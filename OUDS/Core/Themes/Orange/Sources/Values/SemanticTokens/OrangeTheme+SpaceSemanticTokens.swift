@@ -25,12 +25,12 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceColumnGapNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spaceColumnGapShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension75
-    @objc open var spaceColumnGapShorter: SpaceSemanticToken { DimensionRawTokens.dimension75 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem150
+    @objc open var spaceColumnGapShorter: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem150 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spaceColumnGapShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spaceColumnGapSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spaceColumnGapSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension200
     @objc open var spaceColumnGapTall: SpaceSemanticToken { DimensionRawTokens.dimension200 }
     /// Has for value token DimensionRawTokens.dimension250
@@ -51,8 +51,8 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceFixedShorter: SpaceSemanticToken { DimensionRawTokens.dimension100 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spaceFixedShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spaceFixedSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spaceFixedSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension600
     @objc open var spaceFixedSpacious: SpaceSemanticToken { DimensionRawTokens.dimension600 }
     /// Has for value token DimensionRawTokens.dimension300
@@ -67,12 +67,12 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceInsetNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spaceInsetShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension75
-    @objc open var spaceInsetShorter: SpaceSemanticToken { DimensionRawTokens.dimension75 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem150
+    @objc open var spaceInsetShorter: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem150 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spaceInsetShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spaceInsetSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spaceInsetSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension500
     @objc open var spaceInsetSpacious: SpaceSemanticToken { DimensionRawTokens.dimension500 }
     /// Has for value token DimensionRawTokens.dimension200
@@ -89,12 +89,12 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spacePaddingBlockNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spacePaddingBlockShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension75
-    @objc open var spacePaddingBlockShorter: SpaceSemanticToken { DimensionRawTokens.dimension75 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem150
+    @objc open var spacePaddingBlockShorter: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem150 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spacePaddingBlockShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spacePaddingBlockSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spacePaddingBlockSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension350
     @objc open var spacePaddingBlockSpacious: SpaceSemanticToken { DimensionRawTokens.dimension350 }
     /// Has for value token DimensionRawTokens.dimension200
@@ -111,12 +111,12 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spacePaddingInlineNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spacePaddingInlineShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension75
-    @objc open var spacePaddingInlineShorter: SpaceSemanticToken { DimensionRawTokens.dimension75 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem150
+    @objc open var spacePaddingInlineShorter: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem150 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spacePaddingInlineShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spacePaddingInlineSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spacePaddingInlineSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension350
     @objc open var spacePaddingInlineSpacious: SpaceSemanticToken { DimensionRawTokens.dimension350 }
     /// Has for value token DimensionRawTokens.dimension200
@@ -131,12 +131,12 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceRowGapNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spaceRowGapShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension75
-    @objc open var spaceRowGapShorter: SpaceSemanticToken { DimensionRawTokens.dimension75 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem150
+    @objc open var spaceRowGapShorter: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem150 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spaceRowGapShortest: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spaceRowGapSmash: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spaceRowGapSmash: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension200
     @objc open var spaceRowGapTall: SpaceSemanticToken { DimensionRawTokens.dimension200 }
     /// Has for value token DimensionRawTokens.dimension200
@@ -159,8 +159,8 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceScaledShortestMobile: SpaceSemanticToken { DimensionRawTokens.dimension50 }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var spaceScaledShortestTablet: SpaceSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension25
-    @objc open var spaceScaledSmashMobile: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    /// Has for value token DimensionRawTokens.dimensionOutOfSystem50
+    @objc open var spaceScaledSmashMobile: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
     /// Has for value token DimensionRawTokens.dimension50
     @objc open var spaceScaledSmashTablet: SpaceSemanticToken { DimensionRawTokens.dimension50 }
     /// Has for value token DimensionRawTokens.dimension600

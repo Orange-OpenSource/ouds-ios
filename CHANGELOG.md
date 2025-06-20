@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Tool] Update `SwiftFormat` Swift Package from v0.56.2 to v0.56.4
 - Optional accessibility identifiers for items of radio picker and checkbox picker components
+- Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Dimension raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Update the names and the order of the divider colors (Orange-OpenSource/ouds-ios#712)  
 - In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
 - Improve documentation of components by adding component versions

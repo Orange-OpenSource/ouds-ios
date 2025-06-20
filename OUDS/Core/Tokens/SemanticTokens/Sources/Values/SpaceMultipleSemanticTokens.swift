@@ -36,7 +36,7 @@
 ///         // The spacing semantic tokens using them,
 ///         // declared (in SpaceSemanticTokens.swift) and defined (in OUDSTheme+SpaceSemanticTokens.swift) by the tokenator
 ///         var spaceScaledNoneMobile: SpaceSemanticToken { DimensionRawTokens.dimension0 }
-///         var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+///         var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
 ///
 ///         // The 'higher level' spacing semantic tokens wrapping them and exposed to users,
 ///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manualy

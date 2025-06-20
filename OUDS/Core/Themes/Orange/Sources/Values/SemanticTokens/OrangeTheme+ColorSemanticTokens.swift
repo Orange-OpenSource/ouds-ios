@@ -90,16 +90,16 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionSupportLoadingDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite120 }
     /// Has for value token ColorRawTokens.colorOpacityWhite120
     @objc open var colorActionSupportPressedDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite120 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst600
-    @objc open var colorActionVisitedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst600
+    @objc open var colorActionVisitedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst600 }
     /// Has for value token ColorRawTokens.colorOpacityWhite200
     @objc open var colorActionDisabledDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorActionEnabledDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorActionEnabledDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorOpacityWhite640
     @objc open var colorActionFocusDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorActionHighlightedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorActionHighlightedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorOpacityWhite640
     @objc open var colorActionHoverDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
@@ -108,38 +108,38 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionPressedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorActionSelectedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorActionVisitedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorAlwaysBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorAlwaysOnBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorAlwaysOnBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorAlwaysOnWhiteLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorAlwaysWhiteLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorAlwaysBlackDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorAlwaysOnBlackDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorAlwaysOnBlackDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorAlwaysOnWhiteDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorAlwaysWhiteDark: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc open var colorBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc open var colorBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorBgPrimaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray80
-    @objc open var colorBgSecondaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
+    @objc open var colorBgSecondaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray100
     @objc open var colorBgTertiaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc open var colorBgEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc open var colorBgPrimaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray800
-    @objc open var colorBgSecondaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray800 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc open var colorBgEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc open var colorBgPrimaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark800
+    @objc open var colorBgSecondaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark800 }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray900
     @objc open var colorBgTertiaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange550
@@ -164,10 +164,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBorderDefaultDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     /// Has for value token ColorRawTokens.colorOpacityWhite920
     @objc open var colorBorderEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite920 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorBorderFocusDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc open var colorBorderFocusInsetDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorBorderFocusDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc open var colorBorderFocusInsetDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
     /// Has for value token ColorRawTokens.colorOpacityWhite80
     @objc open var colorBorderMutedDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange550
@@ -224,8 +224,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnStatusEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorContentOnStatusMutedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorContentOnStatusMutedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue500
     @objc open var colorContentStatusInfoLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
     /// Has for value token ColorRawTokens.colorFunctionalScarlet600
@@ -244,8 +244,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentStatusWarningDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorContentBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorContentDefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorContentDefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
     /// Has for value token ColorRawTokens.colorOpacityWhite200
     @objc open var colorContentDisabledDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     /// Has for value token ColorRawTokens.colorOpacityWhite640
@@ -254,18 +254,18 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOverlayDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorOpacityBlack40
     @objc open var colorOverlayDragLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray720
-    @objc open var colorOverlayEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray720 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
+    @objc open var colorOverlayEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark720 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorOverlayModalLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorOpacityWhite80
     @objc open var colorOverlayDefaultDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
     /// Has for value token ColorRawTokens.colorOpacityWhite200
     @objc open var colorOverlayDragDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorOverlayEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc open var colorOverlayModalDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorOverlayEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc open var colorOverlayModalDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
@@ -318,66 +318,66 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorSurfaceStatusWarningEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
     /// Has for value token ColorRawTokens.colorFunctionalSun900
     @objc open var colorSurfaceStatusWarningMutedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun900 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald500
-    @objc open var colorDecorativeAccent1DefaultLight: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald700
-    @objc open var colorDecorativeAccent1EmphasizedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald700 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald200
-    @objc open var colorDecorativeAccent1MutedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald200 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald500
-    @objc open var colorDecorativeAccent1DefaultDark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald700
-    @objc open var colorDecorativeAccent1EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald700 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald200
-    @objc open var colorDecorativeAccent1MutedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald200 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky400
-    @objc open var colorDecorativeAccent2DefaultLight: ColorSemanticToken { ColorRawTokens.colorDecorativeSky400 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky700
-    @objc open var colorDecorativeAccent2EmphasizedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeSky700 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky200
-    @objc open var colorDecorativeAccent2MutedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeSky200 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky400
-    @objc open var colorDecorativeAccent2DefaultDark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky400 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky700
-    @objc open var colorDecorativeAccent2EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky700 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky200
-    @objc open var colorDecorativeAccent2MutedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500
+    @objc open var colorDecorativeAccent1DefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald700
+    @objc open var colorDecorativeAccent1EmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald200
+    @objc open var colorDecorativeAccent1MutedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500
+    @objc open var colorDecorativeAccent1DefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald700
+    @objc open var colorDecorativeAccent1EmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald200
+    @objc open var colorDecorativeAccent1MutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky400
+    @objc open var colorDecorativeAccent2DefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky700
+    @objc open var colorDecorativeAccent2EmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky200
+    @objc open var colorDecorativeAccent2MutedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky400
+    @objc open var colorDecorativeAccent2DefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky700
+    @objc open var colorDecorativeAccent2EmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky200
+    @objc open var colorDecorativeAccent2MutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky200 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc open var colorDecorativeAccent3DefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber500
-    @objc open var colorDecorativeAccent3EmphasizedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber500
+    @objc open var colorDecorativeAccent3EmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber500 }
     /// Has for value token ColorRawTokens.colorFunctionalSun200
     @objc open var colorDecorativeAccent3MutedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun200 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc open var colorDecorativeAccent3DefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber500
-    @objc open var colorDecorativeAccent3EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber500
+    @objc open var colorDecorativeAccent3EmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber500 }
     /// Has for value token ColorRawTokens.colorFunctionalSun200
     @objc open var colorDecorativeAccent3MutedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorDecorativeAccent4DefaultLight: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst800
-    @objc open var colorDecorativeAccent4EmphasizedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst200
-    @objc open var colorDecorativeAccent4MutedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorDecorativeAccent4DefaultDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst800
-    @objc open var colorDecorativeAccent4EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst200
-    @objc open var colorDecorativeAccent4MutedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst200 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink200
-    @objc open var colorDecorativeAccent5DefaultLight: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink200 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink300
-    @objc open var colorDecorativeAccent5EmphasizedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink100
-    @objc open var colorDecorativeAccent5MutedLight: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink100 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink200
-    @objc open var colorDecorativeAccent5DefaultDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink200 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink300
-    @objc open var colorDecorativeAccent5EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink100
-    @objc open var colorDecorativeAccent5MutedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorDecorativeAccent4DefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst800
+    @objc open var colorDecorativeAccent4EmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst200
+    @objc open var colorDecorativeAccent4MutedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorDecorativeAccent4DefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst800
+    @objc open var colorDecorativeAccent4EmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst200
+    @objc open var colorDecorativeAccent4MutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink200
+    @objc open var colorDecorativeAccent5DefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink300
+    @objc open var colorDecorativeAccent5EmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink100
+    @objc open var colorDecorativeAccent5MutedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink200
+    @objc open var colorDecorativeAccent5DefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink300
+    @objc open var colorDecorativeAccent5EmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink100
+    @objc open var colorDecorativeAccent5MutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink100 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorDecorativeBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
@@ -390,130 +390,130 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorDecorativeBrandSecondaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorDecorativeBrandTertiaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc open var colorDecorativeNeutralEmphasizedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray400
-    @objc open var colorDecorativeNeutralEmphasizedLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray320
-    @objc open var colorDecorativeNeutralEmphasizedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray320 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray240
-    @objc open var colorDecorativeNeutralEmphasizedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray240 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc open var colorDecorativeNeutralEmphasizedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray400
-    @objc open var colorDecorativeNeutralEmphasizedLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray320
-    @objc open var colorDecorativeNeutralEmphasizedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray320 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray240
-    @objc open var colorDecorativeNeutralEmphasizedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray240 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray400
-    @objc open var colorDecorativeNeutralMutedHighLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray400 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray800
-    @objc open var colorDecorativeNeutralMutedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray800 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray960
-    @objc open var colorDecorativeNeutralMutedHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray960 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray240
-    @objc open var colorDecorativeNeutralMutedLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray240 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorDecorativeNeutralMutedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray80
-    @objc open var colorDecorativeNeutralMutedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray320
-    @objc open var colorDecorativeNeutralMutedMediumLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray320 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray400
-    @objc open var colorDecorativeNeutralMutedHighDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray400 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray800
-    @objc open var colorDecorativeNeutralMutedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray800 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray960
-    @objc open var colorDecorativeNeutralMutedHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray960 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray240
-    @objc open var colorDecorativeNeutralMutedLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray240 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc open var colorDecorativeNeutralMutedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray80
-    @objc open var colorDecorativeNeutralMutedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray320
-    @objc open var colorDecorativeNeutralMutedMediumDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray320 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach100
-    @objc open var colorDecorativeSkinTint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach100 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach200
-    @objc open var colorDecorativeSkinTint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach200 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach300
-    @objc open var colorDecorativeSkinTint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach300 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach400
-    @objc open var colorDecorativeSkinTint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach400 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach500
-    @objc open var colorDecorativeSkinTint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach500 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach600
-    @objc open var colorDecorativeSkinTint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach600 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach700
-    @objc open var colorDecorativeSkinTint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach700 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach800
-    @objc open var colorDecorativeSkinTint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach800 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach900
-    @objc open var colorDecorativeSkinTint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach900 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach100
-    @objc open var colorDecorativeSkinTint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach100 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach200
-    @objc open var colorDecorativeSkinTint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach200 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach300
-    @objc open var colorDecorativeSkinTint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach300 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach400
-    @objc open var colorDecorativeSkinTint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach400 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach500
-    @objc open var colorDecorativeSkinTint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach500 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach600
-    @objc open var colorDecorativeSkinTint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach600 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach700
-    @objc open var colorDecorativeSkinTint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach700 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach800
-    @objc open var colorDecorativeSkinTint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach800 }
-    /// Has for value token ColorRawTokens.colorDecorativeDeepPeach900
-    @objc open var colorDecorativeSkinTint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach900 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc open var colorDecorativeNeutralEmphasizedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark400
+    @objc open var colorDecorativeNeutralEmphasizedLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark400 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark320
+    @objc open var colorDecorativeNeutralEmphasizedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark320 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark240
+    @objc open var colorDecorativeNeutralEmphasizedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark240 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc open var colorDecorativeNeutralEmphasizedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark400
+    @objc open var colorDecorativeNeutralEmphasizedLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark400 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark320
+    @objc open var colorDecorativeNeutralEmphasizedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark320 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark240
+    @objc open var colorDecorativeNeutralEmphasizedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark240 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight400
+    @objc open var colorDecorativeNeutralMutedHighLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight400 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight800
+    @objc open var colorDecorativeNeutralMutedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight800 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight960
+    @objc open var colorDecorativeNeutralMutedHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight960 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight240
+    @objc open var colorDecorativeNeutralMutedLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight240 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorDecorativeNeutralMutedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
+    @objc open var colorDecorativeNeutralMutedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight320
+    @objc open var colorDecorativeNeutralMutedMediumLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight320 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight400
+    @objc open var colorDecorativeNeutralMutedHighDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight400 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight800
+    @objc open var colorDecorativeNeutralMutedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight800 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight960
+    @objc open var colorDecorativeNeutralMutedHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight960 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight240
+    @objc open var colorDecorativeNeutralMutedLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight240 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc open var colorDecorativeNeutralMutedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
+    @objc open var colorDecorativeNeutralMutedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight320
+    @objc open var colorDecorativeNeutralMutedMediumDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight320 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach100
+    @objc open var colorDecorativeSkinTint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach200
+    @objc open var colorDecorativeSkinTint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach300
+    @objc open var colorDecorativeSkinTint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach400
+    @objc open var colorDecorativeSkinTint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach500
+    @objc open var colorDecorativeSkinTint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach600
+    @objc open var colorDecorativeSkinTint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach700
+    @objc open var colorDecorativeSkinTint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach800
+    @objc open var colorDecorativeSkinTint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach900
+    @objc open var colorDecorativeSkinTint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach100
+    @objc open var colorDecorativeSkinTint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach200
+    @objc open var colorDecorativeSkinTint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach300
+    @objc open var colorDecorativeSkinTint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach400
+    @objc open var colorDecorativeSkinTint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach500
+    @objc open var colorDecorativeSkinTint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach600
+    @objc open var colorDecorativeSkinTint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach700
+    @objc open var colorDecorativeSkinTint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach800
+    @objc open var colorDecorativeSkinTint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeDeepPeach900
+    @objc open var colorDecorativeSkinTint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeDeepPeach900 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorChartBorderLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorChartBorderContrastLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst600
-    @objc open var colorChartCategoricalTier1Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst600 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald600
-    @objc open var colorChartCategoricalTier2Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald600 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink700
-    @objc open var colorChartCategoricalTier3Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst600
+    @objc open var colorChartCategoricalTier1Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald600
+    @objc open var colorChartCategoricalTier2Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink700
+    @objc open var colorChartCategoricalTier3Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink700 }
     /// Has for value token ColorRawTokens.colorFunctionalSun700
     @objc open var colorChartCategoricalTier4Light: ColorSemanticToken { ColorRawTokens.colorFunctionalSun700 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue700
     @objc open var colorChartCategoricalTier5Light: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue700 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst500
-    @objc open var colorChartCategoricalTier6Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald700
-    @objc open var colorChartCategoricalTier7Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald700 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink600
-    @objc open var colorChartCategoricalTier8Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst500
+    @objc open var colorChartCategoricalTier6Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald700
+    @objc open var colorChartCategoricalTier7Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink600
+    @objc open var colorChartCategoricalTier8Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink600 }
     /// Has for value token ColorRawTokens.colorFunctionalSun800
     @objc open var colorChartCategoricalTier9Light: ColorSemanticToken { ColorRawTokens.colorFunctionalSun800 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue600
     @objc open var colorChartCategoricalTier10Light: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue600 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorChartCategoricalTier1Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald500
-    @objc open var colorChartCategoricalTier2Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald500 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink300
-    @objc open var colorChartCategoricalTier3Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber600
-    @objc open var colorChartCategoricalTier4Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber600 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky300
-    @objc open var colorChartCategoricalTier5Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst500
-    @objc open var colorChartCategoricalTier6Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald300
-    @objc open var colorChartCategoricalTier7Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald300 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink400
-    @objc open var colorChartCategoricalTier8Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber300
-    @objc open var colorChartCategoricalTier9Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber300 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky500
-    @objc open var colorChartCategoricalTier10Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorChartCategoricalTier1Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500
+    @objc open var colorChartCategoricalTier2Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink300
+    @objc open var colorChartCategoricalTier3Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber600
+    @objc open var colorChartCategoricalTier4Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky300
+    @objc open var colorChartCategoricalTier5Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst500
+    @objc open var colorChartCategoricalTier6Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald300
+    @objc open var colorChartCategoricalTier7Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink400
+    @objc open var colorChartCategoricalTier8Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber300
+    @objc open var colorChartCategoricalTier9Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky500
+    @objc open var colorChartCategoricalTier10Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky500 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue600
     @objc open var colorChartFunctionalInfoLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue600 }
     /// Has for value token ColorRawTokens.colorFunctionalScarlet600
@@ -530,202 +530,202 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorChartFunctionalPositiveDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc open var colorChartFunctionalWarningDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray400
-    @objc open var colorChartGridlinesLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray400 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight400
+    @objc open var colorChartGridlinesLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight400 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange550
     @objc open var colorChartHighlightLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray880
-    @objc open var colorChartNeutralLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray880 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky100
-    @objc open var colorChartSequentialAccent1Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky100 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky200
-    @objc open var colorChartSequentialAccent1Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky200 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky300
-    @objc open var colorChartSequentialAccent1Tint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky300 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky400
-    @objc open var colorChartSequentialAccent1Tint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky400 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky500
-    @objc open var colorChartSequentialAccent1Tint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky500 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky600
-    @objc open var colorChartSequentialAccent1Tint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky600 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky700
-    @objc open var colorChartSequentialAccent1Tint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky700 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky800
-    @objc open var colorChartSequentialAccent1Tint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky800 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky900
-    @objc open var colorChartSequentialAccent1Tint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky900 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky900
-    @objc open var colorChartSequentialAccent1Tint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky900 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky800
-    @objc open var colorChartSequentialAccent1Tint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky800 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky700
-    @objc open var colorChartSequentialAccent1Tint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky700 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky600
-    @objc open var colorChartSequentialAccent1Tint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky600 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky500
-    @objc open var colorChartSequentialAccent1Tint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky500 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky400
-    @objc open var colorChartSequentialAccent1Tint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky400 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky300
-    @objc open var colorChartSequentialAccent1Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky300 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky200
-    @objc open var colorChartSequentialAccent1Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky200 }
-    /// Has for value token ColorRawTokens.colorDecorativeSky100
-    @objc open var colorChartSequentialAccent1Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky100 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald100
-    @objc open var colorChartSequentialAccent2Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald100 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald200
-    @objc open var colorChartSequentialAccent2Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald200 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald300
-    @objc open var colorChartSequentialAccent2Tint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald300 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald400
-    @objc open var colorChartSequentialAccent2Tint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald400 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald500
-    @objc open var colorChartSequentialAccent2Tint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald600
-    @objc open var colorChartSequentialAccent2Tint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald600 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald700
-    @objc open var colorChartSequentialAccent2Tint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald700 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald800
-    @objc open var colorChartSequentialAccent2Tint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald800 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald900
-    @objc open var colorChartSequentialAccent2Tint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald900 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald900
-    @objc open var colorChartSequentialAccent2Tint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald900 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald800
-    @objc open var colorChartSequentialAccent2Tint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald800 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald700
-    @objc open var colorChartSequentialAccent2Tint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald700 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald600
-    @objc open var colorChartSequentialAccent2Tint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald600 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald500
-    @objc open var colorChartSequentialAccent2Tint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald500 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald400
-    @objc open var colorChartSequentialAccent2Tint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald400 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald300
-    @objc open var colorChartSequentialAccent2Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald300 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald200
-    @objc open var colorChartSequentialAccent2Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald200 }
-    /// Has for value token ColorRawTokens.colorDecorativeEmerald100
-    @objc open var colorChartSequentialAccent2Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald100 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink100
-    @objc open var colorChartSequentialAccent3Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink100 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink200
-    @objc open var colorChartSequentialAccent3Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink200 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink300
-    @objc open var colorChartSequentialAccent3Tint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink400
-    @objc open var colorChartSequentialAccent3Tint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink400 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink500
-    @objc open var colorChartSequentialAccent3Tint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink500 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink600
-    @objc open var colorChartSequentialAccent3Tint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink600 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink700
-    @objc open var colorChartSequentialAccent3Tint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink700 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink800
-    @objc open var colorChartSequentialAccent3Tint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink800 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink900
-    @objc open var colorChartSequentialAccent3Tint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink900 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink900
-    @objc open var colorChartSequentialAccent3Tint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink900 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink800
-    @objc open var colorChartSequentialAccent3Tint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink800 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink700
-    @objc open var colorChartSequentialAccent3Tint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink700 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink600
-    @objc open var colorChartSequentialAccent3Tint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink600 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink500
-    @objc open var colorChartSequentialAccent3Tint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink500 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink400
-    @objc open var colorChartSequentialAccent3Tint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink400 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink300
-    @objc open var colorChartSequentialAccent3Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink200
-    @objc open var colorChartSequentialAccent3Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink200 }
-    /// Has for value token ColorRawTokens.colorDecorativeShockingPink100
-    @objc open var colorChartSequentialAccent3Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink100 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst100
-    @objc open var colorChartSequentialAccent4Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst100 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst200
-    @objc open var colorChartSequentialAccent4Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst300
-    @objc open var colorChartSequentialAccent4Tint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorChartSequentialAccent4Tint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst500
-    @objc open var colorChartSequentialAccent4Tint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst600
-    @objc open var colorChartSequentialAccent4Tint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst600 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst700
-    @objc open var colorChartSequentialAccent4Tint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst700 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst800
-    @objc open var colorChartSequentialAccent4Tint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst900
-    @objc open var colorChartSequentialAccent4Tint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst900 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst900
-    @objc open var colorChartSequentialAccent4Tint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst900 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst800
-    @objc open var colorChartSequentialAccent4Tint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst700
-    @objc open var colorChartSequentialAccent4Tint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst700 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst600
-    @objc open var colorChartSequentialAccent4Tint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst600 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst500
-    @objc open var colorChartSequentialAccent4Tint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst400
-    @objc open var colorChartSequentialAccent4Tint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst300
-    @objc open var colorChartSequentialAccent4Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst200
-    @objc open var colorChartSequentialAccent4Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmethyst100
-    @objc open var colorChartSequentialAccent4Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst100 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber100
-    @objc open var colorChartSequentialAccent5Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber100 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber200
-    @objc open var colorChartSequentialAccent5Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber300
-    @objc open var colorChartSequentialAccent5Tint300Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber400
-    @objc open var colorChartSequentialAccent5Tint400Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber500
-    @objc open var colorChartSequentialAccent5Tint500Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber600
-    @objc open var colorChartSequentialAccent5Tint600Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber600 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber700
-    @objc open var colorChartSequentialAccent5Tint700Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber700 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber800
-    @objc open var colorChartSequentialAccent5Tint800Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber900
-    @objc open var colorChartSequentialAccent5Tint900Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber900 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber900
-    @objc open var colorChartSequentialAccent5Tint100Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber900 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber800
-    @objc open var colorChartSequentialAccent5Tint200Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber800 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber700
-    @objc open var colorChartSequentialAccent5Tint300Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber700 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber600
-    @objc open var colorChartSequentialAccent5Tint400Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber600 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber500
-    @objc open var colorChartSequentialAccent5Tint500Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber500 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber400
-    @objc open var colorChartSequentialAccent5Tint600Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber400 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber300
-    @objc open var colorChartSequentialAccent5Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber300 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber200
-    @objc open var colorChartSequentialAccent5Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber200 }
-    /// Has for value token ColorRawTokens.colorDecorativeAmber100
-    @objc open var colorChartSequentialAccent5Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber100 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc open var colorChartBorderDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight880
+    @objc open var colorChartNeutralLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight880 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky100
+    @objc open var colorChartSequentialAccent1Tint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky200
+    @objc open var colorChartSequentialAccent1Tint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky300
+    @objc open var colorChartSequentialAccent1Tint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky400
+    @objc open var colorChartSequentialAccent1Tint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky500
+    @objc open var colorChartSequentialAccent1Tint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky600
+    @objc open var colorChartSequentialAccent1Tint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky700
+    @objc open var colorChartSequentialAccent1Tint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky800
+    @objc open var colorChartSequentialAccent1Tint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky900
+    @objc open var colorChartSequentialAccent1Tint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky900
+    @objc open var colorChartSequentialAccent1Tint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky800
+    @objc open var colorChartSequentialAccent1Tint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky700
+    @objc open var colorChartSequentialAccent1Tint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky600
+    @objc open var colorChartSequentialAccent1Tint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky500
+    @objc open var colorChartSequentialAccent1Tint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky400
+    @objc open var colorChartSequentialAccent1Tint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky300
+    @objc open var colorChartSequentialAccent1Tint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky200
+    @objc open var colorChartSequentialAccent1Tint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeSky100
+    @objc open var colorChartSequentialAccent1Tint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeSky100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald100
+    @objc open var colorChartSequentialAccent2Tint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald200
+    @objc open var colorChartSequentialAccent2Tint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald300
+    @objc open var colorChartSequentialAccent2Tint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald400
+    @objc open var colorChartSequentialAccent2Tint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500
+    @objc open var colorChartSequentialAccent2Tint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald600
+    @objc open var colorChartSequentialAccent2Tint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald700
+    @objc open var colorChartSequentialAccent2Tint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald800
+    @objc open var colorChartSequentialAccent2Tint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald900
+    @objc open var colorChartSequentialAccent2Tint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald900
+    @objc open var colorChartSequentialAccent2Tint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald800
+    @objc open var colorChartSequentialAccent2Tint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald700
+    @objc open var colorChartSequentialAccent2Tint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald600
+    @objc open var colorChartSequentialAccent2Tint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500
+    @objc open var colorChartSequentialAccent2Tint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald400
+    @objc open var colorChartSequentialAccent2Tint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald300
+    @objc open var colorChartSequentialAccent2Tint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald200
+    @objc open var colorChartSequentialAccent2Tint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald100
+    @objc open var colorChartSequentialAccent2Tint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink100
+    @objc open var colorChartSequentialAccent3Tint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink200
+    @objc open var colorChartSequentialAccent3Tint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink300
+    @objc open var colorChartSequentialAccent3Tint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink400
+    @objc open var colorChartSequentialAccent3Tint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink500
+    @objc open var colorChartSequentialAccent3Tint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink600
+    @objc open var colorChartSequentialAccent3Tint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink700
+    @objc open var colorChartSequentialAccent3Tint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink800
+    @objc open var colorChartSequentialAccent3Tint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink900
+    @objc open var colorChartSequentialAccent3Tint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink900
+    @objc open var colorChartSequentialAccent3Tint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink800
+    @objc open var colorChartSequentialAccent3Tint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink700
+    @objc open var colorChartSequentialAccent3Tint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink600
+    @objc open var colorChartSequentialAccent3Tint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink500
+    @objc open var colorChartSequentialAccent3Tint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink400
+    @objc open var colorChartSequentialAccent3Tint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink300
+    @objc open var colorChartSequentialAccent3Tint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink200
+    @objc open var colorChartSequentialAccent3Tint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeShockingPink100
+    @objc open var colorChartSequentialAccent3Tint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeShockingPink100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst100
+    @objc open var colorChartSequentialAccent4Tint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst200
+    @objc open var colorChartSequentialAccent4Tint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst300
+    @objc open var colorChartSequentialAccent4Tint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorChartSequentialAccent4Tint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst500
+    @objc open var colorChartSequentialAccent4Tint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst600
+    @objc open var colorChartSequentialAccent4Tint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst700
+    @objc open var colorChartSequentialAccent4Tint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst800
+    @objc open var colorChartSequentialAccent4Tint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst900
+    @objc open var colorChartSequentialAccent4Tint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst900
+    @objc open var colorChartSequentialAccent4Tint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst800
+    @objc open var colorChartSequentialAccent4Tint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst700
+    @objc open var colorChartSequentialAccent4Tint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst600
+    @objc open var colorChartSequentialAccent4Tint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst500
+    @objc open var colorChartSequentialAccent4Tint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst400
+    @objc open var colorChartSequentialAccent4Tint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst300
+    @objc open var colorChartSequentialAccent4Tint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst200
+    @objc open var colorChartSequentialAccent4Tint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmethyst100
+    @objc open var colorChartSequentialAccent4Tint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmethyst100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber100
+    @objc open var colorChartSequentialAccent5Tint100Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber100 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber200
+    @objc open var colorChartSequentialAccent5Tint200Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber300
+    @objc open var colorChartSequentialAccent5Tint300Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber400
+    @objc open var colorChartSequentialAccent5Tint400Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber500
+    @objc open var colorChartSequentialAccent5Tint500Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber600
+    @objc open var colorChartSequentialAccent5Tint600Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber700
+    @objc open var colorChartSequentialAccent5Tint700Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber800
+    @objc open var colorChartSequentialAccent5Tint800Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber900
+    @objc open var colorChartSequentialAccent5Tint900Light: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber900
+    @objc open var colorChartSequentialAccent5Tint100Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber900 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber800
+    @objc open var colorChartSequentialAccent5Tint200Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber800 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber700
+    @objc open var colorChartSequentialAccent5Tint300Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber700 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber600
+    @objc open var colorChartSequentialAccent5Tint400Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber600 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber500
+    @objc open var colorChartSequentialAccent5Tint500Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber500 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber400
+    @objc open var colorChartSequentialAccent5Tint600Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber400 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber300
+    @objc open var colorChartSequentialAccent5Tint700Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber300 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber200
+    @objc open var colorChartSequentialAccent5Tint800Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber200 }
+    /// Has for value token OrangeBrandColorRawTokens.colorDecorativeAmber100
+    @objc open var colorChartSequentialAccent5Tint900Dark: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeAmber100 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc open var colorChartBorderDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorChartBorderContrastDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray240
-    @objc open var colorChartGridlinesDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray240 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark240
+    @objc open var colorChartGridlinesDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark240 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorChartHighlightDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray960
-    @objc open var colorChartNeutralDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray960 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight960
+    @objc open var colorChartNeutralDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight960 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc public final var colorRepositoryAccentDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray900
@@ -788,34 +788,34 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNegativeLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet100 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc public final var colorRepositoryNeutralEmphasizedBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray720
-    @objc public final var colorRepositoryNeutralEmphasizedHighLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray720 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray800
-    @objc public final var colorRepositoryNeutralEmphasizedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray800 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc public final var colorRepositoryNeutralEmphasizedHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc public final var colorRepositoryNeutralEmphasizedMediumLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
+    @objc public final var colorRepositoryNeutralEmphasizedHighLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark720 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark800
+    @objc public final var colorRepositoryNeutralEmphasizedHigherLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark800 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc public final var colorRepositoryNeutralEmphasizedHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc public final var colorRepositoryNeutralEmphasizedMediumLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc public final var colorRepositoryNeutralEmphasizedBlackDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray720
-    @objc public final var colorRepositoryNeutralEmphasizedHighDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray720 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray800
-    @objc public final var colorRepositoryNeutralEmphasizedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray800 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray880
-    @objc public final var colorRepositoryNeutralEmphasizedHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
-    /// Has for value token ColorRawTokens.colorFunctionalDarkGray640
-    @objc public final var colorRepositoryNeutralEmphasizedMediumDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc public final var colorRepositoryNeutralMutedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray80
-    @objc public final var colorRepositoryNeutralMutedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
+    @objc public final var colorRepositoryNeutralEmphasizedHighDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark720 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark800
+    @objc public final var colorRepositoryNeutralEmphasizedHigherDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark800 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
+    @objc public final var colorRepositoryNeutralEmphasizedHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
+    @objc public final var colorRepositoryNeutralEmphasizedMediumDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc public final var colorRepositoryNeutralMutedLowerLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
+    @objc public final var colorRepositoryNeutralMutedLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc public final var colorRepositoryNeutralMutedWhiteLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray160
-    @objc public final var colorRepositoryNeutralMutedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
-    /// Has for value token ColorRawTokens.colorFunctionalLightGray80
-    @objc public final var colorRepositoryNeutralMutedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
+    @objc public final var colorRepositoryNeutralMutedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
+    @objc public final var colorRepositoryNeutralMutedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc public final var colorRepositoryNeutralMutedWhiteDark: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorOpacityBlack520
