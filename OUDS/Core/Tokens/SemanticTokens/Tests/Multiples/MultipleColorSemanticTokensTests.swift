@@ -52,9 +52,9 @@ struct MultipleColorSemanticTokensTests {
     /// if an only if they have the same light and dark values and have the same types.
     @Test func isEqual() {
         let first = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let second = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
+        let second = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalGrayDark80, dark: ColorRawTokens.colorFunctionalSun100)
         let third = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
-        let fourth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let fourth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalGrayDark80, dark: ColorRawTokens.colorFunctionalScarlet900)
         let fifth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
