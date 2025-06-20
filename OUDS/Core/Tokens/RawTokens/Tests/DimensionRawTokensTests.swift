@@ -533,6 +533,71 @@ struct DimensionRawTokensTests {
     }
 
     @Test
+    func dimensionRawTokenOutOfSystem25NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem25 >= 0)
+    }
+
+    @Test func dimensionRawTokenOutOfSystem25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem25, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem25LessThanOutOfSystem50() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem25 < DimensionRawTokens.dimensionOutOfSystem50)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem50NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem50 >= 0)
+    }
+
+    @Test func dimensionRawTokenOutOfSystem50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem50, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem50LessThanOutOfSystem75() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem50 < DimensionRawTokens.dimensionOutOfSystem75)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem75NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem75 >= 0)
+    }
+
+    @Test func dimensionRawTokenOutOfSystem75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem75, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem75LessThanOutOfSystem150() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem75 < DimensionRawTokens.dimensionOutOfSystem150)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem150NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 >= 0)
+    }
+
+    @Test func dimensionRawTokenOutOfSystem150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem150, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem150LessThanOutOfSystem520() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 < DimensionRawTokens.dimensionOutOfSystem250)
+    }
+
+    @Test
+    func dimensionRawTokenOutOfSystem250NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimensionOutOfSystem25 >= 0)
+    }
+
+    @Test func dimensionRawTokenOutOfSystem250MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem25, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
     func nonEqualityForDimensions() throws {
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension50)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension100)

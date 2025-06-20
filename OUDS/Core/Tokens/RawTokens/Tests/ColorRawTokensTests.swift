@@ -100,51 +100,51 @@ struct ColorRawTokensTests {
         TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight880, ColorRawTokens.colorFunctionalGrayLight960)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight80Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight80Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight80, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight160Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight160Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight160, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight240Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight240Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight240, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight320Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight320Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight320, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight400Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight400Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight400, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight480Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight480Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight480, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight560Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight560Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight560, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight640Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight640Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight640, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight720Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight720Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight720, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight800Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight800Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight800, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight880Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight880Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight880, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayLight960Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayLight960Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight960, regexp: Self.colorFormat)
     }
 
@@ -194,51 +194,51 @@ struct ColorRawTokensTests {
         TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark880, ColorRawTokens.colorFunctionalGrayDark960)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark80Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark80Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark80, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark160Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark160Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark160, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark240Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark240Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark240, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark320Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark320Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark320, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark400Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark400Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark400, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark480Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark480Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark480, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark560Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark560Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark560, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark640Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark640Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark640, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark720Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark720Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark720, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark800Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark800Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark800, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark880Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark880Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark880, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokencolorFunctionalGrayDark960Format() throws {
+    @Test func colorRawTokenColorFunctionalGrayDark960Format() throws {
         TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark960, regexp: Self.colorFormat)
     }
 
