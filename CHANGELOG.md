@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Update background color in pressecd and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#4720) 
+- Background color in pressed and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#720)  
 - Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
 - Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
 
