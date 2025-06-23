@@ -57,22 +57,14 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
-    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorNoneLight: ElevationColorSemanticToken { get }
-    var elevationColorNoneDark: ElevationColorSemanticToken { get }
-    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
-    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
-    var elevationColorDragLight: ElevationColorSemanticToken { get }
-    var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get }
+    var elevationColorDefault: ElevationColorSemanticToken { get }
+    var elevationColorNone: ElevationColorSemanticToken { get }
+    var elevationColorRaised: ElevationColorSemanticToken { get }
+    var elevationColorDrag: ElevationColorSemanticToken { get }
+    var elevationColorEmphasized: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefault: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
