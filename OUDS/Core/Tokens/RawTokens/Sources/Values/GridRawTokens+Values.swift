@@ -68,7 +68,7 @@ extension GridRawTokens {
     /// Has for value 389
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
     /// Has for value 1336
-    public static let gridMaxWidthRegular: GridRawToken = 1_336
+    public static let gridMaxWidthRegular: GridRawToken = 1336
     /// Has for value 390
     public static let gridMinWidthCompact: GridRawToken = 390
     /// Has for value 320
