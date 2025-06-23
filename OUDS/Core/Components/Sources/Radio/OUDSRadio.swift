@@ -101,6 +101,7 @@ public struct OUDSRadio: View {
                 .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
                        minHeight: theme.radioButton.radioButtonSizeMinHeight,
                        maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
+                .modifier(RadioBackgroundModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)

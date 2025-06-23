@@ -115,6 +115,7 @@ public struct OUDSCheckboxIndeterminate: View {
                        maxWidth: theme.checkbox.checkboxSizeMinWidth,
                        minHeight: theme.checkbox.checkboxSizeMinHeight,
                        maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
