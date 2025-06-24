@@ -70,7 +70,7 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSmTablet != abstractTheme.sizes.sizeIconWithHeadingLargeSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
@@ -95,12 +95,12 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeLgTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShortMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumSmMobile() throws {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSmMobile != abstractTheme.sizes.sizeIconWithHeadingMediumSizeSmMobile)
         #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSmTablet != abstractTheme.sizes.sizeIconWithHeadingMediumSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
@@ -130,7 +130,7 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSmTablet != abstractTheme.sizes.sizeIconWithHeadingSmallSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
@@ -160,7 +160,7 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSmTablet != abstractTheme.sizes.sizeIconWithBodyLargeSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
@@ -185,12 +185,12 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeLgTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShortMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumSmMobile() throws {
         #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSmMobile != abstractTheme.sizes.sizeIconWithBodyMediumSizeSmMobile)
         #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSmTablet != abstractTheme.sizes.sizeIconWithBodyMediumSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
@@ -220,7 +220,7 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
         #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeSmMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallShortTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallSmTablet() throws {
         #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeSmTablet != abstractTheme.sizes.sizeIconWithBodySmallSizeSmTablet)
         #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeSmTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }

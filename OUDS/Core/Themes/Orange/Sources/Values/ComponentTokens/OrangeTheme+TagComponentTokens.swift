@@ -66,28 +66,28 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
     /// Has for value token DimensionRawTokens.dimension550
     @objc open var tagSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token spaces.spaceColumnGapShorter
-    @objc open var tagSpaceColumnGapColumnGapMedium: SpaceSemanticToken { spaces.spaceColumnGapShorter }
-    /// Has for value token spaces.spaceColumnGapShortest
-    @objc open var tagSpaceColumnGapColumnGapSmall: SpaceSemanticToken { spaces.spaceColumnGapShortest }
-    /// Has for value token spaces.spacePaddingBlockShorter
-    @objc open var tagSpacePaddingBlockMedium: SpaceSemanticToken { spaces.spacePaddingBlockShorter }
-    /// Has for value token spaces.spacePaddingBlockShortest
-    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.spacePaddingBlockShortest }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var tagSpacePaddingInlineIconEndMedium: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    /// Has for value token spaces.spacePaddingInlineShort
-    @objc open var tagSpacePaddingInlineIconEndSmall: SpaceSemanticToken { spaces.spacePaddingInlineShort }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var tagSpacePaddingInlineIconStartMedium: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    /// Has for value token spaces.spacePaddingInlineShort
-    @objc open var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    /// Has for value token spaces.spaceColumnGapXs
+    @objc open var tagSpaceColumnGapColumnGapMedium: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    /// Has for value token spaces.spaceColumnGap2xs
+    @objc open var tagSpaceColumnGapColumnGapSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    /// Has for value token spaces.spacePaddingBlockXs
+    @objc open var tagSpacePaddingBlockMedium: SpaceSemanticToken { spaces.spacePaddingBlockXs }
+    /// Has for value token spaces.spacePaddingBlock2xs
+    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var tagSpacePaddingInlineIconEndMedium: SpaceSemanticToken { spaces.spacePaddingInlineMd }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var tagSpacePaddingInlineIconEndSmall: SpaceSemanticToken { spaces.spacePaddingInlineSm }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var tagSpacePaddingInlineIconStartMedium: SpaceSemanticToken { spaces.spacePaddingInlineMd }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineSm }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var tagSpacePaddingInlineLabelEndMedium: SpaceSemanticToken { spaces.spacePaddingInlineTall }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var tagSpacePaddingInlineLabelEndSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var tagSpacePaddingInlineLabelEndMedium: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var tagSpacePaddingInlineLabelEndSmall: SpaceSemanticToken { spaces.spacePaddingInlineMd }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var tagSpacePaddingInlineLabelStartMedium: SpaceSemanticToken { spaces.spacePaddingInlineTall }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var tagSpacePaddingInlineLabelStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var tagSpacePaddingInlineLabelStartMedium: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var tagSpacePaddingInlineLabelStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMd }
 }

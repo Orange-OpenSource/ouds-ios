@@ -78,57 +78,57 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
     override public var spacePaddingInlineNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineSmash: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineSpacious: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingInlineHuge: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline3xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline2xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInlineXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInlineSm: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInlineMd: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInlineLg: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInlineXl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline2xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline3xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline4xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Padding stack
 
     override public var spacePaddingBlockNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spacePaddingBlockTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlockXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlockSm: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlockMd: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlockLg: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlockXl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingBlock2xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Padding inset
 
     override public var spaceInsetNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetSmash: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceInsetSpacious: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInset3xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInset2xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInsetXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInsetSm: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInsetMd: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInsetLg: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInsetXl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInset2xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInset3xl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Column Gap
 
     override public var spaceColumnGapNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceColumnGapShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceColumnGapShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceColumnGapMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceColumnGapTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceColumnGapTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceColumnGapXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceColumnGapSm: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceColumnGapMd: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceColumnGapLg: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceColumnGapXl: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Row Gap
 
     override public var spaceRowGapNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceRowGapShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceRowGapShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceRowGapShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceRowGapMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceRowGapTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceRowGap2xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceRowGapXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceRowGapSm: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceRowGapMd: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceRowGapLg: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 }
 
 // swiftlint:enable required_deinit

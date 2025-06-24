@@ -224,24 +224,24 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
     /// Has for value token DimensionRawTokens.dimension600
     @objc open var buttonSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    /// Has for value token spaces.spaceColumnGapShorter
-    @objc open var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapShorter }
-    /// Has for value token spaces.spaceColumnGapShort
-    @objc open var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapShort }
+    /// Has for value token spaces.spaceColumnGapXs
+    @objc open var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    /// Has for value token spaces.spaceColumnGapSm
+    @objc open var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceInsetMedium
-    @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineSpacious
-    @objc open var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    @objc open var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xl }
     /// Has for value token spaces.spacePaddingInlineHuge
-    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineHuge }
+    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xl }
     /// Has for value token spaces.spacePaddingInlineTaller
-    @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineTaller }
+    @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXl }
     /// Has for value token spaces.spacePaddingInlineSpacious
-    @objc open var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    @objc open var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInline3xl }
 }

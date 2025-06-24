@@ -29,7 +29,7 @@ extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc open var listItemColorContentLoader: MultipleColorSemanticTokens { colors.colorContentDefault }
     @objc open var listItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
     @objc open var listItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
-    @objc open var listItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
-    @objc open var listItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var listItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLg }
+    @objc open var listItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMd }
     @objc open var listItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
 }

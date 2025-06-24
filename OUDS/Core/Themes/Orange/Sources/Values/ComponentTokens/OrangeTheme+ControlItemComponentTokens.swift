@@ -43,9 +43,9 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     /// Has for value token DimensionRawTokens.dimension2000
     @objc open var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2000 }
     /// Has for value token spaces.spaceColumnGapTall
-    @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
+    @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLg }
     /// Has for value token spaces.spaceInsetMedium
-    @objc open var controlItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var controlItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spaceRowGapNone
     @objc open var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
 }
