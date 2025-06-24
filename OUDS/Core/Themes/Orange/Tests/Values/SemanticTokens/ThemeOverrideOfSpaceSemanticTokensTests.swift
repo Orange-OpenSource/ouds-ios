@@ -40,59 +40,59 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.spaceFixedNone == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedSmash() throws {
-        #expect(inheritedTheme.spaces.spaceFixedSmash != abstractTheme.spaces.spaceFixedSmash)
-        #expect(inheritedTheme.spaces.spaceFixedSmash == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed3xs() throws {
+        #expect(inheritedTheme.spaces.spaceFixed3xs != abstractTheme.spaces.spaceFixed3xs)
+        #expect(inheritedTheme.spaces.spaceFixed3xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedShortest() throws {
-        #expect(inheritedTheme.spaces.spaceFixedShortest != abstractTheme.spaces.spaceFixedShortest)
-        #expect(inheritedTheme.spaces.spaceFixedShortest == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed2xs() throws {
+        #expect(inheritedTheme.spaces.spaceFixed2xs != abstractTheme.spaces.spaceFixed2xs)
+        #expect(inheritedTheme.spaces.spaceFixed2xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedShorter() throws {
-        #expect(inheritedTheme.spaces.spaceFixedShorter != abstractTheme.spaces.spaceFixedShorter)
-        #expect(inheritedTheme.spaces.spaceFixedShorter == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixedXs() throws {
+        #expect(inheritedTheme.spaces.spaceFixedXs != abstractTheme.spaces.spaceFixedXs)
+        #expect(inheritedTheme.spaces.spaceFixedXs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedShort() throws {
-        #expect(inheritedTheme.spaces.spaceFixedShort != abstractTheme.spaces.spaceFixedShort)
-        #expect(inheritedTheme.spaces.spaceFixedShort == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixedSm() throws {
+        #expect(inheritedTheme.spaces.spaceFixedSm != abstractTheme.spaces.spaceFixedSm)
+        #expect(inheritedTheme.spaces.spaceFixedSm == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedMedium() throws {
-        #expect(inheritedTheme.spaces.spaceFixedMedium != abstractTheme.spaces.spaceFixedMedium)
-        #expect(inheritedTheme.spaces.spaceFixedMedium == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixedMd() throws {
+        #expect(inheritedTheme.spaces.spaceFixedMd != abstractTheme.spaces.spaceFixedMd)
+        #expect(inheritedTheme.spaces.spaceFixedMd == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedTall() throws {
-        #expect(inheritedTheme.spaces.spaceFixedTall != abstractTheme.spaces.spaceFixedTall)
-        #expect(inheritedTheme.spaces.spaceFixedTall == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixedLg() throws {
+        #expect(inheritedTheme.spaces.spaceFixedLg != abstractTheme.spaces.spaceFixedLg)
+        #expect(inheritedTheme.spaces.spaceFixedLg == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedTaller() throws {
-        #expect(inheritedTheme.spaces.spaceFixedTaller != abstractTheme.spaces.spaceFixedTaller)
-        #expect(inheritedTheme.spaces.spaceFixedTaller == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixedXl() throws {
+        #expect(inheritedTheme.spaces.spaceFixedXl != abstractTheme.spaces.spaceFixedXl)
+        #expect(inheritedTheme.spaces.spaceFixedXl == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedTallest() throws {
-        #expect(inheritedTheme.spaces.spaceFixedTallest != abstractTheme.spaces.spaceFixedTallest)
-        #expect(inheritedTheme.spaces.spaceFixedTallest == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed2xl() throws {
+        #expect(inheritedTheme.spaces.spaceFixed2xl != abstractTheme.spaces.spaceFixed2xl)
+        #expect(inheritedTheme.spaces.spaceFixed2xl == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedSpacious() throws {
-        #expect(inheritedTheme.spaces.spaceFixedSpacious != abstractTheme.spaces.spaceFixedSpacious)
-        #expect(inheritedTheme.spaces.spaceFixedSpacious == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed3xl() throws {
+        #expect(inheritedTheme.spaces.spaceFixed3xl != abstractTheme.spaces.spaceFixed3xl)
+        #expect(inheritedTheme.spaces.spaceFixed3xl == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedHuge() throws {
-        #expect(inheritedTheme.spaces.spaceFixedHuge != abstractTheme.spaces.spaceFixedHuge)
-        #expect(inheritedTheme.spaces.spaceFixedHuge == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed4xl() throws {
+        #expect(inheritedTheme.spaces.spaceFixed4xl != abstractTheme.spaces.spaceFixed4xl)
+        #expect(inheritedTheme.spaces.spaceFixed4xl == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSpaceFixedJumbo() throws {
-        #expect(inheritedTheme.spaces.spaceFixedJumbo != abstractTheme.spaces.spaceFixedJumbo)
-        #expect(inheritedTheme.spaces.spaceFixedJumbo == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceFixed5xl() throws {
+        #expect(inheritedTheme.spaces.spaceFixed5xl != abstractTheme.spaces.spaceFixed5xl)
+        #expect(inheritedTheme.spaces.spaceFixed5xl == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
     // MARK: - Semantic token - Spacing - Layout fluid

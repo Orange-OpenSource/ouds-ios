@@ -24,12 +24,12 @@ import OUDSFoundations
 ///
 ///         // Then override the space semantic tokens you want, using the dimension raw tokens available
 ///
-///         override var spaceFixedMedium: SpaceSemanticToken {
+///         override var spaceFixedMd: SpaceSemanticToken {
 ///             DimensionRawTokens.dimension400
 ///         }
 ///
 ///         override var spaceScaledSm: MultipleSpaceSemanticTokens {
-///             MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
+///             MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
 ///         }
 /// }
 /// ```

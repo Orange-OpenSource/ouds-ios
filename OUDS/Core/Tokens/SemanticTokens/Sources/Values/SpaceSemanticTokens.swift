@@ -50,17 +50,17 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Fixed
 
     var spaceFixedNone: SpaceSemanticToken { get }
-    var spaceFixedSmash: SpaceSemanticToken { get }
-    var spaceFixedShortest: SpaceSemanticToken { get }
-    var spaceFixedShorter: SpaceSemanticToken { get }
-    var spaceFixedShort: SpaceSemanticToken { get }
-    var spaceFixedMedium: SpaceSemanticToken { get }
-    var spaceFixedTall: SpaceSemanticToken { get }
-    var spaceFixedTaller: SpaceSemanticToken { get }
-    var spaceFixedTallest: SpaceSemanticToken { get }
-    var spaceFixedSpacious: SpaceSemanticToken { get }
-    var spaceFixedHuge: SpaceSemanticToken { get }
-    var spaceFixedJumbo: SpaceSemanticToken { get }
+    var spaceFixed3xs: SpaceSemanticToken { get }
+    var spaceFixed2xs: SpaceSemanticToken { get }
+    var spaceFixedXs: SpaceSemanticToken { get }
+    var spaceFixedSm: SpaceSemanticToken { get }
+    var spaceFixedMd: SpaceSemanticToken { get }
+    var spaceFixedLg: SpaceSemanticToken { get }
+    var spaceFixedXl: SpaceSemanticToken { get }
+    var spaceFixed2xl: SpaceSemanticToken { get }
+    var spaceFixed3xl: SpaceSemanticToken { get }
+    var spaceFixed4xl: SpaceSemanticToken { get }
+    var spaceFixed5xl: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
