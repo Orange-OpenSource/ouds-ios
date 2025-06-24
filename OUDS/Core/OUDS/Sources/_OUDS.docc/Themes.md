@@ -75,11 +75,11 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMedium: SpaceSemanticToken {
+    override var spaceFixedMd: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
-    override var spaceScaledShort: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
+    override var spaceScaledSm: MultipleSpaceSemanticTokens {
+        MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
     }
 }
 
@@ -107,14 +107,14 @@ class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
 
 // Token provider for border
 
-class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
+class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider {
     override var borderStyleDefault: BorderStyleSemanticToken {
         BorderRawTokens.borderStyleDashed
     }
-    override var borderWidthMedium: BorderWidthSemanticToken {
+    override var borderWidthw: BorderWidthSemanticToken {
         BorderRawTokens.borderWidth100
     }
-    override var borderRadiusTall: BorderRadiusSemanticToken {
+    override var borderRadiusLarge: BorderRadiusSemanticToken {
         BorderRawTokens.borderRadius800
     }
 }

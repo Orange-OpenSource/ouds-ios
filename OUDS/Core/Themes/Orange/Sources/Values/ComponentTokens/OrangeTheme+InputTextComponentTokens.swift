@@ -51,21 +51,21 @@ extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens 
     /// Has for value token DimensionRawTokens.dimension1600
     @objc open var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
     /// Has for value token spaces.spaceInsetMedium
-    @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spacePaddingInlineShorter
-    @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    /// Has for value token spaces.spacePaddingInlineShorter
-    @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
-    /// Has for value token spaces.spacePaddingInlineShort
-    @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
-    /// Has for value token spaces.spacePaddingInlineShortest
-    @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
-    /// Has for value token spaces.spacePaddingInlineShort
-    @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
+    /// Has for value token spaces.spacePaddingInlineXs
+    @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMd }
+    /// Has for value token spaces.spacePaddingInlineXs
+    @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineSm }
+    /// Has for value token spaces.spacePaddingInline2xs
+    @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineSm }
 }
 
 // swiftlint:enable identifier_name

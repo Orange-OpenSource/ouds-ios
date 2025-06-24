@@ -14,6 +14,8 @@
 import OUDS
 import OUDSTokensSemantic
 
+// swiftlint:disable function_body_length
+
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
@@ -87,6 +89,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
+    ///    - dimensions: All semantic tokens of dimension
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -112,6 +115,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
                          opacities: AllOpacitySemanticTokensProvider? = nil,
+                         dimensions: AllDimensionSemanticTokensProvider? = nil,
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
@@ -139,6 +143,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
         let opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
+        let dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
 
@@ -165,6 +170,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
+                   dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
@@ -187,3 +193,5 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
+
+// swiftlint:enable function_body_length

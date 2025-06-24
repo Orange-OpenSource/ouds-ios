@@ -59,6 +59,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All opacity semantic tokens exposed in one object
     public let opacities: AllOpacitySemanticTokensProvider
 
+    /// All dimension semantic tokens exposed in one object
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     /// All size semantic tokens exposed in one object
     public let sizes: AllSizeSemanticTokensProvider
 
@@ -126,6 +129,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
+    ///    - dimensions: All dimensions tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -151,6 +155,7 @@ open class OUDSTheme: @unchecked Sendable {
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
                 opacities: AllOpacitySemanticTokensProvider,
+                dimensions: AllDimensionSemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
@@ -179,6 +184,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.fonts = fonts
         self.grids = grids
         self.opacities = opacities
+        self.dimensions = dimensions
         self.sizes = sizes
         self.spaces = spaces
 

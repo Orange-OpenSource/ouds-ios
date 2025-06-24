@@ -42,7 +42,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     // And also semantic tokens
 
     @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
-    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMd }
     @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 }

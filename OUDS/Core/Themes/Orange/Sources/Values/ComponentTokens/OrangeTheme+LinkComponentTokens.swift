@@ -58,16 +58,16 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc open var linkSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
     /// Has for value token DimensionRawTokens.dimension550
     @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token spaces.spaceColumnGapShorter
-    @objc open var linkSpaceColumnGapArrowMedium: SpaceSemanticToken { spaces.spaceColumnGapShorter }
-    /// Has for value token spaces.spaceColumnGapShortest
-    @objc open var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { spaces.spaceColumnGapShortest }
-    /// Has for value token spaces.spaceColumnGapShort
-    @objc open var linkSpaceColumnGapIconMedium: SpaceSemanticToken { spaces.spaceColumnGapShort }
-    /// Has for value token spaces.spaceColumnGapShorter
-    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapShorter }
+    /// Has for value token spaces.spaceColumnGapXs
+    @objc open var linkSpaceColumnGapArrowMedium: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    /// Has for value token spaces.spaceColumnGap2xs
+    @objc open var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    /// Has for value token spaces.spaceColumnGapSm
+    @objc open var linkSpaceColumnGapIconMedium: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    /// Has for value token spaces.spaceColumnGapXs
+    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
     /// Has for value token spaces.spacePaddingInlineNone
     @objc open var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
 }
