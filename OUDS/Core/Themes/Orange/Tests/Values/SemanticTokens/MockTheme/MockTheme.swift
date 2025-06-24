@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDS
+import OUDSThemesOrange
 
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
@@ -51,6 +52,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
+                   dimensions: OrangeThemeDimensionSemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
                    badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),

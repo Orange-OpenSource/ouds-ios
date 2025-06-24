@@ -52,15 +52,15 @@ public protocol SpaceMultipleSemanticTokens {
     // MARK: Semantic token - Spacing - Scaled
 
     var spaceScaledNone: MultipleSpaceSemanticTokens { get }
-    var spaceScaledSmash: MultipleSpaceSemanticTokens { get }
-    var spaceScaledShortest: MultipleSpaceSemanticTokens { get }
-    var spaceScaledShorter: MultipleSpaceSemanticTokens { get }
-    var spaceScaledShort: MultipleSpaceSemanticTokens { get }
-    var spaceScaledMedium: MultipleSpaceSemanticTokens { get }
-    var spaceScaledTall: MultipleSpaceSemanticTokens { get }
-    var spaceScaledTaller: MultipleSpaceSemanticTokens { get }
-    var spaceScaledTallest: MultipleSpaceSemanticTokens { get }
-    var spaceScaledSpacious: MultipleSpaceSemanticTokens { get }
+    var spaceScaled3xs: MultipleSpaceSemanticTokens { get }
+    var spaceScaled2xs: MultipleSpaceSemanticTokens { get }
+    var spaceScaledXs: MultipleSpaceSemanticTokens { get }
+    var spaceScaledSm: MultipleSpaceSemanticTokens { get }
+    var spaceScaledMd: MultipleSpaceSemanticTokens { get }
+    var spaceScaledLg: MultipleSpaceSemanticTokens { get }
+    var spaceScaledXl: MultipleSpaceSemanticTokens { get }
+    var spaceScaled2xl: MultipleSpaceSemanticTokens { get }
+    var spaceScaled3xl: MultipleSpaceSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

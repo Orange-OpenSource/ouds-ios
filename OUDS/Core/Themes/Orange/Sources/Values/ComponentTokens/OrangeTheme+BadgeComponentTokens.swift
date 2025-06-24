@@ -54,10 +54,10 @@ extension OrangeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     @objc open var badgeSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension200 }
     /// Has for value token DimensionRawTokens.dimension150
     @objc open var badgeSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension150 }
-    /// Has for value token spaces.spacePaddingInlineShorter
-    @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
-    /// Has for value token spaces.spacePaddingInlineShortest
-    @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
+    /// Has for value token spaces.spacePaddingInlineXs
+    @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    /// Has for value token spaces.spacePaddingInline2xs
+    @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token spaces.spaceRowGapNone
     @objc open var badgeSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
 }

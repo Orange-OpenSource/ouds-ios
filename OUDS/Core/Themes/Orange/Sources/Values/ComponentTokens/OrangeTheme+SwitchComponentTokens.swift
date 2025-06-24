@@ -60,10 +60,10 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { DimensionRawTokens.dimension300 }
     /// Has for value token DimensionRawTokens.dimension700
     @objc open var switchSizeWidthTrack: SizeSemanticToken { DimensionRawTokens.dimension700 }
-    /// Has for value token spaces.spacePaddingInlineShortest
-    @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
-    /// Has for value token spaces.spacePaddingInlineShort
-    @objc open var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    /// Has for value token spaces.spacePaddingInline2xs
+    @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineSm }
 }
 
 // swiftlint:enable line_length

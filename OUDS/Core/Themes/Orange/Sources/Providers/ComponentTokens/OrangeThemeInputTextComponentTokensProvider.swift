@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
 ///
-///         override var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+///         override var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSm }
 ///
 ///         override  var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 ///

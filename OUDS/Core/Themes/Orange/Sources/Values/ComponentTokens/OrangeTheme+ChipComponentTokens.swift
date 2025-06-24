@@ -72,22 +72,22 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
     /// Has for value token DimensionRawTokens.dimension600
     @objc open var chipSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    /// Has for value token spaces.spaceColumnGapShorter
-    @objc open var chipSpaceColumnGapColumnGap: SpaceSemanticToken { spaces.spaceColumnGapShorter }
+    /// Has for value token spaces.spaceColumnGapXs
+    @objc open var chipSpaceColumnGapColumnGap: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceInsetMedium
-    @objc open var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
-    /// Has for value token spaces.spacePaddingBlockShorter
-    @objc open var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockShorter }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
+    /// Has for value token spaces.spacePaddingBlockXs
+    @objc open var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockXs }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineMd }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineTall }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var chipSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { spaces.spacePaddingInlineMd }
+    /// Has for value token spaces.spacePaddingInlineMd
+    @objc open var chipSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineMd }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineTall
-    @objc open var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
 }
