@@ -30,44 +30,44 @@ extension GridRawTokens {
     /// Has for value 8
     public static let gridColumnCount800: GridRawToken = 8
     /// Has for value 1
-    public static let gridColumnGap10: GridRawToken = DimensionRawTokens.dimensionBase * 0.25 // 1
+    public static let gridColumnGap10: GridRawToken = DimensionRawTokens.dimensionBase * 0.25 // 1px
     /// Has for value 8
-    public static let gridColumnGap100: GridRawToken = DimensionRawTokens.dimensionBase * 2 // 8
+    public static let gridColumnGap100: GridRawToken = DimensionRawTokens.dimensionBase * 2 // 8px
     /// Has for value 16
-    public static let gridColumnGap200: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16
+    public static let gridColumnGap200: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16px
     /// Has for value 20
-    public static let gridColumnGap300: GridRawToken = DimensionRawTokens.dimensionBase * 5 // 20
+    public static let gridColumnGap300: GridRawToken = DimensionRawTokens.dimensionBase * 5 // 20px
     /// Has for value 24
-    public static let gridColumnGap400: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24
+    public static let gridColumnGap400: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24px
     /// Has for value 32
-    public static let gridColumnGap600: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32
+    public static let gridColumnGap600: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32px
     /// Has for value 40
-    public static let gridColumnGap800: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40
+    public static let gridColumnGap800: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40px
     /// Has for value 16
-    public static let gridMargin100: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16
+    public static let gridMargin100: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16px
     /// Has for value 52
-    public static let gridMargin1000: GridRawToken = DimensionRawTokens.dimensionBase * 13 // 52
+    public static let gridMargin1000: GridRawToken = DimensionRawTokens.dimensionBase * 13 // 52px
     /// Has for value 56
-    public static let gridMargin1100: GridRawToken = DimensionRawTokens.dimensionBase * 14 // 56
+    public static let gridMargin1100: GridRawToken = DimensionRawTokens.dimensionBase * 14 // 56px
     /// Has for value 80
-    public static let gridMargin1700: GridRawToken = DimensionRawTokens.dimensionBase * 20 // 80
+    public static let gridMargin1700: GridRawToken = DimensionRawTokens.dimensionBase * 20 // 80px
     /// Has for value 112
-    public static let gridMargin2500: GridRawToken = DimensionRawTokens.dimensionBase * 28 // 112
+    public static let gridMargin2500: GridRawToken = DimensionRawTokens.dimensionBase * 28 // 112px
     /// Has for value 24
-    public static let gridMargin300: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24
+    public static let gridMargin300: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24px
     /// Has for value 28
-    public static let gridMargin400: GridRawToken = DimensionRawTokens.dimensionBase * 7 // 28
+    public static let gridMargin400: GridRawToken = DimensionRawTokens.dimensionBase * 7 // 28px
     /// Has for value 32
-    public static let gridMargin500: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32
+    public static let gridMargin500: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32px
     /// Has for value 36
-    public static let gridMargin600: GridRawToken = DimensionRawTokens.dimensionBase * 9 // 36
+    public static let gridMargin600: GridRawToken = DimensionRawTokens.dimensionBase * 9 // 36px
     /// Has for value 40
-    public static let gridMargin700: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40
+    public static let gridMargin700: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40px
     /// Has for value 852
     public static let gridMaxWidthCompact: GridRawToken = 852
     /// Has for value 389
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
-    /// Has for value 1336
+    /// Has for value 1_336
     public static let gridMaxWidthRegular: GridRawToken = 1_336
     /// Has for value 390
     public static let gridMinWidthCompact: GridRawToken = 390

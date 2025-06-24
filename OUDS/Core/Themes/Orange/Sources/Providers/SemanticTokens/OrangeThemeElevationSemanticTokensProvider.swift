@@ -61,10 +61,9 @@ open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens are not here
+    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift,
-    // in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift,
-    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationMultipleSemanticTokens.swift,
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of OrangeThemeElevationSemanticTokensProvider is here to allow to write documentation.
 }
 
