@@ -42,6 +42,9 @@ public protocol AllGridSemanticTokensProvider: TokensProvider, GridSemanticToken
 /// Something which provides all semantic tokens of opacity
 public protocol AllOpacitySemanticTokensProvider: TokensProvider, OpacitySemanticTokens {}
 
+/// Something which provides all semantic tokens of dimension
+public protocol AllDimensionSemanticTokensProvider: TokensProvider, DimensionSemanticTokens {}
+
 /// Something which provides all semantic tokens of size
 public protocol AllSizeSemanticTokensProvider: TokensProvider, SizeSemanticTokens, SizeMultipleSemanticTokens {}
 

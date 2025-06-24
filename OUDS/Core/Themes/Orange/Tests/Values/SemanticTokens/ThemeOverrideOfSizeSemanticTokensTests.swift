@@ -327,6 +327,16 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative4xs() throws {
+        #expect(inheritedTheme.sizes.sizeIconDecorative4xs != abstractTheme.sizes.sizeIconDecorative4xs)
+        #expect(inheritedTheme.sizes.sizeIconDecorative4xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative3xs() throws {
+        #expect(inheritedTheme.sizes.sizeIconDecorative3xs != abstractTheme.sizes.sizeIconDecorative3xs)
+        #expect(inheritedTheme.sizes.sizeIconDecorative3xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative2xs() throws {
         #expect(inheritedTheme.sizes.sizeIconDecorative2xs != abstractTheme.sizes.sizeIconDecorative2xs)
         #expect(inheritedTheme.sizes.sizeIconDecorative2xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
@@ -462,6 +472,13 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodySmallTablet() throws {
         #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodySmallTablet != abstractTheme.sizes.sizeMaxWidthTypeBodySmallTablet)
         #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    // MARK: - Semantic token - Sizing - Interactive area
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMinInteractiveArea() throws {
+        #expect(inheritedTheme.sizes.sizeMinInteractiveArea != abstractTheme.sizes.sizeMinInteractiveArea)
+        #expect(inheritedTheme.sizes.sizeMinInteractiveArea == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 }
 

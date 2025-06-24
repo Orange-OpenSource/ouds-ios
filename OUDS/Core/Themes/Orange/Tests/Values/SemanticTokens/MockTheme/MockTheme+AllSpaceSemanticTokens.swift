@@ -27,38 +27,38 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     // MARK: Semantic token - Spacing - Layout fluid (multiple)
 
     override public var spaceScaledNone: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledSmash: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledShortest: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledShorter: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledShort: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledMedium: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledTall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledTaller: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledTallest: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override public var spaceScaledSpacious: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaled3xs: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaled2xs: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaledXs: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaledSm: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaledMd: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaledLg: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaledXl: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaled2xl: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override public var spaceScaled3xl: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
 
     // MARK: Semantic token - Spacing - Layout fluid (pure semantic)
 
     override public var spaceScaledNoneMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceScaledNoneTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledSmashMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledSmashTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShortestMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShortestTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShorterMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShorterTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShortMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledShortTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledMediumMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledMediumTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallerMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallerTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallestMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledTallestTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledSpaciousMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override public var spaceScaledSpaciousTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled3xsMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled3xsTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled2xsMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled2xsTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledXsMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledXsTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledSmMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledSmTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledMdMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledMdTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledLgMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledLgTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledXlMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaledXlTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled2xlMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled2xlTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled3xlMobile: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceScaled3xlTablet: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Spacing - Layout fix
 

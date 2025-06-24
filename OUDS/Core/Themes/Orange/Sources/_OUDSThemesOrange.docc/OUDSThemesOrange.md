@@ -94,7 +94,7 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
-    override var spaceScaledShort: MultipleSpaceSemanticTokens {
+    override var spaceScaledSm: MultipleSpaceSemanticTokens {
         MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
     }
 }
@@ -130,7 +130,7 @@ class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     override var borderWidthMedium: BorderWidthSemanticToken {
         BorderRawTokens.borderWidth100
     }
-    override var borderRadiusTall: BorderRadiusSemanticToken {
+    override var borderRadiusLarge: BorderRadiusSemanticToken {
         BorderRawTokens.borderRadius800
     }
 }

@@ -28,7 +28,7 @@ import OUDSFoundations
 ///             DimensionRawTokens.dimension400
 ///         }
 ///
-///         override var spaceScaledShort: MultipleSpaceSemanticTokens {
+///         override var spaceScaledSm: MultipleSpaceSemanticTokens {
 ///             MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
 ///         }
 /// }
