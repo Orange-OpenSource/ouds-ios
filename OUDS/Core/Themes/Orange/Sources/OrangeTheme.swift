@@ -14,6 +14,8 @@
 import OUDS
 import OUDSTokensSemantic
 
+// swiftlint:disable function_body_length
+
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
@@ -191,3 +193,5 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
+
+// swiftlint:enable function_body_length

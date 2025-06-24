@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **dimension semantic tokens**, and expose them.
 /// This provider should be integrated as a `AllDimensionSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -33,6 +35,8 @@ import OUDSFoundations
 ///     OrangeTheme(dimensions: OrangeThemeDimensionSemanticTokensProvider())
 /// ```
 ///
+/// Note that by design the semenatic tokens of dimensions provide dby this provider cannot be overriden, this is forbiden in Figma.
+///
 /// - Since: 0.16.0
 open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
 
@@ -49,3 +53,5 @@ open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticToken
     // but in Core/Themes/Orange/Values/DimensionTokens/OrangeTheme+DimensionSemanticTokens.swift
     // This declaration of OrangeThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name
