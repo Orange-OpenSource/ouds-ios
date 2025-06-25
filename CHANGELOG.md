@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Optional accessibility identifiers for items of radio picker and checkbox picker components
 - Update the names and the order of the divider colors (Orange-OpenSource/ouds-ios#712)  
 - In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
 - Improve documentation of components by adding component versions

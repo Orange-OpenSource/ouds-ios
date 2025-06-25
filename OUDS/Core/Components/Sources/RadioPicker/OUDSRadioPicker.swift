@@ -22,6 +22,8 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
+/// The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used.
+/// However if defined in the ``OUDSRadioPickerData`` the items inside the picker will have such accessibility identifiers.
 ///
 /// ## Forbidden by design
 ///
@@ -171,8 +173,14 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
     private func content(for radios: [OUDSRadioPickerData<Tag>]) -> some View {
         ForEach(radios, id: \.tag) { radio in
-            content(for: radio,
-                    noDivider: radios[radios.count - 1].tag == radio.tag) // No divider for last item
+            if let a11yidentifier = radio.accessibilityIdentifier {
+                content(for: radio,
+                        noDivider: radios[radios.count - 1].tag == radio.tag) // No divider for last item
+                    .accessibilityIdentifier(a11yidentifier)
+            } else {
+                content(for: radio,
+                        noDivider: radios[radios.count - 1].tag == radio.tag) // No divider for last item
+            }
         }
     }
 
