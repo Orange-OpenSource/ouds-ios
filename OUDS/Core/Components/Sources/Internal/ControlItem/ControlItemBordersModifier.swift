@@ -43,7 +43,8 @@ struct ControlItemBordersModifier: ViewModifier {
                             color: borderColor)
         } else {
             if layoutData.hasDivider {
-                VStack(spacing: 0) {
+                // Divider must be inside
+                ZStack(alignment: .bottom) {
                     content
                     OUDSHorizontalDivider()
                 }
