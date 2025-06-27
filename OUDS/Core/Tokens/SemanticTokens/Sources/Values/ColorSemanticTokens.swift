@@ -182,11 +182,11 @@ public protocol ColorSemanticTokens {
     var colorContentOnOverlayEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnOverlayEmphasizedDark: ColorSemanticToken { get }
 
-    var colorContentOnStatusEmphasizedLight: ColorSemanticToken { get }
-    var colorContentOnStatusEmphasizedDark: ColorSemanticToken { get }
+    var colorContentOnStatusNeutralEmphasizedLight: ColorSemanticToken { get }
+    var colorContentOnStatusNeutralEmphasizedDark: ColorSemanticToken { get }
 
-    var colorContentOnStatusEmphasizedAltLight: ColorSemanticToken { get }
-    var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken { get }
+    var colorContentOnStatusNegativeEmphasizedLight: ColorSemanticToken { get }
+    var colorContentOnStatusNegativeEmphasizedDark: ColorSemanticToken { get }
 
     var colorContentOnStatusMutedLight: ColorSemanticToken { get }
     var colorContentOnStatusMutedDark: ColorSemanticToken { get }

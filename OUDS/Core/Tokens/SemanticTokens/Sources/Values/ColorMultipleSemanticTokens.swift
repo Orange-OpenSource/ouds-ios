@@ -148,9 +148,9 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusNegativeEmphasized: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusMuted: MultipleColorSemanticTokens { get }
 

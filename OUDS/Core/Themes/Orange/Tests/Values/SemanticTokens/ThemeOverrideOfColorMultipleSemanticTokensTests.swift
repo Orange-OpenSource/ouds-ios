@@ -295,14 +295,14 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnOverlayEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasized() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusEmphasized != abstractTheme.colors.colorContentOnStatusEmphasized)
-        #expect(inheritedTheme.colors.colorContentOnStatusEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralEmphasized() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasized != abstractTheme.colors.colorContentOnStatusNeutralEmphasized)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasizedAlt() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusEmphasizedAlt != abstractTheme.colors.colorContentOnStatusEmphasizedAlt)
-        #expect(inheritedTheme.colors.colorContentOnStatusEmphasizedAlt == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeEmphasized() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasized != abstractTheme.colors.colorContentOnStatusNegativeEmphasized)
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusMuted() throws {
