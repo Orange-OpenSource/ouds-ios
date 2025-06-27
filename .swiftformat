@@ -15,7 +15,6 @@
 
 --exclude Resources/CodeGen/**,Pods/**
 
---enable isEmpty
 --disable blankLinesAroundMark,blankLinesAtStartOfScope,redundantRawValues
 
 --closingparen same-line
