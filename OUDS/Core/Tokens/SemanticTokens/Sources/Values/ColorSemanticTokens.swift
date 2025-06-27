@@ -21,8 +21,8 @@
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all ``ColorSemanticToken``  a theme must have.
-/// These tokens are then gathered inside ``MultipleColorSemanticTokens`` defined in ``ColorMultipleSemanticTokens``.
-/// Any color semantic token must be declared there (except ``MultipleColorSemanticTokens``)
+/// These tokens are then gathered inside ``ColorSemanticToken`` defined in ``ColorMultipleSemanticTokens``.
+/// Any color semantic token must be declared there (except ``ColorSemanticToken``)
 ///
 /// - Since: 0.8.0
 public protocol ColorSemanticTokens {
@@ -99,10 +99,10 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Always
 
-    var colorAlwaysBlack: MultipleColorSemanticTokens { get }
-    var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
-    var colorAlwaysOnWhite: MultipleColorSemanticTokens { get }
-    var colorAlwaysWhite: MultipleColorSemanticTokens { get }
+    var colorAlwaysBlack: ColorSemanticToken { get }
+    var colorAlwaysOnBlack: ColorSemanticToken { get }
+    var colorAlwaysOnWhite: ColorSemanticToken { get }
+    var colorAlwaysWhite: ColorSemanticToken { get }
 
     // MARK: - Color - Background
 
@@ -435,176 +435,63 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Repository
 
-    var colorRepositoryAccentDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryAccentDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryAccentHighestLight: ColorSemanticToken { get }
-    var colorRepositoryAccentHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryAccentLowLight: ColorSemanticToken { get }
-    var colorRepositoryAccentLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryAccentLowestLight: ColorSemanticToken { get }
-    var colorRepositoryAccentLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryInfoDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryInfoDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryInfoHighestLight: ColorSemanticToken { get }
-    var colorRepositoryInfoHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryInfoLowLight: ColorSemanticToken { get }
-    var colorRepositoryInfoLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryInfoLowestLight: ColorSemanticToken { get }
-    var colorRepositoryInfoLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeHighLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeHigherLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeHigherDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeHighestLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeLowLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeLowerLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeLowerDark: ColorSemanticToken { get }
-
-    var colorRepositoryNegativeLowestLight: ColorSemanticToken { get }
-    var colorRepositoryNegativeLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralEmphasizedBlackLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralEmphasizedBlackDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralEmphasizedHighLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralEmphasizedHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralEmphasizedHigherLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralEmphasizedHigherDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralEmphasizedHighestLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralEmphasizedHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralEmphasizedMediumLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralEmphasizedMediumDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralMutedLowerLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralMutedLowerDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralMutedLowestLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralMutedLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryNeutralMutedWhiteLight: ColorSemanticToken { get }
-    var colorRepositoryNeutralMutedWhiteDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackHighLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackHigherLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackHigherDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackHighestLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackLowLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackLowerLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackLowerDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackLowestLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackMediumLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackMediumDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackMediumLowLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackMediumLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackMediumHighLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackMediumHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityBlackTransparentLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackTransparentDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityInfoLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityInfoDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityNegativeLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityNegativeDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityPositiveLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityPositiveDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWarningLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWarningDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteHighLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteHigherLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteHigherDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteHighestLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteMediumLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteMediumDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteMediumLowLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteMediumLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteLowLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteLowerLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteLowerDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteLowestLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryOpacityWhiteTransparentLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityWhiteTransparentDark: ColorSemanticToken { get }
-
-    var colorRepositoryPositiveDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryPositiveDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryPositiveHighLight: ColorSemanticToken { get }
-    var colorRepositoryPositiveHighDark: ColorSemanticToken { get }
-
-    var colorRepositoryPositiveHighestLight: ColorSemanticToken { get }
-    var colorRepositoryPositiveHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryPositiveLowLight: ColorSemanticToken { get }
-    var colorRepositoryPositiveLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryPositiveLowestLight: ColorSemanticToken { get }
-    var colorRepositoryPositiveLowestDark: ColorSemanticToken { get }
-
-    var colorRepositoryPrimaryDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryPrimaryDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryPrimaryLowLight: ColorSemanticToken { get }
-    var colorRepositoryPrimaryLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryWarningDefaultLight: ColorSemanticToken { get }
-    var colorRepositoryWarningDefaultDark: ColorSemanticToken { get }
-
-    var colorRepositoryWarningHighestLight: ColorSemanticToken { get }
-    var colorRepositoryWarningHighestDark: ColorSemanticToken { get }
-
-    var colorRepositoryWarningLowLight: ColorSemanticToken { get }
-    var colorRepositoryWarningLowDark: ColorSemanticToken { get }
-
-    var colorRepositoryWarningLowestLight: ColorSemanticToken { get }
-    var colorRepositoryWarningLowestDark: ColorSemanticToken { get }
+    var colorRepositoryAccentDefault: ColorSemanticToken { get }
+    var colorRepositoryAccentHighest: ColorSemanticToken { get }
+    var colorRepositoryAccentLow: ColorSemanticToken { get }
+    var colorRepositoryAccentLowest: ColorSemanticToken { get }
+    var colorRepositoryInfoDefault: ColorSemanticToken { get }
+    var colorRepositoryInfoHighest: ColorSemanticToken { get }
+    var colorRepositoryInfoLow: ColorSemanticToken { get }
+    var colorRepositoryInfoLowest: ColorSemanticToken { get }
+    var colorRepositoryNegativeDefault: ColorSemanticToken { get }
+    var colorRepositoryNegativeHigh: ColorSemanticToken { get }
+    var colorRepositoryNegativeHigher: ColorSemanticToken { get }
+    var colorRepositoryNegativeHighest: ColorSemanticToken { get }
+    var colorRepositoryNegativeLow: ColorSemanticToken { get }
+    var colorRepositoryNegativeLower: ColorSemanticToken { get }
+    var colorRepositoryNegativeLowest: ColorSemanticToken { get }
+    var colorRepositoryNeutralEmphasizedBlack: ColorSemanticToken { get }
+    var colorRepositoryNeutralEmphasizedHigh: ColorSemanticToken { get }
+    var colorRepositoryNeutralEmphasizedHigher: ColorSemanticToken { get }
+    var colorRepositoryNeutralEmphasizedHighest: ColorSemanticToken { get }
+    var colorRepositoryNeutralEmphasizedMedium: ColorSemanticToken { get }
+    var colorRepositoryNeutralMutedLower: ColorSemanticToken { get }
+    var colorRepositoryNeutralMutedLowest: ColorSemanticToken { get }
+    var colorRepositoryNeutralMutedWhite: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackHigh: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackHigher: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackHighest: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackLow: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackLower: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackLowest: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackMedium: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackMediumLow: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackMediumHigh: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackTransparent: ColorSemanticToken { get }
+    var colorRepositoryOpacityInfo: ColorSemanticToken { get }
+    var colorRepositoryOpacityNegative: ColorSemanticToken { get }
+    var colorRepositoryOpacityPositive: ColorSemanticToken { get }
+    var colorRepositoryOpacityWarning: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHigh: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHigher: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHighest: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteMedium: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteMediumLow: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLow: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLower: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLowest: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteTransparent: ColorSemanticToken { get }
+    var colorRepositoryPositiveDefault: ColorSemanticToken { get }
+    var colorRepositoryPositiveHigh: ColorSemanticToken { get }
+    var colorRepositoryPositiveHighest: ColorSemanticToken { get }
+    var colorRepositoryPositiveLow: ColorSemanticToken { get }
+    var colorRepositoryPositiveLowest: ColorSemanticToken { get }
+    var colorRepositoryPrimaryDefault: ColorSemanticToken { get }
+    var colorRepositoryPrimaryLow: ColorSemanticToken { get }
+    var colorRepositoryWarningDefault: ColorSemanticToken { get }
+    var colorRepositoryWarningHighest: ColorSemanticToken { get }
+    var colorRepositoryWarningLow: ColorSemanticToken { get }
+    var colorRepositoryWarningLowest: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
