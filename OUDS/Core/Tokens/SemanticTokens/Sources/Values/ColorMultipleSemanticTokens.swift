@@ -94,16 +94,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorActionVisited: MultipleColorSemanticTokens { get }
 
-    // MARK: - Color - Always
-
-    var colorAlwaysBlack: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnWhite: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysWhite: MultipleColorSemanticTokens { get }
-
     // MARK: - Color - Background
 
     var colorBgEmphasized: MultipleColorSemanticTokens { get }

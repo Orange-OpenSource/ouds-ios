@@ -75,16 +75,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionVisitedLight, dark: colorActionVisitedDark) }
 
-    // MARK: - Color - Always
-
-    @objc open var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysBlackLight, dark: colorAlwaysBlackDark) }
-
-    @objc open var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnBlackLight, dark: colorAlwaysOnBlackDark) }
-
-    @objc open var colorAlwaysOnWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnWhiteLight, dark: colorAlwaysOnWhiteDark) }
-
-    @objc open var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysWhiteLight, dark: colorAlwaysWhiteDark) }
-
     // MARK: - Color - Background
 
     @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
