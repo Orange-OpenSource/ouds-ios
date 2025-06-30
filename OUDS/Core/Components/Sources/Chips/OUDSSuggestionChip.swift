@@ -31,7 +31,7 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Icon only with default hierarchy
+///     // Icon only
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
 ///
 ///     // Text only
@@ -40,7 +40,6 @@ import SwiftUI
 ///     // Text and icon
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
 /// ```
-///
 ///
 /// ## Design documentation
 /// - TODO: Add OUDS documentation URL for chips

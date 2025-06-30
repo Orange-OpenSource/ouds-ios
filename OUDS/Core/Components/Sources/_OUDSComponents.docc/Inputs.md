@@ -207,3 +207,37 @@ The indicator can be leading or trailing.
                    isError: true,
                    hasDivider: true)
 ```
+
+### Chips
+
+#### Siggestion
+
+The library proposes suggestion chip component to make some predicitve or recomended selection.
+You can use a chip without any labels and images.
+
+```swift
+    // Suggestion chip with icon only 
+    OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+
+    // Layout with text only
+    OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+
+    // Latout with text and icon
+    OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+```
+
+#### Filter
+
+The library proposes filter chip component to make some filtering with selected or unselected options.
+You can use a chip without any labels and images.
+
+```swift
+    // Filter chip with icon only as selected 
+    OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+
+    // Filter chip with text only as not selected
+    OUDSFilterChip(text: "Heart", selected: false) { /* the action to process */ }
+
+    // Filter chip with text and icon layout an in selected state
+    OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+```
