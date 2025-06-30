@@ -519,9 +519,9 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusMutedLight() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusMutedLight != abstractTheme.colors.colorContentOnStatusMutedLight)
-        #expect(inheritedTheme.colors.colorContentOnStatusMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedLight != abstractTheme.colors.colorContentOnStatusNeutralMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralEmphasizedDark() throws {
@@ -534,9 +534,9 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusMutedDark() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusMutedDark != abstractTheme.colors.colorContentOnStatusMutedDark)
-        #expect(inheritedTheme.colors.colorContentOnStatusMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark != abstractTheme.colors.colorContentOnStatusNeutralMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusInfoLight() throws {

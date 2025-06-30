@@ -305,9 +305,9 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusMuted() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusMuted != abstractTheme.colors.colorContentOnStatusMuted)
-        #expect(inheritedTheme.colors.colorContentOnStatusMuted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralMuted() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMuted != abstractTheme.colors.colorContentOnStatusNeutralMuted)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMuted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusInfo() throws {
