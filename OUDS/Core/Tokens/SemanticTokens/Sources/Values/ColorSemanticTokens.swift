@@ -155,6 +155,9 @@ public protocol ColorSemanticTokens {
     var colorContentMutedLight: ColorSemanticToken { get }
     var colorContentMutedDark: ColorSemanticToken { get }
 
+    var colorContentOnActionSelectedLight: ColorSemanticToken { get }
+    var colorContentOnActionSelectedDark: ColorSemanticToken { get }
+
     var colorContentOnActionDisabledLight: ColorSemanticToken { get }
     var colorContentOnActionDisabledDark: ColorSemanticToken { get }
 
@@ -182,14 +185,35 @@ public protocol ColorSemanticTokens {
     var colorContentOnOverlayEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnOverlayEmphasizedDark: ColorSemanticToken { get }
 
+    var colorContentOnStatusPositiveMutedLight: ColorSemanticToken { get }
+    var colorContentOnStatusPositiveMutedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusPositiveEmphasizedLight: ColorSemanticToken { get }
+    var colorContentOnStatusPositiveEmphasizedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusNeutralMutedLight: ColorSemanticToken { get }
+    var colorContentOnStatusNeutralMutedDark: ColorSemanticToken { get }
+
     var colorContentOnStatusNeutralEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnStatusNeutralEmphasizedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusNegativeMutedLight: ColorSemanticToken { get }
+    var colorContentOnStatusNegativeMutedDark: ColorSemanticToken { get }
 
     var colorContentOnStatusNegativeEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnStatusNegativeEmphasizedDark: ColorSemanticToken { get }
 
-    var colorContentOnStatusMutedNeutralLight: ColorSemanticToken { get }
-    var colorContentOnStatusMutedNeutralDark: ColorSemanticToken { get }
+    var colorContentOnStatusWarningMutedLight: ColorSemanticToken { get }
+    var colorContentOnStatusWarningMutedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusWarningEmphasizedLight: ColorSemanticToken { get }
+    var colorContentOnStatusWarningEmphasizedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusAccentMutedLight: ColorSemanticToken { get }
+    var colorContentOnStatusAccentMutedDark: ColorSemanticToken { get }
+
+    var colorContentOnStatusAccentEmphasizedLight: ColorSemanticToken { get }
+    var colorContentOnStatusAccentEmphasizedDark: ColorSemanticToken { get }
 
     var colorContentStatusInfoLight: ColorSemanticToken { get }
     var colorContentStatusInfoDark: ColorSemanticToken { get }
@@ -260,119 +284,46 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Decorative
 
-    var colorDecorativeAccent1DefaultLight: ColorSemanticToken { get }
-    var colorDecorativeAccent1DefaultDark: ColorSemanticToken { get }
+    var colorDecorativeAccent1Default: ColorSemanticToken { get }
+    var colorDecorativeAccent1Emphasized: ColorSemanticToken { get }
+    var colorDecorativeAccent1Muted: ColorSemanticToken { get }
+    var colorDecorativeAccent2Default: ColorSemanticToken { get }
+    var colorDecorativeAccent2Emphasized: ColorSemanticToken { get }
+    var colorDecorativeAccent2Muted: ColorSemanticToken { get }
+    var colorDecorativeAccent3Default: ColorSemanticToken { get }
+    var colorDecorativeAccent3Emphasized: ColorSemanticToken { get }
+    var colorDecorativeAccent3Muted: ColorSemanticToken { get }
+    var colorDecorativeAccent4Default: ColorSemanticToken { get }
+    var colorDecorativeAccent4Emphasized: ColorSemanticToken { get }
+    var colorDecorativeAccent4Muted: ColorSemanticToken { get }
+    var colorDecorativeAccent5Default: ColorSemanticToken { get }
+    var colorDecorativeAccent5Emphasized: ColorSemanticToken { get }
+    var colorDecorativeAccent5Muted: ColorSemanticToken { get }
 
-    var colorDecorativeAccent1EmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent1EmphasizedDark: ColorSemanticToken { get }
+    var colorDecorativeBrandPrimary: ColorSemanticToken { get }
+    var colorDecorativeBrandSecondary: ColorSemanticToken { get }
+    var colorDecorativeBrandTertiary: ColorSemanticToken { get }
+    var colorDecorativeSkinTint100: ColorSemanticToken { get }
+    var colorDecorativeSkinTint200: ColorSemanticToken { get }
+    var colorDecorativeSkinTint300: ColorSemanticToken { get }
+    var colorDecorativeSkinTint400: ColorSemanticToken { get }
+    var colorDecorativeSkinTint500: ColorSemanticToken { get }
+    var colorDecorativeSkinTint600: ColorSemanticToken { get }
+    var colorDecorativeSkinTint700: ColorSemanticToken { get }
+    var colorDecorativeSkinTint800: ColorSemanticToken { get }
+    var colorDecorativeSkinTint900: ColorSemanticToken { get }
 
-    var colorDecorativeAccent1MutedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent1MutedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent2DefaultLight: ColorSemanticToken { get }
-    var colorDecorativeAccent2DefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent2EmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent2EmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent2MutedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent2MutedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent3DefaultLight: ColorSemanticToken { get }
-    var colorDecorativeAccent3DefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent3EmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent3EmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent3MutedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent3MutedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent4DefaultLight: ColorSemanticToken { get }
-    var colorDecorativeAccent4DefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent4EmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent4EmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent4MutedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent4MutedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent5DefaultLight: ColorSemanticToken { get }
-    var colorDecorativeAccent5DefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent5EmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent5EmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeAccent5MutedLight: ColorSemanticToken { get }
-    var colorDecorativeAccent5MutedDark: ColorSemanticToken { get }
-
-    var colorDecorativeBrandPrimaryLight: ColorSemanticToken { get }
-    var colorDecorativeBrandPrimaryDark: ColorSemanticToken { get }
-
-    var colorDecorativeBrandSecondaryLight: ColorSemanticToken { get }
-    var colorDecorativeBrandSecondaryDark: ColorSemanticToken { get }
-
-    var colorDecorativeBrandTertiaryLight: ColorSemanticToken { get }
-    var colorDecorativeBrandTertiaryDark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint100Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint100Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint200Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint200Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint300Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint300Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint400Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint400Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint500Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint500Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint600Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint600Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint700Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint700Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint800Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint800Dark: ColorSemanticToken { get }
-
-    var colorDecorativeSkinTint900Light: ColorSemanticToken { get }
-    var colorDecorativeSkinTint900Dark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedHigherLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedHigherDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedLowLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLowDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedLowerLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLowerDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedLowestLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLowestDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedHighLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHighDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedHigherLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHigherDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedHighestLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHighestDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedLowLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLowDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedLowerLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLowerDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedLowestLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLowestDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedMediumLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedMediumDark: ColorSemanticToken { get }
+    var colorDecorativeNeutralEmphasizedHigher: ColorSemanticToken { get }
+    var colorDecorativeNeutralEmphasizedLow: ColorSemanticToken { get }
+    var colorDecorativeNeutralEmphasizedLower: ColorSemanticToken { get }
+    var colorDecorativeNeutralEmphasizedLowest: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedHigh: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedHigher: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedHighest: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedLow: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedLower: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedLowest: ColorSemanticToken { get }
+    var colorDecorativeNeutralMutedMedium: ColorSemanticToken { get }
 
     // MARK: - Color - Chart
 
@@ -481,6 +432,13 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityWhiteLower: ColorSemanticToken { get }
     var colorRepositoryOpacityWhiteLowest: ColorSemanticToken { get }
     var colorRepositoryOpacityWhiteTransparent: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryLow: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryLower: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryLowest: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryMedium: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryHigh: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryHigher: ColorSemanticToken { get }
+    var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { get }
     var colorRepositoryPositiveDefault: ColorSemanticToken { get }
     var colorRepositoryPositiveHigh: ColorSemanticToken { get }
     var colorRepositoryPositiveHighest: ColorSemanticToken { get }

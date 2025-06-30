@@ -419,6 +419,11 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnActionSelectedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnActionSelectedLight != abstractTheme.colors.colorContentOnActionSelectedLight)
+        #expect(inheritedTheme.colors.colorContentOnActionSelectedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnActionDisabledLight() throws {
         #expect(inheritedTheme.colors.colorContentOnActionDisabledLight != abstractTheme.colors.colorContentOnActionDisabledLight)
         #expect(inheritedTheme.colors.colorContentOnActionDisabledLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
@@ -452,6 +457,11 @@ struct ThemeOverrideOfColorSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnActionPressedLight() throws {
         #expect(inheritedTheme.colors.colorContentOnActionPressedLight != abstractTheme.colors.colorContentOnActionPressedLight)
         #expect(inheritedTheme.colors.colorContentOnActionPressedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnActionSelectedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnActionSelectedDark != abstractTheme.colors.colorContentOnActionSelectedDark)
+        #expect(inheritedTheme.colors.colorContentOnActionSelectedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnActionDisabledDark() throws {
@@ -509,14 +519,14 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnOverlayEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralEmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedLight != abstractTheme.colors.colorContentOnStatusNeutralEmphasizedLight)
-        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusPositiveMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedLight != abstractTheme.colors.colorContentOnStatusPositiveMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeEmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedLight != abstractTheme.colors.colorContentOnStatusNegativeEmphasizedLight)
-        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusPositiveEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveEmphasizedLight != abstractTheme.colors.colorContentOnStatusPositiveEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralMutedLight() throws {
@@ -524,9 +534,74 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedLight != abstractTheme.colors.colorContentOnStatusNeutralEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeMutedight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeMutedLight != abstractTheme.colors.colorContentOnStatusNegativeMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedLight != abstractTheme.colors.colorContentOnStatusNegativeEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusInfoMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoMutedLight != abstractTheme.colors.colorContentOnStatusInfoMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusInfoEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoEmphasizedLight != abstractTheme.colors.colorContentOnStatusInfoEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusWarningMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningMutedLight != abstractTheme.colors.colorContentOnStatusWarningMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusWarningEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningEmphasizedLight != abstractTheme.colors.colorContentOnStatusWarningEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusAccentMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentMutedLight != abstractTheme.colors.colorContentOnStatusAccentMutedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusAccentEmphasizedLight() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentEmphasizedLight != abstractTheme.colors.colorContentOnStatusAccentEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusPositiveMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedDark != abstractTheme.colors.colorContentOnStatusPositiveMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusPositiveEmphasizedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveEmphasizedDark != abstractTheme.colors.colorContentOnStatusPositiveEmphasizedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusPositiveEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutraMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark != abstractTheme.colors.colorContentOnStatusNeutralMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralEmphasizedDark() throws {
         #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedDark != abstractTheme.colors.colorContentOnStatusNeutralEmphasizedDark)
         #expect(inheritedTheme.colors.colorContentOnStatusNeutralEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeMutedDark != abstractTheme.colors.colorContentOnStatusNegativeMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusNegativeMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeEmphasizedDark() throws {
@@ -534,14 +609,49 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeutralMutedDark() throws {
-        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark != abstractTheme.colors.colorContentOnStatusNeutralMutedDark)
-        #expect(inheritedTheme.colors.colorContentOnStatusNeutralMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusInfoMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoMutedDark != abstractTheme.colors.colorContentOnStatusInfoMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusInfoEmphasizedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoEmphasizedDark != abstractTheme.colors.colorContentOnStatusInfoEmphasizedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusInfoEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusWarningMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningMutedDark != abstractTheme.colors.colorContentOnStatusWarningMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusWarningEmphasizedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningEmphasizedDark != abstractTheme.colors.colorContentOnStatusWarningEmphasizedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusWarningEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusAccentMutedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentMutedDark != abstractTheme.colors.colorContentOnStatusAccentMutedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentMutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusAccentEmphasizedDark() throws {
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentEmphasizedDark != abstractTheme.colors.colorContentOnStatusAccentEmphasizedDark)
+        #expect(inheritedTheme.colors.colorContentOnStatusAccentEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusInfoLight() throws {
         #expect(inheritedTheme.colors.colorContentStatusInfoLight != abstractTheme.colors.colorContentStatusInfoLight)
         #expect(inheritedTheme.colors.colorContentStatusInfoLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusInfoMutedLight() throws {
+        #expect(inheritedTheme.colors.colorContentStatusInfoMutedLight != abstractTheme.colors.colorContentStatusInfoMutedLight)
+        #expect(inheritedTheme.colors.colorContentStatusInfoMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusInfoEmphasizedight() throws {
+        #expect(inheritedTheme.colors.colorContentStatusInfoEmphasizedLight != abstractTheme.colors.colorContentStatusInfoEmphasizedLight)
+        #expect(inheritedTheme.colors.colorContentStatusInfoEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusNegativeLight() throws {
@@ -753,384 +863,194 @@ struct ThemeOverrideOfColorSemanticTokensTests {
 
     // MARK: - Color - Decorative
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1DefaultLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1DefaultLight != abstractTheme.colors.colorDecorativeAccent1DefaultLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1DefaultLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1Default() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Default != abstractTheme.colors.colorDecorativeAccent1Default)
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Default == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1EmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1EmphasizedLight != abstractTheme.colors.colorDecorativeAccent1EmphasizedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1EmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1Emphasized() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Emphasized != abstractTheme.colors.colorDecorativeAccent1Emphasized)
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Emphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1MutedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1MutedLight != abstractTheme.colors.colorDecorativeAccent1MutedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1MutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1Muted() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Muted != abstractTheme.colors.colorDecorativeAccent1Muted)
+        #expect(inheritedTheme.colors.colorDecorativeAccent1Muted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1DefaultDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1DefaultDark != abstractTheme.colors.colorDecorativeAccent1DefaultDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1DefaultDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2Default() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Default != abstractTheme.colors.colorDecorativeAccent2Default)
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Default == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1EmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1EmphasizedDark != abstractTheme.colors.colorDecorativeAccent1EmphasizedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1EmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2Emphasized() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Emphasized != abstractTheme.colors.colorDecorativeAccent2Emphasized)
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Emphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent1MutedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent1MutedDark != abstractTheme.colors.colorDecorativeAccent1MutedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent1MutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2Muted() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Muted != abstractTheme.colors.colorDecorativeAccent2Muted)
+        #expect(inheritedTheme.colors.colorDecorativeAccent2Muted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2DefaultLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2DefaultLight != abstractTheme.colors.colorDecorativeAccent2DefaultLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2DefaultLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3Default() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Default != abstractTheme.colors.colorDecorativeAccent3Default)
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Default == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2EmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2EmphasizedLight != abstractTheme.colors.colorDecorativeAccent2EmphasizedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2EmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3Emphasized() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Emphasized != abstractTheme.colors.colorDecorativeAccent3Emphasized)
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Emphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2MutedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2MutedLight != abstractTheme.colors.colorDecorativeAccent2MutedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2MutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3Muted() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Muted != abstractTheme.colors.colorDecorativeAccent3Muted)
+        #expect(inheritedTheme.colors.colorDecorativeAccent3Muted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2DefaultDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2DefaultDark != abstractTheme.colors.colorDecorativeAccent2DefaultDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2DefaultDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4Default() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Default != abstractTheme.colors.colorDecorativeAccent4Default)
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Default == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2EmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2EmphasizedDark != abstractTheme.colors.colorDecorativeAccent2EmphasizedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2EmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4Emphasized() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Emphasized != abstractTheme.colors.colorDecorativeAccent4Emphasized)
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Emphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent2MutedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent2MutedDark != abstractTheme.colors.colorDecorativeAccent2MutedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent2MutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4Muted() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Muted != abstractTheme.colors.colorDecorativeAccent4Muted)
+        #expect(inheritedTheme.colors.colorDecorativeAccent4Muted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3DefaultLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3DefaultLight != abstractTheme.colors.colorDecorativeAccent3DefaultLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3DefaultLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5Default() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Default != abstractTheme.colors.colorDecorativeAccent5Default)
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Default == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3EmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3EmphasizedLight != abstractTheme.colors.colorDecorativeAccent3EmphasizedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3EmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5Emphasized() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Emphasized != abstractTheme.colors.colorDecorativeAccent5Emphasized)
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Emphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3MutedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3MutedLight != abstractTheme.colors.colorDecorativeAccent3MutedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3MutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5Muted() throws {
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Muted != abstractTheme.colors.colorDecorativeAccent5Muted)
+        #expect(inheritedTheme.colors.colorDecorativeAccent5Muted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3DefaultDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3DefaultDark != abstractTheme.colors.colorDecorativeAccent3DefaultDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3DefaultDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandPrimary() throws {
+        #expect(inheritedTheme.colors.colorDecorativeBrandPrimary != abstractTheme.colors.colorDecorativeBrandPrimary)
+        #expect(inheritedTheme.colors.colorDecorativeBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3EmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3EmphasizedDark != abstractTheme.colors.colorDecorativeAccent3EmphasizedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3EmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorDecorativeBrandSecondary != abstractTheme.colors.colorDecorativeBrandSecondary)
+        #expect(inheritedTheme.colors.colorDecorativeBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent3MutedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent3MutedDark != abstractTheme.colors.colorDecorativeAccent3MutedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent3MutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorDecorativeBrandTertiary != abstractTheme.colors.colorDecorativeBrandTertiary)
+        #expect(inheritedTheme.colors.colorDecorativeBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4DefaultLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4DefaultLight != abstractTheme.colors.colorDecorativeAccent4DefaultLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4DefaultLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint100() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint100 != abstractTheme.colors.colorDecorativeSkinTint100)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint100 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4EmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4EmphasizedLight != abstractTheme.colors.colorDecorativeAccent4EmphasizedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4EmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint200() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint200 != abstractTheme.colors.colorDecorativeSkinTint200)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint200 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4MutedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4MutedLight != abstractTheme.colors.colorDecorativeAccent4MutedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4MutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint300() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint300 != abstractTheme.colors.colorDecorativeSkinTint300)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint300 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4DefaultDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4DefaultDark != abstractTheme.colors.colorDecorativeAccent4DefaultDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4DefaultDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint400() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint400 != abstractTheme.colors.colorDecorativeSkinTint400)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint400 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4EmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4EmphasizedDark != abstractTheme.colors.colorDecorativeAccent4EmphasizedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4EmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint500() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint500 != abstractTheme.colors.colorDecorativeSkinTint500)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint500 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent4MutedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent4MutedDark != abstractTheme.colors.colorDecorativeAccent4MutedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent4MutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint600() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint600 != abstractTheme.colors.colorDecorativeSkinTint600)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint600 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5DefaultLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5DefaultLight != abstractTheme.colors.colorDecorativeAccent5DefaultLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5DefaultLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint700() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint700 != abstractTheme.colors.colorDecorativeSkinTint700)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint700 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5EmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5EmphasizedLight != abstractTheme.colors.colorDecorativeAccent5EmphasizedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5EmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint800() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint800 != abstractTheme.colors.colorDecorativeSkinTint800)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint800 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5MutedLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5MutedLight != abstractTheme.colors.colorDecorativeAccent5MutedLight)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5MutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint900() throws {
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint900 != abstractTheme.colors.colorDecorativeSkinTint900)
+        #expect(inheritedTheme.colors.colorDecorativeSkinTint900 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5DefaultDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5DefaultDark != abstractTheme.colors.colorDecorativeAccent5DefaultDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5DefaultDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedHigher() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigher != abstractTheme.colors.colorDecorativeNeutralEmphasizedHigher)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigher == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5EmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5EmphasizedDark != abstractTheme.colors.colorDecorativeAccent5EmphasizedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5EmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLow() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLow != abstractTheme.colors.colorDecorativeNeutralEmphasizedLow)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLow == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeAccent5MutedDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeAccent5MutedDark != abstractTheme.colors.colorDecorativeAccent5MutedDark)
-        #expect(inheritedTheme.colors.colorDecorativeAccent5MutedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLower() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLower != abstractTheme.colors.colorDecorativeNeutralEmphasizedLower)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLower == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandPrimaryLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandPrimaryLight != abstractTheme.colors.colorDecorativeBrandPrimaryLight)
-        #expect(inheritedTheme.colors.colorDecorativeBrandPrimaryLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowest() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowest != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowest)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowest == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandSecondaryLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandSecondaryLight != abstractTheme.colors.colorDecorativeBrandSecondaryLight)
-        #expect(inheritedTheme.colors.colorDecorativeBrandSecondaryLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHigh() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigh != abstractTheme.colors.colorDecorativeNeutralMutedHigh)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigh == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandTertiaryLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandTertiaryLight != abstractTheme.colors.colorDecorativeBrandTertiaryLight)
-        #expect(inheritedTheme.colors.colorDecorativeBrandTertiaryLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHigher() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigher != abstractTheme.colors.colorDecorativeNeutralMutedHigher)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigher == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandPrimaryDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandPrimaryDark != abstractTheme.colors.colorDecorativeBrandPrimaryDark)
-        #expect(inheritedTheme.colors.colorDecorativeBrandPrimaryDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHighest() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighest != abstractTheme.colors.colorDecorativeNeutralMutedHighest)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighest == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandSecondaryDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandSecondaryDark != abstractTheme.colors.colorDecorativeBrandSecondaryDark)
-        #expect(inheritedTheme.colors.colorDecorativeBrandSecondaryDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLow() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLow != abstractTheme.colors.colorDecorativeNeutralMutedLow)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLow == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeBrandTertiaryDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeBrandTertiaryDark != abstractTheme.colors.colorDecorativeBrandTertiaryDark)
-        #expect(inheritedTheme.colors.colorDecorativeBrandTertiaryDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLower() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLower != abstractTheme.colors.colorDecorativeNeutralMutedLower)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLower == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint100Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint100Light != abstractTheme.colors.colorDecorativeSkinTint100Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint100Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowest() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowest != abstractTheme.colors.colorDecorativeNeutralMutedLowest)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowest == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint200Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint200Light != abstractTheme.colors.colorDecorativeSkinTint200Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint200Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint300Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint300Light != abstractTheme.colors.colorDecorativeSkinTint300Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint300Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint400Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint400Light != abstractTheme.colors.colorDecorativeSkinTint400Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint400Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint500Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint500Light != abstractTheme.colors.colorDecorativeSkinTint500Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint500Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint600Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint600Light != abstractTheme.colors.colorDecorativeSkinTint600Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint600Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint700Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint700Light != abstractTheme.colors.colorDecorativeSkinTint700Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint700Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint800Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint800Light != abstractTheme.colors.colorDecorativeSkinTint800Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint800Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint900Light() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint900Light != abstractTheme.colors.colorDecorativeSkinTint900Light)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint900Light == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint100Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint100Dark != abstractTheme.colors.colorDecorativeSkinTint100Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint100Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint200Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint200Dark != abstractTheme.colors.colorDecorativeSkinTint200Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint200Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint300Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint300Dark != abstractTheme.colors.colorDecorativeSkinTint300Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint300Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint400Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint400Dark != abstractTheme.colors.colorDecorativeSkinTint400Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint400Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint500Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint500Dark != abstractTheme.colors.colorDecorativeSkinTint500Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint500Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint600Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint600Dark != abstractTheme.colors.colorDecorativeSkinTint600Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint600Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint700Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint700Dark != abstractTheme.colors.colorDecorativeSkinTint700Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint700Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint800Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint800Dark != abstractTheme.colors.colorDecorativeSkinTint800Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint800Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint900Dark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint900Dark != abstractTheme.colors.colorDecorativeSkinTint900Dark)
-        #expect(inheritedTheme.colors.colorDecorativeSkinTint900Dark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedHigherLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigherLight != abstractTheme.colors.colorDecorativeNeutralEmphasizedHigherLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigherLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedHigherDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigherDark != abstractTheme.colors.colorDecorativeNeutralEmphasizedHigherDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedHigherDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowLight != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowDark != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowerLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowerLight != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowerLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowerLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowerDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowerDark != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowerDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowerDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowestLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowestLight != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowestLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowestLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralEmphasizedLowestDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowestDark != abstractTheme.colors.colorDecorativeNeutralEmphasizedLowestDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralEmphasizedLowestDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHighLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighLight != abstractTheme.colors.colorDecorativeNeutralMutedHighLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHighDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighDark != abstractTheme.colors.colorDecorativeNeutralMutedHighDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHigherLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigherLight != abstractTheme.colors.colorDecorativeNeutralMutedHigherLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigherLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHigherDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigherDark != abstractTheme.colors.colorDecorativeNeutralMutedHigherDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHigherDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHighestLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighestLight != abstractTheme.colors.colorDecorativeNeutralMutedHighestLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighestLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedHighestDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighestDark != abstractTheme.colors.colorDecorativeNeutralMutedHighestDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedHighestDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowLight != abstractTheme.colors.colorDecorativeNeutralMutedLowLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowDark != abstractTheme.colors.colorDecorativeNeutralMutedLowDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowerLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowerLight != abstractTheme.colors.colorDecorativeNeutralMutedLowerLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowerLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowerDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowerDark != abstractTheme.colors.colorDecorativeNeutralMutedLowerDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowerDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowestLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowestLight != abstractTheme.colors.colorDecorativeNeutralMutedLowestLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowestLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedLowestDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowestDark != abstractTheme.colors.colorDecorativeNeutralMutedLowestDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedLowestDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedMediumLight() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMediumLight != abstractTheme.colors.colorDecorativeNeutralMutedMediumLight)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMediumLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedMediumDark() throws {
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMediumDark != abstractTheme.colors.colorDecorativeNeutralMutedMediumDark)
-        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMediumDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    @Test func inheritedThemeCanOverrideColorDecorativeNeutralMutedMedium() throws {
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMedium != abstractTheme.colors.colorDecorativeNeutralMutedMedium)
+        #expect(inheritedTheme.colors.colorDecorativeNeutralMutedMedium == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     // MARK: - Color - Chart
