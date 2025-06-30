@@ -55,7 +55,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: OrangeThemeDimensionSemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
-                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
+                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, spaces: spaces),
                    bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
