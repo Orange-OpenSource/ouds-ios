@@ -94,16 +94,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorActionVisited: MultipleColorSemanticTokens { get }
 
-    // MARK: - Color - Always
-
-    var colorAlwaysBlack: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnWhite: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysWhite: MultipleColorSemanticTokens { get }
-
     // MARK: - Color - Background
 
     var colorBgEmphasized: MultipleColorSemanticTokens { get }
@@ -140,6 +130,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentMuted: MultipleColorSemanticTokens { get }
 
+    var colorContentOnActionSelected: MultipleColorSemanticTokens { get }
+
     var colorContentOnActionDisabled: MultipleColorSemanticTokens { get }
 
     var colorContentOnActionEnabled: MultipleColorSemanticTokens { get }
@@ -158,11 +150,29 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusMuted: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusInfoMuted: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusInfoEmphasized: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusWarningMuted: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusWarningEmphasized: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusNegativeMuted: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusNegativeEmphasized: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusAccentMuted: MultipleColorSemanticTokens { get }
+
+    var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { get }
 
     var colorContentStatusInfo: MultipleColorSemanticTokens { get }
 
@@ -210,84 +220,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { get }
 
-    // MARK: - Color - Decorative
-
-    var colorDecorativeAccent1Default: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent1Emphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent1Muted: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent2Default: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent2Emphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent2Muted: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent3Default: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent3Emphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent3Muted: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent4Default: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent4Emphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent4Muted: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent5Default: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent5Emphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeAccent5Muted: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeBrandPrimary: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeBrandSecondary: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint100: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint200: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint300: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint400: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint500: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint600: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint700: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint800: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeSkinTint900: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasizedHigher: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasizedLow: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasizedLower: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasizedLowest: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedHigh: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedHigher: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedHighest: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedLow: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedLower: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedLowest: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMutedMedium: MultipleColorSemanticTokens { get }
-
     // MARK: - Color - Chart
 
     var colorChartBorder: MultipleColorSemanticTokens { get }
@@ -327,122 +259,6 @@ public protocol ColorMultipleSemanticTokens {
     var colorChartHighlight: MultipleColorSemanticTokens { get }
 
     var colorChartNeutral: MultipleColorSemanticTokens { get }
-
-    // MARK: - Color - Repository
-
-    var colorRepositoryAccentDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryAccentHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryAccentLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryAccentLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryInfoDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryInfoHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryInfoLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryInfoLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeHigher: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeLower: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNegativeLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralEmphasizedBlack: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralEmphasizedHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralEmphasizedHigher: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralEmphasizedHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralEmphasizedMedium: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralMutedLower: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralMutedLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryNeutralMutedWhite: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackHigher: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackLower: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackMediumLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackMediumHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteMedium: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteMediumLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPositiveHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPositiveLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPositiveLowest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPrimaryDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryPrimaryLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryWarningDefault: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryWarningHighest: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryWarningLow: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryWarningLowest: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

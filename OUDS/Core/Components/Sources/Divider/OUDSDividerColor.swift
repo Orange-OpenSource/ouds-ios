@@ -51,13 +51,13 @@ public enum OUDSDividerColor {
         case .onBrandPrimary:
             theme.colors.colorBorderOnBrandPrimary
         case .alwaysBlack:
-            theme.colors.colorAlwaysBlack
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysBlack)
         case .alwaysWhite:
-            theme.colors.colorAlwaysWhite
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysWhite)
         case .alwaysOnBlack:
-            theme.colors.colorAlwaysOnBlack
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnBlack)
         case .alwaysOnWhite:
-            theme.colors.colorAlwaysOnWhite
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnWhite)
         }
     }
 }

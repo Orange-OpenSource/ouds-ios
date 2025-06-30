@@ -58,7 +58,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .minimal:
             useMonochrome ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
         case .negative:
-            theme.colors.colorContentOnStatusEmphasizedAlt
+            theme.colors.colorContentOnStatusNegativeEmphasized
         }
     }
 }

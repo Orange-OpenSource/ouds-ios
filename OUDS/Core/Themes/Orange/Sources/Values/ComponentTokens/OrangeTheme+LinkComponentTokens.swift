@@ -29,23 +29,23 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value  colors.colorContentBrandPrimary
     @objc open var linkColorArrowPressed: MultipleColorSemanticTokens { colors.colorContentBrandPrimary }
     /// Has for value  colors.colorRepositoryOpacityBlackMedium
-    @objc open var linkColorContentDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var linkColorContentDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackMedium) }
     /// Has for value  colors.colorActionEnabled
     @objc open var linkColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var linkColorContentEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var linkColorContentEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionFocus
     @objc open var linkColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var linkColorContentFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var linkColorContentFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionHover
     @objc open var linkColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var linkColorContentHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var linkColorContentHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionPressed
     @objc open var linkColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var linkColorContentPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var linkColorContentPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
     @objc open var linkSizeIconMedium: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
