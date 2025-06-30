@@ -20,12 +20,12 @@ import SwiftUI
 
 struct ChipBorderModifier: ViewModifier {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
-
     // MARK: Stored Properties
 
-    let state: ChipInternalState
+    let state: ChipInteractionState
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 
@@ -33,14 +33,14 @@ struct ChipBorderModifier: ViewModifier {
             content
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
-                    width: defaultWidth,
+                    width: width,
                     radius: theme.chip.chipBorderRadiusPill,
-                    color: defaultColor)
+                    color: color)
     }
 
     // MARK: Default hierarchy
 
-    private var defaultWidth: BorderWidthSemanticToken {
+    private var width: BorderWidthSemanticToken {
         switch state {
         case .enabled:
             theme.chip.chipBorderWidthUnselected
@@ -53,7 +53,7 @@ struct ChipBorderModifier: ViewModifier {
         }
     }
 
-    private var defaultColor: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
             theme.chip.chipColorBorderUnselected // TODO: chipColorBorderUnselectedEnabled

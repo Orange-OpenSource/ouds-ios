@@ -20,11 +20,10 @@ import SwiftUI
 
 struct ChipBackgroundModifier: ViewModifier {
 
-    @Environment(\.theme) private var theme
-
     // MARK: Stored Properties
 
-    let state: ChipInternalState
+    let state: ChipInteractionState
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 
@@ -37,29 +36,13 @@ struct ChipBackgroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            enabledColor
+            theme.chip.chipColorBgEnabled
         case .hover:
-            hoverColor
+            theme.chip.chipColorBgHover
         case .pressed:
-            pressedColor
+            theme.chip.chipColorBgPressed
         case .disabled:
-            disabledColor
+            theme.chip.chipColorBgDisabled
         }
-    }
-
-    private var enabledColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorBgEnabled
-    }
-
-    private var hoverColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorBgHover
-    }
-
-    private var pressedColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorBgPressed
-    }
-
-    private var disabledColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorBgDisabled
     }
 }

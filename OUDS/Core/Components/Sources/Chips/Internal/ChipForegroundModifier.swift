@@ -24,7 +24,7 @@ struct ChipForegroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let state: ChipInternalState
+    let state: ChipInteractionState
 
     // MARK: Body
 
@@ -37,29 +37,13 @@ struct ChipForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            enabledColor
+            theme.chip.chipColorContentEnabled
         case .hover:
-            hoverColor
+            theme.chip.chipColorContentHover
         case .pressed:
-            pressedColor
+            theme.chip.chipColorContentPressed
         case .disabled:
-            disabledColor
+            theme.chip.chipColorContentDisabled
         }
-    }
-
-    private var enabledColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorContentEnabled
-    }
-
-    private var hoverColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorContentHover
-    }
-
-    private var pressedColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorContentPressed
-    }
-
-    private var disabledColor: MultipleColorSemanticTokens {
-        theme.chip.chipColorContentDisabled
     }
 }
