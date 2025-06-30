@@ -17,7 +17,6 @@
 
 // swiftlint:disable missing_docs
 // swiftlint:disable identifier_name
-// swiftlint:disable file_length
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all ``ColorSemanticToken``  a theme must have.
