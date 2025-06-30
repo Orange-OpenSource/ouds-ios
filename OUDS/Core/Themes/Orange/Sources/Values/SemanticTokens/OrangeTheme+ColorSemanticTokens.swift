@@ -22,452 +22,452 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    /// Has for value token #ffffff
-    @objc open var colorFunctionalWhite: ColorSemanticToken { #ffffff }
-    /// Has for value token #000000
-    @objc open var colorFunctionalBlack: ColorSemanticToken { #000000 }
-    /// Has for value token #f4f4f4
-    @objc open var colorFunctionalGrayLight80: ColorSemanticToken { #f4f4f4 }
-    /// Has for value token #eeeeee
-    @objc open var colorFunctionalGrayLight160: ColorSemanticToken { #eeeeee }
-    /// Has for value token #e0e0e0
-    @objc open var colorFunctionalGrayLight240: ColorSemanticToken { #e0e0e0 }
-    /// Has for value token #d6d6d6
-    @objc open var colorFunctionalGrayLight320: ColorSemanticToken { #d6d6d6 }
-    /// Has for value token #cccccc
-    @objc open var colorFunctionalGrayLight400: ColorSemanticToken { #cccccc }
-    /// Has for value token #c2c2c2
-    @objc open var colorFunctionalGrayLight480: ColorSemanticToken { #c2c2c2 }
-    /// Has for value token #bbbbbb
-    @objc open var colorFunctionalGrayLight560: ColorSemanticToken { #bbbbbb }
-    /// Has for value token #adadad
-    @objc open var colorFunctionalGrayLight640: ColorSemanticToken { #adadad }
-    /// Has for value token #a3a3a3
-    @objc open var colorFunctionalGrayLight720: ColorSemanticToken { #a3a3a3 }
-    /// Has for value token #999999
-    @objc open var colorFunctionalGrayLight800: ColorSemanticToken { #999999 }
-    /// Has for value token #8f8f8f
-    @objc open var colorFunctionalGrayLight880: ColorSemanticToken { #8f8f8f }
-    /// Has for value token #858585
-    @objc open var colorFunctionalGrayLight960: ColorSemanticToken { #858585 }
-    /// Has for value token #7a7a7a
-    @objc open var colorFunctionalGrayDark80: ColorSemanticToken { #7a7a7a }
-    /// Has for value token #707070
-    @objc open var colorFunctionalGrayDark160: ColorSemanticToken { #707070 }
-    /// Has for value token #666666
-    @objc open var colorFunctionalGrayDark240: ColorSemanticToken { #666666 }
-    /// Has for value token #5c5c5c
-    @objc open var colorFunctionalGrayDark320: ColorSemanticToken { #5c5c5c }
-    /// Has for value token #555555
-    @objc open var colorFunctionalGrayDark400: ColorSemanticToken { #555555 }
-    /// Has for value token #444444
-    @objc open var colorFunctionalGrayDark480: ColorSemanticToken { #444444 }
-    /// Has for value token #3d3d3d
-    @objc open var colorFunctionalGrayDark560: ColorSemanticToken { #3d3d3d }
-    /// Has for value token #333333
-    @objc open var colorFunctionalGrayDark640: ColorSemanticToken { #333333 }
-    /// Has for value token #272727
-    @objc open var colorFunctionalGrayDark720: ColorSemanticToken { #272727 }
-    /// Has for value token #1f1f1f
-    @objc open var colorFunctionalGrayDark800: ColorSemanticToken { #1f1f1f }
-    /// Has for value token #141414
-    @objc open var colorFunctionalGrayDark880: ColorSemanticToken { #141414 }
-    /// Has for value token #0a0a0a
-    @objc open var colorFunctionalGrayDark960: ColorSemanticToken { #0a0a0a }
-    /// Has for value token #ffe5e6
-    @objc open var colorFunctionalScarlet100: ColorSemanticToken { #ffe5e6 }
-    /// Has for value token #ffb2b3
-    @objc open var colorFunctionalScarlet200: ColorSemanticToken { #ffb2b3 }
-    /// Has for value token #ff8081
-    @objc open var colorFunctionalScarlet300: ColorSemanticToken { #ff8081 }
-    /// Has for value token #ff4d4e
-    @objc open var colorFunctionalScarlet400: ColorSemanticToken { #ff4d4e }
-    /// Has for value token #ff1a1b
-    @objc open var colorFunctionalScarlet500: ColorSemanticToken { #ff1a1b }
-    /// Has for value token #db0002
-    @objc open var colorFunctionalScarlet600: ColorSemanticToken { #db0002 }
-    /// Has for value token #b20002
-    @objc open var colorFunctionalScarlet700: ColorSemanticToken { #b20002 }
-    /// Has for value token #800001
-    @objc open var colorFunctionalScarlet800: ColorSemanticToken { #800001 }
-    /// Has for value token #4d0001
-    @objc open var colorFunctionalScarlet900: ColorSemanticToken { #4d0001 }
-    /// Has for value token #fff7d6
-    @objc open var colorFunctionalSun100: ColorSemanticToken { #fff7d6 }
-    /// Has for value token #ffed99
-    @objc open var colorFunctionalSun200: ColorSemanticToken { #ffed99 }
-    /// Has for value token #ffe270
-    @objc open var colorFunctionalSun300: ColorSemanticToken { #ffe270 }
-    /// Has for value token #ffd73d
-    @objc open var colorFunctionalSun400: ColorSemanticToken { #ffd73d }
-    /// Has for value token #ffd000
-    @objc open var colorFunctionalSun500: ColorSemanticToken { #ffd000 }
-    /// Has for value token #d6aa00
-    @objc open var colorFunctionalSun600: ColorSemanticToken { #d6aa00 }
-    /// Has for value token #a38200
-    @objc open var colorFunctionalSun700: ColorSemanticToken { #a38200 }
-    /// Has for value token #665100
-    @objc open var colorFunctionalSun800: ColorSemanticToken { #665100 }
-    /// Has for value token #3d3100
-    @objc open var colorFunctionalSun900: ColorSemanticToken { #3d3100 }
-    /// Has for value token #edfcf0
-    @objc open var colorFunctionalMalachite100: ColorSemanticToken { #edfcf0 }
-    /// Has for value token #c1f6ca
-    @objc open var colorFunctionalMalachite200: ColorSemanticToken { #c1f6ca }
-    /// Has for value token #94f0a4
-    @objc open var colorFunctionalMalachite300: ColorSemanticToken { #94f0a4 }
-    /// Has for value token #67e97e
-    @objc open var colorFunctionalMalachite400: ColorSemanticToken { #67e97e }
-    /// Has for value token #3de35a
-    @objc open var colorFunctionalMalachite500: ColorSemanticToken { #3de35a }
-    /// Has for value token #1ecd3c
-    @objc open var colorFunctionalMalachite600: ColorSemanticToken { #1ecd3c }
-    /// Has for value token #17a02f
-    @objc open var colorFunctionalMalachite700: ColorSemanticToken { #17a02f }
-    /// Has for value token #0e621d
-    @objc open var colorFunctionalMalachite800: ColorSemanticToken { #0e621d }
-    /// Has for value token #0a4715
-    @objc open var colorFunctionalMalachite900: ColorSemanticToken { #0a4715 }
-    /// Has for value token #f0faff
-    @objc open var colorFunctionalDodgerBlue100: ColorSemanticToken { #f0faff }
-    /// Has for value token #bde7ff
-    @objc open var colorFunctionalDodgerBlue200: ColorSemanticToken { #bde7ff }
-    /// Has for value token #8ad5ff
-    @objc open var colorFunctionalDodgerBlue300: ColorSemanticToken { #8ad5ff }
-    /// Has for value token #57c3ff
-    @objc open var colorFunctionalDodgerBlue400: ColorSemanticToken { #57c3ff }
-    /// Has for value token #26b2ff
-    @objc open var colorFunctionalDodgerBlue500: ColorSemanticToken { #26b2ff }
-    /// Has for value token #009bf0
-    @objc open var colorFunctionalDodgerBlue600: ColorSemanticToken { #009bf0 }
-    /// Has for value token #007abd
-    @objc open var colorFunctionalDodgerBlue700: ColorSemanticToken { #007abd }
-    /// Has for value token #00598a
-    @objc open var colorFunctionalDodgerBlue800: ColorSemanticToken { #00598a }
-    /// Has for value token #003857
-    @objc open var colorFunctionalDodgerBlue900: ColorSemanticToken { #003857 }
-    /// Has for value token #ea030514
-    @objc open var colorOpacityScarlet: ColorSemanticToken { #ea030514 }
-    /// Has for value token #ffd00029
-    @objc open var colorOpacitySun: ColorSemanticToken { #ffd00029 }
-    /// Has for value token #3de35a1f
-    @objc open var colorOpacityMalachite: ColorSemanticToken { #3de35a1f }
-    /// Has for value token #26b2ff14
-    @objc open var colorOpacityDodgerBlue: ColorSemanticToken { #26b2ff14 }
-    /// Has for value token #00000000
-    @objc open var colorOpacityBlack0: ColorSemanticToken { #00000000 }
-    /// Has for value token #0000000a
-    @objc open var colorOpacityBlack40: ColorSemanticToken { #0000000a }
-    /// Has for value token #00000014
-    @objc open var colorOpacityBlack80: ColorSemanticToken { #00000014 }
-    /// Has for value token #0000001f
-    @objc open var colorOpacityBlack120: ColorSemanticToken { #0000001f }
-    /// Has for value token #00000029
-    @objc open var colorOpacityBlack160: ColorSemanticToken { #00000029 }
-    /// Has for value token #00000033
-    @objc open var colorOpacityBlack200: ColorSemanticToken { #00000033 }
-    /// Has for value token #0000003d
-    @objc open var colorOpacityBlack240: ColorSemanticToken { #0000003d }
-    /// Has for value token #00000047
-    @objc open var colorOpacityBlack280: ColorSemanticToken { #00000047 }
-    /// Has for value token #00000052
-    @objc open var colorOpacityBlack320: ColorSemanticToken { #00000052 }
-    /// Has for value token #0000005c
-    @objc open var colorOpacityBlack360: ColorSemanticToken { #0000005c }
-    /// Has for value token #00000066
-    @objc open var colorOpacityBlack400: ColorSemanticToken { #00000066 }
-    /// Has for value token #00000070
-    @objc open var colorOpacityBlack440: ColorSemanticToken { #00000070 }
-    /// Has for value token #0000007a
-    @objc open var colorOpacityBlack480: ColorSemanticToken { #0000007a }
-    /// Has for value token #00000085
-    @objc open var colorOpacityBlack520: ColorSemanticToken { #00000085 }
-    /// Has for value token #0000008f
-    @objc open var colorOpacityBlack560: ColorSemanticToken { #0000008f }
-    /// Has for value token #00000099
-    @objc open var colorOpacityBlack600: ColorSemanticToken { #00000099 }
-    /// Has for value token #000000a3
-    @objc open var colorOpacityBlack640: ColorSemanticToken { #000000a3 }
-    /// Has for value token #000000ad
-    @objc open var colorOpacityBlack680: ColorSemanticToken { #000000ad }
-    /// Has for value token #000000b8
-    @objc open var colorOpacityBlack720: ColorSemanticToken { #000000b8 }
-    /// Has for value token #000000c2
-    @objc open var colorOpacityBlack760: ColorSemanticToken { #000000c2 }
-    /// Has for value token #000000cc
-    @objc open var colorOpacityBlack800: ColorSemanticToken { #000000cc }
-    /// Has for value token #000000d6
-    @objc open var colorOpacityBlack840: ColorSemanticToken { #000000d6 }
-    /// Has for value token #000000e0
-    @objc open var colorOpacityBlack880: ColorSemanticToken { #000000e0 }
-    /// Has for value token #000000eb
-    @objc open var colorOpacityBlack920: ColorSemanticToken { #000000eb }
-    /// Has for value token #000000f5
-    @objc open var colorOpacityBlack960: ColorSemanticToken { #000000f5 }
-    /// Has for value token #ffffff00
-    @objc open var colorOpacityWhite0: ColorSemanticToken { #ffffff00 }
-    /// Has for value token #ffffff0a
-    @objc open var colorOpacityWhite40: ColorSemanticToken { #ffffff0a }
-    /// Has for value token #ffffff14
-    @objc open var colorOpacityWhite80: ColorSemanticToken { #ffffff14 }
-    /// Has for value token #ffffff1f
-    @objc open var colorOpacityWhite120: ColorSemanticToken { #ffffff1f }
-    /// Has for value token #ffffff29
-    @objc open var colorOpacityWhite160: ColorSemanticToken { #ffffff29 }
-    /// Has for value token #ffffff33
-    @objc open var colorOpacityWhite200: ColorSemanticToken { #ffffff33 }
-    /// Has for value token #ffffff3d
-    @objc open var colorOpacityWhite240: ColorSemanticToken { #ffffff3d }
-    /// Has for value token #ffffff47
-    @objc open var colorOpacityWhite280: ColorSemanticToken { #ffffff47 }
-    /// Has for value token #ffffff52
-    @objc open var colorOpacityWhite320: ColorSemanticToken { #ffffff52 }
-    /// Has for value token #ffffff5c
-    @objc open var colorOpacityWhite360: ColorSemanticToken { #ffffff5c }
-    /// Has for value token #ffffff66
-    @objc open var colorOpacityWhite400: ColorSemanticToken { #ffffff66 }
-    /// Has for value token #ffffff70
-    @objc open var colorOpacityWhite440: ColorSemanticToken { #ffffff70 }
-    /// Has for value token #ffffff7a
-    @objc open var colorOpacityWhite480: ColorSemanticToken { #ffffff7a }
-    /// Has for value token #ffffff85
-    @objc open var colorOpacityWhite520: ColorSemanticToken { #ffffff85 }
-    /// Has for value token #ffffff8f
-    @objc open var colorOpacityWhite560: ColorSemanticToken { #ffffff8f }
-    /// Has for value token #ffffff99
-    @objc open var colorOpacityWhite600: ColorSemanticToken { #ffffff99 }
-    /// Has for value token #ffffffa3
-    @objc open var colorOpacityWhite640: ColorSemanticToken { #ffffffa3 }
-    /// Has for value token #ffffffad
-    @objc open var colorOpacityWhite680: ColorSemanticToken { #ffffffad }
-    /// Has for value token #ffffffb8
-    @objc open var colorOpacityWhite720: ColorSemanticToken { #ffffffb8 }
-    /// Has for value token #ffffffc2
-    @objc open var colorOpacityWhite760: ColorSemanticToken { #ffffffc2 }
-    /// Has for value token #ffffffcc
-    @objc open var colorOpacityWhite800: ColorSemanticToken { #ffffffcc }
-    /// Has for value token #ffffffd6
-    @objc open var colorOpacityWhite840: ColorSemanticToken { #ffffffd6 }
-    /// Has for value token #ffffffe0
-    @objc open var colorOpacityWhite880: ColorSemanticToken { #ffffffe0 }
-    /// Has for value token #ffffffeb
-    @objc open var colorOpacityWhite920: ColorSemanticToken { #ffffffeb }
-    /// Has for value token #fffffff5
-    @objc open var colorOpacityWhite960: ColorSemanticToken { #fffffff5 }
-    /// Has for value token #f9f5f0
-    @objc open var colorWarmGray100: ColorSemanticToken { #f9f5f0 }
-    /// Has for value token #e9ddce
-    @objc open var colorWarmGray200: ColorSemanticToken { #e9ddce }
-    /// Has for value token #d6c4ae
-    @objc open var colorWarmGray300: ColorSemanticToken { #d6c4ae }
-    /// Has for value token #c1ab90
-    @objc open var colorWarmGray400: ColorSemanticToken { #c1ab90 }
-    /// Has for value token #a99275
-    @objc open var colorWarmGray500: ColorSemanticToken { #a99275 }
-    /// Has for value token #8a7860
-    @objc open var colorWarmGray600: ColorSemanticToken { #8a7860 }
-    /// Has for value token #685d50
-    @objc open var colorWarmGray700: ColorSemanticToken { #685d50 }
-    /// Has for value token #48433d
-    @objc open var colorWarmGray800: ColorSemanticToken { #48433d }
-    /// Has for value token #353228
-    @objc open var colorWarmGray900: ColorSemanticToken { #353228 }
-    /// Has for value token #23211a
-    @objc open var colorWarmGray1000: ColorSemanticToken { #23211a }
-    /// Has for value token #fff2e6
-    @objc open var colorOrange50: ColorSemanticToken { #fff2e6 }
-    /// Has for value token #ffd5b0
-    @objc open var colorOrange100: ColorSemanticToken { #ffd5b0 }
-    /// Has for value token #ffc18a
-    @objc open var colorOrange200: ColorSemanticToken { #ffc18a }
-    /// Has for value token #ffa554
-    @objc open var colorOrange300: ColorSemanticToken { #ffa554 }
-    /// Has for value token #ff9433
-    @objc open var colorOrange400: ColorSemanticToken { #ff9433 }
-    /// Has for value token #ff7900
-    @objc open var colorOrange500: ColorSemanticToken { #ff7900 }
-    /// Has for value token #f15e00
-    @objc open var colorOrange550: ColorSemanticToken { #f15e00 }
-    /// Has for value token #e86e00
-    @objc open var colorOrange600: ColorSemanticToken { #e86e00 }
-    /// Has for value token #b55600
-    @objc open var colorOrange700: ColorSemanticToken { #b55600 }
-    /// Has for value token #8c4300
-    @objc open var colorOrange800: ColorSemanticToken { #8c4300 }
-    /// Has for value token #6b3300
-    @objc open var colorOrange900: ColorSemanticToken { #6b3300 }
-    /// Has for value token #e5f5ed
-    @objc open var colorDecorativeEmerald100: ColorSemanticToken { #e5f5ed }
-    /// Has for value token #c0e8d4
-    @objc open var colorDecorativeEmerald200: ColorSemanticToken { #c0e8d4 }
-    /// Has for value token #9bdaba
-    @objc open var colorDecorativeEmerald300: ColorSemanticToken { #9bdaba }
-    /// Has for value token #75cca1
-    @objc open var colorDecorativeEmerald400: ColorSemanticToken { #75cca1 }
-    /// Has for value token #50be87
-    @objc open var colorDecorativeEmerald500: ColorSemanticToken { #50be87 }
-    /// Has for value token #3ba06e
-    @objc open var colorDecorativeEmerald600: ColorSemanticToken { #3ba06e }
-    /// Has for value token #2e7b54
-    @objc open var colorDecorativeEmerald700: ColorSemanticToken { #2e7b54 }
-    /// Has for value token #20563b
-    @objc open var colorDecorativeEmerald800: ColorSemanticToken { #20563b }
-    /// Has for value token #123021
-    @objc open var colorDecorativeEmerald900: ColorSemanticToken { #123021 }
-    /// Has for value token #d2ecf9
-    @objc open var colorDecorativeSky100: ColorSemanticToken { #d2ecf9 }
-    /// Has for value token #a5daf3
-    @objc open var colorDecorativeSky200: ColorSemanticToken { #a5daf3 }
-    /// Has for value token #79c7ec
-    @objc open var colorDecorativeSky300: ColorSemanticToken { #79c7ec }
-    /// Has for value token #4ab4e6
-    @objc open var colorDecorativeSky400: ColorSemanticToken { #4ab4e6 }
-    /// Has for value token #1fa2e0
-    @objc open var colorDecorativeSky500: ColorSemanticToken { #1fa2e0 }
-    /// Has for value token #1982b3
-    @objc open var colorDecorativeSky600: ColorSemanticToken { #1982b3 }
-    /// Has for value token #136186
-    @objc open var colorDecorativeSky700: ColorSemanticToken { #136186 }
-    /// Has for value token #0c415a
-    @objc open var colorDecorativeSky800: ColorSemanticToken { #0c415a }
-    /// Has for value token #06202d
-    @objc open var colorDecorativeSky900: ColorSemanticToken { #06202d }
-    /// Has for value token #fff0cc
-    @objc open var colorDecorativeAmber100: ColorSemanticToken { #fff0cc }
-    /// Has for value token #ffe199
-    @objc open var colorDecorativeAmber200: ColorSemanticToken { #ffe199 }
-    /// Has for value token #ffd266
-    @objc open var colorDecorativeAmber300: ColorSemanticToken { #ffd266 }
-    /// Has for value token #ffc333
-    @objc open var colorDecorativeAmber400: ColorSemanticToken { #ffc333 }
-    /// Has for value token #ffb400
-    @objc open var colorDecorativeAmber500: ColorSemanticToken { #ffb400 }
-    /// Has for value token #cc9000
-    @objc open var colorDecorativeAmber600: ColorSemanticToken { #cc9000 }
-    /// Has for value token #996c00
-    @objc open var colorDecorativeAmber700: ColorSemanticToken { #996c00 }
-    /// Has for value token #664800
-    @objc open var colorDecorativeAmber800: ColorSemanticToken { #664800 }
-    /// Has for value token #332400
-    @objc open var colorDecorativeAmber900: ColorSemanticToken { #332400 }
-    /// Has for value token #f1ecf9
-    @objc open var colorDecorativeAmethyst100: ColorSemanticToken { #f1ecf9 }
-    /// Has for value token #e0d4f2
-    @objc open var colorDecorativeAmethyst200: ColorSemanticToken { #e0d4f2 }
-    /// Has for value token #c5ade6
-    @objc open var colorDecorativeAmethyst300: ColorSemanticToken { #c5ade6 }
-    /// Has for value token #a885d8
-    @objc open var colorDecorativeAmethyst400: ColorSemanticToken { #a885d8 }
-    /// Has for value token #8d60cd
-    @objc open var colorDecorativeAmethyst500: ColorSemanticToken { #8d60cd }
-    /// Has for value token #5b2f98
-    @objc open var colorDecorativeAmethyst600: ColorSemanticToken { #5b2f98 }
-    /// Has for value token #432371
-    @objc open var colorDecorativeAmethyst700: ColorSemanticToken { #432371 }
-    /// Has for value token #2c174a
-    @objc open var colorDecorativeAmethyst800: ColorSemanticToken { #2c174a }
-    /// Has for value token #150b23
-    @objc open var colorDecorativeAmethyst900: ColorSemanticToken { #150b23 }
-    /// Has for value token #ffe5f6
-    @objc open var colorDecorativeShockingPink100: ColorSemanticToken { #ffe5f6 }
-    /// Has for value token #ffb4e6
-    @objc open var colorDecorativeShockingPink200: ColorSemanticToken { #ffb4e6 }
-    /// Has for value token #ff80d4
-    @objc open var colorDecorativeShockingPink300: ColorSemanticToken { #ff80d4 }
-    /// Has for value token #ff4dc3
-    @objc open var colorDecorativeShockingPink400: ColorSemanticToken { #ff4dc3 }
-    /// Has for value token #ff1ab2
-    @objc open var colorDecorativeShockingPink500: ColorSemanticToken { #ff1ab2 }
-    /// Has for value token #e50099
-    @objc open var colorDecorativeShockingPink600: ColorSemanticToken { #e50099 }
-    /// Has for value token #b20077
-    @objc open var colorDecorativeShockingPink700: ColorSemanticToken { #b20077 }
-    /// Has for value token #800055
-    @objc open var colorDecorativeShockingPink800: ColorSemanticToken { #800055 }
-    /// Has for value token #4d0033
-    @objc open var colorDecorativeShockingPink900: ColorSemanticToken { #4d0033 }
-    /// Has for value token #fbebdf
-    @objc open var colorDecorativeDeepPeach100: ColorSemanticToken { #fbebdf }
-    /// Has for value token #f4cfb2
-    @objc open var colorDecorativeDeepPeach200: ColorSemanticToken { #f4cfb2 }
-    /// Has for value token #e3b591
-    @objc open var colorDecorativeDeepPeach300: ColorSemanticToken { #e3b591 }
-    /// Has for value token #c19372
-    @objc open var colorDecorativeDeepPeach400: ColorSemanticToken { #c19372 }
-    /// Has for value token #cf7e3f
-    @objc open var colorDecorativeDeepPeach500: ColorSemanticToken { #cf7e3f }
-    /// Has for value token #aa6631
-    @objc open var colorDecorativeDeepPeach600: ColorSemanticToken { #aa6631 }
-    /// Has for value token #7e4f2a
-    @objc open var colorDecorativeDeepPeach700: ColorSemanticToken { #7e4f2a }
-    /// Has for value token #553720
-    @objc open var colorDecorativeDeepPeach800: ColorSemanticToken { #553720 }
-    /// Has for value token #2e2014
-    @objc open var colorDecorativeDeepPeach900: ColorSemanticToken { #2e2014 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPrimaryLowest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPrimaryLower: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FFFFFFFF"
+    @objc open var colorFunctionalWhite: ColorSemanticToken { "#FFFFFFFF" }
+    /// Has for value token "#000000FF"
+    @objc open var colorFunctionalBlack: ColorSemanticToken { "#000000FF" }
+    /// Has for value token "#F4F4F4FF"
+    @objc open var colorFunctionalGrayLight80: ColorSemanticToken { "#F4F4F4FF" }
+    /// Has for value token "#EEEEEEFF"
+    @objc open var colorFunctionalGrayLight160: ColorSemanticToken { "#EEEEEEFF" }
+    /// Has for value token "#E0E0E0FF"
+    @objc open var colorFunctionalGrayLight240: ColorSemanticToken { "#E0E0E0FF" }
+    /// Has for value token "#D6D6D6FF"
+    @objc open var colorFunctionalGrayLight320: ColorSemanticToken { "#D6D6D6FF" }
+    /// Has for value token "#CCCCCCFF"
+    @objc open var colorFunctionalGrayLight400: ColorSemanticToken { "#CCCCCCFF" }
+    /// Has for value token "#C2C2C2FF"
+    @objc open var colorFunctionalGrayLight480: ColorSemanticToken { "#C2C2C2FF" }
+    /// Has for value token "#BBBBBBFF"
+    @objc open var colorFunctionalGrayLight560: ColorSemanticToken { "#BBBBBBFF" }
+    /// Has for value token "#ADADADFF"
+    @objc open var colorFunctionalGrayLight640: ColorSemanticToken { "#ADADADFF" }
+    /// Has for value token "#A3A3A3FF"
+    @objc open var colorFunctionalGrayLight720: ColorSemanticToken { "#A3A3A3FF" }
+    /// Has for value token "#999999FF"
+    @objc open var colorFunctionalGrayLight800: ColorSemanticToken { "#999999FF" }
+    /// Has for value token "#8F8F8FFF"
+    @objc open var colorFunctionalGrayLight880: ColorSemanticToken { "#8F8F8FFF" }
+    /// Has for value token "#858585FF"
+    @objc open var colorFunctionalGrayLight960: ColorSemanticToken { "#858585FF" }
+    /// Has for value token "#7A7A7AFF"
+    @objc open var colorFunctionalGrayDark80: ColorSemanticToken { "#7A7A7AFF" }
+    /// Has for value token "#707070FF"
+    @objc open var colorFunctionalGrayDark160: ColorSemanticToken { "#707070FF" }
+    /// Has for value token "#666666FF"
+    @objc open var colorFunctionalGrayDark240: ColorSemanticToken { "#666666FF" }
+    /// Has for value token "#5C5C5CFF"
+    @objc open var colorFunctionalGrayDark320: ColorSemanticToken { "#5C5C5CFF" }
+    /// Has for value token "#555555FF"
+    @objc open var colorFunctionalGrayDark400: ColorSemanticToken { "#555555FF" }
+    /// Has for value token "#444444FF"
+    @objc open var colorFunctionalGrayDark480: ColorSemanticToken { "#444444FF" }
+    /// Has for value token "#3D3D3DFF"
+    @objc open var colorFunctionalGrayDark560: ColorSemanticToken { "#3D3D3DFF" }
+    /// Has for value token "#333333FF"
+    @objc open var colorFunctionalGrayDark640: ColorSemanticToken { "#333333FF" }
+    /// Has for value token "#272727FF"
+    @objc open var colorFunctionalGrayDark720: ColorSemanticToken { "#272727FF" }
+    /// Has for value token "#1F1F1FFF"
+    @objc open var colorFunctionalGrayDark800: ColorSemanticToken { "#1F1F1FFF" }
+    /// Has for value token "#141414FF"
+    @objc open var colorFunctionalGrayDark880: ColorSemanticToken { "#141414FF" }
+    /// Has for value token "#0A0A0AFF"
+    @objc open var colorFunctionalGrayDark960: ColorSemanticToken { "#0A0A0AFF" }
+    /// Has for value token "#FFE5E6FF"
+    @objc open var colorFunctionalScarlet100: ColorSemanticToken { "#FFE5E6FF" }
+    /// Has for value token "#FFB2B3FF"
+    @objc open var colorFunctionalScarlet200: ColorSemanticToken { "#FFB2B3FF" }
+    /// Has for value token "#FF8081FF"
+    @objc open var colorFunctionalScarlet300: ColorSemanticToken { "#FF8081FF" }
+    /// Has for value token "#FF4D4EFF"
+    @objc open var colorFunctionalScarlet400: ColorSemanticToken { "#FF4D4EFF" }
+    /// Has for value token "#FF1A1BFF"
+    @objc open var colorFunctionalScarlet500: ColorSemanticToken { "#FF1A1BFF" }
+    /// Has for value token "#DB0002FF"
+    @objc open var colorFunctionalScarlet600: ColorSemanticToken { "#DB0002FF" }
+    /// Has for value token "#B20002FF"
+    @objc open var colorFunctionalScarlet700: ColorSemanticToken { "#B20002FF" }
+    /// Has for value token "#800001FF"
+    @objc open var colorFunctionalScarlet800: ColorSemanticToken { "#800001FF" }
+    /// Has for value token "#4D0001FF"
+    @objc open var colorFunctionalScarlet900: ColorSemanticToken { "#4D0001FF" }
+    /// Has for value token "#FFF7D6FF"
+    @objc open var colorFunctionalSun100: ColorSemanticToken { "#FFF7D6FF" }
+    /// Has for value token "#FFED99FF"
+    @objc open var colorFunctionalSun200: ColorSemanticToken { "#FFED99FF" }
+    /// Has for value token "#FFE270FF"
+    @objc open var colorFunctionalSun300: ColorSemanticToken { "#FFE270FF" }
+    /// Has for value token "#FFD73DFF"
+    @objc open var colorFunctionalSun400: ColorSemanticToken { "#FFD73DFF" }
+    /// Has for value token "#FFD000FF"
+    @objc open var colorFunctionalSun500: ColorSemanticToken { "#FFD000FF" }
+    /// Has for value token "#D6AA00FF"
+    @objc open var colorFunctionalSun600: ColorSemanticToken { "#D6AA00FF" }
+    /// Has for value token "#A38200FF"
+    @objc open var colorFunctionalSun700: ColorSemanticToken { "#A38200FF" }
+    /// Has for value token "#665100FF"
+    @objc open var colorFunctionalSun800: ColorSemanticToken { "#665100FF" }
+    /// Has for value token "#3D3100FF"
+    @objc open var colorFunctionalSun900: ColorSemanticToken { "#3D3100FF" }
+    /// Has for value token "#EDFCF0FF"
+    @objc open var colorFunctionalMalachite100: ColorSemanticToken { "#EDFCF0FF" }
+    /// Has for value token "#C1F6CAFF"
+    @objc open var colorFunctionalMalachite200: ColorSemanticToken { "#C1F6CAFF" }
+    /// Has for value token "#94F0A4FF"
+    @objc open var colorFunctionalMalachite300: ColorSemanticToken { "#94F0A4FF" }
+    /// Has for value token "#67E97EFF"
+    @objc open var colorFunctionalMalachite400: ColorSemanticToken { "#67E97EFF" }
+    /// Has for value token "#3DE35AFF"
+    @objc open var colorFunctionalMalachite500: ColorSemanticToken { "#3DE35AFF" }
+    /// Has for value token "#1ECD3CFF"
+    @objc open var colorFunctionalMalachite600: ColorSemanticToken { "#1ECD3CFF" }
+    /// Has for value token "#17A02FFF"
+    @objc open var colorFunctionalMalachite700: ColorSemanticToken { "#17A02FFF" }
+    /// Has for value token "#0E621DFF"
+    @objc open var colorFunctionalMalachite800: ColorSemanticToken { "#0E621DFF" }
+    /// Has for value token "#0A4715FF"
+    @objc open var colorFunctionalMalachite900: ColorSemanticToken { "#0A4715FF" }
+    /// Has for value token "#F0FAFFFF"
+    @objc open var colorFunctionalDodgerBlue100: ColorSemanticToken { "#F0FAFFFF" }
+    /// Has for value token "#BDE7FFFF"
+    @objc open var colorFunctionalDodgerBlue200: ColorSemanticToken { "#BDE7FFFF" }
+    /// Has for value token "#8AD5FFFF"
+    @objc open var colorFunctionalDodgerBlue300: ColorSemanticToken { "#8AD5FFFF" }
+    /// Has for value token "#57C3FFFF"
+    @objc open var colorFunctionalDodgerBlue400: ColorSemanticToken { "#57C3FFFF" }
+    /// Has for value token "#26B2FFFF"
+    @objc open var colorFunctionalDodgerBlue500: ColorSemanticToken { "#26B2FFFF" }
+    /// Has for value token "#009BF0FF"
+    @objc open var colorFunctionalDodgerBlue600: ColorSemanticToken { "#009BF0FF" }
+    /// Has for value token "#007ABDFF"
+    @objc open var colorFunctionalDodgerBlue700: ColorSemanticToken { "#007ABDFF" }
+    /// Has for value token "#00598AFF"
+    @objc open var colorFunctionalDodgerBlue800: ColorSemanticToken { "#00598AFF" }
+    /// Has for value token "#003857FF"
+    @objc open var colorFunctionalDodgerBlue900: ColorSemanticToken { "#003857FF" }
+    /// Has for value token "#EA030514"
+    @objc open var colorOpacityScarlet: ColorSemanticToken { "#EA030514" }
+    /// Has for value token "#FFD00029"
+    @objc open var colorOpacitySun: ColorSemanticToken { "#FFD00029" }
+    /// Has for value token "#3DE35A1F"
+    @objc open var colorOpacityMalachite: ColorSemanticToken { "#3DE35A1F" }
+    /// Has for value token "#26B2FF14"
+    @objc open var colorOpacityDodgerBlue: ColorSemanticToken { "#26B2FF14" }
+    /// Has for value token "#00000000"
+    @objc open var colorOpacityBlack0: ColorSemanticToken { "#00000000" }
+    /// Has for value token "#0000000A"
+    @objc open var colorOpacityBlack40: ColorSemanticToken { "#0000000A" }
+    /// Has for value token "#00000014"
+    @objc open var colorOpacityBlack80: ColorSemanticToken { "#00000014" }
+    /// Has for value token "#0000001F"
+    @objc open var colorOpacityBlack120: ColorSemanticToken { "#0000001F" }
+    /// Has for value token "#00000029"
+    @objc open var colorOpacityBlack160: ColorSemanticToken { "#00000029" }
+    /// Has for value token "#00000033"
+    @objc open var colorOpacityBlack200: ColorSemanticToken { "#00000033" }
+    /// Has for value token "#0000003D"
+    @objc open var colorOpacityBlack240: ColorSemanticToken { "#0000003D" }
+    /// Has for value token "#00000047"
+    @objc open var colorOpacityBlack280: ColorSemanticToken { "#00000047" }
+    /// Has for value token "#00000052"
+    @objc open var colorOpacityBlack320: ColorSemanticToken { "#00000052" }
+    /// Has for value token "#0000005C"
+    @objc open var colorOpacityBlack360: ColorSemanticToken { "#0000005C" }
+    /// Has for value token "#00000066"
+    @objc open var colorOpacityBlack400: ColorSemanticToken { "#00000066" }
+    /// Has for value token "#00000070"
+    @objc open var colorOpacityBlack440: ColorSemanticToken { "#00000070" }
+    /// Has for value token "#0000007A"
+    @objc open var colorOpacityBlack480: ColorSemanticToken { "#0000007A" }
+    /// Has for value token "#00000085"
+    @objc open var colorOpacityBlack520: ColorSemanticToken { "#00000085" }
+    /// Has for value token "#0000008F"
+    @objc open var colorOpacityBlack560: ColorSemanticToken { "#0000008F" }
+    /// Has for value token "#00000099"
+    @objc open var colorOpacityBlack600: ColorSemanticToken { "#00000099" }
+    /// Has for value token "#000000A3"
+    @objc open var colorOpacityBlack640: ColorSemanticToken { "#000000A3" }
+    /// Has for value token "#000000AD"
+    @objc open var colorOpacityBlack680: ColorSemanticToken { "#000000AD" }
+    /// Has for value token "#000000B8"
+    @objc open var colorOpacityBlack720: ColorSemanticToken { "#000000B8" }
+    /// Has for value token "#000000C2"
+    @objc open var colorOpacityBlack760: ColorSemanticToken { "#000000C2" }
+    /// Has for value token "#000000CC"
+    @objc open var colorOpacityBlack800: ColorSemanticToken { "#000000CC" }
+    /// Has for value token "#000000D6"
+    @objc open var colorOpacityBlack840: ColorSemanticToken { "#000000D6" }
+    /// Has for value token "#000000E0"
+    @objc open var colorOpacityBlack880: ColorSemanticToken { "#000000E0" }
+    /// Has for value token "#000000EB"
+    @objc open var colorOpacityBlack920: ColorSemanticToken { "#000000EB" }
+    /// Has for value token "#000000F5"
+    @objc open var colorOpacityBlack960: ColorSemanticToken { "#000000F5" }
+    /// Has for value token "#FFFFFF00"
+    @objc open var colorOpacityWhite0: ColorSemanticToken { "#FFFFFF00" }
+    /// Has for value token "#FFFFFF0A"
+    @objc open var colorOpacityWhite40: ColorSemanticToken { "#FFFFFF0A" }
+    /// Has for value token "#FFFFFF14"
+    @objc open var colorOpacityWhite80: ColorSemanticToken { "#FFFFFF14" }
+    /// Has for value token "#FFFFFF1F"
+    @objc open var colorOpacityWhite120: ColorSemanticToken { "#FFFFFF1F" }
+    /// Has for value token "#FFFFFF29"
+    @objc open var colorOpacityWhite160: ColorSemanticToken { "#FFFFFF29" }
+    /// Has for value token "#FFFFFF33"
+    @objc open var colorOpacityWhite200: ColorSemanticToken { "#FFFFFF33" }
+    /// Has for value token "#FFFFFF3D"
+    @objc open var colorOpacityWhite240: ColorSemanticToken { "#FFFFFF3D" }
+    /// Has for value token "#FFFFFF47"
+    @objc open var colorOpacityWhite280: ColorSemanticToken { "#FFFFFF47" }
+    /// Has for value token "#FFFFFF52"
+    @objc open var colorOpacityWhite320: ColorSemanticToken { "#FFFFFF52" }
+    /// Has for value token "#FFFFFF5C"
+    @objc open var colorOpacityWhite360: ColorSemanticToken { "#FFFFFF5C" }
+    /// Has for value token "#FFFFFF66"
+    @objc open var colorOpacityWhite400: ColorSemanticToken { "#FFFFFF66" }
+    /// Has for value token "#FFFFFF70"
+    @objc open var colorOpacityWhite440: ColorSemanticToken { "#FFFFFF70" }
+    /// Has for value token "#FFFFFF7A"
+    @objc open var colorOpacityWhite480: ColorSemanticToken { "#FFFFFF7A" }
+    /// Has for value token "#FFFFFF85"
+    @objc open var colorOpacityWhite520: ColorSemanticToken { "#FFFFFF85" }
+    /// Has for value token "#FFFFFF8F"
+    @objc open var colorOpacityWhite560: ColorSemanticToken { "#FFFFFF8F" }
+    /// Has for value token "#FFFFFF99"
+    @objc open var colorOpacityWhite600: ColorSemanticToken { "#FFFFFF99" }
+    /// Has for value token "#FFFFFFA3"
+    @objc open var colorOpacityWhite640: ColorSemanticToken { "#FFFFFFA3" }
+    /// Has for value token "#FFFFFFAD"
+    @objc open var colorOpacityWhite680: ColorSemanticToken { "#FFFFFFAD" }
+    /// Has for value token "#FFFFFFB8"
+    @objc open var colorOpacityWhite720: ColorSemanticToken { "#FFFFFFB8" }
+    /// Has for value token "#FFFFFFC2"
+    @objc open var colorOpacityWhite760: ColorSemanticToken { "#FFFFFFC2" }
+    /// Has for value token "#FFFFFFCC"
+    @objc open var colorOpacityWhite800: ColorSemanticToken { "#FFFFFFCC" }
+    /// Has for value token "#FFFFFFD6"
+    @objc open var colorOpacityWhite840: ColorSemanticToken { "#FFFFFFD6" }
+    /// Has for value token "#FFFFFFE0"
+    @objc open var colorOpacityWhite880: ColorSemanticToken { "#FFFFFFE0" }
+    /// Has for value token "#FFFFFFEB"
+    @objc open var colorOpacityWhite920: ColorSemanticToken { "#FFFFFFEB" }
+    /// Has for value token "#FFFFFFF5"
+    @objc open var colorOpacityWhite960: ColorSemanticToken { "#FFFFFFF5" }
+    /// Has for value token "#F9F5F0FF"
+    @objc open var colorWarmGray100: ColorSemanticToken { "#F9F5F0FF" }
+    /// Has for value token "#E9DDCEFF"
+    @objc open var colorWarmGray200: ColorSemanticToken { "#E9DDCEFF" }
+    /// Has for value token "#D6C4AEFF"
+    @objc open var colorWarmGray300: ColorSemanticToken { "#D6C4AEFF" }
+    /// Has for value token "#C1AB90FF"
+    @objc open var colorWarmGray400: ColorSemanticToken { "#C1AB90FF" }
+    /// Has for value token "#A99275FF"
+    @objc open var colorWarmGray500: ColorSemanticToken { "#A99275FF" }
+    /// Has for value token "#8A7860FF"
+    @objc open var colorWarmGray600: ColorSemanticToken { "#8A7860FF" }
+    /// Has for value token "#685D50FF"
+    @objc open var colorWarmGray700: ColorSemanticToken { "#685D50FF" }
+    /// Has for value token "#48433DFF"
+    @objc open var colorWarmGray800: ColorSemanticToken { "#48433DFF" }
+    /// Has for value token "#353228FF"
+    @objc open var colorWarmGray900: ColorSemanticToken { "#353228FF" }
+    /// Has for value token "#23211AFF"
+    @objc open var colorWarmGray1000: ColorSemanticToken { "#23211AFF" }
+    /// Has for value token "#FFF2E6FF"
+    @objc open var colorOrange50: ColorSemanticToken { "#FFF2E6FF" }
+    /// Has for value token "#FFD5B0FF"
+    @objc open var colorOrange100: ColorSemanticToken { "#FFD5B0FF" }
+    /// Has for value token "#FFC18AFF"
+    @objc open var colorOrange200: ColorSemanticToken { "#FFC18AFF" }
+    /// Has for value token "#FFA554FF"
+    @objc open var colorOrange300: ColorSemanticToken { "#FFA554FF" }
+    /// Has for value token "#FF9433FF"
+    @objc open var colorOrange400: ColorSemanticToken { "#FF9433FF" }
+    /// Has for value token "#FF7900FF"
+    @objc open var colorOrange500: ColorSemanticToken { "#FF7900FF" }
+    /// Has for value token "#F15E00FF"
+    @objc open var colorOrange550: ColorSemanticToken { "#F15E00FF" }
+    /// Has for value token "#E86E00FF"
+    @objc open var colorOrange600: ColorSemanticToken { "#E86E00FF" }
+    /// Has for value token "#B55600FF"
+    @objc open var colorOrange700: ColorSemanticToken { "#B55600FF" }
+    /// Has for value token "#8C4300FF"
+    @objc open var colorOrange800: ColorSemanticToken { "#8C4300FF" }
+    /// Has for value token "#6B3300FF"
+    @objc open var colorOrange900: ColorSemanticToken { "#6B3300FF" }
+    /// Has for value token "#E5F5EDFF"
+    @objc open var colorDecorativeEmerald100: ColorSemanticToken { "#E5F5EDFF" }
+    /// Has for value token "#C0E8D4FF"
+    @objc open var colorDecorativeEmerald200: ColorSemanticToken { "#C0E8D4FF" }
+    /// Has for value token "#9BDABAFF"
+    @objc open var colorDecorativeEmerald300: ColorSemanticToken { "#9BDABAFF" }
+    /// Has for value token "#75CCA1FF"
+    @objc open var colorDecorativeEmerald400: ColorSemanticToken { "#75CCA1FF" }
+    /// Has for value token "#50BE87FF"
+    @objc open var colorDecorativeEmerald500: ColorSemanticToken { "#50BE87FF" }
+    /// Has for value token "#3BA06EFF"
+    @objc open var colorDecorativeEmerald600: ColorSemanticToken { "#3BA06EFF" }
+    /// Has for value token "#2E7B54FF"
+    @objc open var colorDecorativeEmerald700: ColorSemanticToken { "#2E7B54FF" }
+    /// Has for value token "#20563BFF"
+    @objc open var colorDecorativeEmerald800: ColorSemanticToken { "#20563BFF" }
+    /// Has for value token "#123021FF"
+    @objc open var colorDecorativeEmerald900: ColorSemanticToken { "#123021FF" }
+    /// Has for value token "#D2ECF9FF"
+    @objc open var colorDecorativeSky100: ColorSemanticToken { "#D2ECF9FF" }
+    /// Has for value token "#A5DAF3FF"
+    @objc open var colorDecorativeSky200: ColorSemanticToken { "#A5DAF3FF" }
+    /// Has for value token "#79C7ECFF"
+    @objc open var colorDecorativeSky300: ColorSemanticToken { "#79C7ECFF" }
+    /// Has for value token "#4AB4E6FF"
+    @objc open var colorDecorativeSky400: ColorSemanticToken { "#4AB4E6FF" }
+    /// Has for value token "#1FA2E0FF"
+    @objc open var colorDecorativeSky500: ColorSemanticToken { "#1FA2E0FF" }
+    /// Has for value token "#1982B3FF"
+    @objc open var colorDecorativeSky600: ColorSemanticToken { "#1982B3FF" }
+    /// Has for value token "#136186FF"
+    @objc open var colorDecorativeSky700: ColorSemanticToken { "#136186FF" }
+    /// Has for value token "#0C415AFF"
+    @objc open var colorDecorativeSky800: ColorSemanticToken { "#0C415AFF" }
+    /// Has for value token "#06202DFF"
+    @objc open var colorDecorativeSky900: ColorSemanticToken { "#06202DFF" }
+    /// Has for value token "#FFF0CCFF"
+    @objc open var colorDecorativeAmber100: ColorSemanticToken { "#FFF0CCFF" }
+    /// Has for value token "#FFE199FF"
+    @objc open var colorDecorativeAmber200: ColorSemanticToken { "#FFE199FF" }
+    /// Has for value token "#FFD266FF"
+    @objc open var colorDecorativeAmber300: ColorSemanticToken { "#FFD266FF" }
+    /// Has for value token "#FFC333FF"
+    @objc open var colorDecorativeAmber400: ColorSemanticToken { "#FFC333FF" }
+    /// Has for value token "#FFB400FF"
+    @objc open var colorDecorativeAmber500: ColorSemanticToken { "#FFB400FF" }
+    /// Has for value token "#CC9000FF"
+    @objc open var colorDecorativeAmber600: ColorSemanticToken { "#CC9000FF" }
+    /// Has for value token "#996C00FF"
+    @objc open var colorDecorativeAmber700: ColorSemanticToken { "#996C00FF" }
+    /// Has for value token "#664800FF"
+    @objc open var colorDecorativeAmber800: ColorSemanticToken { "#664800FF" }
+    /// Has for value token "#332400FF"
+    @objc open var colorDecorativeAmber900: ColorSemanticToken { "#332400FF" }
+    /// Has for value token "#F1ECF9FF"
+    @objc open var colorDecorativeAmethyst100: ColorSemanticToken { "#F1ECF9FF" }
+    /// Has for value token "#E0D4F2FF"
+    @objc open var colorDecorativeAmethyst200: ColorSemanticToken { "#E0D4F2FF" }
+    /// Has for value token "#C5ADE6FF"
+    @objc open var colorDecorativeAmethyst300: ColorSemanticToken { "#C5ADE6FF" }
+    /// Has for value token "#A885D8FF"
+    @objc open var colorDecorativeAmethyst400: ColorSemanticToken { "#A885D8FF" }
+    /// Has for value token "#8D60CDFF"
+    @objc open var colorDecorativeAmethyst500: ColorSemanticToken { "#8D60CDFF" }
+    /// Has for value token "#5B2F98FF"
+    @objc open var colorDecorativeAmethyst600: ColorSemanticToken { "#5B2F98FF" }
+    /// Has for value token "#432371FF"
+    @objc open var colorDecorativeAmethyst700: ColorSemanticToken { "#432371FF" }
+    /// Has for value token "#2C174AFF"
+    @objc open var colorDecorativeAmethyst800: ColorSemanticToken { "#2C174AFF" }
+    /// Has for value token "#150B23FF"
+    @objc open var colorDecorativeAmethyst900: ColorSemanticToken { "#150B23FF" }
+    /// Has for value token "#FFE5F6FF"
+    @objc open var colorDecorativeShockingPink100: ColorSemanticToken { "#FFE5F6FF" }
+    /// Has for value token "#FFB4E6FF"
+    @objc open var colorDecorativeShockingPink200: ColorSemanticToken { "#FFB4E6FF" }
+    /// Has for value token "#FF80D4FF"
+    @objc open var colorDecorativeShockingPink300: ColorSemanticToken { "#FF80D4FF" }
+    /// Has for value token "#FF4DC3FF"
+    @objc open var colorDecorativeShockingPink400: ColorSemanticToken { "#FF4DC3FF" }
+    /// Has for value token "#FF1AB2FF"
+    @objc open var colorDecorativeShockingPink500: ColorSemanticToken { "#FF1AB2FF" }
+    /// Has for value token "#E50099FF"
+    @objc open var colorDecorativeShockingPink600: ColorSemanticToken { "#E50099FF" }
+    /// Has for value token "#B20077FF"
+    @objc open var colorDecorativeShockingPink700: ColorSemanticToken { "#B20077FF" }
+    /// Has for value token "#800055FF"
+    @objc open var colorDecorativeShockingPink800: ColorSemanticToken { "#800055FF" }
+    /// Has for value token "#4D0033FF"
+    @objc open var colorDecorativeShockingPink900: ColorSemanticToken { "#4D0033FF" }
+    /// Has for value token "#FBEBDFFF"
+    @objc open var colorDecorativeDeepPeach100: ColorSemanticToken { "#FBEBDFFF" }
+    /// Has for value token "#F4CFB2FF"
+    @objc open var colorDecorativeDeepPeach200: ColorSemanticToken { "#F4CFB2FF" }
+    /// Has for value token "#E3B591FF"
+    @objc open var colorDecorativeDeepPeach300: ColorSemanticToken { "#E3B591FF" }
+    /// Has for value token "#C19372FF"
+    @objc open var colorDecorativeDeepPeach400: ColorSemanticToken { "#C19372FF" }
+    /// Has for value token "#CF7E3FFF"
+    @objc open var colorDecorativeDeepPeach500: ColorSemanticToken { "#CF7E3FFF" }
+    /// Has for value token "#AA6631FF"
+    @objc open var colorDecorativeDeepPeach600: ColorSemanticToken { "#AA6631FF" }
+    /// Has for value token "#7E4F2AFF"
+    @objc open var colorDecorativeDeepPeach700: ColorSemanticToken { "#7E4F2AFF" }
+    /// Has for value token "#553720FF"
+    @objc open var colorDecorativeDeepPeach800: ColorSemanticToken { "#553720FF" }
+    /// Has for value token "#2E2014FF"
+    @objc open var colorDecorativeDeepPeach900: ColorSemanticToken { "#2E2014FF" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPrimaryLowest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPrimaryLower: ColorSemanticToken { "#FF000000" }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc public final var colorRepositoryPrimaryLow: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange550
     @objc public final var colorRepositoryPrimaryDefault: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPrimaryHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPrimaryHigher: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPrimaryHighest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryLowest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryLower: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryLow: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryDefault: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryHigher: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositorySecondaryHighest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryLowest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryLower: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryLow: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryDefault: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryHigher: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryTertiaryHighest: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPrimaryHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPrimaryHigher: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPrimaryHighest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryLowest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryLower: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryLow: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryDefault: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryHigher: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositorySecondaryHighest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryLowest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryLower: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryLow: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryDefault: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryHigher: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryTertiaryHighest: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc public final var colorRepositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
     @objc public final var colorRepositoryNeutralMutedLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
     @objc public final var colorRepositoryNeutralMutedLower: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralMutedLow: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralMutedMedium: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralMutedHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralMutedHigher: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralMutedHighest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralEmphasizedLowest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralEmphasizedLower: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralMutedLow: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralMutedMedium: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralMutedHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralMutedHigher: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralMutedHighest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralEmphasizedLowest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralEmphasizedLower: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
     @objc public final var colorRepositoryNeutralEmphasizedMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
@@ -480,16 +480,16 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalSun100
     @objc public final var colorRepositoryWarningLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun100 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryWarningLower: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryWarningLower: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalSun300
     @objc public final var colorRepositoryWarningLow: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc public final var colorRepositoryWarningDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryWarningHigher: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryWarningHigher: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalSun900
     @objc public final var colorRepositoryWarningHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun900 }
     /// Has for value token ColorRawTokens.colorFunctionalScarlet100
@@ -508,44 +508,44 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNegativeHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet900 }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite100
     @objc public final var colorRepositoryPositiveLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPositiveLower: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPositiveLower: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite300
     @objc public final var colorRepositoryPositiveLow: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite500
     @objc public final var colorRepositoryPositiveDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite600
     @objc public final var colorRepositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite900
     @objc public final var colorRepositoryPositiveHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue100
     @objc public final var colorRepositoryInfoLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue100 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryInfoLower: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryInfoLower: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue300
     @objc public final var colorRepositoryInfoLow: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue300 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue500
     @objc public final var colorRepositoryInfoDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryInfoHigher: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryInfoHigher: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue900
     @objc public final var colorRepositoryInfoHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue900 }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray100
     @objc public final var colorRepositoryAccentLowest: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryAccentLower: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryAccentLower: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalSun300
     @objc public final var colorRepositoryAccentLow: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc public final var colorRepositoryAccentDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryAccentHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryAccentHigher: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryAccentHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryAccentHigher: ColorSemanticToken { "#FF000000" }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray1000
     @objc public final var colorRepositoryAccentHighest: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray1000 }
     /// Has for value token ColorRawTokens.colorOpacityScarlet
@@ -594,22 +594,22 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.colorOpacityWhite800 }
     /// Has for value token ColorRawTokens.colorOpacityWhite920
     @objc public final var colorRepositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.colorOpacityWhite920 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryTransparent: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryLowest: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryLower: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryLow: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryMedium: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryHigh: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryHigher: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc public final var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryTransparent: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryLowest: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryLower: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryLow: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryMedium: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryHigh: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryHigher: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc public final var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryNeutralMutedWhite
     @objc open var colorBgPrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedHighest
@@ -630,14 +630,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryLow
     @objc open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
-    /// Has for value token #ff000000
-    @objc open var colorSurfaceBrandSecondaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorSurfaceBrandSecondaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorSurfaceBrandTertiaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorSurfaceBrandTertiaryDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorSurfaceBrandSecondaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorSurfaceBrandSecondaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorSurfaceBrandTertiaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorSurfaceBrandTertiaryDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryOpacityBlackLowest
     @objc open var colorSurfaceStatusNeutralMutedLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLower
@@ -702,14 +702,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryDefault }
     /// Has for value token colorRepositoryPrimaryLow
     @objc open var colorContentBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
-    /// Has for value token #ff000000
-    @objc open var colorContentBrandSecondaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentBrandSecondaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentBrandTertiaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentBrandTertiaryDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentBrandSecondaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentBrandSecondaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentBrandTertiaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentBrandTertiaryDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryPositiveDefault
     @objc open var colorContentStatusPositiveLight: ColorSemanticToken { colorRepositoryPositiveDefault }
     /// Has for value token colorRepositoryPositiveDefault
@@ -734,14 +734,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorContentOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnBrandSecondaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnBrandSecondaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnBrandTertiaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnBrandTertiaryDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnBrandSecondaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnBrandSecondaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnBrandTertiaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnBrandTertiaryDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorContentOnStatusNeutralMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
@@ -814,10 +814,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnActionFocusLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorContentOnActionFocusDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnActionSelectedLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorContentOnActionSelectedDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnActionSelectedLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorContentOnActionSelectedDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryNeutralMutedWhite
     @objc open var colorContentOnActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
@@ -850,46 +850,46 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBorderBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryDefault }
     /// Has for value token colorRepositoryPrimaryLow
     @objc open var colorBorderBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
-    /// Has for value token #ff000000
-    @objc open var colorBorderBrandSecondaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderBrandSecondaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderBrandTertiaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderBrandTertiaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusPositiveLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusPositiveDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusInfoLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusInfoDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusWarningLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusWarningDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusNegativeLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusNegativeDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusAccentLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderStatusAccentDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderBrandSecondaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderBrandSecondaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderBrandTertiaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderBrandTertiaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusPositiveLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusPositiveDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusInfoLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusInfoDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusWarningLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusWarningDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusNegativeLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusNegativeDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusAccentLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderStatusAccentDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorBorderOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorBorderOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
-    /// Has for value token #ff000000
-    @objc open var colorBorderOnBrandSecondaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderOnBrandSecondaryDark: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderOnBrandTertiaryLight: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorBorderOnBrandTertiaryDark: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderOnBrandSecondaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderOnBrandSecondaryDark: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderOnBrandTertiaryLight: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorBorderOnBrandTertiaryDark: ColorSemanticToken { "#FF000000" }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorActionEnabledLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
@@ -1004,22 +1004,22 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorAlwaysOnWhite: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token OrangeBrandColorRawTokens.colorOrange500
     @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalBlack
     @objc open var colorDecorativeBrandSecondary: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandSecondaryMuted: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandSecondaryEmphasized: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandSecondaryMuted: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandSecondaryEmphasized: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
     @objc open var colorDecorativeBrandTertiary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
     @objc open var colorDecorativeNeutralMutedLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
@@ -1040,14 +1040,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorDecorativeNeutralEmphasizedLower: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark320 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark400
     @objc open var colorDecorativeNeutralEmphasizedLow: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark400 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeNeutralEmphasizedMedium: ColorSemanticToken { #ff000000 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeNeutralEmphasizedHigh: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeNeutralEmphasizedMedium: ColorSemanticToken { "#FF000000" }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeNeutralEmphasizedHigh: ColorSemanticToken { "#FF000000" }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
     @objc open var colorDecorativeNeutralEmphasizedHigher: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
-    /// Has for value token #ff000000
-    @objc open var colorDecorativeNeutralEmphasizedHighest: ColorSemanticToken { #ff000000 }
+    /// Has for value token "#FF000000"
+    @objc open var colorDecorativeNeutralEmphasizedHighest: ColorSemanticToken { "#FF000000" }
     /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald200
     @objc open var colorDecorativeAccent1Muted: ColorSemanticToken { OrangeBrandColorRawTokens.colorDecorativeEmerald200 }
     /// Has for value token OrangeBrandColorRawTokens.colorDecorativeEmerald500

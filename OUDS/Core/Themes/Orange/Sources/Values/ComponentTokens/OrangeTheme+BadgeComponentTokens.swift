@@ -22,10 +22,10 @@ import OUDSTokensSemantic
 extension OrangeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     /// Has for value token DimensionRawTokens.dimensionOutOfSystem75
     @objc open var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
-    /// Has for value token spaces.paddingInline3xs
-    @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.paddingInline3xs }
-    /// Has for value token spaces.paddingInline2xs
-    @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.paddingInline2xs }
+    /// Has for value token spaces.spacePaddingInline3xs
+    @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline3xs }
+    /// Has for value token spaces.spacePaddingInline2xs
+    @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token DimensionRawTokens.dimension100
     @objc open var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens.dimension100 }
     /// Has for value token DimensionRawTokens.dimension150
