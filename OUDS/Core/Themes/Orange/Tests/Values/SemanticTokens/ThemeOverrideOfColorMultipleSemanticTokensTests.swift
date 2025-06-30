@@ -152,28 +152,6 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorActionVisited == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    // MARK: - Color - Always
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorAlwaysBlack() throws {
-        #expect(inheritedTheme.colors.colorAlwaysBlack != abstractTheme.colors.colorAlwaysBlack)
-        #expect(inheritedTheme.colors.colorAlwaysBlack == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorAlwaysOnBlack() throws {
-        #expect(inheritedTheme.colors.colorAlwaysOnBlack != abstractTheme.colors.colorAlwaysOnBlack)
-        #expect(inheritedTheme.colors.colorAlwaysOnBlack == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorAlwaysOnWhite() throws {
-        #expect(inheritedTheme.colors.colorAlwaysOnWhite != abstractTheme.colors.colorAlwaysOnWhite)
-        #expect(inheritedTheme.colors.colorAlwaysOnWhite == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorAlwaysWhite() throws {
-        #expect(inheritedTheme.colors.colorAlwaysWhite != abstractTheme.colors.colorAlwaysWhite)
-        #expect(inheritedTheme.colors.colorAlwaysWhite == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
     // MARK: - Color - Background
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorBgEmphasized() throws {

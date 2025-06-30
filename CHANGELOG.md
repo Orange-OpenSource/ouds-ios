@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 
 ### Changed
