@@ -43,19 +43,22 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value  colors.colorOpacityTransparent
     @objc open var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher)
+    }
+
     /// Has for value  colors.colorOpacityTransparent
     @objc open var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value  colors.colorOpacityTransparent
     @objc open var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorOpacityTransparent
     @objc open var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorOpacityTransparent
     @objc open var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value  colors.colorOpacityTransparent
@@ -67,39 +70,39 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value  colors.colorActionSupportFocus
     @objc open var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value  colors.colorActionSupportHover
     @objc open var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value  colors.colorActionSupportLoading
     @objc open var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorActionSupportPressed
     @objc open var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorRepositoryOpacityBlackMedium
-    @objc open var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackMedium) }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value  colors.colorRepositoryOpacityBlackHigher
-    @objc open var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigher
-    @objc open var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc open var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value  colors.colorActionDisabled
     @objc open var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value  colors.colorRepositoryOpacityBlackMedium
-    @objc open var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackMedium) }
     /// Has for value  colors.colorActionEnabled
     @objc open var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionFocus
     @objc open var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value  colors.colorOpacityTransparent
@@ -155,63 +158,63 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value  colors.colorActionDisabled
     @objc open var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value  colors.colorRepositoryOpacityBlackMedium
-    @objc open var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackMedium) }
     /// Has for value  colors.colorActionEnabled
     @objc open var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionFocus
     @objc open var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorActionHover
     @objc open var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorActionLoading
     @objc open var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionPressed
     @objc open var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionDisabled
     @objc open var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value  colors.colorRepositoryOpacityBlackMedium
-    @objc open var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityBlackMedium) }
     /// Has for value  colors.colorActionEnabled
     @objc open var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionFocus
     @objc open var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorActionHover
     @objc open var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorContentDefault
     @objc open var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorActionPressed
     @objc open var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorRepositoryOpacityWhiteHigh
-    @objc open var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigh }
+    @objc open var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorRepositoryNeutralMutedWhite
-    @objc open var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    @objc open var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value  colors.colorRepositoryNeutralEmphasizedBlack
-    @objc open var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    @objc open var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
     @objc open var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm

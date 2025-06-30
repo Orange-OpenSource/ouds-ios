@@ -67,7 +67,7 @@ struct ButtonForegroundModifier: ViewModifier {
         case .minimal:
             useMonochrome ? theme.button.buttonColorContentMinimalEnabledMono : theme.button.buttonColorContentMinimalEnabled
         case .negative:
-            theme.colors.colorContentOnStatusEmphasizedAlt
+            theme.colors.colorContentOnStatusNegativeEmphasized
         }
     }
 
@@ -80,7 +80,7 @@ struct ButtonForegroundModifier: ViewModifier {
         case .minimal:
             useMonochrome ? theme.button.buttonColorContentMinimalHoverMono : theme.button.buttonColorContentMinimalHover
         case .negative:
-            theme.colors.colorContentOnStatusEmphasizedAlt
+            theme.colors.colorContentOnStatusNegativeEmphasized
         }
     }
 
@@ -93,7 +93,7 @@ struct ButtonForegroundModifier: ViewModifier {
         case .minimal:
             useMonochrome ? theme.button.buttonColorContentDefaultPressedMono : theme.button.buttonColorContentDefaultPressed
         case .negative:
-            theme.colors.colorContentOnStatusEmphasizedAlt
+            theme.colors.colorContentOnStatusNegativeEmphasized
         }
     }
 
