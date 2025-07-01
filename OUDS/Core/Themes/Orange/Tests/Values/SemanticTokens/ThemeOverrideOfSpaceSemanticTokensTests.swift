@@ -303,6 +303,11 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.spaceInsetNone == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSpaceInset4xs() throws {
+        #expect(inheritedTheme.spaces.spaceInset4xs != abstractTheme.spaces.spaceInset4xs)
+        #expect(inheritedTheme.spaces.spaceInset4xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenSpaceInset3xs() throws {
         #expect(inheritedTheme.spaces.spaceInset3xs != abstractTheme.spaces.spaceInset3xs)
         #expect(inheritedTheme.spaces.spaceInset3xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)

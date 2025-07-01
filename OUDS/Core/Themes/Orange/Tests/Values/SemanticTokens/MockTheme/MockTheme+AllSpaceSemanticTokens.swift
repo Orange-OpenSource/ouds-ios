@@ -103,6 +103,7 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     // MARK: Semantic token - Padding - Padding inset
 
     override public var spaceInsetNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spaceInset4xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceInset3xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceInset2xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceInsetXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
