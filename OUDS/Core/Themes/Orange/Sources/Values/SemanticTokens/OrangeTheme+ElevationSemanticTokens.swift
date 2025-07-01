@@ -68,19 +68,19 @@ extension OrangeThemeElevationSemanticTokensProvider: ElevationSemanticTokens {
     /// Has for value token ElevationRawTokens.elevationBlur400
     @objc open var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     /// Has for value token ColorRawTokens.colorOpacityBlack0
-    @objc open var elevationColorNone: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc open var elevationColorNone: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     /// Has for value token ColorRawTokens.colorOpacityBlack320
-    @objc open var elevationColorRaised: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
+    @objc open var elevationColorRaised: ColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
     /// Has for value token ColorRawTokens.colorOpacityBlack240
-    @objc open var elevationColorDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack240 }
+    @objc open var elevationColorDefault: ColorSemanticToken { ColorRawTokens.colorOpacityBlack240 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc open var elevationColorEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc open var elevationColorEmphasized: ColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack320
-    @objc open var elevationColorDrag: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
+    @objc open var elevationColorDrag: ColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc open var elevationColorStickyDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc open var elevationColorStickyDefault: ColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc open var elevationColorStickyEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc open var elevationColorStickyEmphasized: ColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc open var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc open var elevationColorStickyNavigationScrolled: ColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
 }
