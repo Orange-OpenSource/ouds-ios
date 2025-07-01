@@ -78,6 +78,7 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
     override public var spacePaddingInlineNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
+    override public var spacePaddingInline4xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spacePaddingInline3xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spacePaddingInline2xs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spacePaddingInlineXs: SpaceSemanticToken { Self.mockThemeSpaceRawToken }

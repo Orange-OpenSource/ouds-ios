@@ -204,6 +204,11 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.spacePaddingInlineNone == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenSpacePaddingInline4xs() throws {
+        #expect(inheritedTheme.spaces.spacePaddingInline4xs != abstractTheme.spaces.spacePaddingInline4xs)
+        #expect(inheritedTheme.spaces.spacePaddingInline4xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenSpacePaddingInline3xs() throws {
         #expect(inheritedTheme.spaces.spacePaddingInline3xs != abstractTheme.spaces.spacePaddingInline3xs)
         #expect(inheritedTheme.spaces.spacePaddingInline3xs == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
