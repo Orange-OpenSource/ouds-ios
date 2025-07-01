@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Chip component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Badge component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
