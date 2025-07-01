@@ -74,7 +74,7 @@ private struct LinkUnderlineModifier: ViewModifier {
             interactionState == .hover || interactionState == .pressed
         case .textOnly:
             true
-        case .iconAndText:
+        case .textAndIcon:
             interactionState == .hover || interactionState == .pressed
         }
     }

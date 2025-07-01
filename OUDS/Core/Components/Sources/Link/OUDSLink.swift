@@ -76,7 +76,7 @@ public struct OUDSLink: View {
     enum Layout {
         case indicator(OUDSLink.Indicator)
         case textOnly
-        case iconAndText(Image)
+        case textAndIcon(Image)
     }
 
     // MARK: Initializers
@@ -90,7 +90,7 @@ public struct OUDSLink: View {
     ///   - action: The action to perform when the user triggers the link
     public init(text: String, icon: Image? = nil, size: Size = .default, action: @escaping () -> Void) {
         if let icon {
-            layout = .iconAndText(icon)
+            layout = .textAndIcon(icon)
         } else {
             layout = .textOnly
         }
@@ -134,7 +134,7 @@ public struct OUDSLink: View {
                 } icon: {
                     EmptyView()
                 }
-            case let .iconAndText(icon):
+            case let .textAndIcon(icon):
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
