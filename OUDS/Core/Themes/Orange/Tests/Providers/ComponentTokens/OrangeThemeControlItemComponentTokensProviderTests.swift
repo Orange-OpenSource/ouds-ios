@@ -31,6 +31,10 @@ struct OrangeThemeControlItemComponentTokensProviderTests {
         #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
     }
 
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
+    }
+
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
     }
