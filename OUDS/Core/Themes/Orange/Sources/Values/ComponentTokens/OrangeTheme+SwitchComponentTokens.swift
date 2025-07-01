@@ -22,26 +22,26 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) 
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
     @objc open var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh) 
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh)
     @objc open var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow) 
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow)
     @objc open var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium-high, dark: colors.colorRepositoryOpacityWhiteHigh) 
-    @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium-high, dark: colors.colorRepositoryOpacityWhiteHigh) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) 
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh)
+    @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc open var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token borders.borderRadiusPill
     @objc open var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusPill }
     /// Has for value token borders.borderRadiusPill
     @objc open var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token opacities.switchOpacityCheck
-    @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.switchOpacityCheck }
+    /// Has for value token opacities.opacityOpaque
+    @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
     /// Has for value token spaces.spacePaddingInline3xs
     @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInlineXs

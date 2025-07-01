@@ -61,7 +61,8 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
 
     // MARK: Borders
 
-    override public var switchBorderRadius: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
+    override public var switchBorderRadiusCursor: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
+    override public var switchBorderRadiusTrack: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
 
     // MARK: Colors
 
