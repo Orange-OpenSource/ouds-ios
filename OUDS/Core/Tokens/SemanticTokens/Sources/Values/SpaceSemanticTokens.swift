@@ -65,6 +65,7 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
     var spacePaddingInlineNone: SpaceSemanticToken { get }
+    var spacePaddingInline4xs: SpaceSemanticToken { get }
     var spacePaddingInline3xs: SpaceSemanticToken { get }
     var spacePaddingInline2xs: SpaceSemanticToken { get }
     var spacePaddingInlineXs: SpaceSemanticToken { get }
