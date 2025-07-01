@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Control item component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Link component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
