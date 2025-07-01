@@ -161,7 +161,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
         let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities))
-        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
 
         super.init(borders: borders,
                    colors: colors,
