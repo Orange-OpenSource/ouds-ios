@@ -80,7 +80,7 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens {}
 
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens {}
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
 /// Something which provides all component tokens of list item
 public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}

@@ -34,7 +34,7 @@ struct LinkSizeIconModifier: ViewModifier {
         case .small:
             theme.link.linkSizeIconSmall
         case .default:
-            theme.link.linkSizeIconMedium
+            theme.link.linkSizeIconDefault
         }
     }
 
@@ -43,7 +43,7 @@ struct LinkSizeIconModifier: ViewModifier {
         case .small:
             theme.link.linkSizeIconSmall
         case .default:
-            theme.link.linkSizeIconMedium
+            theme.link.linkSizeIconDefault
         }
     }
 }
