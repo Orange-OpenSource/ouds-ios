@@ -54,9 +54,16 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.controlItemSizeLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
-    @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeListItemSizeMinHeightText() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeListItemSizeMinHeightText != abstractTheme.controlItem.controlItemSizeListItemSizeMinHeightText)
-        #expect(inheritedTheme.controlItem.controlItemSizeListItemSizeMinHeightText == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+    // MARK: - Borders
+
+    @Test func inheritedThemeCanOverrideControlItemComponentBorderRadius() throws {
+        #expect(inheritedTheme.controlItem.controlItemBorderRadius != abstractTheme.controlItem.controlItemBorderRadius)
+        #expect(inheritedTheme.controlItem.controlItemBorderRadius == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
+    }
+
+    @Test func inheritedThemeCanOverrideControlItemComponentBorderRadiusItemOnly() throws {
+        #expect(inheritedTheme.controlItem.controlItemBorderRadiusItemOnly != abstractTheme.controlItem.controlItemBorderRadiusItemOnly)
+        #expect(inheritedTheme.controlItem.controlItemBorderRadiusItemOnly == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
     }
 
     // MARK: - Colors
