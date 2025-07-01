@@ -130,9 +130,14 @@ struct ThemeOverrideOfSwitchComponentTokensTests {
 
     // MARK: - Borders
 
-    @Test func inheritedThemeCanOverrideSwitchBorderRadius() throws {
-        #expect(inheritedTheme.switch.switchBorderRadius != abstractTheme.switch.switchBorderRadius)
-        #expect(inheritedTheme.switch.switchBorderRadius == MockThemeSwitchComponentTokenProvider.mockThemeSwitchBorderRadius)
+    @Test func inheritedThemeCanOverrideSwitchBorderRadiusCursor() throws {
+        #expect(inheritedTheme.switch.switchBorderRadiusCursor != abstractTheme.switch.switchBorderRadiusCursor)
+        #expect(inheritedTheme.switch.switchBorderRadiusCursor == MockThemeSwitchComponentTokenProvider.mockThemeSwitchBorderRadius)
+    }
+
+    @Test func inheritedThemeCanOverrideSwitchBorderRadiusTrack() throws {
+        #expect(inheritedTheme.switch.switchBorderRadiusTrack != abstractTheme.switch.switchBorderRadiusTrack)
+        #expect(inheritedTheme.switch.switchBorderRadiusTrack == MockThemeSwitchComponentTokenProvider.mockThemeSwitchBorderRadius)
     }
 
     // MARK: - Opacities
