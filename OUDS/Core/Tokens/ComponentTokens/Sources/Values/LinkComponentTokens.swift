@@ -27,20 +27,15 @@ public protocol LinkComponentTokens {
 
     // MARK: - Sizes
 
-    var linkSizeMinHeightMedium: SizeSemanticToken { get }
-    var linkSizeMinWidthMedium: SizeSemanticToken { get }
     var linkSizeMinHeightSmall: SizeSemanticToken { get }
+    var linkSizeMinHeightDefault: SizeSemanticToken { get }
     var linkSizeMinWidthSmall: SizeSemanticToken { get }
-    var linkSizeIconMedium: SizeSemanticToken { get }
+    var linkSizeMinWidthDefault: SizeSemanticToken { get }
     var linkSizeIconSmall: SizeSemanticToken { get }
+    var linkSizeIconDefault: SizeSemanticToken { get }
 
     // MARK: - Colors
 
-    var linkColorContentEnabledMono: MultipleColorSemanticTokens { get }
-    var linkColorContentHoverMono: MultipleColorSemanticTokens { get }
-    var linkColorContentPressedMono: MultipleColorSemanticTokens { get }
-    var linkColorContentFocusMono: MultipleColorSemanticTokens { get }
-    var linkColorContentDisabledMono: MultipleColorSemanticTokens { get }
     var linkColorContentEnabled: MultipleColorSemanticTokens { get }
     var linkColorContentHover: MultipleColorSemanticTokens { get }
     var linkColorContentPressed: MultipleColorSemanticTokens { get }
@@ -54,10 +49,10 @@ public protocol LinkComponentTokens {
 
     var linkSpacePaddingInline: SpaceSemanticToken { get }
     var linkSpacePaddingBlock: SpaceSemanticToken { get }
-    var linkSpaceColumnGapIconMedium: SpaceSemanticToken { get }
     var linkSpaceColumnGapIconSmall: SpaceSemanticToken { get }
-    var linkSpaceColumnGapArrowMedium: SpaceSemanticToken { get }
     var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { get }
+    var linkSpaceColumnGapIconDefault: SpaceSemanticToken { get }
+    var linkSpaceColumnGapArrowDefault: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

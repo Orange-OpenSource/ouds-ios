@@ -51,18 +51,18 @@ struct LinkColorContentModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkColorContentEnabledMono : theme.link.linkColorContentEnabled
+        useMonochrome ? theme.link.linkMonoColorContentEnabled : theme.link.linkColorContentEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkColorContentHoverMono : theme.link.linkColorContentHover
+        useMonochrome ? theme.link.linkMonoColorContentHover : theme.link.linkColorContentHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkColorContentPressedMono : theme.link.linkColorContentPressed
+        useMonochrome ? theme.link.linkMonoColorContentPressed : theme.link.linkColorContentPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkColorContentDisabledMono : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.linkMonoColorContentDisabled : theme.colors.colorActionDisabled
     }
 }

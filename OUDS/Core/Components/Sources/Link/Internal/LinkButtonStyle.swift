@@ -64,11 +64,11 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Helpers
 
     private var minWidth: Double {
-        size == .small ? theme.link.linkSizeMinWidthSmall : theme.link.linkSizeMinWidthMedium
+        size == .small ? theme.link.linkSizeMinWidthSmall : theme.link.linkSizeMinWidthDefault
     }
 
     private var minHeight: Double {
-        size == .small ? theme.link.linkSizeMinHeightSmall : theme.link.linkSizeMinHeightMedium
+        size == .small ? theme.link.linkSizeMinHeightSmall : theme.link.linkSizeMinHeightDefault
     }
 }
 
@@ -104,7 +104,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     }
 
     private var spacing: Double {
-        size == .small ? theme.link.linkSpaceColumnGapArrowSmall : theme.link.linkSpaceColumnGapArrowMedium
+        size == .small ? theme.link.linkSpaceColumnGapArrowSmall : theme.link.linkSpaceColumnGapArrowDefault
     }
 
     private var alignment: VerticalAlignment {
@@ -131,6 +131,6 @@ private struct LinkIconAndTextLabelStyle: LabelStyle {
     }
 
     private var spacing: Double {
-        size == .small ? theme.link.linkSpaceColumnGapIconSmall : theme.link.linkSpaceColumnGapIconMedium
+        size == .small ? theme.link.linkSpaceColumnGapIconSmall : theme.link.linkSpaceColumnGapIconDefault
     }
 }
