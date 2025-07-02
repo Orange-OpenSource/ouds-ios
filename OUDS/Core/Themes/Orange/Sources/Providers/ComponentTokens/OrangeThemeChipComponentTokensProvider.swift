@@ -21,8 +21,8 @@ import OUDSFoundations
 /// Custom themes can use subclass of ``OrangeThemeChipComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ChipComponentTokens` so as to expose the component tokens for *chip* through any `OUDSTheme`.
 /// *Chip* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`)
-/// and border  (from `AllBorderSemanticTokensProvider`).
+/// colors (from `AllColorSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`),
+/// dimensions (`AllDimensionSemanticTokensProvider`) and border  (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for chip component tokens
@@ -82,7 +82,8 @@ import OUDSFoundations
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
-///                                                 space: CustomSpaceSemanticTokensProvider())
+///                                                 space: CustomSpaceSemanticTokensProvider(),
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
@@ -100,22 +101,28 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     /// Provider of spaces semantic tokens to use for chip spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     /// Defines a provider of component tokens dedicated to `OUDSChip`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
     }
 
     deinit {}

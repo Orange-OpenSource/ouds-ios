@@ -21,7 +21,9 @@
 /// It defines all ``DimensionSemanticToken`` a theme must have.
 /// Any dimension semantic token must be declared there.
 ///
-/// These dimension semantic tokens cannot be overriden by design.
+/// These dimension semantic tokens should not be overriden by design.
+/// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
+/// and library. The tokens are not hidden from developers.
 ///
 /// - Since: 0.16.0
 public protocol DimensionSemanticTokens {

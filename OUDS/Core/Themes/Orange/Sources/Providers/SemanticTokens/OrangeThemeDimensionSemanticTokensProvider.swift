@@ -35,7 +35,9 @@ import OUDSFoundations
 ///     OrangeTheme(dimensions: OrangeThemeDimensionSemanticTokensProvider())
 /// ```
 ///
-/// Note that by design the semenatic tokens of dimensions provide dby this provider cannot be overriden, this is forbiden in Figma.
+/// These dimension semantic tokens are not overridable by design.
+/// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
+/// and library. The tokens are not hidden from developers.
 ///
 /// - Since: 0.16.0
 open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
