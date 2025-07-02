@@ -58,33 +58,14 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Color - Background
 
-    var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { get }
-
     var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
-    var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultHover: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalHover: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { get }
@@ -92,57 +73,21 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Color - Border
 
-    var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { get }
-    var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { get }
-    var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
-    var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens { get }
     var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
 
-    var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { get }
-    var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { get }
     var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
     var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { get }
     var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { get }
