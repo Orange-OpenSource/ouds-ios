@@ -16,7 +16,6 @@
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have (``ElevationXSemanticToken``, ``ElevationYSemanticToken``,
@@ -57,23 +56,14 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
-    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorNoneLight: ElevationColorSemanticToken { get }
-    var elevationColorNoneDark: ElevationColorSemanticToken { get }
-    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
-    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
-    var elevationColorDragLight: ElevationColorSemanticToken { get }
-    var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get }
+    var elevationColorDefault: ElevationColorSemanticToken { get }
+    var elevationColorNone: ElevationColorSemanticToken { get }
+    var elevationColorRaised: ElevationColorSemanticToken { get }
+    var elevationColorDrag: ElevationColorSemanticToken { get }
+    var elevationColorEmphasized: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefault: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

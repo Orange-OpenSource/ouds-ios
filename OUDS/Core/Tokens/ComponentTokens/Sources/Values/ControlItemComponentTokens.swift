@@ -31,7 +31,6 @@ public protocol ControlItemComponentTokens {
     var controlItemSizeMinWidth: SizeSemanticToken { get }
     var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var controlItemSizeIcon: SizeSemanticToken { get }
-    var controlItemSizeListItemSizeMinHeightText: SizeSemanticToken { get }
     var controlItemSizeLoader: SizeSemanticToken { get }
 
     // MARK: - Colors
@@ -47,6 +46,11 @@ public protocol ControlItemComponentTokens {
     var controlItemSpaceColumnGap: SpaceSemanticToken { get }
     var controlItemSpaceRowGap: SpaceSemanticToken { get }
     var controlItemSpaceInset: SpaceSemanticToken { get }
+
+    // MARK: - Borders
+
+    var controlItemBorderRadius: BorderRadiusSemanticToken { get }
+    var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

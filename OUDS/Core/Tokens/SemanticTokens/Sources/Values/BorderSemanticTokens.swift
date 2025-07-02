@@ -39,9 +39,9 @@ public protocol BorderSemanticTokens {
 
     var borderRadiusNone: BorderRadiusSemanticToken { get }
     var borderRadiusDefault: BorderRadiusSemanticToken { get }
-    var borderRadiusShort: BorderRadiusSemanticToken { get }
+    var borderRadiusSmall: BorderRadiusSemanticToken { get }
     var borderRadiusMedium: BorderRadiusSemanticToken { get }
-    var borderRadiusTall: BorderRadiusSemanticToken { get }
+    var borderRadiusLarge: BorderRadiusSemanticToken { get }
     var borderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Semantic token - Border - Style

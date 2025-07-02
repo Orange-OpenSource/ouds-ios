@@ -30,7 +30,7 @@ import OUDSFoundations
 ///         override var borderWidthMedium: BorderWidthSemanticToken {
 ///             BorderRawTokens.borderWidth100
 ///         }
-///         override var borderRadiusTall: BorderRadiusSemanticToken {
+///         override var borderRadiusLarge: BorderRadiusSemanticToken {
 ///             BorderRawTokens.borderRadius800
 ///         }
 /// }

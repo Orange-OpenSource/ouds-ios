@@ -25,39 +25,24 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
 
     static let mockThemeBadgeSpace: SpaceSemanticToken = 1_312
     static let mockThemeBadgeSize: SizeSemanticToken = 118_218
-    static let mockThemeBadgeBorderRadius: BorderRadiusRawToken = 0.000000001
 
     override public init(sizes: AllSizeSemanticTokensProvider?,
-                         borders: AllBorderSemanticTokensProvider?,
                          spaces: AllSpaceSemanticTokensProvider?)
     {
         super.init(sizes: sizes,
-                   borders: borders,
                    spaces: spaces)
     }
 
     // MARK: - Badge component tokens
 
-    override public var badgeSizeMaxHeightExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxHeightLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxHeightMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxHeightSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthLargeDot: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthMediumDot: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinHeightExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinHeightLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinHeightMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinHeightSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinWidthExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinWidthLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinWidthMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMinWidthSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeBorderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBadgeBorderRadius }
-    override public var badgeSpaceRowGap: SpaceSemanticToken { Self.mockThemeBadgeSpace }
-    override public var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override public var badgeSizeXsmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override public var badgeSizeSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override public var badgeSizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override public var badgeSizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
+
+    override public var badgeSpaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
     override public var badgeSpacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override public var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
 }
 
 // swiftlint:enable required_deinit

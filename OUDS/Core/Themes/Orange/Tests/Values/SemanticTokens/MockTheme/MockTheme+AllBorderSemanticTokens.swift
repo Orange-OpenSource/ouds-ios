@@ -41,9 +41,9 @@ final class MockThemeBorderSemanticTokensProvider: OrangeThemeBorderSemanticToke
 
     override public var borderRadiusNone: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
     override public var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusShort: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override public var borderRadiusSmall: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
     override public var borderRadiusMedium: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusTall: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override public var borderRadiusLarge: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
     override public var borderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
 
     // MARK: Semantic token - Border - Style

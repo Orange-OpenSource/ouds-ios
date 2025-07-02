@@ -40,41 +40,56 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
 
     // MARK: - Chip component tokens
 
-    override public var chipSizeMinHeight: SizeSemanticToken { Self.mockThemeChipSize }
-    override public var chipSizeMinWidth: SizeSemanticToken { Self.mockThemeChipSize }
     override public var chipSizeIcon: SizeSemanticToken { Self.mockThemeChipSize }
-    override public var chipBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
-    override public var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
+    override public var chipSizeMinWidth: SizeSemanticToken { Self.mockThemeChipSize }
+    override public var chipSizeMinHeight: SizeSemanticToken { Self.mockThemeChipSize }
+    override public var chipSizeMinHeightInteractiveArea: SizeSemanticToken { Self.mockThemeChipSize }
+
     override public var chipBorderWidthSelected: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
-    override public var chipBorderWidthSelectedInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override public var chipBorderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override public var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
-    override public var chipBorderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeChipBorderRadius }
-    override public var chipColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorContentHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorContentDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBgEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBgHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBgDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderSelected: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderUnselected: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingInlineIconStart: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingInlineIconNone: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpaceInsetIconOnly: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipBorderRadius: BorderRadiusSemanticToken { Self.mockThemeChipBorderWidth }
+
+    override public var chipBadgeColorBg: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipBadgeColorContent: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+
     override public var chipSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpaceColumnGapColumnGap: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpacePaddingInlineIcon: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpacePaddingInlineIconNone: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpacePaddingInlineArrowEnd: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpaceColumnGapIcon: SpaceSemanticToken { Self.mockThemeChipSpace }
+    override public var chipSpaceColumnGapBadgeArrow: SpaceSemanticToken { Self.mockThemeChipSpace }
 }
 
 // swiftlint:enable required_deinit

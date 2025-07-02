@@ -57,189 +57,189 @@ struct ColorRawTokensTests {
     // MARK: - Primitive token - Colors - Functional light gray
 
     @Test func colorRawTokenFunctionalLightGray80LighterThanFunctionalLightGray160() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray80, ColorRawTokens.colorFunctionalLightGray160)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight80, ColorRawTokens.colorFunctionalGrayLight160)
     }
 
     @Test func colorRawTokenFunctionalLightGray160LighterThanFunctionalLightGray240() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray160, ColorRawTokens.colorFunctionalLightGray240)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight160, ColorRawTokens.colorFunctionalGrayLight240)
     }
 
     @Test func colorRawTokenFunctionalLightGray240LighterThanFunctionalLightGray320() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray240, ColorRawTokens.colorFunctionalLightGray320)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight240, ColorRawTokens.colorFunctionalGrayLight320)
     }
 
     @Test func colorRawTokenFunctionalLightGray320LighterThanFunctionalLightGray400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray320, ColorRawTokens.colorFunctionalLightGray400)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight320, ColorRawTokens.colorFunctionalGrayLight400)
     }
 
     @Test func colorRawTokenFunctionalLightGray400LighterThanFunctionalLightGray480() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray400, ColorRawTokens.colorFunctionalLightGray480)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight400, ColorRawTokens.colorFunctionalGrayLight480)
     }
 
     @Test func colorRawTokenFunctionalLightGray480LighterThanFunctionalLightGray560() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray480, ColorRawTokens.colorFunctionalLightGray560)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight480, ColorRawTokens.colorFunctionalGrayLight560)
     }
 
     @Test func colorRawTokenFunctionalLightGray560LighterThanFunctionalLightGray640() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray560, ColorRawTokens.colorFunctionalLightGray640)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight560, ColorRawTokens.colorFunctionalGrayLight640)
     }
 
     @Test func colorRawTokenFunctionalLightGray640LighterThanFunctionalLightGray720() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray640, ColorRawTokens.colorFunctionalLightGray720)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight640, ColorRawTokens.colorFunctionalGrayLight720)
     }
 
     @Test func colorRawTokenFunctionalLightGray720LighterThanFunctionalLightGray800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray720, ColorRawTokens.colorFunctionalLightGray800)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight720, ColorRawTokens.colorFunctionalGrayLight800)
     }
 
     @Test func colorRawTokenFunctionalLightGray800LighterThanFunctionalLightGray880() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray800, ColorRawTokens.colorFunctionalLightGray880)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight800, ColorRawTokens.colorFunctionalGrayLight880)
     }
 
     @Test func colorRawTokenFunctionalLightGray880LighterThanFunctionalLightGray960() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalLightGray880, ColorRawTokens.colorFunctionalLightGray960)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayLight880, ColorRawTokens.colorFunctionalGrayLight960)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray80Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray80, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight80Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight80, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray160Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray160, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight160Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight160, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray240Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray240, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight240Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight240, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray320Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray320, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight320Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight320, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray400, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight400Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight400, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray480Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray480, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight480Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight480, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray560Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray560, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight560Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight560, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray640Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray640, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight640Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight640, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray720Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray720, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight720Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight720, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray800, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight800Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight800, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray880Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray880, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight880Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight880, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalLightGray960Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalLightGray960, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayLight960Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayLight960, regexp: Self.colorFormat)
     }
 
     // MARK: - Primitive token - Colors - Functional dark gray
 
     @Test func colorRawTokenFunctionalDarkGray80LighterThanFunctionalDarkGray160() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray80, ColorRawTokens.colorFunctionalDarkGray160)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark80, ColorRawTokens.colorFunctionalGrayDark160)
     }
 
     @Test func colorRawTokenFunctionalDarkGray160LighterThanFunctionalDarkGray240() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray160, ColorRawTokens.colorFunctionalDarkGray240)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark160, ColorRawTokens.colorFunctionalGrayDark240)
     }
 
     @Test func colorRawTokenFunctionalDarkGray240LighterThanFunctionalDarkGray320() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray240, ColorRawTokens.colorFunctionalDarkGray320)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark240, ColorRawTokens.colorFunctionalGrayDark320)
     }
 
     @Test func colorRawTokenFunctionalDarkGray320LighterThanFunctionalDarkGray400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray320, ColorRawTokens.colorFunctionalDarkGray400)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark320, ColorRawTokens.colorFunctionalGrayDark400)
     }
 
     @Test func colorRawTokenFunctionalDarkGray400LighterThanFunctionalDarkGray480() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray400, ColorRawTokens.colorFunctionalDarkGray480)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark400, ColorRawTokens.colorFunctionalGrayDark480)
     }
 
     @Test func colorRawTokenFunctionalDarkGray480LighterThanFunctionalDarkGray560() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray480, ColorRawTokens.colorFunctionalDarkGray560)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark480, ColorRawTokens.colorFunctionalGrayDark560)
     }
 
     @Test func colorRawTokenFunctionalDarkGray560LighterThanFunctionalDarkGray640() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray560, ColorRawTokens.colorFunctionalDarkGray640)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark560, ColorRawTokens.colorFunctionalGrayDark640)
     }
 
     @Test func colorRawTokenFunctionalDarkGray640LighterThanFunctionalDarkGray720() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray640, ColorRawTokens.colorFunctionalDarkGray720)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark640, ColorRawTokens.colorFunctionalGrayDark720)
     }
 
     @Test func colorRawTokenFunctionalDarkGray720LighterThanFunctionalDarkGray800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray720, ColorRawTokens.colorFunctionalDarkGray800)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark720, ColorRawTokens.colorFunctionalGrayDark800)
     }
 
     @Test func colorRawTokenFunctionalDarkGray800LighterThanFunctionalDarkGray880() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray800, ColorRawTokens.colorFunctionalDarkGray880)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark800, ColorRawTokens.colorFunctionalGrayDark880)
     }
 
     @Test func colorRawTokenFunctionalDarkGray880LighterThanFunctionalDarkGray960() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalDarkGray880, ColorRawTokens.colorFunctionalDarkGray960)
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorFunctionalGrayDark880, ColorRawTokens.colorFunctionalGrayDark960)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray80Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray80, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark80Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark80, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray160Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray160, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark160Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark160, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray240Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray240, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark240Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark240, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray320Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray320, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark320Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark320, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray400, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark400Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark400, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray480Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray480, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark480Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark480, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray560Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray560, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark560Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark560, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray640Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray640, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark640Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark640, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray720Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray720, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark720Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark720, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray800, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark800Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark800, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray880Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray880, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark880Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark880, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorFunctionalDarkGray960Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalDarkGray960, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorFunctionalGrayDark960Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorFunctionalGrayDark960, regexp: Self.colorFormat)
     }
 
     // MARK: - Primitive token - Colors - Functional scarlet
@@ -924,427 +924,6 @@ struct ColorRawTokensTests {
         TestsUtils.assertMatches(ColorRawTokens.colorOpacityWhite960, regexp: Self.colorFormat)
     }
 
-    // MARK: Primitive token - Colors - Emerald
-
-    @Test func colorRawTokenColorDecorativeEmerald100LighterThanEmerald200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald100, ColorRawTokens.colorDecorativeEmerald200)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald200LighterThanEmerald300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald200, ColorRawTokens.colorDecorativeEmerald300)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald300LighterThanEmerald400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald300, ColorRawTokens.colorDecorativeEmerald400)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald400LighterThanEmerald500() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald400, ColorRawTokens.colorDecorativeEmerald500)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald500LighterThanEmerald600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald500, ColorRawTokens.colorDecorativeEmerald600)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald600LighterThanEmerald700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald600, ColorRawTokens.colorDecorativeEmerald700)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald700LighterThanEmerald800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald700, ColorRawTokens.colorDecorativeEmerald800)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald800LighterThanEmerald900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeEmerald800, ColorRawTokens.colorDecorativeEmerald900)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeEmerald900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeEmerald900, regexp: Self.colorFormat)
-    }
-
-    // MARK: Primitive token - Colors - Sky
-
-    @Test func colorRawTokenColorDecorativeSky100LighterThanSky200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky100, ColorRawTokens.colorDecorativeSky200)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky200LighterThanSky300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky200, ColorRawTokens.colorDecorativeSky300)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky300LighterThanSky400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky300, ColorRawTokens.colorDecorativeSky400)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky400LighterThanSky500() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky400, ColorRawTokens.colorDecorativeSky500)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky500LighterThanSky600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky500, ColorRawTokens.colorDecorativeSky600)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky600LighterThanSky700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky600, ColorRawTokens.colorDecorativeSky700)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky700LighterThanSky800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky700, ColorRawTokens.colorDecorativeSky800)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky800LighterThanSky900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeSky800, ColorRawTokens.colorDecorativeSky900)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeSky900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeSky900, regexp: Self.colorFormat)
-    }
-
-    // MARK: Primitive token - Colors - Amber
-
-    @Test func colorRawTokenColorDecorativeAmber100LighterThanAmber200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber100, ColorRawTokens.colorDecorativeAmber200)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber200LighterThanAmber300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber200, ColorRawTokens.colorDecorativeAmber300)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber300LighterThanAmber400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber300, ColorRawTokens.colorDecorativeAmber400)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber400LighterThanAmber500() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber400, ColorRawTokens.colorDecorativeAmber500)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber500LighterThanAmber600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber500, ColorRawTokens.colorDecorativeAmber600)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber600LighterThanAmber700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber600, ColorRawTokens.colorDecorativeAmber700)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber700LighterThanAmber800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber700, ColorRawTokens.colorDecorativeAmber800)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber800LighterThanAmber900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmber800, ColorRawTokens.colorDecorativeAmber900)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmber900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmber900, regexp: Self.colorFormat)
-    }
-
-    // MARK: Primitive token - Colors - Amethyst
-
-    @Test func colorRawTokenColorDecorativeAmethyst100LighterThanAmethyst200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst100, ColorRawTokens.colorDecorativeAmethyst200)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst200LighterThanAmethyst300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst200, ColorRawTokens.colorDecorativeAmethyst300)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst300LighterThanAmethyst400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst300, ColorRawTokens.colorDecorativeAmethyst400)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst400LighterThanAmethyst500() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst400, ColorRawTokens.colorDecorativeAmethyst500)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst500LighterThanAmethyst600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst500, ColorRawTokens.colorDecorativeAmethyst600)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst600LighterThanAmethyst700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst600, ColorRawTokens.colorDecorativeAmethyst700)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst700LighterThanAmethyst800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst700, ColorRawTokens.colorDecorativeAmethyst800)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst800LighterThanAmethyst900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst800, ColorRawTokens.colorDecorativeAmethyst900)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeAmethyst900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeAmethyst900, regexp: Self.colorFormat)
-    }
-
-    // MARK: Primitive token - Colors -  Shocking Pink
-
-    @Test func colorRawTokenColorDecorativeShockingPink100LighterThan200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink100, ColorRawTokens.colorDecorativeShockingPink200)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink200LighterThan300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink200, ColorRawTokens.colorDecorativeShockingPink300)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink300LighterThan400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink300, ColorRawTokens.colorDecorativeShockingPink400)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink400LighterThan500() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink400, ColorRawTokens.colorDecorativeShockingPink500)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink500LighterThan600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink500, ColorRawTokens.colorDecorativeShockingPink600)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink600LighterThan700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink600, ColorRawTokens.colorDecorativeShockingPink700)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink700LighterThan800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink700, ColorRawTokens.colorDecorativeShockingPink800)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink800LighterThan900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink800, ColorRawTokens.colorDecorativeShockingPink900)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeShockingPink900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeShockingPink900, regexp: Self.colorFormat)
-    }
-
-    // MARK: Primitive token - Colors -  Deep Peach
-
-    @Test func colorRawTokenColorDecorativeDeepPeach100LighterThan200() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach100, ColorRawTokens.colorDecorativeDeepPeach200)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach200LighterThan300() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach200, ColorRawTokens.colorDecorativeDeepPeach300)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach300LighterThan400() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach300, ColorRawTokens.colorDecorativeDeepPeach400)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach400LighterThan500() throws {
-        TestsUtils.assertColorDarkerThan(ColorRawTokens.colorDecorativeDeepPeach400, ColorRawTokens.colorDecorativeDeepPeach500)
-        // TODO: Why? Is the palette well defined in design team. This is the only case 400 is darker than 500
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach500LighterThan600() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach500, ColorRawTokens.colorDecorativeDeepPeach600)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach600LighterThan700() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach600, ColorRawTokens.colorDecorativeDeepPeach700)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach700LighterThan800() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach700, ColorRawTokens.colorDecorativeDeepPeach800)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach800LighterThan900() throws {
-        TestsUtils.assertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach800, ColorRawTokens.colorDecorativeDeepPeach900)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach100Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach100, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach200Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach200, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach300Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach300, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach400Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach400, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach500Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach500, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach600Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach600, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach700Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach700, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach800Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach800, regexp: Self.colorFormat)
-    }
-
-    @Test func colorRawTokenColorDecorativeDeepPeach900Format() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorDecorativeDeepPeach900, regexp: Self.colorFormat)
-    }
-
     // MARK: - Compare all colors
 
     /// Compare all colors to ensure they are all unique
@@ -1354,95 +933,23 @@ struct ColorRawTokensTests {
 
         // Step 1: Gather all tokens of color in arrays
 
-        let colorsDecorativeAmber: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeAmber100,
-            ColorRawTokens.colorDecorativeAmber200,
-            ColorRawTokens.colorDecorativeAmber300,
-            ColorRawTokens.colorDecorativeAmber400,
-            ColorRawTokens.colorDecorativeAmber500,
-            ColorRawTokens.colorDecorativeAmber600,
-            ColorRawTokens.colorDecorativeAmber700,
-            ColorRawTokens.colorDecorativeAmber800,
-            ColorRawTokens.colorDecorativeAmber900,
-        ]
-
-        let colorsDecorativeAmethyst: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeAmethyst100,
-            ColorRawTokens.colorDecorativeAmethyst200,
-            ColorRawTokens.colorDecorativeAmethyst300,
-            ColorRawTokens.colorDecorativeAmethyst400,
-            ColorRawTokens.colorDecorativeAmethyst500,
-            ColorRawTokens.colorDecorativeAmethyst600,
-            ColorRawTokens.colorDecorativeAmethyst700,
-            ColorRawTokens.colorDecorativeAmethyst800,
-            ColorRawTokens.colorDecorativeAmethyst900,
-        ]
-
-        let colorsDecorativeDeepPeach: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeDeepPeach100,
-            ColorRawTokens.colorDecorativeDeepPeach200,
-            ColorRawTokens.colorDecorativeDeepPeach300,
-            ColorRawTokens.colorDecorativeDeepPeach400,
-            ColorRawTokens.colorDecorativeDeepPeach500,
-            ColorRawTokens.colorDecorativeDeepPeach600,
-            ColorRawTokens.colorDecorativeDeepPeach700,
-            ColorRawTokens.colorDecorativeDeepPeach800,
-            ColorRawTokens.colorDecorativeDeepPeach900,
-        ]
-
-        let colorsDecorativeEmerald: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeEmerald100,
-            ColorRawTokens.colorDecorativeEmerald200,
-            ColorRawTokens.colorDecorativeEmerald300,
-            ColorRawTokens.colorDecorativeEmerald400,
-            ColorRawTokens.colorDecorativeEmerald500,
-            ColorRawTokens.colorDecorativeEmerald600,
-            ColorRawTokens.colorDecorativeEmerald700,
-            ColorRawTokens.colorDecorativeEmerald800,
-            ColorRawTokens.colorDecorativeEmerald900,
-        ]
-
-        let colorsDecorativeShockingPink: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeShockingPink100,
-            ColorRawTokens.colorDecorativeShockingPink200,
-            ColorRawTokens.colorDecorativeShockingPink300,
-            ColorRawTokens.colorDecorativeShockingPink400,
-            ColorRawTokens.colorDecorativeShockingPink500,
-            ColorRawTokens.colorDecorativeShockingPink600,
-            ColorRawTokens.colorDecorativeShockingPink700,
-            ColorRawTokens.colorDecorativeShockingPink800,
-            ColorRawTokens.colorDecorativeShockingPink900,
-        ]
-
-        let colorsDecorativeSky: [ColorRawToken] = [
-            ColorRawTokens.colorDecorativeSky100,
-            ColorRawTokens.colorDecorativeSky200,
-            ColorRawTokens.colorDecorativeSky300,
-            ColorRawTokens.colorDecorativeSky400,
-            ColorRawTokens.colorDecorativeSky500,
-            ColorRawTokens.colorDecorativeSky600,
-            ColorRawTokens.colorDecorativeSky700,
-            ColorRawTokens.colorDecorativeSky800,
-            ColorRawTokens.colorDecorativeSky900,
-        ]
-
         let colorsFunctionalBlack: [ColorRawToken] = [ColorRawTokens.colorFunctionalBlack]
 
         let colorsFunctionalWhite: [ColorRawToken] = [ColorRawTokens.colorFunctionalWhite]
 
         let colorsFunctionalDarkGray: [ColorRawToken] = [
-            ColorRawTokens.colorFunctionalDarkGray80,
-            ColorRawTokens.colorFunctionalDarkGray160,
-            ColorRawTokens.colorFunctionalDarkGray240,
-            ColorRawTokens.colorFunctionalDarkGray320,
-            ColorRawTokens.colorFunctionalDarkGray400,
-            ColorRawTokens.colorFunctionalDarkGray480,
-            ColorRawTokens.colorFunctionalDarkGray560,
-            ColorRawTokens.colorFunctionalDarkGray640,
-            ColorRawTokens.colorFunctionalDarkGray720,
-            ColorRawTokens.colorFunctionalDarkGray800,
-            ColorRawTokens.colorFunctionalDarkGray880,
-            ColorRawTokens.colorFunctionalDarkGray960,
+            ColorRawTokens.colorFunctionalGrayDark80,
+            ColorRawTokens.colorFunctionalGrayDark160,
+            ColorRawTokens.colorFunctionalGrayDark240,
+            ColorRawTokens.colorFunctionalGrayDark320,
+            ColorRawTokens.colorFunctionalGrayDark400,
+            ColorRawTokens.colorFunctionalGrayDark480,
+            ColorRawTokens.colorFunctionalGrayDark560,
+            ColorRawTokens.colorFunctionalGrayDark640,
+            ColorRawTokens.colorFunctionalGrayDark720,
+            ColorRawTokens.colorFunctionalGrayDark800,
+            ColorRawTokens.colorFunctionalGrayDark880,
+            ColorRawTokens.colorFunctionalGrayDark960,
         ]
 
         let colorsFunctionalDodgerBlue: [ColorRawToken] = [
@@ -1458,18 +965,18 @@ struct ColorRawTokensTests {
         ]
 
         let colorsFunctionalLightGray: [ColorRawToken] = [
-            ColorRawTokens.colorFunctionalLightGray80,
-            ColorRawTokens.colorFunctionalLightGray160,
-            ColorRawTokens.colorFunctionalLightGray240,
-            ColorRawTokens.colorFunctionalLightGray320,
-            ColorRawTokens.colorFunctionalLightGray400,
-            ColorRawTokens.colorFunctionalLightGray480,
-            ColorRawTokens.colorFunctionalLightGray560,
-            ColorRawTokens.colorFunctionalLightGray640,
-            ColorRawTokens.colorFunctionalLightGray720,
-            ColorRawTokens.colorFunctionalLightGray800,
-            ColorRawTokens.colorFunctionalLightGray880,
-            ColorRawTokens.colorFunctionalLightGray960,
+            ColorRawTokens.colorFunctionalGrayLight80,
+            ColorRawTokens.colorFunctionalGrayLight160,
+            ColorRawTokens.colorFunctionalGrayLight240,
+            ColorRawTokens.colorFunctionalGrayLight320,
+            ColorRawTokens.colorFunctionalGrayLight400,
+            ColorRawTokens.colorFunctionalGrayLight480,
+            ColorRawTokens.colorFunctionalGrayLight560,
+            ColorRawTokens.colorFunctionalGrayLight640,
+            ColorRawTokens.colorFunctionalGrayLight720,
+            ColorRawTokens.colorFunctionalGrayLight800,
+            ColorRawTokens.colorFunctionalGrayLight880,
+            ColorRawTokens.colorFunctionalGrayLight960,
         ]
 
         let colorsFunctionalMalachite: [ColorRawToken] = [
@@ -1574,12 +1081,6 @@ struct ColorRawTokensTests {
         // Step 2: Pack all arrays
 
         let allColors: [[ColorRawToken]] = [
-            colorsDecorativeAmber,
-            colorsDecorativeAmethyst,
-            colorsDecorativeDeepPeach,
-            colorsDecorativeEmerald,
-            colorsDecorativeShockingPink,
-            colorsDecorativeSky,
             colorsFunctionalBlack,
             colorsFunctionalWhite,
             colorsFunctionalDarkGray,

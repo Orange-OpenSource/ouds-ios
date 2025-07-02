@@ -79,6 +79,10 @@ let package = Package(
             name: "OUDS",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/OUDS/Sources"),
+        .testTarget(
+            name: "OUDS-Tests",
+            dependencies: ["OUDS", "TestsUtils"],
+            path: "OUDS/Core/OUDS/Tests"),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],

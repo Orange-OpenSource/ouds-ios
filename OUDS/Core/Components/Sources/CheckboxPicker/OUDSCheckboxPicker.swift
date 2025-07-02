@@ -315,9 +315,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Forges the label to vocalize with *Voice Over* for the root element
     private var a11yLabel: String {
         if case let .verticalRooted(label, _) = placement {
-            return label
+            label
         } else {
-            return ""
+            ""
         }
     }
 

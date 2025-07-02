@@ -124,6 +124,8 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
+    var sizeIconDecorative4xs: SizeSemanticToken { get }
+    var sizeIconDecorative3xs: SizeSemanticToken { get }
     var sizeIconDecorative2xs: SizeSemanticToken { get }
     var sizeIconDecorativeXs: SizeSemanticToken { get }
     var sizeIconDecorativeSm: SizeSemanticToken { get }
@@ -131,6 +133,10 @@ public protocol SizeSemanticTokens {
     var sizeIconDecorativeLg: SizeSemanticToken { get }
     var sizeIconDecorativeXl: SizeSemanticToken { get }
     var sizeIconDecorative2xl: SizeSemanticToken { get }
+
+    // MARK: - Semantic token - Sizing - Interactive area
+
+    var sizeMinInteractiveArea: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
 ///
-///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMd }
 ///
 ///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 ///

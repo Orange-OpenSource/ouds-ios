@@ -27,50 +27,34 @@ public protocol TagComponentTokens {
 
     // MARK: - Borders
 
-    var tagBorderRadiusPill: BorderRadiusSemanticToken { get }
+    var tagBorderRadius: BorderRadiusSemanticToken { get }
     var tagBorderWidthDefault: BorderWidthSemanticToken { get }
     var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
 
-    // MARK: - Colors
-
-    var tagColorBgEnabled: MultipleColorSemanticTokens { get }
-    var tagColorBgFocus: MultipleColorSemanticTokens { get }
-    var tagColorBgHover: MultipleColorSemanticTokens { get }
-    var tagColorBgPressed: MultipleColorSemanticTokens { get }
-    var tagColorBorderDisabled: MultipleColorSemanticTokens { get }
-    var tagColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var tagColorBorderFocus: MultipleColorSemanticTokens { get }
-    var tagColorBorderHover: MultipleColorSemanticTokens { get }
-    var tagColorBorderPressed: MultipleColorSemanticTokens { get }
-    var tagColorContentDisabled: MultipleColorSemanticTokens { get }
-    var tagColorContentEnabled: MultipleColorSemanticTokens { get }
-    var tagColorContentFocus: MultipleColorSemanticTokens { get }
-    var tagColorContentHover: MultipleColorSemanticTokens { get }
-    var tagColorContentPressed: MultipleColorSemanticTokens { get }
-
     // MARK: - Sizes
 
-    var tagSizeIconMedium: SizeSemanticToken { get }
+    var tagSizeIconDefault: SizeSemanticToken { get }
     var tagSizeIconSmall: SizeSemanticToken { get }
-    var tagSizeMinHeightMedium: SizeSemanticToken { get }
+    var tagSizeLoaderDefault: SizeSemanticToken { get }
+    var tagSizeLoaderSmall: SizeSemanticToken { get }
+    var tagSizeMinHeightDefault: SizeSemanticToken { get }
+    var tagSizeMinWidthDefault: SizeSemanticToken { get }
     var tagSizeMinHeightSmall: SizeSemanticToken { get }
-    var tagSizeMinWidthMedium: SizeSemanticToken { get }
     var tagSizeMinWidthSmall: SizeSemanticToken { get }
+    var tagSizeMinHeightInteractiveArea: SizeSemanticToken { get }
 
     // MARK: - Spaces
 
-    var tagSpaceColumnGapColumnGapMedium: SpaceSemanticToken { get }
-    var tagSpaceColumnGapColumnGapSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingBlockMedium: SpaceSemanticToken { get }
     var tagSpacePaddingBlockSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineIconEndMedium: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineIconEndSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineIconStartMedium: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineLabelEndMedium: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineLabelEndSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineLabelStartMedium: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineLabelStartSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingBlockDefault: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineDefault: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineSmallAsset: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineDefaultAsset: SpaceSemanticToken { get }
+    var tagSpaceInsetSmallAsset: SpaceSemanticToken { get }
+    var tagSpaceInsetDefaultAsset: SpaceSemanticToken { get }
+    var tagSpaceColumnGapSmall: SpaceSemanticToken { get }
+    var tagSpaceColumnGapDefault: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
