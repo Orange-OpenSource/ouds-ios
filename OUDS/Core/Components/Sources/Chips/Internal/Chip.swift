@@ -74,6 +74,7 @@ struct Chip: View {
         .modifier(ChipBackgroundModifier(state: interactionState))
         .modifier(ChipBorderModifier(state: interactionState))
         .frame(minWidth: theme.chip.chipSizeMinWidth, minHeight: theme.chip.chipSizeMinHeight)
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 
     private var leadingPadding: CGFloat {
@@ -128,8 +129,9 @@ private struct ChipContent: View {
     var body: some View {
         Group {
             switch layout {
-            case let .icon(icon, _):
+            case let .icon(icon, accessibilityLabel):
                 ScaledIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                    .accessibilityLabel(accessibilityLabel)
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, icon, iconPosition):

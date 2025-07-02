@@ -87,7 +87,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedShort) {
-            Text(title).typeHeadingLarge(theme).padding(.leading, theme.spaces.spaceFixedMedium)
+            Text(title)
+                .typeHeadingLarge(theme)
+                .padding(.leading, theme.spaces.spaceFixedMedium)
+                .accessibilityAddTraits(.isHeader)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
