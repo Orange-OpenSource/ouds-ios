@@ -49,52 +49,52 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthMinimal: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
-    override public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgStrongPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorContentStrongPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBgMinimalEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
@@ -102,31 +102,31 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override public var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonMonoColorBorderStrongPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
