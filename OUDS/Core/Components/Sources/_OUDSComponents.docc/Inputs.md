@@ -241,3 +241,33 @@ You can use a chip without any labels and images.
     // Filter chip with text and icon layout an in selected state
     OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
 ```
+
+#### Cbips picker
+
+The library proposes a chip picker to make easyly filtering with selected or unselected options.
+```swift
+     // Define the elements to display in filter chip using OUDSChipPickerData.
+     enum Drink: String, CaseIterable {
+         case virginHolyLava, ipaBeer, mineralWater
+     }
+
+     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
+         [
+             OUDSChipPickerData(tag: Drink.virginHolyLava,
+                                             layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+
+             OUDSChipPickerData(tag: Dring.ipaBeer,
+                                     layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+
+             OUDSChipPickerData(tag: Drink.mineralWater,
+                                     layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+         ]
+     }
+
+     // Prepare the selection, with a value previously selected
+     // Use the data and the binding for the picker.
+     @State var selection: Drink = .mineralWater
+
+     // Here the picker with title, selection and data
+     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+ ```
