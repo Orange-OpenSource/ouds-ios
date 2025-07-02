@@ -19,7 +19,9 @@ import TestsUtils
 /// Some tests on versions of of OUDS parts to be sure they are well defined
 struct OUDSVersionsTests {
 
+    // swiftlint:disable force_try
     private static let oudsVersionsFormat = try! NSRegularExpression(pattern: "^\\d+\\.\\d+\\.\\d+$")
+    // swiftlint:enable force_try
 
     // MARK: - Tests
 
