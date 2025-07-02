@@ -33,9 +33,10 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public init(sizes: AllSizeSemanticTokensProvider?,
                          borders: AllBorderSemanticTokensProvider?,
                          colors: AllColorSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+                         spaces: AllSpaceSemanticTokensProvider?,
+                         dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Chip component tokens
