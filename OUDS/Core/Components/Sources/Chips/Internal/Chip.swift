@@ -18,6 +18,11 @@ import SwiftUI
 
 
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
+///
+/// The layout of the chip will change according to the `ChipInteractionState` and the selected flag.
+
+/// - Version: 1.2.0
+/// - Since: 0.16.0
 struct Chip: View {
 
     // MARK: Stored Properties
@@ -204,10 +209,8 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            // TODO: the tick is fixed or scaled ?
-            // TODO: the tick is centered if text is on multiline ?
-            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle),
-                      size: theme.chip.chipSizeIcon)
+            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: Bundle.OUDSComponents),
+                       size: theme.chip.chipSizeIcon)
             .accessibilityHidden(true)
             .oudsForegroundColor(appliedColor)
         }

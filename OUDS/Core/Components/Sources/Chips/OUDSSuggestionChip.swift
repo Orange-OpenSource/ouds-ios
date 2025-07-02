@@ -11,13 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Chip
+// MARK: - OUDS Suggestion Chip
 
-///
 /// Chips help people enter information, make selections, filter content, or trigger actions. Chips
 /// can show multiple interactive elements together in the same area, such as a list of selectable
 /// movie times, or a series of email contacts.
@@ -46,7 +44,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
 ///
-/// - Version: 1.1.0
+/// - Version: 1.2.0
 /// - Since: 0.16.0
 public struct OUDSSuggestionChip: View {
 

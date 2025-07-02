@@ -58,7 +58,6 @@ import SwiftUI
 /// There is no online specification as this component is not an official OUDS one
 ///
 /// - Since: 0.16.0
-
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The title of the picker
@@ -108,6 +107,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
+        // swiftlint:disable pattern_matching_keywords
         let selected = data.tag == selection.wrappedValue
         switch data.layout {
         case .text(let text):
@@ -117,5 +117,6 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         case .textAndIcon(let text, let icon):
             OUDSFilterChip(icon: icon, text: text, selected: selected, action: action)
         }
+        // swiftlint:enable pattern_matching_keywords
     }
 }

@@ -11,11 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-
 import OUDSFoundations
 import SwiftUI
 
-///
 /// A ``OUDSFilterChip``is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user.
 ///
 /// Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way.
@@ -42,7 +40,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
 ///
-/// - Version: 1.1.0
+/// - Version: 1.2.0
 /// - Since: 0.16.0
 public struct OUDSFilterChip: View {
 
