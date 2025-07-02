@@ -62,7 +62,7 @@ public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentT
 public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens {}
 
 /// Something which provides all component tokens of button
-public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens {}
+public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens, ButtonMonoComponentTokens {}
 
 /// Something which provides all component tokens of checkboxes
 public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens {}
