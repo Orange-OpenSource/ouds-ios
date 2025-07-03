@@ -16,6 +16,11 @@ import OUDSFoundations
 #if DEBUG
 extension TokensProvider {
 
+    /// If `count` is greater than 1, displays a warning message in the standard output
+    /// saying the tokens provider with name `providerName` is instanciated more than once and should not be
+    /// - Parameters:
+    ///    - count: Supposed to be instance count
+    ///    - providerName: Supposed to be name of the tokens provider
     public func checkInstances(count: Int, for providerName: String) {
         guard count > 1 else { return }
         OL.warning("🧮 There are \(count) instances of \(providerName), it should be unique!")

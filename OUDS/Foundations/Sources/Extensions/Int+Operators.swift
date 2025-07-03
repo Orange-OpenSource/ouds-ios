@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// swiftlint:disable missing_docs
+
 // MARK: - Operator -- (Int)
 
 postfix operator --
@@ -36,3 +38,4 @@ extension Int {
         return value
     }
 }
+// swiftlint:enable missing_docs

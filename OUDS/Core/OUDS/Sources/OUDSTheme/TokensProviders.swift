@@ -20,7 +20,9 @@ import OUDSTokensSemantic
 public protocol TokensProvider {
 
     #if DEBUG
+    // swiftlint:disable missing_docs
     func checkInstances(count: Int, for providerName: String)
+    // swiftlint:enable missing_docs
     #endif
 }
 
