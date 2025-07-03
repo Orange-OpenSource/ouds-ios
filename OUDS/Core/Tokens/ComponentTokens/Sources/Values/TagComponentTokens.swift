@@ -28,15 +28,11 @@ public protocol TagComponentTokens {
     // MARK: - Borders
 
     var tagBorderRadius: BorderRadiusSemanticToken { get }
-    var tagBorderWidthDefault: BorderWidthSemanticToken { get }
-    var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
 
     // MARK: - Sizes
 
     var tagSizeIconDefault: SizeSemanticToken { get }
     var tagSizeIconSmall: SizeSemanticToken { get }
-    var tagSizeLoaderDefault: SizeSemanticToken { get }
-    var tagSizeLoaderSmall: SizeSemanticToken { get }
     var tagSizeMinHeightDefault: SizeSemanticToken { get }
     var tagSizeMinWidthDefault: SizeSemanticToken { get }
     var tagSizeMinHeightSmall: SizeSemanticToken { get }

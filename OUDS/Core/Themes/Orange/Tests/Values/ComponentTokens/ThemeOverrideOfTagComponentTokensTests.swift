@@ -32,16 +32,6 @@ struct ThemeOverrideOfTagComponentTokensTests {
         #expect(inheritedTheme.tag.tagBorderRadius == MockThemeTagComponentTokenProvider.mockThemeTagBorderRadius)
     }
 
-    @Test func inheritedThemeCanOverrideTagBorderWidthDefault() throws {
-        #expect(inheritedTheme.tag.tagBorderWidthDefault != abstractTheme.tag.tagBorderWidthDefault)
-        #expect(inheritedTheme.tag.tagBorderWidthDefault == MockThemeTagComponentTokenProvider.mockThemeTagBorderWidth)
-    }
-
-    @Test func inheritedThemeCanOverrideTagBorderWidthDefaultInteraction() throws {
-        #expect(inheritedTheme.tag.tagBorderWidthDefaultInteraction != abstractTheme.tag.tagBorderWidthDefaultInteraction)
-        #expect(inheritedTheme.tag.tagBorderWidthDefaultInteraction == MockThemeTagComponentTokenProvider.mockThemeTagBorderWidth)
-    }
-
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideTagSizeIconDefault() throws {
@@ -52,16 +42,6 @@ struct ThemeOverrideOfTagComponentTokensTests {
     @Test func inheritedThemeCanOverrideTagSizeIconSmall() throws {
         #expect(inheritedTheme.tag.tagSizeIconSmall != abstractTheme.tag.tagSizeIconSmall)
         #expect(inheritedTheme.tag.tagSizeIconSmall == MockThemeTagComponentTokenProvider.mockThemeTagSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTagSizeLoaderDefault() throws {
-        #expect(inheritedTheme.tag.tagSizeLoaderDefault != abstractTheme.tag.tagSizeLoaderDefault)
-        #expect(inheritedTheme.tag.tagSizeLoaderDefault == MockThemeTagComponentTokenProvider.mockThemeTagSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTagSizeLoaderSmall() throws {
-        #expect(inheritedTheme.tag.tagSizeLoaderSmall != abstractTheme.tag.tagSizeLoaderSmall)
-        #expect(inheritedTheme.tag.tagSizeLoaderSmall == MockThemeTagComponentTokenProvider.mockThemeTagSize)
     }
 
     @Test func inheritedThemeCanOverrideTagSizeMinHeightDefault() throws {

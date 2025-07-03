@@ -404,8 +404,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorDecorativeDeepPeach800: ColorSemanticToken { "#553720FF" }
     /// Has for value token "#2E2014FF"
     @objc open var colorDecorativeDeepPeach900: ColorSemanticToken { "#2E2014FF" }
-    /// Has for value token "#BD793C14"
-    @objc open var colorOpacityWarmGray: ColorSemanticToken { "#BD793C14" }
     /// Has for value token "#FF000000"
     @objc public final var colorRepositoryPrimaryLowest: ColorSemanticToken { "#FF000000" }
     /// Has for value token "#FF000000"

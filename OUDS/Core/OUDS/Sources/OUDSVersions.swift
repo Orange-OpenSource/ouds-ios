@@ -23,31 +23,32 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Actions
 
-    public static let componentButtonVersion = "undefined"
+    public static let componentButtonVersion = "2.0.0"
 
     // MARK: - Components versions - Navigation
 
-    public static let componentLinkVersion = "undefined"
+    public static let componentLinkVersion = "2.0.0"
 
     // MARK: - Components versions - Input
 
-    public static let componentCheckboxVersion = "undefined"
-    public static let componentChipVersion = "undefined"
-    public static let componentRadioButtonVersion = "undefined"
-    public static let componentSwitchVersion = "undefined"
+    public static let componentCheckboxVersion = "2.0.0"
+    public static let componentChipVersion = "1.1.0"
+    public static let componentRadioButtonVersion = "1.0.0"
+    public static let componentSwitchVersion = "1.1.0"
 
     // MARK: - Components versions - Tag
 
-    public static let componentBadgeVersion = "undefined"
-    public static let componentSkeletonVersion = "undefined"
-    public static let componentTagVersion = "undefined"
+    public static let componentBadgeVersion = "1.1.0"
+    public static let componentSkeletonVersion = "1.0.0"
+    public static let componentTagVersion = "1.0.0"
 
     // MARK: - Components versions - Divider
 
-    public static let componentDividerVersion = "undefined"
+    public static let componentDividerVersion = "1.0.0"
 
-    // MARK: - Components versions - Conent display
+    // MARK: - Components versions - Content display
 
-    public static let componentBulletListVersion = "undefined"
+    public static let componentBulletListVersion = "1.0.0"
 }
+
 // swiftlint:enable missing_docs

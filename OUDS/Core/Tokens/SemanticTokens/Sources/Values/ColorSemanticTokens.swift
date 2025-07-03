@@ -386,6 +386,8 @@ public protocol ColorSemanticTokens {
     // MARK: - Color - Repository
 
     var colorRepositoryAccentDefault: ColorSemanticToken { get }
+    var colorRepositoryAccentHigh: ColorSemanticToken { get }
+    var colorRepositoryAccentHigher: ColorSemanticToken { get }
     var colorRepositoryAccentHighest: ColorSemanticToken { get }
     var colorRepositoryAccentLow: ColorSemanticToken { get }
     var colorRepositoryAccentLowest: ColorSemanticToken { get }
@@ -419,6 +421,7 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityBlackMediumHigh: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackTransparent: ColorSemanticToken { get }
     var colorRepositoryOpacityInfo: ColorSemanticToken { get }
+    var colorRepositoryOpacityAccent: ColorSemanticToken { get }
     var colorRepositoryOpacityNegative: ColorSemanticToken { get }
     var colorRepositoryOpacityPositive: ColorSemanticToken { get }
     var colorRepositoryOpacityWarning: ColorSemanticToken { get }

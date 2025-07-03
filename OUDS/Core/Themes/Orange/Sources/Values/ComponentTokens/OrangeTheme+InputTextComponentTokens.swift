@@ -22,29 +22,29 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens {
-    /// Has for value token colors.colorActionSupportEnabled 
+    /// Has for value token colors.colorActionSupportEnabled
     @objc open var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
-    /// Has for value token colors.colorActionSupportHover 
+    /// Has for value token colors.colorActionSupportHover
     @objc open var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
-    /// Has for value token colors.colorActionSupportPressed 
+    /// Has for value token colors.colorActionSupportPressed
     @objc open var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
-    /// Has for value token colors.colorActionSupportLoading 
+    /// Has for value token colors.colorActionSupportLoading
     @objc open var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
-    /// Has for value token colors.colorActionSupportEnabled 
+    /// Has for value token colors.colorActionSupportEnabled
     @objc open var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
-    /// Has for value token colors.colorActionSupportFocus 
+    /// Has for value token colors.colorActionSupportFocus
     @objc open var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDisabled 
+    /// Has for value token colors.colorContentDisabled
     @objc open var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
-    /// Has for value token colors.colorContentDefault 
+    /// Has for value token colors.colorContentDefault
     @objc open var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token spaces.spaceInsetMd
     @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMd }

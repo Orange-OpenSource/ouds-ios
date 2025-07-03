@@ -41,15 +41,11 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
     // MARK: - Borders
 
     override public var tagBorderRadius: BorderRadiusSemanticToken { Self.mockThemeTagBorderRadius }
-    override public var tagBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeTagBorderWidth }
-    override public var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeTagBorderWidth }
 
     // MARK: - Sizes
 
     override public var tagSizeIconDefault: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeIconSmall: SizeSemanticToken { Self.mockThemeTagSize }
-    override public var tagSizeLoaderDefault: SizeSemanticToken { Self.mockThemeTagSize }
-    override public var tagSizeLoaderSmall: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinHeightDefault: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinWidthDefault: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinHeightSmall: SizeSemanticToken { Self.mockThemeTagSize }
