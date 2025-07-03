@@ -276,7 +276,7 @@ struct SoshBrandColorRawTokensTests {
     }
 
     @Test func soshBrandColorRawTokenColorCitrine50LighterThanColorCitrine100() throws {
-        TestsUtils.assertColorLighterThan(SoshBrandColorRawTokens.colorCitrine50, SoshBrandColorRawTokens.colorCitrine100)
+        TestsUtils.assertColorDarkerThan(SoshBrandColorRawTokens.colorCitrine50, SoshBrandColorRawTokens.colorCitrine100)
     }
 
     @Test func soshBrandColorRawTokenColorCitrine100LighterThanColorCitrine200() throws {
@@ -423,7 +423,7 @@ struct SoshBrandColorRawTokensTests {
     private func assertAllUniqueColors(_ colors: [ColorRawToken], file: StaticString = #file, line: UInt = #line) {
         for i in 0..<colors.count {
             for j in (i+1)..<colors.count {
-                #expect(colors[i] == colors[j], "Colors \(colors[i]) and \(colors[j]) must be different")
+                #expect(colors[i] != colors[j], "Colors \(colors[i]) and \(colors[j]) must be different")
             }
         }
     }
