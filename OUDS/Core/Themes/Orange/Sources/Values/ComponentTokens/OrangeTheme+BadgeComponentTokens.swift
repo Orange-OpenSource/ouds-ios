@@ -26,12 +26,12 @@ extension OrangeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInline2xs
     @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInline2xs }
-    /// Has for value token DimensionRawTokens.dimension100
-    @objc open var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens.dimension100 }
-    /// Has for value token DimensionRawTokens.dimension150
-    @objc open var badgeSizeSmall: SizeSemanticToken { DimensionRawTokens.dimension150 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var badgeSizeMedium: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension250
-    @objc open var badgeSizeLarge: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    /// Has for value token dimensions.dimension8xs
+    @objc open var badgeSizeXsmall: SizeSemanticToken { dimensions.dimension8xs }
+    /// Has for value token dimensions.dimension6xs
+    @objc open var badgeSizeSmall: SizeSemanticToken { dimensions.dimension6xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var badgeSizeMedium: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimension4xs
+    @objc open var badgeSizeLarge: SizeSemanticToken { dimensions.dimension4xs }
 }

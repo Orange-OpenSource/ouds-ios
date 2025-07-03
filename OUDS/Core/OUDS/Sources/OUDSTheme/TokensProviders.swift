@@ -17,7 +17,14 @@ import OUDSTokensSemantic
 // MARK: - Root
 
 /// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
-public protocol TokensProvider {}
+public protocol TokensProvider {
+
+    #if DEBUG
+    // swiftlint:disable missing_docs
+    func checkInstances(count: Int, for providerName: String)
+    // swiftlint:enable missing_docs
+    #endif
+}
 
 // MARK: - Semantic tokens providers
 

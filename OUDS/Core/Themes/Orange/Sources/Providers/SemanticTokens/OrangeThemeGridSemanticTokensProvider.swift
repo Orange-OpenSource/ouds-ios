@@ -58,12 +58,24 @@ import OUDSFoundations
 /// - Since: 0.8.0
 open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider {
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Intializes the provider
     public init() {
         OL.debug("Init of OrangeThemeGridSemanticTokensProvider")
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeGridSemanticTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

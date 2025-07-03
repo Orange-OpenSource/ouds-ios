@@ -103,56 +103,56 @@ extension OrangeThemeSizeSemanticTokensProvider: SizeSemanticTokens {
     @objc open var sizeIconWithBodySmallSizeLgMobile: SizeSemanticToken { DimensionRawTokens.dimension250 }
     /// Has for value token DimensionRawTokens.dimension250
     @objc open var sizeIconWithBodySmallSizeLgTablet: SizeSemanticToken { DimensionRawTokens.dimension250 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var sizeIconWithLabelXlargeSizeSm: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension500
-    @objc open var sizeIconWithLabelXlargeSizeMd: SizeSemanticToken { DimensionRawTokens.dimension500 }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc open var sizeIconWithLabelXlargeSizeLg: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token DimensionRawTokens.dimension250
-    @objc open var sizeIconWithLabelLargeSizeXs: SizeSemanticToken { DimensionRawTokens.dimension250 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var sizeIconWithLabelLargeSizeSm: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension350
-    @objc open var sizeIconWithLabelLargeSizeMd: SizeSemanticToken { DimensionRawTokens.dimension350 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc open var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token DimensionRawTokens.dimension150
-    @objc open var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { DimensionRawTokens.dimension150 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension250
-    @objc open var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { DimensionRawTokens.dimension250 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimensionOutOfSystem250
-    @objc open var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { DimensionRawTokens.dimensionOutOfSystem250 }
-    /// Has for value token DimensionRawTokens.dimension150
-    @objc open var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { DimensionRawTokens.dimension150 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension250
-    @objc open var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { DimensionRawTokens.dimension250 }
-    /// Has for value token DimensionRawTokens.dimensionOutOfSystem250
-    @objc open var sizeIconDecorative4xs: SizeSemanticToken { DimensionRawTokens.dimensionOutOfSystem250 }
-    /// Has for value token DimensionRawTokens.dimension150
-    @objc open var sizeIconDecorative3xs: SizeSemanticToken { DimensionRawTokens.dimension150 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var sizeIconDecorative2xs: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var sizeIconDecorativeXs: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var sizeIconDecorativeSm: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension500
-    @objc open var sizeIconDecorativeMd: SizeSemanticToken { DimensionRawTokens.dimension500 }
-    /// Has for value token DimensionRawTokens.dimension600
-    @objc open var sizeIconDecorativeLg: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    /// Has for value token DimensionRawTokens.dimension700
-    @objc open var sizeIconDecorativeXl: SizeSemanticToken { DimensionRawTokens.dimension700 }
-    /// Has for value token DimensionRawTokens.dimension900
-    @objc open var sizeIconDecorative2xl: SizeSemanticToken { DimensionRawTokens.dimension900 }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var sizeIconWithLabelXlargeSizeSm: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimensionMd
+    @objc open var sizeIconWithLabelXlargeSizeMd: SizeSemanticToken { dimensions.dimensionMd }
+    /// Has for value token dimensions.dimensionLg
+    @objc open var sizeIconWithLabelXlargeSizeLg: SizeSemanticToken { dimensions.dimensionLg }
+    /// Has for value token dimensions.dimension4xs
+    @objc open var sizeIconWithLabelLargeSizeXs: SizeSemanticToken { dimensions.dimension4xs }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var sizeIconWithLabelLargeSizeSm: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimension2xs
+    @objc open var sizeIconWithLabelLargeSizeMd: SizeSemanticToken { dimensions.dimension2xs }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimensionLg
+    @objc open var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { dimensions.dimensionLg }
+    /// Has for value token dimensions.dimension6xs
+    @objc open var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { dimensions.dimension6xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimension4xs
+    @objc open var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { dimensions.dimension4xs }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimension7xs
+    @objc open var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { dimensions.dimension7xs }
+    /// Has for value token dimensions.dimension6xs
+    @objc open var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { dimensions.dimension6xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimension4xs
+    @objc open var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { dimensions.dimension4xs }
+    /// Has for value token dimensions.dimension7xs
+    @objc open var sizeIconDecorative4xs: SizeSemanticToken { dimensions.dimension7xs }
+    /// Has for value token dimensions.dimension6xs
+    @objc open var sizeIconDecorative3xs: SizeSemanticToken { dimensions.dimension6xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var sizeIconDecorative2xs: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var sizeIconDecorativeXs: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var sizeIconDecorativeSm: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimensionMd
+    @objc open var sizeIconDecorativeMd: SizeSemanticToken { dimensions.dimensionMd }
+    /// Has for value token dimensions.dimensionXl
+    @objc open var sizeIconDecorativeLg: SizeSemanticToken { dimensions.dimensionXl }
+    /// Has for value token dimensions.dimension3xl
+    @objc open var sizeIconDecorativeXl: SizeSemanticToken { dimensions.dimension3xl }
+    /// Has for value token dimensions.dimension6xl
+    @objc open var sizeIconDecorative2xl: SizeSemanticToken { dimensions.dimension6xl }
     /// Has for value token DimensionRawTokens.dimension600
     @objc open var sizeMinInteractiveArea: SizeSemanticToken { DimensionRawTokens.dimension600 }
     /// Has for value token DimensionRawTokens.dimension9000

@@ -54,14 +54,14 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagSizeLoaderDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeXs }
     /// Has for value token sizes.sizeIconWithLabelSmallSizeXs
     @objc open var tagSizeLoaderSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeXs }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var tagSizeMinHeightDefault: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension600
-    @objc open var tagSizeMinWidthDefault: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var tagSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc open var tagSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var tagSizeMinHeightDefault: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimensionXl
+    @objc open var tagSizeMinWidthDefault: SizeSemanticToken { dimensions.dimensionXl }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var tagSizeMinHeightSmall: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimensionLg
+    @objc open var tagSizeMinWidthSmall: SizeSemanticToken { dimensions.dimensionLg }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

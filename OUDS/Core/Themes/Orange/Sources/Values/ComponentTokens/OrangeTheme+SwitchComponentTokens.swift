@@ -46,30 +46,30 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInlineXs
     @objc open var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXs }
-    /// Has for value token DimensionRawTokens.dimension700
-    @objc open var switchSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension700 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var switchSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// Has for value token dimensions.dimension3xl
+    @objc open var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension3xl }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var switchSizeMinHeight: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var switchSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var switchSizeWidthCursorSelected: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var switchSizeWidthCursorUnselected: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension700
-    @objc open var switchSizeWidthTrack: SizeSemanticToken { DimensionRawTokens.dimension700 }
-    /// Has for value token DimensionRawTokens.dimension300
-    @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { DimensionRawTokens.dimension300 }
-    /// Has for value token DimensionRawTokens.dimension200
-    @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { DimensionRawTokens.dimension200 }
-    /// Has for value token DimensionRawTokens.dimension400
-    @objc open var switchSizeHeightTrack: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var switchSizeMaxHeight: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var switchSizeWidthCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var switchSizeWidthCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions.dimensionXs }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimension3xl
+    @objc open var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension3xl }
+    /// Has for value token dimensions.dimension3xs
+    @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimension5xs
+    @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXs }
 }
 
 // swiftlint:enable line_length

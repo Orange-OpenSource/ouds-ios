@@ -33,9 +33,10 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public init(sizes: AllSizeSemanticTokensProvider?,
                          borders: AllBorderSemanticTokensProvider?,
                          colors: AllColorSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+                         spaces: AllSpaceSemanticTokensProvider?,
+                         dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Chip component tokens
@@ -65,6 +66,7 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override public var chipColorContentSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
