@@ -18,7 +18,7 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllSpaceSemanticTokens` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Closed tokens of dimensions (`AllDimensionSemanticTokensProvider`) are used so as to keep consistancy beweetn Figma specifications and library for developers.
-/// 
+///
 /// ```swift
 ///     // Define your own provider for space semantic tokens
 ///     class CustomSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
@@ -58,14 +58,26 @@ open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvide
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Intializes the provider
     /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeSizeSemanticTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

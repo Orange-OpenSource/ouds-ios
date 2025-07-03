@@ -104,6 +104,10 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSChip`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -123,10 +127,17 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeChipComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
-
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of ChipComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift

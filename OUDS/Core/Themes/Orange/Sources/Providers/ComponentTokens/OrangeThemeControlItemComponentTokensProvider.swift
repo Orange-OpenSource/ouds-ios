@@ -99,6 +99,10 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
     /// Provider of spaces semantic tokens to use for control-item-layout-based  spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to control-item-layout-based components.
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -115,10 +119,17 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeControlItemComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
-
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of ControlItemComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift

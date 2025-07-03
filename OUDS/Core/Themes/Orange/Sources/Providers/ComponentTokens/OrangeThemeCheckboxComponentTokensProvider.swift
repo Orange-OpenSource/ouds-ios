@@ -88,6 +88,10 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
     /// Provider of border semantic tokens to use for checkbox borders
     public let borders: AllBorderSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSCheckbox` and `OUDSCheckboxItem`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -98,9 +102,17 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
         OL.debug("Init of OrangeThemeCheckboxComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeCheckboxComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

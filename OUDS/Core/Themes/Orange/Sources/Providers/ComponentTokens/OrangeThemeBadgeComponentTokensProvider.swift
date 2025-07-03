@@ -88,6 +88,9 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -100,9 +103,17 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeBadgeComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

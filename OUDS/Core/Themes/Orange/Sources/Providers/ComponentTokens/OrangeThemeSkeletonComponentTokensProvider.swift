@@ -79,14 +79,26 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
     /// Provider of color semantic tokens to use for link colors
     public let colors: AllColorSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSkeletonComponentTokensProvider")
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeSkeletonComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

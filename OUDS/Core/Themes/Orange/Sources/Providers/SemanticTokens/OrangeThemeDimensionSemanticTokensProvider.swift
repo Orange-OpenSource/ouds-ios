@@ -42,12 +42,24 @@ import OUDSFoundations
 /// - Since: 0.16.0
 open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Intializes the provider
     public init() {
         OL.debug("Init of OrangeThemeDimensionSemanticTokensProvider")
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeDimensionSemanticTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
