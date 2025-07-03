@@ -162,7 +162,6 @@ struct DesignToolbox: App {
 - ``ColorModeMultipleSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
-- ``ElevationMultipleSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizeSemanticTokens``

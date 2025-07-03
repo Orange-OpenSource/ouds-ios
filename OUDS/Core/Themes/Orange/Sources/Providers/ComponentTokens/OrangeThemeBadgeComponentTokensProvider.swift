@@ -95,6 +95,7 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)

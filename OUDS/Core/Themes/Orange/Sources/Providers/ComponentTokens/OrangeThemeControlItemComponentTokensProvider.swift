@@ -106,7 +106,7 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
     /// Defines a provider of component tokens dedicated to control-item-layout-based components.
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    ///    - colors: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
