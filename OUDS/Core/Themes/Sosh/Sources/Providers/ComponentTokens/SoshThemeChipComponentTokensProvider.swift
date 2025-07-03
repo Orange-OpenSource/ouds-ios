@@ -1,6 +1,6 @@
 //
 // Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Sosh SA
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
 // This software is distributed under the MIT license,
