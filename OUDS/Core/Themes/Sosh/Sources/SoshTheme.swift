@@ -55,7 +55,7 @@ final class SoshTheme: OUDSTheme, @unchecked Sendable {
     public init(){
         let borders = SoshThemeBorderSemanticTokensProvider()
         let colors = SoshThemeColorSemanticTokensProvider()
-        let colorModes = SoshThemeColorModeSemanticTokensProvider(colors: colors)()
+        let colorModes = SoshThemeColorModeSemanticTokensProvider(colors: colors)
         let elevations = SoshThemeElevationSemanticTokensProvider()
         let fonts = SoshThemeFontSemanticTokensProvider()
         let grids = SoshThemeGridSemanticTokensProvider()
@@ -104,8 +104,7 @@ final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    select: select,
                    skeleton: skeleton,
                    switch: `switch`,
-                   tag: tag,
-                   fontFamily: fontFamily)
+                   tag: tag)
     }
 
     deinit {}
