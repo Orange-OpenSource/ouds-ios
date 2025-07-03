@@ -34,6 +34,12 @@ let package = Package(
             name: "OUDS",
             targets: ["OUDS"]),
         .library(
+            name: "OUDSThemesOrange",
+            targets: ["OUDSThemesOrange"]),
+        .library(
+            name: "OUDSThemesSosh",
+            targets: ["OUDSThemesSosh"]),
+        .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
         .library(
@@ -42,9 +48,6 @@ let package = Package(
         .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
-        .library(
-            name: "OUDSThemesOrange",
-            targets: ["OUDSThemesOrange"]),
         .library(
             name: "OUDSTokensSemantic",
             targets: ["OUDSTokensRaw"]),
@@ -96,6 +99,14 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
+        .target(
+            name: "OUDSThemesSosh",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/Themes/Sosh/Sources"),
+        .testTarget(
+            name: "OUDSThemesSosh-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesSosh"],
+            path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
             name: "OUDSThemesOrange",
             dependencies: ["OUDS"],
