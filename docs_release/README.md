@@ -46,6 +46,12 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     >[!IMPORTANT]
     > Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
 
+    - Update also the displayed versions of themes and components
+
+    ```shell
+    ./updateTokensLibraryVersion.sh
+    ```
+
 - Verify the changes mentioned above, then commit and push.
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.

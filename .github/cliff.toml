@@ -19,7 +19,8 @@
 header = """
 # What's new\n
 ```
-🧱 Tokens version: 
+🧱 Core version: 
+🧱 Orange theme version: 
 ```
 """
 # template for the changelog body

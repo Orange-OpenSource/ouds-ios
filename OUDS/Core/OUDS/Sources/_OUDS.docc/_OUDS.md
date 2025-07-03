@@ -7,6 +7,11 @@ The iOS library of *Orange Unified Design System*, the new design system unified
     @SupportedLanguage(objc)
 }
 
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧱 Core version: 1.1.0
+```
+
 ## Overview
 
 Orange is providing a full design system to build Orange mobile aplications. The objective of *Orange Unified Design System* (OUDS) is to propose a set of guidelines about how to apply the Orange brand on mobile applications. *Orange Unified Design System* also provides series of components and modules that show in details how to use this in the Orange apps.

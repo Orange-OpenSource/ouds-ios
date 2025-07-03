@@ -17,80 +17,65 @@ set -euo pipefail
 # Configuration
 # -------------
 
-TEMPLATE_TO_LOOK_FOR="Tokens version: "
+OUDS_VERSION_SWIFT_FILE="../OUDS/Core/OUDS/Sources/OUDSVersions.swift"
+OUDS_README_FILE="../README.md"
+RAW_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
+SEMANTIC_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"
+COMPONENT_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
+CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDS/Sources/_OUDS.docc/_OUDS.md"
+ORANGE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/OUDSThemesOrange.md"
 
-FILES_TO_PROCESS=(
-
-    # For README
-    "../README.md"
-
-    # For generated documentation
-    "../OUDS/Core/OUDS/Sources/_OUDS.docc/Tokens.md"
-    "../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
-    "../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
-    "../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"
-
-    # For raw tokens generated files (common)
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/BorderRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/ColorRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/DimensionRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/ElevationRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/FontRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/GridRawTokens+Values.swift"
-	"../OUDS/Core/Tokens/RawTokens/Sources/Values/OpacityRawTokens+Values.swift"
-
-    # For raw tokens generated files (Orange theme)
-	"../OUDS/Core/Themes/Orange/Sources/Values/RawTokens/OrangeBrandColorRawTokens+Values.swift"
-
-    # For semantic tokens generated files
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+FontSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SizeSemanticTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SpaceSemanticTokens.swift"
-
-    # For component tokens generated files
-    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift"
-    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+DividerComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+InputTextComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ListItemComponentTokens.swift"
-    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+RadioButtonComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SelectComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+TagComponentTokens.swift"
-)
+CORE_VERSION_PATTERN="🧱 Core version: "
+THEME_VERSION_PATTERN="🧱 Theme version: "
 
 # Errors
 # ------
 
 EXIT_OK=0
 EXIT_ERROR_BAD_PARAMETER_COUNT=1
-EXIT_ERROR_MISSING_ARGUMENT=2
-EXIT_ERROR_UNKNOWN_PARAMETER=3
-EXIT_ERROR_MISSING_FILE_TO_PROCESS=4
-EXIT_ERROR_MISSING_TEMPLATE_IN_FILE_TO_PROCESS=5
-EXIT_ERROR_TOO_MANY_OCCURENCES_OF_TEMPLATE=6
+EXIT_MISSING_VERSIONS_FILE=2
+EXIT_MISSING_FILE=3
+EXIT_MISSING_VERSION=4
 
 # Utils
 # -----
 
 function display_help {
-    echo "Usage: $0 --version <value>"
+    echo "Usage: $0"
     echo
-    echo "Options:"
-    echo "  --version <value>   The value to use in the files in place of the predefined template (format x.y.z)"
-    echo
-    echo "This script composes occurences of '$TEMPLATE_TO_LOOK_FOR' in some predefined files with the given value, looking for old x.y.z version and replace by new one"
+    echo "This script parses versions values from one Swift file and update documentation files"
+}
+
+function test_existence_of_file {
+    if [ ! -e "$1" ]; then
+        echo "❌ Error: Cannot find file '$1' to process"
+        exit $EXIT_MISSING_FILE
+    fi
+}
+
+function extract_version {
+    local versionFile="$1"
+    local versionSymbol="$2"
+    local result
+
+    result=$(grep "$versionSymbol" "$versionFile" | sed -E 's/.*= \"([^\"]*)\".*/\1/')
+
+    if [ -z "$result" ]; then
+        echo "❌ Error: No version found for '$versionSymbol' in '$versionFile'" >&2
+        exit $EXIT_MISSING_VERSION
+    else
+        echo "$result"
+    fi
+}
+
+function udpate_value_at_pattern_in_file {
+    local valueForUpdate="$1"
+    local patternToSearch="$2"
+    local fileToProcess="$3"
+
+    # Find the patern with the semver version, repalce by value for given file
+    sed -i '' -E "s/(${patternToSearch})([0-9]+\.[0-9]+\.[0-9]+)/\1${valueForUpdate}/" "$fileToProcess"
+    echo "✔️ Updated file '$fileToProcess' with value '$valueForUpdate'"
 }
 
 # Service
@@ -98,64 +83,45 @@ function display_help {
 
 # Check parameters
 
-if [[ "$#" -eq 0 ]]; then
+if [[ "$#" -ne 0 ]]; then
     display_help
+    echo "❌ Error: Too many arguments"
     exit $EXIT_ERROR_BAD_PARAMETER_COUNT
 fi
 
-if [[ "$#" -ne 2 ]]; then
-    echo "❌ Error: Too few or too many parameter(s)."
-    exit $EXIT_ERROR_BAD_PARAMETER_COUNT
-fi
+# Check prerequisites
 
-versionToInject=""
+test_existence_of_file "$OUDS_VERSION_SWIFT_FILE"
 
-# Process arguments
-while [[ "$#" -gt 0 ]]; do
-    case $1 in
-        --version) 
-            if [[ -n "$2" ]]; then
-                versionToInject="$2"
-                shift
-            else
-                echo "❌ Error: No value given for --version."
-                exit $EXIT_ERROR_MISSING_ARGUMENT
-            fi
-            ;;        
-        *) 
-            echo "❌ Error: Unknown parameter '$1'."
-            exit $EXIT_ERROR_UNKNOWN_PARAMETER
-            ;;
-    esac
-    shift
-done
+# Get themes versions
 
-# Replace any template occurences in the files predefined above
-for file in "${FILES_TO_PROCESS[@]}"; do
+themeCoreVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeCoreVersion)
+themeOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeVersion)
 
-    # Check if nthe file exists
-    if [[ ! -f "$file" ]]; then
-        echo "❌ Error: The file '$file' does not exist"
-        exit $EXIT_ERROR_MISSING_FILE_TO_PROCESS
-    fi
+# Get component versions
+# TODO
 
-    # Ensure we have only one occurence to replace, othrwise it could mean side effects
-    count=$(grep -c "$TEMPLATE_TO_LOOK_FOR" "$file")
-    if [[ $count -ne 1 ]]; then
-        echo "❌ Error: The pattern appears not enough or too many times in the file '$file'."
-        exit $EXIT_ERROR_TOO_MANY_OCCURENCES_OF_TEMPLATE
-    fi
+# Update files
+# ------------
 
-    if ! grep -q "$TEMPLATE_TO_LOOK_FOR" "$file"; then
-        echo "❌ Error: Missing template '$TEMPLATE_TO_LOOK_FOR' in file '$file'."
-        exit $EXIT_ERROR_MISSING_TEMPLATE_IN_FILE_TO_PROCESS
-    fi
+test_existence_of_file "$OUDS_README_FILE"
+udpate_value_at_pattern_in_file $themeCoreVersion "- Core version: " "$OUDS_README_FILE"
+udpate_value_at_pattern_in_file $themeOrangeVersion "- Orange theme version: " "$OUDS_README_FILE"
 
-    # Keep items before and after template, keep tempalte and replace old x.y.z by the value
-    sed -i '' -E "s/(${TEMPLATE_TO_LOOK_FOR})([0-9]+\.[0-9]+\.[0-9]+)/\1$versionToInject/" "$file"
+test_existence_of_file "$RAW_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN" "$RAW_TOKENS_MARKDOWN_FILE"
 
-    echo "✔️ Updated file '$file'"
-done
+test_existence_of_file "$SEMANTIC_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN" "$SEMANTIC_TOKENS_MARKDOWN_FILE"
+
+test_existence_of_file "$COMPONENT_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN" "$COMPONENT_TOKENS_MARKDOWN_FILE"
+
+test_existence_of_file "$CORE_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN " "$CORE_THEME_MARKDOWN_FILE"
+
+test_existence_of_file "$ORANGE_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_THEME_MARKDOWN_FILE"
 
 echo "👋 Bye!"
 exit $EXIT_OK

@@ -2,6 +2,11 @@
 
 The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
 
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧱 Theme version: 1.1.0
+```
+
 ## Overview
 
 This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.

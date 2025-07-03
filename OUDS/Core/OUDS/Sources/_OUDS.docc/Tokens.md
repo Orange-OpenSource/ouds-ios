@@ -2,11 +2,6 @@
 
 Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names.
 
-<!-- NOTE: Do not forget to update tokens version -->
-```
-🧱 Tokens version: 0.11.0
-```
-
 ## Component tokens
 
 ### What they are
