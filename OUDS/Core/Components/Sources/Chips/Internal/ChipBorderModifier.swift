@@ -23,6 +23,7 @@ struct ChipBorderModifier: ViewModifier {
     // MARK: Stored Properties
 
     let state: ChipInteractionState
+    let selected: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
@@ -34,7 +35,7 @@ struct ChipBorderModifier: ViewModifier {
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
                     width: width,
-                    radius: theme.chip.chipBorderRadiusPill,
+                    radius: theme.chip.chipBorderRadius,
                     color: color)
     }
 
@@ -42,27 +43,23 @@ struct ChipBorderModifier: ViewModifier {
 
     private var width: BorderWidthSemanticToken {
         switch state {
-        case .enabled:
-            theme.chip.chipBorderWidthUnselected
-        case .hover:
-            theme.chip.chipBorderWidthUnselectedInteraction // TODO: oudsInputChipColorBorderUnselectedPressed
-        case .pressed:
-            theme.chip.chipBorderWidthUnselectedInteraction // TODO: oudsInputChipColorBorderUnselectedPressed
-        case .disabled:
-            theme.chip.chipBorderWidthUnselected // TODO: oudsInputChipColorBorderUnselectedDisabled
+        case .enabled, .disabled:
+            return selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselected
+        case .hover, .pressed:
+            return selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselectedInteraction
         }
     }
 
     private var color: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.chip.chipColorBorderUnselected // TODO: chipColorBorderUnselectedEnabled
+            selected ? theme.chip.chipColorBorderSelectedEnabled : theme.chip.chipColorBorderUnselectedEnabled
         case .hover:
-            theme.chip.chipColorBorderHover // TODO: chipColorBorderUnselectedHover
+            selected ? theme.chip.chipColorBorderSelectedHover : theme.chip.chipColorBorderUnselectedHover
         case .pressed:
-            theme.chip.chipColorBorderPressed // TODO: chipColorBorderUnselectedPressed
+            selected ? theme.chip.chipColorBorderSelectedPressed : theme.chip.chipColorBorderUnselectedPressed
         case .disabled:
-            theme.chip.chipColorBorderDisabled // TODO: chipColorBorderUnselectedDisbaled
+            selected ? theme.chip.chipColorBorderSelectedDisabled : theme.chip.chipColorBorderUnselectedDisabled
         }
     }
 }

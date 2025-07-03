@@ -23,6 +23,7 @@ struct ChipBackgroundModifier: ViewModifier {
     // MARK: Stored Properties
 
     let state: ChipInteractionState
+    let selected: Bool
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -36,13 +37,13 @@ struct ChipBackgroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.chip.chipColorBgEnabled
+            selected ? theme.chip.chipColorBgSelectedEnabled : theme.chip.chipColorBgUnselectedEnabled
         case .hover:
-            theme.chip.chipColorBgHover
+            selected ? theme.chip.chipColorBgSelectedHover : theme.chip.chipColorBgUnselectedHover
         case .pressed:
-            theme.chip.chipColorBgPressed
+            selected ? theme.chip.chipColorBgSelectedPressed : theme.chip.chipColorBgUnselectedPressed
         case .disabled:
-            theme.chip.chipColorBgDisabled
+            selected ? theme.chip.chipColorBgSelectedDisabled : theme.chip.chipColorBgUnselectedDisabled
         }
     }
 }

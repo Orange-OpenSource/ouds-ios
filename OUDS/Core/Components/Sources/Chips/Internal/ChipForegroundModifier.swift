@@ -25,6 +25,7 @@ struct ChipForegroundModifier: ViewModifier {
     // MARK: Stored Properties
 
     let state: ChipInteractionState
+    let selected: Bool
 
     // MARK: Body
 
@@ -37,13 +38,13 @@ struct ChipForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.chip.chipColorContentEnabled
+            selected ? theme.chip.chipColorContentSelectedEnabled : theme.chip.chipColorContentUnselectedEnabled
         case .hover:
-            theme.chip.chipColorContentHover
+            selected ? theme.chip.chipColorContentSelectedHover : theme.chip.chipColorContentUnselectedHover
         case .pressed:
-            theme.chip.chipColorContentPressed
+            selected ? theme.chip.chipColorContentSelectedPressed : theme.chip.chipColorContentUnselectedPressed
         case .disabled:
-            theme.chip.chipColorContentDisabled
+            selected ?  theme.chip.chipColorContentSelectedDisabled : theme.chip.chipColorContentUnselectedDisabled
         }
     }
 }

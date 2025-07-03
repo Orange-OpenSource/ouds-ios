@@ -86,10 +86,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     // MARK: - Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedShort) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
             Text(title)
                 .typeHeadingLarge(theme)
-                .padding(.leading, theme.spaces.spaceFixedMedium)
+                .padding(.leading, theme.spaces.spaceFixedMd)
                 .accessibilityAddTraits(.isHeader)
 
             ScrollView(.horizontal, showsIndicators: false) {
@@ -100,10 +100,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                         }
                     }
                 }
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.spaceFixedMd)
             }
         }
-        .padding(.vertical, theme.spaces.spaceFixedShort)
+        .padding(.vertical, theme.spaces.spaceFixedSm)
     }
 
     // MARK: - Helper

@@ -64,33 +64,35 @@ struct Chip: View {
     // MARK: Body
 
     public var body: some View {
-        HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapColumnGap) { // TODO: chipSpaceColumnGapIcon
+        HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
             ChipSelectionIndicator(state: interactionState, selected: selected)
             ChipContent(layout: layout, selected: selected, interactionState: interactionState)
         }
         .padding(.vertical, theme.chip.chipSpacePaddingBlock)
         .padding(.leading, leadingPadding)
         .padding(.trailing, trailingPadding)
-        .modifier(ChipBackgroundModifier(state: interactionState))
-        .modifier(ChipBorderModifier(state: interactionState))
         .frame(minWidth: theme.chip.chipSizeMinWidth, minHeight: theme.chip.chipSizeMinHeight)
+        .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
+        .modifier(ChipBorderModifier(state: interactionState, selected: selected))
         .accessibilityAddTraits(selected ? [.isSelected] : [])
+//        .frame(minHeight: theme.chip.chipSizeMinHeightInteractiveArea)
+//        .background(.red)
     }
 
     private var leadingPadding: CGFloat {
         if selected {
-            return theme.chip.chipSpacePaddingInlineIconStart // TODO:
+            return theme.chip.chipSpacePaddingInlineIcon
         } else {
             switch layout {
             case .text:
                 return theme.chip.chipSpacePaddingInlineIconNone
             case .icon:
-                return theme.chip.chipSpacePaddingInlineIconStart // TODO: chipSpacePaddingInlineIcon
+                return theme.chip.chipSpacePaddingInlineIcon
             case .textAndIcon(_, _, let iconPosition):
                 if iconPosition == .leading {
-                    return theme.chip.chipSpacePaddingInlineIconStart // TODO: chipSpacePaddingInlineIcon
+                    return theme.chip.chipSpacePaddingInlineIcon
                 } else {
-                    return theme.chip.chipSpacePaddingInlineIconNone // TODO: chipSpacePaddingInlineIcon
+                    return theme.chip.chipSpacePaddingInlineIconNone
                 }
             }
         }
@@ -101,12 +103,12 @@ struct Chip: View {
         case .text:
             return theme.chip.chipSpacePaddingInlineIconNone
         case .icon:
-            return theme.chip.chipSpacePaddingInlineIconEnd // TODO: chipSpacePaddingInlineIcon
+            return theme.chip.chipSpacePaddingInlineIcon
         case .textAndIcon(_, _, let iconPosition):
-            if iconPosition == .leading {
-                return theme.chip.chipSpacePaddingInlineIconNone // TODO: chipSpacePaddingInlineIcon
+            if iconPosition == .trailing {
+                return theme.chip.chipSpacePaddingInlineIcon
             } else {
-                return theme.chip.chipSpacePaddingInlineIconEnd // TODO: chipSpacePaddingInlineIcon
+                return theme.chip.chipSpacePaddingInlineIconNone
             }
         }
     }
@@ -135,7 +137,7 @@ private struct ChipContent: View {
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, icon, iconPosition):
-                HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapColumnGap) { // TODO: chipSpaceColumnGapIcon
+                HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
                     if iconPosition == .leading {
                         FixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
                     }
@@ -148,7 +150,7 @@ private struct ChipContent: View {
                 }
             }
         }
-        .modifier(ChipForegroundModifier(state: interactionState))
+        .modifier(ChipForegroundModifier(state: interactionState, selected: selected))
     }
 }
 
@@ -223,13 +225,13 @@ private struct ChipSelectionIndicator: View {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.chip.chipColorContentEnabled // TODO: chipColorContentSelectedTickEnabled
+            theme.chip.chipColorContentSelectedTickEnabled
         case .hover:
-            theme.chip.chipColorContentHover // TODO: chipColorContentSelectedTickHover
+            theme.chip.chipColorContentSelectedHover
         case .pressed:
-            theme.chip.chipColorContentPressed // TODO: chipColorContentSelectedPressed
+            theme.chip.chipColorContentSelectedPressed
         case .disabled:
-            theme.chip.chipColorContentDisabled // TODO: chipColorContentSelectedTickDisabled
+            theme.chip.chipColorContentSelectedDisabled
         }
     }
 }
