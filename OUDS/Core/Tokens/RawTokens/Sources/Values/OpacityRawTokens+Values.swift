@@ -17,8 +17,10 @@
 extension OpacityRawTokens {
     /// Has for value 0
     public static let opacity0: OpacityRawToken = 0
-    /// Has for value 1
-    public static let opacity1000: OpacityRawToken = 1
+    /// Has for value 0.04
+    public static let opacity40: OpacityRawToken = 0.04
+    /// Has for value 0.08
+    public static let opacity80: OpacityRawToken = 0.08
     /// Has for value 0.12
     public static let opacity120: OpacityRawToken = 0.12
     /// Has for value 0.16
@@ -33,8 +35,6 @@ extension OpacityRawTokens {
     public static let opacity320: OpacityRawToken = 0.32
     /// Has for value 0.36
     public static let opacity360: OpacityRawToken = 0.36
-    /// Has for value 0.04
-    public static let opacity40: OpacityRawToken = 0.04
     /// Has for value 0.4
     public static let opacity400: OpacityRawToken = 0.4
     /// Has for value 0.44
@@ -55,8 +55,6 @@ extension OpacityRawTokens {
     public static let opacity720: OpacityRawToken = 0.72
     /// Has for value 0.76
     public static let opacity760: OpacityRawToken = 0.76
-    /// Has for value 0.08
-    public static let opacity80: OpacityRawToken = 0.08
     /// Has for value 0.8
     public static let opacity800: OpacityRawToken = 0.8
     /// Has for value 0.88
@@ -65,4 +63,6 @@ extension OpacityRawTokens {
     public static let opacity920: OpacityRawToken = 0.92
     /// Has for value 0.96
     public static let opacity960: OpacityRawToken = 0.96
+    /// Has for value 1
+    public static let opacity1000: OpacityRawToken = 1
 }
