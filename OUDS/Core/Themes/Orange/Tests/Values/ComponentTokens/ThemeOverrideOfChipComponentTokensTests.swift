@@ -146,6 +146,11 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipColorContentSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
+    @Test func inheritedThemeCanOverrideChipColorContentSelectedPressed() throws {
+        #expect(inheritedTheme.chip.chipColorContentSelectedPressed != abstractTheme.chip.chipColorContentSelectedPressed)
+        #expect(inheritedTheme.chip.chipColorContentSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+    }
+
     @Test func inheritedThemeCanOverrideChipColorContentSelectedDisabled() throws {
         #expect(inheritedTheme.chip.chipColorContentSelectedDisabled != abstractTheme.chip.chipColorContentSelectedDisabled)
         #expect(inheritedTheme.chip.chipColorContentSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
