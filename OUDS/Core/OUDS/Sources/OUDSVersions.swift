@@ -18,4 +18,5 @@ public enum OUDSVersions {
     public static let themeCoreVersion = "1.1.0"
     public static let themeOrangeVersion = "1.1.0"
 }
+
 // swiftlint:enable missing_docs

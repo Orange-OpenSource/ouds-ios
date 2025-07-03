@@ -15,6 +15,9 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
+
 /// Checks if the closed semantic tokens of dimensions, as defined in the Orange theme, have expected values and relationships
 /// between them.
 struct DimensionSemanticTokensValuesTests {
@@ -434,3 +437,5 @@ struct DimensionSemanticTokensValuesTests {
     }
 }
 
+// swiftlint:enable function_body_length
+// swiftlint:enable type_body_length
