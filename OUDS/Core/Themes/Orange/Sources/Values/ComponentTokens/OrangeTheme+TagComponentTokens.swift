@@ -22,22 +22,18 @@ import OUDSTokensSemantic
 extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     /// Has for value token borders.borderRadiusPill
     @objc open var tagBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthDefault
-    @objc open var tagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc open var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
-    /// Has for value token spaces.spacePaddingBlock2xs
-    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
-    /// Has for value token spaces.spacePaddingBlockXs
-    @objc open var tagSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingBlockXs }
-    /// Has for value token DimensionRawTokens.dimensionOutOfSystem250
-    @objc open var tagSpacePaddingInlineSmall: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem250 }
+    /// Has for value token spaces.spacePaddingInlineSm
+    @objc open var tagSpacePaddingInlineSmall: SpaceSemanticToken { spaces.spacePaddingInlineSm }
     /// Has for value token spaces.spacePaddingInlineMd
     @objc open var tagSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineMd }
     /// Has for value token spaces.spacePaddingInline2xs
     @objc open var tagSpacePaddingInlineSmallAsset: SpaceSemanticToken { spaces.spacePaddingInline2xs }
-    /// Has for value token DimensionRawTokens.dimension100
-    @objc open var tagSpacePaddingInlineDefaultAsset: SpaceSemanticToken { DimensionRawTokens.dimension100 }
+    /// Has for value token spaces.spacePaddingInlineXs
+    @objc open var tagSpacePaddingInlineDefaultAsset: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    /// Has for value token spaces.spacePaddingBlock2xs
+    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
+    /// Has for value token spaces.spacePaddingBlockXs
+    @objc open var tagSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingBlockXs }
     /// Has for value token spaces.spaceInset4xs
     @objc open var tagSpaceInsetSmallAsset: SpaceSemanticToken { spaces.spaceInset4xs }
     /// Has for value token spaces.spaceInset3xs
@@ -46,22 +42,18 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagSpaceColumnGapSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token spaces.spaceColumnGap2xs
     @objc open var tagSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGap2xs }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
-    @objc open var tagSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
     /// Has for value token sizes.sizeIconWithLabelSmallSizeSm
     @objc open var tagSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeSm }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeXs
-    @objc open var tagSizeLoaderDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeXs }
-    /// Has for value token sizes.sizeIconWithLabelSmallSizeXs
-    @objc open var tagSizeLoaderSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeXs }
-    /// Has for value token dimensions.dimensionXs
-    @objc open var tagSizeMinHeightDefault: SizeSemanticToken { dimensions.dimensionXs }
-    /// Has for value token dimensions.dimensionXl
-    @objc open var tagSizeMinWidthDefault: SizeSemanticToken { dimensions.dimensionXl }
+    /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
+    @objc open var tagSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
     /// Has for value token dimensions.dimension3xs
     @objc open var tagSizeMinHeightSmall: SizeSemanticToken { dimensions.dimension3xs }
+    /// Has for value token dimensions.dimensionXs
+    @objc open var tagSizeMinHeightDefault: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token dimensions.dimensionLg
     @objc open var tagSizeMinWidthSmall: SizeSemanticToken { dimensions.dimensionLg }
+    /// Has for value token dimensions.dimensionXl
+    @objc open var tagSizeMinWidthDefault: SizeSemanticToken { dimensions.dimensionXl }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

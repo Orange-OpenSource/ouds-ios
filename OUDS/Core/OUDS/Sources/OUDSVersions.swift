@@ -15,7 +15,39 @@
 
 // swiftlint:disable missing_docs
 public enum OUDSVersions {
-    public static let themeCoreVersion = "1.1.0"
+
+    // MARK: - Themes versions
+
+    public static let themeCoreVersion = "1.2.0"
     public static let themeOrangeVersion = "1.1.0"
+
+    // MARK: - Components versions - Actions
+
+    public static let componentButtonVersion = "undefined"
+
+    // MARK: - Components versions - Navigation
+
+    public static let componentLinkVersion = "undefined"
+
+    // MARK: - Components versions - Input
+
+    public static let componentCheckboxVersion = "undefined"
+    public static let componentChipVersion = "undefined"
+    public static let componentRadioButtonVersion = "undefined"
+    public static let componentSwitchVersion = "undefined"
+
+    // MARK: - Components versions - Tag
+
+    public static let componentBadgeVersion = "undefined"
+    public static let componentSkeletonVersion = "undefined"
+    public static let componentTagVersion = "undefined"
+
+    // MARK: - Components versions - Divider
+
+    public static let componentDividerVersion = "undefined"
+
+    // MARK: - Components versions - Conent display
+
+    public static let componentBulletListVersion = "undefined"
 }
 // swiftlint:enable missing_docs
