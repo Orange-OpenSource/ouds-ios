@@ -32,4 +32,48 @@ struct OUDSVersionsTests {
     @Test func themeOrangeVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.themeOrangeVersion, regexp: Self.oudsVersionsFormat)
     }
+
+    @Test func componentButtonVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentButtonVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentLinkVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentLinkVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentCheckboxVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentCheckboxVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentChipVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentChipVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentRadioButtonVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentRadioButtonVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentSwitchVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentSwitchVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentBadgeVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentBadgeVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentSkeletonVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentSkeletonVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentTagVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentTagVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentDividerVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentDividerVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentBulletListVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentBulletListVersion, regexp: Self.oudsVersionsFormat)
+    }
 }

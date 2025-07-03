@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var tagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthMedium }
+///         override var tagBorderRadius: BorderRadiusSemanticToken  { borders.borderRadiusNone }
 ///
 ///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
 ///

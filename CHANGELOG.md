@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Versions of components in package
 - New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
@@ -15,7 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Tool] Update `SwiftFormat` Swift Package from v0.56.2 to v0.56.4
+- Button component tokens (tokens library v1.2.0)
+- Link component tokens (tokens library v1.2.0)
+- Checkbox component tokens (tokens library v1.2.0)
+- Radio button component tokens (tokens library v1.2.0)
+- Button component tokens (tokens library v1.2.0)
+- Tag component tokens (tokens library v1.2.0)
+- Update `SwiftFormat` Swift Package from v0.56.2 to v0.56.4
 - Optional accessibility identifiers for items of radio picker and checkbox picker components
 - Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
