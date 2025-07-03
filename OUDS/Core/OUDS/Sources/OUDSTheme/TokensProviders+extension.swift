@@ -16,6 +16,7 @@ import OUDSFoundations
 #if DEBUG
 extension TokensProvider {
 
+    // swiftlint:disable line_length
     /// If `count` is greater than 1, displays a warning message in the standard output
     /// saying the tokens provider with name `providerName` is instanciated more than once and should not be
     /// - Parameters:
@@ -25,5 +26,6 @@ extension TokensProvider {
         guard count > 1 else { return }
         OL.warning("🧮 There are \(count) instances of \(providerName), it should be unique! If this warning does not occur during tests, feel free to submit a bug: https://github.com/Orange-OpenSource/ouds-ios/issues")
     }
+    // swiftlint:enable line_length
 }
 #endif

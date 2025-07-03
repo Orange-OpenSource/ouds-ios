@@ -38,4 +38,5 @@ extension Int {
         return value
     }
 }
+
 // swiftlint:enable missing_docs
