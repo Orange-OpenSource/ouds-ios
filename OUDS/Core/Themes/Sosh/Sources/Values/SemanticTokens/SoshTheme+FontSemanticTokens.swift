@@ -20,183 +20,183 @@ import OUDSTokensSemantic
 
 extension SoshThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Has for value token FontRawTokens.fontFamilySystemSfPro
-    @objc public var fontFamilySystem: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSfPro }
+    @objc public final var fontFamilySystem: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSfPro }
     /// Has for value token fontFamilySystem
-    @objc public var fontFamilyDisplay: FontFamilySemanticToken { fontFamilySystem }
+    @objc public final var fontFamilyDisplay: FontFamilySemanticToken { fontFamilySystem }
     /// Has for value token fontFamilySystem
-    @objc public var fontFamilyHeading: FontFamilySemanticToken { fontFamilySystem }
+    @objc public final var fontFamilyHeading: FontFamilySemanticToken { fontFamilySystem }
     /// Has for value token fontFamilySystem
-    @objc public var fontFamilyBody: FontFamilySemanticToken { fontFamilySystem }
+    @objc public final var fontFamilyBody: FontFamilySemanticToken { fontFamilySystem }
     /// Has for value token fontFamilySystem
-    @objc public var fontFamilyLabel: FontFamilySemanticToken { fontFamilySystem }
+    @objc public final var fontFamilyLabel: FontFamilySemanticToken { fontFamilySystem }
     /// Has for value token FontRawTokens.fontFamilyMonospaceSfMono
-    @objc public var fontFamilyCode: FontFamilySemanticToken { FontRawTokens.fontFamilyMonospaceSfMono }
+    @objc public final var fontFamilyCode: FontFamilySemanticToken { FontRawTokens.fontFamilyMonospaceSfMono }
     /// Has for value token FontRawTokens.fontWeight400
-    @objc public var fontWeightSystemDefault: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
+    @objc public final var fontWeightSystemDefault: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
     /// Has for value token FontRawTokens.fontWeight700
-    @objc public var fontWeightSystemStrong: FontWeightSemanticToken { FontRawTokens.fontWeight700 }
+    @objc public final var fontWeightSystemStrong: FontWeightSemanticToken { FontRawTokens.fontWeight700 }
     /// Has for value token fontWeightSystemStrong
-    @objc public var fontWeightDisplay: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc public final var fontWeightDisplay: FontWeightSemanticToken { fontWeightSystemStrong }
     /// Has for value token fontWeightSystemStrong
-    @objc public var fontWeightHeading: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc public final var fontWeightHeading: FontWeightSemanticToken { fontWeightSystemStrong }
     /// Has for value token fontWeightSystemDefault
-    @objc public var fontWeightBodyDefault: FontWeightSemanticToken { fontWeightSystemDefault }
+    @objc public final var fontWeightBodyDefault: FontWeightSemanticToken { fontWeightSystemDefault }
     /// Has for value token fontWeightSystemStrong
-    @objc public var fontWeightBodyStrong: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc public final var fontWeightBodyStrong: FontWeightSemanticToken { fontWeightSystemStrong }
     /// Has for value token fontWeightSystemDefault
-    @objc public var fontWeightLabelDefault: FontWeightSemanticToken { fontWeightSystemDefault }
+    @objc public final var fontWeightLabelDefault: FontWeightSemanticToken { fontWeightSystemDefault }
     /// Has for value token fontWeightSystemStrong
-    @objc public var fontWeightLabelStrong: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc public final var fontWeightLabelStrong: FontWeightSemanticToken { fontWeightSystemStrong }
     /// Has for value token FontRawTokens.fontWeight400
-    @objc public var fontWeightCode: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
+    @objc public final var fontWeightCode: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
     /// Has for value token FontRawTokens.fontSize850
-    @objc public var fontSizeDisplayLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize850 }
+    @objc public final var fontSizeDisplayLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize850 }
     /// Has for value token FontRawTokens.fontSize1450
-    @objc public var fontSizeDisplayLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize1450 }
+    @objc public final var fontSizeDisplayLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize1450 }
     /// Has for value token FontRawTokens.fontSize750
-    @objc public var fontSizeDisplayMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize750 }
+    @objc public final var fontSizeDisplayMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize750 }
     /// Has for value token FontRawTokens.fontSize1050
-    @objc public var fontSizeDisplayMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize1050 }
+    @objc public final var fontSizeDisplayMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize1050 }
     /// Has for value token FontRawTokens.fontSize650
-    @objc public var fontSizeDisplaySmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize650 }
+    @objc public final var fontSizeDisplaySmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize650 }
     /// Has for value token FontRawTokens.fontSize850
-    @objc public var fontSizeDisplaySmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize850 }
+    @objc public final var fontSizeDisplaySmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize850 }
     /// Has for value token FontRawTokens.fontSize550
-    @objc public var fontSizeHeadingXlargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize550 }
+    @objc public final var fontSizeHeadingXlargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize550 }
     /// Has for value token FontRawTokens.fontSize750
-    @objc public var fontSizeHeadingXlargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize750 }
+    @objc public final var fontSizeHeadingXlargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize750 }
     /// Has for value token FontRawTokens.fontSize450
-    @objc public var fontSizeHeadingLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize450 }
+    @objc public final var fontSizeHeadingLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize450 }
     /// Has for value token FontRawTokens.fontSize550
-    @objc public var fontSizeHeadingLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize550 }
+    @objc public final var fontSizeHeadingLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize550 }
     /// Has for value token FontRawTokens.fontSize350
-    @objc public var fontSizeHeadingMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize350 }
+    @objc public final var fontSizeHeadingMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize350 }
     /// Has for value token FontRawTokens.fontSize450
-    @objc public var fontSizeHeadingMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize450 }
+    @objc public final var fontSizeHeadingMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize450 }
     /// Has for value token FontRawTokens.fontSize300
-    @objc public var fontSizeHeadingSmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize300 }
+    @objc public final var fontSizeHeadingSmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize300 }
     /// Has for value token FontRawTokens.fontSize350
-    @objc public var fontSizeHeadingSmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize350 }
+    @objc public final var fontSizeHeadingSmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize350 }
     /// Has for value token FontRawTokens.fontSize250
-    @objc public var fontSizeBodyLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize250 }
+    @objc public final var fontSizeBodyLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize250 }
     /// Has for value token FontRawTokens.fontSize250
-    @objc public var fontSizeBodyLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize250 }
+    @objc public final var fontSizeBodyLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize250 }
     /// Has for value token FontRawTokens.fontSize200
-    @objc public var fontSizeBodyMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize200 }
+    @objc public final var fontSizeBodyMediumMobile: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     /// Has for value token FontRawTokens.fontSize200
-    @objc public var fontSizeBodyMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize200 }
+    @objc public final var fontSizeBodyMediumTablet: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     /// Has for value token FontRawTokens.fontSize150
-    @objc public var fontSizeBodySmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize150 }
+    @objc public final var fontSizeBodySmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize150 }
     /// Has for value token FontRawTokens.fontSize150
-    @objc public var fontSizeBodySmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize150 }
+    @objc public final var fontSizeBodySmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize150 }
     /// Has for value token FontRawTokens.fontSize300
-    @objc public var fontSizeLabelXlarge: FontSizeSemanticToken { FontRawTokens.fontSize300 }
+    @objc public final var fontSizeLabelXlarge: FontSizeSemanticToken { FontRawTokens.fontSize300 }
     /// Has for value token FontRawTokens.fontSize250
-    @objc public var fontSizeLabelLarge: FontSizeSemanticToken { FontRawTokens.fontSize250 }
+    @objc public final var fontSizeLabelLarge: FontSizeSemanticToken { FontRawTokens.fontSize250 }
     /// Has for value token FontRawTokens.fontSize200
-    @objc public var fontSizeLabelMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
+    @objc public final var fontSizeLabelMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     /// Has for value token FontRawTokens.fontSize150
-    @objc public var fontSizeLabelSmall: FontSizeSemanticToken { FontRawTokens.fontSize150 }
+    @objc public final var fontSizeLabelSmall: FontSizeSemanticToken { FontRawTokens.fontSize150 }
     /// Has for value token FontRawTokens.fontSize200
-    @objc public var fontSizeCodeMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
+    @objc public final var fontSizeCodeMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     /// Has for value token FontRawTokens.fontLineHeight1050
-    @objc public var fontLineHeightDisplayLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1050 }
+    @objc public final var fontLineHeightDisplayLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1050 }
     /// Has for value token FontRawTokens.fontLineHeight1850
-    @objc public var fontLineHeightDisplayLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1850 }
+    @objc public final var fontLineHeightDisplayLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1850 }
     /// Has for value token FontRawTokens.fontLineHeight950
-    @objc public var fontLineHeightDisplayMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight950 }
+    @objc public final var fontLineHeightDisplayMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight950 }
     /// Has for value token FontRawTokens.fontLineHeight1250
-    @objc public var fontLineHeightDisplayMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1250 }
+    @objc public final var fontLineHeightDisplayMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1250 }
     /// Has for value token FontRawTokens.fontLineHeight850
-    @objc public var fontLineHeightDisplaySmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight850 }
+    @objc public final var fontLineHeightDisplaySmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight850 }
     /// Has for value token FontRawTokens.fontLineHeight1050
-    @objc public var fontLineHeightDisplaySmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1050 }
+    @objc public final var fontLineHeightDisplaySmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight1050 }
     /// Has for value token FontRawTokens.fontLineHeight750
-    @objc public var fontLineHeightHeadingXlargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight750 }
+    @objc public final var fontLineHeightHeadingXlargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight750 }
     /// Has for value token FontRawTokens.fontLineHeight950
-    @objc public var fontLineHeightHeadingXlargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight950 }
+    @objc public final var fontLineHeightHeadingXlargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight950 }
     /// Has for value token FontRawTokens.fontLineHeight650
-    @objc public var fontLineHeightHeadingLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight650 }
+    @objc public final var fontLineHeightHeadingLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight650 }
     /// Has for value token FontRawTokens.fontLineHeight750
-    @objc public var fontLineHeightHeadingLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight750 }
+    @objc public final var fontLineHeightHeadingLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight750 }
     /// Has for value token FontRawTokens.fontLineHeight550
-    @objc public var fontLineHeightHeadingMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight550 }
+    @objc public final var fontLineHeightHeadingMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight550 }
     /// Has for value token FontRawTokens.fontLineHeight650
-    @objc public var fontLineHeightHeadingMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight650 }
+    @objc public final var fontLineHeightHeadingMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight650 }
     /// Has for value token FontRawTokens.fontLineHeight450
-    @objc public var fontLineHeightHeadingSmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+    @objc public final var fontLineHeightHeadingSmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
     /// Has for value token FontRawTokens.fontLineHeight550
-    @objc public var fontLineHeightHeadingSmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight550 }
+    @objc public final var fontLineHeightHeadingSmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight550 }
     /// Has for value token FontRawTokens.fontLineHeight450
-    @objc public var fontLineHeightBodyLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+    @objc public final var fontLineHeightBodyLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
     /// Has for value token FontRawTokens.fontLineHeight450
-    @objc public var fontLineHeightBodyLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+    @objc public final var fontLineHeightBodyLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
     /// Has for value token FontRawTokens.fontLineHeight350
-    @objc public var fontLineHeightBodyMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
+    @objc public final var fontLineHeightBodyMediumMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
     /// Has for value token FontRawTokens.fontLineHeight350
-    @objc public var fontLineHeightBodyMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
+    @objc public final var fontLineHeightBodyMediumTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
     /// Has for value token FontRawTokens.fontLineHeight250
-    @objc public var fontLineHeightBodySmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
+    @objc public final var fontLineHeightBodySmallMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
     /// Has for value token FontRawTokens.fontLineHeight250
-    @objc public var fontLineHeightBodySmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
+    @objc public final var fontLineHeightBodySmallTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
     /// Has for value token FontRawTokens.fontLineHeight450
-    @objc public var fontLineHeightLabelXlarge: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+    @objc public final var fontLineHeightLabelXlarge: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
     /// Has for value token FontRawTokens.fontLineHeight450
-    @objc public var fontLineHeightLabelLarge: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+    @objc public final var fontLineHeightLabelLarge: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
     /// Has for value token FontRawTokens.fontLineHeight350
-    @objc public var fontLineHeightLabelMedium: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
+    @objc public final var fontLineHeightLabelMedium: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
     /// Has for value token FontRawTokens.fontLineHeight250
-    @objc public var fontLineHeightLabelSmall: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
+    @objc public final var fontLineHeightLabelSmall: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight250 }
     /// Has for value token FontRawTokens.fontLineHeight350
-    @objc public var fontLineHeightCodeMedium: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
+    @objc public final var fontLineHeightCodeMedium: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight350 }
     /// Has for value token FontRawTokens.fontLetterSpacing850
-    @objc public var fontLetterSpacingDisplayLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing850 }
+    @objc public final var fontLetterSpacingDisplayLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing850 }
     /// Has for value token FontRawTokens.fontLetterSpacing1450
-    @objc public var fontLetterSpacingDisplayLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1450 }
+    @objc public final var fontLetterSpacingDisplayLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1450 }
     /// Has for value token FontRawTokens.fontLetterSpacing750
-    @objc public var fontLetterSpacingDisplayMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
+    @objc public final var fontLetterSpacingDisplayMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
     /// Has for value token FontRawTokens.fontLetterSpacing1050
-    @objc public var fontLetterSpacingDisplayMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1050 }
+    @objc public final var fontLetterSpacingDisplayMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1050 }
     /// Has for value token FontRawTokens.fontLetterSpacing650
-    @objc public var fontLetterSpacingDisplaySmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing650 }
+    @objc public final var fontLetterSpacingDisplaySmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing650 }
     /// Has for value token FontRawTokens.fontLetterSpacing850
-    @objc public var fontLetterSpacingDisplaySmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing850 }
+    @objc public final var fontLetterSpacingDisplaySmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing850 }
     /// Has for value token FontRawTokens.fontLetterSpacing550
-    @objc public var fontLetterSpacingHeadingXlargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing550 }
+    @objc public final var fontLetterSpacingHeadingXlargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing550 }
     /// Has for value token FontRawTokens.fontLetterSpacing750
-    @objc public var fontLetterSpacingHeadingXlargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
+    @objc public final var fontLetterSpacingHeadingXlargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
     /// Has for value token FontRawTokens.fontLetterSpacing450
-    @objc public var fontLetterSpacingHeadingLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing450 }
+    @objc public final var fontLetterSpacingHeadingLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing450 }
     /// Has for value token FontRawTokens.fontLetterSpacing550
-    @objc public var fontLetterSpacingHeadingLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing550 }
+    @objc public final var fontLetterSpacingHeadingLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing550 }
     /// Has for value token FontRawTokens.fontLetterSpacing350
-    @objc public var fontLetterSpacingHeadingMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing350 }
+    @objc public final var fontLetterSpacingHeadingMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing350 }
     /// Has for value token FontRawTokens.fontLetterSpacing450
-    @objc public var fontLetterSpacingHeadingMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing450 }
+    @objc public final var fontLetterSpacingHeadingMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing450 }
     /// Has for value token FontRawTokens.fontLetterSpacing300
-    @objc public var fontLetterSpacingHeadingSmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing300 }
+    @objc public final var fontLetterSpacingHeadingSmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing300 }
     /// Has for value token FontRawTokens.fontLetterSpacing350
-    @objc public var fontLetterSpacingHeadingSmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing350 }
+    @objc public final var fontLetterSpacingHeadingSmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing350 }
     /// Has for value token FontRawTokens.fontLetterSpacing250
-    @objc public var fontLetterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
+    @objc public final var fontLetterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     /// Has for value token FontRawTokens.fontLetterSpacing250
-    @objc public var fontLetterSpacingBodyLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
+    @objc public final var fontLetterSpacingBodyLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     /// Has for value token FontRawTokens.fontLetterSpacing200
-    @objc public var fontLetterSpacingBodyMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
+    @objc public final var fontLetterSpacingBodyMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
     /// Has for value token FontRawTokens.fontLetterSpacing200
-    @objc public var fontLetterSpacingBodyMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
+    @objc public final var fontLetterSpacingBodyMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
     /// Has for value token FontRawTokens.fontLetterSpacing150
-    @objc public var fontLetterSpacingBodySmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
+    @objc public final var fontLetterSpacingBodySmallMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
     /// Has for value token FontRawTokens.fontLetterSpacing150
-    @objc public var fontLetterSpacingBodySmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
+    @objc public final var fontLetterSpacingBodySmallTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
     /// Has for value token FontRawTokens.fontLetterSpacing300
-    @objc public var fontLetterSpacingLabelXlarge: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing300 }
+    @objc public final var fontLetterSpacingLabelXlarge: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing300 }
     /// Has for value token FontRawTokens.fontLetterSpacing250
-    @objc public var fontLetterSpacingLabelLarge: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
+    @objc public final var fontLetterSpacingLabelLarge: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     /// Has for value token FontRawTokens.fontLetterSpacing200
-    @objc public var fontLetterSpacingLabelMedium: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
+    @objc public final var fontLetterSpacingLabelMedium: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
     /// Has for value token FontRawTokens.fontLetterSpacing150
-    @objc public var fontLetterSpacingLabelSmall: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
+    @objc public final var fontLetterSpacingLabelSmall: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing150 }
     /// Has for value token FontRawTokens.fontLetterSpacing200
-    @objc public var fontLetterSpacingCodeMedium: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
+    @objc public final var fontLetterSpacingCodeMedium: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
 }

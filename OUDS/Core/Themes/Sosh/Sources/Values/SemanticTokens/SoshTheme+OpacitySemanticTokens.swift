@@ -20,15 +20,15 @@ import OUDSTokensSemantic
 
 extension SoshThemeOpacitySemanticTokensProvider: OpacitySemanticTokens {
     /// Has for value token OpacityRawTokens.opacity0
-    @objc public var opacityInvisible: OpacitySemanticToken { OpacityRawTokens.opacity0 }
+    @objc public final var opacityInvisible: OpacitySemanticToken { OpacityRawTokens.opacity0 }
     /// Has for value token OpacityRawTokens.opacity40
-    @objc public var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity40 }
+    @objc public final var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity40 }
     /// Has for value token OpacityRawTokens.opacity160
-    @objc public var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity160 }
+    @objc public final var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity160 }
     /// Has for value token OpacityRawTokens.opacity320
-    @objc public var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity320 }
+    @objc public final var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity320 }
     /// Has for value token OpacityRawTokens.opacity640
-    @objc public var opacityStrong: OpacitySemanticToken { OpacityRawTokens.opacity640 }
+    @objc public final var opacityStrong: OpacitySemanticToken { OpacityRawTokens.opacity640 }
     /// Has for value token OpacityRawTokens.opacity1000
-    @objc public var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity1000 }
+    @objc public final var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity1000 }
 }
