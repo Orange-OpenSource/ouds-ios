@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 
 extension SoshThemeLinkComponentTokensProvider: LinkMonoComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
-    @objc public var linkMonoColorContentEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
+    @objc public final var linkMonoColorContentEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
-    @objc public var linkMonoColorContentHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
+    @objc public final var linkMonoColorContentHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
-    @objc public var linkMonoColorContentPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
+    @objc public final var linkMonoColorContentPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium)
-    @objc public var linkMonoColorContentDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium) }
+    @objc public final var linkMonoColorContentDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
-    @objc public var linkMonoColorContentFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
+    @objc public final var linkMonoColorContentFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
 }
 
 // swiftlint:enable line_length

@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension SoshThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     /// Has for value token DimensionRawTokens.dimensionOutOfSystem75
-    @objc public var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
+    @objc public final var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
     /// Has for value token spaces.spacePaddingInline3xs
-    @objc public var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline3xs }
+    @objc public final var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInline2xs
-    @objc public var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    @objc public final var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token dimensions.dimension8xs
-    @objc public var badgeSizeXsmall: SizeSemanticToken { dimensions.dimension8xs }
+    @objc public final var badgeSizeXsmall: SizeSemanticToken { dimensions.dimension8xs }
     /// Has for value token dimensions.dimension6xs
-    @objc public var badgeSizeSmall: SizeSemanticToken { dimensions.dimension6xs }
+    @objc public final var badgeSizeSmall: SizeSemanticToken { dimensions.dimension6xs }
     /// Has for value token dimensions.dimension5xs
-    @objc public var badgeSizeMedium: SizeSemanticToken { dimensions.dimension5xs }
+    @objc public final var badgeSizeMedium: SizeSemanticToken { dimensions.dimension5xs }
     /// Has for value token dimensions.dimension4xs
-    @objc public var badgeSizeLarge: SizeSemanticToken { dimensions.dimension4xs }
+    @objc public final var badgeSizeLarge: SizeSemanticToken { dimensions.dimension4xs }
 }

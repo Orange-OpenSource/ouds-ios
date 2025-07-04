@@ -21,9 +21,9 @@ import OUDSTokensSemantic
 
 extension SoshThemeSkeletonComponentTokensProvider: SkeletonComponentTokens {
     /// Has for value token colors.colorOpacityLowest
-    @objc public var skeletonColorBg: MultipleColorSemanticTokens { colors.colorOpacityLowest }
+    @objc public final var skeletonColorBg: MultipleColorSemanticTokens { colors.colorOpacityLowest }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var skeletonColorGradientStartEnd: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var skeletonColorGradientStartEnd: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityLower
-    @objc public var skeletonColorGradientMiddle: MultipleColorSemanticTokens { colors.colorOpacityLower }
+    @objc public final var skeletonColorGradientMiddle: MultipleColorSemanticTokens { colors.colorOpacityLower }
 }
