@@ -19,8 +19,7 @@ import TestsUtils
 
 // swiftlint:disable type_body_length
 // swiftlint:disable force_try
-// swiftlint:disable function_body_length
-// swiftlint:disable file_length
+// swiftlint:disable line_length
 
 /// The aim of this tests class is to look for regressions in **Sosh brand color raw tokens**.
 ///
@@ -431,4 +430,4 @@ struct SoshBrandColorRawTokensTests {
 
 // swiftlint:enable type_body_length
 // swiftlint:enable force_try
-// swiftlint:enable function_body_length
+// swiftlint:enable line_length
