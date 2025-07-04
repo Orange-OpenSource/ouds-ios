@@ -51,5 +51,4 @@ public enum OUDSVersions {
 
     public static let componentBulletListVersion = "1.0.0"
 }
-
 // swiftlint:enable missing_docs
