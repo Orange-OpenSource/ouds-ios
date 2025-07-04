@@ -39,7 +39,7 @@ struct SoshBrandColorRawTokensTests {
     private static let colorFormat = try! NSRegularExpression(pattern: "^#[0-9A-Fa-f]{8}$")
 
     // MARK: - Tests format of colors
-    
+
     func testColorMagenta50Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta50, regexp: Self.colorFormat)
     }
@@ -232,8 +232,8 @@ struct SoshBrandColorRawTokensTests {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorOpacityMagenta, regexp: Self.colorFormat)
     }
 
-    // MARK: - Tests - Colros darker and darker
-    
+    // MARK: - Tests - Colors darker and darker
+
     @Test func soshBrandColorRawTokenColorMagenta50LighterThanColorMagenta100() throws {
         TestsUtils.assertColorLighterThan(SoshBrandColorRawTokens.colorMagenta50, SoshBrandColorRawTokens.colorMagenta100)
     }
@@ -397,9 +397,9 @@ struct SoshBrandColorRawTokensTests {
     @Test func soshBrandColorRawTokenColorBlueDuckDark880LighterThanColorBlueDuckDark960() throws {
         TestsUtils.assertColorLighterThan(SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960)
     }
-    
+
     // MARK: - Test all values unique
-    
+
     @Test func soshBrandColorRawTokensAreAllUnique() throws {
         let allColors = [
             SoshBrandColorRawTokens.colorMagenta50, SoshBrandColorRawTokens.colorMagenta100, SoshBrandColorRawTokens.colorMagenta200, SoshBrandColorRawTokens.colorMagenta300, SoshBrandColorRawTokens.colorMagenta400,
@@ -412,16 +412,16 @@ struct SoshBrandColorRawTokensTests {
             SoshBrandColorRawTokens.colorBlueDuckLight800, SoshBrandColorRawTokens.colorBlueDuckLight880, SoshBrandColorRawTokens.colorBlueDuckLight960, SoshBrandColorRawTokens.colorBlueDuckDark80,
             SoshBrandColorRawTokens.colorBlueDuckDark160, SoshBrandColorRawTokens.colorBlueDuckDark240, SoshBrandColorRawTokens.colorBlueDuckDark320, SoshBrandColorRawTokens.colorBlueDuckDark400,
             SoshBrandColorRawTokens.colorBlueDuckDark480, SoshBrandColorRawTokens.colorBlueDuckDark560, SoshBrandColorRawTokens.colorBlueDuckDark640, SoshBrandColorRawTokens.colorBlueDuckDark720,
-            SoshBrandColorRawTokens.colorBlueDuckDark800, SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960, SoshBrandColorRawTokens.colorOpacityMagenta
+            SoshBrandColorRawTokens.colorBlueDuckDark800, SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960, SoshBrandColorRawTokens.colorOpacityMagenta,
         ]
         assertAllUniqueColors(allColors)
     }
 
     // MARK: - Helpers
-    
+
     private func assertAllUniqueColors(_ colors: [ColorRawToken], file: StaticString = #file, line: UInt = #line) {
-        for i in 0..<colors.count {
-            for j in (i+1)..<colors.count {
+        for i in 0 ..< colors.count {
+            for j in (i + 1) ..< colors.count {
                 #expect(colors[i] != colors[j], "Colors \(colors[i]) and \(colors[j]) must be different")
             }
         }

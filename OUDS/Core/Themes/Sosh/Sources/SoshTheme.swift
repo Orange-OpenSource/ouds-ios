@@ -14,9 +14,6 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable function_body_length
-// swiftlint:disable line_length
-
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
 ///
@@ -47,12 +44,12 @@ import OUDSTokensSemantic
 /// ```
 ///
 /// - Since: 0.17.0
-final public class SoshTheme: OUDSTheme, @unchecked Sendable {
+public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
     /// Constructor of the Sosh theme with its own providers of tokens.
-    public init(){
+    public init() {
         let borders = SoshThemeBorderSemanticTokensProvider()
         let colors = SoshThemeColorSemanticTokensProvider()
         let colorModes = SoshThemeColorModeSemanticTokensProvider(colors: colors)
@@ -109,6 +106,3 @@ final public class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
-
-// swiftlint:enable function_body_length
-// swiftlint:enable line_length
