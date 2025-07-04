@@ -16,7 +16,6 @@ import SwiftUI
 
 // MARK: - Chip
 
-
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
 ///
 /// The layout of the chip will change according to the `ChipInteractionState` and the selected flag.

@@ -44,7 +44,7 @@ struct ChipForegroundModifier: ViewModifier {
         case .pressed:
             selected ? theme.chip.chipColorContentSelectedPressed : theme.chip.chipColorContentUnselectedPressed
         case .disabled:
-            selected ?  theme.chip.chipColorContentSelectedDisabled : theme.chip.chipColorContentUnselectedDisabled
+            selected ? theme.chip.chipColorContentSelectedDisabled : theme.chip.chipColorContentUnselectedDisabled
         }
     }
 }
