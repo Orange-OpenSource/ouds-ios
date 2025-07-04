@@ -23,49 +23,49 @@ import OUDSTokensSemantic
 
 extension SoshThemeInputTextComponentTokensProvider: InputTextComponentTokens {
     /// Has for value token colors.colorActionSupportEnabled
-    @objc public var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    @objc public final var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
     /// Has for value token colors.colorActionSupportHover
-    @objc public var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc public final var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     /// Has for value token colors.colorActionSupportPressed
-    @objc public var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc public final var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     /// Has for value token colors.colorActionSupportLoading
-    @objc public var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc public final var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     /// Has for value token colors.colorActionSupportEnabled
-    @objc public var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    @objc public final var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
     /// Has for value token colors.colorActionSupportFocus
-    @objc public var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc public final var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value token colors.colorContentDefault
-    @objc public var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDefault
-    @objc public var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDefault
-    @objc public var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDefault
-    @objc public var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDisabled
-    @objc public var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
+    @objc public final var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
     /// Has for value token colors.colorContentDefault
-    @objc public var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token spaces.spaceInsetMd
-    @objc public var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMd }
+    @objc public final var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd
-    @objc public var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
+    @objc public final var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
     /// Has for value token spaces.spacePaddingInlineMd
-    @objc public var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMd }
+    @objc public final var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMd }
     /// Has for value token spaces.spacePaddingInline2xs
-    @objc public var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    @objc public final var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token spaces.spacePaddingInlineXs
-    @objc public var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    @objc public final var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
     /// Has for value token spaces.spacePaddingInlineXs
-    @objc public var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    @objc public final var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineXs }
     /// Has for value token spaces.spacePaddingInline3xs
-    @objc public var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInline3xs }
+    @objc public final var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInline2xs
-    @objc public var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    @objc public final var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token DimensionRawTokens.dimension1600
-    @objc public var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
+    @objc public final var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
     /// Has for value token DimensionRawTokens.dimension4000
-    @objc public var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    @objc public final var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
 }
 
 // swiftlint:enable identifier_name
