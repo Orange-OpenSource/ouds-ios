@@ -21,119 +21,119 @@ import OUDSTokensSemantic
 
 extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorActionSupportHover
-    @objc public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc public final var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     /// Has for value token colors.colorActionSupportPressed
-    @objc public var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc public final var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     /// Has for value token colors.colorActionSupportLoading
-    @objc public var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc public final var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorActionSupportFocus
-    @objc public var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc public final var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value token colors.colorActionEnabled
-    @objc public var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token colors.colorActionHover
-    @objc public var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc public final var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value token colors.colorActionPressed
-    @objc public var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc public final var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionLoading
-    @objc public var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    @objc public final var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     /// Has for value token colors.colorActionDisabled
-    @objc public var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    @objc public final var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
-    @objc public var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc public final var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value token colors.colorActionEnabled
-    @objc public var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token colors.colorActionHover
-    @objc public var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc public final var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value token colors.colorActionPressed
-    @objc public var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
-    /// Has for value token colors.colorContentDefault
-    @objc public var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorActionDisabled
-    @objc public var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    /// Has for value token colors.colorActionFocus
-    @objc public var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorActionEnabled
-    @objc public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    /// Has for value token colors.colorActionHover
-    @objc public var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorActionPressed
-    @objc public var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc public final var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionLoading
-    @objc public var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    @objc public final var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     /// Has for value token colors.colorActionDisabled
-    @objc public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    @objc public final var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
-    @objc public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc public final var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    /// Has for value token colors.colorActionEnabled
+    @objc public final var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    /// Has for value token colors.colorActionHover
+    @objc public final var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    /// Has for value token colors.colorActionPressed
+    @objc public final var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    /// Has for value token colors.colorActionLoading
+    @objc public final var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    /// Has for value token colors.colorActionDisabled
+    @objc public final var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    /// Has for value token colors.colorActionFocus
+    @objc public final var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
-    @objc public var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc public final var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token borders.borderRadiusDefault
-    @objc public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    @objc public final var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token borders.borderWidthDefault
-    @objc public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
+    /// Has for value token borders.borderWidthDefault
+    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
     /// Has for value token borders.borderWidthNone
-    @objc public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc public var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token spaces.spaceInsetMd
-    @objc public var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
+    @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd
-    @objc public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
+    @objc public final var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
     /// Has for value token spaces.spacePaddingInline3xl
-    @objc public var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInline3xl }
+    @objc public final var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInline3xl }
     /// Has for value token spaces.spacePaddingInline3xl
-    @objc public var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xl }
+    @objc public final var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xl }
     /// Has for value token spaces.spacePaddingInline4xl
-    @objc public var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xl }
+    @objc public final var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xl }
     /// Has for value token spaces.spacePaddingInlineXl
-    @objc public var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXl }
+    @objc public final var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXl }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc public var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc public final var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc public var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc public final var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc public var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapXs
-    @objc public var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc public final var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc public var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc public var buttonSizeIconOnly: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc public final var buttonSizeIconOnly: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc public var buttonSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var buttonSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public var buttonSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var buttonSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public var buttonSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var buttonSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var buttonSizeMaxHeightIconOnly: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension SoshThemeBulletListComponentTokensProvider: BulletListComponentTokens {
     /// Has for value token DimensionRawTokens.dimension50
-    @objc public var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens.dimension50 }
+    @objc public final var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens.dimension50 }
     /// Has for value token DimensionRawTokens.dimension450
-    @objc public var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens.dimension450 }
+    @objc public final var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens.dimension450 }
     /// Has for value token DimensionRawTokens.dimension850
-    @objc public var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens.dimension850 }
+    @objc public final var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens.dimension850 }
     /// Has for value token spaces.spacePaddingBlockXs
-    @objc public var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlockXs }
+    @objc public final var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlockXs }
     /// Has for value token spaces.spacePaddingBlockXs
-    @objc public var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlockXs }
+    @objc public final var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlockXs }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc public var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc public var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSm }
 }

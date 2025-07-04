@@ -23,53 +23,53 @@ import OUDSTokensSemantic
 
 extension SoshThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
-    @objc public var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
+    @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
     /// Has for value token colors.colorContentDefault
-    @objc public var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDefault
-    @objc public var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh)
-    @objc public var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh) }
+    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefault, dark: colors.colorRepositoryPositiveHigh) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow)
-    @objc public var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow) }
+    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveLow) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh)
-    @objc public var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
+    @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
-    @objc public var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
+    @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token borders.borderRadiusPill
-    @objc public var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusPill }
+    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusPill }
     /// Has for value token borders.borderRadiusPill
-    @objc public var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusPill }
+    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusPill }
     /// Has for value token opacities.opacityOpaque
-    @objc public var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
+    @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
     /// Has for value token spaces.spacePaddingInline3xs
-    @objc public var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xs }
+    @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInlineXs
-    @objc public var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXs }
+    @objc public final var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXs }
     /// Has for value token dimensions.dimension3xl
-    @objc public var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension3xl }
+    @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension3xl }
     /// Has for value token dimensions.dimensionXs
-    @objc public var switchSizeMinHeight: SizeSemanticToken { dimensions.dimensionXs }
+    @objc public final var switchSizeMinHeight: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token dimensions.dimensionXs
-    @objc public var switchSizeMaxHeight: SizeSemanticToken { dimensions.dimensionXs }
+    @objc public final var switchSizeMaxHeight: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token dimensions.dimension3xs
-    @objc public var switchSizeWidthCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
+    @objc public final var switchSizeWidthCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
     /// Has for value token dimensions.dimension5xs
-    @objc public var switchSizeWidthCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
+    @objc public final var switchSizeWidthCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
     /// Has for value token dimensions.dimensionXs
-    @objc public var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions.dimensionXs }
+    @objc public final var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token dimensions.dimension3xs
-    @objc public var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions.dimension3xs }
+    @objc public final var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions.dimension3xs }
     /// Has for value token dimensions.dimension3xl
-    @objc public var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension3xl }
+    @objc public final var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension3xl }
     /// Has for value token dimensions.dimension3xs
-    @objc public var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
+    @objc public final var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
     /// Has for value token dimensions.dimension5xs
-    @objc public var switchSizeHeightCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
+    @objc public final var switchSizeHeightCursorUnselected: SizeSemanticToken { dimensions.dimension5xs }
     /// Has for value token dimensions.dimensionXs
-    @objc public var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXs }
+    @objc public final var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXs }
 }
 
 // swiftlint:enable line_length
