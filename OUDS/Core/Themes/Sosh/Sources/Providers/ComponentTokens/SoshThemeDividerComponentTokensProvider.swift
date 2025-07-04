@@ -14,8 +14,6 @@
 import OUDS
 import OUDSFoundations
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **component  tokens of divider** for *divider* objects like `OUDSDivider`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllDividerComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -55,5 +53,3 @@ final class SoshThemeDividerComponentTokensProvider: AllDividerComponentTokensPr
     // the implemention of ChipComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ChipComponentTokens.swift
     // This declaration of SoshThemeChipComponentTokensProvider is here also to allow to write documentation.
 }
-
-// swiftlint:enable type_name

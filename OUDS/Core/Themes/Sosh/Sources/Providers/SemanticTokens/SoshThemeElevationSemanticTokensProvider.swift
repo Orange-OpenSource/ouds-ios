@@ -14,8 +14,6 @@
 import OUDS
 import OUDSFoundations
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **elevation semantic tokens**, *multiple*, *composite* or not, and expose them.
 /// This provider should be integrated as a `AllElevationSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -49,5 +47,3 @@ final class SoshThemeElevationSemanticTokensProvider: AllElevationSemanticTokens
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of SoshThemeElevationSemanticTokensProvider is here to allow to write documentation.
 }
-
-// swiftlint:enable type_name
