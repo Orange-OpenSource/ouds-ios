@@ -57,7 +57,6 @@ public protocol ChipComponentTokens {
     var chipColorContentSelectedEnabled: MultipleColorSemanticTokens { get }
     var chipColorContentSelectedPressed: MultipleColorSemanticTokens { get }
     var chipColorContentSelectedHover: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedPressed: MultipleColorSemanticTokens { get }
     var chipColorContentSelectedDisabled: MultipleColorSemanticTokens { get }
     var chipColorContentSelectedFocus: MultipleColorSemanticTokens { get }
     var chipColorContentUnselectedEnabled: MultipleColorSemanticTokens { get }
