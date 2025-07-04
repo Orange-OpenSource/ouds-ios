@@ -8,13 +8,11 @@
 // or see the "LICENSE" file for more details.
 //
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Sosh Unified Design System
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
 import OUDSFoundations
-
-// swiftlint:disable type_name
 
 /// A class which wraps all **component  tokens of list item** for *list item* objects like `OUDSListItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -70,5 +68,3 @@ final class SoshThemeListItemComponentTokensProvider: AllListItemComponentTokens
     // the implemention of ListItemComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ListItemComponentTokens.swift
     // This declaration of SoshThemeListItemComponentTokensProvider is here also to allow to write documentation.
 }
-
-// swiftlint:enable type_name

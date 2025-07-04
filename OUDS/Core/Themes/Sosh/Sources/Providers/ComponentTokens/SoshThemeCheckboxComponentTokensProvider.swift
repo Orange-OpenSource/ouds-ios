@@ -8,13 +8,11 @@
 // or see the "LICENSE" file for more details.
 //
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Sosh Unified Design System
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
 import OUDSFoundations
-
-// swiftlint:disable type_name
 
 /// A class which wraps all **component  tokens of checkbox** for  *checkboxes* objects
 /// like `OUDSCheckbox` and `OUDSCheckboxItem`.
@@ -66,5 +64,3 @@ final class SoshThemeCheckboxComponentTokensProvider: AllCheckboxComponentTokens
     // the implemention of CheckboxComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+CheckboxComponentTokens.swift
     // This declaration of SoshThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
-
-// swiftlint:enable type_name
