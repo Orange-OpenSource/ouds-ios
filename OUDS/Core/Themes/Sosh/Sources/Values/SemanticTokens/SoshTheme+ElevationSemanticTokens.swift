@@ -20,67 +20,67 @@ import OUDSTokensSemantic
 
 extension SoshThemeElevationSemanticTokensProvider: ElevationSemanticTokens {
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXNone: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXNone: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXRaised: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXRaised: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXDrag: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXDrag: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXStickyDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXStickyDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXStickyEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXStickyEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationX0
-    @objc public var elevationXStickyNavigationScrolled: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc public final var elevationXStickyNavigationScrolled: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     /// Has for value token ElevationRawTokens.elevationY0
-    @objc public var elevationYNone: ElevationYSemanticToken { ElevationRawTokens.elevationY0 }
+    @objc public final var elevationYNone: ElevationYSemanticToken { ElevationRawTokens.elevationY0 }
     /// Has for value token ElevationRawTokens.elevationY100
-    @objc public var elevationYRaised: ElevationYSemanticToken { ElevationRawTokens.elevationY100 }
+    @objc public final var elevationYRaised: ElevationYSemanticToken { ElevationRawTokens.elevationY100 }
     /// Has for value token ElevationRawTokens.elevationY200
-    @objc public var elevationYDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY200 }
+    @objc public final var elevationYDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY200 }
     /// Has for value token ElevationRawTokens.elevationY500
-    @objc public var elevationYEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY500 }
+    @objc public final var elevationYEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY500 }
     /// Has for value token ElevationRawTokens.elevationY300
-    @objc public var elevationYDrag: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc public final var elevationYDrag: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     /// Has for value token ElevationRawTokens.elevationY300
-    @objc public var elevationYStickyDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc public final var elevationYStickyDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     /// Has for value token ElevationRawTokens.elevationY300
-    @objc public var elevationYStickyEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc public final var elevationYStickyEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     /// Has for value token ElevationRawTokens.elevationY300
-    @objc public var elevationYStickyNavigationScrolled: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc public final var elevationYStickyNavigationScrolled: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     /// Has for value token ElevationRawTokens.elevationBlur0
-    @objc public var elevationBlurNone: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
+    @objc public final var elevationBlurNone: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
     /// Has for value token ElevationRawTokens.elevationBlur200
-    @objc public var elevationBlurRaised: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur200 }
+    @objc public final var elevationBlurRaised: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur200 }
     /// Has for value token ElevationRawTokens.elevationBlur300
-    @objc public var elevationBlurDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur300 }
+    @objc public final var elevationBlurDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur300 }
     /// Has for value token ElevationRawTokens.elevationBlur600
-    @objc public var elevationBlurEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur600 }
+    @objc public final var elevationBlurEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur600 }
     /// Has for value token ElevationRawTokens.elevationBlur400
-    @objc public var elevationBlurDrag: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
+    @objc public final var elevationBlurDrag: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     /// Has for value token ElevationRawTokens.elevationBlur400
-    @objc public var elevationBlurStickyDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
+    @objc public final var elevationBlurStickyDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     /// Has for value token ElevationRawTokens.elevationBlur400
-    @objc public var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
+    @objc public final var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     /// Has for value token ElevationRawTokens.elevationBlur400
-    @objc public var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
+    @objc public final var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     /// Has for value token ColorRawTokens.colorOpacityBlack0
-    @objc public var elevationColorNone: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc public final var elevationColorNone: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     /// Has for value token ColorRawTokens.colorOpacityBlack320
-    @objc public var elevationColorRaised: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
+    @objc public final var elevationColorRaised: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
     /// Has for value token ColorRawTokens.colorOpacityBlack240
-    @objc public var elevationColorDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack240 }
+    @objc public final var elevationColorDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack240 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc public var elevationColorEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc public final var elevationColorEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack320
-    @objc public var elevationColorDrag: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
+    @objc public final var elevationColorDrag: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack320 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc public var elevationColorStickyDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc public final var elevationColorStickyDefault: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc public var elevationColorStickyEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc public final var elevationColorStickyEmphasized: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
     /// Has for value token ColorRawTokens.colorOpacityBlack160
-    @objc public var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
+    @objc public final var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ColorRawTokens.colorOpacityBlack160 }
 }
