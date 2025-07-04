@@ -47,7 +47,7 @@ import OUDSTokensSemantic
 /// ```
 ///
 /// - Since: 0.17.0
-final class SoshTheme: OUDSTheme, @unchecked Sendable {
+final public class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
