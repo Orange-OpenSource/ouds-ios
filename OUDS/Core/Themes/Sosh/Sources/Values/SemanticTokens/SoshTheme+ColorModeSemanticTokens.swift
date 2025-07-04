@@ -20,91 +20,91 @@ import OUDSTokensSemantic
 
 extension SoshThemeColorModeSemanticTokensProvider: ColorModeSemanticTokens {
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnBgPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnBgPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnBgPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBgPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnBgSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnBgSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnBgSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBgSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnBgTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnBgTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnBgTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBgTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnBgEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBgEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnBgEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.undefined
-    @objc public var modeOnBrandSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
-    /// Has for value token ColorModeRawTokens.undefined
-    @objc public var modeOnBrandSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
-    /// Has for value token ColorModeRawTokens.undefined
-    @objc public var modeOnBrandTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
-    /// Has for value token ColorModeRawTokens.undefined
-    @objc public var modeOnBrandTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusNeutralMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusNeutralMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusInfoMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusInfoMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusWarningMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusWarningMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBgEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.monochromeDark
-    @objc public var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
+    @objc public final var modeOnBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
     /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-    /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnStatusAccentMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
-    /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnStatusAccentMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeDark
+    @objc public final var modeOnBrandSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
     /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    @objc public final var modeOnBrandSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
     /// Has for value token ColorModeRawTokens.monochromeLight
-    @objc public var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    @objc public final var modeOnBrandTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnBrandTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnOverlayDefaultLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnStatusNeutralMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnOverlayDefaultDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnStatusNeutralMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnOverlayEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnOverlayEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.light
-    @objc public var modeOnModalLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    @objc public final var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
     /// Has for value token ColorModeRawTokens.dark
-    @objc public var modeOnModalDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    @objc public final var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnStatusInfoMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnStatusInfoMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnStatusWarningMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnStatusWarningMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.monochromeDark
+    @objc public final var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnStatusAccentMutedLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnStatusAccentMutedDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.monochromeLight
+    @objc public final var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnOverlayDefaultLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnOverlayDefaultDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnOverlayEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnOverlayEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.light
+    @objc public final var modeOnModalLight: ColorModeSemanticToken { ColorModeRawTokens.light }
+    /// Has for value token ColorModeRawTokens.dark
+    @objc public final var modeOnModalDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
 }
