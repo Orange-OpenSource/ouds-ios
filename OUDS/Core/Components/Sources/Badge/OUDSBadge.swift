@@ -1,0 +1,266 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSFoundations
+import OUDSTokensSemantic
+import SwiftUI
+
+// MARK: - OUDS Badge
+
+/// The ``OUDSBadge`` proposes ...
+///
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Neutral badge in medium size without information
+///     OUDSBadge(status: .neutral, size: .medium)
+///
+///     // Negative badge in medium size with count information
+///     OUDSBadge(count: 1, status: .negative, size: .medium)
+///
+///     // Info badge in medium size with icon information
+///     OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
+/// ```
+///
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
+///
+/// - Version: 1.1.0
+/// - Since: 0.16.0
+public struct OUDSBadge: View {
+
+    // MARK: Stored Properties
+
+    static let maxCount = 99
+    private let status: Status
+    private let size: Size
+    private let count: UInt8?
+    private let icon: Image?
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    /// The status depends on the context of the information it represents.
+    public enum Status {
+        // Used for general labels without specific emphasis
+        case neutral
+
+        // Employed to highlight discovery or exploration-related content
+        case accent
+
+        // Indicates success, completion, or approval
+        case positive
+
+        // Provides informational context without urgency
+        case info
+
+        // Negatives the user to potential risks or cautionary messages
+        case warning
+
+        // Draws attention to important or critical information.
+        // Often used for errors, restrictions, or urgent messages, but not exclusively for failures.
+        case negative
+
+        // Indicate when the user isn’t allowed to interact with an element.
+        // They remove all interactivity from a text or icon elements.
+        case disabled
+    }
+
+    /// All available sizes of a badge
+    public enum Size {
+        // A compact badge for minimal space usage, ideal for small UI elements like icons or tooltips.
+        case extraSmall
+
+        // A slightly larger badge that remains subtle but improves readability, often used for inline labels.
+        case small
+
+        // The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
+        case medium
+
+        // A prominent badge for drawing more attention, often used in dashboards or highlighted sections.
+        case large
+    }
+
+    // MARK: Initializers
+
+    /// Create a basicv badge.
+    ///
+    /// - Parameters:
+    ///     - status: The status of this badge. The background color of the badge and the number color are based on this status.
+    ///     - size: The size of this badge. The number is not displayed when size is [OudsBadge.Size.ExtraSmall] or [OudsBadge.Size.Small].
+    public init(status: Status, size: Size) {
+        self.status = status
+        self.size = size
+        self.icon = nil
+        self.count = nil
+    }
+
+    /// Create a badge displays numerical value (e.g., unread messages, notifications).
+    ///
+    /// - Parameters:
+    ///    - count:The number displayed in the badge. Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
+    ///     - status: The status of this badge. The background color of the badge and the number color are based on this status.
+    ///     - size: The size of this badge. The number is not displayed when size is [OudsBadge.Size.ExtraSmall] or [OudsBadge.Size.Small].
+    public init(count: UInt8, status: Status, size: Size) {
+        self.status = status
+        self.size = size
+        self.count = count
+        self.icon = nil
+    }
+
+    /// Create a badge displays an icon to visually reinforce meaning.
+    ///
+    /// It is used for status indicators (e.g., "New", "Pending", "Success").
+    /// The size remains unchanged despite the increase in the interface size.
+    ///
+    /// - Parameters:
+    ///     - icon: The icon displayed in the badge
+    ///     - status: The status of this badge. The background color of the badge and the number color are based on this status
+    ///     - size: The size of this badge. The icon is not displayed when size is ``OOUSBadge.Size.extraSmall`` or ``OUDSBadge.Size.small``.
+    public init(icon: Image, status: Status, size: Size) {
+        self.status = status
+        self.size = size
+        self.count = nil
+        self.icon = icon
+    }
+
+    // MARK: Body
+
+    public var body: some View {
+        HStack(alignment: .center) {
+            BadgeCount(count: count, size: size)
+            BadgeIcon(icon: icon, size: size)
+        }
+        .oudsForegroundColor(color)
+        .frame(height: frameSize, alignment: .center)
+        .frame(minWidth: frameSize, alignment: .center)
+        .oudsBackground(backgroundColor)
+        .clipShape(RoundedRectangle(cornerRadius: theme.borders.borderRadiusPill))
+    }
+
+    private var frameSize: SizeSemanticToken {
+        switch size {
+        case .extraSmall:
+            theme.badge.badgeSizeXsmall
+        case .small:
+            theme.badge.badgeSizeSmall
+        case .medium:
+            theme.badge.badgeSizeMedium
+        case .large:
+            theme.badge.badgeSizeLarge
+        }
+    }
+
+    private var backgroundColor: MultipleColorSemanticTokens {
+        switch status {
+        case .neutral:
+            return theme.colors.colorSurfaceStatusNeutralEmphasized
+        case .accent:
+            return theme.colors.colorSurfaceStatusAccentEmphasized
+        case .positive:
+            return theme.colors.colorSurfaceStatusPositiveEmphasized
+        case .info:
+            return theme.colors.colorSurfaceStatusInfoEmphasized
+        case .warning:
+            return theme.colors.colorSurfaceStatusWarningEmphasized
+        case .negative:
+            return theme.colors.colorSurfaceStatusNegativeEmphasized
+        case .disabled:
+            return theme.colors.colorActionDisabled
+        }
+    }
+
+    private var color: MultipleColorSemanticTokens {
+        switch status {
+        case .neutral:
+            return theme.colors.colorContentOnStatusNeutralEmphasized
+        case .accent:
+            return theme.colors.colorContentOnStatusAccentEmphasized
+        case .positive:
+            return theme.colors.colorContentOnStatusPositiveEmphasized
+        case .info:
+            return theme.colors.colorContentOnStatusInfoEmphasized
+        case .warning:
+            return theme.colors.colorContentOnStatusWarningEmphasized
+        case .negative:
+            return theme.colors.colorContentOnStatusNegativeEmphasized
+        case .disabled:
+            return theme.colors.colorContentOnActionDisabled
+        }
+    }
+}
+
+private struct BadgeCount: View {
+
+    // MARK: Stored Properties
+
+    let count: UInt8?
+    let size: OUDSBadge.Size
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
+
+    var body: some View {
+        if let count = count {
+            let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
+            switch size {
+            case .extraSmall, .small:
+                EmptyView()
+            case .medium:
+                Text(text).typeLabelDefaultSmall(theme)
+            case .large:
+                Text(text).typeLabelDefaultMedium(theme)
+            }
+        }
+    }
+
+    private var horizontalPadding: SpaceSemanticToken {
+        switch size {
+        case .extraSmall, .small:
+            return theme.spaces.spaceFixedNone
+        case .medium:
+            return theme.badge.badgeSpacePaddingInlineMedium
+        case .large:
+            return theme.badge.badgeSpacePaddingInlineLarge
+        }
+    }
+}
+
+private struct BadgeIcon: View {
+
+    // MARK: Stored Properties
+
+    let icon: Image?
+    let size: OUDSBadge.Size
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
+
+    var body: some View {
+        if let icon = icon, validIconSize {
+            icon
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
+                .padding(.all, theme.badge.badgeSpaceInset)
+        }
+    }
+
+    private var validIconSize: Bool {
+        size == .medium || size == .large
+    }
+}
