@@ -47,7 +47,7 @@ public struct OUDSBadge: View {
     static let maxCount = 99
     private let status: Status
     private let size: Size
-    private let count: UInt8?
+    private let count: UInt?
     private let icon: Image?
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -113,7 +113,7 @@ public struct OUDSBadge: View {
     ///    - count:The number displayed in the badge. Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
     ///     - status: The status of this badge. The background color of the badge and the number color are based on this status.
     ///     - size: The size of this badge. The number is not displayed when size is [OudsBadge.Size.ExtraSmall] or [OudsBadge.Size.Small].
-    public init(count: UInt8, status: Status, size: Size) {
+    public init(count: UInt, status: Status, size: Size) {
         self.status = status
         self.size = size
         self.count = count
@@ -206,7 +206,7 @@ private struct BadgeCount: View {
 
     // MARK: Stored Properties
 
-    let count: UInt8?
+    let count: UInt?
     let size: OUDSBadge.Size
 
     @Environment(\.theme) private var theme
@@ -220,9 +220,13 @@ private struct BadgeCount: View {
             case .extraSmall, .small:
                 EmptyView()
             case .medium:
-                Text(text).typeLabelDefaultSmall(theme)
+                Text(text)
+                    .typeLabelDefaultSmall(theme)
+                    .padding(.horizontal, horizontalPadding)
             case .large:
-                Text(text).typeLabelDefaultMedium(theme)
+                Text(text)
+                    .typeLabelDefaultMedium(theme)
+                    .padding(.horizontal, horizontalPadding)
             }
         }
     }
