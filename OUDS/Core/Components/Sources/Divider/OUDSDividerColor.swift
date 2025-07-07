@@ -16,18 +16,22 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// List of colors available for dividers (i.e. `ÒUDSHorizontal` or `OUDSVerticalDivider`)
+/// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
 /// - Since: 0.14.0
 public enum OUDSDividerColor {
-    case borderDefault
-    case borderMuted
-    case borderEmphasized
-    case borderBrandPrimary
-    case borderOnBrandPrimary
+    case `default`
+    case muted
+    case emphasized
+    case brandPrimary
+    case onBrandPrimary
     case alwaysBlack
-    case alwaysOnBlack
     case alwaysWhite
+    case alwaysOnBlack
     case alwaysOnWhite
     // swiftlint:enable missing_docs
 
@@ -36,24 +40,24 @@ public enum OUDSDividerColor {
     /// - Parameter theme: The theme that defines the token color
     public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticTokens {
         switch self {
-        case .borderDefault:
+        case .default:
             theme.colors.colorBorderDefault
-        case .borderMuted:
+        case .muted:
             theme.colors.colorBorderMuted
-        case .borderEmphasized:
+        case .emphasized:
             theme.colors.colorBorderEmphasized
-        case .borderBrandPrimary:
+        case .brandPrimary:
             theme.colors.colorBorderBrandPrimary
-        case .borderOnBrandPrimary:
+        case .onBrandPrimary:
             theme.colors.colorBorderOnBrandPrimary
         case .alwaysBlack:
-            theme.colors.colorAlwaysBlack
-        case .alwaysOnBlack:
-            theme.colors.colorAlwaysOnBlack
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysBlack)
         case .alwaysWhite:
-            theme.colors.colorAlwaysWhite
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysWhite)
+        case .alwaysOnBlack:
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnBlack)
         case .alwaysOnWhite:
-            theme.colors.colorAlwaysOnWhite
+            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnWhite)
         }
     }
 }

@@ -17,7 +17,14 @@ import OUDSTokensSemantic
 // MARK: - Root
 
 /// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
-public protocol TokensProvider {}
+public protocol TokensProvider {
+
+    #if DEBUG
+    // swiftlint:disable missing_docs
+    func checkInstances(count: Int, for providerName: String)
+    // swiftlint:enable missing_docs
+    #endif
+}
 
 // MARK: - Semantic tokens providers
 
@@ -31,7 +38,7 @@ public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTok
 public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSemanticTokens, ColorModeMultipleSemanticTokens {}
 
 /// Something which provides all semantic tokens of elevation
-public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens {}
+public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens {}
 
 /// Something which provides all semantic tokens of font
 public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens {}
@@ -41,6 +48,9 @@ public protocol AllGridSemanticTokensProvider: TokensProvider, GridSemanticToken
 
 /// Something which provides all semantic tokens of opacity
 public protocol AllOpacitySemanticTokensProvider: TokensProvider, OpacitySemanticTokens {}
+
+/// Something which provides all semantic tokens of dimension
+public protocol AllDimensionSemanticTokensProvider: TokensProvider, DimensionSemanticTokens {}
 
 /// Something which provides all semantic tokens of size
 public protocol AllSizeSemanticTokensProvider: TokensProvider, SizeSemanticTokens, SizeMultipleSemanticTokens {}
@@ -59,7 +69,7 @@ public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentT
 public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens {}
 
 /// Something which provides all component tokens of button
-public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens {}
+public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens, ButtonMonoComponentTokens {}
 
 /// Something which provides all component tokens of checkboxes
 public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens {}
@@ -77,7 +87,7 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens {}
 
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens {}
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
 /// Something which provides all component tokens of list item
 public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}

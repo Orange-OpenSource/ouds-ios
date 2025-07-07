@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDS
+import OUDSThemesOrange
 
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
@@ -51,14 +52,15 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
+                   dimensions: OrangeThemeDimensionSemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
-                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
+                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, spaces: spaces),
                    bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
@@ -67,7 +69,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
-                   tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    fontFamily: fontFamily)
     }
 

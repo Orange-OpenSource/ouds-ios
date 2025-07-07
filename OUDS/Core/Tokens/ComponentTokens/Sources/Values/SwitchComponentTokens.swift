@@ -39,9 +39,10 @@ public protocol SwitchComponentTokens {
     var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { get }
     var switchSizeWidthTrack: SizeSemanticToken { get }
 
-    // MARK: - Borders
+    // MARK: - Border
 
-    var switchBorderRadius: BorderRadiusSemanticToken { get }
+    var switchBorderRadiusCursor: BorderRadiusSemanticToken { get }
+    var switchBorderRadiusTrack: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
 

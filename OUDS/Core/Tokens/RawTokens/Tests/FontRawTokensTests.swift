@@ -63,6 +63,11 @@ struct FontRawTokensTests {
     }
 
     @Test
+    func fontRawTokenFontFamilySystemSfMono() throws {
+        #expect(FontRawTokens.fontFamilyMonospaceSfMono == "SF Mono")
+    }
+
+    @Test
     func fontRawTokenFontFamilySystemSfPro() throws {
         #expect(FontRawTokens.fontFamilySystemSfPro == "SF Pro")
     }

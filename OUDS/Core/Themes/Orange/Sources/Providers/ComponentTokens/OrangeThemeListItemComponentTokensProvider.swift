@@ -93,6 +93,10 @@ open class OrangeThemeListItemComponentTokensProvider: AllListItemComponentToken
     /// Provider of spaces semantic tokens to use for button spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSListItem`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -106,9 +110,17 @@ open class OrangeThemeListItemComponentTokensProvider: AllListItemComponentToken
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeListItemComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

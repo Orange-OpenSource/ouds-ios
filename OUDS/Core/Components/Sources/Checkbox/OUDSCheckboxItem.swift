@@ -50,6 +50,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -105,9 +106,15 @@ import SwiftUI
 ///                      isInversed: layoutDirection == .rightToLeft)
 /// ```
 ///
-/// ## Design documentation
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// ## Suggestions
 ///
+/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox/t/14bf4bd854), the checkbox by default must be used in unselected state.
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
+///
+/// - Version: 2.0.0
 /// - Since: 0.12.0
 public struct OUDSCheckboxItem: View {
 

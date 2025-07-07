@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
 ///
-///         override var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+///         override var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSm }
 ///
 ///         override  var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 ///
@@ -94,6 +94,10 @@ open class OrangeThemeInputTextComponentTokensProvider: AllInputTextComponentTok
     /// Provider of spaces semantic tokens to use for button spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSButton`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
@@ -107,9 +111,17 @@ open class OrangeThemeInputTextComponentTokensProvider: AllInputTextComponentTok
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeInputTextComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

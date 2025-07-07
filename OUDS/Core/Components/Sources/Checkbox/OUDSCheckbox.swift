@@ -38,6 +38,7 @@ import SwiftUI
 /// Note also the component must be instanciated with a string parameter used as accessibility label.
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for checkbox.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Cases forbidden by design
 ///
@@ -60,23 +61,29 @@ import SwiftUI
 ///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
 ///
+/// ## Suggestions
+///
+/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox/t/14bf4bd854), the checkbox by default must be used in unselected state.
+///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
 ///
+/// - Version: 2.0.0
 /// - Since: 0.12.0
 public struct OUDSCheckbox: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let isError: Bool
     private let a11yLabel: String
 
-    @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
 
-    // MARK: - Initializers
+    @Binding var isOn: Bool
+
+    // MARK: Initializers
 
     /// Creates a checkbox with only an indicator.
     ///
@@ -110,6 +117,7 @@ public struct OUDSCheckbox: View {
                        minHeight: theme.checkbox.checkboxSizeMinHeight,
                        maxHeight: theme.checkbox.checkboxSizeMaxHeight)
                 .contentShape(Rectangle())
+                .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
@@ -117,7 +125,7 @@ public struct OUDSCheckbox: View {
         .accessibilityHint(a11yHint())
     }
 
-    // MARK: - Computed value
+    // MARK: Computed value
 
     private var convertedState: OUDSCheckboxIndicatorState {
         isOn ? .selected : .unselected

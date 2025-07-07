@@ -27,10 +27,11 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
+/// - Version: 1.0.0
 /// - Since: 0.14.0
-public struct OUDSVerticalDivider: View { // TODO: #511 - Update documentation hyperlink
+public struct OUDSVerticalDivider: View {
 
     // MARK: - Stored properties
 
@@ -40,10 +41,10 @@ public struct OUDSVerticalDivider: View { // TODO: #511 - Update documentation h
 
     /// Create a vertical colored divider.
     ///
-    /// - Parameter color: The color of the divider, `OUDSDivider.Color.borderDefault` by default
+    /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
-    public init(color: OUDSDividerColor = .borderDefault) {
+    public init(color: OUDSDividerColor = .default) {
         self.color = color
     }
 
@@ -67,7 +68,7 @@ extension Divider {
     /// }
     /// ```
     ///
-    /// - Parameter color: the color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter color: the color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor

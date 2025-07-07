@@ -305,6 +305,14 @@ struct BorderRawTokensTests {
         TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
     }
 
+    @Test func borderRadiusRawToken800LessThan9999() throws {
+        #expect(BorderRawTokens.borderRadius800 < BorderRawTokens.borderRadius9999)
+    }
+
+    @Test func borderRadiusRawToken9999NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius9999 >= 0)
+    }
+
     /// Border radius raw tokens must be different
     @Test func nonEqualityForBorderRadiuses() throws {
         #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius25)
@@ -318,6 +326,7 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius50)
         #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius75)
@@ -329,6 +338,7 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius75)
         #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius100)
@@ -339,6 +349,7 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius100)
         #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius150)
@@ -348,6 +359,7 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius150)
         #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius200)
@@ -356,6 +368,7 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius200)
         #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius300)
@@ -363,26 +376,34 @@ struct BorderRawTokensTests {
         #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius300)
         #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius400)
         #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius400)
         #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius500)
         #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius600)
         #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius9999)
 
         #expect(BorderRawTokens.borderRadius600 != BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius600 != BorderRawTokens.borderRadius9999)
+
+        #expect(BorderRawTokens.borderRadius800 != BorderRawTokens.borderRadius9999)
     }
 
     // MARK: - Primitive token - Border - Style

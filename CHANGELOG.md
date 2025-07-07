@@ -4,7 +4,54 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...develop)
+## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...0.16.0) - 2025-07-07
+
+### Added
+
+- Versions of components in package
+- New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Dimension semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+
+### Changed
+
+- Button component tokens (tokens library v1.2.0)
+- Link component tokens (tokens library v1.2.0)
+- Checkbox component tokens (tokens library v1.2.0)
+- Radio button component tokens (tokens library v1.2.0)
+- Button component tokens (tokens library v1.2.0)
+- Tag component tokens (tokens library v1.2.0)
+- Update `SwiftFormat` Swift Package from v0.56.2 to v0.56.4
+- Optional accessibility identifiers for items of radio picker and checkbox picker components
+- Switch component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Checkbox component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Control item component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Link component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Tag component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Chip component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Badge component tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Space semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Border semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Size semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Elevation semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Color raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Dimension raw tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+- Update the names and the order of the divider colors (Orange-OpenSource/ouds-ios#712)  
+- In low power mode, stop animations of loading button (Orange-OpenSource/ouds-ios#661)
+- Improve documentation of components by adding component versions
+
+### Removed
+
+- Elevation multiple semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
+
+### Fixed
+
+- Divider in component should not increase the size of this component (Orange-OpenSource/ouds-ios#525)
+- Background color in pressed and hover states for Radio button and Checkbox components (Orange-OpenSource/ouds-ios#720)  
+- Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
+- Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
 
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...0.15.0) - 2025-05-28
 

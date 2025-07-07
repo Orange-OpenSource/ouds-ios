@@ -27,8 +27,16 @@ struct OrangeThemeTagComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
+    @Test func defaultSizeSemanticTokensProvider() throws {
+        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
+    }
+
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
+    }
+
+    @Test func defaultSpaceSemanticTokensProvider() throws {
+        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
     }
 }
 

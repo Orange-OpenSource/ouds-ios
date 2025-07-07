@@ -22,6 +22,9 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a chekcbox trait.
+/// The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used.
+/// However if defined in the ``OUDSRadioPickerData`` the items inside the picker will have such accessibility identifiers.
+/// In addition the root item of the picker has for accessiiblity identifier the displayed text.
 ///
 /// ## Forbidden by design
 ///
@@ -186,9 +189,11 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             } else {
                 selections.wrappedValue = []
             }
-        }.accessibilityLabel(a11yLabel)
-            .accessibilityHint(a11yHint.localized())
-            .accessibilityValue(a11yValue)
+        }
+        .accessibilityLabel(a11yLabel)
+        .accessibilityHint(a11yHint.localized())
+        .accessibilityValue(a11yValue)
+        .accessibilityIdentifier(rootLabel(for: text, of: type))
     }
 
     /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
@@ -196,8 +201,14 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// - Returns: The view
     private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>]) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
-            content(for: checkbox,
-                    noDivider: checkboxes[checkboxes.count - 1].tag == checkbox.tag) // No divider for last item
+            if let a11yidentifier = checkbox.accessibilityIdentifier {
+                content(for: checkbox,
+                        noDivider: checkboxes[checkboxes.count - 1].tag == checkbox.tag) // No divider for last item
+                    .accessibilityIdentifier(a11yidentifier)
+            } else {
+                content(for: checkbox,
+                        noDivider: checkboxes[checkboxes.count - 1].tag == checkbox.tag) // No divider for last item
+            }
         }
     }
 
@@ -304,9 +315,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Forges the label to vocalize with *Voice Over* for the root element
     private var a11yLabel: String {
         if case let .verticalRooted(label, _) = placement {
-            return label
+            label
         } else {
-            return ""
+            ""
         }
     }
 

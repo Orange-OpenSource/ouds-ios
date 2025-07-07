@@ -49,6 +49,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -72,9 +73,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", isReadOnly: true)
 ///
-///     // A leading radio with a label, and an helper text.
+///     // A leading radio with a label, and an additional label but without text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", helper: "The Beatles")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles")
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
@@ -116,6 +117,7 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
+/// - Version: 1.0.0
 /// - Since: 0.12.0
 public struct OUDSRadioItem: View {
 

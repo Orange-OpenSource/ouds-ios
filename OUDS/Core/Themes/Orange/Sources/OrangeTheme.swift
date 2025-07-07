@@ -14,6 +14,9 @@
 import OUDS
 import OUDSTokensSemantic
 
+// swiftlint:disable function_body_length
+// swiftlint:disable line_length
+
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
@@ -87,6 +90,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
+    ///    - dimensions: All semantic tokens of dimension
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -112,6 +116,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
                          opacities: AllOpacitySemanticTokensProvider? = nil,
+                         dimensions: AllDimensionSemanticTokensProvider? = nil,
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
@@ -139,15 +144,16 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
         let opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
-        let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
-        let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        let dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions))
+        let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
-        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
+        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
-        let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
-        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
@@ -155,8 +161,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
         let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
-        let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities))
-        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+        let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
+        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
 
         super.init(borders: borders,
                    colors: colors,
@@ -165,6 +171,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
+                   dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
@@ -187,3 +194,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
+
+// swiftlint:enable function_body_length
+// swiftlint:enable line_length

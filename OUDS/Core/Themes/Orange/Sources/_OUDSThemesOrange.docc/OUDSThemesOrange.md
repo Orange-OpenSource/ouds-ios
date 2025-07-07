@@ -2,6 +2,11 @@
 
 The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
 
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧱 Theme version: 1.1.0
+```
+
 ## Overview
 
 This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
@@ -91,11 +96,11 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMedium: SpaceSemanticToken {
+    override var spaceFixedMd: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
-    override var spaceScaledShort: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
+    override var spaceScaledSm: MultipleSpaceSemanticTokens {
+        MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
     }
 }
 
@@ -130,7 +135,7 @@ class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     override var borderWidthMedium: BorderWidthSemanticToken {
         BorderRawTokens.borderWidth100
     }
-    override var borderRadiusTall: BorderRadiusSemanticToken {
+    override var borderRadiusLarge: BorderRadiusSemanticToken {
         BorderRawTokens.borderRadius800
     }
 }

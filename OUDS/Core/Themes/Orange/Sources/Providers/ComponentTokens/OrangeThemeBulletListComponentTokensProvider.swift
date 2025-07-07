@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the bullet list component tokens you want.
 ///
-///         override var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+///         override var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSm }
 ///
 ///         // ...
 ///     }
@@ -79,14 +79,26 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
     /// Provider of spaces semantic tokens to use for link spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeBulletListComponentTokensProvider")
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeBulletListComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

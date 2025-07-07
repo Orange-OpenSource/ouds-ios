@@ -3,12 +3,12 @@
 These _tokens_ can be used mainly for _component tokens_ to apply some style and configuration values ; today _component tokens_ or _components_ are not defined yet.
 They can be seen as an high level of usage with functional meanings.
 
-## Overview
-
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Tokens version: 0.11.0
+🧱 Core version: 1.1.0
 ```
+
+## Overview
 
 If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
 
@@ -162,7 +162,6 @@ struct DesignToolbox: App {
 - ``ColorModeMultipleSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
-- ``ElevationMultipleSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizeSemanticTokens``

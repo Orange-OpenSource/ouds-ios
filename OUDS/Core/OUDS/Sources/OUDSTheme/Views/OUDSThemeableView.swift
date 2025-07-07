@@ -89,10 +89,12 @@ public struct OUDSThemeableView<Content>: View where Content: View {
         #if canImport(UIKit)
         content()
             .environment(\._theme, theme)
+            .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
         #else
         content()
             .environment(\._theme, theme)
+            .environmentObject(OUDSLowPowerModeObserver())
         #endif
     }
 }

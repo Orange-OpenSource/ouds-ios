@@ -63,14 +63,26 @@ open class OrangeThemeColorModeSemanticTokensProvider: AllColorModeSemanticToken
     /// Provider of color semantic tokens to use for depending to some color modes
     public let colors: AllColorSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of color mode semantic tokens
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeColorModeSemanticTokensProvider")
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeColorModeSemanticTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

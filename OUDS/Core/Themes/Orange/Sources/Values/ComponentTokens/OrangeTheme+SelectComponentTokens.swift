@@ -51,7 +51,7 @@ extension OrangeThemeSelectComponentTokensProvider: SelectComponentTokens {
     @objc open var selectSizeCheckBox: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     @objc open var selectSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
     @objc open var selectSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
-    @objc open var selectSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
-    @objc open var selectSpacePaddingInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var selectSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLg }
+    @objc open var selectSpacePaddingInset: SpaceSemanticToken { spaces.spaceInsetMd }
     @objc open var selectSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
 }

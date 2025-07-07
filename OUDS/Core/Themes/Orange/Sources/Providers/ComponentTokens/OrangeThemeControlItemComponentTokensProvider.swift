@@ -23,7 +23,7 @@ import OUDSFoundations
 /// Custom themes can use subclass of ``OrangeThemeControlItemComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ControlItemComponentTokens` so as to expose the component tokens for control-item-layout-basded components through any `OUDSTheme`.
 /// Such components tokens are defined with raw and semantic tokens of sizes (from `SizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`)  and spaces (from `AllSpaceSemanticTokensProvider`)?
+/// borders (from `AllBorderSemanticTokensProvider`),  colors (from `AllColorSemanticTokensProvider`)  and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for control-item-layout-based component tokens
@@ -71,6 +71,7 @@ import OUDSFoundations
 /// ```swift
 ///     // Uses by default here:
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     let controlItemComponentTokensProvider = OrangeThemeControlItemComponentTokensProvider()
@@ -78,6 +79,7 @@ import OUDSFoundations
 ///     // Or use your own size, color and space semantic tokens providers (or only some)
 ///     let controlItemComponentTokensProvider = OrangeThemeControlItemComponentTokensProvider(
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 space: CustomSpaceSemanticTokensProvider())
 /// ```
@@ -88,29 +90,46 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
     /// Provider of size semantic tokens to use for control-item-layout-based sizes
     public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of border semantic tokens to use for button borders
+    public let borders: AllBorderSemanticTokensProvider
+
     /// Provider of color semantic tokens to use for control-item-layout-based  colors
     public let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for control-item-layout-based  spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Defines a provider of component tokens dedicated to control-item-layout-based components.
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeControlItemComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeControlItemComponentTokensProvider")
+        #endif
     }
 
-    deinit {}
-
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of ControlItemComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift

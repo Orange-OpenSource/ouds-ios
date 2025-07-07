@@ -14,14 +14,16 @@
 
 Looking to contribute something OUDS iOS? **Here's how you can help.**
 
-Please take a moment to review this document in order to make the contribution process easy for everyone involved.
+> [!TIP]
+> Please take a moment to review this document in order to make the contribution process easy for everyone involved.
 
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
-In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
+> [!IMPORTANT]
+> Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
+> In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
-You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions.
-[The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-[The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
+You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions:
+- [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+- [The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
 
 ## Using the Issue Tracker
 
@@ -41,7 +43,8 @@ You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/
 
 If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
 
-Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
+> [!IMPORTANT]
+> Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Issues and Labels
 
@@ -50,7 +53,8 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`) or a major version bump if public API broken (e.g., `v1.0.0` to `v2.0.0`)
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
-For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
+> [!TIP]
+> For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
 
 ## Bug Reports
 
@@ -97,6 +101,9 @@ Good pull requests (patches, improvements, new features) are a fantastic help. T
 Please adhere to the [coding guidelines](#code-guidelines) used throughout the project (indentation, accurate comments, etc.) and any other requirements (such as test coverage).
 
 Adhering to the following process is the best way to get your work included in the project:
+
+> [!TIP]
+> Of course you can use GUI tools if your are not used to CLI
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
@@ -151,6 +158,10 @@ Format your code before committing to ensure your changes follow our coding stan
 Linters and formatters are configured for the project.
 Keep documentation and tests updated.
 Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture).
+
+> [!IMPORTANT]
+> About naming of the components and their parameters, use the parameters and components grammar as defined in Figma specifications.
+> Do not use your own wordings for such things as consitency must be kept between Figma specifications and all products of OUDS.
 
 ## Commits Style
 
@@ -209,15 +220,16 @@ Reviewed-by: Reviewer firstname and lastname <reviewer email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
-refactor: update some things colors and design of the demo app (#123) (#4562)
+refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Acked-by: Julien Déramond <julien.deramond@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
@@ -229,7 +241,7 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthsies some commercial name.
 
 ```text
-feat: add thousands of tokens (#666))
+feat: add thousands of tokens (#666)
 
 Add thousands of tokens and hundreds of tests.
 
@@ -281,4 +293,5 @@ Pull requests will be merged if no conditions / prerequisites / checks are red (
 
 ## License
 
-By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).
+> [!IMPORTANT]
+> By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).

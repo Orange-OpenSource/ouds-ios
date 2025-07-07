@@ -21,6 +21,12 @@ Copyright (c) 2019 Zachary Rice
 *gitleaks* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
 
+### Grype
+<!-- (CI/CD, tools, etc.) -->
+
+*Grype* is distributed under the terms and conditions of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
+You may download the source code on the [following website](https://github.com/anchore/grype).
+
 ### Periphery
 <!-- GitHub Action workflow -->
 
@@ -53,7 +59,7 @@ Copyright 2020 Realm Inc.
 *SwiftLint* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/realm/SwiftLint).
 
-#### SwiftLintPlugins
+### SwiftLintPlugins
 <!-- Xcode build tool plugin -->
 
 Copyright 2020 Realm Inc.
@@ -62,10 +68,16 @@ Copyright 2024 Danny Mösch
 *SwiftLintPlugins* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/SimplyDanny/SwiftLintPlugins).
 
-#### SwiftPolyglot
+### SwiftPolyglot
 <!-- GitHub Action workflow -->
 
 Copyright 2024 App Deco Studio Inc.
 
 *SwiftPolyglot* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/appdecostudio/SwiftPolyglot).
+
+### Syft
+<!-- (CI/CD, tools, etc.) -->
+
+*Syft* is distributed under the terms and conditions of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
+You may download the source code on the [following website](https://github.com/anchore/syft).

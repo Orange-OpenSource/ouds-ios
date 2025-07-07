@@ -21,7 +21,7 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 [bundle exec] fastlane ios check_dead_code
 ```
 
-RUN PERIPHERY FOR DEAD CODE ANALYSIS
+Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned.
 
 ### ios format
 
@@ -29,7 +29,7 @@ RUN PERIPHERY FOR DEAD CODE ANALYSIS
 [bundle exec] fastlane ios format
 ```
 
-RUN SWIFT FORMAT TO FORMAT SOURCES
+Run SwiftFormat to format Swift source files according to the local configuration.
 
 ### ios lint
 
@@ -37,7 +37,23 @@ RUN SWIFT FORMAT TO FORMAT SOURCES
 [bundle exec] fastlane ios lint
 ```
 
-RUN SWIFT LINT TO CHECK SMELLS
+Run SwiftLint in strict mode to detect code smells
+
+### ios check_leaks
+
+```sh
+[bundle exec] fastlane ios check_leaks
+```
+
+Run GitLeaks to look for leaks of secrets in project and Git history
+
+### ios update_sbom
+
+```sh
+[bundle exec] fastlane ios update_sbom
+```
+
+Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities
 
 ### ios build
 
@@ -45,7 +61,7 @@ RUN SWIFT LINT TO CHECK SMELLS
 [bundle exec] fastlane ios build
 ```
 
-BUILD THE SWIFT PACKAGE
+Build the Swift Package to be sure the package is compilable
 
 ### ios test_unit
 
@@ -53,7 +69,7 @@ BUILD THE SWIFT PACKAGE
 [bundle exec] fastlane ios test_unit
 ```
 
-RUN UNIT TESTS OF SWIFT PAKCAGE
+Run the unit tests embeded in the Swift Package project
 
 ----
 

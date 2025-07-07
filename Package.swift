@@ -67,7 +67,7 @@ let package = Package(
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.59.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.56.2"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.56.4"),
     ],
 
     // MARK: - Targets
@@ -79,6 +79,10 @@ let package = Package(
             name: "OUDS",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/OUDS/Sources"),
+        .testTarget(
+            name: "OUDS-Tests",
+            dependencies: ["OUDS", "TestsUtils"],
+            path: "OUDS/Core/OUDS/Tests"),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],

@@ -52,19 +52,30 @@ import OUDSFoundations
 /// - Since: 0.8.0
 open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticTokensProvider {
 
+    #if DEBUG
+    private nonisolated(unsafe) static var instanceCount: Int = 0
+    #endif
+
     /// Intializes the provider
     public init() {
         OL.debug("Init of OrangeThemeElevationSemanticTokensProvider")
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeElevationSemanticTokensProvider")
+        #endif
     }
 
-    deinit {}
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens are not here
+    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift,
-    // in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift,
-    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationMultipleSemanticTokens.swift,
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of OrangeThemeElevationSemanticTokensProvider is here to allow to write documentation.
 }
 

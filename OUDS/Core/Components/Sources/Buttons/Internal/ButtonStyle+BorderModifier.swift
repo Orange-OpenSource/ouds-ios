@@ -22,6 +22,8 @@ struct ButtonBorderModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Stored Properties
 
@@ -82,15 +84,19 @@ struct ButtonBorderModifier: ViewModifier {
     private var defaultColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            useMonochrome ? theme.button.buttonColorBorderDefaultEnabledMono : theme.button.buttonColorBorderDefaultEnabled
+            useMonochrome ? theme.button.buttonMonoColorBorderDefaultEnabled : theme.button.buttonColorBorderDefaultEnabled
         case .hover:
-            useMonochrome ? theme.button.buttonColorBorderDefaultHoverMono : theme.button.buttonColorBorderDefaultHover
+            useMonochrome ? theme.button.buttonMonoColorBorderDefaultHover : theme.button.buttonColorBorderDefaultHover
         case .pressed:
-            useMonochrome ? theme.button.buttonColorBorderDefaultPressedMono : theme.button.buttonColorBorderDefaultPressed
+            useMonochrome ? theme.button.buttonMonoColorBorderDefaultPressed : theme.button.buttonColorBorderDefaultPressed
         case .loading:
-            useMonochrome ? theme.button.buttonColorBorderDefaultLoadingMono : theme.button.buttonColorBorderDefaultLoading
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                theme.colors.colorContentDefault
+            } else {
+                useMonochrome ? theme.button.buttonMonoColorBorderDefaultLoading : theme.button.buttonColorBorderDefaultLoading
+            }
         case .disabled:
-            useMonochrome ? theme.button.buttonColorBorderDefaultDisabledMono : theme.button.buttonColorBorderDefaultDisabled
+            useMonochrome ? theme.button.buttonMonoColorBorderDefaultDisabled : theme.button.buttonColorBorderDefaultDisabled
         }
     }
 
@@ -114,15 +120,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var minimalColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            useMonochrome ? theme.button.buttonColorBorderMinimalEnabledMono : theme.button.buttonColorBorderMinimalEnabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderMinimalEnabled
         case .hover:
-            useMonochrome ? theme.button.buttonColorBorderMinimalHoverMono : theme.button.buttonColorBorderMinimalHover
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderMinimalHover
         case .pressed:
-            useMonochrome ? theme.button.buttonColorBorderMinimalPressedMono : theme.button.buttonColorBorderMinimalPressed
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderMinimalPressed
         case .loading:
-            useMonochrome ? theme.button.buttonColorBorderMinimalLoadingMono : theme.button.buttonColorBorderMinimalLoading
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderMinimalLoading
         case .disabled:
-            useMonochrome ? theme.button.buttonColorBorderMinimalDisabledMono : theme.button.buttonColorBorderMinimalDisabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderMinimalDisabled
         }
     }
 
@@ -131,15 +137,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var strongColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.button.buttonColorBorderStrongEnabledMono
+            theme.button.buttonMonoColorBorderStrongEnabled
         case .hover:
-            theme.button.buttonColorBorderStrongHoverMono
+            theme.button.buttonMonoColorBorderStrongHover
         case .pressed:
-            theme.button.buttonColorBorderStrongPressedMono
+            theme.button.buttonMonoColorBorderStrongPressed
         case .loading:
-            theme.button.buttonColorBorderStrongLoadingMono
+            theme.button.buttonMonoColorBorderStrongLoading
         case .disabled:
-            theme.button.buttonColorBorderStrongDisabledMono
+            theme.button.buttonMonoColorBorderStrongDisabled
         }
     }
 }

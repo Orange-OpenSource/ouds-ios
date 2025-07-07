@@ -13,13 +13,19 @@
 - [Linter](#linter)
 - [Formater](#formater)
 - [Dead code](#dead-code)
+- [Software Bill of Materials](#software-bill-of-materials)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
 
-You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels of the project.
-Have a look on the locks file to know which versions we are using (*Packages.swift*, *Package.resolved*, *Gemfile* and *Gemfile.lock*).
+> [!IMPORTANT]
+> You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
+> You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
+> Have a look on the locks file to know which versions we are using (Podfile, Podfile.lock, Gemfile, Gemfile.lock, etc.).
+
+> [!IMPORTANT]
+> We use a lot Fastlane for its automatic features and also to wrap to Shell command lines in order to have the same command to trigger
+> for both the design ssytem toolbox app and the OUDS Swift package.
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
@@ -50,17 +56,30 @@ brew install gitleaks
 brew install swiftlint
 # or `brew reinstall swiftlint` to get updates if old version installed
 
-# For SwiftFormat (at least 0.52.4)
+# For SwiftFormat (at least 0.56.2)
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
 
 # For xcodes (at least 1.5.0)
 brew install xcodesorg/made/xcodes
 # or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
+
+# For git-cliff (at least 2.8.0)
+brew install git-cliff
+
+# For Syft (at least 1.26.1)
+brew install syft
+
+# For Grype (at least 0.92.2)
+brew tap anchore/grype
+brew install grype
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
-We use here _Ruby 3_ (>= 3.4).
+
+> [!TIP]
+> We use here Ruby 3 (>= 3.4).
+
 If you are not used to this tool:
 
 ```shell
@@ -82,7 +101,9 @@ ruby --version
 
 We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this version or newer if you want.
 
-**Xcode 16.3** and **Swift 6** are used for this project. You must use this configuration.
+> [!IMPORTANT]
+> Xcode 16.3 and Swift 6 are used for this project. You must use this configuration.
+> No retrocompatibility is planned.
 
 ## Build OUDS Package
 
@@ -91,7 +112,11 @@ To build the OUDS package:
 2. Select the "OUDS-Package" scheme
 3. Build
 
-You can also move the folder from the *Finder* to the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) so as to have a local reference of the package in the demo project.
+> [!TIP]
+> You can also move the folder from the *Finder* to the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) so as to have a local reference of the package in the demo project.
+
+> [!TIP]
+> For consistancy reasons, when you work on a dedicated branch on the Swift Package repository and need to have a dedicated branch in the design system toolbox app, you should create a branch from the issue in GitHub and (creating then a branch in the package repository) and create a branch with the same name in the design system toolbox app repositoy. Thus with two repositories we will be able to find easily the suitable branches because the names are the same. Because issues are disabled in the design system toolbox repository, there is no wories to have to refer to issues numbers in the branch names.
 
 ## Documentation
 
@@ -156,7 +181,6 @@ Your commit message should be prefixed by keywords [you can find in the specific
 
 You can add also ! after the keyword to say a breaking change occurs, and also add a scope between parenthesis like:
 - `feat!:` breaking change because..
-- `feat(API)!:` breaking change in the API because..
 - `feat:` add something in the API...
 
 A *Git commit-msg hook* is also defined in the project. It will run *Shell* codes to check if rules defined in the hook are respected before commit being pushed.
@@ -174,15 +198,16 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
 ```text
-refactor: update some things colors and design of the demo app (#123) (#4562)
+refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Acked-by: Stephen McCarthy <stephen.mccarthy@orange.com>
@@ -191,6 +216,9 @@ Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
+
+> [!TIP]
+> Keep things clear and sorted. If people worked on your commits, mention them if relevant.
 
 #### Integration of tokenator updates
 
@@ -219,15 +247,12 @@ We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](h
 Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 To generate a release note:
-
 ```shell
-# Install git-cliff
-brew install git-cliff
-
-# Run the command
-# where X is the starting tag and Y the ending tag
 git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
 ```
+
+> [!Tip]
+> X can be a commit hash or the last tag for example. Y should be HEAD. Run this comman on main branch.
 
 ## Use of Gitleaks
 
@@ -254,8 +279,12 @@ fi
 Or just run when you want the command:
 
 ```shell
-gitleaks detect -v -l debug --source .
+bundle exec fastlane check_leaks
 ```
+
+> [!CAUTION]
+> It can increase yout git flow time if your run this command in pre-commit stage
+
 
 Note that we face some issues about the use of _Gitleaks GitHub Action_ and _Gitleaks_ as CLI command, for fur further details see [#131](https://github.com/gitleaks/gitleaks-action/issues/131), [#132](https://github.com/gitleaks/gitleaks-action/issues/132) and [#1331](https://github.com/gitleaks/gitleaks/issues/1331).
 
@@ -327,6 +356,16 @@ brew install peripheryapp/periphery/periphery
 And run:
 ```shell
 bundle exec fastlane check_dead_code
+```
+
+## Software Bill of Materials
+
+For software quality reasons, intellectual property compliance, users trust and legal oblgitations with Cyber Resilience Act (CRA) and NIS2, it it interesing or mandatory to keep updated a Software Nill Of Materials (SBOM). And with such file listing dependencies in several levels we are able to make scans of them and check if there are known vulnerabilities.
+To do these operations, we use [Syft](https://github.com/anchore/syft) to generate a SBOM in SPDX JSON format, which will processed by [Grype](https://github.com/anchore/grype) to check if there are known vulnerabilities.
+
+These operations, triggered in CLI, are wrapped in a Fastlane command:
+```shell
+bundle exec fastlane update_sbom
 ```
 
 ## CI/CD

@@ -21,6 +21,7 @@ import SwiftUI
 /// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
 /// It will define the look and feel of the indicator depending to the ``InteractionState``,
 /// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
+/// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
@@ -170,6 +171,8 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: - Body
 
@@ -202,7 +205,11 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                theme.colors.colorActionSelected
+                if colorSchemeContrast == .increased, colorScheme == .light {
+                    theme.colors.colorContentDefault
+                } else {
+                    theme.colors.colorActionSelected
+                }
             case .unselected:
                 theme.colors.colorActionEnabled
             }
