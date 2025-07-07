@@ -17,7 +17,7 @@ import SwiftUI
 
 // MARK: - OUDS Badge
 
-/// The ``OUDSBadge` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
+/// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 ///
 /// ## Code samples
 ///
@@ -142,8 +142,11 @@ public struct OUDSBadge: View {
             BadgeIcon(icon: icon, size: size)
         }
         .oudsForegroundColor(contentColor)
-        .frame(height: frameSize, alignment: .center)
-        .frame(minWidth: frameSize, alignment: .center)
+        .frame(minWidth: frameSize,
+               maxWidth: count != nil ? nil : frameSize, // if count (means a text), don't limit width)
+               minHeight: frameSize,
+               maxHeight: count != nil ? nil : frameSize, // if count (means a text), don't limit height)
+               alignment: .center)
         .oudsBackground(backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: theme.borders.borderRadiusPill))
     }
