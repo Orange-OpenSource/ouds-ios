@@ -17,7 +17,9 @@ import SwiftUI
 
 // MARK: - OUDS Badge
 
-/// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
+/// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization
+/// within an interface. It is often displayed as a label or indicator with a distinct background
+/// color and text.
 ///
 /// ## Code samples
 ///
