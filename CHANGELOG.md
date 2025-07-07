@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
 - Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
+### Added
+
+- [Library] Bagde component ([#587](https://github.com/Orange-OpenSource/ouds-ios/issues/514))
 
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...0.16.0) - 2025-07-07
 
