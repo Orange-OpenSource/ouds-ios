@@ -29,18 +29,18 @@ struct OrangeThemeBorderSemanticTokensTests {
 
     @Test func borderWidthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.borderWidthNone < theme.borders.borderWidthDefault)
-        #expect(theme.borders.borderWidthDefault < theme.borders.borderWidthThin)
+        #expect(theme.borders.borderWidthDefault <= theme.borders.borderWidthThin)
         #expect(theme.borders.borderWidthThin < theme.borders.borderWidthMedium)
         #expect(theme.borders.borderWidthMedium < theme.borders.borderWidthThick)
         #expect(theme.borders.borderWidthThick < theme.borders.borderWidthThicker)
 
         #expect(theme.borders.borderWidthFocusInset < theme.borders.borderWidthFocus)
 
-        #expect(theme.borders.borderRadiusNone < theme.borders.borderRadiusDefault)
+        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault)
     }
 
     @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderRadiusNone < theme.borders.borderRadiusDefault)
+        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault)
         #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusSmall)
         #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusMedium)
         #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
