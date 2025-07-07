@@ -8,6 +8,7 @@ You can get more details about them in the categories below:
 
 - <doc:Actions>
 - <doc:Navigations>
+- <doc:Indicators>
 - <doc:Inputs>
 - <doc:Layouts>
 

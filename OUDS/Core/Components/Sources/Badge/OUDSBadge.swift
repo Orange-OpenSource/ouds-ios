@@ -17,8 +17,7 @@ import SwiftUI
 
 // MARK: - OUDS Badge
 
-/// The ``OUDSBadge`` proposes ...
-///
+/// The ``OUDSBadge` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 ///
 /// ## Code samples
 ///
@@ -32,7 +31,6 @@ import SwiftUI
 ///     // Info badge in medium size with icon information
 ///     OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
 /// ```
-///
 ///
 /// ## Design documentation
 ///
@@ -98,8 +96,8 @@ public struct OUDSBadge: View {
     /// Create a basicv badge.
     ///
     /// - Parameters:
-    ///     - status: The status of this badge. The background color of the badge and the number color are based on this status.
-    ///     - size: The size of this badge. The number is not displayed when size is [OudsBadge.Size.ExtraSmall] or [OudsBadge.Size.Small].
+    ///     - status: The status of this badge. The background color of the badge is based on this status.
+    ///     - size: The size of this badge.
     public init(status: Status, size: Size) {
         self.status = status
         self.size = size
@@ -112,7 +110,7 @@ public struct OUDSBadge: View {
     /// - Parameters:
     ///    - count:The number displayed in the badge. Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
     ///     - status: The status of this badge. The background color of the badge and the number color are based on this status.
-    ///     - size: The size of this badge. The number is not displayed when size is [OudsBadge.Size.ExtraSmall] or [OudsBadge.Size.Small].
+    ///     - size: The size of this badge. The number is not displayed when size is ``OUDSBadge.Size.extraSmall`` or ``OUDSBadge.Size.small``.
     public init(count: UInt, status: Status, size: Size) {
         self.status = status
         self.size = size
@@ -127,7 +125,7 @@ public struct OUDSBadge: View {
     ///
     /// - Parameters:
     ///     - icon: The icon displayed in the badge
-    ///     - status: The status of this badge. The background color of the badge and the number color are based on this status
+    ///     - status: The status of this badge. The background color of the badge and the icon color are based on this status
     ///     - size: The size of this badge. The icon is not displayed when size is ``OOUSBadge.Size.extraSmall`` or ``OUDSBadge.Size.small``.
     public init(icon: Image, status: Status, size: Size) {
         self.status = status
@@ -143,12 +141,14 @@ public struct OUDSBadge: View {
             BadgeCount(count: count, size: size)
             BadgeIcon(icon: icon, size: size)
         }
-        .oudsForegroundColor(color)
+        .oudsForegroundColor(contentColor)
         .frame(height: frameSize, alignment: .center)
         .frame(minWidth: frameSize, alignment: .center)
         .oudsBackground(backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: theme.borders.borderRadiusPill))
     }
+
+    // MARK: Private helpers
 
     private var frameSize: SizeSemanticToken {
         switch size {
@@ -182,7 +182,7 @@ public struct OUDSBadge: View {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var contentColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
             return theme.colors.colorContentOnStatusNeutralEmphasized
