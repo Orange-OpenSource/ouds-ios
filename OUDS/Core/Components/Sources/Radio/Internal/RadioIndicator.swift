@@ -23,6 +23,8 @@ struct RadioIndicator: View {
     let isOn: Bool
     let isError: Bool
 
+    @Environment(\.theme) private var theme
+
     // MARK: - Body
 
     var body: some View {
@@ -37,14 +39,14 @@ struct RadioIndicator: View {
     @ViewBuilder
     private func indicator() -> some View {
         if isOn {
-            tickImage(name: "ic_radio_selected")
+            tickImage(name: "ic_radio-button_selected")
         } else {
             Color.clear
         }
     }
 
     private func tickImage(name: String) -> some View {
-        Image(decorative: name, bundle: Bundle.OUDSComponents)
+        Image(decorative: name, bundle: theme.resourcesBundle)
             .renderingMode(.template)
             .resizable()
             .scaledToFit()

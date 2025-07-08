@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
 import OUDS
 import OUDSTokensSemantic
 
@@ -101,8 +102,17 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    select: select,
                    skeleton: skeleton,
                    switch: `switch`,
-                   tag: tag)
+                   tag: tag,
+                   resourcesBundle: Bundle.SoshTheme)
     }
 
     deinit {}
+}
+
+// MARK: - Extension of Bundle
+
+extension Bundle {
+
+    /// The Sosh theme bundle, useful to find resources
+    static let SoshTheme = Bundle.module
 }

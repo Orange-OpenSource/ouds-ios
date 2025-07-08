@@ -81,8 +81,10 @@ private struct Cursor: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
+            Image(decorative: "ic_switch_selected", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
                 .foregroundStyle(tickColor)
                 .opacity(theme.switch.switchOpacityCheck)
         }
