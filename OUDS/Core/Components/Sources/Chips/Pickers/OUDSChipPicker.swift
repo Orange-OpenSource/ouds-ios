@@ -16,7 +16,7 @@ import SwiftUI
 /// A picker allowing to expose several filter chips and choose only one within the others.
 /// Each chip contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose the choosen value through this "tag".
-/// It has also some configuration elements which will override the one applied to nested ``OUDSFilterChip``
+/// It has also some configuration elements which will override the one applied to nested ``OUDSFilterChip``.
 ///
 /// ## Accessibility considerations
 ///
@@ -28,20 +28,20 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define the elements to display in filter chip using OUDSChipPickerData.
-///         enum Drink: String, CaseIterable {
-///            case virginHolyLava, ipaBeer, mineralWater
-///         }
-
+///     enum Drink: String, CaseIterable {
+///         case virginHolyLava, ipaBeer, mineralWater
+///     }
+///
 ///     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 ///         [
 ///             OUDSChipPickerData(tag: Drink.virginHolyLava,
-///                                             layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+///                                layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
 ///
 ///             OUDSChipPickerData(tag: Dring.ipaBeer,
-///                                     layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+///                                layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
 ///
 ///             OUDSChipPickerData(tag: Drink.mineralWater,
-///                                     layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+///                                layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
 ///         ]
 ///     }
 ///
@@ -55,7 +55,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDS one
+/// There is no online specification as this component is not an official OUDS one.
 ///
 /// - Since: 0.16.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
@@ -68,11 +68,13 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
+
     @Environment(\.theme) private var theme
 
     // MARK: - Init
 
     /// Defines the picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    ///
     /// - Parameters:
     ///    - title: The title of the picker
     ///    - selections: The current selected values
@@ -110,7 +112,6 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
-        // swiftlint:disable pattern_matching_keywords
         let selected = data.tag == selection.wrappedValue
         switch data.layout {
         case let .text(text):
@@ -120,6 +121,5 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         case let .textAndIcon(text, icon):
             OUDSFilterChip(icon: icon, text: text, selected: selected, action: action)
         }
-        // swiftlint:enable pattern_matching_keywords
     }
 }

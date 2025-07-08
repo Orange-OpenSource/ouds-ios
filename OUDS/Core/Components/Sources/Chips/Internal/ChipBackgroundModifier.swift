@@ -17,13 +17,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Used to apply the right background color associated to the state
-
 struct ChipBackgroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
     let state: ChipInteractionState
     let selected: Bool
+
     @Environment(\.theme) private var theme
 
     // MARK: Body

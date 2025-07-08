@@ -17,15 +17,15 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right forground color associated to the state
+/// Used to apply the right foreground color associated to the state
 struct ChipForegroundModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
 
     // MARK: Stored Properties
 
     let state: ChipInteractionState
     let selected: Bool
+
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 

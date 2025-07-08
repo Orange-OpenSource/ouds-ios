@@ -210,10 +210,9 @@ The indicator can be leading or trailing.
 
 ### Chips
 
-#### Siggestion
+#### Suggestion
 
-The library proposes suggestion chip component to make some predicitve or recomended selection.
-You can use a chip without any labels and images.
+The library proposes suggestion chip component to make some predicitve or recommended selection.
 
 ```swift
     // Suggestion chip with icon only 
@@ -229,38 +228,38 @@ You can use a chip without any labels and images.
 #### Filter
 
 The library proposes filter chip component to make some filtering with selected or unselected options.
-You can use a chip without any labels and images.
 
 ```swift
     // Filter chip with icon only as selected 
     OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
 
     // Filter chip with text only as not selected
-    OUDSFilterChip(text: "Heart", selected: false) { /* the action to process */ }
+    OUDSFilterChip(text: "Heart") { /* the action to process */ }
 
     // Filter chip with text and icon layout an in selected state
     OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
 ```
 
-#### Cbips picker
+#### Chips picker
 
-The library proposes a chip picker to make easyly filtering with selected or unselected options.
+The library proposes a chip picker to make easily filtering with selected or unselected options.
+
 ```swift
-     // Define the elements to display in filter chip using OUDSChipPickerData.
-     enum Drink: String, CaseIterable {
-         case virginHolyLava, ipaBeer, mineralWater
-     }
+    // Define the elements to display in filter chip using OUDSChipPickerData.
+    enum Drink: String, CaseIterable {
+        case virginHolyLava, ipaBeer, mineralWater
+    }
 
-     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
+    var someDataToPopulate: [OUDSChipPickerData<Drink>] {
          [
              OUDSChipPickerData(tag: Drink.virginHolyLava,
-                                             layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+                                layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
 
              OUDSChipPickerData(tag: Dring.ipaBeer,
-                                     layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+                                layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
 
              OUDSChipPickerData(tag: Drink.mineralWater,
-                                     layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+                                layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
          ]
      }
 
@@ -269,5 +268,5 @@ The library proposes a chip picker to make easyly filtering with selected or uns
      @State var selection: Drink = .mineralWater
 
      // Here the picker with title, selection and data
-     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+     OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
  ```

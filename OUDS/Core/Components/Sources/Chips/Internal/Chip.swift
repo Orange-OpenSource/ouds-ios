@@ -19,9 +19,9 @@ import SwiftUI
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
 ///
 /// The layout of the chip will change according to the `ChipInteractionState` and the selected flag.
-
+///
 /// - Version: 1.2.0
-/// - Since: 0.16.0
+/// - Since: 0.17.0
 struct Chip: View {
 
     // MARK: Stored Properties
@@ -33,10 +33,7 @@ struct Chip: View {
     @Environment(\.theme) private var theme
 
     enum IconPosition {
-        // Icon at leading position
         case leading
-
-        // Icon at trailing position
         case trailing
     }
 
@@ -53,7 +50,7 @@ struct Chip: View {
     /// - Parameters:
     ///    - layout: The layout of the chip
     ///    - selected: Flag to know if chip is selected
-    ///    - interactionState: The interaction state from button
+    ///    - interactionState: The interaction state
     public init(layout: Layout, selected: Bool, interactionState: ChipInteractionState) {
         self.layout = layout
         self.selected = selected
@@ -74,8 +71,6 @@ struct Chip: View {
         .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
         .modifier(ChipBorderModifier(state: interactionState, selected: selected))
         .accessibilityAddTraits(selected ? [.isSelected] : [])
-//        .frame(minHeight: theme.chip.chipSizeMinHeightInteractiveArea)
-//        .background(.red)
     }
 
     private var leadingPadding: CGFloat {

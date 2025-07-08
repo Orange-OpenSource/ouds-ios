@@ -11,13 +11,18 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
+
+/// The internal state used by modifiers to handle all states of the chip.
 enum ChipInteractionState {
 
-    /// The internal state used by modifiers to handle all states of the chip.
-    case enabled, hover, pressed, disabled
+    case enabled
+    case hover
+    case pressed
+    case disabled
 
-    /// Initialize the `ChipInteractionState` with the `InteractionState`
-    /// provided by the `InteractionButton` which is used to build a chip.
+    /// Initializes the ``ChipInteractionState`` with the `InteractionState`
+    /// provided by the ``InteractionButton`` which is used to build a chip.
     ///
     /// This is prefered because chip does not support read only state.
     ///
@@ -33,7 +38,7 @@ enum ChipInteractionState {
         case .disabled:
             self = .disabled
         case .readOnly:
-            fatalError("Read only not allowed on chip")
+            OL.fatal("An OUDS chip is a component which cannot be in read-only mode")
         }
     }
 }

@@ -16,12 +16,15 @@ import SwiftUI
 /// The data to use to populate the picker of ``OUDSFilterChip`` objects.
 /// Each property in this ``OUDSChipPickerData`` is used to define the suitable ``OUDSFilterChip``.
 ///
-/// - Since: 0.16.0
+/// - Since: 0.17.0
 public struct OUDSChipPickerData<Tag> where Tag: Hashable {
 
     /// The identifier, supposed to be unique, to discriminate the element.
     /// This value will be exposed as selection inside the ``OUDSChipPicker``.
     let tag: Tag
+
+    /// The layout of the ``OUDSFilterChip``
+    let layout: Layout
 
     /// The layout of the ``OUDSFilterChip``.
     ///
@@ -38,13 +41,11 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         case textAndIcon(text: String, icon: Image)
     }
 
-    /// The layout of the ``OUDSFilterChip``
-    let layout: Layout
-
     /// Defines the data to use to define the chip (``OUDSFilterChip``)
+    ///
     /// - Parameters:
-    ///    - tag: a value to discriminate one chip to another
-    ///    - layout: the layout of the ``OUDSFilterChip``
+    ///    - tag: A value to discriminate one chip to another
+    ///    - layout: The layout of the ``OUDSFilterChip``
     public init(tag: Tag, layout: Layout) {
         self.tag = tag
         self.layout = layout

@@ -17,7 +17,6 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Used to apply a border with color, width and radius associated to the state
-
 struct ChipBorderModifier: ViewModifier {
 
     // MARK: Stored Properties
