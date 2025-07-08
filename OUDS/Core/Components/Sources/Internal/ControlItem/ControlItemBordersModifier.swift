@@ -39,7 +39,7 @@ struct ControlItemBordersModifier: ViewModifier {
             content
                 .oudsBorder(style: theme.borders.borderStyleDefault,
                             width: theme.borders.borderWidthDefault,
-                            radius: theme.borders.borderRadiusNone,
+                            radius: borderRadius,
                             color: borderColor)
         } else {
             if layoutData.hasDivider {
@@ -95,5 +95,11 @@ struct ControlItemBordersModifier: ViewModifier {
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return isOn ? theme.colors.colorActionDisabled : nil
+    }
+
+    private var borderRadius: BorderRadiusSemanticToken {
+        interactionState == .readOnly ?
+        theme.controlItem.controlItemBorderRadiusItemOnly :
+        theme.controlItem.controlItemBorderRadius
     }
 }
