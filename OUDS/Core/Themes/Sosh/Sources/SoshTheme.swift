@@ -103,7 +103,8 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   resourcesBundle: Bundle.SoshTheme)
+                   resourcesBundle: Bundle.SoshTheme,
+                   fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
     }
 
     deinit {}
