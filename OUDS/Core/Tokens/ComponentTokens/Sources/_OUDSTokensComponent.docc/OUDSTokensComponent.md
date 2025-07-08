@@ -5,7 +5,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Core version: 1.1.0
+🧱 Core version: 1.2.0
 ```
 
 ## Overview

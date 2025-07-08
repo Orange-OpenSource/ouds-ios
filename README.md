@@ -73,7 +73,7 @@
 > This Swift package embeds specific versions of themes.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core version: 1.1.0
+- Core version: 1.2.0
 - Orange theme version: 1.1.0
 
 ## About OUDS
