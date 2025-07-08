@@ -33,7 +33,7 @@ struct SwitchIndicator: View {
             .padding(.horizontal, spacePadding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
     }
 
@@ -88,7 +88,7 @@ private struct Cursor: View {
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
         .oudsBackground(theme.switch.switchColorCursor)
-        .clipShape(Capsule())
+        .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusCursor))
         .oudsShadow(theme.elevations.elevationRaised)
         .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
     }
