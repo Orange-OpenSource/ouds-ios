@@ -60,20 +60,20 @@ import SwiftUI
 ///
 /// - Since: 0.17.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
-
+    
     /// The title of the picker
     let title: String?
-
+    
     /// The tags of the selected checkbox
     var selection: Binding<Tag>
-
+    
     /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
-
+    
     @Environment(\.theme) private var theme
-
+    
     // MARK: - Init
-
+    
     /// Defines the picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     ///
     /// - Parameters:
@@ -88,9 +88,9 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         self.selection = selection
         self.chips = chips
     }
-
+    
     // MARK: - Body
-
+    
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
             if let title {
@@ -99,7 +99,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                     .padding(.leading, theme.spaces.spaceFixedMd)
                     .accessibilityAddTraits(.isHeader)
             }
-
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(chips, id: \.tag) { chip in
@@ -113,9 +113,9 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         }
         .padding(.vertical, theme.spaces.spaceFixedSm)
     }
-
+    
     // MARK: - Helper
-
+    
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         if let a11yidentifier = data.accessibilityIdentifier {
@@ -124,7 +124,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
             _filterChip(from: data, action: action)
         }
     }
-
+    
     @ViewBuilder
     private func _filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         let selected = data.tag == selection.wrappedValue
