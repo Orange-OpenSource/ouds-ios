@@ -48,4 +48,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
 
+./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Black.ttf
+./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Bold.ttf
+./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Medium.ttf
+./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Regular.ttf
+./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Thin.ttf
+
 End of the parts list under Orange SA Copyright

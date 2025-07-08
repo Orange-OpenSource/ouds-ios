@@ -60,17 +60,9 @@ struct SomeView: View {
         // Etc.
     }
 }
-
 ```
 
-## How to use the Sosh fonts
-
-Even if the typography is designed in this Swift Package thanks to tokens and Swift code, the TTF files defining the Sosh fonts are not exposed here and should be added in your project. 
-You can get them in the [design system toolbox app](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
-
-To use the fonts, follow the steps:
-- In the Info.plist of your project, add the new groupe entry "Fonts provided by application"
-- Then in this group add one new line per font (Sosh-Black.ttf, Sosh-Bold.ttf, Sosh-Medium.ttf, Sosh-Regular.ttf, Sosh-Thinn.ttf) 
+This theme embeds and registers the fonts for the Sosh theme, you just need to use the theme object as is.
 
 ## How to enrich the theme
 
