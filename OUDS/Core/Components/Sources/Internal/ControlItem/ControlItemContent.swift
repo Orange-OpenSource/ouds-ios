@@ -52,6 +52,7 @@ struct ControlItemContent: View {
         .padding(.all, theme.controlItem.controlItemSpaceInset)
         .oudsBackground(backgroundColor)
         .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
     }
 
     // MARK: Containers
