@@ -13,7 +13,9 @@
 
 import Foundation
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
+import SwiftUI
 
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
@@ -105,9 +107,20 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    tag: tag,
                    resourcesBundle: Bundle.SoshTheme,
                    fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
+
+        registerFonts()
     }
 
     deinit {}
+}
+
+extension SoshTheme {
+    
+    /// Fonts are defined in Resources/Fonts in TTF files
+    func registerFonts() {
+        let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+    }
 }
 
 // MARK: - Extension of Bundle
