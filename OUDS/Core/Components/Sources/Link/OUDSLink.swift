@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import SwiftUI
 
 /// The ``OUDSLink`` proposes layout with text only or text with icon.
@@ -59,6 +60,7 @@ public struct OUDSLink: View {
     private let size: Size
     private let action: () -> Void
 
+    @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
 
     /// Represents the size of an `OUDSLink`.
@@ -122,10 +124,9 @@ public struct OUDSLink: View {
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    Image(decorative: "ic_form_chevron_left", bundle: Bundle.OUDSComponents)
+                    Image(decorative: linkIconResourceName, bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
                 }
             case .textOnly:
                 Label {
@@ -146,5 +147,17 @@ public struct OUDSLink: View {
         .buttonStyle(LinkButtonStyle(layout: layout, size: size))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
+    }
+    
+    // MARK: - Helpers
+
+    private var linkIconResourceName: String {
+        if case let .indicator(nav) = layout, nav == .back {
+            return layoutDirection == .leftToRight ? "ic_chevron_left" : "ic_chevron_right"
+        }
+        if case let .indicator(nav) = layout, nav == .next {
+            return layoutDirection == .leftToRight ? "ic_chevron_right" : "ic_chevron_left"
+        }
+        OL.fatal("Tried to load an icon for an OUDS Link which is not a back or next indicator, report an issue at https://github.com/Orange-OpenSource/ouds-ios/issues")
     }
 }

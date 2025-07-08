@@ -116,6 +116,12 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
+    // MARK: - Other elements
+
+    /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
+    /// Supposed to have, for a given resurce, the same name accross themes.
+    public let resourcesBundle: Bundle
+
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
@@ -173,6 +179,7 @@ open class OUDSTheme: @unchecked Sendable {
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
+                resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil)
     {
 
@@ -206,6 +213,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.tag = tag
 
         // Load other configuration elements
+        self.resourcesBundle = resourcesBundle
         self.fontFamily = fontFamily
     }
 
