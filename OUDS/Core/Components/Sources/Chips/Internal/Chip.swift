@@ -80,18 +80,18 @@ struct Chip: View {
 
     private var leadingPadding: CGFloat {
         if selected {
-            return theme.chip.chipSpacePaddingInlineIcon
+            theme.chip.chipSpacePaddingInlineIcon
         } else {
             switch layout {
             case .text:
-                return theme.chip.chipSpacePaddingInlineIconNone
+                theme.chip.chipSpacePaddingInlineIconNone
             case .icon:
-                return theme.chip.chipSpacePaddingInlineIcon
-            case .textAndIcon(_, _, let iconPosition):
+                theme.chip.chipSpacePaddingInlineIcon
+            case let .textAndIcon(_, _, iconPosition):
                 if iconPosition == .leading {
-                    return theme.chip.chipSpacePaddingInlineIcon
+                    theme.chip.chipSpacePaddingInlineIcon
                 } else {
-                    return theme.chip.chipSpacePaddingInlineIconNone
+                    theme.chip.chipSpacePaddingInlineIconNone
                 }
             }
         }
@@ -100,14 +100,14 @@ struct Chip: View {
     private var trailingPadding: CGFloat {
         switch layout {
         case .text:
-            return theme.chip.chipSpacePaddingInlineIconNone
+            theme.chip.chipSpacePaddingInlineIconNone
         case .icon:
-            return theme.chip.chipSpacePaddingInlineIcon
-        case .textAndIcon(_, _, let iconPosition):
+            theme.chip.chipSpacePaddingInlineIcon
+        case let .textAndIcon(_, _, iconPosition):
             if iconPosition == .trailing {
-                return theme.chip.chipSpacePaddingInlineIcon
+                theme.chip.chipSpacePaddingInlineIcon
             } else {
-                return theme.chip.chipSpacePaddingInlineIconNone
+                theme.chip.chipSpacePaddingInlineIconNone
             }
         }
     }
@@ -212,8 +212,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: Bundle.OUDSComponents),
-                       size: theme.chip.chipSizeIcon)
+            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
             .accessibilityHidden(true)
             .oudsForegroundColor(appliedColor)
         }

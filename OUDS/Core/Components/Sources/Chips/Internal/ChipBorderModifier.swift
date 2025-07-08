@@ -31,12 +31,12 @@ struct ChipBorderModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-            content
-                .oudsBorder(
-                    style: theme.borders.borderStyleDefault,
-                    width: width,
-                    radius: theme.chip.chipBorderRadius,
-                    color: color)
+        content
+            .oudsBorder(
+                style: theme.borders.borderStyleDefault,
+                width: width,
+                radius: theme.chip.chipBorderRadius,
+                color: color)
     }
 
     // MARK: Default hierarchy
@@ -44,9 +44,9 @@ struct ChipBorderModifier: ViewModifier {
     private var width: BorderWidthSemanticToken {
         switch state {
         case .enabled, .disabled:
-            return selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselected
+            selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselected
         case .hover, .pressed:
-            return selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselectedInteraction
+            selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselectedInteraction
         }
     }
 

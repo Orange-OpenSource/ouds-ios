@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
@@ -113,11 +113,11 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         // swiftlint:disable pattern_matching_keywords
         let selected = data.tag == selection.wrappedValue
         switch data.layout {
-        case .text(let text):
+        case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
-        case .icon(let icon, let accessibilityLabel):
+        case let .icon(icon, accessibilityLabel):
             OUDSFilterChip(icon: icon, accessibilityLabel: accessibilityLabel, selected: selected, action: action)
-        case .textAndIcon(let text, let icon):
+        case let .textAndIcon(text, icon):
             OUDSFilterChip(icon: icon, text: text, selected: selected, action: action)
         }
         // swiftlint:enable pattern_matching_keywords
