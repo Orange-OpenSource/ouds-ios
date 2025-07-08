@@ -55,6 +55,8 @@ public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyper
 
     /// Create a chip with text and icon.
     ///
+    /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the chip, should not be empty

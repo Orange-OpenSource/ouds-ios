@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import SwiftUI
 
 /// A picker allowing to expose several filter chips and choose only one within the others.
@@ -57,11 +58,11 @@ import SwiftUI
 ///
 /// There is no online specification as this component is not an official OUDS one.
 ///
-/// - Since: 0.16.0
+/// - Since: 0.17.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The title of the picker
-    let title: String
+    let title: String?
 
     /// The tags of the selected checkbox
     var selection: Binding<Tag>
@@ -76,11 +77,14 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     /// Defines the picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     ///
     /// - Parameters:
-    ///    - title: The title of the picker
+    ///    - title: The title of the picker, can be nil
     ///    - selections: The current selected values
     ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
-    public init(title: String, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>]) {
-        self.title = title.localized()
+    public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>]) {
+        if let title, title.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = title?.localized()
         self.selection = selection
         self.chips = chips
     }
@@ -89,10 +93,12 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
-            Text(title)
-                .typeHeadingLarge(theme)
-                .padding(.leading, theme.spaces.spaceFixedMd)
-                .accessibilityAddTraits(.isHeader)
+            if let title {
+                Text(title)
+                    .typeHeadingLarge(theme)
+                    .padding(.leading, theme.spaces.spaceFixedMd)
+                    .accessibilityAddTraits(.isHeader)
+            }
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
@@ -112,6 +118,15 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
+        if let a11yidentifier = data.accessibilityIdentifier {
+            _filterChip(from: data, action: action).accessibilityIdentifier(a11yidentifier)
+        } else {
+            _filterChip(from: data, action: action)
+        }
+    }
+
+    @ViewBuilder
+    private func _filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         let selected = data.tag == selection.wrappedValue
         switch data.layout {
         case let .text(text):
