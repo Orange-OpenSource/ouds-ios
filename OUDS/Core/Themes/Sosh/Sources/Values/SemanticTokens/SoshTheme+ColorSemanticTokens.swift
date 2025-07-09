@@ -538,10 +538,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorActionSelectedLight: ColorSemanticToken { colorRepositoryPrimaryDefault }
     /// Has for value token colorRepositorySecondaryLower
     @objc public final var colorActionSelectedDark: ColorSemanticToken { colorRepositorySecondaryLower }
-    /// Has for value token "#FF0000FF"
-    @objc public final var colorActionVisitedLight: ColorSemanticToken { "#FF0000FF" }
-    /// Has for value token "#FF0000FF"
-    @objc public final var colorActionVisitedDark: ColorSemanticToken { "#FF0000FF" }
+    /// Has for value token SoshBrandColorRawTokens.colorCitrine500
+      @objc public final var colorActionVisitedLight: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine500 }
+      /// Has for value token SoshBrandColorRawTokens.colorCitrine300
+    @objc public final var colorActionVisitedDark: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine300 }
     /// Has for value token colorRepositorySecondaryDefault
     @objc public final var colorActionHighlightedLight: ColorSemanticToken { colorRepositorySecondaryDefault }
     /// Has for value token colorRepositoryNeutralMutedLower
@@ -752,6 +752,9 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorChartFunctionalNegativeLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
     /// Has for value token ColorRawTokens.colorFunctionalScarlet400
     @objc public final var colorChartFunctionalNegativeDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet400 }
+
+    // WARNING: TODO #665 - Does Sosh theme have charts colors. If not, must be extracted in another module!
+
     /// Has for value token "#FF0000FF"
     @objc public final var colorChartCategoricalTier1Light: ColorSemanticToken { "#FF0000FF" }
     /// Has for value token "#FF0000FF"
