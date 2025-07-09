@@ -418,6 +418,54 @@
         }
       }
     },
+    "core_filterchip_hint_selected_a11y" : {
+      "comment" : "Compoent - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا لإلغاء التحديد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-top to unselect"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour déselectionner "
+          }
+        }
+      }
+    },
+    "core_filterchip_hint_unselected_a11y" : {
+      "comment" : "Compoent - Chip",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا للتحديد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-top to select"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour sélectionner "
+          }
+        }
+      }
+    },
     "core_radio_hint_selected_a11y" : {
       "comment" : "Radio",
       "extractionState" : "manual",

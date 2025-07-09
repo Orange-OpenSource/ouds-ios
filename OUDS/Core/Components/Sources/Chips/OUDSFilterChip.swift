@@ -104,7 +104,13 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
             Chip(layout: layout, selected: selected, interactionState: ChipInteractionState(with: $0))
         }
         .accessibilityAddTraits(selected ? [.isSelected] : [])
+        .accessibilityAddTraits(.isButton)
+        .accessibilityHint(accessibilityHint)
         .accessibilityLabel(accessibilityLabel)
+    }
+
+    private var accessibilityHint: String {
+        (selected ? "core_filterchip_hint_selected_a11y" : "core_filterchip_hint_unselected_a11y").localized()
     }
 
     private var accessibilityLabel: String {
