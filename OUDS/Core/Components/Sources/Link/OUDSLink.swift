@@ -148,7 +148,7 @@ public struct OUDSLink: View {
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }
-    
+
     // MARK: - Helpers
 
     private var linkIconResourceName: String {

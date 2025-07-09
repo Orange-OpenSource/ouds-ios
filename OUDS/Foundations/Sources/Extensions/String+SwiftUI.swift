@@ -21,7 +21,10 @@ extension String {
     /// `String` extension to get a `Color` from `self` supposed to be an hexadecimal string representation.
     /// We assume the value of `self` is a valid hexadecimal string.
     public var color: Color! {
-        Color(hexadecimalCode: self)
+        if self == "ouds-forbidden-color-value" {
+            OL.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
+        }
+        return Color(hexadecimalCode: self)
     }
 
     /// Forges the font name which is expected for the given weight.
