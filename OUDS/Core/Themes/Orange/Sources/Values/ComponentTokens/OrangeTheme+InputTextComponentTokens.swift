@@ -68,4 +68,4 @@ extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens 
     @objc open var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
 }
 
-// swiftlint:enable identifier_name
+// swiftlint:disable identifier_name

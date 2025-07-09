@@ -34,4 +34,4 @@ extension SoshThemeLinkComponentTokensProvider: LinkMonoComponentTokens {
     @objc public final var linkMonoColorContentFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length

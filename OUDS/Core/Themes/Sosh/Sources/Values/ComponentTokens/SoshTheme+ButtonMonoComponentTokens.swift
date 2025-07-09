@@ -132,4 +132,4 @@ extension SoshThemeButtonComponentTokensProvider: ButtonMonoComponentTokens {
     @objc public final var buttonMonoColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length

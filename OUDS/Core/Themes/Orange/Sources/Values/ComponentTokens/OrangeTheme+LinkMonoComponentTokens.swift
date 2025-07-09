@@ -34,4 +34,4 @@ extension OrangeThemeLinkComponentTokensProvider: LinkMonoComponentTokens {
     @objc open var linkMonoColorContentFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length

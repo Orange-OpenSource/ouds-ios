@@ -64,4 +64,4 @@ extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length
