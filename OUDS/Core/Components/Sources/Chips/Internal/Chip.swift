@@ -70,7 +70,6 @@ struct Chip: View {
         .frame(minWidth: theme.chip.chipSizeMinWidth, minHeight: theme.chip.chipSizeMinHeight)
         .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
         .modifier(ChipBorderModifier(state: interactionState, selected: selected))
-        .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 
     private var leadingPadding: CGFloat {

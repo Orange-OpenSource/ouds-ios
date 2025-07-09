@@ -103,5 +103,14 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
         InteractionButton(action: action) {
             Chip(layout: layout, selected: selected, interactionState: ChipInteractionState(with: $0))
         }
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    private var accessibilityLabel: String {
+        switch layout {
+        case let .text(text), let .textAndIcon(text, _, _), let .icon(_, text):
+            text
+        }
     }
 }
