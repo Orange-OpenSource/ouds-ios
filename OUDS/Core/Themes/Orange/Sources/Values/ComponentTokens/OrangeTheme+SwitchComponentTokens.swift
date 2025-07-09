@@ -72,4 +72,4 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXs }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length

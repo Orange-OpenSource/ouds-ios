@@ -131,5 +131,3 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonMonoComponentTokens {
     /// Has for value token colors.colorOpacityTransparent
     @objc open var buttonMonoColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
 }
-
-// swiftlint:enable line_length

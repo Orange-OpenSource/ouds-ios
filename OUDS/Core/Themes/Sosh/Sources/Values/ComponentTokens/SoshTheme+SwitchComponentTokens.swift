@@ -72,4 +72,4 @@ extension SoshThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc public final var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXs }
 }
 
-// swiftlint:enable line_length
+// swiftlint:disable line_length

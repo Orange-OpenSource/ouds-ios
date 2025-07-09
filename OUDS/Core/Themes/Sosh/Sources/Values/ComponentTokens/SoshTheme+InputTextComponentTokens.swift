@@ -67,5 +67,3 @@ extension SoshThemeInputTextComponentTokensProvider: InputTextComponentTokens {
     /// Has for value token DimensionRawTokens.dimension4000
     @objc public final var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
 }
-
-// swiftlint:enable identifier_name
