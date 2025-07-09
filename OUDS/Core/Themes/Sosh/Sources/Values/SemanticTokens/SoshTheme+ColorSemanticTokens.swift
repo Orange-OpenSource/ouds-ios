@@ -24,24 +24,24 @@ import OUDSTokensSemantic
 extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token SoshBrandColorRawTokens.colorMagenta50
     @objc public final var colorRepositoryPrimaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorMagenta50 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryPrimaryLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryPrimaryLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorMagenta300
     @objc public final var colorRepositoryPrimaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorMagenta300 }
     /// Has for value token SoshBrandColorRawTokens.colorMagenta500
     @objc public final var colorRepositoryPrimaryDefault: ColorSemanticToken { SoshBrandColorRawTokens.colorMagenta500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryPrimaryHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryPrimaryHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryPrimaryHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryPrimaryHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorMagenta800
     @objc public final var colorRepositoryPrimaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorMagenta800 }
     /// Has for value token SoshBrandColorRawTokens.colorBlueDuckLight80
     @objc public final var colorRepositorySecondaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorBlueDuckLight80 }
     /// Has for value token SoshBrandColorRawTokens.colorBlueDuckLight800
     @objc public final var colorRepositorySecondaryLower: ColorSemanticToken { SoshBrandColorRawTokens.colorBlueDuckLight800 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositorySecondaryLow: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositorySecondaryLow: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorBlueDuckDark400
     @objc public final var colorRepositorySecondaryDefault: ColorSemanticToken { SoshBrandColorRawTokens.colorBlueDuckDark400 }
     /// Has for value token SoshBrandColorRawTokens.colorBlueDuckDark720
@@ -52,16 +52,16 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositorySecondaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorBlueDuckDark960 }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine50
     @objc public final var colorRepositoryTertiaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine50 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryTertiaryLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryTertiaryLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine300
     @objc public final var colorRepositoryTertiaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine300 }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine500
     @objc public final var colorRepositoryTertiaryDefault: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryTertiaryHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryTertiaryHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryTertiaryHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryTertiaryHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine950
     @objc public final var colorRepositoryTertiaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine950 }
     /// Has for value token ColorRawTokens.colorFunctionalWhite
@@ -70,22 +70,22 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNeutralMutedLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
     @objc public final var colorRepositoryNeutralMutedLower: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralMutedLow: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralMutedMedium: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralMutedHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralMutedHigher: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralMutedHighest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralEmphasizedLowest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralEmphasizedLower: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralMutedLow: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralMutedMedium: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralMutedHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralMutedHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralMutedHighest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralEmphasizedLowest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralEmphasizedLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
     @objc public final var colorRepositoryNeutralEmphasizedMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
@@ -98,44 +98,44 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite100
     @objc public final var colorRepositoryPositiveLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryPositiveLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryPositiveLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite300
     @objc public final var colorRepositoryPositiveLow: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite500
     @objc public final var colorRepositoryPositiveDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite600
     @objc public final var colorRepositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalMalachite900
     @objc public final var colorRepositoryPositiveHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue100
     @objc public final var colorRepositoryInfoLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue100 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryInfoLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryInfoLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue300
     @objc public final var colorRepositoryInfoLow: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue300 }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue500
     @objc public final var colorRepositoryInfoDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryInfoHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryInfoHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue900
     @objc public final var colorRepositoryInfoHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue900 }
     /// Has for value token ColorRawTokens.colorFunctionalSun100
     @objc public final var colorRepositoryWarningLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun100 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryWarningLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryWarningLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalSun300
     @objc public final var colorRepositoryWarningLow: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
     /// Has for value token ColorRawTokens.colorFunctionalSun500
     @objc public final var colorRepositoryWarningDefault: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryWarningHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryWarningHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalSun900
     @objc public final var colorRepositoryWarningHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun900 }
     /// Has for value token ColorRawTokens.colorFunctionalScarlet100
@@ -154,16 +154,16 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNegativeHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet900 }
     /// Has for value token colorRepositoryPrimaryLowest
     @objc public final var colorRepositoryAccentLowest: ColorSemanticToken { colorRepositoryPrimaryLowest }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryAccentLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryAccentLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token colorRepositoryPrimaryLow
     @objc public final var colorRepositoryAccentLow: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryDefault
     @objc public final var colorRepositoryAccentDefault: ColorSemanticToken { colorRepositoryPrimaryDefault }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryAccentHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryAccentHigher: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryAccentHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryAccentHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token colorRepositoryPrimaryHighest
     @objc public final var colorRepositoryAccentHighest: ColorSemanticToken { colorRepositoryPrimaryHighest }
     /// Has for value token ColorRawTokens.colorOpacityMalachite
@@ -214,22 +214,22 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.colorOpacityWhite800 }
     /// Has for value token ColorRawTokens.colorOpacityWhite920
     @objc public final var colorRepositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.colorOpacityWhite920 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryTransparent: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryLowest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryLower: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryLow: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryMedium: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryHigher: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryTransparent: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryLowest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryLow: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryMedium: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token colorRepositoryNeutralMutedWhite
     @objc public final var colorBgPrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositorySecondaryHighest
@@ -478,26 +478,26 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorBorderBrandTertiaryLight: ColorSemanticToken { colorRepositoryTertiaryDefault }
     /// Has for value token colorRepositoryTertiaryLow
     @objc public final var colorBorderBrandTertiaryDark: ColorSemanticToken { colorRepositoryTertiaryLow }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusPositiveLight: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusPositiveDark: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusInfoLight: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusInfoDark: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusWarningLight: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusWarningDark: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusNegativeLight: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusNegativeDark: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusAccentLight: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorBorderStatusAccentDark: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusPositiveLight: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusPositiveDark: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusInfoLight: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusInfoDark: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusWarningLight: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusWarningDark: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusNegativeLight: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusNegativeDark: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusAccentLight: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorBorderStatusAccentDark: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token colorRepositoryNeutralMutedWhite
     @objc public final var colorBorderOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositorySecondaryHighest
@@ -624,98 +624,98 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorAlwaysOnWhite: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token SoshBrandColorRawTokens.colorMagenta500
     @objc public final var colorDecorativeBrandPrimary: ColorSemanticToken { SoshBrandColorRawTokens.colorMagenta500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorBlueDuckLight480
     @objc public final var colorDecorativeBrandSecondary: ColorSemanticToken { SoshBrandColorRawTokens.colorBlueDuckLight480 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandSecondaryMuted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandSecondaryEmphasized: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandSecondaryMuted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandSecondaryEmphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine500
     @objc public final var colorDecorativeBrandTertiary: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine500 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralMutedLowest: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralMutedLowest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
     @objc public final var colorDecorativeNeutralMutedLower: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralMutedLow: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralMutedLow: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight400
     @objc public final var colorDecorativeNeutralMutedMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight400 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralMutedHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralMutedHigher: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralMutedHighest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedLowest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedLower: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralMutedHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralMutedHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralMutedHighest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedLowest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedLower: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark400
     @objc public final var colorDecorativeNeutralEmphasizedLow: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark400 }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedMedium: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedHigh: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedHigher: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeNeutralEmphasizedHighest: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent1Muted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent1Default: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent1Emphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent2Muted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent2Default: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent2Emphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent3Muted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent3Default: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent3Emphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent4Muted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent4Default: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent4Emphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent5Muted: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent5Default: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeAccent5Emphasized: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint100: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint200: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint300: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint400: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint500: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint600: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint700: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint800: ColorSemanticToken { "#FF000000" }
-    /// Has for value token "#FF000000"
-    @objc public final var colorDecorativeSkinTint900: ColorSemanticToken { "#FF000000" }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedMedium: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedHigh: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedHigher: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeNeutralEmphasizedHighest: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent1Muted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent1Default: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent1Emphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent2Muted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent2Default: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent2Emphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent3Muted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent3Default: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent3Emphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent4Muted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent4Default: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent4Emphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent5Muted: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent5Default: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeAccent5Emphasized: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint100: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint200: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint300: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint400: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint500: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint600: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint700: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint800: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
+    /// This token has a forbidden color value (#FF000000 in tokenator) and must not be used if you use this SoshTheme
+    @objc public final var colorDecorativeSkinTint900: ColorSemanticToken { OUDSTokenatorConstants.forbiddenColor }
     /// Has for value token ColorRawTokens.colorFunctionalGrayLight400
     @objc public final var colorChartGridlinesLight: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight400 }
     /// Has for value token ColorRawTokens.colorFunctionalGrayDark240
