@@ -20,8 +20,11 @@
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all ``ColorSemanticToken``  a theme must have.
-/// These tokens are then gathered inside ``ColorSemanticToken`` defined in ``ColorMultipleSemanticTokens``.
-/// Any color semantic token must be declared there (except ``ColorSemanticToken``)
+/// These tokens are then gathered inside ``MultipleColorSemanticTokens`` objects defined in ``ColorMultipleSemanticTokens``.
+/// If it possible a theme won't have such semantic tokens of colors defined as not specified nor used in Figma.
+/// Thus the value for these tokens will be "ouds-forbidden-color-value" as returned by the tokenator.
+/// Thus if the token is still used, even if explained in the documentation it should not,
+/// this special value won't be successfully parsed as color and the app will crash like expected.
 ///
 /// - Since: 0.8.0
 public protocol ColorSemanticTokens {

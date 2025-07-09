@@ -106,7 +106,20 @@ Thus when the *tokenator* generates tokens without managing composites, the file
 
 ### Particular cases with semantic tokens
 
-There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `colorRepository*` tokens. They are only defined at once.
+#### Closed semantic tokens
+
+There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `colorRepository*` tokens. They are only defined at once and are considered as "closed tokens".
+
+Also the dimension semantic tokens are closed.
+
+#### Semantic tokens with forbidden values
+
+It is possible to have some undefined color semantic tokens. 
+Indeed some themes can use just a smaller set of colors, thus some semantic tokens of colors are not relevant. 
+Because Figma cannot manage "optional" tokens, and because it will make heavier the management of tokens in Swift pakcage side, the forbidden value is used. 
+This forbidden value is in tokenator side the "transparent red", i.e. #FF000000. 
+But in Swift package side, this value is converted to "ouds-forbidden-color-value", and associated documentation updated. 
+Then, even if users use these tokens, even if not specified in theme and documentation and Figma specifications, this value won't be successfully parsed as color and program will crash. 
 
 ## How to use semantic tokens
 
