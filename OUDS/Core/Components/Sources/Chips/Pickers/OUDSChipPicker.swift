@@ -93,7 +93,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
-            if let title {
+            if let title, !title.isEmpty {
                 Text(title)
                     .typeHeadingLarge(theme)
                     .padding(.leading, theme.spaces.spaceFixedMd)
