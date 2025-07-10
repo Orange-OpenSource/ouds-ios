@@ -63,32 +63,56 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     
     /// The title of the picker
     let title: String?
-    
-    /// The tags of the selected checkbox
-    var selection: Binding<Tag>
-    
+
+    /// The type of selection
+    var selectionType: SelectionType
+
     /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
     
     @Environment(\.theme) private var theme
-    
+
+    /// The type of selection
+    enum SelectionType {
+        /// Single selction with tag of the selected chip
+        case single(Binding<Tag>)
+
+        /// Multiple selction with tags of the selected chips
+        case multiple(Binding<[Tag]>)
+    }
+
     // MARK: - Init
     
-    /// Defines the picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
-    ///    - selections: The current selected values
+    ///    - selection: The current selected value
     ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
     public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>]) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
-        self.selection = selection
+        self.chips = chips
+        self.selectionType = .single(selection)
+    }
+
+    /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    ///
+    /// - Parameters:
+    ///    - title: The title of the picker, can be nil
+    ///    - selections: Current selected values
+    ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
+    public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>]) {
+        if let title, title.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = title?.localized()
+        self.selectionType = .multiple(selections)
         self.chips = chips
     }
-    
+
     // MARK: - Body
     
     public var body: some View {
@@ -102,9 +126,9 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(chips, id: \.tag) { chip in
-                        filterChip(from: chip) {
-                            selection.wrappedValue = chip.tag
+                    ForEach(chips, id: \.tag) { chipData in
+                        filterChip(from: chipData) {
+                            toggle(tag: chipData.tag)
                         }
                     }
                 }
@@ -127,7 +151,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     
     @ViewBuilder
     private func _filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
-        let selected = data.tag == selection.wrappedValue
+        let selected = selected(tag: data.tag)
         switch data.layout {
         case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
@@ -135,6 +159,29 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
             OUDSFilterChip(icon: icon, accessibilityLabel: accessibilityLabel, selected: selected, action: action)
         case let .textAndIcon(text, icon):
             OUDSFilterChip(icon: icon, text: text, selected: selected, action: action)
+        }
+    }
+
+    private func selected(tag: Tag) -> Bool {
+        switch selectionType {
+        case .single(let binding):
+            return binding.wrappedValue == tag
+        case .multiple(let binding):
+            return binding.wrappedValue.contains {  $0 == tag }
+        }
+    }
+
+    private func toggle(tag: Tag) {
+        switch selectionType {
+        case .single(let binding):
+            binding.wrappedValue = tag
+        case .multiple(let binding):
+            let index = binding.wrappedValue.firstIndex(of: tag)
+            if let index = index {
+                binding.wrappedValue.remove(at: index)
+            } else {
+                binding.wrappedValue.append(tag)
+            }
         }
     }
 }
