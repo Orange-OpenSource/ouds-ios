@@ -70,6 +70,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
                    tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
+                   resourcesBundle: Bundle.OrangeTheme,
                    fontFamily: fontFamily)
     }
 

@@ -24,50 +24,67 @@
 /// - Since: 0.13.0
 public protocol ColorModeSemanticTokens {
 
+    // MARK: - On Background
+
+    var modeOnBgPrimaryLight: ColorModeSemanticToken { get }
+    var modeOnBgPrimaryDark: ColorModeSemanticToken { get }
+    var modeOnBgSecondaryLight: ColorModeSemanticToken { get }
+    var modeOnBgSecondaryDark: ColorModeSemanticToken { get }
+    var modeOnBgTertiaryLight: ColorModeSemanticToken { get }
+    var modeOnBgTertiaryDark: ColorModeSemanticToken { get }
+    var modeOnBgEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnBgEmphasizedDark: ColorModeSemanticToken { get }
+
+    // MARK: - On Brand
+
     var modeOnBrandPrimaryLight: ColorModeSemanticToken { get }
     var modeOnBrandPrimaryDark: ColorModeSemanticToken { get }
-
     var modeOnBrandSecondaryLight: ColorModeSemanticToken { get }
     var modeOnBrandSecondaryDark: ColorModeSemanticToken { get }
-
     var modeOnBrandTertiaryLight: ColorModeSemanticToken { get }
     var modeOnBrandTertiaryDark: ColorModeSemanticToken { get }
 
-    var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusAccentMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusAccentMutedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusInfoMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusInfoMutedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { get }
+    // MARK: - On Status
 
     var modeOnStatusNeutralMutedLight: ColorModeSemanticToken { get }
     var modeOnStatusNeutralMutedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { get }
-
+    var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { get }
     var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { get }
     var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { get }
-
-    var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { get }
-
+    var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { get }
+    var modeOnStatusInfoMutedLight: ColorModeSemanticToken { get }
+    var modeOnStatusInfoMutedDark: ColorModeSemanticToken { get }
+    var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { get }
     var modeOnStatusWarningMutedLight: ColorModeSemanticToken { get }
     var modeOnStatusWarningMutedDark: ColorModeSemanticToken { get }
+    var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { get }
+    var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { get }
+    var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { get }
+    var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { get }
+
+    // MARK: - On Status Accent
+
+    var modeOnStatusAccentMutedLight: ColorModeSemanticToken { get }
+    var modeOnStatusAccentMutedDark: ColorModeSemanticToken { get }
+    var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { get }
+
+    // MARK: - On Overlay
+
+    var modeOnOverlayDefaultLight: ColorModeSemanticToken { get }
+    var modeOnOverlayDefaultDark: ColorModeSemanticToken { get }
+    var modeOnOverlayEmphasizedLight: ColorModeSemanticToken { get }
+    var modeOnOverlayEmphasizedDark: ColorModeSemanticToken { get }
+
+    // MARK: - On Modal
+
+    var modeOnModalLight: ColorModeSemanticToken { get }
+    var modeOnModalDark: ColorModeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -98,7 +98,6 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
-                    .rotationEffect(.degrees(180))
             }
         }
     }

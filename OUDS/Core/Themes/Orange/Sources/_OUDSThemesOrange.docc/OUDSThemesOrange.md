@@ -20,7 +20,7 @@ You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further
 
 ```swift
 import OUDS // To get OUDSThemeableView
-import OUDSThemeOrange // To get OrangeTheme
+import OUDSThemesOrange // To get OrangeTheme
 import SwiftUI
 
 @main

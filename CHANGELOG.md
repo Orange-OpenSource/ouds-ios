@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Sosh theme (Orange-OpenSource/ouds-ios#665)
 - Badge component (Orange-OpenSource/ouds-ios#514)
+
+### Changed
+
+- Color mode semantic tokens (tokens library v1.1.0)
+- Color multiple semantic tokens (tokens library v1.1.0)
 
 ### Fixed
 
@@ -19,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Sosh theme (Orange-OpenSource/ouds-ios#665)
 - Versions of components in package
 - New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)

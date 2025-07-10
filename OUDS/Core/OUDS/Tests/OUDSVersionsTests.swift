@@ -23,7 +23,7 @@ struct OUDSVersionsTests {
     private static let oudsVersionsFormat = try! NSRegularExpression(pattern: "^\\d+\\.\\d+\\.\\d+$")
     // swiftlint:enable force_try
 
-    // MARK: - Tests
+    // MARK: - Tests - Themes versions
 
     @Test func themeCoreVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.themeCoreVersion, regexp: Self.oudsVersionsFormat)
@@ -32,6 +32,12 @@ struct OUDSVersionsTests {
     @Test func themeOrangeVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.themeOrangeVersion, regexp: Self.oudsVersionsFormat)
     }
+
+    @Test func themeSoshVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeSoshVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    // MARK: - Tests - Component versions
 
     @Test func componentButtonVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentButtonVersion, regexp: Self.oudsVersionsFormat)

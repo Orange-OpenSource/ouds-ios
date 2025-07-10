@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
 import OUDS
 import OUDSTokensSemantic
 
@@ -24,7 +25,7 @@ import OUDSTokensSemantic
 ///
 /// ```swift
 ///     import OUDS                 // To get OUDSThemeableView
-///     import OUDSThemeOrange      // To get OrangeTheme
+///     import OUDSThemesOrange    // To get OrangeTheme
 ///     import SwiftUI
 ///
 ///     @main
@@ -134,6 +135,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          skeleton: AllSkeletonComponentTokensProvider? = nil,
                          switch: AllSwitchComponentTokensProvider? = nil,
                          tag: AllTagComponentTokensProvider? = nil,
+                         resourcesBundle: Bundle = Bundle.OrangeTheme,
                          fontFamily: FontFamilySemanticToken? = nil)
     {
 
@@ -189,10 +191,19 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
+                   resourcesBundle: Bundle.OrangeTheme,
                    fontFamily: fontFamily)
     }
 
     deinit {}
+}
+
+// MARK: - Extension of Bundle
+
+extension Bundle {
+
+    /// The Orange theme bundle, useful to find resources
+    public static let OrangeTheme = Bundle.module
 }
 
 // swiftlint:enable function_body_length

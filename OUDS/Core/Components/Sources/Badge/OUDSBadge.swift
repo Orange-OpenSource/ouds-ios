@@ -115,7 +115,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     /// - Parameters:
     ///    - count:The number displayed in the badge. Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
     ///    - status: The status of this badge. The background color of the badge and the number color are based on this status.
-    ///    - size: The size of this badge. The number is not displayed when size is ``OUDSBadge.Size.extraSmall`` or ``OUDSBadge.Size.small``.
+    ///    - size: The size of this badge. The number is not displayed when size is `OUDSBadge.Size.extraSmall` or `OUDSBadge.Size.small`.
     public init(count: UInt, status: Status, size: Size) {
         self.status = status
         self.size = size
@@ -131,7 +131,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     /// - Parameters:
     ///    - icon: The icon displayed in the badge
     ///    - status: The status of this badge. The background color of the badge and the icon color are based on this status
-    ///    - size: The size of this badge. The icon is not displayed when size is ``OOUSBadge.Size.extraSmall`` or ``OUDSBadge.Size.small``.
+    ///    - size: The size of this badge. The icon is not displayed when size is `OUDSBadge.Size.extraSmall` or `OUDSBadge.Size.small`.
     public init(icon: Image, status: Status, size: Size) {
         self.status = status
         self.size = size
