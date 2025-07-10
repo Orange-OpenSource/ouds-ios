@@ -32,7 +32,7 @@ open class MockThemeColorModeSemanticTokensProvider: OrangeThemeColorModeSemanti
     override public var modeOnBgSecondary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
     override public var modeOnBgTertiary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
-    
+
     override public var modeOnBgEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
     override public var modeOnOverlayDefault: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
