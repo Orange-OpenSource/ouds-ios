@@ -14,9 +14,12 @@
 import OUDSFoundations
 import SwiftUI
 
-/// A picker allowing to expose several filter chips and choose only one within the others.
+/// A picker allowing to expose several filter chips and propose two kinds of selection:
+/// - **single**: used to select only one option within the others
+/// - **multiple**: used to select sevral options within the others
+///
 /// Each chip contains a "tag", i.e. a supposed to be unique value.
-/// The picker will expose the choosen value through this "tag".
+/// The picker will expose choosen values through this "tag".
 /// It has also some configuration elements which will override the one applied to nested ``OUDSFilterChip``.
 ///
 /// ## Accessibility considerations
@@ -46,12 +49,24 @@ import SwiftUI
 ///         ]
 ///     }
 ///
+///     /// MARK: - Single selection
+///
 ///     // Prepare the selection, with a value previously selected
 ///     // Use the data and the binding for the picker.
 ///     @State var selection: Drink = .mineralWater
 ///
 ///     // Here the picker with title, selection and data
 ///     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+///
+///     /// MARK: - Multiple selection
+///
+///     // Prepare the selection, with a value previously selected
+///     // Use the data and the binding for the picker.
+///     @State var selections: [Drink] = [.mineralWater]
+///
+///     // Here the picker with title, selection and data
+///     OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
+
 /// ```
 ///
 /// ## Design documentation

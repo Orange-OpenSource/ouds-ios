@@ -242,7 +242,9 @@ The library proposes filter chip component to make some filtering with selected 
 
 #### Chips picker
 
-The library proposes a chip picker to make easily filtering with selected or unselected options.
+The library proposes a chip picker to make easily filtering with two kinds of selection:
+- **single:** to select or unselect one option
+- **multiple** to select several options
 
 ```swift
     // Define the elements to display in filter chip using OUDSChipPickerData.
@@ -268,5 +270,14 @@ The library proposes a chip picker to make easily filtering with selected or uns
      @State var selection: Drink = .mineralWater
 
      // Here the picker with title, selection and data
-     OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+
+     /// MARK: - Multiple selection
+
+     // Prepare the selection, with a value previously selected
+     // Use the data and the binding for the picker.
+     @State var selections: [Drink] = [.mineralWater]
+
+     // Here the picker with title, selection and data
+     OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
  ```
