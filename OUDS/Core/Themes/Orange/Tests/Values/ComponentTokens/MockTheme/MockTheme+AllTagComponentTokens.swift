@@ -26,7 +26,6 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
     static let mockThemeTagSize: SizeSemanticToken = 123
     static let mockThemeTagSpace: SizeSemanticToken = 456
     static let mockThemeTagBorderRadius: BorderRadiusSemanticToken = 666
-    static let mockThemeTagBorderWidth: BorderWidthSemanticToken = 999
 
     override public init(sizes: AllSizeSemanticTokensProvider?,
                          borders: AllBorderSemanticTokensProvider?,

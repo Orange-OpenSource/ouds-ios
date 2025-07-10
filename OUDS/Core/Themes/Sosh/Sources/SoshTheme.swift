@@ -13,8 +13,6 @@
 
 import Foundation
 import OUDS
-import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 // swiftlint:disable function_body_length

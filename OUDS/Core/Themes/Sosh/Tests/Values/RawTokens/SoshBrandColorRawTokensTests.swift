@@ -40,195 +40,243 @@ struct SoshBrandColorRawTokensTests {
 
     // MARK: - Tests format of colors
 
-    func testColorMagenta50Format() throws {
+    @Test
+    func colorMagenta50Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta50, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta100Format() throws {
+    @Test
+    func colorMagenta100Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta100, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta200Format() throws {
+    @Test
+    func colorMagenta200Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta200, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta300Format() throws {
+    @Test
+    func colorMagenta300Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta300, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta400Format() throws {
+    @Test
+    func colorMagenta400Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta400, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta500Format() throws {
+    @Test
+    func colorMagenta500Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta500, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta600Format() throws {
+    @Test
+    func colorMagenta600Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta600, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta700Format() throws {
+    @Test
+    func colorMagenta700Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta700, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta800Format() throws {
+    @Test
+    func colorMagenta800Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta800, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta900Format() throws {
+    @Test
+    func colorMagenta900Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta900, regexp: Self.colorFormat)
     }
 
-    func testColorMagenta950Format() throws {
+    @Test
+    func colorMagenta950Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorMagenta950, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine50Format() throws {
+    @Test
+    func colorCitrine50Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine50, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine100Format() throws {
+    @Test
+    func colorCitrine100Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine100, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine200Format() throws {
+    @Test
+    func colorCitrine200Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine200, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine300Format() throws {
+    @Test
+    func colorCitrine300Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine300, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine400Format() throws {
+    @Test
+    func colorCitrine400Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine400, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine500Format() throws {
+    @Test
+    func colorCitrine500Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine500, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine600Format() throws {
+    @Test
+    func colorCitrine600Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine600, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine700Format() throws {
+    @Test
+    func colorCitrine700Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine700, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine800Format() throws {
+    @Test
+    func colorCitrine800Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine800, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine900Format() throws {
+    @Test
+    func colorCitrine900Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine900, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine950Format() throws {
+    @Test
+    func colorCitrine950Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine950, regexp: Self.colorFormat)
     }
 
-    func testColorCitrine1000Format() throws {
+    @Test
+    func colorCitrine1000Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorCitrine1000, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight80Format() throws {
+    @Test
+    func colorBlueDuckLight80Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight80, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight160Format() throws {
+    @Test
+    func colorBlueDuckLight160Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight160, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight240Format() throws {
+    @Test
+    func colorBlueDuckLight240Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight240, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight320Format() throws {
+    @Test
+    func colorBlueDuckLight320Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight320, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight400Format() throws {
+    @Test
+    func colorBlueDuckLight400Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight400, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight480Format() throws {
+    @Test
+    func colorBlueDuckLight480Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight480, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight560Format() throws {
+    @Test
+    func colorBlueDuckLight560Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight560, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight640Format() throws {
+    @Test
+    func colorBlueDuckLight640Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight640, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight720Format() throws {
+    @Test
+    func colorBlueDuckLight720Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight720, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight800Format() throws {
+    @Test
+    func colorBlueDuckLight800Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight800, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight880Format() throws {
+    @Test
+    func colorBlueDuckLight880Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight880, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckLight960Format() throws {
+    @Test
+    func colorBlueDuckLight960Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckLight960, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark80Format() throws {
+    @Test
+    func colorBlueDuckDark80Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark80, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark160Format() throws {
+    @Test
+    func colorBlueDuckDark160Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark160, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark240Format() throws {
+    @Test
+    func colorBlueDuckDark240Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark240, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark320Format() throws {
+    @Test
+    func colorBlueDuckDark320Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark320, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark400Format() throws {
+    @Test
+    func colorBlueDuckDark400Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark400, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark480Format() throws {
+    @Test
+    func colorBlueDuckDark480Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark480, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark560Format() throws {
+    @Test
+    func colorBlueDuckDark560Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark560, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark640Format() throws {
+    @Test
+    func colorBlueDuckDark640Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark640, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark720Format() throws {
+    @Test
+    func colorBlueDuckDark720Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark720, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark800Format() throws {
+    @Test
+    func colorBlueDuckDark800Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark800, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark880Format() throws {
+    @Test
+    func colorBlueDuckDark880Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark880, regexp: Self.colorFormat)
     }
 
-    func testColorBlueDuckDark960Format() throws {
+    @Test
+    func colorBlueDuckDark960Format() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorBlueDuckDark960, regexp: Self.colorFormat)
     }
 
-    func testColorOpacityMagentaFormat() throws {
+    @Test
+    func colorOpacityMagentaFormat() throws {
         TestsUtils.assertMatches(SoshBrandColorRawTokens.colorOpacityMagenta, regexp: Self.colorFormat)
     }
 
@@ -419,7 +467,7 @@ struct SoshBrandColorRawTokensTests {
 
     // MARK: - Helpers
 
-    private func assertAllUniqueColors(_ colors: [ColorRawToken], file: StaticString = #file, line: UInt = #line) {
+    private func assertAllUniqueColors(_ colors: [ColorRawToken]) {
         for i in 0 ..< colors.count {
             for j in (i + 1) ..< colors.count {
                 #expect(colors[i] != colors[j], "Colors \(colors[i]) and \(colors[j]) must be different")

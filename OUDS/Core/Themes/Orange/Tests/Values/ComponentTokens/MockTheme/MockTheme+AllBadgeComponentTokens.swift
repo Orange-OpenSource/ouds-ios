@@ -15,7 +15,6 @@ import Foundation
 import OUDS
 import OUDSThemesOrange
 import OUDSTokensComponent
-import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit

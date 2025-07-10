@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -51,7 +50,6 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     private let icon: Image?
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Configuration
 
