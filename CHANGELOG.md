@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Sosh theme (Orange-OpenSource/ouds-ios#665)
 - Badge component (Orange-OpenSource/ouds-ios#514)
 
 ### Changed
