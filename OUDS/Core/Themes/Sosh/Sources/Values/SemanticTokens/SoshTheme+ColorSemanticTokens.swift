@@ -539,8 +539,8 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token colorRepositorySecondaryLower
     @objc public final var colorActionSelectedDark: ColorSemanticToken { colorRepositorySecondaryLower }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine500
-      @objc public final var colorActionVisitedLight: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine500 }
-      /// Has for value token SoshBrandColorRawTokens.colorCitrine300
+    @objc public final var colorActionVisitedLight: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine500 }
+    /// Has for value token SoshBrandColorRawTokens.colorCitrine300
     @objc public final var colorActionVisitedDark: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine300 }
     /// Has for value token colorRepositorySecondaryDefault
     @objc public final var colorActionHighlightedLight: ColorSemanticToken { colorRepositorySecondaryDefault }

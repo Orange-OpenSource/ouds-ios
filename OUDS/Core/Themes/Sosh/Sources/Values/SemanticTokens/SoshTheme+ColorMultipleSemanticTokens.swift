@@ -88,6 +88,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }
 
+    @objc public var colorBorderBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandSecondaryLight, dark: colorBorderBrandSecondaryDark) }
+
+    @objc public var colorBorderBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandTertiaryLight, dark: colorBorderBrandTertiaryDark) }
+
     @objc public var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderDefaultLight, dark: colorBorderDefaultDark) }
 
     @objc public var colorBorderEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderEmphasizedLight, dark: colorBorderEmphasizedDark) }
@@ -100,9 +104,17 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandPrimaryLight, dark: colorBorderOnBrandPrimaryDark) }
 
+    @objc public var colorBorderOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandSecondaryLight, dark: colorBorderOnBrandSecondaryDark) }
+
+    @objc public var colorBorderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandTertiaryLight, dark: colorBorderOnBrandTertiaryDark) }
+
     // MARK: - Color - Content
 
     @objc public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryLight, dark: colorContentBrandPrimaryDark) }
+
+    @objc public var colorContentBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandSecondaryLight, dark: colorContentBrandSecondaryDark) }
+
+    @objc public var colorContentBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandTertiaryLight, dark: colorContentBrandTertiaryDark) }
 
     @objc public var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentDefaultLight, dark: colorContentDefaultDark) }
 
@@ -127,6 +139,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc public var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionPressedLight, dark: colorContentOnActionPressedDark) }
 
     @objc public var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandPrimaryLight, dark: colorContentOnBrandPrimaryDark) }
+
+    @objc public var colorContentOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandSecondaryLight, dark: colorContentOnBrandSecondaryDark) }
+
+    @objc public var colorContentOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandTertiaryLight, dark: colorContentOnBrandTertiaryDark) }
 
     @objc public var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnOverlayEmphasizedLight, dark: colorContentOnOverlayEmphasizedDark) }
 
@@ -176,6 +192,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandPrimaryLight, dark: colorSurfaceBrandPrimaryDark) }
 
+    @objc public var colorSurfaceBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandSecondaryLight, dark: colorSurfaceBrandSecondaryDark) }
+
+    @objc public var colorSurfaceBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandTertiaryLight, dark: colorSurfaceBrandTertiaryDark) }
+
     @objc public var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusAccentEmphasizedLight, dark: colorSurfaceStatusAccentEmphasizedDark) }
 
     @objc public var colorSurfaceStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusAccentMutedLight, dark: colorSurfaceStatusAccentMutedDark) }
@@ -199,7 +219,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc public var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningEmphasizedLight, dark: colorSurfaceStatusWarningEmphasizedDark) }
 
     @objc public var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningMutedLight, dark: colorSurfaceStatusWarningMutedDark) }
-
     // MARK: - Color - Chart
 
     @objc public var colorChartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderLight, dark: colorChartBorderDark) }

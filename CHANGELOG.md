@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Badge component (Orange-OpenSource/ouds-ios#514)
 
+### Changed
+
+- Color mode semantic tokens (tokens library v1.1.0)
+- Color multiple semantic tokens (tokens library v1.1.0)
+
 ### Fixed
 
 - Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)

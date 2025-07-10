@@ -181,6 +181,16 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorBorderBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorBorderBrandSecondary != abstractTheme.colors.colorBorderBrandSecondary)
+        #expect(inheritedTheme.colors.colorBorderBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorBorderBrandTertiary != abstractTheme.colors.colorBorderBrandTertiary)
+        #expect(inheritedTheme.colors.colorBorderBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenColorBorderDefault() throws {
         #expect(inheritedTheme.colors.colorBorderDefault != abstractTheme.colors.colorBorderDefault)
         #expect(inheritedTheme.colors.colorBorderDefault == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
@@ -206,11 +216,31 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorBorderOnBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderOnBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorBorderOnBrandSecondary != abstractTheme.colors.colorBorderOnBrandSecondary)
+        #expect(inheritedTheme.colors.colorBorderOnBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderOnBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorBorderOnBrandTertiary != abstractTheme.colors.colorBorderOnBrandTertiary)
+        #expect(inheritedTheme.colors.colorBorderOnBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
     // MARK: - Color - Content
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentBrandPrimary() throws {
         #expect(inheritedTheme.colors.colorContentBrandPrimary != abstractTheme.colors.colorContentBrandPrimary)
         #expect(inheritedTheme.colors.colorContentBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorContentBrandSecondary != abstractTheme.colors.colorContentBrandSecondary)
+        #expect(inheritedTheme.colors.colorContentBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorContentBrandTertiary != abstractTheme.colors.colorContentBrandTertiary)
+        #expect(inheritedTheme.colors.colorContentBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentDefault() throws {
@@ -271,6 +301,16 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnBrandPrimary() throws {
         #expect(inheritedTheme.colors.colorContentOnBrandPrimary != abstractTheme.colors.colorContentOnBrandPrimary)
         #expect(inheritedTheme.colors.colorContentOnBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorContentOnBrandSecondary != abstractTheme.colors.colorContentOnBrandSecondary)
+        #expect(inheritedTheme.colors.colorContentOnBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorContentOnBrandTertiary != abstractTheme.colors.colorContentOnBrandTertiary)
+        #expect(inheritedTheme.colors.colorContentOnBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnOverlayEmphasized() throws {
@@ -385,6 +425,16 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorSurfaceBrandPrimary() throws {
         #expect(inheritedTheme.colors.colorSurfaceBrandPrimary != abstractTheme.colors.colorSurfaceBrandPrimary)
         #expect(inheritedTheme.colors.colorSurfaceBrandPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorSurfaceBrandSecondary() throws {
+        #expect(inheritedTheme.colors.colorSurfaceBrandSecondary != abstractTheme.colors.colorSurfaceBrandSecondary)
+        #expect(inheritedTheme.colors.colorSurfaceBrandSecondary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorSurfaceBrandTertiary() throws {
+        #expect(inheritedTheme.colors.colorSurfaceBrandTertiary != abstractTheme.colors.colorSurfaceBrandTertiary)
+        #expect(inheritedTheme.colors.colorSurfaceBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorSurfaceStatusAccentEmphasized() throws {

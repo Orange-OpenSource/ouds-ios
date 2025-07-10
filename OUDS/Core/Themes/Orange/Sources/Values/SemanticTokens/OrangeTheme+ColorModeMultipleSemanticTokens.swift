@@ -28,6 +28,14 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
 
     // MARK: - Multiple tokens
 
+    @objc open var modeOnBgPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgPrimary", light: modeOnBgPrimaryLight, dark: modeOnBgPrimaryDark) }
+
+    @objc open var modeOnBgSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgSecondary", light: modeOnBgSecondaryLight, dark: modeOnBgSecondaryDark) }
+
+    @objc open var modeOnBgTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgTertiary", light: modeOnBgTertiaryLight, dark: modeOnBgTertiaryDark) }
+
+    @objc open var modeOnBgEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgEmphasized", light: modeOnBgEmphasizedLight, dark: modeOnBgEmphasizedDark) }
+
     @objc open var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandPrimary", light: modeOnBrandPrimaryLight, dark: modeOnBrandPrimaryDark) }
 
     @objc open var modeOnBrandSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandSecondary", light: modeOnBrandSecondaryLight, dark: modeOnBrandSecondaryDark) }
@@ -57,6 +65,12 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
     @objc open var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningEmphasized", light: modeOnStatusWarningEmphasizedLight, dark: modeOnStatusWarningEmphasizedDark) }
 
     @objc open var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningMuted", light: modeOnStatusWarningMutedLight, dark: modeOnStatusWarningMutedDark) }
+
+    @objc open var modeOnOverlayDefault: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayDefault", light: modeOnOverlayDefaultLight, dark: modeOnOverlayDefaultDark) }
+
+    @objc open var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayEmphasized", light: modeOnOverlayEmphasizedLight, dark: modeOnOverlayEmphasizedDark) }
+
+    @objc open var modeOnModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnModal", light: modeOnModalLight, dark: modeOnModalDark) }
 
     // MARK: - Additional rules
 
@@ -110,27 +124,38 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
     }
 
     // swiftlint:disable cyclomatic_complexity
-    /// Returns the colors semantic token depending to the given color mode
+    /// Returns the colors semantic token depending to the given color mode.
+    /// If the given color mode has undefined value, or is not managed, triggers a fatal error as not expected situation.
+    ///
     /// - Parameter mode: The color mpde token to use
     /// - Returns: The colors to apply
     public func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens {
-        if mode.isEqual(modeOnBrandPrimary) { return colors.colorSurfaceBrandPrimary }
-        if mode.isEqual(modeOnBrandSecondary) { return colors.colorSurfaceBrandPrimary } // TODO: #521 - Not sure of this implementation
-        if mode.isEqual(modeOnBrandTertiary) { return colors.colorSurfaceBrandPrimary } // TODO: #521 - Not sure of this implementation
-        if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
-        if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
-        if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
-        if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
-        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceStatusNeutralEmphasized }
+        guard !mode.hasUndefinedValue() else {
+            OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Orange Theme")
+        }
+        // List here all cases where light and dark mode values are NOT undefined
+        if mode.isEqual(modeOnBgPrimary) { return colors.colorBgPrimary }
+        if mode.isEqual(modeOnBgSecondary) { return colors.colorBgSecondary }
+        if mode.isEqual(modeOnBgTertiary) { return colors.colorBgTertiary }
+        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgEmphasized }
+        if mode.isEqual(modeOnBrandPrimary) { return colors.colorContentBrandPrimary }
+        // modeOnBrandSecondary and modeOnBrandTertiary have undefined values for this theme
         if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceStatusNeutralMuted }
-        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
-        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
-        if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
+        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceStatusNeutralEmphasized }
         if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
-        if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
+        if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
+        if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
+        if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
         if mode.isEqual(modeOnStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
-        OL.warning("Multiple color mode semantic token not managed: \(mode.name)")
-        return colors.colorSurfaceBrandPrimary // TODO: #521 - Which default behavior?
+        if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
+        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
+        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
+        if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
+        if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
+        if mode.isEqual(modeOnOverlayDefault) { return colors.colorOverlayDefault }
+        if mode.isEqual(modeOnOverlayEmphasized) { return colors.colorOverlayEmphasized }
+        if mode.isEqual(modeOnModal) { return colors.colorOverlayModal }
+        OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity
 }

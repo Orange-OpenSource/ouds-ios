@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSTokensRaw
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of ``ColorModeSemanticToken`` depending to *color scheme* (i.e. light mode or dark mode).
@@ -91,5 +92,12 @@ public final class MultipleColorModeSemanticTokens: NSObject, Sendable {
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleColorModeSemanticTokens else { return false }
         return name == other.name
+    }
+
+    /// Because some color semantic tokens can be forbidden values, making some color mode semantic tokens undefined,
+    /// this helpers returns a flag saying if its the case or not
+    /// - Returns: True if contains at least one udnefined color mode semenatic tokens, false otherwise
+    public func hasUndefinedValue() -> Bool {
+        light == ColorModeRawTokens.undefined || dark == ColorModeRawTokens.undefined
     }
 }
