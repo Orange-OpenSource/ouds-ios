@@ -36,7 +36,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Version: 1.1.0
+/// - Version:1.1.0 (Figma component design version)
 /// - Since: 0.17.0
 public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge documentation in documentation above
 

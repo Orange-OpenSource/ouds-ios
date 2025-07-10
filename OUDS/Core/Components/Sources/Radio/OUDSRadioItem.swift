@@ -117,7 +117,7 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
-/// - Version: 1.1.0
+/// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSRadioItem: View {
 
