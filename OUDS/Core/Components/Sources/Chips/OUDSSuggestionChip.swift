@@ -14,14 +14,17 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Suggestion Chip
-
 /// Chips help people enter information, make selections, filter content, or trigger actions.
 /// Chips can show multiple interactive elements together in the same area, such as a list of selectable movie times, or a series of email contacts.
-/// A suggestion chip is a compact UI element used to present recommended or predictive options based on user input or context.
-/// This version of the suggestion chip uses the *text only* layout which displays only text, offering a clean and minimalistic look.
+/// A *suggestion chip* is a compact UI element used to present recommended or predictive options based on user input or context.
+/// This version of the *suggestion chip* uses the *text only* layout which displays only text, offering a clean and minimalistic look.
 /// Best suited for category-based filters that do not require additional visual elements.
-/// Other layouts are avaialble for this component like: *text + icon* and *icon only*.
+/// Other layouts are available for this component like: *text + icon* and *icon only*.
+///
+/// ## Accessibility considerations
+///
+/// This component does not define in its side some accessibility hints. If you sue this component, you must define such hints so as to explain
+/// to your users which actions are available for which interations.
 ///
 /// ## Code samples
 ///
@@ -44,17 +47,18 @@ import SwiftUI
 /// - Since: 0.17.0
 public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyperlink in doc above
 
-    // MARK: Stored Properties
+    // MARK: - Stored Properties
 
     private let layout: Chip.Layout
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Create a chip with text and icon.
     ///
+    /// No accessibility hint is defined for this component.
     /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
     ///
     /// - Parameters:
@@ -63,7 +67,7 @@ public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyper
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image, text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSSuggestionChip should not have an empty text!")
+            OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
         }
         layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading)
         self.action = action
@@ -86,11 +90,11 @@ public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyper
     /// Create a chip with a text only.
     ///
     /// - Parameters:
-    ///    - text: The text of the button to display,  should not be empty
+    ///    - text: The text of the button to display,  must not be empty
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSSuggestionChip should not have an empty text!")
+            OL.fatal("The OUDSSuggestionChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action

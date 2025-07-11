@@ -14,9 +14,9 @@
 import OUDSFoundations
 import SwiftUI
 
-/// A picker allowing to expose several filter chips and propose two kinds of selection:
+/// A picker allowing to expose several *filter chips* and proposing two kinds of selection:
 /// - **single**: used to select only one option within the others
-/// - **multiple**: used to select sevral options within the others
+/// - **multiple**: used to select several options within the others
 ///
 /// Each chip contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose choosen values through this "tag".
@@ -49,24 +49,23 @@ import SwiftUI
 ///         ]
 ///     }
 ///
-///     /// MARK: - Single selection
+///     /// Single selection case
 ///
 ///     // Prepare the selection, with a value previously selected
 ///     // Use the data and the binding for the picker.
 ///     @State var selection: Drink = .mineralWater
 ///
 ///     // Here the picker with title, selection and data
-///     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+///     OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 ///
-///     /// MARK: - Multiple selection
+///     /// Multiple selection case
 ///
 ///     // Prepare the selection, with a value previously selected
 ///     // Use the data and the binding for the picker.
 ///     @State var selections: [Drink] = [.mineralWater]
 ///
 ///     // Here the picker with title, selection and data
-///     OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
-
+///     OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
 /// ```
 ///
 /// ## Design documentation
@@ -75,7 +74,7 @@ import SwiftUI
 ///
 /// - Since: 0.17.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
-    
+
     /// The title of the picker
     let title: String?
 
@@ -84,7 +83,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
-    
+
     @Environment(\.theme) private var theme
 
     /// The type of selection
@@ -97,7 +96,8 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     }
 
     // MARK: - Init
-    
+
+    // swiftlint:disable function_default_parameter_at_end
     /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     ///
     /// - Parameters:
@@ -110,9 +110,12 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         }
         self.title = title?.localized()
         self.chips = chips
-        self.selectionType = .single(selection)
+        selectionType = .single(selection)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
+    // swiftlint:disable function_default_parameter_at_end
     /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     ///
     /// - Parameters:
@@ -124,12 +127,14 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
-        self.selectionType = .multiple(selections)
+        selectionType = .multiple(selections)
         self.chips = chips
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Body
-    
+
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
             if let title, !title.isEmpty {
@@ -138,7 +143,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                     .padding(.leading, theme.spaces.spaceFixedMd)
                     .accessibilityAddTraits(.isHeader)
             }
-            
+
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(chips, id: \.tag) { chipData in
@@ -152,9 +157,9 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         }
         .padding(.vertical, theme.spaces.spaceFixedSm)
     }
-    
+
     // MARK: - Helper
-    
+
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         if let a11yidentifier = data.accessibilityIdentifier {
@@ -163,7 +168,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
             _filterChip(from: data, action: action)
         }
     }
-    
+
     @ViewBuilder
     private func _filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
         let selected = selected(tag: data.tag)
@@ -179,20 +184,20 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     private func selected(tag: Tag) -> Bool {
         switch selectionType {
-        case .single(let binding):
-            return binding.wrappedValue == tag
-        case .multiple(let binding):
-            return binding.wrappedValue.contains {  $0 == tag }
+        case let .single(binding):
+            binding.wrappedValue == tag
+        case let .multiple(binding):
+            binding.wrappedValue.contains { $0 == tag }
         }
     }
 
     private func toggle(tag: Tag) {
         switch selectionType {
-        case .single(let binding):
+        case let .single(binding):
             binding.wrappedValue = tag
-        case .multiple(let binding):
+        case let .multiple(binding):
             let index = binding.wrappedValue.firstIndex(of: tag)
-            if let index = index {
+            if let index {
                 binding.wrappedValue.remove(at: index)
             } else {
                 binding.wrappedValue.append(tag)

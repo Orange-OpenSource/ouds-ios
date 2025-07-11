@@ -15,9 +15,9 @@ import OUDSFoundations
 import SwiftUI
 
 /// An ``OUDSFilterChip`` is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user.
-/// Filter chips allow users to refine content or data by applying one or more filters in a visually accessible and interactive way.
-/// This version of the filter chip uses the *text only* layout which displays only text, offering a clean and minimalistic look.
-/// Other layouts are avaialble for this component like: *text + icon* and *icon only*.
+/// *Filter chips* allow users to refine content or data by applying one or more filters in a visually accessible and interactive way.
+/// This version of the *filter chip* uses the *text only* layout which displays only text, offering a clean and minimalistic look.
+/// Other layouts are available for this component like: *text + icon* and *icon only*.
 ///
 /// ## Code samples
 ///
@@ -40,7 +40,7 @@ import SwiftUI
 /// - Since: 0.17.0
 public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink in doc above
 
-    // MARK: Stored Properties
+    // MARK: - Stored Properties
 
     private let layout: Chip.Layout
     private let action: () -> Void
@@ -48,7 +48,7 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
 
     @Environment(\.theme) private var theme
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Create a filter chip with text and icon.
     ///
@@ -59,7 +59,7 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead (OUDSFilterChip(icon:accessibilityLabel:selected:action)")
+            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead (OUDSFilterChip(icon:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing)
         self.action = action
@@ -85,12 +85,12 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
     /// Create a chip with a text only.
     ///
     /// - Parameters:
-    ///    - text: The text of the button to display, should not be empty
+    ///    - text: The text of the button to display, must not be empty
     ///    - selected: Flag to know if chip is selected, by default is unselected
     ///    - action: The action to perform when the user triggers the chip
     public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text!")
+            OL.fatal("The OUDSFilterChip must not have an empty text!")
         }
         layout = .text(text)
         self.action = action

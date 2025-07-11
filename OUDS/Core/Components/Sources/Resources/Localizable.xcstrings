@@ -419,7 +419,7 @@
       }
     },
     "core_filterchip_hint_selected_a11y" : {
-      "comment" : "Compoent - Chip",
+      "comment" : "Component - Chip",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -443,24 +443,24 @@
       }
     },
     "core_filterchip_hint_unselected_a11y" : {
-      "comment" : "Compoent - Chip",
+      "comment" : "Compon,ent - Chip",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "انقر نقرًا مزدوجًا للتحديد"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Double-top to select"
+            "value" : "Double-tap to select"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Taper deux fois pour sélectionner "
           }
         }

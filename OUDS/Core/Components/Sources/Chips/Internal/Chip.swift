@@ -18,7 +18,7 @@ import SwiftUI
 
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
 ///
-/// The layout of the chip will change according to the `ChipInteractionState` and the selected flag.
+/// The layout of the chip will change according to the ``ChipInteractionState`` and the selected flag.
 ///
 /// - Version: 1.2.0
 /// - Since: 0.17.0
@@ -49,7 +49,7 @@ struct Chip: View {
     ///
     /// - Parameters:
     ///    - layout: The layout of the chip
-    ///    - selected: Flag to know if chip is selected
+    ///    - selected: Flag to know if chip is selected or not
     ///    - interactionState: The interaction state
     public init(layout: Layout, selected: Bool, interactionState: ChipInteractionState) {
         self.layout = layout
@@ -207,8 +207,8 @@ private struct ChipSelectionIndicator: View {
     var body: some View {
         if selected {
             ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
-            .accessibilityHidden(true)
-            .oudsForegroundColor(appliedColor)
+                .accessibilityHidden(true)
+                .oudsForegroundColor(appliedColor)
         }
     }
 
