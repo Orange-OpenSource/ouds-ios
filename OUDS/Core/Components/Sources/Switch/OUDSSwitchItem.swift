@@ -127,7 +127,7 @@ public struct OUDSSwitchItem: View {
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
+    ///   - isReversed: `true` of the switch indicator must be in leading position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
@@ -139,7 +139,7 @@ public struct OUDSSwitchItem: View {
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isReversed: Bool = true,
+                isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false)
@@ -164,7 +164,7 @@ public struct OUDSSwitchItem: View {
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
-            orientation: isReversed ? .reversed : .default)
+            orientation: !isReversed ? .reversed : .default) // default position of switch indicator is trailing
     }
 
     // MARK: Body
