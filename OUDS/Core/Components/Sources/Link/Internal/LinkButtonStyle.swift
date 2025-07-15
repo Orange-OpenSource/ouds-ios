@@ -47,10 +47,10 @@ struct LinkButtonStyle: ButtonStyle {
                     .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator))
             case .textOnly:
                 configuration.label
-                    .labelStyle(LinkIconAndTextLabelStyle(interactionState: interactionState, size: size, layout: layout))
-            case .iconAndText:
+                    .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
+            case .textAndIcon:
                 configuration.label
-                    .labelStyle(LinkIconAndTextLabelStyle(interactionState: interactionState, size: size, layout: layout))
+                    .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
             }
         }
         .padding(.horizontal, theme.link.linkSpacePaddingInline)
@@ -113,7 +113,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
 
 // MARK: - Link Icon And Text Label Label Style
 
-private struct LinkIconAndTextLabelStyle: LabelStyle {
+private struct LinkTextAndIconLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
