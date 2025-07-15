@@ -243,7 +243,8 @@ The library proposes filter chip component to make some filtering with selected 
 #### Chips picker
 
 The library proposes a chip picker to make easily filtering with two kinds of selection:
-- **single:** to select or unselect one option
+- **single or none:** to select or unselect one option only
+- **single:** to select at least one option
 - **multiple** to select several options
 
 ```swift
@@ -265,19 +266,30 @@ The library proposes a chip picker to make easily filtering with two kinds of se
          ]
      }
 
-     // Prepare the selection, with a value previously selected
-     // Use the data and the binding for the picker.
-     @State var selection: Drink = .mineralWater
+    // MARK: - Simple selection, one or zero
 
-     // Here the picker with title, selection and data
-     OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selection: Drink? = .mineralWater
 
-     /// MARK: - Multiple selection
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
 
-     // Prepare the selection, with a value previously selected
-     // Use the data and the binding for the picker.
-     @State var selections: [Drink] = [.mineralWater]
+    // MARK: - Simple selection
 
-     // Here the picker with title, selection and data
-     OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selection: Drink = .mineralWater
+
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+
+    // MARK: - Multiple selection
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selections: [Drink] = [.mineralWater]
+
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
  ```
