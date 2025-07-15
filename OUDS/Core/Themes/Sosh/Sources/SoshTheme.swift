@@ -50,7 +50,7 @@ import SwiftUI
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     /// Flag to avoid to register severals the fonts making some errors happen
-    nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
+    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
 
     // MARK: - Initializers
 
