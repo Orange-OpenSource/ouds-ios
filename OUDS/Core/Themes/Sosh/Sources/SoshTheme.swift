@@ -49,6 +49,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
+    /// Flag to avoid to register severals the fonts making some errors happen
+    nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
+
     // MARK: - Initializers
 
     /// Constructor of the Sosh theme with its own providers of tokens.
@@ -115,8 +118,11 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     /// Fonts are defined in Resources/Fonts in TTF files
     func registerFonts() {
-        let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+        if !SoshTheme.fontsAlreadyRegistered {
+            let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+            SoshTheme.fontsAlreadyRegistered = true
+        }
     }
 }
 
