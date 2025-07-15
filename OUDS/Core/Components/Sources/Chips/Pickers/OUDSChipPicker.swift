@@ -88,17 +88,37 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The type of selection
     enum SelectionType {
-        /// Single selction with tag of the selected chip
+        /// Single selection with tag of the selected chip, but selection can be empty
+        case singleOrNone(Binding<Tag?>)
+
+        /// Single selection with tag of the selected chip
         case single(Binding<Tag>)
 
-        /// Multiple selction with tags of the selected chips
+        /// Multiple selection with tags of the selected chips
         case multiple(Binding<[Tag]>)
     }
 
     // MARK: - Init
 
     // swiftlint:disable function_default_parameter_at_end
+    /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
+    /// The user will be able to choose zero or one option in this picker.
+    ///
+    /// - Parameters:
+    ///    - title: The title of the picker, can be nil
+    ///    - selection: The current selected value
+    ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
+    public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>]) {
+        if let title, title.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = title?.localized()
+        self.chips = chips
+        selectionType = .singleOrNone(selection)
+    }
+
     /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    /// The user will be able to choose only one option in this picker.
     ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
@@ -113,10 +133,8 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         selectionType = .single(selection)
     }
 
-    // swiftlint:enable function_default_parameter_at_end
-
-    // swiftlint:disable function_default_parameter_at_end
-    /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
+    /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
+    /// The user will be able to choose zero or one or seevral options in this picker.
     ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
@@ -158,7 +176,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         .padding(.vertical, theme.spaces.spaceFixedSm)
     }
 
-    // MARK: - Helper
+    // MARK: - Private helpers
 
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {
@@ -184,6 +202,8 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     private func selected(tag: Tag) -> Bool {
         switch selectionType {
+        case let .singleOrNone(binding):
+            binding.wrappedValue != nil && binding.wrappedValue == tag
         case let .single(binding):
             binding.wrappedValue == tag
         case let .multiple(binding):
@@ -193,6 +213,12 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     private func toggle(tag: Tag) {
         switch selectionType {
+        case let .singleOrNone(binding):
+            if binding.wrappedValue == tag { // If selected the already selected value, unselect
+                binding.wrappedValue = nil
+            } else {
+                binding.wrappedValue = tag
+            }
         case let .single(binding):
             binding.wrappedValue = tag
         case let .multiple(binding):

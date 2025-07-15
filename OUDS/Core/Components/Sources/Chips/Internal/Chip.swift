@@ -17,11 +17,7 @@ import SwiftUI
 // MARK: - Chip
 
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
-///
 /// The layout of the chip will change according to the ``ChipInteractionState`` and the selected flag.
-///
-/// - Version: 1.2.0
-/// - Since: 0.17.0
 struct Chip: View {
 
     // MARK: Stored Properties
@@ -45,7 +41,7 @@ struct Chip: View {
 
     // MARK: Initializers
 
-    /// Create a chip with text and icon.
+    /// Creates a chip with text and icon.
     ///
     /// - Parameters:
     ///    - layout: The layout of the chip
@@ -71,6 +67,8 @@ struct Chip: View {
         .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
         .modifier(ChipBorderModifier(state: interactionState, selected: selected))
     }
+
+    // MARK: - Private helpers
 
     private var leadingPadding: CGFloat {
         if selected {
@@ -125,20 +123,20 @@ private struct ChipContent: View {
         Group {
             switch layout {
             case let .icon(icon, accessibilityLabel):
-                ScaledIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                ChipScaledIcon(icon: icon, size: theme.chip.chipSizeIcon)
                     .accessibilityLabel(accessibilityLabel)
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, icon, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
                     if iconPosition == .leading {
-                        FixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
                     }
 
                     ChipText(text: text)
 
                     if iconPosition == .trailing {
-                        FixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
                     }
                 }
             }
@@ -149,7 +147,7 @@ private struct ChipContent: View {
 
 // MARK: - Scaled Icon
 
-private struct ScaledIcon: View {
+private struct ChipScaledIcon: View {
 
     let icon: Image
     @ScaledMetric var size: CGFloat
@@ -164,7 +162,7 @@ private struct ScaledIcon: View {
 
 // MARK: - Fixed Icon
 
-private struct FixedIcon: View {
+private struct ChipFixedIcon: View {
 
     let icon: Image
     let size: CGFloat
@@ -206,7 +204,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
+            ChipScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
                 .accessibilityHidden(true)
                 .oudsForegroundColor(appliedColor)
         }

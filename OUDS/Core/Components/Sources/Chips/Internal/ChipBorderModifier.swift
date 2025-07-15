@@ -38,7 +38,7 @@ struct ChipBorderModifier: ViewModifier {
                 color: color)
     }
 
-    // MARK: Default hierarchy
+    // MARK: Private helpers
 
     private var width: BorderWidthSemanticToken {
         switch state {

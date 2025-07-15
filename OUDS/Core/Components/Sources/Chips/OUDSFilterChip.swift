@@ -50,7 +50,7 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
 
     // MARK: - Initializers
 
-    /// Create a filter chip with text and icon.
+    /// Creates a filter chip with text and icon.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -59,7 +59,7 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead (OUDSFilterChip(icon:accessibilityLabel:selected:action).")
+            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing)
         self.action = action

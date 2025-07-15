@@ -21,12 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
 - Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
-- Chips components (picker, filter, suggestion) (Orange-OpenSource/ouds-ios#407)
-
-### Fixed
-
-- Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
-- Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
 
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...0.16.0) - 2025-07-07
 
