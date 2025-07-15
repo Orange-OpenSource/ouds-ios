@@ -51,15 +51,15 @@ body:
   - type: input
     id: app-token-lib-version
     attributes:
-      label: Token library version embeded in the app
-      placeholder: "0.11.0"
+      label: Tokens libraries versions embeded in the app
+      placeholder: "Orange 1.1.0, Core 1.2.0, Sosh 1.0.0, ..."
     validations:
       required: false      
   - type: input
     id: app-build-type
     attributes:
       label: App build type
-      placeholder: alpha, beta, prod, DEBUG
+      placeholder: alpha, beta, prod, debug
     validations:
       required: true             
   - type: input
