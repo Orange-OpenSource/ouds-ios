@@ -14,6 +14,7 @@
 - [Formater](#formater)
 - [Dead code](#dead-code)
 - [Software Bill of Materials](#software-bill-of-materials)
+- [Update of dependencies](#update-of-dependencies)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
@@ -370,6 +371,21 @@ These operations, triggered in CLI, are wrapped in a Fastlane command:
 ```shell
 bundle exec fastlane update_sbom
 ```
+
+## Update of dependencies
+
+ > [!TIP]
+ > It is important to keep updated dependencies for its softwar,e but some steps must be processed carefully.
+
+To update dependencies of the project, supossing *Renovate* for example provides pull requests:
+- Check the new version of the dependency to update: is a a major release? minor? bug fix? Does it bring breaking changes? Does it fix vulnerabilities?
+- Have a look on the dependency release note or changelog to get enough details
+- Check in a dedicated branch if the CI/CD works fine still
+- Check if there is no issues or troubles with this new version (update of license, unstabilities, etc.)
+- Get the updates
+- Update the changelog
+- Update the SBOM
+- Make a nice commit message (e.g. `chore(deps):`) for the merge
 
 ## CI/CD
 
