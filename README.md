@@ -70,11 +70,12 @@
 ## Theme versions
 
 > [!TIP]
-> This Swift package embeds specific versions of themes.
+> This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
 - Core version: 1.2.0
 - Orange theme version: 1.1.0
+- Sosh theme version: 1.1.0
 
 ## About OUDS
 

@@ -17,13 +17,14 @@ set -euo pipefail
 # Configuration
 # -------------
 
-OUDS_VERSION_SWIFT_FILE="../OUDS/Core/OUDS/Sources/OUDSVersions.swift"
+OUDS_VERSION_SWIFT_FILE="../OUDS/Core/OUDS/Sources/TokenatorConstants.swift"
 OUDS_README_FILE="../README.md"
 RAW_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
 SEMANTIC_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"
 COMPONENT_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
 CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDS/Sources/_OUDS.docc/_OUDS.md"
 ORANGE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/OUDSThemesOrange.md"
+SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"
 
 CORE_VERSION_PATTERN="🧱 Core version: "
 THEME_VERSION_PATTERN="🧱 Theme version: "
@@ -97,6 +98,7 @@ test_existence_of_file "$OUDS_VERSION_SWIFT_FILE"
 
 themeCoreVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeCoreVersion)
 themeOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeVersion)
+themeSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshVersion)
 
 # Get component versions
 # TODO
@@ -107,6 +109,7 @@ themeOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeVersion
 test_existence_of_file "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreVersion "- Core version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeOrangeVersion "- Orange theme version: " "$OUDS_README_FILE"
+udpate_value_at_pattern_in_file $themeSoshVersion "- Sosh theme version: " "$OUDS_README_FILE"
 
 test_existence_of_file "$RAW_TOKENS_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN" "$RAW_TOKENS_MARKDOWN_FILE"
@@ -122,6 +125,9 @@ udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN " "$COR
 
 test_existence_of_file "$ORANGE_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_THEME_MARKDOWN_FILE"
+
+test_existence_of_file "$SOSH_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeSoshVersion "$THEME_VERSION_PATTERN" "$SOSH_THEME_MARKDOWN_FILE"
 
 echo "👋 Bye!"
 exit $EXIT_OK
