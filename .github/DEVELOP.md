@@ -74,7 +74,7 @@ brew install git-cliff
 # For Syft (at least 1.26.1)
 brew install syft
 
-# For Grype (at least 0.92.2)
+# For Grype (at least 0.96.0)
 brew tap anchore/grype
 brew install grype
 ```
@@ -370,6 +370,11 @@ To do these operations, we use [Syft](https://github.com/anchore/syft) to genera
 These operations, triggered in CLI, are wrapped in a Fastlane command:
 ```shell
 bundle exec fastlane update_sbom
+```
+
+You may need to udpate *grype* before so as to use an updated database for vulnerabilities checks:
+```shell
+brew install grype
 ```
 
 ## Update of dependencies
