@@ -219,45 +219,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc public var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningEmphasizedLight, dark: colorSurfaceStatusWarningEmphasizedDark) }
 
     @objc public var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningMutedLight, dark: colorSurfaceStatusWarningMutedDark) }
-    // MARK: - Color - Chart
-
-    @objc public var colorChartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderLight, dark: colorChartBorderDark) }
-
-    @objc public var colorChartBorderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderContrastLight, dark: colorChartBorderContrastDark) }
-
-    @objc public var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier1Light, dark: colorChartCategoricalTier1Dark) }
-
-    @objc public var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier2Light, dark: colorChartCategoricalTier2Dark) }
-
-    @objc public var colorChartCategoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier3Light, dark: colorChartCategoricalTier3Dark) }
-
-    @objc public var colorChartCategoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier4Light, dark: colorChartCategoricalTier4Dark) }
-
-    @objc public var colorChartCategoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier5Light, dark: colorChartCategoricalTier5Dark) }
-
-    @objc public var colorChartCategoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier6Light, dark: colorChartCategoricalTier6Dark) }
-
-    @objc public var colorChartCategoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier7Light, dark: colorChartCategoricalTier7Dark) }
-
-    @objc public var colorChartCategoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier8Light, dark: colorChartCategoricalTier8Dark) }
-
-    @objc public var colorChartCategoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier9Light, dark: colorChartCategoricalTier9Dark) }
-
-    @objc public var colorChartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier10Light, dark: colorChartCategoricalTier10Dark) }
-
-    @objc public var colorChartFunctionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalInfoLight, dark: colorChartFunctionalInfoDark) }
-
-    @objc public var colorChartFunctionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalNegativeLight, dark: colorChartFunctionalNegativeDark) }
-
-    @objc public var colorChartFunctionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalPositiveLight, dark: colorChartFunctionalPositiveDark) }
-
-    @objc public var colorChartFunctionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalWarningLight, dark: colorChartFunctionalWarningDark) }
-
-    @objc public var colorChartGridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartGridlinesLight, dark: colorChartGridlinesDark) }
-
-    @objc public var colorChartHighlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartHighlightLight, dark: colorChartHighlightDark) }
-
-    @objc public var colorChartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartNeutralLight, dark: colorChartNeutralDark) }
 }
 
 // swiftlint:enable line_length
