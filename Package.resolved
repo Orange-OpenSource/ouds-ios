@@ -1,13 +1,13 @@
 {
-  "originHash" : "297b6dd4ab57a53f19182f3305d1583a5539e299a3bedd5c23e421fd69073fea",
+  "originHash" : "da4529ce553139cd4f60b7450f93816a1542d303f9ca27e71386a45b33551c04",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-docc-plugin",
       "state" : {
-        "revision" : "85e4bb4e1cd62cec64a4b8e769dcefdf0c5b9d64",
-        "version" : "1.4.3"
+        "revision" : "3e4f133a77e644a5812911a0513aeb7288b07d06",
+        "version" : "1.4.5"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
       "state" : {
-        "revision" : "6ebb96ce454ddb036320104a1160350ee9581767",
-        "version" : "0.56.4"
+        "revision" : "b83a8f132ff5430f3b6ff7d912baa407caea9e29",
+        "version" : "0.57.2"
       }
     },
     {

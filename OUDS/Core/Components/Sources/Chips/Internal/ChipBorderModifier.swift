@@ -25,7 +25,6 @@ struct ChipBorderModifier: ViewModifier {
     let selected: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 

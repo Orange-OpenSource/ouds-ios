@@ -46,8 +46,6 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
     private let action: () -> Void
     private let selected: Bool
 
-    @Environment(\.theme) private var theme
-
     // MARK: - Initializers
 
     /// Creates a filter chip with text and icon.

@@ -52,8 +52,6 @@ public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyper
     private let layout: Chip.Layout
     private let action: () -> Void
 
-    @Environment(\.theme) private var theme
-
     // MARK: - Initializers
 
     /// Creates a chip with text and icon.

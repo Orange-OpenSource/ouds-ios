@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
