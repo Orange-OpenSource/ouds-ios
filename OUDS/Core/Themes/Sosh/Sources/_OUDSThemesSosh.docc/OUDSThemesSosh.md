@@ -14,6 +14,8 @@ It embeds also in its target the Sosh brand colors which are not shared nor expo
 
 In other words, this ``SoshTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Sosh brand colors and assets.
 
+The ``SoshTheme`` does not embed colors for charts yet.
+
 ## How to use the theme
 
 You can use ``SoshTheme`` directly. To use the ``SoshTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``SoshTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.

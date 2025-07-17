@@ -42,9 +42,9 @@ open class SoshThemeInputTextComponentTokensProvider: AllInputTextComponentToken
 
     /// Defines a provider of component tokens dedicated to `OUDSButton`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
-    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (`SoshThemeSizeSemanticTokensProvider`)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`SoshThemeColorSemanticTokensProvider`)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`SoshThemeSpaceSemanticTokensProvider`)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil)

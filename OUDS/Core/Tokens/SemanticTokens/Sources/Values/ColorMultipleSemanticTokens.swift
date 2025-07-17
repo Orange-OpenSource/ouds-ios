@@ -243,46 +243,6 @@ public protocol ColorMultipleSemanticTokens {
     var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { get }
-
-    // MARK: - Color - Chart
-
-    var colorChartBorder: MultipleColorSemanticTokens { get }
-
-    var colorChartBorderContrast: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier2: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier3: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier4: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier5: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier6: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier7: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier8: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier9: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier10: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalInfo: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalNegative: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalPositive: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalWarning: MultipleColorSemanticTokens { get }
-
-    var colorChartGridlines: MultipleColorSemanticTokens { get }
-
-    var colorChartHighlight: MultipleColorSemanticTokens { get }
-
-    var colorChartNeutral: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

@@ -36,6 +36,10 @@ struct OrangeThemeTests {
         #expect((theme.colorModes as! OrangeThemeColorModeSemanticTokensProvider).colors is OrangeThemeColorSemanticTokensProvider)
     }
 
+    @Test func defaultColorChartsSemanticTokensProvider() throws {
+        #expect(theme.colorCharts is OrangeThemeColorChartSemanticTokensProvider)
+    }
+
     @Test func defaultBorderSemanticTokensProvider() throws {
         #expect(theme.borders is OrangeThemeBorderSemanticTokensProvider)
     }

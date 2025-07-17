@@ -107,7 +107,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
-    ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>]) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -123,7 +123,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
-    ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>]) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -139,7 +139,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selections: Current selected values
-    ///    - data: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>]) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
