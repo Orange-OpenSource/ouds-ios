@@ -29,12 +29,20 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.themeCoreVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    @Test func themeOrangeVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.themeOrangeVersion, regexp: Self.oudsVersionsFormat)
+    @Test func themeOrangeCoreVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeOrangeCoreVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    @Test func themeSoshVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.themeSoshVersion, regexp: Self.oudsVersionsFormat)
+    @Test func themeOrangeBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeOrangeBrandVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func themeSoshCoreVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeSoshCoreVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func themeSoshBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeSoshBrandVersion, regexp: Self.oudsVersionsFormat)
     }
 
     // MARK: - Tests - Component versions
