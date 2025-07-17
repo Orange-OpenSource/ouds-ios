@@ -25,7 +25,7 @@ import OUDSFoundations
 /// If you think you need to overide some colors or have your own set of colors, start a new discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a).
 ///
 /// - Since: 0.17.0
-final class OrangeThemeColorChartSemanticTokensProvider: AllColorChartSemanticTokensProvider {
+public final class OrangeThemeColorChartSemanticTokensProvider: AllColorChartSemanticTokensProvider {
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0

@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSChartsOrange
 import OUDSThemesOrange
 import Testing
 
@@ -38,7 +37,7 @@ struct OrangeThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts is OrangeChartColorChartSemanticTokensProvider)
+        #expect(theme.colorCharts is OrangeThemeColorChartSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
