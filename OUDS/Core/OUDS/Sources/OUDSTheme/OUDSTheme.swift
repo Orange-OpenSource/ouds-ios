@@ -44,6 +44,18 @@ open class OUDSTheme: @unchecked Sendable {
     /// All color mode semantic tokens exposed in one object
     public let colorModes: AllColorModeSemanticTokensProvider
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    /// All color charts semantic tokens exposed in one obejct
+    ///
+    /// If nil the theme does not provide color charts (like today `SoshTheme`).
+    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`
+    /// or by `OrangeChartColorChartSemanticTokensProvider` from `OrangeTheme`.
+    ///
+    /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
+    /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
+    public let colorCharts: AllColorChartSemanticTokensProvider!
+    // swiftlint:enable implicitly_unwrapped_optional
+
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokensProvider
 
@@ -125,12 +137,14 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Defines the theme to apply everywhere.
     ///
     /// - Parameters:
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
+    ///    - colorCharts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -153,10 +167,12 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
+                colorCharts: AllColorChartSemanticTokensProvider? = nil,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -187,6 +203,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.borders = borders
         self.colors = colors
         self.colorModes = colorModes
+        self.colorCharts = colorCharts
         self.elevations = elevations
         self.fonts = fonts
         self.grids = grids
@@ -216,6 +233,8 @@ open class OUDSTheme: @unchecked Sendable {
         self.resourcesBundle = resourcesBundle
         self.fontFamily = fontFamily
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
 }

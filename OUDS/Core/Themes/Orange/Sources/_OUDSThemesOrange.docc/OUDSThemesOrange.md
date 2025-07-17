@@ -14,6 +14,8 @@ It embeds also in its target the brand colors which are not shared nor exposed i
 
 In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
 
+It contains also colors dedicated to charts.
+
 ## How to use the theme
 
 You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
@@ -80,6 +82,9 @@ You will have to consider the semantic tokens providers you need:
 - opacity tokens are in `OrangeThemeOpacitySemanticTokensProvider`
 - grid tokens are in `OrangeThemeGridSemanticTokensProvider`
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
+- etc.
+
+The color semantic tokens of charts are not overridable as they are highly related to the brand. However it can change in the future.
 
 You can also override the component tokens providers you need.
 Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/) to know which one you need to update.

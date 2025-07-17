@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
 - Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
 - Gem `fastlane` gem from v2.227.2 to v2.228.0
 - Swift package `SwifFormat` from v0.56.4 to v0.57.2

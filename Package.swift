@@ -87,19 +87,6 @@ let package = Package(
             dependencies: ["OUDS", "TestsUtils"],
             path: "OUDS/Core/OUDS/Tests"),
         .target(
-            name: "OUDSModules",
-            dependencies: ["OUDSComponents"],
-            path: "OUDS/Modules/Sources"),
-        .target(
-            name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDS"],
-            path: "OUDS/Core/Components/Sources",
-            resources: [.process("Resources/")]),
-        .testTarget(
-            name: "OUDSComponents-Tests",
-            dependencies: ["OUDSComponents"],
-            path: "OUDS/Core/Components/Tests"),
-        .target(
             name: "OUDSThemesSosh",
             dependencies: ["OUDS"],
             path: "OUDS/Core/Themes/Sosh/Sources",
@@ -117,6 +104,19 @@ let package = Package(
             name: "OUDSThemesOrange-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Orange/Tests"),
+        .target(
+            name: "OUDSModules",
+            dependencies: ["OUDSComponents"],
+            path: "OUDS/Modules/Sources"),
+        .target(
+            name: "OUDSComponents",
+            dependencies: ["OUDSTokensComponent", "OUDS"],
+            path: "OUDS/Core/Components/Sources",
+            resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSComponents-Tests",
+            dependencies: ["OUDSComponents"],
+            path: "OUDS/Core/Components/Tests"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],

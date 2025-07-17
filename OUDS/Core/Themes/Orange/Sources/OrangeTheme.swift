@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
-/// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
+/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
@@ -62,7 +62,7 @@ import OUDSTokensSemantic
 ///    let badge = OrangeThemeBadgeComponentTokensProvider()
 ///
 ///    // Define in the end your theme by overriding some providers.
-///    // YOu can override all providers, or only some, or just keep the theme as is.
+///    // You can override all providers, or only some, or just keep the theme as is.
 ///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button, badge: badge)
 ///
 /// ```
@@ -87,6 +87,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
+    ///    - colorCharts: All semantic tokens of color charts
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -109,10 +110,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
+                         colorCharts: AllColorChartSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -142,6 +145,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
+        let colorCharts = (colorCharts ?? OrangeThemeColorChartSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -169,6 +173,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   colorCharts: colorCharts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
