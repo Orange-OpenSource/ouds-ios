@@ -20,10 +20,14 @@ public enum OUDSVersions {
 
     /// Version of the Core tokens library
     public static let themeCoreVersion = "1.2.0"
-    /// Version of the Orange theme tokens library
-    public static let themeOrangeVersion = "1.1.0"
-    /// Version of the Sosh theme tokens library
-    public static let themeSoshVersion = "1.1.0"
+    /// Version of the Orange core tokens library
+    public static let themeOrangeCoreVersion = "1.1.0"
+    /// Version of the Orange brand tokens library
+    public static let themeOrangeBrandVersion = "1.2.0"
+    /// Version of the Sosh core tokens library
+    public static let themeSoshCoreVersion = "1.1.0"
+    /// Version of the Sosh brand tokens library
+    public static let themeSoshBrandVersion = "1.2.0"
 
     // MARK: - Components versions - Actions
 
