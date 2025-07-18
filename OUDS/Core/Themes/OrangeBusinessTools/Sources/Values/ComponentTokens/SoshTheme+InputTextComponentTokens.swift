@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable identifier_name
 
-extension OrangeBusinessToolsThemeInputTextComponentTokensProvider: InputTextComponentTokens {
+extension SoshThemeInputTextComponentTokensProvider: InputTextComponentTokens {
     /// Has for value token colors.colorActionSupportEnabled
     @objc public final var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
     /// Has for value token colors.colorActionSupportHover

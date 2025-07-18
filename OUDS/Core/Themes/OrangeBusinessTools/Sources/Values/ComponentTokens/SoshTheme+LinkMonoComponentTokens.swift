@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-extension OrangeBusinessToolsThemeLinkComponentTokensProvider: LinkMonoComponentTokens {
+extension SoshThemeLinkComponentTokensProvider: LinkMonoComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
     @objc public final var linkMonoColorContentEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
