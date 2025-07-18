@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of badge** for *badge* objects like `OUDSBadge`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllBadgeComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -68,3 +70,5 @@ final class OrangeBusinessToolsThemeBadgeComponentTokensProvider: AllBadgeCompon
     // the implemention of BadgeComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BadgeComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeBadgeComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

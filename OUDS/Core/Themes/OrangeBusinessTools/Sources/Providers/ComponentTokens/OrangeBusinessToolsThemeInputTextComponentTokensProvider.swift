@@ -15,6 +15,7 @@ import OUDS
 import OUDSFoundations
 
 // swiftlint:disable type_name
+// swiftlint:disable line_length
 
 /// A class which wraps all **component  tokens of input text** for *input text* objects like `OUDSInputText`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -72,3 +73,4 @@ open class OrangeBusinessToolsThemeInputTextComponentTokensProvider: AllInputTex
 }
 
 // swiftlint:enable type_name
+// swiftlint:enable line_length

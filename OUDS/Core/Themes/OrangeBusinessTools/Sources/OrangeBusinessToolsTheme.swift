@@ -16,6 +16,7 @@ import OUDS
 import SwiftUI
 
 // swiftlint:disable function_body_length
+// swiftlint:disable line_length
 
 /// This is an override of the default basic `OUDSTheme` for the **Orange Business Tools theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
@@ -127,6 +128,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 }
 
 // swiftlint:enable function_body_length
+// swiftlint:enable line_length
 
 // MARK: - Extension of Bundle
 

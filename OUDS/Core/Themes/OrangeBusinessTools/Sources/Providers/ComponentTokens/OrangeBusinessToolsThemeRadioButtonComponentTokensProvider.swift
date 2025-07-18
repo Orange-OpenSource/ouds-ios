@@ -15,6 +15,7 @@ import OUDS
 import OUDSFoundations
 
 // swiftlint:disable type_name
+// swiftlint:disable line_length
 
 /// A class which wraps all **component  tokens of radio button** for  *radios* objects
 /// like `OUDSRadioButton` and `OUDSRadioButtonItem`.
@@ -68,3 +69,4 @@ final class OrangeBusinessToolsThemeRadioButtonComponentTokensProvider: AllRadio
 }
 
 // swiftlint:enable type_name
+// swiftlint:enable line_length

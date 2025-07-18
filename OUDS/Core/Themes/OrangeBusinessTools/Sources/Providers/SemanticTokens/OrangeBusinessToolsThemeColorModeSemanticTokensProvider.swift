@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **color mode semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllColorModeSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -52,3 +54,5 @@ final class OrangeBusinessToolsThemeColorModeSemanticTokensProvider: AllColorMod
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorModeSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeColorModeSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

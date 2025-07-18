@@ -14,6 +14,8 @@
 @testable import OUDSThemesOrangeBusinessTools
 import Testing
 
+// swiftlint:disable type_name
+
 /// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
 struct OrangeBusinessToolsThemeTagComponentTokensProviderTests {
 
@@ -37,3 +39,5 @@ struct OrangeBusinessToolsThemeTagComponentTokensProviderTests {
         #expect(provider.spaces is OrangeBusinessToolsThemeSpaceSemanticTokensProvider)
     }
 }
+
+// swiftlint:enable type_name

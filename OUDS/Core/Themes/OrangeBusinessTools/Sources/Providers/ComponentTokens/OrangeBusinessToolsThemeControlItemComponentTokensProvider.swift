@@ -15,6 +15,7 @@ import OUDS
 import OUDSFoundations
 
 // swiftlint:disable type_name
+// swiftlint:disable line_length
 
 /// A class which wraps all **component  tokens** for components with a *control item* layout like `OUDSSwitch`, `OUDSRadioButton` and `OUDSCheckboItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -78,3 +79,4 @@ final class OrangeBusinessToolsThemeControlItemComponentTokensProvider: AllContr
 }
 
 // swiftlint:enable type_name
+// swiftlint:enable line_length

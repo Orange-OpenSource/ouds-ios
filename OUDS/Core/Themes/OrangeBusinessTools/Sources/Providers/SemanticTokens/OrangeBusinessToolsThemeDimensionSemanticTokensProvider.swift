@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **dimension semantic tokens**, and expose them.
 /// This provider should be integrated as a `AllDimensionSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -50,3 +52,5 @@ final class OrangeBusinessToolsThemeDimensionSemanticTokensProvider: AllDimensio
     // but in Core/Themes/OrangeBusinessTools/Values/DimensionTokens/OrangeBusinessToolsTheme+DimensionSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

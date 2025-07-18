@@ -14,6 +14,9 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+// swiftlint:disable line_length
+
 /// A class which wraps all **opacity semantic tokens** and expose them.
 /// This provider should be integrated as a `AllOpacitySemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -45,3 +48,6 @@ final class OrangeBusinessToolsThemeOpacitySemanticTokensProvider: AllOpacitySem
     // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+OpacitySemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name
+// swiftlint:enable line_length
