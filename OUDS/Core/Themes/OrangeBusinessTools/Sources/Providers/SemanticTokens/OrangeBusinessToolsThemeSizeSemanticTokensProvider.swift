@@ -42,7 +42,7 @@ final class OrangeBusinessToolsThemeSizeSemanticTokensProvider: AllSizeSemanticT
         #endif
     }
 
-    deinit { x
+    deinit {
         #if DEBUG
         Self.instanceCount--
         #endif

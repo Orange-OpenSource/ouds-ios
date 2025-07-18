@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDS
+import OUDSThemesOrange
 import SwiftUI
 
 // swiftlint:disable function_body_length
@@ -110,21 +111,10 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    switch: `switch`,
                    tag: tag,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
-                   fontFamily: OrangeBusinessToolsBrandFontRawTokens.fontFamilyDefault)
-
-        registerFonts()
+                   fontFamily: nil)
     }
 
     deinit {}
-
-    /// Fonts are defined in Resources/Fonts in TTF files
-    func registerFonts() {
-        if !OrangeBusinessToolsTheme.fontsAlreadyRegistered {
-            let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
-            OrangeBusinessToolsTheme.fontsAlreadyRegistered = true
-        }
-    }
 }
 
 // swiftlint:enable function_body_length
@@ -135,5 +125,5 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 extension Bundle {
 
     /// The OrangeBusinessTools theme bundle, useful to find resources
-    static let OrangeBusinessToolsTheme = Bundle.module
+    public static let OrangeBusinessToolsTheme = Bundle.OrangeTheme
 }

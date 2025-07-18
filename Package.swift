@@ -91,7 +91,7 @@ let package = Package(
             path: "OUDS/Core/OUDS/Tests"),
         .target(
             name: "OUDSThemesOrangeBusinessTools",
-            dependencies: ["OUDS"],
+            dependencies: ["OUDS", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/OrangeBusinessTools/Sources"),
         .testTarget(
             name: "OUDSThemesOrangeBusinessTools-Tests",
