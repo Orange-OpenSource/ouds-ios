@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponentTokens {
+extension SoshThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
     @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
     /// Has for value token colors.colorContentDefault
@@ -45,8 +45,8 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xs }
     /// Has for value token spaces.spacePaddingInlineXs
     @objc public final var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXs }
-    /// Has for value token dimensions.dimension2xl
-    @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension2xl }
+    /// Has for value token dimensions.dimension3xl
+    @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension3xl }
     /// Has for value token dimensions.dimensionXs
     @objc public final var switchSizeMinHeight: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token sizes.sizeMinInteractiveArea
@@ -61,8 +61,8 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions.dimensionXs }
     /// Has for value token dimensions.dimension3xs
     @objc public final var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions.dimension3xs }
-    /// Has for value token dimensions.dimension2xl
-    @objc public final var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension2xl }
+    /// Has for value token dimensions.dimension3xl
+    @objc public final var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension3xl }
     /// Has for value token dimensions.dimension3xs
     @objc public final var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions.dimension3xs }
     /// Has for value token dimensions.dimension5xs
