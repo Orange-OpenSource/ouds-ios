@@ -23,15 +23,15 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDS                 // To get OUDSThemeableView
-///     import OUDSThemeSosh       // To get SoshTheme
+///     import OUDS           // To get OUDSThemeableView
+///     import OUDSThemesSosh // To get SoshTheme
 ///     import SwiftUI
 ///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
 ///             WindowGroup {
-///                 OUDSThemeableView(theme: SoshTheme) {
+///                 OUDSThemeableView(theme: SoshTheme()) {
 ///                     // Your root view
 ///                 }
 ///             }

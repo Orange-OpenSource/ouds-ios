@@ -16,7 +16,7 @@ import Testing
 
 // swiftlint:disable force_cast
 
-/// Check if the themes ahs the default tokens providers with the expected types.
+/// Check if the themes has the default tokens providers with the expected types.
 struct SoshThemeTests {
 
     private var theme: SoshTheme

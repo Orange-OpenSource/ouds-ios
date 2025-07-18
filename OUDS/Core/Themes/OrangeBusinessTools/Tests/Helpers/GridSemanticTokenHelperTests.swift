@@ -12,15 +12,15 @@
 //
 
 import OUDS
-import OUDSThemesSosh
+import OUDSThemesOrangeBusinessTools
 import OUDSTokensSemantic
 import Testing
 
 /// Tests some helper functions defined in extensions of `OUDSTheme` in the *OUDS* module, related to grids tokens.
-/// Cannot be tested there because no theme exists at that level., but here the ``SoshTheme`` can be used.
+/// Cannot be tested there because no theme exists at that level., but here the ``OrangeBusinessToolsTheme`` can be used.
 struct GridSemanticTokenHelperTests {
 
-    private let someTheme: OUDSTheme = SoshTheme()
+    private let someTheme: OUDSTheme = OrangeBusinessToolsTheme()
 
     @Test func gridMinWith() throws {
         #expect(someTheme.grids.gridExtraCompactMinWidth == someTheme.gridMinWidth(for: .extraCompact))
