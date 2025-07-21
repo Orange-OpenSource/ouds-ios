@@ -37,7 +37,7 @@ struct OrangeInverseThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts is OrangeInverseThemeColorChartsSemanticTokensProvider)
+        #expect(theme.colorCharts is OrangeInverseThemeColorChartSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {

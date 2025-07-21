@@ -37,6 +37,14 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.themeOrangeBrandVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func themeOrangeBusinessToolsBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeOrangeBusinessToolsBrandVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func themeOrangeInverseBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeOrangeInverseBrandVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     @Test func themeSoshCoreVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.themeSoshCoreVersion, regexp: Self.oudsVersionsFormat)
     }
