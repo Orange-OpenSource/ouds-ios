@@ -24,6 +24,8 @@ SEMANTIC_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDST
 COMPONENT_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
 CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDS/Sources/_OUDS.docc/_OUDS.md"
 ORANGE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/OUDSThemesOrange.md"
+ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/OUDSThemesOrangeBusinessTools.md"
+ORANGE_INVERSE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeInverse/Sources/_OUDSThemesOrangeInverse.docc/OUDSThemesOrangeInverse.md"
 SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"
 
 CORE_VERSION_PATTERN="🧱 Core version: "
@@ -98,6 +100,8 @@ test_existence_of_file "$OUDS_VERSION_SWIFT_FILE"
 
 themeCoreVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeCoreVersion)
 themeOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeVersion)
+themeOrangeBusinessToolsVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeBusinessTools)
+themeOrangeInverseVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeInverse)
 themeSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshVersion)
 
 # Get component versions
@@ -109,6 +113,8 @@ themeSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshVersion)
 test_existence_of_file "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreVersion "- Core version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeOrangeVersion "- Orange theme version: " "$OUDS_README_FILE"
+udpate_value_at_pattern_in_file $themeOrangeBusinessToolsVersion "- Orange Business Tools theme version: " "$OUDS_README_FILE"
+udpate_value_at_pattern_in_file $themeOrangeInverseVersion "- Orange Inverse theme version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeSoshVersion "- Sosh theme version: " "$OUDS_README_FILE"
 
 test_existence_of_file "$RAW_TOKENS_MARKDOWN_FILE"
@@ -125,6 +131,12 @@ udpate_value_at_pattern_in_file $themeCoreVersion "$CORE_VERSION_PATTERN " "$COR
 
 test_existence_of_file "$ORANGE_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_THEME_MARKDOWN_FILE"
+
+test_existence_of_file "$ORANGE_BUSINESS_TOOLS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_BUSINESS_TOOLS_MARKDOWN_FILE"
+
+test_existence_of_file "$ORANGE_INVERSE_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_INVERSE_MARKDOWN_FILE"
 
 test_existence_of_file "$SOSH_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeSoshVersion "$THEME_VERSION_PATTERN" "$SOSH_THEME_MARKDOWN_FILE"
