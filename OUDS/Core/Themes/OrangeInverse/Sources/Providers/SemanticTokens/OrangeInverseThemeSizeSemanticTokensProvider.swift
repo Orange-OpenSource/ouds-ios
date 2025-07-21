@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSizeSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -53,3 +55,5 @@ final class OrangeInverseThemeSizeSemanticTokensProvider: AllSizeSemanticTokensP
     // and in Core/Themes/OrangeInverse/Values/SemanticTokens/OrangeInverseTheme+SizeMultipleSemanticTokens.swift
     // This declaration of OrangeInverseThemeSizeSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

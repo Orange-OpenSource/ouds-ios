@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **opacity semantic tokens** and expose them.
 /// This provider should be integrated as a `AllOpacitySemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -45,3 +47,5 @@ final class OrangeInverseThemeOpacitySemanticTokensProvider: AllOpacitySemanticT
     // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/OrangeInverse/Values/SemanticTokens/OrangeInverseTheme+OpacitySemanticTokens.swift
     // This declaration of OrangeInverseThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

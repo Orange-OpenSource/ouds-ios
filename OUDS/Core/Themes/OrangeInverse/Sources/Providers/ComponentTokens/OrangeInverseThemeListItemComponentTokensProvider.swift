@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of list item** for *list item* objects like `OUDSListItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllListItemComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -68,3 +70,5 @@ final class OrangeInverseThemeListItemComponentTokensProvider: AllListItemCompon
     // the implemention of ListItemComponentTokens is not here but in Core/Themes/OrangeInverse/Values/ComponentTokens/OrangeInverseTheme+ListItemComponentTokens.swift
     // This declaration of OrangeInverseThemeListItemComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

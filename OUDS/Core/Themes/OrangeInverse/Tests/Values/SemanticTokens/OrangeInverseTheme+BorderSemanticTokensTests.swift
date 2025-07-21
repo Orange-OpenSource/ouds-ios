@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrangeInverse
 import Testing
 
+// swiftlint:disable type_name
+
 /// The aim of this tests class is to look for regressions in **OrangeInverse brand border semantic tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// In the semantics of **border semantic tokens**, there will be some unchanged things like relationships between tokens.
@@ -47,3 +49,5 @@ struct OrangeInverseThemeBorderSemanticTokensTests {
         #expect(theme.borders.borderRadiusLarge < theme.borders.borderRadiusPill)
     }
 }
+
+// swiftlint:enable type_name
