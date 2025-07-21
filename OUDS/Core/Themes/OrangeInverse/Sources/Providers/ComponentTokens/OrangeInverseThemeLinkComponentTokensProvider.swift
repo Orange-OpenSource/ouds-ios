@@ -23,7 +23,7 @@ import OUDSFoundations
 /// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
-final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
+final class OrangeInverseThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for link sizes
     public let sizes: AllSizeSemanticTokensProvider
@@ -40,20 +40,20 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
-    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeInverseThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of SoshThemeLinkComponentTokensProvider")
-        self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
-        self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
-        self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        OL.debug("Init of OrangeInverseThemeLinkComponentTokensProvider")
+        self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
+        self.colors = (colors ?? OrangeInverseThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeInverseThemeSpaceSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "SoshThemeLinkComponentTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeInverseThemeLinkComponentTokensProvider")
         #endif
     }
 
@@ -65,6 +65,6 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of LinkComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+LinkComponentTokens.swift
-    // This declaration of SoshThemeLinkComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of LinkComponentTokens is not here but in Core/Themes/OrangeInverse/Values/ComponentTokens/OrangeInverseTheme+LinkComponentTokens.swift
+    // This declaration of OrangeInverseThemeLinkComponentTokensProvider is here also to allow to write documentation.
 }

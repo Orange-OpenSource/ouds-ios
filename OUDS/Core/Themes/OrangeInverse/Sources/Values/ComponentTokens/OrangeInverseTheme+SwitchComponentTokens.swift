@@ -20,19 +20,19 @@ import OUDSTokensSemantic
 
 extension OrangeInverseThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token colors.colorRepositoryNeutralEmphasizedHighest
-    @objc public final var switchColorCursor: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedHighest }
+    @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryNeutralEmphasizedHighest) }
     /// Has for value token colors.colorContentDefault
     @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorContentDefault
     @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorRepositoryPositiveHigh
-    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { colors.colorRepositoryPositiveHigh }
-    /// Has for value token colors.colorRepositoryPositiveLow
-    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.colorRepositoryPositiveLow }
+    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryPositiveHigh) }
+    /// Has for value token colors.colorRepositoryPositiveLow)
+    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryPositiveLow) }
     /// Has for value token colors.colorRepositoryOpacityWhiteHigh
-    @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigh }
+    @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value token colors.colorRepositoryOpacityWhiteHigher
-    @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token borders.borderRadiusPill
     @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusPill }
     /// Has for value token borders.borderRadiusPill

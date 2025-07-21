@@ -117,8 +117,7 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   resourcesBundle: Bundle.OrangeInverseTheme,
-                   fontFamily: OrangeInverseBrandFontRawTokens.fontFamilyDefault)
+                   resourcesBundle: Bundle.OrangeInverseTheme)
     }
 
     deinit {}
