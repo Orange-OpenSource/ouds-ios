@@ -8,11 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Color charts for Orange Business Tools theme
 - Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
 - Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
-- Chip component (Orange-OpenSource/ouds-ios#407)
+- Chip components (Orange-OpenSource/ouds-ios#407)
 - Sosh theme (Orange-OpenSource/ouds-ios#665)
-- Badge component (Orange-OpenSource/ouds-ios#514)
+- Badge components (Orange-OpenSource/ouds-ios#514)
 
 ### Changed
 
