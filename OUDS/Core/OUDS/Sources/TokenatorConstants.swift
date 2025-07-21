@@ -30,6 +30,8 @@ public enum OUDSVersions {
     public static let themeSoshBrandVersion = "1.2.0"
     /// Version of the Orange Business Tools brand tokens library
     public static let themeOrangeBusinessToolsBrandVersion = "1.1.0"
+    /// Version fo the Orange Inverse brand tokens library
+    public static let themeOrangeInverseBrandVersion = "1.1.0"
 
     // MARK: - Components versions - Actions
 
