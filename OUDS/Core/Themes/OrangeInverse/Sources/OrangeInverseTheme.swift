@@ -68,6 +68,7 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let borders = OrangeInverseThemeBorderSemanticTokensProvider()
         let colors = OrangeInverseThemeColorSemanticTokensProvider()
         let colorModes = OrangeInverseThemeColorModeSemanticTokensProvider(colors: colors)
+        let colorCharts = OrangeInverseThemeColorChartSemanticTokensProvider()
         let elevations = OrangeInverseThemeElevationSemanticTokensProvider()
         let fonts = OrangeInverseThemeFontSemanticTokensProvider()
         let grids = OrangeInverseThemeGridSemanticTokensProvider()
@@ -95,6 +96,7 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   colorCharts: colorCharts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
