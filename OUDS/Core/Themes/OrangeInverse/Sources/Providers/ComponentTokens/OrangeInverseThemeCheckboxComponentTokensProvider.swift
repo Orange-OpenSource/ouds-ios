@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of checkbox** for  *checkboxes* objects
 /// like `OUDSCheckbox` and `OUDSCheckboxItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -64,3 +66,5 @@ final class OrangeInverseThemeCheckboxComponentTokensProvider: AllCheckboxCompon
     // the implemention of CheckboxComponentTokens is not here but in Core/Themes/OrangeInverse/Values/ComponentTokens/OrangeInverseTheme+CheckboxComponentTokens.swift
     // This declaration of OrangeInverseThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

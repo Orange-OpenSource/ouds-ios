@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **space semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSpaceSemanticTokens` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -53,3 +55,5 @@ final class OrangeInverseThemeSpaceSemanticTokensProvider: AllSpaceSemanticToken
     // and in Core/Themes/OrangeInverse/Values/SemanticTokens/OrangeInverseTheme+SpaceMultipleSemanticTokens.swift
     // This declaration of OrangeInverseThemeSpaceSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

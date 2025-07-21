@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **border semantic tokens** and expose them.
 /// This provider should be integrated as a `AllBorderSemanticTokensProvider` implementation inside some `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -45,3 +47,5 @@ final class OrangeInverseThemeBorderSemanticTokensProvider: AllBorderSemanticTok
     // the implemention of BorderSemanticTokens is not here but in Core/Themes/OrangeInverse/Values/SemanticTokens/OrangeInverseTheme+BorderSemanticTokens.swift
     // This declaration of OrangeInverseThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name

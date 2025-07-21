@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of skeleton** for *skeleton* objects like `OUDSSkeleton`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllSkeletonComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -53,3 +55,5 @@ final class OrangeInverseThemeSkeletonComponentTokensProvider: AllSkeletonCompon
     // the implemention of SkeletonComponentTokens is not here but in Core/Themes/OrangeInverse/Values/ComponentTokens/OrangeInverseTheme+SkeletonComponentTokens.swift
     // This declaration of OrangeInverseThemeSkeletonComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name
