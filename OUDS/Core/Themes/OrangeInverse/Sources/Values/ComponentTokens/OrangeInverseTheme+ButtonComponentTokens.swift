@@ -61,8 +61,8 @@ extension OrangeInverseThemeButtonComponentTokensProvider: ButtonComponentTokens
     @objc public final var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value token colors.colorActionPressed
     @objc public final var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
-    /// Has for value token colors.colorActionLoading
-    @objc public final var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    /// Has for value token colors.colorContentDefault
+    @objc public final var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
     /// Has for value token colors.colorActionDisabled
     @objc public final var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
@@ -95,8 +95,8 @@ extension OrangeInverseThemeButtonComponentTokensProvider: ButtonComponentTokens
     @objc public final var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token borders.borderWidthDefault
     @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
+    /// Has for value token borders.borderWidthMedium
+    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthNone
     @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
