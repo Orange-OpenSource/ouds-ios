@@ -21,14 +21,14 @@ import OUDSTokensSemantic
 extension OrangeInverseThemeRadioButtonComponentTokensProvider: RadioButtonComponentTokens {
     /// Has for value token borders.borderRadiusPill
     @objc public final var radioButtonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var radioButtonBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var radioButtonBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var radioButtonBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var radioButtonBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.borderWidthNone }
+    /// Has for value token borders.borderWidthMedium
+    @objc public final var radioButtonBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.borderWidthMedium
+    @objc public final var radioButtonBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.borderWidthMedium
+    @objc public final var radioButtonBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.borderWidthMedium
+    @objc public final var radioButtonBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthThin
     @objc public final var radioButtonBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthThin }
     /// Has for value token borders.borderWidthMedium

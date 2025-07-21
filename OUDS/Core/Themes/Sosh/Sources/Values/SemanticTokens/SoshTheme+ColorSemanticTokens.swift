@@ -598,10 +598,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorOverlayDragLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow
     @objc public final var colorOverlayDragDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
-    /// Has for value token colorBgPrimaryLight
-    @objc public final var colorOverlayModalLight: ColorSemanticToken { colorBgPrimaryLight }
-    /// Has for value token colorBgEmphasizedDark
-    @objc public final var colorOverlayModalDark: ColorSemanticToken { colorBgEmphasizedDark }
+    /// Has for value token colorRepositoryNeutralMutedWhite
+    @objc public final var colorOverlayModalLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    /// Has for value token colorRepositorySecondaryHigh
+    @objc public final var colorOverlayModalDark: ColorSemanticToken { colorRepositorySecondaryHigh }
     /// Has for value token colorRepositoryOpacityBlackTransparent
     @objc public final var colorOpacityTransparentLight: ColorSemanticToken { colorRepositoryOpacityBlackTransparent }
     /// Has for value token colorRepositoryOpacityWhiteTransparent
