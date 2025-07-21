@@ -32,13 +32,13 @@ struct OrangeBusinessToolsThemeTests {
         #expect(theme.colors is OrangeBusinessToolsThemeColorSemanticTokensProvider)
     }
 
+    @Test func defaultColorChartsSemanticTokensProvider() throws {
+        #expect(theme.colorCharts is OrangeBusinessToolsThemeColorChartSemanticTokensProvider)
+    }
+
     @Test func defaultColorModeSemanticTokensProvider() throws {
         #expect(theme.colorModes is OrangeBusinessToolsThemeColorModeSemanticTokensProvider)
         #expect((theme.colorModes as! OrangeBusinessToolsThemeColorModeSemanticTokensProvider).colors is OrangeBusinessToolsThemeColorSemanticTokensProvider)
-    }
-
-    @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts is OrangeThemeColorChartSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
