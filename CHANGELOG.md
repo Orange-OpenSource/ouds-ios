@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
 - Chip component (Orange-OpenSource/ouds-ios#407)
 - Sosh theme (Orange-OpenSource/ouds-ios#665)
 - Badge component (Orange-OpenSource/ouds-ios#514)

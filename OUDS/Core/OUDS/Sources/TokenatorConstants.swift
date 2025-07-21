@@ -28,6 +28,8 @@ public enum OUDSVersions {
     public static let themeSoshCoreVersion = "1.1.0"
     /// Version of the Sosh brand tokens library
     public static let themeSoshBrandVersion = "1.2.0"
+    /// Version of the Orange Business Tools brand tokens library
+    public static let themeOrangeBusinessToolsBrandVersion = "1.1.0"
 
     // MARK: - Components versions - Actions
 
