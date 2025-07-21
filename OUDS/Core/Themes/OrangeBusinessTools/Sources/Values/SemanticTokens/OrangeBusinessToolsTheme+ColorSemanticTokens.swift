@@ -23,10 +23,6 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    // TODO: #821: This token is missing and is not send by tokenator nor available in the JSON it consumes.
-    // This is a Figma issue know by design team, and should be fixed with 1.3.0 of tokens library.
-    // Only this theme is impacted.
-    @objc public final var colorRepositoryOpacityAccent: ColorSemanticToken { OrangeBrandColorRawTokens.colorOpacityWarmGray }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeBusinessToolsTheme**
     @objc public final var colorRepositoryPrimaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeBusinessToolsTheme**
