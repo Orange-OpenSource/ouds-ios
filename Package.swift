@@ -31,17 +31,20 @@ let package = Package(
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
         .library(
-            name: "OUDS",
-            targets: ["OUDS"]),
-        .library(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
+        .library(
+            name: "OUDSThemesOrangeBusinessTools",
+            targets: ["OUDSThemesOrangeBusinessTools"]),
+        .library(
+            name: "OUDSThemesOrangeInverse",
+            targets: ["OUDSThemesOrangeInverse"]),
         .library(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
         .library(
-            name: "OUDSThemesOrangeBusinessTools",
-            targets: ["OUDSThemesOrangeBusinessTools"]),
+            name: "OUDS",
+            targets: ["OUDS"]),
         .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
@@ -82,13 +85,14 @@ let package = Package(
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
         .target(
-            name: "OUDS",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/OUDS/Sources"),
+            name: "OUDSThemesOrange",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/Themes/Orange/Sources",
+            resources: [.process("Resources/")]),
         .testTarget(
-            name: "OUDS-Tests",
-            dependencies: ["OUDS", "TestsUtils"],
-            path: "OUDS/Core/OUDS/Tests"),
+            name: "OUDSThemesOrange-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Orange/Tests"),
         .target(
             name: "OUDSThemesOrangeBusinessTools",
             dependencies: ["OUDS", "OUDSThemesOrange"],
@@ -97,6 +101,14 @@ let package = Package(
             name: "OUDSThemesOrangeBusinessTools-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrangeBusinessTools"],
             path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
+        .target(
+            name: "OUDSThemesOrangeInverse",
+            dependencies: ["OUDS", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/OrangeInverse/Sources"),
+        .testTarget(
+            name: "OUDSThemesOrangeInverse-tests",
+            dependencies: ["OUDS", "OUDSThemesOrangeInverse"],
+            path: "OUDS/Core/Themes/OrangeInverse/Tests"),
         .target(
             name: "OUDSThemesSosh",
             dependencies: ["OUDS"],
@@ -107,14 +119,13 @@ let package = Package(
             dependencies: ["TestsUtils", "OUDSThemesSosh"],
             path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
-            name: "OUDSThemesOrange",
-            dependencies: ["OUDS"],
-            path: "OUDS/Core/Themes/Orange/Sources",
-            resources: [.process("Resources/")]),
+            name: "OUDS",
+            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
+            path: "OUDS/Core/OUDS/Sources"),
         .testTarget(
-            name: "OUDSThemesOrange-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Orange/Tests"),
+            name: "OUDS-Tests",
+            dependencies: ["OUDS", "TestsUtils"],
+            path: "OUDS/Core/OUDS/Tests"),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],
