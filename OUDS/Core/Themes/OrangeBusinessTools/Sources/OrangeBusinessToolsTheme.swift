@@ -19,8 +19,18 @@ import SwiftUI
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
+/// The Orange Business Tools theme is an Orange theme but ftailors for some productd with heavy UI.
 /// This is an override of the default basic `OUDSTheme` for the **Orange Business Tools theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+///
+/// ## Usages
+///
+/// Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
+/// with which users can interact. Thus for such products there are specific constraints of spaces and sizes, even if
+/// thes products must be Orange flavored.
+/// That is the reason why this team is created: a kind of `OrangeTheme` but wih adjustments on some tokens like spacings and sizings.
+///
+/// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
@@ -57,10 +67,12 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
     // MARK: - Initializers
 
     /// Constructor of the OrangeBusinessTools theme with its own providers of tokens.
+    /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
     public init() {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
+        let colorCharts = OrangeThemeColorChartSemanticTokensProvider()
         let elevations = OrangeBusinessToolsThemeElevationSemanticTokensProvider()
         let fonts = OrangeBusinessToolsThemeFontSemanticTokensProvider()
         let grids = OrangeBusinessToolsThemeGridSemanticTokensProvider()
@@ -88,6 +100,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   colorCharts: colorCharts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

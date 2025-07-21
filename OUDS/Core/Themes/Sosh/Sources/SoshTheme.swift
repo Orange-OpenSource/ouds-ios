@@ -17,8 +17,15 @@ import SwiftUI
 
 // swiftlint:disable function_body_length
 
+/// This is the theme for Sosh brand?
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+///
+/// ## Usages
+///
+/// Sosh products must use this Sosh theme. It provides all Sosh brand colors and also the Sosh fonts
+///
+/// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///

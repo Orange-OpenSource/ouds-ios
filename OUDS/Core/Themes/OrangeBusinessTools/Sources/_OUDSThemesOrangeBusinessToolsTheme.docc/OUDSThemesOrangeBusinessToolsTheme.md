@@ -10,8 +10,11 @@ The Sosh theme overrides some tokens from the basic `OUDSTheme` and should be se
 ## Overview
 
 This is the Orange Business Tools theme any for some business tools products, and cannot be subclassed.
+This theme is related to `OrangeTheme` module sp as to get some raw tokens of colors and colors charts.
 
-The ``OrangeBusinessToolsTheme`` does not embed colors for charts yet.
+Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
+with which users can interact. Thus for such products there are specific constraints of spaces and sizes.
+That is the reason why this team is created.
 
 ## How to use the theme
 
