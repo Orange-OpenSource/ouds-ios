@@ -112,3 +112,6 @@ public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponen
 
 /// Something which provides all component tokens of tag
 public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens {}
+
+/// Something which provides all component tokens of tag input
+public protocol AllTagInputComponentTokensProvider: TokensProvider, TagInputComponentTokens {}

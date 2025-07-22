@@ -131,6 +131,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
+    /// All components tokens related to tags components like `OUDSTagInput`
+    public let tagInput: AllTagInputComponentTokensProvider
+
     // MARK: - Other elements
 
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
@@ -171,6 +174,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - tagInput: All component tokens for tag input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
@@ -200,6 +204,7 @@ open class OUDSTheme: @unchecked Sendable {
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
+                tagInput: AllTagInputComponentTokensProvider,
                 resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil)
     {
@@ -234,6 +239,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.skeleton = skeleton
         self.switch = `switch`
         self.tag = tag
+        self.tagInput = tagInput
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
