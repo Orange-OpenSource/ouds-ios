@@ -47,9 +47,9 @@ extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token spaces.spaceColumnGapXs
     @objc public final var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceColumnGap2xs
-    @objc public final var linkSpaceColumnGapArrowDefault: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token spaces.spaceColumnGap2xs
-    @objc public final var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
     @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
