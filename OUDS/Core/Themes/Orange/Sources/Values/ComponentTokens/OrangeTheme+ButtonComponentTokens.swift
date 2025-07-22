@@ -100,9 +100,9 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token borders.borderWidthNone
     @objc open var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc open var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc open var buttonBorderWidth⛔️minimal⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc open var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc open var buttonBorderWidth⛔️minimalInteraction⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token spaces.spaceInsetMd
     @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd
@@ -116,13 +116,15 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token spaces.spacePaddingInlineXl
     @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXl }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc open var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc open var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc open var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc open var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spaceColumnGapSm
     @objc open var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapXs
-    @objc open var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc open var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    /// Has for value token spaces.spaceColumnGap2xs
+    @objc open var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
     @objc open var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm

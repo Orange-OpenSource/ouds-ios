@@ -100,9 +100,9 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token borders.borderWidthNone
     @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc public final var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var buttonBorderWidth⛔️minimal⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc public final var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var buttonBorderWidth⛔️minimalInteraction⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token spaces.spaceInsetMd
     @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd
@@ -116,13 +116,15 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token spaces.spacePaddingInlineXl
     @objc public final var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXl }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc public final var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc public final var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInlineLg
-    @objc public final var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
+    @objc public final var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spaceColumnGapSm
     @objc public final var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapXs
-    @objc public final var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc public final var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    /// Has for value token spaces.spaceColumnGap2xs
+    @objc public final var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
     @objc public final var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
