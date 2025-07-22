@@ -80,6 +80,7 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
     var spacePaddingBlockNone: SpaceSemanticToken { get }
+    var spacePaddingBlock4xs: SpaceSemanticToken { get }
     var spacePaddingBlock3xs: SpaceSemanticToken { get }
     var spacePaddingBlock2xs: SpaceSemanticToken { get }
     var spacePaddingBlockXs: SpaceSemanticToken { get }
