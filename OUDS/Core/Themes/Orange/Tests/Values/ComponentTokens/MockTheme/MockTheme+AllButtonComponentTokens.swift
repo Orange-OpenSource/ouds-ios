@@ -144,8 +144,8 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonSpaceColumnGapIcon: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override public var buttonSpaceInsetIconOnly: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override public var buttonSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeButtonSpace }
-    override public var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { Self.mockThemeButtonSpace }
-    override public var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override public var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override public var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override public var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override public var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override public var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { Self.mockThemeButtonSpace }

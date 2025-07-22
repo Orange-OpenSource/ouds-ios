@@ -40,8 +40,8 @@ public protocol ButtonComponentTokens {
     var buttonSpaceColumnGapIcon: SpaceSemanticToken { get }
     var buttonSpaceInsetIconOnly: SpaceSemanticToken { get }
     var buttonSpacePaddingBlock: SpaceSemanticToken { get }
-    var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
-    var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { get }

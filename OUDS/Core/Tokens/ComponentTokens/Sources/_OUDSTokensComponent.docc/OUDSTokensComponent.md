@@ -69,8 +69,8 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.buttonBorderRadius)
         }
-        .padding(.leading, theme.button.buttonSpacePaddingInlineArrowStart)
-        .padding(.trailing, theme.button.buttonSpacePaddingInlineArrowEnd)
+        .padding(.leading, theme.button.buttonSpacePaddingInlineChevronStart)
+        .padding(.trailing, theme.button.buttonSpacePaddingInlineChevronEnd)
         .background(theme.button.buttonColorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.buttonBorderRadius)
@@ -80,7 +80,7 @@ struct SomeView: View {
 /*
     - The theme provides border semantic tokens "buttonBorderRadius" and "buttonBorderWidthDefault"
     - The theme provides a color semantic token "buttonColorBgStrongEnabledMono"
-    - The theme provides spaces semantic token "buttonSpacePaddingInlineArrowStart" and "buttonSpacePaddingInlineArrowEnd"
+    - The theme provides spaces semantic token "buttonSpacePaddingInlineChevronStart" and "buttonSpacePaddingInlineChevronEnd"
 */
 }
 
