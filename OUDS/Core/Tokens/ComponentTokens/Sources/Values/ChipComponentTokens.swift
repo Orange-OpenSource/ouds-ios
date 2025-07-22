@@ -80,7 +80,7 @@ public protocol ChipComponentTokens {
     var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIcon: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { get }
     var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { get }
     var chipSpaceColumnGapIcon: SpaceSemanticToken { get }
     var chipSpaceColumnGapBadgeArrow: SpaceSemanticToken { get }

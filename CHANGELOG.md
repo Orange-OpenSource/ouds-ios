@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Chip component tokens for all themes (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Button component (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Button component tokens for all themes (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Bullet list component tokens for Orange theme (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
