@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Quantity input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Tag input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Pin code input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Orange theme font family raw tokens
 
 ### Fixed

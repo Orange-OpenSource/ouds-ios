@@ -104,8 +104,8 @@ public protocol AllQuantityInputComponentTokensProvider: TokensProvider, Quantit
 /// Something which provides all component tokens of radio buttons
 public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens {}
 
-/// Something which provides all component tokens of select
-public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens {}
+/// Something which provides all component tokens of select input
+public protocol AllSelectInputComponentTokensProvider: TokensProvider, SelectInputComponentTokens {}
 
 /// Something which provides all component tokens of skeleton
 public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens {}

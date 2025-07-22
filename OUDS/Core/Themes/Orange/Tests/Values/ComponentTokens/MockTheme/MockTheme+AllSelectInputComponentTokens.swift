@@ -1,0 +1,38 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDS
+import OUDSThemesOrange
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+// swiftlint:disable required_deinit
+
+final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputComponentTokensProvider {
+
+    // MARK: - Mocks and setup
+
+    static let mockThemeSelectInputSize: DimensionRawToken = 118
+
+    override public init(sizes: AllSizeSemanticTokensProvider?) {
+        super.init(sizes: sizes)
+    }
+
+    // MARK: - Select Input component tokens
+
+    override public var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectSize }
+}
+
+// swiftlint:enable required_deinit

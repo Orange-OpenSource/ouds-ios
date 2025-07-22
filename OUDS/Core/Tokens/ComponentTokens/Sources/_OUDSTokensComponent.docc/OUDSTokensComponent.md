@@ -114,8 +114,9 @@ struct DesignToolbox: App {
 - ``LinkComponentTokens``
 - ``ListItemComponentTokens``
 - ``PinCodeInputComponentTokens``
+- ``QuantityInputComponentTokens``
 - ``RadioButtonComponentTokens``
-- ``SelectComponentTokens``
+- ``SelectInputComponentTokens``
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
