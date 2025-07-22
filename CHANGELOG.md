@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Pin code input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Color charts for Orange Business Tools theme
 - Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
 - Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)

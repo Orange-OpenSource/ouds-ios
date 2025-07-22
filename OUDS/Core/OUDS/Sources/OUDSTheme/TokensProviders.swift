@@ -83,8 +83,11 @@ public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTok
 /// Something which provides all component tokens for control-item-layout-based components
 public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens {}
 
-/// Something which provides all component tokens of diviers
+/// Something which provides all component tokens of divider
 public protocol AllDividerComponentTokensProvider: TokensProvider, DividerComponentTokens {}
+
+/// Something which provides all component tokens of pin code input
+public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
 /// Something which provides all component tokens of input text
 public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens {}
