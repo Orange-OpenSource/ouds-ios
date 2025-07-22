@@ -56,7 +56,7 @@ struct ButtonBorderModifier: ViewModifier {
             content
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
-                    width: minimalWidth,
+                    width: defaultWidth,
                     radius: theme.button.buttonBorderRadius,
                     color: minimalColor)
         case .negative:
@@ -101,21 +101,6 @@ struct ButtonBorderModifier: ViewModifier {
     }
 
     // MARK: Minimal hierarchy
-
-    private var minimalWidth: BorderWidthSemanticToken {
-        switch state {
-        case .enabled:
-            theme.button.buttonBorderWidthMinimal
-        case .hover:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .pressed:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .loading:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .disabled:
-            theme.button.buttonBorderWidthMinimalInteraction
-        }
-    }
 
     private var minimalColor: MultipleColorSemanticTokens {
         switch state {

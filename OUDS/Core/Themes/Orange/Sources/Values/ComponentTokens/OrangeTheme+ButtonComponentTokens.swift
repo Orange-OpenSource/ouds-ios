@@ -79,18 +79,6 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc open var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token borders.borderRadiusDefault
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token borders.borderWidthDefault
@@ -99,10 +87,6 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthNone
     @objc open var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc open var buttonBorderWidth⛔️minimal⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc open var buttonBorderWidth⛔️minimalInteraction⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token spaces.spaceInsetMd
     @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd

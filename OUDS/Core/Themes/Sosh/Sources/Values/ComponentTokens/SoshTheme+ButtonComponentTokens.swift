@@ -79,18 +79,6 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc public final var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token borders.borderRadiusDefault
     @objc public final var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token borders.borderWidthDefault
@@ -99,10 +87,6 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
     /// Has for value token borders.borderWidthNone
     @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var buttonBorderWidth⛔️minimal⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var buttonBorderWidth⛔️minimalInteraction⛔️: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token spaces.spaceInsetMd
     @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spacePaddingBlockMd

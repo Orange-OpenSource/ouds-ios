@@ -53,8 +53,6 @@ public protocol ButtonComponentTokens {
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
-    var buttonBorderWidthMinimal: BorderWidthSemanticToken { get }
-    var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { get }
 
     // MARK: - Color - Background
 

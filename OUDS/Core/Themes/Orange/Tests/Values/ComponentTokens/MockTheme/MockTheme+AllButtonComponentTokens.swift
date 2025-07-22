@@ -47,8 +47,6 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
-    override public var buttonBorderWidthMinimal: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
-    override public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonMonoColorBgDefaultHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonMonoColorBgDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
