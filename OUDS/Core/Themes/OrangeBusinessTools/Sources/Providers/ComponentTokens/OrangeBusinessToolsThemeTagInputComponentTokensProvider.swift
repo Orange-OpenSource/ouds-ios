@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of tag input** objects like `OUDSTagInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TagInputComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
@@ -60,3 +62,5 @@ final class OrangeBusinessToolsThemeTagInputComponentTokensProvider: AllTagInput
     // the implemention of TagInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TagInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeTagInputComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name
