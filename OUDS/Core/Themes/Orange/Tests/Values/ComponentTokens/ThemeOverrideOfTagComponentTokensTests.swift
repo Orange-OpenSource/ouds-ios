@@ -34,14 +34,14 @@ struct ThemeOverrideOfTagComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideTagSizeIconDefault() throws {
-        #expect(inheritedTheme.tag.tagSizeIconDefault != abstractTheme.tag.tagSizeIconDefault)
-        #expect(inheritedTheme.tag.tagSizeIconDefault == MockThemeTagComponentTokenProvider.mockThemeTagSize)
+    @Test func inheritedThemeCanOverrideTagSizeAssetDefault() throws {
+        #expect(inheritedTheme.tag.tagSizeAssetDefault != abstractTheme.tag.tagSizeAssetDefault)
+        #expect(inheritedTheme.tag.tagSizeAssetDefault == MockThemeTagComponentTokenProvider.mockThemeTagSize)
     }
 
-    @Test func inheritedThemeCanOverrideTagSizeIconSmall() throws {
-        #expect(inheritedTheme.tag.tagSizeIconSmall != abstractTheme.tag.tagSizeIconSmall)
-        #expect(inheritedTheme.tag.tagSizeIconSmall == MockThemeTagComponentTokenProvider.mockThemeTagSize)
+    @Test func inheritedThemeCanOverrideTagSizeAssetSmall() throws {
+        #expect(inheritedTheme.tag.tagSizeAssetSmall != abstractTheme.tag.tagSizeAssetSmall)
+        #expect(inheritedTheme.tag.tagSizeAssetSmall == MockThemeTagComponentTokenProvider.mockThemeTagSize)
     }
 
     @Test func inheritedThemeCanOverrideTagSizeMinHeightDefault() throws {
@@ -91,24 +91,44 @@ struct ThemeOverrideOfTagComponentTokensTests {
         #expect(inheritedTheme.tag.tagSpacePaddingInlineDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpacePaddingInlineSmallAsset() throws {
-        #expect(inheritedTheme.tag.tagSpacePaddingInlineSmallAsset != abstractTheme.tag.tagSpacePaddingInlineSmallAsset)
-        #expect(inheritedTheme.tag.tagSpacePaddingInlineSmallAsset == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpacePaddingInlineAssetSmall() throws {
+        #expect(inheritedTheme.tag.tagSpacePaddingInlineAssetSmall != abstractTheme.tag.tagSpacePaddingInlineAssetSmall)
+        #expect(inheritedTheme.tag.tagSpacePaddingInlineAssetSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpacePaddingInlineDefaultAsset() throws {
-        #expect(inheritedTheme.tag.tagSpacePaddingInlineDefaultAsset != abstractTheme.tag.tagSpacePaddingInlineDefaultAsset)
-        #expect(inheritedTheme.tag.tagSpacePaddingInlineDefaultAsset == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpacePaddingInlineAssetDefault() throws {
+        #expect(inheritedTheme.tag.tagSpacePaddingInlineAssetDefault != abstractTheme.tag.tagSpacePaddingInlineAssetDefault)
+        #expect(inheritedTheme.tag.tagSpacePaddingInlineAssetDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpaceInsetSmallAsset() throws {
-        #expect(inheritedTheme.tag.tagSpaceInsetSmallAsset != abstractTheme.tag.tagSpaceInsetSmallAsset)
-        #expect(inheritedTheme.tag.tagSpaceInsetSmallAsset == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpaceInsetIconSmall() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetIconSmall != abstractTheme.tag.tagSpaceInsetIconSmall)
+        #expect(inheritedTheme.tag.tagSpaceInsetIconSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpaceInsetDefaultAsset() throws {
-        #expect(inheritedTheme.tag.tagSpaceInsetDefaultAsset != abstractTheme.tag.tagSpaceInsetDefaultAsset)
-        #expect(inheritedTheme.tag.tagSpaceInsetDefaultAsset == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpaceInsetBulletSmall() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetBulletSmall != abstractTheme.tag.tagSpaceInsetBulletSmall)
+        #expect(inheritedTheme.tag.tagSpaceInsetBulletSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTagSpaceInsetLoaderSmall() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetLoaderSmall != abstractTheme.tag.tagSpaceInsetLoaderSmall)
+        #expect(inheritedTheme.tag.tagSpaceInsetLoaderSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTagSpaceInsetIconDefault() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetIconDefault != abstractTheme.tag.tagSpaceInsetIconDefault)
+        #expect(inheritedTheme.tag.tagSpaceInsetIconDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTagSpaceInsetBulletDefault() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetBulletDefault != abstractTheme.tag.tagSpaceInsetBulletDefault)
+        #expect(inheritedTheme.tag.tagSpaceInsetBulletDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTagSpaceInsetLoaderDefault() throws {
+        #expect(inheritedTheme.tag.tagSpaceInsetLoaderDefault != abstractTheme.tag.tagSpaceInsetLoaderDefault)
+        #expect(inheritedTheme.tag.tagSpaceInsetLoaderDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
     @Test func inheritedThemeCanOverrideTagSpaceColumnGapSmall() throws {

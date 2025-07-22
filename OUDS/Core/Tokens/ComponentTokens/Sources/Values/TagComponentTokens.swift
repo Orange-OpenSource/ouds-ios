@@ -31,8 +31,8 @@ public protocol TagComponentTokens {
 
     // MARK: - Sizes
 
-    var tagSizeIconDefault: SizeSemanticToken { get }
-    var tagSizeIconSmall: SizeSemanticToken { get }
+    var tagSizeAssetDefault: SizeSemanticToken { get }
+    var tagSizeAssetSmall: SizeSemanticToken { get }
     var tagSizeMinHeightDefault: SizeSemanticToken { get }
     var tagSizeMinWidthDefault: SizeSemanticToken { get }
     var tagSizeMinHeightSmall: SizeSemanticToken { get }
@@ -45,10 +45,14 @@ public protocol TagComponentTokens {
     var tagSpacePaddingBlockDefault: SpaceSemanticToken { get }
     var tagSpacePaddingInlineSmall: SpaceSemanticToken { get }
     var tagSpacePaddingInlineDefault: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineSmallAsset: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineDefaultAsset: SpaceSemanticToken { get }
-    var tagSpaceInsetSmallAsset: SpaceSemanticToken { get }
-    var tagSpaceInsetDefaultAsset: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { get }
+    var tagSpaceInsetIconSmall: SpaceSemanticToken { get }
+    var tagSpaceInsetBulletSmall: SpaceSemanticToken { get }
+    var tagSpaceInsetLoaderSmall: SpaceSemanticToken { get }
+    var tagSpaceInsetIconDefault: SpaceSemanticToken { get }
+    var tagSpaceInsetBulletDefault: SpaceSemanticToken { get }
+    var tagSpaceInsetLoaderDefault: SpaceSemanticToken { get }
     var tagSpaceColumnGapSmall: SpaceSemanticToken { get }
     var tagSpaceColumnGapDefault: SpaceSemanticToken { get }
 }

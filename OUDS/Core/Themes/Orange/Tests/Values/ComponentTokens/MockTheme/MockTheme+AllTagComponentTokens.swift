@@ -43,8 +43,8 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
 
     // MARK: - Sizes
 
-    override public var tagSizeIconDefault: SizeSemanticToken { Self.mockThemeTagSize }
-    override public var tagSizeIconSmall: SizeSemanticToken { Self.mockThemeTagSize }
+    override public var tagSizeAssetDefault: SizeSemanticToken { Self.mockThemeTagSize }
+    override public var tagSizeAssetSmall: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinHeightDefault: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinWidthDefault: SizeSemanticToken { Self.mockThemeTagSize }
     override public var tagSizeMinHeightSmall: SizeSemanticToken { Self.mockThemeTagSize }
@@ -57,10 +57,14 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
     override public var tagSpacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
     override public var tagSpacePaddingInlineSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
     override public var tagSpacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override public var tagSpacePaddingInlineSmallAsset: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override public var tagSpacePaddingInlineDefaultAsset: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override public var tagSpaceInsetSmallAsset: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override public var tagSpaceInsetDefaultAsset: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetIconSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetBulletSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetLoaderSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetIconDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetBulletDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override public var tagSpaceInsetLoaderDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
     override public var tagSpaceColumnGapSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
     override public var tagSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
 }

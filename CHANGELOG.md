@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Tag component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Link component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Chip component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Button component (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
