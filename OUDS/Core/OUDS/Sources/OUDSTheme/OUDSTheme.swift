@@ -116,6 +116,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to pin code input components like `OUDSPinCodeInput`
     public let pinCodeInput: AllPinCodeInputComponentTokensProvider
 
+    /// All components tokens related to quantity input components like `OUDSQuantityInput`
+    public let quantityInput: AllQuantityInputComponentTokensProvider
+
     /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
     public let radioButton: AllRadioButtonComponentTokensProvider
 
@@ -169,6 +172,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - select: All component tokens for select
     ///    - skeleton: All component tokens for skeleton
@@ -199,6 +203,7 @@ open class OUDSTheme: @unchecked Sendable {
                 listItem: AllListItemComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
                 select: AllSelectComponentTokensProvider,
                 skeleton: AllSkeletonComponentTokensProvider,
@@ -234,6 +239,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput
+        self.quantityInput = quantityInput
         self.radioButton = radioButton
         self.select = select
         self.skeleton = skeleton

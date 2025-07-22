@@ -84,11 +84,14 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let inputText = SoshThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let select = SoshThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
+        let tagInput = SoshThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
 
         super.init(borders: borders,
                    colors: colors,
@@ -110,11 +113,14 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    inputText: inputText,
                    listItem: listItem,
                    link: link,
+                   pinCodeInput: pinCodeInput,
+                   quantityInput: quantityInput,
                    radioButton: radioButton,
                    select: select,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
+                   tagInput: tagInput,
                    resourcesBundle: Bundle.SoshTheme,
                    fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
 

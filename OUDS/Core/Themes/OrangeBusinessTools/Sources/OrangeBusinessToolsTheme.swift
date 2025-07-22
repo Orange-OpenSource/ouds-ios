@@ -91,11 +91,14 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let inputText = OrangeBusinessToolsThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeBusinessToolsThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let quantityInput = OrangeBusinessToolsThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeBusinessToolsThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let select = OrangeBusinessToolsThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let skeleton = OrangeBusinessToolsThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
+        let tagInput = OrangeBusinessToolsThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
 
         super.init(borders: borders,
                    colors: colors,
@@ -118,11 +121,14 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    inputText: inputText,
                    listItem: listItem,
                    link: link,
+                   pinCodeInput: pinCodeInput,
+                   quantityInput: quantityInput,
                    radioButton: radioButton,
                    select: select,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
+                   tagInput: tagInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
                    fontFamily: nil)
     }

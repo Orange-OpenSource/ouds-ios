@@ -98,6 +98,9 @@ public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTok
 /// Something which provides all component tokens of list item
 public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}
 
+/// Something which provides all component tokens of quantity input
+public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
+
 /// Something which provides all component tokens of radio buttons
 public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens {}
 

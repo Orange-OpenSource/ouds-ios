@@ -87,11 +87,14 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let inputText = OrangeInverseThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let link = OrangeInverseThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeInverseThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let quantityInput = OrangeInverseThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeInverseThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let select = OrangeInverseThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let skeleton = OrangeInverseThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeInverseThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeInverseThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
+        let tagInput = OrangeInverseThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
 
         super.init(borders: borders,
                    colors: colors,
@@ -114,11 +117,14 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    inputText: inputText,
                    listItem: listItem,
                    link: link,
+                   pinCodeInput: pinCodeInput,
+                   quantityInput: quantityInput,
                    radioButton: radioButton,
                    select: select,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
+                   tagInput: tagInput,
                    resourcesBundle: Bundle.OrangeInverseTheme)
     }
 
