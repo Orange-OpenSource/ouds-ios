@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of select input** for objects like `OUDSSelectInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllSelectInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -103,3 +105,5 @@ open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponen
     // the implemention of SelectComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SelectInputComponentTokens.swift
     // This declaration of OrangeThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfTagInputComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -94,3 +96,5 @@ struct ThemeOverrideOfTagInputComponentTokensTests {
         #expect(inheritedTheme.tagInput.tagInputColorBorderFocus == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 }
+
+// swiftlint:enable type_name

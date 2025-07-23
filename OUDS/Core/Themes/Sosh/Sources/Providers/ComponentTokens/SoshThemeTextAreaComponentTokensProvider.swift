@@ -14,8 +14,6 @@
 import OUDS
 import OUDSFoundations
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
@@ -62,5 +60,3 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
     // the implemention of TextAreaComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TextAreaComponentTokens.swift
     // This declaration of SoshThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }
-
-// swiftlint:enable type_name

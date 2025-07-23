@@ -18,6 +18,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 final class MockThemeQuantityInputComponentTokenProvider: OrangeThemeQuantityInputComponentTokensProvider {
 
@@ -45,3 +46,4 @@ final class MockThemeQuantityInputComponentTokenProvider: OrangeThemeQuantityInp
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

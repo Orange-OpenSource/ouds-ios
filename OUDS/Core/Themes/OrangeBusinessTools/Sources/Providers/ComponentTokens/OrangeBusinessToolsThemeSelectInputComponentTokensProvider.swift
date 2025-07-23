@@ -14,6 +14,7 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable line_length
 // swiftlint:disable type_name
 
 /// A class which wraps all **component  tokens of select input** for objects like `OUDSSelectInput`.
@@ -64,4 +65,5 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
     // This declaration of OrangeBusinessToolsThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
 
+// swiftlint:enable line_length
 // swiftlint:enable type_name

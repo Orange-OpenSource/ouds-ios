@@ -14,6 +14,8 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTextAreaComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -114,3 +116,5 @@ open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentToken
     // the implemention of TextAreaComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TextAreaComponentTokens.swift
     // This declaration of OrangeThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

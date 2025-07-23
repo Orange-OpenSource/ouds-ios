@@ -45,7 +45,7 @@ struct OrangeInverseThemeChipComponentTokensProviderTests {
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
         #expect(provider.dimensions is OrangeInverseThemeDimensionSemanticTokensProvider)
-    } w
+    }
 }
 
 // swiftlint:enable type_name

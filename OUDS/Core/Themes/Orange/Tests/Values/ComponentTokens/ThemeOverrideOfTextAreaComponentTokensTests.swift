@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfTextAreaComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -54,3 +56,5 @@ struct ThemeOverrideOfTextAreaComponentTokensTests {
         #expect(inheritedTheme.textArea.textAreaSizeMaxWidth == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
     }
 }
+
+// swiftlint:enable type_name

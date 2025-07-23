@@ -14,6 +14,7 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable line_length
 // swiftlint:disable type_name
 
 /// A class which wraps all **component  tokens of pin code input** like `OUDSPinCodeInput`;
@@ -71,4 +72,5 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     // This declaration of OrangeBusinessToolsThemePinCodeInputComponentTokensProvider is here also to allow to write documentation.
 }
 
+// swiftlint:enable line_length
 // swiftlint:enable type_name

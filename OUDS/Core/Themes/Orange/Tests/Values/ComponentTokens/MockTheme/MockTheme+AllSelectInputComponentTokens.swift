@@ -19,6 +19,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputComponentTokensProvider {
 
@@ -36,3 +37,4 @@ final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputCo
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

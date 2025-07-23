@@ -11,28 +11,28 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesOrangeBusinessTools
+@testable import OUDSThemesOrangeInverse
 import Testing
 
 // swiftlint:disable type_name
 
 /// Check if the component tokens provider under tests as the default semantic token providers with the expected types.
-struct OrangeBusinessToolsThemeTextAreaComponentTokensProviderTests {
+struct OrangeInverseThemeTextAreaComponentTokensProviderTests {
 
-    private var provider: OrangeTBusinessToolTshemeTextAreaComponentTokensProvider
+    private var provider: OrangeInverseThemeTextAreaComponentTokensProvider
 
     init() {
-        provider = OrangeBusinessToolsThemeTextAreaComponentTokensProvider()
+        provider = OrangeInverseThemeTextAreaComponentTokensProvider()
     }
 
     // MARK: - Tests
 
     @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeBusinessToolsThemeSizeSemanticTokensProvider)
+        #expect(provider.sizes is OrangeInverseThemeSizeSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeBusinessToolsThemeSpaceSemanticTokensProvider)
+        #expect(provider.spaces is OrangeInverseThemeSpaceSemanticTokensProvider)
     }
 }
 

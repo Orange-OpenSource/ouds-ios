@@ -30,4 +30,4 @@ public protocol PinCodeInputComponentTokens {
     var pinCodeInputSizeMaxWidth: SizeSemanticToken { get }
 }
 
-// swiftlint:disable missing_docs
+// swiftlint:enable missing_docs

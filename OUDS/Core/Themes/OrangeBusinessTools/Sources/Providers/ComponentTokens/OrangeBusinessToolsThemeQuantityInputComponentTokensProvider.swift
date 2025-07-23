@@ -14,6 +14,9 @@
 import OUDS
 import OUDSFoundations
 
+// swiftlint:disable line_length
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of quantity input** objects like `OUDSQuantityInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllQuantityInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -59,3 +62,6 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
     // the implemention of TagInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+QuantityInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable line_length
+// swiftlint:enable type_name

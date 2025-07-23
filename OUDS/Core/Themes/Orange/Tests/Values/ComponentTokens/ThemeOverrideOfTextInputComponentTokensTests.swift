@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfTextInputComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -163,3 +165,5 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.textInputSpaceRowGapLabelInput == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 }
+
+// swiftlint:enable type_name

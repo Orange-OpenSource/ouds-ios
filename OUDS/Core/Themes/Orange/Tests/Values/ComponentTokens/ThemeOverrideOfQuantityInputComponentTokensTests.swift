@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfQuantityInputComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -54,3 +56,5 @@ struct ThemeOverrideOfQuantityInputComponentTokensTests {
         #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
     }
 }
+
+// swiftlint:enable type_name
