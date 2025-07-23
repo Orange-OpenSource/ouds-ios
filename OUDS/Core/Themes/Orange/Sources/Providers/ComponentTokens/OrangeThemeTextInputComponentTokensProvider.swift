@@ -22,8 +22,9 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTextInputComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TextInputComponentTokens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
-/// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`), borcers (from `AllBorderSemanticTokensProvider`)
-/// and spaces (from `AllSpaceSemanticTokensProvider`).
+/// *Inout text* components tokens are defined with raw and semantic tokens of colors (`AllColorSemanticTokensProvider`),
+/// borders (from `AllBorderSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`)
+/// and  dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for input text component tokens
@@ -76,19 +77,22 @@ import OUDSFoundations
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider()
 ///
-///     // Or use your own size, color and space semantic tokens providers (or only some)
+///     // Or use your own size, border, color, space and dimension semantic tokens providers (or only some)
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider(
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
-///                                                 space: CustomSpaceSemanticTokensProvider())
+///                                                 space: CustomSpaceSemanticTokensProvider(),
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
 open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for text input sizes
+    /// Provider of sizes semantic tokens to use for text input sizes
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of borders semantic tokens to use for text input colors

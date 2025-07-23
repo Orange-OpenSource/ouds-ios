@@ -95,10 +95,10 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
-    /// All components tokens related to chip components like `OUDSChip`
+    /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
-    /// All components tokens related to divider components like `OUDSDivider`
+    /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`

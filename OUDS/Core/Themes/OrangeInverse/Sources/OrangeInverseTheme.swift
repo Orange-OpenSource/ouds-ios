@@ -77,7 +77,7 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let sizes = OrangeInverseThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = OrangeInverseThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
-        let badge = OrangeInverseThemeBadgeComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let badge = OrangeInverseThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let button = OrangeInverseThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeInverseThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = OrangeInverseThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -86,16 +86,16 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let divider = OrangeInverseThemeDividerComponentTokensProvider(borders: borders)
         let link = OrangeInverseThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeInverseThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeInverseThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeInverseThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = OrangeInverseThemeSelectInputComponentTokensProvider(sizes: sizes)
+        let selectInput = OrangeInverseThemeSelectInputComponentTokensProvider(dimensions: dimensions)
         let skeleton = OrangeInverseThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeInverseThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeInverseThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = OrangeInverseThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeInverseThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = OrangeInverseThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        let textInput = OrangeInverseThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
         super.init(borders: borders,
                    colors: colors,

@@ -19,13 +19,10 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllSelectInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `SelectInputComponentTokens` so as to expose the component tokens for *select input* through any `OUDSTheme`.
-/// *Select input* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`.
+/// *Select input* components tokens are defined with  semantic tokens of sizes (from `AllDimensionSemanticTokensProvider`.
 ///
 /// - Since: 0.17.0
 final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
-
-    /// Provider of size semantic tokens to use for select input sizes
-    public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of dimension semantic tokens to use for pin code input dimensions
     public let dimensions: AllDimensionSemanticTokensProvider
@@ -36,13 +33,11 @@ final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponent
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
     /// - Parameters:
-    ///    -  sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeSelectInputComponentTokensProvider")
-        self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

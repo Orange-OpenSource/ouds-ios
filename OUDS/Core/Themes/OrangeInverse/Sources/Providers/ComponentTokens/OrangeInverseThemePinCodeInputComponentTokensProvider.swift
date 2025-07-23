@@ -21,17 +21,17 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllPinCodeInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `PinCodeInputComponentTokens` so as to expose the component tokens for *pin code input* through any `OUDSTheme`.
-/// *Pint code input* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
+/// *Pint code input* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`),
 /// ans spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeInverseThemePinCodeInputComponentTokensProvider: AllPinCodeInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
-    public let sizes: AllSizeSemanticTokensProvider
-
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for pin code input  spaces
     public let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of dimensions semantic tokens to use for pin code input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -39,14 +39,14 @@ final class OrangeInverseThemePinCodeInputComponentTokensProvider: AllPinCodeInp
 
     /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeDimensionSemanticTokensProvider``)
+    public init(spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemePinCodeInputComponentTokensProvider")
-        self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeInverseThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeInverseThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeInverseThemePinCodeInputComponentTokensProvider")

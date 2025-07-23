@@ -22,7 +22,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemePinCodeInputComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `PinceCodeInputComponentTokens` so as to expose the component tokens for *pin code input* through any `OUDSTheme`.
-/// *Pin code input* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
+/// *Pin code input* components tokens are defined with raw and semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`),
 /// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
@@ -68,43 +68,37 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Uses by default here:
-///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let pintCodeInputComponentTokensProvider = OrangeThemePinCodeInputComponentTokensProvider()
 ///
-///     // Or use your own size and space semantic tokens providers (or only some)
+///     // Or use your own dimension and space semantic tokens providers (or only some)
 ///     let pintCodeInputComponentTokensProvider = OrangeThemePinCodeInputComponentTokensProvider(
-///                                                 sizes: CustomSizeSemanticTokensProvider(),
-///                                                 space: CustomSpaceSemanticTokensProvider())
+///                                                 sizes: CustomSpaceSemanticTokensProvider(),
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
 open class OrangeThemePinCodeInputComponentTokensProvider: AllPinCodeInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
-    public let sizes: AllSizeSemanticTokensProvider
-
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for pin code input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimensions semantic tokens to use for text input dimensions
+    /// Provider of dimensions semantic tokens to use for pin code input dimensions
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSButton`
+    /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
+    public init(spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemePinCodeInputComponentTokensProvider")
-        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG

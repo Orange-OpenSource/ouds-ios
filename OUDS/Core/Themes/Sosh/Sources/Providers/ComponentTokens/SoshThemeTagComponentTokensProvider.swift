@@ -19,14 +19,13 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`)
-/// and borders (from `AllBorderSemanticTokensProvider`).
+/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`) and sizes (`AllSizeSematicTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class SoshThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for tag suzes
+    /// Provider of size semantic tokens to use for tag borders
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for tag borders

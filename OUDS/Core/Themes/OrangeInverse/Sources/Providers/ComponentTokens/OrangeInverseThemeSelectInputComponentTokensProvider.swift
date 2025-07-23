@@ -21,24 +21,23 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllSelectInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `SelectInputComponentTokens` so as to expose the component tokens for *select* through any `OUDSTheme`.
-/// *Select input* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`).
+/// *Select input* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeInverseThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for link sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    /// Provider of dimensions semantic tokens to use for pin code input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
-    /// - Parameter sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
-
-    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
+    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeDimensionSemanticTokensProvider``)
+    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeInverseThemeSelectInputComponentTokensProvider")
-        self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeInverseThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeInverseThemeSelectInputComponentTokensProvider")

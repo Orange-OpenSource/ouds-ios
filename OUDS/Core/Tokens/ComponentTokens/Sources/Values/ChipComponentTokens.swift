@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for chips components like `OUDSChip`
+/// Declares all component tokens for chips components like `OUDSFilterChip` and `OUDSSuggestionChip`
 /// Use for tokens providers like `OrangeThemeChipComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

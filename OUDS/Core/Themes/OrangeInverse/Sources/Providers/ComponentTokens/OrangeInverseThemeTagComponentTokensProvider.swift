@@ -21,14 +21,14 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`)
+/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`),  sizes (from `AllSizeSemanticTokensProvider`)
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeInverseThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for tag suzes
+    /// Provider of size semantic tokens to use for tag sizes
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for tag borders
@@ -46,7 +46,7 @@ final class OrangeInverseThemeTagComponentTokensProvider: AllTagComponentTokensP
 
     /// Defines a provider of component tokens dedicated to `OUDSTag`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
+    ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeInverseThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeDimensionSemanticTokensProvider``)

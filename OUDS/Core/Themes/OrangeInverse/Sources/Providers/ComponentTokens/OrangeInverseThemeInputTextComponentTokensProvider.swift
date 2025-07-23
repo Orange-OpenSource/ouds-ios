@@ -39,6 +39,9 @@ final class OrangeInverseThemeTextInputComponentTokensProvider: AllTextInputComp
     /// Provider of spaces semantic tokens to use for  text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for  text input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
@@ -49,16 +52,19 @@ final class OrangeInverseThemeTextInputComponentTokensProvider: AllTextInputComp
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`OrangeInverseThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`OrangeInverseThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`OrangeInverseThemeSpaceSemanticTokensProvider`)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`OrangeInverseThemeDimensionSemanticTokensProvider`)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeInverseThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeInverseThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeInverseThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeInverseThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeInverseThemeTextInputComponentTokensProvider")

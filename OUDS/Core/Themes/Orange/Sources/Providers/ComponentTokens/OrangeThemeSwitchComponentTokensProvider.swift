@@ -21,8 +21,8 @@ import OUDSFoundations
 /// Custom themes can use subclass of ``OrangeThemeSwitchComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `SwitchComponentTokens` so as to expose the component tokens for *switch / toggle* through any `OUDSTheme`.
 /// *Switch* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
-/// spaces (from `AllSpacesSemanticTokensProvider`) , sizes (`AllSizeSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`), borders (`AllBorderSemanticTokensProvider`) and opacities (`AllOpacitiySemanticTokensProvider`).
+/// spaces (from `AllSpacesSemanticTokensProvider`) ,  dimensions (`AllDimensionSemanticTokensProvider`),
+/// sizes (`AllSizeSemanticTokensProvider`), borders (`AllBorderSemanticTokensProvider`) and opacities (`AllOpacitiySemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for switch component tokens
@@ -68,17 +68,17 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Uses by default here:
-///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     // - OrangeThemeOpacitySemanticTokensProvider for opacities
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider()
 ///
-///     // Or use your own size, color, border, space and opacities semantic tokens providers (or only some)
+///     // Or use your own dimension, color, border, space and opacities semantic tokens providers (or only some)
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider(
-///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 sizes: CustomSizesSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 spaces: CustomSpaceSemanticTokensProvider(),
@@ -92,7 +92,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
     /// Provider of size semantic tokens to use for switch sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of size semantic tokens to use for switch sizes
+    /// Provider of border semantic tokens to use for switch borders
     public let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for switch colors
@@ -111,7 +111,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSSwitch`
+    /// Defines a provider of component tokens dedicated to `OUDSSwitch` and `OUDSSwitchItem`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)

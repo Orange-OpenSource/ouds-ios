@@ -20,7 +20,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeSelectInputComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `SelectInputComponentTokens` so as to expose the component tokens for *select input* through any `OUDSTheme`.
-/// *Select input* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
+/// *Select input* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`)
 ///
 /// ```swift
 ///     // Define your own provider for select input component tokens
@@ -63,19 +63,16 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Uses by default here:
-///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimension
 ///     let selectInputComponentTokensProvider = OrangeThemeSelectInputComponentTokensProvider()
 ///
-///     // Or use your own size semantic tokens providers (or only some)
+///     // Or use your own dimension semantic tokens providers (or only some)
 ///     let selectInputComponentTokensProvider = OrangeThemeSelectInputComponentTokensProvider(
-///                                                 sizes: CustomSizeSemanticTokensProvider())
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
 open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
-
-    /// Provider of size semantic tokens to use for select input sizes
-    public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of dimensions semantic tokens to use for text input dimensions
     public let dimensions: AllDimensionSemanticTokensProvider
@@ -85,14 +82,9 @@ open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponen
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
-    /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
-    {
+    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSelectInputComponentTokensProvider")
-        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++

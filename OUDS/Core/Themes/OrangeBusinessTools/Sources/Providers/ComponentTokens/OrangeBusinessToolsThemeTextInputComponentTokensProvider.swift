@@ -23,7 +23,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `TextInputComponentTOkens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
 /// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`),
-/// and spaces (from `AllSpaceSemanticTokensProvider`).
+/// spaces (from `AllSpaceSemanticTokensProvider`) and dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeBusinessToolsThemeTextInputComponentTokensProvider: AllTextInputComponentTokensProvider {
@@ -40,6 +40,9 @@ final class OrangeBusinessToolsThemeTextInputComponentTokensProvider: AllTextInp
     /// Provider of spaces semantic tokens to use for  text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for  text input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
@@ -50,16 +53,19 @@ final class OrangeBusinessToolsThemeTextInputComponentTokensProvider: AllTextInp
     ///    - borders: Provider for size semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeSpaceSemanticTokensProvider`)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeDimensionSemanticTokensProvider`)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeBusinessToolsThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeBusinessToolsThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeTextInputComponentTokensProvider")

@@ -74,7 +74,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let sizes = SoshThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = SoshThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
-        let badge = SoshThemeBadgeComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -83,16 +83,16 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = SoshThemeSelectInputComponentTokensProvider(sizes: sizes)
+        let selectInput = SoshThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = SoshThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
 
         super.init(borders: borders,
                    colors: colors,

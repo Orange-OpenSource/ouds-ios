@@ -14,15 +14,15 @@
 import OUDS
 import OUDSFoundations
 
-/// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSChip`.
+/// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSFilterChip` and `OUDSSuggestionChip`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllChipComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeChipComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ChipComponentTokens` so as to expose the component tokens for *chip* through any `OUDSTheme`.
-/// *Chip* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) and border  (from `AllBorderSemanticTokensProvider`).
+/// *Chip* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`), dimensions (`AllDimensionSemanticTokensProvider`)
+/// and border  (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for chip component tokens
@@ -71,15 +71,14 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Uses by default here:
-///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let chipComponentTokensProvider = OrangeThemeChipComponentTokensProvider()
 ///
-///     // Or use your own size, border, color and space semantic tokens providers (or only some)
+///     // Or use your own dimension, border, color and space semantic tokens providers (or only some)
 ///     let chipComponentTokensProvider = OrangeThemeChipComponentTokensProvider(
-///                                                 sizes: CustomSizeSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 space: CustomSpaceSemanticTokensProvider(),
@@ -92,7 +91,7 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     /// Provider of size semantic tokens to use for chip sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of border semantic tokens to use for chip sizes
+    /// Provider of border semantic tokens to use for chip borders
     public let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for chip colors

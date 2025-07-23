@@ -21,13 +21,14 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllTextInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `InouttextComponentTokens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
-/// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`)
-/// and spaces (from `AllSpaceSemanticTokensProvider`).
+/// *Input text* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`),
+/// colors (`AllColorSemanticTokensProvider`), borders (`AllBorderSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`) and sizes (from `AllSizeSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for  text input sizes
+    /// Provider of sizes semantic tokens to use for chip sizes
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for text input borders
@@ -48,11 +49,11 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
 
     /// Defines a provider of component tokens dedicated to `OUDSTextInput
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (`SoshThemeSizeSemanticTokensProvider`)
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`SoshThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`SoshThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`SoshThemeSpaceSemanticTokensProvider`)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`SoshThemeDimensionSemanticTokensProvider`)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,

@@ -81,7 +81,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let sizes = OrangeBusinessToolsThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = OrangeBusinessToolsThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
-        let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let button = OrangeBusinessToolsThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeBusinessToolsThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = OrangeBusinessToolsThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -90,16 +90,16 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeBusinessToolsThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeBusinessToolsThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeBusinessToolsThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = OrangeBusinessToolsThemeSelectInputComponentTokensProvider(sizes: sizes)
+        let selectInput = OrangeBusinessToolsThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
         let skeleton = OrangeBusinessToolsThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = OrangeBusinessToolsThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeBusinessToolsThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
         super.init(borders: borders,
                    colors: colors,
