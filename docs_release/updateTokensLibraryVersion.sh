@@ -28,8 +28,8 @@ ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeBusinessToo
 ORANGE_INVERSE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeInverse/Sources/_OUDSThemesOrangeInverse.docc/OUDSThemesOrangeInverse.md"
 SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"
 
-CORE_VERSION_PATTERN="🧱 Core version: "
-THEME_VERSION_PATTERN="🧱 Theme version: "
+CORE_VERSION_PATTERN="🧬 Core version: "
+THEME_VERSION_PATTERN="🧬 Theme version: "
 
 # Errors
 # ------
