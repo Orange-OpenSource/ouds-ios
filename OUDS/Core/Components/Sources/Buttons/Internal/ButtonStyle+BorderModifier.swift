@@ -105,15 +105,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var minimalColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderMinimalEnabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderDefaultEnabled
         case .hover:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderMinimalHover
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderDefaultHover
         case .pressed:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderMinimalPressed
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderDefaultPressed
         case .loading:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderMinimalLoading
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderDefaultLoading
         case .disabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderMinimalDisabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderDefaultDisabled
         }
     }
 

@@ -77,15 +77,23 @@ open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponen
     /// Provider of size semantic tokens to use for select input sizes
     public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for text input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
-    /// - Parameter sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)`)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeSelectInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeSelectInputComponentTokensProvider")

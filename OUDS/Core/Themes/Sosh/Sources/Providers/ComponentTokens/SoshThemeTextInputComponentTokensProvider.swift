@@ -39,6 +39,9 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
     /// Provider of spaces semantic tokens to use for  text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimension semantic tokens to use for pin code input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
@@ -49,16 +52,19 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`SoshThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`SoshThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`SoshThemeSpaceSemanticTokensProvider`)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeTextInputComponentTokensProvider")

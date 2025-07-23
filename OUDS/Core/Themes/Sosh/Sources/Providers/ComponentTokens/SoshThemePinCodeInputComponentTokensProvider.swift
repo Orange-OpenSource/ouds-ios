@@ -27,11 +27,14 @@ import OUDSFoundations
 /// - Since: 0.17.0
 final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
+    /// Provider of size semantic tokens to use for pin code input sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for pin code input spaces
     public let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of dimension semantic tokens to use for pin code input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -41,12 +44,15 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshsThemePinCodeInputComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshsThemePinCodeInputComponentTokensProvider")

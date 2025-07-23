@@ -27,15 +27,23 @@ final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponent
     /// Provider of size semantic tokens to use for select input sizes
     public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of dimension semantic tokens to use for pin code input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
-    /// - Parameter sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
+    /// - Parameters:
+    ///    -  sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of SoshThemeSelectInputComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeSelectInputComponentTokensProvider")

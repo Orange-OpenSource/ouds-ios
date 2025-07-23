@@ -36,7 +36,6 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Space
 
-    var buttonSpaceColumnGapArrow: SpaceSemanticToken { get }
     var buttonSpaceColumnGapIcon: SpaceSemanticToken { get }
     var buttonSpaceInsetIconOnly: SpaceSemanticToken { get }
     var buttonSpacePaddingBlock: SpaceSemanticToken { get }
@@ -77,12 +76,6 @@ public protocol ButtonComponentTokens {
     var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
 

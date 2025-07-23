@@ -267,9 +267,4 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipSpaceColumnGapIcon != abstractTheme.chip.chipSpaceColumnGapIcon)
         #expect(inheritedTheme.chip.chipSpaceColumnGapIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
-
-    @Test func inheritedThemeCanOverrideChipSpaceColumnGapBadgeArrow() throws {
-        #expect(inheritedTheme.chip.chipSpaceColumnGapBadgeArrow != abstractTheme.chip.chipSpaceColumnGapBadgeArrow)
-        #expect(inheritedTheme.chip.chipSpaceColumnGapBadgeArrow == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
-    }
 }

@@ -100,6 +100,9 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     /// Provider of spaces semantic tokens to use for text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for text input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
@@ -110,16 +113,19 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeTextInputComponentTokensProvider")

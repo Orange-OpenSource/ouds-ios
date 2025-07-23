@@ -91,7 +91,6 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { Self.mockThemeChipSpace }
     override public var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { Self.mockThemeChipSpace }
     override public var chipSpaceColumnGapIcon: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpaceColumnGapBadgeArrow: SpaceSemanticToken { Self.mockThemeChipSpace }
 }
 
 // swiftlint:enable required_deinit
