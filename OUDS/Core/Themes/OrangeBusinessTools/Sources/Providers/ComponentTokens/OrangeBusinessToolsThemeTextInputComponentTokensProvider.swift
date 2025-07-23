@@ -17,46 +17,52 @@ import OUDSFoundations
 // swiftlint:disable type_name
 // swiftlint:disable line_length
 
-/// A class which wraps all **component  tokens of input text** for *input text* objects like `OUDSInputText`.
+/// A class which wraps all **component  tokens of input text** for *input text* objects like `OUDSTextInput`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllInputTextComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllTextInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// It implements also the protocol `InouttextComponentTokens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
-/// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`)
+/// It implements also the protocol `TextInputComponentTOkens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
+/// *Inout text* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), colors (`AllColorSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`),
 /// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
-open class OrangeBusinessToolsThemeInputTextComponentTokensProvider: AllInputTextComponentTokensProvider {
+final class OrangeBusinessToolsThemeTextInputComponentTokensProvider: AllTextInputComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
+    /// Provider of size semantic tokens to use for text input sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of color semantic tokens to use for button colors
+    /// Provider of border semantic tokens to use for text input sborders
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for  text input colors
     public let colors: AllColorSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for  text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSButton`
+    /// Defines a provider of component tokens dedicated to `OUDSTextInput`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeSizeSemanticTokensProvider`)
+    ///    - borders: Provider for size semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`OrangeBusinessToolsThemeSpaceSemanticTokensProvider`)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of OrangeBusinessToolsThemeInputTextComponentTokensProvider")
+        OL.debug("Init of OrangeBusinessToolsThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeBusinessToolsThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeBusinessToolsThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeInputTextComponentTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeTextInputComponentTokensProvider")
         #endif
     }
 
@@ -68,8 +74,8 @@ open class OrangeBusinessToolsThemeInputTextComponentTokensProvider: AllInputTex
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of InputTextComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+InputTextComponentTokens.swift
-    // This declaration of OrangeBusinessToolsThemeInputTextComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of TextInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TextInputComponentTokens.swift
+    // This declaration of OrangeBusinessToolsThemeTextInputComponentTokensProvider is here also to allow to write documentation.
 }
 
 // swiftlint:enable type_name

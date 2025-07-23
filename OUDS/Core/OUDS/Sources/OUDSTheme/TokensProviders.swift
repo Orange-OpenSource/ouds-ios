@@ -89,9 +89,6 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 /// Something which provides all component tokens of pin code input
 public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
-/// Something which provides all component tokens of input text
-public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens {}
-
 /// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
@@ -121,3 +118,6 @@ public protocol AllTagInputComponentTokensProvider: TokensProvider, TagInputComp
 
 /// Something which provides all component tokens of text area
 public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComponentTokens {}
+
+/// Something which provides all component tokens of text input
+public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}

@@ -102,10 +102,6 @@ struct OrangeThemeTests {
         #expect(theme.controlItem is OrangeThemeControlItemComponentTokensProvider)
     }
 
-    @Test func defaultInputTextComponentTokensProvider() throws {
-        #expect(theme.inputText is OrangeThemeInputTextComponentTokensProvider)
-    }
-
     @Test func defaultLinkComponentTokensProvider() throws {
         #expect(theme.link is OrangeThemeLinkComponentTokensProvider)
     }
@@ -148,6 +144,10 @@ struct OrangeThemeTests {
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {
         #expect(theme.textArea is OrangeThemeTextAreaComponentTokensProvider)
+    }
+
+    @Test func defaultTextInputComponentTokensProvider() throws {
+        #expect(theme.textInput is OrangeThemeTextInputComponentTokensProvider)
     }
 }
 

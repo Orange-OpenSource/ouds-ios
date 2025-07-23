@@ -81,17 +81,18 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
-        let inputText = SoshThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let select = SoshThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let selectInput = SoshThemeSelectInputComponentTokensProvider(sizes: sizes)
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = SoshThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
+        let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
+        let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
 
         super.init(borders: borders,
                    colors: colors,
@@ -110,17 +111,18 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   inputText: inputText,
                    listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
-                   select: select,
+                   selectInput: selectInput,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
                    tagInput: tagInput,
+                   textArea: textArea,
+                   textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
                    fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
 

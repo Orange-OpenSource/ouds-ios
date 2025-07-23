@@ -90,12 +90,14 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let quantityInput = OrangeInverseThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeInverseThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let select = OrangeInverseThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let selectInput = OrangeInverseThemeSelectInputComponentTokensProvider(sizes: sizes)
         let skeleton = OrangeInverseThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeInverseThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeInverseThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = OrangeInverseThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
-
+        let textArea = OrangeInverseThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
+        let textInput = OrangeInverseThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
@@ -120,11 +122,13 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
-                   select: select,
+                   selectInput: selectInput,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
                    tagInput: tagInput,
+                   textArea: textArea,
+                   textInput: textInput,
                    resourcesBundle: Bundle.OrangeInverseTheme)
     }
 

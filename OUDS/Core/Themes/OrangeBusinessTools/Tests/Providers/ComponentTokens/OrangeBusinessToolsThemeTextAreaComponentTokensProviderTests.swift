@@ -19,7 +19,7 @@ import Testing
 /// Check if the component tokens provider under tests as the default semantic token providers with the expected types.
 struct OrangeBusinessToolsThemeTextAreaComponentTokensProviderTests {
 
-    private var provider: OrangeTBusinessToolTshemeTextAreaComponentTokensProvider
+    private var provider: OrangeBusinessToolThemeTextAreaComponentTokensProvider
 
     init() {
         provider = OrangeBusinessToolsThemeTextAreaComponentTokensProvider()

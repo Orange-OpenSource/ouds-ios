@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesOrangeInverse
+@testable import OUDSThemesOrangeInverse
 import Testing
 
 // swiftlint:disable force_cast
@@ -102,10 +102,6 @@ struct OrangeInverseThemeTests {
         #expect(theme.controlItem is OrangeInverseThemeControlItemComponentTokensProvider)
     }
 
-    @Test func defaultInputTextComponentTokensProvider() throws {
-        #expect(theme.inputText is OrangeInverseThemeInputTextComponentTokensProvider)
-    }
-
     @Test func defaultLinkComponentTokensProvider() throws {
         #expect(theme.link is OrangeInverseThemeLinkComponentTokensProvider)
     }
@@ -148,6 +144,10 @@ struct OrangeInverseThemeTests {
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {
         #expect(theme.textArea is OrangeInverseThemeTextAreaComponentTokensProvider)
+    }
+
+    @Test func defaultTextInputComponentTokensProvider() throws {
+        #expect(theme.textInput is OrangeInverseThemeTextInputComponentTokensProvider)
     }
 }
 

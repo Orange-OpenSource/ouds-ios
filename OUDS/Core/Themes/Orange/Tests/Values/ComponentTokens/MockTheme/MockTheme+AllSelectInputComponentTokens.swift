@@ -32,7 +32,7 @@ final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputCo
 
     // MARK: - Select Input component tokens
 
-    override public var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectSize }
+    override public var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectInputSize }
 }
 
 // swiftlint:enable required_deinit

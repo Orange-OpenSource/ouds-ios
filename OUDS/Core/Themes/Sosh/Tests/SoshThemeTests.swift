@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesSosh
+@testable import OUDSThemesSosh
 import Testing
 
 // swiftlint:disable force_cast
@@ -102,10 +102,6 @@ struct SoshThemeTests {
         #expect(theme.controlItem is SoshThemeControlItemComponentTokensProvider)
     }
 
-    @Test func defaultInputTextComponentTokensProvider() throws {
-        #expect(theme.inputText is SoshThemeInputTextComponentTokensProvider)
-    }
-
     @Test func defaultLinkComponentTokensProvider() throws {
         #expect(theme.link is SoshThemeLinkComponentTokensProvider)
     }
@@ -148,6 +144,10 @@ struct SoshThemeTests {
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {
         #expect(theme.textArea is SoshThemeTextAreaComponentTokensProvider)
+    }
+
+    @Test func defaultTextInputComponentTokensProvider() throws {
+        #expect(theme.textInput is SoshThemeTextInputComponentTokensProvider)
     }
 }
 

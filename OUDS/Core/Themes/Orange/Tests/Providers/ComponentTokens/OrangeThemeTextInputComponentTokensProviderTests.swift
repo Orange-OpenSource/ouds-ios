@@ -17,12 +17,12 @@ import Testing
 // swiftlint:disable type_name
 
 /// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
-struct OrangeThemeInputTextComponentTokensProviderTests {
+struct OrangeThemeTextInputComponentTokensProviderTests {
 
-    private var provider: OrangeThemeInputTextComponentTokensProvider
+    private var provider: OrangeThemeTextInputComponentTokensProvider
 
     init() {
-        provider = OrangeThemeInputTextComponentTokensProvider()
+        provider = OrangeThemeTextInputComponentTokensProvider()
     }
 
     // MARK: - Tests
@@ -33,6 +33,10 @@ struct OrangeThemeInputTextComponentTokensProviderTests {
 
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
+    }
+
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {

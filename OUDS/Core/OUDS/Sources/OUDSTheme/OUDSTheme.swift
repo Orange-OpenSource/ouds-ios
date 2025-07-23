@@ -104,9 +104,6 @@ open class OUDSTheme: @unchecked Sendable {
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
-    /// All components tokens related to bullet list components like `OUDSInputText`
-    public let inputText: AllInputTextComponentTokensProvider
-
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
@@ -140,6 +137,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to text area components like `OUDSTextArea`
     public let textArea: AllTextAreaComponentTokensProvider
 
+    /// All components tokens related to bullet list components like `OUDSTextInput`
+    public let textInput: AllTextInputComponentTokensProvider
+
     // MARK: - Other elements
 
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
@@ -171,18 +171,18 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
-    ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
-    ///    - select: All component tokens for select
+    ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
     ///    - tagInput: All component tokens for tag input
     ///    - textArea: All component tokens for text area
+    ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
@@ -203,7 +203,6 @@ open class OUDSTheme: @unchecked Sendable {
                 chip: AllChipComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
-                inputText: AllInputTextComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
@@ -215,6 +214,7 @@ open class OUDSTheme: @unchecked Sendable {
                 tag: AllTagComponentTokensProvider,
                 tagInput: AllTagInputComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
+                textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil)
     {
@@ -240,7 +240,6 @@ open class OUDSTheme: @unchecked Sendable {
         self.chip = chip
         self.controlItem = controlItem
         self.divider = divider
-        self.inputText = inputText
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput
@@ -252,6 +251,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.tag = tag
         self.tagInput = tagInput
         self.textArea = textArea
+        self.textInput = textInput
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle

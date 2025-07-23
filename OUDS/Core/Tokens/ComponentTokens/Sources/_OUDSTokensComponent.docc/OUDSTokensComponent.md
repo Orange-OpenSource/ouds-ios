@@ -110,7 +110,6 @@ struct DesignToolbox: App {
 - ``ChipComponentTokens``
 - ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
-- ``InputTextComponentTokens``
 - ``LinkComponentTokens``
 - ``ListItemComponentTokens``
 - ``PinCodeInputComponentTokens``
@@ -122,3 +121,4 @@ struct DesignToolbox: App {
 - ``TagComponentTokens``
 - ``TagInputComponentTokens``
 - ``TextAreaComponentTokens``
+- ``TextInputComponentTokens``
