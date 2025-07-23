@@ -69,7 +69,7 @@ extension OrangeInverseThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
 
     @objc public var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayEmphasized", light: modeOnOverlayEmphasizedLight, dark: modeOnOverlayEmphasizedDark) }
 
-    @objc public var modeOnModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnModal", light: modeOnModalLight, dark: modeOnModalDark) }
+    @objc public var modeOnOverlayModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayModal", light: modeOnOverlayModalLight, dark: modeOnOverlayModalDark) }
 
     // MARK: - Additional rules
 
@@ -154,7 +154,7 @@ extension OrangeInverseThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
         if mode.isEqual(modeOnOverlayDefault) { return colors.colorOverlayDefault }
         if mode.isEqual(modeOnOverlayEmphasized) { return colors.colorOverlayEmphasized }
-        if mode.isEqual(modeOnModal) { return colors.colorOverlayModal }
+        if mode.isEqual(modeOnOverlayModal) { return colors.colorOverlayModal }
         OL.fatal("The color mode '\(mode.name)' for OrangeInverse Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity

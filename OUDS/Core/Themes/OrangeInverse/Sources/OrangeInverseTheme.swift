@@ -84,7 +84,6 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let chip = OrangeInverseThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = OrangeInverseThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeInverseThemeDividerComponentTokensProvider(borders: borders)
-        let inputText = OrangeInverseThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let link = OrangeInverseThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = OrangeInverseThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces)
@@ -95,9 +94,9 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let `switch` = OrangeInverseThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeInverseThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = OrangeInverseThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
-        let textArea = OrangeInverseThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
+        let textArea = OrangeInverseThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeInverseThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
-        
+
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
@@ -116,7 +115,6 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   inputText: inputText,
                    listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,

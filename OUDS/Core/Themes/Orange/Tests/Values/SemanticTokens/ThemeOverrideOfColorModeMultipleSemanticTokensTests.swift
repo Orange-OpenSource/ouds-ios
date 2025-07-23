@@ -153,9 +153,9 @@ struct ThemeOverrideOfColorModeMultipleSemanticTokensTests {
 
     // MARK: - On Modal
 
-    @Test func inheritedThemeCanOverrideModeOnModalt() throws {
-        #expect(inheritedTheme.colorModes.modeOnModal != abstractTheme.colorModes.modeOnModal)
-        #expect(inheritedTheme.colorModes.modeOnModal == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+    @Test func inheritedThemeCanOverrideModeOnModalOverlay() throws {
+        #expect(inheritedTheme.colorModes.modeOnModalOverlay != abstractTheme.colorModes.modeOnModalOverlay)
+        #expect(inheritedTheme.colorModes.modeOnModalOverlay == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
     }
 }
 

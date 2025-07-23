@@ -62,6 +62,11 @@ struct ThemeOverrideOfOpacitySemanticTokensTests {
         #expect(inheritedTheme.opacities.opacityOpaque != abstractTheme.opacities.opacityOpaque)
         #expect(inheritedTheme.opacities.opacityOpaque == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenOpacityDisabled() throws {
+        #expect(inheritedTheme.opacities.opacityDisabled != abstractTheme.opacities.opacityDisabled)
+        #expect(inheritedTheme.opacities.opacityDisabled == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+    }
 }
 
 // swiftlint:enable type_name

@@ -258,14 +258,26 @@ struct ThemeOverrideOfColorModeSemanticTokensTests {
 
     // MARK: - On Modal
 
-    @Test func inheritedThemeCanOverrideModeOnModalLight() throws {
-        #expect(inheritedTheme.colorModes.modeOnModalLight != abstractTheme.colorModes.modeOnModalLight)
-        #expect(inheritedTheme.colorModes.modeOnModalLight == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
+    @Test func inheritedThemeCanOverrideModeOnOverlayModalLight() throws {
+        #expect(inheritedTheme.colorModes.modeOnOverlayModalLight != abstractTheme.colorModes.modeOnOverlayModalLight)
+        #expect(inheritedTheme.colorModes.modeOnOverlayModalLight == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
     }
 
-    @Test func inheritedThemeCanOverrideModeOnModalDark() throws {
-        #expect(inheritedTheme.colorModes.modeOnModalDark != abstractTheme.colorModes.modeOnModalDark)
-        #expect(inheritedTheme.colorModes.modeOnModalDark == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
+    @Test func inheritedThemeCanOverrideModeOnOverlayModalDark() throws {
+        #expect(inheritedTheme.colorModes.modeOnOverlayModalDark != abstractTheme.colorModes.modeOnOverlayModalDark)
+        #expect(inheritedTheme.colorModes.modeOnOverlayModalDark == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
+    }
+
+    // MARK: - Navigation
+
+    @Test func inheritedThemeCanOverrideModeNavigationBarLight() throws {
+        #expect(inheritedTheme.colorModes.modeNavigationBarLight != abstractTheme.colorModes.modeNavigationBarLight)
+        #expect(inheritedTheme.colorModes.modeNavigationBarLight == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideModeNavigationBarDark() throws {
+        #expect(inheritedTheme.colorModes.modeNavigationBarDark != abstractTheme.colorModes.modeNavigationBarDark)
+        #expect(inheritedTheme.colorModes.modeNavigationBarDark == MockThemeColorModeSemanticTokensProvider.mockThemeColorModeSemanticToken)
     }
 }
 
