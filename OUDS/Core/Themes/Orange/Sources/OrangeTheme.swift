@@ -189,7 +189,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
         let tagInput = (tagInput ?? OrangeThemeTagInputComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
-        let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
 
         super.init(borders: borders,
                    colors: colors,

@@ -92,7 +92,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let tagInput = SoshThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
+        let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
         super.init(borders: borders,
                    colors: colors,
