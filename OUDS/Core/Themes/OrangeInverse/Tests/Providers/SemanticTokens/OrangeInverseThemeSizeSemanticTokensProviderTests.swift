@@ -11,28 +11,25 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSThemesOrange
+@testable import OUDSThemesOrangeInverse
+import OUDSTokensSemantic
 import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under test as the default semantic token providers with the expected types.
-struct OrangeThemePinCodeInputComponentTokensProviderTests {
+/// Check if the semantic tokens provider for size tokens under test as the good rules implementations
+struct OrangeInverseThemeSizeSemanticTokensProviderTests {
 
-    private var provider: OrangeThemePinCodeInputComponentTokensProvider
+    private var provider: OrangeInverseThemeSizeSemanticTokensProvider
 
     init() {
-        provider = OrangeThemePinCodeInputComponentTokensProvider()
+        provider = OrangeInverseThemeSizeSemanticTokensProvider()
     }
 
     // MARK: - Tests
 
-    @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
-    }
-
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is OrangeInverseThemeDimensionSemanticTokensProvider)
     }
 }
 

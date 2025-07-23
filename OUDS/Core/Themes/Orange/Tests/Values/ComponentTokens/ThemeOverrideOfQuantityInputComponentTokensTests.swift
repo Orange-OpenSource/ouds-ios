@@ -29,28 +29,28 @@ struct ThemeOverrideOfQuantityInputComponentTokensTests {
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapDefault() throws {
         #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapDefault != abstractTheme.quantityInput.quantityInputSpaceColumnGapDefault)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapDefault == MockThemeQuantityInputComponentTokenProvider.SpaceSemanticToken)
+        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapDefault == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapLeadingIcon() throws {
         #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon != abstractTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon == MockThemeQuantityInputComponentTokenProvider.SpaceSemanticToken)
+        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapQuantitySelector() throws {
-        #expect(inheritedTheme.quantityInputSpaceColumnGapQuantitySelector.quantityInputSpaceColumnGapLeadingIcon != abstractTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector == MockThemeQuantityInputComponentTokenProvider.SpaceSemanticToken)
+        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon != abstractTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector)
+        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideQuantityInputSizeMinWidth() throws {
         #expect(inheritedTheme.quantityInput.quantityInputSizeMinWidth != abstractTheme.quantityInput.quantityInputSizeMinWidth)
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMinWidth == quantityInputBorderWidthDefaultInteraction.mockThemeQuantityInputSize)
+        #expect(inheritedTheme.quantityInput.quantityInputSizeMinWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSizeMaxWidth() throws {
         #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth != abstractTheme.quantityInput.quantityInputSizeMaxWidth)
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth == quantityInputBorderWidthDefaultInteraction.mockThemeQuantityInputSpace)
+        #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
     }
 }

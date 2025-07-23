@@ -30,8 +30,8 @@ struct ThemeOverrideOfSelectInputComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideSelectInputComponentTokenSizeMinWidth() throws {
-        #expect(inheritedTheme.select.selectInputSizeMinWidth != abstractTheme.select.selectInputSizeMinWidth)
-        #expect(inheritedTheme.select.selectInputSizeMinWidth == MockThemeSelectInputComponentTokenProvider.mockThemeSelectInputSize)
+        #expect(inheritedTheme.selectInput.selectInputSizeMinWidth != abstractTheme.selectInput.selectInputSizeMinWidth)
+        #expect(inheritedTheme.selectInput.selectInputSizeMinWidth == MockThemeSelectInputComponentTokenProvider.mockThemeSelectInputSize)
     }
 }
 

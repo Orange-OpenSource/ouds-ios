@@ -27,8 +27,8 @@ struct OrangeThemeSelectInputComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
     }
 }
 

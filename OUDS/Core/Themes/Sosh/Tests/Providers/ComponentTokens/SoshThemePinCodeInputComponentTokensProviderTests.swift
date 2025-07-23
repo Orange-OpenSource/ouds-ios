@@ -27,12 +27,12 @@ struct SoshThemePinCodeInputComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is SoshThemeSizeSemanticTokensProvider)
-    }
-
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
     }
 }
 

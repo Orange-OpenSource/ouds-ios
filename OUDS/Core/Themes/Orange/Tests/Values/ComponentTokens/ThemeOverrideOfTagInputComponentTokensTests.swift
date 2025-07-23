@@ -41,56 +41,56 @@ struct ThemeOverrideOfTagInputComponentTokensTests {
 
     @Test func inheritedThemeCanOverrideTagInputColorBgEnabled() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBgEnabled != abstractTheme.tagInput.tagInputColorBgEnabled)
-        #expect(inheritedTheme.tagInput.tagInputColorBgEnabled == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBgEnabled == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBgHover() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBgHover != abstractTheme.tagInput.tagInputColorBgHover)
-        #expect(inheritedTheme.tagInput.tagInputColorBgHover == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBgHover == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBgFocus() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBgFocus != abstractTheme.tagInput.tagInputColorBgFocus)
-        #expect(inheritedTheme.tagInput.tagInputColorBgFocus == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBgFocus == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorContentEnabled() throws {
         #expect(inheritedTheme.tagInput.tagInputColorContentEnabled != abstractTheme.tagInput.tagInputColorContentEnabled)
-        #expect(inheritedTheme.tagInput.tagInputColorContentEnabled == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorContentEnabled == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorContentHover() throws {
         #expect(inheritedTheme.tagInput.tagInputColorContentHover != abstractTheme.tagInput.tagInputColorContentHover)
-        #expect(inheritedTheme.tagInput.tagInputColorContentHover == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorContentHover == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorContentPressed() throws {
         #expect(inheritedTheme.tagInput.tagInputColorContentPressed != abstractTheme.tagInput.tagInputColorContentPressed)
-        #expect(inheritedTheme.tagInput.tagInputColorContentPressed == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorContentPressed == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorContentFocus() throws {
         #expect(inheritedTheme.tagInput.tagInputColorContentFocus != abstractTheme.tagInput.tagInputColorContentFocus)
-        #expect(inheritedTheme.tagInput.tagInputColorContentFocus == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorContentFocus == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBorderEnabled() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBorderEnabled != abstractTheme.tagInput.tagInputColorBorderEnabled)
-        #expect(inheritedTheme.tagInput.tagInputColorBorderEnabled == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBorderEnabled == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBorderHover() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBorderHover != abstractTheme.tagInput.tagInputColorBorderHover)
-        #expect(inheritedTheme.tagInput.tagInputColorBorderHover == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBorderHover == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBorderPressed() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBorderPressed != abstractTheme.tagInput.tagInputColorBorderPressed)
-        #expect(inheritedTheme.tagInput.tagInputColorBorderPressed == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBorderPressed == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 
     @Test func inheritedThemeCanOverrideTagInputColorBorderFocus() throws {
         #expect(inheritedTheme.tagInput.tagInputColorBorderFocus != abstractTheme.tagInput.tagInputColorBorderFocus)
-        #expect(inheritedTheme.tagInput.tagInputColorBorderFocus == tagInputBorderWidthDefaultInteraction.mockThemeTagInputColor)
+        #expect(inheritedTheme.tagInput.tagInputColorBorderFocus == MockThemeTagInputComponentTokenProvider.mockThemeTagInputColor)
     }
 }

@@ -27,8 +27,8 @@ struct SoshThemeSelectInputComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is SoshThemeSizeSemanticTokensProvider)
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
     }
 }
 

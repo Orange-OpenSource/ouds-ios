@@ -27,12 +27,12 @@ struct OrangeInverseThemePinCodeInputComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeInverseThemeSizeSemanticTokensProvider)
-    }
-
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeInverseThemeSpaceSemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeInverseThemeDimensionSemanticTokensProvider)
     }
 }
 

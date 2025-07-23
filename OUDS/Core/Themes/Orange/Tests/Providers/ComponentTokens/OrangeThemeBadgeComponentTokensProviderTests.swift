@@ -27,8 +27,12 @@ struct OrangeThemeBadgeComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
+    @Test func defaultSpacesSemanticTokensProvider() throws {
+        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
     }
 }
 

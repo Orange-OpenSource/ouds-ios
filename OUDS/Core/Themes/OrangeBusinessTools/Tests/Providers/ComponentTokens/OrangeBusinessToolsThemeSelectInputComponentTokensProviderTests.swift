@@ -30,6 +30,10 @@ struct OrangeBusinessToolsThemeSelectInputComponentTokensProviderTests {
     @Test func defaultSizeSemanticTokensProvider() throws {
         #expect(provider.sizes is OrangeBusinessToolsThemeSizeSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

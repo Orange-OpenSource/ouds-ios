@@ -32,9 +32,10 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
     override public init(sizes: AllSizeSemanticTokensProvider?,
                          borders: AllBorderSemanticTokensProvider?,
                          colors: AllColorSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+                         spaces: AllSpaceSemanticTokensProvider?,
+                         dimensions: AllDimensionSemanticTokensProvider?)
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Sizes

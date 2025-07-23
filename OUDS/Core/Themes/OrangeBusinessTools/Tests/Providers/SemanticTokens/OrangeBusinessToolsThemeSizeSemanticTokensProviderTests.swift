@@ -12,24 +12,21 @@
 //
 
 @testable import OUDSThemesOrangeBusinessTools
+import OUDSTokensSemantic
 import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under tests has the default semantic token providers with the expected types.
-struct OrangeBusinessToolsThemeBadgeComponentTokensProviderTests {
+/// Check if the semantic tokens provider for size tokens under test as the good rules implementations
+struct OrangeBusinessToolsThemeSizeSemanticTokensProviderTests {
 
-    private var provider: OrangeBusinessToolsThemeBadgeComponentTokensProvider
+    private var provider: OrangeBusinessToolsThemeSizeSemanticTokensProvider
 
     init() {
-        provider = OrangeBusinessToolsThemeBadgeComponentTokensProvider()
+        provider = OrangeBusinessToolsThemeSizeSemanticTokensProvider()
     }
 
     // MARK: - Tests
-
-    @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeBusinessToolsThemeSpaceSemanticTokensProvider)
-    }
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
         #expect(provider.dimensions is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)

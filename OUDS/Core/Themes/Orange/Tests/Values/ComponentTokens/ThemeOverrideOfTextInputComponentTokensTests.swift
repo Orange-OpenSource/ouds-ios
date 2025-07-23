@@ -103,12 +103,12 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     @Test func inheritedThemeCanOverrideTextInputBorderRadiusDefault() throws {
         #expect(inheritedTheme.textInput.textInputBorderWidthDefault != abstractTheme.textInput.textInputBorderWidthDefault)
-        #expect(inheritedTheme.textInput.textInputBorderWidthDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+        #expect(inheritedTheme.textInput.textInputBorderWidthDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideTextInputBorderRadiusWidthFocus() throws {
         #expect(inheritedTheme.textInput.textInputBorderWidthFocus != abstractTheme.textInput.textInputBorderWidthFocus)
-        #expect(inheritedTheme.textInput.textInputBorderWidthFocus == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+        #expect(inheritedTheme.textInput.textInputBorderWidthFocus == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderWidth)
     }
 
     // MARK: - Spaces
