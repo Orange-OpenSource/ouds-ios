@@ -253,9 +253,9 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipSpacePaddingInlineIconNone == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
-    @Test func inheritedThemeCanOverrideChipSpacePaddingInlineArrowEnd() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineArrowEnd != abstractTheme.chip.chipSpacePaddingInlineArrowEnd)
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineArrowEnd == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+    @Test func inheritedThemeCanOverridechipSpacePaddingInlineChevronEnd() throws {
+        #expect(inheritedTheme.chip.chipSpacePaddingInlineChevronEnd != abstractTheme.chip.chipSpacePaddingInlineChevronEnd)
+        #expect(inheritedTheme.chip.chipSpacePaddingInlineChevronEnd == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingInlineBadgeStart() throws {
@@ -266,10 +266,5 @@ struct ThemeOverrideOfChipComponentTokensTests {
     @Test func inheritedThemeCanOverrideChipSpaceColumnGapIcon() throws {
         #expect(inheritedTheme.chip.chipSpaceColumnGapIcon != abstractTheme.chip.chipSpaceColumnGapIcon)
         #expect(inheritedTheme.chip.chipSpaceColumnGapIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
-    }
-
-    @Test func inheritedThemeCanOverrideChipSpaceColumnGapBadgeArrow() throws {
-        #expect(inheritedTheme.chip.chipSpaceColumnGapBadgeArrow != abstractTheme.chip.chipSpaceColumnGapBadgeArrow)
-        #expect(inheritedTheme.chip.chipSpaceColumnGapBadgeArrow == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 }

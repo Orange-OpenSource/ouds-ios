@@ -16,14 +16,14 @@ import OUDSFoundations
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSChip`.
+/// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSFilterChip` and `OUDSSuggestionChip`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllChipComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `ChipComponentTokens` so as to expose the component tokens for *chip* through any `OUDSTheme`.
-/// *Chip* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) and border  (from `AllBorderSemanticTokensProvider`).
+/// *Chip* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`), dimensions (`AllDimensionSemanticTokensProvider`),
+/// border  (from `AllBorderSemanticTokensProvider`) and sizes  (from `AllSizeSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeInverseThemeChipComponentTokensProvider: AllChipComponentTokensProvider {
@@ -31,7 +31,7 @@ final class OrangeInverseThemeChipComponentTokensProvider: AllChipComponentToken
     /// Provider of size semantic tokens to use for chip sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of border semantic tokens to use for chip sizes
+    /// Provider of border semantic tokens to use for chip borders
     public let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for chip colors
@@ -47,7 +47,7 @@ final class OrangeInverseThemeChipComponentTokensProvider: AllChipComponentToken
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSChip`
+    /// Defines a provider of component tokens dedicated to `OUDSFilterChip` and `OUDSSuggestionChip`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeInverseThemeBorderSemanticTokensProvider``)

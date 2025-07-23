@@ -95,17 +95,14 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
-    /// All components tokens related to chip components like `OUDSChip`
+    /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
-    /// All components tokens related to divider components like `OUDSDivider`
+    /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
-
-    /// All components tokens related to bullet list components like `OUDSInputText`
-    public let inputText: AllInputTextComponentTokensProvider
 
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
@@ -113,11 +110,17 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to list item components like `OUDSListItem`
     public let listItem: AllListItemComponentTokensProvider
 
+    /// All components tokens related to pin code input components like `OUDSPinCodeInput`
+    public let pinCodeInput: AllPinCodeInputComponentTokensProvider
+
+    /// All components tokens related to quantity input components like `OUDSQuantityInput`
+    public let quantityInput: AllQuantityInputComponentTokensProvider
+
     /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
     public let radioButton: AllRadioButtonComponentTokensProvider
 
-    /// All components tokens related to select components like `OUDSSelect`
-    public let select: AllSelectComponentTokensProvider
+    /// All components tokens related to select input components like `OUDSSelectInput`
+    public let selectInput: AllSelectInputComponentTokensProvider
 
     /// All components tokens related to skeleto components like `OUDSSkeleton`
     public let skeleton: AllSkeletonComponentTokensProvider
@@ -127,6 +130,15 @@ open class OUDSTheme: @unchecked Sendable {
 
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
+
+    /// All components tokens related to tags components like `OUDSTagInput`
+    public let tagInput: AllTagInputComponentTokensProvider
+
+    /// All components tokens related to text area components like `OUDSTextArea`
+    public let textArea: AllTextAreaComponentTokensProvider
+
+    /// All components tokens related to bullet list components like `OUDSTextInput`
+    public let textInput: AllTextInputComponentTokensProvider
 
     // MARK: - Other elements
 
@@ -159,14 +171,18 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
-    ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
+    ///    - pinCodeInput: All component tokens for pin code input
+    ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
-    ///    - select: All component tokens for select
+    ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - tagInput: All component tokens for tag input
+    ///    - textArea: All component tokens for text area
+    ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
@@ -187,14 +203,18 @@ open class OUDSTheme: @unchecked Sendable {
                 chip: AllChipComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
-                inputText: AllInputTextComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
+                pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
-                select: AllSelectComponentTokensProvider,
+                selectInput: AllSelectInputComponentTokensProvider,
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
+                tagInput: AllTagInputComponentTokensProvider,
+                textArea: AllTextAreaComponentTokensProvider,
+                textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil)
     {
@@ -220,14 +240,18 @@ open class OUDSTheme: @unchecked Sendable {
         self.chip = chip
         self.controlItem = controlItem
         self.divider = divider
-        self.inputText = inputText
         self.link = link
         self.listItem = listItem
+        self.pinCodeInput = pinCodeInput
+        self.quantityInput = quantityInput
         self.radioButton = radioButton
-        self.select = select
+        self.selectInput = selectInput
         self.skeleton = skeleton
         self.switch = `switch`
         self.tag = tag
+        self.tagInput = tagInput
+        self.textArea = textArea
+        self.textInput = textInput
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle

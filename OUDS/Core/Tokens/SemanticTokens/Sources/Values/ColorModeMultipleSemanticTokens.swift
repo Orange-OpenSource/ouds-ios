@@ -75,9 +75,9 @@ public protocol ColorModeMultipleSemanticTokens {
     var modeOnOverlayDefault: MultipleColorModeSemanticTokens { get }
     var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { get }
 
-    // MARK: - On Modal
+    // MARK: - On Overlay Modal
 
-    var modeOnModal: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayModal: MultipleColorModeSemanticTokens { get }
 
     // MARK: - Additional rules
 

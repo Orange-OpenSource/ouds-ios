@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Text input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Text area component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Quantity input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Tag input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Pin code input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Color charts for Orange Business Tools theme
 - Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
 - Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
@@ -17,6 +23,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Control item component (Orange-OpenSource/ouds-ios#875)
+- Opacity semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Color repository semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Color mode semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Space semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Tag component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Link component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Chip component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Button component (Orange-OpenSource/ouds-ios#875)
+- Button component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Bullet list component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
 - Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
 - Gem `fastlane` gem from v2.227.2 to v2.228.0
@@ -26,6 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- Input text component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Orange theme font family raw tokens
 
 ### Fixed

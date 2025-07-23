@@ -21,14 +21,11 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllBadgeComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `BadgeComponentTokens` so as to expose the component tokens for *badge* through any `OUDSTheme`.
-/// *Badge* components tokens are defined with raw and semantic tokens of dimensions (`DimensionRawToken`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) and sizes (from `AllSizeSemanticTokensProvider`).
+/// *Badge* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`)
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeInverseThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvider {
-
-    /// Provider of size semantic tokens to use for badge sizes
-    public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for badge spaces
     public let spaces: AllSpaceSemanticTokensProvider
@@ -42,15 +39,12 @@ final class OrangeInverseThemeBadgeComponentTokensProvider: AllBadgeComponentTok
 
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeInverseThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
+    public init(spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeBadgeComponentTokensProvider")
-        self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeInverseThemeSpaceSemanticTokensProvider())
         self.dimensions = (dimensions ?? OrangeInverseThemeDimensionSemanticTokensProvider())
         #if DEBUG

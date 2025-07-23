@@ -42,6 +42,10 @@ struct OrangeBusinessToolsThemeChipComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeBusinessToolsThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

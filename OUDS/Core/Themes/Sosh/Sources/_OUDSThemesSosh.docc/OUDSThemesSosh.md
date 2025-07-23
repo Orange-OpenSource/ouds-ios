@@ -4,7 +4,7 @@ The Sosh theme is the theme dedicated to the Sosh brand only.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Theme version: 1.1.0
+🧬 Theme version: 1.1.0
 ```
 
 ## Overview

@@ -81,10 +81,15 @@ public protocol ColorModeSemanticTokens {
     var modeOnOverlayEmphasizedLight: ColorModeSemanticToken { get }
     var modeOnOverlayEmphasizedDark: ColorModeSemanticToken { get }
 
-    // MARK: - On Modal
+    // MARK: - On Overlay Modal
 
-    var modeOnModalLight: ColorModeSemanticToken { get }
-    var modeOnModalDark: ColorModeSemanticToken { get }
+    var modeOnOverlayModalLight: ColorModeSemanticToken { get }
+    var modeOnOverlayModalDark: ColorModeSemanticToken { get }
+
+    // MARK: - Navigation
+
+    var modeNavigationBarLight: ColorModeSemanticToken { get }
+    var modeNavigationBarDark: ColorModeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

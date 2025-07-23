@@ -27,6 +27,10 @@ struct OrangeThemeTests {
 
     // MARK: - Tests - Semantic tokens providers
 
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(theme.borders is OrangeThemeBorderSemanticTokensProvider)
+    }
+
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(theme.colors is OrangeThemeColorSemanticTokensProvider)
     }
@@ -38,10 +42,6 @@ struct OrangeThemeTests {
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
         #expect(theme.colorCharts is OrangeThemeColorChartSemanticTokensProvider)
-    }
-
-    @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(theme.borders is OrangeThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultElevationSemanticTokensProvider() throws {
@@ -60,6 +60,10 @@ struct OrangeThemeTests {
         #expect(theme.opacities is OrangeThemeOpacitySemanticTokensProvider)
     }
 
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(theme.dimensions is OrangeThemeDimensionSemanticTokensProvider)
+    }
+
     @Test func defaultSizeSemanticTokensProvider() throws {
         #expect(theme.sizes is OrangeThemeSizeSemanticTokensProvider)
     }
@@ -70,63 +74,81 @@ struct OrangeThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
-    @Test func defaultButtonComponentTokensProvider() throws {
-        #expect(theme.button is OrangeThemeButtonComponentTokensProvider)
-    }
-
-    @Test func defaultLinkComponentTokensProvider() throws {
-        #expect(theme.link is OrangeThemeLinkComponentTokensProvider)
-    }
-
-    @Test func defaultSelectComponentTokensProvider() throws {
-        #expect(theme.select is OrangeThemeSelectComponentTokensProvider)
-    }
-
-    @Test func defaultSkeletonComponentTokensProvider() throws {
-        #expect(theme.skeleton is OrangeThemeSkeletonComponentTokensProvider)
-    }
-
-    @Test func defaultTagComponentTokensProvider() throws {
-        #expect(theme.tag is OrangeThemeTagComponentTokensProvider)
-    }
-
-    @Test func defaultSwitchComponentTokensProvider() throws {
-        #expect(theme.switch is OrangeThemeSwitchComponentTokensProvider)
-    }
-
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is OrangeThemeListItemComponentTokensProvider)
-    }
-
-    @Test func defaultChipComponentTokensProvider() throws {
-        #expect(theme.chip is OrangeThemeChipComponentTokensProvider)
+    @Test func defaultBadgeComponentTokensProvider() throws {
+        #expect(theme.badge is OrangeThemeBadgeComponentTokensProvider)
     }
 
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is OrangeThemeBulletListComponentTokensProvider)
     }
 
-    @Test func defaultInputTextComponentTokensProvider() throws {
-        #expect(theme.inputText is OrangeThemeInputTextComponentTokensProvider)
-    }
-
-    @Test func defaultBadgeComponentTokensProvider() throws {
-        #expect(theme.badge is OrangeThemeBadgeComponentTokensProvider)
-    }
-
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is OrangeThemeControlItemComponentTokensProvider)
+    @Test func defaultButtonComponentTokensProvider() throws {
+        #expect(theme.button is OrangeThemeButtonComponentTokensProvider)
     }
 
     @Test func defaultCheckboxComponentTokensProvider() throws {
         #expect(theme.checkbox is OrangeThemeCheckboxComponentTokensProvider)
     }
 
-    @Test func defaultRadioComponentTokensProvider() throws {
+    @Test func defaultChipComponentTokensProvider() throws {
+        #expect(theme.chip is OrangeThemeChipComponentTokensProvider)
+    }
+
+    @Test func defaultDividerComponentTokensProvider() throws {
+        #expect(theme.divider is OrangeThemeDividerComponentTokensProvider)
+    }
+
+    @Test func defaultControlItemComponentTokensProvider() throws {
+        #expect(theme.controlItem is OrangeThemeControlItemComponentTokensProvider)
+    }
+
+    @Test func defaultLinkComponentTokensProvider() throws {
+        #expect(theme.link is OrangeThemeLinkComponentTokensProvider)
+    }
+
+    @Test func defaultListItemComponentTokensProvider() throws {
+        #expect(theme.listItem is OrangeThemeListItemComponentTokensProvider)
+    }
+
+    @Test func defaultPinCodeInputComponentTokensProvider() throws {
+        #expect(theme.pinCodeInput is OrangeThemePinCodeInputComponentTokensProvider)
+    }
+
+    @Test func defaultQuantityInputComponentTokensProvider() throws {
+        #expect(theme.quantityInput is OrangeThemeQuantityInputComponentTokensProvider)
+    }
+
+    @Test func defaultRadioButtonComponentTokensProvider() throws {
         #expect(theme.radioButton is OrangeThemeRadioButtonComponentTokensProvider)
     }
 
-    // NOTE: Add tests for new component tokens providers
+    @Test func defaultSelectInputComponentTokensProvider() throws {
+        #expect(theme.selectInput is OrangeThemeSelectInputComponentTokensProvider)
+    }
+
+    @Test func defaultSkeletonComponentTokensProvider() throws {
+        #expect(theme.skeleton is OrangeThemeSkeletonComponentTokensProvider)
+    }
+
+    @Test func defaultSwitchComponentTokensProvider() throws {
+        #expect(theme.switch is OrangeThemeSwitchComponentTokensProvider)
+    }
+
+    @Test func defaultTagComponentTokensProvider() throws {
+        #expect(theme.tag is OrangeThemeTagComponentTokensProvider)
+    }
+
+    @Test func defaultTagInputComponentTokensProvider() throws {
+        #expect(theme.tagInput is OrangeThemeTagInputComponentTokensProvider)
+    }
+
+    @Test func defaultTextAreaButtonComponentTokensProvider() throws {
+        #expect(theme.textArea is OrangeThemeTextAreaComponentTokensProvider)
+    }
+
+    @Test func defaultTextInputComponentTokensProvider() throws {
+        #expect(theme.textInput is OrangeThemeTextInputComponentTokensProvider)
+    }
 }
 
 // swiftlint:enable force_cast

@@ -21,14 +21,14 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`)
+/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`), sizes (from `AllSSizeSemanticTokensProvider`)
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeBusinessToolsThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for tag suzes
+    /// Provider of sizes semantic tokens to use for tag sizes
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for tag borders

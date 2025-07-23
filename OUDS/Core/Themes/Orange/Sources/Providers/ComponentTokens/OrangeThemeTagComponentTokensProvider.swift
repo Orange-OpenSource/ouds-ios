@@ -20,8 +20,8 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTagComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// dimensions (`AllDimensionSemanticTokensProvider`) , spaces (from `AllSpaceSemanticTokensProvider`)
+/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
+/// spaces (from `AllSpaceSemanticTokensProvider`) , sizes (from `AllSizesSemanticTokensProvider`)
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
@@ -69,13 +69,13 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Uses by default here:
-///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider()
 ///
-///     // Or use your own space, size and border semantic tokens providers (or only some)
+///     // Or use your own size, space, dimension and border semantic tokens providers (or only some)
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider(
 ///                                             sizes: CustomSizeSemanticTokensProvider(),
 ///                                             borders: CustomBorderSemanticTokensProvider(),
@@ -86,7 +86,7 @@ import OUDSFoundations
 /// - Since: 0.9.0
 open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for tag suzes
+    /// Provider of size semantic tokens to use for tag sizes
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for tag borders
@@ -104,7 +104,7 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
 
     /// Defines a provider of component tokens dedicated to `OUDSTag`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)

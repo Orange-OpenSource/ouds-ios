@@ -46,6 +46,10 @@ struct SoshThemeSwitchComponentTokensProviderTests {
     @Test func defaultOpacitySemanticTokensProvider() throws {
         #expect(provider.opacities is SoshThemeOpacitySemanticTokensProvider)
     }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

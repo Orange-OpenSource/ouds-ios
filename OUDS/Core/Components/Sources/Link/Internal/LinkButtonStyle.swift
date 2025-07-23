@@ -103,7 +103,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     }
 
     private var spacing: Double {
-        size == .small ? theme.link.linkSpaceColumnGapArrowSmall : theme.link.linkSpaceColumnGapArrowDefault
+        size == .small ? theme.link.linkSpaceColumnGapChevronSmall : theme.link.linkSpaceColumnGapChevronDefault
     }
 
     private var alignment: VerticalAlignment {

@@ -5,7 +5,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Core version: 1.2.0
+🧬 Core version: 1.2.0
 ```
 
 ## Overview
@@ -69,8 +69,8 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.buttonBorderRadius)
         }
-        .padding(.leading, theme.button.buttonSpacePaddingInlineArrowStart)
-        .padding(.trailing, theme.button.buttonSpacePaddingInlineArrowEnd)
+        .padding(.leading, theme.button.buttonSpacePaddingInlineChevronStart)
+        .padding(.trailing, theme.button.buttonSpacePaddingInlineChevronEnd)
         .background(theme.button.buttonColorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.buttonBorderRadius)
@@ -80,7 +80,7 @@ struct SomeView: View {
 /*
     - The theme provides border semantic tokens "buttonBorderRadius" and "buttonBorderWidthDefault"
     - The theme provides a color semantic token "buttonColorBgStrongEnabledMono"
-    - The theme provides spaces semantic token "buttonSpacePaddingInlineArrowStart" and "buttonSpacePaddingInlineArrowEnd"
+    - The theme provides spaces semantic token "buttonSpacePaddingInlineChevronStart" and "buttonSpacePaddingInlineChevronEnd"
 */
 }
 
@@ -110,11 +110,15 @@ struct DesignToolbox: App {
 - ``ChipComponentTokens``
 - ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
-- ``InputTextComponentTokens``
 - ``LinkComponentTokens``
 - ``ListItemComponentTokens``
+- ``PinCodeInputComponentTokens``
+- ``QuantityInputComponentTokens``
 - ``RadioButtonComponentTokens``
-- ``SelectComponentTokens``
+- ``SelectInputComponentTokens``
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
+- ``TagInputComponentTokens``
+- ``TextAreaComponentTokens``
+- ``TextInputComponentTokens``

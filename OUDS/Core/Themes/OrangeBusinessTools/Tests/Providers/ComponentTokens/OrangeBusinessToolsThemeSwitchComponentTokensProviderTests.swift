@@ -46,6 +46,10 @@ struct OrangeBusinessToolsThemeSwitchComponentTokensProviderTests {
     @Test func defaultOpacitySemanticTokensProvider() throws {
         #expect(provider.opacities is OrangeBusinessToolsThemeOpacitySemanticTokensProvider)
     }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name
