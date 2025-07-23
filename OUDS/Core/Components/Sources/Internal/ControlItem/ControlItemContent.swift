@@ -50,7 +50,7 @@ struct ControlItemContent: View {
             }
         }
         .padding(.all, theme.controlItem.controlItemSpaceInset)
-        .oudsBackground(backgroundColor)
+        .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
         .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
     }
@@ -80,19 +80,6 @@ struct ControlItemContent: View {
             isOn.wrappedValue
         case let .checkBox(selectionState):
             selectionState.wrappedValue == .selected
-        }
-    }
-
-    private var backgroundColor: MultipleColorSemanticTokens {
-        switch interactionState {
-        case .enabled:
-            theme.select.selectColorBgEnabled
-        case .hover:
-            theme.select.selectColorBgHover
-        case .pressed:
-            theme.select.selectColorBgPressed
-        case .disabled, .readOnly:
-            theme.select.selectColorBgDisabled
         }
     }
 }
