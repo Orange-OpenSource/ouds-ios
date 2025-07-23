@@ -118,3 +118,6 @@ public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentToken
 
 /// Something which provides all component tokens of tag input
 public protocol AllTagInputComponentTokensProvider: TokensProvider, TagInputComponentTokens {}
+
+/// Something which provides all component tokens of text area
+public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComponentTokens {}

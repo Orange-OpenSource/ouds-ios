@@ -121,3 +121,4 @@ struct DesignToolbox: App {
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
 - ``TagInputComponentTokens``
+- ``TextAreaComponentTokens``

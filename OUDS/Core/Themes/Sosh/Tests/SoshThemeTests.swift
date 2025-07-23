@@ -11,12 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSThemesSosh
+import OUDSThemesSosh
 import Testing
 
 // swiftlint:disable force_cast
 
-/// Check if the themes has the default tokens providers with the expected types.
+/// Check if the themes ahs the default tokens providers with the expected types.
 struct SoshThemeTests {
 
     private var theme: SoshTheme
@@ -27,6 +27,10 @@ struct SoshThemeTests {
 
     // MARK: - Tests - Semantic tokens providers
 
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(theme.borders is SoshThemeBorderSemanticTokensProvider)
+    }
+
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(theme.colors is SoshThemeColorSemanticTokensProvider)
     }
@@ -36,8 +40,8 @@ struct SoshThemeTests {
         #expect((theme.colorModes as! SoshThemeColorModeSemanticTokensProvider).colors is SoshThemeColorSemanticTokensProvider)
     }
 
-    @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(theme.borders is SoshThemeBorderSemanticTokensProvider)
+    @Test func defaultColorChartsSemanticTokensProvider() throws {
+        #expect(theme.colorCharts == nil)
     }
 
     @Test func defaultElevationSemanticTokensProvider() throws {
@@ -56,6 +60,10 @@ struct SoshThemeTests {
         #expect(theme.opacities is SoshThemeOpacitySemanticTokensProvider)
     }
 
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(theme.dimensions is SoshThemeDimensionSemanticTokensProvider)
+    }
+
     @Test func defaultSizeSemanticTokensProvider() throws {
         #expect(theme.sizes is SoshThemeSizeSemanticTokensProvider)
     }
@@ -66,63 +74,81 @@ struct SoshThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
-    @Test func defaultButtonComponentTokensProvider() throws {
-        #expect(theme.button is SoshThemeButtonComponentTokensProvider)
-    }
-
-    @Test func defaultLinkComponentTokensProvider() throws {
-        #expect(theme.link is SoshThemeLinkComponentTokensProvider)
-    }
-
-    @Test func defaultSelectComponentTokensProvider() throws {
-        #expect(theme.select is SoshThemeSelectComponentTokensProvider)
-    }
-
-    @Test func defaultSkeletonComponentTokensProvider() throws {
-        #expect(theme.skeleton is SoshThemeSkeletonComponentTokensProvider)
-    }
-
-    @Test func defaultTagComponentTokensProvider() throws {
-        #expect(theme.tag is SoshThemeTagComponentTokensProvider)
-    }
-
-    @Test func defaultSwitchComponentTokensProvider() throws {
-        #expect(theme.switch is SoshThemeSwitchComponentTokensProvider)
-    }
-
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is SoshThemeListItemComponentTokensProvider)
-    }
-
-    @Test func defaultChipComponentTokensProvider() throws {
-        #expect(theme.chip is SoshThemeChipComponentTokensProvider)
+    @Test func defaultBadgeComponentTokensProvider() throws {
+        #expect(theme.badge is SoshThemeBadgeComponentTokensProvider)
     }
 
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is SoshThemeBulletListComponentTokensProvider)
     }
 
-    @Test func defaultInputTextComponentTokensProvider() throws {
-        #expect(theme.inputText is SoshThemeInputTextComponentTokensProvider)
-    }
-
-    @Test func defaultBadgeComponentTokensProvider() throws {
-        #expect(theme.badge is SoshThemeBadgeComponentTokensProvider)
-    }
-
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is SoshThemeControlItemComponentTokensProvider)
+    @Test func defaultButtonComponentTokensProvider() throws {
+        #expect(theme.button is SoshThemeButtonComponentTokensProvider)
     }
 
     @Test func defaultCheckboxComponentTokensProvider() throws {
         #expect(theme.checkbox is SoshThemeCheckboxComponentTokensProvider)
     }
 
-    @Test func defaultRadioComponentTokensProvider() throws {
+    @Test func defaultChipComponentTokensProvider() throws {
+        #expect(theme.chip is SoshThemeChipComponentTokensProvider)
+    }
+
+    @Test func defaultDividerComponentTokensProvider() throws {
+        #expect(theme.divider is SoshThemeDividerComponentTokensProvider)
+    }
+
+    @Test func defaultControlItemComponentTokensProvider() throws {
+        #expect(theme.controlItem is SoshThemeControlItemComponentTokensProvider)
+    }
+
+    @Test func defaultInputTextComponentTokensProvider() throws {
+        #expect(theme.inputText is SoshThemeInputTextComponentTokensProvider)
+    }
+
+    @Test func defaultLinkComponentTokensProvider() throws {
+        #expect(theme.link is SoshThemeLinkComponentTokensProvider)
+    }
+
+    @Test func defaultListItemComponentTokensProvider() throws {
+        #expect(theme.listItem is SoshThemeListItemComponentTokensProvider)
+    }
+
+    @Test func defaultPinCodeInputComponentTokensProvider() throws {
+        #expect(theme.pinCodeInput is SoshThemePinCodeInputComponentTokensProvider)
+    }
+
+    @Test func defaultQuantityInputComponentTokensProvider() throws {
+        #expect(theme.quantityInput is SoshThemeQuantityInputComponentTokensProvider)
+    }
+
+    @Test func defaultRadioButtonComponentTokensProvider() throws {
         #expect(theme.radioButton is SoshThemeRadioButtonComponentTokensProvider)
     }
 
-    // NOTE: Add tests for new component tokens providers
+    @Test func defaultSelectInputComponentTokensProvider() throws {
+        #expect(theme.selectInput is SoshThemeSelectInputComponentTokensProvider)
+    }
+
+    @Test func defaultSkeletonComponentTokensProvider() throws {
+        #expect(theme.skeleton is SoshThemeSkeletonComponentTokensProvider)
+    }
+
+    @Test func defaultSwitchComponentTokensProvider() throws {
+        #expect(theme.switch is SoshThemeSwitchComponentTokensProvider)
+    }
+
+    @Test func defaultTagComponentTokensProvider() throws {
+        #expect(theme.tag is SoshThemeTagComponentTokensProvider)
+    }
+
+    @Test func defaultTagInputComponentTokensProvider() throws {
+        #expect(theme.tagInput is SoshThemeTagInputComponentTokensProvider)
+    }
+
+    @Test func defaultTextAreaButtonComponentTokensProvider() throws {
+        #expect(theme.textArea is SoshThemeTextAreaComponentTokensProvider)
+    }
 }
 
 // swiftlint:enable force_cast
