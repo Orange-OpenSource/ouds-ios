@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Border semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - Text input component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - Button component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
 - Control item component (Orange-OpenSource/ouds-ios#875)
