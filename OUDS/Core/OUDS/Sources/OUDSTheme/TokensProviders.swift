@@ -37,6 +37,9 @@ public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTok
 /// Something which provides all semantic tokens of colors modes
 public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSemanticTokens, ColorModeMultipleSemanticTokens {}
 
+/// Something which provides all semantic tokens of colors charts
+public protocol AllColorChartSemanticTokensProvider: TokensProvider, ColorChartSemanticTokens, ColorChartMultipleSemanticTokens {}
+
 /// Something which provides all semantic tokens of elevation
 public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens {}
 
@@ -80,23 +83,23 @@ public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTok
 /// Something which provides all component tokens for control-item-layout-based components
 public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens {}
 
-/// Something which provides all component tokens of diviers
+/// Something which provides all component tokens of divider
 public protocol AllDividerComponentTokensProvider: TokensProvider, DividerComponentTokens {}
 
-/// Something which provides all component tokens of input text
-public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens {}
+/// Something which provides all component tokens of pin code input
+public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
 /// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
-/// Something which provides all component tokens of list item
-public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}
+/// Something which provides all component tokens of quantity input
+public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
 
 /// Something which provides all component tokens of radio buttons
 public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens {}
 
-/// Something which provides all component tokens of select
-public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens {}
+/// Something which provides all component tokens of select input
+public protocol AllSelectInputComponentTokensProvider: TokensProvider, SelectInputComponentTokens {}
 
 /// Something which provides all component tokens of skeleton
 public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens {}
@@ -106,3 +109,12 @@ public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponen
 
 /// Something which provides all component tokens of tag
 public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens {}
+
+/// Something which provides all component tokens of tag input
+public protocol AllTagInputComponentTokensProvider: TokensProvider, TagInputComponentTokens {}
+
+/// Something which provides all component tokens of text area
+public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComponentTokens {}
+
+/// Something which provides all component tokens of text input
+public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}

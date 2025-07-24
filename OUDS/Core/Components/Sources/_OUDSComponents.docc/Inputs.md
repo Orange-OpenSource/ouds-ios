@@ -207,3 +207,89 @@ The indicator can be leading or trailing.
                    isError: true,
                    hasDivider: true)
 ```
+
+### Chips
+
+#### Suggestion
+
+The library proposes suggestion chip component to make some predicitve or recommended selection.
+
+```swift
+    // Suggestion chip with icon only 
+    OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+
+    // Layout with text only
+    OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+
+    // Latout with text and icon
+    OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+```
+
+#### Filter
+
+The library proposes filter chip component to make some filtering with selected or unselected options.
+
+```swift
+    // Filter chip with icon only as selected 
+    OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+
+    // Filter chip with text only as not selected
+    OUDSFilterChip(text: "Heart") { /* the action to process */ }
+
+    // Filter chip with text and icon layout an in selected state
+    OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+```
+
+#### Chips picker
+
+The library proposes a chip picker to make easily filtering with two kinds of selection:
+- **single or none:** to select or unselect one option only
+- **single:** to select at least one option
+- **multiple** to select several options
+
+```swift
+    // Define the elements to display in filter chip using OUDSChipPickerData.
+    enum Drink: String, CaseIterable {
+        case virginHolyLava, ipaBeer, mineralWater
+    }
+
+    var someDataToPopulate: [OUDSChipPickerData<Drink>] {
+         [
+             OUDSChipPickerData(tag: Drink.virginHolyLava,
+                                layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+
+             OUDSChipPickerData(tag: Dring.ipaBeer,
+                                layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+
+             OUDSChipPickerData(tag: Drink.mineralWater,
+                                layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+         ]
+     }
+
+    // MARK: - Simple selection, one or zero
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selection: Drink? = .mineralWater
+
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+
+    // MARK: - Simple selection
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selection: Drink = .mineralWater
+
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+
+    // MARK: - Multiple selection
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selections: [Drink] = [.mineralWater]
+
+    // Here the picker with title, selection and data
+    OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
+ ```

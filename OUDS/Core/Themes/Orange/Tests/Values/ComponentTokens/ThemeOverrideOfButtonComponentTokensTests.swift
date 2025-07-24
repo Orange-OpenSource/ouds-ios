@@ -44,9 +44,14 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonSizeMinWidth == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadius() throws {
-        #expect(inheritedTheme.button.buttonBorderRadius != abstractTheme.button.buttonBorderRadius)
-        #expect(inheritedTheme.button.buttonBorderRadius == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusDefault() throws {
+        #expect(inheritedTheme.button.buttonBorderRadiusDefault != abstractTheme.button.buttonBorderRadiusDefault)
+        #expect(inheritedTheme.button.buttonBorderRadiusDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusRounded() throws {
+        #expect(inheritedTheme.button.buttonBorderRadiusRounded != abstractTheme.button.buttonBorderRadiusRounded)
+        #expect(inheritedTheme.button.buttonBorderRadiusRounded == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefault() throws {
@@ -62,16 +67,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefaultInteractionMono() throws {
         #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction != abstractTheme.button.buttonBorderWidthDefaultInteraction)
         #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthMinimal() throws {
-        #expect(inheritedTheme.button.buttonBorderWidthMinimal != abstractTheme.button.buttonBorderWidthMinimal)
-        #expect(inheritedTheme.button.buttonBorderWidthMinimal == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthMinimalInteraction() throws {
-        #expect(inheritedTheme.button.buttonBorderWidthMinimalInteraction != abstractTheme.button.buttonBorderWidthMinimalInteraction)
-        #expect(inheritedTheme.button.buttonBorderWidthMinimalInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBgDefaultFocus() throws {
@@ -324,6 +319,16 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonColorBgMinimalPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgBrandEnabled() throws {
+        #expect(inheritedTheme.button.buttonColorBgBrandEnabled != abstractTheme.button.buttonColorBgBrandEnabled)
+        #expect(inheritedTheme.button.buttonColorBgBrandEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandEnabled() throws {
+        #expect(inheritedTheme.button.buttonColorContentBrandEnabled != abstractTheme.button.buttonColorContentBrandEnabled)
+        #expect(inheritedTheme.button.buttonColorContentBrandEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderDefaultDisabled() throws {
         #expect(inheritedTheme.button.buttonColorBorderDefaultDisabled != abstractTheme.button.buttonColorBorderDefaultDisabled)
         #expect(inheritedTheme.button.buttonColorBorderDefaultDisabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
@@ -374,19 +379,9 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonMonoColorBorderDefaultPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalDisabled() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalDisabled != abstractTheme.button.buttonColorBorderMinimalDisabled)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalDisabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalDisabledMono() throws {
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalDisabled != abstractTheme.button.buttonMonoColorBorderMinimalDisabled)
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalDisabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalEnabled() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalEnabled != abstractTheme.button.buttonColorBorderMinimalEnabled)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalEnabledMono() throws {
@@ -394,19 +389,9 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalFocus() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalFocus != abstractTheme.button.buttonColorBorderMinimalFocus)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalFocus == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalFocusMono() throws {
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalFocus != abstractTheme.button.buttonMonoColorBorderMinimalFocus)
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalFocus == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalHover() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalHover != abstractTheme.button.buttonColorBorderMinimalHover)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalHover == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalHoverMono() throws {
@@ -414,19 +399,9 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalHover == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalLoading() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalLoading != abstractTheme.button.buttonColorBorderMinimalLoading)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalLoading == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalLoadingMono() throws {
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalLoading != abstractTheme.button.buttonMonoColorBorderMinimalLoading)
         #expect(inheritedTheme.button.buttonMonoColorBorderMinimalLoading == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderMinimalPressed() throws {
-        #expect(inheritedTheme.button.buttonColorBorderMinimalPressed != abstractTheme.button.buttonColorBorderMinimalPressed)
-        #expect(inheritedTheme.button.buttonColorBorderMinimalPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBorderMinimalPressedMono() throws {
@@ -539,11 +514,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonSizeLoader == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceColumnGapArrow() throws {
-        #expect(inheritedTheme.button.buttonSpaceColumnGapArrow != abstractTheme.button.buttonSpaceColumnGapArrow)
-        #expect(inheritedTheme.button.buttonSpaceColumnGapArrow == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceColumnGapIcon() throws {
         #expect(inheritedTheme.button.buttonSpaceColumnGapIcon != abstractTheme.button.buttonSpaceColumnGapIcon)
         #expect(inheritedTheme.button.buttonSpaceColumnGapIcon == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
@@ -559,14 +529,14 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonSpacePaddingBlock == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineArrowEnd() throws {
-        #expect(inheritedTheme.button.buttonSpacePaddingInlineArrowEnd != abstractTheme.button.buttonSpacePaddingInlineArrowEnd)
-        #expect(inheritedTheme.button.buttonSpacePaddingInlineArrowEnd == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronEnd() throws {
+        #expect(inheritedTheme.button.buttonSpacePaddingInlineChevronEnd != abstractTheme.button.buttonSpacePaddingInlineChevronEnd)
+        #expect(inheritedTheme.button.buttonSpacePaddingInlineChevronEnd == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineArrowStart() throws {
-        #expect(inheritedTheme.button.buttonSpacePaddingInlineArrowStart != abstractTheme.button.buttonSpacePaddingInlineArrowStart)
-        #expect(inheritedTheme.button.buttonSpacePaddingInlineArrowStart == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronStart() throws {
+        #expect(inheritedTheme.button.buttonSpacePaddingInlineChevronStart != abstractTheme.button.buttonSpacePaddingInlineChevronStart)
+        #expect(inheritedTheme.button.buttonSpacePaddingInlineChevronStart == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineEndIconStart() throws {

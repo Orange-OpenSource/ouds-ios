@@ -44,6 +44,18 @@ open class OUDSTheme: @unchecked Sendable {
     /// All color mode semantic tokens exposed in one object
     public let colorModes: AllColorModeSemanticTokensProvider
 
+    // swiftlint:disable implicitly_unwrapped_optional
+    /// All color charts semantic tokens exposed in one obejct
+    ///
+    /// If nil the theme does not provide color charts (like today `SoshTheme`).
+    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`
+    /// or by `OrangeChartColorChartSemanticTokensProvider` from `OrangeTheme`.
+    ///
+    /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
+    /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
+    public let colorCharts: AllColorChartSemanticTokensProvider!
+    // swiftlint:enable implicitly_unwrapped_optional
+
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokensProvider
 
@@ -83,29 +95,29 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
-    /// All components tokens related to chip components like `OUDSChip`
+    /// All components tokens related to chip components like `OUDSFilterChip` and `OUDSSuggestionChip`
     public let chip: AllChipComponentTokensProvider
 
-    /// All components tokens related to divider components like `OUDSDivider`
+    /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
-    /// All components tokens related to bullet list components like `OUDSInputText`
-    public let inputText: AllInputTextComponentTokensProvider
-
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
-    /// All components tokens related to list item components like `OUDSListItem`
-    public let listItem: AllListItemComponentTokensProvider
+    /// All components tokens related to pin code input components like `OUDSPinCodeInput`
+    public let pinCodeInput: AllPinCodeInputComponentTokensProvider
+
+    /// All components tokens related to quantity input components like `OUDSQuantityInput`
+    public let quantityInput: AllQuantityInputComponentTokensProvider
 
     /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
     public let radioButton: AllRadioButtonComponentTokensProvider
 
-    /// All components tokens related to select components like `OUDSSelect`
-    public let select: AllSelectComponentTokensProvider
+    /// All components tokens related to select input components like `OUDSSelectInput`
+    public let selectInput: AllSelectInputComponentTokensProvider
 
     /// All components tokens related to skeleto components like `OUDSSkeleton`
     public let skeleton: AllSkeletonComponentTokensProvider
@@ -116,15 +128,32 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
+    /// All components tokens related to tags components like `OUDSTagInput`
+    public let tagInput: AllTagInputComponentTokensProvider
+
+    /// All components tokens related to text area components like `OUDSTextArea`
+    public let textArea: AllTextAreaComponentTokensProvider
+
+    /// All components tokens related to bullet list components like `OUDSTextInput`
+    public let textInput: AllTextInputComponentTokensProvider
+
+    // MARK: - Other elements
+
+    /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
+    /// Supposed to have, for a given resurce, the same name accross themes.
+    public let resourcesBundle: Bundle
+
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Defines the theme to apply everywhere.
     ///
     /// - Parameters:
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
+    ///    - colorCharts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -139,18 +168,23 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
-    ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
-    ///    - listItem: All component tokens for list item
+    ///    - pinCodeInput: All component tokens for pin code input
+    ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
-    ///    - select: All component tokens for select
+    ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - tagInput: All component tokens for tag input
+    ///    - textArea: All component tokens for text area
+    ///    - textInput: All component tokens for text input
+    ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
+                colorCharts: AllColorChartSemanticTokensProvider? = nil,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -165,14 +199,18 @@ open class OUDSTheme: @unchecked Sendable {
                 chip: AllChipComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
-                inputText: AllInputTextComponentTokensProvider,
-                listItem: AllListItemComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
+                pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
-                select: AllSelectComponentTokensProvider,
+                selectInput: AllSelectInputComponentTokensProvider,
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
+                tagInput: AllTagInputComponentTokensProvider,
+                textArea: AllTextAreaComponentTokensProvider,
+                textInput: AllTextInputComponentTokensProvider,
+                resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil)
     {
 
@@ -180,6 +218,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.borders = borders
         self.colors = colors
         self.colorModes = colorModes
+        self.colorCharts = colorCharts
         self.elevations = elevations
         self.fonts = fonts
         self.grids = grids
@@ -196,18 +235,24 @@ open class OUDSTheme: @unchecked Sendable {
         self.chip = chip
         self.controlItem = controlItem
         self.divider = divider
-        self.inputText = inputText
         self.link = link
-        self.listItem = listItem
+        self.pinCodeInput = pinCodeInput
+        self.quantityInput = quantityInput
         self.radioButton = radioButton
-        self.select = select
+        self.selectInput = selectInput
         self.skeleton = skeleton
         self.switch = `switch`
         self.tag = tag
+        self.tagInput = tagInput
+        self.textArea = textArea
+        self.textInput = textInput
 
         // Load other configuration elements
+        self.resourcesBundle = resourcesBundle
         self.fontFamily = fontFamily
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
 }

@@ -31,6 +31,21 @@ let package = Package(
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
         .library(
+            name: "OUDSThemesOrange",
+            targets: ["OUDSThemesOrange"]),
+        .library(
+            name: "OUDSThemesOrangeBusinessTools",
+            targets: ["OUDSThemesOrangeBusinessTools"]),
+        .library(
+            name: "OUDSThemesOrangeInverse",
+            targets: ["OUDSThemesOrangeInverse"]),
+        .library(
+            name: "OUDSThemesSosh",
+            targets: ["OUDSThemesSosh"]),
+        .library(
+            name: "OUDSThemesWireframe",
+            targets: ["OUDSThemesWireframe"]),
+        .library(
             name: "OUDS",
             targets: ["OUDS"]),
         .library(
@@ -42,9 +57,6 @@ let package = Package(
         .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
-        .library(
-            name: "OUDSThemesOrange",
-            targets: ["OUDSThemesOrange"]),
         .library(
             name: "OUDSTokensSemantic",
             targets: ["OUDSTokensRaw"]),
@@ -63,11 +75,11 @@ let package = Package(
         // MARK: Dev dependencies
 
         // Apple Swift tool to build documentation
-        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.3"),
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.5"),
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.59.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.56.4"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.57.2"),
     ],
 
     // MARK: - Targets
@@ -75,6 +87,49 @@ let package = Package(
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
+        .target(
+            name: "OUDSThemesOrange",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/Themes/Orange/Sources",
+            resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSThemesOrange-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Orange/Tests"),
+        .target(
+            name: "OUDSThemesOrangeBusinessTools",
+            dependencies: ["OUDS", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/OrangeBusinessTools/Sources"),
+        .testTarget(
+            name: "OUDSThemesOrangeBusinessTools-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesOrangeBusinessTools"],
+            path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
+        .target(
+            name: "OUDSThemesOrangeInverse",
+            dependencies: ["OUDS", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/OrangeInverse/Sources"),
+        .testTarget(
+            name: "OUDSThemesOrangeInverse-Tests",
+            dependencies: ["OUDS", "OUDSThemesOrangeInverse"],
+            path: "OUDS/Core/Themes/OrangeInverse/Tests"),
+        .target(
+            name: "OUDSThemesSosh",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/Themes/Sosh/Sources",
+            resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSThemesSosh-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesSosh"],
+            path: "OUDS/Core/Themes/Sosh/Tests"),
+        .target(
+            name: "OUDSThemesWireframe",
+            dependencies: ["OUDS", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Wireframe/Sources",
+            resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSThemesWirefame-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesWireframe"],
+            path: "OUDS/Core/Themes/Wireframe/Tests"),
         .target(
             name: "OUDS",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
@@ -96,14 +151,6 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
-        .target(
-            name: "OUDSThemesOrange",
-            dependencies: ["OUDS"],
-            path: "OUDS/Core/Themes/Orange/Sources"),
-        .testTarget(
-            name: "OUDSThemesOrange-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Orange/Tests"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],

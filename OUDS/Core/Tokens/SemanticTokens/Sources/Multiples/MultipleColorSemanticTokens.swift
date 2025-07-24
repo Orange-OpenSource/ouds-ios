@@ -102,6 +102,13 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     public func color(for colorScheme: ColorScheme) -> Color {
         (colorScheme == .light ? light : dark).color
     }
+
+    /// Because some color semantic tokens can be forbidden values,
+    /// this helpers returns a flag saying if its the case or not
+    /// - Returns: True if contains at least one forbidden color value, false otherwise
+    public func hasForbiddenColorValue() -> Bool {
+        light.isForbiddenValueColor() || dark.isForbiddenValueColor()
+    }
 }
 
 // MARK: - Color WCAG 2.1

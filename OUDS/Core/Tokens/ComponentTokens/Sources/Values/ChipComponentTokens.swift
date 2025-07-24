@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for chips components like `OUDSChip`
+/// Declares all component tokens for chips components like `OUDSFilterChip` and `OUDSSuggestionChip`
 /// Use for tokens providers like `OrangeThemeChipComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
@@ -80,10 +80,9 @@ public protocol ChipComponentTokens {
     var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIcon: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { get }
     var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { get }
     var chipSpaceColumnGapIcon: SpaceSemanticToken { get }
-    var chipSpaceColumnGapBadgeArrow: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

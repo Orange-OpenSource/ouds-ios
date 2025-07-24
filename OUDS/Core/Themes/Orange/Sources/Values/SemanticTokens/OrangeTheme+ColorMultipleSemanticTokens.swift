@@ -89,6 +89,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }
 
+    @objc open var colorBorderBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandSecondaryLight, dark: colorBorderBrandSecondaryDark) }
+
+    @objc open var colorBorderBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandTertiaryLight, dark: colorBorderBrandTertiaryDark) }
+
     @objc open var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderDefaultLight, dark: colorBorderDefaultDark) }
 
     @objc open var colorBorderEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderEmphasizedLight, dark: colorBorderEmphasizedDark) }
@@ -101,9 +105,17 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandPrimaryLight, dark: colorBorderOnBrandPrimaryDark) }
 
+    @objc open var colorBorderOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandSecondaryLight, dark: colorBorderOnBrandSecondaryDark) }
+
+    @objc open var colorBorderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandTertiaryLight, dark: colorBorderOnBrandTertiaryDark) }
+
     // MARK: - Color - Content
 
     @objc open var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryLight, dark: colorContentBrandPrimaryDark) }
+
+    @objc open var colorContentBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandSecondaryLight, dark: colorContentBrandSecondaryDark) }
+
+    @objc open var colorContentBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandTertiaryLight, dark: colorContentBrandTertiaryDark) }
 
     @objc open var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentDefaultLight, dark: colorContentDefaultDark) }
 
@@ -128,6 +140,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionPressedLight, dark: colorContentOnActionPressedDark) }
 
     @objc open var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandPrimaryLight, dark: colorContentOnBrandPrimaryDark) }
+
+    @objc open var colorContentOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandSecondaryLight, dark: colorContentOnBrandSecondaryDark) }
+
+    @objc open var colorContentOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandTertiaryLight, dark: colorContentOnBrandTertiaryDark) }
 
     @objc open var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnOverlayEmphasizedLight, dark: colorContentOnOverlayEmphasizedDark) }
 
@@ -177,6 +193,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandPrimaryLight, dark: colorSurfaceBrandPrimaryDark) }
 
+    @objc open var colorSurfaceBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandSecondaryLight, dark: colorSurfaceBrandSecondaryDark) }
+
+    @objc open var colorSurfaceBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandTertiaryLight, dark: colorSurfaceBrandTertiaryDark) }
+
     @objc open var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusAccentEmphasizedLight, dark: colorSurfaceStatusAccentEmphasizedDark) }
 
     @objc open var colorSurfaceStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusAccentMutedLight, dark: colorSurfaceStatusAccentMutedDark) }
@@ -200,46 +220,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningEmphasizedLight, dark: colorSurfaceStatusWarningEmphasizedDark) }
 
     @objc open var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningMutedLight, dark: colorSurfaceStatusWarningMutedDark) }
-
-    // MARK: - Color - Chart
-
-    @objc open var colorChartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderLight, dark: colorChartBorderDark) }
-
-    @objc open var colorChartBorderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderContrastLight, dark: colorChartBorderContrastDark) }
-
-    @objc open var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier1Light, dark: colorChartCategoricalTier1Dark) }
-
-    @objc open var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier2Light, dark: colorChartCategoricalTier2Dark) }
-
-    @objc open var colorChartCategoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier3Light, dark: colorChartCategoricalTier3Dark) }
-
-    @objc open var colorChartCategoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier4Light, dark: colorChartCategoricalTier4Dark) }
-
-    @objc open var colorChartCategoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier5Light, dark: colorChartCategoricalTier5Dark) }
-
-    @objc open var colorChartCategoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier6Light, dark: colorChartCategoricalTier6Dark) }
-
-    @objc open var colorChartCategoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier7Light, dark: colorChartCategoricalTier7Dark) }
-
-    @objc open var colorChartCategoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier8Light, dark: colorChartCategoricalTier8Dark) }
-
-    @objc open var colorChartCategoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier9Light, dark: colorChartCategoricalTier9Dark) }
-
-    @objc open var colorChartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier10Light, dark: colorChartCategoricalTier10Dark) }
-
-    @objc open var colorChartFunctionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalInfoLight, dark: colorChartFunctionalInfoDark) }
-
-    @objc open var colorChartFunctionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalNegativeLight, dark: colorChartFunctionalNegativeDark) }
-
-    @objc open var colorChartFunctionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalPositiveLight, dark: colorChartFunctionalPositiveDark) }
-
-    @objc open var colorChartFunctionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartFunctionalWarningLight, dark: colorChartFunctionalWarningDark) }
-
-    @objc open var colorChartGridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartGridlinesLight, dark: colorChartGridlinesDark) }
-
-    @objc open var colorChartHighlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartHighlightLight, dark: colorChartHighlightDark) }
-
-    @objc open var colorChartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartNeutralLight, dark: colorChartNeutralDark) }
 }
 
 // swiftlint:enable line_length

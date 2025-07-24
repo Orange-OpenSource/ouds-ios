@@ -16,7 +16,7 @@ import SwiftUI
 /// The button will compute the `InteractionState` to send it to the provided content builder.
 /// This state is computed by the `InteractionButtonStyle`.
 ///
-/// Remark: If the isReadOnly flag is true the action on the button is dropped.
+/// Remark: If the *isReadOnly* flag is true the action on the button is dropped.
 struct InteractionButton<Content>: View where Content: View {
 
     // MARK: Stored properties
@@ -76,8 +76,7 @@ private struct InteractionButtonStyle<Content>: ButtonStyle where Content: View 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: isReadOnly)
-        content(interactionState)
+        content(InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: isReadOnly))
             .onHover { isHover in
                 self.isHover = isHover
             }

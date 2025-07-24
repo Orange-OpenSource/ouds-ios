@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for divider components like `OUDSDivider`
+/// Declares all component tokens for divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
 /// Use for tokens providers like `OrangeThemeDividerComponentTokensProvider`.
 ///
 /// - Since: 0.13.0

@@ -45,16 +45,16 @@ struct CheckboxIndicator: View {
     @ViewBuilder
     private func indicator() -> some View {
         if indicatorState == .selected {
-            tickImage(name: "ic_form_tick")
+            tickImage(name: "ic_checkbox_selected")
         } else if indicatorState == .indeterminate {
-            tickImage(name: "ic_form_dash")
+            tickImage(name: "ic_checkbox_undeterminate")
         } else { // .unselected
             Color.clear
         }
     }
 
     private func tickImage(name: String) -> some View {
-        Image(decorative: name, bundle: Bundle.OUDSComponents)
+        Image(decorative: name, bundle: theme.resourcesBundle)
             .resizable()
             .scaledToFit()
             .accessibilityHidden(true)

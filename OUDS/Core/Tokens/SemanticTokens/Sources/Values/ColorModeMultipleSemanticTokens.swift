@@ -39,35 +39,45 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - Multiple tokens
 
+    // MARK: On Background
+
+    var modeOnBgPrimary: MultipleColorModeSemanticTokens { get }
+    var modeOnBgSecondary: MultipleColorModeSemanticTokens { get }
+    var modeOnBgTertiary: MultipleColorModeSemanticTokens { get }
+    var modeOnBgEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: On Brand
+
     var modeOnBrandPrimary: MultipleColorModeSemanticTokens { get }
-
     var modeOnBrandSecondary: MultipleColorModeSemanticTokens { get }
-
     var modeOnBrandTertiary: MultipleColorModeSemanticTokens { get }
 
-    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens { get }
+    // MARK: - On Status
 
     var modeOnStatusNeutralMuted: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
-
+    var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
-
-    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
-
+    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - On Status
+
+    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - On Overlay
+
+    var modeOnOverlayDefault: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - On Overlay Modal
+
+    var modeOnOverlayModal: MultipleColorModeSemanticTokens { get }
 
     // MARK: - Additional rules
 

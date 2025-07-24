@@ -39,7 +39,7 @@ struct ButtonBorderModifier: ViewModifier {
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
                     width: defaultWidth,
-                    radius: theme.button.buttonBorderRadius,
+                    radius: theme.button.buttonBorderRadiusDefault,
                     color: defaultColor)
         case .strong:
             if onColoredSurface {
@@ -47,7 +47,7 @@ struct ButtonBorderModifier: ViewModifier {
                     .oudsBorder(
                         style: theme.borders.borderStyleDefault,
                         width: defaultWidth,
-                        radius: theme.button.buttonBorderRadius,
+                        radius: theme.button.buttonBorderRadiusDefault,
                         color: strongColor)
             } else {
                 content
@@ -56,8 +56,8 @@ struct ButtonBorderModifier: ViewModifier {
             content
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
-                    width: minimalWidth,
-                    radius: theme.button.buttonBorderRadius,
+                    width: defaultWidth,
+                    radius: theme.button.buttonBorderRadiusDefault,
                     color: minimalColor)
         case .negative:
             content
@@ -102,33 +102,18 @@ struct ButtonBorderModifier: ViewModifier {
 
     // MARK: Minimal hierarchy
 
-    private var minimalWidth: BorderWidthSemanticToken {
-        switch state {
-        case .enabled:
-            theme.button.buttonBorderWidthMinimal
-        case .hover:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .pressed:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .loading:
-            theme.button.buttonBorderWidthMinimalInteraction
-        case .disabled:
-            theme.button.buttonBorderWidthMinimalInteraction
-        }
-    }
-
     private var minimalColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderMinimalEnabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderDefaultEnabled
         case .hover:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderMinimalHover
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderDefaultHover
         case .pressed:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderMinimalPressed
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderDefaultPressed
         case .loading:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderMinimalLoading
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderDefaultLoading
         case .disabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderMinimalDisabled
+            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderDefaultDisabled
         }
     }
 

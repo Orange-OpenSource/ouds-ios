@@ -20,7 +20,7 @@ You should use one (or several) of the following imports for your needs, which a
 import OUDS // If you want to define your theme or use OUDSThemeableView
 import OUDSModules // To use modules
 import OUDSComponents // To use components
-import OUDSThemeOrange // To use the default theme
+import OUDSThemesOrange // To use the default theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import OUDSTokensRaw // If you need to override or use directly raw tokens
@@ -38,7 +38,7 @@ You will need to use for your root view the [`OUDSThemeableView`](https://ios.un
 
 ```swift
 import OUDS  // To get OUDSThemeableView
-import OUDSThemeOrange // To get OrangeTheme
+import OUDSThemesOrange // To get OrangeTheme
 import SwiftUI
 
 @main

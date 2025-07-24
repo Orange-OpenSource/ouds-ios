@@ -21,7 +21,7 @@
 /// This is a group of semantic tokens for **colors** but using ``MultipleColorSemanticTokens``.
 ///
 /// In fact the ``MultipleColorSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorSemanticTokens``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes). These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens`` which must be updated manually.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorSemanticTokens``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside  a `OUDSTheme`. These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens`` which must be updated manually.
 ///
 /// In few words:
 ///
@@ -45,6 +45,10 @@
 ///
 /// - Since: 0.8.0
 public protocol ColorMultipleSemanticTokens {
+
+    // NOTE: colorRepository* color semantic tokens are closed
+    // used indirectly and it seems to not be that much useful and relevant
+    // to wrap them in MultipleColorSemanticTokens.
 
     // MARK: - Color - Opacity
 
@@ -108,6 +112,10 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }
 
+    var colorBorderBrandSecondary: MultipleColorSemanticTokens { get }
+
+    var colorBorderBrandTertiary: MultipleColorSemanticTokens { get }
+
     var colorBorderDefault: MultipleColorSemanticTokens { get }
 
     var colorBorderEmphasized: MultipleColorSemanticTokens { get }
@@ -120,9 +128,17 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
 
+    var colorBorderOnBrandSecondary: MultipleColorSemanticTokens { get }
+
+    var colorBorderOnBrandTertiary: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Content
 
     var colorContentBrandPrimary: MultipleColorSemanticTokens { get }
+
+    var colorContentBrandSecondary: MultipleColorSemanticTokens { get }
+
+    var colorContentBrandTertiary: MultipleColorSemanticTokens { get }
 
     var colorContentDefault: MultipleColorSemanticTokens { get }
 
@@ -147,6 +163,10 @@ public protocol ColorMultipleSemanticTokens {
     var colorContentOnActionPressed: MultipleColorSemanticTokens { get }
 
     var colorContentOnBrandPrimary: MultipleColorSemanticTokens { get }
+
+    var colorContentOnBrandSecondary: MultipleColorSemanticTokens { get }
+
+    var colorContentOnBrandTertiary: MultipleColorSemanticTokens { get }
 
     var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { get }
 
@@ -196,6 +216,10 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { get }
 
+    var colorSurfaceBrandSecondary: MultipleColorSemanticTokens { get }
+
+    var colorSurfaceBrandTertiary: MultipleColorSemanticTokens { get }
+
     var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusAccentMuted: MultipleColorSemanticTokens { get }
@@ -219,46 +243,6 @@ public protocol ColorMultipleSemanticTokens {
     var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { get }
-
-    // MARK: - Color - Chart
-
-    var colorChartBorder: MultipleColorSemanticTokens { get }
-
-    var colorChartBorderContrast: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier2: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier3: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier4: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier5: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier6: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier7: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier8: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier9: MultipleColorSemanticTokens { get }
-
-    var colorChartCategoricalTier10: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalInfo: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalNegative: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalPositive: MultipleColorSemanticTokens { get }
-
-    var colorChartFunctionalWarning: MultipleColorSemanticTokens { get }
-
-    var colorChartGridlines: MultipleColorSemanticTokens { get }
-
-    var colorChartHighlight: MultipleColorSemanticTokens { get }
-
-    var colorChartNeutral: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

@@ -50,9 +50,9 @@ public protocol LinkComponentTokens {
     var linkSpacePaddingInline: SpaceSemanticToken { get }
     var linkSpacePaddingBlock: SpaceSemanticToken { get }
     var linkSpaceColumnGapIconSmall: SpaceSemanticToken { get }
-    var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { get }
+    var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { get }
     var linkSpaceColumnGapIconDefault: SpaceSemanticToken { get }
-    var linkSpaceColumnGapArrowDefault: SpaceSemanticToken { get }
+    var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

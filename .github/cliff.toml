@@ -19,8 +19,13 @@
 header = """
 # What's new\n
 ```
-🧱 Core version: 
-🧱 Orange theme version: 
+🧬 Core OUDSversion: 
+🧬 Core Orange version: 
+🧬 Core Sosh version: 
+🧬 Orange brand version: 
+🧬 Orange Business Tools brand version: 
+🧬 Orange Inverse brand version: 
+🧬 Sosh brand version: 
 ```
 """
 # template for the changelog body

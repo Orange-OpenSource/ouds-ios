@@ -33,7 +33,7 @@ struct SwitchIndicator: View {
             .padding(.horizontal, spacePadding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
     }
 
@@ -81,14 +81,16 @@ private struct Cursor: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
+            Image(decorative: "ic_switch_selected", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
                 .foregroundStyle(tickColor)
                 .opacity(theme.switch.switchOpacityCheck)
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
         .oudsBackground(theme.switch.switchColorCursor)
-        .clipShape(Capsule())
+        .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusCursor))
         .oudsShadow(theme.elevations.elevationRaised)
         .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
     }

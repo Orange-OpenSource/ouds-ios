@@ -11,20 +11,30 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
 import OUDS
 import OUDSTokensSemantic
 
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
-/// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
+/// The Orange theme is the bsic, default, theme for any Orange products.
+/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
+///
+/// # Usages
+///
+/// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions.
+/// The system font families are used; no *Helevetica* font fmaily is embeded nor provider by OUDS.
+/// This theme also provides colros charts charts.
+///
+/// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
 ///     import OUDS                 // To get OUDSThemeableView
-///     import OUDSThemeOrange      // To get OrangeTheme
+///     import OUDSThemesOrange    // To get OrangeTheme
 ///     import SwiftUI
 ///
 ///     @main
@@ -61,7 +71,8 @@ import OUDSTokensSemantic
 ///    let badge = OrangeThemeBadgeComponentTokensProvider()
 ///
 ///    // Define in the end your theme by overriding some providers.
-///    // YOu can override all providers, or only some, or just keep the theme as is.
+///    // You can override all providers, or only some, or just keep the theme as is.
+///    // However you should uses thhese providers in a dedicated Orange theme subclass for clarity reasons.
 ///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button, badge: badge)
 ///
 /// ```
@@ -86,6 +97,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
+    ///    - colorCharts: All semantic tokens of color charts
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -100,18 +112,23 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
-    ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
-    ///    - listItem: All component tokens for list item
+    ///    - pinCodeInput: All component tokens for pin code input
+    ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
-    ///    - select: All component tokens for select
+    ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
+    ///    - tagInput: All component tokens for tag input
+    ///    - textInput: All component tokens for text input
+    ///    - textArea: All component tokens for text area
+    ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
+                         colorCharts: AllColorChartSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -126,20 +143,25 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          chip: AllChipComponentTokensProvider? = nil,
                          controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
-                         inputText: AllInputTextComponentTokensProvider? = nil,
-                         listItem: AllListItemComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
+                         pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
+                         quantityInput: AllQuantityInputComponentTokensProvider? = nil,
                          radioButton: AllRadioButtonComponentTokensProvider? = nil,
-                         select: AllSelectComponentTokensProvider? = nil,
+                         selectInput: AllSelectInputComponentTokensProvider? = nil,
                          skeleton: AllSkeletonComponentTokensProvider? = nil,
                          switch: AllSwitchComponentTokensProvider? = nil,
                          tag: AllTagComponentTokensProvider? = nil,
+                         tagInput: AllTagInputComponentTokensProvider? = nil,
+                         textArea: AllTextAreaComponentTokensProvider? = nil,
+                         textInput: AllTextInputComponentTokensProvider? = nil,
+                         resourcesBundle: Bundle = Bundle.OrangeTheme,
                          fontFamily: FontFamilySemanticToken? = nil)
     {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
+        let colorCharts = (colorCharts ?? OrangeThemeColorChartSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -148,25 +170,29 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions))
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
-        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions))
+        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
-        let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
-        let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(dimensions: dimensions))
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
         let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
+        let tagInput = (tagInput ?? OrangeThemeTagInputComponentTokensProvider(borders: borders, colors: colors))
+        let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
+        let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
 
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   colorCharts: colorCharts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -181,18 +207,30 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   inputText: inputText,
-                   listItem: listItem,
                    link: link,
+                   pinCodeInput: pinCodeInput,
+                   quantityInput: quantityInput,
                    radioButton: radioButton,
-                   select: select,
+                   selectInput: selectInput,
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
+                   tagInput: tagInput,
+                   textArea: textArea,
+                   textInput: textInput,
+                   resourcesBundle: Bundle.OrangeTheme,
                    fontFamily: fontFamily)
     }
 
     deinit {}
+}
+
+// MARK: - Extension of Bundle
+
+extension Bundle {
+
+    /// The Orange theme bundle, useful to find resources
+    public static let OrangeTheme = Bundle.module
 }
 
 // swiftlint:enable function_body_length

@@ -36,12 +36,11 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Space
 
-    var buttonSpaceColumnGapArrow: SpaceSemanticToken { get }
     var buttonSpaceColumnGapIcon: SpaceSemanticToken { get }
     var buttonSpaceInsetIconOnly: SpaceSemanticToken { get }
     var buttonSpacePaddingBlock: SpaceSemanticToken { get }
-    var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
-    var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { get }
@@ -49,12 +48,11 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Border
 
-    var buttonBorderRadius: BorderRadiusSemanticToken { get }
+    var buttonBorderRadiusDefault: BorderRadiusSemanticToken { get }
+    var buttonBorderRadiusRounded: BorderRadiusSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
-    var buttonBorderWidthMinimal: BorderWidthSemanticToken { get }
-    var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { get }
 
     // MARK: - Color - Background
 
@@ -71,6 +69,11 @@ public protocol ButtonComponentTokens {
     var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { get }
 
+    // MARK: - Color - Brand
+
+    var buttonColorBgBrandEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentBrandEnabled: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Border
 
     var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
@@ -79,12 +82,6 @@ public protocol ButtonComponentTokens {
     var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
 

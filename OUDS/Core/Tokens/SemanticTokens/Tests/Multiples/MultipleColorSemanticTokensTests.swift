@@ -66,6 +66,29 @@ struct MultipleColorSemanticTokensTests {
         #expect(!first.isEqual(sixth))
     }
 
+    /// Tests controls on `MultipleColorSemanticTokens` to ensure that if it contains at least one forbidden color value we know it
+    @Test func hasForbiddenColorValues() {
+        // Given
+        let forbiddenColorValue = "ouds-forbidden-color-value"
+        let notForbiddenColorValue = ColorRawTokens.colorFunctionalMalachite300
+
+        // When, then
+        var multipleColorSemanticTokens = MultipleColorSemanticTokens(light: notForbiddenColorValue, dark: notForbiddenColorValue)
+        #expect(multipleColorSemanticTokens.hasForbiddenColorValue() == false)
+
+        // When, then
+        multipleColorSemanticTokens = MultipleColorSemanticTokens(light: notForbiddenColorValue, dark: forbiddenColorValue)
+        #expect(multipleColorSemanticTokens.hasForbiddenColorValue() == true)
+
+        // When, then
+        multipleColorSemanticTokens = MultipleColorSemanticTokens(light: forbiddenColorValue, dark: notForbiddenColorValue)
+        #expect(multipleColorSemanticTokens.hasForbiddenColorValue() == true)
+
+        // When, then
+        multipleColorSemanticTokens = MultipleColorSemanticTokens(light: forbiddenColorValue, dark: forbiddenColorValue)
+        #expect(multipleColorSemanticTokens.hasForbiddenColorValue() == true)
+    }
+
     // MARK: - Extension with OUDSWCAG21Ratio
 
     @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utlity must return suitable values", .enabled(if: Self.doesRunOniOS))

@@ -20,8 +20,11 @@
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all ``ColorSemanticToken``  a theme must have.
-/// These tokens are then gathered inside ``ColorSemanticToken`` defined in ``ColorMultipleSemanticTokens``.
-/// Any color semantic token must be declared there (except ``ColorSemanticToken``)
+/// These tokens are then gathered inside ``MultipleColorSemanticTokens`` objects defined in ``ColorMultipleSemanticTokens``.
+/// If it possible a theme won't have such semantic tokens of colors defined as not specified nor used in Figma.
+/// Thus the value for these tokens will be "ouds-forbidden-color-value" as returned by the tokenator.
+/// Thus if the token is still used, even if explained in the documentation it should not,
+/// this special value won't be successfully parsed as color and the app will crash like expected.
 ///
 /// - Since: 0.8.0
 public protocol ColorSemanticTokens {
@@ -324,65 +327,6 @@ public protocol ColorSemanticTokens {
     var colorDecorativeNeutralMutedLowest: ColorSemanticToken { get }
     var colorDecorativeNeutralMutedMedium: ColorSemanticToken { get }
 
-    // MARK: - Color - Chart
-
-    var colorChartBorderLight: ColorSemanticToken { get }
-    var colorChartBorderDark: ColorSemanticToken { get }
-
-    var colorChartBorderContrastLight: ColorSemanticToken { get }
-    var colorChartBorderContrastDark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier1Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier1Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier2Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier2Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier3Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier3Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier4Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier4Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier5Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier5Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier6Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier6Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier7Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier7Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier8Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier8Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier9Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier9Dark: ColorSemanticToken { get }
-
-    var colorChartCategoricalTier10Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier10Dark: ColorSemanticToken { get }
-
-    var colorChartFunctionalInfoLight: ColorSemanticToken { get }
-    var colorChartFunctionalInfoDark: ColorSemanticToken { get }
-
-    var colorChartFunctionalNegativeLight: ColorSemanticToken { get }
-    var colorChartFunctionalNegativeDark: ColorSemanticToken { get }
-
-    var colorChartFunctionalPositiveLight: ColorSemanticToken { get }
-    var colorChartFunctionalPositiveDark: ColorSemanticToken { get }
-
-    var colorChartFunctionalWarningLight: ColorSemanticToken { get }
-    var colorChartFunctionalWarningDark: ColorSemanticToken { get }
-
-    var colorChartGridlinesLight: ColorSemanticToken { get }
-    var colorChartGridlinesDark: ColorSemanticToken { get }
-
-    var colorChartHighlightLight: ColorSemanticToken { get }
-    var colorChartHighlightDark: ColorSemanticToken { get }
-
-    var colorChartNeutralLight: ColorSemanticToken { get }
-    var colorChartNeutralDark: ColorSemanticToken { get }
-
     // MARK: - Color - Repository
 
     var colorRepositoryAccentDefault: ColorSemanticToken { get }
@@ -446,8 +390,13 @@ public protocol ColorSemanticTokens {
     var colorRepositoryPositiveHighest: ColorSemanticToken { get }
     var colorRepositoryPositiveLow: ColorSemanticToken { get }
     var colorRepositoryPositiveLowest: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHighest: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHigher: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHigh: ColorSemanticToken { get }
     var colorRepositoryPrimaryDefault: ColorSemanticToken { get }
     var colorRepositoryPrimaryLow: ColorSemanticToken { get }
+    var colorRepositoryPrimaryLower: ColorSemanticToken { get }
+    var colorRepositoryPrimaryLowest: ColorSemanticToken { get }
     var colorRepositoryWarningDefault: ColorSemanticToken { get }
     var colorRepositoryWarningHighest: ColorSemanticToken { get }
     var colorRepositoryWarningLow: ColorSemanticToken { get }

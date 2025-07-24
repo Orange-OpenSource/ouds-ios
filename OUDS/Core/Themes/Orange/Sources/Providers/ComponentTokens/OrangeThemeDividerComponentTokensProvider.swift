@@ -16,7 +16,7 @@ import OUDSFoundations
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of divider** for *divider* objects like `OUDSDivider`.
+/// A class which wraps all **component  tokens of divider** for *divider* objects like `OUDSHorizontalDivider` and `OUDSVerticalDivider`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllDividerComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -83,7 +83,7 @@ open class OrangeThemeDividerComponentTokensProvider: AllDividerComponentTokensP
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSChip`
+    /// Defines a provider of component tokens dedicated to `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     /// - Parameter borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     public init(borders: AllBorderSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeDividerComponentTokensProvider")

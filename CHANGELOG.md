@@ -4,10 +4,65 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.16.0...0.17.0) - 2025-07-24
+
+### Added
+
+- Wireframe theme (Orange-OpenSource/ouds-ios#669)
+- Text input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Text area component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Quantity input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Tag input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Pin code input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Color charts for Orange Business Tools theme
+- Orange Inverse theme (Orange-OpenSource/ouds-ios#828)
+- Orange Business Tools theme (Orange-OpenSource/ouds-ios#821)
+- Chip components (Orange-OpenSource/ouds-ios#407)
+- Sosh theme (Orange-OpenSource/ouds-ios#665)
+- Badge components (Orange-OpenSource/ouds-ios#514)
+
+### Changed
+
+- Color semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- Border semantic tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- Text input component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- Button component tokens (tokens library v1.4.0) (Orange-OpenSource/ouds-ios#883)
+- Control item component (Orange-OpenSource/ouds-ios#875)
+- Opacity semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Color repository semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Color mode semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Space semantic tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Tag component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Link component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Chip component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Button component (Orange-OpenSource/ouds-ios#875)
+- Button component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Bullet list component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Split color charts semantic tokens to dedicated provider (Orange-OpenSource/ouds-ios#856)
+- Swift package `swift-docc-plugin` from v1.4.3 to v1.4.5
+- Gem `fastlane` gem from v2.227.2 to v2.228.0
+- Swift package `SwifFormat` from v0.56.4 to v0.57.2
+- Color mode semantic tokens (tokens library v1.1.0)
+- Color multiple semantic tokens (tokens library v1.1.0)
+
+### Removed
+
+- List item component tokens
+- Input text component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
+- Orange theme font family raw tokens
+
+### Fixed
+
+- Update `controlItem` component to use `controlItemBorderRadius*` tokens (Orange-OpenSource/ouds-ios#777)
+- Update `switch` component to use `switchBorderRadius*` tokens (Orange-OpenSource/ouds-ios#780)
+
 ## [0.16.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...0.16.0) - 2025-07-07
 
 ### Added
 
+- Sosh theme (Orange-OpenSource/ouds-ios#665)
 - Versions of components in package
 - New content-on color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
 - New repository color semantic tokens (tokens library v1.1.0) (Orange-OpenSource/ouds-ios#664)
