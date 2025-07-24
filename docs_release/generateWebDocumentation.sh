@@ -197,6 +197,10 @@ swift package \
     --target OUDSModules \
     --target OUDSComponents \
     --target OUDSThemesOrange \
+    --target OUDSThemesOrangeInverse \
+    --target OUDSThemesOrangeBusinessTools \
+    --target OUDSThemesSosh \
+    --target OUDSThemesWireframe \
     --target OUDSTokensComponent \
     --target OUDSTokensSemantic \
     --target OUDSTokensRaw \
