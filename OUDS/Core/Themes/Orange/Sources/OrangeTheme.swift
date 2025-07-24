@@ -112,7 +112,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
-    ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
@@ -122,6 +121,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
     ///    - tagInput: All component tokens for tag input
+    ///    - textInput: All component tokens for text input
+    ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     override public init(borders: AllBorderSemanticTokensProvider? = nil,

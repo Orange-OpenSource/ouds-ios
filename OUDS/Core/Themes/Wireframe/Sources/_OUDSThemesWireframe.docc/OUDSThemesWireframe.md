@@ -69,3 +69,6 @@ You cannot derivate the Wireframe theme.
 ### Group
 
 - ``WireframeTheme``
+- ``WireframeBrandColorRawTokens``
+- ``WireframeBrandFontRawTokens``
+

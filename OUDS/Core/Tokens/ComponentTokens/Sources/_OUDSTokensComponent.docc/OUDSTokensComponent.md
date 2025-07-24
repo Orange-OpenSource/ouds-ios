@@ -111,7 +111,6 @@ struct DesignToolbox: App {
 - ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
 - ``LinkComponentTokens``
-- ``ListItemComponentTokens``
 - ``PinCodeInputComponentTokens``
 - ``QuantityInputComponentTokens``
 - ``RadioButtonComponentTokens``

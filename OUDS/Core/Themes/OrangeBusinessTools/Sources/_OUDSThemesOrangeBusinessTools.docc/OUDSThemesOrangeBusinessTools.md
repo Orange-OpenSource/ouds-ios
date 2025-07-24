@@ -74,6 +74,4 @@ You cannot derivate the Sosh theme.
 
 ### Group
 
-- ``SoshTheme``
-- ``SoshBrandColorRawTokens``
-- ``SoshBrandFontRawTokens``
+- ``OrangeBusinessToolsTheme``
