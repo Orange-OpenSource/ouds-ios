@@ -47,7 +47,8 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Borders
 
-    var textInputBorderRadius: BorderRadiusSemanticToken { get }
+    var textInputBorderRadiusDefault: BorderRadiusSemanticToken { get }
+    var textInputBorderRadiusRounded: BorderRadiusSemanticToken { get }
     var textInputBorderWidthDefault: BorderWidthSemanticToken { get }
     var textInputBorderWidthFocus: BorderWidthSemanticToken { get }
 

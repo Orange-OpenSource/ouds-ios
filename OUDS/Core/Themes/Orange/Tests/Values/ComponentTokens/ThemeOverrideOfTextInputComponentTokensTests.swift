@@ -98,9 +98,14 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     // MARK: - Borders
 
-    @Test func inheritedThemeCanOverrideTextInputBorderRadius() throws {
-        #expect(inheritedTheme.textInput.textInputBorderRadius != abstractTheme.textInput.textInputBorderRadius)
-        #expect(inheritedTheme.textInput.textInputBorderRadius == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+    @Test func inheritedThemeCanOverrideTextInputBorderRadiusDefault() throws {
+        #expect(inheritedTheme.textInput.textInputBorderRadiusDefault != abstractTheme.textInput.textInputBorderRadiusDefault)
+        #expect(inheritedTheme.textInput.textInputBorderRadiusDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+    }
+
+    @Test func inheritedThemeCanOverrideTextInputBorderRadiusRounded() throws {
+        #expect(inheritedTheme.textInput.textInputBorderRadiusRounded != abstractTheme.textInput.textInputBorderRadiusRounded)
+        #expect(inheritedTheme.textInput.textInputBorderRadiusRounded == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
     }
 
     @Test func inheritedThemeCanOverrideTextInputBorderRadiusDefault() throws {

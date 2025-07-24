@@ -59,7 +59,8 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Borders
 
-    override public var textInputBorderRadius: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
+    override public var textInputBorderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
+    override public var textInputBorderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
     override public var textInputBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeTextInputBorderWidth }
     override public var textInputBorderWidthFocus: BorderWidthSemanticToken { Self.mockThemeTextInputBorderWidth }
 
