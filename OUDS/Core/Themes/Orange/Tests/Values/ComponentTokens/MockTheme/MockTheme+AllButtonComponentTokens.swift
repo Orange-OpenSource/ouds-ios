@@ -43,7 +43,8 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { Self.mockThemeButtonSize }
     override public var buttonSizeMinHeight: SizeSemanticToken { Self.mockThemeButtonSize }
     override public var buttonSizeMinWidth: SizeSemanticToken { Self.mockThemeButtonSize }
-    override public var buttonBorderRadius: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override public var buttonBorderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override public var buttonBorderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
@@ -97,6 +98,8 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorBgBrandEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorContentBrandEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
