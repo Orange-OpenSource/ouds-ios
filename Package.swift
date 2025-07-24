@@ -43,6 +43,9 @@ let package = Package(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
         .library(
+            name: "OUDSThemesWireframe",
+            targets: ["OUDSThemesWireframe"]),
+        .library(
             name: "OUDS",
             targets: ["OUDS"]),
         .library(
@@ -118,6 +121,15 @@ let package = Package(
             name: "OUDSThemesSosh-Tests",
             dependencies: ["TestsUtils", "OUDSThemesSosh"],
             path: "OUDS/Core/Themes/Sosh/Tests"),
+        .target(
+            name: "OUDSThemesWireframe",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/Themes/Wireframe/Sources",
+            resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSThemesWirefame-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesWireframe"],
+            path: "OUDS/Core/Themes/Wireframe/Tests"),
         .target(
             name: "OUDS",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],

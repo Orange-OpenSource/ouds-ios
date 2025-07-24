@@ -12,20 +12,20 @@
 //
 
 import OUDS
-import OUDSThemesOrangeBusinessTools
+import OUDSThemesWireframe
 import Testing
 
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
 
-/// Checks if the closed semantic tokens of dimensions, as defined in the OrangeBusinessTools theme, have expected values and relationships
+/// Checks if the closed semantic tokens of dimensions, as defined in the Wireframe theme, have expected values and relationships
 /// between them.
 struct DimensionSemanticTokensValuesTests {
 
     private var theme: OUDSTheme
 
     init() {
-        theme = OrangeBusinessToolsTheme()
+        theme = WireframeTheme()
     }
 
     @Test func dimensionsAreSmallerOneByOne() throws {
@@ -35,7 +35,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension10xs < theme.dimensions.dimension9xs)
         #expect(theme.dimensions.dimension9xs < theme.dimensions.dimension8xs)
         #expect(theme.dimensions.dimension8xs < theme.dimensions.dimension7xs)
-        #expect(theme.dimensions.dimension7xs <= theme.dimensions.dimension6xs) // Confirmed by Mdesign team, can be equal
+        #expect(theme.dimensions.dimension7xs < theme.dimensions.dimension6xs)
         #expect(theme.dimensions.dimension6xs < theme.dimensions.dimension5xs)
         #expect(theme.dimensions.dimension5xs < theme.dimensions.dimension4xs)
         #expect(theme.dimensions.dimension4xs < theme.dimensions.dimension3xs)
@@ -205,9 +205,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension8xs != theme.dimensions.dimension10xl)
         #expect(theme.dimensions.dimension8xs != theme.dimensions.dimension11xl)
 
-        // Confirmed by Mdesign team, can be equal
-        // #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension6xs)
-
+        #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension6xs)
         #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension5xs)
         #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension4xs)
         #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension3xs)

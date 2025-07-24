@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Wireframe theme (Orange-OpenSource/ouds-ios#669)
 - Text input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Text area component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Select input component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)

@@ -132,7 +132,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
     deinit {}
 
     /// Fonts are defined in Resources/Fonts in TTF files
-    func registerFonts() {
+    private func registerFonts() {
         if !SoshTheme.fontsAlreadyRegistered {
             let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
             fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
