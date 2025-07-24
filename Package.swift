@@ -109,7 +109,7 @@ let package = Package(
             dependencies: ["OUDS", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/OrangeInverse/Sources"),
         .testTarget(
-            name: "OUDSThemesOrangeInverse-tests",
+            name: "OUDSThemesOrangeInverse-Tests",
             dependencies: ["OUDS", "OUDSThemesOrangeInverse"],
             path: "OUDS/Core/Themes/OrangeInverse/Tests"),
         .target(
