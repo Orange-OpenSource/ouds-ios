@@ -48,8 +48,6 @@ The steps are quite simple:
     ```
     where P.Q.R is the previous version tag, X.Y.Z the version we are releasing, and YYYY-MM-dd the date.
 
-    - Ensure the marketing version defined in Xcode is updated with the new X.Y.Z
-
     - Update the SBOM
 
     ```shell
@@ -85,10 +83,21 @@ In the _merge commit_ message add the changelog, the authors and the details. Th
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/4b68bdb021c426d5e001b6c4fc3e200e2a19db28)):
 
 ```text
-Version 0.15.0 (#113) // [DO NOT ADD THIS COMMENT] <--- Commit title, #113 is PR nummber, GitHub suggests it
+Version 0.17.0 (#113) // [DO NOT ADD THIS COMMENT] <--- Commit title, #113 is PR nummber, GitHub suggests it
 
 // [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
-Release of version 0.2.0
+Release of version 0.17.0
+Embeds token libraries:
+- Core OUDS version: 1.3.0
+- Core Orange version: 1.1.0
+- Brand Orange version: 1.3.0
+- Core Sosh version: 1.1.0
+- Brand Sosh version: 1.3.0
+- Core Wireframe version: 1.0.0
+- Brand Wireframe version: 1.1.0
+- Brand Orange Business Tools version: 1.3.0
+- Brand Orange Inverse version: 1.3.0
+
 See below the full CHANGELOG details.
 
 // [DO NOT ADD THIS LINE] Keep also an empty line above
@@ -211,8 +220,6 @@ A bit lost? Quite simple: [look this release and do the same thing](https://gith
      ```
     \## [Unreleased]\(https://github.com/Orange-OpenSource/ouds-ios/compare/X.Y.Z...develop)
     ```
-    
-    - Update in Xcode the version of DesignToolbox target to U.V.W (the new version you suppose it will be) and increment build number
     - Commit your modifications
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 
