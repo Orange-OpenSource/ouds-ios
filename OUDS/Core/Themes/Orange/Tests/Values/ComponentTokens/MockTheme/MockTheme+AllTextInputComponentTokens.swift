@@ -40,10 +40,6 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Sizes
 
-    override public var textInputSizeLeadingIcon: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCreditCardHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCountrySelectorChevron: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeVerticalDividerHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeLabelMaxHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeMinHeight: SizeSemanticToken { Self.mockThemeTextInputSize }

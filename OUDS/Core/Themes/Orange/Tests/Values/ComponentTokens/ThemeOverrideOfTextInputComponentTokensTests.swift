@@ -29,26 +29,6 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideTextInputSizeLeadIcon() throws {
-        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon != abstractTheme.textInput.textInputSizeLeadingIcon)
-        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCrediCardHeight() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCreditCardHeight != abstractTheme.textInput.textInputSizeCreditCardHeight)
-        #expect(inheritedTheme.textInput.textInputSizeCreditCardHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCountrySelectorChevron() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorChevron != abstractTheme.textInput.textInputSizeCountrySelectorChevron)
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorChevron == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCountrySelectorFlagHeight() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight != abstractTheme.textInput.textInputSizeCountrySelectorFlagHeight)
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
     @Test func inheritedThemeCanOverrideTextInputSizeVerticalDividerHeight() throws {
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight != abstractTheme.textInput.textInputSizeVerticalDividerHeight)
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)

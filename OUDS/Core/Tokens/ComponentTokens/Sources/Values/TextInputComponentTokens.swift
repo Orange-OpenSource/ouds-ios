@@ -28,10 +28,6 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Sizes
 
-    var textInputSizeLeadingIcon: SizeSemanticToken { get }
-    var textInputSizeCreditCardHeight: SizeSemanticToken { get }
-    var textInputSizeCountrySelectorChevron: SizeSemanticToken { get }
-    var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { get }
     var textInputSizeVerticalDividerHeight: SizeSemanticToken { get }
     var textInputSizeLabelMaxHeight: SizeSemanticToken { get }
     var textInputSizeMinHeight: SizeSemanticToken { get }
