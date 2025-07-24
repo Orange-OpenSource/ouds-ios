@@ -67,16 +67,6 @@
 > This release should not be used as is.
 > This is only an incremental version of OUDS iOS library.
 
-## Theme versions
-
-> [!TIP]
-> This Swift package embeds specific versions of themes / tokens librairies.
-> You can find more details in the online documentation and also in the wiki.
-
-- Core version: 1.2.0
-- Orange theme version: 1.1.0
-- Sosh theme version: 1.1.0
-
 ## About OUDS
 
 OUDS means *Orange Unified Design System*.
@@ -106,3 +96,19 @@ Please read through our [contributing guidelines](https://github.com/Orange-Open
 
 Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
 For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
+
+## Tokens libraries versions
+
+> [!TIP]
+> This Swift package embeds specific versions of themes / tokens librairies.
+> You can find more details in the online documentation and also in the wiki.
+
+- Core OUDS version: 1.3.0
+- Core Orange version: 1.1.0
+- Brand Orange version: 1.3.0
+- Core Sosh version: 1.1.0
+- Brand Sosh version: 1.3.0
+- Core Wireframe version: 1.0.0
+- Brand Wireframe version: 1.1.0
+- Brand Orange Business Tools version: 1.3.0
+- Brand Orange Inverse version: 1.3.0
