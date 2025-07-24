@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 extension WireframeThemeFontSemanticTokensProvider: FontSemanticTokens {
     /// Has for value token {coreWframeFontFamilyDefault
-    @objc open var fontFamilySystem: FontFamilySemanticToken { {coreWframeFontFamilyDefault }
+    @objc open var fontFamilySystem: FontFamilySemanticToken { WireframeBrandFontRawTokens.fontFamilyDefault }
     /// Has for value token fontFamilySystem
     @objc open var fontFamilyDisplay: FontFamilySemanticToken { fontFamilySystem }
     /// Has for value token fontFamilySystem
