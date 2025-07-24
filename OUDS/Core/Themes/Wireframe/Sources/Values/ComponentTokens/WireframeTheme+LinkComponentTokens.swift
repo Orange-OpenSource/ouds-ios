@@ -21,43 +21,43 @@ import OUDSTokensSemantic
 
 extension WireframeThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.colorActionEnabled
-    @objc open var linkColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var linkColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token colors.colorActionHover
-    @objc open var linkColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc public final var linkColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value token colors.colorActionPressed
-    @objc open var linkColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc public final var linkColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionFocus
-    @objc open var linkColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc public final var linkColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value token colors.colorActionEnabled
-    @objc open var linkColorArrowEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var linkColorArrowEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token colors.colorActionHover
-    @objc open var linkColorArrowHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc public final var linkColorArrowHover: MultipleColorSemanticTokens { colors.colorActionHover }
     /// Has for value token colors.colorActionPressed
-    @objc open var linkColorArrowPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc public final var linkColorArrowPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionFocus
-    @objc open var linkColorArrowFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc public final var linkColorArrowFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value token spaces.spacePaddingInlineNone
-    @objc open var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
+    @objc public final var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
     /// Has for value token spaces.spacePaddingBlockMd
-    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
+    @objc public final var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMd }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc open var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapXs
-    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc public final var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceColumnGap2xs
-    @objc open var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token spaces.spaceColumnGap2xs
-    @objc open var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
+    @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xs }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc open var linkSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
-    @objc open var linkSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
+    @objc public final var linkSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token DimensionRawTokens.dimension550
-    @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
     /// Has for value token DimensionRawTokens.dimension550
-    @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
 }

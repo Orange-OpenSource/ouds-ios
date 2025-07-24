@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 
 extension WireframeThemeQuantityInputComponentTokensProvider: QuantityInputComponentTokens {
     /// Has for value token spaces.spaceColumnGapXs
-    @objc open var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc public final var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceColumnGapMd
-    @objc open var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.spaceColumnGapMd }
+    @objc public final var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.spaceColumnGapMd }
     /// Has for value token DimensionRawTokens.dimensionOutOfSystem25
-    @objc open var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem25 }
+    @objc public final var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem25 }
     /// Has for value token DimensionRawTokens.dimension2225
-    @objc open var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2225 }
+    @objc public final var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2225 }
     /// Has for value token DimensionRawTokens.dimension3000
-    @objc open var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+    @objc public final var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
 }
 
 // swiftlint:enable identifier_name

@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension WireframeThemeBulletListComponentTokensProvider: BulletListComponentTokens {
     /// Has for value token DimensionRawTokens.dimension50
-    @objc open var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens.dimension50 }
+    @objc public final var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens.dimension50 }
     /// Has for value token DimensionRawTokens.dimension450
-    @objc open var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens.dimension450 }
+    @objc public final var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens.dimension450 }
     /// Has for value token DimensionRawTokens.dimension850
-    @objc open var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens.dimension850 }
+    @objc public final var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens.dimension850 }
     /// Has for value token spaces.spacePaddingBlock2xs
-    @objc open var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
+    @objc public final var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
     /// Has for value token spaces.spacePaddingBlock2xs
-    @objc open var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
+    @objc public final var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlock2xs }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc open var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSm }
     /// Has for value token spaces.spaceColumnGapSm
-    @objc open var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSm }
+    @objc public final var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSm }
 }

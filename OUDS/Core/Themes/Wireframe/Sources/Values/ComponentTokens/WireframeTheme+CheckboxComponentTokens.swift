@@ -20,29 +20,29 @@ import OUDSTokensSemantic
 
 extension WireframeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     /// Has for value token borders.borderRadiusSmall
-    @objc open var checkboxBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusSmall }
+    @objc public final var checkboxBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusSmall }
     /// Has for value token borders.borderWidthNone
-    @objc open var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc open var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc open var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthNone
-    @objc open var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc public final var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.borderWidthNone }
     /// Has for value token borders.borderWidthMedium
-    @objc open var checkboxBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc public final var checkboxBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthMedium
-    @objc open var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc public final var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthMedium
-    @objc open var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc public final var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token borders.borderWidthMedium
-    @objc open var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc public final var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc open var checkboxSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var checkboxSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var checkboxSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    @objc public final var checkboxSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

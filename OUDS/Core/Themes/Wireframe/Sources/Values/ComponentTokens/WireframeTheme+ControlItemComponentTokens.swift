@@ -21,33 +21,33 @@ import OUDSTokensSemantic
 
 extension WireframeThemeControlItemComponentTokensProvider: ControlItemComponentTokens {
     /// Has for value token colors.colorActionSupportHover
-    @objc open var controlItemColorBgHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc public final var controlItemColorBgHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     /// Has for value token colors.colorActionSupportPressed
-    @objc open var controlItemColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc public final var controlItemColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     /// Has for value token colors.colorActionSupportLoading
-    @objc open var controlItemColorBgLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc public final var controlItemColorBgLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     /// Has for value token colors.colorActionSupportFocus
-    @objc open var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc public final var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value token colors.colorActionLoading
-    @objc open var controlItemColorContentLoader: MultipleColorSemanticTokens { colors.colorActionLoading }
+    @objc public final var controlItemColorContentLoader: MultipleColorSemanticTokens { colors.colorActionLoading }
     /// Has for value token borders.borderRadiusNone
-    @objc open var controlItemBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
+    @objc public final var controlItemBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
     /// Has for value token borders.borderRadiusDefault
-    @objc open var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    @objc public final var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token spaces.spaceInsetMd
-    @objc open var controlItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMd }
+    @objc public final var controlItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMd }
     /// Has for value token spaces.spaceColumnGapLg
-    @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLg }
+    @objc public final var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLg }
     /// Has for value token spaces.spaceRowGapNone
-    @objc open var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
+    @objc public final var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeMd
-    @objc open var controlItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
+    @objc public final var controlItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc open var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc public final var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     /// Has for value token DimensionRawTokens.dimension650
-    @objc open var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension650 }
+    @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension650 }
     /// Has for value token DimensionRawTokens.dimension1200
-    @objc open var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
+    @objc public final var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
     /// Has for value token DimensionRawTokens.dimension2000
-    @objc open var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2000 }
+    @objc public final var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2000 }
 }

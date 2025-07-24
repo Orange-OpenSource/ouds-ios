@@ -21,13 +21,13 @@ import OUDSTokensSemantic
 
 extension WireframeThemeTextAreaComponentTokensProvider: TextAreaComponentTokens {
     /// Has for value token spaces.spacePaddingBlockSm
-    @objc open var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockSm }
+    @objc public final var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockSm }
     /// Has for value token DimensionRawTokens.dimension900
-    @objc open var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens.dimension900 }
+    @objc public final var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens.dimension900 }
     /// Has for value token DimensionRawTokens.dimension2500
-    @objc open var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens.dimension2500 }
+    @objc public final var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens.dimension2500 }
     /// Has for value token DimensionRawTokens.dimension1100
-    @objc open var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1100 }
+    @objc public final var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1100 }
     /// Has for value token DimensionRawTokens.dimension6000
-    @objc open var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc public final var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension6000 }
 }
