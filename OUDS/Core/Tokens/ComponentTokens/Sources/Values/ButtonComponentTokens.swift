@@ -48,7 +48,8 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Border
 
-    var buttonBorderRadius: BorderRadiusSemanticToken { get }
+    var buttonBorderRadiusDefault: BorderRadiusSemanticToken { get }
+    var buttonBorderRadiusRounded: BorderRadiusSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
@@ -67,6 +68,11 @@ public protocol ButtonComponentTokens {
     var buttonColorBgMinimalHover: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { get }
+
+    // MARK: - Color - Brand
+
+    var buttonColorBgBrandEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentBrandEnabled: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Border
 

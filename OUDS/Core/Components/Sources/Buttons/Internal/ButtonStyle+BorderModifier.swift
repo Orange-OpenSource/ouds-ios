@@ -39,7 +39,7 @@ struct ButtonBorderModifier: ViewModifier {
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
                     width: defaultWidth,
-                    radius: theme.button.buttonBorderRadius,
+                    radius: theme.button.buttonBorderRadiusDefault,
                     color: defaultColor)
         case .strong:
             if onColoredSurface {
@@ -47,7 +47,7 @@ struct ButtonBorderModifier: ViewModifier {
                     .oudsBorder(
                         style: theme.borders.borderStyleDefault,
                         width: defaultWidth,
-                        radius: theme.button.buttonBorderRadius,
+                        radius: theme.button.buttonBorderRadiusDefault,
                         color: strongColor)
             } else {
                 content
@@ -57,7 +57,7 @@ struct ButtonBorderModifier: ViewModifier {
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
                     width: defaultWidth,
-                    radius: theme.button.buttonBorderRadius,
+                    radius: theme.button.buttonBorderRadiusDefault,
                     color: minimalColor)
         case .negative:
             content

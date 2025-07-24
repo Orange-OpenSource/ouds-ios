@@ -29,26 +29,6 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideTextInputSizeLeadIcon() throws {
-        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon != abstractTheme.textInput.textInputSizeLeadingIcon)
-        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCrediCardHeight() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCreditCardHeight != abstractTheme.textInput.textInputSizeCreditCardHeight)
-        #expect(inheritedTheme.textInput.textInputSizeCreditCardHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCountrySelectorChevron() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorChevron != abstractTheme.textInput.textInputSizeCountrySelectorChevron)
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorChevron == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
-    @Test func inheritedThemeCanOverrideTextInputSizeCountrySelectorFlagHeight() throws {
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight != abstractTheme.textInput.textInputSizeCountrySelectorFlagHeight)
-        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
-    }
-
     @Test func inheritedThemeCanOverrideTextInputSizeVerticalDividerHeight() throws {
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight != abstractTheme.textInput.textInputSizeVerticalDividerHeight)
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
@@ -98,9 +78,14 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     // MARK: - Borders
 
-    @Test func inheritedThemeCanOverrideTextInputBorderRadius() throws {
-        #expect(inheritedTheme.textInput.textInputBorderRadius != abstractTheme.textInput.textInputBorderRadius)
-        #expect(inheritedTheme.textInput.textInputBorderRadius == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+    @Test func inheritedThemeCanOverrideTextInputBorderRadiusDefault() throws {
+        #expect(inheritedTheme.textInput.textInputBorderRadiusDefault != abstractTheme.textInput.textInputBorderRadiusDefault)
+        #expect(inheritedTheme.textInput.textInputBorderRadiusDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
+    }
+
+    @Test func inheritedThemeCanOverrideTextInputBorderRadiusRounded() throws {
+        #expect(inheritedTheme.textInput.textInputBorderRadiusRounded != abstractTheme.textInput.textInputBorderRadiusRounded)
+        #expect(inheritedTheme.textInput.textInputBorderRadiusRounded == MockThemeTextInputComponentTokenProvider.mockThemeTextInputBorderRadius)
     }
 
     @Test func inheritedThemeCanOverrideTextInputBorderRadiusDefault() throws {

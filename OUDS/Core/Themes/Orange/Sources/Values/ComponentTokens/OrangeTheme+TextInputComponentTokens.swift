@@ -31,7 +31,9 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     /// Has for value token colors.colorBorderEmphasized
     @objc open var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
     /// Has for value token borders.borderRadiusDefault
-    @objc open var textInputBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    @objc open var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    /// Has for value token borders.borderRadiusSmall
+    @objc open var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.borderRadiusSmall }
     /// Has for value token borders.borderWidthDefault
     @objc open var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     /// Has for value token borders.borderWidthMedium
@@ -57,13 +59,9 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     /// Has for value token spaces.spaceRowGapNone
     @objc open var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc open var textInputSizeCreditCardHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc open var textInputSizeLeadingAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc open var textInputSizeCountrySelectorChevron: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc open var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc open var textInputSizeCountrySelectorAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token dimensions.dimension4xs
     @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions.dimension4xs }
     /// Has for value token DimensionRawTokens.dimension600

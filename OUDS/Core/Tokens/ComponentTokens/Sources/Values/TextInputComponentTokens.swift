@@ -28,10 +28,6 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Sizes
 
-    var textInputSizeLeadingIcon: SizeSemanticToken { get }
-    var textInputSizeCreditCardHeight: SizeSemanticToken { get }
-    var textInputSizeCountrySelectorChevron: SizeSemanticToken { get }
-    var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { get }
     var textInputSizeVerticalDividerHeight: SizeSemanticToken { get }
     var textInputSizeLabelMaxHeight: SizeSemanticToken { get }
     var textInputSizeMinHeight: SizeSemanticToken { get }
@@ -47,7 +43,8 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Borders
 
-    var textInputBorderRadius: BorderRadiusSemanticToken { get }
+    var textInputBorderRadiusDefault: BorderRadiusSemanticToken { get }
+    var textInputBorderRadiusRounded: BorderRadiusSemanticToken { get }
     var textInputBorderWidthDefault: BorderWidthSemanticToken { get }
     var textInputBorderWidthFocus: BorderWidthSemanticToken { get }
 

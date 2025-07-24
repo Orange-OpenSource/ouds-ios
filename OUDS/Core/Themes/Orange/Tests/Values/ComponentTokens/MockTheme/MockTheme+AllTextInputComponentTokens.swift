@@ -40,10 +40,6 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Sizes
 
-    override public var textInputSizeLeadingIcon: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCreditCardHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCountrySelectorChevron: SizeSemanticToken { Self.mockThemeTextInputSize }
-    override public var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeVerticalDividerHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeLabelMaxHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeMinHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
@@ -59,7 +55,8 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Borders
 
-    override public var textInputBorderRadius: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
+    override public var textInputBorderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
+    override public var textInputBorderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeTextInputBorderRadius }
     override public var textInputBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeTextInputBorderWidth }
     override public var textInputBorderWidthFocus: BorderWidthSemanticToken { Self.mockThemeTextInputBorderWidth }
 

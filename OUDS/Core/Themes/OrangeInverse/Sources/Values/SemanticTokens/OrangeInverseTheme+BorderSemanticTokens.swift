@@ -39,10 +39,10 @@ extension OrangeInverseThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     @objc public final var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
     /// Has for value token BorderRawTokens.borderRadius0
     @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
-    /// Has for value token BorderRawTokens.borderRadius75
-    @objc public final var borderRadiusSmall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius75 }
-    /// Has for value token BorderRawTokens.borderRadius150
-    @objc public final var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
+    /// Has for value token BorderRawTokens.borderRadius100
+    @objc public final var borderRadiusSmall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius100 }
+    /// Has for value token BorderRawTokens.borderRadius200
+    @objc public final var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius200 }
     /// Has for value token BorderRawTokens.borderRadius300
     @objc public final var borderRadiusLarge: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
     /// Has for value token BorderRawTokens.borderRadius9999

@@ -30,8 +30,10 @@ extension SoshThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
     /// Has for value token colors.colorBorderEmphasized
     @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
-    /// Has for value token borders.borderRadiusMedium
-    @objc public final var textInputBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+    /// Has for value token borders.borderRadiusDefault
+    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    /// Has for value token borders.borderRadiusDefault
+    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token borders.borderWidthThin
     @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThin }
     /// Has for value token borders.borderWidthMedium
@@ -57,13 +59,9 @@ extension SoshThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     /// Has for value token spaces.spaceRowGapNone
     @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc public final var textInputSizeCreditCardHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc public final var textInputSizeLeadingAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc public final var textInputSizeCountrySelectorChevron: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var textInputSizeCountrySelectorAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token dimensions.dimension4xs
     @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions.dimension4xs }
     /// Has for value token DimensionRawTokens.dimension600
