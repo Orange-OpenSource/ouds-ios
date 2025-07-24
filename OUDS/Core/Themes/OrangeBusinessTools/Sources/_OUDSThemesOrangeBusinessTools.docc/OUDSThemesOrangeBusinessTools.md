@@ -1,10 +1,10 @@
-# ``OUDSThemesOrangeBusinessToolsTheme``
+# ``OUDSThemesOrangeBusinessTools``
 
 The Sosh theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme for the Sosh brand.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.1.0
+🧬 Theme version: 1.3.0
 ```
 
 ## Overview

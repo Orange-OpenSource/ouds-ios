@@ -4,7 +4,7 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.2.0
+🧬 Core version: 1.3.0
 ```
 
 ## Overview

@@ -4,7 +4,7 @@ This Orange theme is a theme with an inversed color palette for some specific us
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.1.0
+🧬 Theme version: 1.3.0
 ```
 
 ## Overview
