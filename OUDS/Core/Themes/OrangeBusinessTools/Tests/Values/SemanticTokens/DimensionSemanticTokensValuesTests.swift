@@ -35,7 +35,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension10xs < theme.dimensions.dimension9xs)
         #expect(theme.dimensions.dimension9xs < theme.dimensions.dimension8xs)
         #expect(theme.dimensions.dimension8xs < theme.dimensions.dimension7xs)
-        #expect(theme.dimensions.dimension7xs <= theme.dimensions.dimension6xs) // See https://github.com/Orange-OpenSource/ouds-ios/issues/821#issuecomment-3097550479
+        #expect(theme.dimensions.dimension7xs <= theme.dimensions.dimension6xs) // Confirmed by Mdesign team, can be equal
         #expect(theme.dimensions.dimension6xs < theme.dimensions.dimension5xs)
         #expect(theme.dimensions.dimension5xs < theme.dimensions.dimension4xs)
         #expect(theme.dimensions.dimension4xs < theme.dimensions.dimension3xs)
@@ -205,7 +205,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension8xs != theme.dimensions.dimension10xl)
         #expect(theme.dimensions.dimension8xs != theme.dimensions.dimension11xl)
 
-        // See https://github.com/Orange-OpenSource/ouds-ios/issues/821#issuecomment-3097550479
+        // Confirmed by Mdesign team, can be equal
         // #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension6xs)
 
         #expect(theme.dimensions.dimension7xs != theme.dimensions.dimension5xs)

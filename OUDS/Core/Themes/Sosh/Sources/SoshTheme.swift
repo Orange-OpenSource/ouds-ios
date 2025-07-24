@@ -82,7 +82,6 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -111,7 +110,6 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
@@ -132,9 +130,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
     deinit {}
 
     /// Fonts are defined in Resources/Fonts in TTF files
-    func registerFonts() {
+    private func registerFonts() {
         if !SoshTheme.fontsAlreadyRegistered {
-            let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            let fonts = Bundle.SoshTheme.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
             fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
             SoshTheme.fontsAlreadyRegistered = true
         }

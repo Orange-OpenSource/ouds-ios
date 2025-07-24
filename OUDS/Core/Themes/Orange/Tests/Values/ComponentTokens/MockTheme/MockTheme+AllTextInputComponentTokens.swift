@@ -25,7 +25,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     static let mockThemeTextInputColor = MultipleColorSemanticTokens("#00FF00")
     static let mockThemeTextInputBorderWidth: BorderWidthSemanticToken = 666
-    static let mockThemeTextInputBorderRadius: BorderRadiusSemanticToken = 4
+    static let mockThemeTextInputBorderRadius: BorderRadiusSemanticToken = 999
     static let mockThemeTextInputSize: SizeSemanticToken = 123
     static let mockThemeTextInputSpace: SizeSemanticToken = 456
 

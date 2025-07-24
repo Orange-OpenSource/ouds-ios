@@ -43,7 +43,7 @@ struct OrangeBusinessToolsThemeBorderSemanticTokensTests {
 
     @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault)
-        #expect(theme.borders.borderRadiusDefault <= theme.borders.borderRadiusSmall) // See https://github.com/Orange-OpenSource/ouds-ios/issues/821#issuecomment-3097550479
+        #expect(theme.borders.borderRadiusDefault <= theme.borders.borderRadiusSmall) // Confirmed by Mdesign team, can be equal
         #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusMedium)
         #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
         #expect(theme.borders.borderRadiusLarge < theme.borders.borderRadiusPill)

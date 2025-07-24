@@ -61,6 +61,16 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.themeSoshBrandVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    // MARK: - Tests - Themes versions - Wireframe
+
+    @Test func themeWireframeCoreVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeWireframeCoreVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func themeWireframeBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeWireframeBrandVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Actions
 
     @Test func componentButtonVersionMustBeConform() throws {

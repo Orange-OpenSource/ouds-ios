@@ -62,6 +62,7 @@ struct TypographyModifier: ViewModifier {
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
+            // Can be a custom font laoded form side assets or another custom font avaialble in the OS
             let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont

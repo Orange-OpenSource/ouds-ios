@@ -85,7 +85,6 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
         let controlItem = OrangeInverseThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeInverseThemeDividerComponentTokensProvider(borders: borders)
         let link = OrangeInverseThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let listItem = OrangeInverseThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = OrangeInverseThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeInverseThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeInverseThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -115,7 +114,6 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

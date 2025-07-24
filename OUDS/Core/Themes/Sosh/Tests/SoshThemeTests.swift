@@ -106,10 +106,6 @@ struct SoshThemeTests {
         #expect(theme.link is SoshThemeLinkComponentTokensProvider)
     }
 
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is SoshThemeListItemComponentTokensProvider)
-    }
-
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is SoshThemePinCodeInputComponentTokensProvider)
     }

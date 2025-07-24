@@ -31,7 +31,7 @@ struct OrangeInverseThemeBorderSemanticTokensTests {
 
     @Test func borderWidthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.borderWidthNone < theme.borders.borderWidthDefault)
-        #expect(theme.borders.borderWidthThin <= theme.borders.borderWidthDefault) // See https://github.com/Orange-OpenSource/ouds-ios/issues/828#issuecomment-3097578222
+        #expect(theme.borders.borderWidthThin <= theme.borders.borderWidthDefault) // Confirmed by Mdesign team, can be equal
         #expect(theme.borders.borderWidthThin < theme.borders.borderWidthMedium)
         #expect(theme.borders.borderWidthMedium < theme.borders.borderWidthThick)
         #expect(theme.borders.borderWidthThick < theme.borders.borderWidthThicker)
@@ -42,7 +42,7 @@ struct OrangeInverseThemeBorderSemanticTokensTests {
     }
 
     @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault) // See https://github.com/Orange-OpenSource/ouds-ios/issues/828#issuecomment-3097578222
+        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault) // Confirmed by Mdesign team, can be equal
         #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusSmall)
         #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusMedium)
         #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
