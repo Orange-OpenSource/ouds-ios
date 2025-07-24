@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- List item component tokens
 - Input text component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Select component tokens (tokens library v1.3.0) (Orange-OpenSource/ouds-ios#875)
 - Orange theme font family raw tokens

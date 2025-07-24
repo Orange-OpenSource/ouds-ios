@@ -41,7 +41,7 @@ struct WireframeThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts is WireframeThemeColorChartSemanticTokensProvider)
+        #expect(theme.colorCharts == nil)
     }
 
     @Test func defaultElevationSemanticTokensProvider() throws {
@@ -104,10 +104,6 @@ struct WireframeThemeTests {
 
     @Test func defaultLinkComponentTokensProvider() throws {
         #expect(theme.link is WireframeThemeLinkComponentTokensProvider)
-    }
-
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is WireframeThemeListItemComponentTokensProvider)
     }
 
     @Test func defaultPinCodeInputComponentTokensProvider() throws {

@@ -89,7 +89,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let controlItem = OrangeBusinessToolsThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let listItem = OrangeBusinessToolsThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+
         let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeBusinessToolsThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeBusinessToolsThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -119,7 +119,6 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

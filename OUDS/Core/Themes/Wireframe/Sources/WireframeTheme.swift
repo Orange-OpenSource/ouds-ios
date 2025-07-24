@@ -78,7 +78,6 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = WireframeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -107,7 +106,6 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

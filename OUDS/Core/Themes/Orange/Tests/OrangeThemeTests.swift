@@ -106,10 +106,6 @@ struct OrangeThemeTests {
         #expect(theme.link is OrangeThemeLinkComponentTokensProvider)
     }
 
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is OrangeThemeListItemComponentTokensProvider)
-    }
-
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is OrangeThemePinCodeInputComponentTokensProvider)
     }

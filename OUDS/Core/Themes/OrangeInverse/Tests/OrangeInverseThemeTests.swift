@@ -106,10 +106,6 @@ struct OrangeInverseThemeTests {
         #expect(theme.link is OrangeInverseThemeLinkComponentTokensProvider)
     }
 
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is OrangeInverseThemeListItemComponentTokensProvider)
-    }
-
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is OrangeInverseThemePinCodeInputComponentTokensProvider)
     }
