@@ -52,12 +52,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
-    /// Flag to avoid to register severals the fonts making some errors happen
-    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
-
     // MARK: - Initializers
 
-    /// Constructor of the `Wireframe theme with its own providers of tokens.
+    /// Constructor of the `Wireframe` theme with its own providers of tokens.
     public init() {
         let borders = WireframeThemeBorderSemanticTokensProvider()
         let colors = WireframeThemeColorSemanticTokensProvider()
@@ -117,21 +114,11 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    tagInput: tagInput,
                    textArea: textArea,
                    textInput: textInput,
-                   resourcesBundle: Bundle.WireframeTheme)
-
-        registerFonts()
+                   resourcesBundle: Bundle.WireframeTheme,
+                   fontFamily: WireframeBrandFontRawTokens.fontFamilyDefault)
     }
 
     deinit {}
-
-    /// Fonts are defined in Resources/Fonts in TTF files
-    private func registerFonts() {
-        if !WireframeTheme.fontsAlreadyRegistered {
-            let fonts = Bundle.module.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
-            WireframeTheme.fontsAlreadyRegistered = true
-        }
-    }
 }
 
 // swiftlint:enable function_body_length

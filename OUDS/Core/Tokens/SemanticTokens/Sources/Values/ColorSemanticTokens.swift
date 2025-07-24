@@ -390,8 +390,13 @@ public protocol ColorSemanticTokens {
     var colorRepositoryPositiveHighest: ColorSemanticToken { get }
     var colorRepositoryPositiveLow: ColorSemanticToken { get }
     var colorRepositoryPositiveLowest: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHighest: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHigher: ColorSemanticToken { get }
+    var colorRepositoryPrimaryHigh: ColorSemanticToken { get }
     var colorRepositoryPrimaryDefault: ColorSemanticToken { get }
     var colorRepositoryPrimaryLow: ColorSemanticToken { get }
+    var colorRepositoryPrimaryLower: ColorSemanticToken { get }
+    var colorRepositoryPrimaryLowest: ColorSemanticToken { get }
     var colorRepositoryWarningDefault: ColorSemanticToken { get }
     var colorRepositoryWarningHighest: ColorSemanticToken { get }
     var colorRepositoryWarningLow: ColorSemanticToken { get }

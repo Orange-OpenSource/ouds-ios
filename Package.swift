@@ -123,7 +123,7 @@ let package = Package(
             path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
             name: "OUDSThemesWireframe",
-            dependencies: ["OUDS"],
+            dependencies: ["OUDS", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
