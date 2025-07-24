@@ -20,35 +20,35 @@ import OUDSTokensSemantic
 
 extension WireframeThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     /// Has for value token BorderRawTokens.borderWidth0
-    @objc open var borderWidthNone: BorderWidthSemanticToken { BorderRawTokens.borderWidth0 }
+    @objc public final var borderWidthNone: BorderWidthSemanticToken { BorderRawTokens.borderWidth0 }
     /// Has for value token BorderRawTokens.borderWidth25
-    @objc open var borderWidthDefault: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
+    @objc public final var borderWidthDefault: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
     /// Has for value token BorderRawTokens.borderWidth25
-    @objc open var borderWidthThin: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
+    @objc public final var borderWidthThin: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
     /// Has for value token BorderRawTokens.borderWidth50
-    @objc open var borderWidthMedium: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
+    @objc public final var borderWidthMedium: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
     /// Has for value token BorderRawTokens.borderWidth100
-    @objc open var borderWidthThick: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
+    @objc public final var borderWidthThick: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
     /// Has for value token BorderRawTokens.borderWidth150
-    @objc open var borderWidthThicker: BorderWidthSemanticToken { BorderRawTokens.borderWidth150 }
+    @objc public final var borderWidthThicker: BorderWidthSemanticToken { BorderRawTokens.borderWidth150 }
     /// Has for value token BorderRawTokens.borderWidth125
-    @objc open var borderWidthFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth125 }
+    @objc public final var borderWidthFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth125 }
     /// Has for value token BorderRawTokens.borderWidth50
-    @objc open var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
+    @objc public final var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
     /// Has for value token BorderRawTokens.borderRadius0
-    @objc open var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
+    @objc public final var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
     /// Has for value token BorderRawTokens.borderRadius150
-    @objc open var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
+    @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
     /// Has for value token BorderRawTokens.borderRadius100
-    @objc open var borderRadiusSmall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius100 }
+    @objc public final var borderRadiusSmall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius100 }
     /// Has for value token BorderRawTokens.borderRadius200
-    @objc open var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius200 }
+    @objc public final var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius200 }
     /// Has for value token BorderRawTokens.borderRadius300
-    @objc open var borderRadiusLarge: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
+    @objc public final var borderRadiusLarge: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
     /// Has for value token BorderRawTokens.borderRadius9999
-    @objc open var borderRadiusPill: BorderRadiusSemanticToken { BorderRawTokens.borderRadius9999 }
+    @objc public final var borderRadiusPill: BorderRadiusSemanticToken { BorderRawTokens.borderRadius9999 }
     /// Has for value token BorderRawTokens.borderStyleSolid
-    @objc open var borderStyleDefault: BorderStyleSemanticToken { BorderRawTokens.borderStyleSolid }
+    @objc public final var borderStyleDefault: BorderStyleSemanticToken { BorderRawTokens.borderStyleSolid }
     /// Has for value token BorderRawTokens.borderStyleDashed
-    @objc open var borderStyleDrag: BorderStyleSemanticToken { BorderRawTokens.borderStyleDashed }
+    @objc public final var borderStyleDrag: BorderStyleSemanticToken { BorderRawTokens.borderStyleDashed }
 }

@@ -20,9 +20,9 @@ import OUDSTokensSemantic
 
 extension WireframeThemePinCodeInputComponentTokensProvider: PinCodeInputComponentTokens {
     /// Has for value token spaces.spaceColumnGapMd
-    @objc open var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { spaces.spaceColumnGapMd }
+    @objc public final var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { spaces.spaceColumnGapMd }
     /// Has for value token dimensions.dimensionLg
-    @objc open var pinCodeInputSizeMinWidth: SizeSemanticToken { dimensions.dimensionLg }
+    @objc public final var pinCodeInputSizeMinWidth: SizeSemanticToken { dimensions.dimensionLg }
     /// Has for value token dimensions.dimension3xl
-    @objc open var pinCodeInputSizeMaxWidth: SizeSemanticToken { dimensions.dimension3xl }
+    @objc public final var pinCodeInputSizeMaxWidth: SizeSemanticToken { dimensions.dimension3xl }
 }
