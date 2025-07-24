@@ -13,7 +13,6 @@
 
 import Foundation
 import OUDS
-import OUDSThemesOrange
 import SwiftUI
 
 // swiftlint:disable function_body_length
