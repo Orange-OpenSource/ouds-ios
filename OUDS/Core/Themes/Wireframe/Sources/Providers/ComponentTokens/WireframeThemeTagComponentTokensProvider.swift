@@ -14,8 +14,6 @@
 import OUDS
 import OUDSFoundations
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **component  tokens of tag** for *tag* objects like `OUDSTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -77,5 +75,3 @@ final class WireframeThemeTagComponentTokensProvider: AllTagComponentTokensProvi
     // the implemention of TagComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+TagComponentTokens.swift
     // This declaration of WireframeThemeTagComponentTokensProvider is here also to allow to write documentation.
 }
-
-// swiftlint:enable type_name

@@ -106,10 +106,6 @@ struct OrangeBusinessToolsThemeTests {
         #expect(theme.link is OrangeBusinessToolsThemeLinkComponentTokensProvider)
     }
 
-    @Test func defaultListItemComponentTokensProvider() throws {
-        #expect(theme.listItem is OrangeBusinessToolsThemeListItemComponentTokensProvider)
-    }
-
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is OrangeBusinessToolsThemePinCodeInputComponentTokensProvider)
     }

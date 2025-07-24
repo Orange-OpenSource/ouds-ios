@@ -114,7 +114,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - divider: All component tokens for divider
     ///    - inputText: All component tokens for input text
     ///    - link: All component tokens for link
-    ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
@@ -143,7 +142,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          chip: AllChipComponentTokensProvider? = nil,
                          controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
-                         listItem: AllListItemComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
@@ -179,7 +177,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
@@ -209,7 +206,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
-                   listItem: listItem,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

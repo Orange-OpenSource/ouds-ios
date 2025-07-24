@@ -92,9 +92,6 @@ public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeI
 /// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 
-/// Something which provides all component tokens of list item
-public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens {}
-
 /// Something which provides all component tokens of quantity input
 public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
 

@@ -15,8 +15,6 @@ import OUDS
 import OUDSThemesWireframe
 import Testing
 
-// swiftlint:disable type_name
-
 /// The aim of this tests class is to look for regressions in **Wireframe brand border semantic tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// In the semantics of **border semantic tokens**, there will be some unchanged things like relationships between tokens.
@@ -31,7 +29,7 @@ struct WireframeThemeBorderSemanticTokensTests {
 
     @Test func borderWidthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.borderWidthNone < theme.borders.borderWidthDefault)
-        #expect(theme.borders.borderWidthThin <= theme.borders.borderWidthDefault) // Confirmed by Mdesign team, can be equal
+        #expect(theme.borders.borderWidthThin <= theme.borders.borderWidthDefault) // Confirmed by design team, can be equal
         #expect(theme.borders.borderWidthThin < theme.borders.borderWidthMedium)
         #expect(theme.borders.borderWidthMedium < theme.borders.borderWidthThick)
         #expect(theme.borders.borderWidthThick < theme.borders.borderWidthThicker)
@@ -42,12 +40,10 @@ struct WireframeThemeBorderSemanticTokensTests {
     }
 
     @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault) // Confirmed by Mdesign team, can be equal
-        #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusSmall)
-        #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusMedium)
+        #expect(theme.borders.borderRadiusNone < theme.borders.borderRadiusSmall)
+        #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusDefault)
+        #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusMedium)
         #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
         #expect(theme.borders.borderRadiusLarge < theme.borders.borderRadiusPill)
     }
 }
-
-// swiftlint:enable type_name

@@ -10,6 +10,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 ## Overview
 
 The ``WireframeTheme`` does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
+The ``WireframeTheme`` uses the **ChalkboardSE** font family available in the iOS system.
 
 ## How to use the theme
 
