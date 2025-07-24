@@ -14,8 +14,6 @@
 import OUDS
 import OUDSFoundations
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **grid semantic tokens** and expose them.
 /// This provider should be integrated as a `AllGridSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -47,5 +45,3 @@ final class WireframeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvi
     // the implemention of GridSemanticTokens is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+GridSemanticTokens.swift
     // This declaration of WireframeThemeGridSemanticTokensProvider is here to allow to write documentation.
 }
-
-// swiftlint:enable type_name
