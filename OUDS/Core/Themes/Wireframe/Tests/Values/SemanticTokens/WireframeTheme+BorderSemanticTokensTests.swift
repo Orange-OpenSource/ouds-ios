@@ -40,9 +40,9 @@ struct WireframeThemeBorderSemanticTokensTests {
     }
 
     @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault) // Confirmed by design team, can be equal
-        #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusSmall)
-        #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusMedium)
+        #expect(theme.borders.borderRadiusNone < theme.borders.borderRadiusSmall)
+        #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusDefault)
+        #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusMedium)
         #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
         #expect(theme.borders.borderRadiusLarge < theme.borders.borderRadiusPill)
     }
