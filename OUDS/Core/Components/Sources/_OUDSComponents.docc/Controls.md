@@ -1,6 +1,6 @@
-# Input
+# Controls
 
-Some components can be used for **inputs**.
+Some components can be used for **controls** and **inputs**.
 
 ## Overview
 
