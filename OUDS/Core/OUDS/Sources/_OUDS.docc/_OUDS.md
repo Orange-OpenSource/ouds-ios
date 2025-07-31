@@ -2,11 +2,6 @@
 
 The iOS library of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
 
-@Metadata {
-    @TechnologyRoot
-    @SupportedLanguage(objc)
-}
-
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Core version: 1.1.0

@@ -206,7 +206,10 @@ swift package \
     --target OUDSTokensRaw \
     --target OUDSFoundations \
     --output-path "$DOCUMENTATION_HTML_LOCATION" \
-    --transform-for-static-hosting
+    --transform-for-static-hosting \
+    --warnings-as-errors \
+    --symbol-graph-minimum-access-level public
+
 
 files_count=`find $DOCUMENTATION_HTML_LOCATION -type f | wc -l | xargs`
 

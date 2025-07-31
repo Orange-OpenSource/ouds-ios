@@ -1,0 +1,56 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
+# Rules for this GitHub Actions workflow
+# - use "almost" frozen version of macOS
+# - is for branches main, develop and all
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# But beware, triggered on commit push, so do not be a push-machine-gun!
+
+name: Build DocC documentation
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - '*'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize 
+    branches:
+      - main
+      - develop
+      - '*'        
+
+jobs:
+  # Build the documentation to check if everything works well
+  build-documentation:
+    runs-on: macos-15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode 16.3.0
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.3.0.app/Contents/Developer
+
+      - name: Build documentation
+        run: |
+          cd docs_release
+          yes | ./generateWebDocumentation.sh --libversion=none --nozip

@@ -404,9 +404,12 @@ Workflows are the following:
 - [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml)
 - [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml)
 - [run linter](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml)
+- [generate documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml)
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+
+Note the workflow about the documentation builds it but does not expose it online. It allows us to ensure the documentation can be built on the current code base.
 
 ### GitLab CI (internal)
 
