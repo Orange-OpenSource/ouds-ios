@@ -41,7 +41,7 @@ struct ButtonBorderModifier: ViewModifier {
                     width: defaultWidth,
                     radius: theme.button.buttonBorderRadiusDefault,
                     color: defaultColor)
-        case .strong:
+        case .strong, .brand:
             if onColoredSurface {
                 content
                     .oudsBorder(

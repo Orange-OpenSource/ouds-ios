@@ -27,6 +27,10 @@ import SwiftUI
 /// - **strong**: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
 /// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
 ///
+/// - **brand**: A brand primary color alternative to the Strong button.
+/// To be used sparingly for high-value specific actions or to visually anchor a brand moment. Do not use it as the default primary button in your interfaces.
+/// A button with `OUDSButton.Hierarchy.Brand` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
+///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
@@ -100,6 +104,8 @@ public struct OUDSButton: View {
         case `default`
         /// Strong button on the page should be singular and prominent
         case strong
+        /// A brand primary color alternative to the Strong button.
+        case brand
         /// Minimal button for actions that are considered less crucial
         case minimal
         /// Negative button used for destructive action
