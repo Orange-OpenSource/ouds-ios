@@ -99,7 +99,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 3.0.0 (Figma component design version)
 /// - Since: 0.10.0
 public struct OUDSButton: View {
 
