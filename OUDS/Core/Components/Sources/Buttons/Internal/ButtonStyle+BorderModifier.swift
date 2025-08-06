@@ -53,14 +53,7 @@ struct ButtonBorderModifier: ViewModifier {
             } else {
                 content.clipShape(RoundedRectangle(cornerRadius: radius))
             }
-        case .minimal:
-            content
-                .oudsBorder(
-                    style: theme.borders.borderStyleDefault,
-                    width: defaultWidth,
-                    radius: radius,
-                    color: minimalColor)
-        case .negative:
+        case .minimal, .negative:
             content.clipShape(RoundedRectangle(cornerRadius: radius))
         }
     }
@@ -104,23 +97,6 @@ struct ButtonBorderModifier: ViewModifier {
             }
         case .disabled:
             useMonochrome ? theme.button.buttonMonoColorBorderDefaultDisabled : theme.button.buttonColorBorderDefaultDisabled
-        }
-    }
-
-    // MARK: Minimal hierarchy
-
-    private var minimalColor: MultipleColorSemanticTokens {
-        switch state {
-        case .enabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderDefaultEnabled
-        case .hover:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderDefaultHover
-        case .pressed:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderDefaultPressed
-        case .loading:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderDefaultLoading
-        case .disabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderDefaultDisabled
         }
     }
 
