@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-// MARK: - Environment values for oudsUseMonochrome
+// MARK: - Environment values for oudsRoundedButton
 
 public struct OUDSRoundedButtonKey: EnvironmentKey {
 
@@ -22,7 +22,7 @@ public struct OUDSRoundedButtonKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSButton``, the value tells that button should be rounded or not.
+    /// Used by the ``OUDSButton``, the value tells that button should be rounded or not.
     public var oudsRoundedButton: Bool {
         get {
             self[OUDSRoundedButtonKey.self]

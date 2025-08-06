@@ -64,6 +64,26 @@ import SwiftUI
 /// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for following states disabled, pressed, hovered or normal (i.e. enabled)
 /// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
+///
+/// ## Rounded Layout
+///
+/// To be favored in more emotional, immersive contexts or those tied to specific visual identities.
+/// For standard or business-oriented journeys, keep the default corners.
+/// This evolution addresses the need for flexibility in adapting the design to certain brand contexts.
+///
+/// To activate the rounded button behavior, set to true the  ``oudsRoundedButton`` environement variable
+/// at the root level of the view hierarchy (i.e. can be applied on the ``OUDSThemeableView``),
+/// to be sure all buttons in the application are rounded.
+///
+/// ```swift
+///     // Add themeable view to your root view to use the OrangeTheme
+///     OUDSThemeableView(theme: OrangeTheme()) {
+///         YourRootView() // With some views with Buttons
+///     }
+///     .environment(\.oudsRoundedButton, true)
+
+/// ```
+///
 /// ## Colored Surface
 ///
 /// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
