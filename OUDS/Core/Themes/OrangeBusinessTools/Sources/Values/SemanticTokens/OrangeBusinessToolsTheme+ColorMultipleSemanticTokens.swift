@@ -168,6 +168,8 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusAccentEmphasizedLight, dark: colorContentOnStatusAccentEmphasizedDark) }
 
+    @objc public final var colorContentStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusAccentLight, dark: colorContentStatusAccentDark) }
+
     @objc public final var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusInfoLight, dark: colorContentStatusInfoDark) }
 
     @objc public final var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusNegativeLight, dark: colorContentStatusNegativeDark) }

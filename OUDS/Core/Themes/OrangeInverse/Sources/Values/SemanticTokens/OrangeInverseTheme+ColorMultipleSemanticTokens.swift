@@ -170,6 +170,8 @@ extension OrangeInverseThemeColorSemanticTokensProvider: ColorMultipleSemanticTo
 
     @objc public var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusAccentEmphasizedLight, dark: colorContentOnStatusAccentEmphasizedDark) }
 
+    @objc public var colorContentStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusAccentLight, dark: colorContentStatusAccentDark) }
+
     @objc public var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusInfoLight, dark: colorContentStatusInfoDark) }
 
     @objc public var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusNegativeLight, dark: colorContentStatusNegativeDark) }
