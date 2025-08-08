@@ -28,6 +28,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 
 ## OUDS / Themes / Sosh
 
@@ -47,6 +48,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Black.ttf
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Fonts/Sosh-Bold.ttf
@@ -71,5 +73,6 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 
 End of the parts list under Orange SA Copyright
