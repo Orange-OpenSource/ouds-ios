@@ -18,8 +18,8 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let type: OUDSTag.`Type`
     let size: OUDSTag.Size
+    let hasIcon: Bool
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -56,9 +56,9 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
     private var paddingLeading: CGFloat {
         switch size {
         case .default:
-            hasAsset ? theme.tag.tagSpacePaddingInlineAssetDefault : theme.tag.tagSpacePaddingInlineDefault
+            hasIcon ? theme.tag.tagSpacePaddingInlineAssetDefault : theme.tag.tagSpacePaddingInlineDefault
         case .small:
-            hasAsset ? theme.tag.tagSpacePaddingInlineAssetSmall : theme.tag.tagSpacePaddingInlineSmall
+            hasIcon ? theme.tag.tagSpacePaddingInlineAssetSmall : theme.tag.tagSpacePaddingInlineSmall
         }
     }
 
@@ -86,15 +86,6 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
             theme.tag.tagSizeMinHeightDefault
         case .small:
             theme.tag.tagSizeMinHeightSmall
-        }
-    }
-
-    private var hasAsset: Bool {
-        switch type {
-        case .text(_, let hasBullet):
-            return hasBullet
-        default:
-            return true
         }
     }
 }

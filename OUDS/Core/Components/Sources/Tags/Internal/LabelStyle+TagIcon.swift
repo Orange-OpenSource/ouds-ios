@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct TagAsset: View {
+struct TagIcon: View {
 
     // MARK: Stored Properties
 
@@ -29,24 +29,13 @@ struct TagAsset: View {
 
     var body: some View {
         switch type {
-        case .text(_, let hasBullet):
-            if hasBullet {
-                TagBullet(size: size, status: status, hierarchy: hierarchy)
-            }
         case .textAndIcon(_, let icon):
-            icon.padding(.all, iconPadding)
+            if let icon {
+                TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
+            }
         case .textAndLoader:
             Image(systemName: "circle.fill")
                 .padding(.all, loaderPadding)
-        }
-    }
-
-    private var iconPadding: CGFloat {
-        switch size {
-        case .default:
-            theme.tag.tagSpaceInsetIconDefault
-        case .small:
-            theme.tag.tagSpaceInsetIconSmall
         }
     }
 
@@ -60,32 +49,35 @@ struct TagAsset: View {
     }
 }
 
-struct TagBullet: View {
+struct TagAsset: View {
 
     // MARK: Stored properties
 
-    let size: OUDSTag.Size
-    let status: OUDSTag.Status
+    let icon: OUDSTag.Icon
     let hierarchy: OUDSTag.Hierarchy
+    let status: OUDSTag.Status
+    let size: OUDSTag.Size
+
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        Image(systemName: "circle.fill")
+        image
             .renderingMode(.template)
+            .resizable()
             .oudsForegroundStyle(color)
             .padding(.all, padding)
     }
 
     // MARK: Helpers
 
-    private var padding: CGFloat {
-        switch size {
-        case .default:
-            theme.tag.tagSpaceInsetBulletDefault
-        case .small:
-            theme.tag.tagSpaceInsetBulletSmall
+    private var image: Image {
+        switch icon {
+        case .bullet:
+            Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
+        case .asset(let image):
+            image
         }
     }
 
@@ -135,29 +127,17 @@ struct TagBullet: View {
             return theme.colors.colorContentOnActionDisabled
         }
     }
-}
-
-struct TagIcon: View {
-
-    // MARK: Stored properties
-
-    let size: OUDSTag.Size
-    let status: OUDSTag.Status
-    let hierarchy: OUDSTag.Hierarchy
-    @Environment(\.theme) private var theme
-
-    // MARK: Body
-
-    var body: some View {
-        Image(systemName: "circle.fill")
-            .renderingMode(.template)
-            .oudsForegroundStyle(color)
-            .padding(.all, padding)
-    }
-
-    // MARK: Helpers
 
     private var padding: CGFloat {
+        switch icon {
+        case .bullet:
+            return bulletPadding
+        case .asset:
+            return assetPadding
+        }
+    }
+
+    private var bulletPadding: CGFloat {
         switch size {
         case .default:
             theme.tag.tagSpaceInsetBulletDefault
@@ -166,50 +146,12 @@ struct TagIcon: View {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            return emphasizeColor
-        case .muted:
-            return mutedColor
-        }
-    }
-
-    private var emphasizeColor: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            return theme.colors.colorContentOnStatusNeutralEmphasized
-        case .accent:
-            return theme.colors.colorContentOnStatusAccentEmphasized
-        case .positive:
-            return theme.colors.colorContentOnStatusPositiveEmphasized
-        case .warning:
-            return theme.colors.colorContentOnStatusWarningEmphasized
-        case .negative:
-            return theme.colors.colorContentOnStatusNegativeEmphasized
-        case .info:
-            return theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            return theme.colors.colorContentOnActionDisabled
-        }
-    }
-
-    private var mutedColor: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            return theme.colors.colorContentOnStatusNeutralMuted
-        case .accent:
-            return theme.colors.colorContentStatusAccent
-        case .positive:
-            return theme.colors.colorContentStatusPositive
-        case .warning:
-            return theme.colors.colorContentStatusWarning
-        case .negative:
-            return theme.colors.colorContentStatusNegative
-        case .info:
-            return theme.colors.colorContentStatusInfo
-        case .disabled:
-            return theme.colors.colorContentOnActionDisabled
+    private var assetPadding: CGFloat {
+        switch size {
+        case .default:
+            theme.tag.tagSpaceInsetIconDefault
+        case .small:
+            theme.tag.tagSpaceInsetIconSmall
         }
     }
 }

@@ -22,6 +22,7 @@ struct TagLabelStyle: LabelStyle {
     let status: OUDSTag.Status
     let shape: OUDSTag.Shape
     let size: OUDSTag.Size
+    let hasIcon: Bool
 
     @Environment(\.theme) private var theme
 
@@ -34,6 +35,9 @@ struct TagLabelStyle: LabelStyle {
 
             configuration.title
         }
+        .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
+        .modifier(TagBackgroundModifier(hierarchy: hierarchy, status: status))
+        .modifier(TagShapeModifier(shape: shape))
     }
 
     // MARK: Helper

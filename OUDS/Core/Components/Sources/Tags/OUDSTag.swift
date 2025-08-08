@@ -121,16 +121,24 @@ public struct OUDSTag: View {
     @Environment(\.theme) private var theme
 
     enum `Type` {
-        case text(String, hasBullet: Bool)
-        case textAndIcon(text: String, icon: Image)
-        case textAndLoader(text: String)
+        case textAndIcon(label: String, icon: OUDSTag.Icon?)
+        case textAndLoader(label: String)
 
         var label: String {
             switch self {
-            case .text(let label, _), .textAndIcon(let label, _), .textAndLoader(let label):
+            case .textAndIcon(let label, _), .textAndLoader(let label):
                 return label
             }
         }
+    }
+
+    /// Type of iccon in a Tag.
+    public enum Icon {
+        /// The bullet icon in `OUDSTag`
+        case bullet
+
+        /// An icon from asset
+        case asset(Image)
     }
 
     /// Represents the hierarchy of a tag
@@ -196,18 +204,32 @@ public struct OUDSTag: View {
     /// Create a tag with simple label, categorie, or keyword without additional visual elements.
     /// A small indicator (bullet) could be displays to show status, presence, or activity next to the label.
     ///
+    ///  Four different layouts are supported:
+    ///     - **Text only**: when [icon] is `nil`, the tag displays only text.
+    ///       Used for simple labels, categories, or keywords without additional visual elements.
+    ///
+    ///     - **Text and bullet**: when [icon] is equal to `OUDSTag.Icon.bullet`, the tag displays a small
+    ///     indicator (bullet) alongside the text. Used to show status, presence, or activity next to the label.
+    ///
+    ///     - **Text and icon**: when [icon] is not `nil`, the tag includes an icon from asset before the text.
+    ///     Used to visually reinforce the meaning of the tag, such as status, type, or action.
+    ///
+    ///     - **Text and loader**: when [loading] is `true`, the tag combines a loading spinner (or progress indicator)
+    ///     with text. Used to indicate that a process or action related to the tag is in progress.
+    ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
-    ///    - hasBullet: Controls the display of a bullet before the **label**
+    ///    - icon: The icon displayed before the label, or `nil` if there is no icon
     ///    - hierarchy: The importance of the tag. Its background color and its content color are based on this hierarchy combined to the [status] of the tag
-    ///    - status: The status of the tag. Its background color and its content color are based on this status combined to the [hierarchy] of the tag
+    ///    - status: The status of the tag. Its background color and its content color are based on this status combined to
+    ///    the `hierarchy` of the tag
     ///    - shape: The shape of the tag that allows to play with its corners appearance.
     ///    - size: The size of the tag
     ///    - loading: An optional loading spinner (or progress indicator) displayed before the **label**. Used to
     ///     indicate that a process or action related to the tag is in progress.
     ///
     public init(label: String,
-                hasBullet: Bool = false,
+                icon: OUDSTag.Icon? = nil,
                 hierarchy: Hierarchy = .emphasized,
                 status: Status = .neutral,
                 shape: Shape = .rounded,
@@ -216,33 +238,7 @@ public struct OUDSTag: View {
         self.status = status
         self.shape = shape
         self.size = size
-        self.type = .text(label, hasBullet: hasBullet)
-    }
-
-    /// Create a tag with text and icon.
-    ///
-    /// - Paramters:
-    ///    - icon: An image which shoud contains an icon
-    ///    - label: The label displayed in the tag
-    ///    - hasBullet: Controls the display of a bullet before the **label**
-    ///    - hierarchy: The importance of the tag. Its background color and its content color are based on this hierarchy combined to the [status] of the tag
-    ///    - status: The status of the tag. Its background color and its content color are based on this status combined to the [hierarchy] of the tag
-    ///    - shape: The shape of the tag that allows to play with its corners appearance.
-    ///    - size: The size of the tag
-    ///    - loading: An optional loading spinner (or progress indicator) displayed before the **label**. Used to
-    ///     indicate that a process or action related to the tag is in progress.
-
-    public init(icon: Image,
-                label: String,
-                hierarchy: Hierarchy = .emphasized,
-                status: Status = .neutral,
-                shape: Shape = .rounded,
-                size: Size = .default) {
-        self.hierarchy = hierarchy
-        self.status = status
-        self.shape = shape
-        self.size = size
-        self.type = .textAndIcon(text: label, icon: icon)
+        self.type = .textAndIcon(label: label, icon: icon)
     }
 
     // MARK: Body
@@ -251,11 +247,18 @@ public struct OUDSTag: View {
         Label {
             TagLabel(label: type.label, hierarchy: hierarchy, status: status, size: size)
         } icon: {
-            TagAsset(type: type, hierarchy: hierarchy, status: status, size: size)
+            TagIcon(type: type, hierarchy: hierarchy, status: status, size: size)
         }
-        .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size))
-        .modifier(TagPaddingsAndSizeModifier(type: type, size: size))
-        .modifier(TagBackgroundModifier(hierarchy: hierarchy, status: status))
-        .modifier(TagShapeModifier(shape: shape))
+        .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size, hasIcon: hasIcon))
     }
+
+    private var hasIcon: Bool {
+        switch type {
+        case .textAndIcon(_, let icon):
+            return icon != nil
+        default:
+            return true
+        }
+    }
+
 }
