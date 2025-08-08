@@ -19,10 +19,10 @@ struct TagAsset: View {
 
     // MARK: Stored Properties
 
-    let size: OUDSTag.Size
-    let status: OUDSTag.Status
     let type: OUDSTag.`Type`
     let hierarchy: OUDSTag.Hierarchy
+    let status: OUDSTag.Status
+    let size: OUDSTag.Size
     @Environment(\.theme) private var theme
 
     // MARK: Body

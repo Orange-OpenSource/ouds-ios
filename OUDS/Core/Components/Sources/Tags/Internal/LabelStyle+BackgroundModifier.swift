@@ -18,8 +18,8 @@ struct TagBackgroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let status: OUDSTag.Status
     let hierarchy: OUDSTag.Hierarchy
+    let status: OUDSTag.Status
     @Environment(\.theme) private var theme
 
     // MARK: Body

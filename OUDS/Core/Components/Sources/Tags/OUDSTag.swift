@@ -249,13 +249,13 @@ public struct OUDSTag: View {
 
     public var body: some View {
         Label {
-            TagLabel(label: type.label, status: status, hierarchy: hierarchy)
+            TagLabel(label: type.label, hierarchy: hierarchy, status: status, size: size)
         } icon: {
-            TagAsset(size: size, status: status, type: type, hierarchy: hierarchy)
+            TagAsset(type: type, hierarchy: hierarchy, status: status, size: size)
         }
-        .labelStyle(TagLabelStyle(size: size, status: status, shape: shape, hierarchy: hierarchy))
-        .modifier(TagPaddingsAndSizeModifier(size: size, type: type))
-        .modifier(TagBackgroundModifier(status: status, hierarchy: hierarchy))
+        .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size))
+        .modifier(TagPaddingsAndSizeModifier(type: type, size: size))
+        .modifier(TagBackgroundModifier(hierarchy: hierarchy, status: status))
         .modifier(TagShapeModifier(shape: shape))
     }
 }

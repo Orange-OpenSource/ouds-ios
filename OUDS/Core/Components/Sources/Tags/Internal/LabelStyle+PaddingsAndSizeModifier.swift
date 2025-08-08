@@ -18,8 +18,8 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let size: OUDSTag.Size
     let type: OUDSTag.`Type`
+    let size: OUDSTag.Size
     @Environment(\.theme) private var theme
 
     // MARK: Body

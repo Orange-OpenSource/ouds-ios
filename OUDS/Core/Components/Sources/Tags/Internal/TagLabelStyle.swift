@@ -18,10 +18,10 @@ struct TagLabelStyle: LabelStyle {
 
     // MARK: Stored Properties
 
-    let size: OUDSTag.Size
+    let hierarchy: OUDSTag.Hierarchy
     let status: OUDSTag.Status
     let shape: OUDSTag.Shape
-    let hierarchy: OUDSTag.Hierarchy
+    let size: OUDSTag.Size
 
     @Environment(\.theme) private var theme
 

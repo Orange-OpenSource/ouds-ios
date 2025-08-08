@@ -20,16 +20,25 @@ struct TagLabel: View {
     // MARK: Stored Properties
 
     let label: String
-    let status: OUDSTag.Status
     let hierarchy: OUDSTag.Hierarchy
+    let status: OUDSTag.Status
+    let size: OUDSTag.Size
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        Text(label)
-            .typeLabelStrongMedium(theme)
-            .oudsForegroundColor(color)
+        Group {
+            switch size {
+            case .default:
+                Text(label)
+                    .typeLabelStrongMedium(theme)
+            case .small:
+                Text(label)
+                    .typeLabelStrongSmall(theme)
+            }
+        }
+        .oudsForegroundColor(color)
     }
 
     // MARK: Helper
