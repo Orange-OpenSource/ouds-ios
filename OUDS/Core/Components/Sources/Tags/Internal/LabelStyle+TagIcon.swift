@@ -34,17 +34,84 @@ struct TagIcon: View {
                 TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
             }
         case .textAndLoader:
-            Image(systemName: "circle.fill")
-                .padding(.all, loaderPadding)
+            TagLoader(hierarchy: hierarchy, status: status, size: size)
         }
     }
+}
 
-    private var loaderPadding: CGFloat {
+struct TagLoader: View {
+
+    // MARK: Stored Properties
+
+    let hierarchy: OUDSTag.Hierarchy
+    let status: OUDSTag.Status
+    let size: OUDSTag.Size
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Body
+
+    var body: some View {
+        LoaderIndicator(color: color.color(for: colorScheme))
+            .padding(.all, padding)
+    }
+
+    // MARK: Heplers
+
+    private var padding: CGFloat {
         switch size {
         case .default:
             theme.tag.tagSpaceInsetLoaderDefault
         case .small:
             theme.tag.tagSpaceInsetLoaderSmall
+        }
+    }
+
+    private var color: MultipleColorSemanticTokens {
+        switch hierarchy {
+        case .emphasized:
+            return colorEmphasized
+        case .muted:
+            return colorMuted
+        }
+    }
+
+    private var colorEmphasized: MultipleColorSemanticTokens {
+        switch status {
+        case .neutral:
+            theme.colors.colorContentOnStatusNeutralEmphasized
+        case .accent:
+            theme.colors.colorContentOnStatusAccentEmphasized
+        case .positive:
+            theme.colors.colorContentOnStatusPositiveEmphasized
+        case .warning:
+            theme.colors.colorContentOnStatusWarningEmphasized
+        case .negative:
+            theme.colors.colorContentOnStatusNegativeEmphasized
+        case .info:
+            theme.colors.colorContentOnStatusInfoEmphasized
+        case .disabled:
+            theme.colors.colorContentOnActionDisabled
+        }
+    }
+
+    private var colorMuted: MultipleColorSemanticTokens {
+        switch status {
+        case .neutral:
+            theme.colors.colorContentOnStatusNeutralMuted
+        case .accent:
+            theme.colors.colorContentOnStatusAccentMuted
+        case .positive:
+            theme.colors.colorContentOnStatusPositiveMuted
+        case .warning:
+            theme.colors.colorContentOnStatusWarningMuted
+        case .negative:
+            theme.colors.colorContentOnStatusNegativeMuted
+        case .info:
+            theme.colors.colorContentOnStatusInfoMuted
+        case .disabled:
+            theme.colors.colorContentOnActionDisabled
         }
     }
 }

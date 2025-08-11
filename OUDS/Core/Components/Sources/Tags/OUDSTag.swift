@@ -225,20 +225,27 @@ public struct OUDSTag: View {
     ///    the `hierarchy` of the tag
     ///    - shape: The shape of the tag that allows to play with its corners appearance.
     ///    - size: The size of the tag
-    ///    - loading: An optional loading spinner (or progress indicator) displayed before the **label**. Used to
-    ///     indicate that a process or action related to the tag is in progress.
-    ///
+    ///    - loader: An optional loader (or progress indicator) displayed before the **label**. It will
+    ///    replace the `icon` if provided. Used to indicate that a process or action related to the tag is in progress.
     public init(label: String,
                 icon: OUDSTag.Icon? = nil,
                 hierarchy: Hierarchy = .emphasized,
                 status: Status = .neutral,
                 shape: Shape = .rounded,
-                size: Size = .default) {
+                size: Size = .default,
+                loader: Bool = false) {
         self.hierarchy = hierarchy
         self.status = status
         self.shape = shape
         self.size = size
-        self.type = .textAndIcon(label: label, icon: icon)
+        if loader {
+            if status == .disabled {
+                OL.fatal("An OUDSTag with OUDSTag.Status.disabled status has been detected with loader activated, which is not allowed.")
+            }
+            self.type = .textAndLoader(label: label)
+        } else {
+            self.type = .textAndIcon(label: label, icon: icon)
+        }
     }
 
     // MARK: Body
@@ -260,5 +267,4 @@ public struct OUDSTag: View {
             return true
         }
     }
-
 }
