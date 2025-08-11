@@ -38,7 +38,7 @@ jobs:
   SwiftLint:
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: cirruslabs/swiftlint-action@v1
         with:
           version: latest

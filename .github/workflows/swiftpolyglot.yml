@@ -43,7 +43,7 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Clone SwiftPolyglot
         run: git clone https://github.com/appdecostudio/SwiftPolyglot.git --branch=1.1.0 ../SwiftPolyglot
