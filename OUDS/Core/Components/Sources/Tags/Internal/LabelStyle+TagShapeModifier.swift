@@ -36,7 +36,6 @@ struct TagShapeModifier: ViewModifier {
             return theme.borders.borderRadiusNone
         case .rounded:
             return theme.tag.tagBorderRadius
-
         }
     }
 }

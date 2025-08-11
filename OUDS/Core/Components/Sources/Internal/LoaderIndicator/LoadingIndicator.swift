@@ -14,8 +14,6 @@
 import OUDS
 import SwiftUI
 
-// MARK: - Loader indicator
-
 struct LoaderIndicator: View {
 
     // MARK: Stored Properties

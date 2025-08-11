@@ -56,7 +56,8 @@ import SwiftUI
 /// - **Info** Conveys informational messages or supplementary details. Used for neutral, helpful,
 /// or contextual information.
 ///
-/// - **Disabled** Shows that the tag is inactive and cannot be interacted with. Appears faded or greyed out.
+/// - **Disabled** Shows that the tag is inactive and cannot be interacted with. Appears faded or greyed out. This is not
+///  allowed when loader activated.
 ///
 /// ## Shape
 ///
@@ -99,6 +100,8 @@ import SwiftUI
 ///     // Tag with label and icon
 ///     OUDSTag(icon: Image("ic_heart"), label: "Label")
 ///
+///     // Tag with label and loader
+///     OUDSTag(icon: Image("ic_heart"), label: "Label", loader: true)
 /// ```
 ///
 /// ## Design documentation
@@ -160,7 +163,6 @@ public struct OUDSTag: View {
         /// Squared tags provide a more formal, structured, or technical feel. They are often used in business contexts to label promotions, offers, or important notices.
         case square
 
-
         /// A tag with fully rounded corners, creating a pill-shaped appearance.
         /// Rounded tags offer a softer and more approachable look, suitable for most modern interfaces.
         case rounded
@@ -196,7 +198,7 @@ public struct OUDSTag: View {
         case info
 
         /// Shows that the tag is inactive and cannot be interacted with. Appears faded or greyed out.
-        case disabled // @TODO: a garder ?
+        case disabled
     }
 
     // MARK: Initializers
@@ -205,16 +207,16 @@ public struct OUDSTag: View {
     /// A small indicator (bullet) could be displays to show status, presence, or activity next to the label.
     ///
     ///  Four different layouts are supported:
-    ///     - **Text only**: when [icon] is `nil`, the tag displays only text.
+    ///     - **Text only**: when `icon` is `nil`, the tag displays only text.
     ///       Used for simple labels, categories, or keywords without additional visual elements.
     ///
-    ///     - **Text and bullet**: when [icon] is equal to `OUDSTag.Icon.bullet`, the tag displays a small
+    ///     - **Text and bullet**: when `icon` is equal to `OUDSTag.Icon.bullet`, the tag displays a small
     ///     indicator (bullet) alongside the text. Used to show status, presence, or activity next to the label.
     ///
-    ///     - **Text and icon**: when [icon] is not `nil`, the tag includes an icon from asset before the text.
+    ///     - **Text and icon**: when `icon` is not `nil`, the tag includes an icon from asset before the text.
     ///     Used to visually reinforce the meaning of the tag, such as status, type, or action.
     ///
-    ///     - **Text and loader**: when [loading] is `true`, the tag combines a loading spinner (or progress indicator)
+    ///     - **Text and loader**: when `loader` is `true`, the tag combines a loading spinner (or progress indicator)
     ///     with text. Used to indicate that a process or action related to the tag is in progress.
     ///
     /// - Parameters:
