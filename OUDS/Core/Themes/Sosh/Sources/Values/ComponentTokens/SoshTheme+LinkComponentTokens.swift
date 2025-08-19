@@ -31,13 +31,13 @@ extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.colorActionFocus
     @objc public final var linkColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     /// Has for value token colors.colorActionEnabled
-    @objc public final var linkColorArrowEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var linkColorChevronEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorContentBrandPrimaryLight, dark: colors.colorActionEnabledDark)
-    @objc public final var linkColorArrowHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorContentBrandPrimaryLight, dark: colors.colorActionEnabledDark) }
+    @objc public final var linkColorChevronHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorContentBrandPrimaryLight, dark: colors.colorActionEnabledDark) }
     /// Has for value token colors.colorActionPressed
-    @objc public final var linkColorArrowPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc public final var linkColorChevronPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionEnabled
-    @objc public final var linkColorArrowFocus: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc public final var linkColorChevronFocus: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token spaces.spacePaddingInlineNone
     @objc public final var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
     /// Has for value token spaces.spacePaddingBlockMd
