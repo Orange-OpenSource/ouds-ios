@@ -57,7 +57,7 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component checkbox
     public static let componentCheckboxVersion = "2.1.0"
     /// Version of the Figma specifications for the component chip
-    public static let componentChipVersion = "1.3.0"
+    public static let componentChipVersion = "1.2.0"
     /// Version of the Figma specifications for the component radio button
     public static let componentRadioButtonVersion = "1.1.0"
     /// Version of the Figma specifications for the component switch
