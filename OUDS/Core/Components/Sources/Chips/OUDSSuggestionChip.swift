@@ -43,7 +43,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Version: 1.2.0
+/// - Version: 1.3.0
 /// - Since: 0.17.0
 public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyperlink in doc above
 

@@ -46,6 +46,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
     override public var textInputSizeMinHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeMinWidth: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeMaxWidth: SizeSemanticToken { Self.mockThemeTextInputSize }
+    override public var textInputSizeLeadingIcon: SizeSemanticToken { Self.mockThemeTextInputSize }
 
     // MARK: - Colors
 
