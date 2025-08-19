@@ -62,11 +62,8 @@ public protocol ButtonComponentTokens {
     var buttonColorBgDefaultHover: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { get }
     var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Brand

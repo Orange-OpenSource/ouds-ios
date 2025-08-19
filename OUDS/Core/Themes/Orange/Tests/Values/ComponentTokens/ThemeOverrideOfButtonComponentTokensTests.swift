@@ -279,19 +279,9 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonColorBgDefaultPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgMinimalDisabled() throws {
-        #expect(inheritedTheme.button.buttonColorBgMinimalDisabled != abstractTheme.button.buttonColorBgMinimalDisabled)
-        #expect(inheritedTheme.button.buttonColorBgMinimalDisabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBgMinimalDisabled() throws {
         #expect(inheritedTheme.button.buttonMonoColorBgMinimalDisabled != abstractTheme.button.buttonMonoColorBgMinimalDisabled)
         #expect(inheritedTheme.button.buttonMonoColorBgMinimalDisabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgMinimalEnabled() throws {
-        #expect(inheritedTheme.button.buttonColorBgMinimalEnabled != abstractTheme.button.buttonColorBgMinimalEnabled)
-        #expect(inheritedTheme.button.buttonColorBgMinimalEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonMonoComponentTokenButtonMonoColorBgMinimalDisabled() throws {
@@ -307,11 +297,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgMinimalHover() throws {
         #expect(inheritedTheme.button.buttonColorBgMinimalHover != abstractTheme.button.buttonColorBgMinimalHover)
         #expect(inheritedTheme.button.buttonColorBgMinimalHover == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
-    }
-
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgMinimalLoading() throws {
-        #expect(inheritedTheme.button.buttonColorBgMinimalLoading != abstractTheme.button.buttonColorBgMinimalLoading)
-        #expect(inheritedTheme.button.buttonColorBgMinimalLoading == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgMinimalPressed() throws {
