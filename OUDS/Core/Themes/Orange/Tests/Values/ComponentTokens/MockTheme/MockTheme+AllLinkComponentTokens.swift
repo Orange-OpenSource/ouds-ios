@@ -58,10 +58,10 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override public var linkColorContentHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
     override public var linkColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
     override public var linkColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override public var linkColorArrowEnabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override public var linkColorArrowHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override public var linkColorArrowPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override public var linkColorArrowFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override public var linkColorChevronEnabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override public var linkColorChevronHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override public var linkColorChevronPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override public var linkColorChevronFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
 }
 
 // swiftlint:enable required_deinit

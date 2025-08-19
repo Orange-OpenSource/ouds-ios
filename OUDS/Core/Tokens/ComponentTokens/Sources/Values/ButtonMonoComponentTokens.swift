@@ -30,11 +30,8 @@ public protocol ButtonMonoComponentTokens {
     var buttonMonoColorBgDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalEnabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgMinimalHover: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgMinimalPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalDisabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgMinimalFocus: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgStrongEnabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBgStrongHover: MultipleColorSemanticTokens { get }
@@ -72,12 +69,6 @@ public protocol ButtonMonoComponentTokens {
     var buttonMonoColorBorderStrongLoading: MultipleColorSemanticTokens { get }
     var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderMinimalFocus: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

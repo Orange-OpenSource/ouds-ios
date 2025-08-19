@@ -33,16 +33,10 @@ extension WireframeThemeButtonComponentTokensProvider: ButtonMonoComponentTokens
     @objc public final var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc public final var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher) }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBgMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc public final var buttonMonoColorBgMinimalHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher)
     @objc public final var buttonMonoColorBgMinimalPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher)
-    @objc public final var buttonMonoColorBgMinimalLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher) }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBgMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc public final var buttonMonoColorBgMinimalFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
@@ -117,18 +111,6 @@ extension WireframeThemeButtonComponentTokensProvider: ButtonMonoComponentTokens
     @objc public final var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     /// Has for value token colors.colorOpacityTransparent
     @objc public final var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
 }
 
 // swiftlint:enable line_length

@@ -4,7 +4,7 @@ The Sosh theme overrides some tokens from the basic `OUDSTheme` and should be se
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.3.0
+🧬 Theme version: 1.5.0
 ```
 
 ## Overview
