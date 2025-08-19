@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Button mono component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Button component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Button version 3.0 (add brand hierarchy and rounded property, update minimal variant) (Orange-OpenSource/ouds-ios#887)
