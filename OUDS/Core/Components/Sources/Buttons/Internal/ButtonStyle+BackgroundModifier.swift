@@ -30,12 +30,16 @@ struct ButtonBackgroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.oudsBackground(appliedColor)
+        if let appliedColor {
+            content.oudsBackground(appliedColor)
+        } else {
+            content
+        }
     }
 
     // MARK: Private helpers
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticTokens? {
         switch state {
         case .enabled:
             enabledColor
@@ -50,14 +54,16 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticTokens? {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultEnabled : theme.button.buttonColorBgDefaultEnabled
         case .strong:
             useMonochrome ? theme.button.buttonMonoColorBgStrongEnabled : theme.colors.colorActionEnabled
+        case .brand:
+            theme.button.buttonColorBgBrandEnabled
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalEnabled : theme.button.buttonColorBgMinimalEnabled
+            nil
         case .negative:
             theme.colors.colorActionNegativeEnabled
         }
@@ -68,6 +74,8 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultHover : theme.button.buttonColorBgDefaultHover
         case .strong:
+            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
+        case .brand:
             useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorBgMinimalHover : theme.button.buttonColorBgMinimalHover
@@ -82,6 +90,8 @@ struct ButtonBackgroundModifier: ViewModifier {
             useMonochrome ? theme.button.buttonMonoColorBgDefaultPressed : theme.button.buttonColorBgDefaultPressed
         case .strong:
             useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
+        case .brand:
+            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorBgMinimalPressed : theme.button.buttonColorBgMinimalPressed
         case .negative:
@@ -89,27 +99,31 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var loadingColor: MultipleColorSemanticTokens {
+    private var loadingColor: MultipleColorSemanticTokens? {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultLoading : theme.button.buttonColorBgDefaultLoading
         case .strong:
             useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
+        case .brand:
+            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalLoading : theme.button.buttonColorBgMinimalLoading
+            nil
         case .negative:
             theme.colors.colorActionNegativeLoading
         }
     }
 
-    private var disabledColor: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticTokens? {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultDisabled : theme.button.buttonColorBgDefaultDisabled
         case .strong:
             useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
+        case .brand:
+            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalDisabled : theme.button.buttonColorBgMinimalDisabled
+            nil
         case .negative:
             theme.colors.colorActionDisabled
         }

@@ -53,7 +53,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
             } else {
                 useMonochrome ? theme.button.buttonMonoColorContentDefaultLoading : theme.button.buttonColorContentDefaultLoading
             }
-        case .strong:
+        case .strong, .brand:
             useMonochrome ? theme.button.buttonMonoColorContentStrongLoading : theme.colors.colorContentOnActionLoading
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentMinimalLoading : theme.button.buttonColorContentMinimalLoading

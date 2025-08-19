@@ -20,6 +20,7 @@ import SwiftUI
 struct ButtonBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
+    @Environment(\.oudsRoundedButton) private var roundedButton
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
     @Environment(\.colorScheme) private var colorScheme
@@ -39,29 +40,28 @@ struct ButtonBorderModifier: ViewModifier {
                 .oudsBorder(
                     style: theme.borders.borderStyleDefault,
                     width: defaultWidth,
-                    radius: theme.button.buttonBorderRadiusDefault,
+                    radius: radius,
                     color: defaultColor)
-        case .strong:
+        case .strong, .brand:
             if onColoredSurface {
                 content
                     .oudsBorder(
                         style: theme.borders.borderStyleDefault,
                         width: defaultWidth,
-                        radius: theme.button.buttonBorderRadiusDefault,
+                        radius: radius,
                         color: strongColor)
             } else {
-                content
+                content.clipShape(RoundedRectangle(cornerRadius: radius))
             }
-        case .minimal:
-            content
-                .oudsBorder(
-                    style: theme.borders.borderStyleDefault,
-                    width: defaultWidth,
-                    radius: theme.button.buttonBorderRadiusDefault,
-                    color: minimalColor)
-        case .negative:
-            content
+        case .minimal, .negative:
+            content.clipShape(RoundedRectangle(cornerRadius: radius))
         }
+    }
+
+    // MARK: Radius
+
+    private var radius: BorderRadiusSemanticToken {
+        roundedButton ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
     }
 
     // MARK: Default hierarchy
@@ -97,23 +97,6 @@ struct ButtonBorderModifier: ViewModifier {
             }
         case .disabled:
             useMonochrome ? theme.button.buttonMonoColorBorderDefaultDisabled : theme.button.buttonColorBorderDefaultDisabled
-        }
-    }
-
-    // MARK: Minimal hierarchy
-
-    private var minimalColor: MultipleColorSemanticTokens {
-        switch state {
-        case .enabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalEnabled : theme.button.buttonColorBorderDefaultEnabled
-        case .hover:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalHover : theme.button.buttonColorBorderDefaultHover
-        case .pressed:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalPressed : theme.button.buttonColorBorderDefaultPressed
-        case .loading:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalLoading : theme.button.buttonColorBorderDefaultLoading
-        case .disabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderMinimalDisabled : theme.button.buttonColorBorderDefaultDisabled
         }
     }
 

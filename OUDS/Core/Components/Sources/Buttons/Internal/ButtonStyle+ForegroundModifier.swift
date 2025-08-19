@@ -64,6 +64,8 @@ struct ButtonForegroundModifier: ViewModifier {
             useMonochrome ? theme.button.buttonMonoColorContentDefaultEnabled : theme.button.buttonColorContentDefaultEnabled
         case .strong:
             useMonochrome ? theme.button.buttonMonoColorContentStrongEnabled : theme.colors.colorContentOnActionEnabled
+        case .brand:
+            theme.button.buttonColorContentBrandEnabled
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentMinimalEnabled : theme.button.buttonColorContentMinimalEnabled
         case .negative:
@@ -75,7 +77,7 @@ struct ButtonForegroundModifier: ViewModifier {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultHover : theme.button.buttonColorContentDefaultHover
-        case .strong:
+        case .strong, .brand:
             useMonochrome ? theme.button.buttonMonoColorContentStrongHover : theme.colors.colorContentOnActionHover
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentMinimalHover : theme.button.buttonColorContentMinimalHover
@@ -88,7 +90,7 @@ struct ButtonForegroundModifier: ViewModifier {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultPressed : theme.button.buttonColorContentDefaultPressed
-        case .strong:
+        case .strong, .brand:
             useMonochrome ? theme.button.buttonMonoColorContentStrongPressed : theme.colors.colorContentOnActionPressed
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultPressed : theme.button.buttonColorContentDefaultPressed
@@ -101,7 +103,7 @@ struct ButtonForegroundModifier: ViewModifier {
         switch hierarchy {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultDisabled : theme.button.buttonColorContentDefaultDisabled
-        case .strong:
+        case .strong, .brand:
             useMonochrome ? theme.button.buttonMonoColorContentStrongDisabled : theme.colors.colorContentOnActionDisabled
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentMinimalDisabled : theme.button.buttonColorContentMinimalDisabled

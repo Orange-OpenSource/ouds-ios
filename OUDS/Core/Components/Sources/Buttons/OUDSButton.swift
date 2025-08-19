@@ -20,12 +20,16 @@ import SwiftUI
 ///
 /// ## Hierarchies
 ///
-/// Four hierarchies are proposed for all layouts:
+/// Five hierarchies are proposed for all layouts:
 ///
 /// - **default (by default)**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
-/// - **strong**: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
-/// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
+/// - **strong**: Should be singular and prominent, limited to one per view.
+/// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc. It is a "call for action".
+///
+/// - **brand**: A brand primary color alternative to the *strong* button.
+/// To be used sparingly for high-value specific actions or to visually anchor a brand moment. Do not use it as the default primary button in your interfaces.
+/// A button with `OUDSButton.Hierarchy.Brand` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
@@ -57,14 +61,32 @@ import SwiftUI
 ///
 /// Two style are available:
 ///
-/// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for following states disabled, pressed, hovered or normal (i.e. enabled)
+/// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for  states *disabled*, *pressed*, *hovered* or normal (i.e. *enabled*)
 /// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
-/// ## Colored Surface
+/// ## Rounded layout
 ///
-/// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
+/// Buttons can have rounded layouts to be favored in more emotional, immersive contexts or those tied to specific visual identities.
+/// For standard or business-oriented journeys, keep the default corners.
+/// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// **Remark: Today it is not allowed to place a Negative button on a colored surface.**
+/// To activate the rounded button behavior, set to true the  `oudsRoundedButton` environment variable
+/// at the root level of the view hierarchy (i.e. can be applied on the `OUDSThemeableView`),
+/// to be sure all buttons in the application are rounded.
+///
+/// ```swift
+///     // Add themeable view to your app root view to use the OrangeTheme
+///     OUDSThemeableView(theme: OrangeTheme()) {
+///         YourRootView() // With some views with Buttons
+///     }
+///     .environment(\.oudsRoundedButton, true)
+/// ```
+///
+/// ## Colored surface
+///
+/// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrome mode.
+///
+/// **Remark: Today it is not allowed to place a Negative nor a Brand button on a colored surface.**
 ///
 /// ## Specific behavior
 ///
@@ -75,18 +97,18 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 3.0.0 (Figma component design version)
 /// - Since: 0.10.0
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
 
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
-
     private let type: `Type`
     private let hierarchy: Hierarchy
     private let style: Style
     private let action: () -> Void
+
+    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private enum `Type` {
         case text(String)
@@ -100,6 +122,8 @@ public struct OUDSButton: View {
         case `default`
         /// Strong button on the page should be singular and prominent
         case strong
+        /// A brand primary color alternative to the Strong button.
+        case brand
         /// Minimal button for actions that are considered less crucial
         case minimal
         /// Negative button used for destructive action
@@ -163,11 +187,12 @@ public struct OUDSButton: View {
 
     // MARK: Body
 
+    // swiftlint:disable line_length
     public var body: some View {
-        // A button with negative hierarchy is not allowed on a colored surface
+        // A button with negative or brand hierarchy is not allowed on a colored surface.
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
-        if onColoredSurface, hierarchy == .negative {
-            OL.fatal("An OUDSButton with OUDSButton.Hierarchy.Negative hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
+        if onColoredSurface, hierarchy == .negative || hierarchy == .brand {
+            OL.fatal("An OUDSButton with OUDSButton.Hierarchy.{Negative | Brand} hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {
@@ -183,6 +208,8 @@ public struct OUDSButton: View {
         .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
         .accessibilityLabel(accessibilityLabel)
     }
+
+    // swiftlint:enable line_length
 
     /// Forges a string to vocalize with *Voice Over* describing the button style `loading`
     /// or the text according to the button type. For iconOnly the `accessibilityLabel` is used,
