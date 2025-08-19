@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Button version 3.0 (Add brand hierarchy, add rounded property and update minimal variant) (Orange-OpenSource/ouds-ios#887)
+- Button version 3.0 (add brand hierarchy and rounded property, update minimal variant) (Orange-OpenSource/ouds-ios#887)
 
 ## [0.17.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.16.0...0.17.0) - 2025-07-24
 

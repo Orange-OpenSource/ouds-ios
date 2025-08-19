@@ -63,7 +63,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .brand:
             theme.button.buttonColorBgBrandEnabled
         case .minimal:
-            nil // TODO: Remove button tokens
+            nil
         case .negative:
             theme.colors.colorActionNegativeEnabled
         }
