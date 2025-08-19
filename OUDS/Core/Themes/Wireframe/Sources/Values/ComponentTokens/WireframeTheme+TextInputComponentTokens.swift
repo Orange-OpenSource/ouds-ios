@@ -41,7 +41,7 @@ extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentToke
     /// Has for value token spaces.spacePaddingInlineLg
     @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineLg }
     /// Has for value token spaces.spacePaddingInline2xs
-    @objc public final var textInputSpacePaddingInlineButton: SpaceSemanticToken { spaces.spacePaddingInline2xs }
+    @objc public final var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.spacePaddingInline2xs }
     /// Has for value token spaces.spacePaddingInlineSm
     @objc public final var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.spacePaddingInlineSm }
     /// Has for value token spaces.spacePaddingInlineXs
@@ -55,13 +55,13 @@ extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentToke
     /// Has for value token spaces.spaceColumnGapXs
     @objc public final var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceColumnGapXs
-    @objc public final var textInputSpaceColumnGapTrailingErrorIcon: SpaceSemanticToken { spaces.spaceColumnGapXs }
+    @objc public final var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.spaceColumnGapXs }
     /// Has for value token spaces.spaceRowGapNone
     @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSm
-    @objc public final var textInputSizeLeadingAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXs
-    @objc public final var textInputSizeCountrySelectorAsset: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     /// Has for value token dimensions.dimension4xs
     @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions.dimension4xs }
     /// Has for value token DimensionRawTokens.dimension600

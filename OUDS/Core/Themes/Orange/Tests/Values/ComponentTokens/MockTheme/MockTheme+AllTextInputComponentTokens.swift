@@ -40,6 +40,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Sizes
 
+    override public var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeVerticalDividerHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeLabelMaxHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
     override public var textInputSizeMinHeight: SizeSemanticToken { Self.mockThemeTextInputSize }
@@ -63,7 +64,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
     // MARK: - Spaces
 
     override public var textInputSpacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
-    override public var textInputSpacePaddingInlineButton: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override public var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override public var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override public var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override public var textInputSpacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
@@ -71,7 +72,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     override public var textInputSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override public var textInputSpaceColumnGapInlineText: SpaceSemanticToken { Self.mockThemeTextInputSpace }
-    override public var textInputSpaceColumnGapTrailingErrorIcon: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override public var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override public var textInputSpaceRowGapLabelInput: SpaceSemanticToken { Self.mockThemeTextInputSpace }
 }
 

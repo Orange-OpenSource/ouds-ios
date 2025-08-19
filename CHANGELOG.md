@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Text input component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Button mono component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Button component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
