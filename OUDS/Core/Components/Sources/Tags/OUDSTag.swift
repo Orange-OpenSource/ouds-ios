@@ -274,7 +274,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
             someLabel
         }
 
-        return if case .textAndLoader(label: _) = type {
+        return if case .textAndLoader = type {
             tagLabel + ", " + "core_common_loading_a11y".localized()
         } else {
             tagLabel
