@@ -100,13 +100,13 @@ import SwiftUI
 ///     OUDSTag(label: "Label")
 ///
 ///     // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-///     OUDSTag(label: "Label", hasBullet: true, status: .negative)
+///     OUDSTag(label: "Label", icon: .bullet, status: .negative)
 ///
-///     // Tag with label and icon
-///     OUDSTag(icon: Image("ic_heart"), label: "Label")
+///     // Tag with label and icon with image
+///     OUDSTag(label: "Label", icon: .asset(Image("ic_heart")))
 ///
-///     // Tag with label and loader
-///     OUDSTag(icon: Image("ic_heart"), label: "Label", loader: true)
+///     // Tag with label and loader, but defined with an image which won't be displayed while loader is active
+///     OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
 /// ```
 ///
 /// ## Design documentation
@@ -220,7 +220,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     ///    the `hierarchy` of the tag
     ///    - shape: The shape of the tag that allows to play with its corners appearance.
     ///    - size: The size of the tag
-    ///    - loader: An optional loader (or progress indicator) displayed before the `label`. It will
+    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not. It will
     ///    replace the `icon` if provided.
     public init(label: String,
                 icon: OUDSTag.Icon? = nil,
@@ -228,13 +228,13 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
                 status: Status = .neutral,
                 shape: Shape = .rounded,
                 size: Size = .default,
-                loader: Bool = false)
+                hasLoader: Bool = false)
     {
         self.hierarchy = hierarchy
         self.status = status
         self.shape = shape
         self.size = size
-        if loader {
+        if hasLoader {
             if status == .disabled {
                 OL.fatal("An OUDSTag with OUDSTag.Status.disabled status has been detected with loader activated, which is not allowed.")
             }
