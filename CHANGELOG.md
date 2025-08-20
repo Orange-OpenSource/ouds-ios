@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update typography of the title in the ChipPicker component (Orange-OpenSource/ouds-ios#841)
 - Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)
 - Text input component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
 - Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
