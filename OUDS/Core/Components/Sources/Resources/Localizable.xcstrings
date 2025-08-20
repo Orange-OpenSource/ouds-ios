@@ -4,30 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    "core_button_loading_a11y" : {
-      "comment" : "Button",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تحميل"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chargement"
-          }
-        }
-      }
-    },
     "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
@@ -342,6 +318,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activé"
+          }
+        }
+      }
+    },
+    "core_common_loading_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحميل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement"
           }
         }
       }

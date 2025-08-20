@@ -253,7 +253,10 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
             TagIcon(type: type, hierarchy: hierarchy, status: status, size: size)
         }
         .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size, hasIcon: hasIcon))
+        .accessibilityLabel(accessibilityLabel)
     }
+
+    // MARK: - Helpers
 
     private var hasIcon: Bool {
         switch type {
@@ -261,6 +264,20 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
             icon != nil
         default:
             true
+        }
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the tag dependign to if loading state or not.
+    private var accessibilityLabel: String {
+        let tagLabel = switch type {
+        case let .textAndIcon(label: someLabel, _), let .textAndLoader(label: someLabel):
+            someLabel
+        }
+
+        return if case .textAndLoader(label: _) = type {
+            tagLabel + ", " + "core_common_loading_a11y".localized()
+        } else {
+            tagLabel
         }
     }
 }
