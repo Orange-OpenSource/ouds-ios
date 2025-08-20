@@ -45,9 +45,9 @@ struct TagLabel: View {
     private var color: MultipleColorSemanticTokens {
         switch hierarchy {
         case .emphasized:
-            return colorEmphasized
+            colorEmphasized
         case .muted:
-            return colorMuted
+            colorMuted
         }
     }
 

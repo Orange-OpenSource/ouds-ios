@@ -16,8 +16,6 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Button Loading Content Modifier
-
 /// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.

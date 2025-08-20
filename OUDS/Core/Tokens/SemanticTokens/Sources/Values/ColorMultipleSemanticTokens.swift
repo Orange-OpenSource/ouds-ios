@@ -193,6 +193,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorContentOnStatusAccentMuted: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { get }
+
     var colorContentStatusAccent: MultipleColorSemanticTokens { get }
 
     var colorContentStatusInfo: MultipleColorSemanticTokens { get }

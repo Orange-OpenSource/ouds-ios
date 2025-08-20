@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -16,11 +16,12 @@ import SwiftUI
 
 struct LoaderIndicator: View {
 
-    // MARK: Stored Properties
+    // MARK: Stored properties
 
     let color: Color
 
     @State private var isAnimating = false
+
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
@@ -29,7 +30,7 @@ struct LoaderIndicator: View {
     var body: some View {
         if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
             circleView()
-                .onAppear { // If not set, animation never resumes is low power mode move from true to false
+                .onAppear { // If not set, animation never resumes if low power mode moved from true to false
                     isAnimating = false
                 }
         } else {

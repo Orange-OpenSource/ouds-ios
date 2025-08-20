@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
@@ -20,6 +20,7 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
 
     let size: OUDSTag.Size
     let hasIcon: Bool
+
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -29,7 +30,7 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
             .padding(.top, paddingTop)
             .padding(.bottom, paddingBottom)
             .padding(.leading, paddingLeading)
-            .padding(.trailing, paddingTailing)
+            .padding(.trailing, paddingTrailing)
             .frame(minWidth: minWidth, minHeight: minHeight, alignment: .center)
     }
 
@@ -62,7 +63,7 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
         }
     }
 
-    private var paddingTailing: CGFloat {
+    private var paddingTrailing: CGFloat {
         switch size {
         case .default:
             theme.tag.tagSpacePaddingInlineDefault
@@ -71,7 +72,7 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
         }
     }
 
-    private var minWidth: CGFloat{
+    private var minWidth: CGFloat {
         switch size {
         case .default:
             theme.tag.tagSizeMinWidthDefault
@@ -80,7 +81,7 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
         }
     }
 
-    private var minHeight: CGFloat{
+    private var minHeight: CGFloat {
         switch size {
         case .default:
             theme.tag.tagSizeMinHeightDefault

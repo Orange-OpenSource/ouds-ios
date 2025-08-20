@@ -2,33 +2,36 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Tag Icon
+
 struct TagIcon: View {
 
-    // MARK: Stored Properties
+    // MARK: Stored properties
 
     let type: OUDSTag.`Type`
     let hierarchy: OUDSTag.Hierarchy
     let status: OUDSTag.Status
     let size: OUDSTag.Size
+
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
         switch type {
-        case .textAndIcon(_, let icon):
+        case let .textAndIcon(_, icon):
             if let icon {
                 TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
             }
@@ -37,6 +40,8 @@ struct TagIcon: View {
         }
     }
 }
+
+// MARK: - Tag Loader
 
 struct TagLoader: View {
 
@@ -56,7 +61,7 @@ struct TagLoader: View {
             .padding(.all, padding)
     }
 
-    // MARK: Heplers
+    // MARK: Helpers
 
     private var padding: CGFloat {
         switch size {
@@ -70,9 +75,9 @@ struct TagLoader: View {
     private var color: MultipleColorSemanticTokens {
         switch hierarchy {
         case .emphasized:
-            return colorEmphasized
+            colorEmphasized
         case .muted:
-            return colorMuted
+            colorMuted
         }
     }
 
@@ -115,6 +120,8 @@ struct TagLoader: View {
     }
 }
 
+// MARK: - Tag Asset
+
 struct TagAsset: View {
 
     // MARK: Stored properties
@@ -142,7 +149,7 @@ struct TagAsset: View {
         switch icon {
         case .bullet:
             Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
-        case .asset(let image):
+        case let .asset(image):
             image
         }
     }
@@ -150,56 +157,56 @@ struct TagAsset: View {
     private var color: MultipleColorSemanticTokens {
         switch hierarchy {
         case .emphasized:
-            return emphasizeColor
+            emphasizedColor
         case .muted:
-            return mutedColor
+            mutedColor
         }
     }
 
-    private var emphasizeColor: MultipleColorSemanticTokens {
+    private var emphasizedColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            return theme.colors.colorContentOnStatusNeutralEmphasized
+            theme.colors.colorContentOnStatusNeutralEmphasized
         case .accent:
-            return theme.colors.colorContentOnStatusAccentEmphasized
+            theme.colors.colorContentOnStatusAccentEmphasized
         case .positive:
-            return theme.colors.colorContentOnStatusPositiveEmphasized
+            theme.colors.colorContentOnStatusPositiveEmphasized
         case .warning:
-            return theme.colors.colorContentOnStatusWarningEmphasized
+            theme.colors.colorContentOnStatusWarningEmphasized
         case .negative:
-            return theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
-            return theme.colors.colorContentOnStatusInfoEmphasized
+            theme.colors.colorContentOnStatusInfoEmphasized
         case .disabled:
-            return theme.colors.colorContentOnActionDisabled
+            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var mutedColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            return theme.colors.colorContentOnStatusNeutralMuted
+            theme.colors.colorContentOnStatusNeutralMuted
         case .accent:
-            return theme.colors.colorContentStatusAccent
+            theme.colors.colorContentStatusAccent
         case .positive:
-            return theme.colors.colorContentStatusPositive
+            theme.colors.colorContentStatusPositive
         case .warning:
-            return theme.colors.colorContentStatusWarning
+            theme.colors.colorContentStatusWarning
         case .negative:
-            return theme.colors.colorContentStatusNegative
+            theme.colors.colorContentStatusNegative
         case .info:
-            return theme.colors.colorContentStatusInfo
+            theme.colors.colorContentStatusInfo
         case .disabled:
-            return theme.colors.colorContentOnActionDisabled
+            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var padding: CGFloat {
         switch icon {
         case .bullet:
-            return bulletPadding
+            bulletPadding
         case .asset:
-            return assetPadding
+            assetPadding
         }
     }
 
