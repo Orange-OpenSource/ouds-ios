@@ -19,7 +19,7 @@ struct BadgeIcon: View {
     // MARK: Stored Properties
 
     let icon: Image?
-    let size: OUDSBadge.Size
+    let size: OUDSBadge.StandardSize
 
     @Environment(\.theme) private var theme
 
