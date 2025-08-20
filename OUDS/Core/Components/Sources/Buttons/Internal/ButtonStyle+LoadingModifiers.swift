@@ -16,8 +16,6 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Button Loading Content Modifier
-
 /// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
@@ -38,7 +36,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                LoadingIndicator(color: colorToken.color(for: colorScheme))
+                LoaderIndicator(color: colorToken.color(for: colorScheme))
                     .padding(.vertical, theme.button.buttonSpacePaddingBlock)
             }
     }
@@ -60,42 +58,5 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .negative:
             theme.colors.colorContentOnStatusNegativeEmphasized
         }
-    }
-}
-
-// MARK: - Loading indicator
-
-private struct LoadingIndicator: View {
-
-    // MARK: Stored Properties
-
-    let color: Color
-
-    @State private var isAnimating = false
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
-
-    // MARK: Body
-
-    var body: some View {
-        if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
-            circleView()
-                .onAppear { // If not set, animation never resumes is low power mode move from true to false
-                    isAnimating = false
-                }
-        } else {
-            circleView()
-                .rotationEffect(.degrees(isAnimating ? 360 : 0))
-                .onAppear {
-                    isAnimating = true
-                }
-                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: isAnimating)
-        }
-    }
-
-    private func circleView() -> some View {
-        Circle()
-            .trim(from: 0, to: 0.7)
-            .stroke(color, lineWidth: 3)
     }
 }
