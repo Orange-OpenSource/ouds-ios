@@ -107,6 +107,10 @@ import SwiftUI
 ///
 ///     // Tag with label and loader, but defined with an image which won't be displayed while loader is active
 ///     OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
+///
+///     // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+///     // you can flip the icon
+///     OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
 /// ```
 ///
 /// ## Design documentation
@@ -130,12 +134,12 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     // MARK: - Configuration enums
 
     enum `Type` {
-        case textAndIcon(label: String, icon: OUDSTag.Icon?)
+        case textAndIcon(label: String, icon: OUDSTag.Icon?, flipIcon: Bool = false)
         case textAndLoader(label: String)
 
         var label: String {
             switch self {
-            case let .textAndIcon(label, _), let .textAndLoader(label):
+            case let .textAndIcon(label, _, _), let .textAndLoader(label):
                 label
             }
         }
@@ -215,6 +219,8 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     /// - Parameters:
     ///    - label: The label displayed in the tag
     ///    - icon: The icon displayed before the label, or `nil` if there is no icon
+    ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically).
+    ///     Usefull for example in RTL case to prevent loose of meanings for some images.
     ///    - hierarchy: The importance of the tag. Its background color and its content color are based on this hierarchy combined to the `status` of the tag
     ///    - status: The status of the tag. Its background color and its content color are based on this status combined to
     ///    the `hierarchy` of the tag
@@ -224,6 +230,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     ///    replace the `icon` if provided.
     public init(label: String,
                 icon: OUDSTag.Icon? = nil,
+                flipIcon: Bool = false,
                 hierarchy: Hierarchy = .emphasized,
                 status: Status = .neutral,
                 shape: Shape = .rounded,
@@ -240,7 +247,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
             }
             type = .textAndLoader(label: label)
         } else {
-            type = .textAndIcon(label: label, icon: icon)
+            type = .textAndIcon(label: label, icon: icon, flipIcon: flipIcon)
         }
     }
 
@@ -260,7 +267,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
 
     private var hasIcon: Bool {
         switch type {
-        case let .textAndIcon(_, icon):
+        case let .textAndIcon(_, icon, _):
             icon != nil
         default:
             true
@@ -270,7 +277,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     /// Forges a string to vocalize with *Voice Over* describing the tag dependign to if loading state or not.
     private var accessibilityLabel: String {
         let tagLabel = switch type {
-        case let .textAndIcon(label: someLabel, _), let .textAndLoader(label: someLabel):
+        case let .textAndIcon(label: someLabel, _, _), let .textAndLoader(label: someLabel):
             someLabel
         }
 

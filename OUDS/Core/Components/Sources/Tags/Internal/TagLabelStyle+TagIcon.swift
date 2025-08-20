@@ -31,9 +31,10 @@ struct TagIcon: View {
 
     var body: some View {
         switch type {
-        case let .textAndIcon(_, icon):
+        case let .textAndIcon(_, icon, flipIcon):
             if let icon {
                 TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
+                    .toFlip(flipIcon)
             }
         case .textAndLoader:
             TagLoader(hierarchy: hierarchy, status: status, size: size)

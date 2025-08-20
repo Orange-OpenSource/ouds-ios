@@ -37,4 +37,8 @@ A tag is a small element that shows short information like a label, keyword, or 
 
     // Tag with label and loader, but defined with an image which won't be displayed while loader is active
     OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
+
+    // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+    // you can flip the icon
+    OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
 ```

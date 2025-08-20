@@ -40,7 +40,7 @@ struct ControlItemIconContainer: View {
                     .oudsForegroundStyle(iconColor)
                     .accessibilityHidden(true)
                     .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
-                    .toFlip(flip: flip)
+                    .toFlip(flip)
             }
             .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
         }

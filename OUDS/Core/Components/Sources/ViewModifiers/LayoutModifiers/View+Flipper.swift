@@ -19,7 +19,7 @@ extension View {
     ///
     /// - Parameter flip: if `true` mirrors the view, `false` does nothing
     /// - Returns some View: The current `View` with or not a flip effect
-    func toFlip(flip: Bool) -> some View {
+    func toFlip(_ flip: Bool) -> some View {
         modifier(FlipperModifier(flip: flip))
     }
 }
