@@ -116,7 +116,7 @@ public struct OUDSRadio: View {
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(accessibilityLabel), \(stateDescription) \(errorDescription) \(radioA11yTrait)"
+        let result = "\(accessibilityLabel), \(stateDescription),  \(errorDescription), \(radioA11yTrait)"
         return result
     }
 
@@ -127,10 +127,12 @@ public struct OUDSRadio: View {
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        if _isOn.wrappedValue {
-            "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+        if !isEnabled {
+            ""
         } else {
-            "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+            _isOn.wrappedValue
+                ? "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+                : "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
         }
     }
 }

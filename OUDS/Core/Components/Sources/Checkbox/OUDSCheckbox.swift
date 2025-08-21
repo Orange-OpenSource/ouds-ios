@@ -140,9 +140,13 @@ public struct OUDSCheckbox: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
     private func a11yHint() -> String {
-        isOn
-            ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
-            : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+        if !isEnabled {
+            ""
+        } else {
+            isOn
+                ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
+                : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+        }
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
@@ -152,7 +156,7 @@ public struct OUDSCheckbox: View {
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
+        let result = "\(a11yLabel), \(stateDescription), \(errorDescription), \(checkboxA11yTrait)"
         return result
     }
 }

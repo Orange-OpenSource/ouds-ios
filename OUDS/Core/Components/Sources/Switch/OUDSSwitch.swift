@@ -93,7 +93,7 @@ public struct OUDSSwitch: View {
         let stateDescription = isEnabled ? "" : "core_common_disabled_a11y".localized()
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(accessibilityLabel), \(stateDescription) \(switchA11yTrait)"
+        let result = "\(accessibilityLabel), \(stateDescription), \(switchA11yTrait)"
         return result
     }
 
@@ -104,6 +104,10 @@ public struct OUDSSwitch: View {
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+        if !isEnabled {
+            ""
+        } else {
+            "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+        }
     }
 }
