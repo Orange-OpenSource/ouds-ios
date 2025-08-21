@@ -53,6 +53,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     private let icon: Image?
 
     @Environment(\.theme) private var theme
+    @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
 
     // MARK: - Configuration
 
@@ -165,15 +166,19 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     // MARK: Private helpers
 
     private var frameSize: SizeSemanticToken {
-        switch size {
-        case .extraSmall:
-            theme.badge.badgeSizeXsmall
-        case .small:
-            theme.badge.badgeSizeSmall
-        case .medium:
-            theme.badge.badgeSizeMedium
-        case .large:
+        if sizeCategory.isLargeTextUsed {
             theme.badge.badgeSizeLarge
+        } else {
+            switch size {
+            case .extraSmall:
+                theme.badge.badgeSizeXsmall
+            case .small:
+                theme.badge.badgeSizeSmall
+            case .medium:
+                theme.badge.badgeSizeMedium
+            case .large:
+                theme.badge.badgeSizeLarge
+            }
         }
     }
 
