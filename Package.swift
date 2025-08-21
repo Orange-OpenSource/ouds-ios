@@ -146,7 +146,7 @@ let package = Package(
             name: "OUDSComponents",
             dependencies: ["OUDSTokensComponent", "OUDS"],
             path: "OUDS/Core/Components/Sources",
-            resources: [.process("Resources/")]),
+            resources: [.process("_/Resources/")]),
         .testTarget(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
