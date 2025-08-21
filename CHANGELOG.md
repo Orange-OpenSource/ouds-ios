@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Voice Over vocalization for checkbox picker root item if error (Orange-OpenSource/ouds-ios#754)
 - Voice Over vocalization for disabled checkbox, radio button and switch (Orange-OpenSource/ouds-ios#715)
 - Icon of badge component does not resize if big texts used (Orange-OpenSource/ouds-ios#844)
 
