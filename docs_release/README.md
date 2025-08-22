@@ -128,47 +128,10 @@ Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
 
 - Generate documentation: from Xcode build the documentation, export each doccarchive in your downlaods folder (9 modules), then run the script ; it will update online version and generate a ZIP file in _/tmp_
+
     ```shell
     ./generateWebDocumentation.sh --libversion=X.Y.Z --usegit
     ```
-    
-- Launch a job on your runner to build the demo application
-
-- Or use _Fastlane_ command:
-    ```shell
-    # For comments on issues and tags management
-    export GITHUB_ACCESS_TOKEN=<your_github_personal_token>
-
-    # Variables for upload to TestFlight
-    export OUDS_APPLE_KEY_ID=<your_key_ID>
-    export OUDS_APPLE_ISSUER_ID=<your_issuer_ID>
-    export OUDS_APPLE_KEY_CONTENT=<your_key_content>
-    
-    # Certificates and provisioning profiles
-    export OUDS_BUILD_CERTIFICATE_BASE64=<certificate_base64_content>
-    export OUDS_BUILD_PROVISIONING_PROFILE_BASE64=<prov_profile_base64_content>
-    export OUDS_P12_PASSWORD=<password_of_certificate>
-    export OUDS_KEYCHAIN_PASSWORD=<password_for_keychain>
-
-    # Variables for application signing
-    export OUDS_DEVELOPER_BUNDLE_IDENTIFIER=<your_app_identifier>
-    export OUDS_FASTLANE_APPLE_ID=<your_apple_email_address>
-    export OUDS_DEVELOPER_PORTAL_TEAM_ID=<your_developer_portal_team_ID>
-    
-    # For Mattermost notifications
-    export OUDS_MATTERMOST_HOOK_BOT_ICON_URL=<hook_bot_icon>
-    export OUDS_MATTERMOST_HOOK_BOT_NAME=<hook_bot_name>
-    export OUDS_MATTERMOST_HOOK_URL=<hook_url>
-
-    # Variables for internal portal upload (for in the end App Store)
-    export OUDS_UPLOAD_STORE_URL=<URL_wih_details_for_upload>
-
-    bundle exec fastlane prod upload:true
-    # set "upload" to true if you want to upload app to internal portal, false otherwise.
-    ```
-
-> [!TIP]
-> Of course this build operation will be successful if and ony if you have the suitable certificates and provisoning profile son your computer
 
 ### Publish release to GitHub
 
@@ -199,11 +162,9 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in artefacts
 
-- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
-
 - Close the previous release discussion, lock and unpin it. Pin the new discussion for the release, and add in comments the sprint number and the app details in production mode. [This is an exemple of a release discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/606) and [a detailed comment](https://github.com/Orange-OpenSource/ouds-ios/discussions/358#discussioncomment-11608399).
 
-A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.13.0).
+A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.17.0).
 
 > [!Important]
 > You must make a release of the Design System Toolbox app after this release so as to make the app se the new stable version of this Swift package
