@@ -62,6 +62,8 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorActionSupportEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportEnabledLight, dark: colorActionSupportEnabledDark) }
 
+    @objc public final var colorActionSupportDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportDisabledLight, dark: colorActionSupportDisabledDark) }
+
     @objc public final var colorActionSupportFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportFocusLight, dark: colorActionSupportFocusDark) }
 
     @objc public final var colorActionSupportHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportHoverLight, dark: colorActionSupportHoverDark) }

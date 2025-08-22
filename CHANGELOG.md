@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Color semantic tokens (Orange-OpenSource/ouds-ios#915)
 - Structure of components and files in repository (Orange-OpenSource/ouds-ios#908)
 - Update typography of the title in the chip picker component (Orange-OpenSource/ouds-ios#841)
 - Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)

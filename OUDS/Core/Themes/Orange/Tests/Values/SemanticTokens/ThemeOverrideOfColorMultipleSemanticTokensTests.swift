@@ -127,6 +127,11 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorActionSupportEnabled == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportDisabled() throws {
+        #expect(inheritedTheme.colors.colorActionSupportDisabled != abstractTheme.colors.colorActionSupportDisabled)
+        #expect(inheritedTheme.colors.colorActionSupportDisabled == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportFocus() throws {
         #expect(inheritedTheme.colors.colorActionSupportFocus != abstractTheme.colors.colorActionSupportFocus)
         #expect(inheritedTheme.colors.colorActionSupportFocus == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)

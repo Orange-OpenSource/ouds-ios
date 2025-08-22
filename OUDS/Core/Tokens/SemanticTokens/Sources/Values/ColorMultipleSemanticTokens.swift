@@ -88,6 +88,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorActionSupportEnabled: MultipleColorSemanticTokens { get }
 
+    var colorActionSupportDisabled: MultipleColorSemanticTokens { get }
+
     var colorActionSupportFocus: MultipleColorSemanticTokens { get }
 
     var colorActionSupportHover: MultipleColorSemanticTokens { get }
