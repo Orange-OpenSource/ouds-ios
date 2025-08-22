@@ -30,9 +30,26 @@ import SwiftUI
 /// ```swift
 /// ```
 ///
+/// ## Rounded layout
+///
+/// TextInput can have rounded layouts to be favored in more emotional, immersive contexts or those tied to specific visual identities.
+/// For standard or business-oriented journeys, keep the default corners.
+/// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
+///
+/// To activate the rounded button behavior, set to true the  `oudsRoundedTetxInput` environment variable
+/// at the root level of the view hierarchy (i.e. can be applied on the `OUDSThemeableView`),
+/// to be sure all buttons in the application are rounded.
+///
+/// ```swift
+///     // Add themeable view to your app root view to use the OrangeTheme
+///     OUDSThemeableView(theme: OrangeTheme()) {
+///         YourRootView() // With some views with TextInput
+///     }
+///     .environment(\.oudsRoundedTextInput, true)
+/// ```
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.18.0
