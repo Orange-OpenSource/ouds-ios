@@ -17,7 +17,7 @@ import SwiftUI
 
 struct BadgeCount: View {
 
-    // MARK: Stored Properties
+    // MARK: Stored properties
 
     let count: UInt?
     let size: OUDSBadge.StandardSize

@@ -16,7 +16,7 @@ import SwiftUI
 
 struct BadgeIcon: View {
 
-    // MARK: Stored Properties
+    // MARK: Stored properties
 
     let icon: Image?
     let size: OUDSBadge.StandardSize
