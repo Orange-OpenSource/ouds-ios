@@ -14,15 +14,13 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Badge
-
 /// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization
 /// within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Default badge is netral with medium size
+///     // Default badge is neutral with medium size
 ///     OUDSBadge()
 ///
 ///     // Accent badge in small size without information
@@ -45,20 +43,21 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
 
     static let maxCount = 99
 
-    // MARK: Stored Properties
+    // MARK: Stored properties
 
     private let status: Status
-    private let size: Size
+    private let size: StandardSize
     private let count: UInt?
     private let icon: Image?
 
     @Environment(\.theme) private var theme
     @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
 
-    // MARK: - Configuration
+    // MARK: - Configurations
 
     /// The status depends on the context of the information it represents.
     public enum Status {
+
         /// Used for general labels without specific emphasis
         case neutral
 
@@ -83,8 +82,9 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
         case disabled
     }
 
-    /// All available sizes of a badge
-    public enum Size {
+    /// All available sizes of a badge as *standard* type
+    public enum StandardSize {
+
         /// A compact badge for minimal space usage, ideal for small UI elements like icons or tooltips.
         case extraSmall
 
@@ -98,14 +98,34 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
         case large
     }
 
+    /// All available sizes of a badge with *count* or *icon*
+    public enum IllustrationSize {
+
+        /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
+        case medium
+
+        /// A prominent badge for drawing more attention, often used in dashboards or highlighted sections.
+        case large
+
+        /// Internal usage: convert to standard size
+        public var standardSize: StandardSize {
+            switch self {
+            case .medium:
+                .medium
+            case .large:
+                .large
+            }
+        }
+    }
+
     // MARK: Initializers
 
-    /// Creates a basic badge.
+    /// Creates a basic standard neutral badge.
     ///
     /// - Parameters:
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    public init(status: Status = .neutral, size: Size = .medium) {
+    public init(status: Status = .neutral, size: StandardSize = .medium) {
         self.status = status
         self.size = size
         icon = nil
@@ -114,34 +134,32 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
     /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
-    /// Negative values are not allowed.
-    /// The number is not displayed when size is `OUDSBadge.Size.extraSmall` or `OUDSBadge.Size.small`.
-    /// The background color of the badge and the number color are based on thie given `status`.
+    /// Negative values are not allowed by design.
+    /// The background color of the badge and the number color are based on the given `status`.
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(count: UInt, status: Status = .neutral, size: Size = .medium) {
+    public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
         self.status = status
-        self.size = size
+        self.size = size.standardSize
         self.count = count
         icon = nil
     }
 
-    /// Create a badge which displays an icon to visually reinforce meaning.
+    /// Creates a badge which displays an icon to visually reinforce meaning.
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
     /// The size remains unchanged despite the increase in the interface size.
     /// The background color of the badge and the icon color are based on the given `status`.
-    /// The icon is not displayed when size is `OUDSBadge.Size.extraSmall` or `OUDSBadge.Size.small`.
     ///
     /// - Parameters:
     ///    - icon: The icon displayed in the badge
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(icon: Image, status: Status = .neutral, size: Size = .medium) {
+    public init(icon: Image, status: Status = .neutral, size: IllustrationSize = .medium) {
         self.status = status
-        self.size = size
+        self.size = size.standardSize
         count = nil
         self.icon = icon
     }

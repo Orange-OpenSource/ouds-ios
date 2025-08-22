@@ -14,7 +14,7 @@
 import OUDSComponents
 import Testing
 
-/// Tests some helper functions defined in extensions of `OUDSComponents` module.
+/// Tests some API for `OUDSCheckbox`
 struct OUDSCheckboxStateTests {
 
     /// A selected checkbox must be toggled to an unselected checkbox.
