@@ -11,8 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
+import OUDS
 import OUDSTokensComponent
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - OUDS Text input
@@ -59,21 +60,148 @@ public struct OUDSTextInput: View {
 
     @Environment(\.theme) private var theme
 
+    let label: String
+    let text: Binding<String>
+    let helperText: String?
+    let placeholderText: String?
+
     // MARK: - Initializers
 
     /// Creates a text input.
     ///
     /// - Parameters:
-    public init() {
+    ///     - label: The lable of the text input
+    ///     - helperText: Additional helper text below the input text
+    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil) {
+        self.label = label
+        self.text = text
+        self.helperText = helperText
+        self.placeholderText = placeholderText
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
-            VibrationsManager.warning()
-        } content: { interactionState in
-            Text("Content here")
-        }
+        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText)
     }
 }
+
+struct TextInput: View {
+
+    // MARK: - Properties
+
+    let label: String
+    let text: Binding<String>
+    let placeholderText: String?
+    let helperText: String?
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsRoundedTextInput) private var rounded
+
+    // MARK: - Body
+
+    var body: some View {
+        VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
+                TextContainer(label: label, text: text, placeholderText: placeholderText)
+                    .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
+                    .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+                    .oudsBackground(theme.colors.colorActionSupportEnabled)
+
+                Divider()
+                    .oudsHorizontalDivider(dividerColor: .default)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+
+            if let helperText {
+                HelperTextContainer(helperText: helperText)
+            }
+        }
+    }
+
+    // MARK: - Helper
+
+    private var cornerRadius: BorderRadiusSemanticToken {
+        rounded ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+    }
+}
+
+struct TextContainer: View {
+
+    // MARK: - Properties
+
+    let label: String
+    let text: Binding<String>
+    let placeholderText: String?
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+            LabelContainer(label: label)
+
+            if placeholderText != nil {
+                TextField("", text: text, prompt: promptText)
+            }
+        }
+    }
+
+    // MARK: - Helper
+
+    private var promptText: Text? {
+        if let placeholderText {
+            return Text(placeholderText)
+        }
+        return nil
+    }
+}
+
+struct LabelContainer: View {
+
+    // MARK: - Properties
+
+    let label: String
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: - Body
+
+    var body: some View {
+        Text(label)
+            .typeLabelDefaultLarge(theme)
+            .oudsForegroundColor(color)
+            .frame(maxWidth: .infinity, maxHeight: theme.textInput.textInputSizeLabelMaxHeight, alignment: .leading)
+    }
+
+    // MARK: Helper
+
+    private var color: MultipleColorSemanticTokens {
+        isEnabled ? theme.colors.colorContentMuted: theme.colors.colorActionDisabled
+    }
+}
+
+struct HelperTextContainer: View {
+
+    // MARK: - Properties
+
+    let helperText: String
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: - Body
+
+    var body: some View {
+        Text(helperText)
+            .typeLabelDefaultMedium(theme)
+            .oudsForegroundColor(theme.colors.colorContentMuted)
+            .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
+            .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+    }
+
+    // MARK: Helper
+
+    private var color: MultipleColorSemanticTokens {
+        isEnabled ? theme.colors.colorContentMuted: theme.colors.colorActionDisabled
+    }
+}
+
