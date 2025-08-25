@@ -64,6 +64,16 @@ public struct OUDSTextInput: View {
     let text: Binding<String>
     let helperText: String?
     let placeholderText: String?
+    let style: Style
+
+    public enum Style {
+        /// An input with a subtle background fill and a visible bottom border,
+        /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
+        case `default`
+        /// A minimalist input with a transparent background and a visible stroke outlining
+        /// the field.
+        case alternative
+    }
 
     // MARK: - Initializers
 
@@ -72,17 +82,20 @@ public struct OUDSTextInput: View {
     /// - Parameters:
     ///     - label: The lable of the text input
     ///     - helperText: Additional helper text below the input text
-    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil) {
+    ///     - placeholderText: The placeholder text set in place of text when empty
+    ///     - style: The style of the text input
+    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil, style: Style = .default) {
         self.label = label
         self.text = text
         self.helperText = helperText
         self.placeholderText = placeholderText
+        self.style = style
     }
 
     // MARK: Body
 
     public var body: some View {
-        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText)
+        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText, style: style)
     }
 }
 
@@ -94,27 +107,97 @@ struct TextInput: View {
     let text: Binding<String>
     let placeholderText: String?
     let helperText: String?
+    let style: OUDSTextInput.Style
     @Environment(\.theme) private var theme
-    @Environment(\.oudsRoundedTextInput) private var rounded
 
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
+            TextContainer(label: label, text: text, placeholderText: placeholderText)
+                .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
+                .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+                .modifier(TextInputBackgroundModifier(style: style))
+                .modifier(TextInputBoderModifier(style: style))
+
+            if let helperText, !helperText.isEmpty {
+                HelperTextContainer(helperText: helperText)
+            }
+        }
+        .frame(minWidth: theme.textInput.textInputSizeMinWidth,
+               maxWidth: theme.textInput.textInputSizeMaxWidth,
+               minHeight: theme.textInput.textInputSizeMinHeight,
+               alignment: .center)
+    }
+}
+
+struct TextInputBackgroundModifier: ViewModifier {
+
+    // MARK: - Stored properties
+
+    let style: OUDSTextInput.Style
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsRoundedTextInput) private var rounded
+    @Environment(\.isEnabled) private var enabled
+    @Environment(\.isFocused) private var focused
+
+    @State private var hover = false
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        switch style {
+        case .default:
+            content
+                .onHover { hover in
+                    self.hover = hover
+                }
+                .oudsBackground(color)
+        case .alternative:
+            content
+        }
+    }
+
+    private var color: MultipleColorSemanticTokens {
+        if !enabled{
+            return theme.colors.colorActionDisabled
+        }
+        if hover {
+            return theme.colors.colorActionSupportHover
+        }
+        if focused {
+            return theme.colors.colorActionSupportFocus
+        }
+        return theme.colors.colorActionSupportHover
+    }
+}
+
+struct TextInputBoderModifier: ViewModifier {
+
+    // MARK: - Stored properties
+
+    let style: OUDSTextInput.Style
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsRoundedTextInput) private var rounded
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        switch style {
+        case .default:
             VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
-                TextContainer(label: label, text: text, placeholderText: placeholderText)
-                    .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
-                    .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
-                    .oudsBackground(theme.colors.colorActionSupportEnabled)
+                content
 
                 Divider()
                     .oudsHorizontalDivider(dividerColor: .default)
             }
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-
-            if let helperText {
-                HelperTextContainer(helperText: helperText)
-            }
+        case .alternative:
+            content
+                .oudsBorder(style: theme.borders.borderStyleDefault,
+                            width: theme.textInput.textInputBorderWidthDefault,
+                            radius: cornerRadius,
+                            color: theme.textInput.textInputColorBorderEnabled)
         }
     }
 
@@ -140,7 +223,7 @@ struct TextContainer: View {
         VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
             LabelContainer(label: label)
 
-            if placeholderText != nil {
+            if let placeholderText, !placeholderText.isEmpty {
                 TextField("", text: text, prompt: promptText)
             }
         }
