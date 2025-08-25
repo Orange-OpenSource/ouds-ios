@@ -64,6 +64,7 @@ public struct OUDSTextInput: View {
     let text: Binding<String>
     let helperText: String?
     let placeholderText: String?
+    let leadingIcon: Image?
     let style: Style
 
     public enum Style {
@@ -82,20 +83,22 @@ public struct OUDSTextInput: View {
     /// - Parameters:
     ///     - label: The lable of the text input
     ///     - helperText: Additional helper text below the input text
-    ///     - placeholderText: The placeholder text set in place of text when empty
+    ///     - placeholderText: An optional placeholder text set in place of text when empty
+    ///     - leadingIcon: An optional leading icon to provide more context
     ///     - style: The style of the text input
-    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil, style: Style = .default) {
+    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil, leadingIcon: Image? = nil, style: Style = .default) {
         self.label = label
         self.text = text
         self.helperText = helperText
         self.placeholderText = placeholderText
+        self.leadingIcon = leadingIcon
         self.style = style
     }
 
     // MARK: Body
 
     public var body: some View {
-        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText, style: style)
+        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText, leadingIcon: leadingIcon, style: style)
     }
 }
 
@@ -107,6 +110,7 @@ struct TextInput: View {
     let text: Binding<String>
     let placeholderText: String?
     let helperText: String?
+    let leadingIcon: Image?
     let style: OUDSTextInput.Style
     @Environment(\.theme) private var theme
 
@@ -114,9 +118,10 @@ struct TextInput: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
-            TextContainer(label: label, text: text, placeholderText: placeholderText)
+            TextInputContainer(label: label, text: text, placeholderText: placeholderText, leadingIcon: leadingIcon)
                 .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
-                .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+                .padding(.leading, leading)
+                .padding(.trailing, trailing)
                 .modifier(TextInputBackgroundModifier(style: style))
                 .modifier(TextInputBoderModifier(style: style))
 
@@ -129,6 +134,17 @@ struct TextInput: View {
                minHeight: theme.textInput.textInputSizeMinHeight,
                alignment: .center)
     }
+
+    private var leading: SpaceSemanticToken {
+        // TODO: textInputSpacePaddingInlineStart is missing
+        // leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineStart
+        theme.textInput.textInputSpacePaddingInlineDefault
+    }
+
+    private var trailing: CGFloat {
+        leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineTrailingAction
+    }
+
 }
 
 struct TextInputBackgroundModifier: ViewModifier {
@@ -208,23 +224,31 @@ struct TextInputBoderModifier: ViewModifier {
     }
 }
 
-struct TextContainer: View {
+struct TextInputContainer: View {
 
     // MARK: - Properties
 
     let label: String
     let text: Binding<String>
     let placeholderText: String?
+    let leadingIcon: Image?
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
-            LabelContainer(label: label)
+        HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+            leadingIcon?
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
 
-            if let placeholderText, !placeholderText.isEmpty {
-                TextField("", text: text, prompt: promptText)
+            VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+                LabelContainer(label: label)
+
+                if let placeholderText, !placeholderText.isEmpty {
+                    TextField("", text: text, prompt: promptText)
+                }
             }
         }
     }
