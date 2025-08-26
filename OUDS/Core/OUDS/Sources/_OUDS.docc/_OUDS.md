@@ -4,7 +4,7 @@ The iOS library of *Orange Unified Design System*, the new design system unified
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.1.0
+🧬 Core version: 1.5.0
 ```
 
 ## Overview
