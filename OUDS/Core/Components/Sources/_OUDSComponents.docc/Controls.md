@@ -263,7 +263,7 @@ The library proposes filter chip component to make some filtering with selected 
 
 #### Chips picker
 
-![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange.png)
+![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
 
 The library proposes a chip picker to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only
