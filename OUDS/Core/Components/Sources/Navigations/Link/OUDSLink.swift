@@ -49,6 +49,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/31c33b-link)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A link component in light and dark mode with Orange theme](component_link_enabled_default_next_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A link component in light and dark mode with Orange Business Tools theme](component_link_enabled_default_next_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A link component in light and dark mode with Orange Inverse theme](component_link_enabled_default_next_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A link component in light and dark mode with Sosh theme](component_link_enabled_default_next_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A link component in light and dark mode with Wireframe theme](component_link_enabled_default_next_Wireframe)
+///
 /// - Version: 2.0.0 (Figma component design version)
 /// - Since: 0.11.0
 public struct OUDSLink: View {

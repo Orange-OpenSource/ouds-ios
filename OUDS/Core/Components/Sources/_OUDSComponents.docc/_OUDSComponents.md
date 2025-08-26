@@ -1,5 +1,9 @@
 # ``OUDSComponents``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_folder_categories")
+}
+
 The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:

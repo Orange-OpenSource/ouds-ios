@@ -1,5 +1,9 @@
 # ``OUDSFoundations``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_layers")
+}
+
 Contains a set of helpers shared for higher level targets.
 
 ## Overview

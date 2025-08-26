@@ -1,5 +1,9 @@
 # ``OUDS``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_unified_ds")
+}
+
 The iOS library of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
 
 <!-- NOTE: Do not forget to update tokens version -->

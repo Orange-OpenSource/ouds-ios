@@ -1,5 +1,9 @@
 # ``OUDSTokensComponent``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_design_token_figma_component")
+}
+
 These _tokens_ are defined for components and refer to semantic tokens or raw tokens.
 They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
 

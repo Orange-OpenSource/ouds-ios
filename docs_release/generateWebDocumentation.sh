@@ -158,7 +158,7 @@ if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
     _ "👋 Bye!"
     exit $EXIT_OK
 else
-    _ "👍 Ok, let's go!"
+    _ "👍 Ok, let's go! Keep in mind it can need between 15 and 20 minutes!"
 fi
 
 start_time=$(date +%s)
@@ -265,6 +265,7 @@ if [[ $use_git -eq 1 ]]; then
     rm -rf "css"
     rm -rf "data"
     rm -rf "documentation"
+    rm -rf "images"
     rm -rf "img"
     rm -rf "index"
     rm -rf "js"
@@ -274,11 +275,28 @@ if [[ $use_git -eq 1 ]]; then
     
     # Copy all files from temporary folder to branch
     cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
+
+    # It seems there is an issue with references of images
+    # Need to copy them also in root images folder at least for landing page
+    # See https://github.com/swiftlang/swift-docc/issues/1284
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeBusinessTools/ic_theme_orangebusinesstools.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeInverse/ic_theme_orangeinverse.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"
     
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY/css"
     git add "$DOCS_DIRECTORY/data"
     git add "$DOCS_DIRECTORY/documentation"
+    git add "$DOCS_DIRECTORY/images"
     git add "$DOCS_DIRECTORY/img"
     git add "$DOCS_DIRECTORY/index"
     git add "$DOCS_DIRECTORY/js"

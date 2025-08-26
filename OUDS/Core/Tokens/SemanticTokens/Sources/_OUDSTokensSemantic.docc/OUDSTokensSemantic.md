@@ -1,5 +1,9 @@
 # ``OUDSTokensSemantic``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_design_token_figma_semantic")
+}
+
 These _tokens_ can be used mainly for _component tokens_ to apply some style and configuration values ; today _component tokens_ or _components_ are not defined yet.
 They can be seen as an high level of usage with functional meanings.
 

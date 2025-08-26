@@ -37,6 +37,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A badge component in light and dark mode with Orange theme](component_badge_count_large_accent_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_count_large_accent_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A badge component in light and dark mode with Orange Inverse theme](component_badge_count_large_accent_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A badge component in light and dark mode with Sosh theme](component_badge_count_large_accent_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A badge component in light and dark mode with Wireframe theme](component_badge_count_large_accent_Wireframe)
+///
 /// - Version:1.1.0 (Figma component design version)
 /// - Since: 0.17.0
 public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge documentation in documentation above

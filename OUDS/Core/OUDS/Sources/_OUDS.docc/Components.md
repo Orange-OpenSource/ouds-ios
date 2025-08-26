@@ -14,7 +14,7 @@ Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with 
 
 ```swift
 // The theme can be OrangeTheme or your own
-OUDSThemeableView(theme: theTheme) {
+OUDSThemeableView(theme: OrangeTheme()) {
         
 }
 ``` 

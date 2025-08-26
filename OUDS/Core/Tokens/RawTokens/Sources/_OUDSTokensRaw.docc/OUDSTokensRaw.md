@@ -1,5 +1,9 @@
 # ``OUDSTokensRaw``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_design_token_figma_raw")
+}
+
 _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
 <!-- NOTE: Do not forget to update tokens version -->

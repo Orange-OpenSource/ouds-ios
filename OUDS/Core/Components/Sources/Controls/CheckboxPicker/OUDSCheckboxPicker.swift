@@ -83,6 +83,12 @@ import SwiftUI
 ///
 /// There is no online specification as this component is not an official OUDS one
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxpicker_vertical_rooted_Orange)
+///
 /// - Since: 0.14.0
 public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
