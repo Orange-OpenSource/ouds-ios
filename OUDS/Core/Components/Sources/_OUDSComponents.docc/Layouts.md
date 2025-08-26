@@ -6,6 +6,8 @@ Some components can be used for **layouts**.
 
 ### Colored Surface
 
+![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredsurface_Orange)
+
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
 To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *buttonColorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
@@ -44,7 +46,7 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
 ```
 
-##### Debuging contrast ratios
+#### Debuging contrast ratios
 
 Some countries set up new laws so as to force companies to have a better accessibility of their digital services.
 This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr/), also named "RGAA".

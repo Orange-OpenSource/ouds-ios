@@ -27,6 +27,12 @@ import SwiftUI
 ///   }
 /// ```
 ///
+/// ## Theme rendering
+///
+/// ### Orange
+///
+/// ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredsurface_Orange)
+///
 /// - Since: 0.13.0
 public struct OUDSColoredSurface<Content>: View where Content: View {
 
