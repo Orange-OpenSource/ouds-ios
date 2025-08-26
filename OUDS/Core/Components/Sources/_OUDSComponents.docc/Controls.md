@@ -219,7 +219,9 @@ The indicator can be leading or trailing.
 
 #### Suggestion
 
-The library proposes suggestion chip component to make some predicitve or recommended selection.
+![A suggestion chip component in light and dark mode with Orange theme](component_suggestionchip_text_icon_enabled_Orange)
+
+The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
 ```swift
     // Suggestion chip with icon only 
