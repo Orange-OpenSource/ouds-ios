@@ -184,8 +184,10 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
 #### Switch (only)
 
+![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+
 The library proposes a new layout for the switch component. The native it not used anymore.
-You can use a simple switch without any labels and images.
+You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
 
 ```swift
     // A simple switch, with only an indicator

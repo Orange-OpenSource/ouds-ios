@@ -15,8 +15,6 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDS Switch
-
 /// The ``OUDSSwitch`` proposes layout to add in your views a lonely switch, without labels, texts nor icons switchs components
 /// If you want to use a switch with additional texts and icon, prefer instead ``OUDSSwitchItem``.
 ///
@@ -39,6 +37,28 @@ import SwiftUI
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
+///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_enabled_selected_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A switch component in light and dark mode with Orange Inverse theme](component_switch_enabled_selected_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A switch component in light and dark mode with Sosh theme](component_switch_enabled_selected_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A switch component in light and dark mode with Wireframe theme](component_switch_enabled_selected_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0
