@@ -28,9 +28,11 @@ This checkbox can provide two values (selected and unselected) or three values (
 
 #### Checkbox item
 
+![A checkbox item component in light and dark mode with Orange theme](component_checkbox_item_Orange)
+
 The library proposes also a checkbox which has in its layout some labels and icons.
 The indicator can be leading or trailing.
-It can be be sued for two-states or three-states management.
+It can be be used for two-states (``OUDSCheckboxItem``) or three-states management (``ODUSCheckboxItemIndeterminate``).
 
 ```swift
     // A leading checkbox with a label, with only two states
