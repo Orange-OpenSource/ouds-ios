@@ -236,6 +236,8 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 #### Filter
 
+![A fiter chip component in light and dark mode with Orange theme](component_filterchip_text_enabled_Orange)
+
 The library proposes filter chip component to make some filtering with selected or unselected options.
 
 ```swift
