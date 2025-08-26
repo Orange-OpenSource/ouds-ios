@@ -4,7 +4,11 @@ _Themes_ are applications of specific values for _components tokens_ and _semant
 A _theme_ contains any relevant tokens which can be used for components rendering.
 
 This library exposes today following themes:
-1. [Orange Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) which can be seen as the default _theme_ ;
+1. [Orange ](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) which can be seen as the default _theme_ for Orange products
+2. [Orange Inverse](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/) for Orange products in particular conditions and usages
+3. [Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/) for Orange products with contraints of spaces and sizes due to rich and heavy interfaces
+4. [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/) for Sosh products
+5. [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/) for mockups, protoypes and prooves of concepts without Orange-flavoured styles
 
 All themes are based on an `OUDSTheme`.
 
@@ -29,6 +33,10 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 // Make imports
 import OUDS // For OUDSThemeableView
 import OUDSThemesOrange // For OrangeTheme
+import OUDSThemesOrangeInverse // For OrangeInverseTheme
+import OUDSThemesOrangeBusinessTools // For OrangeBusinessToolsTheme
+import OUDSThemesSosh // For SoshTheme
+import OUDSThemesWireframe // For WrieframeTheme
 
 // Add themeable view to your root view to use the OrangeTheme
 OUDSThemeableView(theme: OrangeTheme()) {
