@@ -65,6 +65,7 @@ public struct OUDSTextInput: View {
     let helperText: String?
     let placeholderText: String?
     let leadingIcon: Image?
+    let isError: Bool
     let style: Style
 
     public enum Style {
@@ -80,25 +81,35 @@ public struct OUDSTextInput: View {
 
     /// Creates a text input.
     ///
+    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
+    ///
     /// - Parameters:
     ///     - label: The lable of the text input
     ///     - helperText: Additional helper text below the input text
     ///     - placeholderText: An optional placeholder text set in place of text when empty
     ///     - leadingIcon: An optional leading icon to provide more context
+    ///     - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///     - style: The style of the text input
-    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil, leadingIcon: Image? = nil, style: Style = .default) {
+    public init(label: String, text: Binding<String>, placeholderText: String? = nil, helperText: String? = nil, leadingIcon: Image? = nil, style: Style = .default, isError: Bool = false) {
         self.label = label
         self.text = text
         self.helperText = helperText
         self.placeholderText = placeholderText
         self.leadingIcon = leadingIcon
+        self.isError = isError
         self.style = style
     }
 
     // MARK: Body
 
     public var body: some View {
-        TextInput(label: label,text: text, placeholderText: placeholderText, helperText: helperText, leadingIcon: leadingIcon, style: style)
+        TextInput(label: label,
+                  text: text,
+                  placeholderText: placeholderText,
+                  helperText: helperText,
+                  leadingIcon: leadingIcon,
+                  style: style,
+                  isError: isError)
     }
 }
 
@@ -112,18 +123,19 @@ struct TextInput: View {
     let helperText: String?
     let leadingIcon: Image?
     let style: OUDSTextInput.Style
+    let isError: Bool
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
-            TextInputContainer(label: label, text: text, placeholderText: placeholderText, leadingIcon: leadingIcon)
+            TextInputContainer(label: label, text: text, placeholderText: placeholderText, leadingIcon: leadingIcon, isError: isError)
                 .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
                 .padding(.leading, leading)
                 .padding(.trailing, trailing)
-                .modifier(TextInputBackgroundModifier(style: style))
-                .modifier(TextInputBoderModifier(style: style))
+                .modifier(TextInputBackgroundModifier(style: style, isError: isError))
+                .modifier(TextInputBoderModifier(style: style, isError: isError))
 
             if let helperText, !helperText.isEmpty {
                 HelperTextContainer(helperText: helperText)
@@ -152,11 +164,11 @@ struct TextInputBackgroundModifier: ViewModifier {
     // MARK: - Stored properties
 
     let style: OUDSTextInput.Style
+    let isError: Bool
     @Environment(\.theme) private var theme
     @Environment(\.oudsRoundedTextInput) private var rounded
     @Environment(\.isEnabled) private var enabled
     @Environment(\.isFocused) private var focused
-
     @State private var hover = false
 
     // MARK: - Body
@@ -176,15 +188,15 @@ struct TextInputBackgroundModifier: ViewModifier {
 
     private var color: MultipleColorSemanticTokens {
         if !enabled{
-            return theme.colors.colorActionDisabled
+            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionDisabled
         }
         if hover {
-            return theme.colors.colorActionSupportHover
+            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportHover
         }
         if focused {
-            return theme.colors.colorActionSupportFocus
+            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportFocus
         }
-        return theme.colors.colorActionSupportHover
+        return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportHover
     }
 }
 
@@ -193,19 +205,24 @@ struct TextInputBoderModifier: ViewModifier {
     // MARK: - Stored properties
 
     let style: OUDSTextInput.Style
+    let isError: Bool
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsRoundedTextInput) private var rounded
+    @Environment(\.isEnabled) private var enabled
+    @Environment(\.isFocused) private var focused
+    @State private var hover = false
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
         switch style {
         case .default:
-            VStack(alignment: .leading, spacing:  theme.spaces.spaceFixedNone) {
+            ZStack(alignment: .bottom) {
                 content
-
                 Divider()
-                    .oudsHorizontalDivider(dividerColor: .default)
+                    .frame(height: theme.textInput.textInputBorderWidthDefault)
+                    .overlay(color.color(for: colorScheme))
             }
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
         case .alternative:
@@ -213,7 +230,7 @@ struct TextInputBoderModifier: ViewModifier {
                 .oudsBorder(style: theme.borders.borderStyleDefault,
                             width: theme.textInput.textInputBorderWidthDefault,
                             radius: cornerRadius,
-                            color: theme.textInput.textInputColorBorderEnabled)
+                            color: color)
         }
     }
 
@@ -221,6 +238,18 @@ struct TextInputBoderModifier: ViewModifier {
 
     private var cornerRadius: BorderRadiusSemanticToken {
         rounded ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+    }
+
+    private var color: MultipleColorSemanticTokens {
+        if hover {
+            return isError ? theme.colors.colorActionNegativeHover : theme.textInput.textInputColorBorderHover
+        }
+
+        if focused {
+            return isError ? theme.colors.colorActionNegativeFocus : theme.textInput.textInputColorBorderFocus
+        }
+
+        return isError ? theme.colors.colorActionNegativeEnabled : theme.textInput.textInputColorBorderEnabled
     }
 }
 
@@ -232,7 +261,9 @@ struct TextInputContainer: View {
     let text: Binding<String>
     let placeholderText: String?
     let leadingIcon: Image?
+    let isError: Bool
     @Environment(\.theme) private var theme
+
 
     // MARK: - Body
 
@@ -244,7 +275,7 @@ struct TextInputContainer: View {
                 .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
 
             VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
-                LabelContainer(label: label)
+                LabelContainer(label: label, isError: isError)
 
                 if let placeholderText, !placeholderText.isEmpty {
                     TextField("", text: text, prompt: promptText)
@@ -268,8 +299,11 @@ struct LabelContainer: View {
     // MARK: - Properties
 
     let label: String
+    let isError: Bool
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.isFocused) private var focused
+    @State private var hover = false
 
     // MARK: - Body
 
@@ -278,12 +312,24 @@ struct LabelContainer: View {
             .typeLabelDefaultLarge(theme)
             .oudsForegroundColor(color)
             .frame(maxWidth: .infinity, maxHeight: theme.textInput.textInputSizeLabelMaxHeight, alignment: .leading)
+            .onHover { hover = $0 }
     }
 
     // MARK: Helper
 
     private var color: MultipleColorSemanticTokens {
-        isEnabled ? theme.colors.colorContentMuted: theme.colors.colorActionDisabled
+        if isError {
+            if hover {
+                return theme.colors.colorActionNegativeHover
+            }
+            if hover {
+                return theme.colors.colorActionNegativeFocus
+            }
+            
+            return theme.colors.colorActionNegativeEnabled
+        } else {
+            return isEnabled ? theme.colors.colorContentMuted: theme.colors.colorActionDisabled
+        }
     }
 }
 
