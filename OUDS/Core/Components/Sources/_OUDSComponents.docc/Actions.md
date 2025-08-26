@@ -6,9 +6,11 @@ Some components can be used for **actions**.
 
 ### Buttons
 
-The ``OUDSButton`` propose layout with text only, icon only or text and icon. 
+![A button component in light and dark mode with Orange theme](component_button_enabled_strong_Orange)
+
+The ``OUDSButton`` proposes layout with text only, icon only or text and icon. 
 Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.
-Two style are available: *default* and *loading*.
+Two style are available: *default* and *loading*. 
 If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 

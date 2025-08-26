@@ -77,6 +77,12 @@ import SwiftUI
 ///
 /// There is no online specification as this component is not an official OUDS one
 ///
+/// ## Theme rendering
+///
+/// ### Orange
+///
+/// ![A radio picker component in light and dark mode with Orange theme](component_radiopicker_vertical_Orange)
+///
 /// - Since: 0.14.0
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 

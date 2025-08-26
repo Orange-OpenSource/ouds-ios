@@ -114,6 +114,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A checkbox item component in light and dark mode with Orange theme](component_checkbox_item_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A checkbox item component in light and dark mode with Orange Business Tools theme](component_checkbox_item_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkbox_item_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A checkbox item component in light and dark mode with Sosh theme](component_checkbox_item_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A checkbox item component in light and dark mode with Wireframe theme](component_checkbox_item_Wireframe)
+///
 /// - Version: 2.1.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSCheckboxItem: View {

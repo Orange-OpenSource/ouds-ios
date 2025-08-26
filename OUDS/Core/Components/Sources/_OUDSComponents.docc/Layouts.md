@@ -6,6 +6,8 @@ Some components can be used for **layouts**.
 
 ### Colored Surface
 
+![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredsurface_Orange)
+
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
 To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *buttonColorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
@@ -44,7 +46,7 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
 ```
 
-##### Debuging contrast ratios
+#### Debuging contrast ratios
 
 Some countries set up new laws so as to force companies to have a better accessibility of their digital services.
 This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr/), also named "RGAA".
@@ -85,9 +87,12 @@ OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 
 #### How it works
 
+![An horizontal divider in light and dark mode with Orange theme](component_horizontaldivider_Orange)
+![An horizontal divider in light and dark mode with Orange theme](component_verticaldivider_Orange)
+
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
-- `OUDSHorizontalDivider` To separate elements stacked vertivally (VStask).
-- `OUDSVerticalDivider` To separate elements stacked Horizontally (HStask).
+- ``OUDSHorizontalDivider``: to separate elements stacked vertivally (VStask).
+- ``OUDSVerticalDivider``: to separate elements stacked Horizontally (HStask).
 
 A divider can be colored using color enumerated in the `OUDSDividerColor`.
 

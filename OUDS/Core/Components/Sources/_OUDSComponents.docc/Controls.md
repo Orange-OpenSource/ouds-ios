@@ -8,8 +8,10 @@ Some components can be used for **controls** and **inputs**.
 
 #### Checkbox (only)
 
+![A checkbox component in light and dark mode with Orange theme](component_checkbox_enabled_selected_Orange)
+
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
-You can use a simple checkbox without any labels and images.
+You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
 This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)
 
 ```swift
@@ -26,9 +28,11 @@ This checkbox can provide two values (selected and unselected) or three values (
 
 #### Checkbox item
 
+![A checkbox item component in light and dark mode with Orange theme](component_checkbox_item_Orange)
+
 The library proposes also a checkbox which has in its layout some labels and icons.
 The indicator can be leading or trailing.
-It can be be sued for two-states or three-states management.
+It can be be used for two-states (``OUDSCheckboxItem``) or three-states management (``OUDSCheckboxItemIndeterminate``).
 
 ```swift
     // A leading checkbox with a label, with only two states
@@ -52,7 +56,10 @@ It can be be sued for two-states or three-states management.
 
 #### Checkbox picker
 
-Checkboxes can be embeded in a checkbox picker so as to let the users to select one or more items within several.
+![A checkbox picker component in light and dark mode with Orange theme](component_checkboxpicker_vertical_rooted_Orange)
+
+Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
+
 ```swift
      // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
      // This object has the same properties as the OUDSCheckboxItem,
@@ -101,8 +108,10 @@ Checkboxes can be embeded in a checkbox picker so as to let the users to select 
 
 #### Radio (only)
 
+![A radio button component in light and dark mode with Orange theme](component_radio_enabled_selected_Orange)
+
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
-You can use a simple radio without any labels and images.
+You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
 
 ```swift
      // A simple radio, with only an indicator
@@ -113,7 +122,9 @@ You can use a simple radio without any labels and images.
 
 #### Radio item
 
-The library proposes also a radio which has in its layout some labels and icons.
+![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+
+The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
 
 ```swift
@@ -134,7 +145,9 @@ The indicator can be leading or trailing.
 
 #### Radio picker
 
-Radio items can be embeded in a radio picker so as to let the users to select only one item within several.
+![A radio picker component in light and dark mode with Orange theme](component_radiopicker_vertical_Orange)
+
+Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
 
 ```swift
     // Define the elements to display in radio buttons using OUDSRadioPickerData.
@@ -171,8 +184,10 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
 #### Switch (only)
 
+![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+
 The library proposes a new layout for the switch component. The native it not used anymore.
-You can use a simple switch without any labels and images.
+You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
 
 ```swift
     // A simple switch, with only an indicator
@@ -185,7 +200,9 @@ You can use a simple switch without any labels and images.
 
 #### Switch item
 
-The library proposes also a switch which has in its layout some labels and icons.
+![A switch item component in light and dark mode with Orange theme](component_switchitem_enabled_selected_Orange)
+
+The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``)
 The indicator can be leading or trailing.
 
 ```swift
@@ -212,7 +229,9 @@ The indicator can be leading or trailing.
 
 #### Suggestion
 
-The library proposes suggestion chip component to make some predicitve or recommended selection.
+![A suggestion chip component in light and dark mode with Orange theme](component_suggestionchip_text_icon_enabled_Orange)
+
+The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
 ```swift
     // Suggestion chip with icon only 
@@ -227,6 +246,8 @@ The library proposes suggestion chip component to make some predicitve or recomm
 
 #### Filter
 
+![A fiter chip component in light and dark mode with Orange theme](component_filterchip_text_enabled_Orange)
+
 The library proposes filter chip component to make some filtering with selected or unselected options.
 
 ```swift
@@ -240,12 +261,14 @@ The library proposes filter chip component to make some filtering with selected 
     OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
 ```
 
-#### Chips picker
+#### Chip picker
+
+![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
 
 The library proposes a chip picker to make easily filtering with two kinds of selection:
-- **single or none:** to select or unselect one option only
-- **single:** to select at least one option
-- **multiple** to select several options
+- **single or none**: to select or unselect one option only
+- **single**: to select at least one option
+- **multiple**: to select several options
 
 ```swift
     // Define the elements to display in filter chip using OUDSChipPickerData.

@@ -72,6 +72,12 @@ import SwiftUI
 ///
 /// There is no online specification as this component is not an official OUDS one.
 ///
+/// ## Theme rendering
+///
+/// ### Orange
+///
+/// ![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
+///
 /// - Since: 0.17.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 

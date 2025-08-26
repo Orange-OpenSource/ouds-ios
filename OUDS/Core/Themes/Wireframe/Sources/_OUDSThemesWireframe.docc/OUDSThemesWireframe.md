@@ -62,7 +62,82 @@ struct SomeView: View {
 
 ## How to enrich the theme
 
-You cannot derivate the Wireframe theme.
+You cannot derivate the *Wireframe* theme.
+
+## Previews
+<!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
+
+### Actions
+
+![A button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_Wireframe.png)
+
+### Controls
+
+#### Checkbox
+
+![A checkbox component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Wireframe.png)
+
+#### Checkbox item
+
+![A checkbox item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Wireframe.png)
+
+<!-- Maybe not relevant to display checkbox picker -->
+
+#### Radio
+
+![A radio button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Wireframe.png)
+
+#### Radio item
+
+![A radio item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Wireframe.png)
+
+<!-- Maybe not relevant to display radio picker -->
+
+#### Switch
+
+![A switch component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Wireframe.png)
+
+#### Switch item
+
+![A switch item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Wireframe.png)
+
+#### Filter chip
+
+![A filter chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Wireframe.png)
+
+#### Suggestion chip
+
+![A suggestion chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Wireframe.png)
+
+<!-- Maybe not relevant to display chip picker -->
+
+### Indicators
+
+#### Badge
+
+![A badge component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_Wireframe.png)
+
+#### Tag
+
+![A tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_Wireframe.png)
+
+### Layouts
+
+<!-- Maybe not relevant to display colored surface -->
+
+#### Horizontal divider
+
+![An horizontal divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Wireframe.png)
+
+#### Vertical divider
+
+![A vertical divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Wireframe.png)
+
+### Navigations
+
+#### Link
+
+![A link component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_Wireframe.png)
 
 ## Topics
 
@@ -71,4 +146,3 @@ You cannot derivate the Wireframe theme.
 - ``WireframeTheme``
 - ``WireframeBrandColorRawTokens``
 - ``WireframeBrandFontRawTokens``
-

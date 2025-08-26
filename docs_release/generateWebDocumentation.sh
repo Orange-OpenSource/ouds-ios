@@ -158,7 +158,7 @@ if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
     _ "👋 Bye!"
     exit $EXIT_OK
 else
-    _ "👍 Ok, let's go!"
+    _ "👍 Ok, let's go! Keep in mind it can need between 15 and 20 minutes!"
 fi
 
 start_time=$(date +%s)
@@ -265,6 +265,7 @@ if [[ $use_git -eq 1 ]]; then
     rm -rf "css"
     rm -rf "data"
     rm -rf "documentation"
+    rm -rf "images"
     rm -rf "img"
     rm -rf "index"
     rm -rf "js"
@@ -279,6 +280,7 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY/css"
     git add "$DOCS_DIRECTORY/data"
     git add "$DOCS_DIRECTORY/documentation"
+    git add "$DOCS_DIRECTORY/images"
     git add "$DOCS_DIRECTORY/img"
     git add "$DOCS_DIRECTORY/index"
     git add "$DOCS_DIRECTORY/js"
