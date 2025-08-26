@@ -20,7 +20,11 @@ You should use one (or several) of the following imports for your needs, which a
 import OUDS // If you want to define your theme or use OUDSThemeableView
 import OUDSModules // To use modules
 import OUDSComponents // To use components
-import OUDSThemesOrange // To use the default theme
+import OUDSThemesOrange // To use the default Orange theme
+import OUDSThemesOrangeInverse // To use the Orange Inverse theme
+import OUDSThemesOrangeBusinessTools // To use the Orange Business Tools theme
+import OUDSThemesSosh // To use the Sosh theme
+import OUDSThemeWireframe // To use the Wireframe theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import OUDSTokensRaw // If you need to override or use directly raw tokens
@@ -29,8 +33,12 @@ import OUDSTokensRaw // If you need to override or use directly raw tokens
 ### Chose your theme
 
 You can:
-1. Use the `OrangeTheme` which is the default one
-2. Implement your own theme
+1. Use the `OrangeTheme` which is the default one for Orange products and can be enriched / derivated
+2. Use the `SoshTheme` for the Sosh products
+3. Use the `OrangeInverseTheme` for some Orange products in specific use cases
+4. Use the `OrangeBusinessToolsTheme` for some Orange products with heavy / rich UI and dimension constraints
+5. Use the `WireframeTheme` for mockups, prototypes and prooves of concepts with Orange-flavoured styles
+6. Or implement your own theme from `OUDSTheme` or `OrangeTheme`
 
 ### Apply a theme
 
