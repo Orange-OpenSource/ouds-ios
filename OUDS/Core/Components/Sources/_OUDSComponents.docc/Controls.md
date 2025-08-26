@@ -11,7 +11,7 @@ Some components can be used for **controls** and **inputs**.
 ![A checkbox component in light and dark mode with Orange theme](component_checkbox_enabled_selected_Orange)
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
-You can use a simple checkbox without any labels and images.
+You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
 This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)
 
 ```swift
@@ -54,7 +54,10 @@ It can be be sued for two-states or three-states management.
 
 #### Checkbox picker
 
-Checkboxes can be embeded in a checkbox picker so as to let the users to select one or more items within several.
+![A checkbox picker component in light and dark mode with Orange theme](component_checkboxpicker_vertical_rooted_Orange)
+
+Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
+
 ```swift
      // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
      // This object has the same properties as the OUDSCheckboxItem,
