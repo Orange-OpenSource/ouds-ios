@@ -200,7 +200,9 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 
 #### Switch item
 
-The library proposes also a switch which has in its layout some labels and icons.
+![A switch item component in light and dark mode with Orange theme](component_switchitem_enabled_selected_Orange)
+
+The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``)
 The indicator can be leading or trailing.
 
 ```swift

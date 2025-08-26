@@ -104,6 +104,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A switch item component in light and dark mode with Orange theme](component_switchitem_enabled_selected_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A switch item  component in light and dark mode with Orange Business Tools theme](component_switchitem_enabled_selected_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A switch item component in light and dark mode with Orange Inverse theme](component_switchitem_enabled_selected_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A switch item component in light and dark mode with Sosh theme](component_switchitem_enabled_selected_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A switch item component in light and dark mode with Wireframe theme](component_switchitem_enabled_selected_Wireframe)
+///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.14.0
 public struct OUDSSwitchItem: View {
