@@ -117,6 +117,28 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioitem_enabled_selected_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A radio item component in light and dark mode with Orange Inverse theme](component_radioitem_enabled_selected_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A radio item component in light and dark mode with Sosh theme](component_radioitem_enabled_selected_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A radio item component in light and dark mode with Wireframe theme](component_radioitem_enabled_selected_Wireframe)
+///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSRadioItem: View {

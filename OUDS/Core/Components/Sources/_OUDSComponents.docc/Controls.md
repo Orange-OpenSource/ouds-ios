@@ -122,7 +122,9 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 
 #### Radio item
 
-The library proposes also a radio which has in its layout some labels and icons.
+![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+
+The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
 
 ```swift
