@@ -45,7 +45,7 @@ import SwiftUI
 ///
 /// ### Sosh
 ///
-/// ![A horizontal divider component in light and dark mode with Sosh theme](component_horizontaldivider_Sosh)
+/// ![A horizontal divider component in light and dark modeO with Sosh theme](component_horizontaldivider_Sosh)
 ///
 /// ### Wireframe
 ///
