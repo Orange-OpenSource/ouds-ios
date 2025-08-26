@@ -29,6 +29,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![An horizontal divider component in light and dark mode with Orange theme](component_horizontaldivider_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A horizontal divider component in light and dark mode with Orange Business Tools theme](component_horizontaldivider_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A horizontal divider component in light and dark mode with Orange Inverse theme](component_horizontaldivider_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A horizontal divider component in light and dark mode with Sosh theme](component_horizontaldivider_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A horizontal divider component in light and dark mode with Wireframe theme](component_horizontaldivider_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0
 public struct OUDSHorizontalDivider: View { // TODO: #511 - Update documentation hyperlink

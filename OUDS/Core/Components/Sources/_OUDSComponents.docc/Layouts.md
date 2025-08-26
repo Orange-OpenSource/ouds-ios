@@ -87,9 +87,11 @@ OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 
 #### How it works
 
+![An horizontal divider in light and dark mode with Orange theme](component_coloredsurface_Orange)
+
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
-- `OUDSHorizontalDivider` To separate elements stacked vertivally (VStask).
-- `OUDSVerticalDivider` To separate elements stacked Horizontally (HStask).
+- ``OUDSHorizontalDivider``: to separate elements stacked vertivally (VStask).
+- ``OUDSVerticalDivider``: to separate elements stacked Horizontally (HStask).
 
 A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
