@@ -108,8 +108,10 @@ Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to
 
 #### Radio (only)
 
+![A radio button component in light and dark mode with Orange theme](component_radio_enabled_selected_Orange)
+
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
-You can use a simple radio without any labels and images.
+You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
 
 ```swift
      // A simple radio, with only an indicator
