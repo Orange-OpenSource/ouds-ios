@@ -145,7 +145,9 @@ The indicator can be leading or trailing.
 
 #### Radio picker
 
-Radio items can be embeded in a radio picker so as to let the users to select only one item within several.
+![A radio picker component in light and dark mode with Orange theme](component_radiopicker_vertical_Orange)
+
+Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
 
 ```swift
     // Define the elements to display in radio buttons using OUDSRadioPickerData.
