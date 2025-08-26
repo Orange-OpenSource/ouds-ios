@@ -8,6 +8,8 @@ Some components can be used for **controls** and **inputs**.
 
 #### Checkbox (only)
 
+![A checkbox component in light and dark mode with Orange theme](component_checkbox_enabled_selected_Orange)
+
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
 You can use a simple checkbox without any labels and images.
 This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)

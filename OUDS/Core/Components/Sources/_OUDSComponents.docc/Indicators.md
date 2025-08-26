@@ -23,7 +23,9 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 ### Tag
 
-A ``ÒUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
+![A tag component in light and dark mode with Orange theme](component_tag_bullet_emphasized_accent_rounded_default_Orange)
+
+An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 
 ```swift
     // Text only with neutral status, for emphasized hierarchy with rounded shape in default size

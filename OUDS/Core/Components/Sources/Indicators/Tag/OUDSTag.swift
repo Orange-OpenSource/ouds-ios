@@ -117,6 +117,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A tag component in light and dark mode with Orange theme](component_tag_bullet_emphasized_accent_rounded_default_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A tag component in light and dark mode with Orange Business Tools theme](component_tag_bullet_emphasized_accent_rounded_default_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A tag component in light and dark mode with Orange Inverse theme](component_tag_bullet_emphasized_accent_rounded_default_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A tag component in light and dark mode with Sosh theme](component_tag_bullet_emphasized_accent_rounded_default_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A tag component in light and dark mode with Wireframe theme](component_tag_bullet_emphasized_accent_rounded_default_Wireframe)
+///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.18.0
 public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc above
