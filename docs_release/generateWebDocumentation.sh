@@ -280,6 +280,10 @@ if [[ $use_git -eq 1 ]]; then
     # Need to copy them also in root images folder at least for landing page
     # See https://github.com/swiftlang/swift-docc/issues/1284
     cp "$DOCS_DIRECTORY/images/OUDS/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_design_token_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_theme_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_module_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_component_intro.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"

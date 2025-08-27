@@ -3,22 +3,26 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_theme_orange")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Theme version: 1.5.0
 ```
 
-## Overview
-
-This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
+This is the default theme any Orange branded app should use, and can be subclassed to define for example themes dedicated to countries.
 It embeds also in its target the brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
 
 In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
 
-It contains also colors dedicated to charts.
+> Note: It contains also colors dedicated to charts.
 
 ## How to use the theme
 
@@ -72,6 +76,10 @@ struct SomeView: View {
 ## How to enrich the theme
 
 You can enrich the ``OrangeTheme`` by subclassing it or by overriding some tokens.
+
+> Important: Only the Orange theme can be subclassed today. If this theme does not fill your need you can also implement your own theme from scratch.
+
+> Tip: Because theme definition is based on thousands of tokens, you should contact the design team to get helped.
 
 ### By using your own theme and subclassing existing token providers
 
@@ -266,80 +274,92 @@ struct YourApp: App {
 }
 ```
 
-## Previews
+## How it looks like
 <!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
 
 ### Actions
 
-![A button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_Orange.png)
+![A button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_Orange.png)
 
 ### Controls
 
-#### Checkbox
+#### Checkboxes
 
-![A checkbox component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Orange.png)
-
-#### Checkbox item
-
-![A checkbox item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Orange.png)
-
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Orange.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Orange.png)
+    }
+}
 <!-- Maybe not relevant to display checkbox picker -->
 
-#### Radio
+#### Radios
 
-![A radio button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Orange.png)
-
-#### Radio item
-
-![A radio item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Orange.png)
-
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Orange.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Orange.png)
+    }
+}
 <!-- Maybe not relevant to display radio picker -->
 
-#### Switch
+#### Switches
 
-![A switch component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Orange.png)
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Orange.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Orange.png)
+    }
+}
 
-#### Switch item
+#### Chips
 
-![A switch item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Orange.png)
-
-#### Filter chip
-
-![A filter chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Orange.png)
-
-#### Suggestion chip
-
-![A suggestion chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Orange.png)
-
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Orange.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Orange.png)
+    }
+}
 <!-- Maybe not relevant to display chip picker -->
 
 ### Indicators
 
 #### Badge
 
-![A badge component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_Orange.png)
+![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_Orange.png)
 
 #### Tag
 
-![A tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_Orange.png)
+![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_Orange.png)
 
 ### Layouts
 
 <!-- Maybe not relevant to display colored surface -->
 
-#### Horizontal divider
+#### Dividers
 
-![An horizontal divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Orange.png)
-
-#### Vertical divider
-
-![A vertical divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Orange.png)
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Orange.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Orange.png)
+    }
+}
 
 ### Navigations
 
 #### Link
 
-![A link component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_Orange.png)
+![A link component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_Orange.png)
 
 ## Topics
 

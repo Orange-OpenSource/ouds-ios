@@ -1,5 +1,10 @@
 # Tokens
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_design_token_intro")
+    @PageImage(purpose: card, source: "ic_design_token_intro")
+}
+
 Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names.
 
 ## Component tokens
@@ -44,6 +49,8 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
 ```
+
+> Tip: In most of cases you may use the components tokens if you want to implement your own components
 
 ## Semantic tokens
 
@@ -93,6 +100,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
 // This provider is then exposed through OUDSTheme as an AllColorSemanticTokensProvider
 ```
+
+> Tip: In some cases you can use the components tokens if you want to implement your own components
 
 ### Important notice
 
@@ -156,7 +165,9 @@ enum OrangeBrandColorRawTokens {
 }
 ```
 
+> Note: In most of cases you won't use these raw tokens as they are already in yse by component and semantic tokens
+
 ## Add, edit or remove tokens
 
-If you need to add, edit or remove tokens, you will have to follow some simple steps.
+If you need to add, update or remove tokens, you will have to follow some simple steps.
 You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want. [The wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) can be also helpful.

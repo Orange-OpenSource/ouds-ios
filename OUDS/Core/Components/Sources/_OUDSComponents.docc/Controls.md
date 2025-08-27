@@ -1,5 +1,10 @@
 # Controls
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_folder_categories")
+    @PageImage(purpose: card, source: "ic_folder_categories")
+}
+
 Some components can be used for **controls** and **inputs**.
 
 ## Overview

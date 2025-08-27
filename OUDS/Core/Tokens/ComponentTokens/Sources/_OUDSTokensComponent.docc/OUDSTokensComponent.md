@@ -3,16 +3,20 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_component")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 These _tokens_ are defined for components and refer to semantic tokens or raw tokens.
 They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Core version: 1.5.0
 ```
-
-## Overview
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ thanks to token providers to get their style values.
@@ -102,6 +106,29 @@ struct DesignToolbox: App {
     }
 }
 ```
+
+The components tokens are wrapped in tokens provider acessible through the themes:
+
+Components tokens provider     | Target component                          
+------------------------------ | ------------------------------------- 
+badge                          | For badges like `OUDSBadge`
+button                         | For buttons like `OUDSButton` 
+bulletList                     | For list of elements with bullets 
+checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
+chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip` 
+controlItem                    | Shared and sued for switch, checkbox and radio items layouts 
+divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
+link                           | For links like `OUDSLink` 
+pinCodeInput                   |  
+quantityInput                  | 
+radioButton                    | For radio components like `OUDSRadio` and `OUDSRadioItem` 
+selectInput                    |
+skeleton                       |
+switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 
+tag                            | For tag components like `OUDSTag`
+tagInput                       | For tag input components like `OUDSTagInput`
+textArea                       | For text area components like `OUDSTextArea`
+textInput                      |
 
 ## Topics
 

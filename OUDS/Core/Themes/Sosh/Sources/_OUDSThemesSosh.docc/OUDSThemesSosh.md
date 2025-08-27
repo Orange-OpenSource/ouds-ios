@@ -3,22 +3,27 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_theme_sosh")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 The Sosh theme is the theme dedicated to the Sosh brand only.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Theme version: 1.5.0
 ```
 
-## Overview
-
 This is the Sosh theme any Sosh product must use, and cannot be subclassed.
 It embeds also in its target the Sosh brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
-
 In other words, this ``SoshTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Sosh brand colors and assets.
 
-The ``SoshTheme`` does not embed colors for charts yet.
+> Tip: This theme embeds and registers the fonts for the Sosh theme, you just need to use the theme object as is.
+
+> Important: The Sosh theme does not embed colors for charts yet and is read-only: it cannot be subclassed or derivated
 
 ## How to use the theme
 
@@ -68,13 +73,11 @@ struct SomeView: View {
 }
 ```
 
-This theme embeds and registers the fonts for the Sosh theme, you just need to use the theme object as is.
-
 ## How to enrich the theme
 
 You cannot derivate the Sosh theme.
 
-## Previews
+## How it looks like
 <!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
 
 ### Actions
@@ -83,42 +86,51 @@ You cannot derivate the Sosh theme.
 
 ### Controls
 
-#### Checkbox
+#### Checkboxes
 
-![A checkbox component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Sosh.png)
-
-#### Checkbox item
-
-![A checkbox item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Sosh.png)
-
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Sosh.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Sosh.png)
+    }
+}
 <!-- Maybe not relevant to display checkbox picker -->
 
-#### Radio
+#### Radios
 
-![A radio button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Sosh.png)
-
-#### Radio item
-
-![A radio item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Sosh.png)
-
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Sosh.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Sosh.png)
+    }
+}
 <!-- Maybe not relevant to display radio picker -->
 
-#### Switch
+#### Switches
 
-![A switch component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Sosh.png)
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Sosh.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Sosh.png)
+    }
+}
 
-#### Switch item
+#### Chips
 
-![A switch item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Sosh.png)
-
-#### Filter chip
-
-![A filter chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Sosh.png)
-
-#### Suggestion chip
-
-![A suggestion chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Sosh.png)
-
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Sosh.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Sosh.png)
+    }
+}
 <!-- Maybe not relevant to display chip picker -->
 
 ### Indicators
@@ -135,13 +147,16 @@ You cannot derivate the Sosh theme.
 
 <!-- Maybe not relevant to display colored surface -->
 
-#### Horizontal divider
+#### Dividers
 
-![An horizontal divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Sosh.png)
-
-#### Vertical divider
-
-![A vertical divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Sosh.png)
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Sosh.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Sosh.png)
+    }
+}
 
 ### Navigations
 

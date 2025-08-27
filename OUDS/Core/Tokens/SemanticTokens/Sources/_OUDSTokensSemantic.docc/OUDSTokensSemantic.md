@@ -3,16 +3,20 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_semantic")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 These _tokens_ can be used mainly for _component tokens_ to apply some style and configuration values ; today _component tokens_ or _components_ are not defined yet.
 They can be seen as an high level of usage with functional meanings.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Core version: 1.5.0
 ```
-
-## Overview
 
 If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
 
@@ -167,6 +171,21 @@ struct DesignToolbox: App {
     }
 }
 ```
+
+The semantic tokens are wrapped in tokens provider acessible through the themes:
+
+Semantic tokens provider       | Description                          
+------------------------------ | ------------------------------------- 
+borders                        | For borders (width, styles, radius...)  
+colors                         | For colors with also meta objects combining light and dark versions)           
+colorModes                     | Kind of frozen and not generated tokens about management of colors           
+colorCharts                    | For charts, but optional and not defined in all themes
+elevations                     | For elevations to produc shadow effects
+fonts                          | For fonts (weights, letter spacings, sizes, line heights...)
+grids                          | For grids
+opacities                      | For opacities
+sizes                          | For size of elements
+spaces                         | For paddings and margins
 
 ## Topics
 

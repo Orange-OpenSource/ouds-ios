@@ -3,6 +3,10 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_modular")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 The catalog of all modules provided by OUDS.
 A module can be seen as a set of features with some dedicated components.

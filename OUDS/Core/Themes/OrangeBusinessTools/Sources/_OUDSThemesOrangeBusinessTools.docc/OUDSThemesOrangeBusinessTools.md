@@ -3,22 +3,30 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_theme_orangebusinesstools")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 The Orange Business Tools theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme for the Orange Business Tools brand.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Theme version: 1.5.0
 ```
 
-## Overview
-
-This is the Orange Business Tools theme any for some business tools products, and cannot be subclassed.
-This theme is related to `OrangeTheme` module to use some raw tokens of colors.
-
 Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
 with which users can interact. Thus for such products there are specific constraints of spaces and sizes.
 That is the reason why this team is created.
+This is the Orange Business Tools theme any for some business tools products, and cannot be subclassed.
+
+> Note: This theme is related to Orange theme module to use some raw tokens of colors.
+
+> Note: It contains also colors dedicated to charts.
+
+> Important: The Orange Business Tools theme is read-only: it cannot be suclassed or derivated.
 
 ## How to use the theme
 
@@ -74,7 +82,7 @@ This theme embeds and registers the fonts for the Orange Business Tools theme, y
 
 You cannot derivate the *Orange Business Tools* theme.
 
-## Previews
+## How it looks like
 <!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
 
 ### Actions
@@ -83,42 +91,51 @@ You cannot derivate the *Orange Business Tools* theme.
 
 ### Controls
 
-#### Checkbox
+#### Checkboxes
 
-![A checkbox component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_OrangeBusinessTools.png)
-
-#### Checkbox item
-
-![A checkbox item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_OrangeBusinessTools.png)
-
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_OrangeBusinessTools.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_OrangeBusinessTools.png)
+    }
+}
 <!-- Maybe not relevant to display checkbox picker -->
 
-#### Radio
+#### Radios
 
-![A radio button component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_OrangeBusinessTools.png)
-
-#### Radio item
-
-![A radio item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_OrangeBusinessTools.png)
-
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_OrangeBusinessTools.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_OrangeBusinessTools.png)
+    }
+}
 <!-- Maybe not relevant to display radio picker -->
 
-#### Switch
+#### Switches
 
-![A switch component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_OrangeBusinessTools.png)
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_OrangeBusinessTools.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_OrangeBusinessTools.png)
+    }
+}
 
-#### Switch item
+#### Chips
 
-![A switch item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_OrangeBusinessTools.png)
-
-#### Filter chip
-
-![A filter chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_OrangeBusinessTools.png)
-
-#### Suggestion chip
-
-![A suggestion chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_OrangeBusinessTools.png)
-
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_OrangeBusinessTools.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_OrangeBusinessTools.png)
+    }
+}
 <!-- Maybe not relevant to display chip picker -->
 
 ### Indicators
@@ -135,13 +152,16 @@ You cannot derivate the *Orange Business Tools* theme.
 
 <!-- Maybe not relevant to display colored surface -->
 
-#### Horizontal divider
+#### Dividers
 
-![An horizontal divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_OrangeBusinessTools.png)
-
-#### Vertical divider
-
-![A vertical divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_OrangeBusinessTools.png)
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_OrangeBusinessTools.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_OrangeBusinessTools.png)
+    }
+}
 
 ### Navigations
 

@@ -3,6 +3,10 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_layers")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 Contains a set of helpers shared for higher level targets.
 

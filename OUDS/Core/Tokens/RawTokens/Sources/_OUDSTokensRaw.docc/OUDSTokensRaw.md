@@ -3,15 +3,19 @@
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_raw")
 }
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
 _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
+
+## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
 🧬 Core version: 1.5.0
 ```
-
-## Overview
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than Swift `struct` or `class` objects. Keeping primitive types helps today to expose objects using Objective-C runtime.
 
@@ -73,15 +77,18 @@ To use raw tokens you will have to make the suitable import for our _OUDS iOS Sw
 import OUDSTokensRaw
 ```
 
-Then choose the tokens you want within:
-* ``BorderRawTokens`` for borders
-* ``ColorRawTokens`` for colors
-* ``ColorModeRawTokens`` for colors mode (kind of frozen and not generated raw tokens)
-* ``DimensionRawTokens`` for dimensions
-* ``ElevationRawTokens`` for elevations
-* ``FontRawTokens`` for fonts
-* ``GridRawTokens`` for grids
-* ``OpacityRawTokens`` for opacities
+Then choose the tokens you want within the enums below:
+
+Raw tokens enums               | Description                          
+------------------------------ | ------------------------------------- 
+``BorderRawTokens``            | For borders (width, styles, radius...)  
+``ColorRawTokens``             | For colors common to all modules (different to `OrangeBrandColorRawTokens`)           
+``ColorModeRawTokens``         | Kind of frozen and not generated tokens about management of colors           
+``DimensionRawTokens``         | For dimensions used in sizes and spaces
+``ElevationRawTokens``         | For elevations to produc shadow effects
+``FontRawTokens``              | For fonts (weights, letter spacings, sizes, line heights...)
+``GridRawTokens``              | For grids
+``OpacityRawTokens``           | For opacities
 
 ## Topics
 
