@@ -103,10 +103,10 @@ rbenv global 3.4.0
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 16.4**, we suggest you use this version or newer if you want.
 
 > [!IMPORTANT]
-> Xcode 16.3 and Swift 6 are used for this project. You must use this configuration.
+> Xcode 16.4 and Swift 6.1 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
 
 ## Build OUDS Package
