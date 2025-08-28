@@ -21,9 +21,7 @@ struct TextInputConatiner: View {
     let layout: OUDSTextInput.Layout
     let label: String
     let text: Binding<String>
-    let placeholderText: String?
-    let prefix: String?
-    let suffix: String?
+    let placeholder: OUDSTextInput.Placeholder?
     let leadingIcon: Image?
     let trailingAction: OUDSTextInput.TrailingAction?
     let isError: Bool
@@ -56,7 +54,7 @@ struct TextInputConatiner: View {
                 HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
 
                     // Prefix container
-                    if let prefix, !prefix.isEmpty, showPlaceholder {
+                    if let prefix = placeholder?.prefix, !prefix.isEmpty, showPlaceholder {
                         Text(prefix)
                             .typeLabelDefaultLarge(theme)
                     }
@@ -68,7 +66,7 @@ struct TextInputConatiner: View {
                         .focused($focused, equals: true)
 
                     // Sufix container
-                    if let suffix, !suffix.isEmpty, showPlaceholder {
+                    if let suffix = placeholder?.suffix, !suffix.isEmpty, showPlaceholder {
                         Text(suffix)
                             .typeLabelDefaultLarge(theme)
                     }
@@ -105,7 +103,7 @@ struct TextInputConatiner: View {
         case .label:
             focused ? "" : label
         case .placeholder:
-            placeholderText ?? ""
+            placeholder?.text ?? ""
         }
     }
 

@@ -4,12 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    "$" : {
-
-    },
-    "€" : {
-
-    },
     "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
