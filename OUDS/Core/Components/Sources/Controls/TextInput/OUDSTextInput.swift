@@ -64,9 +64,7 @@ public struct OUDSTextInput: View {
     let label: String
     let text: Binding<String>
     let helperText: String?
-    let placeholderText: String?
-    let prefix: String?
-    let suffix: String?
+    let placeholder: Self.Placeholder?
     let leadingIcon: Image?
     let trailingAction: TrailingAction?
     let isError: Bool
@@ -86,15 +84,40 @@ public struct OUDSTextInput: View {
         case placeholder
     }
 
+    /// Used to describe the trailing action
     public struct TrailingAction {
         let icon: Image
         let accessibilityLabel: String
         let action: () -> Void
 
+        /// Create a trailing action.
+        ///  - Paramters:
+        ///   - icon: The icon set in the `OUDSButton`
+        ///   - accessibilityLabel: A string that describes the purpose of the button's `action`
+        ///   - action: The action to perform when the user triggers the button
         public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
             self.icon = icon
             self.accessibilityLabel = accessibilityLabel
             self.action = action
+        }
+    }
+
+    /// Used to describe the trailing action
+    public struct Placeholder {
+        let text: String
+        let suffix: String?
+        let prefix: String?
+
+        /// Create a placeholder with text and additional (optional) prefix and suffix.
+        ///
+        ///  - Paramters:
+        ///   - text: The placeholder text
+        ///   - prefix: Optional prefix
+        ///   - suffix: Optional suffix
+        public init(text: String, prefix: String? = nil, suffix: String? = nil) {
+            self.text = text
+            self.prefix = prefix
+            self.suffix = suffix
         }
     }
 
@@ -105,18 +128,19 @@ public struct OUDSTextInput: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///     - layout: The desired layout
-    ///     - label: The lable of the text input
-    ///     - helperText: Additional helper text below the input text
-    ///     - leadingIcon: An optional leading icon to provide more context
-    ///     - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    ///     - style: The style of the text input
+    ///    - layout: The desired layout
+    ///    - label: The label of the text input
+    ///    - text: The text to display and edit
+    ///    - placeholder: An optional placeholder
+    ///    - leadingIcon: An optional leading icon to provide more context
+    ///    - trailingAction: An optional trailing action
+    ///    - helperText: Additional helper text below the input text
+    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - style: The style of the text input
     public init(layout: Self.Layout = .label,
                 label: String,
                 text: Binding<String>,
-                placeholderText: String? = nil,
-                prefix: String? = nil,
-                sufix: String? = nil,
+                placeholder: Placeholder? = nil,
                 leadingIcon: Image? = nil,
                 trailingAction: TrailingAction? = nil,
                 helperText: String? = nil,
@@ -126,9 +150,7 @@ public struct OUDSTextInput: View {
         self.label = label
         self.text = text
         self.helperText = helperText
-        self.placeholderText = placeholderText
-        self.prefix = prefix
-        self.suffix = sufix
+        self.placeholder = placeholder
         self.leadingIcon = leadingIcon
         self.trailingAction = trailingAction
         self.isError = isError
@@ -147,7 +169,7 @@ public struct OUDSTextInput: View {
         case .label:
             focused ? "" : label
         case .placeholder:
-            placeholderText ?? ""
+            placeholder?.text ?? ""
         }
     }
 
@@ -156,9 +178,7 @@ public struct OUDSTextInput: View {
             TextInputConatiner(layout: layout,
                                label: label,
                                text: text,
-                               placeholderText: placeholderText,
-                               prefix: prefix,
-                               suffix: suffix,
+                               placeholder: placeholder,
                                leadingIcon: leadingIcon,
                                trailingAction: trailingAction,
                                isError: isError,
