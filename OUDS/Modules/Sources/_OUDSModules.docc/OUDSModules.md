@@ -2,6 +2,8 @@
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_modular")
+    @DisplayName("Modules", style: symbol)
+    @TitleHeading("Library")
 }
 <!-- 
 Do not add @PageImage(purpose: card) because not managed for landing page of online doc.

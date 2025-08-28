@@ -2,6 +2,8 @@
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_design_token_figma_semantic")
+    @DisplayName("Tokens for semantics", style: symbol)
+    @TitleHeading("Library")
 }
 <!-- 
 Do not add @PageImage(purpose: card) because not managed for landing page of online doc.

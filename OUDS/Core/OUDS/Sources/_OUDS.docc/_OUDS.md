@@ -2,6 +2,8 @@
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_unified_ds")
+    @DisplayName("Welcome to Orange Unified Design System", style: symbol)
+    @TitleHeading("Swift Package")
 }
 <!-- 
 Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
