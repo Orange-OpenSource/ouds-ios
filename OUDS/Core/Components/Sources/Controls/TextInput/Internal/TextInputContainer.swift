@@ -28,7 +28,8 @@ struct TextInputConatiner: View {
     let style: OUDSTextInput.Style
 
     @Environment(\.theme) private var theme
-    @FocusState private var focused: Bool 
+    @FocusState private var focused: Bool
+    @State var hover: Bool = false
 
     // MARK: - Body
 
@@ -43,7 +44,6 @@ struct TextInputConatiner: View {
                 // Label container
                 if showPlaceholder, !label.isEmpty {
                     LabelContainer(label: label, status: status)
-                        .focused($focused, equals: true)
                 }
 
                 // Input container
@@ -53,11 +53,15 @@ struct TextInputConatiner: View {
                     if let prefix = placeholder?.prefix, !prefix.isEmpty, showPlaceholder {
                         Text(prefix)
                             .typeLabelDefaultLarge(theme)
-                            .foregroundStyle(focused ? .green : .blue)
                     }
 
                     // Input text container
-                    Inputtext(label: textfieldPlaceholder, text: text, status: status, labelAsPlaceholder: showPlaceholder)
+                    Inputtext(label: textfieldPlaceholder,
+                              text: text,
+                              labelAsPlaceholder: showPlaceholder,
+                              status: status,
+                              interactionState: interactionState)
+                        .focused($focused, equals: true)
 
                     // Sufix container
                     if let suffix = placeholder?.suffix, !suffix.isEmpty, showPlaceholder {
@@ -68,7 +72,7 @@ struct TextInputConatiner: View {
             }
 
             // Trailing action container
-            TrailingActionContainer(trailingAction: trailingAction, status: status)
+            TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
         .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
         .padding(.leading, leading)
@@ -77,8 +81,9 @@ struct TextInputConatiner: View {
                maxWidth: theme.textInput.textInputSizeMaxWidth,
                minHeight: theme.textInput.textInputSizeMinHeight,
                alignment: .center)
-        .modifier(TextInputBackgroundModifier(style: style, status: status))
-        .modifier(TextInputBoderModifier(style: style, status: status))
+        .modifier(TextInputBackgroundModifier(style: style, status: status, interactionState: interactionState))
+        .modifier(TextInputBoderModifier(style: style, status: status, interactionState: interactionState))
+        .onHover{ self.hover = $0 }
     }
 
     // MARK: - Helper
@@ -105,5 +110,8 @@ struct TextInputConatiner: View {
     private var trailing: CGFloat {
         leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineTrailingAction
     }
-}
 
+    private var interactionState: TextInputInteractionState {
+        TextInputInteractionState(focused: focused, hover: hover)
+    }
+}

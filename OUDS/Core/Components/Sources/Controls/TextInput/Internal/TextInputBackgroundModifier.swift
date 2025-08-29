@@ -20,44 +20,56 @@ struct TextInputBackgroundModifier: ViewModifier {
 
     let style: OUDSTextInput.Style
     let status: OUDSTextInput.Status
+    let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.oudsRoundedTextInput) private var rounded
-    @Environment(\.isFocused) private var focused
-    @State private var hover = false
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        switch style {
-        case .default:
-            content
-                .onHover { hover in
-                    self.hover = hover
-                }
-                .oudsBackground(color)
-        case .alternative:
+        if let color {
+            content.oudsBackground(color)
+        } else {
             content
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticTokens? {
+        switch style {
+        case .default:
+            return defaultColor
+        case .alternative:
+            return alternativeColor
+        }
+    }
+
+    private var defaultColor: MultipleColorSemanticTokens? {
         switch status {
         case .default:
-            if hover {
+            switch interactionState {
+            case .idle:
+                return theme.colors.colorActionSupportEnabled
+            case .focused:
+                return theme.colors.colorActionSupportPressed
+            case .hover:
                 return theme.colors.colorActionSupportHover
             }
-            if focused {
-                return theme.colors.colorActionSupportPressed
-            }
-            return theme.colors.colorActionSupportEnabled
         case .error:
             return theme.colors.colorSurfaceStatusNegativeMuted
         case .loading:
             return theme.colors.colorActionSupportLoading
         case .readOnly:
-            return theme.colors.colorActionSupportDisabled
+            return nil
         case .disbaled:
             return theme.colors.colorActionSupportDisabled
+        }
+    }
+
+    private var alternativeColor: MultipleColorSemanticTokens? {
+        if status == .readOnly {
+            return theme.colors.colorActionSupportDisabled
+        } else {
+            return nil
         }
     }
 }
