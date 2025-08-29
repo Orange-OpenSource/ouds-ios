@@ -19,11 +19,10 @@ struct TextInputBoderModifier: ViewModifier {
     // MARK: - Stored properties
 
     let style: OUDSTextInput.Style
-    let isError: Bool
+    let status: OUDSTextInput.Status
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsRoundedTextInput) private var rounded
-    @Environment(\.isEnabled) private var enabled
     @Environment(\.isFocused) private var focused
     @State private var hover = false
 
@@ -31,20 +30,28 @@ struct TextInputBoderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         switch style {
-        case .default:
-            ZStack(alignment: .bottom) {
-                content
-                Divider()
-                    .frame(height: theme.textInput.textInputBorderWidthDefault)
-                    .overlay(color.color(for: colorScheme))
-            }
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-        case .alternative:
+        case .default where status == .readOnly:
             content
                 .oudsBorder(style: theme.borders.borderStyleDefault,
                             width: theme.textInput.textInputBorderWidthDefault,
                             radius: cornerRadius,
-                            color: color)
+                            color: theme.colors.colorBorderMuted)
+        case .default:
+            ZStack(alignment: .bottom) {
+                content
+                Divider()
+                    .frame(height: width)
+                    .overlay(defaultColor.color(for: colorScheme))
+            }
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+        case .alternative where status == .readOnly:
+            content
+        case .alternative:
+            content
+                .oudsBorder(style: theme.borders.borderStyleDefault,
+                            width: width,
+                            radius: cornerRadius,
+                            color: alternativeColor)
         }
     }
 
@@ -54,16 +61,67 @@ struct TextInputBoderModifier: ViewModifier {
         rounded ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
     }
 
-    private var color: MultipleColorSemanticTokens {
-        if hover {
-            return isError ? theme.colors.colorActionNegativeHover : theme.textInput.textInputColorBorderHover
-        }
-
+    private var width: BorderWidthSemanticToken {
         if focused {
-            return isError ? theme.colors.colorActionNegativeFocus : theme.textInput.textInputColorBorderFocus
+                return theme.textInput.textInputBorderWidthFocus
         }
 
-        return isError ? theme.colors.colorActionNegativeEnabled : theme.textInput.textInputColorBorderEnabled
+        return theme.textInput.textInputBorderWidthDefault
+    }
+
+    private var defaultColor: MultipleColorSemanticTokens {
+        switch status {
+        case .default:
+            if focused {
+                return theme.textInput.textInputColorBorderFocus
+            }
+            if hover {
+                return theme.textInput.textInputColorBorderHover
+            }
+            return theme.textInput.textInputColorBorderEnabled
+        case .error:
+            if focused {
+                return theme.colors.colorActionNegativePressed
+            }
+            if hover {
+                return theme.colors.colorActionNegativeHover
+            }
+            return theme.colors.colorActionNegativeEnabled
+        case .loading:
+            return theme.textInput.textInputColorBorderLoading
+        case .readOnly:
+            return theme.colors.colorBorderMuted
+        case .disbaled:
+            return theme.colors.colorActionDisabled
+        }
+    }
+
+    private var alternativeColor: MultipleColorSemanticTokens {
+        switch status {
+        case .default:
+            if focused {
+                return theme.textInput.textInputColorBorderFocus
+            }
+            if hover {
+                return theme.textInput.textInputColorBorderHover
+            }
+            return theme.textInput.textInputColorBorderEnabled
+        case .error:
+            if focused {
+                return theme.colors.colorActionNegativeEnabled
+            }
+            if hover {
+                return theme.colors.colorActionNegativeHover
+            }
+            return theme.colors.colorActionNegativePressed
+        case .loading:
+            return theme.textInput.textInputColorBorderLoading
+        case .readOnly:
+            // should not appear
+            return theme.colors.colorActionDisabled
+        case .disbaled:
+            return theme.colors.colorActionDisabled
+        }
     }
 }
 

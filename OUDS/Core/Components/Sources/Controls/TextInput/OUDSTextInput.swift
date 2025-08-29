@@ -67,7 +67,7 @@ public struct OUDSTextInput: View {
     let placeholder: Self.Placeholder?
     let leadingIcon: Image?
     let trailingAction: TrailingAction?
-    let isError: Bool
+    let status: Self.Status
     let style: Style
 
     public enum Style {
@@ -121,6 +121,14 @@ public struct OUDSTextInput: View {
         }
     }
 
+    public enum Status {
+        case `default`
+        case error
+        case loading
+        case readOnly
+        case disbaled
+    }
+
     // MARK: - Initializers
 
     /// Creates a text input.
@@ -135,7 +143,7 @@ public struct OUDSTextInput: View {
     ///    - leadingIcon: An optional leading icon to provide more context
     ///    - trailingAction: An optional trailing action
     ///    - helperText: Additional helper text below the input text
-    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - status: The current status
     ///    - style: The style of the text input
     public init(layout: Self.Layout = .label,
                 label: String,
@@ -145,7 +153,7 @@ public struct OUDSTextInput: View {
                 trailingAction: TrailingAction? = nil,
                 helperText: String? = nil,
                 style: Style = .default,
-                isError: Bool = false) {
+                status: Self.Status = .default) {
         self.layout = layout
         self.label = label
         self.text = text
@@ -153,7 +161,7 @@ public struct OUDSTextInput: View {
         self.placeholder = placeholder
         self.leadingIcon = leadingIcon
         self.trailingAction = trailingAction
-        self.isError = isError
+        self.status = status
         self.style = style
     }
 
@@ -181,11 +189,11 @@ public struct OUDSTextInput: View {
                                placeholder: placeholder,
                                leadingIcon: leadingIcon,
                                trailingAction: trailingAction,
-                               isError: isError,
+                               status: status,
                                style: style)
             
             if let helperText {
-                HelperTextContainer(helperText: helperText, isError: isError)
+                HelperTextContainer(helperText: helperText, status: status)
             }
         }
     }

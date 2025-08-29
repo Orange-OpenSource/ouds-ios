@@ -14,43 +14,23 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct LabelContainer: View {
+struct LeadingIconContainer: View {
 
-    // MARK: - Properties
-
-    let label: String
+    let leadingIcon: Image?
     let status: OUDSTextInput.Status
     @Environment(\.theme) private var theme
-    @Environment(\.isFocused) private var focused
-    @State private var hover = false
-
-    // MARK: - Body
 
     var body: some View {
-        Text(label)
-            .typeLabelDefaultSmall(theme)
+        leadingIcon?
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
-            .fixedSize(horizontal: true, vertical: false)
-            .onHover { hover = $0 }
     }
-
-    // MARK: Helper
 
     private var color: MultipleColorSemanticTokens {
         switch status {
-        case .default:
-            return theme.colors.colorContentMuted
-        case .error:
-            if focused {
-                return theme.colors.colorActionNegativeFocus
-            }
-            if hover {
-                return theme.colors.colorActionNegativeHover
-            }
-            return theme.colors.colorActionNegativeEnabled
-        case .loading:
-            return theme.colors.colorContentMuted
-        case .readOnly:
+        case .default, .error, .loading, .readOnly:
             return theme.colors.colorContentMuted
         case .disbaled:
             return theme.colors.colorActionDisabled

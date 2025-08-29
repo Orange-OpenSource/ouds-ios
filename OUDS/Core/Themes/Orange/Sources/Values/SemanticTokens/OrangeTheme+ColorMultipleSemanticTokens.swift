@@ -75,6 +75,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorActionSupportPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportPressedLight, dark: colorActionSupportPressedDark) }
 
+    @objc open var colorActionSupportDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportDisabledLight, dark: colorActionSupportDisabledDark) }
+
     @objc open var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionVisitedLight, dark: colorActionVisitedDark) }
 
     // MARK: - Color - Background

@@ -19,9 +19,8 @@ struct HelperTextContainer: View {
     // MARK: - Properties
 
     let helperText: String
-    let isError: Bool
+    let status: OUDSTextInput.Status
     @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Body
 
@@ -36,10 +35,15 @@ struct HelperTextContainer: View {
     // MARK: - Helper
 
     private var color: MultipleColorSemanticTokens {
-        if isError {
+        switch status {
+        case .default:
+            theme.colors.colorContentMuted
+        case .error:
             theme.colors.colorContentStatusNegative
-        } else {
-            isEnabled ? theme.colors.colorContentMuted : theme.colors.colorActionDisabled
+        case  .loading: // should not appear
+            theme.colors.colorContentMuted
+        case .readOnly, .disbaled:
+            theme.colors.colorActionDisabled
         }
     }
 }
