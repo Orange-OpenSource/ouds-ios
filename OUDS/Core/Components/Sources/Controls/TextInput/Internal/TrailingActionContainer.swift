@@ -20,10 +20,9 @@ struct TrailingActionContainer: View {
 
     let trailingAction: OUDSTextInput.TrailingAction?
     let status: OUDSTextInput.Status
+    let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
-    @Environment(\.isFocused) private var focused
     @Environment(\.colorScheme) private var colorScheme
-    @State private var hover = false
 
     // MARK: - Body
 
@@ -61,12 +60,13 @@ struct TrailingActionContainer: View {
     // MARK: Helper
 
     private var errorIconColor: MultipleColorSemanticTokens {
-        if focused {
+        switch interactionState {
+        case .idle:
+            return theme.colors.colorActionNegativeEnabled
+        case .focused:
             return theme.colors.colorActionNegativePressed
-        }
-        if hover {
+        case .hover:
             return theme.colors.colorActionNegativeHover
         }
-        return theme.colors.colorActionNegativeEnabled
     }
 }

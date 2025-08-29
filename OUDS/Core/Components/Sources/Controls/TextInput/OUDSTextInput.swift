@@ -70,15 +70,6 @@ public struct OUDSTextInput: View {
     let status: Self.Status
     let style: Style
 
-    public enum Style {
-        /// An input with a subtle background fill and a visible bottom border,
-        /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
-        case `default`
-        /// A minimalist input with a transparent background and a visible stroke outlining
-        /// the field.
-        case alternative
-    }
-
     public enum Layout {
         case label
         case placeholder
@@ -119,6 +110,15 @@ public struct OUDSTextInput: View {
             self.prefix = prefix
             self.suffix = suffix
         }
+    }
+
+    public enum Style {
+        /// An input with a subtle background fill and a visible bottom border,
+        /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
+        case `default`
+        /// A minimalist input with a transparent background and a visible stroke outlining
+        /// the field.
+        case alternative
     }
 
     public enum Status {
@@ -166,20 +166,6 @@ public struct OUDSTextInput: View {
     }
 
     // MARK: Body
-    @FocusState private var focused: Bool
-
-    private var showPlaceholder: Bool {
-        focused || !text.wrappedValue.isEmpty || layout == .placeholder
-    }
-
-    private var textfieldPlaceholder: String {
-        switch layout {
-        case .label:
-            focused ? "" : label
-        case .placeholder:
-            placeholder?.text ?? ""
-        }
-    }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {

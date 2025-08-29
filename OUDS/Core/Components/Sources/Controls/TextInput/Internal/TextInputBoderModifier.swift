@@ -20,11 +20,10 @@ struct TextInputBoderModifier: ViewModifier {
 
     let style: OUDSTextInput.Style
     let status: OUDSTextInput.Status
+    let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsRoundedTextInput) private var rounded
-    @Environment(\.isFocused) private var focused
-    @State private var hover = false
 
     // MARK: - Body
 
@@ -62,31 +61,38 @@ struct TextInputBoderModifier: ViewModifier {
     }
 
     private var width: BorderWidthSemanticToken {
-        if focused {
-                return theme.textInput.textInputBorderWidthFocus
+        switch interactionState {
+        case .idle:
+            return theme.textInput.textInputBorderWidthDefault
+        case .focused:
+            return theme.textInput.textInputBorderWidthFocus
+        case .hover:
+            return theme.textInput.textInputBorderWidthDefault
         }
-
-        return theme.textInput.textInputBorderWidthDefault
     }
 
     private var defaultColor: MultipleColorSemanticTokens {
         switch status {
         case .default:
-            if focused {
+            switch interactionState {
+            case .idle:
+                return theme.textInput.textInputColorBorderEnabled
+            case .focused:
                 return theme.textInput.textInputColorBorderFocus
-            }
-            if hover {
+            case .hover:
                 return theme.textInput.textInputColorBorderHover
             }
-            return theme.textInput.textInputColorBorderEnabled
+
         case .error:
-            if focused {
+            switch interactionState {
+            case .idle:
+                return theme.colors.colorActionNegativeEnabled
+            case .focused:
                 return theme.colors.colorActionNegativePressed
-            }
-            if hover {
+            case .hover:
                 return theme.colors.colorActionNegativeHover
             }
-            return theme.colors.colorActionNegativeEnabled
+
         case .loading:
             return theme.textInput.textInputColorBorderLoading
         case .readOnly:
@@ -99,21 +105,23 @@ struct TextInputBoderModifier: ViewModifier {
     private var alternativeColor: MultipleColorSemanticTokens {
         switch status {
         case .default:
-            if focused {
+            switch interactionState {
+            case .idle:
+                return theme.textInput.textInputColorBorderEnabled
+            case .focused:
                 return theme.textInput.textInputColorBorderFocus
-            }
-            if hover {
+            case .hover:
                 return theme.textInput.textInputColorBorderHover
             }
-            return theme.textInput.textInputColorBorderEnabled
         case .error:
-            if focused {
+            switch interactionState {
+            case .idle:
                 return theme.colors.colorActionNegativeEnabled
-            }
-            if hover {
+            case .focused:
+                return theme.colors.colorActionNegativePressed
+            case .hover:
                 return theme.colors.colorActionNegativeHover
             }
-            return theme.colors.colorActionNegativePressed
         case .loading:
             return theme.textInput.textInputColorBorderLoading
         case .readOnly:
