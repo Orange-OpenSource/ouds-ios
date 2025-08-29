@@ -72,6 +72,8 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public var colorActionSupportPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportPressedLight, dark: colorActionSupportPressedDark) }
 
+    @objc public var colorActionSupportDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportDisabledLight, dark: colorActionSupportDisabledDark) }
+
     @objc public var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionVisitedLight, dark: colorActionVisitedDark) }
 
     // MARK: - Color - Background

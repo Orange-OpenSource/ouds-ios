@@ -24,11 +24,11 @@ struct TextInputConatiner: View {
     let placeholder: OUDSTextInput.Placeholder?
     let leadingIcon: Image?
     let trailingAction: OUDSTextInput.TrailingAction?
-    let isError: Bool
+    let status: OUDSTextInput.Status
     let style: OUDSTextInput.Style
 
     @Environment(\.theme) private var theme
-    @FocusState private var focused: Bool
+    @FocusState private var focused: Bool 
 
     // MARK: - Body
 
@@ -36,18 +36,14 @@ struct TextInputConatiner: View {
         HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
 
             // Leading icon container
-            leadingIcon?
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
+            LeadingIconContainer(leadingIcon: leadingIcon, status: status)
 
             // Text container
             VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
-                // Label caontainer
+                // Label container
                 if showPlaceholder, !label.isEmpty {
-                    Text(label)
-                        .typeLabelDefaultSmall(theme)
-                        .fixedSize(horizontal: true, vertical: false)
+                    LabelContainer(label: label, status: status)
+                        .focused($focused, equals: true)
                 }
 
                 // Input container
@@ -57,13 +53,11 @@ struct TextInputConatiner: View {
                     if let prefix = placeholder?.prefix, !prefix.isEmpty, showPlaceholder {
                         Text(prefix)
                             .typeLabelDefaultLarge(theme)
+                            .foregroundStyle(focused ? .green : .blue)
                     }
 
                     // Input text container
-                    TextField(textfieldPlaceholder, text: text)
-                        .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-                        .typeLabelDefaultLarge(theme)
-                        .focused($focused, equals: true)
+                    Inputtext(label: textfieldPlaceholder, text: text, status: status, labelAsPlaceholder: showPlaceholder)
 
                     // Sufix container
                     if let suffix = placeholder?.suffix, !suffix.isEmpty, showPlaceholder {
@@ -74,12 +68,7 @@ struct TextInputConatiner: View {
             }
 
             // Trailing action container
-            if let trailingAction {
-                OUDSButton(icon: trailingAction.icon,
-                           accessibilityLabel: trailingAction.accessibilityLabel,
-                           hierarchy: .minimal,
-                           action: trailingAction.action)
-            }
+            TrailingActionContainer(trailingAction: trailingAction, status: status)
         }
         .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
         .padding(.leading, leading)
@@ -88,8 +77,8 @@ struct TextInputConatiner: View {
                maxWidth: theme.textInput.textInputSizeMaxWidth,
                minHeight: theme.textInput.textInputSizeMinHeight,
                alignment: .center)
-        .modifier(TextInputBackgroundModifier(style: style, isError: isError))
-        .modifier(TextInputBoderModifier(style: style, isError: isError))
+        .modifier(TextInputBackgroundModifier(style: style, status: status))
+        .modifier(TextInputBoderModifier(style: style, status: status))
     }
 
     // MARK: - Helper
@@ -115,47 +104,6 @@ struct TextInputConatiner: View {
 
     private var trailing: CGFloat {
         leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineTrailingAction
-    }
-}
-
-struct TextInputBackgroundModifier: ViewModifier {
-
-    // MARK: - Stored properties
-
-    let style: OUDSTextInput.Style
-    let isError: Bool
-    @Environment(\.theme) private var theme
-    @Environment(\.oudsRoundedTextInput) private var rounded
-    @Environment(\.isEnabled) private var enabled
-    @Environment(\.isFocused) private var focused
-    @State private var hover = false
-
-    // MARK: - Body
-
-    func body(content: Content) -> some View {
-        switch style {
-        case .default:
-            content
-                .onHover { hover in
-                    self.hover = hover
-                }
-                .oudsBackground(color)
-        case .alternative:
-            content
-        }
-    }
-
-    private var color: MultipleColorSemanticTokens {
-        if !enabled{
-            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionDisabled
-        }
-        if hover {
-            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportHover
-        }
-        if focused {
-            return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportFocus
-        }
-        return isError ? theme.colors.colorSurfaceStatusNegativeMuted : theme.colors.colorActionSupportHover
     }
 }
 
