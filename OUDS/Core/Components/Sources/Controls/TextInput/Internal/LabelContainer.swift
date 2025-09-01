@@ -20,9 +20,8 @@ struct LabelContainer: View {
 
     let label: String
     let status: OUDSTextInput.Status
+    let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
-    @Environment(\.isFocused) private var focused
-    @State private var hover = false
 
     // MARK: - Body
 
@@ -30,8 +29,7 @@ struct LabelContainer: View {
         Text(label)
             .typeLabelDefaultSmall(theme)
             .oudsForegroundColor(color)
-            .fixedSize(horizontal: true, vertical: false)
-            .onHover { hover = $0 }
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: Helper
@@ -41,13 +39,14 @@ struct LabelContainer: View {
         case .default:
             return theme.colors.colorContentMuted
         case .error:
-            if focused {
+            switch interactionState {
+            case .idle:
+                return theme.colors.colorActionNegativeEnabled
+            case .focused:
                 return theme.colors.colorActionNegativeFocus
-            }
-            if hover {
+            case .hover:
                 return theme.colors.colorActionNegativeHover
             }
-            return theme.colors.colorActionNegativeEnabled
         case .loading:
             return theme.colors.colorContentMuted
         case .readOnly:

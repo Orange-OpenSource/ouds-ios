@@ -43,7 +43,7 @@ struct TextInputConatiner: View {
             VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
                 // Label container
                 if showPlaceholder, !label.isEmpty {
-                    LabelContainer(label: label, status: status)
+                    LabelContainer(label: label, status: status, interactionState: interactionState)
                 }
 
                 // Input container
@@ -53,6 +53,7 @@ struct TextInputConatiner: View {
                     if let prefix = placeholder?.prefix, !prefix.isEmpty, showPlaceholder {
                         Text(prefix)
                             .typeLabelDefaultLarge(theme)
+                            .oudsForegroundColor(prefixSuffixColor)
                     }
 
                     // Input text container
@@ -66,7 +67,7 @@ struct TextInputConatiner: View {
                     // Sufix container
                     if let suffix = placeholder?.suffix, !suffix.isEmpty, showPlaceholder {
                         Text(suffix)
-                            .typeLabelDefaultLarge(theme)
+                            .oudsForegroundColor(prefixSuffixColor)
                     }
                 }
             }
@@ -109,6 +110,10 @@ struct TextInputConatiner: View {
 
     private var trailing: CGFloat {
         leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineTrailingAction
+    }
+
+    private var prefixSuffixColor: MultipleColorSemanticTokens {
+        status == .disbaled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
     }
 
     private var interactionState: TextInputInteractionState {
