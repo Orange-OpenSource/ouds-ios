@@ -39,7 +39,7 @@ struct TextInputBoderModifier: ViewModifier {
             ZStack(alignment: .bottom) {
                 content
                 Divider()
-                    .frame(height: width)
+                    .frame(height: size)
                     .overlay(defaultColor.color(for: colorScheme))
             }
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
@@ -48,7 +48,7 @@ struct TextInputBoderModifier: ViewModifier {
         case .alternative:
             content
                 .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: width,
+                            width: size,
                             radius: cornerRadius,
                             color: alternativeColor)
         }
@@ -60,7 +60,7 @@ struct TextInputBoderModifier: ViewModifier {
         rounded ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
     }
 
-    private var width: BorderWidthSemanticToken {
+    private var size: BorderWidthSemanticToken {
         switch interactionState {
         case .idle:
             return theme.textInput.textInputBorderWidthDefault

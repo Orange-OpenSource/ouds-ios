@@ -27,32 +27,24 @@ struct TrailingActionContainer: View {
     // MARK: - Body
 
     var body: some View {
-        if case .loading = status {
-            // TODO: update size with token
-            LoaderIndicator(color: theme.colors.colorContentMuted.color(for: colorScheme))
-                .frame(width: 24, height: 24, alignment: .center)
-                .padding(.all, theme.button.buttonSpaceInsetIconOnly)
-        } else {
-            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
-                if status == .error {
-                    // TODO: Update asset name
-                    Image(decorative: "ic_error", bundle: theme.resourcesBundle)
-                        .renderingMode(.template)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .oudsForegroundStyle(errorIconColor)
-                        .frame(width: 24, height: 24, alignment: .center)
-                        .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
-                }
+        HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
+            if status == .error {
+                // TODO: Update asset name
+                Image(decorative: "ic_error", bundle: theme.resourcesBundle)
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .oudsForegroundStyle(errorIconColor)
+                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+            }
 
-                if let trailingAction {
-                    OUDSButton(icon: trailingAction.icon,
-                               accessibilityLabel: trailingAction.accessibilityLabel,
-                               hierarchy: .minimal,
-                               style: .default,
-                               action: trailingAction.action)
-                    .disabled(status == .disbaled || status == .readOnly)
-                }
+            if let trailingAction {
+                OUDSButton(icon: trailingAction.icon,
+                           accessibilityLabel: trailingAction.accessibilityLabel,
+                           hierarchy: .minimal,
+                           style: .loading == status ?  .loading : .default,
+                           action: trailingAction.action)
+                .disabled(status == .disbaled || status == .readOnly)
             }
         }
     }
