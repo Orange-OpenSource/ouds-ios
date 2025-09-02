@@ -28,23 +28,30 @@ struct TrailingActionContainer: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
-            if status == .error {
+            switch status {
+            case .default, .readOnly, .disbaled:
+                if let trailingAction {
+                    OUDSButton(icon: trailingAction.icon,
+                               accessibilityLabel: trailingAction.accessibilityLabel,
+                               hierarchy: .minimal,
+                               style: .loading == status ?  .loading : .default,
+                               action: trailingAction.action)
+                    .disabled(status == .disbaled || status == .readOnly)
+                }
+            case .error:
                 // TODO: Update asset name
-                Image(decorative: "ic_error", bundle: theme.resourcesBundle)
+                Image(decorative: "ic_important", bundle: theme.resourcesBundle)
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .oudsForegroundStyle(errorIconColor)
                     .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
-            }
 
-            if let trailingAction {
-                OUDSButton(icon: trailingAction.icon,
-                           accessibilityLabel: trailingAction.accessibilityLabel,
-                           hierarchy: .minimal,
-                           style: .loading == status ?  .loading : .default,
-                           action: trailingAction.action)
-                .disabled(status == .disbaled || status == .readOnly)
+            case .loading:
+                LoaderIndicator(color: theme.colors.colorContentMuted.color(for: colorScheme))
+//                    .padding(.all, theme.button.buttonSpaceInsetIconOnly)
+                    .frame(width: theme.button.buttonSizeLoader, height: theme.button.buttonSizeLoader, alignment: .center)
+
             }
         }
     }

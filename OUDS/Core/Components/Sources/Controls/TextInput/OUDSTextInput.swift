@@ -70,8 +70,12 @@ public struct OUDSTextInput: View {
     let status: Self.Status
     let style: Style
 
+    /// The prefered layout to displkay label or placeholder in input area
     public enum Layout {
+        /// Used to display the label into the input area
         case label
+
+        /// Used to display the placeholder into the input area
         case placeholder
     }
 
@@ -112,6 +116,7 @@ public struct OUDSTextInput: View {
         }
     }
 
+    /// The prefered style of the Text input
     public enum Style {
         /// An input with a subtle background fill and a visible bottom border,
         /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
@@ -121,11 +126,25 @@ public struct OUDSTextInput: View {
         case alternative
     }
 
+    /// Define all available status.
     public enum Status {
+        /// The `default` status
         case `default`
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
+        /// accessible error message positioned below the input.
         case error
+
+        /// The `loading` state indicates that the system is processing or retrieving data related to the
+        /// text entered. A progress indicator appears to inform the user that an action is in progress.
         case loading
+
+        /// The`readOnly`, letd the text visible but not editable
         case readOnly
+
+        ///  In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
+        ///  **Remark** the SwiftUI `View.disbaled` is ignored.
         case disbaled
     }
 
@@ -169,7 +188,7 @@ public struct OUDSTextInput: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            TextInputConatiner(layout: layout,
+            TextInputContainer(layout: layout,
                                label: label,
                                text: text,
                                placeholder: placeholder,
@@ -177,7 +196,7 @@ public struct OUDSTextInput: View {
                                trailingAction: trailingAction,
                                status: status,
                                style: style)
-            
+
             if let helperText {
                 HelperTextContainer(helperText: helperText, status: status)
             }
