@@ -57,7 +57,7 @@ This checkbox can provide two values (selected and unselected) or three values (
         ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
-        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeInverse)
+        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeBusinessTools)
     }
     @Tab("Sosh") {
         ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
