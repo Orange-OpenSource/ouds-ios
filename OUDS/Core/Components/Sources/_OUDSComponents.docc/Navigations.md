@@ -11,7 +11,23 @@ Some components can be used for **navigation**.
 
 ### Links
 
-![A link component in light and dark mode with Orange theme](component_link_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A link component in light and dark mode with Orange theme](component_link_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A link component in light and dark mode with Orange Inverse theme](component_link_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A link component in light and dark mode with Orange Business Tools theme](component_link_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A link component in light and dark mode with Sosh theme](component_link_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A link component in light and dark mode with Wireframe theme](component_link_Wireframe)
+    }
+}
 
 The ``OUDSLink`` proposes layout with text only or text with icon.
 It also proposes layout to navigate forward or backward.

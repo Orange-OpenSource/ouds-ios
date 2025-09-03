@@ -11,7 +11,23 @@ Some components can be used for **layouts**.
 
 ### Colored Surface
 
-![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A colored surface with text, button and link in light and dark mode with Orange Inverse theme](component_coloredSurface_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A colored surface with text, button and link in light and dark mode with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A colored surface with text, button and link in light and dark mode with Sosh theme](component_coloredSurface_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A colored surface with text, button and link in light and dark mode with Wireframe theme](component_coloredSurface_Wireframe)
+    }
+}
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
@@ -92,14 +108,51 @@ OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 
 #### How it works
 
-![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
-![An horizontal divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
-
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
 - ``OUDSHorizontalDivider``: to separate elements stacked vertivally (VStask).
 - ``OUDSVerticalDivider``: to separate elements stacked Horizontally (HStask).
 
 A divider can be colored using color enumerated in the `OUDSDividerColor`.
+
+##### Horizontal
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![An horizontal divider in light and dark mode with Orange Inverse theme](component_horizontalDivider_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinesTools)
+    }
+    @Tab("Sosh") {
+        ![An horizontal divider in light and dark mode with Sosh theme](component_horizontalDivider_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An horizontal divider in light and dark mode with Wireframe theme](component_horizontalDivider_Wireframe)
+    }
+}
+
+##### Vertical
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An vertical divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![An vertical divider in light and dark mode with Orange Inverse theme](component_verticalDivider_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![An vertical divider in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![An vertical divider in light and dark mode with Sosh theme](component_verticalDivider_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An vertical divider in light and dark mode with Wireframe theme](component_verticalDivider_Wireframe)
+    }
+}
 
 #### How to use
 
