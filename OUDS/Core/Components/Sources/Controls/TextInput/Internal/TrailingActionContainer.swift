@@ -27,32 +27,26 @@ struct TrailingActionContainer: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
             switch status {
             case .default, .readOnly, .disbaled:
-                if let trailingAction {
-                    OUDSButton(icon: trailingAction.icon,
-                               accessibilityLabel: trailingAction.accessibilityLabel,
-                               hierarchy: .minimal,
-                               style: .loading == status ?  .loading : .default,
-                               action: trailingAction.action)
+                trailingActionButton
                     .disabled(status == .disbaled || status == .readOnly)
-                }
             case .error:
-                // TODO: Update asset name
-                Image(decorative: "ic_important", bundle: theme.resourcesBundle)
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .oudsForegroundStyle(errorIconColor)
-                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+                HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
+                    Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .oudsForegroundColor(errorIconColor)
+                        .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
+                        .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+
+                    trailingActionButton
+                }
 
             case .loading:
                 LoaderIndicator(color: theme.colors.colorContentMuted.color(for: colorScheme))
-//                    .padding(.all, theme.button.buttonSpaceInsetIconOnly)
                     .frame(width: theme.button.buttonSizeLoader, height: theme.button.buttonSizeLoader, alignment: .center)
-
-            }
         }
     }
 
@@ -66,6 +60,17 @@ struct TrailingActionContainer: View {
             return theme.colors.colorActionNegativePressed
         case .hover:
             return theme.colors.colorActionNegativeHover
+        }
+    }
+
+    @ViewBuilder
+    private var trailingActionButton: some View {
+        if let trailingAction {
+            OUDSButton(icon: trailingAction.icon,
+                       accessibilityLabel: trailingAction.accessibilityLabel,
+                       hierarchy: .minimal,
+                       style: .loading == status ?  .loading : .default,
+                       action: trailingAction.action)
         }
     }
 }
