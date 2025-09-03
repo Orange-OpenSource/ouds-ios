@@ -84,7 +84,7 @@ You cannot derivate the Sosh theme.
 
 ### Actions
 
-![A button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_Sosh.png)
+![A button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Sosh.png)
 
 ### Controls
 
@@ -92,10 +92,10 @@ You cannot derivate the Sosh theme.
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Sosh.png)        
+        ![A checkbox component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Sosh.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Sosh.png)
+        ![A checkbox item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Sosh.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -104,10 +104,10 @@ You cannot derivate the Sosh theme.
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Sosh.png)        
+        ![A radio button component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Sosh.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Sosh.png)
+        ![A radio item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Sosh.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -116,10 +116,10 @@ You cannot derivate the Sosh theme.
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Sosh.png)        
+        ![A switch component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Sosh.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Sosh.png)
+        ![A switch item component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Sosh.png)
     }
 }
 
@@ -127,10 +127,10 @@ You cannot derivate the Sosh theme.
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Sosh.png)        
+        ![A filter chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Sosh.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Sosh.png)
+        ![A suggestion chip component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Sosh.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
@@ -139,11 +139,11 @@ You cannot derivate the Sosh theme.
 
 #### Badge
 
-![A badge component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_Sosh.png)
+![A badge component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Sosh.png)
 
 #### Tag
 
-![A tag component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_Sosh.png)
+![A tag component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Sosh.png)
 
 ### Layouts
 
@@ -153,10 +153,10 @@ You cannot derivate the Sosh theme.
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Sosh.png)
+        ![An horizontal divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Sosh.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Sosh.png)
+        ![A vertical divider component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Sosh.png)
     }
 }
 

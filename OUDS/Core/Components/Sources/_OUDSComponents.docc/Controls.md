@@ -13,7 +13,7 @@ Some components can be used for **controls** and **inputs**.
 
 #### Checkbox (only)
 
-![A checkbox component in light and dark mode with Orange theme](component_checkbox_enabled_selected_Orange)
+![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
@@ -33,7 +33,7 @@ This checkbox can provide two values (selected and unselected) or three values (
 
 #### Checkbox item
 
-![A checkbox item component in light and dark mode with Orange theme](component_checkbox_item_Orange)
+![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
 
 The library proposes also a checkbox which has in its layout some labels and icons.
 The indicator can be leading or trailing.
@@ -61,7 +61,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 
 #### Checkbox picker
 
-![A checkbox picker component in light and dark mode with Orange theme](component_checkboxpicker_vertical_rooted_Orange)
+![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
 
 Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
 
@@ -113,7 +113,7 @@ Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to
 
 #### Radio (only)
 
-![A radio button component in light and dark mode with Orange theme](component_radio_enabled_selected_Orange)
+![A radio button component in light and dark mode with Orange theme](component_radio_Orange)
 
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
 You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
@@ -127,7 +127,7 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 
 #### Radio item
 
-![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
 
 The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
@@ -150,7 +150,7 @@ The indicator can be leading or trailing.
 
 #### Radio picker
 
-![A radio picker component in light and dark mode with Orange theme](component_radiopicker_vertical_Orange)
+![A radio picker component in light and dark mode with Orange theme](component_radioPicker_Orange)
 
 Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
 
@@ -189,7 +189,7 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
 #### Switch (only)
 
-![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+![A switch component in light and dark mode with Orange theme](component_switch_Orange)
 
 The library proposes a new layout for the switch component. The native it not used anymore.
 You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
@@ -205,7 +205,7 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 
 #### Switch item
 
-![A switch item component in light and dark mode with Orange theme](component_switchitem_enabled_selected_Orange)
+![A switch item component in light and dark mode with Orange theme](component_switchItem_Orange)
 
 The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``)
 The indicator can be leading or trailing.
@@ -234,7 +234,7 @@ The indicator can be leading or trailing.
 
 #### Suggestion
 
-![A suggestion chip component in light and dark mode with Orange theme](component_suggestionchip_text_icon_enabled_Orange)
+![A suggestion chip component in light and dark mode with Orange theme](component_suggestionChip_Orange)
 
 The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
@@ -251,7 +251,7 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 #### Filter
 
-![A fiter chip component in light and dark mode with Orange theme](component_filterchip_text_enabled_Orange)
+![A fiter chip component in light and dark mode with Orange theme](component_filterChip_Orange)
 
 The library proposes filter chip component to make some filtering with selected or unselected options.
 
@@ -268,7 +268,7 @@ The library proposes filter chip component to make some filtering with selected 
 
 #### Chip picker
 
-![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
+![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
 
 The library proposes a chip picker to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only

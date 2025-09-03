@@ -64,10 +64,32 @@ import SwiftUI
 /// ## Suggestions
 ///
 /// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox/t/14bf4bd854), the checkbox by default must be used in unselected state.
-/// w
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
+///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A checkbox component in light and dark mode with Orange Inverse theme](component_checkbox_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
 ///
 /// - Version: 2.0.0 (Figma component design version)
 /// - Since: 0.12.0

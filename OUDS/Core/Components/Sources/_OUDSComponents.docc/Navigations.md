@@ -11,7 +11,7 @@ Some components can be used for **navigation**.
 
 ### Links
 
-![A link component in light and dark mode with Orange theme](component_link_enabled_default_next_Orange)
+![A link component in light and dark mode with Orange theme](component_link_Orange)
 
 The ``OUDSLink`` proposes layout with text only or text with icon.
 It also proposes layout to navigate forward or backward.

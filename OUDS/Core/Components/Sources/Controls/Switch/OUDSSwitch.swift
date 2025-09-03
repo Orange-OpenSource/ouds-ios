@@ -42,23 +42,23 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+/// ![A switch component in light and dark mode with Orange theme](component_switch_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_enabled_selected_OrangeBusinessTools)
+/// ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_OrangeBusinessTools)
 ///
 /// ### Orange Inverse
 ///
-/// ![A switch component in light and dark mode with Orange Inverse theme](component_switch_enabled_selected_OrangeInverse)
+/// ![A switch component in light and dark mode with Orange Inverse theme](component_switch_OrangeInverse)
 ///
 /// ### Sosh
 ///
-/// ![A switch component in light and dark mode with Sosh theme](component_switch_enabled_selected_Sosh)
+/// ![A switch component in light and dark mode with Sosh theme](component_switch_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A switch component in light and dark mode with Wireframe theme](component_switch_enabled_selected_Wireframe)
+/// ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0

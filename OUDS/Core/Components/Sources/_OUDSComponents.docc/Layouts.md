@@ -11,7 +11,7 @@ Some components can be used for **layouts**.
 
 ### Colored Surface
 
-![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredsurface_Orange)
+![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
@@ -92,8 +92,8 @@ OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 
 #### How it works
 
-![An horizontal divider in light and dark mode with Orange theme](component_horizontaldivider_Orange)
-![An horizontal divider in light and dark mode with Orange theme](component_verticaldivider_Orange)
+![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
+![An horizontal divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
 
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
 - ``OUDSHorizontalDivider``: to separate elements stacked vertivally (VStask).

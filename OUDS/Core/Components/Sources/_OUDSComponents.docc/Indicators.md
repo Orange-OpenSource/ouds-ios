@@ -11,7 +11,7 @@ Some components can be used for **indicators**.
 
 ### Badge
 
-![A badge component in light and dark mode with Orange theme](component_badge_count_large_accent_Orange)
+![A badge component in light and dark mode with Orange theme](component_badge_Orange)
 
 The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 
@@ -28,7 +28,7 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 ### Tag
 
-![A tag component in light and dark mode with Orange theme](component_tag_bullet_emphasized_accent_rounded_default_Orange)
+![A tag component in light and dark mode with Orange theme](component_tag_Orange)
 
 An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 

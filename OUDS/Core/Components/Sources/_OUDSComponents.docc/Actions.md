@@ -11,7 +11,7 @@ Some components can be used for **actions**.
 
 ### Buttons
 
-![A button component in light and dark mode with Orange theme](component_button_enabled_strong_Orange)
+![A button component in light and dark mode with Orange theme](component_button_Orange)
 
 The ``OUDSButton`` proposes layout with text only, icon only or text and icon. 
 Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.

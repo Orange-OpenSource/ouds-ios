@@ -83,7 +83,7 @@ You cannot derivate the *Orange inverse* theme.
 
 ### Actions
 
-![A button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_OrangeInverse.png)
+![A button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_OrangeInverse.png)
 
 ### Controls
 
@@ -91,10 +91,10 @@ You cannot derivate the *Orange inverse* theme.
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_OrangeInverse.png)        
+        ![A checkbox component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_OrangeInverse.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_OrangeInverse.png)
+        ![A checkbox item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_OrangeInverse.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -103,10 +103,10 @@ You cannot derivate the *Orange inverse* theme.
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_OrangeInverse.png)        
+        ![A radio button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_OrangeInverse.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_OrangeInverse.png)
+        ![A radio item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_OrangeInverse.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -115,10 +115,10 @@ You cannot derivate the *Orange inverse* theme.
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_OrangeInverse.png)        
+        ![A switch component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_OrangeInverse.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_OrangeInverse.png)
+        ![A switch item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_OrangeInverse.png)
     }
 }
 
@@ -126,10 +126,10 @@ You cannot derivate the *Orange inverse* theme.
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_OrangeInverse.png)        
+        ![A filter chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_OrangeInverse.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_OrangeInverse.png)
+        ![A suggestion chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_OrangeInverse.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
@@ -138,11 +138,11 @@ You cannot derivate the *Orange inverse* theme.
 
 #### Badge
 
-![A badge component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_OrangeInverse.png)
+![A badge component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeInverse.png)
 
 #### Tag
 
-![A tag component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_OrangeInverse.png)
+![A tag component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_OrangeInverse.png)
 
 ### Layouts
 
@@ -152,10 +152,10 @@ You cannot derivate the *Orange inverse* theme.
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_OrangeInverse.png)
+        ![An horizontal divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_OrangeInverse.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_OrangeInverse.png)
+        ![A vertical divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_OrangeInverse.png)
     }
 }
 
@@ -163,7 +163,7 @@ You cannot derivate the *Orange inverse* theme.
 
 #### Link
 
-![A link component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_OrangeInverse.png)
+![A link component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_OrangeInverse.png)
 
 ## Topics
 

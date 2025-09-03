@@ -41,23 +41,23 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A badge component in light and dark mode with Orange theme](component_badge_count_large_accent_Orange)
+/// ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_count_large_accent_OrangeBusinessTools)
+/// ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
 ///
 /// ### Orange Inverse
 ///
-/// ![A badge component in light and dark mode with Orange Inverse theme](component_badge_count_large_accent_OrangeInverse)
+/// ![A badge component in light and dark mode with Orange Inverse theme](component_badge_OrangeInverse)
 ///
 /// ### Sosh
 ///
-/// ![A badge component in light and dark mode with Sosh theme](component_badge_count_large_accent_Sosh)
+/// ![A badge component in light and dark mode with Sosh theme](component_badge_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A badge component in light and dark mode with Wireframe theme](component_badge_count_large_accent_Wireframe)
+/// ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
 ///
 /// - Version:1.1.0 (Figma component design version)
 /// - Since: 0.17.0
