@@ -76,12 +76,9 @@ struct TextInputContainer: View {
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
         .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
-        .padding(.leading, leading)
+        .padding(.leading, theme.textInput.textInputSpacePaddingInlineDefault)
         .padding(.trailing, trailing)
-        .frame(minWidth: theme.textInput.textInputSizeMinWidth,
-               maxWidth: theme.textInput.textInputSizeMaxWidth,
-               minHeight: theme.textInput.textInputSizeMinHeight,
-               alignment: .center)
+        .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .center)
         .modifier(TextInputBackgroundModifier(style: style, status: status, interactionState: interactionState))
         .modifier(TextInputBoderModifier(style: style, status: status, interactionState: interactionState))
         .onHover{ self.hover = $0 }
@@ -102,14 +99,12 @@ struct TextInputContainer: View {
         }
     }
 
-    private var leading: SpaceSemanticToken {
-        // TODO: textInputSpacePaddingInlineStart is missing
-        // leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineStart
-        theme.textInput.textInputSpacePaddingInlineDefault
-    }
-
     private var trailing: CGFloat {
-        leadingIcon == nil ? theme.textInput.textInputSpacePaddingInlineDefault : theme.textInput.textInputSpacePaddingInlineTrailingAction
+        if trailingAction != nil || status == .error {
+            return theme.textInput.textInputSpacePaddingInlineTrailingAction
+        } else {
+            return theme.textInput.textInputSpacePaddingInlineDefault
+        }
     }
 
     private var prefixSuffixColor: MultipleColorSemanticTokens {

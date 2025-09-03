@@ -99,9 +99,9 @@ public struct OUDSTextInput: View {
 
     /// Used to describe the trailing action
     public struct Placeholder {
-        let text: String
-        let suffix: String?
-        let prefix: String?
+        public let text: String
+        public let suffix: String?
+        public let prefix: String?
 
         /// Create a placeholder with text and additional (optional) prefix and suffix.
         ///
@@ -201,5 +201,10 @@ public struct OUDSTextInput: View {
                 HelperTextContainer(helperText: helperText, status: status)
             }
         }
+        .frame(minWidth: theme.textInput.textInputSizeMinWidth,
+               maxWidth: theme.textInput.textInputSizeMaxWidth,
+               minHeight: theme.textInput.textInputSizeMinHeight,
+               alignment: .center)
+
     }
 }
