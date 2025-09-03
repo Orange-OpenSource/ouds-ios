@@ -243,6 +243,8 @@ if [[ $use_git -eq 1 ]]; then
 
     clean_repo
 
+    git config commit.gpgsign false
+
     _ "🔨 Checkout service pages branch, align with remote"
 
     # Check if the local branch exists.
@@ -311,7 +313,7 @@ if [[ $use_git -eq 1 ]]; then
     
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
-    git commit -m "$commit_message"
+    git commit -m "$commit_message" --no-gpg-sign
 
     _ "🔨 Pushing things"
     git push origin "$SERVICE_PAGES_BRANCH"
