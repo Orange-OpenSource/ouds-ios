@@ -76,7 +76,23 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
+/// ![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
+///
+/// ### Orange Business Tools
+///
+/// ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+///
+/// ### Orange Inverse
+///
+/// ![A chip picker component in light and dark mode with Orange Inverse theme](component_chipPicker_OrangeInverse)
+///
+/// ### Sosh
+///
+/// ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A chip picker component in light and dark mode with Wireframe theme](component_chipPicker_Wireframe)
 ///
 /// - Since: 0.17.0
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {

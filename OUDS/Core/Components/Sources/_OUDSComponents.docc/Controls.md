@@ -13,7 +13,23 @@ Some components can be used for **controls** and **inputs**.
 
 #### Checkbox (only)
 
-![A checkbox component in light and dark mode with Orange theme](component_checkbox_enabled_selected_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A checkbox component in light and dark mode with Orange Inverse theme](component_checkbox_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
+    }
+}
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
@@ -33,7 +49,23 @@ This checkbox can provide two values (selected and unselected) or three values (
 
 #### Checkbox item
 
-![A checkbox item component in light and dark mode with Orange theme](component_checkbox_item_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A checkbox item component in light and dark mode with Wireframe theme](component_checkboxItem_Wireframe)
+    }
+}
 
 The library proposes also a checkbox which has in its layout some labels and icons.
 The indicator can be leading or trailing.
@@ -61,7 +93,23 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 
 #### Checkbox picker
 
-![A checkbox picker component in light and dark mode with Orange theme](component_checkboxpicker_vertical_rooted_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A checkbox picker component in light and dark mode with Orange Inverse theme](component_checkboxPicker_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A checkbox picker component in light and dark mode with Orange Business Tools theme](component_checkboxPicker_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A checkbox picker component in light and dark mode with Sosh theme](component_checkboxPicker_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A checkbox picker component in light and dark mode with Wireframe theme](component_checkboxPicker_Wireframe)
+    }
+}
 
 Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
 
@@ -113,7 +161,23 @@ Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to
 
 #### Radio (only)
 
-![A radio button component in light and dark mode with Orange theme](component_radio_enabled_selected_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A radio button component in light and dark mode with Orange theme](component_radio_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A radio button component in light and dark mode with Orange Inverse theme](component_radio_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A radio button component in light and dark mode with Orange Business Tools theme](component_radio_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A radio button component in light and dark mode with Sosh theme](component_radio_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
+    }
+}
 
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
 You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
@@ -127,7 +191,23 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 
 #### Radio item
 
-![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A radio item component in light and dark mode with Orange Inverse theme](component_radioItem_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A radio item component in light and dark mode with Sosh theme](component_radioItem_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
+    }
+}
 
 The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
@@ -150,7 +230,23 @@ The indicator can be leading or trailing.
 
 #### Radio picker
 
-![A radio picker component in light and dark mode with Orange theme](component_radiopicker_vertical_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A radio picker component in light and dark mode with Orange theme](component_radioPicker_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A radio picker component in light and dark mode with Orange Inverse theme](component_radioPicker_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A radio picker component in light and dark mode with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A radio picker component in light and dark mode with Sosh theme](component_radioPicker_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A radio picker component in light and dark mode with Wireframe theme](component_radioPicker_Wireframe)
+    }
+}
 
 Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
 
@@ -189,7 +285,23 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
 #### Switch (only)
 
-![A switch component in light and dark mode with Orange theme](component_switch_enabled_selected_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A switch component in light and dark mode with Orange theme](component_switch_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A switch component in light and dark mode with Orange Inverse theme](component_switch_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A switch component in light and dark mode with Sosh theme](component_switch_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
+    }
+}
 
 The library proposes a new layout for the switch component. The native it not used anymore.
 You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
@@ -205,7 +317,23 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 
 #### Switch item
 
-![A switch item component in light and dark mode with Orange theme](component_switchitem_enabled_selected_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A switch item component in light and dark mode with Orange theme](component_switchItem_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A switch item component in light and dark mode with Orange Inverse theme](component_switchItem_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A switch item component in light and dark mode with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A switch item component in light and dark mode with Sosh theme](component_switchItem_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A switch item component in light and dark mode with Wireframe theme](component_switchItem_Wireframe)
+    }
+}
 
 The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``)
 The indicator can be leading or trailing.
@@ -234,7 +362,23 @@ The indicator can be leading or trailing.
 
 #### Suggestion
 
-![A suggestion chip component in light and dark mode with Orange theme](component_suggestionchip_text_icon_enabled_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A suggestion chip component in light and dark mode with Orange theme](component_suggestionChip_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A suggestion chip component in light and dark mode with Orange Inverse theme](component_suggestionChip_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A suggestion chip component in light and dark mode with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A suggestion chip component in light and dark mode with Sosh theme](component_suggestionChip_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A suggestion chip component in light and dark mode with Wireframe theme](component_suggestionChip_Wireframe)
+    }
+}
 
 The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
@@ -251,7 +395,23 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 #### Filter
 
-![A fiter chip component in light and dark mode with Orange theme](component_filterchip_text_enabled_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A fiter chip component in light and dark mode with Orange theme](component_filterChip_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A fiter chip component in light and dark mode with Orange Inverse theme](component_filterChip_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A fiter chip component in light and dark mode with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A fiter chip component in light and dark mode with Sosh theme](component_filterChip_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A fiter chip component in light and dark mode with Wireframe theme](component_filterChip_Wireframe)
+    }
+}
 
 The library proposes filter chip component to make some filtering with selected or unselected options.
 
@@ -268,7 +428,23 @@ The library proposes filter chip component to make some filtering with selected 
 
 #### Chip picker
 
-![A chip picker component in light and dark mode with Orange theme](component_chippicker_enabled_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A chip picker component in light and dark mode with Orange Inverse theme](component_chipPicker_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A chip picker component in light and dark mode with Wireframe theme](component_chipPicker_Wireframe)
+    }
+}
 
 The library proposes a chip picker to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only

@@ -33,23 +33,23 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![An horizontal divider component in light and dark mode with Orange theme](component_horizontaldivider_Orange)
+/// ![An horizontal divider component in light and dark mode with Orange theme](component_horizontalDivider_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A horizontal divider component in light and dark mode with Orange Business Tools theme](component_horizontaldivider_OrangeBusinessTools)
+/// ![A horizontal divider component in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
 ///
 /// ### Orange Inverse
 ///
-/// ![A horizontal divider component in light and dark mode with Orange Inverse theme](component_horizontaldivider_OrangeInverse)
+/// ![A horizontal divider component in light and dark mode with Orange Inverse theme](component_horizontalDivider_OrangeInverse)
 ///
 /// ### Sosh
 ///
-/// ![A horizontal divider component in light and dark modeO with Sosh theme](component_horizontaldivider_Sosh)
+/// ![A horizontal divider component in light and dark modeO with Sosh theme](component_horizontalDivider_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A horizontal divider component in light and dark mode with Wireframe theme](component_horizontaldivider_Wireframe)
+/// ![A horizontal divider component in light and dark mode with Wireframe theme](component_horizontalDivider_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0

@@ -11,7 +11,23 @@ Some components can be used for **actions**.
 
 ### Buttons
 
-![A button component in light and dark mode with Orange theme](component_button_enabled_strong_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A button component in light and dark mode with Orange theme](component_button_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A button component in light and dark mode with Orange Inverse theme](component_button_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A button component in light and dark mode with Orange Business Tools theme](component_button_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A button component in light and dark mode with Sosh theme](component_button_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A button component in light and dark mode with Wireframe theme](component_button_Wireframe)
+    }
+}
 
 The ``OUDSButton`` proposes layout with text only, icon only or text and icon. 
 Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.

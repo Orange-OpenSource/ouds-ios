@@ -11,7 +11,23 @@ Some components can be used for **indicators**.
 
 ### Badge
 
-![A badge component in light and dark mode with Orange theme](component_badge_count_large_accent_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A badge component in light and dark mode with Orange Inverse theme](component_badge_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A badge component in light and dark mode with Sosh theme](component_badge_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
+    }
+}
 
 The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 
@@ -28,7 +44,23 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 ### Tag
 
-![A tag component in light and dark mode with Orange theme](component_tag_bullet_emphasized_accent_rounded_default_Orange)
+@TabNavigator {
+    @Tab("Orange") {
+        ![A tag component in light and dark mode with Orange theme](component_tag_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A tag component in light and dark mode with Orange Inverse theme](component_tag_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A tag component in light and dark mode with Orange Business Tools theme](component_tag_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A tag component in light and dark mode with Sosh theme](component_tag_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A tag component in light and dark mode with Wireframe theme](component_tag_Wireframe)
+    }
+}
 
 An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 

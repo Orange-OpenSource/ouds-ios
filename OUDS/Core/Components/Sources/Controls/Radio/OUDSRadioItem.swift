@@ -121,23 +121,23 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A radio item component in light and dark mode with Orange theme](component_radioitem_enabled_selected_Orange)
+/// ![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioitem_enabled_selected_OrangeBusinessTools)
+/// ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
 ///
 /// ### Orange Inverse
 ///
-/// ![A radio item component in light and dark mode with Orange Inverse theme](component_radioitem_enabled_selected_OrangeInverse)
+/// ![A radio item component in light and dark mode with Orange Inverse theme](component_radioItem_OrangeInverse)
 ///
 /// ### Sosh
 ///
-/// ![A radio item component in light and dark mode with Sosh theme](component_radioitem_enabled_selected_Sosh)
+/// ![A radio item component in light and dark mode with Sosh theme](component_radioItem_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A radio item component in light and dark mode with Wireframe theme](component_radioitem_enabled_selected_Wireframe)
+/// ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
 ///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.12.0

@@ -281,7 +281,7 @@ struct YourApp: App {
 
 ### Actions
 
-![A button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_enabled_strong_Orange.png)
+![A button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Orange.png)
 
 ### Controls
 
@@ -289,10 +289,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_enabled_selected_Orange.png)        
+        ![A checkbox component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Orange.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_item_Orange.png)
+        ![A checkbox item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Orange.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -301,10 +301,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_enabled_selected_Orange.png)        
+        ![A radio button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Orange.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioitem_enabled_selected_Orange.png)
+        ![A radio item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Orange.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -313,10 +313,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_enabled_selected_Orange.png)        
+        ![A switch component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Orange.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchitem_enabled_selected_Orange.png)
+        ![A switch item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Orange.png)
     }
 }
 
@@ -324,10 +324,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterchip_text_enabled_Orange.png)        
+        ![A filter chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionchip_text_icon_enabled_Orange.png)
+        ![A suggestion chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
@@ -336,11 +336,11 @@ struct YourApp: App {
 
 #### Badge
 
-![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_count_large_accent_Orange.png)
+![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
 
 #### Tag
 
-![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_bullet_emphasized_accent_rounded_default_Orange.png)
+![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)
 
 ### Layouts
 
@@ -350,10 +350,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontaldivider_Orange.png)
+        ![An horizontal divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Orange.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticaldivider_Orange.png)
+        ![A vertical divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Orange.png)
     }
 }
 
@@ -361,7 +361,7 @@ struct YourApp: App {
 
 #### Link
 
-![A link component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_Orange.png)
+![A link component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Orange.png)
 
 ## Topics
 
