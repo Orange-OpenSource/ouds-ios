@@ -124,7 +124,7 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
         ![An horizontal divider in light and dark mode with Orange Inverse theme](component_horizontalDivider_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
-        ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinesTools)
+        ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
     }
     @Tab("Sosh") {
         ![An horizontal divider in light and dark mode with Sosh theme](component_horizontalDivider_Sosh)

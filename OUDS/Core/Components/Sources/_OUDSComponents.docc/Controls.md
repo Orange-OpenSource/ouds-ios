@@ -436,7 +436,7 @@ The library proposes filter chip component to make some filtering with selected 
         ![A chip picker component in light and dark mode with Orange Inverse theme](component_chipPicker_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
-        ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinesTools)
+        ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
     }
     @Tab("Sosh") {
         ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
