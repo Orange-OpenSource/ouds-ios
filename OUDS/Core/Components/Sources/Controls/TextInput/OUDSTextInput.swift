@@ -67,6 +67,7 @@ public struct OUDSTextInput: View {
     let placeholder: Self.Placeholder?
     let leadingIcon: Image?
     let trailingAction: TrailingAction?
+    let helperLink: Helperlink?
     let status: Self.Status
     let style: Style
 
@@ -148,6 +149,22 @@ public struct OUDSTextInput: View {
         case disbaled
     }
 
+    /// Used to describe the helper link above the helper text.
+    public struct Helperlink {
+        let text: String
+        let action: () -> Void
+
+        /// Create a helper link with text and associated action.
+        ///
+        ///  - Paramters:
+        ///   - text: The helper text (could be the url
+        ///   - action: The action when clicked
+        public init(text: String, action: @escaping () -> Void) {
+            self.text = text
+            self.action = action
+        }
+    }
+
     // MARK: - Initializers
 
     /// Creates a text input.
@@ -162,6 +179,7 @@ public struct OUDSTextInput: View {
     ///    - leadingIcon: An optional leading icon to provide more context
     ///    - trailingAction: An optional trailing action
     ///    - helperText: Additional helper text below the input text
+    ///    - helperlink: Additional optional helper link
     ///    - status: The current status
     ///    - style: The style of the text input
     public init(layout: Self.Layout = .label,
@@ -171,6 +189,7 @@ public struct OUDSTextInput: View {
                 leadingIcon: Image? = nil,
                 trailingAction: TrailingAction? = nil,
                 helperText: String? = nil,
+                helperLink: Helperlink? = nil,
                 style: Style = .default,
                 status: Self.Status = .default) {
         self.layout = layout
@@ -180,6 +199,7 @@ public struct OUDSTextInput: View {
         self.placeholder = placeholder
         self.leadingIcon = leadingIcon
         self.trailingAction = trailingAction
+        self.helperLink = helperLink
         self.status = status
         self.style = style
     }
@@ -199,6 +219,11 @@ public struct OUDSTextInput: View {
 
             if let helperText {
                 HelperTextContainer(helperText: helperText, status: status)
+            }
+
+            if let helperLink {
+                OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
+                    .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
             }
         }
         .frame(minWidth: theme.textInput.textInputSizeMinWidth,
