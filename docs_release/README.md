@@ -54,7 +54,7 @@ The steps are quite simple:
     bundle exec fastlane update_sbom
     ```
 
-    >[!IMPORTANT]
+    > [!IMPORTANT]
     > Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
 
     - Update also the displayed versions of themes and components
@@ -67,7 +67,7 @@ The steps are quite simple:
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
-- Review and merge this pull request on GitHub using **squash and merge commits strategy**.<br /><br />
+- Review and merge this pull request on GitHub using **squash and merge commits strategy**. Delete your old temporary branch.<br /><br />
 
 ## Release
 
