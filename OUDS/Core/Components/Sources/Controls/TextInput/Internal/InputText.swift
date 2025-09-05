@@ -36,6 +36,7 @@ struct Inputtext: View {
                 .typeLabelDefaultLarge(theme)
                 .oudsForegroundStyle(color)
         }
+        .multilineTextAlignment(.leading)
         .tint(cursorColor.color(for: colorScheme))
         .disabled(status == .disbaled || status == .readOnly || status == .loading)
     }

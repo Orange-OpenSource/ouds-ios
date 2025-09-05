@@ -36,7 +36,7 @@ struct TextInputBoderModifier: ViewModifier {
                             radius: cornerRadius,
                             color: theme.colors.colorBorderMuted)
         case .default:
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: .bottomLeading) {
                 content
                 Divider()
                     .frame(height: size)

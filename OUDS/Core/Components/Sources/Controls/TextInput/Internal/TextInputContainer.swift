@@ -78,7 +78,7 @@ struct TextInputContainer: View {
         .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
         .padding(.leading, theme.textInput.textInputSpacePaddingInlineDefault)
         .padding(.trailing, trailing)
-        .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .center)
+        .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .leading)
         .modifier(TextInputBackgroundModifier(style: style, status: status, interactionState: interactionState))
         .modifier(TextInputBoderModifier(style: style, status: status, interactionState: interactionState))
         .onHover{ self.hover = $0 }
