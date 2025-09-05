@@ -71,7 +71,7 @@ public struct OUDSTextInput: View {
     let status: Self.Status
     let style: Style
 
-    /// The prefered layout to displkay label or placeholder in input area
+    /// The prefered layout to display label or placeholder in input area
     public enum Layout {
         /// Used to display the label into the input area
         case label
@@ -229,7 +229,6 @@ public struct OUDSTextInput: View {
         .frame(minWidth: theme.textInput.textInputSizeMinWidth,
                maxWidth: theme.textInput.textInputSizeMaxWidth,
                minHeight: theme.textInput.textInputSizeMinHeight,
-               alignment: .center)
-
+               alignment: .leading)
     }
 }
