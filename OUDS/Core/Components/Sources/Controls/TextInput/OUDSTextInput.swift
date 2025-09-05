@@ -217,11 +217,11 @@ public struct OUDSTextInput: View {
                                status: status,
                                style: style)
 
-            if let helperText {
+            if let helperText, !helperText.isEmpty {
                 HelperTextContainer(helperText: helperText, status: status)
             }
 
-            if let helperLink {
+            if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
                     .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
             }
