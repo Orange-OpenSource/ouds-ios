@@ -1,5 +1,10 @@
 # Components
-  
+
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_component_intro")
+    @PageImage(purpose: card, source: "ic_component_intro")
+}
+
 _Components_ are the `View` objects you can add in the views of your apps, like buttons, links, cards etc.
 
 ## How to use components
@@ -14,7 +19,7 @@ Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with 
 
 ```swift
 // The theme can be OrangeTheme or your own
-OUDSThemeableView(theme: theTheme) {
+OUDSThemeableView(theme: OrangeTheme()) {
         
 }
 ``` 

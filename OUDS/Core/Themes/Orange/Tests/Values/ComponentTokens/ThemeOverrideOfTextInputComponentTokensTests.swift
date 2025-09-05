@@ -29,6 +29,16 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
 
     // MARK: - Sizes
 
+    @Test func inheritedThemeCanOverrideTextInputSizeLeadingIcon() throws {
+        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon != abstractTheme.textInput.textInputSizeLeadingIcon)
+        #expect(inheritedTheme.textInput.textInputSizeLeadingIcon == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
+    }
+
+    @Test func inheritedThemeCanOverrideTextInputSizeCountrySelectorFlagHeight() throws {
+        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight != abstractTheme.textInput.textInputSizeCountrySelectorFlagHeight)
+        #expect(inheritedTheme.textInput.textInputSizeCountrySelectorFlagHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
+    }
+
     @Test func inheritedThemeCanOverrideTextInputSizeVerticalDividerHeight() throws {
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight != abstractTheme.textInput.textInputSizeVerticalDividerHeight)
         #expect(inheritedTheme.textInput.textInputSizeVerticalDividerHeight == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSize)
@@ -100,9 +110,9 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.textInputSpacePaddingInlineDefault == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineButton() throws {
-        #expect(inheritedTheme.textInput.textInputSpacePaddingInlineButton != abstractTheme.textInput.textInputSpacePaddingInlineButton)
-        #expect(inheritedTheme.textInput.textInputSpacePaddingInlineButton == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineTrailingAction() throws {
+        #expect(inheritedTheme.textInput.textInputSpacePaddingInlineTrailingAction != abstractTheme.textInput.textInputSpacePaddingInlineTrailingAction)
+        #expect(inheritedTheme.textInput.textInputSpacePaddingInlineTrailingAction == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideTextInputSpacePaddingInlineCountrySelectorStart() throws {
@@ -135,9 +145,9 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.textInputSpaceColumnGapInlineText == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapTrailingErrorIcon() throws {
-        #expect(inheritedTheme.textInput.textInputSpaceColumnGapTrailingErrorIcon != abstractTheme.textInput.textInputSpaceColumnGapTrailingErrorIcon)
-        #expect(inheritedTheme.textInput.textInputSpaceColumnGapTrailingErrorIcon == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapTrailingErrorAction() throws {
+        #expect(inheritedTheme.textInput.textInputSpaceColumnGapTrailingErrorAction != abstractTheme.textInput.textInputSpaceColumnGapTrailingErrorAction)
+        #expect(inheritedTheme.textInput.textInputSpaceColumnGapTrailingErrorAction == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapLabelInput() throws {

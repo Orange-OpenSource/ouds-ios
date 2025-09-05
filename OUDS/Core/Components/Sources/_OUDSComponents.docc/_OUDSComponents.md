@@ -1,5 +1,15 @@
 # ``OUDSComponents``
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_folder_categories")
+    @DisplayName("Components", style: symbol)
+    @TitleHeading("Library")
+}
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
+
 The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:
@@ -9,7 +19,7 @@ You can get more details about them in the categories below:
 - <doc:Actions>
 - <doc:Navigations>
 - <doc:Indicators>
-- <doc:Inputs>
+- <doc:Controls>
 - <doc:Layouts>
 
 ## Customize components

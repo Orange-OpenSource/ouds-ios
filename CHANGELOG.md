@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.17.0...0.18.0) - 2025-09-05
+
+### Added
+
+- Illustrations in documentation (Orange-OpenSource/ouds-ios#666)
+- Tag component (Orange-OpenSource/ouds-ios#408)
+
+### Changed
+
+- GitHub Actions `checkout` from v4 to v5
+- Swift package `SwiftLintPlugins` from v0.59.1 to v0.60.0
+- Migration to Xcode 16.4
+- Color semantic tokens (Orange-OpenSource/ouds-ios#915)
+- Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
+- Use specific size types for count and icon badges (Orange-OpenSource/ouds-ios#855)
+- Structure of components and files in repository (Orange-OpenSource/ouds-ios#908)
+- Update typography of the title in the chip picker component (Orange-OpenSource/ouds-ios#841)
+- Chip version 1.3.0 (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#906)
+- Text input component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- Link component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- Button mono component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- Button component tokens (tokens library v1.5.0) (Orange-OpenSource/ouds-ios#898)
+- Button version 3.0.0 (add brand hierarchy and rounded property, update minimal variant) (Orange-OpenSource/ouds-ios#887)
+
+### Fixed
+
+- Voice Over vocalization for checkbox picker root item if error (Orange-OpenSource/ouds-ios#754)
+- Voice Over vocalization for disabled checkbox, radio button and switch (Orange-OpenSource/ouds-ios#715)
+- Icon of badge component does not resize if big texts used (Orange-OpenSource/ouds-ios#844)
+
 ## [0.17.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.16.0...0.17.0) - 2025-07-24
 
 ### Added

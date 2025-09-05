@@ -56,12 +56,14 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorActionPressedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSelectedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportEnabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorActionSupportDisabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportFocusLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportHoverLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportLoadingLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportPressedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var colorActionSupportEnabledDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorActionSupportDisabledDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportFocusDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportHoverDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionSupportLoadingDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -241,6 +243,7 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorActionPressed: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorActionSelected: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorActionSupportEnabled: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorActionSupportDisabled: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorActionSupportFocus: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorActionSupportHover: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorActionSupportLoading: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }

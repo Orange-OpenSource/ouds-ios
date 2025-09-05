@@ -1,20 +1,30 @@
 # ``OUDSThemesOrange``
 
-The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_theme_orange")
+    @DisplayName("Theme Orange", style: symbol)
+    @TitleHeading("Library")
+}
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
-<!-- NOTE: Do not forget to update tokens version -->
-```
-🧬 Theme version: 1.3.0
-```
+The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
 
 ## Overview
 
-This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧬 Theme version: 1.5.0
+```
+
+This is the default theme any Orange branded app should use, and can be subclassed to define for example themes dedicated to countries.
 It embeds also in its target the brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
 
 In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
 
-It contains also colors dedicated to charts.
+> Note: It contains also colors dedicated to charts.
 
 ## How to use the theme
 
@@ -68,6 +78,10 @@ struct SomeView: View {
 ## How to enrich the theme
 
 You can enrich the ``OrangeTheme`` by subclassing it or by overriding some tokens.
+
+> Important: Only the Orange theme can be subclassed today. If this theme does not fill your need you can also implement your own theme from scratch.
+
+> Tip: Because theme definition is based on thousands of tokens, you should contact the design team to get helped.
 
 ### By using your own theme and subclassing existing token providers
 
@@ -261,6 +275,93 @@ struct YourApp: App {
     }
 }
 ```
+
+## How it looks like
+<!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
+
+### Actions
+
+![A button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Orange.png)
+
+### Controls
+
+#### Checkboxes
+
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Orange.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Orange.png)
+    }
+}
+<!-- Maybe not relevant to display checkbox picker -->
+
+#### Radios
+
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Orange.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Orange.png)
+    }
+}
+<!-- Maybe not relevant to display radio picker -->
+
+#### Switches
+
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Orange.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Orange.png)
+    }
+}
+
+#### Chips
+
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
+    }
+}
+<!-- Maybe not relevant to display chip picker -->
+
+### Indicators
+
+#### Badge
+
+![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+
+#### Tag
+
+![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)
+
+### Layouts
+
+<!-- Maybe not relevant to display colored surface -->
+
+#### Dividers
+
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Orange.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Orange.png)
+    }
+}
+
+### Navigations
+
+#### Link
+
+![A link component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Orange.png)
 
 ## Topics
 

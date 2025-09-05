@@ -65,6 +65,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorActionSupportEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportEnabledLight, dark: colorActionSupportEnabledDark) }
 
+    @objc open var colorActionSupportDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportDisabledLight, dark: colorActionSupportDisabledDark) }
+
     @objc open var colorActionSupportFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportFocusLight, dark: colorActionSupportFocusDark) }
 
     @objc open var colorActionSupportHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSupportHoverLight, dark: colorActionSupportHoverDark) }
@@ -170,6 +172,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorContentOnStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusAccentMutedLight, dark: colorContentOnStatusAccentMutedDark) }
 
     @objc open var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusAccentEmphasizedLight, dark: colorContentOnStatusAccentEmphasizedDark) }
+
+    @objc open var colorContentStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusAccentLight, dark: colorContentStatusAccentDark) }
 
     @objc open var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusInfoLight, dark: colorContentStatusInfoDark) }
 

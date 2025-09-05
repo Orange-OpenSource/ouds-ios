@@ -1,16 +1,31 @@
 # Themes
 
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_theme_intro")
+    @PageImage(purpose: card, source: "ic_theme_intro")
+}
+
 _Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ using in the end _raw tokens_.
 A _theme_ contains any relevant tokens which can be used for components rendering.
+A _theme_ can use its own assets like fonts and icons.
 
-This library exposes today following themes:
-1. [Orange Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) which can be seen as the default _theme_ ;
+This framework exposes today following themes:
 
-All themes are based on an `OUDSTheme`.
+Theme                                                                                                      | Description                          
+---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
+[Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
+[Orange Inverse](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/)            | For some Orange products in specific use cases           
+[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and dimension constraints           
+[Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
+[Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 
-_Themes_ can be defined thanks to `open class` in Swift. It allows inheritance and derivation.
+All themes are based on a theme contract called `OUDSTheme`.
 
-_Themes_ use *tokens providers* which provide the *semantic tokens* to apply in the project. These tokens are overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). Thus we can split values and responsabilities in different _Swift Package Manager_ targets and keep overriding and inheritance possible.
+_Themes_ use *tokens providers* which provide the *semantic tokens* and *component tokens* to apply in the project. 
+These tokens in most of cases can be overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). 
+Thus we can split values and responsabilities in different _Swift Package Manager_ targets and keep overriding and inheritance possible.
+
+> Important: Only one theme, the Orange theme, can be subclassed.
 
 ## Architecture
 
@@ -29,6 +44,10 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 // Make imports
 import OUDS // For OUDSThemeableView
 import OUDSThemesOrange // For OrangeTheme
+import OUDSThemesOrangeInverse // For OrangeInverseTheme
+import OUDSThemesOrangeBusinessTools // For OrangeBusinessToolsTheme
+import OUDSThemesSosh // For SoshTheme
+import OUDSThemesWireframe // For WrieframeTheme
 
 // Add themeable view to your root view to use the OrangeTheme
 OUDSThemeableView(theme: OrangeTheme()) {
@@ -216,5 +235,5 @@ public enum MyOwnFontRawTokens {
 All components the OUDS library provides are based on themes, handle through the abstract `OUDSTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
 In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
 
-You are also able to define your components and your *semantic tokens* used by them.
+You are also able to define your *components tokens* and your *semantic tokens* used by them.
 

@@ -28,6 +28,8 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Sizes
 
+    var textInputSizeLeadingIcon: SizeSemanticToken { get }
+    var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { get }
     var textInputSizeVerticalDividerHeight: SizeSemanticToken { get }
     var textInputSizeLabelMaxHeight: SizeSemanticToken { get }
     var textInputSizeMinHeight: SizeSemanticToken { get }
@@ -51,7 +53,7 @@ public protocol TextInputComponentTokens {
     // MARK: - Spaces
 
     var textInputSpacePaddingInlineDefault: SpaceSemanticToken { get }
-    var textInputSpacePaddingInlineButton: SpaceSemanticToken { get }
+    var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { get }
     var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { get }
     var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { get }
     var textInputSpacePaddingBlockDefault: SpaceSemanticToken { get }
@@ -59,7 +61,7 @@ public protocol TextInputComponentTokens {
 
     var textInputSpaceColumnGapDefault: SpaceSemanticToken { get }
     var textInputSpaceColumnGapInlineText: SpaceSemanticToken { get }
-    var textInputSpaceColumnGapTrailingErrorIcon: SpaceSemanticToken { get }
+    var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { get }
     var textInputSpaceRowGapLabelInput: SpaceSemanticToken { get }
 }
 

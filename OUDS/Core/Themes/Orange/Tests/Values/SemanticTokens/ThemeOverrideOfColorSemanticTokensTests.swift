@@ -164,6 +164,11 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorActionSupportEnabledLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportDisabledLight() throws {
+        #expect(inheritedTheme.colors.colorActionSupportDisabledLight != abstractTheme.colors.colorActionSupportDisabledLight)
+        #expect(inheritedTheme.colors.colorActionSupportDisabledLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportFocusLight() throws {
         #expect(inheritedTheme.colors.colorActionSupportFocusLight != abstractTheme.colors.colorActionSupportFocusLight)
         #expect(inheritedTheme.colors.colorActionSupportFocusLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
@@ -187,6 +192,11 @@ struct ThemeOverrideOfColorSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportEnabledDark() throws {
         #expect(inheritedTheme.colors.colorActionSupportEnabledDark != abstractTheme.colors.colorActionSupportEnabledDark)
         #expect(inheritedTheme.colors.colorActionSupportEnabledDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportDisabledDark() throws {
+        #expect(inheritedTheme.colors.colorActionSupportDisabledDark != abstractTheme.colors.colorActionSupportDisabledDark)
+        #expect(inheritedTheme.colors.colorActionSupportDisabledDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorActionSupportFocusDark() throws {

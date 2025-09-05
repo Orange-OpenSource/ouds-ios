@@ -40,10 +40,10 @@ public protocol LinkComponentTokens {
     var linkColorContentHover: MultipleColorSemanticTokens { get }
     var linkColorContentPressed: MultipleColorSemanticTokens { get }
     var linkColorContentFocus: MultipleColorSemanticTokens { get }
-    var linkColorArrowEnabled: MultipleColorSemanticTokens { get }
-    var linkColorArrowHover: MultipleColorSemanticTokens { get }
-    var linkColorArrowPressed: MultipleColorSemanticTokens { get }
-    var linkColorArrowFocus: MultipleColorSemanticTokens { get }
+    var linkColorChevronEnabled: MultipleColorSemanticTokens { get }
+    var linkColorChevronHover: MultipleColorSemanticTokens { get }
+    var linkColorChevronPressed: MultipleColorSemanticTokens { get }
+    var linkColorChevronFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 

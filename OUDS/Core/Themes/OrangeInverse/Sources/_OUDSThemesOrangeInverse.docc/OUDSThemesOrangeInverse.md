@@ -1,19 +1,30 @@
 # ``OUDSThemesOrangeInverse``
 
-This Orange theme is a theme with an inversed color palette for some specific use cases.
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_theme_orangeinverse")
+    @DisplayName("Theme Orange Inverse", style: symbol)
+    @TitleHeading("Library")
+}
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
-<!-- NOTE: Do not forget to update tokens version -->
-```
-🧬 Theme version: 1.3.0
-```
+This Orange theme is a theme with an inversed color palette for some specific use cases.
 
 ## Overview
 
-Some Orange products can be designed for very specific use cases. For example dark environments, or for users always on screen or for mobility uses cases.
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧬 Theme version: 1.5.0
+```
 
+Some Orange products can be designed for very specific use cases. For example dark environments, or for users always on screen or for mobility uses cases.
 Thus this inverse theme is based on the Orange theme and it tailored with a dedicated color palette.
 
-The ``OrangeInverseTheme`` does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
+> Note: This theme is related to Orange theme module to use some raw tokens of colors.
+
+> Important: The Orange Inverse theme does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
 
 ## How to use the theme
 
@@ -65,7 +76,94 @@ struct SomeView: View {
 
 ## How to enrich the theme
 
-You cannot derivate the Orange inverse theme.
+You cannot derivate the *Orange inverse* theme.
+
+## How it looks like
+<!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
+
+### Actions
+
+![A button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_OrangeInverse.png)
+
+### Controls
+
+#### Checkboxes
+
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_OrangeInverse.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_OrangeInverse.png)
+    }
+}
+<!-- Maybe not relevant to display checkbox picker -->
+
+#### Radios
+
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_OrangeInverse.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_OrangeInverse.png)
+    }
+}
+<!-- Maybe not relevant to display radio picker -->
+
+#### Switches
+
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_OrangeInverse.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_OrangeInverse.png)
+    }
+}
+
+#### Chips
+
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_OrangeInverse.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_OrangeInverse.png)
+    }
+}
+<!-- Maybe not relevant to display chip picker -->
+
+### Indicators
+
+#### Badge
+
+![A badge component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeInverse.png)
+
+#### Tag
+
+![A tag component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_OrangeInverse.png)
+
+### Layouts
+
+<!-- Maybe not relevant to display colored surface -->
+
+#### Dividers
+
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_OrangeInverse.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_OrangeInverse.png)
+    }
+}
+
+### Navigations
+
+#### Link
+
+![A link component in light and dark mode with Orange Inverse theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_OrangeInverse.png)
 
 ## Topics
 

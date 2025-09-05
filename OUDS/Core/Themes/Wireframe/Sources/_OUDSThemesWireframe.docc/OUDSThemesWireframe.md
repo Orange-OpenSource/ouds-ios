@@ -1,16 +1,27 @@
 # ``OUDSThemesWireframe``
 
-This Wireframe theme is a theme for some specific usages, like for prototyping and design of journeys with non-Orange charted themes.
+@Metadata {
+    @PageImage(purpose: icon, source: "ic_theme_wireframe")
+    @DisplayName("Theme Wireframe", style: symbol)
+    @TitleHeading("Library")
+}
+<!-- 
+Do not add @PageImage(purpose: card) because not managed for landing page of online doc.
+See https://github.com/swiftlang/swift-docc/issues/1283
+-->
 
-<!-- NOTE: Do not forget to update tokens version -->
-```
-🧬 Theme version: 1.1.0
-```
+This Wireframe theme is a theme for some specific usages, like for prototyping and design of journeys with non-Orange charted themes.
 
 ## Overview
 
-The ``WireframeTheme`` does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
-The ``WireframeTheme`` uses the **ChalkboardSE** font family available in the iOS system.
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧬 Theme version: 1.5.0
+```
+
+> Note: The Wireframe theme uses the ChalkboardSE font family available in the iOS system.
+
+> Important: The Wireframe theme does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
 
 ## How to use the theme
 
@@ -62,7 +73,95 @@ struct SomeView: View {
 
 ## How to enrich the theme
 
-You cannot derivate the Wireframe theme.
+You cannot derivate the *Wireframe* theme.
+
+## How it looks like
+
+<!-- Use online images because stored in another Swift Package library and do not want to replicate assets -->
+
+### Actions
+
+![A button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Wireframe.png)
+
+### Controls
+
+#### Checkboxes
+
+@TabNavigator {
+    @Tab("Checkbox") {
+        ![A checkbox component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Wireframe.png)        
+    }
+    @Tab("Checkbox item") {
+        ![A checkbox item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Wireframe.png)
+    }
+}
+<!-- Maybe not relevant to display checkbox picker -->
+
+#### Radios
+
+@TabNavigator {
+    @Tab("Radio") {
+        ![A radio button component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Wireframe.png)        
+    }
+    @Tab("Radio item") {
+        ![A radio item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Wireframe.png)
+    }
+}
+<!-- Maybe not relevant to display radio picker -->
+
+#### Switches
+
+@TabNavigator {
+    @Tab("Switch") {
+        ![A switch component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Wireframe.png)        
+    }
+    @Tab("Switch item") {
+        ![A switch item component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Wireframe.png)
+    }
+}
+
+#### Chips
+
+@TabNavigator {
+    @Tab("Filter chip") {
+        ![A filter chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Wireframe.png)        
+    }
+    @Tab("Suggestion chip") {
+        ![A suggestion chip component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Wireframe.png)
+    }
+}
+<!-- Maybe not relevant to display chip picker -->
+
+### Indicators
+
+#### Badge
+
+![A badge component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Wireframe.png)
+
+#### Tag
+
+![A tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Wireframe.png)
+
+### Layouts
+
+<!-- Maybe not relevant to display colored surface -->
+
+#### Dividers
+
+@TabNavigator {
+    @Tab("Horizontal divider") {
+        ![An horizontal divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Wireframe.png)
+    }
+    @Tab("Vertical divider") {
+        ![A vertical divider component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Wireframe.png)
+    }
+}
+
+### Navigations
+
+#### Link
+
+![A link component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Wireframe.png)
 
 ## Topics
 
@@ -71,4 +170,3 @@ You cannot derivate the Wireframe theme.
 - ``WireframeTheme``
 - ``WireframeBrandColorRawTokens``
 - ``WireframeBrandFontRawTokens``
-

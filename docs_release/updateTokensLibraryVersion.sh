@@ -136,7 +136,7 @@ test_existence_of_file "$COMPONENT_TOKENS_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$COMPONENT_TOKENS_MARKDOWN_FILE"
 
 test_existence_of_file "$CORE_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN " "$CORE_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$CORE_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$ORANGE_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeBrandOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_THEME_MARKDOWN_FILE"

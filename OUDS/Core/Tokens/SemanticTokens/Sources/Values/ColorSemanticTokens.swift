@@ -84,6 +84,9 @@ public protocol ColorSemanticTokens {
     var colorActionSupportEnabledLight: ColorSemanticToken { get }
     var colorActionSupportEnabledDark: ColorSemanticToken { get }
 
+    var colorActionSupportDisabledLight: ColorSemanticToken { get }
+    var colorActionSupportDisabledDark: ColorSemanticToken { get }
+
     var colorActionSupportFocusLight: ColorSemanticToken { get }
     var colorActionSupportFocusDark: ColorSemanticToken { get }
 

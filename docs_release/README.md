@@ -48,15 +48,13 @@ The steps are quite simple:
     ```
     where P.Q.R is the previous version tag, X.Y.Z the version we are releasing, and YYYY-MM-dd the date.
 
-    - Ensure the marketing version defined in Xcode is updated with the new X.Y.Z
-
     - Update the SBOM
 
     ```shell
     bundle exec fastlane update_sbom
     ```
 
-    >[!IMPORTANT]
+    > [!IMPORTANT]
     > Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
 
     - Update also the displayed versions of themes and components
@@ -69,7 +67,7 @@ The steps are quite simple:
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
-- Review and merge this pull request on GitHub using **squash and merge commits strategy**.<br /><br />
+- Review and merge this pull request on GitHub using **squash and merge commits strategy**. Delete your old temporary branch.<br /><br />
 
 ## Release
 
@@ -85,10 +83,21 @@ In the _merge commit_ message add the changelog, the authors and the details. Th
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/4b68bdb021c426d5e001b6c4fc3e200e2a19db28)):
 
 ```text
-Version 0.15.0 (#113) // [DO NOT ADD THIS COMMENT] <--- Commit title, #113 is PR nummber, GitHub suggests it
+Version 0.17.0 (#113) // [DO NOT ADD THIS COMMENT] <--- Commit title, #113 is PR nummber, GitHub suggests it
 
 // [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
-Release of version 0.2.0
+Release of version 0.17.0
+Embeds token libraries:
+- Core OUDS version: 1.3.0
+- Core Orange version: 1.1.0
+- Brand Orange version: 1.3.0
+- Core Sosh version: 1.1.0
+- Brand Sosh version: 1.3.0
+- Core Wireframe version: 1.0.0
+- Brand Wireframe version: 1.1.0
+- Brand Orange Business Tools version: 1.3.0
+- Brand Orange Inverse version: 1.3.0
+
 See below the full CHANGELOG details.
 
 // [DO NOT ADD THIS LINE] Keep also an empty line above
@@ -119,47 +128,10 @@ Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
 
 - Generate documentation: from Xcode build the documentation, export each doccarchive in your downlaods folder (9 modules), then run the script ; it will update online version and generate a ZIP file in _/tmp_
+
     ```shell
     ./generateWebDocumentation.sh --libversion=X.Y.Z --usegit
     ```
-    
-- Launch a job on your runner to build the demo application
-
-- Or use _Fastlane_ command:
-    ```shell
-    # For comments on issues and tags management
-    export GITHUB_ACCESS_TOKEN=<your_github_personal_token>
-
-    # Variables for upload to TestFlight
-    export OUDS_APPLE_KEY_ID=<your_key_ID>
-    export OUDS_APPLE_ISSUER_ID=<your_issuer_ID>
-    export OUDS_APPLE_KEY_CONTENT=<your_key_content>
-    
-    # Certificates and provisioning profiles
-    export OUDS_BUILD_CERTIFICATE_BASE64=<certificate_base64_content>
-    export OUDS_BUILD_PROVISIONING_PROFILE_BASE64=<prov_profile_base64_content>
-    export OUDS_P12_PASSWORD=<password_of_certificate>
-    export OUDS_KEYCHAIN_PASSWORD=<password_for_keychain>
-
-    # Variables for application signing
-    export OUDS_DEVELOPER_BUNDLE_IDENTIFIER=<your_app_identifier>
-    export OUDS_FASTLANE_APPLE_ID=<your_apple_email_address>
-    export OUDS_DEVELOPER_PORTAL_TEAM_ID=<your_developer_portal_team_ID>
-    
-    # For Mattermost notifications
-    export OUDS_MATTERMOST_HOOK_BOT_ICON_URL=<hook_bot_icon>
-    export OUDS_MATTERMOST_HOOK_BOT_NAME=<hook_bot_name>
-    export OUDS_MATTERMOST_HOOK_URL=<hook_url>
-
-    # Variables for internal portal upload (for in the end App Store)
-    export OUDS_UPLOAD_STORE_URL=<URL_wih_details_for_upload>
-
-    bundle exec fastlane prod upload:true
-    # set "upload" to true if you want to upload app to internal portal, false otherwise.
-    ```
-
-> [!TIP]
-> Of course this build operation will be successful if and ony if you have the suitable certificates and provisoning profile son your computer
 
 ### Publish release to GitHub
 
@@ -190,11 +162,9 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in artefacts
 
-- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
-
 - Close the previous release discussion, lock and unpin it. Pin the new discussion for the release, and add in comments the sprint number and the app details in production mode. [This is an exemple of a release discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/606) and [a detailed comment](https://github.com/Orange-OpenSource/ouds-ios/discussions/358#discussioncomment-11608399).
 
-A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.13.0).
+A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.17.0).
 
 > [!Important]
 > You must make a release of the Design System Toolbox app after this release so as to make the app se the new stable version of this Swift package
@@ -211,8 +181,6 @@ A bit lost? Quite simple: [look this release and do the same thing](https://gith
      ```
     \## [Unreleased]\(https://github.com/Orange-OpenSource/ouds-ios/compare/X.Y.Z...develop)
     ```
-    
-    - Update in Xcode the version of DesignToolbox target to U.V.W (the new version you suppose it will be) and increment build number
     - Commit your modifications
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 

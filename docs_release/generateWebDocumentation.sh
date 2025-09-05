@@ -158,7 +158,7 @@ if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
     _ "👋 Bye!"
     exit $EXIT_OK
 else
-    _ "👍 Ok, let's go!"
+    _ "👍 Ok, let's go! Keep in mind it can need between 15 and 20 minutes!"
 fi
 
 start_time=$(date +%s)
@@ -197,12 +197,19 @@ swift package \
     --target OUDSModules \
     --target OUDSComponents \
     --target OUDSThemesOrange \
+    --target OUDSThemesOrangeInverse \
+    --target OUDSThemesOrangeBusinessTools \
+    --target OUDSThemesSosh \
+    --target OUDSThemesWireframe \
     --target OUDSTokensComponent \
     --target OUDSTokensSemantic \
     --target OUDSTokensRaw \
     --target OUDSFoundations \
     --output-path "$DOCUMENTATION_HTML_LOCATION" \
-    --transform-for-static-hosting
+    --transform-for-static-hosting \
+    --warnings-as-errors \
+    --symbol-graph-minimum-access-level public
+
 
 files_count=`find $DOCUMENTATION_HTML_LOCATION -type f | wc -l | xargs`
 
@@ -236,6 +243,8 @@ if [[ $use_git -eq 1 ]]; then
 
     clean_repo
 
+    git config commit.gpgsign false
+
     _ "🔨 Checkout service pages branch, align with remote"
 
     # Check if the local branch exists.
@@ -258,6 +267,7 @@ if [[ $use_git -eq 1 ]]; then
     rm -rf "css"
     rm -rf "data"
     rm -rf "documentation"
+    rm -rf "images"
     rm -rf "img"
     rm -rf "index"
     rm -rf "js"
@@ -267,11 +277,32 @@ if [[ $use_git -eq 1 ]]; then
     
     # Copy all files from temporary folder to branch
     cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
+
+    # It seems there is an issue with references of images
+    # Need to copy them also in root images folder at least for landing page
+    # See https://github.com/swiftlang/swift-docc/issues/1284
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_design_token_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_theme_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_module_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDS/ic_component_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeBusinessTools/ic_theme_orangebusinesstools.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeInverse/ic_theme_orangeinverse.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"
     
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY/css"
     git add "$DOCS_DIRECTORY/data"
     git add "$DOCS_DIRECTORY/documentation"
+    git add "$DOCS_DIRECTORY/images"
     git add "$DOCS_DIRECTORY/img"
     git add "$DOCS_DIRECTORY/index"
     git add "$DOCS_DIRECTORY/js"
@@ -282,7 +313,7 @@ if [[ $use_git -eq 1 ]]; then
     
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
-    git commit -m "$commit_message"
+    git commit -m "$commit_message" --no-gpg-sign
 
     _ "🔨 Pushing things"
     git push origin "$SERVICE_PAGES_BRANCH"

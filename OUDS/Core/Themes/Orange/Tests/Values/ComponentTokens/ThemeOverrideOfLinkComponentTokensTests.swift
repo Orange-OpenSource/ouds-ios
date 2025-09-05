@@ -105,23 +105,23 @@ struct ThemeOverrideOfLinkComponentTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenColorArrowEnabled() throws {
-        #expect(inheritedTheme.link.linkColorArrowEnabled != abstractTheme.link.linkColorArrowEnabled)
-        #expect(inheritedTheme.link.linkColorArrowEnabled == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+        #expect(inheritedTheme.link.linkColorChevronEnabled != abstractTheme.link.linkColorChevronEnabled)
+        #expect(inheritedTheme.link.linkColorChevronEnabled == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenColorArrowHover() throws {
-        #expect(inheritedTheme.link.linkColorArrowHover != abstractTheme.link.linkColorArrowHover)
-        #expect(inheritedTheme.link.linkColorArrowHover == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+        #expect(inheritedTheme.link.linkColorChevronHover != abstractTheme.link.linkColorChevronHover)
+        #expect(inheritedTheme.link.linkColorChevronHover == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenColorArrowPressed() throws {
-        #expect(inheritedTheme.link.linkColorArrowPressed != abstractTheme.link.linkColorArrowPressed)
-        #expect(inheritedTheme.link.linkColorArrowPressed == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+        #expect(inheritedTheme.link.linkColorChevronPressed != abstractTheme.link.linkColorChevronPressed)
+        #expect(inheritedTheme.link.linkColorChevronPressed == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenColorArrowFocus() throws {
-        #expect(inheritedTheme.link.linkColorArrowFocus != abstractTheme.link.linkColorArrowFocus)
-        #expect(inheritedTheme.link.linkColorArrowFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+        #expect(inheritedTheme.link.linkColorChevronFocus != abstractTheme.link.linkColorChevronFocus)
+        #expect(inheritedTheme.link.linkColorChevronFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     // MARK: - Spaces

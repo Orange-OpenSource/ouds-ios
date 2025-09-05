@@ -3,6 +3,8 @@
 - [Technical preconditions](#technical-preconditions)
 - [Build OUDS Package](#build-ouds-package)
 - [Documentation](#documentation)
+  * [Generation](#generation)
+  * [Illustrations](#illustrations)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
@@ -103,10 +105,10 @@ rbenv global 3.4.0
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 16.4**, we suggest you use this version or newer if you want.
 
 > [!IMPORTANT]
-> Xcode 16.3 and Swift 6 are used for this project. You must use this configuration.
+> Xcode 16.4 and Swift 6.1 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
 
 ## Build OUDS Package
@@ -124,11 +126,38 @@ To build the OUDS package:
 
 ## Documentation
 
+### Generation
+
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
 Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
 The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
 the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+
+### Illustrations
+
+The illustrations in use for the documentation is versioned in the Swift Package library.
+However it is the [design system toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) which updates it using UI tests.
+
+To update the illustrations, you have to:
+- select the device from Xcode (i.e. *iPhone 12 Pro*) (see details in `AppTestCase+Dimensions.swift` file)
+- keep the device in portrait mode
+- check the color scheme in use you need (light or dark mode)
+- run the debug app: this is the app wich will be compiled and used for tests and screenshots
+- select the theme you want from the app; your choice will be kept in user defaults
+- then run the UI tests (*DesignToolboxUITests* scheme), all *DocumentationScreenshots* test cases
+
+Xcode will then run the tests and put the illustrations, here cropped screenshots of the app in selected device, in attachments of tests.
+
+Then copy/paste these files in the location you want for the Swift Package library. having a local reference of it in your Xcode is more comfortable.
+
+Repeat this process for the other themes if needed.
+
+For *App Store* illustrations, same thing, but with the suitable simulators or devices:
+- iPad Pro 2nd generation / 12.9-inch
+- iPad Pro 3rd generation (2018) / 12.9-inch
+- iPhone 5.5-inch devices (iPhone 6/7/8 Plus) 1242 x 2208
+- iPhone 6.5-inch (iPhone XS Max) 1242 x 2688
 
 ## Run tests 
 
@@ -404,9 +433,12 @@ Workflows are the following:
 - [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml)
 - [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml)
 - [run linter](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml)
+- [generate documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml)
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+
+Note the workflow about the documentation builds it but does not expose it online. It allows us to ensure the documentation can be built on the current code base.
 
 ### GitLab CI (internal)
 
