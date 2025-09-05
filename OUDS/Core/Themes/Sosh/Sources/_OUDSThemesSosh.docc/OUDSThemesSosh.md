@@ -164,7 +164,7 @@ You cannot derivate the Sosh theme.
 
 #### Link
 
-![A link component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_enabled_default_next_Sosh.png)
+![A link component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Sosh.png)
 
 ## Topics
 
