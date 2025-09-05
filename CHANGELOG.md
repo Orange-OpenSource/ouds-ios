@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift package `SwiftLintPlugins` from v0.59.1 to v0.60.0
 - Migration to Xcode 16.4
 - Color semantic tokens (Orange-OpenSource/ouds-ios#915)
 - Update API to use a specific size for count and icon badge types (Orange-OpenSource/ouds-ios#855)
