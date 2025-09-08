@@ -11,6 +11,8 @@
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
   * [About commits](#about-commits)
   * [About release note and changelog](#about-release-note-and-changelog)
+  * [Integration of tokenator updates](#integration-of-tokenator-updates)
+  * [Verifying commits cryptographic signatures](#verifying-commits-cryptographic-signatures)
 - [Use of Gitleaks](#use-of-gitleaks)
 - [Linter](#linter)
 - [Formater](#formater)
@@ -271,6 +273,41 @@ chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#2
 
 Tokens library v0.4.1
 ``` 
+
+#### Verifying commits cryptographic signatures
+
+Some core maintainers in the project use GPG so cryptographically sign their commits.
+You can check the commits status with the commands below:
+```shell
+# Of course we suppose you are a bit used to GPG and have it installed
+# Update your keychain of GPG keys and getthe online the ones for the maintainers
+# For example GPG key identifier of @pylapp is "8030BBE06B4F48F95BD082DA7D5AE4DCFF3A3435"
+
+# This command can take a lot of time, maybe try the next one
+gpg --refresh-keys
+gpg --keyserver https://key.openpgp.org --recv-keys 8030BBE06B4F48F95BD082DA7D5AE4DCFF3A3435
+
+# If none of this command works, contact the maintainers to get their public key to add in your keychain and run
+gpg --import path/to/asc/key/file
+
+# Then check if the key is in your keychain
+gpg --list-keys --keyid-format=short
+
+# If you run "gpg --check-sigs" you may notice they keys are not signed (unknown trust), that's not unexpected
+
+# Then run the command to verify the commit status using for example its hash
+git verify-commit the-commit-hash
+# Or get more logs
+git log --show-signature
+```
+
+In addition, GitHub also provides a feature of commits veritification named [Vigilant mode](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits).
+In few words, if the commit was signed with the committer's verified signature, the commit is *verified*.
+
+> [!CAUTION]
+> Some maintainers do not use GPG or SSH signing for commits, so the documentation commits can be seen as "unverified"
+> and some commits can have empty status because GitHub Vigilant Mode is not enabled for everyone
+> and some commits can be unsigned.
 
 ### About release note and changelog
 
