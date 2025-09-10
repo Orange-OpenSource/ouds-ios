@@ -18,22 +18,120 @@ import SwiftUI
 
 // MARK: - OUDS Text input
 
-/// The ``OUDSTextInput`` proposes layout to
-/// A Text Input is a user interface component that allows users to enter, edit, or select
-/// ???? single-line ??? textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
+/// The ``OUDSTextInput`` is a user interface component that allows users to enter, edit, or select
+/// single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
 ///
-/// It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, helper messages, and validation feedback.
+/// It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, helper messages.
+///
+/// ## Layout
+///
+///  - **Label** Describes the purpose of the input.
+///
+///  In some UI contexts, especially when space is limited or when the input is part of a compact layout
+///  (search bars, filters, inline forms), the label can be hidden.
+///
+///  However, hiding the label should only be done if:
+/// - The purpose of the input remains clear thanks to a placeholder or contextual icon.
+/// - The label is still accessible to screen readers (using aria-label, aria-labelledby, or
+///   visually hidden text).
+///
+/// Hiding a label is a design choice that must balance visual simplicity and clarity of intent,
+/// without compromising inclusiveness or form guidance.
+///
+/// - **placeholder** If the text of the text input is empty a placeholder provides a hint or
+///    guidance inside the field to suggest expected input. A prefix and sa uffix can be added to
+///    give more context.
+///
+///  - **leading icon**
+///  Helps indicate the purpose of the input (magnifying glass for search, envelope for email,
+///  phone device for phone number). Only use a leading icon if it adds clear functional or contextual
+///  value.
+///
+///  - **trailing action**
+///  Used to provide actions related to the field: clear input, toggle password visibility, open a
+///  date picker, etc. Can also indicate status or feedback (error checkmark, loading spinner).
+///
+/// ## Status
+///
+/// Five status are proposed for all layouts:
+///
+/// - **default (by default)**: Default neutral appearance, whether empty or filled. It allows users
+///    to click, focus, and type freely without restrictions.
+///
+/// - **error** The `error` status indicates that the user input does not meet validation rules or
+///    expected formatting. It provides immediate visual feedback, typically through a red border,
+///    error icon, and a clear, accessible error message positioned below the input.
+///
+/// - **loading** The `loading` state indicates that the system is processing or retrieving data
+///    related to the text entered. A progress indicator appears to inform the user that an action
+///    is in progress.
+///
+/// - **readOnly** The`readOnly`, lets the text visible but not editable
+///
+///  - **disbaled** In `disabled` status, the field is non-interactive and grayed out to indicate
+///     it cannot be changed.
+///     **Remark** the SwiftUI `View.disbaled()` is ignored.
+///
+/// ## Style
+///
+/// Two style are proposed for all layouts:
+///
+/// - **default** An input with a subtle background fill and un visible bottom border,
+/// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
+///
+/// **alternative** A minimalist input with a transparent background and a visible stroke outlining
+///  the field. This style may be interesting for contexts other than form pages:
+///      - When inputs need to feel lightweight and unobtrusive
+///      - In a header (search field)
+///      - In a selection/filtering feature in a product catalog
+///
+/// ## Helpers
+///
+/// - **Helper Text** A supporting text conveys additional information about the input field,
+/// such as how it will be used. It should ideally only take up a single line, though may wrap
+/// to multiple lines if required, and be either persistently visible or visible only on focus.
+///
+/// - **Helper Link** If the helper text is not sufficient, it's possible to offer the user
+/// an additional help link (the link can be external or open a modal).
 ///
 /// ## Accessibility considerations
 ///
 /// ## Code samples
 ///
 /// ```swift
-/// ```
+///     // The text to display and edit
+///     @State var text: String = ""
 ///
+///     // Empty text and no placeholder
+///     OUDSInputText(label: "Label", text: $text)
+///
+///     // Empty text with placeholder
+///     OUDSInputText(label: "Label", text: $text, placeholder: .init(text: "Placeholder", suffix "€"))
+///
+///     // Add a leading icon for more context
+///     OUDSInputText(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), leadingIcon: Image("ic_heart"))
+///
+///     // Add a trailing button for additional acction
+///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+///     OUDSInputText(label: "Label", text: $text, trailingAction: trailingAction)
+///
+///    // With helper text
+///    OUDSInputText(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperText: "The helper text")
+///
+///    // With helper link
+///    @Environment(\.openURL) private var openUrl
+///
+///    let helperLink = OUDSTextInput.HelperLinbk(text: "Helper Link") {
+///        openUrl.callAsFunction(url)
+///    }
+///
+///    OUDSInputText(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperLink: helperLink)
+/// ```
+/// 
 /// ## Rounded layout
 ///
-/// TextInput can have rounded layouts to be favored in more emotional, immersive contexts or those tied to specific visual identities.
+/// Text input can have rounded layouts to be favored in more emotional, immersive contexts or those
+/// tied to specific visual identities.
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
@@ -48,6 +146,7 @@ import SwiftUI
 ///     }
 ///     .environment(\.oudsRoundedTextInput, true)
 /// ```
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
@@ -63,10 +162,10 @@ public struct OUDSTextInput: View {
     let layout: Self.Layout
     let label: String
     let text: Binding<String>
-    let helperText: String?
     let placeholder: Self.Placeholder?
     let leadingIcon: Image?
     let trailingAction: TrailingAction?
+    let helperText: String?
     let helperLink: Helperlink?
     let status: Self.Status
     let style: Style
@@ -141,11 +240,11 @@ public struct OUDSTextInput: View {
         /// text entered. A progress indicator appears to inform the user that an action is in progress.
         case loading
 
-        /// The`readOnly`, letd the text visible but not editable
+        /// The`readOnly`, lets the text visible but not editable
         case readOnly
 
         ///  In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
-        ///  **Remark** the SwiftUI `View.disbaled` is ignored.
+        ///  **Remark** the SwiftUI `View.disbaled()` is ignored.
         case disbaled
     }
 
@@ -173,24 +272,27 @@ public struct OUDSTextInput: View {
     ///
     /// - Parameters:
     ///    - layout: The desired layout
-    ///    - label: The label of the text input
+    ///    - label: The label displayed above the text input. It describe the purpose of the input
     ///    - text: The text to display and edit
-    ///    - placeholder: An optional placeholder
-    ///    - leadingIcon: An optional leading icon to provide more context
-    ///    - trailingAction: An optional trailing action
-    ///    - helperText: Additional helper text below the input text
-    ///    - helperlink: Additional optional helper link
-    ///    - status: The current status
+    ///    - placeholder: The text displayed when the text input is empty
+    ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
+    ///      envelope for email, etc.)
+    ///    - trailingAction: An optional trailing action related to the field: (clear input,
+    ///      toggle password visibility, etc.)
+    ///    - helperText: An optional helper text displayed below the text input. It conveys additional
+    ///      information about the input field, such as how it will be used.
+    ///    - helperlink: An optional helper link displayed below or in place of the helper text.
     ///    - style: The style of the text input
+    ///    - status: The cuurent status of the text input
     public init(layout: Self.Layout = .label,
                 label: String,
                 text: Binding<String>,
                 placeholder: Placeholder? = nil,
                 leadingIcon: Image? = nil,
-                trailingAction: TrailingAction? = nil,
+                trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
-                helperLink: Helperlink? = nil,
-                style: Style = .default,
+                helperLink: Self.Helperlink? = nil,
+                style: Self.Style = .default,
                 status: Self.Status = .default) {
         self.layout = layout
         self.label = label
