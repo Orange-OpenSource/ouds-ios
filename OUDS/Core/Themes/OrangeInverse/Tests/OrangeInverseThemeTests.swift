@@ -16,13 +16,25 @@ import Testing
 
 // swiftlint:disable force_cast
 
-/// Check if the themes ahs the default tokens providers with the expected types.
+/// Check if the theme has the default configuration and tokens providers with the expected types.
 struct OrangeInverseThemeTests {
 
     private var theme: OrangeInverseTheme
 
     init() {
         theme = OrangeInverseTheme()
+    }
+
+    // MARK: - Tests - Theme tuning
+
+    @Test func defaultTuningOfOrangeInverseTheme() throws {
+        let tuning = theme.tuning
+        #expect(tuning.roundedCorners == false)
+    }
+
+    @Test func tuningOfOrangeInverseTheme() throws {
+        let tunedTheme = OrangeInverseTheme(tuning: ThemeTuning(roundedCorners: true))
+        #expect(tunedTheme.tuning.roundedCorners == true)
     }
 
     // MARK: - Tests - Semantic tokens providers
