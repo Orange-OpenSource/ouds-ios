@@ -73,6 +73,16 @@ import OUDSTokensSemantic
 ///     let theme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
 /// ```
 ///
+/// ## Max it
+///
+/// In the Orange universe there is the "Max it" project, included in Orange brand, and applying the Orange theme but with some
+/// adjusements. Thus there is an available predefined tuning to use the Orange theme from Max it.
+///
+/// To apply it:
+/// ```swift
+///     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
+/// ```
+///
 /// ## Tokens loading
 ///
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
@@ -251,6 +261,14 @@ extension Bundle {
 
     /// The Orange theme bundle, useful to find resources
     public static let OrangeTheme = Bundle.module
+}
+
+// MARK: - Extensin of Tuning
+
+extension Tuning {
+
+    /// Predefined tuning of Orange theme for "Max it" project
+    public static let MaxIt = Tuning(hasRoundedCorners: true)
 }
 
 // swiftlint:enable function_body_length

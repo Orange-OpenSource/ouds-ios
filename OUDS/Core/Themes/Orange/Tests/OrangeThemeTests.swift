@@ -38,6 +38,13 @@ struct OrangeThemeTests {
         #expect(tunedTheme.tuning.hasRoundedCorners == true)
     }
 
+    // MARK: - Tests - "Max it" tuning
+
+    @Test func maxitTuningWithinOrangeTheme() throws {
+        let maxitTunedTheme = OrangeTheme(tuning: Tuning.MaxIt)
+        #expect(maxitTunedTheme.tuning.hasRoundedCorners == true)
+    }
+
     // MARK: - Tests - Semantic tokens providers
 
     @Test func defaultBorderSemanticTokensProvider() throws {
