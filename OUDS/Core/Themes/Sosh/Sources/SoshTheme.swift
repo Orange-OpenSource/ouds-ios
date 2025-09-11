@@ -25,6 +25,13 @@ import SwiftUI
 ///
 /// Sosh products must use this Sosh theme. It provides all Sosh brand colors and also the Sosh fonts
 ///
+/// To get it:
+/// ```swift
+///     import OUDS
+///
+///     @Environment(\.theme) var theme
+/// ```
+///
 /// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
@@ -46,12 +53,9 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// Then get it:
-/// ```swift
-///     import OUDS
+/// # Theme tuning
 ///
-///     @Environment(\.theme) var theme
-/// ```
+/// This theme cannot be customized more.
 ///
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {

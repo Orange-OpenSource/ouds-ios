@@ -24,14 +24,20 @@ import OUDSTokensSemantic
 ///
 /// # Usages
 ///
-/// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions.
-/// The system font families are used; no *Helevetica* font fmaily is embeded nor provider by OUDS.
-/// This theme also provides colros charts charts.
+/// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
+/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDS.
+/// This theme also provides colors charts tokens.
+///
+/// The theme can be got through environment variable:
+/// ```swift
+///     import OUDS
+///
+///     @Environment(\.theme) var theme
+/// ```
 ///
 /// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
-///
 /// ```swift
 ///     import OUDS                 // To get OUDSThemeableView
 ///     import OUDSThemesOrange    // To get OrangeTheme
@@ -49,9 +55,28 @@ import OUDSTokensSemantic
 ///     }
 /// ```
 ///
+/// ## Theme tuning
+///
+/// The theme can be customized a bit for more flexibility thanks to `ThemeTuning` object.
+/// Only few elements can be tuned:
+///  - rounded corners for some components like buttons
+///
+/// To apply the tuning:
+///
+/// ```swift
+///     // Define your theme tuning
+///     let tuning = ThemeTuning(roundedCorners: true)
+///
+///     // Apply it to your theme
+///     let theme = OrangeTheme(tuning: tuning)
+///     // Or in one line
+///     let theme = OrangeTheme(tuning: ThemeTuning(roundedCorners: true))
+/// ```
+///
+/// ## Tokens loading
+///
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
 /// For example:
-///
 /// ```swift
 ///
 ///    // Use some already defined providers
@@ -74,14 +99,6 @@ import OUDSTokensSemantic
 ///    // You can override all providers, or only some, or just keep the theme as is.
 ///    // However you should uses thhese providers in a dedicated Orange theme subclass for clarity reasons.
 ///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button, badge: badge)
-///
-/// ```
-///
-/// Then get it:
-/// ```swift
-///     import OUDS
-///
-///     @Environment(\.theme) var theme
 /// ```
 ///
 /// - Since: 0.8.0
@@ -125,6 +142,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
@@ -155,7 +173,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
-                         fontFamily: FontFamilySemanticToken? = nil)
+                         fontFamily: FontFamilySemanticToken? = nil,
+                         tuning: ThemeTuning = ThemeTuning.default)
     {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
@@ -219,7 +238,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,
-                   fontFamily: fontFamily)
+                   fontFamily: fontFamily,
+                   tuning: tuning)
     }
 
     deinit {}
