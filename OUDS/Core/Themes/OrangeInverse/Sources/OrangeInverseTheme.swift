@@ -65,12 +65,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(roundedCorners: true)
+///     let tuning = Tuning(hasRoundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeInverse(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeInverse(tuning: Tuning(roundedCorners: true))
+///     let theme = OrangeInverse(tuning: Tuning(hasRoundedCorners: true))
 /// ```
 ///
 /// - Since: 0.17.0

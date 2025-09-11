@@ -29,7 +29,7 @@ struct SoshThemeTests {
 
     @Test func defaultTuningOfSoshTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning.roundedCorners == false)
+        #expect(tuning.hasRoundedCorners == false)
     }
 
     // MARK: - Tests - Semantic tokens providers

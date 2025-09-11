@@ -16,6 +16,7 @@ import OUDSTokensSemantic
 
 // MARK: - Type aliases
 
+/// Tuning is obviously theme tuning
 public typealias Tuning = OUDSTheme.ThemeTuning
 
 // MARK: - OUDS Theme
@@ -190,7 +191,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    ///    - tuning: A set of configurations to tune a theme, by default ``ThemeTuning.default``
+    ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
@@ -278,12 +279,19 @@ open class OUDSTheme: @unchecked Sendable {
 
         // MARK: Tuned properties
 
-        /// A theme can apply rounded corners on some components like buttons.
-        public let roundedCorners: Bool
+        /// If components like button must have always rounded corners or not
+        public let hasRoundedCorners: Bool
+
+        /// Defines the tuning for a theme
+        ///
+        /// - Parameter hasRoundedCorners: Always rounded corners on tunable components or not
+        public init(hasRoundedCorners: Bool = false) {
+            self.hasRoundedCorners = hasRoundedCorners
+        }
 
         // MARK: Pretuned configurations
 
         /// By default a theme does not have rounded corners
-        public static let `default` = ThemeTuning(roundedCorners: false)
+        public static let `default` = ThemeTuning()
     }
 }

@@ -65,12 +65,12 @@ import OUDSTokensSemantic
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(roundedCorners: true)
+///     let tuning = Tuning(hasRoundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeTheme(tuning: Tuning(roundedCorners: true))
+///     let theme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
 /// ```
 ///
 /// ## Tokens loading

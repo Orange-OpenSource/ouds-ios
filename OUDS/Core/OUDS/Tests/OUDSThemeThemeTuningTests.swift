@@ -21,6 +21,6 @@ struct OUDSThemeThemeTuningTests {
 
     @Test("The default theme tuning must not have rounded corners")
     func defaultThemeTuningRoundedCorners() throws {
-        #expect(OUDSTheme.ThemeTuning.default.roundedCorners == false)
+        #expect(OUDSTheme.ThemeTuning.default.hasRoundedCorners == false)
     }
 }

@@ -30,12 +30,12 @@ struct OrangeThemeTests {
 
     @Test func defaultTuningOfOrangeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning.roundedCorners == false)
+        #expect(tuning.hasRoundedCorners == false)
     }
 
     @Test func tuningOfOrangeTheme() throws {
-        let tunedTheme = OrangeTheme(tuning: ThemeTuning(roundedCorners: true))
-        #expect(tunedTheme.tuning.roundedCorners == true)
+        let tunedTheme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
+        #expect(tunedTheme.tuning.hasRoundedCorners == true)
     }
 
     // MARK: - Tests - Semantic tokens providers

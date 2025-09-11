@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+@testable import OUDS
 @testable import OUDSThemesOrangeBusinessTools
 import Testing
 
@@ -29,12 +30,12 @@ struct OrangeBusinessToolsThemeTests {
 
     @Test func defaultTuningOfOrangeBusinessToolsTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning.roundedCorners == false)
+        #expect(tuning.hasRoundedCorners == false)
     }
 
     @Test func tuningOfOrangeBusinessToolsTheme() throws {
-        let tunedTheme = OrangeBusinessToolsTheme(tuning: ThemeTuning(roundedCorners: true))
-        #expect(tunedTheme.tuning.roundedCorners == true)
+        let tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
+        #expect(tunedTheme.tuning.hasRoundedCorners == true)
     }
 
     // MARK: - Tests - Semantic tokens providers

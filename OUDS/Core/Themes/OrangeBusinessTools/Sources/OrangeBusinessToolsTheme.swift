@@ -68,12 +68,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(roundedCorners: true)
+///     let tuning = Tuning(hasRoundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeBusinessToolsTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(roundedCorners: true))
+///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
 /// ```
 ///
 /// - Since: 0.17.0
