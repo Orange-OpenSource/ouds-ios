@@ -18,14 +18,13 @@ struct TextInputContainer: View {
 
     // MARK: - Properties
 
-    let layout: OUDSTextInput.Layout
     let label: String
     let text: Binding<String>
     let placeholder: OUDSTextInput.Placeholder?
     let leadingIcon: Image?
     let trailingAction: OUDSTextInput.TrailingAction?
     let status: OUDSTextInput.Status
-    let style: OUDSTextInput.Style
+    let isOutlined: Bool
 
     @Environment(\.theme) private var theme
     @FocusState private var focused: Bool
@@ -42,7 +41,7 @@ struct TextInputContainer: View {
             // Text container
             VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
                 // Label container
-                if showPlaceholder, !label.isEmpty {
+                if showLabelInContainer {
                     LabelContainer(label: label, status: status, interactionState: interactionState)
                 }
 
@@ -50,23 +49,29 @@ struct TextInputContainer: View {
                 HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
 
                     // Prefix container
-                    if let prefix = placeholder?.prefix, !prefix.isEmpty, showPlaceholder {
+                    if let placeholder,
+                       let prefix = placeholder.prefix,
+                       !prefix.isEmpty, !placeholder.text.isEmpty {
                         Text(prefix)
                             .typeLabelDefaultLarge(theme)
                             .oudsForegroundColor(prefixSuffixColor)
                     }
 
                     // Input text container
-                    Inputtext(label: textfieldPlaceholder,
+                    Inputtext(label: textfieldLabel,
                               text: text,
-                              labelAsPlaceholder: showPlaceholder,
+                              labelAsPlaceholder: textfieldLabel == label,
                               status: status,
                               interactionState: interactionState)
                         .focused($focused, equals: true)
 
                     // Sufix container
-                    if let suffix = placeholder?.suffix, !suffix.isEmpty, showPlaceholder {
+                    if let placeholder,
+                       let suffix = placeholder.suffix,
+                       !suffix.isEmpty, !placeholder.text.isEmpty {
+
                         Text(suffix)
+                            .typeLabelDefaultLarge(theme)
                             .oudsForegroundColor(prefixSuffixColor)
                     }
                 }
@@ -79,24 +84,26 @@ struct TextInputContainer: View {
         .padding(.leading, theme.textInput.textInputSpacePaddingInlineDefault)
         .padding(.trailing, trailing)
         .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .leading)
-        .modifier(TextInputBackgroundModifier(style: style, status: status, interactionState: interactionState))
-        .modifier(TextInputBoderModifier(style: style, status: status, interactionState: interactionState))
+        .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
+        .modifier(TextInputBoderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .onHover{ self.hover = $0 }
     }
 
     // MARK: - Helper
 
     private var showPlaceholder: Bool {
-        focused || !text.wrappedValue.isEmpty || layout == .placeholder
+        focused || !text.wrappedValue.isEmpty
     }
 
-    private var textfieldPlaceholder: String {
-        switch layout {
-        case .label:
-            focused ? "" : label
-        case .placeholder:
-            placeholder?.text ?? ""
+    private var showLabelInContainer: Bool {
+        !label.isEmpty && (focused || (!focused && (placeholder?.text.isEmpty == false) || !text.wrappedValue.isEmpty))
+    }
+
+    private var textfieldLabel: String {
+        guard let placeholder, !placeholder.text.isEmpty else {
+            return focused ? "" : label
         }
+        return placeholder.text
     }
 
     private var trailing: CGFloat {

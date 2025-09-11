@@ -25,8 +25,10 @@ import SwiftUI
 ///
 /// ## Layout
 ///
-///  - **Label** Describes the purpose of the input.
+/// Text input is based on some configurable UI elements:
 ///
+///  - **Label**
+///  It is used to describe the purpose of the input.
 ///  In some UI contexts, especially when space is limited or when the input is part of a compact layout
 ///  (search bars, filters, inline forms), the label can be hidden.
 ///
@@ -38,18 +40,54 @@ import SwiftUI
 /// Hiding a label is a design choice that must balance visual simplicity and clarity of intent,
 /// without compromising inclusiveness or form guidance.
 ///
-/// - **placeholder** If the text of the text input is empty a placeholder provides a hint or
-///    guidance inside the field to suggest expected input. A prefix and sa uffix can be added to
-///    give more context.
+/// - **placeholder**
+///  If the text of the text input is empty a placeholder provides a hint or
+///  guidance inside the field to suggest expected input. A prefix and sa uffix can be added to
+///  give more context.
 ///
 ///  - **leading icon**
-///  Helps indicate the purpose of the input (magnifying glass for search, envelope for email,
+///  It helps indicate the purpose of the input (magnifying glass for search, envelope for email,
 ///  phone device for phone number). Only use a leading icon if it adds clear functional or contextual
 ///  value.
 ///
 ///  - **trailing action**
-///  Used to provide actions related to the field: clear input, toggle password visibility, open a
+///  It is used to provide actions related to the field: clear input, toggle password visibility, open a
 ///  date picker, etc. Can also indicate status or feedback (error checkmark, loading spinner).
+///
+/// ## Outlined style
+///
+/// By **default**, the input is with a subtle background fill and un visible bottom border,
+/// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
+///
+/// When **outlined**, the text input is a minimalist design with a transparent background and a
+/// visible stroke outlining the field. This style may be interesting for contexts other than form pages:
+///      - When inputs need to feel lightweight and unobtrusive
+///      - In a header (search field)
+///      - In a selection/filtering feature in a product catalog
+///
+///  ```swift
+///     // An outlined text input
+///     OUDSInputText(label: "Label", text: $text, isOutlined: true)
+/// ```
+///
+/// ### Rounded layout
+///
+/// Text input can have rounded layouts to be favored in more emotional, immersive contexts or those
+/// tied to specific visual identities.
+/// For standard or business-oriented journeys, keep the default corners.
+/// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
+///
+/// To activate the rounded button behavior, set to true the  `oudsRoundedTetxInput` environment variable
+/// at the root level of the view hierarchy (i.e. can be applied on the `OUDSThemeableView`),
+/// to be sure all buttons in the application are rounded.
+///
+/// ```swift
+///     // Add themeable view to your app root view to use the OrangeTheme
+///     OUDSThemeableView(theme: OrangeTheme()) {
+///         YourRootView() // With some views with TextInput
+///     }
+///     .environment(\.oudsRoundedTextInput, true)
+/// ```
 ///
 /// ## Status
 ///
@@ -71,19 +109,6 @@ import SwiftUI
 ///  - **disbaled** In `disabled` status, the field is non-interactive and grayed out to indicate
 ///     it cannot be changed.
 ///     **Remark** the SwiftUI `View.disbaled()` is ignored.
-///
-/// ## Style
-///
-/// Two style are proposed for all layouts:
-///
-/// - **default** An input with a subtle background fill and un visible bottom border,
-/// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
-///
-/// **alternative** A minimalist input with a transparent background and a visible stroke outlining
-///  the field. This style may be interesting for contexts other than form pages:
-///      - When inputs need to feel lightweight and unobtrusive
-///      - In a header (search field)
-///      - In a selection/filtering feature in a product catalog
 ///
 /// ## Helpers
 ///
@@ -127,25 +152,6 @@ import SwiftUI
 ///
 ///    OUDSInputText(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperLink: helperLink)
 /// ```
-/// 
-/// ## Rounded layout
-///
-/// Text input can have rounded layouts to be favored in more emotional, immersive contexts or those
-/// tied to specific visual identities.
-/// For standard or business-oriented journeys, keep the default corners.
-/// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
-///
-/// To activate the rounded button behavior, set to true the  `oudsRoundedTetxInput` environment variable
-/// at the root level of the view hierarchy (i.e. can be applied on the `OUDSThemeableView`),
-/// to be sure all buttons in the application are rounded.
-///
-/// ```swift
-///     // Add themeable view to your app root view to use the OrangeTheme
-///     OUDSThemeableView(theme: OrangeTheme()) {
-///         YourRootView() // With some views with TextInput
-///     }
-///     .environment(\.oudsRoundedTextInput, true)
-/// ```
 ///
 /// ## Design documentation
 ///
@@ -159,7 +165,6 @@ public struct OUDSTextInput: View {
 
     @Environment(\.theme) private var theme
 
-    let layout: Self.Layout
     let label: String
     let text: Binding<String>
     let placeholder: Self.Placeholder?
@@ -168,16 +173,7 @@ public struct OUDSTextInput: View {
     let helperText: String?
     let helperLink: Helperlink?
     let status: Self.Status
-    let style: Style
-
-    /// The prefered layout to display label or placeholder in input area
-    public enum Layout {
-        /// Used to display the label into the input area
-        case label
-
-        /// Used to display the placeholder into the input area
-        case placeholder
-    }
+    let isOutlined: Bool
 
     /// Used to describe the trailing action
     public struct TrailingAction {
@@ -271,7 +267,6 @@ public struct OUDSTextInput: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - layout: The desired layout
     ///    - label: The label displayed above the text input. It describe the purpose of the input
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text input is empty
@@ -282,19 +277,18 @@ public struct OUDSTextInput: View {
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional
     ///      information about the input field, such as how it will be used.
     ///    - helperlink: An optional helper link displayed below or in place of the helper text.
-    ///    - style: The style of the text input
+    ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
+    ///      text input with a transparent background and a visible stroke outlining the field.
     ///    - status: The cuurent status of the text input
-    public init(layout: Self.Layout = .label,
-                label: String,
+    public init(label: String,
                 text: Binding<String>,
                 placeholder: Placeholder? = nil,
                 leadingIcon: Image? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
-                style: Self.Style = .default,
+                isOutlined: Bool = false,
                 status: Self.Status = .default) {
-        self.layout = layout
         self.label = label
         self.text = text
         self.helperText = helperText
@@ -303,21 +297,20 @@ public struct OUDSTextInput: View {
         self.trailingAction = trailingAction
         self.helperLink = helperLink
         self.status = status
-        self.style = style
+        self.isOutlined = isOutlined
     }
 
     // MARK: Body
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            TextInputContainer(layout: layout,
-                               label: label,
+            TextInputContainer(label: label,
                                text: text,
                                placeholder: placeholder,
                                leadingIcon: leadingIcon,
                                trailingAction: trailingAction,
                                status: status,
-                               style: style)
+                               isOutlined: isOutlined)
 
             if let helperText, !helperText.isEmpty {
                 HelperTextContainer(helperText: helperText, status: status)

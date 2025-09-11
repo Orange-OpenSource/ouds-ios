@@ -34,8 +34,9 @@ struct Inputtext: View {
             Text(label)
                 .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
                 .typeLabelDefaultLarge(theme)
-                .oudsForegroundStyle(color)
+                .oudsForegroundStyle(placeholderColor)
         }
+        .oudsForegroundColor(inputTextColor)
         .multilineTextAlignment(.leading)
         .tint(cursorColor.color(for: colorScheme))
         .disabled(status == .disbaled || status == .readOnly || status == .loading)
@@ -47,12 +48,16 @@ struct Inputtext: View {
         status == .error ? theme.colors.colorActionNegativePressed : theme.colors.colorContentDefault
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var inputTextColor: MultipleColorSemanticTokens {
+        status == .disbaled ? theme.colors.colorActionDisabled : theme.colors.colorContentDefault
+    }
+
+    private var placeholderColor: MultipleColorSemanticTokens {
         switch status {
         case .default:
             return theme.colors.colorContentMuted
         case .error:
-            return errorColor
+            return placeholderErrorColor
         case .loading:
             return theme.colors.colorContentMuted
         case .readOnly:
@@ -62,10 +67,8 @@ struct Inputtext: View {
         }
     }
 
-    private var errorColor: MultipleColorSemanticTokens {
+    private var placeholderErrorColor: MultipleColorSemanticTokens {
         if labelAsPlaceholder {
-            return theme.colors.colorContentMuted
-        } else {
             switch interactionState {
             case .idle:
                 return theme.colors.colorActionNegativeEnabled
@@ -74,6 +77,8 @@ struct Inputtext: View {
             case .hover:
                 return theme.colors.colorActionNegativeHover
             }
+        } else {
+            return theme.colors.colorContentMuted
         }
     }
 }

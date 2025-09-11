@@ -18,8 +18,8 @@ struct TextInputBoderModifier: ViewModifier {
 
     // MARK: - Stored properties
 
-    let style: OUDSTextInput.Style
     let status: OUDSTextInput.Status
+    let isOutlined: Bool
     let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -28,29 +28,32 @@ struct TextInputBoderModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        switch style {
-        case .default where status == .readOnly:
-            content
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.textInput.textInputBorderWidthDefault,
-                            radius: cornerRadius,
-                            color: theme.colors.colorBorderMuted)
-        case .default:
-            ZStack(alignment: .bottomLeading) {
+        if isOutlined {
+            if status == .readOnly {
                 content
-                Divider()
-                    .frame(height: size)
-                    .overlay(defaultColor.color(for: colorScheme))
+            } else {
+                content
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                                width: size,
+                                radius: cornerRadius,
+                                color: outlinedColor)
             }
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-        case .alternative where status == .readOnly:
-            content
-        case .alternative:
-            content
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: size,
-                            radius: cornerRadius,
-                            color: alternativeColor)
+        } else {
+            if status == .readOnly {
+                content
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                                width: theme.textInput.textInputBorderWidthDefault,
+                                radius: cornerRadius,
+                                color: theme.colors.colorBorderMuted)
+            } else {
+                ZStack(alignment: .bottomLeading) {
+                    content
+                    Divider()
+                        .frame(height: size)
+                        .overlay(defaultColor.color(for: colorScheme))
+                }
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            }
         }
     }
 
@@ -102,7 +105,7 @@ struct TextInputBoderModifier: ViewModifier {
         }
     }
 
-    private var alternativeColor: MultipleColorSemanticTokens {
+    private var outlinedColor: MultipleColorSemanticTokens {
         switch status {
         case .default:
             switch interactionState {

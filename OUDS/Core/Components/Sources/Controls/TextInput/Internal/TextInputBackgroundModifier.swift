@@ -18,8 +18,8 @@ struct TextInputBackgroundModifier: ViewModifier {
 
     // MARK: - Stored properties
 
-    let style: OUDSTextInput.Style
     let status: OUDSTextInput.Status
+    let isOutlined: Bool
     let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.oudsRoundedTextInput) private var rounded
@@ -35,12 +35,7 @@ struct TextInputBackgroundModifier: ViewModifier {
     }
 
     private var color: MultipleColorSemanticTokens? {
-        switch style {
-        case .default:
-            return defaultColor
-        case .alternative:
-            return alternativeColor
-        }
+        isOutlined ? outlinedColor : defaultColor
     }
 
     private var defaultColor: MultipleColorSemanticTokens? {
@@ -65,7 +60,7 @@ struct TextInputBackgroundModifier: ViewModifier {
         }
     }
 
-    private var alternativeColor: MultipleColorSemanticTokens? {
+    private var outlinedColor: MultipleColorSemanticTokens? {
         if status == .readOnly {
             return theme.colors.colorActionSupportDisabled
         } else {
