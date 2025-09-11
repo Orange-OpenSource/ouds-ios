@@ -74,6 +74,27 @@ struct SomeView: View {
 }
 ```
 
+## How to tune the theme
+
+The `OrangeInverseTheme` theme can be tuned a bit, e.g. with rounded corners or not.
+```swift
+    // Define your theme tuning
+    let tuning = Tuning(roundedCorners: true)
+
+    // Apply it to your theme
+    let theme = OrangeInverseTheme(tuning: tuning)
+
+    // Or in one line
+    let theme = OrangeInverseTheme(tuning: Tuning(roundedCorners: true))
+```
+
+A default tuning is applied for this theme:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners                | false  
+
+
 ## How to enrich the theme
 
 You cannot derivate the *Orange inverse* theme.

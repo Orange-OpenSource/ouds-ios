@@ -60,7 +60,7 @@ import SwiftUI
 ///
 /// ## Theme tuning
 ///
-/// The theme can be customized a bit for more flexibility thanks to `ThemeTuning` object.
+/// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
 /// Only few elements can be tuned:
 ///  - rounded corners for some components like buttons
 ///
@@ -68,12 +68,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = ThemeTuning(roundedCorners: true)
+///     let tuning = Tuning(roundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeBusinessToolsTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeBusinessToolsTheme(tuning: ThemeTuning(roundedCorners: true))
+///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(roundedCorners: true))
 /// ```
 ///
 /// - Since: 0.17.0
@@ -87,8 +87,8 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
     /// Constructor of the OrangeBusinessTools theme with its own providers of tokens.
     /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
     ///
-    /// - Parameter tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
-    public init(tuning: ThemeTuning = ThemeTuning.default) {
+    /// - Parameter tuning: A set of configurations to tune a theme, by default `Tuning.default`
+    public init(tuning: Tuning = Tuning.default) {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)

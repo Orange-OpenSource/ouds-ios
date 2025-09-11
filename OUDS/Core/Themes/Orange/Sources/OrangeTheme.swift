@@ -57,7 +57,7 @@ import OUDSTokensSemantic
 ///
 /// ## Theme tuning
 ///
-/// The theme can be customized a bit for more flexibility thanks to `ThemeTuning` object.
+/// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
 /// Only few elements can be tuned:
 ///  - rounded corners for some components like buttons
 ///
@@ -65,12 +65,12 @@ import OUDSTokensSemantic
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = ThemeTuning(roundedCorners: true)
+///     let tuning = Tuning(roundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeTheme(tuning: ThemeTuning(roundedCorners: true))
+///     let theme = OrangeTheme(tuning: Tuning(roundedCorners: true))
 /// ```
 ///
 /// ## Tokens loading
@@ -142,7 +142,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
+    ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
@@ -174,7 +174,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
                          fontFamily: FontFamilySemanticToken? = nil,
-                         tuning: ThemeTuning = ThemeTuning.default)
+                         tuning: Tuning = Tuning.default)
     {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())

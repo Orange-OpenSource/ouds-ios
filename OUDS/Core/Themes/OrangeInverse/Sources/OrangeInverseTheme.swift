@@ -57,7 +57,7 @@ import SwiftUI
 ///
 /// ## Theme tuning
 ///
-/// The theme can be customized a bit for more flexibility thanks to `ThemeTuning` object.
+/// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
 /// Only few elements can be tuned:
 ///  - rounded corners for some components like buttons
 ///
@@ -65,12 +65,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = ThemeTuning(roundedCorners: true)
+///     let tuning = Tuning(roundedCorners: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeInverse(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeInverse(tuning: ThemeTuning(roundedCorners: true))
+///     let theme = OrangeInverse(tuning: Tuning(roundedCorners: true))
 /// ```
 ///
 /// - Since: 0.17.0
@@ -83,8 +83,8 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
 
     /// Constructor of the `OrangeInverse` theme with its own providers of tokens.
     ///
-    /// - Parameter tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
-    public init(tuning: ThemeTuning = ThemeTuning.default) {
+    /// - Parameter tuning: A set of configurations to tune a theme, by default `Tuning.default`
+    public init(tuning: Tuning = Tuning.default) {
         let borders = OrangeInverseThemeBorderSemanticTokensProvider()
         let colors = OrangeInverseThemeColorSemanticTokensProvider()
         let colorModes = OrangeInverseThemeColorModeSemanticTokensProvider(colors: colors)

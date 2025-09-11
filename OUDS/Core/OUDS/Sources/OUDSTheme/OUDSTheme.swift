@@ -14,6 +14,10 @@
 import Foundation
 import OUDSTokensSemantic
 
+// MARK: - Type aliases
+
+public typealias Tuning = OUDSTheme.ThemeTuning
+
 // MARK: - OUDS Theme
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
@@ -263,23 +267,23 @@ open class OUDSTheme: @unchecked Sendable {
     // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
-}
 
-// MARK: - Theme tuning
+    // MARK: - Theme tuning
 
-/// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
-/// This allows for example to have a theme defined by the Brand but to apply some customization.
-///
-/// - Since: 0.19.0
-public struct ThemeTuning: @unchecked Sendable {
+    /// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
+    /// This allows for example to have a theme defined by the Brand but to apply some customization.
+    ///
+    /// - Since: 0.19.0
+    public struct ThemeTuning: @unchecked Sendable {
 
-    // MARK: Tuned properties
+        // MARK: Tuned properties
 
-    /// A theme can apply rounded corners on some components like buttons.
-    public let roundedCorners: Bool
+        /// A theme can apply rounded corners on some components like buttons.
+        public let roundedCorners: Bool
 
-    // MARK: Pretuned configurations
+        // MARK: Pretuned configurations
 
-    /// By default a theme does not have rounded corners
-    public static let `default` = ThemeTuning(roundedCorners: false)
+        /// By default a theme does not have rounded corners
+        public static let `default` = ThemeTuning(roundedCorners: false)
+    }
 }
