@@ -11,8 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Swift package `SwiftLintPlugins` from v0.60.0 to v0.60.1
 - Update various GitHub Actions workflows dependencies
 - Tuning of themes (like rounded corners) (Orange-OpenSource/ouds-ios#951)
+
 ### Fixed
 
+- Filter chip component should not have a button trait (Orange-OpenSource#956)
 - Badge component does not have bigger sizes if text sizes is increased (Orange-OpenSource#844)
 
 ## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.17.0...0.18.0) - 2025-09-05
