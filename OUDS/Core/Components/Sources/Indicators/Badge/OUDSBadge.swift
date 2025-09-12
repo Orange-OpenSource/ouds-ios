@@ -215,20 +215,17 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     /// If the text is not large, uses the expected tokens.
     /// Otherwise uses the largest token and applies a factor based on the text size rate to have bigger size.
     private var frameSize: SizeSemanticToken {
-        if sizeCategory.isLargeTextUsed {
-            theme.badge.badgeSizeLarge * (sizeCategory.percentageRate / 100)
-        } else {
-            switch size {
-            case .extraSmall:
-                theme.badge.badgeSizeXsmall
-            case .small:
-                theme.badge.badgeSizeSmall
-            case .medium:
-                theme.badge.badgeSizeMedium
-            case .large:
-                theme.badge.badgeSizeLarge
-            }
+        let rawSize = switch size {
+        case .extraSmall:
+            theme.badge.badgeSizeXsmall
+        case .small:
+            theme.badge.badgeSizeSmall
+        case .medium:
+            theme.badge.badgeSizeMedium
+        case .large:
+            theme.badge.badgeSizeLarge
         }
+        return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
     }
 
     private var backgroundColor: MultipleColorSemanticTokens {
