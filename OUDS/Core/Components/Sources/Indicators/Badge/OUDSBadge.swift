@@ -33,6 +33,12 @@ import SwiftUI
 ///     OUDSBadge(icon: Image("ic_heart"), status: .info)
 /// ```
 ///
+/// ## Accessibility considerations
+///
+/// Users may need to increase their text sizes. However by design their is no tokens for such cases.
+/// Thus, if large text is used, a factor is applied on the largest token value based on the size percentage rate.
+/// Thus it will make users able to have bigger badges.
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
@@ -205,9 +211,12 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
 
     // MARK: Private helpers
 
+    /// Returns the value to apply to compute frame wize.
+    /// If the text is not large, uses the expected tokens.
+    /// Otherwise uses the largest token and applies a factor based on the text size rate to have bigger size.
     private var frameSize: SizeSemanticToken {
         if sizeCategory.isLargeTextUsed {
-            theme.badge.badgeSizeLarge
+            theme.badge.badgeSizeLarge * (sizeCategory.percentageRate / 100)
         } else {
             switch size {
             case .extraSmall:

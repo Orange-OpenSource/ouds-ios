@@ -45,4 +45,37 @@ extension ContentSizeCategory {
             false
         }
     }
+
+    /// Can be used for sizes comparisons.
+    /// *Percentage values have been picked from system debug.*
+    public var percentageRate: Double {
+        switch self {
+        case .accessibilityExtraExtraExtraLarge:
+            310
+        case .accessibilityExtraExtraLarge:
+            275
+        case .accessibilityExtraLarge:
+            235
+        case .accessibilityLarge:
+            190
+        case .accessibilityMedium:
+            160
+        case .extraExtraExtraLarge:
+            135
+        case .extraExtraLarge:
+            120
+        case .extraLarge:
+            110
+        case .large:
+            100
+        case .medium:
+            90
+        case .small:
+            85
+        case .extraSmall:
+            80
+        default:
+            0
+        }
+    }
 }
