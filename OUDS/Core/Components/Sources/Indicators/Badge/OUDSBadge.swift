@@ -213,6 +213,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
 
     // MARK: Body
 
+    // swiftlint:disable force_unwrapping
     public var body: some View {
         HStack(alignment: .center) {
             BadgeCount(count: count, size: size)
@@ -229,6 +230,8 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
         .accessibilityHidden(count == nil && icon == nil) // Hide badge from A11Y tools if no content inside
         .accessibilityLabel(accessibilityLabel ?? (count != nil ? "\(count!)" : ""))
     }
+
+    // swiftlint:enable force_unwrapping
 
     // MARK: Private helpers
 
