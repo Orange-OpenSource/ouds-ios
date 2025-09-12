@@ -156,5 +156,3 @@ struct ContentSizeCategoryTests {
         #expect(ContentSizeCategory.accessibilityExtraExtraExtraLarge.percentageRate == 310)
     }
 }
-
-// swiftlint:enable force_unwrapping
