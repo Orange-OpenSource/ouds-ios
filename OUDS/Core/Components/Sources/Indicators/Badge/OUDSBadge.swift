@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -30,14 +31,21 @@ import SwiftUI
 ///     OUDSBadge(count: 1, status: .negative, size: .large)
 ///
 ///     // Info badge in medium size (default size) with icon information
-///     OUDSBadge(icon: Image("ic_heart"), status: .info)
+///     OUDSBadge(icon: Image("ic_heart"), accessibilityLabel: "Like", status: .info)
 /// ```
 ///
 /// ## Accessibility considerations
 ///
+/// ### Sizes
+///
 /// Users may need to increase their text sizes. However by design their is no tokens for such cases.
 /// Thus, if large text is used, a factor is applied on the largest token value based on the size percentage rate.
 /// Thus it will make users able to have bigger badges.
+///
+/// ### Vocalizations
+///
+/// A badge without content will be ignored instead of a count badge for which its value wil be vocalized.
+/// For badge with icon, if the accessibility label is defined (and it should be) it will be vocalized.
 ///
 /// ## Design documentation
 ///
@@ -77,6 +85,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
     private let size: StandardSize
     private let count: UInt?
     private let icon: Image?
+    private let accessibilityLabel: String?
 
     @Environment(\.theme) private var theme
     @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
@@ -148,7 +157,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
 
     // MARK: Initializers
 
-    /// Creates a basic standard neutral badge.
+    /// Creates a basic badge.
     ///
     /// - Parameters:
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
@@ -157,6 +166,7 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
         self.status = status
         self.size = size
         icon = nil
+        accessibilityLabel = nil
         count = nil
     }
 
@@ -174,22 +184,31 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
         self.size = size.standardSize
         self.count = count
         icon = nil
+        accessibilityLabel = nil
     }
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
-    /// The size remains unchanged despite the increase in the interface size.
     /// The background color of the badge and the icon color are based on the given `status`.
     ///
     /// - Parameters:
     ///    - icon: The icon displayed in the badge
+    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(icon: Image, status: Status = .neutral, size: IllustrationSize = .medium) {
+    public init(icon: Image,
+                accessibilityLabel: String,
+                status: Status = .neutral,
+                size: IllustrationSize = .medium)
+    {
+        if accessibilityLabel.isEmpty {
+            OL.warning("The OUDS Badge with an icon should not have an empty accessibility label, think about your disabled users!")
+        }
         self.status = status
         self.size = size.standardSize
         count = nil
         self.icon = icon
+        self.accessibilityLabel = accessibilityLabel
     }
 
     // MARK: Body
@@ -207,6 +226,8 @@ public struct OUDSBadge: View { // TODO: #514 - Add hyperlink for badge document
                alignment: .center)
         .oudsBackground(backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: theme.borders.borderRadiusPill))
+        .accessibilityHidden(count == nil && icon == nil) // Hide badge from A11Y tools if no content inside
+        .accessibilityLabel(accessibilityLabel ?? (count != nil ? "\(count!)" : ""))
     }
 
     // MARK: Private helpers
