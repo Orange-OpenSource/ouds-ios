@@ -67,7 +67,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// ## Themes rendering
 ///
