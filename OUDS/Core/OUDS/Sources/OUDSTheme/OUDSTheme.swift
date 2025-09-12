@@ -14,6 +14,13 @@
 import Foundation
 import OUDSTokensSemantic
 
+// MARK: - Type aliases
+
+/// Tuning is obviously theme tuning
+public typealias Tuning = OUDSTheme.ThemeTuning
+
+// MARK: - OUDS Theme
+
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
@@ -143,6 +150,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// Supposed to have, for a given resurce, the same name accross themes.
     public let resourcesBundle: Bundle
 
+    /// Some tuning for the theme
+    public let tuning: ThemeTuning
+
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
@@ -181,6 +191,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
@@ -211,7 +222,8 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
-                fontFamily: FontFamilySemanticToken? = nil)
+                fontFamily: FontFamilySemanticToken? = nil,
+                tuning: ThemeTuning = ThemeTuning.default)
     {
 
         // Save semantic tokens providers
@@ -250,9 +262,36 @@ open class OUDSTheme: @unchecked Sendable {
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
         self.fontFamily = fontFamily
+        self.tuning = tuning
     }
 
     // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
+
+    // MARK: - Theme tuning
+
+    /// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
+    /// This allows for example to have a theme defined by the Brand but to apply some customization.
+    ///
+    /// - Since: 0.19.0
+    public struct ThemeTuning: @unchecked Sendable {
+
+        // MARK: Tuned properties
+
+        /// If components like button must have always rounded corners or not
+        public let hasRoundedCorners: Bool
+
+        /// Defines the tuning for a theme
+        ///
+        /// - Parameter hasRoundedCorners: Always rounded corners on tunable components or not
+        public init(hasRoundedCorners: Bool = false) {
+            self.hasRoundedCorners = hasRoundedCorners
+        }
+
+        // MARK: Pretuned configurations
+
+        /// By default a theme does not have rounded corners
+        public static let `default` = ThemeTuning()
+    }
 }

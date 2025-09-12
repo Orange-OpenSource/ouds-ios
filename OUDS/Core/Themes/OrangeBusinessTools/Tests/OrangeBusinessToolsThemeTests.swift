@@ -11,18 +11,31 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+@testable import OUDS
 @testable import OUDSThemesOrangeBusinessTools
 import Testing
 
 // swiftlint:disable force_cast
 
-/// Check if the themes ahs the default tokens providers with the expected types.
+/// Check if the theme has the default configuration and okens providers with the expected types.
 struct OrangeBusinessToolsThemeTests {
 
     private var theme: OrangeBusinessToolsTheme
 
     init() {
         theme = OrangeBusinessToolsTheme()
+    }
+
+    // MARK: - Tests - Theme tuning
+
+    @Test func defaultTuningOfOrangeBusinessToolsTheme() throws {
+        let tuning = theme.tuning
+        #expect(tuning.hasRoundedCorners == false)
+    }
+
+    @Test func tuningOfOrangeBusinessToolsTheme() throws {
+        let tunedTheme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
+        #expect(tunedTheme.tuning.hasRoundedCorners == true)
     }
 
     // MARK: - Tests - Semantic tokens providers

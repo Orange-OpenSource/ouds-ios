@@ -30,6 +30,13 @@ import SwiftUI
 /// thes products must be Orange flavored.
 /// That is the reason why this team is created: a kind of `OrangeTheme` but wih adjustments on some tokens like spacings and sizings.
 ///
+/// To get the theme:
+/// ```swift
+///     import OUDS
+///
+///     @Environment(\.theme) var theme
+/// ```
+///
 /// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
@@ -51,11 +58,22 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// Then get it:
-/// ```swift
-///     import OUDS
+/// ## Theme tuning
 ///
-///     @Environment(\.theme) var theme
+/// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
+/// Only few elements can be tuned:
+///  - rounded corners for some components like buttons
+///
+/// To apply the tuning:
+///
+/// ```swift
+///     // Define your theme tuning
+///     let tuning = Tuning(hasRoundedCorners: true)
+///
+///     // Apply it to your theme
+///     let theme = OrangeBusinessToolsTheme(tuning: tuning)
+///     // Or in one line
+///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
 /// ```
 ///
 /// - Since: 0.17.0
@@ -68,7 +86,9 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 
     /// Constructor of the OrangeBusinessTools theme with its own providers of tokens.
     /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
-    public init() {
+    ///
+    /// - Parameter tuning: A set of configurations to tune a theme, by default `Tuning.default`
+    public init(tuning: Tuning = Tuning.default) {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
@@ -131,7 +151,8 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
-                   fontFamily: nil)
+                   fontFamily: nil,
+                   tuning: tuning)
     }
 
     deinit {}

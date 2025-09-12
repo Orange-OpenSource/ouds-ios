@@ -20,7 +20,6 @@ import SwiftUI
 struct ButtonBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsRoundedButton) private var roundedButton
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
     @Environment(\.colorScheme) private var colorScheme
@@ -61,7 +60,7 @@ struct ButtonBorderModifier: ViewModifier {
     // MARK: Radius
 
     private var radius: BorderRadiusSemanticToken {
-        roundedButton ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
+        theme.tuning.hasRoundedCorners ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
     }
 
     // MARK: Default hierarchy
