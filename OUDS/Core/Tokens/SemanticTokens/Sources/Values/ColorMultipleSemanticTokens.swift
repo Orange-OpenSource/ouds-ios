@@ -98,8 +98,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorActionSupportPressed: MultipleColorSemanticTokens { get }
 
-    var colorActionSupportDisabled: MultipleColorSemanticTokens { get }
-
     var colorActionVisited: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Background
