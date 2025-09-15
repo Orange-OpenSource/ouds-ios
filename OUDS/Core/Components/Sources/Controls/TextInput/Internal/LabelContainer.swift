@@ -51,7 +51,7 @@ struct LabelContainer: View {
             return theme.colors.colorContentMuted
         case .readOnly:
             return theme.colors.colorContentMuted
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionDisabled
         }
     }

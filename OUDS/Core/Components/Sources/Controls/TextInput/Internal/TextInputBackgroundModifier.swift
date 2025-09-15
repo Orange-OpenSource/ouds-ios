@@ -55,7 +55,7 @@ struct TextInputBackgroundModifier: ViewModifier {
             return theme.colors.colorActionSupportLoading
         case .readOnly:
             return nil
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionSupportDisabled
         }
     }

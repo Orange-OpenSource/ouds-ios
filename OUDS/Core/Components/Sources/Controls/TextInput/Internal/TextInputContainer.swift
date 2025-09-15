@@ -23,8 +23,8 @@ struct TextInputContainer: View {
     let placeholder: OUDSTextInput.Placeholder?
     let leadingIcon: Image?
     let trailingAction: OUDSTextInput.TrailingAction?
-    let status: OUDSTextInput.Status
     let isOutlined: Bool
+    let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
     @FocusState private var focused: Bool
@@ -115,7 +115,7 @@ struct TextInputContainer: View {
     }
 
     private var prefixSuffixColor: MultipleColorSemanticTokens {
-        status == .disbaled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
+        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
     }
 
     private var interactionState: TextInputInteractionState {

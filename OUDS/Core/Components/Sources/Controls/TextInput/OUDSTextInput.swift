@@ -241,7 +241,7 @@ public struct OUDSTextInput: View {
 
         ///  In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
         ///  **Remark** the SwiftUI `View.disbaled()` is ignored.
-        case disbaled
+        case disabled
     }
 
     /// Used to describe the helper link above the helper text.

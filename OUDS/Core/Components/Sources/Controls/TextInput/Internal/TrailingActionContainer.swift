@@ -28,9 +28,9 @@ struct TrailingActionContainer: View {
 
     var body: some View {
             switch status {
-            case .default, .readOnly, .disbaled:
+            case .default, .readOnly, .disabled:
                 trailingActionButton
-                    .disabled(status == .disbaled || status == .readOnly)
+                    .disabled(status == .disabled || status == .readOnly)
             case .error:
                 HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
                     Image(decorative: "ic_important", bundle: theme.resourcesBundle)

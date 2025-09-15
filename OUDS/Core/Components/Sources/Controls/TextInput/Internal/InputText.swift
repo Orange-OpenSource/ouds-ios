@@ -39,7 +39,7 @@ struct Inputtext: View {
         .oudsForegroundColor(inputTextColor)
         .multilineTextAlignment(.leading)
         .tint(cursorColor.color(for: colorScheme))
-        .disabled(status == .disbaled || status == .readOnly || status == .loading)
+        .disabled(status == .disabled || status == .readOnly || status == .loading)
     }
 
     // MARK: - Helper
@@ -49,7 +49,7 @@ struct Inputtext: View {
     }
 
     private var inputTextColor: MultipleColorSemanticTokens {
-        status == .disbaled ? theme.colors.colorActionDisabled : theme.colors.colorContentDefault
+        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentDefault
     }
 
     private var placeholderColor: MultipleColorSemanticTokens {
@@ -62,7 +62,7 @@ struct Inputtext: View {
             return theme.colors.colorContentMuted
         case .readOnly:
             return theme.colors.colorContentMuted
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionDisabled
         }
     }

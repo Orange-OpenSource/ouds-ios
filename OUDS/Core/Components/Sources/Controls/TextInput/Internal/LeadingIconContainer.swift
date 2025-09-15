@@ -32,7 +32,7 @@ struct LeadingIconContainer: View {
         switch status {
         case .default, .error, .loading, .readOnly:
             return theme.colors.colorContentMuted
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionDisabled
         }
     }

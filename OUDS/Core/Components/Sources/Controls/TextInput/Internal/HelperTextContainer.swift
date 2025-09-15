@@ -42,7 +42,7 @@ struct HelperTextContainer: View {
             theme.colors.colorContentStatusNegative
         case  .loading: // should not appear
             theme.colors.colorContentMuted
-        case .readOnly, .disbaled:
+        case .readOnly, .disabled:
             theme.colors.colorActionDisabled
         }
     }

@@ -100,7 +100,7 @@ struct TextInputBoderModifier: ViewModifier {
             return theme.textInput.textInputColorBorderLoading
         case .readOnly:
             return theme.colors.colorBorderMuted
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionDisabled
         }
     }
@@ -130,7 +130,7 @@ struct TextInputBoderModifier: ViewModifier {
         case .readOnly:
             // should not appear
             return theme.colors.colorActionDisabled
-        case .disbaled:
+        case .disabled:
             return theme.colors.colorActionDisabled
         }
     }
