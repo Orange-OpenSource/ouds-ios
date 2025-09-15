@@ -23,6 +23,7 @@ struct LeadingIconContainer: View {
     var body: some View {
         leadingIcon?
             .resizable()
+            .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
             .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
