@@ -27,26 +27,27 @@ struct TrailingActionContainer: View {
     // MARK: - Body
 
     var body: some View {
-            switch status {
-            case .default, .readOnly, .disabled:
-                trailingActionButton
-                    .disabled(status == .disabled || status == .readOnly)
-            case .error:
-                HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
-                    Image(decorative: "ic_important", bundle: theme.resourcesBundle)
-                        .renderingMode(.template)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .oudsForegroundColor(errorIconColor)
-                        .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
-                        .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+        switch status {
+        case .default, .readOnly, .disabled:
+            if let trailingAction {
+                trailingButton(for: trailingAction)
+            }
+        case .error:
+            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
+                Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .oudsForegroundColor(errorIconColor)
+                    .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
+                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
 
-                    trailingActionButton
+                if let trailingAction {
+                    trailingButton(for: trailingAction)
                 }
-
-            case .loading:
-                LoaderIndicator(color: theme.colors.colorContentMuted.color(for: colorScheme))
-                    .frame(width: theme.button.buttonSizeLoader, height: theme.button.buttonSizeLoader, alignment: .center)
+            }
+        case .loading:
+            trailingButton(for: .init(icon:  Image(decorative: "ic_heart"), accessibilityLabel: "", action: {}))
         }
     }
 
@@ -63,14 +64,11 @@ struct TrailingActionContainer: View {
         }
     }
 
-    @ViewBuilder
-    private var trailingActionButton: some View {
-        if let trailingAction {
-            OUDSButton(icon: trailingAction.icon,
-                       accessibilityLabel: trailingAction.accessibilityLabel,
-                       hierarchy: .minimal,
-                       style: .loading == status ?  .loading : .default,
-                       action: trailingAction.action)
-        }
+    func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
+        OUDSButton(icon: trailingAction.icon,
+                   accessibilityLabel: trailingAction.accessibilityLabel,
+                   hierarchy: .minimal,
+                   style: .loading == status ?  .loading : .default,
+                   action: trailingAction.action)
     }
 }

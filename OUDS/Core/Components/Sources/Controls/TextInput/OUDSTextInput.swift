@@ -309,8 +309,8 @@ public struct OUDSTextInput: View {
                                placeholder: placeholder,
                                leadingIcon: leadingIcon,
                                trailingAction: trailingAction,
-                               status: status,
-                               isOutlined: isOutlined)
+                               isOutlined: isOutlined,
+                               status: status)
 
             if let helperText, !helperText.isEmpty {
                 HelperTextContainer(helperText: helperText, status: status)

@@ -107,7 +107,7 @@ struct TextInputContainer: View {
     }
 
     private var trailing: CGFloat {
-        if trailingAction != nil || status == .error {
+        if trailingAction != nil || status == .error || status == .loading {
             return theme.textInput.textInputSpacePaddingInlineTrailingAction
         } else {
             return theme.textInput.textInputSpacePaddingInlineDefault
