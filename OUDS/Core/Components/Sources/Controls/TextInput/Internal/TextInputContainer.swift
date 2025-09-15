@@ -89,7 +89,7 @@ struct TextInputContainer: View {
         .onHover{ self.hover = $0 }
     }
 
-    // MARK: - Helper
+    // MARK: - Helpers
 
     private var showPlaceholder: Bool {
         focused || !text.wrappedValue.isEmpty

@@ -33,6 +33,8 @@ struct TextInputBackgroundModifier: ViewModifier {
         }
     }
 
+    // MARK: - Helpers
+
     private var color: MultipleColorSemanticTokens? {
         isOutlined ? outlinedColor : defaultColor
     }

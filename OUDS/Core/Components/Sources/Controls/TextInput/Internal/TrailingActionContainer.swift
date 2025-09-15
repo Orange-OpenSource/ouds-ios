@@ -51,7 +51,7 @@ struct TrailingActionContainer: View {
         }
     }
 
-    // MARK: Helper
+    // MARK: Helpers
 
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {

@@ -16,9 +16,13 @@ import SwiftUI
 
 struct LeadingIconContainer: View {
 
+    // MARK: - Properties
+
     let leadingIcon: Image?
     let status: OUDSTextInput.Status
     @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     var body: some View {
         leadingIcon?
@@ -28,6 +32,8 @@ struct LeadingIconContainer: View {
             .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
     }
+
+    // MARK: - Helper
 
     private var color: MultipleColorSemanticTokens {
         switch status {
