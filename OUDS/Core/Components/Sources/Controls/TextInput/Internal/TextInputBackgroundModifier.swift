@@ -22,7 +22,6 @@ struct TextInputBackgroundModifier: ViewModifier {
     let isOutlined: Bool
     let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
-    @Environment(\.oudsRoundedTextInput) private var rounded
 
     // MARK: - Body
 

@@ -23,7 +23,6 @@ struct TextInputBoderModifier: ViewModifier {
     let interactionState: TextInputInteractionState
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsRoundedTextInput) private var rounded
 
     // MARK: - Body
 
@@ -60,7 +59,7 @@ struct TextInputBoderModifier: ViewModifier {
     // MARK: - Helper
 
     private var cornerRadius: BorderRadiusSemanticToken {
-        rounded ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+        theme.tuning.hasRoundedCorners ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
     }
 
     private var size: BorderWidthSemanticToken {
