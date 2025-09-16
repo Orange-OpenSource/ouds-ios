@@ -37,6 +37,9 @@ on:
     branches-ignore:
       - main    
 
+permissions:
+  contents: read
+
 jobs:
   i18n:
     name: Check translations (Swift Polyglot)
