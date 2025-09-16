@@ -39,6 +39,9 @@ on:
       - develop
       - '*'        
 
+permissions:
+  contents: read
+
 jobs:
   # Build the library
   build:
