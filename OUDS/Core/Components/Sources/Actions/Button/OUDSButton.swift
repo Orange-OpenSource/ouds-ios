@@ -122,6 +122,7 @@ public struct OUDSButton: View {
     private let style: Style
     private let action: () -> Void
 
+    @State private var isHover: Bool
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private enum `Type` {
@@ -168,6 +169,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        self.isHover = false
     }
 
     /// Create a button with an icon only.
@@ -183,6 +185,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        self.isHover = false
     }
 
     /// Create a button with a text only.
@@ -197,6 +200,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        self.isHover = false
     }
 
     // MARK: Body
@@ -219,8 +223,11 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
+        .buttonStyle(OUDSButtonStyle(isHover: isHover, hierarchy: hierarchy, style: style))
         .accessibilityLabel(accessibilityLabel)
+        .onHover { isHover in
+            self.isHover = isHover
+        }
     }
 
     // swiftlint:enable line_length

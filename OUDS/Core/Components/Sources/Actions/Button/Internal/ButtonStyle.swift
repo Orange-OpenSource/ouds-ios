@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 /// Used to apply the right style on an ``OUDSButton`` according to the `hierarchy`
 /// and the `style`.
@@ -35,10 +36,9 @@ struct OUDSButtonStyle: ButtonStyle {
 
     @Environment(\.isEnabled) private var isEnabled
 
-    @State private var isHover: Bool
-
     // MARK: Stored Properties
 
+    private let isHover: Bool
     private let hierarchy: OUDSButton.Hierarchy
     private let style: OUDSButton.Style
 
@@ -50,10 +50,10 @@ struct OUDSButtonStyle: ButtonStyle {
     /// - Parameters:
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
-    public init(hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
+    public init(isHover: Bool, hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
         self.hierarchy = hierarchy
         self.style = style
-        isHover = false
+        self.isHover = isHover
     }
 
     // MARK: Body
@@ -62,9 +62,6 @@ struct OUDSButtonStyle: ButtonStyle {
         switch style {
         case .default:
             configuration.label
-                .onHover { isHover in
-                    self.isHover = isHover
-                }
                 .modifier(ButtonViewModifier(hierarchy: hierarchy, state: internalState(isPressed: configuration.isPressed)))
         case .loading:
             configuration.label
