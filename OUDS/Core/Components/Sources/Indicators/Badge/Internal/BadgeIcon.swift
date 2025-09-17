@@ -32,6 +32,7 @@ struct BadgeIcon: View {
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .padding(.all, theme.badge.badgeSpaceInset)
+                .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
         }
     }
 
