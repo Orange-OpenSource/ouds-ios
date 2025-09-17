@@ -124,13 +124,20 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
             Chip(layout: layout, selected: selected, interactionState: ChipInteractionState(with: $0))
         }
         .accessibilityAddTraits(selected ? [.isSelected] : [])
-        .accessibilityAddTraits(.isButton)
+        .accessibilityRemoveTraits([.isButton])
         .accessibilityHint(accessibilityHint)
         .accessibilityLabel(accessibilityLabel)
+        .modifier(IsToggleModifier())
     }
 
+    /// If the device OS is > iOS 17, the toggle trait is added thanks to `IsToggleModifier`.
+    /// Thus an hint is automatically added and a custom hint is not needed anymore/
     private var accessibilityHint: String {
-        (selected ? "core_filterchip_hint_selected_a11y" : "core_filterchip_hint_unselected_a11y").localized()
+        if #available(iOS 17.0, *) {
+            ""
+        } else {
+            (selected ? "core_filterchip_hint_selected_a11y" : "core_filterchip_hint_unselected_a11y").localized()
+        }
     }
 
     private var accessibilityLabel: String {
