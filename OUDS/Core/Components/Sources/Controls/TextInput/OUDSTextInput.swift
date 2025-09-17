@@ -289,7 +289,7 @@ public struct OUDSTextInput: View { // TODO: #4066 - Add documentation hyperlink
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
     ///      information about the input field, such as how it will be used., by default is *nil*
-    ///    - helperlink: An optional helper link displayed below or in place of the helper text., by default is *nil*
+    ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - status: The current status of the text input, by default to set *default*
