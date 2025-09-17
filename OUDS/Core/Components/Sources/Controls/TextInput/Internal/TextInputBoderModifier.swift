@@ -2,25 +2,26 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
 import SwiftUI
 
-struct TextInputBoderModifier: ViewModifier {
+struct TextInputBorderModifier: ViewModifier {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let status: OUDSTextInput.Status
     let isOutlined: Bool
     let interactionState: TextInputInteractionState
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -59,17 +60,17 @@ struct TextInputBoderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var cornerRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedCorners ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+        theme.tuning.hasRoundedTextInputs ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
     }
 
     private var size: BorderWidthSemanticToken {
         switch interactionState {
         case .idle:
-            return theme.textInput.textInputBorderWidthDefault
+            theme.textInput.textInputBorderWidthDefault
         case .focused:
-            return theme.textInput.textInputBorderWidthFocus
+            theme.textInput.textInputBorderWidthFocus
         case .hover:
-            return theme.textInput.textInputBorderWidthDefault
+            theme.textInput.textInputBorderWidthDefault
         }
     }
 
@@ -78,29 +79,31 @@ struct TextInputBoderModifier: ViewModifier {
         case .default:
             switch interactionState {
             case .idle:
-                return theme.textInput.textInputColorBorderEnabled
+                theme.textInput.textInputColorBorderEnabled
             case .focused:
-                return theme.textInput.textInputColorBorderFocus
+                theme.textInput.textInputColorBorderFocus
             case .hover:
-                return theme.textInput.textInputColorBorderHover
+                theme.textInput.textInputColorBorderHover
             }
 
         case .error:
             switch interactionState {
             case .idle:
-                return theme.colors.colorActionNegativeEnabled
+                theme.colors.colorActionNegativeEnabled
             case .focused:
-                return theme.colors.colorActionNegativePressed
+                theme.colors.colorActionNegativePressed
             case .hover:
-                return theme.colors.colorActionNegativeHover
+                theme.colors.colorActionNegativeHover
             }
 
         case .loading:
-            return theme.textInput.textInputColorBorderLoading
+            theme.textInput.textInputColorBorderLoading
+
         case .readOnly:
-            return theme.colors.colorBorderMuted
+            theme.colors.colorBorderMuted
+
         case .disabled:
-            return theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled
         }
     }
 
@@ -109,30 +112,28 @@ struct TextInputBoderModifier: ViewModifier {
         case .default:
             switch interactionState {
             case .idle:
-                return theme.textInput.textInputColorBorderEnabled
+                theme.textInput.textInputColorBorderEnabled
             case .focused:
-                return theme.textInput.textInputColorBorderFocus
+                theme.textInput.textInputColorBorderFocus
             case .hover:
-                return theme.textInput.textInputColorBorderHover
+                theme.textInput.textInputColorBorderHover
             }
         case .error:
             switch interactionState {
             case .idle:
-                return theme.colors.colorActionNegativeEnabled
+                theme.colors.colorActionNegativeEnabled
             case .focused:
-                return theme.colors.colorActionNegativePressed
+                theme.colors.colorActionNegativePressed
             case .hover:
-                return theme.colors.colorActionNegativeHover
+                theme.colors.colorActionNegativeHover
             }
         case .loading:
-            return theme.textInput.textInputColorBorderLoading
+            theme.textInput.textInputColorBorderLoading
         case .readOnly:
             // should not appear
-            return theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled
         case .disabled:
-            return theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled
         }
     }
 }
-
-

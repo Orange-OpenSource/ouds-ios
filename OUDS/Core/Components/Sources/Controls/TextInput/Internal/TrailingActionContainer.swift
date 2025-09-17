@@ -21,6 +21,7 @@ struct TrailingActionContainer: View {
     let trailingAction: OUDSTextInput.TrailingAction?
     let status: OUDSTextInput.Status
     let interactionState: TextInputInteractionState
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -47,7 +48,7 @@ struct TrailingActionContainer: View {
                 }
             }
         case .loading:
-            trailingButton(for: .init(icon:  Image(decorative: "ic_heart"), accessibilityLabel: "", action: {}))
+            trailingButton(for: .init(icon: Image(decorative: "ic_heart"), accessibilityLabel: "", action: {}))
         }
     }
 
@@ -56,19 +57,19 @@ struct TrailingActionContainer: View {
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .idle:
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         case .focused:
-            return theme.colors.colorActionNegativePressed
+            theme.colors.colorActionNegativePressed
         case .hover:
-            return theme.colors.colorActionNegativeHover
+            theme.colors.colorActionNegativeHover
         }
     }
 
-    func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
+    private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
         OUDSButton(icon: trailingAction.icon,
                    accessibilityLabel: trailingAction.accessibilityLabel,
                    hierarchy: .minimal,
-                   style: .loading == status ?  .loading : .default,
+                   style: status == .loading ? .loading : .default,
                    action: trailingAction.action)
     }
 }

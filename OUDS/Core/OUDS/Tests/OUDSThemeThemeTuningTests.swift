@@ -12,21 +12,15 @@
 //
 
 import Foundation
+import OUDS
+import Testing
+import TestsUtils
 
-enum TextInputInteractionState {
-    case idle
-    case focused
-    case hover
+/// Some tests on the default theme tuning setup
+struct OUDSThemeThemeTuningTests {
 
-    init(focused: Bool, hover: Bool) {
-        if focused {
-            self = .focused
-        } else {
-            if hover {
-                self = .hover
-            } else {
-                self = .idle
-            }
-        }
+    @Test("The default theme tuning must not have rounded corners")
+    func defaultThemeTuningRoundedCorners() throws {
+        #expect(OUDSTheme.ThemeTuning.default.hasRoundedButtons == false)
     }
 }

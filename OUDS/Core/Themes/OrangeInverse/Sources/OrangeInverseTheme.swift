@@ -58,7 +58,8 @@ import SwiftUI
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// You just need to give a predefined tuning configuration at theme init build the one you need.
+/// You just need to give a predefined tuning configuration at theme init to build the one you need.
+///
 /// To apply the tuning:
 ///
 /// ```swift

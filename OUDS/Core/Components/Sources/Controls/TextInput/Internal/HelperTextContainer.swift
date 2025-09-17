@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
@@ -20,6 +20,7 @@ struct HelperTextContainer: View {
 
     let helperText: String
     let status: OUDSTextInput.Status
+
     @Environment(\.theme) private var theme
 
     // MARK: - Body
@@ -40,11 +41,10 @@ struct HelperTextContainer: View {
             theme.colors.colorContentMuted
         case .error:
             theme.colors.colorContentStatusNegative
-        case  .loading: // should not appear
+        case .loading: // Should not appear
             theme.colors.colorContentMuted
         case .readOnly, .disabled:
             theme.colors.colorActionDisabled
         }
     }
 }
-

@@ -60,7 +60,8 @@ import SwiftUI
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// You just need to give a predefined tuning configuration at theme init build the one you need.
+/// You just need to give a predefined tuning configuration at theme init to build the one you need.
+///
 /// To apply the tuning:
 ///
 /// ```swift
@@ -201,4 +202,12 @@ extension Bundle {
 
     /// The OrangeBusinessTools theme bundle, useful to find resources
     public static let OrangeBusinessToolsTheme = Bundle.OrangeTheme
+}
+
+// MARK: - Extension of Tuning
+
+extension Tuning {
+
+    /// Predefined tuning of Orange theme for "Max it" project
+    public static let OrangeBusinessTools = Tuning(hasRoundedButtons: false, hasRoundedTextInputs: true)
 }

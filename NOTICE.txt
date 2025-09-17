@@ -36,9 +36,9 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_search.imageset/ic_search.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
 
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg
@@ -67,9 +67,9 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_search.imageset/ic_search.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
 
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg
@@ -96,8 +96,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
 
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg

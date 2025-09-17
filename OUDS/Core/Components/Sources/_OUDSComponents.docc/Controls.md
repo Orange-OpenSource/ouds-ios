@@ -707,3 +707,41 @@ The library proposes a chip picker to make easily filtering with two kinds of se
     // Here the picker with title, selection and data
     OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
  ```
+
+### Text input
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A text input component in light and dark mode with Orange theme](component_textInput_Orange)
+    }
+    @Tab("Orange Inverse") {
+        ![A text input component in light and dark mode with Orange Inverse theme](component_textInput_OrangeInverse)
+    }
+    @Tab("Orange Business Tools") {
+        ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A text input component in light and dark mode with Sosh theme](component_textInput_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
+    }
+}
+
+The library provides useful components for forms like ``OUDSTextInput`` to let user write text data and be helped if needed.
+Such components can have or not a leading icon or a trailing action with or without placeholders.
+
+```swift
+    // The text to display and edit
+    @State var text: String = ""
+
+    // Empty text and no placeholder
+    OUDSTextInput(label: "Label", text: $text)
+
+    // Add a leading icon for more context
+    OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), leadingIcon: Image("ic_heart"))
+
+    // Add a trailing button for additional action
+    let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+    OUDSTextInput(label: "Label", text: $text, trailingAction: trailingAction)
+```

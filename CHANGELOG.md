@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
 - Predefined theme tuning for Orange Business and Orange France
 - TextInput component (Orange-OpenSource/ouds-ios#406)
+- `Text input` component (Orange-OpenSource/ouds-ios#406)
 
 ### Changed
 

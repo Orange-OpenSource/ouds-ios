@@ -2,19 +2,19 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensSemantic
 import SwiftUI
 
-struct Inputtext: View {
+struct InputText: View {
 
     // MARK: - Stored properties
 
@@ -55,15 +55,15 @@ struct Inputtext: View {
     private var placeholderColor: MultipleColorSemanticTokens {
         switch status {
         case .default:
-            return theme.colors.colorContentMuted
+            theme.colors.colorContentMuted
         case .error:
-            return placeholderErrorColor
+            placeholderErrorColor
         case .loading:
-            return theme.colors.colorContentMuted
+            theme.colors.colorContentMuted
         case .readOnly:
-            return theme.colors.colorContentMuted
+            theme.colors.colorContentMuted
         case .disabled:
-            return theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled
         }
     }
 
@@ -71,14 +71,14 @@ struct Inputtext: View {
         if labelAsPlaceholder {
             switch interactionState {
             case .idle:
-                return theme.colors.colorActionNegativeEnabled
+                theme.colors.colorActionNegativeEnabled
             case .focused:
-                return theme.colors.colorActionNegativeFocus
+                theme.colors.colorActionNegativeFocus
             case .hover:
-                return theme.colors.colorActionNegativeHover
+                theme.colors.colorActionNegativeHover
             }
         } else {
-            return theme.colors.colorContentMuted
+            theme.colors.colorContentMuted
         }
     }
 }
