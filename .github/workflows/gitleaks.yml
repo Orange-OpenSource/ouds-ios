@@ -36,6 +36,9 @@ on:
     branches-ignore:
       - main      
 
+permissions:
+  contents: read
+
 jobs:
   scan:
     name: gitleaks

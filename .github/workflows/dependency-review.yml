@@ -1,3 +1,18 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Generated thanks to https://app.stepsecurity.io/securerepo
+
 # Dependency Review Action
 #
 # This Action will scan dependency manifest files that change as part of a Pull Request,
@@ -6,6 +21,7 @@
 # PRs introducing known-vulnerable packages will be blocked from merging.
 #
 # Source repository: https://github.com/actions/dependency-review-action
+
 name: 'Dependency Review'
 on: [pull_request]
 

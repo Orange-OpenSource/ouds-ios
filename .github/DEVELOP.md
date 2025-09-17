@@ -462,15 +462,20 @@ To update dependencies of the project, supossing *Renovate* for example provides
 
 ### GitHub Action
 
-We use *GitHub Actions* so as to define a workflow with some actions to build and test the library.
+We use *GitHub Actions* so as to define several workflows with some actions to build, test, check, documentation and audit the library.
+
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
+
 Workflows are the following:
-- [build and run unit tests](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
-- [check if there are secrets leaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml).
-- [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml)
-- [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml)
-- [run linter](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml)
-- [generate documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml)
+- [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
+- [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
+- [codeql](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to automated security checks
+- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
+- [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
+- [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
+- [swiftlint](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
+- [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
