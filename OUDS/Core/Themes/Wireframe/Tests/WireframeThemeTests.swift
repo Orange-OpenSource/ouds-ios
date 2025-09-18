@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 @testable import OUDSThemesWireframe
 import Testing
 
@@ -29,7 +30,7 @@ struct WireframeThemeTests {
 
     @Test func defaultTuningOfWireframeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning.hasRoundedCorners == false)
+        #expect(tuning == Tuning.default)
     }
 
     // MARK: - Tests - Semantic tokens providers

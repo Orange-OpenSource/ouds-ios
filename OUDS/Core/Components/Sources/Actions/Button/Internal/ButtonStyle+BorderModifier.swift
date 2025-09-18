@@ -60,7 +60,7 @@ struct ButtonBorderModifier: ViewModifier {
     // MARK: Radius
 
     private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedCorners ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
+        theme.tuning.hasRoundedButtons ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
     }
 
     // MARK: Default hierarchy

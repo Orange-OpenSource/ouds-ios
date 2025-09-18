@@ -61,19 +61,22 @@ import SwiftUI
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// Only few elements can be tuned:
-///  - rounded corners for some components like buttons
-///
+/// You just need to give a predefined tuning configuration at theme init build the one you need.
 /// To apply the tuning:
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedCorners: true)
+///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeBusinessToolsTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedCorners: true))
+///     let theme = OrangeBusinessToolsTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+///
+///     // Or apply predefined tunings
+///     let orangeFranceTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeFrance)
+///     let orangeBusinessTheme = OrangeBusinessToolsTheme(tuning: Tuning.OrangeBusiness)
+///     let maxitTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
 /// ```
 ///
 /// - Since: 0.17.0
