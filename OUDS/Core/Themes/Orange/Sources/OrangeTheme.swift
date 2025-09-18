@@ -58,28 +58,21 @@ import OUDSTokensSemantic
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// Only few elements can be tuned:
-///  - rounded corners for some components like buttons
-///
+/// You just need to give a predefined tuning configuration at theme init build the one you need.
 /// To apply the tuning:
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedCorners: true)
+///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
-/// ```
+///     let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
 ///
-/// ## Max it
-///
-/// In the Orange universe there is the "Max it" project, included in Orange brand, and applying the Orange theme but with some
-/// adjusements. Thus there is an available predefined tuning to use the Orange theme from Max it.
-///
-/// To apply it:
-/// ```swift
+///     // Or apply predefined tunings
+///     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+///     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
 ///     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 /// ```
 ///
@@ -261,14 +254,6 @@ extension Bundle {
 
     /// The Orange theme bundle, useful to find resources
     public static let OrangeTheme = Bundle.module
-}
-
-// MARK: - Extensin of Tuning
-
-extension Tuning {
-
-    /// Predefined tuning of Orange theme for "Max it" project
-    public static let MaxIt = Tuning(hasRoundedCorners: true)
 }
 
 // swiftlint:enable function_body_length

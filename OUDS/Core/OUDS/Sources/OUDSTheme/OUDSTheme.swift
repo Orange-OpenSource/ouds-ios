@@ -14,11 +14,6 @@
 import Foundation
 import OUDSTokensSemantic
 
-// MARK: - Type aliases
-
-/// Tuning is obviously theme tuning
-public typealias Tuning = OUDSTheme.ThemeTuning
-
 // MARK: - OUDS Theme
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
@@ -151,7 +146,7 @@ open class OUDSTheme: @unchecked Sendable {
     public let resourcesBundle: Bundle
 
     /// Some tuning for the theme
-    public let tuning: ThemeTuning
+    public let tuning: Tuning
 
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
@@ -223,7 +218,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
                 fontFamily: FontFamilySemanticToken? = nil,
-                tuning: ThemeTuning = ThemeTuning.default)
+                tuning: Tuning = Tuning.default)
     {
 
         // Save semantic tokens providers
@@ -268,30 +263,4 @@ open class OUDSTheme: @unchecked Sendable {
     // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
-
-    // MARK: - Theme tuning
-
-    /// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
-    /// This allows for example to have a theme defined by the Brand but to apply some customization.
-    ///
-    /// - Since: 0.19.0
-    public struct ThemeTuning: @unchecked Sendable {
-
-        // MARK: Tuned properties
-
-        /// If components like button must have always rounded corners or not
-        public let hasRoundedCorners: Bool
-
-        /// Defines the tuning for a theme
-        ///
-        /// - Parameter hasRoundedCorners: Always rounded corners on tunable components or not
-        public init(hasRoundedCorners: Bool = false) {
-            self.hasRoundedCorners = hasRoundedCorners
-        }
-
-        // MARK: Pretuned configurations
-
-        /// By default a theme does not have rounded corners
-        public static let `default` = ThemeTuning()
-    }
 }

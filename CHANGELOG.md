@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...develop)
 
+### Added
+
+- Predefined theme tuning for Orange Business and Orange France
+
 ### Changed
 
 - Swift package `SwiftLintPlugins` from v0.60.0 to v0.60.1

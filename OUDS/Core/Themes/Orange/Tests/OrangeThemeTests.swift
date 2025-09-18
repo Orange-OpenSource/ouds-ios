@@ -30,19 +30,7 @@ struct OrangeThemeTests {
 
     @Test func defaultTuningOfOrangeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning.hasRoundedCorners == false)
-    }
-
-    @Test func tuningOfOrangeTheme() throws {
-        let tunedTheme = OrangeTheme(tuning: Tuning(hasRoundedCorners: true))
-        #expect(tunedTheme.tuning.hasRoundedCorners == true)
-    }
-
-    // MARK: - Tests - "Max it" tuning
-
-    @Test func maxitTuningWithinOrangeTheme() throws {
-        let maxitTunedTheme = OrangeTheme(tuning: Tuning.MaxIt)
-        #expect(maxitTunedTheme.tuning.hasRoundedCorners == true)
+        #expect(tuning == Tuning.default)
     }
 
     // MARK: - Tests - Semantic tokens providers
