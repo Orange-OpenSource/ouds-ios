@@ -169,7 +169,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
-        self.isHover = false
+        isHover = false
     }
 
     /// Create a button with an icon only.
@@ -185,7 +185,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
-        self.isHover = false
+        isHover = false
     }
 
     /// Create a button with a text only.
@@ -200,7 +200,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
-        self.isHover = false
+        isHover = false
     }
 
     // MARK: Body
