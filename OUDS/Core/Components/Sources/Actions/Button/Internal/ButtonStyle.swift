@@ -18,23 +18,21 @@ import SwiftUI
 /// and the `style`.
 ///
 /// Four hierarchies are proposed:
-/// - default: Default buttons are used for actions which are not mandatory or essential for the user.
+/// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
-/// - strong: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
+/// - **strong**: The strong "call for action" on the page should be singular and prominent, limited to one per view.
 /// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
 ///
-/// - minimal: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
+/// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
-/// - negative: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
+/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
 /// resulting in the opening of a confirmation dialog.
 ///
 /// Two styles are available:
-/// - normal: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
-/// - loading: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
+/// - **normal**: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
+/// - **loading**: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 struct OUDSButtonStyle: ButtonStyle {
-
-    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Stored Properties
 
@@ -42,12 +40,15 @@ struct OUDSButtonStyle: ButtonStyle {
     private let hierarchy: OUDSButton.Hierarchy
     private let style: OUDSButton.Style
 
+    @Environment(\.isEnabled) private var isEnabled
+
     // MARK: Initializer
 
     /// Initialize the `OUDSButtonStyle` for the `hierarchy`
-    /// in the `state` of the `OUDSButton`.
+    /// and the `style` of the `OUDSButton`.
     ///
     /// - Parameters:
+    ///    - isHover: Flag is button is hovered (e.g. by mouse)
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     public init(isHover: Bool, hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
