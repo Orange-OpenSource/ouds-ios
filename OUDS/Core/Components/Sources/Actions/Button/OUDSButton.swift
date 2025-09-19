@@ -156,7 +156,7 @@ public struct OUDSButton: View {
 
     // MARK: Initializers
 
-    /// Create a button with text and icon.
+    /// Creates a button with text and icon.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -169,10 +169,11 @@ public struct OUDSButton: View {
         self.appearance = appearance
         self.style = style
         self.action = action
+
         isHover = false
     }
 
-    /// Create a button with an icon only.
+    /// Creates a button with an icon only.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon

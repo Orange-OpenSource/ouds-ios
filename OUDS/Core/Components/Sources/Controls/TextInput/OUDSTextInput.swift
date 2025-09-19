@@ -98,6 +98,12 @@ import SwiftUI
 /// - **Helper link**: If the helper text is not sufficient, it's possible to offer the user
 /// an additional help link (the link can be external or open a modal).
 ///
+/// ## Accessibility considerations
+///
+/// By default no haptics are done by the component for the trailing action.
+/// However you should think about cases wher you will have to make the devices vibrates.
+/// You can refer to the [Human Interface Guidelines of Apple](https://developer.apple.com/design/human-interface-guidelines/playing-haptics).
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -158,7 +164,7 @@ import SwiftUI
 ///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 0.19.0
-public struct OUDSTextInput: View { // TODO: #4066 - Add documentation hyperlink in doc above
+public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
 
@@ -178,22 +184,31 @@ public struct OUDSTextInput: View { // TODO: #4066 - Add documentation hyperlink
     // MARK: - Trailing Action
 
     /// Used to describe the trailing action of the text input
+    ///
+    /// A trailing action contains an image which must bring meanings.
+    /// This image should not be vocalized.
+    /// The trailing action contains also an accessibility action hint used for the button to describe the action.
+    /// The action can be any action.
+    ///
+    /// For iOS 17+ it is possible to define a sensory feeback for the button.
     public struct TrailingAction {
+
         let icon: Image
-        let accessibilityLabel: String
+        let actionHint: String
         let action: () -> Void
 
         /// Create a trailing action.
+        ///
         /// - Parameters:
         ///   - icon: The icon set in the ``OUDSButton``
-        ///   - accessibilityLabel: A string that describes the purpose of the button's `action`
+        ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
-            if accessibilityLabel.isEmpty {
-                OL.warning("The accessibility label for the text input trailing action should not be empty, think about your disabled users!")
+        public init(icon: Image, actionHint: String, action: @escaping () -> Void) {
+            if actionHint.isEmpty {
+                OL.warning("The accessibility action hint for the text input trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
-            self.accessibilityLabel = accessibilityLabel
+            self.actionHint = actionHint
             self.action = action
         }
     }

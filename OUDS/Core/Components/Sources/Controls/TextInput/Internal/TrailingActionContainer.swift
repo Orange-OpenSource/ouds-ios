@@ -48,7 +48,7 @@ struct TrailingActionContainer: View {
                 }
             }
         case .loading:
-            trailingButton(for: .init(icon: Image(decorative: "ic_heart"), accessibilityLabel: "", action: {}))
+            trailingButton(for: .init(icon: Image(decorative: "ic_heart"), actionHint: "", action: {}))
         }
     }
 
@@ -67,7 +67,7 @@ struct TrailingActionContainer: View {
 
     private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
         OUDSButton(icon: trailingAction.icon,
-                   accessibilityLabel: trailingAction.accessibilityLabel,
+                   accessibilityLabel: trailingAction.actionHint,
                    hierarchy: .minimal,
                    style: status == .loading ? .loading : .default,
                    action: trailingAction.action)

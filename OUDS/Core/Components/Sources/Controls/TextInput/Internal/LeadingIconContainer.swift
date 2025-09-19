@@ -34,6 +34,7 @@ struct LeadingIconContainer: View {
             .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
             .toFlip(flip)
+            .accessibilityHidden(true)
     }
 
     // MARK: - Helper
