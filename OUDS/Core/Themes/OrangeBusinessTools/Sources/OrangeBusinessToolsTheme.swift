@@ -203,11 +203,3 @@ extension Bundle {
     /// The OrangeBusinessTools theme bundle, useful to find resources
     public static let OrangeBusinessToolsTheme = Bundle.OrangeTheme
 }
-
-// MARK: - Extension of Tuning
-
-extension Tuning {
-
-    /// Predefined tuning of Orange theme for "Max it" project
-    public static let OrangeBusinessTools = Tuning(hasRoundedButtons: false, hasRoundedTextInputs: true)
-}
