@@ -20,6 +20,7 @@ struct TagBackgroundModifier: ViewModifier {
 
     let hierarchy: OUDSTag.Hierarchy
     let status: OUDSTag.Status
+    let isLoader: Bool
 
     @Environment(\.theme) private var theme
 
@@ -32,11 +33,15 @@ struct TagBackgroundModifier: ViewModifier {
     // MARK: Helpers
 
     private var background: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            emphasizedBackground
-        case .muted:
-            mutedBackground
+        if isLoader {
+            return theme.colors.colorSurfaceStatusNeutralMuted
+        } else {
+            switch hierarchy {
+            case .emphasized:
+                return emphasizedBackground
+            case .muted:
+                return mutedBackground
+            }
         }
     }
 

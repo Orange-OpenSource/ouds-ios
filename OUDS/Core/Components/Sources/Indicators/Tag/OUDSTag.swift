@@ -134,7 +134,7 @@ import SwiftUI
 ///
 /// ![A tag component in light and dark mode with Wireframe theme](component_tag_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.18.0
 public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc above
 
@@ -156,6 +156,15 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
             switch self {
             case let .textAndIcon(label, _, _), let .textAndLoader(label):
                 label
+            }
+        }
+
+        var isLoader: Bool {
+            switch self {
+            case .textAndLoader:
+                return true
+            default:
+                return false
             }
         }
     }
@@ -270,24 +279,15 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
 
     public var body: some View {
         Label {
-            TagLabel(label: type.label, hierarchy: hierarchy, status: status, size: size)
+            TagLabel(type: type, hierarchy: hierarchy, status: status, size: size)
         } icon: {
             TagIcon(type: type, hierarchy: hierarchy, status: status, size: size)
         }
-        .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size, hasIcon: hasIcon))
+        .labelStyle(TagLabelStyle(hierarchy: hierarchy, status: status, shape: shape, size: size, type: type))
         .accessibilityLabel(accessibilityLabel)
     }
 
     // MARK: - Helpers
-
-    private var hasIcon: Bool {
-        switch type {
-        case let .textAndIcon(_, icon, _):
-            icon != nil
-        default:
-            true
-        }
-    }
 
     /// Forges a string to vocalize with *Voice Over* describing the tag dependign to if loading state or not.
     private var accessibilityLabel: String {

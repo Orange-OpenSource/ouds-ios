@@ -35,7 +35,7 @@ struct TagIcon: View {
                     .toFlip(flipIcon)
             }
         case .textAndLoader:
-            TagLoader(hierarchy: hierarchy, status: status, size: size)
+            TagLoader(size: size)
         }
     }
 }
@@ -46,8 +46,7 @@ struct TagLoader: View {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+
     let size: OUDSTag.Size
 
     @Environment(\.theme) private var theme
@@ -56,7 +55,7 @@ struct TagLoader: View {
     // MARK: Body
 
     var body: some View {
-        LoaderIndicator(color: color.color(for: colorScheme))
+        LoaderIndicator(color: theme.colors.colorContentDefault.color(for: colorScheme))
             .padding(.all, padding)
     }
 
