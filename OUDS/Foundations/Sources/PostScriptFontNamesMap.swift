@@ -59,7 +59,11 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 
 // MARK: - Values
 
-/// Contains the Apple PostScript name of a font given a font family name and a font weight
+/// Contains the Apple PostScript name of a font given a font family name and a font weight/
+/// Such values have been picked from the Apple Font Book.
+/// If you use your own fonts, be sure their PostScript name:
+/// - do not collide with one the the values defined here (depending to tokens)
+/// - do not collide with one of the Apple available fonts (in iOS side)
 public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
@@ -105,6 +109,8 @@ public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Helvetica Neue", Font.Weight.medium): "HelveticaNeue-Medium",
         PSFNMK("Helvetica Neue", Font.Weight.semibold): "HelveticaNeue-Semibold",
         PSFNMK("Helvetica Neue", Font.Weight.bold): "HelveticaNeue-Bold",
+        // NOTE: "Helvetica Neue 75" in Orange Brand TTF has "HelveticaNeue-Bold" PostScript Name
+        // ┬─┬ ︵ /(.□. \）
 
         // MARK: Sosh
 

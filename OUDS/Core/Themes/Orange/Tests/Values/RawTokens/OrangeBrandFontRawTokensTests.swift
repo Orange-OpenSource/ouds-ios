@@ -29,6 +29,6 @@ struct OrangeBrandFontRawTokensTests {
     }
 
     @Test func orangeBrandFontRawTokenFontFamilyBrandTV() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrandDefault == "Helvetica Neue LT")
+        #expect(OrangeBrandFontRawTokens.fontFamilyBrandTv == "Helvetica Neue LT")
     }
 }

@@ -22,7 +22,7 @@ struct PostScriptFontNamesMapTests {
 
     @Test
     func arialRegular() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Arial", Font.Weight.regular)] == "Arial")
+        #expect(kApplePostScriptFontNames[PSFNMK("Arial", Font.Weight.regular)] == "ArialMT")
     }
 
     @Test
@@ -91,7 +91,7 @@ struct PostScriptFontNamesMapTests {
 
     @Test
     func sfProHeavy() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("SF Pro", Font.Weight.ultraLight)] == "SFPro-Heavy")
+        #expect(kApplePostScriptFontNames[PSFNMK("SF Pro", Font.Weight.heavy)] == "SFPro-Heavy")
     }
 
     @Test
@@ -196,7 +196,7 @@ struct PostScriptFontNamesMapTests {
 
     @Test
     func chalkboardSELight() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.black)] == "ChalkboardSE-Light")
+        #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.light)] == "ChalkboardSE-Light")
     }
 
     @Test

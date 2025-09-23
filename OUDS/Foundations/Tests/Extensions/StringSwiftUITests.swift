@@ -90,7 +90,7 @@ struct StringSwiftUITests {
     func fontNameInPostScriptForCourrierNew() throws {
         var result: String
 
-        result = "Courrier New".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        result = "Courier New".fontNameInPostScript(using: "\(Font.Weight.bold)")
         #expect(result == "CourierNewPS-BoldMT", "Current value is '\(result)'")
     }
 
