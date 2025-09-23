@@ -94,6 +94,21 @@ Some tuning object exists.
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
 
+## Typography
+
+The Orange theme uses *Helvetica Neue* typography. This font is already available through iOS.
+It is possible to use another typography, by the ones recommended are the ones defined in tokens.
+
+```swift
+    // The three following instanciations are the same
+    let orangeTheme = OrangeInverseTheme()
+    let orangeTheme = OrangeInverseTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
+    let orangeTheme = OrangeInverseTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+
+    // This instanciation won't work as the font family is not recognised
+    let orangeTheme = OrangeInverseTheme(fontFamily: "Helvetica Neue")
+```
+
 ## How to enrich the theme
 
 You cannot derivate the *Orange inverse* theme.
