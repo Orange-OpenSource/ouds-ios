@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right background color associated to the hierarchy and style
+/// Used to apply the right background color associated to the appearance and style
 struct ButtonBackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -24,7 +24,7 @@ struct ButtonBackgroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButton.Hierarchy
+    let appearance: OUDSButton.Appearance
     let state: ButtonInternalState
 
     // MARK: Body
@@ -55,7 +55,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens? {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultEnabled : theme.button.buttonColorBgDefaultEnabled
         case .strong:
@@ -70,7 +70,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultHover : theme.button.buttonColorBgDefaultHover
         case .strong:
@@ -85,7 +85,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultPressed : theme.button.buttonColorBgDefaultPressed
         case .strong:
@@ -100,7 +100,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     }
 
     private var loadingColor: MultipleColorSemanticTokens? {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultLoading : theme.button.buttonColorBgDefaultLoading
         case .strong:
@@ -115,7 +115,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     }
 
     private var disabledColor: MultipleColorSemanticTokens? {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultDisabled : theme.button.buttonColorBgDefaultDisabled
         case .strong:
