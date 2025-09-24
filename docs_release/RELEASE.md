@@ -14,8 +14,8 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 > [!TIP]
 > A release candidate can be done on the develop branch. 
-> The aim is to prove a kind of pre-release, not an enough stable one,
-> with its dedicated tag, for the next incoming real release. It is usefull for some suers and with an incremental approach.
+> The aim is to provide a kind of pre-release, not an enough stable one,
+> with its dedicated tag, for the next incoming real release. It is usefull for some users and with an incremental approach.
 
 The steps are quite simple:
 - update the SBOM
