@@ -14,8 +14,8 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 > [!TIP]
 > A release candidate can be done on the develop branch. 
-> The aim is to prove a kind of pre-release, not an enough stable one,
-> with its dedicated tag, for the next incoming real release. It is usefull for some suers and with an incremental approach.
+> The aim is to provide a kind of pre-release, not an enough stable one,
+> with its dedicated tag, for the next incoming real release. It is usefull for some users and with an incremental approach.
 
 The steps are quite simple:
 - update the SBOM
@@ -54,8 +54,8 @@ The steps are quite simple:
     bundle exec fastlane update_sbom
     ```
 
-    > [!IMPORTANT]
-    > Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
+> [!IMPORTANT]
+> Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
 
     - Update also the displayed versions of themes and components
 

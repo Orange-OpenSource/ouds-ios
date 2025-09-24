@@ -80,6 +80,26 @@ struct SomeView: View {
 
 This theme embeds and registers the fonts for the Orange Business Tools theme, you just need to use the theme object as is.
 
+## Tunable theme
+
+The theme can be tuned with `Tuning` object to give at init.
+Some tuning object exists.
+
+```swift
+    // Define your theme tuning
+    let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
+
+    // Apply it to your theme
+    let theme = OrangeTheme(tuning: tuning)
+    // Or in one line
+    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+
+    // Or apply predefined tunings
+    let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+    let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+    let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
+```
+
 ## How to enrich the theme
 
 You cannot derivate the *Orange Business Tools* theme.

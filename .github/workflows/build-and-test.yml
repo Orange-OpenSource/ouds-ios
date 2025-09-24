@@ -39,20 +39,23 @@ on:
       - develop
       - '*'        
 
+permissions:
+  contents: read
+
 jobs:
   # Build the library
   build:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Set up Xcode 16.4.0
         run: |
           sudo xcode-select -s /Applications/Xcode_16.4.0.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@0481980f17b760ef6bca5e8c55809102a0af1e5a # v1.263.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.3'
 
@@ -69,14 +72,14 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Set up Xcode 16.4.0
         run: |
           sudo xcode-select -s /Applications/Xcode_16.4.0.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@0481980f17b760ef6bca5e8c55809102a0af1e5a # v1.263.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.3'
 

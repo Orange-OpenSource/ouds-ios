@@ -70,17 +70,9 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded button behavior, set to true the  `oudsRoundedButton` environment variable
-/// at the root level of the view hierarchy (i.e. can be applied on the `OUDSThemeableView`),
-/// to be sure all buttons in the application are rounded.
-///
-/// ```swift
-///     // Add themeable view to your app root view to use the OrangeTheme
-///     OUDSThemeableView(theme: OrangeTheme()) {
-///         YourRootView() // With some views with Buttons
-///     }
-///     .environment(\.oudsRoundedButton, true)
-/// ```
+/// To activate the rounded button behavior, set to true the  `hasRoundedButtons` values of the `Tuning` object
+/// in your theme configuration (if the theme exposes this property at init).
+/// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
 /// ## Colored surface
 ///
@@ -130,6 +122,7 @@ public struct OUDSButton: View {
     private let style: Style
     private let action: () -> Void
 
+    @State private var isHover: Bool
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private enum `Type` {
@@ -176,6 +169,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        isHover = false
     }
 
     /// Create a button with an icon only.
@@ -191,6 +185,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        isHover = false
     }
 
     /// Create a button with a text only.
@@ -205,6 +200,7 @@ public struct OUDSButton: View {
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
+        isHover = false
     }
 
     // MARK: Body
@@ -227,8 +223,11 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
+        .buttonStyle(OUDSButtonStyle(isHover: isHover, hierarchy: hierarchy, style: style))
         .accessibilityLabel(accessibilityLabel)
+        .onHover { isHover in
+            self.isHover = isHover
+        }
     }
 
     // swiftlint:enable line_length

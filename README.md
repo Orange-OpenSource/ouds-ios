@@ -31,6 +31,8 @@
 &nbsp;
 <a href="https://www.bestpractices.dev/projects/10674" title="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/10674/badge" alt="OpenSSF Best Practices"></a>
 &nbsp;
+<a href="https://scorecard.dev/viewer/?uri=github.com/Orange-OpenSource/ouds-ios" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/Orange-OpenSource/ouds-ios/badge" alt="OpenSSF Scorecard"></a>
+&nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 </p>
 

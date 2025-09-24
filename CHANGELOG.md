@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
+
+### Added
+
+- Predefined theme tunings for Orange Business and Orange France
+
+### Changed
+
+- Update `SwiftFormat` Swift Package from v0.57.2 to v0.58.0
+- Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
+- Swift package `SwiftLintPlugins` from v0.60.0 to v0.60.1
+- Update various GitHub Actions workflows dependencies
+- Tuning of themes (like rounded corners) (Orange-OpenSource/ouds-ios#951)
+
+### Fixed
+
+- Button in minimal hierarchy does not handle the hover state (Orange-OpenSource/ouds-ios#942)
+- Vocalisation of badge with icons (Orange-OpenSource/ouds-ios#956)
+- Badge component does not have bigger sizes if text sizes is increased (Orange-OpenSource#844)
+
 ## [0.18.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.17.0...0.18.0) - 2025-09-05
 
 ### Added

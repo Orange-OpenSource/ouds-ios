@@ -60,6 +60,57 @@ OUDSThemeableView(theme: YourCustomTheme()) {
 }
 ```
 
+## Theme tuning
+
+### Tunable themes or not
+
+Some themes like `OrangeTheme`, `OrangeInverse` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
+or affiliates constraints.
+However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned
+
+### Tuned values
+
+There are few elements which can be tuned. Some tunings have also been defined.
+
+Tunable elements                       | Default values | Orange France | Orange Business | Max It   |                          
+-------------------------------------- | -------------- | ------------- | --------------- | -------- |
+rounded corners for buttons            |     false      |    false      |      false      |   true   |
+rounded corners for text inputs        |     false      |    false      |      true       |   true   |
+
+### Tuning usages
+
+The tuning to apply must be done at theme init.
+
+```swift
+    // Define your theme tuning with for example only rounded corners for buttons
+    let tuning = Tuning(hasRoundedButtons: true)
+
+    // Apply it to your theme
+    let theme = OrangeTheme(tuning: tuning)
+    // Or in one line
+    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true))
+
+    // Or use predefined tuning
+    let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+    let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+    let maxItTheme = OrangeTheme(tuning: Tuning.MaxIt)
+```
+
+### "Max it" case
+
+A predefined tuning configuration is also available for "Max it":
+
+```swift
+    let theme = OrangeTheme(tuning: Tuning.MaxIt)
+```
+
+It applies the following settings:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners                | true  
+
+
 ## Define a custom theme if needed
 
 You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets) or `OUDSTheme`.

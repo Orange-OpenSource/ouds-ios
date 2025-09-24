@@ -11,6 +11,8 @@
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
   * [About commits](#about-commits)
   * [About release note and changelog](#about-release-note-and-changelog)
+  * [Integration of tokenator updates](#integration-of-tokenator-updates)
+  * [Verifying commits cryptographic signatures](#verifying-commits-cryptographic-signatures)
 - [Use of Gitleaks](#use-of-gitleaks)
 - [Linter](#linter)
 - [Formater](#formater)
@@ -272,6 +274,41 @@ chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#2
 Tokens library v0.4.1
 ``` 
 
+#### Verifying commits cryptographic signatures
+
+Some core maintainers in the project use GPG so cryptographically sign their commits.
+You can check the commits status with the commands below:
+```shell
+# Of course we suppose you are a bit used to GPG and have it installed
+# Update your keychain of GPG keys and getthe online the ones for the maintainers
+# For example GPG key identifier of @pylapp is "8030BBE06B4F48F95BD082DA7D5AE4DCFF3A3435"
+
+# This command can take a lot of time, maybe try the next one
+gpg --refresh-keys
+gpg --keyserver https://key.openpgp.org --recv-keys 8030BBE06B4F48F95BD082DA7D5AE4DCFF3A3435
+
+# If none of this command works, contact the maintainers to get their public key to add in your keychain and run
+gpg --import path/to/asc/key/file
+
+# Then check if the key is in your keychain
+gpg --list-keys --keyid-format=short
+
+# If you run "gpg --check-sigs" you may notice they keys are not signed (unknown trust), that's not unexpected
+
+# Then run the command to verify the commit status using for example its hash
+git verify-commit the-commit-hash
+# Or get more logs
+git log --show-signature
+```
+
+In addition, GitHub also provides a feature of commits veritification named [Vigilant mode](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits).
+In few words, if the commit was signed with the committer's verified signature, the commit is *verified*.
+
+> [!CAUTION]
+> Some maintainers do not use GPG or SSH signing for commits, so the documentation commits can be seen as "unverified"
+> and some commits can have empty status because GitHub Vigilant Mode is not enabled for everyone
+> and some commits can be unsigned.
+
 ### About release note and changelog
 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
@@ -425,15 +462,20 @@ To update dependencies of the project, supossing *Renovate* for example provides
 
 ### GitHub Action
 
-We use *GitHub Actions* so as to define a workflow with some actions to build and test the library.
+We use *GitHub Actions* so as to define several workflows with some actions to build, test, check, documentation and audit the library.
+
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
+
 Workflows are the following:
-- [build and run unit tests](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
-- [check if there are secrets leaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml).
-- [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml)
-- [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml)
-- [run linter](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml)
-- [generate documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml)
+- [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
+- [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
+- [codeql](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to automated security checks
+- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
+- [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
+- [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
+- [swiftlint](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
+- [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).

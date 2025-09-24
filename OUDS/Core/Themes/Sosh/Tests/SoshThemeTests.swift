@@ -11,18 +11,26 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 @testable import OUDSThemesSosh
 import Testing
 
 // swiftlint:disable force_cast
 
-/// Check if the themes ahs the default tokens providers with the expected types.
+/// Check if the theme has the default configuration and tokens providers with the expected types.
 struct SoshThemeTests {
 
     private var theme: SoshTheme
 
     init() {
         theme = SoshTheme()
+    }
+
+    // MARK: - Tests - Theme tuning
+
+    @Test func defaultTuningOfSoshTheme() throws {
+        let tuning = theme.tuning
+        #expect(tuning == Tuning.default)
     }
 
     // MARK: - Tests - Semantic tokens providers

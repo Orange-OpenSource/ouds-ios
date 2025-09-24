@@ -27,6 +27,13 @@ import SwiftUI
 /// This inverse theme is based on the Orange theme by definition in Figma side, and is dedicated to some B2B or very specific uses cases.
 /// In fact some products may need to use some colors palette because of very specific uses cases (dark environement, uses always on their screens, mobilities, etc.).
 ///
+/// To get the theme:
+/// ```swift
+///     import OUDS
+///
+///     @Environment(\.theme) var theme
+/// ```
+///
 /// ## Integration
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
@@ -48,11 +55,25 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// Then get it:
-/// ```swift
-///     import OUDS
+/// ## Theme tuning
 ///
-///     @Environment(\.theme) var theme
+/// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
+/// You just need to give a predefined tuning configuration at theme init build the one you need.
+/// To apply the tuning:
+///
+/// ```swift
+///     // Define your theme tuning
+///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
+///
+///     // Apply it to your theme
+///     let theme = OrangeInverseTheme(tuning: tuning)
+///     // Or in one line
+///     let theme = OrangeInverseTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+///
+///     // Or apply predefined tunings
+///     let orangeFranceTheme = OrangeInverseTheme(tuning: Tuning.OrangeFrance)
+///     let orangeBusinessTheme = OrangeInverseTheme(tuning: Tuning.OrangeBusiness)
+///     let maxitTheme = OrangeInverseTheme(tuning: Tuning.MaxIt)
 /// ```
 ///
 /// - Since: 0.17.0
@@ -63,8 +84,10 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
-    /// Constructor of the `OrangeInverse theme with its own providers of tokens.
-    public init() {
+    /// Constructor of the `OrangeInverse` theme with its own providers of tokens.
+    ///
+    /// - Parameter tuning: A set of configurations to tune a theme, by default `Tuning.default`
+    public init(tuning: Tuning = Tuning.default) {
         let borders = OrangeInverseThemeBorderSemanticTokensProvider()
         let colors = OrangeInverseThemeColorSemanticTokensProvider()
         let colorModes = OrangeInverseThemeColorModeSemanticTokensProvider(colors: colors)
@@ -125,7 +148,8 @@ public final class OrangeInverseTheme: OUDSTheme, @unchecked Sendable {
                    tagInput: tagInput,
                    textArea: textArea,
                    textInput: textInput,
-                   resourcesBundle: Bundle.OrangeInverseTheme)
+                   resourcesBundle: Bundle.OrangeInverseTheme,
+                   tuning: tuning)
     }
 
     deinit {}

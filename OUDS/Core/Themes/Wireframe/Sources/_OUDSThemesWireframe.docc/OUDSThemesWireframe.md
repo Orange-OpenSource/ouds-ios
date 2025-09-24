@@ -71,6 +71,10 @@ struct SomeView: View {
 }
 ```
 
+## How to tune the theme
+
+You cannot tune the Sosh theme.
+
 ## How to enrich the theme
 
 You cannot derivate the *Wireframe* theme.

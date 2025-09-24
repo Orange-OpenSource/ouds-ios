@@ -55,7 +55,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// ## Themes rendering
 ///

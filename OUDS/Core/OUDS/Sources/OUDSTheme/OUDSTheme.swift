@@ -14,6 +14,8 @@
 import Foundation
 import OUDSTokensSemantic
 
+// MARK: - OUDS Theme
+
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
@@ -143,6 +145,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// Supposed to have, for a given resurce, the same name accross themes.
     public let resourcesBundle: Bundle
 
+    /// Some tuning for the theme
+    public let tuning: Tuning
+
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
@@ -181,6 +186,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
@@ -211,7 +217,8 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
-                fontFamily: FontFamilySemanticToken? = nil)
+                fontFamily: FontFamilySemanticToken? = nil,
+                tuning: Tuning = Tuning.default)
     {
 
         // Save semantic tokens providers
@@ -250,6 +257,7 @@ open class OUDSTheme: @unchecked Sendable {
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
         self.fontFamily = fontFamily
+        self.tuning = tuning
     }
 
     // swiftlint:enable function_default_parameter_at_end
