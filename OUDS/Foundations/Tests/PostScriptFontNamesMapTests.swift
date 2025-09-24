@@ -208,4 +208,26 @@ struct PostScriptFontNamesMapTests {
     func chalkboardSEBold() throws {
         #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.bold)] == "ChalkboardSE-Bold")
     }
+
+    // MARK: - Fallbacks
+
+    @Test("A not managed font without fallback must return the font family name")
+    func unknownFontFamilyWithoutFallback() throws {
+        let unknownFontFamily = "Luciole"
+        #expect(kApplePostScriptFontNames[PSFNMK(unknownFontFamily, nil)] == nil)
+        #expect(kApplePostScriptFontNames[PSFNMK(unknownFontFamily, weight: nil)] == nil)
+        #expect(kApplePostScriptFontNames[PSFNMK(unknownFontFamily, weight: "")] == nil)
+        #expect(kApplePostScriptFontNames[PSFNMK(unknownFontFamily, Font.Weight.bold)] == nil)
+        #expect(kApplePostScriptFontNames[PSFNMK(unknownFontFamily, Font.Weight.regular)] == nil)
+    }
+
+    @Test("A not managed font with fallback must return the font family name and font weight")
+    func unknownFontFamilyWithFallback() throws {
+        let unknownFontFamily = "Luciole"
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, nil)] == unknownFontFamily)
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, weight: nil)] == unknownFontFamily)
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, weight: "")] == unknownFontFamily)
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.bold)] == "\(unknownFontFamily)-Bold")
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.regular)] == "\(unknownFontFamily)-Regular")
+    }
 }

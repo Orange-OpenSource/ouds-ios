@@ -19,7 +19,7 @@ import SwiftUI
 public typealias PSFNMK = PostScriptFontNamesMapKey
 
 /// Key of the map containing PostScript name to use for a font depending to its family name and weight.
-public struct PostScriptFontNamesMapKey: Hashable {
+public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
 
     /// The font family name as defined in raw tokens
     public let fontFamilyName: String
@@ -42,7 +42,38 @@ public struct PostScriptFontNamesMapKey: Hashable {
         fontFamilyName = name
         fontWeight = weight != nil ? weight! : ""
     }
+
     // swiftlint:enable force_unwrapping
+
+    /// From `CustomStringConvertible`, defines the description of the key,
+    /// concatenating the font family name and the font weight.
+    public var description: String {
+        fontFamilyName + (fontWeight.isEmpty ? "" : "-\(fontWeight)")
+    }
+}
+
+// MARK: - Dictionary of PostSript Font Names
+
+extension [PostScriptFontNamesMapKey: String] {
+
+    /// If there is no value for the given `key`, returns the description of this key,
+    /// i.e.font family name and font weight.
+    ///
+    /// ```swift
+    ///     // Given a dictionary with one value
+    ///     let myDict: PostScriptFontNamesMap = [PSFNMK("Arial", Font.Weight.regular): "ArialMT"]
+    ///
+    ///     // The given value is returned is the key exists
+    ///     let keyExists = myDict[PSFNMK("Arial", Font.Weight.regular)] // ArialMT
+    ///
+    ///     // But if the key does not exist, the description of the key is returned
+    ///     let keyDoesNotExist = myDict[PSFNMK("Luciole", Font.Weight.bold)] // Luciole-Bold
+    /// ```
+    ///
+    /// - Parameter key: The key to use to get a value
+    public subscript(orKey key: Key) -> String {
+        self[key] ?? key.description
+    }
 }
 
 // MARK: - PostScript Font Names Map

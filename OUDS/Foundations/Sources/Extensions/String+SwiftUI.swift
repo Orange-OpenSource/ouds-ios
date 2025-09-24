@@ -37,7 +37,7 @@ extension String {
     /// - Parameter weight: The weight to apply to the font
     /// - Returns: The PostScript name with the weight, or the font name is the PostScript name is unknown or not managed
     public func fontNameInPostScript(using weight: String) -> String {
-        kApplePostScriptFontNames[PSFNMK(self, weight: weight)] ?? self
+        kApplePostScriptFontNames[orKey: PSFNMK(self, weight: weight)]
     }
 }
 

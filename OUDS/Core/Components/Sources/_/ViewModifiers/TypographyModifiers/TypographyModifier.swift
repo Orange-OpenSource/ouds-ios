@@ -65,7 +65,7 @@ struct TypographyModifier: ViewModifier {
     private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
             // Can be a custom font load from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[PSFNMK(fontFamilyName, adaptiveFont.weight.fontWeight)] ?? fontFamilyName
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamilyName, adaptiveFont.weight.fontWeight)]
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {
