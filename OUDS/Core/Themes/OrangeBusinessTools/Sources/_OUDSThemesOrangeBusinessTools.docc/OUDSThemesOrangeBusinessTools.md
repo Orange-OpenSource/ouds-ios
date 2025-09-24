@@ -10,7 +10,7 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The Orange Business Tools theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme for the Orange Business Tools brand.
+The Orange Business Tools theme is dedicated to applications with strong dimensions constraints.
 
 ## Overview
 
@@ -19,10 +19,9 @@ The Orange Business Tools theme overrides some tokens from the basic `OUDSTheme`
 🧬 Theme version: 1.5.0
 ```
 
-Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
-with which users can interact. Thus for such products there are specific constraints of spaces and sizes.
-That is the reason why this team is created.
-This is the Orange Business Tools theme any for some business tools products, and cannot be subclassed.
+Some products may have heavy and very rich user interfaces with a lot of components and elements to display and
+with which users can interact. Thus for such products there are specific constraints of dimensions, spaces and sizes.
+That is the reason why this theme exists.
 
 > Note: This theme is related to Orange theme module to use some raw tokens of colors.
 
@@ -78,7 +77,7 @@ struct SomeView: View {
 }
 ```
 
-This theme embeds and registers the fonts for the Orange Business Tools theme, you just need to use the theme object as is.
+This theme embeds and registers the fonts for the `Orange Business Tools` theme, you just need to use the theme object as is.
 
 ## Tunable theme
 

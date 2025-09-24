@@ -18,13 +18,12 @@ import SwiftUI
 
 // swiftlint:disable function_body_length
 
-/// This is the theme for the Orange brand but in *inversed* mode, i.e. a particular set of colors.
-/// This is an override of the default basic `OUDSTheme` for the **Orange brand theme** in inverse mode.
-/// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+/// The `Orange Inverse` theme is liked an _inversed* mode Orange theme, i.e. with a particular color palette
+/// for edge uses cases/
 ///
 /// ## Usages
 ///
-/// This inverse theme is based on the Orange theme by definition in Figma side, and is dedicated to some B2B or very specific uses cases.
+/// This *inverse* theme is based on the Orange theme by definition in Figma side, and is dedicated to some B2B or very specific uses cases.
 /// In fact some products may need to use some colors palette because of very specific uses cases (dark environement, uses always on their screens, mobilities, etc.).
 ///
 /// To get the theme:

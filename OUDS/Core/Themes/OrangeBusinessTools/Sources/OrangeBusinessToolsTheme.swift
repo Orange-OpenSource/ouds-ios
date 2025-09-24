@@ -19,15 +19,13 @@ import SwiftUI
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
-/// The Orange Business Tools theme is an Orange theme but ftailors for some productd with heavy UI.
-/// This is an override of the default basic `OUDSTheme` for the **Orange Business Tools theme**
-/// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+/// The `Orange Business Tools`` theme is an Orange theme but tailored for some products with heavy UI.
 ///
 /// ## Usages
 ///
 /// Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
 /// with which users can interact. Thus for such products there are specific constraints of spaces and sizes, even if
-/// thes products must be Orange flavored.
+/// these products must be Orange flavored.
 /// That is the reason why this team is created: a kind of `OrangeTheme` but wih adjustments on some tokens like spacings and sizings.
 ///
 /// To get the theme:
