@@ -19,22 +19,17 @@ import SwiftUI
 struct TagIcon: View {
 
     // MARK: Stored properties
-
-    let type: OUDSTag.`Type`
     let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
     let size: OUDSTag.Size
+    let type: OUDSTag.`Type`
 
     // MARK: Body
 
     var body: some View {
         switch type {
-        case let .textAndIcon(_, icon, flipIcon):
-            if let icon {
-                TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
-                    .toFlip(flipIcon)
-            }
-        case .textAndLoader:
+        case let .status(_, status):
+            TagAsset(hierarchy: hierarchy, size: size, status: status)
+        case .loader:
             TagLoader(size: size)
         }
     }
@@ -45,7 +40,6 @@ struct TagIcon: View {
 struct TagLoader: View {
 
     // MARK: Stored Properties
-
 
     let size: OUDSTag.Size
 
@@ -124,45 +118,73 @@ struct TagAsset: View {
 
     // MARK: Stored properties
 
-    let icon: OUDSTag.Icon
     let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
     let size: OUDSTag.Size
+    let status: OUDSTag.Status
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
     var body: some View {
-        image
+        icon?
             .renderingMode(.template)
             .resizable()
+            .toFlip(status.flipIcon)
             .oudsForegroundStyle(color)
             .padding(.all, padding)
     }
 
     // MARK: Helpers
 
-    private var image: Image {
-        switch icon {
+    private var icon: Image? {
+        switch status.leading {
+        case .none:
+            return nil
         case .bullet:
-            Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
-        case let .asset(image):
-            image
+            return Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
+        case .icon:
+            if let alternativeIcon = status.customIcon {
+                return alternativeIcon
+            }
+
+            return defaultLeadingIcon
+        }
+    }
+
+    private var defaultLeadingIcon: Image? {
+        switch status.category {
+        case .neutral:
+            return nil
+        case .accent:
+            return nil
+        case .positive:
+            return Image(decorative: "ic_success", bundle: theme.resourcesBundle)
+        case .warning:
+            return Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+        case .negative:
+            return Image(decorative: "ic_error", bundle: theme.resourcesBundle)
+        case .info:
+            return Image(decorative: "ic_information", bundle: theme.resourcesBundle)
         }
     }
 
     private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            emphasizedColor
-        case .muted:
-            mutedColor
+        if isEnabled {
+            switch hierarchy {
+            case .emphasized:
+                emphasizedColor
+            case .muted:
+                mutedColor
+            }
+        } else {
+            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var emphasizedColor: MultipleColorSemanticTokens {
-        switch status {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentInverse
         case .accent:
@@ -175,13 +197,11 @@ struct TagAsset: View {
             theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
             theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var mutedColor: MultipleColorSemanticTokens {
-        switch status {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentDefault
         case .accent:
@@ -194,16 +214,16 @@ struct TagAsset: View {
             theme.colors.colorContentStatusNegative
         case .info:
             theme.colors.colorContentStatusInfo
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var padding: CGFloat {
-        switch icon {
+        switch status.leading {
         case .bullet:
             bulletPadding
-        case .asset:
+        case .icon:
+            assetPadding
+        default:
             assetPadding
         }
     }

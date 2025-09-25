@@ -18,11 +18,12 @@ struct TagLabel: View {
 
     // MARK: Stored Properties
 
-    let type: OUDSTag.`Type`
     let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
     let size: OUDSTag.Size
+    let type: OUDSTag.`Type`
+
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
@@ -43,20 +44,25 @@ struct TagLabel: View {
     // MARK: Helper
 
     private var color: MultipleColorSemanticTokens {
-        if type.isLoader {
-            return theme.colors.colorContentDefault
-        } else {
-            switch hierarchy {
-            case .emphasized:
-                return colorEmphasized
-            case .muted:
-                return colorMuted
+        switch type {
+        case .status(_, let status):
+            if isEnabled {
+                switch hierarchy {
+                case .emphasized:
+                    return emphasizedColor(for: status)
+                case .muted:
+                    return mutedColor(for: status)
+                }
+            } else {
+                return theme.colors.colorContentOnActionDisabled
             }
+        case .loader:
+            return theme.colors.colorContentDefault
         }
     }
 
-    private var colorEmphasized: MultipleColorSemanticTokens {
-        switch status {
+    private func emphasizedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentInverse
         case .accent:
@@ -69,13 +75,13 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
             theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
+//        case .disabled:
+//            theme.colors.colorContentOnActionDisabled
         }
     }
 
-    private var colorMuted: MultipleColorSemanticTokens {
-        switch status {
+    private func mutedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentDefault
         case .accent:
@@ -88,8 +94,8 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeMuted
         case .info:
             theme.colors.colorContentOnStatusInfoMuted
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
+//        case .disabled:
+//            theme.colors.colorContentOnActionDisabled
         }
     }
 }

@@ -19,10 +19,10 @@ struct TagBackgroundModifier: ViewModifier {
     // MARK: Stored properties
 
     let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
-    let isLoader: Bool
+    let type: OUDSTag.`Type`
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
@@ -33,39 +33,45 @@ struct TagBackgroundModifier: ViewModifier {
     // MARK: Helpers
 
     private var background: MultipleColorSemanticTokens {
-        if isLoader {
-            return theme.colors.colorSurfaceStatusNeutralMuted
-        } else {
-            switch hierarchy {
-            case .emphasized:
-                return emphasizedBackground
-            case .muted:
-                return mutedBackground
+        switch type {
+        case .status(_, let status):
+            if isEnabled {
+                switch hierarchy {
+                case .emphasized:
+                    return emphasizedBackground(for: status)
+                case .muted:
+                    return mutedBackground(for: status)
+                }
+            } else {
+                return theme.colors.colorActionDisabled
             }
+
+        case .loader:
+            return theme.colors.colorContentDefault
         }
     }
 
-    private var emphasizedBackground: MultipleColorSemanticTokens {
-        switch status {
+    private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
-            theme.colors.colorSurfaceInverseHigh
+            return theme.colors.colorSurfaceInverseHigh
         case .accent:
-            theme.colors.colorSurfaceStatusAccentEmphasized
+            return theme.colors.colorSurfaceStatusAccentEmphasized
         case .positive:
-            theme.colors.colorSurfaceStatusPositiveEmphasized
+            return theme.colors.colorSurfaceStatusPositiveEmphasized
         case .warning:
-            theme.colors.colorSurfaceStatusWarningEmphasized
+            return theme.colors.colorSurfaceStatusWarningEmphasized
         case .negative:
-            theme.colors.colorSurfaceStatusNegativeEmphasized
+            return theme.colors.colorSurfaceStatusNegativeEmphasized
         case .info:
-            theme.colors.colorSurfaceStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorActionDisabled
+            return theme.colors.colorSurfaceStatusInfoEmphasized
+            //        case .disabled:
+            //          return theme.colors.colorActionDisabled
         }
     }
 
-    private var mutedBackground: MultipleColorSemanticTokens {
-        switch status {
+    private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorSurfaceSecondary
         case .accent:
@@ -78,8 +84,8 @@ struct TagBackgroundModifier: ViewModifier {
             theme.colors.colorSurfaceStatusNegativeMuted
         case .info:
             theme.colors.colorSurfaceStatusInfoMuted
-        case .disabled:
-            theme.colors.colorActionDisabled
+            //        case .disabled:
+            //            theme.colors.colorActionDisabled
         }
     }
 }
