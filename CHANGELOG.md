@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
+- Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
 
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
 
@@ -20,7 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update `SwiftFormat` Swift Package from v0.57.2 to v0.58.0
 - Update `ruby/setup-ruby` GitHub Actions action from v1.257.0 to v1.263.0
-- Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
 - Swift package `SwiftLintPlugins` from v0.60.0 to v0.60.1
 - Update various GitHub Actions workflows dependencies
 - Tuning of themes (like rounded corners) (Orange-OpenSource/ouds-ios#951)
