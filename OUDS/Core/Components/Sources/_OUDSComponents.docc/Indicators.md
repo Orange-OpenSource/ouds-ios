@@ -31,16 +31,35 @@ Some components can be used for **indicators**.
 
 The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 
-```swift
-    // Neutral badge in medium size without information
-    OUDSBadge(status: .neutral, size: .medium)
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            // Neutral badge in medium size without information
+            OUDSBadge(status: .neutral, size: .medium)
 
-    // Negative badge in medium size with count information
-    OUDSBadge(count: 1, status: .negative, size: .medium)
+            // Negative badge in medium size with count information
+            OUDSBadge(count: 1, status: .negative, size: .medium)
 
-    // Info badge in medium size with icon information
-    OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
-```
+            // Info badge in medium size with icon information
+            OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
+        ```
+    }
+    @Tab("UIKit") {
+        ```swift
+            // Do not forget the dedicated product containing UIKit backpots
+            // and assign the theme to the bridge once for all
+            
+            // Neutral badge in medium size without information
+            OUDSUIKit.createBadge(status: .neutral, size: .medium)
+
+            // Negative badge in medium size with count information
+            OUOUDSUIKit.createBadgeDSBadge(count: 1, status: .negative, size: .medium)
+
+            // Info badge in medium size with icon information
+            OUDSUIKit.createBadge(icon: Image("ic_heart"), status: .info, size: .medium)
+        ```
+    }
+}
 
 ### Tag
 

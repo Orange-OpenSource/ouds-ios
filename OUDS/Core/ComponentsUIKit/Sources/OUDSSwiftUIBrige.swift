@@ -29,15 +29,17 @@ public enum OUDSSwiftUIBrige {
     // MARK: Properties
 
     /// The `OUDSTheme` is madnatory and must be used for components tuning
-    public nonisolated(unsafe) static var theme: OUDSTheme!
+    private nonisolated(unsafe) static var theme: OUDSTheme!
+    private nonisolated(unsafe) static var lowPowerModeObserver: OUDSLowPowerModeObserver!
 
     // MARK: Init
 
     /// Saves for the `SwiftUIBridgeBuilder` the theme to use
     ///
     /// - Parameter theme: The theme to apply to the components
-    public static func `init`(theme: OUDSTheme) {
+    @MainActor public static func `init`(theme: OUDSTheme) {
         Self.theme = theme
+        lowPowerModeObserver = OUDSLowPowerModeObserver()
     }
 
     /// Checks if all prerequisites are ready to use the bridge.
@@ -63,7 +65,7 @@ public enum OUDSSwiftUIBrige {
         checkPrerequisites()
         let viewWithEnvironment = view
             .environment(\._theme, OUDSSwiftUIBrige.theme)
-            .environmentObject(OUDSLowPowerModeObserver())
+            .environmentObject(OUDSSwiftUIBrige.lowPowerModeObserver)
         return UIHostingController(rootView: AnyView(viewWithEnvironment))
     }
 }
