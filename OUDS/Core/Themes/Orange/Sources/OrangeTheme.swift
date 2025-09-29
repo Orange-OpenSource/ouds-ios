@@ -76,6 +76,26 @@ import OUDSTokensSemantic
 ///     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 /// ```
 ///
+/// ## Typography
+///
+/// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
+/// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
+/// By default an instance of `OrangeTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
+/// If you want to use another font family, you will have to send the suitable token or the suitable font family.
+/// However, beware, iOS API relies also on the PostScript name of the font.
+/// To be sure of the value to use, look at the font book of your device.
+/// It is recommended to use the font raw tokens.
+///
+/// ```swift
+///     // The three following instanciations are the same
+///     let orangeTheme = OrangeTheme()
+///     let orangeTheme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
+///     let orangeTheme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+///
+///     // This instanciation won't work as the font family is not recognised
+///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue")
+/// ```
+///
 /// ## Tokens loading
 ///
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
@@ -144,7 +164,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
-    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.fontFamilyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
@@ -176,7 +196,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
-                         fontFamily: FontFamilySemanticToken? = nil,
+                         fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.fontFamilyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
 

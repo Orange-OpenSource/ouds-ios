@@ -79,6 +79,10 @@ struct SomeView: View {
 
 You cannot tune the Sosh theme.
 
+## Typography
+
+The Sosh theme uses its Sosh font and must not use others.
+
 ## How to enrich the theme
 
 You cannot derivate the Sosh theme.

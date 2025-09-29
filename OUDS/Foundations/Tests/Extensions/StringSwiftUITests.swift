@@ -19,66 +19,141 @@ import Testing
 /// Struct to test `String` extensions related to `SwiftUI`
 struct StringSwiftUITests {
 
-    /// Tests the font family values created using a font family name and a weight
+    /// Tests the Arial font family values created using a font family name and a weight
     @Test
-    func composeWithFonts() throws {
+    func fontNameInPostScriptForArial() throws {
         var result: String
 
-        // Expected values - use string description of Font.Weight
-        result = "Menlo".compose(withFont: Font.Weight.thin.description)
-        #expect(result == "Menlo-Thin", "Current value is '\(result)'")
+        result = "Arial".fontNameInPostScript(using: "\(Font.Weight.regular)")
+        #expect(result == "ArialMT", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: Font.Weight.ultraLight.description)
-        #expect(result == "Menlo-Ultra-Light", "Current value is '\(result)'")
+        result = "Arial".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "Arial-BoldMT", "Current value is '\(result)'")
+    }
 
-        result = "Menlo".compose(withFont: Font.Weight.light.description)
-        #expect(result == "Menlo-Light", "Current value is '\(result)'")
+    /// Tests the Helvetica font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForHelvetica() throws {
+        var result: String
 
-        result = "Menlo".compose(withFont: Font.Weight.regular.description)
+        result = "Helvetica".fontNameInPostScript(using: "\(Font.Weight.light)")
+        #expect(result == "Helvetica-Light", "Current value is '\(result)'")
+
+        result = "Helvetica".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "Helvetica-Bold", "Current value is '\(result)'")
+    }
+
+    /// Tests the SF Pro font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForSFPro() throws {
+        var result: String
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.ultraLight)")
+        #expect(result == "SFPro-Ultralight", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.thin)")
+        #expect(result == "SFPro-Thin", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.light)")
+        #expect(result == "SFPro-Light", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.medium)")
+        #expect(result == "SFPro-Medium", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.semibold)")
+        #expect(result == "SFPro-Semibold", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "SFPro-Bold", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.heavy)")
+        #expect(result == "SFPro-Heavy", "Current value is '\(result)'")
+
+        result = "SF Pro".fontNameInPostScript(using: "\(Font.Weight.black)")
+        #expect(result == "SFPro-Black", "Current value is '\(result)'")
+    }
+
+    /// Tests the Menlo font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForMenlo() throws {
+        var result: String
+
+        result = "Menlo".fontNameInPostScript(using: "\(Font.Weight.regular)")
         #expect(result == "Menlo-Regular", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: Font.Weight.medium.description)
-        #expect(result == "Menlo-Medium", "Current value is '\(result)'")
-
-        result = "Menlo".compose(withFont: Font.Weight.semibold.description)
-        #expect(result == "Menlo-Semi-Bold", "Current value is '\(result)'")
-
-        result = "Menlo".compose(withFont: Font.Weight.bold.description)
+        result = "Menlo".fontNameInPostScript(using: "\(Font.Weight.bold)")
         #expect(result == "Menlo-Bold", "Current value is '\(result)'")
+    }
 
-        result = "Menlo".compose(withFont: Font.Weight.heavy.description)
-        #expect(result == "Menlo-Heavy", "Current value is '\(result)'")
+    /// Tests the Courrier New font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForCourrierNew() throws {
+        var result: String
 
-        // Expected values - no upper case if raw string given
-        result = "Menlo".compose(withFont: "thin")
-        #expect(result == "Menlo-thin", "Current value is '\(result)'")
+        result = "Courier New".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "CourierNewPS-BoldMT", "Current value is '\(result)'")
+    }
 
-        result = "Menlo".compose(withFont: "ultraLight")
-        #expect(result == "Menlo-ultraLight", "Current value is '\(result)'")
+    /// Tests the Helvetica Neue font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForHelveticaNeue() throws {
+        var result: String
 
-        result = "Menlo".compose(withFont: "light")
-        #expect(result == "Menlo-light", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.ultraLight)")
+        #expect(result == "HelveticaNeue-Ultralight", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: "regular")
-        #expect(result == "Menlo-regular", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.thin)")
+        #expect(result == "HelveticaNeue-Thin", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: "medium")
-        #expect(result == "Menlo-medium", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.light)")
+        #expect(result == "HelveticaNeue-Light", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: "semibold")
-        #expect(result == "Menlo-semibold", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.regular)")
+        #expect(result == "HelveticaNeue-Regular", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: "bold")
-        #expect(result == "Menlo-bold", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.medium)")
+        #expect(result == "HelveticaNeue-Medium", "Current value is '\(result)'")
 
-        result = "Menlo".compose(withFont: "heavy")
-        #expect(result == "Menlo-heavy", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.semibold)")
+        #expect(result == "HelveticaNeue-Semibold", "Current value is '\(result)'")
 
-        // Edge cases
-        result = "Menlo".compose(withFont: "")
-        #expect(result == "Menlo", "Current value is '\(result)'")
+        result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "HelveticaNeue-Bold", "Current value is '\(result)'")
+    }
 
-        result = "".compose(withFont: "Yippee ki-yay")
-        #expect(result.isEmpty, "Current value is '\(result)'")
+    /// Tests the Sosh font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForSosh() throws {
+        var result: String
+
+        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.thin)")
+        #expect(result == "Sosh-Thin", "Current value is '\(result)'")
+
+        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.regular)")
+        #expect(result == "Sosh-Regular", "Current value is '\(result)'")
+
+        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.medium)")
+        #expect(result == "Sosh-Medium", "Current value is '\(result)'")
+
+        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "Sosh-Bold", "Current value is '\(result)'")
+
+        result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.black)")
+        #expect(result == "Sosh-Black", "Current value is '\(result)'")
+    }
+
+    /// Tests the Chalkboard SE font family values created using a font family name and a weight
+    @Test
+    func fontNameInPostScriptForChalkboardSE() throws {
+        var result: String
+
+        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.light)")
+        #expect(result == "ChalkboardSE-Light", "Current value is '\(result)'")
+
+        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.regular)")
+        #expect(result == "ChalkboardSE-Regular", "Current value is '\(result)'")
+
+        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "ChalkboardSE-Bold", "Current value is '\(result)'")
     }
 }

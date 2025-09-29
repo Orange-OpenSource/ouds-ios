@@ -75,6 +75,10 @@ struct SomeView: View {
 
 You cannot tune the Sosh theme.
 
+## Typography
+
+The Wireframe theme uses the Chalkboard SE font and must not use others.
+
 ## How to enrich the theme
 
 You cannot derivate the *Wireframe* theme.
