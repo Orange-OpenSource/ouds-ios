@@ -139,7 +139,7 @@ Then, send to the bridge the theme you want to use
 After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
 
 ```swift
-OUDSUIKit.createButton(text: "Desctructive button",
+OUDSUIKit.createButton(text: "Destructive button",
                        appearance: .negative,
                        style: .default,
                        action: {})

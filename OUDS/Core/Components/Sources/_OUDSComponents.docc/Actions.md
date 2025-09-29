@@ -50,7 +50,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
             // Do not forget the dedicated product containing UIKit backpots
             // and assign the theme to the bridge once for all
 
-            OUDSUIKit.createButton(iconName: "ic_heart",
+            OUDSUIKit.createButton(icon: Image("ic_heart"), // Image here is from SwiftUI
                                    appearance: .default,
                                    action: {})
                                           

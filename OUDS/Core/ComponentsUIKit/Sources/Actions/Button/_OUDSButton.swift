@@ -21,19 +21,19 @@ extension OUDSSwiftUIBrige {
     /// Create a SwiftUI `OUDSButton` with text and icon.
     ///
     /// - Parameters:
-    ///    - iconName: The name of an image to load
+    ///    - icon: The image to load
     ///    - text: The text to display in the button
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    @MainActor public static func createButton(iconName: String,
+    @MainActor public static func createButton(icon: Image,
                                                text: String,
                                                appearance: OUDSButton.Appearance = .default,
                                                style: OUDSButton.Style = .default,
                                                action: @escaping () -> Void) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSButton(icon:text:appearance:style:action)")
-        let swiftUIButton = OUDSButton(icon: Image(iconName),
+        let swiftUIButton = OUDSButton(icon: icon,
                                        text: text,
                                        appearance: appearance,
                                        style: style,
@@ -44,19 +44,19 @@ extension OUDSSwiftUIBrige {
     /// Create a SwiftUI `OUDSButton` with an icon only
     ///
     /// - Parameters:
-    ///    - iconName: The name of an image to load
+    ///    - icon: The image to load
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    @MainActor public static func createButton(iconName: String,
+    @MainActor public static func createButton(icon: Image,
                                                accessibilityLabel: String,
                                                appearance: OUDSButton.Appearance = .default,
                                                style: OUDSButton.Style = .default,
                                                action: @escaping () -> Void) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSButton(icon:accessibilityLabel:appearance:style:action)")
-        let swiftUIButton = OUDSButton(icon: Image(iconName),
+        let swiftUIButton = OUDSButton(icon: icon,
                                        accessibilityLabel: accessibilityLabel,
                                        appearance: appearance,
                                        style: style,

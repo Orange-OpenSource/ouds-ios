@@ -236,7 +236,7 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
 
     // MARK: - Initializer
 
-    /// Create a tag with simple label and mayve an icon.
+    /// Create a tag with simple label and maybe an icon.
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag

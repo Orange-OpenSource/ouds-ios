@@ -64,22 +64,54 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 
-```swift
-    // Text only with neutral status, for emphasized hierarchy with rounded shape in default size
-    OUDSTag(label: "Label", hierarchy: .emphasized, status: .neutral, shape: .rounded, size: .default)
-    // Or also
-    OUDSTag(label: "Label")
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            // Text only with neutral status, for emphasized hierarchy with rounded shape in default size
+            OUDSTag(label: "Label", hierarchy: .emphasized, status: .neutral, shape: .rounded, size: .default)
+            // Or also
+            OUDSTag(label: "Label")
 
-    // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-    OUDSTag(label: "Label", icon: .bullet, status: .negative)
+            // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
+            OUDSTag(label: "Label", icon: .bullet, status: .negative)
 
-    // Tag with label and icon with image
-    OUDSTag(label: "Label", icon: .asset(Image("ic_heart")))
+            // Tag with label and icon with image
+            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")))
 
-    // Tag with label and loader, but defined with an image which won't be displayed while loader is active
-    OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
+            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
+            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
 
-    // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
-    // you can flip the icon
-    OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
-```
+            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+            // you can flip the icon
+            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
+        ```
+    }
+    @Tab("UIKit") {
+        ```swift
+            // Do not forget the dedicated product containing UIKit backpots
+            // and assign the theme to the bridge once for all
+            
+            // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
+            OUDSUIKit.createTag(label: "label",
+                                hierarchy: .emphasized,
+                                status: .neutral,
+                                shape: .rounded,
+                                size: .default,
+            // Or also
+            OUDSUIKit.createTag(label: "label")
+            
+            // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
+            OUDSUIKit.createTag(label: "Label", icon: .bullet, status: .negative)
+
+            // Tag with label and icon with image
+            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")))
+
+            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
+            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
+
+            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+            // you can flip the icon
+            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true) // Import of SwiftUI mandatory
+        ```
+    }
+}
