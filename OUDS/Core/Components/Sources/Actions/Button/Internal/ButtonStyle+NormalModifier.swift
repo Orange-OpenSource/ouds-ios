@@ -24,20 +24,20 @@ enum ButtonInternalState {
 
 /// This modifier has in charge to:
 /// - compute the internal state based on `isEnabled`, `isPressed` and `isHover` flags
-/// - apply foreground, background colors and add a border (width, radius and color) associated to the hierarchy and according to the internal state
+/// - apply foreground, background colors and add a border (width, radius and color) associated to the appearance and according to the internal state
 struct ButtonViewModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButton.Hierarchy
+    let appearance: OUDSButton.Appearance
     let state: ButtonInternalState
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         content
-            .modifier(ButtonForegroundModifier(hierarchy: hierarchy, state: state))
-            .modifier(ButtonBackgroundModifier(hierarchy: hierarchy, state: state))
-            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state))
+            .modifier(ButtonForegroundModifier(appearance: appearance, state: state))
+            .modifier(ButtonBackgroundModifier(appearance: appearance, state: state))
+            .modifier(ButtonBorderModifier(appearance: appearance, state: state))
     }
 }

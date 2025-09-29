@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply a border with color, width and radius associated to the hierarchy
+/// Used to apply a border with color, width and radius associated to the appearance
 struct ButtonBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -27,13 +27,13 @@ struct ButtonBorderModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButton.Hierarchy
+    let appearance: OUDSButton.Appearance
     let state: ButtonInternalState
 
     // MARK: Body
 
     func body(content: Content) -> some View {
-        switch hierarchy {
+        switch appearance {
         case .default:
             content
                 .oudsBorder(
@@ -63,7 +63,7 @@ struct ButtonBorderModifier: ViewModifier {
         theme.tuning.hasRoundedButtons ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
     }
 
-    // MARK: Default hierarchy
+    // MARK: Default appearance
 
     private var defaultWidth: BorderWidthSemanticToken {
         switch state {
@@ -99,7 +99,7 @@ struct ButtonBorderModifier: ViewModifier {
         }
     }
 
-    // MARK: Strong hierarchy
+    // MARK: Strong appearance
 
     private var strongColor: MultipleColorSemanticTokens {
         switch state {
