@@ -31,7 +31,7 @@ extension EnvironmentValues {
     // swiftlint:disable strict_fileprivate
     /// The `OUDSTheme` instance exposed as en environment values across the library.
     /// Because at the level of the package we don't have any existing theme, this instance is optional
-    fileprivate var _theme: OUDSTheme? {
+    public var _theme: OUDSTheme? {
         get {
             self[ThemeEnvironmentKey.self]
         }
