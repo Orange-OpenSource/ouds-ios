@@ -48,10 +48,10 @@ public enum OUDSSwiftUIBrige {
     /// - Returns: True if everyting is ok, false otherwise
     @discardableResult public static func checkPrerequisites() -> Bool {
         guard theme != nil else {
-            OL.warning("The theme is not assigned to OUDSSwiftUIBrige, call init(theme:) before using it!")
+            OL.warning("The theme is not assigned to OUDS SwiftUI Brige, call init(theme:) before using it!")
             return false
         }
-        OL.debug("Everything is of for OUDSSwiftUIBrige!")
+        OL.debug("Everything is ok for OUDS SwiftUI Brige!")
         return true
     }
 
