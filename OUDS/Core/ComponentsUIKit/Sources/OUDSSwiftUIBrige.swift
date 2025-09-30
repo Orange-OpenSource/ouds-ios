@@ -29,8 +29,8 @@ public enum OUDSSwiftUIBrige {
     // MARK: Properties
 
     /// The `OUDSTheme` is madnatory and must be used for components tuning
-    private nonisolated(unsafe) static var theme: OUDSTheme!
-    private nonisolated(unsafe) static var lowPowerModeObserver: OUDSLowPowerModeObserver!
+    nonisolated(unsafe) static var theme: OUDSTheme!
+    nonisolated(unsafe) static var lowPowerModeObserver: OUDSLowPowerModeObserver!
 
     // MARK: Init
 

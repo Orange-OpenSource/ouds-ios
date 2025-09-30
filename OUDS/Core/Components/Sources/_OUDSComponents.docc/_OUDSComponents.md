@@ -145,4 +145,6 @@ OUDSUIKit.createButton(text: "Destructive button",
                        action: {})
 ```
 
-> Caution: UIKit is not the highest priority, feel free to submit issues and pull request to improve its support!
+> Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
+
+> Tip: You can also [open a new discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/returns-of-experiences-and-feedbacks) if you have ideas!

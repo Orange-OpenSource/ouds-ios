@@ -435,16 +435,37 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 The library proposes filter chip component to make some filtering with selected or unselected options.
 
-```swift
-    // Filter chip with icon only as selected 
-    OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+            
+            // Filter chip with icon only as selected 
+            OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+            
+            // Filter chip with text only as not selected
+            OUDSFilterChip(text: "Heart") { /* the action to process */ }
+            
+            // Filter chip with text and icon layout an in selected state
+            OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+        ```    
+    }
+    @Tab("UIKit") {
+        ```swift
+            import OUDSComponentsUIKit
+            
+            // Filter chip with icon only as selected 
+            OUDSUIKit.createFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true, action: { /* the action to process */ })
 
-    // Filter chip with text only as not selected
-    OUDSFilterChip(text: "Heart") { /* the action to process */ }
+            // Filter chip with text only as not selected
+            OUDSUIKit.createFilterChip(text: "Heart", action: { /* the action to process */ })
 
-    // Filter chip with text and icon layout an in selected state
-    OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
-```
+            // Filter chip with text and icon layout an in selected state
+            OUDSUIKit.createFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true, action: { /* the action to process */ })
+        ```
+    }
+}
+
 
 #### Chip picker
 
