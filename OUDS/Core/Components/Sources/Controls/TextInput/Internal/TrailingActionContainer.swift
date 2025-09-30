@@ -32,6 +32,7 @@ struct TrailingActionContainer: View {
         case .default, .readOnly, .disabled:
             if let trailingAction {
                 trailingButton(for: trailingAction)
+                    .disabled(status == .readOnly || status == .disabled)
             }
         case .error:
             HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
