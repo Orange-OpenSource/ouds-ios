@@ -21,16 +21,24 @@ import UIKit
 /// OUDS UIKit is not managed with implementation from scratch, but a bridge exists
 public typealias OUDSUIKit = OUDSSwiftUIBrige
 
+/// An component interfaction is defined by a target (like a `UIViewController`), a triggered action (e.g. `Selector`) and an event (e.g. *value changed*)
+public typealias ComponentInteraction = (target: AnyObject, action: Selector, events: UIControl.Event)
+
 // MARK: OUDS SwiftUI Bridge
 
 /// Helps to wrap OUDS components written in SwiftUI for UIKit views
+///
+/// - Since: 0.20.0
 public enum OUDSSwiftUIBrige {
 
     // MARK: Properties
 
-    /// The `OUDSTheme` is madnatory and must be used for components tuning
+    // swiftlint:disable implicitly_unwrapped_optional
+    /// The `OUDSTheme` is mandatory and must be used for components tuning
     nonisolated(unsafe) static var theme: OUDSTheme!
+    /// The `OUDSLowPowerModeObserver` is mandatory for, for example, buttons with animations to be avoided if low energy mode
     nonisolated(unsafe) static var lowPowerModeObserver: OUDSLowPowerModeObserver!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     // MARK: Init
 

@@ -35,17 +35,37 @@ The library proposes layout to add in your views some checkboxes components, eve
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
 This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)
 
-```swift
-    // A simple checkbox, with only an indicator
-    // The component must be instanciated with a string parameter used as accessibility label that will be
-    // vocalized by Voice Over. 
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+            
+            // A simple checkbox, with only an indicator
+            // The component must be instanciated with a string parameter used as accessibility label that will be
+            // vocalized by Voice Over. 
 
-    // The isOn parameter can have only two values: true (selected), false (unselected)
-    OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
+            // The isOn parameter can have only two values: true (selected), false (unselected)
+            OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
 
-    // The selection parameter can have only three values: selected, unselected and indeterminate
-    OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
-```
+            // The selection parameter can have only three values: selected, unselected and indeterminate
+            OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
+        ```
+    }
+    @Tab("UIKit") {
+        ```swift
+            import OUDSComponentsUIKit
+
+            // A simple checkbox, with only an indicator
+            // The component must be instanciated with a string parameter used as accessibility label that will be
+            // vocalized by Voice Over. 
+
+            // The isOn parameter can have only two values: true (selected), false (unselected)
+            // Where target is a reference to the hosting UIViewController
+            // Where action is a selector of a method to trigger when value of the checkbox has changed
+            OUDSUIKit.createCheckbox(isOn: false, accessibilityLabel: "Select the element", target: self, action: action)
+        ```
+    }
+}
 
 #### Checkbox item
 
