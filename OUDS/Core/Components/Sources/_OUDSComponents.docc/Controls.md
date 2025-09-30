@@ -382,16 +382,36 @@ The indicator can be leading or trailing.
 
 The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
-```swift
-    // Suggestion chip with icon only 
-    OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
 
-    // Layout with text only
-    OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+            // Suggestion chip with icon only 
+            OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
 
-    // Latout with text and icon
-    OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
-```
+            // Layout with text only
+            OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+
+            // Layout with text and icon
+            OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+        ```
+    }
+    @Tab("UIKit") {
+        ```swift
+            import OUDSComponentsUIKit
+
+            // Suggestion chip with icon only 
+            OUDSUIKit.createSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", action: { /* the action to process */ })
+
+            // Layout with text only
+            OUDSUIKit.createSuggestionChip(text: "Heart", action: { /* the action to process */ })
+
+            // Layout with text and icon
+            OUDSUIKit.createSuggestionChip(icon: Image("ic_heart"), text: "Heart", action: { /* the action to process */ })
+        ```
+    }
+}
 
 #### Filter
 
