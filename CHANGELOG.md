@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- UIKit backports for `button`, `tag`, `badge`, `horizontal divider`, `vertical divider components
+- UIKit backports for `button`, `tag`, `badge`, `horizontal divider`, `vertical divider`, `link` components
 - Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
 
 ### Changed

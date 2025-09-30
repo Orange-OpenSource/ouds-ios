@@ -38,18 +38,19 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-             // Icon only with default appearance
-             OUDSButton(icon: Image("ic_heart"), appearance: .default) {}
+            import OUDSComponents
+            
+            // Icon only with default appearance
+            OUDSButton(icon: Image("ic_heart"), appearance: .default) {}
 
-             // Text only with negative appearance
-             OUDSButton(text: "Delete", appearance: .negative) {}
+            // Text only with negative appearance
+            OUDSButton(text: "Delete", appearance: .negative) {}
         ```
     }
     @Tab("UIKit") {
         ```swift
-            // Do not forget the dedicated product containing UIKit backpots
-            // and assign the theme to the bridge once for all
-
+            import OUDSComponentsUIKit
+            
             OUDSUIKit.createButton(icon: Image("ic_heart"), // Image here is from SwiftUI
                                    appearance: .default,
                                    action: {})
