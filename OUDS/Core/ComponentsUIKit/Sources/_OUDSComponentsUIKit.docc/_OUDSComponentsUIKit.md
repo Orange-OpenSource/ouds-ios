@@ -1,7 +1,7 @@
 # ``OUDSComponentsUIKit``
 
 @Metadata {
-    @PageImage(purpose: icon, source: "ic_folder_categories_uikit")
+    @PageImage(purpose: icon, source: "ic_under_construction_uikit")
     @DisplayName("Components (UIKit backports)", style: symbol)
     @TitleHeading("Library")
 }
@@ -22,17 +22,19 @@ Some components are available as wrapped version embeded inside UIKIt `UIViewCon
 
 > Caution: You will have to manage constraints and layouts in your UIKit views, the default rendering of the components might be different 
 
-Category       | Component                 | Available through UIKIt                          
--------------- | ------------------------- | ------------------------------------- 
-Actions        | Button                    | yes  
-Controls       | Checkbox                  | yes      
-Controls       | Checkbox indeterminate    | yes
-Controls       | Checkbox item             | yes
-Controls       | Filter chip               | yes
-Controls       | Suggestion chip           | yes
-Indicators     | Tag                       | yes
-Indicators     | Badge                     | yes
-Layouts        | Horizontal divider        | yes
-Layouts        | Vertical divider          | yes
-Navigations    | Link                      | yes
+Category       | Component                     | Available through UIKIt                          
+-------------- | ----------------------------- | ------------------------------------- 
+Actions        | Button                        | yes  
+Controls       | Checkbox                      | yes      
+Controls       | Checkbox indeterminate        | yes
+Controls       | Checkbox item                 | yes
+Controls       | Checkbox item indeterminate   | yes
+Controls       | Checkbox picker               | no
+Controls       | Filter chip                   | yes
+Controls       | Suggestion chip               | yes
+Indicators     | Tag                           | yes
+Indicators     | Badge                         | yes
+Layouts        | Horizontal divider            | yes
+Layouts        | Vertical divider              | yes
+Navigations    | Link                          | yes
 

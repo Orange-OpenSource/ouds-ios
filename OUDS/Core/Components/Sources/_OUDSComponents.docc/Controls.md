@@ -59,14 +59,13 @@ This checkbox can provide two values (selected and unselected) or three values (
             // The component must be instanciated with a string parameter used as accessibility label that will be
             // vocalized by Voice Over. 
 
-            // The isOn parameter can have only two values: true (selected), false (unselected)
             // Where target is a reference to the hosting UIViewController
             // Where action is a selector of a method to trigger when value of the checkbox has changed
+            
+            // The isOn parameter can have only two values: true (selected), false (unselected)
             OUDSUIKit.createCheckbox(isOn: false, accessibilityLabel: "Select the element", target: self, action: action)
             
             // The selection parameter can have three values: selected, unselected and indeterminate
-            // Where target is a reference to the hosting UIViewController
-            // Where action is a selector of a method to trigger when value of the checkbox has changed
             OUDSUIKit.createCheckboxIndeterminate(selection: .indeterminate, accessibilityLabel: "Select the element", target: self, action: action)
         ```
     }
@@ -96,25 +95,65 @@ The library proposes also a checkbox which has in its layout some labels and ico
 The indicator can be leading or trailing.
 It can be be used for two-states (``OUDSCheckboxItem``) or three-states management (``OUDSCheckboxItemIndeterminate``).
 
-```swift
-    // A leading checkbox with a label, with only two states
-    OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+            
+            // A leading checkbox with a label, with only two states
+            OUDSCheckboxItem(isOn: $isOn, label: "Hello world", target: self, action: action)
 
-    // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
-    OUDSCheckboxItemIndeterminate(selection: $selection, 
-                                  label: "Dead Robot Zombie Cop",
-                                  helper: "from Outer Space II")
+            // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
+            OUDSCheckboxItemIndeterminate(selection: $selection, 
+                                          label: "Dead Robot Zombie Cop",
+                                          helper: "from Outer Space II",
+                                          target: self, 
+                                          action: action)
 
-    // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-    // with a reversed layout, and exposing only two states through isOn binding
-    OUDSCheckboxItem(isOn: $isOn,
-                     label: "We live in a fabled world",
-                     helper: "Of dreaming boys and wide-eyed girls",
-                     icon: Image(decorative: "ic_heart"),
-                     isReversed: true,
-                     isError: true,
-                     hasDivider: true)
-```
+            // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+            // with a reversed layout, and exposing only two states through isOn binding
+            OUDSCheckboxItem(isOn: $isOn,
+                             label: "We live in a fabled world",
+                             helper: "Of dreaming boys and wide-eyed girls",
+                             icon: Image(decorative: "ic_heart"),
+                             isReversed: true,
+                             isError: true,
+                             hasDivider: true,
+                             target: self, 
+                             action: action)
+        ```
+    }
+    @Tab("UIKit") {
+        ```swift
+            import OUDSComponentsUIKit
+            
+            // Where target is a reference to the hosting UIViewController
+            // Where action is a selector of a method to trigger when value of the checkbox has changed
+        
+            // A leading checkbox with a label, with only two states
+            OUDSUIKit.createCheckboxItem(isOn: true, label: "Hello world", target: self, action: action)
+
+            // A leading checkbox with a label, an helper text, and with a three-values-based state with selection binding
+            OUDSUIKit.createCheckboxItemIndeterminate(selection: .indeterminate,
+                                                      label: "Dead Robot Zombie Cop",
+                                                      helper: "from Outer Space II"
+                                                      target: self,
+                                                      action: action)
+
+            // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+            // with a reversed layout, and with two states
+            OUDSUIKit.createCheckboxItem(isOn: false,
+                                         label: "We live in a fabled world",
+                                         helper: "Of dreaming boys and wide-eyed girls",
+                                         icon: Image(decorative: "ic_heart"),
+                                         isReversed: true,
+                                         isError: true,
+                                         hasDivider: true,
+                                         target: self,
+                                         action: action)
+        ```
+    }
+}
 
 #### Checkbox picker
 

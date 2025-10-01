@@ -119,10 +119,10 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:ColorS
     someView.oudsAccentColor(theme.colors.colorBgPrimary)
 ```
 
-## UIKit backpots
+## UIKit backports
 
-It is possible, but not recommended, to use OUDS components but wrapped for UIKit.
-Indeed UIKit implementations are not scoped yet, but some helpers exist whichw wraps SwiftUI implementations.
+It is possible, but not recommended at all, to use OUDS components but wrapped for UIKit.
+Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
 
 First, you will need to import the dedicated Swift Package product
 
@@ -133,7 +133,7 @@ import OUDSComponentsUIKit
 Then, send to the bridge the theme you want to use
 
 ```swift
-    OUDSUIKit.`init`(theme: theme)
+    OUDSUIKit.`init`(theme: theme) // e.g. OrangeTheme()
 ```
 
 After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:

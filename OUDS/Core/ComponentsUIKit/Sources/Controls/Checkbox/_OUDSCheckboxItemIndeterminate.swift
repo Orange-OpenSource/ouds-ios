@@ -16,29 +16,29 @@ import OUDSFoundations
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox Item View Controller
+// MARK: - OUDS Checkbox Item Indeterminate View Controller
 
-/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckboxItem`
-/// Helps to manage the states and values of the `OUDSCheckboxItem` and tries to expose a UIKit-like API for actions.
-public final class OUDSCheckboxItemViewController: UIViewController {
+/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckboxItemIndeterminate`
+/// Helps to manage the states and values of the `OUDSCheckboxItemIndeterminate` and tries to expose a UIKit-like API for actions.
+public final class OUDSCheckboxItemIndeterminateViewController: UIViewController {
 
     // MARK: Properties
 
     // swiftlint:disable implicitly_unwrapped_optional
     /// To host the SwiftUI checkbox
-    private var hostingController: UIHostingController<OUDSCheckboxItemWrapper>!
+    private var hostingController: UIHostingController<OUDSCheckboxItemIndeterminateWrapper>!
     // swiftlint:enable implicitly_unwrapped_optional
     /// To manage the checkbox SwiftUI state
-    private let checkboxViewModel: OUDSCheckboxItemViewModel
+    private let checkboxViewModel: OUDSCheckboxItemIndeterminateViewModel
     /// To have an action to trigger for a target
     private var targets: [ComponentInteraction]
 
-    /// To expose the checkbox checked state (`OUDSCheckboxItem/isOn`)
-    public var isOn: Bool {
-        get { checkboxViewModel.isOn }
+    /// To expose the checkbox checked state (`OUDSCheckboxItemIndeterminate/isOn`)
+    public var selection: OUDSCheckboxIndicatorState {
+        get { checkboxViewModel.selection }
         set {
-            let oldValue = checkboxViewModel.isOn
-            checkboxViewModel.isOn = newValue
+            let oldValue = checkboxViewModel.selection
+            checkboxViewModel.selection = newValue
             if oldValue != newValue {
                 sendActions(for: .valueChanged)
             }
@@ -47,11 +47,11 @@ public final class OUDSCheckboxItemViewController: UIViewController {
 
     // MARK: Initialization
 
-    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckboxItem`
+    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckboxItemIndeterminate`
     /// hosted inside it.
     ///
     /// - Parameters:
-    ///   - isOn: A property that determines wether the indicator is ticked (selected) or not (unselected)
+    ///   - selection:A property that determines wether the indicator is ticked (selected) or not (unselected)
     ///   - label: The main label text of the checkbox.
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon
@@ -61,7 +61,7 @@ public final class OUDSCheckboxItemViewController: UIViewController {
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    init(isOn: Bool,
+    init(selection: OUDSCheckboxIndicatorState,
          label: String,
          helper: String?,
          icon: Image?,
@@ -72,16 +72,16 @@ public final class OUDSCheckboxItemViewController: UIViewController {
          hasDivider: Bool,
          action: (() -> Void)?)
     {
-        checkboxViewModel = OUDSCheckboxItemViewModel(isOn: isOn,
-                                                      label: label,
-                                                      helper: helper,
-                                                      icon: icon,
-                                                      flipIcon: flipIcon,
-                                                      isReversed: isReversed,
-                                                      isError: isError,
-                                                      isReadOnly: isReadOnly,
-                                                      hasDivider: hasDivider,
-                                                      action: action)
+        checkboxViewModel = OUDSCheckboxItemIndeterminateViewModel(selection: selection,
+                                                                   label: label,
+                                                                   helper: helper,
+                                                                   icon: icon,
+                                                                   flipIcon: flipIcon,
+                                                                   isReversed: isReversed,
+                                                                   isError: isError,
+                                                                   isReadOnly: isReadOnly,
+                                                                   hasDivider: hasDivider,
+                                                                   action: action)
         targets = []
         super.init(nibName: nil, bundle: nil)
         setupInternalCallback()
@@ -140,7 +140,7 @@ public final class OUDSCheckboxItemViewController: UIViewController {
     // MARK: Set up
 
     private func setupHostingController() {
-        let swiftUIWrapperView = OUDSCheckboxItemWrapper(model: checkboxViewModel)
+        let swiftUIWrapperView = OUDSCheckboxItemIndeterminateWrapper(model: checkboxViewModel)
         hostingController = UIHostingController(rootView: swiftUIWrapperView)
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -160,24 +160,24 @@ public final class OUDSCheckboxItemViewController: UIViewController {
 
 // MARK: - OUDS Checkbox Wrapper
 
-/// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckboxItem` and exposes bindings
+/// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckboxIndeterminateItem` and exposes bindings
 /// and view model.
-struct OUDSCheckboxItemWrapper: View {
+struct OUDSCheckboxItemIndeterminateWrapper: View {
 
-    @ObservedObject var model: OUDSCheckboxItemViewModel
+    @ObservedObject var model: OUDSCheckboxItemIndeterminateViewModel
 
-    private var checkboxBinding: Binding<Bool> {
+    private var checkboxBinding: Binding<OUDSCheckboxIndicatorState> {
         Binding(
-            get: { model.isOn },
+            get: { model.selection },
             set: { newValue in
-                model.isOn = newValue
+                model.selection = newValue
                 model.onInternalValueChanged?(newValue)
             })
     }
 
     var body: some View {
-        OUDSCheckboxItem(
-            isOn: checkboxBinding,
+        OUDSCheckboxItemIndeterminate(
+            selection: checkboxBinding,
             label: model.label,
             helper: model.helper,
             icon: model.icon,
@@ -191,35 +191,35 @@ struct OUDSCheckboxItemWrapper: View {
     }
 }
 
-// MARK: - OUDS Checkbox View Model
+// MARK: - OUDS Checkbox View Indeterminate Model
 
-/// The `SwiftUI` view model used inside the `OUDSCheckboxItemWrapper` to manage the state of the embeded `OUDSCheckboxItem`
-@MainActor final class OUDSCheckboxItemViewModel: ObservableObject {
+/// The `SwiftUI` view model used inside the `OUDSCheckboxItemIndeterminateWrapper` to manage the state of the embeded `OUDSCheckboxItemIndeterminate`
+@MainActor final class OUDSCheckboxItemIndeterminateViewModel: ObservableObject {
 
-    /// For `OUDSCheckboxItem/isOn`
-    @Published var isOn: Bool
-    /// For `OUDSCheckboxItem/label`
+    /// For `OUDSCheckboxItemIndeterminate/isOn`
+    @Published var selection: OUDSCheckboxIndicatorState
+    /// For `OUDSCheckboxItemIndeterminate/label`
     var label: String
-    /// For `OUDSCheckboxItem/helper`
+    /// For `OUDSCheckboxItemIndeterminate/helper`
     var helper: String?
-    /// For `OUDSCheckboxItem/icon`
+    /// For `OUDSCheckboxItemIndeterminate/icon`
     var icon: Image?
-    /// For `OUDSCheckboxItem/flipIcon`
+    /// For `OUDSCheckboxItemIndeterminate/flipIcon`
     var flipIcon: Bool
-    /// For `OUDSCheckboxItem/isReversed`
+    /// For `OUDSCheckboxItemIndeterminate/isReversed`
     var isReversed: Bool
-    /// For `OUDSCheckboxItem/isError`
+    /// For `OUDSCheckboxItemIndeterminate/isError`
     var isError: Bool
-    /// For `OUDSCheckboxItem/isReadOnly`
+    /// For `OUDSCheckboxItemIndeterminate/isReadOnly`
     var isReadOnly: Bool
-    /// For `OUDSCheckboxItem/hasDivider`
+    /// For `OUDSCheckboxItemIndeterminate/hasDivider`
     var hasDivider: Bool
-    /// For `OUDSCheckboxItem/action`
+    /// For `OUDSCheckboxItemIndeterminate/action`
     var action: (() -> Void)?
 
-    var onInternalValueChanged: ((Bool) -> Void)?
+    var onInternalValueChanged: ((OUDSCheckboxIndicatorState) -> Void)?
 
-    init(isOn: Bool,
+    init(selection: OUDSCheckboxIndicatorState,
          label: String,
          helper: String?,
          icon: Image?,
@@ -230,7 +230,7 @@ struct OUDSCheckboxItemWrapper: View {
          hasDivider: Bool,
          action: (() -> Void)?)
     {
-        self.isOn = isOn
+        self.selection = selection
         self.label = label
         self.helper = helper
         self.icon = icon
@@ -250,26 +250,26 @@ struct OUDSCheckboxItemWrapper: View {
 extension OUDSSwiftUIBrige {
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Creates SwiftUI `OUDSCheckboxItem` with only an indicator.
+    /// Creates SwiftUI `OUDSCheckboxItemIndeterminate` with only an indicator.
     ///
     /// ```swift
     ///     // Define the selector for the action
-    ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxItemViewController) {
+    ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxItemIndeterminateViewController) {
     ///         // Do something
     ///         // sender.isError: flag for component in error state
     ///         // sender.isOn: flag for the component value
     ///     }
     ///
-    ///     // Then create the OUDSCheckboxItem inside your UIViewController
-    ///     OUDSUIKit.createCheckboxItem(isOn: true,
-    ///                                  label: "An awesome label"
-    ///                                  helper: "A smaller text",
-    ///                                  icon: Image("ic_heart"),
-    ///                                  action: #selector(checkboxChanged(_:)))
+    ///     // Then create the OUDSCheckboxItemIndeterminate inside your UIViewController
+    ///     OUDSUIKit.createCheckboxItemIndeterminate(selection: .indeterminate,
+    ///                                               label: "An awesome label"
+    ///                                               helper: "A smaller text",
+    ///                                               icon: Image("ic_heart"),
+    ///                                               action: #selector(checkboxChanged(_:)))
     /// ```
     ///
     /// - Parameters:
-    ///    - isOn: A flag indicating wether or not the checkbox is selected
+    ///    - selection: A property indicating wether or not the checkbox is selected or in indeterminate state
     ///    - label: The main label text of the checkbox.
     ///    - helper: An additonal helper text, should not be empty, default set to `nil`
     ///    - icon: An optional icon,  default set to `nil`
@@ -281,33 +281,33 @@ extension OUDSSwiftUIBrige {
     ///    - _action: An additional action to trigger when the checkbox has been pressed
     ///    - target: Reference to the UIKIt `UIViewController` hosting the view
     ///    - action: The `Selector` called when the checkbox value changed
-    @MainActor public static func createCheckboxItem(isOn: Bool,
-                                                     label: String,
-                                                     helper: String? = nil,
-                                                     icon: Image? = nil,
-                                                     flipIcon: Bool = false,
-                                                     isReversed: Bool = false,
-                                                     isError: Bool = false,
-                                                     isReadOnly: Bool = false,
-                                                     hasDivider: Bool = false,
-                                                     _action: (() -> Void)? = nil,
-                                                     target: Any?,
-                                                     action: Selector) -> UIViewController
+    @MainActor public static func createCheckboxItemIndeterminate(selection: OUDSCheckboxIndicatorState,
+                                                                  label: String,
+                                                                  helper: String? = nil,
+                                                                  icon: Image? = nil,
+                                                                  flipIcon: Bool = false,
+                                                                  isReversed: Bool = false,
+                                                                  isError: Bool = false,
+                                                                  isReadOnly: Bool = false,
+                                                                  hasDivider: Bool = false,
+                                                                  _action: (() -> Void)? = nil,
+                                                                  target: Any?,
+                                                                  action: Selector) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSCheckboxItem(isOn:label)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSCheckboxItem(selection:label)")
 
-        let uikitCheckboxItemViewController = OUDSCheckboxItemViewController(isOn: isOn,
-                                                                             label: label,
-                                                                             helper: helper,
-                                                                             icon: icon,
-                                                                             flipIcon: flipIcon,
-                                                                             isReversed: isReversed,
-                                                                             isError: isError,
-                                                                             isReadOnly: isReadOnly,
-                                                                             hasDivider: hasDivider,
-                                                                             action: _action)
-        uikitCheckboxItemViewController.addTarget(target, action: action, for: .valueChanged)
-        return uikitCheckboxItemViewController
+        let uikitCheckboxItemIndeterminateViewController = OUDSCheckboxItemIndeterminateViewController(selection: selection,
+                                                                                                       label: label,
+                                                                                                       helper: helper,
+                                                                                                       icon: icon,
+                                                                                                       flipIcon: flipIcon,
+                                                                                                       isReversed: isReversed,
+                                                                                                       isError: isError,
+                                                                                                       isReadOnly: isReadOnly,
+                                                                                                       hasDivider: hasDivider,
+                                                                                                       action: _action)
+        uikitCheckboxItemIndeterminateViewController.addTarget(target, action: action, for: .valueChanged)
+        return uikitCheckboxItemIndeterminateViewController
     }
     // swiftlint:enable function_default_parameter_at_end
 }
