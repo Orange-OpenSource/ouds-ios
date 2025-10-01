@@ -16,36 +16,36 @@ import OUDSFoundations
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox View Controller
+// MARK: - OUDS Checkbox Indetermiante View Controller
 
-/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckbox`
-/// Helps to manage the states and values of the `OUDSCheckbox` and tries to expose a UIKit-like API for actions.
-public final class OUDSCheckboxViewController: UIViewController {
+/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckboxIndeterminate`
+/// Helps to manage the states and values of the `OUDSCheckboxIndeterminate` and tries to expose a UIKit-like API for actions.
+public final class OUDSCheckboxIndeterminateViewController: UIViewController {
 
     // MARK: Properties
 
     // swiftlint:disable implicitly_unwrapped_optional
     /// To host the SwiftUI checkbox
-    private var hostingController: UIHostingController<OUDSCheckboxWrapper>!
+    private var hostingController: UIHostingController<OUDSCheckboxIndeterminateWrapper>!
     // swiftlint:enable implicitly_unwrapped_optional
     /// To manage the checkbox SwiftUI state
-    private let checkboxViewModel: OUDSCheckboxViewModel
+    private let checkboxViewModel: OUDSCheckboxIndeterminateViewModel
     /// To have an action to trigger for a target
     private var targets: [ComponentInteraction]
 
-    /// To expose the checkbox checked state (`OUDSCheckbox/isOn`)
-    public var isOn: Bool {
-        get { checkboxViewModel.isOn }
+    /// To expose the checkbox checked state (`OUDSCheckboxIndeterminate/selection`)
+    public var selection: OUDSCheckboxIndicatorState {
+        get { checkboxViewModel.selection }
         set {
-            let oldValue = checkboxViewModel.isOn
-            checkboxViewModel.isOn = newValue
+            let oldValue = checkboxViewModel.selection
+            checkboxViewModel.selection = newValue
             if oldValue != newValue {
                 sendActions(for: .valueChanged)
             }
         }
     }
 
-    /// To expose the checkbox error state (`OUDSCheckbox/isError`)
+    /// To expose the checkbox error state (`OUDSCheckboxIndeterminate/isError`)
     public var isError: Bool {
         get { checkboxViewModel.isError }
         set { checkboxViewModel.isError = newValue }
@@ -53,16 +53,16 @@ public final class OUDSCheckboxViewController: UIViewController {
 
     // MARK: Initialization
 
-    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckbox`
+    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckboxIndeterminate`
     /// hosted inside it.
     ///
     /// - Parameters:
-    ///    - isOn: If the checkbox is checked or not
+    ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label to vocalise for the checkbox
     ///    - isError: If the checkbox is in error state or not (default set to *false*)
-    init(isOn: Bool, accessibilityLabel: String, isError: Bool = false) {
-        checkboxViewModel = OUDSCheckboxViewModel(
-            isOn: isOn,
+    init(selection: OUDSCheckboxIndicatorState, accessibilityLabel: String, isError: Bool = false) {
+        checkboxViewModel = OUDSCheckboxIndeterminateViewModel(
+            selection: selection,
             accessibilityLabel: accessibilityLabel,
             isError: isError)
         targets = []
@@ -123,7 +123,7 @@ public final class OUDSCheckboxViewController: UIViewController {
     // MARK: Set up
 
     private func setupHostingController() {
-        let swiftUIWrapperView = OUDSCheckboxWrapper(model: checkboxViewModel)
+        let swiftUIWrapperView = OUDSCheckboxIndeterminateWrapper(model: checkboxViewModel)
         hostingController = UIHostingController(rootView: swiftUIWrapperView)
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -141,26 +141,26 @@ public final class OUDSCheckboxViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Checkbox Wrapper
+// MARK: - OUDS Checkbox Indeterminate Wrapper
 
-/// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckbox` and exposes bindings
+/// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckboxIndeterminate` and exposes bindings
 /// and view model.
-struct OUDSCheckboxWrapper: View {
+struct OUDSCheckboxIndeterminateWrapper: View {
 
-    @ObservedObject var model: OUDSCheckboxViewModel
+    @ObservedObject var model: OUDSCheckboxIndeterminateViewModel
 
-    private var checkboxBinding: Binding<Bool> {
+    private var checkboxBinding: Binding<OUDSCheckboxIndicatorState> {
         Binding(
-            get: { model.isOn },
+            get: { model.selection },
             set: { newValue in
-                model.isOn = newValue
+                model.selection = newValue
                 model.onInternalValueChanged?(newValue)
             })
     }
 
     var body: some View {
-        OUDSCheckbox(
-            isOn: checkboxBinding,
+        OUDSCheckboxIndeterminate(
+            selection: checkboxBinding,
             accessibilityLabel: model.accessibilityLabel,
             isError: model.isError)
             .environment(\._theme, OUDSUIKit.theme)
@@ -169,23 +169,23 @@ struct OUDSCheckboxWrapper: View {
 
 // MARK: - OUDS Checkbox View Model
 
-/// The `SwiftUI` view model used inside the `OUDSCheckboxWrapper` to manage the state of the embeded `OUDSCheckbox`
-@MainActor final class OUDSCheckboxViewModel: ObservableObject {
+/// The `SwiftUI` view model used inside the `OUDSCheckboxIndeterminateWrapper` to manage the state of the embeded `OUDSCheckboxIndeterminate`
+@MainActor final class OUDSCheckboxIndeterminateViewModel: ObservableObject {
 
-    /// For `OUDSCheckbox/isOn`
-    @Published var isOn: Bool
-    /// For `OUDSCheckbox/isError`
+    /// For `OUDSCheckboxIndeterminate/selection`
+    @Published var selection: OUDSCheckboxIndicatorState
+    /// For `OUDSCheckboxIndeterminate/isError`
     @Published var isError: Bool
-    /// For `OUDSCheckbox/accessibilityLabel`
+    /// For `OUDSCheckboxIndeterminate/accessibilityLabel`
     var accessibilityLabel: String
 
-    var onInternalValueChanged: ((Bool) -> Void)?
+    var onInternalValueChanged: ((OUDSCheckboxIndicatorState) -> Void)?
 
-    init(isOn: Bool,
+    init(selection: OUDSCheckboxIndicatorState,
          accessibilityLabel: String,
          isError: Bool = false)
     {
-        self.isOn = isOn
+        self.selection = selection
         self.accessibilityLabel = accessibilityLabel
         self.isError = isError
     }
@@ -198,44 +198,44 @@ struct OUDSCheckboxWrapper: View {
 extension OUDSSwiftUIBrige {
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Creates SwiftUI `OUDSCheckbox` with only an indicator.
+    /// Creates SwiftUI `OUDSCheckboxIndeterminate` with only an indicator.
     ///
     /// ```swift
     ///     // Define the selector for the action
-    ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxViewController) {
+    ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxIndeterminateViewController) {
     ///         // Do something
     ///         // sender.isError: flag for component in error state
-    ///         // sender.isOn: flag for the component value
+    ///         // sender.selection: flag for the component value
     ///     }
     ///
-    ///     // Then create the OUDSCheckbox inside your UIViewController
-    ///     OUDSUIKit.createCheckbox(isOn: true,
-    ///                              accessibilityLabel: "Meaningfull accessibility label",
-    ///                              isError: true,
-    ///                              target: self, // Where self is the UIViewController
-    ///                              action: #selector(checkboxChanged(_:)))
+    ///     // Then create the OUDSCheckboxIndeterminate inside your UIViewController
+    ///     OUDSUIKit.createCheckboxIndeterminate(selection: .indeterminate,
+    ///                                           accessibilityLabel: "Meaningfull accessibility label",
+    ///                                           isError: true,
+    ///                                           target: self, // Where self is the UIViewController
+    ///                                           action: #selector(checkboxChanged(_:)))
     /// ```
     ///
     /// - Parameters:
-    ///    - isOn: True if checkbox is selected, false otherwise
+    ///    - selection: The state of the checkbox (selected, unselected or indeterminate)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - target: Reference to the `UIViewController` hosting the component to create
-    ///    - action: The action to trigger defined in the `target` when the value of the `OUDSCheckbox` has changed
-    @MainActor public static func createCheckbox(isOn: Bool,
-                                                 accessibilityLabel: String,
-                                                 isError: Bool = false,
-                                                 target: Any?,
-                                                 action: Selector) -> UIViewController
+    ///    - action: The action to trigger defined in the `target` when the value of the `OUDSCheckboxIndeterminate` has changed
+    @MainActor public static func createCheckboxIndeterminate(selection: OUDSCheckboxIndicatorState,
+                                                              accessibilityLabel: String,
+                                                              isError: Bool = false,
+                                                              target: Any?,
+                                                              action: Selector) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSCheckbox(isOn:accessibilityLabel:isError)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSCheckboxIndeterminate(selection:accessibilityLabel:isError)")
 
-        let uikitCheckboxViewController = OUDSCheckboxViewController(
-            isOn: isOn,
+        let uikitCheckboxIndeterminateViewController = OUDSCheckboxIndeterminateViewController(
+            selection: selection,
             accessibilityLabel: accessibilityLabel,
             isError: isError)
-        uikitCheckboxViewController.addTarget(target, action: action, for: .valueChanged)
-        return uikitCheckboxViewController
+        uikitCheckboxIndeterminateViewController.addTarget(target, action: action, for: .valueChanged)
+        return uikitCheckboxIndeterminateViewController
     }
     // swiftlint:enable function_default_parameter_at_end
 }

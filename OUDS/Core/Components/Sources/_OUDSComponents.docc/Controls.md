@@ -63,6 +63,11 @@ This checkbox can provide two values (selected and unselected) or three values (
             // Where target is a reference to the hosting UIViewController
             // Where action is a selector of a method to trigger when value of the checkbox has changed
             OUDSUIKit.createCheckbox(isOn: false, accessibilityLabel: "Select the element", target: self, action: action)
+            
+            // The selection parameter can have three values: selected, unselected and indeterminate
+            // Where target is a reference to the hosting UIViewController
+            // Where action is a selector of a method to trigger when value of the checkbox has changed
+            OUDSUIKit.createCheckboxIndeterminate(selection: .indeterminate, accessibilityLabel: "Select the element", target: self, action: action)
         ```
     }
 }
