@@ -32,9 +32,12 @@ Controls       | Checkbox item indeterminate   | yes
 Controls       | Checkbox picker               | no
 Controls       | Radio                         | yes
 Controls       | Radio item                    | yes
-Controls       | Radio picker                  | yes
+Controls       | Radio picker                  | no
+Controls       | Switch                        | yes
+Controls       | Switch item                   | yes
 Controls       | Filter chip                   | yes
 Controls       | Suggestion chip               | yes
+Controls       | Chip picker                   | no
 Indicators     | Tag                           | yes
 Indicators     | Badge                         | yes
 Layouts        | Horizontal divider            | yes

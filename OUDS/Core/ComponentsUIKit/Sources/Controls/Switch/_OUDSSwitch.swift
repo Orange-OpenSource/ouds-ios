@@ -16,29 +16,29 @@ import OUDSFoundations
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Radio View Controller
+// MARK: - OUDS Switch View Controller
 
-/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSRadio`
-/// Helps to manage the states and values of the `OUDSRadio` and tries to expose a UIKit-like API for actions.
-public final class OUDSRadioViewController: UIViewController {
+/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSSwitch`
+/// Helps to manage the states and values of the `OUDSSwitch` and tries to expose a UIKit-like API for actions.
+public final class OUDSSwitchViewController: UIViewController {
 
     // MARK: Properties
 
     // swiftlint:disable implicitly_unwrapped_optional
-    /// To host the SwiftUI radio button
-    private var hostingController: UIHostingController<OUDSRadioWrapper>!
+    /// To host the SwiftUI switch
+    private var hostingController: UIHostingController<OUDSSwitchWrapper>!
     // swiftlint:enable implicitly_unwrapped_optional
-    /// To manage the radio button SwiftUI state
-    private let radioViewModel: OUDSRadioViewModel
+    /// To manage the switch SwiftUI state
+    private let switchViewModel: OUDSSwitchViewModel
     /// To have an action to trigger for a target
     private var targets: [ComponentInteraction]
 
-    /// To expose the radio button checked state (`OUDSRadio/isOn`)
+    /// To expose the switch  checked state (`OUDSSwitch/isOn`)
     public var isOn: Bool {
-        get { radioViewModel.isOn }
+        get { switchViewModel.isOn }
         set {
-            let oldValue = radioViewModel.isOn
-            radioViewModel.isOn = newValue
+            let oldValue = switchViewModel.isOn
+            switchViewModel.isOn = newValue
             if oldValue != newValue {
                 sendActions(for: .valueChanged)
             }
@@ -47,18 +47,16 @@ public final class OUDSRadioViewController: UIViewController {
 
     // MARK: Initialization
 
-    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSRadio`
+    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSSwitch`
     /// hosted inside it.
     ///
     /// - Parameters:
-    ///    - isOn: If the radio button is checked or not
-    ///    - accessibilityLabel: The accessibility label to vocalise for the radio button
-    ///    - isError: If the radio button is in error state or not
-    init(isOn: Bool, accessibilityLabel: String, isError: Bool) {
-        radioViewModel = OUDSRadioViewModel(
+    ///    - isOn: If the switch button is checked or not
+    ///    - accessibilityLabel: The accessibility label to vocalise for the switch
+    init(isOn: Bool, accessibilityLabel: String) {
+        switchViewModel = OUDSSwitchViewModel(
             isOn: isOn,
-            accessibilityLabel: accessibilityLabel,
-            isError: isError)
+            accessibilityLabel: accessibilityLabel)
         targets = []
         super.init(nibName: nil, bundle: nil)
         setupInternalCallback()
@@ -117,7 +115,7 @@ public final class OUDSRadioViewController: UIViewController {
     // MARK: Set up
 
     private func setupHostingController() {
-        let swiftUIWrapperView = OUDSRadioWrapper(model: radioViewModel)
+        let swiftUIWrapperView = OUDSSwitchWrapper(model: switchViewModel)
         hostingController = UIHostingController(rootView: swiftUIWrapperView)
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -126,7 +124,7 @@ public final class OUDSRadioViewController: UIViewController {
     }
 
     private func setupInternalCallback() {
-        radioViewModel.onInternalValueChanged = { [weak self] _ in
+        switchViewModel.onInternalValueChanged = { [weak self] _ in
             guard let self else { return }
             DispatchQueue.main.async {
                 self.sendActions(for: .valueChanged)
@@ -135,15 +133,15 @@ public final class OUDSRadioViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Radio Wrapper
+// MARK: - OUDS Switch Wrapper
 
-/// A SwiftUI `View` which embeds the SwiftUI `OUDSRadio` and exposes bindings
+/// A SwiftUI `View` which embeds the SwiftUI `OUDSSwitch` and exposes bindings
 /// and view model.
-struct OUDSRadioWrapper: View {
+struct OUDSSwitchWrapper: View {
 
-    @ObservedObject var model: OUDSRadioViewModel
+    @ObservedObject var model: OUDSSwitchViewModel
 
-    private var radioButtonBinding: Binding<Bool> {
+    private var switchButtonBinding: Binding<Bool> {
         Binding(
             get: { model.isOn },
             set: { newValue in
@@ -153,35 +151,30 @@ struct OUDSRadioWrapper: View {
     }
 
     var body: some View {
-        OUDSRadio(
-            isOn: radioButtonBinding,
-            accessibilityLabel: model.accessibilityLabel,
-            isError: model.isError)
+        OUDSSwitch(
+            isOn: switchButtonBinding,
+            accessibilityLabel: model.accessibilityLabel)
             .environment(\._theme, OUDSUIKit.theme)
     }
 }
 
-// MARK: - OUDS Radio View Model
+// MARK: - OUDS Switch View Model
 
-/// The `SwiftUI` view model used inside the `OUDSRadioWrapper` to manage the state of the embeded `OUDSRadio`
-@MainActor final class OUDSRadioViewModel: ObservableObject {
+/// The `SwiftUI` view model used inside the `OUDSSwitchWrapper` to manage the state of the embeded `OUDSSwitch`
+@MainActor final class OUDSSwitchViewModel: ObservableObject {
 
-    /// For `OUDSRadio/isOn`
+    /// For `OUDSSwitch/isOn`
     @Published var isOn: Bool
-    /// For `OUDSRadio/isError`
-    var isError: Bool
-    /// For `OUDSRadio/accessibilityLabel`
+    /// For `OUDSSwitch/accessibilityLabel`
     var accessibilityLabel: String
 
     var onInternalValueChanged: ((Bool) -> Void)?
 
     init(isOn: Bool,
-         accessibilityLabel: String,
-         isError: Bool)
+         accessibilityLabel: String)
     {
         self.isOn = isOn
         self.accessibilityLabel = accessibilityLabel
-        self.isError = isError
     }
 
     deinit {}
@@ -192,43 +185,39 @@ struct OUDSRadioWrapper: View {
 extension OUDSSwiftUIBrige {
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Creates SwiftUI `OUDSRadio` with only an indicator.
+    /// Creates SwiftUI `OUDSSwitch` with only an indicator.
     ///
     /// ```swift
     ///     // Define the selector for the action
-    ///      @objc private func radioChanged(_ sender: OUDSRadioViewController) {
+    ///      @objc private func switchChanged(_ sender: OUDSSwitchViewController) {
     ///         // Do something
     ///         // sender.isOn: flag for the component value
     ///     }
     ///
-    ///     // Then create the OUDSRadio inside your UIViewController
-    ///     OUDSUIKit.createRadio(isOn: true,
-    ///                           accessibilityLabel: "Meaningfull accessibility label",
-    ///                           isError: true,
-    ///                           target: self, // Where self is the UIViewController
-    ///                           action: #selector(radioChanged(_:)))
+    ///     // Then create the OUDSSwitch inside your UIViewController
+    ///     OUDSUIKit.createSwitch(isOn: true,
+    ///                            accessibilityLabel: "Meaningfull accessibility label",
+    ///                            target: self, // Where self is the UIViewController
+    ///                            action: #selector(switchChanged(_:)))
     /// ```
     ///
     /// - Parameters:
-    ///    - isOn: True if radio is selected, false otherwise
+    ///    - isOn: True if switch is selected, false otherwise
     ///    - accessibilityLabel: The accessibility label the component must have
-    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - target: Reference to the `UIViewController` hosting the component to create
-    ///    - action: The action to trigger defined in the `target` when the value of the `OUDSRadio` has changed
-    @MainActor public static func createRadio(isOn: Bool,
-                                              accessibilityLabel: String,
-                                              isError: Bool = false,
-                                              target: Any?,
-                                              action: Selector) -> UIViewController
+    ///    - action: The action to trigger defined in the `target` when the value of the `OUDSSwitch` has changed
+    @MainActor public static func createSwitch(isOn: Bool,
+                                               accessibilityLabel: String,
+                                               target: Any?,
+                                               action: Selector) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSRadio(isOn:accessibilityLabel:isError)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSSwitch(isOn:accessibilityLabel)")
 
-        let uikitRadioViewController = OUDSRadioViewController(
+        let uikitSwitchViewController = OUDSSwitchViewController(
             isOn: isOn,
-            accessibilityLabel: accessibilityLabel,
-            isError: isError)
-        uikitRadioViewController.addTarget(target, action: action, for: .valueChanged)
-        return uikitRadioViewController
+            accessibilityLabel: accessibilityLabel)
+        uikitSwitchViewController.addTarget(target, action: action, for: .valueChanged)
+        return uikitSwitchViewController
     }
     // swiftlint:enable function_default_parameter_at_end
 }

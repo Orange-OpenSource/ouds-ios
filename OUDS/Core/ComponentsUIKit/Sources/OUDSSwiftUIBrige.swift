@@ -26,7 +26,11 @@ public typealias ComponentInteraction = (target: AnyObject, action: Selector, ev
 
 // MARK: OUDS SwiftUI Bridge
 
-/// Helps to wrap OUDS components written in SwiftUI for UIKit views
+/// Helps to wrap OUDS components written in SwiftUI for UIKit views.
+/// Contains environement objects like themes or observers.
+/// Provides utilities to to get OUDS SwiftUI components wrapper in UIKit controllers.
+///
+/// **This is still an experimental feature and it is recommended to use SwiftUI components**
 ///
 /// - Since: 0.20.0
 public enum OUDSSwiftUIBrige {

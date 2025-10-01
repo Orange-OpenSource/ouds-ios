@@ -418,14 +418,35 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 The library proposes a new layout for the switch component. The native it not used anymore.
 You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
 
-```swift
-    // A simple switch, with only an indicator
-    // The component must be instanciated with a string parameter used as accessibility label that will be
-    // vocalized by Voice Over. 
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+            
+            // A simple switch, with only an indicator
+            // The component must be instanciated with a string parameter used as accessibility label that will be
+            // vocalized by Voice Over. 
 
-    // The isOn parameter can have only two values: true (selected), false (unselected)
-    OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
-```
+            // The isOn parameter can have only two values: true (selected), false (unselected)
+            OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
+        ```
+    }
+    @Tab("UIKit (experimental)") {
+        ```swift
+            import OUDSComponentsUIKit
+
+            // Where target is a reference to the hosting UIViewController
+            // Where action is a selector of a method to trigger when value of the checkbox has changed
+            
+            // A simple switch, with only an indicator
+            // The component must be instanciated with a string parameter used as accessibility label that will be
+            // vocalized by Voice Over. 
+
+            // The isOn parameter can have only two values: true (selected), false (unselected)
+            OUDSUIKit.createSwitch(isOn: true, accessibilityLabel: "Select the element", target: target, action: action)
+        ```
+    }
+}
 
 #### Switch item
 
@@ -450,25 +471,61 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``)
 The indicator can be leading or trailing.
 
-```swift
-    // A leading switch with a label and exposing the state through isOn binding
-    OUDSSwitchItem(i"Hello world", isOn: $isOn)
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
 
-    // A leading switch with a label, an helper text
-    OUDSSwitchItem("Dead Robot Zombie Cop",
-                   isOn: $isOn,
-                   helper: "from Outer Space II")
+            // A leading switch with a label and exposing the state through isOn binding
+            OUDSSwitchItem("Hello world", isOn: $isOn)
 
-    // A trailing switch with a label, an helper text, an icon, a divider and is about an error
-    // with an inverse layout
-    OUDSSwitchItem("We live in a fabled world",
-                   isOn: $isOn,
-                   helper: "Of dreaming boys and wide-eyed girls",
-                   icon: Image(decorative: "ic_heart"),
-                   isReversed: true,
-                   isError: true,
-                   hasDivider: true)
-```
+            // A leading switch with a label, an helper text
+            OUDSSwitchItem("Dead Robot Zombie Cop",
+                           isOn: $isOn,
+                           helper: "from Outer Space II")
+
+            // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+            // with an inverse layout
+            OUDSSwitchItem("We live in a fabled world",
+                           isOn: $isOn,
+                           helper: "Of dreaming boys and wide-eyed girls",
+                           icon: Image(decorative: "ic_heart"),
+                           isReversed: true,
+                           isError: true,
+                           hasDivider: true)
+        ```
+    }
+    @Tab("UIKit (experimental)") {
+        ```swift
+            import OUDSComponentsUIKit
+            
+            // Where target is a reference to the hosting UIViewController
+            // Where action is a selector of a method to trigger when value of the checkbox has changed
+
+            // A leading switch with a label and exposing the state through isOn binding
+            OUDSUIKit.createSwitchItem("Hello world", isOn: $isOn, target: target, action: action)
+
+            // A leading switch with a label, an helper text
+            OUDSUIKit.createSwitchItem("Dead Robot Zombie Cop",
+                                        isOn: $isOn,
+                                        helper: "from Outer Space II",
+                                        target: target, 
+                                        action: action)
+
+            // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+            // with an inverse layout
+            OUDSUIKit.createSwitchItem("We live in a fabled world",
+                                       isOn: $isOn,
+                                       helper: "Of dreaming boys and wide-eyed girls",
+                                       icon: Image(decorative: "ic_heart"),
+                                       isReversed: true,
+                                       isError: true,
+                                       hasDivider: true,
+                                       target: target, 
+                                       action: action)
+        ```
+    }
+}
 
 ### Chips
 
