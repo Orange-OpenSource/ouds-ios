@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
@@ -247,7 +248,7 @@ struct OUDSRadioItemWrapper: View {
 
 // MARK: - OUDS SwiftUI Bridge
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     // swiftlint:disable function_default_parameter_at_end
     /// Creates SwiftUI `OUDSRadioItem` with only an indicator.
@@ -266,6 +267,8 @@ extension OUDSSwiftUIBrige {
     ///                               icon: Image("ic_heart"),
     ///                               action: #selector(radioChanged(_:)))
     /// ```
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - isOn: A flag indicating wether or not the radio is selected
@@ -310,3 +313,4 @@ extension OUDSSwiftUIBrige {
     }
     // swiftlint:enable function_default_parameter_at_end
 }
+#endif

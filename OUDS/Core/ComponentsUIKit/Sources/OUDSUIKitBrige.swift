@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDS
 import OUDSFoundations
 import SwiftUI
@@ -19,7 +20,7 @@ import UIKit
 // MARK: - Type aliases
 
 /// OUDS UIKit is not managed with implementation from scratch, but a bridge exists
-public typealias OUDSUIKit = OUDSSwiftUIBrige
+public typealias OUDSUIKit = OUDSUIKitBrige
 
 /// An component interfaction is defined by a target (like a `UIViewController`), a triggered action (e.g. `Selector`) and an event (e.g. *value changed*)
 public typealias ComponentInteraction = (target: AnyObject, action: Selector, events: UIControl.Event)
@@ -33,7 +34,7 @@ public typealias ComponentInteraction = (target: AnyObject, action: Selector, ev
 /// **This is still an experimental feature and it is recommended to use SwiftUI components**
 ///
 /// - Since: 0.20.0
-public enum OUDSSwiftUIBrige {
+public enum OUDSUIKitBrige {
 
     // MARK: Properties
 
@@ -76,8 +77,9 @@ public enum OUDSSwiftUIBrige {
     @MainActor public static func wrap(component view: any View) -> UIViewController {
         checkPrerequisites()
         let viewWithEnvironment = view
-            .environment(\._theme, OUDSSwiftUIBrige.theme)
-            .environmentObject(OUDSSwiftUIBrige.lowPowerModeObserver)
+            .environment(\._theme, OUDSUIKitBrige.theme)
+            .environmentObject(OUDSUIKitBrige.lowPowerModeObserver)
         return UIHostingController(rootView: AnyView(viewWithEnvironment))
     }
 }
+#endif

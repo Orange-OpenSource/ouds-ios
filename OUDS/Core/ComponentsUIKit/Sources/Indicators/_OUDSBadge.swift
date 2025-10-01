@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Create a SwiftUI `OUDSBadge` basic.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
@@ -35,6 +38,8 @@ extension OUDSSwiftUIBrige {
     /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
     /// Negative values are not allowed by design.
     /// The background color of the badge and the number color are based on the given `status`.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
@@ -53,6 +58,8 @@ extension OUDSSwiftUIBrige {
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
     /// The background color of the badge and the icon color are based on the given `status`.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - icon: The icon displayed in the badge
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
@@ -68,3 +75,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUIBadge)
     }
 }
+#endif

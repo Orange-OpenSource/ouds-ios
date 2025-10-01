@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
@@ -182,7 +183,7 @@ struct OUDSSwitchWrapper: View {
 
 // MARK: - OUDS SwiftUI Bridge
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Creates SwiftUI `OUDSSwitch` with only an indicator.
     ///
@@ -199,6 +200,8 @@ extension OUDSSwiftUIBrige {
     ///                            target: self, // Where self is the UIViewController
     ///                            action: #selector(switchChanged(_:)))
     /// ```
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - isOn: True if switch is selected, false otherwise
@@ -219,3 +222,4 @@ extension OUDSSwiftUIBrige {
         return uikitSwitchViewController
     }
 }
+#endif

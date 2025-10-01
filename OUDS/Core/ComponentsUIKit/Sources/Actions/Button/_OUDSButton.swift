@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Create a SwiftUI `OUDSButton` with text and icon.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - icon: The image to load
@@ -43,6 +46,8 @@ extension OUDSSwiftUIBrige {
 
     /// Create a SwiftUI `OUDSButton` with an icon only
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - icon: The image to load
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
@@ -66,6 +71,8 @@ extension OUDSSwiftUIBrige {
 
     /// Create a SwiftUI `OUDSButton` with a text only
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - text: The text of the button to display
     ///    - appearance: The button appearance, default set to `.default`
@@ -84,3 +91,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUIButton)
     }
 }
+#endif

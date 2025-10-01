@@ -11,17 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Creates a SwiftUI `OUDSSuggestionChip` with text and icon.
     ///
-    /// No accessibility hint is defined for this component.
-    /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -38,6 +38,8 @@ extension OUDSSwiftUIBrige {
 
     /// Creates a SwiftUI `OUDSSuggestionChip` with an icon only.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
@@ -53,6 +55,8 @@ extension OUDSSwiftUIBrige {
 
     /// Creates a chip with a text only.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - text: The text of the button to display,  must not be empty
     ///    - action: The action to perform when the user triggers the chip
@@ -64,3 +68,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUISuggestionChip)
     }
 }
+#endif

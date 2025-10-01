@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Creates a SwiftUI `OUDSVerticalDivider`
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
     @MainActor public static func createVerticalDivider(color: OUDSDividerColor = .default) -> UIViewController {
@@ -27,3 +30,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUIVerticalDivider)
     }
 }
+#endif

@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Creates a `SwiftUI` `OUDSLink` with text and icon.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
@@ -37,6 +40,8 @@ extension OUDSSwiftUIBrige {
 
     /// Creates a SwiftUI `OUDSLink` with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - indicator: Indicator displayed in the link
@@ -54,3 +59,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUILink)
     }
 }
+#endif

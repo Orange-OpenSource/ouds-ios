@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Create a SwiftUI `OUDSTag` with simple label and maybe an icon.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
@@ -53,3 +56,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUITag)
     }
 }
+#endif

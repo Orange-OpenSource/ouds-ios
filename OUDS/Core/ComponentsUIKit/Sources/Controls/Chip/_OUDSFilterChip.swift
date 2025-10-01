@@ -11,14 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
 import UIKit
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     /// Creates a SwiftUI `OUDSFilterChip` with text and icon.
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -33,6 +36,8 @@ extension OUDSSwiftUIBrige {
 
     /// Creates a SwiftUI `OUDSFilterChip` with an icon only.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
@@ -46,6 +51,8 @@ extension OUDSSwiftUIBrige {
 
     /// Creates a SwiftUI `OUDSFilterChip` with a text only.
     ///
+    /// **This is an experimental feature, feedback and support is appreciated**
+    ///
     /// - Parameters:
     ///    - text: The text of the button to display, must not be empty
     ///    - selected: Flag to know if chip is selected, by default is unselected
@@ -56,3 +63,4 @@ extension OUDSSwiftUIBrige {
         return wrap(component: swiftUIFilterChip)
     }
 }
+#endif

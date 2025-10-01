@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if canImport(UIKit)
 import OUDSComponents
 import OUDSFoundations
 import SwiftUI
@@ -251,7 +252,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
 
 // MARK: - OUDS SwiftUI Bridge
 
-extension OUDSSwiftUIBrige {
+extension OUDSUIKitBrige {
 
     // swiftlint:disable function_default_parameter_at_end
     /// Creates SwiftUI `OUDSCheckboxItemIndeterminate` with only an indicator.
@@ -270,6 +271,8 @@ extension OUDSSwiftUIBrige {
     ///                                               icon: Image("ic_heart"),
     ///                                               action: #selector(checkboxChanged(_:)))
     /// ```
+    ///
+    /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
     ///    - selection: A property indicating wether or not the checkbox is selected or in indeterminate state
@@ -314,3 +317,4 @@ extension OUDSSwiftUIBrige {
     }
     // swiftlint:enable function_default_parameter_at_end
 }
+#endif
