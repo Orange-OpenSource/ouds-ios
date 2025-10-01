@@ -47,7 +47,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
             OUDSButton(text: "Delete", appearance: .negative) {}
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             

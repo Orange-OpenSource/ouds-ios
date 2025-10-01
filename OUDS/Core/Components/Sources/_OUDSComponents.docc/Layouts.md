@@ -176,7 +176,7 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
             }
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             

@@ -30,6 +30,7 @@ Controls       | Checkbox indeterminate        | yes
 Controls       | Checkbox item                 | yes
 Controls       | Checkbox item indeterminate   | yes
 Controls       | Checkbox picker               | no
+Controls       | Radio                         | yes
 Controls       | Filter chip                   | yes
 Controls       | Suggestion chip               | yes
 Indicators     | Tag                           | yes

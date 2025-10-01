@@ -51,7 +51,7 @@ This checkbox can provide two values (selected and unselected) or three values (
             OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
 
@@ -123,7 +123,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
                              action: action)
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             
@@ -246,12 +246,31 @@ Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
 You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
 
-```swift
-     // A simple radio, with only an indicator
-     // The component must be instanciated with a string parameter used as accessibility label that will 
-     // be vocalized by Voice Over. 
-     OUDSRadio(isOn: $selection, accessibilityLabel: "Select the element")
-```
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+            
+            // A simple radio, with only an indicator
+            // The component must be instanciated with a string parameter used as accessibility label that will 
+            // be vocalized by Voice Over. 
+            OUDSRadio(isOn: $selection, accessibilityLabel: "Select the element")
+        ```    
+    }
+    @Tab("UIKit (experimental)") {
+        ```swift
+             import OUDSComponentsUIKit
+             
+             // Where target is a reference to the hosting UIViewController
+             // Where action is a selector of a method to trigger when value of the checkbox has changed
+             
+             // A simple radio, with only an indicator
+             // The component must be instanciated with a string parameter used as accessibility label that will 
+             // be vocalized by Voice Over. 
+             OUDSUIKit.createRadio(isOn: true, accessibilityLabel: "Select the element", target: target, action: action)
+        ```
+    }
+}
 
 #### Radio item
 
@@ -461,7 +480,7 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
             OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
 
@@ -514,7 +533,7 @@ The library proposes filter chip component to make some filtering with selected 
             OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
         ```    
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             

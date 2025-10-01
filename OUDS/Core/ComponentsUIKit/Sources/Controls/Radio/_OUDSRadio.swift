@@ -16,29 +16,29 @@ import OUDSFoundations
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox View Controller
+// MARK: - OUDS Radio View Controller
 
-/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckbox`
-/// Helps to manage the states and values of the `OUDSCheckbox` and tries to expose a UIKit-like API for actions.
-public final class OUDSCheckboxViewController: UIViewController {
+/// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSRadio`
+/// Helps to manage the states and values of the `OUDSRadio` and tries to expose a UIKit-like API for actions.
+public final class OUDSRadioViewController: UIViewController {
 
     // MARK: Properties
 
     // swiftlint:disable implicitly_unwrapped_optional
-    /// To host the SwiftUI checkbox
-    private var hostingController: UIHostingController<OUDSCheckboxWrapper>!
+    /// To host the SwiftUI radio button
+    private var hostingController: UIHostingController<OUDSRadioWrapper>!
     // swiftlint:enable implicitly_unwrapped_optional
-    /// To manage the checkbox SwiftUI state
-    private let checkboxViewModel: OUDSCheckboxViewModel
+    /// To manage the radio button SwiftUI state
+    private let radioViewModel: OUDSRadioViewModel
     /// To have an action to trigger for a target
     private var targets: [ComponentInteraction]
 
-    /// To expose the checkbox checked state (`OUDSCheckbox/isOn`)
+    /// To expose the radio button checkbox checked state (`OUDSRadio/isOn`)
     public var isOn: Bool {
-        get { checkboxViewModel.isOn }
+        get { radioViewModel.isOn }
         set {
-            let oldValue = checkboxViewModel.isOn
-            checkboxViewModel.isOn = newValue
+            let oldValue = radioViewModel.isOn
+            radioViewModel.isOn = newValue
             if oldValue != newValue {
                 sendActions(for: .valueChanged)
             }
@@ -47,15 +47,15 @@ public final class OUDSCheckboxViewController: UIViewController {
 
     // MARK: Initialization
 
-    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckbox`
+    /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSRadio`
     /// hosted inside it.
     ///
     /// - Parameters:
-    ///    - isOn: If the checkbox is checked or not
-    ///    - accessibilityLabel: The accessibility label to vocalise for the checkbox
-    ///    - isError: If the checkbox is in error state or not
+    ///    - isOn: If the radio button is checked or not
+    ///    - accessibilityLabel: The accessibility label to vocalise for the radio butto
+    ///    - isError: If the radio butto is in error state or not
     init(isOn: Bool, accessibilityLabel: String, isError: Bool) {
-        checkboxViewModel = OUDSCheckboxViewModel(
+        radioViewModel = OUDSRadioViewModel(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
             isError: isError)
@@ -117,7 +117,7 @@ public final class OUDSCheckboxViewController: UIViewController {
     // MARK: Set up
 
     private func setupHostingController() {
-        let swiftUIWrapperView = OUDSCheckboxWrapper(model: checkboxViewModel)
+        let swiftUIWrapperView = OUDSRadioWrapper(model: radioViewModel)
         hostingController = UIHostingController(rootView: swiftUIWrapperView)
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -126,7 +126,7 @@ public final class OUDSCheckboxViewController: UIViewController {
     }
 
     private func setupInternalCallback() {
-        checkboxViewModel.onInternalValueChanged = { [weak self] _ in
+        radioViewModel.onInternalValueChanged = { [weak self] _ in
             guard let self else { return }
             DispatchQueue.main.async {
                 self.sendActions(for: .valueChanged)
@@ -135,15 +135,15 @@ public final class OUDSCheckboxViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Checkbox Wrapper
+// MARK: - OUDS Radio Wrapper
 
-/// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckbox` and exposes bindings
+/// A SwiftUI `View` which embeds the SwiftUI `OUDSRadio` and exposes bindings
 /// and view model.
-struct OUDSCheckboxWrapper: View {
+struct OUDSRadioWrapper: View {
 
-    @ObservedObject var model: OUDSCheckboxViewModel
+    @ObservedObject var model: OUDSRadioViewModel
 
-    private var checkboxBinding: Binding<Bool> {
+    private var radioButtonBinding: Binding<Bool> {
         Binding(
             get: { model.isOn },
             set: { newValue in
@@ -153,24 +153,24 @@ struct OUDSCheckboxWrapper: View {
     }
 
     var body: some View {
-        OUDSCheckbox(
-            isOn: checkboxBinding,
+        OUDSRadio(
+            isOn: radioButtonBinding,
             accessibilityLabel: model.accessibilityLabel,
             isError: model.isError)
             .environment(\._theme, OUDSUIKit.theme)
     }
 }
 
-// MARK: - OUDS Checkbox View Model
+// MARK: - OUDS Radio View Model
 
-/// The `SwiftUI` view model used inside the `OUDSCheckboxWrapper` to manage the state of the embeded `OUDSCheckbox`
-@MainActor final class OUDSCheckboxViewModel: ObservableObject {
+/// The `SwiftUI` view model used inside the `OUDSRadioWrapper` to manage the state of the embeded `OUDSRadio`
+@MainActor final class OUDSRadioViewModel: ObservableObject {
 
-    /// For `OUDSCheckbox/isOn`
+    /// For `OUDSRadio/isOn`
     @Published var isOn: Bool
-    /// For `OUDSCheckbox/isError`
+    /// For `OUDSRadio/isError`
     var isError: Bool
-    /// For `OUDSCheckbox/accessibilityLabel`
+    /// For `OUDSRadio/accessibilityLabel`
     var accessibilityLabel: String
 
     var onInternalValueChanged: ((Bool) -> Void)?
@@ -192,43 +192,43 @@ struct OUDSCheckboxWrapper: View {
 extension OUDSSwiftUIBrige {
 
     // swiftlint:disable function_default_parameter_at_end
-    /// Creates SwiftUI `OUDSCheckbox` with only an indicator.
+    /// Creates SwiftUI `OUDSRadio` with only an indicator.
     ///
     /// ```swift
     ///     // Define the selector for the action
-    ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxViewController) {
+    ///      @objc private func radioChanged(_ sender: OUDSRadioViewController) {
     ///         // Do something
     ///         // sender.isOn: flag for the component value
     ///     }
     ///
-    ///     // Then create the OUDSCheckbox inside your UIViewController
-    ///     OUDSUIKit.createCheckbox(isOn: true,
-    ///                              accessibilityLabel: "Meaningfull accessibility label",
-    ///                              isError: true,
-    ///                              target: self, // Where self is the UIViewController
-    ///                              action: #selector(checkboxChanged(_:)))
+    ///     // Then create the OUDSRadio inside your UIViewController
+    ///     OUDSUIKit.createRadio(isOn: true,
+    ///                           accessibilityLabel: "Meaningfull accessibility label",
+    ///                           isError: true,
+    ///                           target: self, // Where self is the UIViewController
+    ///                           action: #selector(radioChanged(_:)))
     /// ```
     ///
     /// - Parameters:
-    ///    - isOn: True if checkbox is selected, false otherwise
+    ///    - isOn: True if radio is selected, false otherwise
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - target: Reference to the `UIViewController` hosting the component to create
     ///    - action: The action to trigger defined in the `target` when the value of the `OUDSCheckbox` has changed
-    @MainActor public static func createCheckbox(isOn: Bool,
-                                                 accessibilityLabel: String,
-                                                 isError: Bool = false,
-                                                 target: Any?,
-                                                 action: Selector) -> UIViewController
+    @MainActor public static func createRadio(isOn: Bool,
+                                              accessibilityLabel: String,
+                                              isError: Bool = false,
+                                              target: Any?,
+                                              action: Selector) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSCheckbox(isOn:accessibilityLabel:isError)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSRadio(isOn:accessibilityLabel:isError)")
 
-        let uikitCheckboxViewController = OUDSCheckboxViewController(
+        let uikitRadioViewController = OUDSRadioViewController(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
             isError: isError)
-        uikitCheckboxViewController.addTarget(target, action: action, for: .valueChanged)
-        return uikitCheckboxViewController
+        uikitRadioViewController.addTarget(target, action: action, for: .valueChanged)
+        return uikitRadioViewController
     }
     // swiftlint:enable function_default_parameter_at_end
 }

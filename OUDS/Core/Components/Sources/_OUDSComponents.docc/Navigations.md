@@ -48,7 +48,7 @@ The link can be displayed in `small` or `default` size.
             OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
         

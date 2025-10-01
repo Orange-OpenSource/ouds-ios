@@ -256,7 +256,6 @@ extension OUDSSwiftUIBrige {
     ///     // Define the selector for the action
     ///      @objc private func checkboxChanged(_ sender: OUDSCheckboxItemViewController) {
     ///         // Do something
-    ///         // sender.isError: flag for component in error state
     ///         // sender.isOn: flag for the component value
     ///     }
     ///

@@ -46,7 +46,7 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
             OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             
@@ -108,7 +108,7 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
             OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
         ```
     }
-    @Tab("UIKit") {
+    @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             
