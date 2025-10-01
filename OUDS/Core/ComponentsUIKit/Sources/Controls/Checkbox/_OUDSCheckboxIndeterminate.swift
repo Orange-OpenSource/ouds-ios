@@ -45,12 +45,6 @@ public final class OUDSCheckboxIndeterminateViewController: UIViewController {
         }
     }
 
-    /// To expose the checkbox error state (`OUDSCheckboxIndeterminate/isError`)
-    public var isError: Bool {
-        get { checkboxViewModel.isError }
-        set { checkboxViewModel.isError = newValue }
-    }
-
     // MARK: Initialization
 
     /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckboxIndeterminate`
@@ -59,8 +53,8 @@ public final class OUDSCheckboxIndeterminateViewController: UIViewController {
     /// - Parameters:
     ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label to vocalise for the checkbox
-    ///    - isError: If the checkbox is in error state or not (default set to *false*)
-    init(selection: OUDSCheckboxIndicatorState, accessibilityLabel: String, isError: Bool = false) {
+    ///    - isError: If the checkbox is in error state or not
+    init(selection: OUDSCheckboxIndicatorState, accessibilityLabel: String, isError: Bool) {
         checkboxViewModel = OUDSCheckboxIndeterminateViewModel(
             selection: selection,
             accessibilityLabel: accessibilityLabel,
@@ -175,7 +169,7 @@ struct OUDSCheckboxIndeterminateWrapper: View {
     /// For `OUDSCheckboxIndeterminate/selection`
     @Published var selection: OUDSCheckboxIndicatorState
     /// For `OUDSCheckboxIndeterminate/isError`
-    @Published var isError: Bool
+    var isError: Bool
     /// For `OUDSCheckboxIndeterminate/accessibilityLabel`
     var accessibilityLabel: String
 
@@ -183,7 +177,7 @@ struct OUDSCheckboxIndeterminateWrapper: View {
 
     init(selection: OUDSCheckboxIndicatorState,
          accessibilityLabel: String,
-         isError: Bool = false)
+         isError: Bool)
     {
         self.selection = selection
         self.accessibilityLabel = accessibilityLabel

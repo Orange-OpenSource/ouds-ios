@@ -45,12 +45,6 @@ public final class OUDSCheckboxViewController: UIViewController {
         }
     }
 
-    /// To expose the checkbox error state (`OUDSCheckbox/isError`)
-    public var isError: Bool {
-        get { checkboxViewModel.isError }
-        set { checkboxViewModel.isError = newValue }
-    }
-
     // MARK: Initialization
 
     /// Prepares a new `UIViewController` with configuration details for the SwiftUI `OUDSCheckbox`
@@ -59,8 +53,8 @@ public final class OUDSCheckboxViewController: UIViewController {
     /// - Parameters:
     ///    - isOn: If the checkbox is checked or not
     ///    - accessibilityLabel: The accessibility label to vocalise for the checkbox
-    ///    - isError: If the checkbox is in error state or not (default set to *false*)
-    init(isOn: Bool, accessibilityLabel: String, isError: Bool = false) {
+    ///    - isError: If the checkbox is in error state or not
+    init(isOn: Bool, accessibilityLabel: String, isError: Bool) {
         checkboxViewModel = OUDSCheckboxViewModel(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
@@ -175,7 +169,7 @@ struct OUDSCheckboxWrapper: View {
     /// For `OUDSCheckbox/isOn`
     @Published var isOn: Bool
     /// For `OUDSCheckbox/isError`
-    @Published var isError: Bool
+    var isError: Bool
     /// For `OUDSCheckbox/accessibilityLabel`
     var accessibilityLabel: String
 
@@ -183,7 +177,7 @@ struct OUDSCheckboxWrapper: View {
 
     init(isOn: Bool,
          accessibilityLabel: String,
-         isError: Bool = false)
+         isError: Bool)
     {
         self.isOn = isOn
         self.accessibilityLabel = accessibilityLabel

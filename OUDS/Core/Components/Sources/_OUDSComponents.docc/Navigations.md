@@ -53,13 +53,13 @@ The link can be displayed in `small` or `default` size.
             import OUDSComponentsUIKit
         
             // Text only in small size
-            OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+            OUDSUIKit.createLink(text: "Feedback", size: .small, action: { /* the action to process */ })
 
             // Text and icon in default size
-            OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+            OUDSUIKit.createLink(text: "Feedback", icon: Image("ic_heart"), size: .default, action: { /* the action to process */ })
 
             // Navigate to previous page with link in a default size
-            OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+            OUDSUIKit.createLink(text: "Back", indicator: .back, size: .default, action: { /* the action to process */ })
         ```
 
     }
