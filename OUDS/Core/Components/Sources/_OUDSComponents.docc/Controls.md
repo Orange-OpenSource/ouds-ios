@@ -295,21 +295,50 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
 
-```swift
-     // A leading radio with a label
-     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+             import OUDSComponents
+        
+             // A leading radio with a label
+             OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", target: target, action: action)
 
-     // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
-     // error with a reversed layout
-     OUDSRadioItem(isOn: $selection,
-                   label: "Lucy in the Sky with Diamonds",
-                   additionalLabel: "The Beatles"
-                   helper: "1967",
-                   icon: Image(decorative: "ic_heart"),
-                   isReversed: true,
-                   isError: true,
-                   hasDivider: true)
-```
+             // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
+             // error with a reversed layout
+             OUDSRadioItem(isOn: $selection,
+                           label: "Lucy in the Sky with Diamonds",
+                           additionalLabel: "The Beatles"
+                           helper: "1967",
+                           icon: Image(decorative: "ic_heart"),
+                           isReversed: true,
+                           isError: true,
+                           hasDivider: true,
+                           target: target, 
+                           action: action)
+        ```
+    }
+    @Tab("UIKit (experimental)") {
+        ```swift
+             import OUDSComponentsUIKit
+             
+             // Where target is a reference to the hosting UIViewController
+             // Where action is a selector of a method to trigger when value of the checkbox has changed
+             
+             // A leading radio with a label
+             OUDSUIKit.createRadioItem(isOn: true, label: "Lucy in the Sky with Diamonds")
+
+             // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an rror with a reversed layout
+             OUDSUIKit.createRadioItem(isOn: true,
+                                       label: "Lucy in the Sky with Diamonds",
+                                       additionalLabel: "The Beatles"
+                                       helper: "1967",
+                                       icon: Image(decorative: "ic_heart"),
+                                       isReversed: true,
+                                       isError: true,
+                                       hasDivider: true)
+        ```
+    }
+}
 
 #### Radio picker
 
