@@ -67,8 +67,7 @@ extension OUDSSwiftUIBrige {
     /// Create a SwiftUI `OUDSButton` with a text only
     ///
     /// - Parameters:
-    ///    - iconName: The name of an image to load
-    ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
+    ///    - text: The text of the button to display
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button

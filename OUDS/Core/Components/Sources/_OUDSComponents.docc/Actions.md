@@ -55,7 +55,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
                                    appearance: .default,
                                    action: {})
                                           
-            OUDSUIKit.createButton(text: "Delete,
+            OUDSUIKit.createButton(text: "Delete",
                                    appearance: .negative,
                                    action: {})
         ```

@@ -63,10 +63,10 @@ This checkbox can provide two values (selected and unselected) or three values (
             // Where action is a selector of a method to trigger when value of the checkbox has changed
             
             // The isOn parameter can have only two values: true (selected), false (unselected)
-            OUDSUIKit.createCheckbox(isOn: false, accessibilityLabel: "Select the element", target: self, action: action)
+            OUDSUIKit.createCheckbox(isOn: isOn, accessibilityLabel: "Select the element", target: self, action: action)
             
             // The selection parameter can have three values: selected, unselected and indeterminate
-            OUDSUIKit.createCheckboxIndeterminate(selection: .indeterminate, accessibilityLabel: "Select the element", target: self, action: action)
+            OUDSUIKit.createCheckboxIndeterminate(selection: selection, accessibilityLabel: "Select the element", target: self, action: action)
         ```
     }
 }
@@ -131,10 +131,10 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
             // Where action is a selector of a method to trigger when value of the checkbox has changed
         
             // A leading checkbox with a label, with only two states
-            OUDSUIKit.createCheckboxItem(isOn: true, label: "Hello world", target: self, action: action)
+            OUDSUIKit.createCheckboxItem(isOn: isOn, label: "Hello world", target: self, action: action)
 
             // A leading checkbox with a label, an helper text, and with a three-values-based state with selection binding
-            OUDSUIKit.createCheckboxItemIndeterminate(selection: .indeterminate,
+            OUDSUIKit.createCheckboxItemIndeterminate(selection: selection,
                                                       label: "Dead Robot Zombie Cop",
                                                       helper: "from Outer Space II"
                                                       target: self,
@@ -142,7 +142,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 
             // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
             // with a reversed layout, and with two states
-            OUDSUIKit.createCheckboxItem(isOn: false,
+            OUDSUIKit.createCheckboxItem(isOn: isOn,
                                          label: "We live in a fabled world",
                                          helper: "Of dreaming boys and wide-eyed girls",
                                          icon: Image(decorative: "ic_heart"),
@@ -254,7 +254,7 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
             // A simple radio, with only an indicator
             // The component must be instanciated with a string parameter used as accessibility label that will 
             // be vocalized by Voice Over. 
-            OUDSRadio(isOn: $selection, accessibilityLabel: "Select the element")
+            OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
         ```    
     }
     @Tab("UIKit (experimental)") {
@@ -267,7 +267,7 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
              // A simple radio, with only an indicator
              // The component must be instanciated with a string parameter used as accessibility label that will 
              // be vocalized by Voice Over. 
-             OUDSUIKit.createRadio(isOn: true, accessibilityLabel: "Select the element", target: target, action: action)
+             OUDSUIKit.createRadio(isOn: isOn, accessibilityLabel: "Select the element", target: target, action: action)
         ```
     }
 }
@@ -301,11 +301,11 @@ The indicator can be leading or trailing.
              import OUDSComponents
         
              // A leading radio with a label
-             OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", target: target, action: action)
+             OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", target: target, action: action)
 
              // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
              // error with a reversed layout
-             OUDSRadioItem(isOn: $selection,
+             OUDSRadioItem(isOn: $isOn,
                            label: "Lucy in the Sky with Diamonds",
                            additionalLabel: "The Beatles"
                            helper: "1967",
@@ -325,10 +325,10 @@ The indicator can be leading or trailing.
              // Where action is a selector of a method to trigger when value of the checkbox has changed
              
              // A leading radio with a label
-             OUDSUIKit.createRadioItem(isOn: true, label: "Lucy in the Sky with Diamonds")
+             OUDSUIKit.createRadioItem(isOn: isOn, label: "Lucy in the Sky with Diamonds")
 
              // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an rror with a reversed layout
-             OUDSUIKit.createRadioItem(isOn: true,
+             OUDSUIKit.createRadioItem(isOn: isOn,
                                        label: "Lucy in the Sky with Diamonds",
                                        additionalLabel: "The Beatles"
                                        helper: "1967",
@@ -443,7 +443,7 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
             // vocalized by Voice Over. 
 
             // The isOn parameter can have only two values: true (selected), false (unselected)
-            OUDSUIKit.createSwitch(isOn: true, accessibilityLabel: "Select the element", target: target, action: action)
+            OUDSUIKit.createSwitch(isOn: isOn, accessibilityLabel: "Select the element", target: target, action: action)
         ```
     }
 }
@@ -503,11 +503,11 @@ The indicator can be leading or trailing.
             // Where action is a selector of a method to trigger when value of the checkbox has changed
 
             // A leading switch with a label and exposing the state through isOn binding
-            OUDSUIKit.createSwitchItem("Hello world", isOn: $isOn, target: target, action: action)
+            OUDSUIKit.createSwitchItem("Hello world", isOn: isOn, target: target, action: action)
 
             // A leading switch with a label, an helper text
             OUDSUIKit.createSwitchItem("Dead Robot Zombie Cop",
-                                        isOn: $isOn,
+                                        isOn: isOn,
                                         helper: "from Outer Space II",
                                         target: target, 
                                         action: action)
@@ -515,7 +515,7 @@ The indicator can be leading or trailing.
             // A trailing switch with a label, an helper text, an icon, a divider and is about an error
             // with an inverse layout
             OUDSUIKit.createSwitchItem("We live in a fabled world",
-                                       isOn: $isOn,
+                                       isOn: isOn,
                                        helper: "Of dreaming boys and wide-eyed girls",
                                        icon: Image(decorative: "ic_heart"),
                                        isReversed: true,
