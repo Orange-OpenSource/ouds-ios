@@ -55,6 +55,9 @@ let package = Package(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
         .library(
+            name: "OUDSComponentsUIKit",
+            targets: ["OUDSComponentsUIKit"]),
+        .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
         .library(
@@ -151,6 +154,10 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
+        .target(
+            name: "OUDSComponentsUIKit",
+            dependencies: ["OUDSComponents"],
+            path: "OUDS/Core/ComponentsUIKit/Sources"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
