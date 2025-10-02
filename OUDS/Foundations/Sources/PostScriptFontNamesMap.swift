@@ -90,11 +90,14 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 
 // MARK: - Values
 
-/// Contains the Apple PostScript name of a font given a font family name and a font weight/
+/// Contains the Apple PostScript name of a font given a font family name and a font weight.
 /// Such values have been picked from the Apple Font Book.
+///
 /// If you use your own fonts, be sure their PostScript name:
 /// - do not collide with one the the values defined here (depending to tokens)
 /// - do not collide with one of the Apple available fonts (in iOS side)
+///
+/// Defines also kind of fallbacks if the weight or the style is not defined.
 public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
@@ -104,16 +107,16 @@ public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",
 
         PSFNMK("Helvetica", Font.Weight.light): "Helvetica-Light",
-        PSFNMK("Helvetica", nil): "Helvetica",
+        PSFNMK("Helvetica", nil /* courant */ ): "Helvetica",
         PSFNMK("Helvetica", Font.Weight.bold): "Helvetica-Bold",
 
-        // "Noto Sans" defined in FontRawTokens but does not exists as is in font books
+        // "Noto Sans" defined in FontRawTokens but does not exist as is in font books
 
         PSFNMK("SF Pro", Font.Weight.ultraLight): "SFPro-Ultralight",
         PSFNMK("SF Pro", Font.Weight.thin): "SFPro-Thin",
         PSFNMK("SF Pro", Font.Weight.light): "SFPro-Light",
         PSFNMK("SF Pro", Font.Weight.regular): "SFPro-Regular",
-        PSFNMK("SF Pro", nil): "SFPro",
+        PSFNMK("SF Pro", nil /* courant */ ): "SFPro-Regular",
         PSFNMK("SF Pro", Font.Weight.medium): "SFPro-Medium",
         PSFNMK("SF Pro", Font.Weight.semibold): "SFPro-Semibold",
         PSFNMK("SF Pro", Font.Weight.bold): "SFPro-Bold",
@@ -125,7 +128,7 @@ public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Menlo", Font.Weight.regular): "Menlo-Regular",
         PSFNMK("Menlo", Font.Weight.bold): "Menlo-Bold",
 
-        PSFNMK("Courier New", nil): "CourierNewPSMT",
+        PSFNMK("Courier New", nil /* normal */ ): "CourierNewPSMT",
         PSFNMK("Courier New", Font.Weight.bold): "CourierNewPS-BoldMT",
 
         // "SF Mono" defined in FontRawTokens but does not exist at all in font books
@@ -136,12 +139,19 @@ public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Helvetica Neue", Font.Weight.thin): "HelveticaNeue-Thin",
         PSFNMK("Helvetica Neue", Font.Weight.light): "HelveticaNeue-Light",
         PSFNMK("Helvetica Neue", Font.Weight.regular): "HelveticaNeue-Regular",
-        PSFNMK("Helvetica Neue", nil): "HelveticaNeue",
+        PSFNMK("Helvetica Neue", nil /* normal */ ): "HelveticaNeue",
         PSFNMK("Helvetica Neue", Font.Weight.medium): "HelveticaNeue-Medium",
         PSFNMK("Helvetica Neue", Font.Weight.semibold): "HelveticaNeue-Semibold",
         PSFNMK("Helvetica Neue", Font.Weight.bold): "HelveticaNeue-Bold",
         // NOTE: "Helvetica Neue 75" in Orange Brand TTF has "HelveticaNeue-Bold" PostScript Name
         // ┬─┬ ︵ /(.□. \）
+
+        // WARNING: Needs TTF font files not available in iOS, thus needed to be added in project
+        // NOTE: Download it through Orange Brand website (need authentication): https://brand.orange.com/en/brand-basics/typography
+        PSFNMK("Helvetica Neue Arabic", Font.Weight.light): "HelveticaNeueLTArabic-Light",
+        PSFNMK("Helvetica Neue Arabic", Font.Weight.regular): "HelveticaNeueLTArabic-Roman",
+        PSFNMK("Helvetica Neue Arabic", nil): "HelveticaNeueLTArabic-Roman",
+        PSFNMK("Helvetica Neue Arabic", Font.Weight.bold): "HelveticaNeueLTArabic-Bold",
 
         // MARK: Sosh
 

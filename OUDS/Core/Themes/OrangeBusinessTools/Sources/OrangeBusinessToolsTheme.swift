@@ -80,6 +80,8 @@ import SwiftUI
 ///
 /// ## Typography
 ///
+/// ### Helvetica Neue
+///
 /// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
 /// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
 /// By default an instance of `OrangeBusinessToolsTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
@@ -89,20 +91,26 @@ import SwiftUI
 /// It is recommended to use the font raw tokens.
 ///
 /// ```swift
-///     // The three following instanciations are the same
+///     // The following instanciations work
 ///     let orangeTheme = OrangeBusinessToolsTheme()
 ///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
 ///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
-///
-///     // This instanciation won't work as the font family is not recognised
 ///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
+/// ```
+///
+/// ### Helvetica Neue Arabic
+///
+/// Because the *Helvetica Neue* font family does not manage arabic alphabet but latin one, it is possible apply another font family to the theme like the
+/// *Helvetica Neue Arabic*. This font family assets can be retrieved through the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
+/// PostScript name management has been implemented for this font family, thus the weight are managed and it is only needed to add the font assets to the project,
+/// register them and define the font family name to use.
+///
+/// ```swift
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue Arabic")
 /// ```
 ///
 /// - Since: 0.17.0
 public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
-
-    /// Flag to avoid to register severals the fonts making some errors happen
-    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
 
     // MARK: - Initializers
 

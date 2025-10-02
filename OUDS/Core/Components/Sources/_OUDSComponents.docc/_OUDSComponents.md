@@ -46,7 +46,7 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevatio
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens). defined in the [`OUDSTokensSemantic` `FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
@@ -56,14 +56,13 @@ The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the co
 MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
 }
 
-// And here are the raw tokebs definitions:
+// And here are the raw tokens definitions:
 public static let typeBold750 = FontCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold)
-
 public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeightBold)
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the systme font will be used.
+Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the system font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
 
@@ -127,7 +126,7 @@ Indeed UIKit implementations are not scoped yet, but some helpers exist which wr
 First, you will need to import the dedicated Swift Package product
 
 ```swift
-import OUDSComponentsUIKit
+    import OUDSComponentsUIKit
 ```
 
 Then, send to the bridge the theme you want to use
@@ -139,10 +138,10 @@ Then, send to the bridge the theme you want to use
 After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
 
 ```swift
-OUDSUIKit.createButton(text: "Destructive button",
-                       appearance: .negative,
-                       style: .default,
-                       action: {})
+    OUDSUIKit.createButton(text: "Destructive button",
+                           appearance: .negative,
+                           style: .default,
+                           action: {})
 ```
 
 > Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
