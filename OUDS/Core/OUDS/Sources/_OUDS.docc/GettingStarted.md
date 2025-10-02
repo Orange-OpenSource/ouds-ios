@@ -29,7 +29,7 @@ import OUDSThemesOrange // To use the default Orange theme
 import OUDSThemesOrangeInverse // To use the Orange Inverse theme
 import OUDSThemesOrangeBusinessTools // To use the Orange Business Tools theme
 import OUDSThemesSosh // To use the Sosh theme
-import OUDSThemeWireframe // To use the Wireframe theme
+import OUDSThemesWireframe // To use the Wireframe theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import OUDSTokensRaw // If you need to override or use directly raw tokens
@@ -37,7 +37,7 @@ import OUDSTokensRaw // If you need to override or use directly raw tokens
 
 ### Chose your theme
 
-The *Orange Unified Design System* framework provides several themes:
+The *Orange Unified Design System* framework provides today five themes:
 
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
@@ -90,4 +90,4 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
     }
 }
 
-> Tip: Keep in mind only one theme can be used within the `OUDSThemeableView`.
+> Tip: Keep in mind only one theme can be used within one `OUDSThemeableView`.

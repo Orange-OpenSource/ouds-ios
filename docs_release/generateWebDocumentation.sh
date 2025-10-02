@@ -231,7 +231,7 @@ fi
 # Landing page of generated documentation is broken, real content is in /documentation
 # Override this page and force by code redirection
 # See Orange-OpenSource/ouds-ios#636
-echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/ouds"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/ouds</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
 
 # Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------

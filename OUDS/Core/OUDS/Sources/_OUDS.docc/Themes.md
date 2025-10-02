@@ -66,16 +66,18 @@ OUDSThemeableView(theme: YourCustomTheme()) {
 
 Some themes like `OrangeTheme`, `OrangeInverse` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
 or affiliates constraints.
-However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned
+However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
+
+> Note: Tuning represents the group of "flexibility points" allowed by the Orange Brand to tailor and customize themes for particular contexts.
 
 ### Tuned values
 
 There are few elements which can be tuned. Some tunings have also been defined.
 
-Tunable elements                       | Default values | Orange France | Orange Business | Max It   |                          
--------------------------------------- | -------------- | ------------- | --------------- | -------- |
-rounded corners for buttons            |     false      |    false      |      false      |   true   |
-rounded corners for text inputs        |     false      |    false      |      true       |   true   |
+Tunable elements                       | Default values    | Orange France    | Orange Business    | Max It      |                          
+-------------------------------------- | ----------------- | ---------------- | ------------------ | ----------- |
+rounded corners for buttons            |     ❌ false      |    ❌ false      |      ❌ false      |   ✅ true   |
+rounded corners for text inputs        |     ❌ false      |    ❌ false      |      ✅ true       |   ✅ true   |
 
 ### Tuning usages
 
@@ -95,21 +97,6 @@ The tuning to apply must be done at theme init.
     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
     let maxItTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
-
-### "Max it" case
-
-A predefined tuning configuration is also available for "Max it":
-
-```swift
-    let theme = OrangeTheme(tuning: Tuning.MaxIt)
-```
-
-It applies the following settings:
-
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners                | true  
-
 
 ## Define a custom theme if needed
 

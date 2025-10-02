@@ -61,6 +61,68 @@ The project is open source (except some assets) and topics like accessibility an
 
 It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) as the only one design system for Orange group and affiliates.
 
+> [!CAUTION]
+> This Swift Package is dedicated to SwiftUI. UIKit and other frameworks are not supported.
+
+## Quick start
+
+### Add the dependency
+
+First, you must add as _package dependency_ of your _project_ the URL of this _Swift Package_ GitHub repository:
+
+```text
+https://github.com/Orange-OpenSource/ouds-ios
+```
+
+You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases are frozen and are based on semantic versioning.
+
+### Add the librairies
+
+In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
+In most of cases, the `OUDS` library at least must be imported, it brings abstraction layer.
+Components are available with `OUDSComponents`. Themes are available through their librairies too (`OUDSThemeOrange`, `OUDSThemeSosh`, `OUDSThemeWireframe`, etc.).
+
+You can have more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
+
+### Instanciate and inject theme
+
+In the root view of your app, add the `OUDSThemeableView` with inside the _theme_ object you want to apply.
+You can instanciate the theme object on the fly, but only once.
+
+```swift
+import OUDS
+import SwiftUI
+
+@main
+struct YourApp: App {
+
+    var body: some Scene {
+        WindowGroup {
+            OUDSThemeableView(theme: theTheme) { // theTheme can be: OrangeTheme(), SoshTheme(), WirefameTheme(), etc.
+              AppRootView() // Add your app root view here
+            }
+        }
+    }
+}
+```
+
+Feel free to read the [online documentation](https://ios.unified-design-system.orange.com/documentation/ouds/gettingstarted).
+You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/ouds/themes).
+
+### Get the theme
+
+If you need to get configuration details from the theme (colors, dimensions, etc.), get the theme through _environment object_:
+
+```swift
+  @Environment(\.theme) var theme
+```
+
+### Use the components
+
+Import the `OUDSComponents` library and instanciate the component you need. All of them are described [in the online documentation (and grouped by categories)](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
+
+The wiki lists also [the components and their availability](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
+
 ## Content
 
 > [!NOTE]

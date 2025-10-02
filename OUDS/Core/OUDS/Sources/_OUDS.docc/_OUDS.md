@@ -10,7 +10,7 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The iOS library of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
+The Apple OS Swift Package of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
 
 ## Overview
 
@@ -34,6 +34,8 @@ You can get details about the this design system in [the official website unifie
 > Note: Orange Unified Design System framework supports iOS 15 and later.
 
 > Important: Orange Unified Design System framework focuses on iOS / iPadOS, other platforms like visionOS, watchOS, macOS and tvOS are not scoped yet.
+
+> Tip: Feel free to submit pull requests if you can improve the support of macOS, visionOS, tvOS and watchOS!
 
 ## Topics
 

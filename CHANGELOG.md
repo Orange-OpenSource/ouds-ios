@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Migration to Xcode 26.0 (Orange-OpenSource/ouds-ios#972)
+- Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
+- Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)
 - Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
 
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
