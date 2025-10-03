@@ -101,7 +101,8 @@ import SwiftUI
 /// ### Helvetica Neue Arabic
 ///
 /// Because the *Helvetica Neue* font family does not manage arabic alphabet but latin one, it is possible apply another font family to the theme like the
-/// *Helvetica Neue Arabic*. This font family assets can be retrieved through the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
+/// *Helvetica Neue Arabic*.
+/// This font family assets can be retrieved through the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
 /// PostScript name management has been implemented for this font family, thus the weight are managed and it is only needed to add the font assets to the project,
 /// register them and define the font family name to use.
 ///
