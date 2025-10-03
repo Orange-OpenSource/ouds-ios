@@ -53,7 +53,7 @@ The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the co
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
 @objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
-MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
+    MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
 }
 
 // And here are the raw tokens definitions:
@@ -75,6 +75,8 @@ myView.typeLabelStrongXLarge(theme)
 
 // Etc.
 ```
+
+These view modifiers are available for any `View` object, [you can get the curated list in the documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents/swiftuicore/view).
 
 ### Apply a specific border (border tokens)
 
@@ -118,7 +120,52 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:ColorS
     someView.oudsAccentColor(theme.colors.colorBgPrimary)
 ```
 
-## UIKit backports
+## Change font family according to locale or preferred language
+
+If you use for example one of the Orange themes, you may for sure use the *Helvetica Neue* font family.
+However, this font family manages latin alphabet and not arabic alphabet.
+Nevertheless a trick can be done to use the suitable *Helvetica Neue* font family according to the language.
+
+```swift
+/// Returns the Helvetica Neue font family to use depending to the preferred language or locale
+func localizedHelveticaFont() -> String {
+    guard let preferredLanguage = Locale.preferredLanguages.first else {
+        return "Helvetica Neue"
+    }
+    if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+        return "Helvetica Neue Arabic"
+    } else {
+        return "Helvetica Neue"
+    }
+}
+
+/// Instanciate your Orange theme using the font family.
+/// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
+let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
+```
+
+> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app
+
+> Note: For cyrillic alphabet the Orange Brand does not provide *Helvetica Neue* variant, you can use *Arial* instead
+
+## Registering font assets
+
+If you need to use some fonts like *Helvetica Neue Arabic*, you will need to add the TTF files in your project and somewhere somehow register them.
+
+```swift
+private static var fontsAlreadyRegistered = false
+
+/// Fonts are defined in Resources/Fonts in TTF files.
+private func registerFonts() {
+    if !Self.fontsAlreadyRegistered {
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+        Self.fontsAlreadyRegistered = true
+    }
+}
+```
+
+## UIKit backports (experimental)
 
 It is possible, but not recommended at all, to use OUDS components but wrapped for UIKit.
 Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
