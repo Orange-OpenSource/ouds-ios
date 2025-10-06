@@ -46,24 +46,23 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevatio
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens). defined in the [`OUDSTokensSemantic` `FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
 @objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
-MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
+    MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
 }
 
-// And here are the raw tokebs definitions:
+// And here are the raw tokens definitions:
 public static let typeBold750 = FontCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold)
-
 public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeightBold)
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the systme font will be used.
+Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the system font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
 
@@ -76,6 +75,8 @@ myView.typeLabelStrongXLarge(theme)
 
 // Etc.
 ```
+
+These view modifiers are available for any `View` object, [you can get the curated list in the documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents/swiftuicore/view).
 
 ### Apply a specific border (border tokens)
 
@@ -119,7 +120,52 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:ColorS
     someView.oudsAccentColor(theme.colors.colorBgPrimary)
 ```
 
-## UIKit backports
+## Change font family according to locale or preferred language
+
+If you use for example one of the Orange themes, you may for sure use the *Helvetica Neue* font family.
+However, this font family manages latin alphabet and not arabic alphabet.
+Nevertheless a trick can be done to use the suitable *Helvetica Neue* font family according to the language.
+
+```swift
+/// Returns the Helvetica Neue font family to use depending to the preferred language or locale
+func localizedHelveticaFont() -> String {
+    guard let preferredLanguage = Locale.preferredLanguages.first else {
+        return "Helvetica Neue"
+    }
+    if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
+        return "Helvetica Neue Arabic"
+    } else {
+        return "Helvetica Neue"
+    }
+}
+
+/// Instanciate your Orange theme using the font family.
+/// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
+let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
+```
+
+> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app
+
+> Note: For cyrillic alphabet the Orange Brand does not provide *Helvetica Neue* variant, you can use *Arial* instead
+
+## Registering font assets
+
+If you need to use some fonts like *Helvetica Neue Arabic*, you will need to add the TTF files in your project and somewhere somehow register them.
+
+```swift
+private static var fontsAlreadyRegistered = false
+
+/// Fonts are defined in Resources/Fonts in TTF files.
+private func registerFonts() {
+    if !Self.fontsAlreadyRegistered {
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+        Self.fontsAlreadyRegistered = true
+    }
+}
+```
+
+## UIKit backports (experimental)
 
 It is possible, but not recommended at all, to use OUDS components but wrapped for UIKit.
 Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
@@ -127,7 +173,7 @@ Indeed UIKit implementations are not scoped yet, but some helpers exist which wr
 First, you will need to import the dedicated Swift Package product
 
 ```swift
-import OUDSComponentsUIKit
+    import OUDSComponentsUIKit
 ```
 
 Then, send to the bridge the theme you want to use
@@ -139,10 +185,10 @@ Then, send to the bridge the theme you want to use
 After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
 
 ```swift
-OUDSUIKit.createButton(text: "Destructive button",
-                       appearance: .negative,
-                       style: .default,
-                       action: {})
+    OUDSUIKit.createButton(text: "Destructive button",
+                           appearance: .negative,
+                           style: .default,
+                           action: {})
 ```
 
 > Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
