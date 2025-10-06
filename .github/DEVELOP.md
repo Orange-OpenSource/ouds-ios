@@ -470,8 +470,7 @@ It will help us to ensure code on pull requests or being merged compiles and has
 Workflows are the following:
 - [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
 - [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
-- [codeql](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to automated security checks
-- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
 - [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
 - [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
@@ -482,6 +481,10 @@ We use also two GitHub apps making controls on pull requests and defining wether
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
 
 Note the workflow about the documentation builds it but does not expose it online. It allows us to ensure the documentation can be built on the current code base.
+
+> [!NOTE]
+> A workflow for dependency-review based on CodeQL existed but it was not posssible to have successful build for analyis
+> It has been withdrawn and will be added later.
 
 ### GitLab CI (internal)
 
