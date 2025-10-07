@@ -68,10 +68,6 @@ brew install swiftlint
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
 
-# For xcodes (at least 1.5.0)
-brew install xcodesorg/made/xcodes
-# or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
-
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
 
