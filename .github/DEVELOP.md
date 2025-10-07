@@ -103,6 +103,12 @@ rbenv global 3.4.0
 # then 
 # >  rbenv global x.y.z
 
+# Apple commends using ZSH as shell instead of Bash, so to will need to add the magic line in the end of your shell configuration
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+# Then
+source ~/.zshrc
+
 # Check Ruby version
 ruby --version
 ```
