@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift package `SwiftFormat` from v0.58.0 to v0.58.3
 - `Wireframe color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Sosh color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Font` semantic tokens for `Sosh` theme (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
