@@ -16,8 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `Dimension` semantic tokens names (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Color` semantic tokens for `Orange` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
-- `Color mode` semantic tokens for `Orange` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
-- `Switch` component tokens for `Orange` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Color mode` semantic tokens for `Orange` and `Orange Business Tools` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Switch` component tokens for `Orange` and `Orange Business Tools` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Tag input` component tokens renamed to `input tag` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Button` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - Migration to Xcode 26.0 (Orange-OpenSource/ouds-ios#972)
