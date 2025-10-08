@@ -17,12 +17,12 @@ import Testing
 // swiftlint:disable type_name
 
 /// Check if the component tokens provider under test has the default semantic token providers with the expected types.
-struct WireframeThemeTagInputComponentTokensProviderTests {
+struct WireframeThemeInputTagComponentTokensProviderTests {
 
-    private var provider: WireframeThemeTagInputComponentTokensProvider
+    private var provider: WireframeThemeInputTagComponentTokensProvider
 
     init() {
-        provider = WireframeThemeTagInputComponentTokensProvider()
+        provider = WireframeThemeInputTagComponentTokensProvider()
     }
 
     // MARK: - Tests

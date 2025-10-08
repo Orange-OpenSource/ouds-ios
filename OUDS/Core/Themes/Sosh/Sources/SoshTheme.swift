@@ -93,7 +93,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
-        let tagInput = SoshThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
+        let inputTag = SoshThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
@@ -122,7 +122,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,

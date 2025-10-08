@@ -35,7 +35,7 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTagInput`
+    /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
@@ -59,7 +59,7 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+QuantityInputComponentTokens.swift
+    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+QuantityInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

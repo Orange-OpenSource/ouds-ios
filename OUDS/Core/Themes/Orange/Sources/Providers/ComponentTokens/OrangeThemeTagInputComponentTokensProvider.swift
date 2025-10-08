@@ -16,44 +16,44 @@ import OUDSFoundations
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of tag input** objects like `OUDSTagInput`.
+/// A class which wraps all **component  tokens of tag input** objects like `OUDSInputTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllTagInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllInputTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// Custom themes can use subclass of ``OrangeThemeTagInputComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `TagInputComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
+/// Custom themes can use subclass of ``OrangeThemeInputTagComponentTokensProvider`` and apply the provider they need.
+/// It implements also the protocol `InputTagComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
 /// *Tag inputs* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for tag input component tokens
 ///     // by inheriting from existing provider
-///     class CustomTagInputComponentTokensProvider: OrangeThemeTagInputComponentTokensProvider {
+///     class CustomInputTagComponentTokensProvider: OrangeThemeInputTagComponentTokensProvider {
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var tagInputBorderRadius: BorderRadiusSemanticToken  { borders.borderRadiusNone }
+///         override var inputTagBorderRadius: BorderRadiusSemanticToken  { borders.borderRadiusNone }
 ///
-///         override var tagInputColorBgPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+///         override var inputTagColorBgPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
 ///
 ///         // ...
 ///     }
 ///
 ///     // Or define your own provider from scratch
-///     class CustomTagInputComponentTokensProvider: TagInputComponentTokens {
+///     class CustomInputTagComponentTokensProvider: InputTagComponentTokens {
 ///
 ///         // And implement maybe hundreds of tokens.
 ///         // You are allowed to use semantic tokens providers if you want to define values.
 ///     }
 /// ```
 ///
-/// Then, you can give this `CustomTagInputComponentTokensProvider` to your own theme implementation:
+/// Then, you can give this `CustomInputTagComponentTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tagInput: CustomTagInputComponentTokensProvider())
+///         super.init(inputTag: CustomInputTagComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -61,7 +61,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tagInput: CustomTagInputComponentTokensProvider())
+///     OrangeTheme(inputTag: CustomInputTagComponentTokensProvider())
 /// ```
 ///
 /// It is also possible to use your own semantic tokens providers for this component tokens providers:
@@ -70,16 +70,16 @@ import OUDSFoundations
 ///     // Uses by default here:
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemColorSemanticTokensProvider for colors
-///     let tagInputComponentTokensProvider = OrangeThemeTagInputComponentTokensProvider()
+///     let inputTagComponentTokensProvider = OrangeThemeInputTagComponentTokensProvider()
 ///
 ///     // Or use your own space, size and border semantic tokens providers (or only some)
-///     let tagInputComponentTokensProvider = OrangeThemeTagInputComponentTokensProvider(
+///     let inputTagComponentTokensProvider = OrangeThemeInputTagComponentTokensProvider(
 ///                                             borders: CustomBorderSemanticTokensProvider(),
 ///                                             colors: CustomColorSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
-open class OrangeThemeTagInputComponentTokensProvider: AllTagInputComponentTokensProvider {
+open class OrangeThemeInputTagComponentTokensProvider: AllInputTagComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for tag input borders
     public let borders: AllBorderSemanticTokensProvider
@@ -91,19 +91,19 @@ open class OrangeThemeTagInputComponentTokensProvider: AllTagInputComponentToken
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTagInput`
+    /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of OrangeThemeTagInputComponentTokensProvider")
+        OL.debug("Init of OrangeThemeInputTagComponentTokensProvider")
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "OrangeThemeTagInputComponentTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeInputTagComponentTokensProvider")
         #endif
     }
 
@@ -115,8 +115,8 @@ open class OrangeThemeTagInputComponentTokensProvider: AllTagInputComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TagInputComponentTokens.swift
-    // This declaration of OrangeThemeTagInputComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of InputTagComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+InputTagComponentTokens.swift
+    // This declaration of OrangeThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }
 
 // swiftlint:enable type_name

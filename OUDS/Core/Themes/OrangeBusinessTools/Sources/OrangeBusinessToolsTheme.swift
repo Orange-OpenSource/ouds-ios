@@ -151,7 +151,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = OrangeBusinessToolsThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
-        let tagInput = OrangeBusinessToolsThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
+        let inputTag = OrangeBusinessToolsThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeBusinessToolsThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
@@ -181,7 +181,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,

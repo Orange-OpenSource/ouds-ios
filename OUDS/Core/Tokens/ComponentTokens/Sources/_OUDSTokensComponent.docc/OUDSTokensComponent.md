@@ -128,7 +128,7 @@ selectInput                    |
 skeleton                       |
 switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 
 tag                            | For tag components like `OUDSTag`
-tagInput                       | For tag input components like `OUDSTagInput`
+inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
 textInput                      |
 
@@ -151,6 +151,6 @@ textInput                      |
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
-- ``TagInputComponentTokens``
+- ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``

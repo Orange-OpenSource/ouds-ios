@@ -34,7 +34,7 @@ final class WireframeThemeQuantityInputComponentTokensProvider: AllQuantityInput
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTagInput`
+    /// Defines a provider of component tokens dedicated to `OUDSQuantityInput`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
@@ -58,7 +58,7 @@ final class WireframeThemeQuantityInputComponentTokensProvider: AllQuantityInput
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+QuantityInputComponentTokens.swift
+    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+QuantityInputComponentTokens.swift
     // This declaration of WireframeThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

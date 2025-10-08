@@ -142,8 +142,8 @@ struct OrangeBusinessToolsThemeTests {
         #expect(theme.tag is OrangeBusinessToolsThemeTagComponentTokensProvider)
     }
 
-    @Test func defaultTagInputComponentTokensProvider() throws {
-        #expect(theme.tagInput is OrangeBusinessToolsThemeTagInputComponentTokensProvider)
+    @Test func defaultInputTagComponentTokensProvider() throws {
+        #expect(theme.inputTag is OrangeBusinessToolsThemeInputTagComponentTokensProvider)
     }
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {

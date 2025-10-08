@@ -14,7 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Button component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Tag input` component tokens renamed to `input tag` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Button` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - Migration to Xcode 26.0 (Orange-OpenSource/ouds-ios#972)
 - Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
 - Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)

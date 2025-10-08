@@ -34,7 +34,7 @@ final class SoshThemeQuantityInputComponentTokensProvider: AllQuantityInputCompo
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTagInput`
+    /// Defines a provider of component tokens dedicated to `OUDSQuantityInput`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
@@ -58,7 +58,7 @@ final class SoshThemeQuantityInputComponentTokensProvider: AllQuantityInputCompo
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+QuantityInputComponentTokens.swift
+    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+QuantityInputComponentTokens.swift
     // This declaration of SoshThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

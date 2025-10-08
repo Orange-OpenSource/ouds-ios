@@ -19,31 +19,31 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for tags components like `OUDSTagInput`
-/// Used for tokens providers like `OrangeThemeTagInputComponentTokensProvider`.
+/// Declares all component tokens for tags components like `OUDSInputTag`
+/// Used for tokens providers like `OrangeThemeInputTagComponentTokensProvider`.
 ///
 /// - Since: 0.17.0
-public protocol TagInputComponentTokens {
+public protocol InputTagComponentTokens {
 
     // MARK: - Colors
 
-    var tagInputColorBgEnabled: MultipleColorSemanticTokens { get }
-    var tagInputColorBgHover: MultipleColorSemanticTokens { get }
-    var tagInputColorBgPressed: MultipleColorSemanticTokens { get }
-    var tagInputColorBgFocus: MultipleColorSemanticTokens { get }
-    var tagInputColorContentEnabled: MultipleColorSemanticTokens { get }
-    var tagInputColorContentHover: MultipleColorSemanticTokens { get }
-    var tagInputColorContentPressed: MultipleColorSemanticTokens { get }
-    var tagInputColorContentFocus: MultipleColorSemanticTokens { get }
-    var tagInputColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var tagInputColorBorderHover: MultipleColorSemanticTokens { get }
-    var tagInputColorBorderPressed: MultipleColorSemanticTokens { get }
-    var tagInputColorBorderFocus: MultipleColorSemanticTokens { get }
+    var inputTagColorBgEnabled: MultipleColorSemanticTokens { get }
+    var inputTagColorBgHover: MultipleColorSemanticTokens { get }
+    var inputTagColorBgPressed: MultipleColorSemanticTokens { get }
+    var inputTagColorBgFocus: MultipleColorSemanticTokens { get }
+    var inputTagColorContentEnabled: MultipleColorSemanticTokens { get }
+    var inputTagColorContentHover: MultipleColorSemanticTokens { get }
+    var inputTagColorContentPressed: MultipleColorSemanticTokens { get }
+    var inputTagColorContentFocus: MultipleColorSemanticTokens { get }
+    var inputTagColorBorderEnabled: MultipleColorSemanticTokens { get }
+    var inputTagColorBorderHover: MultipleColorSemanticTokens { get }
+    var inputTagColorBorderPressed: MultipleColorSemanticTokens { get }
+    var inputTagColorBorderFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Borders
 
-    var tagInputBorderWidthDefault: BorderWidthSemanticToken { get }
-    var tagInputBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+    var inputTagBorderWidthDefault: BorderWidthSemanticToken { get }
+    var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

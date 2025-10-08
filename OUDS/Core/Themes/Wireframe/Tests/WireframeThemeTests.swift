@@ -142,8 +142,8 @@ struct WireframeThemeTests {
         #expect(theme.tag is WireframeThemeTagComponentTokensProvider)
     }
 
-    @Test func defaultTagInputComponentTokensProvider() throws {
-        #expect(theme.tagInput is WireframeThemeTagInputComponentTokensProvider)
+    @Test func defaultInputTagComponentTokensProvider() throws {
+        #expect(theme.inputTag is WireframeThemeInputTagComponentTokensProvider)
     }
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {

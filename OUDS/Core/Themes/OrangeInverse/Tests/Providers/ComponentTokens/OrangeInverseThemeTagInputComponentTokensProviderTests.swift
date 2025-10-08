@@ -17,12 +17,12 @@ import Testing
 // swiftlint:disable type_name
 
 /// Check if the component tokens provider under test has the default semantic token providers with the expected types.
-struct OrangeInverseThemeTagInputComponentTokensProviderTests {
+struct OrangeInverseThemeInputTagComponentTokensProviderTests {
 
-    private var provider: OrangeInverseThemeTagInputComponentTokensProvider
+    private var provider: OrangeInverseThemeInputTagComponentTokensProvider
 
     init() {
-        provider = OrangeInverseThemeTagInputComponentTokensProvider()
+        provider = OrangeInverseThemeInputTagComponentTokensProvider()
     }
 
     // MARK: - Tests

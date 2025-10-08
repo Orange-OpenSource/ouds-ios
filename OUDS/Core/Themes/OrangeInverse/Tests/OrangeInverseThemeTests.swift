@@ -142,8 +142,8 @@ struct OrangeInverseThemeTests {
         #expect(theme.tag is OrangeInverseThemeTagComponentTokensProvider)
     }
 
-    @Test func defaultTagInputComponentTokensProvider() throws {
-        #expect(theme.tagInput is OrangeInverseThemeTagInputComponentTokensProvider)
+    @Test func defaultInputTagComponentTokensProvider() throws {
+        #expect(theme.inputTag is OrangeInverseThemeInputTagComponentTokensProvider)
     }
 
     @Test func defaultTextAreaButtonComponentTokensProvider() throws {

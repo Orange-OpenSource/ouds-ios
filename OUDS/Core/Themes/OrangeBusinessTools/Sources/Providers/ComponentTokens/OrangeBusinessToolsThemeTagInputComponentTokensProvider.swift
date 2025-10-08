@@ -16,14 +16,14 @@ import OUDSFoundations
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of tag input** objects like `OUDSTagInput`.
+/// A class which wraps all **component  tokens of tag input** objects like `OUDSInputTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// It implements also the protocol `TagInputComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
+/// It implements also the protocol `InputTagComponentTokens` so as to expose the component tokens for *tag inputs* through any `OUDSTheme`.
 /// *Tag inputs* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
-final class OrangeBusinessToolsThemeTagInputComponentTokensProvider: AllTagInputComponentTokensProvider {
+final class OrangeBusinessToolsThemeInputTagComponentTokensProvider: AllInputTagComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for tag input borders
     public let borders: AllBorderSemanticTokensProvider
@@ -35,19 +35,19 @@ final class OrangeBusinessToolsThemeTagInputComponentTokensProvider: AllTagInput
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
-    /// Defines a provider of component tokens dedicated to `OUDSTagInput`
+    /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeColorSemanticTokensProvider``)
     public init(borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil)
     {
-        OL.debug("Init of OrangeBusinessToolsThemeTagInputComponentTokensProvider")
+        OL.debug("Init of OrangeBusinessToolsThemeInputTagComponentTokensProvider")
         self.borders = (borders ?? OrangeBusinessToolsThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeBusinessToolsThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeTagInputComponentTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeInputTagComponentTokensProvider")
         #endif
     }
 
@@ -59,8 +59,8 @@ final class OrangeBusinessToolsThemeTagInputComponentTokensProvider: AllTagInput
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TagInputComponentTokens.swift
-    // This declaration of OrangeBusinessToolsThemeTagInputComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of InputTagComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+InputTagComponentTokens.swift
+    // This declaration of OrangeBusinessToolsThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }
 
 // swiftlint:enable type_name
