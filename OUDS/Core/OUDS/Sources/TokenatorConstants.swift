@@ -61,7 +61,7 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component radio button
     public static let componentRadioButtonVersion = "1.0.0"
     /// Version of the Figma specifications for the component switch
-    public static let componentSwitchVersion = "1.3.0"
+    public static let componentSwitchVersion = "1.0.0"
     /// Version of the Figma specifications for the component text input
     public static let componentTextInputVersion = "1.1.0"
     /// Version of the Figma specifications for the component phone number input
