@@ -45,6 +45,7 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonSizeMinWidth: SizeSemanticToken { Self.mockThemeButtonSize }
     override public var buttonBorderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override public var buttonBorderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override public var buttonBorderRadiusSocial: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
@@ -93,7 +94,15 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBgBrandEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorBgBrandHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorBgBrandPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorBgBrandLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorBgBrandFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorContentBrandEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorContentBrandHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorContentBrandPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorContentBrandLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    override public var buttonColorContentBrandFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }

@@ -54,6 +54,11 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonBorderRadiusRounded == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
     }
 
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusSocial() throws {
+        #expect(inheritedTheme.button.buttonBorderRadiusSocial != abstractTheme.button.buttonBorderRadiusSocial)
+        #expect(inheritedTheme.button.buttonBorderRadiusSocial == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    }
+
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefault() throws {
         #expect(inheritedTheme.button.buttonBorderWidthDefault != abstractTheme.button.buttonBorderWidthDefault)
         #expect(inheritedTheme.button.buttonBorderWidthDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
@@ -249,6 +254,26 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonColorBgDefaultEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgBrandHover() throws {
+        #expect(inheritedTheme.button.buttonColorBgBrandHover != abstractTheme.button.buttonColorBgBrandHover)
+        #expect(inheritedTheme.button.buttonColorBgBrandHover == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgBrandPressed() throws {
+        #expect(inheritedTheme.button.buttonColorBgBrandPressed != abstractTheme.button.buttonColorBgBrandPressed)
+        #expect(inheritedTheme.button.buttonColorBgBrandPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgBrandLoading() throws {
+        #expect(inheritedTheme.button.buttonColorBgBrandLoading != abstractTheme.button.buttonColorBgBrandLoading)
+        #expect(inheritedTheme.button.buttonColorBgBrandLoading == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBgBrandFocus() throws {
+        #expect(inheritedTheme.button.buttonColorBgBrandFocus != abstractTheme.button.buttonColorBgBrandFocus)
+        #expect(inheritedTheme.button.buttonColorBgBrandFocus == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBgDefaultEnabled() throws {
         #expect(inheritedTheme.button.buttonMonoColorBgDefaultEnabled != abstractTheme.button.buttonMonoColorBgDefaultEnabled)
         #expect(inheritedTheme.button.buttonMonoColorBgDefaultEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
@@ -297,6 +322,26 @@ struct ThemeOverrideOfButtonComponentTokensTests {
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandEnabled() throws {
         #expect(inheritedTheme.button.buttonColorContentBrandEnabled != abstractTheme.button.buttonColorContentBrandEnabled)
         #expect(inheritedTheme.button.buttonColorContentBrandEnabled == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandHover() throws {
+        #expect(inheritedTheme.button.buttonColorContentBrandHover != abstractTheme.button.buttonColorContentBrandHover)
+        #expect(inheritedTheme.button.buttonColorContentBrandHover == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandPressed() throws {
+        #expect(inheritedTheme.button.buttonColorContentBrandPressed != abstractTheme.button.buttonColorContentBrandPressed)
+        #expect(inheritedTheme.button.buttonColorContentBrandPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandLoading() throws {
+        #expect(inheritedTheme.button.buttonColorContentBrandLoading != abstractTheme.button.buttonColorContentBrandLoading)
+        #expect(inheritedTheme.button.buttonColorContentBrandLoading == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
+    }
+
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorContentBrandFocus() throws {
+        #expect(inheritedTheme.button.buttonColorContentBrandFocus != abstractTheme.button.buttonColorContentBrandFocus)
+        #expect(inheritedTheme.button.buttonColorContentBrandFocus == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonColorBorderDefaultDisabled() throws {
