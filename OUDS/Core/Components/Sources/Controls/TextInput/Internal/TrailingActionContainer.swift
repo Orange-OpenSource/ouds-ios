@@ -50,6 +50,7 @@ struct TrailingActionContainer: View {
             }
         case .loading:
             trailingButton(for: .init(icon: Image(decorative: "ic_heart"), actionHint: "", action: {}))
+                .accessibilityHidden(true)
         }
     }
 

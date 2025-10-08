@@ -36,47 +36,50 @@ struct TextInputContainer: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+                // Leading icon container
+                LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, status: status)
 
-            // Leading icon container
-            LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, status: status)
-
-            // Text container
-            VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
-                // Label container
-                if showLabelInContainer {
-                    LabelContainer(label: label, status: status, interactionState: interactionState)
-                }
-
-                // Input container
-                HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
-
-                    // Prefix container
-                    if let placeholder,
-                       let prefix = placeholder.prefix,
-                       !prefix.isEmpty, !placeholder.text.isEmpty
-                    {
-                        Text(prefix)
-                            .typeLabelDefaultLarge(theme)
-                            .oudsForegroundColor(prefixSuffixColor)
+                // Text container
+                VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
+                    // Label container
+                    if showLabelInContainer {
+                        LabelContainer(label: label, status: status, interactionState: interactionState)
+                            .accessibilityHidden(true)
                     }
 
-                    // Input text container
-                    InputText(label: textfieldLabel,
-                              text: text,
-                              labelAsPlaceholder: textfieldLabel == label,
-                              status: status,
-                              interactionState: interactionState)
+                    // Input container
+                    HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
+
+                        // Prefix container
+                        if let placeholder,
+                           let prefix = placeholder.prefix,
+                           !prefix.isEmpty, !placeholder.text.isEmpty
+                        {
+                            Text(prefix)
+                                .typeLabelDefaultLarge(theme)
+                                .oudsForegroundColor(prefixSuffixColor)
+                                .accessibilityHidden(true)
+                        }
+
+                        // Input text container
+                        InputText(label: textfieldLabel,
+                                  text: text,
+                                  labelAsPlaceholder: textfieldLabel == label,
+                                  status: status,
+                                  interactionState: interactionState)
                         .focused($focused, equals: true)
 
-                    // Suffix container
-                    if let placeholder,
-                       let suffix = placeholder.suffix,
-                       !suffix.isEmpty, !placeholder.text.isEmpty
-                    {
-
-                        Text(suffix)
-                            .typeLabelDefaultLarge(theme)
-                            .oudsForegroundColor(prefixSuffixColor)
+                        // Suffix container
+                        if let placeholder,
+                           let suffix = placeholder.suffix,
+                           !suffix.isEmpty, !placeholder.text.isEmpty
+                        {
+                            Text(suffix)
+                                .typeLabelDefaultLarge(theme)
+                                .oudsForegroundColor(prefixSuffixColor)
+                                .accessibilityHidden(true)
+                        }
                     }
                 }
             }

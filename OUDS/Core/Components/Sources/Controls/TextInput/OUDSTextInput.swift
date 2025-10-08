@@ -162,7 +162,7 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.19.0
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
@@ -335,18 +335,27 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            TextInputContainer(label: label,
-                               text: text,
-                               placeholder: placeholder,
-                               leadingIcon: leadingIcon,
-                               flipIcon: flipLeadingIcon,
-                               trailingAction: trailingAction,
-                               isOutlined: isOutlined,
-                               status: status)
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                TextInputContainer(label: label,
+                                   text: text,
+                                   placeholder: placeholder,
+                                   leadingIcon: leadingIcon,
+                                   flipIcon: flipLeadingIcon,
+                                   trailingAction: trailingAction,
+                                   isOutlined: isOutlined,
+                                   status: status)
 
-            if let helperText, !helperText.isEmpty {
-                HelperTextContainer(helperText: helperText, status: status)
+                if let helperText, !helperText.isEmpty {
+                    HelperTextContainer(helperText: helperText, status: status)
+                        .accessibilityHidden(true)
+                }
             }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityHint(Text(helperText ?? ""))
+            .accessibilityValue(accessibilityValue)
+            .accessibilityAction(named: Text(trailingAction?.actionHint ?? ""), {
+                trailingAction?.action()
+            })
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
@@ -357,5 +366,38 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                maxWidth: theme.textInput.textInputSizeMaxWidth,
                minHeight: theme.textInput.textInputSizeMinHeight,
                alignment: .leading)
+    }
+
+
+    // MARK: Helpers
+
+    private var accessibilityLabel: String {
+
+        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_common_empty_a11y".localized() : ""
+
+        var errorDescription = ""
+        if status == .error, helperText?.isEmpty != false {
+            errorDescription = "core_common_onError_a11y".localized()
+        }
+
+        var loadingDescription = ""
+        if status == .loading {
+            loadingDescription = "core_common_loading_a11y".localized()
+        }
+
+        var labelDescription = label
+        if label.isEmpty {
+            labelDescription = "\(placeholder?.text ?? "")"
+        }
+
+        return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"
+    }
+
+    private var accessibilityValue: String {
+        guard !text.wrappedValue.isEmpty else {
+            return ""
+        }
+
+        return "\(placeholder?.prefix ?? "") \(text.wrappedValue) \(placeholder?.suffix ?? "")"
     }
 }
