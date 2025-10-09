@@ -26,16 +26,16 @@ import OUDSFoundations
 final class SoshThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for tag borders
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for tag borders
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     /// Provider of space semantic tokens to use for tag spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -47,10 +47,10 @@ final class SoshThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeTagComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())

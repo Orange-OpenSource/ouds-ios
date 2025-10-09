@@ -24,10 +24,10 @@ import OUDSFoundations
 final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
 
     /// Provider of sizes semantic tokens to use for text area sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of space semantic tokens to use for text area spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -37,8 +37,8 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())

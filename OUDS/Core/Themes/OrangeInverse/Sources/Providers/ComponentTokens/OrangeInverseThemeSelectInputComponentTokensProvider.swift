@@ -27,7 +27,7 @@ import OUDSFoundations
 final class OrangeInverseThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
     /// Provider of dimensions semantic tokens to use for pin code input dimensions
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -35,7 +35,7 @@ final class OrangeInverseThemeSelectInputComponentTokensProvider: AllSelectInput
 
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
     /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeDimensionSemanticTokensProvider``)
-    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeInverseThemeSelectInputComponentTokensProvider")
         self.dimensions = (dimensions ?? OrangeInverseThemeDimensionSemanticTokensProvider())
         #if DEBUG

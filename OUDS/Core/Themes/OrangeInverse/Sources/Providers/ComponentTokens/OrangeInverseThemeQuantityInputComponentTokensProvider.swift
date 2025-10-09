@@ -25,10 +25,10 @@ import OUDSFoundations
 final class OrangeInverseThemeQuantityInputComponentTokensProvider: AllQuantityInputComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for quantity input component
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of space semantic tokens to use for quantity input component
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -38,8 +38,8 @@ final class OrangeInverseThemeQuantityInputComponentTokensProvider: AllQuantityI
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeQuantityInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())

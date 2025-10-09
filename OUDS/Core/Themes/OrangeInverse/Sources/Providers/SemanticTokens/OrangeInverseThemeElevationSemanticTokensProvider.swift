@@ -28,7 +28,7 @@ final class OrangeInverseThemeElevationSemanticTokensProvider: AllElevationSeman
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeElevationSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

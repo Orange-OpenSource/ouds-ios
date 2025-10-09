@@ -25,7 +25,7 @@ import OUDSFoundations
 final class WireframeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
 
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -33,7 +33,7 @@ final class WireframeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensPro
 
     /// Intializes the provider
     /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
-    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of WireframeThemeSpaceSemanticTokensProvider")
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG

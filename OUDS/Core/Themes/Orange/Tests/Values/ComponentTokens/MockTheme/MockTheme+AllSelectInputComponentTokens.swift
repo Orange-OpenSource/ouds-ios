@@ -27,13 +27,13 @@ final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputCo
 
     static let mockThemeSelectInputSize: DimensionRawToken = 118
 
-    override public init(dimensions: AllDimensionSemanticTokensProvider?) {
+    override init(dimensions: AllDimensionSemanticTokensProvider?) {
         super.init(dimensions: dimensions)
     }
 
     // MARK: - Select Input component tokens
 
-    override public var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectInputSize }
+    override var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectInputSize }
 }
 
 // swiftlint:enable required_deinit

@@ -47,7 +47,7 @@ struct Chip: View {
     ///    - layout: The layout of the chip
     ///    - selected: Flag to know if chip is selected or not
     ///    - interactionState: The interaction state
-    public init(layout: Layout, selected: Bool, interactionState: ChipInteractionState) {
+    init(layout: Layout, selected: Bool, interactionState: ChipInteractionState) {
         self.layout = layout
         self.selected = selected
         self.interactionState = interactionState
@@ -55,7 +55,7 @@ struct Chip: View {
 
     // MARK: Body
 
-    public var body: some View {
+    var body: some View {
         HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
             ChipSelectionIndicator(state: interactionState, selected: selected)
             ChipContent(layout: layout, selected: selected, interactionState: interactionState)

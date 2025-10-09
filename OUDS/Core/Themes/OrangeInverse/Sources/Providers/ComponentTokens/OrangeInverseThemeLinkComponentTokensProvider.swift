@@ -28,13 +28,13 @@ import OUDSFoundations
 final class OrangeInverseThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for link sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for link colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for link spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -45,9 +45,9 @@ final class OrangeInverseThemeLinkComponentTokensProvider: AllLinkComponentToken
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeInverseThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeLinkComponentTokensProvider")
         self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())

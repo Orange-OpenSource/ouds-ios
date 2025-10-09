@@ -32,7 +32,7 @@ final class OrangeInverseThemeDimensionSemanticTokensProvider: AllDimensionSeman
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeDimensionSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

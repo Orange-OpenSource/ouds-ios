@@ -27,7 +27,7 @@ import OUDSFoundations
 final class OrangeInverseThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokensProvider {
 
     /// Provider of color semantic tokens to use for link colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -35,7 +35,7 @@ final class OrangeInverseThemeSkeletonComponentTokensProvider: AllSkeletonCompon
 
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeInverseThemeColorSemanticTokensProvider``)
-    public init(colors: AllColorSemanticTokensProvider? = nil) {
+    init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeInverseThemeSkeletonComponentTokensProvider")
         self.colors = (colors ?? OrangeInverseThemeColorSemanticTokensProvider())
         #if DEBUG

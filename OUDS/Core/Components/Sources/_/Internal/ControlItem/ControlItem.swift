@@ -62,7 +62,7 @@ struct ControlItem: View {
 
     // MARK: Body
 
-    public var body: some View {
+    var body: some View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
             VibrationsManager.success()
             switch indicatorType {

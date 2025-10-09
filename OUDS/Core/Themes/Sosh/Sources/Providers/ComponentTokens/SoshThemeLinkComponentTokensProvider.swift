@@ -26,13 +26,13 @@ import OUDSFoundations
 final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for link sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for link colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for link spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -43,9 +43,9 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeLinkComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())

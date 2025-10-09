@@ -28,7 +28,7 @@ final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticT
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of WireframeThemeElevationSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

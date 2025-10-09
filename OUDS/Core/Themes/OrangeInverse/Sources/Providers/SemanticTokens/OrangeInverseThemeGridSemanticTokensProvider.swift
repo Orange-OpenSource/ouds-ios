@@ -28,7 +28,7 @@ final class OrangeInverseThemeGridSemanticTokensProvider: AllGridSemanticTokensP
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeGridSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

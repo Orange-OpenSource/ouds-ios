@@ -26,7 +26,7 @@ final class SoshThemeColorSemanticTokensProvider: AllColorSemanticTokensProvider
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

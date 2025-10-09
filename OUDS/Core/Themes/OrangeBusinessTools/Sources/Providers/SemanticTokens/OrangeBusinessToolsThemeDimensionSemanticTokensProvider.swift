@@ -32,7 +32,7 @@ final class OrangeBusinessToolsThemeDimensionSemanticTokensProvider: AllDimensio
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeDimensionSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

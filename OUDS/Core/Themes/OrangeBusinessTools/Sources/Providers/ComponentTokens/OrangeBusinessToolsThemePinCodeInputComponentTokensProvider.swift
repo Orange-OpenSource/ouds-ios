@@ -29,13 +29,13 @@ import OUDSFoundations
 final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinCodeInputComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for pin code input sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for pin code input spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of dimension semantic tokens to use for pin code input dimensions
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -46,9 +46,9 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemePinCodeInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())

@@ -26,8 +26,8 @@ final class MockThemeInputTagComponentTokenProvider: OrangeThemeInputTagComponen
     static let mockThemeInputTagColor = MultipleColorSemanticTokens("#00FF00")
     static let mockThemeInputTagBorderWidth: BorderWidthSemanticToken = 666
 
-    override public init(borders: AllBorderSemanticTokensProvider?,
-                         colors: AllColorSemanticTokensProvider?)
+    override init(borders: AllBorderSemanticTokensProvider?,
+                  colors: AllColorSemanticTokensProvider?)
     {
         super.init(borders: borders, colors: colors)
     }

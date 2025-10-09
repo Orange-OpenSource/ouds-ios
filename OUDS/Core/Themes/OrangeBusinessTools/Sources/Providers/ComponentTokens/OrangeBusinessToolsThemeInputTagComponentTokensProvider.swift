@@ -26,10 +26,10 @@ import OUDSFoundations
 final class OrangeBusinessToolsThemeInputTagComponentTokensProvider: AllInputTagComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for tag input borders
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     /// Provider of space semantic tokens to use for tag input colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -39,8 +39,8 @@ final class OrangeBusinessToolsThemeInputTagComponentTokensProvider: AllInputTag
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeColorSemanticTokensProvider``)
-    public init(borders: AllBorderSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil)
+    init(borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeInputTagComponentTokensProvider")
         self.borders = (borders ?? OrangeBusinessToolsThemeBorderSemanticTokensProvider())

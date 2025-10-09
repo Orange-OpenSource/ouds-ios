@@ -32,7 +32,7 @@ final class WireframeThemeDimensionSemanticTokensProvider: AllDimensionSemanticT
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of WireframeThemeDimensionSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

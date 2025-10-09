@@ -28,7 +28,7 @@ final class OrangeInverseThemeOpacitySemanticTokensProvider: AllOpacitySemanticT
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeOpacitySemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

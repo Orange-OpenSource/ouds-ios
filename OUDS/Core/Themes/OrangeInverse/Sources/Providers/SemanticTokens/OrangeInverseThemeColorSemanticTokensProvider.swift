@@ -28,7 +28,7 @@ final class OrangeInverseThemeColorSemanticTokensProvider: AllColorSemanticToken
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

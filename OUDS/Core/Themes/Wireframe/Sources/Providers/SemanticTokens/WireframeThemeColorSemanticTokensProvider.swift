@@ -28,7 +28,7 @@ final class WireframeThemeColorSemanticTokensProvider: AllColorSemanticTokensPro
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of WireframeThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

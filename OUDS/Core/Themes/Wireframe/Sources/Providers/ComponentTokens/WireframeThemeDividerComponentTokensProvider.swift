@@ -27,7 +27,7 @@ import OUDSFoundations
 final class WireframeThemeDividerComponentTokensProvider: AllDividerComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for chip sizes
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -35,7 +35,7 @@ final class WireframeThemeDividerComponentTokensProvider: AllDividerComponentTok
 
     /// Defines a provider of component tokens dedicated to `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     /// - Parameter borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
-    public init(borders: AllBorderSemanticTokensProvider? = nil) {
+    init(borders: AllBorderSemanticTokensProvider? = nil) {
         OL.debug("Init of WireframeThemeDividerComponentTokensProvider")
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         #if DEBUG

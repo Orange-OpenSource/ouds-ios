@@ -30,7 +30,7 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Initializer
 
-    public init(layout: OUDSLink.Layout, size: OUDSLink.Size) {
+    init(layout: OUDSLink.Layout, size: OUDSLink.Size) {
         self.layout = layout
         self.size = size
         isHover = false
@@ -38,7 +38,7 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Body
 
-    public func makeBody(configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         Group {
             switch layout {

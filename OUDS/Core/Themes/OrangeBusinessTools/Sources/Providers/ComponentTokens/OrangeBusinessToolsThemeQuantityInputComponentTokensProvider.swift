@@ -26,10 +26,10 @@ import OUDSFoundations
 final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQuantityInputComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for quantity input component
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of space semantic tokens to use for quantity input component
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -39,8 +39,8 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeQuantityInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())

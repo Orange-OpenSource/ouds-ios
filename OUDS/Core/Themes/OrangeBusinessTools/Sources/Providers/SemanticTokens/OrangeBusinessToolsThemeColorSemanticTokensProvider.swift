@@ -28,7 +28,7 @@ final class OrangeBusinessToolsThemeColorSemanticTokensProvider: AllColorSemanti
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeColorSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

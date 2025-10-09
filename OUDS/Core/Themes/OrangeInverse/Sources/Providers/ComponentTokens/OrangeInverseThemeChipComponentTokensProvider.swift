@@ -29,19 +29,19 @@ import OUDSFoundations
 final class OrangeInverseThemeChipComponentTokensProvider: AllChipComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for chip sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for chip borders
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for chip colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for chip spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -54,11 +54,11 @@ final class OrangeInverseThemeChipComponentTokensProvider: AllChipComponentToken
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeInverseThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeInverseThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeInverseThemeDimensionSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())

@@ -28,7 +28,7 @@ import OUDSFoundations
 final class OrangeBusinessToolsThemeBulletListComponentTokensProvider: AllBulletListComponentTokensProvider {
 
     /// Provider of spaces semantic tokens to use for link spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -36,7 +36,7 @@ final class OrangeBusinessToolsThemeBulletListComponentTokensProvider: AllBullet
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    public init(spaces: AllSpaceSemanticTokensProvider? = nil) {
+    init(spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeBusinessToolsThemeBulletListComponentTokensProvider")
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
         #if DEBUG

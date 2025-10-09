@@ -28,7 +28,7 @@ final class OrangeBusinessToolsThemeElevationSemanticTokensProvider: AllElevatio
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeElevationSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

@@ -29,16 +29,16 @@ import OUDSFoundations
 final class WireframeThemeControlItemComponentTokensProvider: AllControlItemComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for control-item-layout-based sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for button borders
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for control-item-layout-based  colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for control-item-layout-based  spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -50,10 +50,10 @@ final class WireframeThemeControlItemComponentTokensProvider: AllControlItemComp
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of WireframeThemeControlItemComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())

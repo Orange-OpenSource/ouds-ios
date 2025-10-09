@@ -26,7 +26,7 @@ final class SoshThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider {
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeGridSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

@@ -28,19 +28,19 @@ import OUDSFoundations
 final class OrangeInverseThemeTextInputComponentTokensProvider: AllTextInputComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for text input sizes
-    public let sizes: AllSizeSemanticTokensProvider
+    let sizes: AllSizeSemanticTokensProvider
 
     /// Provider of border semantic tokens to use for text input sborders
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     /// Provider of color semantic tokens to use for  text input colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     /// Provider of spaces semantic tokens to use for  text input spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of dimensions semantic tokens to use for  text input dimensions
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -53,11 +53,11 @@ final class OrangeInverseThemeTextInputComponentTokensProvider: AllTextInputComp
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`OrangeInverseThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`OrangeInverseThemeSpaceSemanticTokensProvider`)
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`OrangeInverseThemeDimensionSemanticTokensProvider`)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeInverseThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeInverseThemeSizeSemanticTokensProvider())
