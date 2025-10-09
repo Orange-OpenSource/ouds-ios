@@ -187,10 +187,10 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMd: SpaceSemanticToken {
+    override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
-    override var spaceScaledSm: MultipleSpaceSemanticTokens {
+    override var spaceScaledSmall: MultipleSpaceSemanticTokens {
         MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
     }
 }
