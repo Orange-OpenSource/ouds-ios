@@ -40,10 +40,12 @@ public protocol FontSemanticTokens {
 
     var fontWeightCode: FontWeightSemanticToken { get }
     var fontWeightBodyDefault: FontWeightSemanticToken { get }
+    var fontWeightBodyModerate: FontWeightSemanticToken { get }
     var fontWeightBodyStrong: FontWeightSemanticToken { get }
     var fontWeightDisplay: FontWeightSemanticToken { get }
     var fontWeightHeading: FontWeightSemanticToken { get }
     var fontWeightLabelDefault: FontWeightSemanticToken { get }
+    var fontWeightLabelModerate: FontWeightSemanticToken { get }
     var fontWeightLabelStrong: FontWeightSemanticToken { get }
     var fontWeightSystemDefault: FontWeightSemanticToken { get }
     var fontWeightSystemStrong: FontWeightSemanticToken { get }

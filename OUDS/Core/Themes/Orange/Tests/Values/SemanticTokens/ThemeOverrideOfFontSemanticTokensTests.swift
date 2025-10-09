@@ -87,6 +87,11 @@ struct ThemeOverrideOfFontSemanticTokensTests {
         #expect(inheritedTheme.fonts.fontWeightBodyDefault == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightBodyModerate() throws {
+        #expect(inheritedTheme.fonts.fontWeightBodyModerate != abstractTheme.fonts.fontWeightBodyModerate)
+        #expect(inheritedTheme.fonts.fontWeightBodyModerate == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightBodyStrong() throws {
         #expect(inheritedTheme.fonts.fontWeightBodyStrong != abstractTheme.fonts.fontWeightBodyStrong)
         #expect(inheritedTheme.fonts.fontWeightBodyStrong == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
@@ -95,6 +100,11 @@ struct ThemeOverrideOfFontSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightLabelDefault() throws {
         #expect(inheritedTheme.fonts.fontWeightLabelDefault != abstractTheme.fonts.fontWeightLabelDefault)
         #expect(inheritedTheme.fonts.fontWeightLabelDefault == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightLabelModerate() throws {
+        #expect(inheritedTheme.fonts.fontWeightLabelModerate != abstractTheme.fonts.fontWeightLabelModerate)
+        #expect(inheritedTheme.fonts.fontWeightLabelModerate == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightLabelStrong() throws {
