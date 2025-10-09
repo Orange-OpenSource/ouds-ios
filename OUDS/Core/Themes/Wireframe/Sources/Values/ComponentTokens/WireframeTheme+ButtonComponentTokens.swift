@@ -116,7 +116,7 @@ extension WireframeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token spaces.spacePaddingInline3xlarge
     @objc public final var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
     /// Has for value token spaces.spacePaddingInline4xl
-    @objc public final var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xlarge }
+    @objc public final var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xl }
     /// Has for value token spaces.spacePaddingInlineXlarge
     @objc public final var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXlarge }
     /// Has for value token spaces.spacePaddingInlineLarge

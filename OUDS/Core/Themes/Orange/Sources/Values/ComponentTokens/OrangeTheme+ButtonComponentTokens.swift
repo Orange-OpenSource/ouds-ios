@@ -116,7 +116,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token spaces.spacePaddingInline3xlarge
     @objc open var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
     /// Has for value token spaces.spacePaddingInline4xl
-    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xlarge }
+    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xl }
     /// Has for value token spaces.spacePaddingInlineXlarge
     @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXlarge }
     /// Has for value token spaces.spacePaddingInlineLarge
