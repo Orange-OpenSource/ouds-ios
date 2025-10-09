@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Color` raw tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Font` semantic tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Checkbox` component tokens for `Sosh` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - `Dimension`, `size` and `space` semantic tokens names (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
