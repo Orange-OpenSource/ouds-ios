@@ -106,7 +106,7 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     /// Has for value token dimensions.dimension2xsmall
     @objc open var spacePaddingInline3xlarge: SpaceSemanticToken { dimensions.dimension2xsmall }
     /// Has for value token dimensions.dimensionXsmall
-    @objc open var spacePaddingInline4xlarge: SpaceSemanticToken { dimensions.dimensionXsmall }
+    @objc open var spacePaddingInline4xl: SpaceSemanticToken { dimensions.dimensionXsmall }
     /// Has for value token dimensions.dimensionNone
     @objc open var spacePaddingBlockNone: SpaceSemanticToken { dimensions.dimensionNone }
     /// Has for value token dimensions.dimension11xsmall
@@ -170,7 +170,7 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     /// Has for value token dimensions.dimension4xsmall
     @objc open var spaceColumnGapXlarge: SpaceSemanticToken { dimensions.dimension4xsmall }
     /// Has for value token dimensions.dimension3xsmall
-    @objc open var spaceColumnGap2xlarge: SpaceSemanticToken { dimensions.dimension3xsmall }
+    @objc open var spaceColumnGap2xl: SpaceSemanticToken { dimensions.dimension3xsmall }
     /// Has for value token dimensions.dimensionNone
     @objc open var spaceRowGapNone: SpaceSemanticToken { dimensions.dimensionNone }
     /// Has for value token dimensions.dimension11xsmall
