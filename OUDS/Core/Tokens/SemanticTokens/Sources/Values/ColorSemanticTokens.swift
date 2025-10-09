@@ -251,6 +251,12 @@ public protocol ColorSemanticTokens {
     var colorSurfaceBrandPrimaryLight: ColorSemanticToken { get }
     var colorSurfaceBrandPrimaryDark: ColorSemanticToken { get }
 
+    var colorSurfaceBrandSecondaryLight: ColorSemanticToken { get }
+    var colorSurfaceBrandSecondaryDark: ColorSemanticToken { get }
+
+    var colorSurfaceBrandTertiaryLight: ColorSemanticToken { get }
+    var colorSurfaceBrandTertiaryDark: ColorSemanticToken { get }
+
     var colorSurfaceStatusAccentEmphasizedLight: ColorSemanticToken { get }
     var colorSurfaceStatusAccentEmphasizedDark: ColorSemanticToken { get }
 
@@ -400,6 +406,20 @@ public protocol ColorSemanticTokens {
     var colorRepositoryPrimaryLow: ColorSemanticToken { get }
     var colorRepositoryPrimaryLower: ColorSemanticToken { get }
     var colorRepositoryPrimaryLowest: ColorSemanticToken { get }
+    var colorRepositorySecondaryHighest: ColorSemanticToken { get }
+    var colorRepositorySecondaryHigher: ColorSemanticToken { get }
+    var colorRepositorySecondaryHigh: ColorSemanticToken { get }
+    var colorRepositorySecondaryDefault: ColorSemanticToken { get }
+    var colorRepositorySecondaryLow: ColorSemanticToken { get }
+    var colorRepositorySecondaryLower: ColorSemanticToken { get }
+    var colorRepositorySecondaryLowest: ColorSemanticToken { get }
+    var colorRepositoryTertiaryHighest: ColorSemanticToken { get }
+    var colorRepositoryTertiaryHigher: ColorSemanticToken { get }
+    var colorRepositoryTertiaryHigh: ColorSemanticToken { get }
+    var colorRepositoryTertiaryDefault: ColorSemanticToken { get }
+    var colorRepositoryTertiaryLow: ColorSemanticToken { get }
+    var colorRepositoryTertiaryLower: ColorSemanticToken { get }
+    var colorRepositoryTertiaryLowest: ColorSemanticToken { get }
     var colorRepositoryWarningDefault: ColorSemanticToken { get }
     var colorRepositoryWarningHighest: ColorSemanticToken { get }
     var colorRepositoryWarningLow: ColorSemanticToken { get }
