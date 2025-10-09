@@ -28,24 +28,24 @@ public protocol SpaceSemanticTokens {
 
     var spaceScaledNoneMobile: SpaceSemanticToken { get }
     var spaceScaledNoneTablet: SpaceSemanticToken { get }
-    var spaceScaled3xsMobile: SpaceSemanticToken { get }
-    var spaceScaled3xsTablet: SpaceSemanticToken { get }
-    var spaceScaled2xsMobile: SpaceSemanticToken { get }
-    var spaceScaled2xsTablet: SpaceSemanticToken { get }
-    var spaceScaledXsMobile: SpaceSemanticToken { get }
-    var spaceScaledXsTablet: SpaceSemanticToken { get }
-    var spaceScaledSmMobile: SpaceSemanticToken { get }
-    var spaceScaledSmTablet: SpaceSemanticToken { get }
-    var spaceScaledMdMobile: SpaceSemanticToken { get }
-    var spaceScaledMdTablet: SpaceSemanticToken { get }
-    var spaceScaledLgMobile: SpaceSemanticToken { get }
-    var spaceScaledLgTablet: SpaceSemanticToken { get }
-    var spaceScaledXlMobile: SpaceSemanticToken { get }
-    var spaceScaledXlTablet: SpaceSemanticToken { get }
-    var spaceScaled2xlMobile: SpaceSemanticToken { get }
-    var spaceScaled2xlTablet: SpaceSemanticToken { get }
-    var spaceScaled3xlMobile: SpaceSemanticToken { get }
-    var spaceScaled3xlTablet: SpaceSemanticToken { get }
+    var spaceScaled3xsmallMobile: SpaceSemanticToken { get }
+    var spaceScaled3xsmallTablet: SpaceSemanticToken { get }
+    var spaceScaled2xsmallMobile: SpaceSemanticToken { get }
+    var spaceScaled2xsmallTablet: SpaceSemanticToken { get }
+    var spaceScaledXsmallMobile: SpaceSemanticToken { get }
+    var spaceScaledXsmallTablet: SpaceSemanticToken { get }
+    var spaceScaledSmallMobile: SpaceSemanticToken { get }
+    var spaceScaledSmallTablet: SpaceSemanticToken { get }
+    var spaceScaledMediumMobile: SpaceSemanticToken { get }
+    var spaceScaledMediumTablet: SpaceSemanticToken { get }
+    var spaceScaledLargeMobile: SpaceSemanticToken { get }
+    var spaceScaledLargeTablet: SpaceSemanticToken { get }
+    var spaceScaledXlargeMobile: SpaceSemanticToken { get }
+    var spaceScaledXlargeTablet: SpaceSemanticToken { get }
+    var spaceScaled2xlargeMobile: SpaceSemanticToken { get }
+    var spaceScaled2xlargeTablet: SpaceSemanticToken { get }
+    var spaceScaled3xlargeMobile: SpaceSemanticToken { get }
+    var spaceScaled3xlargeTablet: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Fixed
 
