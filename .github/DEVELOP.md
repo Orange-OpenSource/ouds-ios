@@ -169,9 +169,9 @@ For *App Store* illustrations, same thing, but with the suitable simulators or d
 ### Unit tests for OUDS Swift package
 
 The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
-You should run the tests using an iPhone simulator (like *iPhone 16 Pro (18.0)*).
+You should run the tests using an iPhone simulator (like *iPhone 17 Pro*).
 Because OUDS is designed first for iOS, some of the OUDS API rely on UIKit (color colors and a11y features), and some tests are condioned to the platform.
-SO running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
+So running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
 
 To run these unit tests follow some steps:
 1. Select the "OUDS-Package" scheme

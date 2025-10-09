@@ -54,7 +54,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension7xlarge < theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension8xlarge < theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension9xlarge < theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension10xlarge < theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension10xlarge < theme.dimensions.dimension11xlarge)
     }
 
     @Test func dimensionsAreAllUnique() throws {
@@ -83,7 +83,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionNone != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionNone != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionNone != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionNone != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionNone != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension11xsmall)
         #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension10xsmall)
@@ -109,7 +109,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension12xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension10xsmall)
         #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension9xsmall)
@@ -134,7 +134,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension11xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension9xsmall)
         #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension8xsmall)
@@ -158,7 +158,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension10xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension8xsmall)
         #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension7xsmall)
@@ -181,7 +181,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension9xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension7xsmall)
         #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension6xsmall)
@@ -203,7 +203,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension8xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension6xsmall)
         #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension5xsmall)
@@ -224,7 +224,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension7xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension5xsmall)
         #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension4xsmall)
@@ -244,7 +244,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension6xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension4xsmall)
         #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension3xsmall)
@@ -263,7 +263,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension5xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension3xsmall)
         #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension2xsmall)
@@ -281,7 +281,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension4xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension2xsmall)
         #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimensionXsmall)
@@ -298,7 +298,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension3xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimensionXsmall)
         #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimensionSmall)
@@ -314,7 +314,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension2xsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimensionSmall)
         #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimensionMedium)
@@ -329,7 +329,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionXsmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimensionMedium)
         #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimensionLarge)
@@ -343,7 +343,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionSmall != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimensionLarge)
         #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimensionXlarge)
@@ -356,7 +356,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionMedium != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimensionXlarge)
         #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension2xlarge)
@@ -368,7 +368,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionLarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension2xlarge)
         #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension3xlarge)
@@ -379,7 +379,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimensionXlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension3xlarge)
         #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension4xlarge)
@@ -389,7 +389,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension2xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension4xlarge)
         #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension5xlarge)
@@ -398,7 +398,7 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension3xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension5xlarge)
         #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension6xlarge)
@@ -406,34 +406,34 @@ struct DimensionSemanticTokensValuesTests {
         #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension4xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension6xlarge)
         #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension7xlarge)
         #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension5xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension7xlarge)
         #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension6xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension7xlarge != theme.dimensions.dimension8xlarge)
         #expect(theme.dimensions.dimension7xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension7xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension7xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension7xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension8xlarge != theme.dimensions.dimension9xlarge)
         #expect(theme.dimensions.dimension8xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension8xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension8xlarge != theme.dimensions.dimension11xlarge)
 
         #expect(theme.dimensions.dimension9xlarge != theme.dimensions.dimension10xlarge)
-        #expect(theme.dimensions.dimension9xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension9xlarge != theme.dimensions.dimension11xlarge)
 
-        #expect(theme.dimensions.dimension10xlarge != theme.dimensions.dimension11xl)
+        #expect(theme.dimensions.dimension10xlarge != theme.dimensions.dimension11xlarge)
     }
 }
 
