@@ -71,7 +71,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
                    tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
-                   tagInput: MockThemeTagInputComponentTokenProvider(borders: borders, colors: colors),
+                   inputTag: MockThemeInputTagComponentTokenProvider(borders: borders, colors: colors),
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
                    resourcesBundle: Bundle.OrangeTheme,

@@ -28,28 +28,28 @@ final class MockThemeBorderSemanticTokensProvider: OrangeThemeBorderSemanticToke
 
     // MARK: Semantic token - Border - Width
 
-    override public var borderWidthNone: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthThin: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthMedium: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthThick: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthThicker: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthFocus: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override public var borderWidthFocusInset: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthNone: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthThin: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthMedium: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthThick: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthThicker: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthFocus: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override var borderWidthFocusInset: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
 
     // MARK: Semantic token - Border - Radius
 
-    override public var borderRadiusNone: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusSmall: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusMedium: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusLarge: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override public var borderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusNone: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusSmall: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusMedium: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusLarge: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
+    override var borderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
 
     // MARK: Semantic token - Border - Style
 
-    override public var borderStyleDefault: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
-    override public var borderStyleDrag: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
+    override var borderStyleDefault: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
+    override var borderStyleDrag: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
 }
 
 // swiftlint:enable required_deinit

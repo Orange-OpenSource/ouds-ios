@@ -17,7 +17,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.5.0
+🧬 Core version: 1.6.0
 ```
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
@@ -128,7 +128,7 @@ selectInput                    |
 skeleton                       |
 switch                         | For switch components like `OUDSSwitch` and `OUDSSwitchItem` 
 tag                            | For tag components like `OUDSTag`
-tagInput                       | For tag input components like `OUDSTagInput`
+inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
 textInput                      |
 
@@ -151,6 +151,6 @@ textInput                      |
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
 - ``TagComponentTokens``
-- ``TagInputComponentTokens``
+- ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``

@@ -30,12 +30,12 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     static let mockThemeSwitchColor = MultipleColorSemanticTokens("#00FF00")
     static let mockThemeSwitchOpacity: OpacitySemanticToken = 0.07
 
-    override public init(sizes: AllSizeSemanticTokensProvider?,
-                         borders: AllBorderSemanticTokensProvider?,
-                         colors: AllColorSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?,
-                         opacities: AllOpacitySemanticTokensProvider?,
-                         dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+    override init(sizes: AllSizeSemanticTokensProvider?,
+                  borders: AllBorderSemanticTokensProvider?,
+                  colors: AllColorSemanticTokensProvider?,
+                  spaces: AllSpaceSemanticTokensProvider?,
+                  opacities: AllOpacitySemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
         super.init(sizes: sizes,
                    borders: borders,
@@ -49,40 +49,40 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
 
     // MARK: Sizes
 
-    override public var switchSizeHeightCursorSelected: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeHeightCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeHeightTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeMaxHeight: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeMinHeight: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeMinWidth: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthCursorSelected: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeHeightCursorSelected: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeHeightCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeHeightTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeMaxHeight: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeMinHeight: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeMinWidth: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeWidthCursorSelected: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeWidthCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
+    override var switchSizeWidthTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
 
     // MARK: Borders
 
-    override public var switchBorderRadiusCursor: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
-    override public var switchBorderRadiusTrack: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
+    override var switchBorderRadiusCursor: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
+    override var switchBorderRadiusTrack: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
 
     // MARK: Colors
 
-    override public var switchColorCursor: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchColorTrackSelected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchColorTrackUnselected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchColorCheck: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorCursor: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorTrackSelected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorTrackUnselected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var switchColorCheck: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
 
     // MARK: Spaces
 
-    override public var switchSpacePaddingInlineUnselected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
-    override public var switchSpacePaddingInlineSelected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
+    override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
+    override var switchSpacePaddingInlineSelected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
 
     // MARK: - Opacities
 
-    override public var switchOpacityCheck: OpacitySemanticToken { Self.mockThemeSwitchOpacity }
+    override var switchOpacityCheck: OpacitySemanticToken { Self.mockThemeSwitchOpacity }
 }
 
 // swiftlint:enable required_deinit

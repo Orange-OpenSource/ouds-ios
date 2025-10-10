@@ -16,7 +16,7 @@ This Orange theme is a theme with an inversed color palette for some specific us
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.5.0
+🧬 Theme version: 1.6.0
 ```
 
 Some Orange products can be designed for very specific use cases. For example dark environments, or for users always on screen or for mobility uses cases.

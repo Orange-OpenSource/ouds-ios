@@ -28,7 +28,7 @@ final class OrangeInverseThemeBorderSemanticTokensProvider: AllBorderSemanticTok
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeBorderSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

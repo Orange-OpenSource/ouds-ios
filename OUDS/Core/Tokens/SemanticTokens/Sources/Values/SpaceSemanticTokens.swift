@@ -28,105 +28,105 @@ public protocol SpaceSemanticTokens {
 
     var spaceScaledNoneMobile: SpaceSemanticToken { get }
     var spaceScaledNoneTablet: SpaceSemanticToken { get }
-    var spaceScaled3xsMobile: SpaceSemanticToken { get }
-    var spaceScaled3xsTablet: SpaceSemanticToken { get }
-    var spaceScaled2xsMobile: SpaceSemanticToken { get }
-    var spaceScaled2xsTablet: SpaceSemanticToken { get }
-    var spaceScaledXsMobile: SpaceSemanticToken { get }
-    var spaceScaledXsTablet: SpaceSemanticToken { get }
-    var spaceScaledSmMobile: SpaceSemanticToken { get }
-    var spaceScaledSmTablet: SpaceSemanticToken { get }
-    var spaceScaledMdMobile: SpaceSemanticToken { get }
-    var spaceScaledMdTablet: SpaceSemanticToken { get }
-    var spaceScaledLgMobile: SpaceSemanticToken { get }
-    var spaceScaledLgTablet: SpaceSemanticToken { get }
-    var spaceScaledXlMobile: SpaceSemanticToken { get }
-    var spaceScaledXlTablet: SpaceSemanticToken { get }
-    var spaceScaled2xlMobile: SpaceSemanticToken { get }
-    var spaceScaled2xlTablet: SpaceSemanticToken { get }
-    var spaceScaled3xlMobile: SpaceSemanticToken { get }
-    var spaceScaled3xlTablet: SpaceSemanticToken { get }
+    var spaceScaled3xsmallMobile: SpaceSemanticToken { get }
+    var spaceScaled3xsmallTablet: SpaceSemanticToken { get }
+    var spaceScaled2xsmallMobile: SpaceSemanticToken { get }
+    var spaceScaled2xsmallTablet: SpaceSemanticToken { get }
+    var spaceScaledXsmallMobile: SpaceSemanticToken { get }
+    var spaceScaledXsmallTablet: SpaceSemanticToken { get }
+    var spaceScaledSmallMobile: SpaceSemanticToken { get }
+    var spaceScaledSmallTablet: SpaceSemanticToken { get }
+    var spaceScaledMediumMobile: SpaceSemanticToken { get }
+    var spaceScaledMediumTablet: SpaceSemanticToken { get }
+    var spaceScaledLargeMobile: SpaceSemanticToken { get }
+    var spaceScaledLargeTablet: SpaceSemanticToken { get }
+    var spaceScaledXlargeMobile: SpaceSemanticToken { get }
+    var spaceScaledXlargeTablet: SpaceSemanticToken { get }
+    var spaceScaled2xlargeMobile: SpaceSemanticToken { get }
+    var spaceScaled2xlargeTablet: SpaceSemanticToken { get }
+    var spaceScaled3xlargeMobile: SpaceSemanticToken { get }
+    var spaceScaled3xlargeTablet: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Fixed
 
     var spaceFixedNone: SpaceSemanticToken { get }
-    var spaceFixed3xs: SpaceSemanticToken { get }
-    var spaceFixed2xs: SpaceSemanticToken { get }
-    var spaceFixedXs: SpaceSemanticToken { get }
-    var spaceFixedSm: SpaceSemanticToken { get }
-    var spaceFixedMd: SpaceSemanticToken { get }
-    var spaceFixedLg: SpaceSemanticToken { get }
-    var spaceFixedXl: SpaceSemanticToken { get }
-    var spaceFixed2xl: SpaceSemanticToken { get }
-    var spaceFixed3xl: SpaceSemanticToken { get }
-    var spaceFixed4xl: SpaceSemanticToken { get }
-    var spaceFixed5xl: SpaceSemanticToken { get }
+    var spaceFixed3xsmall: SpaceSemanticToken { get }
+    var spaceFixed2xsmall: SpaceSemanticToken { get }
+    var spaceFixedXsmall: SpaceSemanticToken { get }
+    var spaceFixedSmall: SpaceSemanticToken { get }
+    var spaceFixedMedium: SpaceSemanticToken { get }
+    var spaceFixedLarge: SpaceSemanticToken { get }
+    var spaceFixedXlarge: SpaceSemanticToken { get }
+    var spaceFixed2xlarge: SpaceSemanticToken { get }
+    var spaceFixed3xlarge: SpaceSemanticToken { get }
+    var spaceFixed4xlarge: SpaceSemanticToken { get }
+    var spaceFixed5xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
     var spacePaddingInlineNone: SpaceSemanticToken { get }
-    var spacePaddingInline4xs: SpaceSemanticToken { get }
-    var spacePaddingInline3xs: SpaceSemanticToken { get }
-    var spacePaddingInline2xs: SpaceSemanticToken { get }
-    var spacePaddingInlineXs: SpaceSemanticToken { get }
-    var spacePaddingInlineSm: SpaceSemanticToken { get }
-    var spacePaddingInlineMd: SpaceSemanticToken { get }
-    var spacePaddingInlineLg: SpaceSemanticToken { get }
-    var spacePaddingInlineXl: SpaceSemanticToken { get }
-    var spacePaddingInline2xl: SpaceSemanticToken { get }
-    var spacePaddingInline3xl: SpaceSemanticToken { get }
-    var spacePaddingInline4xl: SpaceSemanticToken { get }
+    var spacePaddingInline4xsmall: SpaceSemanticToken { get }
+    var spacePaddingInline3xsmall: SpaceSemanticToken { get }
+    var spacePaddingInline2xsmall: SpaceSemanticToken { get }
+    var spacePaddingInlineXsmall: SpaceSemanticToken { get }
+    var spacePaddingInlineSmall: SpaceSemanticToken { get }
+    var spacePaddingInlineMedium: SpaceSemanticToken { get }
+    var spacePaddingInlineLarge: SpaceSemanticToken { get }
+    var spacePaddingInlineXlarge: SpaceSemanticToken { get }
+    var spacePaddingInline2xlarge: SpaceSemanticToken { get }
+    var spacePaddingInline3xlarge: SpaceSemanticToken { get }
+    var spacePaddingInline4xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
     var spacePaddingBlockNone: SpaceSemanticToken { get }
-    var spacePaddingBlock4xs: SpaceSemanticToken { get }
-    var spacePaddingBlock3xs: SpaceSemanticToken { get }
-    var spacePaddingBlock2xs: SpaceSemanticToken { get }
-    var spacePaddingBlockXs: SpaceSemanticToken { get }
-    var spacePaddingBlockSm: SpaceSemanticToken { get }
-    var spacePaddingBlockMd: SpaceSemanticToken { get }
-    var spacePaddingBlockLg: SpaceSemanticToken { get }
-    var spacePaddingBlockXl: SpaceSemanticToken { get }
-    var spacePaddingBlock2xl: SpaceSemanticToken { get }
-    var spacePaddingBlock3xl: SpaceSemanticToken { get }
-    var spacePaddingBlock4xl: SpaceSemanticToken { get }
+    var spacePaddingBlock4xsmall: SpaceSemanticToken { get }
+    var spacePaddingBlock3xsmall: SpaceSemanticToken { get }
+    var spacePaddingBlock2xsmall: SpaceSemanticToken { get }
+    var spacePaddingBlockXsmall: SpaceSemanticToken { get }
+    var spacePaddingBlockSmall: SpaceSemanticToken { get }
+    var spacePaddingBlockMedium: SpaceSemanticToken { get }
+    var spacePaddingBlockLarge: SpaceSemanticToken { get }
+    var spacePaddingBlockXlarge: SpaceSemanticToken { get }
+    var spacePaddingBlock2xlarge: SpaceSemanticToken { get }
+    var spacePaddingBlock3xlarge: SpaceSemanticToken { get }
+    var spacePaddingBlock4xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inset
 
     var spaceInsetNone: SpaceSemanticToken { get }
-    var spaceInset4xs: SpaceSemanticToken { get }
-    var spaceInset3xs: SpaceSemanticToken { get }
-    var spaceInset2xs: SpaceSemanticToken { get }
-    var spaceInsetXs: SpaceSemanticToken { get }
-    var spaceInsetSm: SpaceSemanticToken { get }
-    var spaceInsetMd: SpaceSemanticToken { get }
-    var spaceInsetLg: SpaceSemanticToken { get }
-    var spaceInsetXl: SpaceSemanticToken { get }
-    var spaceInset2xl: SpaceSemanticToken { get }
-    var spaceInset3xl: SpaceSemanticToken { get }
+    var spaceInset4xsmall: SpaceSemanticToken { get }
+    var spaceInset3xsmall: SpaceSemanticToken { get }
+    var spaceInset2xsmall: SpaceSemanticToken { get }
+    var spaceInsetXsmall: SpaceSemanticToken { get }
+    var spaceInsetSmall: SpaceSemanticToken { get }
+    var spaceInsetMedium: SpaceSemanticToken { get }
+    var spaceInsetLarge: SpaceSemanticToken { get }
+    var spaceInsetXlarge: SpaceSemanticToken { get }
+    var spaceInset2xlarge: SpaceSemanticToken { get }
+    var spaceInset3xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Column Gap
 
     var spaceColumnGapNone: SpaceSemanticToken { get }
-    var spaceColumnGap3xs: SpaceSemanticToken { get }
-    var spaceColumnGap2xs: SpaceSemanticToken { get }
-    var spaceColumnGapXs: SpaceSemanticToken { get }
-    var spaceColumnGapSm: SpaceSemanticToken { get }
-    var spaceColumnGapMd: SpaceSemanticToken { get }
-    var spaceColumnGapLg: SpaceSemanticToken { get }
-    var spaceColumnGapXl: SpaceSemanticToken { get }
-    var spaceColumnGap2xl: SpaceSemanticToken { get }
+    var spaceColumnGap3xsmall: SpaceSemanticToken { get }
+    var spaceColumnGap2xsmall: SpaceSemanticToken { get }
+    var spaceColumnGapXsmall: SpaceSemanticToken { get }
+    var spaceColumnGapSmall: SpaceSemanticToken { get }
+    var spaceColumnGapMedium: SpaceSemanticToken { get }
+    var spaceColumnGapLarge: SpaceSemanticToken { get }
+    var spaceColumnGapXlarge: SpaceSemanticToken { get }
+    var spaceColumnGap2xlarge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Row Gap
 
     var spaceRowGapNone: SpaceSemanticToken { get }
-    var spaceRowGap3xs: SpaceSemanticToken { get }
-    var spaceRowGap2xs: SpaceSemanticToken { get }
-    var spaceRowGapXs: SpaceSemanticToken { get }
-    var spaceRowGapSm: SpaceSemanticToken { get }
-    var spaceRowGapMd: SpaceSemanticToken { get }
-    var spaceRowGapLg: SpaceSemanticToken { get }
+    var spaceRowGap3xsmall: SpaceSemanticToken { get }
+    var spaceRowGap2xsmall: SpaceSemanticToken { get }
+    var spaceRowGapXsmall: SpaceSemanticToken { get }
+    var spaceRowGapSmall: SpaceSemanticToken { get }
+    var spaceRowGapMedium: SpaceSemanticToken { get }
+    var spaceRowGapLarge: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

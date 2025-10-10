@@ -28,7 +28,7 @@ final class OrangeBusinessToolsThemeFontSemanticTokensProvider: AllFontSemanticT
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

@@ -26,7 +26,7 @@ final class SoshThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvid
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeBorderSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

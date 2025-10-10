@@ -26,7 +26,7 @@ final class SoshThemeElevationSemanticTokensProvider: AllElevationSemanticTokens
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeElevationSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

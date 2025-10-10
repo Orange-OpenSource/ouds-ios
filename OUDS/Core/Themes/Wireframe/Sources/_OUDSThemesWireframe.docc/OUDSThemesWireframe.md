@@ -16,7 +16,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.5.0
+🧬 Theme version: 1.6.0
 ```
 
 > Note: The Wireframe theme uses the ChalkboardSE font family available in the iOS system.

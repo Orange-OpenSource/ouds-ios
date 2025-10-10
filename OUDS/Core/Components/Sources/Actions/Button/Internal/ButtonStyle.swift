@@ -51,7 +51,7 @@ struct OUDSButtonStyle: ButtonStyle {
     ///    - isHover: Flag is button is hovered (e.g. by mouse)
     ///    - appearance: The button appearance
     ///    - style: The button style
-    public init(isHover: Bool, appearance: OUDSButton.Appearance, style: OUDSButton.Style) {
+    init(isHover: Bool, appearance: OUDSButton.Appearance, style: OUDSButton.Style) {
         self.appearance = appearance
         self.style = style
         self.isHover = isHover
@@ -59,7 +59,7 @@ struct OUDSButtonStyle: ButtonStyle {
 
     // MARK: Body
 
-    public func makeBody(configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         switch style {
         case .default:
             configuration.label

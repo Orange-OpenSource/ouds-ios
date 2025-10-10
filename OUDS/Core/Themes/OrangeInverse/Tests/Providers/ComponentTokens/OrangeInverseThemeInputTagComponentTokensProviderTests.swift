@@ -11,28 +11,28 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSThemesWireframe
+@testable import OUDSThemesOrangeInverse
 import Testing
 
 // swiftlint:disable type_name
 
 /// Check if the component tokens provider under test has the default semantic token providers with the expected types.
-struct WireframeThemeTagInputComponentTokensProviderTests {
+struct OrangeInverseThemeInputTagComponentTokensProviderTests {
 
-    private var provider: WireframeThemeTagInputComponentTokensProvider
+    private var provider: OrangeInverseThemeInputTagComponentTokensProvider
 
     init() {
-        provider = WireframeThemeTagInputComponentTokensProvider()
+        provider = OrangeInverseThemeInputTagComponentTokensProvider()
     }
 
     // MARK: - Tests
 
     @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(provider.borders is WireframeThemeBorderSemanticTokensProvider)
+        #expect(provider.borders is OrangeInverseThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is WireframeThemeColorSemanticTokensProvider)
+        #expect(provider.colors is OrangeInverseThemeColorSemanticTokensProvider)
     }
 }
 

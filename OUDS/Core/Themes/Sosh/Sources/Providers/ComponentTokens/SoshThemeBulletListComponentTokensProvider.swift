@@ -27,7 +27,7 @@ import OUDSFoundations
 final class SoshThemeBulletListComponentTokensProvider: AllBulletListComponentTokensProvider {
 
     /// Provider of spaces semantic tokens to use for link spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -35,7 +35,7 @@ final class SoshThemeBulletListComponentTokensProvider: AllBulletListComponentTo
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameter spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    public init(spaces: AllSpaceSemanticTokensProvider? = nil) {
+    init(spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeBulletListComponentTokensProvider")
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
         #if DEBUG

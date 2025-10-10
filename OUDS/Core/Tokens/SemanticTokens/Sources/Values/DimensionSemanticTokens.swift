@@ -30,36 +30,36 @@ public protocol DimensionSemanticTokens {
 
     var dimensionNone: DimensionSemanticToken { get }
 
-    var dimensionXs: DimensionSemanticToken { get }
-    var dimension2xs: DimensionSemanticToken { get }
-    var dimension3xs: DimensionSemanticToken { get }
-    var dimension4xs: DimensionSemanticToken { get }
-    var dimension5xs: DimensionSemanticToken { get }
-    var dimension6xs: DimensionSemanticToken { get }
-    var dimension7xs: DimensionSemanticToken { get }
-    var dimension8xs: DimensionSemanticToken { get }
-    var dimension9xs: DimensionSemanticToken { get }
-    var dimension10xs: DimensionSemanticToken { get }
-    var dimension11xs: DimensionSemanticToken { get }
-    var dimension12xs: DimensionSemanticToken { get }
+    var dimensionXsmall: DimensionSemanticToken { get }
+    var dimension2xsmall: DimensionSemanticToken { get }
+    var dimension3xsmall: DimensionSemanticToken { get }
+    var dimension4xsmall: DimensionSemanticToken { get }
+    var dimension5xsmall: DimensionSemanticToken { get }
+    var dimension6xsmall: DimensionSemanticToken { get }
+    var dimension7xsmall: DimensionSemanticToken { get }
+    var dimension8xsmall: DimensionSemanticToken { get }
+    var dimension9xsmall: DimensionSemanticToken { get }
+    var dimension10xsmall: DimensionSemanticToken { get }
+    var dimension11xsmall: DimensionSemanticToken { get }
+    var dimension12xsmall: DimensionSemanticToken { get }
 
-    var dimensionSm: DimensionSemanticToken { get }
+    var dimensionSmall: DimensionSemanticToken { get }
 
-    var dimensionMd: DimensionSemanticToken { get }
+    var dimensionMedium: DimensionSemanticToken { get }
 
-    var dimensionLg: DimensionSemanticToken { get }
+    var dimensionLarge: DimensionSemanticToken { get }
 
-    var dimensionXl: DimensionSemanticToken { get }
-    var dimension2xl: DimensionSemanticToken { get }
-    var dimension3xl: DimensionSemanticToken { get }
-    var dimension4xl: DimensionSemanticToken { get }
-    var dimension5xl: DimensionSemanticToken { get }
-    var dimension6xl: DimensionSemanticToken { get }
-    var dimension7xl: DimensionSemanticToken { get }
-    var dimension8xl: DimensionSemanticToken { get }
-    var dimension9xl: DimensionSemanticToken { get }
-    var dimension10xl: DimensionSemanticToken { get }
-    var dimension11xl: DimensionSemanticToken { get }
+    var dimensionXlarge: DimensionSemanticToken { get }
+    var dimension2xlarge: DimensionSemanticToken { get }
+    var dimension3xlarge: DimensionSemanticToken { get }
+    var dimension4xlarge: DimensionSemanticToken { get }
+    var dimension5xlarge: DimensionSemanticToken { get }
+    var dimension6xlarge: DimensionSemanticToken { get }
+    var dimension7xlarge: DimensionSemanticToken { get }
+    var dimension8xlarge: DimensionSemanticToken { get }
+    var dimension9xlarge: DimensionSemanticToken { get }
+    var dimension10xlarge: DimensionSemanticToken { get }
+    var dimension11xlarge: DimensionSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

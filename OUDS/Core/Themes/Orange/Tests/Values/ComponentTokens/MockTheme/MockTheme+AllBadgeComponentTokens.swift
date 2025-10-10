@@ -25,8 +25,8 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
     static let mockThemeBadgeSpace: SpaceSemanticToken = 1_312
     static let mockThemeBadgeSize: SizeSemanticToken = 118_218
 
-    override public init(spaces: AllSpaceSemanticTokensProvider?,
-                         dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+    override init(spaces: AllSpaceSemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
         super.init(spaces: spaces,
                    dimensions: dimensions)
@@ -34,14 +34,14 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
 
     // MARK: - Badge component tokens
 
-    override public var badgeSizeXsmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var badgeSizeXsmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var badgeSizeSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var badgeSizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var badgeSizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
 
-    override public var badgeSpaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
-    override public var badgeSpacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
-    override public var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var badgeSpaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var badgeSpacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
 }
 
 // swiftlint:enable required_deinit

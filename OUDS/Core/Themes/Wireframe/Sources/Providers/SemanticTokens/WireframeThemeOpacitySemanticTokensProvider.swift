@@ -28,7 +28,7 @@ final class WireframeThemeOpacitySemanticTokensProvider: AllOpacitySemanticToken
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of WireframeThemeOpacitySemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

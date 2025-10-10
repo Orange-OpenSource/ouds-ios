@@ -14,6 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Color` raw tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Font` semantic tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Checkbox` component tokens for `Sosh` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Dimension`, `size` and `space` semantic tokens names (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Color` semantic tokens for `Orange`, `Orange Inverse`, `Sosh` and `Wireframe` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Color mode` semantic tokens for `Orange`, `Orange Business Tools`, `Sosh` and `Wireframe` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Switch` component tokens for `Orange`, `Orange Business Tools`, `Orange Inverse` and `Sosh themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Tag input` component tokens renamed to `input tag` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Button` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
 - Migration to Xcode 26.0 (Orange-OpenSource/ouds-ios#972)
 - Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
 - Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)

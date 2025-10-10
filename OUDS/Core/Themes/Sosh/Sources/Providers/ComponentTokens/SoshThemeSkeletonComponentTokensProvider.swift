@@ -25,7 +25,7 @@ import OUDSFoundations
 final class SoshThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokensProvider {
 
     /// Provider of color semantic tokens to use for link colors
-    public let colors: AllColorSemanticTokensProvider
+    let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -33,7 +33,7 @@ final class SoshThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokens
 
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
-    public init(colors: AllColorSemanticTokensProvider? = nil) {
+    init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSkeletonComponentTokensProvider")
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         #if DEBUG

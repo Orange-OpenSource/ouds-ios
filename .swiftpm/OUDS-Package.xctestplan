@@ -1,0 +1,87 @@
+{
+  "configurations" : [
+    {
+      "id" : "8F2342A9-924F-4D1F-88B9-242BE1FCA0B9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDS-Tests",
+        "name" : "OUDS-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSComponents-Tests",
+        "name" : "OUDSComponents-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSFoundations-Tests",
+        "name" : "OUDSFoundations-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesOrange-Tests",
+        "name" : "OUDSThemesOrange-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesOrangeBusinessTools-Tests",
+        "name" : "OUDSThemesOrangeBusinessTools-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesOrangeInverse-Tests",
+        "name" : "OUDSThemesOrangeInverse-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesSosh-Tests",
+        "name" : "OUDSThemesSosh-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesWirefame-Tests",
+        "name" : "OUDSThemesWirefame-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSTokensRaw-Tests",
+        "name" : "OUDSTokensRaw-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSTokensSemantic-Tests",
+        "name" : "OUDSTokensSemantic-Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -171,7 +171,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
-    ///    - tagInput: All component tokens for tag input
+    ///    - inputTag: All component tokens for tag input
     ///    - textInput: All component tokens for text input
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
@@ -203,7 +203,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          skeleton: AllSkeletonComponentTokensProvider? = nil,
                          switch: AllSwitchComponentTokensProvider? = nil,
                          tag: AllTagComponentTokensProvider? = nil,
-                         tagInput: AllTagInputComponentTokensProvider? = nil,
+                         inputTag: AllInputTagComponentTokensProvider? = nil,
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
@@ -238,7 +238,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
         let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
-        let tagInput = (tagInput ?? OrangeThemeTagInputComponentTokensProvider(borders: borders, colors: colors))
+        let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
         let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
 
@@ -268,7 +268,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,

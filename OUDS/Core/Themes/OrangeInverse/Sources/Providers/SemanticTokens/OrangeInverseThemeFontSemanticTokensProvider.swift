@@ -28,7 +28,7 @@ final class OrangeInverseThemeFontSemanticTokensProvider: AllFontSemanticTokensP
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeInverseThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

@@ -26,10 +26,10 @@ import OUDSFoundations
 final class SoshThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvider {
 
     /// Provider of spaces semantic tokens to use for badge spaces
-    public let spaces: AllSpaceSemanticTokensProvider
+    let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -39,8 +39,8 @@ final class SoshThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvid
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
     ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``SoshThemeDimensionSemanticTokensProvider``)
-    public init(spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+    init(spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeBadgeComponentTokensProvider")
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())

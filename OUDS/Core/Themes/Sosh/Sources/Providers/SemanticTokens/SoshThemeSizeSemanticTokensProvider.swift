@@ -23,7 +23,7 @@ import OUDSFoundations
 final class SoshThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
     /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -31,7 +31,7 @@ final class SoshThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
     /// Intializes the provider
     /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
-    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSizeSemanticTokensProvider")
         self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG

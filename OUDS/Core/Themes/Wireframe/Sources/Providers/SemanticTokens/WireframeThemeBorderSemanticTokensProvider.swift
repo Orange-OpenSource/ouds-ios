@@ -28,7 +28,7 @@ final class WireframeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensP
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of WireframeThemeBorderSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
