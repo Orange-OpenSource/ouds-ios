@@ -38,7 +38,7 @@ public enum OUDSVersions {
     public static let themeOrangeInverseBrandVersion = "1.6.0"
 
     /// Version of the Wireframe core tokens library
-    public static let themeWireframeCoreVersion = "1.0.0"
+    public static let themeWireframeCoreVersion = "1.1.0"
     /// Version of the Wireframe brand tokens library
     public static let themeWireframeBrandVersion = "1.6.0"
 

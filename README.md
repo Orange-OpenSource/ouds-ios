@@ -149,7 +149,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 - Brand Orange version: 1.6.0
 - Core Sosh version: 1.1.0
 - Brand Sosh version: 1.6.0
-- Core Wireframe version: 1.0.0
+- Core Wireframe version: 1.1.0
 - Brand Wireframe version: 1.6.0
 - Brand Orange Business Tools version: 1.6.0
 - Brand Orange Inverse version: 1.6.0
