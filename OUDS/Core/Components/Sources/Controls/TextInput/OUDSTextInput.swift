@@ -122,7 +122,10 @@ import SwiftUI
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
-///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "firstName.lastName", suffix "@orange.com"), helperText: "The email will be automatically completed with @orange.com")
+///     let placeholder =
+///     OUDSTextInput(label: "Email", text: $text,
+///                      placeholder: .init(text: "firstName.lastName", suffix "@orange.com"),
+///                      helperText: "The email will be automatically completed with @orange.com")
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
