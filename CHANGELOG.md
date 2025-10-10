@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
 - Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
 - UIKit experimental backports for `button`, `tag`, `badge`, `horizontal divider`, `vertical divider`, `link`, `suggestion chip`, `filter chip`, `checkbox`, `checkbox indeterminate`, `checkbox item`, `radio`, `radio item`, `switch` and `switch item` components
 - Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
