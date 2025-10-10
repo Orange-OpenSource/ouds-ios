@@ -163,7 +163,9 @@ public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap
 
         // MARK: Wireframe
 
-        PSFNMK("Chalkboard SE", Font.Weight.light): "ChalkboardSE-Light",
-        PSFNMK("Chalkboard SE", Font.Weight.regular): "ChalkboardSE-Regular",
-        PSFNMK("Chalkboard SE", Font.Weight.bold): "ChalkboardSE-Bold",
+        PSFNMK("Shantell Sans", Font.Weight.light): "ShantellSans-Light",
+        PSFNMK("Shantell Sans", Font.Weight.regular): "ShantellSans-Regular",
+        PSFNMK("Shantell Sans", Font.Weight.medium): "ShantellSans-Medium",
+        PSFNMK("Shantell Sans", Font.Weight.semibold): "ShantellSans-SemiBold",
+        PSFNMK("Shantell Sans", Font.Weight.bold): "ShantellSans-Bold",
     ]

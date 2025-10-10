@@ -141,19 +141,25 @@ struct StringSwiftUITests {
         result = "Sosh".fontNameInPostScript(using: "\(Font.Weight.black)")
         #expect(result == "Sosh-Black", "Current value is '\(result)'")
     }
-
-    /// Tests the Chalkboard SE font family values created using a font family name and a weight
+    
+    /// Tests the Shantell Sans family values created using a font family name and a weight
     @Test
-    func fontNameInPostScriptForChalkboardSE() throws {
+    func fontNameInPostScriptForShantellSans() throws {
         var result: String
 
-        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.light)")
-        #expect(result == "ChalkboardSE-Light", "Current value is '\(result)'")
+        result = "Shantell Sans".fontNameInPostScript(using: "\(Font.Weight.light)")
+        #expect(result == "ShantellSans-Light", "Current value is '\(result)'")
 
-        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.regular)")
-        #expect(result == "ChalkboardSE-Regular", "Current value is '\(result)'")
+        result = "Shantell Sans".fontNameInPostScript(using: "\(Font.Weight.regular)")
+        #expect(result == "ShantellSans-Regular", "Current value is '\(result)'")
 
-        result = "Chalkboard SE".fontNameInPostScript(using: "\(Font.Weight.bold)")
-        #expect(result == "ChalkboardSE-Bold", "Current value is '\(result)'")
+        result = "Shantell Sans".fontNameInPostScript(using: "\(Font.Weight.medium)")
+        #expect(result == "ShantellSans-Medium", "Current value is '\(result)'")
+
+        result = "Shantell Sans".fontNameInPostScript(using: "\(Font.Weight.semibold)")
+        #expect(result == "ShantellSans-SemiBold", "Current value is '\(result)'")
+
+        result = "Shantell Sans".fontNameInPostScript(using: "\(Font.Weight.bold)")
+        #expect(result == "ShantellSans-Bold", "Current value is '\(result)'")
     }
 }

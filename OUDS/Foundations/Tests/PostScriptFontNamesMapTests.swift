@@ -214,21 +214,31 @@ struct PostScriptFontNamesMapTests {
         #expect(kApplePostScriptFontNames[PSFNMK("Sosh", Font.Weight.black)] == "Sosh-Black")
     }
 
-    // MARK: - Chalkboard SE
+    // MARK: - Shantell Sans
 
     @Test
-    func chalkboardSELight() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.light)] == "ChalkboardSE-Light")
+    func ShantellSansLight() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("Shantell Sans", Font.Weight.light)] == "ShantellSans-Light")
     }
 
     @Test
-    func chalkboardSERegular() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.regular)] == "ChalkboardSE-Regular")
+    func ShantellSansRegular() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("Shantell Sans", Font.Weight.regular)] == "ShantellSans-Regular")
     }
 
     @Test
-    func chalkboardSEBold() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Chalkboard SE", Font.Weight.bold)] == "ChalkboardSE-Bold")
+    func ShantellSansMedium() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("Shantell Sans", Font.Weight.medium)] == "ShantellSans-Medium")
+    }
+
+    @Test
+    func ShantellSansSemiBold() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("Shantell Sans", Font.Weight.semibold)] == "ShantellSans-SemiBold")
+    }
+
+    @Test
+    func ShantellSansBold() throws {
+        #expect(kApplePostScriptFontNames[PSFNMK("Shantell Sans", Font.Weight.bold)] == "ShantellSans-Bold")
     }
 
     // MARK: - Fallbacks

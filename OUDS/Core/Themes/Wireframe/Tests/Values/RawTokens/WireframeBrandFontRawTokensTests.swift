@@ -25,6 +25,6 @@ import TestsUtils
 struct WireframeBrandFontRawTokensTests {
 
     @Test func wireframeBrandFontRawTokenFontFamilyBrandDefault() throws {
-        #expect(WireframeBrandFontRawTokens.fontFamilyDefault == "Chalkboard SE")
+        #expect(WireframeBrandFontRawTokens.fontFamilyDefault == "Shantell Sans")
     }
 }
