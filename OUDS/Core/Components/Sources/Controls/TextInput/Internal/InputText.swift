@@ -16,7 +16,7 @@ import SwiftUI
 
 struct InputText: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let label: String
     let text: Binding<String>
@@ -54,7 +54,7 @@ struct InputText: View {
 
     private var placeholderColor: MultipleColorSemanticTokens {
         switch status {
-        case .default:
+        case .enabled:
             theme.colors.colorContentMuted
         case .error:
             placeholderErrorColor

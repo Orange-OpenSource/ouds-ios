@@ -41,7 +41,7 @@ struct LeadingIconContainer: View {
 
     private var color: MultipleColorSemanticTokens {
         switch status {
-        case .default, .error, .loading, .readOnly:
+        case .enabled, .error, .loading, .readOnly:
             theme.colors.colorContentMuted
         case .disabled:
             theme.colors.colorActionDisabled

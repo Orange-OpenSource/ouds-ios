@@ -37,7 +37,7 @@ struct LabelContainer: View {
 
     private var color: MultipleColorSemanticTokens {
         switch status {
-        case .default, .loading, .readOnly:
+        case .enabled, .loading, .readOnly:
             theme.colors.colorContentMuted
         case .error:
             switch interactionState {

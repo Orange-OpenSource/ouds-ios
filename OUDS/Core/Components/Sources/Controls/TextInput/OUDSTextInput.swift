@@ -28,9 +28,8 @@ import SwiftUI
 ///
 /// - **label**: It is used to describe the purpose of the input.
 /// In some UI contexts, especially when space is limited or when the input is part of a compact layout (search bars, filters, inline forms), the label can be hidden.
-/// However, hiding the label should only be done if:
-/// - The purpose of the input remains clear thanks to a placeholder or contextual icon.
-/// - The label is still accessible to screen readers
+/// However, hiding the label should only be done if the purpose of the input remains clear thanks to a placeholder or contextual icon
+/// and if the label is still accessible to screen readers
 /// Hiding a label is a design choice that must balance visual simplicity and clarity of intent, without compromising inclusiveness or form guidance.
 ///
 /// - **placeholder**: if the text of the text input is empty a placeholder provides a hint or guidance inside the field to suggest expected input.
@@ -47,7 +46,7 @@ import SwiftUI
 /// By **default**, the input is with a subtle background fill and invisible bottom border, creating a softer and more contained look.
 /// Best suited for dense layouts or to enhance visibility.
 ///
-/// When **outlined**, the text input is a minimalist design with a transparent background and a  visible stroke outlining the field.
+/// When **outlined**, the text input is a minimalist design with a transparent background and a visible stroke outlining the field.
 /// This style may be interesting for contexts other than form pages:
 /// - When inputs need to feel lightweight and unobtrusive
 /// - In a header (search field)
@@ -75,16 +74,16 @@ import SwiftUI
 /// - **default (by default)**: Default neutral appearance, whether empty or filled.
 /// It allows users to click, focus, and type freely without restrictions.
 ///
-/// - **error** The `error` status indicates that the user input does not meet validation rules or
+/// - **error**: The `error` status indicates that the user input does not meet validation rules or
 /// expected formatting. It provides immediate visual feedback, typically through a red border,
 /// error icon, and a clear, accessible error message positioned below the input.
 ///
-/// - **loading** The `loading` state indicates that the system is processing or retrieving data
+/// - **loading**: The `loading` state indicates that the system is processing or retrieving data
 /// related to the text entered. A progress indicator appears to inform the user that an action is in progress.
 ///
-/// - **readOnly** The`readOnly`, lets the text visible but not editable
+/// - **readOnly** :The`readOnly`, lets the text visible but not editable
 ///
-/// - **disabled** In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
+/// - **disabled**: In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
 /// Note the SwiftUI `View.disabled()` is ignored.
 ///
 /// ## Helpers
@@ -163,8 +162,8 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
-/// - Since: 0.19.0
+/// - Version: 1.1.0 (Figma component design version)
+/// - Since: 0.20.0
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
@@ -198,7 +197,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         let actionHint: String
         let action: () -> Void
 
-        /// Create a trailing action.
+        /// Creates a trailing action.
         ///
         /// - Parameters:
         ///   - icon: The icon set in the ``OUDSButton``
@@ -206,7 +205,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         ///   - action: The action to perform when the user triggers the button
         public init(icon: Image, actionHint: String, action: @escaping () -> Void) {
             if actionHint.isEmpty {
-                OL.warning("The accessibility action hint for the text input trailing action should not be empty, think about your disabled users!")
+                OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
             self.actionHint = actionHint
@@ -229,6 +228,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         ///   - prefix: Optional prefix, by default is *nil*
         ///   - suffix: Optional suffix, by default is *nil*
         public init(text: String, prefix: String? = nil, suffix: String? = nil) {
+            if text.isEmpty {
+                OL.warning("The placeholder text for the OUDSTextInput is empty, avoid using it in that case.")
+            }
             self.text = text
             self.prefix = prefix
             self.suffix = suffix
@@ -250,8 +252,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     /// Define all available status for the text input
     public enum Status {
-        /// The `default` status
-        case `default`
+        /// The `enabled` status (default)
+        case enabled
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
@@ -283,6 +285,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         ///   - text: The helper text (could be the url)
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
+            if text.isEmpty {
+                OL.warning("The helper link text for the OUDSTextInput is empty, avoid using it in that case.")
+            }
             self.text = text
             self.action = action
         }
@@ -291,8 +296,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Initializers
 
     /// Creates a text input.
-    ///
-    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - label: The label displayed above the text input. It describes the purpose of the input
@@ -308,7 +311,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
-    ///    - status: The current status of the text input, by default to set *default*
+    ///    - status: The current status of the text input, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
                 placeholder: Placeholder? = nil,
@@ -318,7 +321,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
-                status: Self.Status = .default)
+                status: Self.Status = .enabled)
     {
         self.label = label
         self.text = text
@@ -375,19 +378,22 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
         let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
 
-        var errorDescription = ""
-        if status == .error, helperText?.isEmpty != false {
-            errorDescription = "core_common_onError_a11y".localized()
+        let errorDescription = if status == .error, helperText?.isEmpty != false {
+            "core_common_onError_a11y".localized()
+        } else {
+            ""
         }
 
-        var loadingDescription = ""
-        if status == .loading {
-            loadingDescription = "core_common_loading_a11y".localized()
+        let loadingDescription = if status == .loading {
+            "core_common_loading_a11y".localized()
+        } else {
+            ""
         }
 
-        var labelDescription = label
-        if label.isEmpty {
-            labelDescription = "\(placeholder?.text ?? "")"
+        let labelDescription = if label.isEmpty {
+            "\(placeholder?.text ?? "")"
+        } else {
+            label
         }
 
         return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"

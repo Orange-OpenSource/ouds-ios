@@ -76,7 +76,7 @@ struct TextInputBorderModifier: ViewModifier {
 
     private var defaultColor: MultipleColorSemanticTokens {
         switch status {
-        case .default:
+        case .enabled:
             switch interactionState {
             case .idle:
                 theme.textInput.textInputColorBorderEnabled
@@ -109,7 +109,7 @@ struct TextInputBorderModifier: ViewModifier {
 
     private var outlinedColor: MultipleColorSemanticTokens {
         switch status {
-        case .default:
+        case .enabled:
             switch interactionState {
             case .idle:
                 theme.textInput.textInputColorBorderEnabled
@@ -130,8 +130,7 @@ struct TextInputBorderModifier: ViewModifier {
         case .loading:
             theme.textInput.textInputColorBorderLoading
         case .readOnly:
-            // should not appear
-            theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled // Should not appear
         case .disabled:
             theme.colors.colorActionDisabled
         }

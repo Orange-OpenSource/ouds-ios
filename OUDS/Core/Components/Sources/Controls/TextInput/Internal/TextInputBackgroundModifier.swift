@@ -42,7 +42,7 @@ struct TextInputBackgroundModifier: ViewModifier {
 
     private var defaultColor: MultipleColorSemanticTokens? {
         switch status {
-        case .default:
+        case .enabled:
             switch interactionState {
             case .idle:
                 theme.colors.colorActionSupportEnabled

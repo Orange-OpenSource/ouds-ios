@@ -29,7 +29,7 @@ struct TrailingActionContainer: View {
 
     var body: some View {
         switch status {
-        case .default, .readOnly, .disabled:
+        case .enabled, .readOnly, .disabled:
             if let trailingAction {
                 trailingButton(for: trailingAction)
                     .disabled(status == .readOnly || status == .disabled)

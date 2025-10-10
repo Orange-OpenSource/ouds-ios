@@ -742,6 +742,6 @@ Such components can have or not a leading icon or a trailing action with or with
     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), leadingIcon: Image("ic_heart"))
 
     // Add a trailing button for additional action
-    let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+    let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
     OUDSTextInput(label: "Label", text: $text, trailingAction: trailingAction)
 ```
