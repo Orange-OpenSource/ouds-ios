@@ -28,11 +28,9 @@ import SwiftUI
 ///
 /// - **label**: It is used to describe the purpose of the input.
 /// In some UI contexts, especially when space is limited or when the input is part of a compact layout (search bars, filters, inline forms), the label can be hidden.
-///
 /// However, hiding the label should only be done if:
 /// - The purpose of the input remains clear thanks to a placeholder or contextual icon.
 /// - The label is still accessible to screen readers
-///
 /// Hiding a label is a design choice that must balance visual simplicity and clarity of intent, without compromising inclusiveness or form guidance.
 ///
 /// - **placeholder**: if the text of the text input is empty a placeholder provides a hint or guidance inside the field to suggest expected input.
@@ -111,20 +109,20 @@ import SwiftUI
 ///     @State var text: String = ""
 ///
 ///     // Empty text and no placeholder
-///     OUDSTextInput(label: "Label", text: $text)
+///     OUDSTextInput(label: "Email", text: $text)
 ///
 ///     // Empty text with placeholder
-///     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder", suffix "€"))
+///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "firstName.lastName", suffix "@orange.com"))
 ///
 ///     // Add a leading icon for more context
-///     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), leadingIcon: Image("ic_heart"))
+///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "Enter email"), leadingIcon: Image(systemName: "envelope"))
 ///
 ///     // Add a trailing button for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
-///     OUDSTextInput(label: "Label", text: $text, trailingAction: trailingAction)
+///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
-///     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperText: "The helper text")
+///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "firstName.lastName", suffix "@orange.com"), helperText: "The email will be automatically completed with @orange.com")
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -368,12 +366,11 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                alignment: .leading)
     }
 
-
     // MARK: Helpers
 
     private var accessibilityLabel: String {
 
-        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_common_empty_a11y".localized() : ""
+        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
 
         var errorDescription = ""
         if status == .error, helperText?.isEmpty != false {

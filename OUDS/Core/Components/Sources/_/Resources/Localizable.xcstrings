@@ -298,30 +298,6 @@
         }
       }
     },
-    "core_common_empty_a11y" : {
-      "comment" : "Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فارغ"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empty"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vide"
-          }
-        }
-      }
-    },
     "core_common_enabled_a11y" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -606,6 +582,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Switch"
+          }
+        }
+      }
+    },
+    "core_textInput_empty_a11y" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فارغ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vide"
           }
         }
       }
