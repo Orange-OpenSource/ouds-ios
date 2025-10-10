@@ -354,9 +354,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             .accessibilityLabel(accessibilityLabel)
             .accessibilityHint(Text(helperText ?? ""))
             .accessibilityValue(accessibilityValue)
-            .accessibilityAction(named: Text(trailingAction?.actionHint ?? ""), {
+            .accessibilityAction(named: Text(trailingAction?.actionHint ?? "")) {
                 trailingAction?.action()
-            })
+            }
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)

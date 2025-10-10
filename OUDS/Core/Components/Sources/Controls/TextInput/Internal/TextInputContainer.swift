@@ -68,7 +68,7 @@ struct TextInputContainer: View {
                                   labelAsPlaceholder: textfieldLabel == label,
                                   status: status,
                                   interactionState: interactionState)
-                        .focused($focused, equals: true)
+                            .focused($focused, equals: true)
 
                         // Suffix container
                         if let placeholder,
