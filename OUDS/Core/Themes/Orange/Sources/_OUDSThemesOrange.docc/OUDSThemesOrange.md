@@ -81,6 +81,7 @@ Some tuning object exists.
 
 ```swift
     // Define your theme tuning
+
     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
 
     // Apply it to your theme
@@ -93,6 +94,28 @@ Some tuning object exists.
     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
+
+A default tuning is applied for this theme:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | false  
+rounded corners text inputs    | false  
+
+### "Max it" case
+
+A predefined tuning configuration is also available for "Max it":
+
+```swift
+    let theme = OrangeTheme(tuning: Tuning.MaxIt)
+```
+
+It applies the following settings:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | true  
+rounded corners text inputs    | true  
 
 ## Typography
 
@@ -403,6 +426,10 @@ struct YourApp: App {
     }
 }
 <!-- Maybe not relevant to display chip picker -->
+
+#### Text inputs
+
+![A text input component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Orange.png)
 
 ### Indicators
 

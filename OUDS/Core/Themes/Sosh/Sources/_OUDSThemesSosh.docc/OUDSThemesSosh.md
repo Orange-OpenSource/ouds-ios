@@ -143,6 +143,10 @@ You cannot derivate the Sosh theme.
 }
 <!-- Maybe not relevant to display chip picker -->
 
+#### Text inputs
+
+![A text input component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Sosh.png)
+
 ### Indicators
 
 #### Badge

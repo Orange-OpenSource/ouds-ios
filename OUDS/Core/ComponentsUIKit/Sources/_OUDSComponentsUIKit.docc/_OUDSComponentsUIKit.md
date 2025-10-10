@@ -45,6 +45,7 @@ Switch item                   | ✅ yes
 Filter chip                   | ✅ yes
 Suggestion chip               | ✅ yes
 Chip picker                   | ❌ no
+Text input                    | ❌ no
 
 ### Indicators
 

@@ -70,7 +70,7 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded button behavior, set to true the  `hasRoundedButtons` values of the `Tuning` object
+/// To activate the rounded button behavior, set to true the `hasRoundedButtons` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
 /// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
@@ -156,7 +156,7 @@ public struct OUDSButton: View {
 
     // MARK: Initializers
 
-    /// Create a button with text and icon.
+    /// Creates a button with text and icon.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -169,10 +169,11 @@ public struct OUDSButton: View {
         self.appearance = appearance
         self.style = style
         self.action = action
+
         isHover = false
     }
 
-    /// Create a button with an icon only.
+    /// Creates a button with an icon only.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon

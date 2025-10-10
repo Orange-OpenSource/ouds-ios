@@ -99,6 +99,13 @@ Some tuning object exists.
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
 
+A default tuning is applied for this theme:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | false  
+rounded corners text inputs    | true
+
 ## Typography
 
 ### Helvetica Neue
@@ -210,6 +217,10 @@ You cannot derivate the *Orange Business Tools* theme.
     }
 }
 <!-- Maybe not relevant to display chip picker -->
+
+#### Text inputs
+
+![A text input component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_OrangeBusinessTools.png)
 
 ### Indicators
 

@@ -140,6 +140,10 @@ You cannot derivate the *Wireframe* theme.
 }
 <!-- Maybe not relevant to display chip picker -->
 
+#### Text inputs
+
+![A text input component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Wireframe.png)
+
 ### Indicators
 
 #### Badge
