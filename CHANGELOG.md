@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for `build-and-test` and `periphery` workflows 
 - `ossf/scorecard-action` action from v2.4.2 to v2.4.3 for `scorecard` workflow
 - `actions/dependency-review-action` action from v4.7.3 to v4.8.1 for `dependency-review` workflow
 - `github/codeql-action/upload-sarif` action from v3 to v4 for `scorecard` workflow
