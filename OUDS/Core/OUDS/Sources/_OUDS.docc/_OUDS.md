@@ -37,6 +37,13 @@ You can get details about the this design system in [the official website unifie
 
 > Tip: Feel free to submit pull requests if you can improve the support of macOS, visionOS, tvOS and watchOS!
 
+## Data and privacy
+
+The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
+As such:
+- this SDK does not handle any personnal data
+- this SDK does not require any device permission to work
+
 ## Topics
 
 ### Essentials
