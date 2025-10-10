@@ -19,7 +19,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 🧬 Theme version: 1.6.0
 ```
 
-> Note: The Wireframe theme uses the ChalkboardSE font family available in the iOS system.
+> Note: The Wireframe theme uses the Shantell Sans font family
 
 > Important: The Wireframe theme does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
 
@@ -77,7 +77,7 @@ You cannot tune the Sosh theme.
 
 ## Typography
 
-The Wireframe theme uses the Chalkboard SE font and must not use others.
+The Wireframe theme uses the Shantell Sans font family and must not use others.
 
 ## How to enrich the theme
 
