@@ -65,6 +65,9 @@ public protocol FontCompositeSemanticTokens {
     var typeBodyDefaultLarge: MultipleFontCompositeRawTokens { get }
     var typeBodyDefaultMedium: MultipleFontCompositeRawTokens { get }
     var typeBodyDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var typeBodyModerateLarge: MultipleFontCompositeRawTokens { get }
+    var typeBodyModerateSmall: MultipleFontCompositeRawTokens { get }
+    var typeBodyModerateMedium: MultipleFontCompositeRawTokens { get }
     var typeBodyStrongLarge: MultipleFontCompositeRawTokens { get }
     var typeBodyStrongMedium: MultipleFontCompositeRawTokens { get }
     var typeBodyStrongSmall: MultipleFontCompositeRawTokens { get }
@@ -75,6 +78,10 @@ public protocol FontCompositeSemanticTokens {
     var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { get }
     var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { get }
     var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var typeLabelModerateXLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelModerateLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelModerateMedium: MultipleFontCompositeRawTokens { get }
+    var typeLabelModerateSmall: MultipleFontCompositeRawTokens { get }
     var typeLabelStrongXLarge: MultipleFontCompositeRawTokens { get }
     var typeLabelStrongLarge: MultipleFontCompositeRawTokens { get }
     var typeLabelStrongMedium: MultipleFontCompositeRawTokens { get }
