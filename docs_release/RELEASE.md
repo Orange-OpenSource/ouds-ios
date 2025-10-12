@@ -25,8 +25,8 @@ The steps are quite simple:
 ## Prepare release
 
 > [!TIP]
-> We use here CLI for Git operations, but of course you are free to use GUI tools
-
+> We use here CLI for Git operations, but of course you are free to use GUI tools.
+> Below are explained the steps and main things to do.
 
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
 
@@ -139,7 +139,7 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 - Click on `Draft a new release`.
 
-- Create a new tag X.Y.Z (following semantic versioning principles)
+- Create a new tag X.Y.Z (following semantic versioning principles). Prefer creating and pushing a tag from your device to cryptographically sign it instead of using web UI because GitHub does not sign tags.
 
 - Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
 

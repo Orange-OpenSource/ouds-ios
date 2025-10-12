@@ -66,6 +66,12 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 
 ## Quick start
 
+### Choose your version
+
+You can find available releases on [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases). 
+The wiki contains also a page [listing the available API](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
+Versions, builds and releases are explained [also in this page](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds).
+
 ### Add the dependency
 
 First, you must add as _package dependency_ of your _project_ the URL of this _Swift Package_ GitHub repository:
