@@ -15,9 +15,6 @@ Some components can be used for **navigation**.
     @Tab("Orange") {
         ![A link component in light and dark mode with Orange theme](component_link_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A link component in light and dark mode with Orange Inverse theme](component_link_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A link component in light and dark mode with Orange Business Tools theme](component_link_OrangeBusinessTools)
     }

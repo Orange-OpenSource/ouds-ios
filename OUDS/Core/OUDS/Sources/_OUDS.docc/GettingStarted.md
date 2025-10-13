@@ -26,7 +26,6 @@ import OUDS // If you want to define your theme or use OUDSThemeableView
 import OUDSModules // To use modules
 import OUDSComponents // To use components
 import OUDSThemesOrange // To use the default Orange theme
-import OUDSThemesOrangeInverse // To use the Orange Inverse theme
 import OUDSThemesOrangeBusinessTools // To use the Orange Business Tools theme
 import OUDSThemesSosh // To use the Sosh theme
 import OUDSThemesWireframe // To use the Wireframe theme
@@ -42,7 +41,6 @@ The *Orange Unified Design System* framework provides today five themes:
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
 Orange                    | The default one for Orange products and can be enriched / derivated  
-Orange Inverse            | For some Orange products in specific use cases           
 Orange Business Tools     | For some Orange products with heavy / rich UI and dimension constraints           
 Sosh                      | For Sosh products
 Wireframe                 | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles

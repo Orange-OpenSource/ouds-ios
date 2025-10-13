@@ -14,7 +14,6 @@ This framework exposes today following themes:
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
 [Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Inverse](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/)            | For some Orange products in specific use cases           
 [Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and dimension constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
@@ -44,7 +43,6 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 // Make imports
 import OUDS // For OUDSThemeableView
 import OUDSThemesOrange // For OrangeTheme
-import OUDSThemesOrangeInverse // For OrangeInverseTheme
 import OUDSThemesOrangeBusinessTools // For OrangeBusinessToolsTheme
 import OUDSThemesSosh // For SoshTheme
 import OUDSThemesWireframe // For WrieframeTheme
@@ -64,7 +62,7 @@ OUDSThemeableView(theme: YourCustomTheme()) {
 
 ### Tunable themes or not
 
-Some themes like `OrangeTheme`, `OrangeInverse` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
+Some themes like `OrangeTheme` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
 or affiliates constraints.
 However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
 

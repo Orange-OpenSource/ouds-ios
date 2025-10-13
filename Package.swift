@@ -37,9 +37,6 @@ let package = Package(
             name: "OUDSThemesOrangeBusinessTools",
             targets: ["OUDSThemesOrangeBusinessTools"]),
         .library(
-            name: "OUDSThemesOrangeInverse",
-            targets: ["OUDSThemesOrangeInverse"]),
-        .library(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
         .library(
@@ -107,14 +104,6 @@ let package = Package(
             name: "OUDSThemesOrangeBusinessTools-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrangeBusinessTools"],
             path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
-        .target(
-            name: "OUDSThemesOrangeInverse",
-            dependencies: ["OUDS", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/OrangeInverse/Sources"),
-        .testTarget(
-            name: "OUDSThemesOrangeInverse-Tests",
-            dependencies: ["OUDS", "OUDSThemesOrangeInverse"],
-            path: "OUDS/Core/Themes/OrangeInverse/Tests"),
         .target(
             name: "OUDSThemesSosh",
             dependencies: ["OUDS"],

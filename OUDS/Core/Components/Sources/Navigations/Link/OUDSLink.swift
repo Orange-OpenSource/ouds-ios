@@ -59,10 +59,6 @@ import SwiftUI
 ///
 /// ![A link component in light and dark mode with Orange Business Tools theme](component_link_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A link component in light and dark mode with Orange Inverse theme](component_link_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A link component in light and dark mode with Sosh theme](component_link_Sosh)

@@ -53,10 +53,6 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/Resources/_/ic_theme_orangebusinesstools.png
 
-## OUDS / Core / Themes / Orange Inverse
-
-./OUDS/Core/Themes/OrangeInverse/Sources/_OUDSThemesOrangeInverse.docc/Resources/_/ic_theme_orangeinverse.png
-
 ## OUDS / Core / Themes / Sosh
 
 ./OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/Resources/_/ic_theme_sosh.png

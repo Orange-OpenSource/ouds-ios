@@ -15,9 +15,6 @@ Some components can be used for **actions**.
     @Tab("Orange") {
         ![A button component in light and dark mode with Orange theme](component_button_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A button component in light and dark mode with Orange Inverse theme](component_button_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A button component in light and dark mode with Orange Business Tools theme](component_button_OrangeBusinessTools)
     }

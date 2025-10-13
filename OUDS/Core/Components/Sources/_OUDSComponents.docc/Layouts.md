@@ -15,9 +15,6 @@ Some components can be used for **layouts**.
     @Tab("Orange") {
         ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A colored surface with text, button and link in light and dark mode with Orange Inverse theme](component_coloredSurface_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A colored surface with text, button and link in light and dark mode with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
     }
@@ -120,9 +117,6 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
     @Tab("Orange") {
         ![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![An horizontal divider in light and dark mode with Orange Inverse theme](component_horizontalDivider_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
     }
@@ -139,9 +133,6 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 @TabNavigator {
     @Tab("Orange") {
         ![An vertical divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![An vertical divider in light and dark mode with Orange Inverse theme](component_verticalDivider_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![An vertical divider in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)

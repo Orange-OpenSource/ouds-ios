@@ -25,7 +25,6 @@ COMPONENT_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/ComponentTokens/Sources/_OUD
 CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDS/Sources/_OUDS.docc/_OUDS.md"
 ORANGE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/OUDSThemesOrange.md"
 ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/OUDSThemesOrangeBusinessTools.md"
-ORANGE_INVERSE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeInverse/Sources/_OUDSThemesOrangeInverse.docc/OUDSThemesOrangeInverse.md"
 SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"
 WIREFRAME_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Wireframe/Sources/_OUDSThemesWireframe.docc/OUDSThemesWireframe.md"
 
@@ -105,7 +104,6 @@ themeCoreSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshCoreVer
 themeCoreWireframeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeWireframeCoreVersion)
 themeBrandOrangeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeBrandVersion)
 themeBrandOrangeBusinessToolsVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeBusinessToolsBrandVersion)
-themeBrandOrangeInverseVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeOrangeInverseBrandVersion)
 themeBrandSoshVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeSoshBrandVersion)
 themeBrandWireframeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeWireframeBrandVersion)
 
@@ -122,7 +120,6 @@ udpate_value_at_pattern_in_file $themeCoreSoshVersion "- Core Sosh version: " "$
 udpate_value_at_pattern_in_file $themeCoreWireframeVersion "- Core Wireframe version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeBrandOrangeVersion "- Brand Orange version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "- Brand Orange Business Tools version: " "$OUDS_README_FILE"
-udpate_value_at_pattern_in_file $themeBrandOrangeInverseVersion "- Brand Orange Inverse version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeBrandSoshVersion "- Brand Sosh version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeBrandWireframeVersion "- Brand Wireframe version: " "$OUDS_README_FILE"
 
@@ -143,9 +140,6 @@ udpate_value_at_pattern_in_file $themeBrandOrangeVersion "$THEME_VERSION_PATTERN
 
 test_existence_of_file "$ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "$THEME_VERSION_PATTERN" "$ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE"
-
-test_existence_of_file "$ORANGE_INVERSE_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeBrandOrangeInverseVersion "$THEME_VERSION_PATTERN" "$ORANGE_INVERSE_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$SOSH_THEME_MARKDOWN_FILE"
 udpate_value_at_pattern_in_file $themeBrandSoshVersion "$THEME_VERSION_PATTERN" "$SOSH_THEME_MARKDOWN_FILE"
