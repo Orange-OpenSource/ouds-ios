@@ -252,6 +252,14 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorBgTertiaryLight: ColorSemanticToken { colorRepositoryTertiaryLowest }
     /// Has for value token colorRepositoryTertiaryHighest
     @objc public final var colorBgTertiaryDark: ColorSemanticToken { colorRepositoryTertiaryHighest }
+    /// Has for value token colorRepositorySecondaryHigher
+    @objc public final var colorBgInverseLowLight: ColorSemanticToken { colorRepositorySecondaryHigher }
+    /// Has for value token colorRepositorySecondaryHigh
+    @objc public final var colorBgInverseLowDark: ColorSemanticToken { colorRepositorySecondaryHigh }
+    /// Has for value token colorRepositorySecondaryHigher
+    @objc public final var colorBgInverseHighLight: ColorSemanticToken { colorRepositorySecondaryHigher }
+    /// Has for value token colorRepositoryNeutralMutedLower
+    @objc public final var colorBgInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryPrimaryDefault
     @objc public final var colorSurfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryDefault }
     /// Has for value token colorRepositoryPrimaryLow
@@ -276,6 +284,14 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorSurfaceTertiaryLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
     /// Has for value token colorRepositoryOpacityAccentMedium
     @objc public final var colorSurfaceTertiaryDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
+    /// Has for value token colorRepositoryNeutralEmphasizedHigh
+    @objc public final var colorSurfaceInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    /// Has for value token colorRepositoryOpacityWhiteLow
+    @objc public final var colorSurfaceInverseLowDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
+    /// Has for value token colorRepositoryNeutralEmphasizedHigh
+    @objc public final var colorSurfaceInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    /// Has for value token colorRepositoryNeutralMutedLower
+    @objc public final var colorSurfaceInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityPositiveLow
     @objc public final var colorSurfaceStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryOpacityPositiveLow }
     /// Has for value token colorRepositoryOpacityPositiveMedium
@@ -444,6 +460,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorContentOnActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositorySecondaryHighest
     @objc public final var colorContentOnActionHighlightedDark: ColorSemanticToken { colorRepositorySecondaryHighest }
+    /// Has for value token colorRepositoryNeutralMutedWhite
+    @objc public final var colorContentInverseLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    /// Has for value token colorRepositoryNeutralEmphasizedBlack
+    @objc public final var colorContentInverseDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryOpacityBlackMediumLow
     @objc public final var colorBorderDefaultLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow

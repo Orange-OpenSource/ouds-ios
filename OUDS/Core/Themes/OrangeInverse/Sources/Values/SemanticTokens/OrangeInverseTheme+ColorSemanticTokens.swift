@@ -244,9 +244,9 @@ extension OrangeInverseThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token colorRepositoryAccentHighest
     @objc public final var colorBgTertiaryDark: ColorSemanticToken { colorRepositoryAccentHighest }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc public final var colorBgEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc public final var colorBgInverseLowLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedMedium
-    @objc public final var colorBgEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
+    @objc public final var colorBgInverseLowDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
     /// Has for value token colorRepositoryPrimaryLow
     @objc public final var colorSurfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryLow

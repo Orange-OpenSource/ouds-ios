@@ -136,7 +136,7 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
         if mode.isEqual(modeOnBgPrimary) { return colors.colorBgPrimary }
         if mode.isEqual(modeOnBgSecondary) { return colors.colorBgSecondary }
         if mode.isEqual(modeOnBgTertiary) { return colors.colorBgTertiary }
-        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgEmphasized }
+        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgInverse }
         if mode.isEqual(modeOnBrandPrimary) { return colors.colorContentBrandPrimary }
         if mode.isEqual(modeOnBrandSecondary) { return colors.colorContentBrandSecondary }
         if mode.isEqual(modeOnBrandTertiary) { return colors.colorContentBrandTertiary }

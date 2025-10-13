@@ -136,7 +136,7 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
         if mode.isEqual(modeOnBgPrimary) { return colors.colorBgPrimary }
         if mode.isEqual(modeOnBgSecondary) { return colors.colorBgSecondary }
         if mode.isEqual(modeOnBgTertiary) { return colors.colorBgTertiary }
-        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgEmphasized }
+        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgInverse }
         if mode.isEqual(modeOnBrandPrimary) { return colors.colorContentBrandPrimary }
         // modeOnBrandSecondary and modeOnBrandTertiary have undefined values for this theme
         if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceStatusNeutralMuted }

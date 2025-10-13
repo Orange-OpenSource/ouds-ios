@@ -252,6 +252,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBgTertiaryLight: ColorSemanticToken { colorRepositoryAccentLowest }
     /// Has for value token colorRepositoryAccentHigher
     @objc open var colorBgTertiaryDark: ColorSemanticToken { colorRepositoryAccentHigher }
+    /// Has for value token colorRepositoryNeutralEmphasizedHighest
+    @objc open var colorBgInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    /// Has for value token colorRepositoryNeutralEmphasizedMedium
+    @objc open var colorBgInverseLowDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
+    /// Has for value token colorRepositoryNeutralEmphasizedHighest
+    @objc open var colorBgInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    /// Has for value token colorRepositoryNeutralMutedLower
+    @objc open var colorBgInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryPrimaryLow
     @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryLow
@@ -276,6 +284,14 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorSurfaceTertiaryLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
     /// Has for value token colorRepositoryOpacityAccentMedium
     @objc open var colorSurfaceTertiaryDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
+    /// Has for value token colorRepositoryNeutralEmphasizedHigh
+    @objc open var colorSurfaceInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    /// Has for value token colorRepositoryOpacityWhiteLow
+    @objc open var colorSurfaceInverseLowDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
+    /// Has for value token colorRepositoryNeutralEmphasizedHigh
+    @objc open var colorSurfaceInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    /// Has for value token colorRepositoryNeutralMutedLower
+    @objc open var colorSurfaceInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityPositiveLow
     @objc open var colorSurfaceStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryOpacityPositiveLow }
     /// Has for value token colorRepositoryOpacityPositiveMedium
@@ -444,6 +460,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc open var colorContentOnActionHighlightedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    /// Has for value token colorRepositoryNeutralMutedWhite
+    @objc open var colorContentInverseLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    /// Has for value token colorRepositoryNeutralEmphasizedBlack
+    @objc open var colorContentInverseDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryOpacityBlackMediumLow
     @objc open var colorBorderDefaultLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow
