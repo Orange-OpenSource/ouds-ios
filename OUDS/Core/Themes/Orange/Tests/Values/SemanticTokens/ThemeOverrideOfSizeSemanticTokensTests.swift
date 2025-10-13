@@ -328,48 +328,48 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
     // MARK: - Semantic token - Sizing - Icon decorative
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative4xs() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorative4xs != abstractTheme.sizes.sizeIconDecorative4xs)
-        #expect(inheritedTheme.sizes.sizeIconDecorative4xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorative4xsmall != abstractTheme.sizes.sizeIconDecorative4xsmall)
+        #expect(inheritedTheme.sizes.sizeIconDecorative4xsmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative3xs() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorative3xs != abstractTheme.sizes.sizeIconDecorative3xs)
-        #expect(inheritedTheme.sizes.sizeIconDecorative3xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorative3xsmall != abstractTheme.sizes.sizeIconDecorative3xsmall)
+        #expect(inheritedTheme.sizes.sizeIconDecorative3xsmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative2xs() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorative2xs != abstractTheme.sizes.sizeIconDecorative2xs)
-        #expect(inheritedTheme.sizes.sizeIconDecorative2xs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorative2xsmall != abstractTheme.sizes.sizeIconDecorative2xsmall)
+        #expect(inheritedTheme.sizes.sizeIconDecorative2xsmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorativeXs() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorativeXs != abstractTheme.sizes.sizeIconDecorativeXs)
-        #expect(inheritedTheme.sizes.sizeIconDecorativeXs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeXsmall != abstractTheme.sizes.sizeIconDecorativeXsmall)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeXsmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokensizeIconDecorativeSm() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorativeSm != abstractTheme.sizes.sizeIconDecorativeSm)
-        #expect(inheritedTheme.sizes.sizeIconDecorativeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeSmall != abstractTheme.sizes.sizeIconDecorativeSmall)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeSmall == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorativeMd() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorativeMd != abstractTheme.sizes.sizeIconDecorativeMd)
-        #expect(inheritedTheme.sizes.sizeIconDecorativeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeMedium != abstractTheme.sizes.sizeIconDecorativeMedium)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeMedium == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorativeLg() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorativeLg != abstractTheme.sizes.sizeIconDecorativeLg)
-        #expect(inheritedTheme.sizes.sizeIconDecorativeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeLarge != abstractTheme.sizes.sizeIconDecorativeLarge)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeLarge == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorativeXl() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorativeXl != abstractTheme.sizes.sizeIconDecorativeXl)
-        #expect(inheritedTheme.sizes.sizeIconDecorativeXl == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeXlarge != abstractTheme.sizes.sizeIconDecorativeXlarge)
+        #expect(inheritedTheme.sizes.sizeIconDecorativeXlarge == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenSizeIconDecorative2xl() throws {
-        #expect(inheritedTheme.sizes.sizeIconDecorative2xl != abstractTheme.sizes.sizeIconDecorative2xl)
-        #expect(inheritedTheme.sizes.sizeIconDecorative2xl == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+        #expect(inheritedTheme.sizes.sizeIconDecorative2xlarge != abstractTheme.sizes.sizeIconDecorative2xlarge)
+        #expect(inheritedTheme.sizes.sizeIconDecorative2xlarge == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     // MARK: - Semantic token - Sizing - Max width

@@ -141,15 +141,15 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
-    override var sizeIconDecorative4xs: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorative3xs: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorative2xs: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorativeXs: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorativeSm: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorativeMd: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorativeLg: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorativeXl: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeIconDecorative2xl: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorative4xsmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorative3xsmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorative2xsmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeXsmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeSmall: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeMedium: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeLarge: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeXlarge: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorative2xlarge: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
     // MARK: - Semantic token - Sizing - Max width typography - Multiples
 

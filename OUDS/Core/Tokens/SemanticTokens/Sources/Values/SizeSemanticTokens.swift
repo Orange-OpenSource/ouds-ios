@@ -125,15 +125,15 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
-    var sizeIconDecorative4xs: SizeSemanticToken { get }
-    var sizeIconDecorative3xs: SizeSemanticToken { get }
-    var sizeIconDecorative2xs: SizeSemanticToken { get }
-    var sizeIconDecorativeXs: SizeSemanticToken { get }
-    var sizeIconDecorativeSm: SizeSemanticToken { get }
-    var sizeIconDecorativeMd: SizeSemanticToken { get }
-    var sizeIconDecorativeLg: SizeSemanticToken { get }
-    var sizeIconDecorativeXl: SizeSemanticToken { get }
-    var sizeIconDecorative2xl: SizeSemanticToken { get }
+    var sizeIconDecorative4xsmall: SizeSemanticToken { get }
+    var sizeIconDecorative3xsmall: SizeSemanticToken { get }
+    var sizeIconDecorative2xsmall: SizeSemanticToken { get }
+    var sizeIconDecorativeXsmall: SizeSemanticToken { get }
+    var sizeIconDecorativeSmall: SizeSemanticToken { get }
+    var sizeIconDecorativeMedium: SizeSemanticToken { get }
+    var sizeIconDecorativeLarge: SizeSemanticToken { get }
+    var sizeIconDecorativeXlarge: SizeSemanticToken { get }
+    var sizeIconDecorative2xlarge: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Interactive area
 
