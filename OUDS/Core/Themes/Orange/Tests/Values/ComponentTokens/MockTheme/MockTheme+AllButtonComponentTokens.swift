@@ -113,12 +113,6 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override var buttonMonoColorBorderDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongHover: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongLoading: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
-    override var buttonMonoColorBorderStrongPressed: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
     override var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeButtonColor }

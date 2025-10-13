@@ -104,15 +104,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var strongColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.button.buttonMonoColorBorderStrongEnabled
+            theme.button.buttonMonoColorBorderDefaultEnabled
         case .hover:
-            theme.button.buttonMonoColorBorderStrongHover
+            theme.button.buttonMonoColorBorderDefaultHover
         case .pressed:
-            theme.button.buttonMonoColorBorderStrongPressed
+            theme.button.buttonMonoColorBorderDefaultPressed
         case .loading:
-            theme.button.buttonMonoColorBorderStrongLoading
+            theme.button.buttonMonoColorBorderDefaultLoading
         case .disabled:
-            theme.button.buttonMonoColorBorderStrongDisabled
+            theme.button.buttonMonoColorBorderDefaultDisabled
         }
     }
 }
