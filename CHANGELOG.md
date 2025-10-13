@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Color raw tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - Orange brand color raw tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Control item` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Chip` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
