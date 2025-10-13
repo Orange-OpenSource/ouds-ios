@@ -34,6 +34,11 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.controlItemSizeMinHeight == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMaxWidth() throws {
+        #expect(inheritedTheme.controlItem.controlItemSizeMaxWidth != abstractTheme.controlItem.controlItemSizeMaxWidth)
+        #expect(inheritedTheme.controlItem.controlItemSizeMaxWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+    }
+
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMinWidth() throws {
         #expect(inheritedTheme.controlItem.controlItemSizeMinWidth != abstractTheme.controlItem.controlItemSizeMinWidth)
         #expect(inheritedTheme.controlItem.controlItemSizeMinWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
@@ -106,8 +111,13 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceInset() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpaceInset != abstractTheme.controlItem.controlItemSpaceInset)
-        #expect(inheritedTheme.controlItem.controlItemSpaceInset == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingBlock != abstractTheme.controlItem.controlItemSpacePaddingBlock)
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingBlock == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceInline() throws {
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline != abstractTheme.controlItem.controlItemSpacePaddingInline)
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 }
 

@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Control item` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Chip` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Button mono` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)

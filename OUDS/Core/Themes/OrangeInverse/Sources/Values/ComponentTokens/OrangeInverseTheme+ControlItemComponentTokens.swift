@@ -35,7 +35,7 @@ extension OrangeInverseThemeControlItemComponentTokensProvider: ControlItemCompo
     /// Has for value token borders.borderRadiusDefault
     @objc public final var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     /// Has for value token spaces.spaceInsetMedium
-    @objc public final var controlItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc public final var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.spaceInsetMedium }
     /// Has for value token spaces.spaceColumnGapLarge
     @objc public final var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapLarge }
     /// Has for value token spaces.spaceRowGapNone
