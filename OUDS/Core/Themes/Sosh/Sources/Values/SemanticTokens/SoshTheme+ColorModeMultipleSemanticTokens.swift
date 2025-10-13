@@ -140,8 +140,8 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
         if mode.isEqual(modeOnBrandPrimary) { return colors.colorContentBrandPrimary }
         if mode.isEqual(modeOnBrandSecondary) { return colors.colorContentBrandSecondary }
         if mode.isEqual(modeOnBrandTertiary) { return colors.colorContentBrandTertiary }
-        if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceStatusNeutralMuted }
-        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceStatusNeutralEmphasized }
+        if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceSecondary }
+        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceInverseHigh }
         if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
         if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
         if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }

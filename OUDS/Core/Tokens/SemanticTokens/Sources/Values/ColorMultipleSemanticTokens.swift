@@ -176,9 +176,7 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
-
-    var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { get }
+    var colorContentInverse: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusInfoMuted: MultipleColorSemanticTokens { get }
 
@@ -236,9 +234,11 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { get }
 
-    var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
+    var colorSurfaceInverseHigh: MultipleColorSemanticTokens { get }
 
-    var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { get }
+    var colorSurfaceInverseLow: MultipleColorSemanticTokens { get }
+
+    var colorSurfaceSecondary: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
 

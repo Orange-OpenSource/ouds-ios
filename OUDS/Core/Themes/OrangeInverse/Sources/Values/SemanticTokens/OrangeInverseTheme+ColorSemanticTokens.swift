@@ -260,13 +260,13 @@ extension OrangeInverseThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeInverseTheme**
     @objc public final var colorSurfaceBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc public final var colorSurfaceStatusNeutralMutedLight: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc public final var colorSurfaceSecondaryLight: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc public final var colorSurfaceStatusNeutralMutedDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc public final var colorSurfaceSecondaryDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryOpacityWhiteHighest
-    @objc public final var colorSurfaceStatusNeutralEmphasizedLight: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
+    @objc public final var colorSurfaceInverseHighLight: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
     /// Has for value token colorRepositoryOpacityWhiteHighest
-    @objc public final var colorSurfaceStatusNeutralEmphasizedDark: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
+    @objc public final var colorSurfaceInverseHighDark: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
     /// Has for value token colorRepositoryPositiveHighest
     @objc public final var colorSurfaceStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryPositiveHighest }
     /// Has for value token colorRepositoryPositiveHighest
@@ -363,14 +363,10 @@ extension OrangeInverseThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorContentOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeInverseTheme**
     @objc public final var colorContentOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token colorRepositoryNeutralMutedLower
-    @objc public final var colorContentOnStatusNeutralMutedLight: ColorSemanticToken { colorRepositoryNeutralMutedLower }
-    /// Has for value token colorRepositoryNeutralMutedLower
-    @objc public final var colorContentOnStatusNeutralMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc public final var colorContentOnStatusNeutralEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc public final var colorContentInverseLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc public final var colorContentOnStatusNeutralEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc public final var colorContentInverseDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
     @objc public final var colorContentOnStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralMutedLower
