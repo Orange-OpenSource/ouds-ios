@@ -199,6 +199,7 @@ spaces                         | For paddings and margins
 - ``ColorMultipleSemanticTokens``
 - ``ColorModeMultipleSemanticTokens``
 - ``ElevationSemanticTokens``
+- ``ElevationMultipleSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
