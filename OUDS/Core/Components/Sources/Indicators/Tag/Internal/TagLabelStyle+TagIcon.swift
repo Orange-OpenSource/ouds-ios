@@ -19,7 +19,7 @@ import SwiftUI
 struct TagIcon: View {
 
     // MARK: Stored properties
-    let hierarchy: OUDSTag.Hierarchy
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
     let type: OUDSTag.`Type`
 
@@ -28,7 +28,7 @@ struct TagIcon: View {
     var body: some View {
         switch type {
         case let .status(_, status):
-            TagAsset(hierarchy: hierarchy, size: size, status: status)
+            TagAsset(appearance: appearance, size: size, status: status)
         case .loader:
             TagLoader(size: size)
         }
@@ -118,7 +118,7 @@ struct TagAsset: View {
 
     // MARK: Stored properties
 
-    let hierarchy: OUDSTag.Hierarchy
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
     let status: OUDSTag.Status
 
@@ -156,23 +156,23 @@ struct TagAsset: View {
     private var defaultLeadingIcon: Image? {
         switch status.category {
         case .neutral:
-            return nil
+            nil
         case .accent:
-            return nil
+            nil
         case .positive:
-            return Image(decorative: "ic_success", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_success", bundle: theme.resourcesBundle)
         case .warning:
-            return Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
         case .negative:
-            return Image(decorative: "ic_error", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_error", bundle: theme.resourcesBundle)
         case .info:
-            return Image(decorative: "ic_information", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_information", bundle: theme.resourcesBundle)
         }
     }
 
     private var color: MultipleColorSemanticTokens {
         if isEnabled {
-            switch hierarchy {
+            switch appearance {
             case .emphasized:
                 emphasizedColor
             case .muted:

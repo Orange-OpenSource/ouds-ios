@@ -17,7 +17,7 @@ struct TagLabelStyle: LabelStyle {
 
     // MARK: Stored properties
 
-    let hierarchy: OUDSTag.Hierarchy
+    let appearance: OUDSTag.Appearance
     let shape: OUDSTag.Shape
     let size: OUDSTag.Size
     let type: OUDSTag.`Type`
@@ -34,7 +34,7 @@ struct TagLabelStyle: LabelStyle {
             configuration.title
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
-        .modifier(TagBackgroundModifier(hierarchy: hierarchy, type: type))
+        .modifier(TagBackgroundModifier(appearance: appearance, type: type))
         .modifier(TagShapeModifier(shape: shape))
     }
 
@@ -45,12 +45,12 @@ struct TagLabelStyle: LabelStyle {
         case let .status(_, status):
             switch status.leading {
             case .icon, .bullet:
-                return true
+                true
             default:
-                return false
+                false
             }
         default:
-            return true
+            true
         }
     }
 

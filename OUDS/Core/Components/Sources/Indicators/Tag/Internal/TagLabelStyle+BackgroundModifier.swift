@@ -18,7 +18,7 @@ struct TagBackgroundModifier: ViewModifier {
 
     // MARK: Stored properties
 
-    let hierarchy: OUDSTag.Hierarchy
+    let appearance: OUDSTag.Appearance
     let type: OUDSTag.`Type`
 
     @Environment(\.theme) private var theme
@@ -34,37 +34,37 @@ struct TagBackgroundModifier: ViewModifier {
 
     private var background: MultipleColorSemanticTokens {
         switch type {
-        case .status(_, let status):
+        case let .status(_, status):
             if isEnabled {
-                switch hierarchy {
+                switch appearance {
                 case .emphasized:
-                    return emphasizedBackground(for: status)
+                    emphasizedBackground(for: status)
                 case .muted:
-                    return mutedBackground(for: status)
+                    mutedBackground(for: status)
                 }
             } else {
-                return theme.colors.colorActionDisabled
+                theme.colors.colorActionDisabled
             }
 
         case .loader:
-            return theme.colors.colorContentDefault
+            theme.colors.colorContentDefault
         }
     }
 
     private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            return theme.colors.colorSurfaceInverseHigh
+            theme.colors.colorSurfaceInverseHigh
         case .accent:
-            return theme.colors.colorSurfaceStatusAccentEmphasized
+            theme.colors.colorSurfaceStatusAccentEmphasized
         case .positive:
-            return theme.colors.colorSurfaceStatusPositiveEmphasized
+            theme.colors.colorSurfaceStatusPositiveEmphasized
         case .warning:
-            return theme.colors.colorSurfaceStatusWarningEmphasized
+            theme.colors.colorSurfaceStatusWarningEmphasized
         case .negative:
-            return theme.colors.colorSurfaceStatusNegativeEmphasized
+            theme.colors.colorSurfaceStatusNegativeEmphasized
         case .info:
-            return theme.colors.colorSurfaceStatusInfoEmphasized
+            theme.colors.colorSurfaceStatusInfoEmphasized
             //        case .disabled:
             //          return theme.colors.colorActionDisabled
         }

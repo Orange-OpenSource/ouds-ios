@@ -18,7 +18,7 @@ struct TagLabel: View {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSTag.Hierarchy
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
     let type: OUDSTag.`Type`
 
@@ -45,19 +45,19 @@ struct TagLabel: View {
 
     private var color: MultipleColorSemanticTokens {
         switch type {
-        case .status(_, let status):
+        case let .status(_, status):
             if isEnabled {
-                switch hierarchy {
+                switch appearance {
                 case .emphasized:
-                    return emphasizedColor(for: status)
+                    emphasizedColor(for: status)
                 case .muted:
-                    return mutedColor(for: status)
+                    mutedColor(for: status)
                 }
             } else {
-                return theme.colors.colorContentOnActionDisabled
+                theme.colors.colorContentOnActionDisabled
             }
         case .loader:
-            return theme.colors.colorContentDefault
+            theme.colors.colorContentDefault
         }
     }
 

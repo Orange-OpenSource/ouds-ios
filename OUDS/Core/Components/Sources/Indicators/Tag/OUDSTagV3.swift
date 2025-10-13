@@ -143,7 +143,7 @@ public struct OUDSTag: View {
 
     // MARK: Stored Properties
 
-    private let hierarchy: Hierarchy
+    private let appearance: Appearance
     private let shape: Shape
     private let size: Size
     private let type: `Type`
@@ -270,13 +270,13 @@ public struct OUDSTag: View {
         private init(leading: Leading, category: Self.Category, alternativeIcon: Image? = nil, flipIcon: Bool = false) {
             self.leading = leading
             self.category = category
-            self.customIcon = alternativeIcon
+            customIcon = alternativeIcon
             self.flipIcon = flipIcon
         }
     }
 
-    /// Represents the hierarchy of an `OUDSTag`
-    public enum Hierarchy {
+    /// Represents the appearance of an `OUDSTag`
+    public enum Appearance {
         /// A tag with a solid, high-contrast background.
         /// Used to draw strong attention to important labels or categories. Emphasized tags stand out
         /// prominently against the interface and are ideal for primary or high-priority information.
@@ -316,7 +316,7 @@ public struct OUDSTag: View {
     ///    - label: The label displayed in the tag
     ///    - status: The status of the tag. Its background color and its content color are based on
     ///    this `OUDSTag.Status` combined to the `OUDSTag.Hierarchy` of the tag
-    ///    - hierarchy: The importance of the tag. Its background color and its content color are based on
+    ///    - appearance: The importance of the tag. Its background color and its content color are based on
     ///    this `OUDSTag.Hierarchy` combined to the `OUDSTag.Status` of the tag
     ///    - shape: The shape of the tag that allows to play with its corners appearance.
     ///    - size: The size of the tag
@@ -327,12 +327,12 @@ public struct OUDSTag: View {
     ///  When loadeer is added, `status` and `hierarchy` are ignored.
     public init(label: String,
                 status: Status,
-                hierarchy: Hierarchy = .emphasized,
+                appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
                 size: Size = .default,
                 hasLoader: Bool = false)
     {
-        self.hierarchy = hierarchy
+        self.appearance = appearance
         self.shape = shape
         self.size = size
         if hasLoader {
@@ -352,8 +352,9 @@ public struct OUDSTag: View {
     ///   - remark: The SwiftUI.disabled has no effect on this state.
     public init(label: String,
                 shape: Shape = .rounded,
-                size: Size = .default) {
-        self.hierarchy = .emphasized
+                size: Size = .default)
+    {
+        appearance = .emphasized
         self.shape = shape
         self.size = size
         type = .loader(label: label)
@@ -363,11 +364,11 @@ public struct OUDSTag: View {
 
     public var body: some View {
         Label {
-            TagLabel(hierarchy: hierarchy, size: size, type: type)
+            TagLabel(appearance: appearance, size: size, type: type)
         } icon: {
-            TagIcon(hierarchy: hierarchy, size: size, type: type)
+            TagIcon(appearance: appearance, size: size, type: type)
         }
-        .labelStyle(TagLabelStyle(hierarchy: hierarchy, shape: shape, size: size, type: type))
+        .labelStyle(TagLabelStyle(appearance: appearance, shape: shape, size: size, type: type))
         .accessibilityLabel(accessibilityLabel)
     }
 
@@ -375,7 +376,7 @@ public struct OUDSTag: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the tag dependign to if loading state or not.
     private var accessibilityLabel: String {
-        return if case .loader = type {
+        if case .loader = type {
             type.label + ", " + "core_common_loading_a11y".localized()
         } else {
             type.label
