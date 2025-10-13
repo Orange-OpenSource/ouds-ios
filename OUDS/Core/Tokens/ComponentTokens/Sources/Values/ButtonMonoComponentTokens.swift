@@ -63,12 +63,6 @@ public protocol ButtonMonoComponentTokens {
     var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
     var buttonMonoColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
     var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

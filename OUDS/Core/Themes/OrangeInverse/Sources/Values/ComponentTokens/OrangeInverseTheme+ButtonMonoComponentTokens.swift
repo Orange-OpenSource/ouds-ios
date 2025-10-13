@@ -99,18 +99,6 @@ extension OrangeInverseThemeButtonComponentTokensProvider: ButtonMonoComponentTo
     @objc public final var buttonMonoColorBorderDefaultDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium) }
     /// Has for value token colors.colorOpacityTransparent
     @objc public final var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonMonoColorBorderStrongFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
 }
 
 // swiftlint:enable line_length
