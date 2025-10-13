@@ -127,10 +127,6 @@ import SwiftUI
 ///
 /// ![A tag component in light and dark mode with Orange Business Tools theme](component_tag_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A tag component in light and dark mode with Orange Inverse theme](component_tag_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A tag component in light and dark mode with Sosh theme](component_tag_Sosh)

@@ -80,10 +80,6 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A checkbox component in light and dark mode with Orange Inverse theme](component_checkbox_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)

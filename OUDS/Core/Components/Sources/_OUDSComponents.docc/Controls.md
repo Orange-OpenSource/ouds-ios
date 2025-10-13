@@ -17,9 +17,6 @@ Some components can be used for **controls** and **inputs**.
     @Tab("Orange") {
         ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A checkbox component in light and dark mode with Orange Inverse theme](component_checkbox_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
     }
@@ -77,11 +74,8 @@ This checkbox can provide two values (selected and unselected) or three values (
     @Tab("Orange") {
         ![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
-        ![A checkbox item component in light and dark mode with Orange Inverse theme](component_checkboxItem_OrangeBusinessTools)
+        ![A checkbox item component in light and dark mode with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
     }
     @Tab("Sosh") {
         ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
@@ -161,9 +155,6 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("Orange") {
         ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A checkbox picker component in light and dark mode with Orange Inverse theme](component_checkboxPicker_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A checkbox picker component in light and dark mode with Orange Business Tools theme](component_checkboxPicker_OrangeBusinessTools)
     }
@@ -229,9 +220,6 @@ Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to
     @Tab("Orange") {
         ![A radio button component in light and dark mode with Orange theme](component_radio_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A radio button component in light and dark mode with Orange Inverse theme](component_radio_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A radio button component in light and dark mode with Orange Business Tools theme](component_radio_OrangeBusinessTools)
     }
@@ -277,9 +265,6 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 @TabNavigator {
     @Tab("Orange") {
         ![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A radio item component in light and dark mode with Orange Inverse theme](component_radioItem_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
@@ -346,9 +331,6 @@ The indicator can be leading or trailing.
     @Tab("Orange") {
         ![A radio picker component in light and dark mode with Orange theme](component_radioPicker_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A radio picker component in light and dark mode with Orange Inverse theme](component_radioPicker_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A radio picker component in light and dark mode with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
     }
@@ -401,9 +383,6 @@ Radio items can be embeded in a radio picker so as to let the users to select on
     @Tab("Orange") {
         ![A switch component in light and dark mode with Orange theme](component_switch_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A switch component in light and dark mode with Orange Inverse theme](component_switch_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_OrangeBusinessTools)
     }
@@ -453,9 +432,6 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 @TabNavigator {
     @Tab("Orange") {
         ![A switch item component in light and dark mode with Orange theme](component_switchItem_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A switch item component in light and dark mode with Orange Inverse theme](component_switchItem_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A switch item component in light and dark mode with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
@@ -535,9 +511,6 @@ The indicator can be leading or trailing.
     @Tab("Orange") {
         ![A suggestion chip component in light and dark mode with Orange theme](component_suggestionChip_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A suggestion chip component in light and dark mode with Orange Inverse theme](component_suggestionChip_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A suggestion chip component in light and dark mode with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
     }
@@ -587,9 +560,6 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 @TabNavigator {
     @Tab("Orange") {
         ![A fiter chip component in light and dark mode with Orange theme](component_filterChip_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A fiter chip component in light and dark mode with Orange Inverse theme](component_filterChip_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A fiter chip component in light and dark mode with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
@@ -641,9 +611,6 @@ The library proposes filter chip component to make some filtering with selected 
 @TabNavigator {
     @Tab("Orange") {
         ![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A chip picker component in light and dark mode with Orange Inverse theme](component_chipPicker_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
@@ -713,9 +680,6 @@ The library proposes a chip picker to make easily filtering with two kinds of se
 @TabNavigator {
     @Tab("Orange") {
         ![A text input component in light and dark mode with Orange theme](component_textInput_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A text input component in light and dark mode with Orange Inverse theme](component_textInput_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)

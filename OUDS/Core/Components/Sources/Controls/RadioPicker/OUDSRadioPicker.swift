@@ -87,10 +87,6 @@ import SwiftUI
 ///
 /// ![A radio picker component in light and dark mode with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A radio picker component in light and dark mode with Orange Inverse theme](component_radioPicker_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A radio picker component in light and dark mode with Sosh theme](component_radioPicker_Sosh)

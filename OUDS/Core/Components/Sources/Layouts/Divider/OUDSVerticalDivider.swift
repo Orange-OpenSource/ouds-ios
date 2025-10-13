@@ -39,10 +39,6 @@ import SwiftUI
 ///
 /// ![A vertical divider component in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A vertical divider component in light and dark mode with Orange Inverse theme](component_verticalDivider_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A vertical divider component in light and dark mode with Sosh theme](component_verticalDivider_Sosh)

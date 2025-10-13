@@ -96,7 +96,6 @@ Embeds token libraries:
 - Core Wireframe version: 1.0.0
 - Brand Wireframe version: 1.1.0
 - Brand Orange Business Tools version: 1.3.0
-- Brand Orange Inverse version: 1.3.0
 
 See below the full CHANGELOG details.
 

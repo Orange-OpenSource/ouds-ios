@@ -46,10 +46,6 @@ import SwiftUI
 ///
 /// ![A filter chip component in light and dark mode with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A filter chip component in light and dark mode with Orange Inverse theme](component_filterChip_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A filter chip component in light and dark mode with Sosh theme](component_filterChip_Sosh)

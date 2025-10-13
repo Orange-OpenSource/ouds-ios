@@ -15,9 +15,6 @@ Some components can be used for **indicators**.
     @Tab("Orange") {
         ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A badge component in light and dark mode with Orange Inverse theme](component_badge_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
     }
@@ -67,9 +64,6 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 @TabNavigator {
     @Tab("Orange") {
         ![A tag component in light and dark mode with Orange theme](component_tag_Orange)
-    }
-    @Tab("Orange Inverse") {
-        ![A tag component in light and dark mode with Orange Inverse theme](component_tag_OrangeInverse)
     }
     @Tab("Orange Business Tools") {
         ![A tag component in light and dark mode with Orange Business Tools theme](component_tag_OrangeBusinessTools)

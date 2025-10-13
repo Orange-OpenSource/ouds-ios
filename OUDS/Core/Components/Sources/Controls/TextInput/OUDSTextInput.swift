@@ -150,10 +150,6 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A text input component in light and dark mode with Orange Inverse theme](component_textInput_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A text input component in light and dark mode with Sosh theme](component_textInput_Sosh)
