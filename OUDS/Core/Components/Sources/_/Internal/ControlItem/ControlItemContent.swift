@@ -49,7 +49,7 @@ struct ControlItemContent: View {
                 indicatorContainer()
             }
         }
-        .padding(.all, theme.controlItem.controlItemSpaceInset)
+        .padding(.all, theme.controlItem.controlItemSpacePaddingBlock)
         .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
         .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
