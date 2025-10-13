@@ -85,7 +85,7 @@ struct TagLoader: View {
     private var colorEmphasized: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentOnStatusNeutralEmphasized
+            theme.colors.colorContentInverse
         case .accent:
             theme.colors.colorContentOnStatusAccentEmphasized
         case .positive:
@@ -104,7 +104,7 @@ struct TagLoader: View {
     private var colorMuted: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentOnStatusNeutralMuted
+            theme.colors.colorContentInverse
         case .accent:
             theme.colors.colorContentOnStatusAccentMuted
         case .positive:
@@ -167,7 +167,7 @@ struct TagAsset: View {
     private var emphasizedColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentOnStatusNeutralEmphasized
+            theme.colors.colorContentInverse
         case .accent:
             theme.colors.colorContentOnStatusAccentEmphasized
         case .positive:
@@ -186,7 +186,7 @@ struct TagAsset: View {
     private var mutedColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentOnStatusNeutralMuted
+            theme.colors.colorContentInverse
         case .accent:
             theme.colors.colorContentStatusAccent
         case .positive:

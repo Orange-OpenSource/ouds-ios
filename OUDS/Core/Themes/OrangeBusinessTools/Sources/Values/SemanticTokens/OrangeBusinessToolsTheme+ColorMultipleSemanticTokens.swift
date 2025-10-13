@@ -154,9 +154,7 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorContentOnStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusWarningEmphasizedLight, dark: colorContentOnStatusWarningEmphasizedDark) }
 
-    @objc public final var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralMutedLight, dark: colorContentOnStatusNeutralMutedDark) }
-
-    @objc public final var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralEmphasizedLight, dark: colorContentOnStatusNeutralEmphasizedDark) }
+    @objc public final var colorContentInverse: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentInverseLight, dark: colorContentInverseDark) }
 
     @objc public final var colorContentOnStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNegativeMutedLight, dark: colorContentOnStatusNegativeMutedDark) }
 
@@ -210,9 +208,11 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNegativeMutedLight, dark: colorSurfaceStatusNegativeMutedDark) }
 
-    @objc public final var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralEmphasizedLight, dark: colorSurfaceStatusNeutralEmphasizedDark) }
+    @objc public final var colorSurfaceInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseHighLight, dark: colorSurfaceInverseHighDark) }
 
-    @objc public final var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralMutedLight, dark: colorSurfaceStatusNeutralMutedDark) }
+    @objc public final var colorSurfaceInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseLowLight, dark: colorSurfaceInverseLowDark) }
+
+    @objc public final var colorSurfaceSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceSecondaryLight, dark: colorSurfaceSecondaryDark) }
 
     @objc public final var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusPositiveEmphasizedLight, dark: colorSurfaceStatusPositiveEmphasizedDark) }
 

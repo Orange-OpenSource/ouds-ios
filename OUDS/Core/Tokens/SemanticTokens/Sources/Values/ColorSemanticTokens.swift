@@ -199,11 +199,8 @@ public protocol ColorSemanticTokens {
     var colorContentOnStatusPositiveEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnStatusPositiveEmphasizedDark: ColorSemanticToken { get }
 
-    var colorContentOnStatusNeutralMutedLight: ColorSemanticToken { get }
-    var colorContentOnStatusNeutralMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnStatusNeutralEmphasizedLight: ColorSemanticToken { get }
-    var colorContentOnStatusNeutralEmphasizedDark: ColorSemanticToken { get }
+    var colorContentInverseLight: ColorSemanticToken { get }
+    var colorContentInverseDark: ColorSemanticToken { get }
 
     var colorContentOnStatusNegativeMutedLight: ColorSemanticToken { get }
     var colorContentOnStatusNegativeMutedDark: ColorSemanticToken { get }
@@ -278,11 +275,23 @@ public protocol ColorSemanticTokens {
     var colorSurfaceStatusNegativeMutedLight: ColorSemanticToken { get }
     var colorSurfaceStatusNegativeMutedDark: ColorSemanticToken { get }
 
-    var colorSurfaceStatusNeutralEmphasizedLight: ColorSemanticToken { get }
-    var colorSurfaceStatusNeutralEmphasizedDark: ColorSemanticToken { get }
+    var colorSurfaceInverseLowLight: ColorSemanticToken { get }
+    var colorSurfaceInverseLowDark: ColorSemanticToken { get }
 
-    var colorSurfaceStatusNeutralMutedLight: ColorSemanticToken { get }
-    var colorSurfaceStatusNeutralMutedDark: ColorSemanticToken { get }
+    var colorSurfaceInverseHighLight: ColorSemanticToken { get }
+    var colorSurfaceInverseHighDark: ColorSemanticToken { get }
+
+    var colorSurfaceInverseLowLight: ColorSemanticToken { get }
+    var colorSurfaceInverseLowDark: ColorSemanticToken { get }
+
+    var colorSurfacePrimaryLight: ColorSemanticToken { get }
+    var colorSurfacePrimaryDark: ColorSemanticToken { get }
+
+    var colorSurfaceSecondaryLight: ColorSemanticToken { get }
+    var colorSurfaceSecondaryDark: ColorSemanticToken { get }
+
+    var colorSurfaceTertiaryLight: ColorSemanticToken { get }
+    var colorSurfaceTertiaryDark: ColorSemanticToken { get }
 
     var colorSurfaceStatusPositiveEmphasizedLight: ColorSemanticToken { get }
     var colorSurfaceStatusPositiveEmphasizedDark: ColorSemanticToken { get }
