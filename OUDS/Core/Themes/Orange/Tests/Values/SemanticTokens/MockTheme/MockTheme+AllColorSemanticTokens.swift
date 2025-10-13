@@ -80,12 +80,14 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorActionSelectedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionVisitedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorBgEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorBgInverseLowLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorBgInverseHighLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgSecondaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgTertiaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorBgEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorBgInverseLowDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorBgInverseHighDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgPrimaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgSecondaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorBgTertiaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -259,7 +261,7 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Background
 
-    override public var colorBgEmphasized: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorBgInverse: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgPrimary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgSecondary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgTertiary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }

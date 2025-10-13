@@ -76,7 +76,7 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     // MARK: - Color - Background
 
-    @objc public final var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
+    @objc public final var colorBgInverse: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseLowLight, dark: colorBgInverseLowDark) }
 
     @objc public final var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 
