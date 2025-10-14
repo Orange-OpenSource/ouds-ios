@@ -85,6 +85,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
+        let icon = SoshThemeIconComponentTokensProvider(colors: colors)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
@@ -114,6 +115,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

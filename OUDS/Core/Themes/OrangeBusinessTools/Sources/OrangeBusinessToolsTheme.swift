@@ -143,6 +143,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let chip = OrangeBusinessToolsThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = OrangeBusinessToolsThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
+        let icon = OrangeBusinessToolsThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
 
         let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
@@ -174,6 +175,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

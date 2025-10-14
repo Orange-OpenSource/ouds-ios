@@ -89,8 +89,12 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 /// Something which provides all component tokens of pin code input
 public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
+/// Something which provides all components tokens for icons
+public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
+
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens, ExpandLinkComponentTokens {}
+// TODO: #1001 - Check if relevant to add the expand link tokens in the same alias (i.e. same provider in the end)
 
 /// Something which provides all component tokens of quantity input
 public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}

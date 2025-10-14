@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `icon` component tokens
+- `expand link` component tokens
 - `text input` component (Orange-OpenSource/ouds-ios#406)
 - `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
 - Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)

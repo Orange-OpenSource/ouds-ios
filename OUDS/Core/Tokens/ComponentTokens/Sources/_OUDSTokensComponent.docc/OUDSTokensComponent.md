@@ -120,6 +120,7 @@ checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckb
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip` 
 controlItem                    | Shared and sued for switch, checkbox and radio items layouts 
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
+icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 
 pinCodeInput                   |  
 quantityInput                  | 
@@ -143,6 +144,8 @@ textInput                      |
 - ``ChipComponentTokens``
 - ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
+- ``ExpandLinkComponentTokens``
+- ``IconComponentTokens``
 - ``LinkComponentTokens``
 - ``PinCodeInputComponentTokens``
 - ``QuantityInputComponentTokens``

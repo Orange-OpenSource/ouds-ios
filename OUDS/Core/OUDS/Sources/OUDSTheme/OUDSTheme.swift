@@ -106,6 +106,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
+    /// All components tokens related to icons components
+    public let icon: AllIconComponentTokensProvider
+
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
@@ -173,6 +176,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
+    ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
@@ -205,6 +209,7 @@ open class OUDSTheme: @unchecked Sendable {
                 chip: AllChipComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
+                icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
@@ -242,6 +247,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.chip = chip
         self.controlItem = controlItem
         self.divider = divider
+        self.icon = icon
         self.link = link
         self.pinCodeInput = pinCodeInput
         self.quantityInput = quantityInput

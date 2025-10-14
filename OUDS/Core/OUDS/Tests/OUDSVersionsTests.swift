@@ -77,6 +77,10 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentLinkVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentExpandLinkVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentExpandLinkVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Controls
 
     @Test func componentCheckboxVersionMustBeConform() throws {
