@@ -171,7 +171,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token ColorRawTokens.colorOpacityMalachite640
     @objc public final var colorRepositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.colorOpacityMalachite640 }
     /// Has for value token ColorRawTokens.colorOpacityDodgerBlue80
-    @objc public final var colorRepositoryOpacityInfoLower: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue80 }
+    @objc public final var colorRepositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue80 } // NOTE: Manualy renamed to colorRepositoryOpacityInfoLow, error in Figma, will be fixed in next iteration
     /// Has for value token ColorRawTokens.colorOpacityDodgerBlue520
     @objc public final var colorRepositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue520 }
     /// Has for value token ColorRawTokens.colorOpacitySun160
@@ -300,8 +300,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorSurfaceStatusPositiveEmphasizedLight: ColorSemanticToken { colorRepositoryPositiveHigher }
     /// Has for value token colorRepositoryPositiveLow
     @objc open var colorSurfaceStatusPositiveEmphasizedDark: ColorSemanticToken { colorRepositoryPositiveLow }
-    /// Has for value token colorRepositoryOpacityInfoLower
-    @objc open var colorSurfaceStatusInfoMutedLight: ColorSemanticToken { colorRepositoryOpacityInfoLower }
+    /// Has for value token colorRepositoryOpacityInfoLow
+    @objc open var colorSurfaceStatusInfoMutedLight: ColorSemanticToken { colorRepositoryOpacityInfoLow } // NOTE: Manualy renamed to colorRepositoryOpacityInfoLow, error in Figma, will be fixed in next iteration
     /// Has for value token colorRepositoryOpacityInfoMedium
     @objc open var colorSurfaceStatusInfoMutedDark: ColorSemanticToken { colorRepositoryOpacityInfoMedium }
     /// Has for value token colorRepositoryInfoHigh

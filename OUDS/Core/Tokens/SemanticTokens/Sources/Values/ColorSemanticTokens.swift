@@ -281,9 +281,6 @@ public protocol ColorSemanticTokens {
     var colorSurfaceInverseHighLight: ColorSemanticToken { get }
     var colorSurfaceInverseHighDark: ColorSemanticToken { get }
 
-    var colorSurfaceInverseLowLight: ColorSemanticToken { get }
-    var colorSurfaceInverseLowDark: ColorSemanticToken { get }
-
     var colorSurfacePrimaryLight: ColorSemanticToken { get }
     var colorSurfacePrimaryDark: ColorSemanticToken { get }
 
