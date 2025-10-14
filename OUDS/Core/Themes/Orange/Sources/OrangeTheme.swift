@@ -164,6 +164,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
+    ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
@@ -196,6 +197,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          chip: AllChipComponentTokensProvider? = nil,
                          controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
+                         icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
@@ -231,6 +233,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
+        let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
@@ -261,6 +264,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,

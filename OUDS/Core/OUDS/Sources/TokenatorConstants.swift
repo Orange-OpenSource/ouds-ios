@@ -48,6 +48,8 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component link
     public static let componentLinkVersion = "2.0.0"
+    /// Version of the Figma specifications for the component expand link
+    public static let componentExpandLinkVersion = "2.3.0"
 
     // MARK: - Components versions - Control
 
@@ -92,4 +94,8 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component bullet list
     public static let componentBulletListVersion = "1.0.0"
+
+    // MARK: - Components versions - Visual assets
+
+    // No version for "icon" component in "visual assets" category
 }

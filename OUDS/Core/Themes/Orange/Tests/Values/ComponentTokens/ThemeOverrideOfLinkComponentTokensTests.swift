@@ -155,4 +155,16 @@ struct ThemeOverrideOfLinkComponentTokensTests {
         #expect(inheritedTheme.link.linkSpaceColumnGapChevronSmall != abstractTheme.link.linkSpaceColumnGapChevronSmall)
         #expect(inheritedTheme.link.linkSpaceColumnGapChevronSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
+
+    // MARK: - Expand link
+
+    @Test func inheritedThemeCanOverrideExpandLinkComponentTokenExpandLinkIconStart() throws {
+        #expect(inheritedTheme.link.expandLinkIconStart != abstractTheme.link.expandLinkIconStart)
+        #expect(inheritedTheme.link.expandLinkIconStart == MockThemeLinkComponentTokenProvider.mockThemeExpandLinkIconStart)
+    }
+
+    @Test func inheritedThemeCanOverrideExpandLinkComponentTokenExpandLinkIconEnd() throws {
+        #expect(inheritedTheme.link.expandLinkIconEnd != abstractTheme.link.expandLinkIconEnd)
+        #expect(inheritedTheme.link.expandLinkIconEnd == MockThemeLinkComponentTokenProvider.mockThemeExpandLinkIconEnd)
+    }
 }

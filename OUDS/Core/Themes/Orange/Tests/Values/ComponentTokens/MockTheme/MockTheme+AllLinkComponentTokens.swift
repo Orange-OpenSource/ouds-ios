@@ -27,6 +27,8 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     static let mockThemeLinkSize: DimensionRawToken = 118
     static let mockThemeLinkSpace: DimensionRawToken = 218
     static let mockThemeLinkColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeExpandLinkIconStart = false // true in Orange Theme
+    static let mockThemeExpandLinkIconEnd = true // false in Orange Theme
 
     override init(sizes: AllSizeSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
@@ -62,6 +64,11 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override var linkColorChevronHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
     override var linkColorChevronPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
     override var linkColorChevronFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+
+    // MARK: - Expand link component tokens
+
+    override var expandLinkIconStart: Bool { Self.mockThemeExpandLinkIconStart }
+    override var expandLinkIconEnd: Bool { Self.mockThemeExpandLinkIconEnd }
 }
 
 // swiftlint:enable required_deinit

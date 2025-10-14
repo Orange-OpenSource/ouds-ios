@@ -110,6 +110,10 @@ struct OrangeBusinessToolsThemeTests {
         #expect(theme.controlItem is OrangeBusinessToolsThemeControlItemComponentTokensProvider)
     }
 
+    @Test func defaultIconComponentTokensProvider() throws {
+        #expect(theme.icon is OrangeBusinessToolsThemeIconComponentTokensProvider)
+    }
+
     @Test func defaultLinkComponentTokensProvider() throws {
         #expect(theme.link is OrangeBusinessToolsThemeLinkComponentTokensProvider)
     }
