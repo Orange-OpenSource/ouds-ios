@@ -65,8 +65,6 @@ struct TagBackgroundModifier: ViewModifier {
             theme.colors.colorSurfaceStatusNegativeEmphasized
         case .info:
             theme.colors.colorSurfaceStatusInfoEmphasized
-            //        case .disabled:
-            //          return theme.colors.colorActionDisabled
         }
     }
 
@@ -84,8 +82,6 @@ struct TagBackgroundModifier: ViewModifier {
             theme.colors.colorSurfaceStatusNegativeMuted
         case .info:
             theme.colors.colorSurfaceStatusInfoMuted
-            //        case .disabled:
-            //            theme.colors.colorActionDisabled
         }
     }
 }

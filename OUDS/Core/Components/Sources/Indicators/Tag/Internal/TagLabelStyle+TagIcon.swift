@@ -128,12 +128,28 @@ struct TagAsset: View {
     // MARK: Body
 
     var body: some View {
-        icon?
-            .renderingMode(.template)
-            .resizable()
-            .toFlip(status.flipIcon)
-            .oudsForegroundStyle(color)
-            .padding(.all, padding)
+        Group {
+            if appearance == .muted, status.category == .warning {
+                ZStack {
+                    // TODO: update tokens
+                    Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .oudsForegroundColor(theme.colors.colorContentDefault)
+                    Image(decorative: "ic_warning_internal_shape", bundle: theme.resourcesBundle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .oudsForegroundColor(theme.colors.colorContentStatusWarning)
+                }
+            } else {
+                icon?
+                    .renderingMode(.template)
+                    .resizable()
+                    .toFlip(status.flipIcon)
+                    .oudsForegroundColor(color)
+            }
+        }
+        .padding(.all, padding)
     }
 
     // MARK: Helpers
@@ -162,9 +178,9 @@ struct TagAsset: View {
         case .positive:
             Image(decorative: "ic_success", bundle: theme.resourcesBundle)
         case .warning:
-            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
         case .negative:
-            Image(decorative: "ic_error", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
         case .info:
             Image(decorative: "ic_information", bundle: theme.resourcesBundle)
         }

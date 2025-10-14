@@ -57,6 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Control item` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Chip` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Button mono` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
+- Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 - Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
 - Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
 - `Color` raw tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)

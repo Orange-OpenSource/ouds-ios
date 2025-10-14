@@ -75,8 +75,6 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
             theme.colors.colorContentOnStatusInfoEmphasized
-//        case .disabled:
-//            theme.colors.colorContentOnActionDisabled
         }
     }
 
@@ -94,8 +92,6 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeMuted
         case .info:
             theme.colors.colorContentOnStatusInfoMuted
-//        case .disabled:
-//            theme.colors.colorContentOnActionDisabled
         }
     }
 }

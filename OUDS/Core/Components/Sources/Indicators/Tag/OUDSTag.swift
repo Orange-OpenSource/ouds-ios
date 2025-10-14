@@ -136,7 +136,7 @@ import SwiftUI
 ///
 /// ![A tag component in light and dark mode with Wireframe theme](component_tag_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.18.0
 ///
 public struct OUDSTag: View {
