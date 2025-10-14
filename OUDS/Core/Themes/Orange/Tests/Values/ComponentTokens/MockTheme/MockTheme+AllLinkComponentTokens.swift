@@ -27,8 +27,8 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     static let mockThemeLinkSize: DimensionRawToken = 118
     static let mockThemeLinkSpace: DimensionRawToken = 218
     static let mockThemeLinkColor = MultipleColorSemanticTokens("#00FF00")
-    static let mockThemeExpandLinkIconStart = false // true in Orange Theme
-    static let mockThemeExpandLinkIconEnd = true // false in Orange Theme
+    static let mockThemeExpandLinkIconStart = true // false in Orange Theme
+    static let mockThemeExpandLinkIconEnd = false // true in Orange Theme
 
     override init(sizes: AllSizeSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
