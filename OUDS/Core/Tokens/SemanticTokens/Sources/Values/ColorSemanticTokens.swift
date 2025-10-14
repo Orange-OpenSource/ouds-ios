@@ -190,9 +190,6 @@ public protocol ColorSemanticTokens {
     var colorContentOnBrandPrimaryLight: ColorSemanticToken { get }
     var colorContentOnBrandPrimaryDark: ColorSemanticToken { get }
 
-    var colorContentOnOverlayEmphasizedLight: ColorSemanticToken { get }
-    var colorContentOnOverlayEmphasizedDark: ColorSemanticToken { get }
-
     var colorContentOnStatusPositiveMutedLight: ColorSemanticToken { get }
     var colorContentOnStatusPositiveMutedDark: ColorSemanticToken { get }
 
@@ -234,8 +231,8 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    var colorOverlayDropDownLight: ColorSemanticToken { get }
-    var colorOverlayDropDownDark: ColorSemanticToken { get }
+    var colorOverlayDropdownLight: ColorSemanticToken { get }
+    var colorOverlayDropdownDark: ColorSemanticToken { get }
 
     var colorOverlayDragLight: ColorSemanticToken { get }
     var colorOverlayDragDark: ColorSemanticToken { get }

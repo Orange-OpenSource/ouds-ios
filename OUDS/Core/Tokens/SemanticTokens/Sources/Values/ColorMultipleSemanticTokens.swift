@@ -170,8 +170,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnBrandTertiary: MultipleColorSemanticTokens { get }
 
-    var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { get }
-
     var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
@@ -206,7 +204,7 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    var colorOverlayDropDown: MultipleColorSemanticTokens { get }
+    var colorOverlayDropdown: MultipleColorSemanticTokens { get }
 
     var colorOverlayDrag: MultipleColorSemanticTokens { get }
 

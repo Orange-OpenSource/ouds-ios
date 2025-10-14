@@ -489,16 +489,6 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentOnBrandPrimaryDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnOverlayEmphasizedLight() throws {
-        #expect(inheritedTheme.colors.colorContentOnOverlayEmphasizedLight != abstractTheme.colors.colorContentOnOverlayEmphasizedLight)
-        #expect(inheritedTheme.colors.colorContentOnOverlayEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnOverlayEmphasizedDark() throws {
-        #expect(inheritedTheme.colors.colorContentOnOverlayEmphasizedDark != abstractTheme.colors.colorContentOnOverlayEmphasizedDark)
-        #expect(inheritedTheme.colors.colorContentOnOverlayEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusPositiveMutedLight() throws {
         #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedLight != abstractTheme.colors.colorContentOnStatusPositiveMutedLight)
         #expect(inheritedTheme.colors.colorContentOnStatusPositiveMutedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
