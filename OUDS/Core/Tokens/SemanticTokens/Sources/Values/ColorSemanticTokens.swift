@@ -296,49 +296,6 @@ public protocol ColorSemanticTokens {
     var colorSurfaceStatusWarningMutedLight: ColorSemanticToken { get }
     var colorSurfaceStatusWarningMutedDark: ColorSemanticToken { get }
 
-    // MARK: - Color - Decorative
-
-    var colorDecorativeAccent1Default: ColorSemanticToken { get }
-    var colorDecorativeAccent1Emphasized: ColorSemanticToken { get }
-    var colorDecorativeAccent1Muted: ColorSemanticToken { get }
-    var colorDecorativeAccent2Default: ColorSemanticToken { get }
-    var colorDecorativeAccent2Emphasized: ColorSemanticToken { get }
-    var colorDecorativeAccent2Muted: ColorSemanticToken { get }
-    var colorDecorativeAccent3Default: ColorSemanticToken { get }
-    var colorDecorativeAccent3Emphasized: ColorSemanticToken { get }
-    var colorDecorativeAccent3Muted: ColorSemanticToken { get }
-    var colorDecorativeAccent4Default: ColorSemanticToken { get }
-    var colorDecorativeAccent4Emphasized: ColorSemanticToken { get }
-    var colorDecorativeAccent4Muted: ColorSemanticToken { get }
-    var colorDecorativeAccent5Default: ColorSemanticToken { get }
-    var colorDecorativeAccent5Emphasized: ColorSemanticToken { get }
-    var colorDecorativeAccent5Muted: ColorSemanticToken { get }
-
-    var colorDecorativeBrandPrimary: ColorSemanticToken { get }
-    var colorDecorativeBrandSecondary: ColorSemanticToken { get }
-    var colorDecorativeBrandTertiary: ColorSemanticToken { get }
-    var colorDecorativeSkinTint100: ColorSemanticToken { get }
-    var colorDecorativeSkinTint200: ColorSemanticToken { get }
-    var colorDecorativeSkinTint300: ColorSemanticToken { get }
-    var colorDecorativeSkinTint400: ColorSemanticToken { get }
-    var colorDecorativeSkinTint500: ColorSemanticToken { get }
-    var colorDecorativeSkinTint600: ColorSemanticToken { get }
-    var colorDecorativeSkinTint700: ColorSemanticToken { get }
-    var colorDecorativeSkinTint800: ColorSemanticToken { get }
-    var colorDecorativeSkinTint900: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedHigher: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLow: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLower: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedLowest: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHigh: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHigher: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedHighest: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLow: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLower: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedLowest: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedMedium: ColorSemanticToken { get }
-
     // MARK: - Color - Repository
 
     var colorRepositoryAccentDefault: ColorSemanticToken { get }
