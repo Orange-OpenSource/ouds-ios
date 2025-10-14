@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 /// Defines provider objects for elevation semantic tokens but "multiple", i.e. tokens with values depending to color schemes.
 /// These values can be overriden inside `SoshThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension SoshThemeElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
-    
+
     public var elevationColorDefault: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorDefaultLight, dark: elevationColorDefaultDark) }
-    
+
     public var elevationColorRaised: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorRaisedLight, dark: elevationColorRaisedDark) }
-    
+
     public var elevationColorDrag: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorDragLight, dark: elevationColorDragDark) }
-    
+
     public var elevationColorEmphasized: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorEmphasizedLight, dark: elevationColorEmphasizedDark) }
-    
+
     public var elevationColorSticky: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorStickyLight, dark: elevationColorStickyDark) }
 }
 

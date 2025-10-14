@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 /// Defines provider objects for elevation semantic tokens but "multiple", i.e. tokens with values depending to color schemes.
 /// These values can be overriden inside `OrangeThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OrangeThemeElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
-    
+
     @objc open var elevationColorDefault: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorDefaultLight, dark: elevationColorDefaultDark) }
-    
+
     @objc open var elevationColorRaised: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorRaisedLight, dark: elevationColorRaisedDark) }
-    
+
     @objc open var elevationColorDrag: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorDragLight, dark: elevationColorDragDark) }
-    
+
     @objc open var elevationColorEmphasized: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorEmphasizedLight, dark: elevationColorEmphasizedDark) }
-    
+
     @objc open var elevationColorSticky: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: elevationColorStickyLight, dark: elevationColorStickyDark) }
 }
 
