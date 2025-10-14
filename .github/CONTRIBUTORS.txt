@@ -20,6 +20,7 @@
 
 # Please keep the list sorted.
 
+chetan-kmr-0607 <118420797+chetan-kmr-0607@users.noreply.github.com>
 Julien DERAMOND <julien.deramond@orange.com>
 Pierre-Yves LAPERSONNE <pierreyves.lapersonne@orange.com>
 Maxime LARDENOIS <maxime.lardenois@orange.com>
