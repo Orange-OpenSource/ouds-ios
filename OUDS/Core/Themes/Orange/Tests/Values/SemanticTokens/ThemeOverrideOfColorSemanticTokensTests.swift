@@ -956,24 +956,44 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryOpacityBlackTransparent == abstractTheme.colors.colorRepositoryOpacityBlackTransparent)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityInfo() throws {
-        #expect(inheritedTheme.colors.colorRepositoryOpacityInfo == abstractTheme.colors.colorRepositoryOpacityInfo)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityInfoLow() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityInfoLow == abstractTheme.colors.colorRepositoryOpacityInfoLow)
+    }
+
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityInfoMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityInfoMedium == abstractTheme.colors.colorRepositoryOpacityInfoMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityAccentLow() throws {
         #expect(inheritedTheme.colors.colorRepositoryOpacityAccentLow == abstractTheme.colors.colorRepositoryOpacityAccentLow)
     }
 
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityAccentMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityAccentMedium == abstractTheme.colors.colorRepositoryOpacityAccentMedium)
+    }
+
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityNegativeLow() throws {
         #expect(inheritedTheme.colors.colorRepositoryOpacityNegativeLow == abstractTheme.colors.colorRepositoryOpacityNegativeLow)
+    }
+
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityNegativeMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityNegativeMedium == abstractTheme.colors.colorRepositoryOpacityNegativeMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityPositiveLow() throws {
         #expect(inheritedTheme.colors.colorRepositoryOpacityPositiveLow == abstractTheme.colors.colorRepositoryOpacityPositiveLow)
     }
 
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityPositiveMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityPositiveMedium == abstractTheme.colors.colorRepositoryOpacityPositiveMedium)
+    }
+
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWarningLow() throws {
-        #expect(inheritedTheme.colors.colorRepositoryOpacityWarning == abstractTheme.colors.colorRepositoryOpacityWarning)
+        #expect(inheritedTheme.colors.colorRepositoryOpacityWarningLow == abstractTheme.colors.colorRepositoryOpacityWarningLow)
+    }
+
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWarningMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityWarningMedium == abstractTheme.colors.colorRepositoryOpacityWarningMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteHigh() throws {

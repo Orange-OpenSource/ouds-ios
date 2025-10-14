@@ -544,8 +544,8 @@ struct WireframeBrandColorRawTokensTests {
         TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.colorOpacityRoyalBlue920, WireframeBrandColorRawTokens.colorOpacityRoyalBlue960)
     }
 
-    @Test func wireframeBrandColorRawTokenColorOpacityRustyRed80LighterThanColorOpacityRustyRed680() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.colorOpacityRustyRed80, WireframeBrandColorRawTokens.colorOpacityRustyRed680)
+    @Test func wireframeBrandColorRawTokenColorOpacityRustyRed80DLighterThanColorOpacityRustyRed680() throws {
+        TestsUtils.assertColorLighterThan(WireframeBrandColorRawTokens.colorOpacityRustyRed80, WireframeBrandColorRawTokens.colorOpacityRustyRed680)
     }
 
     // MARK: - Tests format
