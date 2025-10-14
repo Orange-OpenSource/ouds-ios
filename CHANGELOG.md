@@ -55,6 +55,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Orange Inverse` theme (Orange-OpenSource/ouds-ios#1038)
 - All color decorative tokens  (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 
+### Fixed
+
+- Button should be disabled if loading state (Orange-OpenSource/ouds-ios#988)
+
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
 
 ### Added
