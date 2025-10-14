@@ -184,3 +184,11 @@ The Orange Unified Design System library is a Software Development Kit (SDK) tha
 As such:
 - this SDK does not handle any personnal data
 - this SDK does not require any device permission to work
+
+## Design Toolbox App
+
+Flash the QrCode below or click on it to download the *Design System Toolbox* app.
+
+<p align="center">
+<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Desin Sysem Design System Toolbox page"><img src="./docs_release/images/design-toolbox-download-page-qrcode.png" alt="QrCode redirecting to Orange Unified Desin Sysem Design System Toolbox page" width="125" height="125"></a>
+</p>
