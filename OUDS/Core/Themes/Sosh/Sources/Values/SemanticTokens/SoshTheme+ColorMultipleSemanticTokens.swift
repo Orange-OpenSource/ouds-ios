@@ -146,8 +146,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var colorContentOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandTertiaryLight, dark: colorContentOnBrandTertiaryDark) }
 
-    @objc public final var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnOverlayEmphasizedLight, dark: colorContentOnOverlayEmphasizedDark) }
-
     @objc public final var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveMutedLight, dark: colorContentOnStatusPositiveMutedDark) }
 
     @objc public final var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveEmphasizedLight, dark: colorContentOnStatusPositiveEmphasizedDark) }
@@ -182,7 +180,7 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    @objc public final var colorOverlayDropDown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDropDownLight, dark: colorOverlayDropDownDark) }
+    @objc public final var colorOverlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDropdownLight, dark: colorOverlayDropdownDark) }
 
     @objc public final var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDragLight, dark: colorOverlayDragDark) }
 
