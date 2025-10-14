@@ -44,7 +44,8 @@ public protocol ColorModeMultipleSemanticTokens {
     var modeOnBgPrimary: MultipleColorModeSemanticTokens { get }
     var modeOnBgSecondary: MultipleColorModeSemanticTokens { get }
     var modeOnBgTertiary: MultipleColorModeSemanticTokens { get }
-    var modeOnBgEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnBackgroundInverseHigh: MultipleColorModeSemanticTokens { get }
+    var modeOnBackgroundInverseLow: MultipleColorModeSemanticTokens { get }
 
     // MARK: On Brand
 
@@ -52,32 +53,37 @@ public protocol ColorModeMultipleSemanticTokens {
     var modeOnBrandSecondary: MultipleColorModeSemanticTokens { get }
     var modeOnBrandTertiary: MultipleColorModeSemanticTokens { get }
 
-    // MARK: - On Status
-
-    var modeOnStatusNeutralMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Status
-
-    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Overlay
-
-    var modeOnOverlayDefault: MultipleColorModeSemanticTokens { get }
-    var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Overlay Modal
+    // MARK: On Overlay
 
     var modeOnOverlayModal: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { get }
+
+    // MARK: On Status
+
+    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { get }
+
+    // MARK: Inverse
+
+    var modeOnInverseHigh: MultipleColorModeSemanticTokens { get }
+    var modeOnInverseLow: MultipleColorModeSemanticTokens { get }
+
+    // MARK: Other
+
+    var modeOnPrimary: MultipleColorModeSemanticTokens { get }
+    var modeOnSecondary: MultipleColorModeSemanticTokens { get }
+    var modeOnTertiary: MultipleColorModeSemanticTokens { get }
+
+    var modeNavigationBar: MultipleColorModeSemanticTokens { get }
 
     // MARK: - Additional rules
 

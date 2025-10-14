@@ -110,6 +110,10 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBgTertiary: MultipleColorSemanticTokens { get }
 
+    var colorBgInverseHigh: MultipleColorSemanticTokens { get }
+
+    var colorBgInverseLow: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Border
 
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }

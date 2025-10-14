@@ -111,4 +111,27 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeSemanticTokens {
     @objc open var modeNavigationBarLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.dark
     @objc open var modeNavigationBarDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+
+    // MARK: Missing tokens added manually
+
+    @objc open var modeOnBackgroundInverseHighLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnBackgroundInverseHighDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnBackgroundInverseLowLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnBackgroundInverseLowDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayDropdownLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayDropdownDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayTooltipLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayTooltipDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayInverseLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnOverlayInverseDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnInverseLowLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnInverseLowDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnInverseHighLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc open var modeOnInverseHighDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
 }

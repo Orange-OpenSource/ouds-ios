@@ -179,6 +179,16 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorBgTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBgInverseLow() throws {
+        #expect(inheritedTheme.colors.colorBgInverseLow != abstractTheme.colors.colorBgInverseLow)
+        #expect(inheritedTheme.colors.colorBgInverseLow == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBgInverseHigh() throws {
+        #expect(inheritedTheme.colors.colorBgInverseHigh != abstractTheme.colors.colorBgInverseHigh)
+        #expect(inheritedTheme.colors.colorBgInverseHigh == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
     // MARK: - Color - Border
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorBorderBrandPrimary() throws {
