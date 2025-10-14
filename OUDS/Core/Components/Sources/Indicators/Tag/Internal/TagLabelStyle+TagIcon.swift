@@ -104,7 +104,7 @@ struct TagLoader: View {
     private var colorMuted: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.colorContentDefault
         case .accent:
             theme.colors.colorContentOnStatusAccentMuted
         case .positive:
@@ -186,7 +186,7 @@ struct TagAsset: View {
     private var mutedColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.colorContentDefault
         case .accent:
             theme.colors.colorContentStatusAccent
         case .positive:

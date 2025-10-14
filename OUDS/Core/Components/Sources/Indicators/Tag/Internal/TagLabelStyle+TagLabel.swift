@@ -73,7 +73,7 @@ struct TagLabel: View {
     private var colorMuted: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.colorContentDefault
         case .accent:
             theme.colors.colorContentOnStatusAccentMuted
         case .positive:
