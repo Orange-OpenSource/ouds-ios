@@ -234,14 +234,11 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    var colorOverlayDefaultLight: ColorSemanticToken { get }
-    var colorOverlayDefaultDark: ColorSemanticToken { get }
+    var colorOverlayDropDownLight: ColorSemanticToken { get }
+    var colorOverlayDropDownDark: ColorSemanticToken { get }
 
     var colorOverlayDragLight: ColorSemanticToken { get }
     var colorOverlayDragDark: ColorSemanticToken { get }
-
-    var colorOverlayEmphasizedLight: ColorSemanticToken { get }
-    var colorOverlayEmphasizedDark: ColorSemanticToken { get }
 
     var colorOverlayModalLight: ColorSemanticToken { get }
     var colorOverlayModalDark: ColorSemanticToken { get }
