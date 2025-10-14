@@ -18,6 +18,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 // swiftlint:disable line_length
+// swiftlint:disable identifier_name
 
 /// Overrides **all** the elevation semantic tokens, both simple, multiple and composites (from its super class, i.e. ``OrangeThemeElevationSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
@@ -61,7 +62,7 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
     override var elevationXEmphasized: ElevationYSemanticToken { Self.mockThemeElevationXRawToken }
     override var elevationXDrag: ElevationYSemanticToken { Self.mockThemeElevationXRawToken }
     override var elevationXSticky: ElevationYSemanticToken { Self.mockThemeElevationXRawToken }
-    
+
     // MARK: Semantic token - Elevation - Y
 
     override var elevationYNone: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
@@ -93,7 +94,7 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
     override var elevationColorDragDark: ElevationColorSemanticToken { Self.mockThemeElevationColorSemanticToken }
     override var elevationColorEmphasizedDark: ElevationColorSemanticToken { Self.mockThemeElevationColorSemanticToken }
     override var elevationColorStickyDark: ElevationColorSemanticToken { Self.mockThemeElevationColorSemanticToken }
-    
+
     override var elevationColorDefault: ElevationMultipleColorSemanticToken { Self.mockThemeElevationMultipleColorSemanticToken }
     override var elevationColorRaised: ElevationMultipleColorSemanticToken { Self.mockThemeElevationMultipleColorSemanticToken }
     override var elevationColorDrag: ElevationMultipleColorSemanticToken { Self.mockThemeElevationMultipleColorSemanticToken }
@@ -103,3 +104,4 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
 
 // swiftlint:enable required_deinit
 // swiftlint:enable line_length
+// swiftlint:enable identifier_name

@@ -964,7 +964,7 @@ struct OrangeBrandColorRawTokensTests {
     @Test func colorRawTokenColorDecorativeDeepPeach900Format() throws {
         TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorDecorativeDeepPeach900, regexp: Self.colorFormat)
     }
-    
+
     // MARK: Primitive token - Colors - Opacity
 
     @Test func colorRawTokenColorOpacity80DarkerThan400() throws {

@@ -118,7 +118,7 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.elevationBlurEmphasized != abstractTheme.elevations.elevationBlurEmphasized)
         #expect(inheritedTheme.elevations.elevationBlurEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
     }
-    
+
     @Test func inheritedThemeCanOverrideSemanticTokenElevationBlurDrag() throws {
         #expect(inheritedTheme.elevations.elevationBlurDrag != abstractTheme.elevations.elevationBlurDrag)
         #expect(inheritedTheme.elevations.elevationBlurDrag == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
@@ -128,7 +128,7 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.elevationBlurSticky != abstractTheme.elevations.elevationBlurSticky)
         #expect(inheritedTheme.elevations.elevationBlurSticky == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
     }
-    
+
     // MARK: - Semantic token - Elevation - Colors
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorNone() throws {

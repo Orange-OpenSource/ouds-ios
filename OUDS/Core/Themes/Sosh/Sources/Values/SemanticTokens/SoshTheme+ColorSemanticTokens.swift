@@ -20,6 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable file_length
 // swiftlint:disable identifier_name
+// swiftlint:disable line_length
 
 extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token SoshBrandColorRawTokens.colorMagenta50
@@ -741,3 +742,4 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
 }
 
 // swiftlint:enable identifier_name
+// swiftlint:enable line_length

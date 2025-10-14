@@ -21,6 +21,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable file_length
 // swiftlint:disable identifier_name
+// swiftlint:disable line_length
 
 extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeBusinessToolsTheme**
@@ -742,3 +743,4 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorSemanticToke
 }
 
 // swiftlint:enable identifier_name
+// swiftlint:enable line_length

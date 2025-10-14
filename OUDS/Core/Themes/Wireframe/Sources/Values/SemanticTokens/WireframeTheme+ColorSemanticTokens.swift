@@ -21,6 +21,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable file_length
 // swiftlint:disable identifier_name
+// swiftlint:disable line_length
 
 extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue100
@@ -742,3 +743,4 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 }
 
 // swiftlint:enable identifier_name
+// swiftlint:enable line_length

@@ -470,7 +470,7 @@ struct SoshBrandColorRawTokensTests {
             SoshBrandColorRawTokens.colorBlueDuckDark160, SoshBrandColorRawTokens.colorBlueDuckDark240, SoshBrandColorRawTokens.colorBlueDuckDark320, SoshBrandColorRawTokens.colorBlueDuckDark400,
             SoshBrandColorRawTokens.colorBlueDuckDark480, SoshBrandColorRawTokens.colorBlueDuckDark560, SoshBrandColorRawTokens.colorBlueDuckDark640, SoshBrandColorRawTokens.colorBlueDuckDark720,
             SoshBrandColorRawTokens.colorBlueDuckDark800, SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960, SoshBrandColorRawTokens.colorOpacityMagenta120,
-            SoshBrandColorRawTokens.colorOpacityMagenta640
+            SoshBrandColorRawTokens.colorOpacityMagenta640,
         ]
         assertAllUniqueColors(allColors)
     }
