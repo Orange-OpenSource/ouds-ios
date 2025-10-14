@@ -34,10 +34,6 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
 
     @objc open var modeOnBgTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgTertiary", light: modeOnBgTertiaryLight, dark: modeOnBgTertiaryDark) }
 
-    @objc open var modeOnBackgroundInverseHigh: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBackgroundInverseHigh", light: modeOnBackgroundInverseHighLight, dark: modeOnBackgroundInverseHighDark) }
-
-    @objc open var modeOnBackgroundInverseLow: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBackgroundInverseLow", light: modeOnBackgroundInverseLowLight, dark: modeOnBackgroundInverseLowDark) }
-
     @objc open var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandPrimary", light: modeOnBrandPrimaryLight, dark: modeOnBrandPrimaryDark) }
 
     @objc open var modeOnBrandSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandSecondary", light: modeOnBrandSecondaryLight, dark: modeOnBrandSecondaryDark) }
@@ -69,18 +65,6 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
     @objc open var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningEmphasized", light: modeOnStatusWarningEmphasizedLight, dark: modeOnStatusWarningEmphasizedDark) }
 
     @objc open var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningMuted", light: modeOnStatusWarningMutedLight, dark: modeOnStatusWarningMutedDark) }
-
-    @objc open var modeOnInverseHigh: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnInverseHigh", light: modeOnInverseHighLight, dark: modeOnInverseHighDark) }
-
-    @objc open var modeOnInverseLow: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnInverseLow", light: modeOnInverseLowLight, dark: modeOnInverseLowDark) }
-
-    @objc open var modeOnOverlayInverse: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayInverse", light: modeOnOverlayInverseLight, dark: modeOnOverlayInverseDark) }
-
-    @objc open var modeOnPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnPrimary", light: modeOnPrimaryLight, dark: modeOnPrimaryDark) }
-
-    @objc open var modeOnSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnSecondary", light: modeOnSecondaryLight, dark: modeOnSecondaryDark) }
-
-    @objc open var modeOnTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnTertiary", light: modeOnTertiaryLight, dark: modeOnTertiaryDark) }
 
     @objc open var modeNavigationBar: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeNavigationBarDark", light: modeNavigationBarLight, dark: modeNavigationBarDark) }
 
@@ -163,16 +147,8 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
         if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
         if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
         if mode.isEqual(modeOnStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
-        if mode.isEqual(modeOnBackgroundInverseHigh) { return colors.colorBgInverseHigh }
-        if mode.isEqual(modeOnBackgroundInverseLow) { return colors.colorBgInverseLow }
         if mode.isEqual(modeOnOverlayDropdown) { return colors.colorOverlayDropdown }
         if mode.isEqual(modeOnOverlayTooltip) { return colors.colorOverlayModal } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnOverlayInverse) { return colors.colorOverlayModal } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnInverseHigh) { return colors.colorSurfaceInverseHigh } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnInverseLow) { return colors.colorSurfaceInverseLow } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnPrimary) { return colors.colorBgPrimary } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnPrimary) { return colors.colorBgSecondary } // FIXME: Not sure of this value
-        if mode.isEqual(modeOnTertiary) { return colors.colorBgTertiary } // FIXME: Not sure of this value
         if mode.isEqual(modeNavigationBar) { return colors.colorOverlayModal } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }

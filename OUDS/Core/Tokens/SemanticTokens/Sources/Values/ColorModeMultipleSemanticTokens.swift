@@ -27,8 +27,8 @@ import SwiftUI
 /// ```swift
 ///
 ///         // Tokenator defines seevral color mode semantic tokens
-///         var modeOnBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var modeOnBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var modeOnBrandPrimaryLight: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
+///         var modeOnBrandPrimaryDark: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
 ///
 ///         // They are packed
 ///         var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens(modeOnBrandPrimary) }
@@ -39,49 +39,41 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - Multiple tokens
 
-    // MARK: On Background
+    // MARK: - On Background
 
     var modeOnBgPrimary: MultipleColorModeSemanticTokens { get }
     var modeOnBgSecondary: MultipleColorModeSemanticTokens { get }
     var modeOnBgTertiary: MultipleColorModeSemanticTokens { get }
-    var modeOnBackgroundInverseHigh: MultipleColorModeSemanticTokens { get }
-    var modeOnBackgroundInverseLow: MultipleColorModeSemanticTokens { get }
 
-    // MARK: On Brand
+    // MARK: - On Brand
 
     var modeOnBrandPrimary: MultipleColorModeSemanticTokens { get }
     var modeOnBrandSecondary: MultipleColorModeSemanticTokens { get }
     var modeOnBrandTertiary: MultipleColorModeSemanticTokens { get }
 
-    // MARK: On Overlay
+    // MARK: - On Status
+
+    var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - On Status Accent
+
+    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
+    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - On Overlay Modal
 
     var modeOnOverlayModal: MultipleColorModeSemanticTokens { get }
     var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { get }
     var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { get }
 
-    // MARK: On Status
-
-    var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { get }
-
-    // MARK: Inverse
-
-    var modeOnInverseHigh: MultipleColorModeSemanticTokens { get }
-    var modeOnInverseLow: MultipleColorModeSemanticTokens { get }
-
-    // MARK: Other
-
-    var modeOnPrimary: MultipleColorModeSemanticTokens { get }
-    var modeOnSecondary: MultipleColorModeSemanticTokens { get }
-    var modeOnTertiary: MultipleColorModeSemanticTokens { get }
+    // MARK: - Navigation
 
     var modeNavigationBar: MultipleColorModeSemanticTokens { get }
 
