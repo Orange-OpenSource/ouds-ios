@@ -179,13 +179,11 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorContentStatusPositiveDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorContentStatusWarningDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorOverlayDefaultLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOverlayDropDownLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOverlayDragLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOverlayEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOverlayModalLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOverlayDefaultDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOverlayDropDownDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOverlayDragDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOverlayEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOverlayModalDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var colorSurfaceBrandPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -307,9 +305,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Overlay
 
-    override public var colorOverlayDefault: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorOverlayDropDown: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorOverlayDrag: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorOverlayEmphasized: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorOverlayModal: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Surface

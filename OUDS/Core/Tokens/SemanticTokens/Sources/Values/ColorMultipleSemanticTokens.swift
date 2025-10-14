@@ -206,11 +206,9 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    var colorOverlayDefault: MultipleColorSemanticTokens { get }
+    var colorOverlayDropDown: MultipleColorSemanticTokens { get }
 
     var colorOverlayDrag: MultipleColorSemanticTokens { get }
-
-    var colorOverlayEmphasized: MultipleColorSemanticTokens { get }
 
     var colorOverlayModal: MultipleColorSemanticTokens { get }
 

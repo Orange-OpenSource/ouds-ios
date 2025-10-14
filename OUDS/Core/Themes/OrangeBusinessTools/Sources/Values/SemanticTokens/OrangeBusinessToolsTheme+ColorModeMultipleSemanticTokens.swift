@@ -151,8 +151,7 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
         if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
         if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
         if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
-        if mode.isEqual(modeOnOverlayDefault) { return colors.colorOverlayDefault }
-        if mode.isEqual(modeOnOverlayEmphasized) { return colors.colorOverlayEmphasized }
+        if mode.isEqual(modeOnOverlayDefault) { return colors.colorOverlayDropDown }
         if mode.isEqual(modeOnOverlayModal) { return colors.colorOverlayModal }
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }

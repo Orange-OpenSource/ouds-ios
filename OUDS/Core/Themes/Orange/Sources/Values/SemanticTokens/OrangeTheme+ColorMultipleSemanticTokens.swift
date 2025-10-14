@@ -183,11 +183,9 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    @objc open var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDefaultLight, dark: colorOverlayDefaultDark) }
+    @objc open var colorOverlayDropDown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDropDownLight, dark: colorOverlayDropDownDark) }
 
     @objc open var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDragLight, dark: colorOverlayDragDark) }
-
-    @objc open var colorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayEmphasizedLight, dark: colorOverlayEmphasizedDark) }
 
     @objc open var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayModalLight, dark: colorOverlayModalDark) }
 

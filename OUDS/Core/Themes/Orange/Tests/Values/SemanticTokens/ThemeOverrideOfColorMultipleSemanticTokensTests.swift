@@ -400,19 +400,14 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
 
     // MARK: - Color - Overlay
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDefault() throws {
-        #expect(inheritedTheme.colors.colorOverlayDefault != abstractTheme.colors.colorOverlayDefault)
-        #expect(inheritedTheme.colors.colorOverlayDefault == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDropDown() throws {
+        #expect(inheritedTheme.colors.colorOverlayDropDown != abstractTheme.colors.colorOverlayDropDown)
+        #expect(inheritedTheme.colors.colorOverlayDropDown == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDrag() throws {
         #expect(inheritedTheme.colors.colorOverlayDrag != abstractTheme.colors.colorOverlayDrag)
         #expect(inheritedTheme.colors.colorOverlayDrag == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayEmphasized() throws {
-        #expect(inheritedTheme.colors.colorOverlayEmphasized != abstractTheme.colors.colorOverlayEmphasized)
-        #expect(inheritedTheme.colors.colorOverlayEmphasized == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayModal() throws {
