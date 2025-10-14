@@ -159,11 +159,6 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
 
     // MARK: - Color - Background
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorBgEmphasized() throws {
-        #expect(inheritedTheme.colors.colorBgInverse != abstractTheme.colors.colorBgInverse)
-        #expect(inheritedTheme.colors.colorBgInverse == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
     @Test func inheritedThemeCanOverrideSemanticTokenColorBgPrimary() throws {
         #expect(inheritedTheme.colors.colorBgPrimary != abstractTheme.colors.colorBgPrimary)
         #expect(inheritedTheme.colors.colorBgPrimary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
@@ -333,7 +328,7 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorContentInverse == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNeegativeMuted() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentOnStatusNegativeMuted() throws {
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeMuted != abstractTheme.colors.colorContentOnStatusNegativeMuted)
         #expect(inheritedTheme.colors.colorContentOnStatusNegativeMuted == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }

@@ -257,11 +257,10 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Background
 
-    override public var colorBgInverse: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgPrimary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgSecondary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgTertiary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorBgInverseLow: MultipleColorSemanticTokens: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorBgInverseLow: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorBgInverseHigh: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Border

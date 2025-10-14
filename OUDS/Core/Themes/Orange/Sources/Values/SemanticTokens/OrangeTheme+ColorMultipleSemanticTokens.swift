@@ -79,8 +79,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Background
 
-    @objc open var colorBgInverse: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseLowLight, dark: colorBgInverseLowDark) }
-
     @objc open var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 
     @objc open var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgSecondaryLight, dark: colorBgSecondaryDark) }

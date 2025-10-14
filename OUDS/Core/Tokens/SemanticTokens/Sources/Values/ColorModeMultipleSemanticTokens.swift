@@ -61,9 +61,6 @@ public protocol ColorModeMultipleSemanticTokens {
     var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
     var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Status Accent
-
     var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
     var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
 

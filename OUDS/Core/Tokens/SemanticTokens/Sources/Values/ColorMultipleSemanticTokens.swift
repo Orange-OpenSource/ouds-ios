@@ -102,8 +102,6 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Background
 
-    var colorBgInverse: MultipleColorSemanticTokens { get }
-
     var colorBgPrimary: MultipleColorSemanticTokens { get }
 
     var colorBgSecondary: MultipleColorSemanticTokens { get }
