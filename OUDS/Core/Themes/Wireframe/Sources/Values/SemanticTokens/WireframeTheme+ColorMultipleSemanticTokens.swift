@@ -86,6 +86,10 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
 
+    @objc public final var colorBgInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseHighLight, dark: colorBgInverseHighDark) }
+
+    @objc public final var colorBgInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseLowLight, dark: colorBgInverseLowDark) }
+
     // MARK: - Color - Border
 
     @objc public final var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }

@@ -23,6 +23,7 @@ import SwiftUI
 // swiftlint:disable line_length
 
 /// Defines provider objects for `ColorModeSemanticTokens` so as to pack them as light and dark mode colors.
+/// These values can be overriden inside `OrangeBusinessToolsThemeColorModeSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTokens {
 
     // MARK: - Multiple tokens
@@ -33,13 +34,21 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
 
     @objc public final var modeOnBgTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgTertiary", light: modeOnBgTertiaryLight, dark: modeOnBgTertiaryDark) }
 
-    @objc public final var modeOnBgEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgEmphasized", light: modeOnBgEmphasizedLight, dark: modeOnBgEmphasizedDark) }
+    @objc public final var modeOnBackgroundInverseHigh: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBackgroundInverseHigh", light: modeOnBackgroundInverseHighLight, dark: modeOnBackgroundInverseHighDark) }
+
+    @objc public final var modeOnBackgroundInverseLow: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBackgroundInverseLow", light: modeOnBackgroundInverseLowLight, dark: modeOnBackgroundInverseLowDark) }
 
     @objc public final var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandPrimary", light: modeOnBrandPrimaryLight, dark: modeOnBrandPrimaryDark) }
 
     @objc public final var modeOnBrandSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandSecondary", light: modeOnBrandSecondaryLight, dark: modeOnBrandSecondaryDark) }
 
     @objc public final var modeOnBrandTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandTertiary", light: modeOnBrandTertiaryLight, dark: modeOnBrandTertiaryDark) }
+
+    @objc public final var modeOnOverlayModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnModalOverlay", light: modeOnOverlayModalLight, dark: modeOnOverlayModalDark) }
+
+    @objc public final var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayDropdown", light: modeOnOverlayDropdownLight, dark: modeOnOverlayDropdownDark) }
+
+    @objc public final var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayTooltip", light: modeOnOverlayTooltipLight, dark: modeOnOverlayTooltipDark) }
 
     @objc public final var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusAccentEmphasized", light: modeOnStatusAccentEmphasizedLight, dark: modeOnStatusAccentEmphasizedDark) }
 
@@ -53,10 +62,6 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
 
     @objc public final var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusNegativeMuted", light: modeOnStatusNegativeMutedLight, dark: modeOnStatusNegativeMutedDark) }
 
-    @objc public final var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusNeutralEmphasized", light: modeOnStatusNeutralEmphasizedLight, dark: modeOnStatusNeutralEmphasizedDark) }
-
-    @objc public final var modeOnStatusNeutralMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusNeutralMuted", light: modeOnStatusNeutralMutedLight, dark: modeOnStatusNeutralMutedDark) }
-
     @objc public final var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusPositiveEmphasized", light: modeOnStatusPositiveEmphasizedLight, dark: modeOnStatusPositiveEmphasizedDark) }
 
     @objc public final var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusPositiveMuted", light: modeOnStatusPositiveMutedLight, dark: modeOnStatusPositiveMutedDark) }
@@ -65,11 +70,19 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
 
     @objc public final var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningMuted", light: modeOnStatusWarningMutedLight, dark: modeOnStatusWarningMutedDark) }
 
-    @objc public final var modeOnOverlayDefault: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayDefault", light: modeOnOverlayDefaultLight, dark: modeOnOverlayDefaultDark) }
+    @objc public final var modeOnInverseHigh: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnInverseHigh", light: modeOnInverseHighLight, dark: modeOnInverseHighDark) }
 
-    @objc public final var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayEmphasized", light: modeOnOverlayEmphasizedLight, dark: modeOnOverlayEmphasizedDark) }
+    @objc public final var modeOnInverseLow: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnInverseLow", light: modeOnInverseLowLight, dark: modeOnInverseLowDark) }
 
-    @objc public final var modeOnOverlayModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayModal", light: modeOnOverlayModalLight, dark: modeOnOverlayModalDark) }
+    @objc public final var modeOnOverlayInverse: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayInverse", light: modeOnOverlayInverseLight, dark: modeOnOverlayInverseDark) }
+
+    @objc public final var modeOnPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnPrimary", light: modeOnPrimaryLight, dark: modeOnPrimaryDark) }
+
+    @objc public final var modeOnSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnSecondary", light: modeOnSecondaryLight, dark: modeOnSecondaryDark) }
+
+    @objc public final var modeOnTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnTertiary", light: modeOnTertiaryLight, dark: modeOnTertiaryDark) }
+
+    @objc public final var modeNavigationBar: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeNavigationBarDark", light: modeNavigationBarLight, dark: modeNavigationBarDark) }
 
     // MARK: - Additional rules
 
@@ -136,23 +149,31 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
         if mode.isEqual(modeOnBgPrimary) { return colors.colorBgPrimary }
         if mode.isEqual(modeOnBgSecondary) { return colors.colorBgSecondary }
         if mode.isEqual(modeOnBgTertiary) { return colors.colorBgTertiary }
-        if mode.isEqual(modeOnBgEmphasized) { return colors.colorBgInverse }
-        if mode.isEqual(modeOnBrandPrimary) { return colors.colorContentBrandPrimary }
-        // modeOnBrandSecondary and modeOnBrandTertiary have undefined values for this theme
-        if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceSecondary }
-        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceInverseHigh }
-        if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
-        if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
-        if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
-        if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
-        if mode.isEqual(modeOnStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
-        if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
-        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
-        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
-        if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
-        if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
-        if mode.isEqual(modeOnOverlayDefault) { return colors.colorOverlayDropdown }
+        if mode.isEqual(modeOnBrandPrimary) { return colors.colorSurfaceBrandPrimary }
+        if mode.isEqual(modeOnBrandSecondary) { return colors.colorSurfaceBrandSecondary }
+        if mode.isEqual(modeOnBrandTertiary) { return colors.colorSurfaceBrandTertiary }
         if mode.isEqual(modeOnOverlayModal) { return colors.colorOverlayModal }
+        if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
+        if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
+        if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
+        if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
+        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
+        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
+        if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
+        if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
+        if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
+        if mode.isEqual(modeOnStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
+        if mode.isEqual(modeOnBackgroundInverseHigh) { return colors.colorBgInverseHigh }
+        if mode.isEqual(modeOnBackgroundInverseLow) { return colors.colorBgInverseLow }
+        if mode.isEqual(modeOnOverlayDropdown) { return colors.colorOverlayDropdown }
+        if mode.isEqual(modeOnOverlayTooltip) { return colors.colorOverlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnOverlayInverse) { return colors.colorOverlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnInverseHigh) { return colors.colorSurfaceInverseHigh } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnInverseLow) { return colors.colorSurfaceInverseLow } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnPrimary) { return colors.colorBgPrimary } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnPrimary) { return colors.colorBgSecondary } // FIXME: Not sure of this value
+        if mode.isEqual(modeOnTertiary) { return colors.colorBgTertiary } // FIXME: Not sure of this value
+        if mode.isEqual(modeNavigationBar) { return colors.colorOverlayModal } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity

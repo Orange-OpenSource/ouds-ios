@@ -111,4 +111,27 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeSemanticTokens
     @objc public final var modeNavigationBarLight: ColorModeSemanticToken { ColorModeRawTokens.dark }
     /// Has for value token ColorModeRawTokens.dark
     @objc public final var modeNavigationBarDark: ColorModeSemanticToken { ColorModeRawTokens.dark }
+
+    // MARK: Missing tokens added manually
+
+    @objc public final var modeOnBackgroundInverseHighLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnBackgroundInverseHighDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnBackgroundInverseLowLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnBackgroundInverseLowDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayDropdownLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayDropdownDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayTooltipLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayTooltipDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayInverseLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnOverlayInverseDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnSecondaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnSecondaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnTertiaryLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnTertiaryDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnInverseLowLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnInverseLowDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnInverseHighLight: ColorModeSemanticToken { ColorModeRawTokens.undefined }
+    @objc public final var modeOnInverseHighDark: ColorModeSemanticToken { ColorModeRawTokens.undefined }
 }
