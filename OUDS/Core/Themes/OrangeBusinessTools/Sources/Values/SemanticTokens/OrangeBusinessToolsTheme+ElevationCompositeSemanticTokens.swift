@@ -19,29 +19,42 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
+// swiftlint:disable line_length
+
 /// Defines basic values common to all themes for `ElevationCompositeSemanticTokens``.
 /// The aim of this extension is to make relationships between all semantic tokens for elevations and associated raw tokens.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
 /// It defines in fact box shadows effects.
 extension OrangeBusinessToolsThemeElevationSemanticTokensProvider: ElevationCompositeSemanticTokens {
 
-    // MARK: Semantic token - Elevation - Box shadow
-
-    @objc public final var elevationNone: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_0) }
-
-    @objc public final var elevationRaised: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_500) }
-
-    @objc public final var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_500) }
-
-    @objc public final var elevationOverlayDefault: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_2_400) }
-
-    @objc public final var elevationOverlayEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_5_300) }
-
-    @objc public final var elevationStickyDefault: ElevationCompositeSemanticToken {
-        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300)
+    @objc public final var elevationNone: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(ElevationCompositeRawToken(x: elevationXNone, y: elevationYNone, blur: elevationBlurNone, color: elevationColorNone))
     }
 
-    @objc public final var elevationStickyEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
+    @objc public final var elevationRaised: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXRaised, y: elevationYRaised, blur: elevationBlurRaised, color: elevationColorRaisedLight),
+                                            dark: ElevationCompositeRawToken(x: elevationXRaised, y: elevationYRaised, blur: elevationBlurRaised, color: elevationColorRaisedDark))
+    }
 
-    @objc public final var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
+    @objc public final var elevationDrag: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragLight),
+                                            dark: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragDark))
+    }
+
+    @objc public final var elevationOverlayDefault: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultLight),
+                                            dark: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultDark))
+    }
+
+    @objc public final var elevationOverlayEmphasized: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedLight),
+                                            dark: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedDark))
+    }
+
+    @objc public final var elevationSticky: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXSticky, y: elevationYSticky, blur: elevationBlurSticky, color: elevationColorStickyLight),
+                                            dark: ElevationCompositeRawToken(x: elevationXSticky, y: elevationYSticky, blur: elevationBlurSticky, color: elevationColorStickyDark))
+    }
 }
+
+// swiftlint:enable line_length

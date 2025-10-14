@@ -276,8 +276,13 @@ struct SoshBrandColorRawTokensTests {
     }
 
     @Test
-    func colorOpacityMagentaFormat() throws {
-        TestsUtils.assertMatches(SoshBrandColorRawTokens.colorOpacityMagenta, regexp: Self.colorFormat)
+    func colorOpacityMagenta120Format() throws {
+        TestsUtils.assertMatches(SoshBrandColorRawTokens.colorOpacityMagenta120, regexp: Self.colorFormat)
+    }
+
+    @Test
+    func colorOpacityMagenta640Format() throws {
+        TestsUtils.assertMatches(SoshBrandColorRawTokens.colorOpacityMagenta640, regexp: Self.colorFormat)
     }
 
     // MARK: - Tests - Colors darker and darker
@@ -446,6 +451,10 @@ struct SoshBrandColorRawTokensTests {
         TestsUtils.assertColorLighterThan(SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960)
     }
 
+    @Test func soshBrandColorRawTokenColorOpacityMagenta120LighterThanColorOpacityMagenta640() throws {
+        TestsUtils.assertColorLighterThan(SoshBrandColorRawTokens.colorOpacityMagenta120, SoshBrandColorRawTokens.colorOpacityMagenta640)
+    }
+
     // MARK: - Test all values unique
 
     @Test func soshBrandColorRawTokensAreAllUnique() throws {
@@ -460,7 +469,8 @@ struct SoshBrandColorRawTokensTests {
             SoshBrandColorRawTokens.colorBlueDuckLight800, SoshBrandColorRawTokens.colorBlueDuckLight880, SoshBrandColorRawTokens.colorBlueDuckLight960, SoshBrandColorRawTokens.colorBlueDuckDark80,
             SoshBrandColorRawTokens.colorBlueDuckDark160, SoshBrandColorRawTokens.colorBlueDuckDark240, SoshBrandColorRawTokens.colorBlueDuckDark320, SoshBrandColorRawTokens.colorBlueDuckDark400,
             SoshBrandColorRawTokens.colorBlueDuckDark480, SoshBrandColorRawTokens.colorBlueDuckDark560, SoshBrandColorRawTokens.colorBlueDuckDark640, SoshBrandColorRawTokens.colorBlueDuckDark720,
-            SoshBrandColorRawTokens.colorBlueDuckDark800, SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960, SoshBrandColorRawTokens.colorOpacityMagenta,
+            SoshBrandColorRawTokens.colorBlueDuckDark800, SoshBrandColorRawTokens.colorBlueDuckDark880, SoshBrandColorRawTokens.colorBlueDuckDark960, SoshBrandColorRawTokens.colorOpacityMagenta120,
+            SoshBrandColorRawTokens.colorOpacityMagenta640,
         ]
         assertAllUniqueColors(allColors)
     }

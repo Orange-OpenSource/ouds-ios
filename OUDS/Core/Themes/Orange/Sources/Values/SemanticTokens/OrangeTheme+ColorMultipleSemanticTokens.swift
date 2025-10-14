@@ -79,13 +79,15 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Background
 
-    @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
-
     @objc open var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 
     @objc open var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgSecondaryLight, dark: colorBgSecondaryDark) }
 
     @objc open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
+
+    @objc open var colorBgInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseLowLight, dark: colorBgInverseLowDark) }
+
+    @objc open var colorBgInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseHighLight, dark: colorBgInverseHighDark) }
 
     // MARK: - Color - Border
 
@@ -147,8 +149,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandTertiaryLight, dark: colorContentOnBrandTertiaryDark) }
 
-    @objc open var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnOverlayEmphasizedLight, dark: colorContentOnOverlayEmphasizedDark) }
-
     @objc open var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveMutedLight, dark: colorContentOnStatusPositiveMutedDark) }
 
     @objc open var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveEmphasizedLight, dark: colorContentOnStatusPositiveEmphasizedDark) }
@@ -157,9 +157,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusWarningEmphasizedLight, dark: colorContentOnStatusWarningEmphasizedDark) }
 
-    @objc open var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralMutedLight, dark: colorContentOnStatusNeutralMutedDark) }
-
-    @objc open var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralEmphasizedLight, dark: colorContentOnStatusNeutralEmphasizedDark) }
+    @objc open var colorContentInverse: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentInverseLight, dark: colorContentInverseDark) }
 
     @objc open var colorContentOnStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNegativeMutedLight, dark: colorContentOnStatusNegativeMutedDark) }
 
@@ -185,11 +183,9 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    @objc open var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDefaultLight, dark: colorOverlayDefaultDark) }
+    @objc open var colorOverlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDropdownLight, dark: colorOverlayDropdownDark) }
 
     @objc open var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDragLight, dark: colorOverlayDragDark) }
-
-    @objc open var colorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayEmphasizedLight, dark: colorOverlayEmphasizedDark) }
 
     @objc open var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayModalLight, dark: colorOverlayModalDark) }
 
@@ -213,9 +209,15 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNegativeMutedLight, dark: colorSurfaceStatusNegativeMutedDark) }
 
-    @objc open var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralEmphasizedLight, dark: colorSurfaceStatusNeutralEmphasizedDark) }
+    @objc open var colorSurfaceInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseHighLight, dark: colorSurfaceInverseHighDark) }
 
-    @objc open var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralMutedLight, dark: colorSurfaceStatusNeutralMutedDark) }
+    @objc open var colorSurfaceInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseLowLight, dark: colorSurfaceInverseLowDark) }
+
+    @objc open var colorSurfacePrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfacePrimaryLight, dark: colorSurfacePrimaryDark) }
+
+    @objc open var colorSurfaceSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceSecondaryLight, dark: colorSurfaceSecondaryDark) }
+
+    @objc open var colorSurfaceTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceTertiaryLight, dark: colorSurfaceTertiaryDark) }
 
     @objc open var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusPositiveEmphasizedLight, dark: colorSurfaceStatusPositiveEmphasizedDark) }
 

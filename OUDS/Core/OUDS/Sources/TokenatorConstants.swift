@@ -19,25 +19,25 @@ public enum OUDSVersions {
     // MARK: - Themes versions
 
     /// Version of the Core tokens library
-    public static let themeCoreVersion = "1.6.0"
+    public static let themeCoreVersion = "1.7.0"
 
     /// Version of the Orange core tokens library
-    public static let themeOrangeCoreVersion = "1.1.0"
+    public static let themeOrangeCoreVersion = "1.2.0"
     /// Version of the Orange brand tokens library
-    public static let themeOrangeBrandVersion = "1.6.0"
+    public static let themeOrangeBrandVersion = "2.0.1"
 
     /// Version of the Sosh core tokens library
-    public static let themeSoshCoreVersion = "1.1.0"
+    public static let themeSoshCoreVersion = "1.2.0"
     /// Version of the Sosh brand tokens library
-    public static let themeSoshBrandVersion = "1.6.0"
+    public static let themeSoshBrandVersion = "2.0.1"
 
     /// Version of the Orange Business Tools brand tokens library
-    public static let themeOrangeBusinessToolsBrandVersion = "1.6.0"
+    public static let themeOrangeBusinessToolsBrandVersion = "2.0.1"
 
     /// Version of the Wireframe core tokens library
-    public static let themeWireframeCoreVersion = "1.1.0"
+    public static let themeWireframeCoreVersion = "1.2.0"
     /// Version of the Wireframe brand tokens library
-    public static let themeWireframeBrandVersion = "1.6.0"
+    public static let themeWireframeBrandVersion = "2.0.1"
 
     // MARK: - Components versions - Actions
 
@@ -47,12 +47,12 @@ public enum OUDSVersions {
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link
-    public static let componentLinkVersion = "2.1.0"
+    public static let componentLinkVersion = "2.0.0"
 
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox
-    public static let componentCheckboxVersion = "2.0.0"
+    public static let componentCheckboxVersion = "2.2.0"
     /// Version of the Figma specifications for the component chip
     public static let componentChipVersion = "1.3.0"
     /// Version of the Figma specifications for the component radio button

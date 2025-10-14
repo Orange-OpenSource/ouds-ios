@@ -42,6 +42,7 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
 
     override var controlItemSizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var controlItemSizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var controlItemSizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var controlItemSizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
@@ -52,7 +53,8 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     override var controlItemColorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
     override var controlItemSpaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var controlItemSpaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var controlItemSpaceInset: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemSpacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var controlItemBorderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
     override var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
 }

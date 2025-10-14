@@ -251,7 +251,7 @@ public struct OUDSBadge: View {
     private var backgroundColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorSurfaceStatusNeutralEmphasized
+            theme.colors.colorSurfaceInverseHigh
         case .accent:
             theme.colors.colorSurfaceStatusAccentEmphasized
         case .positive:
@@ -270,7 +270,7 @@ public struct OUDSBadge: View {
     private var contentColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentOnStatusNeutralEmphasized
+            theme.colors.colorContentInverse
         case .accent:
             theme.colors.colorContentOnStatusAccentEmphasized
         case .positive:

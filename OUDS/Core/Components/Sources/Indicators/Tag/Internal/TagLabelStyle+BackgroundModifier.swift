@@ -43,7 +43,7 @@ struct TagBackgroundModifier: ViewModifier {
     private var emphasizedBackground: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorSurfaceStatusNeutralEmphasized
+            theme.colors.colorSurfaceInverseHigh
         case .accent:
             theme.colors.colorSurfaceStatusAccentEmphasized
         case .positive:
@@ -62,7 +62,7 @@ struct TagBackgroundModifier: ViewModifier {
     private var mutedBackground: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorSurfaceStatusNeutralMuted
+            theme.colors.colorSurfaceSecondary
         case .accent:
             theme.colors.colorSurfaceStatusAccentMuted
         case .positive:

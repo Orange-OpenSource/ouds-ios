@@ -102,13 +102,15 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Background
 
-    var colorBgEmphasized: MultipleColorSemanticTokens { get }
-
     var colorBgPrimary: MultipleColorSemanticTokens { get }
 
     var colorBgSecondary: MultipleColorSemanticTokens { get }
 
     var colorBgTertiary: MultipleColorSemanticTokens { get }
+
+    var colorBgInverseHigh: MultipleColorSemanticTokens { get }
+
+    var colorBgInverseLow: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Border
 
@@ -170,15 +172,11 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnBrandTertiary: MultipleColorSemanticTokens { get }
 
-    var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { get }
-
     var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
-
-    var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { get }
+    var colorContentInverse: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusInfoMuted: MultipleColorSemanticTokens { get }
 
@@ -208,11 +206,9 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Overlay
 
-    var colorOverlayDefault: MultipleColorSemanticTokens { get }
+    var colorOverlayDropdown: MultipleColorSemanticTokens { get }
 
     var colorOverlayDrag: MultipleColorSemanticTokens { get }
-
-    var colorOverlayEmphasized: MultipleColorSemanticTokens { get }
 
     var colorOverlayModal: MultipleColorSemanticTokens { get }
 
@@ -236,9 +232,15 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { get }
 
-    var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { get }
+    var colorSurfaceInverseHigh: MultipleColorSemanticTokens { get }
 
-    var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { get }
+    var colorSurfaceInverseLow: MultipleColorSemanticTokens { get }
+
+    var colorSurfacePrimary: MultipleColorSemanticTokens { get }
+
+    var colorSurfaceSecondary: MultipleColorSemanticTokens { get }
+
+    var colorSurfaceTertiary: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
 

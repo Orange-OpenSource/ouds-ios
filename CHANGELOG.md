@@ -17,6 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Wireframe color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Sosh color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Font` semantic tokens for `Sosh` theme (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Elevation` semantic tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Color semantic` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- Orange brand color raw tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Control item` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Chip` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Button mono` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
 - Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
 - `Color` raw tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
@@ -36,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - `Orange Inverse` theme (Orange-OpenSource/ouds-ios#1038)
+- All color decorative tokens  (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
 

@@ -27,8 +27,8 @@ import SwiftUI
 /// ```swift
 ///
 ///         // Tokenator defines seevral color mode semantic tokens
-///         var modeOnBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var modeOnBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var modeOnBrandPrimaryLight: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
+///         var modeOnBrandPrimaryDark: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
 ///
 ///         // They are packed
 ///         var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens(modeOnBrandPrimary) }
@@ -39,14 +39,13 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - Multiple tokens
 
-    // MARK: On Background
+    // MARK: - On Background
 
     var modeOnBgPrimary: MultipleColorModeSemanticTokens { get }
     var modeOnBgSecondary: MultipleColorModeSemanticTokens { get }
     var modeOnBgTertiary: MultipleColorModeSemanticTokens { get }
-    var modeOnBgEmphasized: MultipleColorModeSemanticTokens { get }
 
-    // MARK: On Brand
+    // MARK: - On Brand
 
     var modeOnBrandPrimary: MultipleColorModeSemanticTokens { get }
     var modeOnBrandSecondary: MultipleColorModeSemanticTokens { get }
@@ -54,8 +53,6 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - On Status
 
-    var modeOnStatusNeutralMuted: MultipleColorModeSemanticTokens { get }
-    var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
     var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { get }
@@ -64,20 +61,18 @@ public protocol ColorModeMultipleSemanticTokens {
     var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
     var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
     var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Status
-
     var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { get }
     var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
-
-    // MARK: - On Overlay
-
-    var modeOnOverlayDefault: MultipleColorModeSemanticTokens { get }
-    var modeOnOverlayEmphasized: MultipleColorModeSemanticTokens { get }
 
     // MARK: - On Overlay Modal
 
     var modeOnOverlayModal: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { get }
+    var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { get }
+
+    // MARK: - Navigation
+
+    var modeNavigationBar: MultipleColorModeSemanticTokens { get }
 
     // MARK: - Additional rules
 

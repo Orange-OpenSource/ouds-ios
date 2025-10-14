@@ -41,7 +41,7 @@ public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSem
 public protocol AllColorChartSemanticTokensProvider: TokensProvider, ColorChartSemanticTokens, ColorChartMultipleSemanticTokens {}
 
 /// Something which provides all semantic tokens of elevation
-public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens {}
+public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationMultipleSemanticTokens, ElevationCompositeSemanticTokens {}
 
 /// Something which provides all semantic tokens of font
 public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens {}

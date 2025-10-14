@@ -76,13 +76,15 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     // MARK: - Color - Background
 
-    @objc public final var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
-
     @objc public final var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 
     @objc public final var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgSecondaryLight, dark: colorBgSecondaryDark) }
 
     @objc public final var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
+
+    @objc public final var colorBgInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseLowLight, dark: colorBgInverseLowDark) }
+
+    @objc public final var colorBgInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgInverseHighLight, dark: colorBgInverseHighDark) }
 
     // MARK: - Color - Border
 
@@ -144,8 +146,6 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorContentOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandTertiaryLight, dark: colorContentOnBrandTertiaryDark) }
 
-    @objc public final var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnOverlayEmphasizedLight, dark: colorContentOnOverlayEmphasizedDark) }
-
     @objc public final var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveMutedLight, dark: colorContentOnStatusPositiveMutedDark) }
 
     @objc public final var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusPositiveEmphasizedLight, dark: colorContentOnStatusPositiveEmphasizedDark) }
@@ -154,9 +154,7 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorContentOnStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusWarningEmphasizedLight, dark: colorContentOnStatusWarningEmphasizedDark) }
 
-    @objc public final var colorContentOnStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralMutedLight, dark: colorContentOnStatusNeutralMutedDark) }
-
-    @objc public final var colorContentOnStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNeutralEmphasizedLight, dark: colorContentOnStatusNeutralEmphasizedDark) }
+    @objc public final var colorContentInverse: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentInverseLight, dark: colorContentInverseDark) }
 
     @objc public final var colorContentOnStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusNegativeMutedLight, dark: colorContentOnStatusNegativeMutedDark) }
 
@@ -182,11 +180,9 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     // MARK: - Color - Overlay
 
-    @objc public final var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDefaultLight, dark: colorOverlayDefaultDark) }
+    @objc public final var colorOverlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDropdownLight, dark: colorOverlayDropdownDark) }
 
     @objc public final var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDragLight, dark: colorOverlayDragDark) }
-
-    @objc public final var colorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayEmphasizedLight, dark: colorOverlayEmphasizedDark) }
 
     @objc public final var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayModalLight, dark: colorOverlayModalDark) }
 
@@ -210,9 +206,15 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNegativeMutedLight, dark: colorSurfaceStatusNegativeMutedDark) }
 
-    @objc public final var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralEmphasizedLight, dark: colorSurfaceStatusNeutralEmphasizedDark) }
+    @objc public final var colorSurfaceInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseHighLight, dark: colorSurfaceInverseHighDark) }
 
-    @objc public final var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusNeutralMutedLight, dark: colorSurfaceStatusNeutralMutedDark) }
+    @objc public final var colorSurfaceInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceInverseLowLight, dark: colorSurfaceInverseLowDark) }
+
+    @objc public final var colorSurfacePrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfacePrimaryLight, dark: colorSurfacePrimaryDark) }
+
+    @objc public final var colorSurfaceSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceSecondaryLight, dark: colorSurfaceSecondaryDark) }
+
+    @objc public final var colorSurfaceTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceTertiaryLight, dark: colorSurfaceTertiaryDark) }
 
     @objc public final var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusPositiveEmphasizedLight, dark: colorSurfaceStatusPositiveEmphasizedDark) }
 

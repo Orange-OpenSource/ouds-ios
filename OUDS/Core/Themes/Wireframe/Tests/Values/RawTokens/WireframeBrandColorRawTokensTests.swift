@@ -544,6 +544,10 @@ struct WireframeBrandColorRawTokensTests {
         TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.colorOpacityRoyalBlue920, WireframeBrandColorRawTokens.colorOpacityRoyalBlue960)
     }
 
+    @Test func wireframeBrandColorRawTokenColorOpacityRustyRed80DLighterThanColorOpacityRustyRed680() throws {
+        TestsUtils.assertColorLighterThan(WireframeBrandColorRawTokens.colorOpacityRustyRed80, WireframeBrandColorRawTokens.colorOpacityRustyRed680)
+    }
+
     // MARK: - Tests format
 
     @Test func colorRawTokenColorRoyalBlue50Format() throws {
@@ -1082,8 +1086,12 @@ struct WireframeBrandColorRawTokensTests {
         TestsUtils.assertMatches(WireframeBrandColorRawTokens.colorOpacityRoyalBlue960, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorOpacityRustyRedFormat() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.colorOpacityRustyRed, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorOpacityRustyRed80Format() throws {
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.colorOpacityRustyRed80, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacityRustyRed680Format() throws {
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.colorOpacityRustyRed680, regexp: Self.colorFormat)
     }
 }
 
