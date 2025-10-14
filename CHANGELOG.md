@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Wireframe color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Sosh color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Font` semantic tokens for `Sosh` theme (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Elevation` semantic tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
 - `Color semantic` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
