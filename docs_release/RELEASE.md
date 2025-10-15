@@ -2,7 +2,7 @@
 
 This file lists all the steps to follow when releasing a new version of OUDS iOS.
 
-- [Make earlier release](#make-earlier-release)
+- [Make earlier release](#make-earlier-release-alpha-beta-release-candidate)
 - [Prepare release](#prepare-release)
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
@@ -12,7 +12,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 ## Make earlier release (alpha, beta, release candidate)
 
-You comply with [semantic versioning rules](https://semver.org/).
+You must comply with [semantic versioning rules](https://semver.org/).
 Choose the type of early release you want:
 - If you think the current *develop* code base will be almost equal to the next release make a *release candidate* (prefered)
 - If your users need a beta version and ask for it, make a *beta release*
@@ -151,11 +151,16 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 ### Publish release to GitHub
 
+> [!CAUTION]
+> Prefer creating a tag lcoally to cryptographically sign it (if you sue for example GPG).
+> Keep in mind the project uses GitHub immutable release: when the release is done the tag will be blocked
+> and the associated release won't be editable. The tag won't be usable then.
+
 - Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios/releases).
 
 - Click on `Draft a new release`.
 
-- Create a new tag X.Y.Z (following semantic versioning principles). Prefer creating and pushing a tag from your device to cryptographically sign it instead of using web UI because GitHub does not sign tags.
+- Create a new tag X.Y.Z (following semantic versioning principles)
 
 - Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
 
