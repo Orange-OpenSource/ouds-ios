@@ -17,9 +17,9 @@ import SwiftUI
 /// A tag is a small element that shows short information like a label, keyword, or category.
 /// It helps users quickly find, group, or understand content.
 ///
-/// ## Hierarchies
+/// ## Appearances
 ///
-/// Tags have two hierarchies so as to highlight or not their content.
+/// Tags have two appearances so as to highlight or not their content.
 ///
 /// - **emphasized**: A tag with a solid, high-contrast background. Used to draw strong attention to important
 /// labels or categories. Emphasized tags stand out prominently against the interface and are ideal for
@@ -93,8 +93,8 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Text only with neutral status, for emphasized hierarchy with rounded shape in default size
-///     OUDSTag(label: "Label",  status: .neutral(), hierarchy: .emphasized, shape: .rounded, size: .default)
+///     // Text only with neutral status, for emphasized appearance with rounded shape in default size
+///     OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
 ///     // Or also
 ///     OUDSTag(label: "Label")
 ///
@@ -315,16 +315,16 @@ public struct OUDSTag: View {
     /// - Parameters:
     ///    - label: The label displayed in the tag
     ///    - status: The status of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Status` combined to the `OUDSTag.Hierarchy` of the tag
+    ///    this `OUDSTag.Status` combined to the `OUDSTag.Appearance` of the tag
     ///    - appearance: The importance of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Hierarchy` combined to the `OUDSTag.Status` of the tag
+    ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag
     ///    - shape: The shape of the tag that allows to play with its corners appearance.
     ///    - size: The size of the tag
     ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
     ///    It will replace the `icon` if provided.
     ///
     ///   - remark: Use the SwiftUI.disabled to have tag in disabled state. This helper has no effect when loader is added.
-    ///  When loadeer is added, `status` and `hierarchy` are ignored.
+    ///  When loadeer is added, `status` and `appearance` are ignored.
     public init(label: String,
                 status: Status,
                 appearance: Appearance = .emphasized,
