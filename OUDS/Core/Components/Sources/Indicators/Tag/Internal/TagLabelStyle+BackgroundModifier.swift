@@ -16,13 +16,13 @@ import SwiftUI
 
 struct TagBackgroundModifier: ViewModifier {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let appearance: OUDSTag.Appearance
     let type: OUDSTag.`Type`
 
-    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 
@@ -45,7 +45,6 @@ struct TagBackgroundModifier: ViewModifier {
             } else {
                 theme.colors.colorActionDisabled
             }
-
         case .loader:
             theme.colors.colorSurfaceSecondary
         }

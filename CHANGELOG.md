@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+### Changed
+
+- Update `OUDSTag` to version 1.4 (Orange-OpenSource/ouds-ios#1037)
+- Update `OUDSTag` to version 1.3 (Orange-OpenSource/ouds-ios#945)
 
 ### Changed
 
@@ -40,8 +44,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update `OUDSTag` to 1.4 version (Orange-OpenSource/ouds-ios#1037)
-- Update `OUDSTag` to 1.3 version (Orange-OpenSource/ouds-ios#945)
 - `SwiftLintPlugins` Swift package from v0.61.0 to v0.62.1
 - `Ruby` version from v3.3 to v3.4.7 for `build-and-test` and `periphery` workflows
 - `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for `build-and-test` and `periphery` workflows 

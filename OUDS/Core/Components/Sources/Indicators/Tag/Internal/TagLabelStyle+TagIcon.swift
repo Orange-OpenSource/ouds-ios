@@ -18,12 +18,9 @@ import SwiftUI
 
 struct TagIcon: View {
 
-    // MARK: Stored properties
     let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
     let type: OUDSTag.`Type`
-
-    // MARK: Body
 
     var body: some View {
         switch type {
@@ -39,21 +36,15 @@ struct TagIcon: View {
 
 struct TagLoader: View {
 
-    // MARK: Stored Properties
-
     let size: OUDSTag.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Body
-
     var body: some View {
         LoaderIndicator(color: theme.colors.colorContentDefault.color(for: colorScheme))
             .padding(.all, padding)
     }
-
-    // MARK: Helpers
 
     private var padding: CGFloat {
         switch size {
@@ -116,7 +107,6 @@ struct TagAsset: View {
             if let alternativeIcon = status.customIcon {
                 return alternativeIcon
             }
-
             return defaultLeadingIcon
         }
     }
