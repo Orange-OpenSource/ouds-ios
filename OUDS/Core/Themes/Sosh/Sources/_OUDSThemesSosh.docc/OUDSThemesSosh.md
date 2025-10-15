@@ -16,7 +16,7 @@ The Sosh theme is the theme dedicated to the Sosh brand only.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.5.0
+🧬 Theme version: 2.0.1
 ```
 
 This is the Sosh theme any Sosh product must use, and cannot be subclassed.
@@ -79,6 +79,10 @@ struct SomeView: View {
 
 You cannot tune the Sosh theme.
 
+## Typography
+
+The Sosh theme uses its Sosh font and must not use others.
+
 ## How to enrich the theme
 
 You cannot derivate the Sosh theme.
@@ -138,6 +142,10 @@ You cannot derivate the Sosh theme.
     }
 }
 <!-- Maybe not relevant to display chip picker -->
+
+#### Text inputs
+
+![A text input component in light and dark mode with Sosh theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Sosh.png)
 
 ### Indicators
 

@@ -26,22 +26,22 @@ final class MockThemeTextAreaComponentTokenProvider: OrangeThemeTextAreaComponen
     static let mockThemeTextAreaSize: SizeSemanticToken = 123
     static let mockThemeTextAreaSpace: SizeSemanticToken = 456
 
-    override public init(sizes: AllSizeSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+    override init(sizes: AllSizeSemanticTokensProvider?,
+                  spaces: AllSpaceSemanticTokensProvider?)
     {
         super.init(sizes: sizes, spaces: spaces)
     }
 
     // MARK: - Spaces
 
-    override public var textAreaSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
+    override var textAreaSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
 
     // MARK: - Sizes
 
-    override public var textAreaSizeMinHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override public var textAreaSizeMaxHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override public var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override public var textAreaSizeMaxWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var textAreaSizeMinHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var textAreaSizeMaxHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var textAreaSizeMaxWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
 }
 
 // swiftlint:enable required_deinit

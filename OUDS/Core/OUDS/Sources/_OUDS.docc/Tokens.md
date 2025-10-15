@@ -5,7 +5,7 @@
     @PageImage(purpose: card, source: "ic_design_token_intro")
 }
 
-Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names.
+Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names. They are used to define the look and feel and the style of everything. They are exposed through the themes and can be used as they are.
 
 ## Component tokens
 

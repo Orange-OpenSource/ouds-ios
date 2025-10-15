@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 
 //
 // Software Name: OUDS iOS
@@ -37,9 +37,6 @@ let package = Package(
             name: "OUDSThemesOrangeBusinessTools",
             targets: ["OUDSThemesOrangeBusinessTools"]),
         .library(
-            name: "OUDSThemesOrangeInverse",
-            targets: ["OUDSThemesOrangeInverse"]),
-        .library(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
         .library(
@@ -54,6 +51,9 @@ let package = Package(
         .library(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
+        .library(
+            name: "OUDSComponentsUIKit",
+            targets: ["OUDSComponentsUIKit"]),
         .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
@@ -77,9 +77,9 @@ let package = Package(
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.5"),
         // Linter for Swift code
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.61.0"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.3"),
     ],
 
     // MARK: - Targets
@@ -104,14 +104,6 @@ let package = Package(
             name: "OUDSThemesOrangeBusinessTools-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrangeBusinessTools"],
             path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
-        .target(
-            name: "OUDSThemesOrangeInverse",
-            dependencies: ["OUDS", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/OrangeInverse/Sources"),
-        .testTarget(
-            name: "OUDSThemesOrangeInverse-Tests",
-            dependencies: ["OUDS", "OUDSThemesOrangeInverse"],
-            path: "OUDS/Core/Themes/OrangeInverse/Tests"),
         .target(
             name: "OUDSThemesSosh",
             dependencies: ["OUDS"],
@@ -151,6 +143,10 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
+        .target(
+            name: "OUDSComponentsUIKit",
+            dependencies: ["OUDSComponents"],
+            path: "OUDS/Core/ComponentsUIKit/Sources"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],

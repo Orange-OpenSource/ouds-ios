@@ -27,22 +27,22 @@ final class MockThemeQuantityInputComponentTokenProvider: OrangeThemeQuantityInp
     static let mockThemeQuantityInputSize: SizeSemanticToken = 444
     static let mockThemeQuantityInputSpace: SpaceSemanticToken = 719
 
-    override public init(sizes: AllSizeSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+    override init(sizes: AllSizeSemanticTokensProvider?,
+                  spaces: AllSpaceSemanticTokensProvider?)
     {
         super.init(sizes: sizes, spaces: spaces)
     }
 
     // MARK: - Spaces
 
-    override public var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
-    override public var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
-    override public var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
 
     // MARK: - Sizes
 
-    override public var quantityInputSizeMinWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
-    override public var quantityInputSizeMaxWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
+    override var quantityInputSizeMinWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
+    override var quantityInputSizeMaxWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
 }
 
 // swiftlint:enable required_deinit

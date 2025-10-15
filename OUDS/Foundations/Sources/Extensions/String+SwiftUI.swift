@@ -29,21 +29,15 @@ extension String {
         return Color(hexadecimalCode: self)
     }
 
-    /// Forges the font name which is expected for the given weight.
-    /// Beware, the function does not check if the font exists.
-    /// - Parameter weight: The weight to apply (e.g. "bold", "italic")
-    /// - Returns String: The full name of the font to use (e.g. "Menlo-Bold" or "Menlo-Italic")
-    public func compose(withFont weight: String) -> String {
-        guard !isEmpty else {
-            OL.error("No font family to compose with weight")
-            return self
-        }
-        if !weight.isEmpty {
-            return self + "-" + weight
-        } else {
-            return self
-        }
-        // TODO: String manipulation can be costly, add values in Cache
+    /// Some font families have names which cannot be used as they are to load fonts.
+    /// For example the "Helvetica Neue" font family must be loaded using the PostScript name "HelveticaNeue".
+    /// The name of the font to load depends to its PostScript name and the weight.
+    /// For example a "bold Helvetica Neue" exists in iOS as "HelveticaNeue-Bold"
+    ///
+    /// - Parameter weight: The weight to apply to the font
+    /// - Returns: The PostScript name with the weight, or the font name is the PostScript name is unknown or not managed
+    public func fontNameInPostScript(using weight: String) -> String {
+        kApplePostScriptFontNames[orKey: PSFNMK(self, weight: weight)]
     }
 }
 

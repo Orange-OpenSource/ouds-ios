@@ -14,20 +14,19 @@
 import Foundation
 import OUDS
 import OUDSThemesOrange
+import OUDSTokensSemantic
 import SwiftUI
 
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
-/// The Orange Business Tools theme is an Orange theme but ftailors for some productd with heavy UI.
-/// This is an override of the default basic `OUDSTheme` for the **Orange Business Tools theme**
-/// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
+/// The `Orange Business Tools`` theme is an Orange theme but tailored for some products with heavy UI.
 ///
 /// ## Usages
 ///
 /// Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
 /// with which users can interact. Thus for such products there are specific constraints of spaces and sizes, even if
-/// thes products must be Orange flavored.
+/// these products must be Orange flavored.
 /// That is the reason why this team is created: a kind of `OrangeTheme` but wih adjustments on some tokens like spacings and sizings.
 ///
 /// To get the theme:
@@ -61,7 +60,8 @@ import SwiftUI
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// You just need to give a predefined tuning configuration at theme init build the one you need.
+/// You just need to give a predefined tuning configuration at theme init to build the one you need.
+///
 /// To apply the tuning:
 ///
 /// ```swift
@@ -79,19 +79,51 @@ import SwiftUI
 ///     let maxitTheme = OrangeBusinessToolsTheme(tuning: Tuning.MaxIt)
 /// ```
 ///
+/// ## Typography
+///
+/// ### Helvetica Neue
+///
+/// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
+/// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
+/// By default an instance of `OrangeBusinessToolsTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
+/// If you want to use another font family, you will have to send the suitable token or the suitable font family.
+/// However, beware, iOS API relies also on the PostScript name of the font.
+/// To be sure of the value to use, look at the font book of your device.
+/// It is recommended to use the font raw tokens.
+///
+/// ```swift
+///     // The following instanciations work
+///     let orangeTheme = OrangeBusinessToolsTheme()
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
+/// ```
+///
+/// ### Helvetica Neue Arabic
+///
+/// Because the *Helvetica Neue* font family does not manage arabic alphabet but latin one, it is possible apply another font family to the theme like the
+/// *Helvetica Neue Arabic*. This font family assets can be retrieved through the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
+/// PostScript name management has been implemented for this font family, thus the weight are managed and it is only needed to add the font assets to the project,
+/// register them and define the font family name to use.
+///
+/// ```swift
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue Arabic")
+/// ```
+///
 /// - Since: 0.17.0
 public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
-
-    /// Flag to avoid to register severals the fonts making some errors happen
-    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
 
     // MARK: - Initializers
 
     /// Constructor of the OrangeBusinessTools theme with its own providers of tokens.
     /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
     ///
-    /// - Parameter tuning: A set of configurations to tune a theme, by default `Tuning.default`
-    public init(tuning: Tuning = Tuning.default) {
+    /// - Parameters:
+    ///    - fontFamily: The font family to apply, by default `OrangeBrandFontRawTokens.fontFamilyBrandDefault`
+    ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.default`
+    public init(fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.fontFamilyBrandDefault,
+                tuning: Tuning = Tuning.default)
+    {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
@@ -111,6 +143,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let chip = OrangeBusinessToolsThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = OrangeBusinessToolsThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
+        let icon = OrangeBusinessToolsThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
 
         let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
@@ -120,7 +153,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = OrangeBusinessToolsThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
-        let tagInput = OrangeBusinessToolsThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
+        let inputTag = OrangeBusinessToolsThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeBusinessToolsThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
@@ -142,6 +175,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
@@ -150,11 +184,11 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
-                   fontFamily: nil,
+                   fontFamily: fontFamily,
                    tuning: tuning)
     }
 

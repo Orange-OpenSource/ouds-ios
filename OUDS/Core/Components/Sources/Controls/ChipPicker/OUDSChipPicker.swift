@@ -82,10 +82,6 @@ import SwiftUI
 ///
 /// ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A chip picker component in light and dark mode with Orange Inverse theme](component_chipPicker_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
@@ -176,11 +172,11 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     // MARK: - Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSm) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSmall) {
             if let title, !title.isEmpty {
                 Text(title)
                     .typeBodyStrongLarge(theme)
-                    .padding(.leading, theme.spaces.spaceFixedMd)
+                    .padding(.leading, theme.spaces.spaceFixedMedium)
                     .accessibilityAddTraits(.isHeader)
             }
 
@@ -192,10 +188,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                         }
                     }
                 }
-                .padding(.horizontal, theme.spaces.spaceFixedMd)
+                .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
         }
-        .padding(.vertical, theme.spaces.spaceFixedSm)
+        .padding(.vertical, theme.spaces.spaceFixedSmall)
     }
 
     // MARK: - Private helpers

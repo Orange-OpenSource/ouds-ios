@@ -44,6 +44,9 @@ extension OrangeBusinessToolsThemeFontSemanticTokensProvider: FontCompositeSeman
     @objc public final var typeBodyDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular250) }
     @objc public final var typeBodyDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
     @objc public final var typeBodyDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }
+    @objc public final var typeBodyModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium250) }
+    @objc public final var typeBodyModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium200) }
+    @objc public final var typeBodyModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium150) }
     @objc public final var typeBodyStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
     @objc public final var typeBodyStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold200) }
     @objc public final var typeBodyStrongSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold150) }
@@ -54,6 +57,10 @@ extension OrangeBusinessToolsThemeFontSemanticTokensProvider: FontCompositeSeman
     @objc public final var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
     @objc public final var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
     @objc public final var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }
+    @objc public final var typeLabelModerateXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium300) }
+    @objc public final var typeLabelModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium250) }
+    @objc public final var typeLabelModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium200) }
+    @objc public final var typeLabelModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium150) }
     @objc public final var typeLabelStrongXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold300) }
     @objc public final var typeLabelStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
     @objc public final var typeLabelStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold200) }

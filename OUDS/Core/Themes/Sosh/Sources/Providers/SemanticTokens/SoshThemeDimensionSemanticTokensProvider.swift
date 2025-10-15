@@ -30,7 +30,7 @@ final class SoshThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokens
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeDimensionSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

@@ -19,28 +19,25 @@ public enum OUDSVersions {
     // MARK: - Themes versions
 
     /// Version of the Core tokens library
-    public static let themeCoreVersion = "1.5.0"
+    public static let themeCoreVersion = "1.7.0"
 
     /// Version of the Orange core tokens library
-    public static let themeOrangeCoreVersion = "1.1.0"
+    public static let themeOrangeCoreVersion = "1.2.0"
     /// Version of the Orange brand tokens library
-    public static let themeOrangeBrandVersion = "1.5.0"
+    public static let themeOrangeBrandVersion = "2.0.1"
 
     /// Version of the Sosh core tokens library
-    public static let themeSoshCoreVersion = "1.1.0"
+    public static let themeSoshCoreVersion = "1.2.0"
     /// Version of the Sosh brand tokens library
-    public static let themeSoshBrandVersion = "1.5.0"
+    public static let themeSoshBrandVersion = "2.0.1"
 
     /// Version of the Orange Business Tools brand tokens library
-    public static let themeOrangeBusinessToolsBrandVersion = "1.5.0"
-
-    /// Version fo the Orange Inverse brand tokens library
-    public static let themeOrangeInverseBrandVersion = "1.5.0"
+    public static let themeOrangeBusinessToolsBrandVersion = "2.0.1"
 
     /// Version of the Wireframe core tokens library
-    public static let themeWireframeCoreVersion = "1.0.0"
+    public static let themeWireframeCoreVersion = "1.2.0"
     /// Version of the Wireframe brand tokens library
-    public static let themeWireframeBrandVersion = "1.5.0"
+    public static let themeWireframeBrandVersion = "2.0.1"
 
     // MARK: - Components versions - Actions
 
@@ -50,18 +47,20 @@ public enum OUDSVersions {
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link
-    public static let componentLinkVersion = "2.1.0"
+    public static let componentLinkVersion = "2.0.0"
+    /// Version of the Figma specifications for the component expand link
+    public static let componentExpandLinkVersion = "2.3.0"
 
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox
-    public static let componentCheckboxVersion = "2.1.0"
+    public static let componentCheckboxVersion = "2.2.0"
     /// Version of the Figma specifications for the component chip
     public static let componentChipVersion = "1.3.0"
     /// Version of the Figma specifications for the component radio button
-    public static let componentRadioButtonVersion = "1.1.0"
+    public static let componentRadioButtonVersion = "1.0.0"
     /// Version of the Figma specifications for the component switch
-    public static let componentSwitchVersion = "1.2.0"
+    public static let componentSwitchVersion = "1.0.0"
     /// Version of the Figma specifications for the component text input
     public static let componentTextInputVersion = "1.1.0"
     /// Version of the Figma specifications for the component phone number input
@@ -95,4 +94,8 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component bullet list
     public static let componentBulletListVersion = "1.0.0"
+
+    // MARK: - Components versions - Visual assets
+
+    // No version for "icon" component in "visual assets" category
 }

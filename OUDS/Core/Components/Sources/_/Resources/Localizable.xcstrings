@@ -585,6 +585,30 @@
           }
         }
       }
+    },
+    "core_textInput_empty_a11y" : {
+      "comment" : "Component - TextInput",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فارغ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vide"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

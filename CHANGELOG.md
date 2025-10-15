@@ -4,6 +4,63 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
+
+### Added
+
+- `icon` component tokens
+- `expand link` component tokens
+- `text input` component (Orange-OpenSource/ouds-ios#406)
+- `body moderate` and `label moderate` typography and tokens (Orange-OpenSource/ouds-ios#1003)
+- Management of `Helvetica Neue Arabic` font family (Orange-OpenSource/ouds-ios#1006)
+- UIKit experimental backports for `button`, `tag`, `badge`, `horizontal divider`, `vertical divider`, `link`, `suggestion chip`, `filter chip`, `checkbox`, `checkbox indeterminate`, `checkbox item`, `radio`, `radio item`, `switch` and `switch item` components
+- Apply `Helvetica Neue` font family for themes `Orange`, `Orange Inverse` and `Orange Business Tools` (Orange-OpenSource/ouds-ios#965)
+- Predefined theme tuning for Orange Business and Orange France
+
+### Changed
+
+- `SwiftLintPlugins` Swift package from v0.61.0 to v0.62.1
+- `Ruby` version from v3.3 to v3.4.7 for `build-and-test` and `periphery` workflows
+- `ruby/setup-ruby` action from v1.263.0 to v1.265.0 for `build-and-test` and `periphery` workflows 
+- `ossf/scorecard-action` action from v2.4.2 to v2.4.3 for `scorecard` workflow
+- `actions/dependency-review-action` action from v4.7.3 to v4.8.1 for `dependency-review` workflow
+- `github/codeql-action/upload-sarif` action from v3 to v4 for `scorecard` workflow
+- `SwiftFormat` Swift package from v0.58.0 to v0.58.3
+- `Wireframe color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Sosh color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Font` semantic tokens for `Sosh` theme (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Elevation` semantic tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Color semantic` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Color raw` tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- Orange brand color raw tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Control item` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Chip` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- `Button mono` component tokens (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+- Apply `Shantell Sans` font family for `Wireframe` theme instead of `Chalkboard SE` (Orange-OpenSource/ouds-ios#990)
+- Icon for components catalog documentation (Orange-OpenSource/ouds-ios#1019)
+- `Color` raw tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Font` semantic tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Checkbox` component tokens for `Sosh` theme (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Dimension`, `size` and `space` semantic tokens names (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Color` semantic tokens for `Orange`, `Orange Inverse`, `Sosh` and `Wireframe` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Color mode` semantic tokens for `Orange`, `Orange Business Tools`, `Sosh` and `Wireframe` themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Switch` component tokens for `Orange`, `Orange Business Tools`, `Orange Inverse` and `Sosh themes (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Tag input` component tokens renamed to `input tag` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- `Button` component tokens (tokens library v1.6.0) (Orange-OpenSource/ouds-ios#991)
+- Migration to Xcode 26.0 (Orange-OpenSource/ouds-ios#972)
+- Improve README for onboarding and newcomers (Orange-OpenSource/ouds-ios#1005)
+- Improve web documentation for onboarding and newcomers (Orange-OpenSource/ouds-ios#982)
+- Button component `hierarchy` property renamed to `appearance` (Orange-OpenSource/ouds-ios#969)
+
+### Removed
+
+- `Orange Inverse` theme (Orange-OpenSource/ouds-ios#1038)
+- All color decorative tokens  (tokens library v1.7.0) (Orange-OpenSource/ouds-ios#1031)
+
+### Fixed
+
+- Button should be disabled if loading state (Orange-OpenSource/ouds-ios#988)
+
 ## [0.19.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.18.0...0.19.0) - 2025-09-24
 
 ### Added

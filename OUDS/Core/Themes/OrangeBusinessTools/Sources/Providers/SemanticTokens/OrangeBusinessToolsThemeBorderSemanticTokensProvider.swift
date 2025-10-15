@@ -28,7 +28,7 @@ final class OrangeBusinessToolsThemeBorderSemanticTokensProvider: AllBorderSeman
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeBorderSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

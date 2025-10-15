@@ -2,7 +2,7 @@
 
 This file lists all the steps to follow when releasing a new version of OUDS iOS.
 
-- [Make release candidate](#make-release-candidate)
+- [Make earlier release](#make-earlier-release)
 - [Prepare release](#prepare-release)
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
@@ -10,23 +10,40 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Update wiki](#update-wiki)
 - [About documentation](#about-documentation)
 
-## Make release candidate
+## Make earlier release (alpha, beta, release candidate)
+
+You comply with [semantic versioning rules](https://semver.org/).
+Choose the type of early release you want:
+- If you think the current *develop* code base will be almost equal to the next release make a *release candidate* (prefered)
+- If your users need a beta version and ask for it, make a *beta release*
+- If your users need an alpha version and ask for it, make a *alpha release*
+
+These tags must be done on *develop* branch.
 
 > [!TIP]
-> A release candidate can be done on the develop branch. 
-> The aim is to provide a kind of pre-release, not an enough stable one,
-> with its dedicated tag, for the next incoming real release. It is usefull for some users and with an incremental approach.
+> For example, given a future xxy.z. version 1.2.3, 
+> a release candidate n°1 will be tagged 1.2.3-rc.1,
+> a beta n°1 will be tagged 1.2.3-beta.1,
+> an alpha n°1 will be tagged 1.2.3-alpha.1
 
-The steps are quite simple:
+The *snapshot* tag (x.y.z-SNAPSHOT) is not used in this project.
+
+The actions to do are:
 - update the SBOM
-- update the online documentation
-- define the tag on *develop* branch depending to what should be the next release (e.g. if 0.17.0 is planned, use tag 0.17.0-rc1, and increment then)
+- update the online documentation if relevant
+- define the tag on *develop* branch depending to what should be the next release
+
+> [!CAUTION]
+> These notions of alpha and beta releases are not the same as
+> the alpha builds (i.e. build a feature branch without tags) and
+> the beta builds (i.e. in OUDS context nightly builds tagged with "ci" and "Test_Flight" sufixes).
+> alpha and beta builds are for the design system toolbox app
 
 ## Prepare release
 
 > [!TIP]
-> We use here CLI for Git operations, but of course you are free to use GUI tools
-
+> We use here CLI for Git operations, but of course you are free to use GUI tools.
+> Below are explained the steps and main things to do.
 
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
 
@@ -57,7 +74,7 @@ The steps are quite simple:
 > [!IMPORTANT]
 > Keeping up-to-date the SBOM and check for vulnerabilities is important for both software quality, users trust and legal obligations like the Cyber Resilience Act or NIS2.
 
-    - Update also the displayed versions of themes and components
+- Update also the displayed versions of themes and components
 
     ```shell
     ./updateTokensLibraryVersion.sh
@@ -96,7 +113,6 @@ Embeds token libraries:
 - Core Wireframe version: 1.0.0
 - Brand Wireframe version: 1.1.0
 - Brand Orange Business Tools version: 1.3.0
-- Brand Orange Inverse version: 1.3.0
 
 See below the full CHANGELOG details.
 
@@ -139,7 +155,7 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 - Click on `Draft a new release`.
 
-- Create a new tag X.Y.Z (following semantic versioning principles)
+- Create a new tag X.Y.Z (following semantic versioning principles). Prefer creating and pushing a tag from your device to cryptographically sign it instead of using web UI because GitHub does not sign tags.
 
 - Add release notes and verify using the preview tab. Use *git-cliff* to build the release note to copy/paste in the release description
 

@@ -27,8 +27,8 @@ final class MockThemeCheckboxComponentTokenProvider: OrangeThemeCheckboxComponen
     static let mockThemeCheckboxBorderRadius: BorderRadiusSemanticToken = 1_312
     static let mockThemeCheckboxBorderWidth: BorderRadiusSemanticToken = 666
 
-    override public init(sizes: AllSizeSemanticTokensProvider?,
-                         borders: AllBorderSemanticTokensProvider?)
+    override init(sizes: AllSizeSemanticTokensProvider?,
+                  borders: AllBorderSemanticTokensProvider?)
     {
         super.init(sizes: sizes, borders: borders)
     }
@@ -37,22 +37,22 @@ final class MockThemeCheckboxComponentTokenProvider: OrangeThemeCheckboxComponen
 
     // MARK: - Sizes
 
-    override public var checkboxSizeMinWidth: SizeSemanticToken { Self.mockThemeCheckboxSize }
-    override public var checkboxSizeMaxHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
-    override public var checkboxSizeMinHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
-    override public var checkboxSizeIndicator: SizeSemanticToken { Self.mockThemeCheckboxSize }
+    override var checkboxSizeMinWidth: SizeSemanticToken { Self.mockThemeCheckboxSize }
+    override var checkboxSizeMaxHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
+    override var checkboxSizeMinHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
+    override var checkboxSizeIndicator: SizeSemanticToken { Self.mockThemeCheckboxSize }
 
     // MARK: - Borders
 
-    override public var checkboxBorderRadius: BorderRadiusSemanticToken { Self.mockThemeCheckboxBorderRadius }
-    override public var checkboxBorderWidthSelected: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
-    override public var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderRadius: BorderRadiusSemanticToken { Self.mockThemeCheckboxBorderRadius }
+    override var checkboxBorderWidthSelected: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
+    override var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { Self.mockThemeCheckboxBorderWidth }
 }
 
 // swiftlint:enable required_deinit

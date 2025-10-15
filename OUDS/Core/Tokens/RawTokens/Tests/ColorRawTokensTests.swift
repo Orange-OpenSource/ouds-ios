@@ -718,16 +718,52 @@ struct ColorRawTokensTests {
 
     // MARK: - Primitive token - Colors - Opacity Colored
 
-    @Test func colorRawTokenColorOpacityMalachiteFormat() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorOpacityMalachite, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorOpacityMalachite120Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityMalachite120, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorOpacityScarletFormat() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorOpacityScarlet, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorOpacityMalachite640Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityMalachite640, regexp: Self.colorFormat)
     }
 
-    @Test func colorRawTokenColorOpacitySunFormat() throws {
-        TestsUtils.assertMatches(ColorRawTokens.colorOpacitySun, regexp: Self.colorFormat)
+    @Test func colorRawTokenColorOpacityMalachite120LighterThan640Format() throws {
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorOpacityMalachite120, ColorRawTokens.colorOpacityMalachite640)
+    }
+
+    @Test func colorRawTokenColorOpacityScarlet80Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityScarlet80, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacityScarlet320Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityScarlet320, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacitScarlet80DarkerThan320Format() throws {
+        TestsUtils.assertColorDarkerThan(ColorRawTokens.colorOpacityScarlet80, ColorRawTokens.colorOpacityScarlet320)
+    }
+
+    @Test func colorRawTokenColorOpacitySun160Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacitySun160, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacitySun480Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacitySun480, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacitySun160LighterThan480Format() throws {
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorOpacitySun160, ColorRawTokens.colorOpacitySun480)
+    }
+
+    @Test func colorRawTokenColorOpacityDodgerBlue80Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityDodgerBlue80, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacityDodgerBlue520Format() throws {
+        TestsUtils.assertMatches(ColorRawTokens.colorOpacityDodgerBlue520, regexp: Self.colorFormat)
+    }
+
+    @Test func colorRawTokenColorOpacityDodgerBlue80LighterThan520Format() throws {
+        TestsUtils.assertColorLighterThan(ColorRawTokens.colorOpacityDodgerBlue80, ColorRawTokens.colorOpacityDodgerBlue520)
     }
 
     // MARK: - Primitive token - Colors - Opacity White
@@ -1044,10 +1080,14 @@ struct ColorRawTokensTests {
         ]
 
         let colorsOpacityColored: [ColorRawToken] = [
-            ColorRawTokens.colorOpacityDodgerBlue,
-            ColorRawTokens.colorOpacityMalachite,
-            ColorRawTokens.colorOpacityScarlet,
-            ColorRawTokens.colorOpacitySun,
+            ColorRawTokens.colorOpacityDodgerBlue80,
+            ColorRawTokens.colorOpacityDodgerBlue520,
+            ColorRawTokens.colorOpacityMalachite120,
+            ColorRawTokens.colorOpacityMalachite640,
+            ColorRawTokens.colorOpacityScarlet80,
+            ColorRawTokens.colorOpacityScarlet320,
+            ColorRawTokens.colorOpacitySun160,
+            ColorRawTokens.colorOpacitySun480,
         ]
 
         let colorsOpacityWhite: [ColorRawToken] = [

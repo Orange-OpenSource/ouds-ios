@@ -26,13 +26,13 @@ final class MockThemeDividerComponentTokenProvider: OrangeThemeDividerComponentT
 
     static let mockThemeDividerBorderWidth: DimensionRawToken = 31_032_025
 
-    override public init(borders: AllBorderSemanticTokensProvider?) {
+    override init(borders: AllBorderSemanticTokensProvider?) {
         super.init(borders: borders)
     }
 
     // MARK: - Divider component tokens
 
-    override public var dividerBorderWidth: BorderWidthSemanticToken { Self.mockThemeDividerBorderWidth }
+    override var dividerBorderWidth: BorderWidthSemanticToken { Self.mockThemeDividerBorderWidth }
 }
 
 // swiftlint:enable required_deinit

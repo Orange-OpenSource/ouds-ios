@@ -24,13 +24,13 @@ final class MockThemeOpacitySemanticTokensProvider: OrangeThemeOpacitySemanticTo
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 
-    override public var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityStrong: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityOpaque: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override public var opacityDisabled: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityStrong: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityOpaque: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityDisabled: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
 }
 
 // swiftlint:enable required_deinit

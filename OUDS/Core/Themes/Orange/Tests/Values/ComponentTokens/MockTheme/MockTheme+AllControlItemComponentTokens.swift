@@ -30,31 +30,33 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     static let mockThemeControlItemColor = MultipleColorSemanticTokens("#00FF00")
     static let mockThemeControlItemBorderRadius: BorderRadiusRawToken = 444_719
 
-    override public init(sizes: AllSizeSemanticTokensProvider?,
-                         borders: AllBorderSemanticTokensProvider?,
-                         colors: AllColorSemanticTokensProvider?,
-                         spaces: AllSpaceSemanticTokensProvider?)
+    override init(sizes: AllSizeSemanticTokensProvider?,
+                  borders: AllBorderSemanticTokensProvider?,
+                  colors: AllColorSemanticTokensProvider?,
+                  spaces: AllSpaceSemanticTokensProvider?)
     {
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
     }
 
     // MARK: - ControlItem component tokens
 
-    override public var controlItemSizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override public var controlItemSizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override public var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override public var controlItemSizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override public var controlItemSizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override public var controlItemColorBgHover: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override public var controlItemColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override public var controlItemColorBgLoading: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override public var controlItemColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override public var controlItemColorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override public var controlItemSpaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override public var controlItemSpaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override public var controlItemSpaceInset: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override public var controlItemBorderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
-    override public var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var controlItemSizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemSizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var controlItemColorBgHover: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var controlItemColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var controlItemColorBgLoading: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var controlItemColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var controlItemColorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var controlItemSpaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemSpaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemSpacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var controlItemBorderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
 }
 
 // swiftlint:enable required_deinit

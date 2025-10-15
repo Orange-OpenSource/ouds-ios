@@ -54,9 +54,7 @@ public protocol ElevationCompositeSemanticTokens {
     var elevationDrag: ElevationCompositeSemanticToken { get }
     var elevationOverlayDefault: ElevationCompositeSemanticToken { get }
     var elevationOverlayEmphasized: ElevationCompositeSemanticToken { get }
-    var elevationStickyDefault: ElevationCompositeSemanticToken { get }
-    var elevationStickyEmphasized: ElevationCompositeSemanticToken { get }
-    var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { get }
+    var elevationSticky: ElevationCompositeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -10,6 +10,13 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 ## In OUDS library 
 <!-- No dependency yet -->
 
+### Shantell Sans
+
+Copyright (c) 2022 The Shantell Sans Project Authors
+
+*Shantell Sans* is distributed under the terms and conditions of the [SIL Open Font License version 1.1](https://openfontlicense.org).
+You may download the source code on the [following website](https://fonts.google.com/specimen/Shantell+Sans).
+
 ## In Project 
 <!-- (CI/CD, tools, etc.) -->
 

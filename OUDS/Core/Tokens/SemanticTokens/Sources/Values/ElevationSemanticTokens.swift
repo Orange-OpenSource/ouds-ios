@@ -31,39 +31,42 @@ public protocol ElevationSemanticTokens {
 
     var elevationXNone: ElevationXSemanticToken { get }
     var elevationXRaised: ElevationXSemanticToken { get }
+    var elevationXDefault: ElevationXSemanticToken { get }
+    var elevationXEmphasized: ElevationXSemanticToken { get }
     var elevationXDrag: ElevationXSemanticToken { get }
-    var elevationXStickyDefault: ElevationXSemanticToken { get }
-    var elevationXStickyEmphasized: ElevationXSemanticToken { get }
-    var elevationXStickyNavigationScrolled: ElevationXSemanticToken { get }
+    var elevationXSticky: ElevationXSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Y
 
     var elevationYNone: ElevationYSemanticToken { get }
     var elevationYRaised: ElevationYSemanticToken { get }
+    var elevationYDefault: ElevationYSemanticToken { get }
+    var elevationYEmphasized: ElevationYSemanticToken { get }
     var elevationYDrag: ElevationYSemanticToken { get }
-    var elevationYStickyDefault: ElevationYSemanticToken { get }
-    var elevationYStickyEmphasized: ElevationYSemanticToken { get }
-    var elevationYStickyNavigationScrolled: ElevationYSemanticToken { get }
+    var elevationYSticky: ElevationYSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Blur
 
     var elevationBlurNone: ElevationBlurSemanticToken { get }
     var elevationBlurRaised: ElevationBlurSemanticToken { get }
+    var elevationBlurDefault: ElevationBlurSemanticToken { get }
+    var elevationBlurEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurDrag: ElevationBlurSemanticToken { get }
-    var elevationBlurStickyDefault: ElevationBlurSemanticToken { get }
-    var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { get }
-    var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
+    var elevationBlurSticky: ElevationBlurSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color
 
-    var elevationColorDefault: ElevationColorSemanticToken { get }
     var elevationColorNone: ElevationColorSemanticToken { get }
-    var elevationColorRaised: ElevationColorSemanticToken { get }
-    var elevationColorDrag: ElevationColorSemanticToken { get }
-    var elevationColorEmphasized: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefault: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
+    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
+    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
+    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
+    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
+    var elevationColorDragLight: ElevationColorSemanticToken { get }
+    var elevationColorDragDark: ElevationColorSemanticToken { get }
+    var elevationColorEmphasizedLight: ElevationColorSemanticToken { get }
+    var elevationColorEmphasizedDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyLight: ElevationColorSemanticToken { get }
+    var elevationColorStickyDark: ElevationColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

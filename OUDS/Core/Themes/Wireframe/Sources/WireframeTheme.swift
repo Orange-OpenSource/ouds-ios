@@ -56,6 +56,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
+    /// Flag to avoid to register severals the fonts making some errors happen
+    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
+
     // MARK: - Initializers
 
     /// Constructor of the `Wireframe` theme with its own providers of tokens.
@@ -78,6 +81,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
+        let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
@@ -86,7 +90,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = WireframeThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = WireframeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = WireframeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
-        let tagInput = WireframeThemeTagInputComponentTokensProvider(borders: borders, colors: colors)
+        let inputTag = WireframeThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = WireframeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
@@ -107,6 +111,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
@@ -115,14 +120,25 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.WireframeTheme,
                    fontFamily: WireframeBrandFontRawTokens.fontFamilyDefault)
+
+        registerFonts()
     }
 
     deinit {}
+
+    /// Fonts are defined in Resources/Fonts in TTF files
+    private func registerFonts() {
+        if !WireframeTheme.fontsAlreadyRegistered {
+            let fonts = Bundle.WireframeTheme.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+            fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+            WireframeTheme.fontsAlreadyRegistered = true
+        }
+    }
 }
 
 // swiftlint:enable function_body_length

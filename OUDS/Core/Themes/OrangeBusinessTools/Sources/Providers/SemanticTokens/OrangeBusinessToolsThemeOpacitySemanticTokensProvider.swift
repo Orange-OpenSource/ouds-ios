@@ -29,7 +29,7 @@ final class OrangeBusinessToolsThemeOpacitySemanticTokensProvider: AllOpacitySem
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeOpacitySemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

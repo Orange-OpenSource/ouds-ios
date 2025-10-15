@@ -15,9 +15,6 @@ Some components can be used for **layouts**.
     @Tab("Orange") {
         ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![A colored surface with text, button and link in light and dark mode with Orange Inverse theme](component_coloredSurface_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![A colored surface with text, button and link in light and dark mode with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
     }
@@ -120,9 +117,6 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
     @Tab("Orange") {
         ![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![An horizontal divider in light and dark mode with Orange Inverse theme](component_horizontalDivider_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
     }
@@ -140,9 +134,6 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
     @Tab("Orange") {
         ![An vertical divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
     }
-    @Tab("Orange Inverse") {
-        ![An vertical divider in light and dark mode with Orange Inverse theme](component_verticalDivider_OrangeInverse)
-    }
     @Tab("Orange Business Tools") {
         ![An vertical divider in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
     }
@@ -156,18 +147,35 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
 #### How to use
 
-```swift
-// Add a vertical divider between items
-HStack {
-    Text("Hello wolrd!")
-    OUDSVerticalDivider(color: .brandPrimary)
-    Text("Happy to see you")
-}
+@TabNavigator {
+    @Tab("SwiftUI") {
+        ```swift
+            import OUDSComponents
+        
+            // Add a vertical divider between items
+            HStack {
+                Text("Hello world!")
+                OUDSVerticalDivider(color: .brandPrimary)
+                Text("Happy to see you")
+            }
 
-// Add an horizontal divider between items
-VStack {
-    Text("Hello wolrd!")
-    OUDSHorizontalDivider(color: .brandPrimary)
-    Text("Happy to see you")
+            // Add an horizontal divider between items
+            VStack {
+                Text("Hello world!")
+                OUDSHorizontalDivider(color: .brandPrimary)
+                Text("Happy to see you")
+            }
+        ```
+    }
+    @Tab("UIKit (experimental)") {
+        ```swift
+            import OUDSComponentsUIKit
+            
+            // Add a vertical divider between items
+            OUDSUIKit.createVerticalDivider(color: .brandPrimary)
+            
+            // Add an horizontal divider between items
+            OUDSUIKit.createHorizontalDivider(color: .brandPrimary)
+        ```
+    }
 }
-```

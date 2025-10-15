@@ -1154,6 +1154,22 @@ struct FontRawTokensTests {
         #expect(FontRawTokens.typeRegular250 <| FontRawTokens.typeRegular300)
     }
 
+    @Test func fontRawTokensTypeMedium150LessThanTypeMedium175() throws {
+        #expect(FontRawTokens.typeMedium150 <| FontRawTokens.typeMedium175)
+    }
+
+    @Test func fontRawTokensTypeMedium175LessThanTypeMedium200() throws {
+        #expect(FontRawTokens.typeMedium175 <| FontRawTokens.typeMedium200)
+    }
+
+    @Test func fontRawTokensTypeMedium200LessThanTypeMedium250() throws {
+        #expect(FontRawTokens.typeMedium200 <| FontRawTokens.typeMedium250)
+    }
+
+    @Test func fontRawTokensTypeMedium250LessThanTypeMedium300() throws {
+        #expect(FontRawTokens.typeMedium250 <| FontRawTokens.typeMedium300)
+    }
+
     @Test func fontRawTokensTypeBold150LessThanTypeBold175() throws {
         #expect(FontRawTokens.typeBold150 <| FontRawTokens.typeBold175)
     }

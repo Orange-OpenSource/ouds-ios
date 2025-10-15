@@ -22,7 +22,7 @@ struct FlipperModifier: ViewModifier { // 🐬
 
     // MARK: - Body
 
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         if flip {
             content.scaleEffect(x: -1, y: 1)
         } else {

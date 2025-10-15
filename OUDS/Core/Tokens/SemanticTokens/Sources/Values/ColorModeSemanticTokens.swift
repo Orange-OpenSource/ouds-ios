@@ -32,8 +32,6 @@ public protocol ColorModeSemanticTokens {
     var modeOnBgSecondaryDark: ColorModeSemanticToken { get }
     var modeOnBgTertiaryLight: ColorModeSemanticToken { get }
     var modeOnBgTertiaryDark: ColorModeSemanticToken { get }
-    var modeOnBgEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnBgEmphasizedDark: ColorModeSemanticToken { get }
 
     // MARK: - On Brand
 
@@ -46,10 +44,6 @@ public protocol ColorModeSemanticTokens {
 
     // MARK: - On Status
 
-    var modeOnStatusNeutralMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNeutralMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { get }
     var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { get }
     var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { get }
     var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { get }
@@ -66,9 +60,6 @@ public protocol ColorModeSemanticTokens {
     var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { get }
     var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { get }
     var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { get }
-
-    // MARK: - On Status Accent
-
     var modeOnStatusAccentMutedLight: ColorModeSemanticToken { get }
     var modeOnStatusAccentMutedDark: ColorModeSemanticToken { get }
     var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { get }
@@ -76,15 +67,12 @@ public protocol ColorModeSemanticTokens {
 
     // MARK: - On Overlay
 
-    var modeOnOverlayDefaultLight: ColorModeSemanticToken { get }
-    var modeOnOverlayDefaultDark: ColorModeSemanticToken { get }
-    var modeOnOverlayEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnOverlayEmphasizedDark: ColorModeSemanticToken { get }
-
-    // MARK: - On Overlay Modal
-
     var modeOnOverlayModalLight: ColorModeSemanticToken { get }
     var modeOnOverlayModalDark: ColorModeSemanticToken { get }
+    var modeOnOverlayDropdownLight: ColorModeSemanticToken { get }
+    var modeOnOverlayDropdownDark: ColorModeSemanticToken { get }
+    var modeOnOverlayTooltipLight: ColorModeSemanticToken { get }
+    var modeOnOverlayTooltipDark: ColorModeSemanticToken { get }
 
     // MARK: - Navigation
 

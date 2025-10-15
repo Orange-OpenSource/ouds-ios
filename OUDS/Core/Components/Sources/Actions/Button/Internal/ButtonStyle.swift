@@ -14,10 +14,10 @@
 import Foundation
 import SwiftUI
 
-/// Used to apply the right style on an ``OUDSButton`` according to the `hierarchy`
+/// Used to apply the right style on an ``OUDSButton`` according to the `appearance`
 /// and the `style`.
 ///
-/// Four hierarchies are proposed:
+/// Four appearances are proposed:
 /// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
 /// - **strong**: The strong "call for action" on the page should be singular and prominent, limited to one per view.
@@ -37,37 +37,37 @@ struct OUDSButtonStyle: ButtonStyle {
     // MARK: Stored Properties
 
     private let isHover: Bool
-    private let hierarchy: OUDSButton.Hierarchy
+    private let appearance: OUDSButton.Appearance
     private let style: OUDSButton.Style
 
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
 
-    /// Initialize the `OUDSButtonStyle` for the `hierarchy`
+    /// Initialize the `OUDSButtonStyle` for the `appearance`
     /// and the `style` of the `OUDSButton`.
     ///
     /// - Parameters:
     ///    - isHover: Flag is button is hovered (e.g. by mouse)
-    ///    - hierarchy: The button hierarchy
+    ///    - appearance: The button appearance
     ///    - style: The button style
-    public init(isHover: Bool, hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
-        self.hierarchy = hierarchy
+    init(isHover: Bool, appearance: OUDSButton.Appearance, style: OUDSButton.Style) {
+        self.appearance = appearance
         self.style = style
         self.isHover = isHover
     }
 
     // MARK: Body
 
-    public func makeBody(configuration: Configuration) -> some View {
+    func makeBody(configuration: Configuration) -> some View {
         switch style {
         case .default:
             configuration.label
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: internalState(isPressed: configuration.isPressed)))
+                .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
         case .loading:
             configuration.label
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: .loading))
-                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy))
+                .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
+                .modifier(ButtonLoadingContentModifier(appearance: appearance))
         }
     }
 

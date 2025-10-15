@@ -40,49 +40,49 @@ struct ThemeOverrideOfSpaceMultipleSemanticTokensTests {
         #expect(inheritedTheme.spaces.spaceScaledNone.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled3xs() throws {
-        #expect(inheritedTheme.spaces.spaceScaled3xs != abstractTheme.spaces.spaceScaled3xs)
-        #expect(inheritedTheme.spaces.spaceScaled3xs.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled3xsmall() throws {
+        #expect(inheritedTheme.spaces.spaceScaled3xsmall != abstractTheme.spaces.spaceScaled3xsmall)
+        #expect(inheritedTheme.spaces.spaceScaled3xsmall.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled2xs() throws {
-        #expect(inheritedTheme.spaces.spaceScaled2xs != abstractTheme.spaces.spaceScaled2xs)
-        #expect(inheritedTheme.spaces.spaceScaled2xs.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled2xsmall() throws {
+        #expect(inheritedTheme.spaces.spaceScaled2xsmall != abstractTheme.spaces.spaceScaled2xsmall)
+        #expect(inheritedTheme.spaces.spaceScaled2xsmall.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledXs() throws {
-        #expect(inheritedTheme.spaces.spaceScaledXs != abstractTheme.spaces.spaceScaledXs)
-        #expect(inheritedTheme.spaces.spaceScaledXs.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledXsmall() throws {
+        #expect(inheritedTheme.spaces.spaceScaledXsmall != abstractTheme.spaces.spaceScaledXsmall)
+        #expect(inheritedTheme.spaces.spaceScaledXsmall.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledSm() throws {
-        #expect(inheritedTheme.spaces.spaceScaledSm != abstractTheme.spaces.spaceScaledSm)
-        #expect(inheritedTheme.spaces.spaceScaledSm.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledSmall() throws {
+        #expect(inheritedTheme.spaces.spaceScaledSmall != abstractTheme.spaces.spaceScaledSmall)
+        #expect(inheritedTheme.spaces.spaceScaledSmall.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledMd() throws {
-        #expect(inheritedTheme.spaces.spaceScaledMd != abstractTheme.spaces.spaceScaledMd)
-        #expect(inheritedTheme.spaces.spaceScaledMd.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledMedium() throws {
+        #expect(inheritedTheme.spaces.spaceScaledMedium != abstractTheme.spaces.spaceScaledMedium)
+        #expect(inheritedTheme.spaces.spaceScaledMedium.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledLg() throws {
-        #expect(inheritedTheme.spaces.spaceScaledLg != abstractTheme.spaces.spaceScaledLg)
-        #expect(inheritedTheme.spaces.spaceScaledLg.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledLarge() throws {
+        #expect(inheritedTheme.spaces.spaceScaledLarge != abstractTheme.spaces.spaceScaledLarge)
+        #expect(inheritedTheme.spaces.spaceScaledLarge.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledXl() throws {
-        #expect(inheritedTheme.spaces.spaceScaledXl != abstractTheme.spaces.spaceScaledXl)
-        #expect(inheritedTheme.spaces.spaceScaledXl.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaledXlarge() throws {
+        #expect(inheritedTheme.spaces.spaceScaledXlarge != abstractTheme.spaces.spaceScaledXlarge)
+        #expect(inheritedTheme.spaces.spaceScaledXlarge.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled2xl() throws {
-        #expect(inheritedTheme.spaces.spaceScaled2xl != abstractTheme.spaces.spaceScaled2xl)
-        #expect(inheritedTheme.spaces.spaceScaled2xl.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled2xlarge() throws {
+        #expect(inheritedTheme.spaces.spaceScaled2xlarge != abstractTheme.spaces.spaceScaled2xlarge)
+        #expect(inheritedTheme.spaces.spaceScaled2xlarge.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled3xl() throws {
-        #expect(inheritedTheme.spaces.spaceScaled3xl != abstractTheme.spaces.spaceScaled3xl)
-        #expect(inheritedTheme.spaces.spaceScaled3xl.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenspaceScaled3xlarge() throws {
+        #expect(inheritedTheme.spaces.spaceScaled3xlarge != abstractTheme.spaces.spaceScaled3xlarge)
+        #expect(inheritedTheme.spaces.spaceScaled3xlarge.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 }
 

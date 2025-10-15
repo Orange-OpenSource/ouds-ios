@@ -98,6 +98,30 @@ extension View {
         modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultSmall))
     }
 
+    /// Modifies the current `View` to apply a *body moderate large* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeBodyModerateLarge(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultLarge))
+    }
+
+    /// Modifies the current `View` to apply a *body moderate medium* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeBodyModerateMedium(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultMedium))
+    }
+
+    /// Modifies the current `View` to apply a *body moderate small* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeBodyModerateSmall(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultSmall))
+    }
+
     /// Modifies the current `View` to apply a *body strong large* typography.
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
@@ -152,6 +176,38 @@ extension View {
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelDefaultSmall(_ theme: OUDSTheme) -> some View {
         modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultSmall))
+    }
+
+    /// Modifies the current `View` to apply a *label moderate x large* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeLabelModerateXLarge(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelModerateXLarge))
+    }
+
+    /// Modifies the current `View` to apply a *label moderate large* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeLabelModerateLarge(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelModerateLarge))
+    }
+
+    /// Modifies the current `View` to apply a *label moderate medium* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeLabelModerateMedium(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelModerateMedium))
+    }
+
+    /// Modifies the current `View` to apply a *label moderate small* typography.
+    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
+    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
+    /// - Returns some View: The current `View` but with new typography applied
+    public func typeLabelModerateSmall(_ theme: OUDSTheme) -> some View {
+        modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelModerateSmall))
     }
 
     /// Modifies the current `View` to apply a *label strong x large* typography.

@@ -58,7 +58,8 @@ import OUDSTokensSemantic
 /// ## Theme tuning
 ///
 /// The theme can be customized a bit for more flexibility thanks to `Tuning` object.
-/// You just need to give a predefined tuning configuration at theme init build the one you need.
+/// You just need to give a predefined tuning configuration at theme init to build the one you need.
+///
 /// To apply the tuning:
 ///
 /// ```swift
@@ -74,6 +75,37 @@ import OUDSTokensSemantic
 ///     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
 ///     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
 ///     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
+/// ```
+///
+/// ## Typography
+///
+/// ### Helvetica Neue
+///
+/// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
+/// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
+/// By default an instance of `OrangeTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
+/// If you want to use another font family, you will have to send the suitable token or the suitable font family.
+/// However, beware, iOS API relies also on the PostScript name of the font.
+/// To be sure of the value to use, look at the font book of your device.
+/// It is recommended to use the font raw tokens.
+///
+/// ```swift
+///     // The following instanciations work
+///     let orangeTheme = OrangeTheme()
+///     let orangeTheme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
+///     let orangeTheme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue") // Which is font family nale
+/// ```
+///
+/// ### Helvetica Neue Arabic
+///
+/// Because the *Helvetica Neue* font family does not manage arabic alphabet but latin one, it is possible apply another font family to the theme like the
+/// *Helvetica Neue Arabic*. This font family assets can be retrieved through the [Orange Brand website (authentication needed)](https://brand.orange.com/en/brand-basics/typography).
+/// PostScript name management has been implemented for this font family, thus the weight are managed and it is only needed to add the font assets to the project,
+/// register them and define the font family name to use.
+///
+/// ```swift
+///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue Arabic")
 /// ```
 ///
 /// ## Tokens loading
@@ -132,6 +164,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
+    ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
@@ -140,11 +173,11 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
-    ///    - tagInput: All component tokens for tag input
+    ///    - inputTag: All component tokens for tag input
     ///    - textInput: All component tokens for text input
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
-    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.fontFamilyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
@@ -164,6 +197,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          chip: AllChipComponentTokensProvider? = nil,
                          controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
+                         icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
@@ -172,11 +206,11 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          skeleton: AllSkeletonComponentTokensProvider? = nil,
                          switch: AllSwitchComponentTokensProvider? = nil,
                          tag: AllTagComponentTokensProvider? = nil,
-                         tagInput: AllTagInputComponentTokensProvider? = nil,
+                         inputTag: AllInputTagComponentTokensProvider? = nil,
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
-                         fontFamily: FontFamilySemanticToken? = nil,
+                         fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.fontFamilyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
 
@@ -199,6 +233,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
+        let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
@@ -207,7 +242,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
         let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
-        let tagInput = (tagInput ?? OrangeThemeTagInputComponentTokensProvider(borders: borders, colors: colors))
+        let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
         let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
 
@@ -229,6 +264,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    chip: chip,
                    controlItem: controlItem,
                    divider: divider,
+                   icon: icon,
                    link: link,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
@@ -237,7 +273,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    skeleton: skeleton,
                    switch: `switch`,
                    tag: tag,
-                   tagInput: tagInput,
+                   inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,

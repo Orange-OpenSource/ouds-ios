@@ -53,10 +53,6 @@ import SwiftUI
 ///
 /// ![A suggestion chip component in light and dark mode with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A suggestion chip component in light and dark mode with Orange Inverse theme](component_suggestionChip_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A suggestion chip component in light and dark mode with Sosh theme](component_suggestionChip_Sosh)

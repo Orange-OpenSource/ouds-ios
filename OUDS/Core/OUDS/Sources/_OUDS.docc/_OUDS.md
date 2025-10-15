@@ -10,13 +10,13 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The iOS library of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
+The Apple OS Swift Package of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
 
 ## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.5.0
+🧬 Core version: 1.7.0
 ```
 
 Orange is providing a full design system to build Orange mobile aplications. The objective of *Orange Unified Design System* (OUDS) is to propose a set of guidelines about how to apply the Orange brand on mobile applications. *Orange Unified Design System* also provides series of components and modules that show in details how to use this in the Orange apps.
@@ -34,6 +34,15 @@ You can get details about the this design system in [the official website unifie
 > Note: Orange Unified Design System framework supports iOS 15 and later.
 
 > Important: Orange Unified Design System framework focuses on iOS / iPadOS, other platforms like visionOS, watchOS, macOS and tvOS are not scoped yet.
+
+> Tip: Feel free to submit pull requests if you can improve the support of macOS, visionOS, tvOS and watchOS!
+
+## Data and privacy
+
+The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
+As such:
+- this SDK does not handle any personnal data
+- this SDK does not require any device permission to work
 
 ## Topics
 

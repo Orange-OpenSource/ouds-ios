@@ -19,38 +19,38 @@ import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-final class MockThemeTagInputComponentTokenProvider: OrangeThemeTagInputComponentTokensProvider {
+final class MockThemeInputTagComponentTokenProvider: OrangeThemeInputTagComponentTokensProvider {
 
     // MARK: - Mocks and setup
 
-    static let mockThemeTagInputColor = MultipleColorSemanticTokens("#00FF00")
-    static let mockThemeTagInputBorderWidth: BorderWidthSemanticToken = 666
+    static let mockThemeInputTagColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeInputTagBorderWidth: BorderWidthSemanticToken = 666
 
-    override public init(borders: AllBorderSemanticTokensProvider?,
-                         colors: AllColorSemanticTokensProvider?)
+    override init(borders: AllBorderSemanticTokensProvider?,
+                  colors: AllColorSemanticTokensProvider?)
     {
         super.init(borders: borders, colors: colors)
     }
 
     // MARK: - Colors
 
-    override var tagInputColorBgEnabled: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBgHover: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorContentHover: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBorderEnabled: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBorderHover: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBorderPressed: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
-    override var tagInputColorBorderFocus: MultipleColorSemanticTokens { Self.mockThemeTagInputColor }
+    override var inputTagColorBgEnabled: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBgHover: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorContentHover: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBorderEnabled: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBorderHover: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBorderPressed: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
+    override var inputTagColorBorderFocus: MultipleColorSemanticTokens { Self.mockThemeInputTagColor }
 
     // MARK: - Borders
 
-    override var tagInputBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeTagInputBorderWidth }
-    override var tagInputBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeTagInputBorderWidth }
+    override var inputTagBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeInputTagBorderWidth }
+    override var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeInputTagBorderWidth }
 }
 
 // swiftlint:enable required_deinit

@@ -29,6 +29,7 @@ public protocol ControlItemComponentTokens {
 
     var controlItemSizeMinHeight: SizeSemanticToken { get }
     var controlItemSizeMinWidth: SizeSemanticToken { get }
+    var controlItemSizeMaxWidth: SizeSemanticToken { get }
     var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var controlItemSizeIcon: SizeSemanticToken { get }
     var controlItemSizeLoader: SizeSemanticToken { get }
@@ -45,7 +46,8 @@ public protocol ControlItemComponentTokens {
 
     var controlItemSpaceColumnGap: SpaceSemanticToken { get }
     var controlItemSpaceRowGap: SpaceSemanticToken { get }
-    var controlItemSpaceInset: SpaceSemanticToken { get }
+    var controlItemSpacePaddingBlock: SpaceSemanticToken { get }
+    var controlItemSpacePaddingInline: SpaceSemanticToken { get }
 
     // MARK: - Borders
 

@@ -52,7 +52,7 @@ public final class OUDSLowPowerModeObserver: ObservableObject {
     /// The observer to get the notifications from the `NotificationCenter`
     private var observer: NSObjectProtocol?
 
-    init() {
+    public init() {
         lowPowerModeActor = LowPowerModeActor()
         observer = NotificationCenter.default.addObserver(
             forName: .NSProcessInfoPowerStateDidChange,

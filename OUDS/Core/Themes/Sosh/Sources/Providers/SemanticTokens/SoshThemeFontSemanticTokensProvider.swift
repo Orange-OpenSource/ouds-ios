@@ -26,7 +26,7 @@ final class SoshThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of SoshThemeFontSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

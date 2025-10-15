@@ -106,6 +106,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
+    /// All components tokens related to icons components
+    public let icon: AllIconComponentTokensProvider
+
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
@@ -130,8 +133,8 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
-    /// All components tokens related to tags components like `OUDSTagInput`
-    public let tagInput: AllTagInputComponentTokensProvider
+    /// All components tokens related to tags components like `OUDSInputTag`
+    public let inputTag: AllInputTagComponentTokensProvider
 
     /// All components tokens related to text area components like `OUDSTextArea`
     public let textArea: AllTextAreaComponentTokensProvider
@@ -173,6 +176,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - chip: All component tokens for chip
     ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
+    ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
     ///    - pinCodeInput: All component tokens for pin code input
     ///    - quantityInput: All component tokens for quantity input
@@ -181,7 +185,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
-    ///    - tagInput: All component tokens for tag input
+    ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
@@ -205,6 +209,7 @@ open class OUDSTheme: @unchecked Sendable {
                 chip: AllChipComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
+                icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
@@ -213,7 +218,7 @@ open class OUDSTheme: @unchecked Sendable {
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
-                tagInput: AllTagInputComponentTokensProvider,
+                inputTag: AllInputTagComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
@@ -242,6 +247,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.chip = chip
         self.controlItem = controlItem
         self.divider = divider
+        self.icon = icon
         self.link = link
         self.pinCodeInput = pinCodeInput
         self.quantityInput = quantityInput
@@ -250,7 +256,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.skeleton = skeleton
         self.switch = `switch`
         self.tag = tag
-        self.tagInput = tagInput
+        self.inputTag = inputTag
         self.textArea = textArea
         self.textInput = textInput
 

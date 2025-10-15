@@ -18,9 +18,9 @@ import SwiftUI
 
 /// The ``OUDSButton`` proposes layout with text only, icon only or text with icon.
 ///
-/// ## Hierarchies
+/// ## Appearances
 ///
-/// Five hierarchies are proposed for all layouts:
+/// Five appearances are proposed for all layouts:
 ///
 /// - **default (by default)**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
@@ -29,32 +29,32 @@ import SwiftUI
 ///
 /// - **brand**: A brand primary color alternative to the *strong* button.
 /// To be used sparingly for high-value specific actions or to visually anchor a brand moment. Do not use it as the default primary button in your interfaces.
-/// A button with `OUDSButton.Hierarchy.Brand` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
+/// A button with `OUDSButton.Appearance.Brand` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
 /// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
-/// A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
+/// A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Icon only with default hierarchy
-///     OUDSButton(icon: Image("ic_heart"), hierarchy: .default) { /* the action to process */ }
+///     // Icon only with default appearance
+///     OUDSButton(icon: Image("ic_heart"), appearance: .default) { /* the action to process */ }
 ///     // Or simpler
 ///     OUDSButton(icon: Image("ic_heart")) { /* the action to process */ }
 ///
-///     // Text only with negative hierarchy
-///     OUDSButton(text: "Delete", hierarchy: .negative,  style: .default) { /* the action to process */ }
+///     // Text only with negative appearance
+///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(text: "Delete", hierarchy: .negative) { /* the action to process */ }
+///     OUDSButton(text: "Delete", appearance: .negative) { /* the action to process */ }
 ///
 ///     // A loading button
 ///     OUDSButton(text: "Delete", style: .loading) { /* the action to process */ }
 ///
-///     // Text and icon with strong hierarchy
-///     OUDSButton(icon: Image("ic_heart"), text: "Validate", hierarchy: .strong) { /* the action to process */ }
+///     // Text and icon with strong appearance
+///     OUDSButton(icon: Image("ic_heart"), text: "Validate", appearance: .strong) { /* the action to process */ }
 /// ```
 ///
 /// ## Styles
@@ -70,7 +70,7 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded button behavior, set to true the  `hasRoundedButtons` values of the `Tuning` object
+/// To activate the rounded button behavior, set to true the `hasRoundedButtons` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
 /// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
@@ -99,10 +99,6 @@ import SwiftUI
 ///
 /// ![A button component in light and dark mode with Orange Business Tools theme](component_button_OrangeBusinessTools)
 ///
-/// ### Orange Inverse
-///
-/// ![A button component in light and dark mode with Orange Inverse theme](component_button_OrangeInverse)
-///
 /// ### Sosh
 ///
 /// ![A button component in light and dark mode with Sosh theme](component_button_Sosh)
@@ -118,7 +114,7 @@ public struct OUDSButton: View {
     // MARK: Stored Properties
 
     private let type: `Type`
-    private let hierarchy: Hierarchy
+    private let appearance: Appearance
     private let style: Style
     private let action: () -> Void
 
@@ -131,8 +127,8 @@ public struct OUDSButton: View {
         case textAndIcon(text: String, icon: Image)
     }
 
-    /// Represents the hierarchy of an OUDS button, i.e. a kind of type
-    public enum Hierarchy {
+    /// Represents the appearance of an OUDS button, i.e. a kind of type
+    public enum Appearance {
         /// Default button is used for action
         case `default`
         /// Strong button on the page should be singular and prominent
@@ -156,33 +152,34 @@ public struct OUDSButton: View {
 
     // MARK: Initializers
 
-    /// Create a button with text and icon.
+    /// Creates a button with text and icon.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the button
-    ///    - hierarchy: The button hierarchy, default set to `.default`
+    ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
         type = .textAndIcon(text: text, icon: icon)
-        self.hierarchy = hierarchy
+        self.appearance = appearance
         self.style = style
         self.action = action
+
         isHover = false
     }
 
-    /// Create a button with an icon only.
+    /// Creates a button with an icon only.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
-    ///    - hierarchy: The button hierarchy, default set to `.default`
+    ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, accessibilityLabel: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(icon: Image, accessibilityLabel: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
         type = .icon(icon, accessibilityLabel)
-        self.hierarchy = hierarchy
+        self.appearance = appearance
         self.style = style
         self.action = action
         isHover = false
@@ -192,12 +189,12 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - text: The text of the button to display
-    ///    - hierarchy: The button hierarchy, default set to `.default`
+    ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(text: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
         type = .text(text)
-        self.hierarchy = hierarchy
+        self.appearance = appearance
         self.style = style
         self.action = action
         isHover = false
@@ -207,10 +204,10 @@ public struct OUDSButton: View {
 
     // swiftlint:disable line_length
     public var body: some View {
-        // A button with negative or brand hierarchy is not allowed on a colored surface.
+        // A button with negative or brand appearance is not allowed on a colored surface.
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
-        if onColoredSurface, hierarchy == .negative || hierarchy == .brand {
-            OL.fatal("An OUDSButton with OUDSButton.Hierarchy.{Negative | Brand} hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
+        if onColoredSurface, appearance == .negative || appearance == .brand {
+            OL.fatal("An OUDSButton with OUDSButton.Appearance.{Negative | Brand} appearance has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {
@@ -223,7 +220,8 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(isHover: isHover, hierarchy: hierarchy, style: style))
+        .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
+        .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         .onHover { isHover in
             self.isHover = isHover

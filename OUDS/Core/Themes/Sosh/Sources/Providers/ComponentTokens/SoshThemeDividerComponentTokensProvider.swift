@@ -25,7 +25,7 @@ import OUDSFoundations
 final class SoshThemeDividerComponentTokensProvider: AllDividerComponentTokensProvider {
 
     /// Provider of border semantic tokens to use for chip sizes
-    public let borders: AllBorderSemanticTokensProvider
+    let borders: AllBorderSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -33,7 +33,7 @@ final class SoshThemeDividerComponentTokensProvider: AllDividerComponentTokensPr
 
     /// Defines a provider of component tokens dedicated to `OUDSChip`
     /// - Parameter borders: Provider for border semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
-    public init(borders: AllBorderSemanticTokensProvider? = nil) {
+    init(borders: AllBorderSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeDividerComponentTokensProvider")
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         #if DEBUG

@@ -68,10 +68,6 @@ brew install swiftlint
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
 
-# For xcodes (at least 1.5.0)
-brew install xcodesorg/made/xcodes
-# or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
-
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
 
@@ -103,15 +99,22 @@ rbenv global 3.4.0
 # then 
 # >  rbenv global x.y.z
 
+# Apple commends using ZSH as shell instead of Bash, so to will need to add the magic line in the end of your shell configuration
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+# Then
+source ~/.zshrc
+
 # Check Ruby version
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16.4**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 26.0.1**, we suggest you use this version or newer if you want (but not recommended).
 
 > [!IMPORTANT]
-> Xcode 16.4 and Swift 6.1 are used for this project. You must use this configuration.
+> Xcode 26.0.1 and Swift 6.2 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
+> If needed, contact us and open a discussino on GitHub Orange-OpenSource/ouds-ios
 
 ## Build OUDS Package
 
@@ -166,9 +169,9 @@ For *App Store* illustrations, same thing, but with the suitable simulators or d
 ### Unit tests for OUDS Swift package
 
 The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
-You should run the tests using an iPhone simulator (like *iPhone 16 Pro (18.0)*).
+You should run the tests using an iPhone simulator (like *iPhone 17 Pro*).
 Because OUDS is designed first for iOS, some of the OUDS API rely on UIKit (color colors and a11y features), and some tests are condioned to the platform.
-SO running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
+So running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
 
 To run these unit tests follow some steps:
 1. Select the "OUDS-Package" scheme
@@ -469,8 +472,7 @@ It will help us to ensure code on pull requests or being merged compiles and has
 Workflows are the following:
 - [build-and-test](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) to build and run unit tests
 - [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
-- [codeql](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to automated security checks
-- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/codeql.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
+- [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
 - [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
 - [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
@@ -481,6 +483,10 @@ We use also two GitHub apps making controls on pull requests and defining wether
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
 
 Note the workflow about the documentation builds it but does not expose it online. It allows us to ensure the documentation can be built on the current code base.
+
+> [!NOTE]
+> A workflow for dependency-review based on CodeQL existed but it was not posssible to have successful build for analyis
+> It has been withdrawn and will be added later.
 
 ### GitLab CI (internal)
 

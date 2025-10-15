@@ -17,7 +17,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right forground color associated to the hierarchy and state
+/// Used to apply the right forground color associated to the appearance and state
 struct ButtonForegroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -27,7 +27,7 @@ struct ButtonForegroundModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButton.Hierarchy
+    let appearance: OUDSButton.Appearance
     let state: ButtonInternalState
 
     // MARK: Body
@@ -59,7 +59,7 @@ struct ButtonForegroundModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultEnabled : theme.button.buttonColorContentDefaultEnabled
         case .strong:
@@ -74,7 +74,7 @@ struct ButtonForegroundModifier: ViewModifier {
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultHover : theme.button.buttonColorContentDefaultHover
         case .strong, .brand:
@@ -87,7 +87,7 @@ struct ButtonForegroundModifier: ViewModifier {
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultPressed : theme.button.buttonColorContentDefaultPressed
         case .strong, .brand:
@@ -100,7 +100,7 @@ struct ButtonForegroundModifier: ViewModifier {
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        switch hierarchy {
+        switch appearance {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorContentDefaultDisabled : theme.button.buttonColorContentDefaultDisabled
         case .strong, .brand:

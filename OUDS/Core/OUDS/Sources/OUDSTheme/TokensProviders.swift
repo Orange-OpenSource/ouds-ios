@@ -41,7 +41,7 @@ public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSem
 public protocol AllColorChartSemanticTokensProvider: TokensProvider, ColorChartSemanticTokens, ColorChartMultipleSemanticTokens {}
 
 /// Something which provides all semantic tokens of elevation
-public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens {}
+public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationMultipleSemanticTokens, ElevationCompositeSemanticTokens {}
 
 /// Something which provides all semantic tokens of font
 public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens {}
@@ -89,8 +89,12 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 /// Something which provides all component tokens of pin code input
 public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
 
+/// Something which provides all components tokens for icons
+public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
+
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens, ExpandLinkComponentTokens {}
+// TODO: #1001 - Check if relevant to add the expand link tokens in the same alias (i.e. same provider in the end)
 
 /// Something which provides all component tokens of quantity input
 public protocol AllQuantityInputComponentTokensProvider: TokensProvider, QuantityInputComponentTokens {}
@@ -110,8 +114,8 @@ public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponen
 /// Something which provides all component tokens of tag
 public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens {}
 
-/// Something which provides all component tokens of tag input
-public protocol AllTagInputComponentTokensProvider: TokensProvider, TagInputComponentTokens {}
+/// Something which provides all component tokens of input tag
+public protocol AllInputTagComponentTokensProvider: TokensProvider, InputTagComponentTokens {}
 
 /// Something which provides all component tokens of text area
 public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComponentTokens {}

@@ -197,7 +197,6 @@ swift package \
     --target OUDSModules \
     --target OUDSComponents \
     --target OUDSThemesOrange \
-    --target OUDSThemesOrangeInverse \
     --target OUDSThemesOrangeBusinessTools \
     --target OUDSThemesSosh \
     --target OUDSThemesWireframe \
@@ -231,7 +230,7 @@ fi
 # Landing page of generated documentation is broken, real content is in /documentation
 # Override this page and force by code redirection
 # See Orange-OpenSource/ouds-ios#636
-echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/ouds"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/ouds</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
 
 # Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
@@ -243,7 +242,7 @@ if [[ $use_git -eq 1 ]]; then
 
     clean_repo
 
-    git config commit.gpgsign false
+    # git config commit.gpgsign false
 
     _ "🔨 Checkout service pages branch, align with remote"
 
@@ -291,7 +290,6 @@ if [[ $use_git -eq 1 ]]; then
     cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeBusinessTools/ic_theme_orangebusinesstools.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeInverse/ic_theme_orangeinverse.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images"
@@ -313,7 +311,8 @@ if [[ $use_git -eq 1 ]]; then
     
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
-    git commit -m "$commit_message" --no-gpg-sign
+    # git commit -m "$commit_message" --no-gpg-sign
+    git commit -m "$commit_message"
 
     _ "🔨 Pushing things"
     git push origin "$SERVICE_PAGES_BRANCH"

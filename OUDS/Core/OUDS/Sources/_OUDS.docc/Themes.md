@@ -14,7 +14,6 @@ This framework exposes today following themes:
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
 [Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Inverse](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/)            | For some Orange products in specific use cases           
 [Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and dimension constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
@@ -44,7 +43,6 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 // Make imports
 import OUDS // For OUDSThemeableView
 import OUDSThemesOrange // For OrangeTheme
-import OUDSThemesOrangeInverse // For OrangeInverseTheme
 import OUDSThemesOrangeBusinessTools // For OrangeBusinessToolsTheme
 import OUDSThemesSosh // For SoshTheme
 import OUDSThemesWireframe // For WrieframeTheme
@@ -64,18 +62,20 @@ OUDSThemeableView(theme: YourCustomTheme()) {
 
 ### Tunable themes or not
 
-Some themes like `OrangeTheme`, `OrangeInverse` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
+Some themes like `OrangeTheme` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
 or affiliates constraints.
-However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned
+However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
+
+> Note: Tuning represents the group of "flexibility points" allowed by the Orange Brand to tailor and customize themes for particular contexts.
 
 ### Tuned values
 
 There are few elements which can be tuned. Some tunings have also been defined.
 
-Tunable elements                       | Default values | Orange France | Orange Business | Max It   |                          
--------------------------------------- | -------------- | ------------- | --------------- | -------- |
-rounded corners for buttons            |     false      |    false      |      false      |   true   |
-rounded corners for text inputs        |     false      |    false      |      true       |   true   |
+Tunable elements                       | Default values    | Orange France    | Orange Business    | Max It      |                          
+-------------------------------------- | ----------------- | ---------------- | ------------------ | ----------- |
+rounded corners for buttons            |     ❌ false      |    ❌ false      |      ❌ false      |   ✅ true   |
+rounded corners for text inputs        |     ❌ false      |    ❌ false      |      ✅ true       |   ✅ true   |
 
 ### Tuning usages
 
@@ -95,21 +95,6 @@ The tuning to apply must be done at theme init.
     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
     let maxItTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
-
-### "Max it" case
-
-A predefined tuning configuration is also available for "Max it":
-
-```swift
-    let theme = OrangeTheme(tuning: Tuning.MaxIt)
-```
-
-It applies the following settings:
-
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners                | true  
-
 
 ## Define a custom theme if needed
 
@@ -145,10 +130,10 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMd: SpaceSemanticToken {
+    override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
-    override var spaceScaledSm: MultipleSpaceSemanticTokens {
+    override var spaceScaledSmall: MultipleSpaceSemanticTokens {
         MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
     }
 }

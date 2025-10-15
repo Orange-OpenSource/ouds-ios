@@ -12,6 +12,8 @@
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
+import OUDS
+import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
@@ -62,8 +64,8 @@ struct TypographyModifier: ViewModifier {
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
-            // Can be a custom font laoded form side assets or another custom font avaialble in the OS
-            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
+            // Can be a custom font load from side assets or another custom font available in the OS
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamilyName, adaptiveFont.weight.fontWeight)]
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {

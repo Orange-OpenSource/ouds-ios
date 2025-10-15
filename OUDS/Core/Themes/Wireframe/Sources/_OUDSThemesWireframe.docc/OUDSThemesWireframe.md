@@ -16,10 +16,10 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.5.0
+🧬 Theme version: 2.0.1
 ```
 
-> Note: The Wireframe theme uses the ChalkboardSE font family available in the iOS system.
+> Note: The Wireframe theme uses the Shantell Sans font family
 
 > Important: The Wireframe theme does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
 
@@ -74,6 +74,10 @@ struct SomeView: View {
 ## How to tune the theme
 
 You cannot tune the Sosh theme.
+
+## Typography
+
+The Wireframe theme uses the Shantell Sans font family and must not use others.
 
 ## How to enrich the theme
 
@@ -135,6 +139,10 @@ You cannot derivate the *Wireframe* theme.
     }
 }
 <!-- Maybe not relevant to display chip picker -->
+
+#### Text inputs
+
+![A text input component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Wireframe.png)
 
 ### Indicators
 

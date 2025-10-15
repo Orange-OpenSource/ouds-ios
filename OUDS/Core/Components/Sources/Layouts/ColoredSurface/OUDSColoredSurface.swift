@@ -23,7 +23,7 @@ import SwiftUI
 ///
 /// ```swift
 ///   OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary) {
-///      OUDSButton(icon: Image("ic_heart"), hierarchy: .strong) {}
+///      OUDSButton(icon: Image("ic_heart"), appearance: .strong) {}
 ///   }
 /// ```
 ///

@@ -28,7 +28,7 @@ final class OrangeBusinessToolsThemeGridSemanticTokensProvider: AllGridSemanticT
     #endif
 
     /// Intializes the provider
-    public init() {
+    init() {
         OL.debug("Init of OrangeBusinessToolsThemeGridSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++

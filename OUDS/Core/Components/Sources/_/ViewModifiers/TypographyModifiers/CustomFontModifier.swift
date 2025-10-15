@@ -49,7 +49,7 @@ struct CustomFontModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .font(.custom(fontFamilyName.compose(withFont: weight), size: fontSize))
+            .font(.custom(fontFamilyName.fontNameInPostScript(using: weight), size: fontSize))
             .lineSpacing(lineSpacing)
     }
 }

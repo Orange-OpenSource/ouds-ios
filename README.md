@@ -48,7 +48,7 @@
 
 [![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 16.4](https://img.shields.io/badge/Xcode-16.4-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_4-release-notes)
+[![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
 
 ## About OUDS
 
@@ -60,6 +60,74 @@ Guidelines for TV, Android, iOS and web environments will be merged in a "cohesi
 The project is open source (except some assets) and topics like accessibility and ecodesign are also considered.
 
 It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) as the only one design system for Orange group and affiliates.
+
+> [!CAUTION]
+> This Swift Package is dedicated to SwiftUI. UIKit and other frameworks are not supported.
+
+## Quick start
+
+### Choose your version
+
+You can find available releases on [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases). 
+The wiki contains also a page [listing the available API](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
+Versions, builds and releases are explained [also in this page](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds).
+
+### Add the dependency
+
+First, you must add as _package dependency_ of your _project_ the URL of this _Swift Package_ GitHub repository:
+
+```text
+https://github.com/Orange-OpenSource/ouds-ios
+```
+
+You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases are frozen and are based on semantic versioning.
+
+### Add the librairies
+
+In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
+In most of cases, the `OUDS` library at least must be imported, it brings abstraction layer.
+Components are available with `OUDSComponents`. Themes are available through their librairies too (`OUDSThemeOrange`, `OUDSThemeSosh`, `OUDSThemeWireframe`, etc.).
+
+You can have more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
+
+### Instanciate and inject theme
+
+In the root view of your app, add the `OUDSThemeableView` with inside the _theme_ object you want to apply.
+You can instanciate the theme object on the fly, but only once.
+
+```swift
+import OUDS
+import SwiftUI
+
+@main
+struct YourApp: App {
+
+    var body: some Scene {
+        WindowGroup {
+            OUDSThemeableView(theme: theTheme) { // theTheme can be: OrangeTheme(), SoshTheme(), WirefameTheme(), etc.
+              AppRootView() // Add your app root view here
+            }
+        }
+    }
+}
+```
+
+Feel free to read the [online documentation](https://ios.unified-design-system.orange.com/documentation/ouds/gettingstarted).
+You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/ouds/themes).
+
+### Get the theme
+
+If you need to get configuration details from the theme (colors, dimensions, etc.), get the theme through _environment object_:
+
+```swift
+  @Environment(\.theme) var theme
+```
+
+### Use the components
+
+Import the `OUDSComponents` library and instanciate the component you need. All of them are described [in the online documentation (and grouped by categories)](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
+
+The wiki lists also [the components and their availability](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
 ## Content
 
@@ -82,15 +150,14 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.5.0
-- Core Orange version: 1.1.0
-- Brand Orange version: 1.5.0
-- Core Sosh version: 1.1.0
-- Brand Sosh version: 1.5.0
-- Core Wireframe version: 1.0.0
-- Brand Wireframe version: 1.5.0
-- Brand Orange Business Tools version: 1.5.0
-- Brand Orange Inverse version: 1.5.0
+- Core OUDS version: 1.7.0
+- Core Orange version: 1.2.0
+- Brand Orange version: 2.0.1
+- Core Sosh version: 1.2.0
+- Brand Sosh version: 2.0.1
+- Core Wireframe version: 1.2.0
+- Brand Wireframe version: 2.0.1
+- Brand Orange Business Tools version: 2.0.1
 
 ## Bugs, feature requests and discussions
 
@@ -110,3 +177,18 @@ Please read through our [contributing guidelines](https://github.com/Orange-Open
 
 Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
 For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
+
+## Data and privacy
+
+The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
+As such:
+- this SDK does not handle any personnal data
+- this SDK does not require any device permission to work
+
+## Design Toolbox App
+
+Flash the QrCode below or click on it to download the *Design System Toolbox* app.
+
+<p align="center">
+<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Desin Sysem Design System Toolbox page"><img src="./docs_release/images/design-toolbox-download-page-qrcode.png" alt="QrCode redirecting to Orange Unified Desin Sysem Design System Toolbox page" width="125" height="125"></a>
+</p>

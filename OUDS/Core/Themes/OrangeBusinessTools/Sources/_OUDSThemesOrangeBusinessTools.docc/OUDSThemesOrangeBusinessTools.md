@@ -10,19 +10,18 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The Orange Business Tools theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme for the Orange Business Tools brand.
+The Orange Business Tools theme is dedicated to applications with strong dimensions constraints.
 
 ## Overview
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 1.5.0
+🧬 Theme version: 2.0.1
 ```
 
-Some products may have heavy and very rich user interfaces with a lot of components and elements to displays and
-with which users can interact. Thus for such products there are specific constraints of spaces and sizes.
-That is the reason why this team is created.
-This is the Orange Business Tools theme any for some business tools products, and cannot be subclassed.
+Some products may have heavy and very rich user interfaces with a lot of components and elements to display and
+with which users can interact. Thus for such products there are specific constraints of dimensions, spaces and sizes.
+That is the reason why this theme exists.
 
 > Note: This theme is related to Orange theme module to use some raw tokens of colors.
 
@@ -78,7 +77,7 @@ struct SomeView: View {
 }
 ```
 
-This theme embeds and registers the fonts for the Orange Business Tools theme, you just need to use the theme object as is.
+This theme embeds and registers the fonts for the `Orange Business Tools` theme, you just need to use the theme object as is.
 
 ## Tunable theme
 
@@ -99,6 +98,65 @@ Some tuning object exists.
     let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
+
+A default tuning is applied for this theme:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | false  
+rounded corners text inputs    | true
+
+## Typography
+
+### Helvetica Neue
+
+The Orange theme uses *Helvetica Neue* typography. This font is already available through iOS.
+It is possible to use another typography, by the ones recommended are the ones defined in tokens.
+
+```swift
+    // The three following instanciations are the same
+    let theme = OrangeBusinessToolsTheme()
+    let theme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
+    let theme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+
+    // This instanciation won't work as the font family is not recognised
+    let theme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
+```
+
+### Other fonts
+
+However if, in very particular cases, you need to use another font family, you can try using it by changing the value in the theme init.
+
+```swift
+    // Supposing you want to use another font:
+    // - like the Luciole font (https://luciole-vision.com/) (very good for accessibility)
+    // - or the Robot font (https://fonts.google.com/specimen/Roboto) (to support arabic and cyrillic alphabets)
+    // 1. Add the TTF files in your project
+    
+    // 2. Register the fonts with, for example, the function below
+    private func registerFonts() {
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+    }
+
+    // 3. At theme init, given the font family name, add it to the theme.
+    // Keep in mind that it might not work because PostScript name is used combining
+    // font family name and font weight.
+    // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
+    let theme = OrangeBusinessToolsTheme(fontFamily: theFontFamilyNameInPostScript)
+```
+
+> Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`
+
+> Tip: If your font family is not well managed, you can [send an issue and explain your needs](https://github.com/Orange-OpenSource/ouds-ios/issues)
+
+> Important: For production products and official tools, *Helvetica Neue* is preferred
+
+> Tip: If for your needs Helvetica Neue is not relevant (because does not support cyrilic and arabic, or not enough accessible, or not aligned with your needs), [feel free to open a discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions)
+
+> Caution: For ecodesign principles you should challenge the use of fonts because they can increase the needed storage of your apps
+
+> Important: Always check the license and terms of uses of the font your are using (distribution, hsoting, usage for comemrcial things, etc.)
 
 ## How to enrich the theme
 
@@ -159,6 +217,10 @@ You cannot derivate the *Orange Business Tools* theme.
     }
 }
 <!-- Maybe not relevant to display chip picker -->
+
+#### Text inputs
+
+![A text input component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_OrangeBusinessTools.png)
 
 ### Indicators
 
