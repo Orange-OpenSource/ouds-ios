@@ -63,53 +63,6 @@ struct TagLoader: View {
             theme.tag.tagSpaceInsetLoaderSmall
         }
     }
-
-    private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            colorEmphasized
-        case .muted:
-            colorMuted
-        }
-    }
-
-    private var colorEmphasized: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.colorContentInverse
-        case .accent:
-            theme.colors.colorContentOnStatusAccentEmphasized
-        case .positive:
-            theme.colors.colorContentOnStatusPositiveEmphasized
-        case .warning:
-            theme.colors.colorContentOnStatusWarningEmphasized
-        case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
-        case .info:
-            theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
-        }
-    }
-
-    private var colorMuted: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.colorContentDefault
-        case .accent:
-            theme.colors.colorContentOnStatusAccentMuted
-        case .positive:
-            theme.colors.colorContentOnStatusPositiveMuted
-        case .warning:
-            theme.colors.colorContentOnStatusWarningMuted
-        case .negative:
-            theme.colors.colorContentOnStatusNegativeMuted
-        case .info:
-            theme.colors.colorContentOnStatusInfoMuted
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
-        }
-    }
 }
 
 // MARK: - Tag Asset
@@ -129,20 +82,19 @@ struct TagAsset: View {
 
     var body: some View {
         Group {
-            if appearance == .muted, status.category == .warning {
+            if appearance == .muted, status.leading == .icon, status.category == .warning, isEnabled {
                 ZStack {
-                    // TODO: update tokens
                     Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
+                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningExternalShape)
                     Image(decorative: "ic_warning_internal_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.colors.colorContentStatusWarning)
+                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningInternalShape)
                 }
             } else {
-                icon?
+                iconFromAsset?
                     .renderingMode(.template)
                     .resizable()
                     .toFlip(status.flipIcon)
@@ -154,7 +106,7 @@ struct TagAsset: View {
 
     // MARK: Helpers
 
-    private var icon: Image? {
+    private var iconFromAsset: Image? {
         switch status.leading {
         case .none:
             return nil

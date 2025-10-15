@@ -47,7 +47,7 @@ struct TagBackgroundModifier: ViewModifier {
             }
 
         case .loader:
-            theme.colors.colorContentDefault
+            theme.colors.colorSurfaceSecondary
         }
     }
 
