@@ -1,0 +1,55 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Embedding OUDS Theme and Components in SwiftUI") {
+        Learn how to apply the OUDS design system to your SwiftUI app using themes and components.
+    }
+
+    @Section(title: "Setup OUDS") {
+        @ContentAndMedia {
+            To start, import **OUDS** into your SwiftUI project:
+            ```swift
+            import SwiftUI
+            import OUDS
+            ```
+        }
+    }
+
+    @Section(title: "Apply Theme") {
+        @ContentAndMedia {
+            You can easily embed an OUDS theme:
+            ```swift
+            struct ContentView: View {
+                var body: some View {
+                    VStack {
+                        Text("Welcome to OUDS!")
+                            .font(.oudsHeading)
+                            .foregroundColor(.oudsPrimary)
+                    }
+                    .padding()
+                    .background(Color.oudsBackground)
+                }
+            }
+            ```
+        }
+    }
+
+    @Section(title: "Use OUDS Components") {
+        @ContentAndMedia {
+            Try using a component, for example, a button:
+            ```swift
+            struct ButtonsExample: View {
+                var body: some View {
+                    OUDSButton(title: "Continue") {
+                        print("Button tapped!")
+                    }
+                }
+            }
+            ```
+        }
+    }
+
+    @Section(title: "Summary") {
+        @ContentAndMedia {
+            You’ve successfully embedded OUDS theme and used components within a SwiftUI app!
+        }
+    }
+}
