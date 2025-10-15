@@ -198,6 +198,8 @@ spaces                         | For paddings and margins
 - ``ColorModeSemanticTokens``
 - ``ColorMultipleSemanticTokens``
 - ``ColorModeMultipleSemanticTokens``
+- ``ColorChartSemanticTokens``
+- ``ColorChartMultipleSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationMultipleSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
