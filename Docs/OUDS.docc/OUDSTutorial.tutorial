@@ -1,9 +1,0 @@
-@Tutorials(name: "OUDS Tutorials") {
-    @Intro(title: "OUDS Design System Tutorials") {
-        Learn how to integrate and customize OUDS in your SwiftUI app.
-    }
-
-    @Chapter(name: "Getting Started with OUDS") {
-        Tutorial("Embedding OUDS Theme and Components in SwiftUI")
-    }
-}

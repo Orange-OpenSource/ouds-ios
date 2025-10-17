@@ -1,0 +1,95 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Instanciate and inject a theme") {
+        The theme is exposed as one object which will be injected inside your SwiftUI view.
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+
+    @Section(title: "Prerequisites") {
+        
+        @ContentAndMedia {
+            We will suppose you already have an app or a freshly created new one
+        }
+        
+        @Steps {
+            @Step {
+                Define a basic `App` object using *SwiftUI*.
+                
+                ```swift
+                import SwiftUI
+
+                @main
+                struct OUDSTutorialSandboxApp: App {
+                    var body: some Scene {
+                        WindowGroup {
+                            Text("Hello OUDS!")
+                        }
+                    }
+                }
+                ```
+            }
+        }
+    } 
+    
+    @Section(title: "Import the librairies") {
+        
+        @ContentAndMedia {
+            To start, import *OUDS* and *OUDSThemesOrange* into your view file:
+            
+            ```swift
+            import OUDS
+            import OUDSThemesOrange
+            import SwiftUI
+
+            @main
+            struct OUDSTutorialSandboxApp: App {
+                var body: some Scene {
+                    WindowGroup {
+                        Text("Hello OUDS!")
+                    }
+                }
+            }
+            ```
+        }
+    }
+
+    @Section(title: "Inject the theme") {
+        
+        @ContentAndMedia {
+            The theme is an object to instanciate only one time and inject at the top level of your app view.
+        }
+        
+        @Steps {
+            @Step {
+                Instanciate your theme. Keep in mind this object should be instanciated only once.
+                
+                ```swift
+                import OUDSThemesOrange
+                
+                let myTheme = OrangeTheme()
+                ```
+            }
+            @Step {
+                Add the `OUDSThemeableView` in your app to wrap your root view. This special view will expose as environment object
+                the theme.
+                
+                ```swift
+                @main
+                struct OUDSTutorialSandboxApp: App {
+                    
+                    let myTheme = OrangeTheme()
+                    
+                    var body: some Scene {
+                        WindowGroup {
+                            OUDSThemeableView(theme: myTheme) {
+                                Text("Hello OUDS!")
+                            }
+                        }
+                    }
+                }
+                ```
+            }
+        }
+    }     
+}
+

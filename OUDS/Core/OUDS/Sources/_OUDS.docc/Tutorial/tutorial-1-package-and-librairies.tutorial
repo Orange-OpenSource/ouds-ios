@@ -1,0 +1,46 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Swift Package integration") {
+        OUDS iOS is exposed through a Swift Package, and provides several librairies for your needs
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+
+    @Section(title: "Import the Swift Package") {
+        
+        @ContentAndMedia {
+        
+            OUDS for iOS is an open source Swift Package.
+            
+            @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        }
+    
+        @Steps {
+            @Step {
+                Using Xcode, in your *project package dependencies*, add a new dependency.
+                Search with the GitHub repository URL (https://github.com/Orange-OpenSource/ouds-ios), and select the *ouds-ios* dependency.
+                You can then choose the *dependency rule* you want.
+                To know which version you need, you can have a look on the [available API list](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API) and also the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases).)
+            }
+        }
+    }
+    
+    @Section(title: "Embed the librairies") {
+        
+        @ContentAndMedia {
+        
+            Librairies are blocks of the Swift Package
+            
+            @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        }
+        
+        @Steps {
+            @Step {
+                When you downloaded the package, you will see several librairies are available. 
+                They can be embeded inside your *target* librairies.
+                Things are separated to let users integrate only what they need.
+
+                Import *OUDS*, *OUDSThemesOrange*, *OUDSComponents*, *OUDSTokensSemantic*, *OUDSTokensRaw* and *OUDSFoundations*.
+            }
+        }
+    }
+}

@@ -1,0 +1,224 @@
+@Tutorial(time: 30) {
+    @Intro(title: "Use OUDS components") {
+        OUDS provides components ready to be used, specified in Figma assets and preventing users to handle tokens.
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+
+    @Section(title: "Prerequisites") {
+        
+        @ContentAndMedia {
+            Check if you have the basics
+        }
+        
+        @Steps {
+            @Step {
+                We will suppose you already have an `App` object, with the `OUDSThemeableView` and and additional *ContentView*
+                
+                ```swift
+                import OUDS
+                import OUDSComponents
+                import OUDSThemesOrange
+                import OUDSTokensSemantic
+                import SwiftUI
+
+                @main
+                struct OUDSTutorialSandboxApp: App {
+                    
+                    let myTheme = OrangeTheme()
+                    
+                    var body: some Scene {
+                        WindowGroup {
+                            OUDSThemeableView(theme: myTheme) {
+                                ContentView()
+                            }
+                        }
+                    }
+                }
+
+                struct ContentView: View {
+                    var body: some View {
+                        Text("Hello, World!")
+                    }
+                }
+                ```
+            }
+        }
+    } 
+    
+    @Section(title: "Use the components") {
+        
+        @ContentAndMedia {
+            Components are ready to be used SwiftUI views
+        }
+        
+        @Steps {
+            @Step {
+                Let's add a button. Buttons can have several styles and states. They are based on tokens.
+                Focus, hover and others states are implemented inside it.
+                
+                ```swift
+                struct ContentView: View {
+                    
+                    var body: some View {
+                        OUDSButton(text: "Hello OUDS!") { print("Button tapped!") }
+                    }
+                }
+                ```
+                
+                You can use a button with specific icon and appearance:
+                
+                ```swift
+                struct ContentView: View {
+                    
+                    var body: some View {
+
+                        OUDSButton(icon: Image(systemName: "trash"), text: "Delete", appearance: .negative) { print("Button tapped!") }
+
+                    }
+                }                
+                ```
+            }
+            
+            @Step {
+                Let's say we want to ad a link and a divider between the link and the previous button.
+                These elements are inside an `HStack` with a `large` height:
+                
+                ```swift
+                struct ContentView: View {
+                    @Environment(\.theme) var theme
+                    
+                    var body: some View {
+
+                        HStack(spacing: theme.spaces.spaceFixedSmall) {
+                            OUDSButton(icon: Image(systemName: "trash"), text: "Delete", appearance: .negative) { print("Button tapped!") }
+                            
+                            OUDSVerticalDivider(color: .brandPrimary)
+                            
+                            OUDSLink(text: "Awesome URL", indicator: .next, size: .small) { print("Link clicked") }
+                        }
+                        .frame(height: theme.dimensions.dimensionLarge)
+                    }
+                }
+                ```
+            }
+
+            @Step {
+                We can also add a switch with texts explaining its usage
+                
+                ```swift
+                struct ContentView: View {
+                    @Environment(\.theme) var theme
+                    @State var isToggled: Bool = false
+
+                    var body: some View {
+
+                        VStack(spacing: theme.spaces.spacePaddingBlockSmall) {
+                            
+                            OUDSSwitchItem("Enable some feature", isOn: $isToggled, helper: "You should really toggle it")
+                            
+                            HStack(spacing: theme.spaces.spaceFixedSmall) {
+                                OUDSButton(icon: Image(systemName: "trash"), text: "Delete", appearance: .negative) { print("Button tapped!") }
+                                
+                                OUDSVerticalDivider(color: .brandPrimary)
+                                
+                                OUDSLink(text: "Awesome URL", indicator: .next, size: .small) { print("Link clicked") }
+                            }
+                            .frame(height: theme.dimensions.dimensionLarge)
+                            
+                        }
+                    }
+                }
+                ```
+            }
+            
+            @Step {
+                Some components act differently if you place them on a colored surface. You should have a look on their document.
+                For example a button cannot be *negative* on a surfaced color. Depending to the color of the surface their look and feel will change.
+                
+```swift
+                struct ContentView: View {
+                    @Environment(\.theme) var theme
+                    @State var isToggled: Bool = false
+
+                    var body: some View {
+
+                        OUDSColoredSurface(color: theme.colorModes.modeOnStatusInfoEmphasized) {
+                            VStack(spacing: theme.spaces.spacePaddingBlockSmall) {
+                        
+                                OUDSSwitchItem("Enable some feature", isOn: $isToggled, helper: "You should really toggle it")
+                                    .padding(theme.spaces.spaceFixedXsmall)
+                                
+                                HStack(spacing: theme.spaces.spaceFixedSmall) {
+                                    OUDSButton(icon: Image(systemName: "trash"), text: "Delete", appearance: .strong) { print("Button tapped!") }
+                                    
+                                    OUDSVerticalDivider(color: .brandPrimary)
+                                    
+                                    OUDSLink(text: "Awesome URL", indicator: .next, size: .small) { print("Link clicked") }
+                                }
+                                .frame(height: theme.dimensions.dimensionLarge)
+
+                            }.padding(theme.spaces.spaceFixedMedium)
+                        }
+                    }
+                }
+                ```
+            }
+            
+            @Step {
+                The final result will be:
+                
+```swift
+                import OUDS
+                import OUDSFoundations
+                import OUDSComponents
+                import OUDSThemesOrange
+                import OUDSTokensSemantic
+                import OUDSTokensRaw
+                import SwiftUI
+
+                @main
+                struct OUDSTutorialSandboxApp: App {
+                    
+                    let myTheme = OrangeTheme()
+                    
+                    var body: some Scene {
+                        WindowGroup {
+                            OUDSThemeableView(theme: myTheme) {
+                                ContentView()
+                            }
+                        }
+                    }
+                }
+
+                struct ContentView: View {
+                    @Environment(\.theme) var theme
+                    @State var isToggled: Bool = false
+
+                    var body: some View {
+
+                        OUDSColoredSurface(color: theme.colorModes.modeOnStatusInfoEmphasized) {
+                            VStack(spacing: theme.spaces.spacePaddingBlockSmall) {
+                        
+                                OUDSSwitchItem("Enable some feature", isOn: $isToggled, helper: "You should really toggle it")
+                                    .padding(theme.spaces.spaceFixedXsmall)
+                                
+                                HStack(spacing: theme.spaces.spaceFixedSmall) {
+                                    OUDSButton(icon: Image(systemName: "trash"), text: "Delete", appearance: .strong) { print("Button tapped!") }
+                                    
+                                    OUDSVerticalDivider(color: .brandPrimary)
+                                    
+                                    OUDSLink(text: "Awesome URL", indicator: .next, size: .small) { print("Link clicked") }
+                                }
+                                .frame(height: theme.dimensions.dimensionLarge)
+
+                            }.padding(theme.spaces.spaceFixedMedium)
+                        }
+                    }
+                }
+                ```
+            }
+        }
+    }     
+}
+
