@@ -1,6 +1,6 @@
 @Tutorial(time: 10) {
     @Intro(title: "Embedding OUDS Theme and Components in SwiftUI") {
-        Learn how to apply the OUDS design system to your SwiftUI app using themes and components.
+        Learn how to apply the OUDS design system to your SwiftUI app using real OUDS themes and components.
     }
 
     @Section(title: "Setup OUDS") {
@@ -15,17 +15,20 @@
 
     @Section(title: "Apply Theme") {
         @ContentAndMedia {
-            You can easily embed an OUDS theme:
+            You can easily embed an OUDS theme using **OUDSColoredSurface**:
             ```swift
-            struct ContentView: View {
+            struct ThemedView: View {
                 var body: some View {
-                    VStack {
-                        Text("Welcome to OUDS!")
-                            .font(.oudsHeading)
-                            .foregroundColor(.oudsPrimary)
+                    OUDSColoredSurface {
+                        VStack(spacing: 16) {
+                            Text("Welcome to OUDS")
+                                .font(.title)
+                            OUDSLink(title: "Visit Documentation") {
+                                print("Link tapped!")
+                            }
+                        }
+                        .padding()
                     }
-                    .padding()
-                    .background(Color.oudsBackground)
                 }
             }
             ```
@@ -34,13 +37,23 @@
 
     @Section(title: "Use OUDS Components") {
         @ContentAndMedia {
-            Try using a component, for example, a button:
+            Let’s use a few common OUDS components:
             ```swift
-            struct ButtonsExample: View {
+            struct ComponentsExample: View {
+                @State private var isOn = true
+                @State private var text = ""
+
                 var body: some View {
-                    OUDSButton(title: "Continue") {
-                        print("Button tapped!")
+                    VStack(spacing: 20) {
+                        OUDSButton(title: "Continue") {
+                            print("Button tapped!")
+                        }
+
+                        OUDSSwitch(isOn: $isOn, title: "Enable Feature")
+
+                        OUDSTextInput(text: $text, placeholder: "Enter your name")
                     }
+                    .padding()
                 }
             }
             ```
@@ -49,7 +62,7 @@
 
     @Section(title: "Summary") {
         @ContentAndMedia {
-            You’ve successfully embedded OUDS theme and used components within a SwiftUI app!
+            You’ve successfully embedded OUDS theme and used real OUDS components within a SwiftUI app!
         }
     }
 }
