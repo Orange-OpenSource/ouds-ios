@@ -24,7 +24,7 @@ import SwiftUI
 /// ```swift
 ///     // Create an Input Tag
 ///     OUDSInputTag("Label") {
-///         // Do something, usualy remove itself from a list
+///         // Do something, usually remove itself from a list
 ///     }
 ///
 ///     // Show in a list and removed whend clicked
