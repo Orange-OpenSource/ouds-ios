@@ -110,7 +110,7 @@ private struct InputTagContent: View {
         HStack(alignment: .center, spacing: theme.tag.tagSpaceColumnGapDefault) {
             Text(label)
                 .typeLabelStrongMedium(theme)
-            ScaledIcon(icon: Image(decorative: "ic_delete", bundle: theme.resourcesBundle).renderingMode(.template),
+            ScaledIcon(icon: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle).renderingMode(.template),
                        size: theme.tag.tagSizeAssetDefault)
                 .aspectRatio(contentMode: .fit)
         }
