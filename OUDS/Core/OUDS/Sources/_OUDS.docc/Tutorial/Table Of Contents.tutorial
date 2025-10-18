@@ -1,6 +1,8 @@
 @Tutorials(name: "Orange Unified Design System") {
-    @Intro(title: "iOS Tutorial") {
+    @Intro(title: "Swift Package iOS Tutorial") {
         Discovering a new framework can be exciting and scary. Learn how you can embed and use OUDS Swift Package.
+        With this tutorial tou will learn fundamental concepts of OUDS and discover the layers of this framework.
+        Theme, components, tokens... everything will be introduced!
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
@@ -17,25 +19,41 @@
     @Chapter(name: "Preparation of the theme") {
         In this chapter you will see how to instanciate a theme and inject it inside your app
 
-        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
         
         @TutorialReference(tutorial: "doc:tutorial-2-instanciate-theme")
     }
     
-    @Chapter(name: "Use of theme to configure views") {
-        In this chapter you will learn how you can use the theme yo customize the look and feel of your views.
+    @Chapter(name: "Use of first components provided by OUDS") {
+        In this chapter you will see how you can use your first components providing by OUDS Swift Package.
 
-        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        @Image(source: "ic_component_intro", alt: "OUDS components logo")
         
-        @TutorialReference(tutorial: "doc:tutorial-3-use-theme-for-views")
+        @TutorialReference(tutorial: "doc:tutorial-3-use-first-components")
     }
     
-    @Chapter(name: "Use of components provided by OUDS") {
-        In this chapter you will see how you can use components providing by OUDS Swift Package.
+    @Chapter(name: "Richer and more original components of OUDS") {
+        In this chapter you will use original components of OUDS and richer ones.
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-4-use-other-components")
+    }
+    
+    @Chapter(name: "Typography, view modifiers and tokens") {
+        OUDS is not only about components and themes. It provides view modifiers, typographies and tokens which can be used.
+
+        @Image(source: "ic_desgn_token_intro", alt: "OUDS tokens logo")
+        
+        @TutorialReference(tutorial: "doc:tutorial-5-styling-things")
+    }
+
+    @Chapter(name: "More ressources") {
+        You can have questions and issues, and there are resources online. Let's see that together.
 
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
         
-        @TutorialReference(tutorial: "doc:tutorial-4-use-components-from-ouds")
+        @TutorialReference(tutorial: "doc:tutorial-6-resources")
     }
 }
 

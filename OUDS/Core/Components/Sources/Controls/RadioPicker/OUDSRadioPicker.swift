@@ -180,6 +180,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
             ScrollView(.horizontal, showsIndicators: showsIndicator) {
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     content(for: radios)
+                        .padding(.vertical, 0)
                 }
             }
         case .vertical:

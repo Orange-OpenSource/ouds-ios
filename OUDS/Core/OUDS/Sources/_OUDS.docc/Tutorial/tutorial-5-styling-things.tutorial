@@ -1,0 +1,35 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Styling things") {
+        Even if components increase the identity of your apps, it is not enough. Typography, fonts and tokens are here to improve that.
+        
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @Section(title: "Prerequisites") {
+        
+        @ContentAndMedia {
+            We suppose you already followed and have understood the previous chapters.
+        }
+    } 
+    
+    @Section(title: "Use of tokens") {
+        
+        @Steps {
+            @Step {
+                Get the new source code for this chapter.
+                
+                @Code(name: "Tutorial.swift", file: "tutorial-5-1.swift") {
+                    @Image(source: "tutorial-5-1.png", alt: "Cleaned source code for tutorial")
+                } 
+            }
+         
+         TODO: typo, background, foreground, shadow, apdding, spaces, colors, tuning, font Menlo
+            
+        }
+        
+        @Assessments {
+
+        }
+    }
+}
+

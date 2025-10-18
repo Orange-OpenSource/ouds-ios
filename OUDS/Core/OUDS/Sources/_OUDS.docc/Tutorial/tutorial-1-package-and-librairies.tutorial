@@ -1,17 +1,18 @@
 @Tutorial(time: 10) {
     @Intro(title: "Swift Package integration") {
-        OUDS iOS is exposed through a Swift Package, and provides several librairies for your needs
+        OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several librairies for your needs.
+        These librairies help to split products and make users able to select only what they need.
+        SwiftUI is the only official supported framework.
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
 
-    @Section(title: "Import the Swift Package") {
+    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    
+    @Section(title: "Import the Swift Package and the libraries") {
         
         @ContentAndMedia {
-        
-            OUDS for iOS is an open source Swift Package.
-            
-            @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+            OUDS for iOS is an open source Swift Package available on GitHub under MIT license.
         }
     
         @Steps {
@@ -19,27 +20,69 @@
                 Using Xcode, in your *project package dependencies*, add a new dependency.
                 Search with the GitHub repository URL (https://github.com/Orange-OpenSource/ouds-ios), and select the *ouds-ios* dependency.
                 You can then choose the *dependency rule* you want.
-                To know which version you need, you can have a look on the [available API list](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API) and also the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases).)
+                To know which version you need, you can have a look on the [available API list](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API)
+                and also the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases).)
+                
+                @Image(source: "tutorial-1-ouds-swift-package", alt: "Description by Xcode of the OUDS Swift Package woth its README preview")
             }
-        }
-    }
-    
-    @Section(title: "Embed the librairies") {
-        
-        @ContentAndMedia {
-        
-            Librairies are blocks of the Swift Package
             
-            @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
-        }
-        
-        @Steps {
             @Step {
-                When you downloaded the package, you will see several librairies are available. 
+                Once you downloaded the package, you will see several librairies are available. 
                 They can be embeded inside your *target* librairies.
                 Things are separated to let users integrate only what they need.
+                
+                The *OUDS* library provides the main elements like the `OUDSThemeableView`. The theme contract is defined inside it.
+                
+                *OUDSThemesOrange* provides the theme implementation for the Orange products, and contains also assets and all tokens for this theme.
+                
+                *OUDSThemesSosh* provides the theme implementation for the Sosh products, and contains also assets and all tokens for this theme.
+                
+                *OUDSThemesWireframe* provides the theme implementation for the Wireframe theme, which is a theme dedicated to mockups and prototypes.
+                
+                *OUDSThemesOrangeBusinessTools* provides the theme implementation for the Orange products but with constraintes of sizes and spaces.
+                
+                *OUDSComponents* contains the SwiftUI OUDS components defined with the Figma specifications, and also useful view modifers.
+                
+                *OUDSTokensRaw*, *OUDSTokensSemantic* and *OUDSTokensComponents* are librairies defining and oroviding the tokens for low level (raw), 
+                middle level (semantic) or component levels.
+                
+                *OUDSModules* is for modules or rich components with extra logic.
+                
+                *OUDSFoundations* is dedicated to some utilities and shared logic.
+                
+                Add for example *OUDS*, *OUDSThemesOrange* and *OUDSComponents* in your app target.
+                
+                @Image(source: "tutorial-1-ouds-libraries.png", alt: "Embed librairies inside target")
+            }
+        }
+        
+        @Assessments {
+            @MultipleChoice {
+                Which of these choices is correct?
 
-                Import *OUDS*, *OUDSThemesOrange*, *OUDSComponents*, *OUDSTokensSemantic*, *OUDSTokensRaw* and *OUDSFoundations*.
+                @Choice(isCorrect: true) {
+                    I can contribute to OUDS using pull request 
+
+                    @Justification(reaction: "That's right!") {
+                        OUDS is open source, under MIT license, and hosted on GitHub. Of course you can contribute!
+                    }
+                }
+
+                @Choice(isCorrect: false) {
+                    OUDS supports officialy all Apple OS like visionOS, tvOS, watchOS, iPadOS, iOS and also CarPlay.
+
+                    @Justification(reaction: "Try again!") {
+                        The main supported OS is iOS / iPadOS. However we keep in minde visionOS, tvOS, watchOS and CarPlay. 
+                    }
+                }
+
+                @Choice(isCorrect: false) {
+                    OUDS provides UIKit components 
+                  
+                    @Justification(reaction: "Ttry again!") {
+                        OUDS supports officialy only SwftUI. UIKit is very experimental and not recommended 
+                    }
+                }
             }
         }
     }

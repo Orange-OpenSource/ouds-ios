@@ -1,95 +1,65 @@
 @Tutorial(time: 10) {
     @Intro(title: "Instanciate and inject a theme") {
         The theme is exposed as one object which will be injected inside your SwiftUI view.
+        The theme provides all tokens which defines in the end the rendering of everything.
         
-        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
     @Section(title: "Prerequisites") {
         
         @ContentAndMedia {
-            We will suppose you already have an app or a freshly created new one
-        }
-        
-        @Steps {
-            @Step {
-                Define a basic `App` object using *SwiftUI*.
-                
-                ```swift
-                import SwiftUI
-
-                @main
-                struct OUDSTutorialSandboxApp: App {
-                    var body: some Scene {
-                        WindowGroup {
-                            Text("Hello OUDS!")
-                        }
-                    }
-                }
-                ```
-            }
+            We suppose you already have an app or a freshly created new one, with OUDS Swift Package integrated and the librairies added to the target.
+            We supposed also you have Xcode 26 at least, and for example an iPhone 17 Pro Max simulator.
+            Source code and tokens here are the ones of version 0.20.0 ; things can change in the future.
         }
     } 
     
-    @Section(title: "Import the librairies") {
-        
-        @ContentAndMedia {
-            To start, import *OUDS* and *OUDSThemesOrange* into your view file:
-            
-            ```swift
-            import OUDS
-            import OUDSThemesOrange
-            import SwiftUI
-
-            @main
-            struct OUDSTutorialSandboxApp: App {
-                var body: some Scene {
-                    WindowGroup {
-                        Text("Hello OUDS!")
-                    }
-                }
-            }
-            ```
-        }
-    }
-
-    @Section(title: "Inject the theme") {
-        
-        @ContentAndMedia {
-            The theme is an object to instanciate only one time and inject at the top level of your app view.
-        }
+    @Section(title: "Basic structure for the app") {
         
         @Steps {
             @Step {
-                Instanciate your theme. Keep in mind this object should be instanciated only once.
+                Define a basic `App` object using *SwiftUI*. Add inside a simple text
                 
-                ```swift
-                import OUDSThemesOrange
-                
-                let myTheme = OrangeTheme()
-                ```
+                @Code(name: "Tutorial.swift", file: "tutorial-2-1.swift") {
+                    @Image(source: "tutorial-2-1.png", alt: "A text displaying the \"Hello OUDS!\" message")
+                } 
             }
+         
             @Step {
-                Add the `OUDSThemeableView` in your app to wrap your root view. This special view will expose as environment object
-                the theme.
+                Import the needed librairies in your file (*OUDS* and *OUDSThemeOrange*).
+                Instanciate a new object for `OrangeTheme`.
+                In your app root view, add the `OUDSThemeableView` and give it the new theme object.
                 
-                ```swift
-                @main
-                struct OUDSTutorialSandboxApp: App {
-                    
-                    let myTheme = OrangeTheme()
-                    
-                    var body: some Scene {
-                        WindowGroup {
-                            OUDSThemeableView(theme: myTheme) {
-                                Text("Hello OUDS!")
-                            }
-                        }
-                    }
-                }
-                ```
+                Project must compile then.
+                
+                @Code(name: "Tutorial.swift", file: "tutorial-2-2.swift") {
+                    @Image(source: "tutorial-2-2.png", alt: "A text displaying the \"Hello OUDS!\" message")
+                } 
             }
         }
-    }     
+        
+        @Assessments {
+            @MultipleChoice {
+                Is it mandatory to use today the `OUDSThemeableView`?
+
+                @Choice(isCorrect: true) {
+                    Yes
+
+                    @Justification(reaction: "That's right!") {
+                        It is! Otherwise the theme won't be defined and available as environment variable.
+                    }
+                }
+
+                @Choice(isCorrect: false) {
+                    No
+
+                    @Justification(reaction: "Try again!") {
+                        The `OUDSThemeableView` is mandatory to inject as environment variable the theme and expose it in every view inside. 
+                    }
+                }
+            }
+        }
+    }
 }
 
