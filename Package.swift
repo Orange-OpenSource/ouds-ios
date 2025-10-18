@@ -79,7 +79,7 @@ let package = Package(
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.1"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.3"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.5"),
     ],
 
     // MARK: - Targets
