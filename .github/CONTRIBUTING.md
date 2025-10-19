@@ -95,7 +95,7 @@ Feature requests are welcome. But take a moment to find out whether your idea fi
 ## Pull Requests
 
 > [!IMPORTANT]
-> Be sure you jave an iOS_ready environment, i.e. macOS and Xcode. 
+> Be sure you have an iOS-ready environment, i.e. macOS and Xcode. 
 > Please refer to DEVELOP file for more details.
 
 Good pull requests (patches, improvements, new features) are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
