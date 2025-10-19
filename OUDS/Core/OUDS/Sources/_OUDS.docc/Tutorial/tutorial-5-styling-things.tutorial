@@ -1,18 +1,20 @@
-@Tutorial(time: 10) {
+@Tutorial(time: 30) {
     @Intro(title: "Styling things") {
         Even if components increase the identity of your apps, it is not enough. Typography, fonts and tokens are here to improve that.
         
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @Section(title: "Prerequisites") {
+    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Use of tokens") {
         
         @ContentAndMedia {
+            Components are based on semantic tokens and if needed component tokens.
+            These components tokens are based on semantic tokens, which are absed on raw tokens.
+            
             We suppose you already followed and have understood the previous chapters.
         }
-    } 
-    
-    @Section(title: "Use of tokens") {
         
         @Steps {
             @Step {
@@ -27,19 +29,16 @@
                 The themes objects contains plenty of tokens gathered in tokens providers.
                 These tokens can be semantic tokens (borders, elevations, colors, etc.) or component tokens.
                 In addition, in librairies, there are raw tokens which are used by higher-level ones like semantics.
-                
                 One of these family of tokens is the *space* family. 
-                Spaces are dimensions elements in pixels can be used for margins or paddings for example. 
-                These tokens are particular: some of them can have two values, one for mobile and one for tablet, mainly the *scaled* tokens
+                Spaces are dimensions elements in pixels which can be used for margins or paddings for example. 
+                These tokens are particular: some of them can have two values, one for mobile and one for tablet, mainly the *scaled* tokens.
                 In addition some tokens can be unique, like the *fixed* ones or the *padding* ones for spaces.
-                
                 *Sizes* are very similar to *spaces*: they can have two values too, or not, and have values in pixels. In fact, only their meanings are different.
-                
-                For both *sizes* and *spaces*, the library cannot define which version must be used, i.e. the mobile or the tablet version. Thus, accorcing to the `horizontalSizeClass` the user can give *by code*, a function exist to use the suitable value.
+                For both *sizes* and *spaces*, the library cannot define which version must be used, i.e. the mobile or the tablet version. Thus, according to the `horizontalSizeClass` the user can give *by code*, a function exists to use the suitable value.
                 
                 Try to apply spacings and sizes in the app.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-2.swift") {
+                @Code(name: "ContentView.swift", file: "tutorial-5-2.swift", previousFile: "tutorial-5-1.swift") {
                     @Image(source: "tutorial-5-2.png", alt: "Things are better with spacings and sizes")
                 }
             }
@@ -59,6 +58,10 @@
     
     @Section(title: "Use of view modifiers") {
         
+        @ContentAndMedia {
+            View modifiers are helpful to enrich components and apply effects using current theme and tokens, or not.
+        }
+        
         @Steps {
             @Step {
                 The *OUDSComponents* library provides also view modifiers to apply effects on views, using the power of tokens.
@@ -66,7 +69,7 @@
                 
                 Try to change these colors in the title of the view and the formular.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-4.swift") {
+                @Code(name: "ContentView.swift", file: "tutorial-5-4.swift", previousFile: "tutorial-5-3.swift") {
                     @Image(source: "tutorial-5-4.png", alt: "Using OUDS view modifiers prevents developers to manage light and dark color scheme")
                 }
             }
@@ -82,7 +85,7 @@
             }
             
             @Step {
-                Borders are also defined by tokens, exposed through themes, and usable thanks to view modifiers. They are defined by a style, a width, a radis and a color.
+                Borders are also defined by tokens, exposed through themes, and usable thanks to view modifiers. They are defined by a style, a width, a radius and a color.
                 
                 Let's add a border effect to the formular.
                 
@@ -94,7 +97,7 @@
             @Step {
                 Typography is very important in an app. It is highly related to the brand, and is based on font family. With several weights and sizes the structure of the page is improved.
                 
-                Choose some view modifiers of typogrphy and apply them.
+                Choose some view modifiers of typography and apply them.
                 
                 @Code(name: "ContentView.swift", file: "tutorial-5-7.swift") {
                     @Image(source: "tutorial-5-7.png", alt: "Typography makes things more profesional")
@@ -106,15 +109,15 @@
                 
                 These elements must be defined during the theme initialization, let's try it!
                 
-                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-8.swift") {
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-8.swift", previousFile: "tutorial-5-1.swift") {
                     @Image(source: "tutorial-5-8.png", alt: "Rounded corners are often appreciated")
                 }
             }
             
             @Step {
                 Font family is very important for a brand because it's its identity. 
-                Orange themes use the *Helvetiva Neue* font family, which is available in iOS. 
-                Some font families can be used elswhere in OUDS and are defined in tokens.
+                Orange themes use the *Helvetica Neue* font family, which is available in iOS. 
+                Some font families can be used elsewhere in OUDS and are defined in tokens.
                 To be used, a map has been defined in OUDS package to be sure to make the correspondance between a font family name and a weight in one side, and the PostScript name to load in the other side.
                 
                 Let's use *Menlo* for the app, which is available in iOS.
@@ -126,6 +129,23 @@
         }
     }
     
+    @Section(title: "Final result") {
+        
+        @ContentAndMedia {
+            The aim of this tutorial was to make you discover OUDS, its layers, tools and how to use it.
+        }
+        
+        @Steps {
+            @Step {
+                If you followed this tutorial and apply the code snippets, here is what should looks like the app in light mode and dark mode.
+                
+                Do not hesitate yo test new API and integrate other components!
+                
+                @Image(source: "tutorial-light-dark (result).png", alt: "Tutorial app in light and dark mode")
+            }
+        }
+    }
+
     @Assessments {
         @MultipleChoice {
             Can I use raw tokens form OUDS in my app?
@@ -134,7 +154,7 @@
                 Yes
 
                 @Justification(reaction: "Correct!") {
-                    Even if it is not recommended you can use raw tokens like colors in your app. However you should prefer OUDS view modifier instead because some logic are masked (use of view ports or color schemes)
+                    Even if it is not recommended you can use raw tokens like colors in your app. However you should prefer OUDS view modifiers instead because some logic are masked (use of view ports or color schemes)
                 }
             }
             
@@ -142,7 +162,7 @@
                 No
 
                 @Justification(reaction: "Try again!") {
-                    Even if there are low level values, they are still public so nothing prevents you to use thele?
+                    Even if there are low level values, they are still public so nothing prevents you to use them!
                 }
             }
         }
@@ -174,7 +194,7 @@
                 Yes
 
                 @Justification(reaction: "Correct!") {
-                    The Orange Brand decided to open 5 topics to lets users (i.e. subbrands, countries, etc.) customize a bit theirs themes without changing tokens.
+                    The Orange Brand decided to open 5 topics to lets users (i.e. subbrands, countries, etc.) customize a bit their themes without changing tokens.
                 }
             }
             
@@ -194,8 +214,8 @@
                 Yes
 
                 @Justification(reaction: "Try again!") {
-                    You should alaways check the license of the font family you want to use. For example OpenFont SIL license is interesting.
-                    Other fonts luke *Helvetica Neue* forbid to version the TTF files in repositories, and their use is not free of charge.
+                    You should always check the license of the font family you want to use. For example OpenFont SIL license is interesting.
+                    Other fonts like *Helvetica Neue* forbid to version the TTF files in repositories, and their use is not free of charge.
                 }
             }
             
@@ -203,7 +223,7 @@
                 No
 
                 @Justification(reaction: "Try again!") {
-                    Why not? Some font fmaily are defined in raw tokens and can be used inside OUDS-based projects.
+                    Why not? Some font family are defined in raw tokens and can be used inside OUDS-based projects.
                 }
             }
             
@@ -211,7 +231,7 @@
                 Maybe
 
                 @Justification(reaction: "Correct!") {
-                    You should forst check the license and the terms of uses of the font family you want to use.
+                    You should first check the license and the terms of uses of the font family you want to use.
                     Some font families are available in iOS like *Helvetica Neue*, but not *Helvetica Neue Arabic*.
                     Because the SwiftUI API relies on PostScript names of typography, i.e. font family name and weight, if you want to use a specific font maybe some internal settings should be updated inside OUDS.
                 }

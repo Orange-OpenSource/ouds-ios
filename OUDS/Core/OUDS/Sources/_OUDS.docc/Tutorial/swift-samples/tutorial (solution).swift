@@ -13,7 +13,7 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true))
+    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
 
     var body: some Scene {
         WindowGroup {
@@ -36,7 +36,7 @@ struct ContentView: View {
     @State var creatingProfile: Bool = false
     @State var switchToDarkMode: Bool = false
 
-    @Environment(\.openURL) private var openUrl
+    @Environment(\.openURL) var openUrl
     @Environment(\.theme) var theme
 
     var body: some View {

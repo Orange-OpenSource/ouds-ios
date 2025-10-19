@@ -9,7 +9,7 @@ struct ContentView: View {
     @State var switchToDarkMode: Bool = false
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.openURL) private var openUrl
+    @Environment(\.openURL) var openUrl
     @Environment(\.theme) var theme
 
     var body: some View {

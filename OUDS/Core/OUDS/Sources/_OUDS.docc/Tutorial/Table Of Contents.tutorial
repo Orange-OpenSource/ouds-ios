@@ -1,7 +1,7 @@
 @Tutorials(name: "Orange Unified Design System") {
     @Intro(title: "Swift Package iOS Tutorial") {
         Discovering a new framework can be exciting and scary. Learn how you can embed and use OUDS Swift Package.
-        With this tutorial tou will learn fundamental concepts of OUDS and discover the layers of this framework.
+        With this tutorial you will learn fundamental concepts of Orange Unified Design System and discover the layers of this framework.
         Theme, components, tokens... everything will be introduced!
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
@@ -25,7 +25,7 @@
     }
     
     @Chapter(name: "Use of first components provided by OUDS") {
-        In this chapter you will see how you can use your first components providing by OUDS Swift Package.
+        In this chapter you will see how you can use your first components provided by OUDS Swift Package
 
         @Image(source: "ic_component_intro", alt: "OUDS components logo")
         
@@ -33,7 +33,7 @@
     }
     
     @Chapter(name: "Richer and more original components of OUDS") {
-        In this chapter you will use original components of OUDS and richer ones.
+        In this chapter you will use original components of OUDS and richer ones
 
         @Image(source: "ic_component_intro", alt: "Logo of OUDS")
         
@@ -41,9 +41,9 @@
     }
     
     @Chapter(name: "Typography, view modifiers and tokens") {
-        OUDS is not only about components and themes. It provides view modifiers, typographies and tokens which can be used.
+        OUDS is not only about components and themes. It provides view modifiers, typographies and tokens which can be used. You will learn how.
 
-        @Image(source: "ic_desgn_token_intro", alt: "OUDS tokens logo")
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
         
         @TutorialReference(tutorial: "doc:tutorial-5-styling-things")
     }
@@ -53,7 +53,7 @@
 
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
         
-        @TutorialReference(tutorial: "doc:tutorial-6-resources")
+        @TutorialReference(tutorial: "doc:tutorial-6-going-further")
     }
 }
 

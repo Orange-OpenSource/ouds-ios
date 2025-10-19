@@ -1,32 +1,36 @@
 @Tutorial(time: 30) {
-    @Intro(title: "Use OUDS components") {
+    @Intro(title: "Use your first OUDS components") {
         OUDS provides components ready to be used, specified in Figma assets and preventing users to handle tokens.
         They are rendered thanks to the theme in use.
         
         @Image(source: "ic_component_intro", alt: "OUDS components logo")
     }
 
+    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+
     @Section(title: "Add basic components") {
         
         @ContentAndMedia {
             We will work on a kind of formular using main OUDS components.
+            Feel free to style and design things as you want.
         }
         
         @Steps {
             @Step {
                 First, prepare the `ContentView` by adding inside it a `ScrollView`. 
-                
                 Import also the `OUDSComponents` library.  
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-3-1.swift") 
+                @Code(name: "Tutorial.swift", file: "tutorial-3-1.swift", previousFile: "tutorial-2-2.swift") 
             }
             
             @Step {
                 Now, let's add radio buttons to let the user choose its gender.
                 The official components are `OUDSRadio` and `OUDSRadioItem`, but the library has also a `OUDSRadioPicker` to implement quicky a group of radios.
                 This component can be replaced by your own.
-                The radio picker is defined by an array of value to display associated to a tag, i.e. an `Hashable` thing shared through a `Binding`.
+                The radio picker is defined by an array of values to display radio items associated to a tag, i.e. an `Hashable` thing shared through a `Binding`.
                 Inside a picker the user can select only one value, not zero.
+                
+                Add such picker with three items inside.
                 
                 @Code(name: "Content.swift", file: "tutorial-3-2.swift") {
                     @Image(source: "tutorial-3-2.png", alt: "A radio picker")
@@ -36,7 +40,9 @@
             @Step {
                 The radio picker is alone, it is the time to add below a checkbox. OUDS provides two components: `OUDSCheckbox` which is a simple checkbox, and `OUDSCheckboxItem` which is a checkbox (duh!) with additional texts and icons. 
                 The state of the checkbox is shared through a boolean `State`. 
-                In some cases you may need to use `OUDSCheckboxIndeterminate` and `OudsCheckboxItemIndeterminate` if you want a three-states checkbox.
+                In some cases you may need to use `OUDSCheckboxIndeterminate` and `OUDSCheckboxItemIndeterminate` if you want a three-states checkbox.
+                
+                Add a checkbox item with only two states.
                 
                 @Code(name: "Content.swift", file: "tutorial-3-3.swift") {
                     @Image(source: "tutorial-3-3.png", alt: "A radio picker and a checkbox item")
@@ -44,8 +50,10 @@
             }
             
             @Step {
-                There are also components who do not have any behaviors and are here only for visual rendering, for example dividers which can be horizontal or vertical. Choose to add an instance of `OUDSHorizontalDivider`. A divider is, in the end, a stroke with a color.
-                You will see later, colors in OUDS have two values: a light mode value, and a dark mode value. Here the divider can have a color which can change, or not.
+                There are also components who do not have any behaviors and are here only for visual rendering, for example dividers which can be horizontal or vertical. 
+                A divider is, in the end, a stroke with a color. You will see later, colors in OUDS have two values: a light mode value, and a dark mode value. Here the divider can have a color which can change, or not.
+                
+                Choose to add an instance of `OUDSHorizontalDivider`. 
                 
                 @Code(name: "Content.swift", file: "tutorial-3-4.swift") {
                     @Image(source: "tutorial-3-4.png", alt: "A radio picker, an horizontal divider and a checkbox item")
@@ -55,7 +63,9 @@
             @Step {
                 With radio and checkbox, OUDS provides also switch elements (toggles). They can be alone (`OUDSSwitch`) or with texts (`OUDSSwitchItem`). 
                 Just like the checkbox, the switch exposes its state through a `Binding`.
+                
                 Add a switch item, it will be used as a trick to force the change of the color scheme for the view for our future operations.
+                You will then be able to see the automatic changes of colors when you switch the color scheme.
                 
                 @Code(name: "Content.swift", file: "tutorial-3-5.swift") {
                     @Image(source: "tutorial-3-5.png", alt: "A radio picker, an horizontal divider, a checkbox item and a switch item")
@@ -63,7 +73,8 @@
             }
             
             @Step {
-                Users may need to navigate outside the app, like, for example, open a website. Thus the `OUDSLink` component can be integrated. It can be only with a text or also a chevron indicator.
+                Users may need to navigate outside the app, like, for example, opening a website. Thus the `OUDSLink` component can be integrated. It can be only with a text or also a chevron indicator.
+                
                 Add an `OUDSLink` in the app and make it open the iOS documentation OUDS website.
                 
                 @Code(name: "Content.swift", file: "tutorial-3-6.swift") {
@@ -72,37 +83,38 @@
             }
             
             @Step {
-                In the end, we can also add a button. Button are one of the most used component in an app and bring a lof of the power and the style of the brand.
+                In the end, we can also add a button. Button are one of the most used components in an app and bring a lof of the power and the style of the brand.
                 You can find it with the `OUDSButton`. Such button has an appearance changing its colors, and also a style (loading or not).
                 Thanks to the theme, the enabled, disabled, hover, focus or pressed states are managed.
+                
                 Let's add a button with some rules: if checkbox is not checked it is disabled. When tapped, change the style of the button during 5 seconds.
                 
                 @Code(name: "Content.swift", file: "tutorial-3-7.swift") {
                     @Image(source: "tutorial-3-7.png", alt: "A radio picker, an horizontal divider, a checkbox item, a switch item, a link and a button")
                 } 
             }
-            
-            @Assessments {
-                @MultipleChoice {
-                    Does the developer using OUDS component need to manage the look and feel of the components?
+        }
+    } 
+        
+    @Assessments {
+        @MultipleChoice {
+            Does the developer using OUDS component need to manage the look and feel of the components?
 
-                    @Choice(isCorrect: false) {
-                        Yes
+            @Choice(isCorrect: false) {
+                Yes
 
-                        @Justification(reaction: "Try again!") {
-                            No! The components use the design specifications, i.e. tokens thanks to the theme, to define the style theu must have?
-                        }
-                    }
+                @Justification(reaction: "Try again!") {
+                    No! The components use the design specifications, i.e. tokens, thanks to the theme, to define the style they must have in all cases.
+                }
+            }
 
-                    @Choice(isCorrect: true) {
-                        No
+            @Choice(isCorrect: true) {
+                No
 
-                        @Justification(reaction: "Correct!") {
-                            That is the reason why the `OUDSThemeableView` is so important: it injects the theme as environment variable so that any component can get it to define its style. 
-                        }
-                    }
+                @Justification(reaction: "Correct!") {
+                    That is the reason why the `OUDSThemeableView` is so important: it injects the theme as environment variable so that any component can get it to define its style. 
                 }
             }
         }
-    } 
+    }
 }
