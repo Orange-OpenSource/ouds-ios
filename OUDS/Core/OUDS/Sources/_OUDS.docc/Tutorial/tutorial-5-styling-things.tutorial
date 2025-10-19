@@ -22,14 +22,109 @@
                     @Image(source: "tutorial-5-1.png", alt: "Cleaned source code for tutorial")
                 } 
             }
-         
-         TODO: typo, background, foreground, shadow, apdding, spaces, colors, tuning, font Menlo
             
-        }
-        
-        @Assessments {
-
+            @Step {
+                The themes objects contains plenty of tokens gathered in tokens providers.
+                These tokens can be semantic tokens (borders, elevations, colors, etc.) or component tokens.
+                In addition, in librairies, there are raw tokens which are used by higher-level ones like semantics.
+                
+                One of these family of tokens is the *space* family. 
+                Spaces are dimensions elements in pixels can be used for margins or paddings for example. 
+                These tokens are particular: some of them can have two values, one for mobile and one for tablet, mainly the *scaled* tokens
+                In addition some tokens can be unique, like the *fixed* ones or the *padding* ones for spaces.
+                
+                *Sizes* are very similar to *spaces*: they can have two values too, or not, and have values in pixels. In fact, only their meanings are different.
+                
+                For both *sizes* and *spaces*, the library cannot define which version must be used, i.e. the mobile or the tablet version. Thus, accorcing to the `horizontalSizeClass` the user can give *by code*, a function exist to use the suitable value.
+                
+                Try to apply spacings and sizes in the app.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-2.swift") {
+                    @Image(source: "tutorial-5-2.png", alt: "Things are better with spacings and sizes")
+                }
+            }
+            
+            @Step {
+                Tokens of colors can also be used as they are, even if it is not recommended. 
+                The *OUDS* library provides *core raw tokens*, and some themes like *Orange*, *Sosh* and *Wireframe* have their own *brand raw tokens*. In the package these tokens have primitive types to reduce the memory footprint. Thus, for example for colors, it is needed to convert these raw values to SwiftUI color to apply them.
+                
+                Try to apply a raw token of color to a text field.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-3.swift") {
+                    @Image(source: "tutorial-5-3.png", alt: "Raw tokens can be used, even if not recommended")
+                }
+            }
         }
     }
+    
+    @Section(title: "Use of view modifiers") {
+        
+        @Steps {
+            @Step {
+                The *OUDSComponents* library provides also view modifiers to apply effects on views, using the power of tokens.
+                For example, it is possible de define a foreground color and also a background color using a semantic token of color which will provide light and dark mode variants.
+                
+                Try to change these colors in the title of the view and the formular.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-4.swift") {
+                    @Image(source: "tutorial-5-4.png", alt: "Using OUDS view modifiers prevents developers to manage light and dark color scheme")
+                }
+            }
+            
+            @Step {
+                OUDS provides also view modifiers to create shadow effects, i.e. elevations. These effects are based also on tokens, defined in Figma.
+                
+                Try to apply an elevation to the formular.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-5.swift") {
+                    @Image(source: "tutorial-5-5.png", alt: "Elevations can be lovely effects on cards or square-shaped items")
+                }
+            }
+            
+            @Step {
+                Borders are also defined by tokens, exposed through themes, and usable thanks to view modifiers. They are defined by a style, a width, a radis and a color.
+                
+                Let's add a border effect to the formular.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-6.swift") {
+                    @Image(source: "tutorial-5-6.png", alt: "Borders are useful to make things more visible")
+                }
+            }
+            
+            @Step {
+                Typography is very important in an app. It is highly related to the brand, and is based on font family. With several weights and sizes the structure of the page is improved.
+                
+                Choose some view modifiers of typogrphy and apply them.
+                
+                @Code(name: "ContentView.swift", file: "tutorial-5-7.swift") {
+                    @Image(source: "tutorial-5-7.png", alt: "Typography makes things more profesional")
+                }
+            }
+            
+            @Step {
+                Because countries, affiliates, subcontractors or other projects may need to have small adjustments, the Orange Brand decided to define five "flexibility points" which can be used to customize a theme. For example, locally, the buttons and the text inputs elements can have or not rounded corners.
+                
+                These elements must be defined during the theme initialization, let's try it!
+                
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-8.swift") {
+                    @Image(source: "tutorial-5-8.png", alt: "Rounded corners are oftent appreciated")
+                }
+            }
+            
+            @Step {
+                Font family is very important for a brand because it's its identity. 
+                Orange themes use the *Helvetiva Neue* font family, which is available in iOS. 
+                Some font families can be used elswhere in OUDS and are defined in tokens.
+                To be used, a map has been defined in OUDS package to be sure to make the correspondance between a font family name and a weight in one side, and the PostScript name to load in the other side.
+                
+                Let's use *Menlo* for the app, which is available in iOS.
+                
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-9.swift") {
+                    @Image(source: "tutorial-5-9.png", alt: "Fonts can be fun!")
+                }
+            }
+        }
+    
+    TODO: Add quizz and solution, and chapter 6
 }
 
