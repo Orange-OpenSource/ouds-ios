@@ -66,6 +66,8 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 
 ## Quick start
 
+You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embe and use OUDS iOS Swift Package for your app.
+
 ### Choose your version
 
 You can find available releases on [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases). 

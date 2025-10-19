@@ -1,0 +1,98 @@
+@Tutorial(time: 30) {
+    @Intro(title: "Add more OUDS components") {
+        Components can be similar to iOS native components, or can also be original and strongly related to Orange Unified Design System needs.
+        
+        @Image(source: "ic_component_intro", alt: "OUDS components logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Add basic components") {
+        
+        @ContentAndMedia {
+            Some components like tags are original, and others like text input are richer. Let's play with them!
+        }
+        
+        @Steps {
+            
+            @Step {
+                The tags are small labels bringing pieces of information so as to give more context to the users. They are very simple to use.
+                
+                Add three tags thanks to `OUDSTag` object.
+                
+                @Code(name: "Content.swift", file: "tutorial-4-1.swift", previousFile: "tutorial-3-7.swift") {
+                    @Image(source: "tutorial-4-1.png", alt: "Tags in top of formular")
+                }
+            }
+            
+            @Step {
+                Chips can be considered as interactive tags. OUDS provides `OUDSSuggestionChip` and `OUDSFilterChip` depending to the needs of the users.
+                Just like the radio buttons and the checkboxes, OUDS package provides a `OUDSChipPicker` to add quickly a group of chips and select some of them using specific rule.
+                This component is not official but can be helpful.
+               
+                Add a group of chips for some topics the user must select. The picker is populated by an array of data, and the one we use as a `Binding` of array.
+                The user can select all of the items.
+                
+                @Code(name: "Content.swift", file: "tutorial-4-2.swift") {
+                    @Image(source: "tutorial-4-2.png", alt: "Chips are now integrated inside a picker")
+                }
+            }
+        
+            @Step {
+                Formulars without input text are not formulars. OUDS provide an `OUDSTextInput` to let use write some text.
+                This component is very rich: preffix and suffix can be defined, and also helper text and links. An icon can be added and a trailing action.
+                
+                Add two text inputs: one to get the user name with a delete action, and one for an email address.
+                Their values are exposed through `Binding` of `String`.
+
+                @Code(name: "Content.swift", file: "tutorial-4-3.swift") {
+                    @Image(source: "tutorial-4-3.png", alt: "Texts inputs are very rich and available in lot of apps and formulars")
+                }
+            }
+            
+            @Step {
+                In some conditions, components need to be placed on colored surface. Indeed such colored surfaces make their components strongs and increase the efficiency and the onboarding of the users.
+                However some components like text, button and link must act differently if they are in such surfaces. For example they must use the monochrome colors.
+                In addition the colored surface brings a small set of colors so as to be sure contrasts and rendering of components are acceptable and all combinations tested.
+                Nevertheless some components with particular appearances must not be added in such surface, it is forbidden by design. Developers must check the documentation of the component and also apply the specifications of their designers who know these rules thanks to the Figma OUDS assets.
+                
+                Add a `OUDSColoredSurface` gathering the link, the button and the switch item. You will need to get the theme object for your first time so as to choose the color of the surface! The import of *OUDSTokensSemantic* is also necessary. Once your code is updated, compare the difference for the switch, the link and the button. Their style has changed!
+                
+                @Code(name: "Content.swift", file: "tutorial-4-4.swift") {
+                    @Image(source: "tutorial-4-4.png", alt: "The colored surfce changes the styles of some components")
+                }
+            }
+        }
+    }
+        
+    @Assessments {
+        @MultipleChoice {
+            In which case should I use the colored surface?
+
+            @Choice(isCorrect: false) {
+                Never, I can just change the background
+
+                @Justification(reaction: "Try again!") {
+                    Even if you apply the color you want on the background, it will not be enough because some components can have accessibility issues with bad WCAG ratios. Colored surface provides small set of colors for which components are ready.
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Always, thus my components feel good
+
+                @Justification(reaction: "Try again!") {
+                    No, you should see with your designer so as to know when a colored surface must be used.
+                    Or if you do not have designers, be an artist and test what is pleasant for you!
+                }
+            }
+                
+            @Choice(isCorrect: true) {
+                Sometimes, it depends to the context
+
+                @Justification(reaction: "Good!") {
+                    In most of cases components should not be in monochrome mode and colored surface used. See with your designers the cases when you will have to use the `OUDSColoredSurface`. Or be an artist and test what is pleasant for you!
+                }
+            }
+        }
+    }
+}

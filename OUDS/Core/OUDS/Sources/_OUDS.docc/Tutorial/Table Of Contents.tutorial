@@ -1,0 +1,59 @@
+@Tutorials(name: "Orange Unified Design System") {
+    @Intro(title: "Swift Package iOS Tutorial") {
+        Discovering a new framework can be exciting and scary. Learn how you can embed and use OUDS Swift Package.
+        With this tutorial you will learn fundamental concepts of Orange Unified Design System and discover the layers of this framework.
+        Theme, components, tokens... everything will be introduced!
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+    
+    @Chapter(name: "Import of the Swift Package and choose its librairies") {
+        In this chapter you will learn how to import the OUDS iOS Swift Package and which librairies it provides
+        you should choose for your needs
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-1-package-and-librairies")
+    }
+
+    @Chapter(name: "Preparation of the theme") {
+        In this chapter you will see how to instanciate a theme and inject it inside your app
+
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+        
+        @TutorialReference(tutorial: "doc:tutorial-2-instanciate-theme")
+    }
+    
+    @Chapter(name: "Use of first components provided by OUDS") {
+        In this chapter you will see how you can use your first components provided by OUDS Swift Package
+
+        @Image(source: "ic_component_intro", alt: "OUDS components logo")
+        
+        @TutorialReference(tutorial: "doc:tutorial-3-use-first-components")
+    }
+    
+    @Chapter(name: "Richer and more original components of OUDS") {
+        In this chapter you will use original components of OUDS and richer ones
+
+        @Image(source: "ic_component_intro", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-4-use-other-components")
+    }
+    
+    @Chapter(name: "Typography, view modifiers and tokens") {
+        OUDS is not only about components and themes. It provides view modifiers, typographies and tokens which can be used. You will learn how.
+
+        @Image(source: "ic_design_token_intro", alt: "OUDS tokens logo")
+        
+        @TutorialReference(tutorial: "doc:tutorial-5-styling-things")
+    }
+
+    @Chapter(name: "Go further with more ressources") {
+        You can have questions and issues, and there are resources online. Let's see that together.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-6-going-further")
+    }
+}
+

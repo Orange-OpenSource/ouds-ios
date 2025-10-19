@@ -24,6 +24,10 @@
 ## Technical preconditions
 
 > [!IMPORTANT]
+> You must have an iOS-ready environment to contribute to the project or at least build it.
+> Thus macOS is mandatory and Xcode 26.
+
+> [!IMPORTANT]
 > You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
 > You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
 > Have a look on the locks file to know which versions we are using (Podfile, Podfile.lock, Gemfile, Gemfile.lock, etc.).

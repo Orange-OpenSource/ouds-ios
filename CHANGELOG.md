@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.20.0...develop)
 
+### Added
+
+- Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
 
 ### Added
