@@ -48,7 +48,7 @@
         @TutorialReference(tutorial: "doc:tutorial-5-styling-things")
     }
 
-    @Chapter(name: "More ressources") {
+    @Chapter(name: "Go further with more ressources") {
         You can have questions and issues, and there are resources online. Let's see that together.
 
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")

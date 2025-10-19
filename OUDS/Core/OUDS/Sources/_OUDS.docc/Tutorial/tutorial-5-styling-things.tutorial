@@ -107,7 +107,7 @@
                 These elements must be defined during the theme initialization, let's try it!
                 
                 @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-8.swift") {
-                    @Image(source: "tutorial-5-8.png", alt: "Rounded corners are oftent appreciated")
+                    @Image(source: "tutorial-5-8.png", alt: "Rounded corners are often appreciated")
                 }
             }
             
@@ -163,6 +163,26 @@
 
                 @Justification(reaction: "Try again!") {
                     Look for methods with names prefixed by *ouds*. You will be surprised.
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            Does OUDS provide some flexibility points to let users adujst their themes?
+
+            @Choice(isCorrect: true) {
+                Yes
+
+                @Justification(reaction: "Correct!") {
+                    The Orange Brand decided to open 5 topics to lets users (i.e. subbrands, countries, etc.) customize a bit theirs themes without changing tokens.
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                No
+
+                @Justification(reaction: "Try again!") {
+                    You can look inside the `Tuning` object to see which things can be customized.
                 }
             }
         }

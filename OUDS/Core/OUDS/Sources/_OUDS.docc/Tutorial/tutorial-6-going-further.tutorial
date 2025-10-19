@@ -1,0 +1,40 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Going further with more resources") {
+        Since you have learnt how OUDS works with theme, themeable view, components, tuning and vieww modifiers, it is time now to discover some online resources.
+        
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @Section(title: "More resources") {
+        
+        @Steps {
+            @Step {
+                The iOS technical documentation is available online. It has been generated from all the Swift DocC documentation written in the Swift Package.
+                You will find several catalogs (as many as librairies) with details about everyhting: components, tokens, themes, providers, etc.
+                You can get it at [ios.unified-design-system.orange.com](https://ios.unified-design-system.orange.com/)
+            }
+            
+            @Step {
+                The whole design system is documented and available online. You can find everything about components, tokens, guidelines and principles of OUDS.
+                The *icon finder* is also available there to get icons for your projects.
+                Go to the website and learn things at [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+            }
+            
+            @Step {
+                OUDS iOS provides also a wiki attached to its GitHub repository. The wiki is a public base of knowledge with plenty of things: available API, technicala architecture, tips about processes, tests, conventions and toolings.
+                Have a look [on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) to discover how OUDS works.
+            }
+            
+            @Step {
+                For technical reasons the [Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios) GitHub repository does not embed the source code of the *design system toolbox* app. In fact this app and all its snapshots for tests increases a lot the size of the repository.
+                To get the source code of this showcase app, go to its dedicated GitHub repository at [Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox)
+            }
+            
+            @Step {
+                OUDS is open source, public and uses GitHub as forge. Thus, you will find common things inside the [Orange-OpenSource/ouds-ios](https://github.com/Orange-OpenSource/ouds-ios) GitHub repository.
+                Do not hesitate to [create issues if you spot bugs or want improvements](https://github.com/Orange-OpenSource/ouds-ios/issues) or [open or participate to discussions](https://github.com/Orange-OpenSource/ouds-ios/discussions)!
+            }
+        }
+    }
+}
+
