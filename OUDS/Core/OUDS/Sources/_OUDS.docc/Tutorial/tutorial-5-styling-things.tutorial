@@ -124,7 +124,79 @@
                 }
             }
         }
+    }
     
-    TODO: Add quizz and solution, and chapter 6
+    @Assessments {
+        @MultipleChoice {
+            Can I use raw tokens form OUDS in my app?
+
+            @Choice(isCorrect: true) {
+                Yes
+
+                @Justification(reaction: "Correct!") {
+                    Even if it is not recommended you can use raw tokens like colors in your app. However you should prefer OUDS view modifier instead because some logic are masked (use of view ports or color schemes)
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                No
+
+                @Justification(reaction: "Try again!") {
+                    Even if there are low level values, they are still public so nothing prevents you to use thele?
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            Does OUDS provide view modifiers to apply some effects?
+
+            @Choice(isCorrect: true) {
+                Yes
+
+                @Justification(reaction: "Correct!") {
+                    Borders, elevations, background color, foreground colors... all these things can be defined using view modifiers.
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                No
+
+                @Justification(reaction: "Try again!") {
+                    Look for methods with names prefixed by *ouds*. You will be surprised.
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            Can I use any font family I want?
+
+            @Choice(isCorrect: false) {
+                Yes
+
+                @Justification(reaction: "Try again!") {
+                    You should alaways check the license of the font family you want to use. For example OpenFont SIL license is interesting.
+                    Other fonts luke *Helvetica Neue* forbid to version the TTF files in repositories, and their use is not free of charge.
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                No
+
+                @Justification(reaction: "Try again!") {
+                    Why not? Some font fmaily are defined in raw tokens and can be used inside OUDS-based projects.
+                }
+            }
+            
+            @Choice(isCorrect: true) {
+                Maybe
+
+                @Justification(reaction: "Correct!") {
+                    You should forst check the license and the terms of uses of the font family you want to use.
+                    Some font families are available in iOS like *Helvetica Neue*, but not *Helvetica Neue Arabic*.
+                    Because the SwiftUI API relies on PostScript names of typography, i.e. font family name and weight, if you want to use a specific font maybe some internal settings should be updated inside OUDS.
+                }
+            }
+        }
+    }
 }
 
