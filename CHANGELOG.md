@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
 ### Changed
 
 - Update `OUDSTag` to version 1.4 (Orange-OpenSource/ouds-ios#1037)

@@ -83,23 +83,25 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
         ```swift
             import OUDSComponents
             
-            // Text only with neutral status, for emphasized hierarchy with rounded shape in default size
-            OUDSTag(label: "Label", hierarchy: .emphasized, status: .neutral, shape: .rounded, size: .default)
+            // Text only with neutral status, for emphasized appearance with rounded shape in default size
+            OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
             // Or also
             OUDSTag(label: "Label")
-
-            // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-            OUDSTag(label: "Label", icon: .bullet, status: .negative)
-
-            // Tag with label and icon with image
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")))
-
-            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
-
-            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+            
+            // Tag with negative status with bullet
+            OUDSTag(label: "Label", status: .negative(leading: .bullet)
+            
+            // Tag with neutral status with a custom decorative icon
+            OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+            // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
             // you can flip the icon
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
+            OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+            
+            // Text with neutral status with bullet
+            OUDSTag(label: "Label", status: .neutral(bullet: true))
+            
+            // Tag with loader with rounded shape in small size
+            OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
         ```
     }
     @Tab("UIKit (experimental)") {
@@ -108,25 +110,21 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
             
             // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
             OUDSUIKit.createTag(label: "label",
-                                hierarchy: .emphasized,
                                 status: .neutral,
+                                appearance: .emphasized,
                                 shape: .rounded,
                                 size: .default,
             // Or also
             OUDSUIKit.createTag(label: "label")
             
             // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-            OUDSUIKit.createTag(label: "Label", icon: .bullet, status: .negative)
+            OUDSUIKit.createTag(label: "Label", status: .negative(leading: .bullet)
 
             // Tag with label and icon with image
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")))
+            OUDSUIKit.createTag((label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
 
-            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
-
-            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
-            // you can flip the icon
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true) // Import of SwiftUI mandatory
+            // Tag with label and loader
+            OUDSUIKit.createTag(loadingLabel: "Label", shape: .rounded, size: .small)
         ```
     }
 }

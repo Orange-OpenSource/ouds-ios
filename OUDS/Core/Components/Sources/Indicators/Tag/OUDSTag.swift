@@ -11,15 +11,16 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import SwiftUI
+
+// swiftlint:disable nesting
 
 /// A tag is a small element that shows short information like a label, keyword, or category.
 /// It helps users quickly find, group, or understand content.
 ///
 /// ## Appearances
 ///
-/// Tags have two appearances so as to highlight or not their content.
+/// Tags have two appearances so as to highlight or not their content:
 ///
 /// - **emphasized**: A tag with a solid, high-contrast background. Used to draw strong attention to important
 /// labels or categories. Emphasized tags stand out prominently against the interface and are ideal for
@@ -57,7 +58,7 @@ import SwiftUI
 ///
 /// ## Shape
 ///
-/// Tags can have two shapes.
+/// Tags can have two shapes:
 ///
 /// - **Rounded**: A tag with fully rounded corners, creating a pill-shaped appearance. Rounded
 /// tags offer a softer and more approachable look, suitable for most modern interfaces.
@@ -67,7 +68,7 @@ import SwiftUI
 ///
 /// ## Size
 ///
-/// Tags can have two sizes.
+/// Tags can have two sizes:
 ///
 /// - **Default**: The standard tag size, suitable for most use cases and offering good readability.
 ///
@@ -76,7 +77,7 @@ import SwiftUI
 ///
 /// ## Layout
 ///
-/// There are four available layouts for tags.
+/// There are four available layouts for tags:
 ///
 /// -**Text only**: A tag that displays only text. Used for simple labels, categories, or keywords without additional visual
 ///  elements.
@@ -103,7 +104,7 @@ import SwiftUI
 ///
 ///     // Tag with neutral status with a custom decorative icon
 ///     OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
-///     // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
+///     // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
 ///     // you can flip the icon
 ///     OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
 ///
@@ -111,12 +112,12 @@ import SwiftUI
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
 ///
 ///     // Tag with loader with rounded shape in small size
-///     OUDSTag(label: "Label", shape: .rounded, size: .large)
+///     OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
 /// ```
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/7565ce-tag)
 ///
 /// ## Themes rendering
 ///
@@ -153,10 +154,11 @@ public struct OUDSTag: View {
     enum `Type` {
         /// Tag with label and status
         case status(label: String, status: Status)
+
         /// Tag with label in loading state
         case loader(label: String)
 
-        // Label of the the tag
+        /// Label of the tag
         var label: String {
             switch self {
             case let .status(label, _), let .loader(label):
@@ -165,7 +167,7 @@ public struct OUDSTag: View {
         }
     }
 
-    /// The status of an `OUDSTag` determines the leading elmeent, the background
+    /// The status of an `OUDSTag` determines the leading element, the background
     /// and the content colors of the tag according to the category.
     public struct Status {
 
@@ -178,8 +180,10 @@ public struct OUDSTag: View {
         public enum Leading {
             /// Means no element
             case none
+
             /// To display the leading bullet
             case bullet
+
             /// To display the leadiong icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
             /// the decorative icon need to be provided. For other categories, a default icon is already provided.
             case icon
@@ -207,53 +211,59 @@ public struct OUDSTag: View {
             case info
         }
 
-        /// Use to create a tag with a positive status.
+        /// Used to create a tag with a positive status.
         /// - Parameter leading: The leading element in the tag
         public static func positive(leading: Self.Leading) -> Status {
             Status(leading: leading, category: .positive)
         }
 
-        /// Use to create a tag with a negative status.
+        /// Used to create a tag with a negative status.
         /// - Parameter leading: The leading element in the tag
         public static func negative(leading: Self.Leading) -> Status {
             Status(leading: leading, category: .negative)
         }
 
-        /// Use to create a tag with a warning status.
+        /// Used to create a tag with a warning status.
+        ///
         /// - Parameter leading: The leading element in the tag
         public static func warning(leading: Self.Leading) -> Status {
             Status(leading: leading, category: .warning)
         }
 
-        /// Use to create a tag with a information status.
+        /// Used to create a tag with a information status.
+        ///
         /// - Parameter leading: The leading element in the tag
         public static func info(leading: Self.Leading) -> Status {
             Status(leading: leading, category: .info)
         }
 
-        /// Use to create a tag with a neutral status with leading icon.
-        /// - Parameters
-        ///     - icon: The icon to set as leading element in the tag
-        ///     - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+        /// Used to create a tag with a neutral status with leading icon.
+        ///
+        /// - Parameters:
+        ///    - icon: The icon to set as leading element in the tag
+        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
         public static func neutral(icon: Image, flipIcon: Bool = false) -> Status {
             Status(leading: .icon, category: .neutral, alternativeIcon: icon, flipIcon: flipIcon)
         }
 
-        /// Use to create a tag with a neutral status with leading bullet or not.
+        /// Used to create a tag with a neutral status with leading bullet or not.
+        ///
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
         public static func neutral(bullet: Bool = false) -> Status {
             Status(leading: bullet ? .bullet : .none, category: .neutral)
         }
 
-        /// Use to create a tag with a accent status with leading icon.
-        /// - Parameters
-        ///     - icon: The icon to set as leading element in the tag
-        ///     - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+        /// Used to create a tag with a accent status with leading icon.
+        ///
+        /// - Parameters:
+        ///    - icon: The icon to set as leading element in the tag
+        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
         public static func accent(icon: Image, flipIcon: Bool = false) -> Status {
             Status(leading: .icon, category: .accent, alternativeIcon: icon, flipIcon: flipIcon)
         }
 
-        /// Use to create a tag with a accent status with leading bullet or not.
+        /// Used to create a tag with a accent status with leading bullet or not.
+        ///
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
         public static func accent(bullet: Bool) -> Status {
             Status(leading: bullet ? .bullet : .none, category: .accent)
@@ -262,10 +272,10 @@ public struct OUDSTag: View {
         /// Internal initializer
         ///
         /// - Parameters:
-        ///     - leading: The leading element
-        ///     - category: The category of the status
-        ///     - alternativeIcon: The optinal leading icon
-        ///     - flipIcon: Flag to flip icon
+        ///    - leading: The leading element
+        ///    - category: The category of the status
+        ///    - alternativeIcon: The optinal leading icon
+        ///    - flipIcon: Flag to flip icon
         private init(leading: Leading, category: Self.Category, alternativeIcon: Image? = nil, flipIcon: Bool = false) {
             self.leading = leading
             self.category = category
@@ -276,6 +286,7 @@ public struct OUDSTag: View {
 
     /// Represents the appearance of an `OUDSTag`
     public enum Appearance {
+
         /// A tag with a solid, high-contrast background.
         /// Used to draw strong attention to important labels or categories. Emphasized tags stand out
         /// prominently against the interface and are ideal for primary or high-priority information.
@@ -309,23 +320,23 @@ public struct OUDSTag: View {
 
     // MARK: - Initializer
 
-    /// Create a tag with simple labeled and may be with leading element (bullet or icon).
+    /// Creates a tag with simple label and maybe with leading element (bullet or icon).
+    ///
+    /// Use the `View/disabled(_:)` method to have tag in disabled state. This helper has no effect when loader is added.
+    /// When loader is added, `status` and `appearance` are ignored.
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
     ///    - status: The status of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Status` combined to the `OUDSTag.Appearance` of the tag
+    ///    this `OUDSTag.Status` combined to the `OUDSTag.Appearance` of the tag. Default set to *neutral*.
     ///    - appearance: The importance of the tag. Its background color and its content color are based on
-    ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag
-    ///    - shape: The shape of the tag that allows to play with its corners appearance.
-    ///    - size: The size of the tag
+    ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
+    ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
+    ///    - size: The size of the tag. Default set to *default*.
     ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
-    ///    It will replace the `icon` if provided.
-    ///
-    ///   - remark: Use the SwiftUI.disabled to have tag in disabled state. This helper has no effect when loader is added.
-    ///  When loadeer is added, `status` and `appearance` are ignored.
+    ///    It will replace the `icon` if provided. Default set to *false*.
     public init(label: String,
-                status: Status,
+                status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
                 size: Size = .default,
@@ -334,29 +345,26 @@ public struct OUDSTag: View {
         self.appearance = appearance
         self.shape = shape
         self.size = size
-        if hasLoader {
-            type = .loader(label: label)
-        } else {
-            type = .status(label: label, status: status)
-        }
+        type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
     }
 
-    /// Create a tag in the loading state.
+    /// Creates a tag in the loading state.
+    ///
+    /// The use the `View/disabled(_:)` method has no effect on this state.
     ///
     /// - Parameters:
-    ///    - label: The label displayed in the tag
-    ///    - shape: The shape of the tag that allows to play with its corners appearance.
+    ///    - loadingLabel: The label displayed in the tag
+    ///    - shape: The shape of the tag, i.e. the corners style
     ///    - size: The size of the tag
-    ///
-    ///   - remark: The SwiftUI.disabled has no effect on this state.
-    public init(label: String,
+    public init(loadingLabel: String,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {
         appearance = .emphasized
         self.shape = shape
         self.size = size
-        type = .loader(label: label)
+        type = .loader(label: loadingLabel)
+        // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
     }
 
     // MARK: Body
@@ -382,3 +390,5 @@ public struct OUDSTag: View {
         }
     }
 }
+
+// swiftlint:enable nesting

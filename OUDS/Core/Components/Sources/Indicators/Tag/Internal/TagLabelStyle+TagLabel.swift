@@ -41,7 +41,7 @@ struct TagLabel: View {
         .oudsForegroundColor(color)
     }
 
-    // MARK: Helper
+    // MARK: Helpers
 
     private var color: MultipleColorSemanticTokens {
         switch type {
