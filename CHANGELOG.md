@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+### Changed
+
+Update `textinput` to display an error message if on error and display suffix/prefix even if placeholder is empty (Orange-OpenSource/ouds-ios#1063)
 
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
 
