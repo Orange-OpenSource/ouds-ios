@@ -76,7 +76,7 @@ import SwiftUI
 ///
 /// - **error**: The `error` status indicates that the user input does not meet validation rules or
 /// expected formatting. It provides immediate visual feedback, typically through a red border,
-/// error icon, and a clear, accessible error message positioned below the input.
+/// error icon, and a clear, accessible error message positioned below the input. The error messages replaces the helper text.
 ///
 /// - **loading**: The `loading` state indicates that the system is processing or retrieving data
 /// related to the text entered. A progress indicator appears to inform the user that an action is in progress.
@@ -110,21 +110,25 @@ import SwiftUI
 ///     // Empty text and no placeholder
 ///     OUDSTextInput(label: "Email", text: $text)
 ///
-///     // Empty text with placeholder
-///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "firstName.lastName", suffix "@orange.com"))
+///     // Empty text with placeholder and suffix
+///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com")
+///
+///     // Empty text with prefix and suffix
+///     OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 ///
 ///     // Add a leading icon for more context
-///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "Enter email"), leadingIcon: Image(systemName: "envelope"))
+///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
-///     // Add a trailing button for additional action
+///     // Add a trailing button with local image namde "ic_cross" for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
-///     let placeholder =
-///     OUDSTextInput(label: "Email", text: $text,
-///                      placeholder: .init(text: "firstName.lastName", suffix "@orange.com"),
-///                      helperText: "The email will be automatically completed with @orange.com")
+///     OUDSTextInput(label: "Email",
+///                   text: $text,
+///                   placeholder: "firstName.lastName",
+///                   suffix: "@orange.com",
+///                   helperText: "The email will be automatically completed with @orange.com")
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -133,7 +137,7 @@ import SwiftUI
 ///        openUrl.callAsFunction(url)
 ///     }
 ///
-///     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperLink: helperLink)
+///     OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 /// ```
 ///
 /// ## Design documentation
@@ -164,8 +168,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     // MARK: - Properties
 
-    @Environment(\.theme) private var theme
-
     let label: String
     let text: Binding<String>
     let placeholder: String?
@@ -178,6 +180,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
+
+    @Environment(\.theme) private var theme
 
     // MARK: - Trailing Action
 
@@ -218,6 +222,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// An input with a subtle background fill and a visible bottom border,
         /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
         case `default`
+
         /// A minimalist input with a transparent background and a visible stroke outlining the field.
         case alternative
     }
@@ -287,9 +292,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input. Commonly used to indicate expected formatting like a country code, a unit...
-    ///      The `prefix` is hidden if a `placeholder` is not provided or empty,. But it is visible in focus state or if the value is not empty.
+    ///      The `prefix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
     ///    - suffix: Text placed after the user's input, often used to display a currency or a unit (kg, %, cm…).
-    ///      The `suffix` is hidden if a `placeholder` is not provided or empty,. But it is visible in focus state or if the value is not empty.
+    ///      The `suffix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
     ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
     ///      envelope for email, etc.), by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
@@ -369,7 +374,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: Helpers
 
     private var accessibilityLabel: String {
-
         let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
 
         let errorDescription = switch status {
