@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.

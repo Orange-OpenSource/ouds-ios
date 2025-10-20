@@ -12,8 +12,8 @@
 //
 
 #if canImport(UIKit)
-import OUDSComponents
-import OUDSFoundations
+import OUDSComponents // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 

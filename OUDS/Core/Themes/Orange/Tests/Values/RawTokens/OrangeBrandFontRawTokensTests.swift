@@ -13,9 +13,7 @@
 
 import Foundation
 import OUDSThemesOrange
-import OUDSTokensRaw
 import Testing
-import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **Orange brand font raw tokens**.
 ///

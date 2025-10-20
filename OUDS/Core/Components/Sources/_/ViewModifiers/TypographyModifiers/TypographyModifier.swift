@@ -11,13 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// Conditional import and use of UIKit for documentation generation (see #628 #626)
-import OUDS
-import OUDSFoundations
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/943)
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
-#if canImport(UIKit)
+#if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
 #endif
 
@@ -48,11 +46,7 @@ struct TypographyModifier: ViewModifier {
     /// Says wether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
         horizontalSizeClass == .compact || verticalSizeClass == .compact
-    }
-
-    /// Says wether or not the layout is in *regular mode*
-    private var isRegularMode: Bool {
-        horizontalSizeClass == .regular || verticalSizeClass == .regular
+        // isRegularMode: horizontalSizeClass == .regular || verticalSizeClass == .regular
     }
 
     /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
@@ -63,9 +57,9 @@ struct TypographyModifier: ViewModifier {
     #if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
-        if let fontFamilyName = fontFamily {
+        if let fontFamily {
             // Can be a custom font load from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamilyName, adaptiveFont.weight.fontWeight)]
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, adaptiveFont.weight.fontWeight)]
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {
@@ -75,7 +69,7 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Computes the line spacing value to apply on the typography.
-    /// Difference between the line height tokenand  line height of computed font to apply depending the the scaled font size.
+    /// Difference between the line height token and line height of computed font to apply depending the the scaled font size.
     /// The line spacing token cannot be used as is.
     private var adaptiveLineHeight: CGFloat {
         adaptiveFont.lineHeight - UIFont.systemFont(ofSize: scaledFontSize).lineHeight

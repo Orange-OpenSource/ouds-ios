@@ -90,7 +90,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = SoshThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
+        let selectInput = SoshThemeSelectInputComponentTokensProvider(dimensions: dimensions)
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)

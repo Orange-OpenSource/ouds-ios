@@ -23,7 +23,6 @@ struct TrailingActionContainer: View {
     let interactionState: TextInputInteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 

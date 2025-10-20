@@ -12,7 +12,6 @@
 //
 
 @testable import OUDSThemesOrangeBusinessTools
-import OUDSTokensSemantic
 import SwiftUI
 import Testing
 

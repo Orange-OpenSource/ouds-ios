@@ -98,10 +98,6 @@ struct TextInputContainer: View {
 
     // MARK: - Helpers
 
-    private var showPlaceholder: Bool {
-        focused || !text.wrappedValue.isEmpty
-    }
-
     private var showLabelInContainer: Bool {
         !label.isEmpty && (focused || (!focused && (placeholder?.text.isEmpty == false) || !text.wrappedValue.isEmpty))
     }

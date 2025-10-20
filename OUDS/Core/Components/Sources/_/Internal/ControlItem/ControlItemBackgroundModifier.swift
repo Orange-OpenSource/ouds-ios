@@ -12,8 +12,6 @@
 //
 
 import OUDS
-import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define the background

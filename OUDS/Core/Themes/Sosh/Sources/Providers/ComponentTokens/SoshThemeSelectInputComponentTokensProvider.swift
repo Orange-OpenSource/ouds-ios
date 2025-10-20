@@ -36,9 +36,7 @@ final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponent
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
     /// - Parameters:
     ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
-    init(sizes: AllSizeSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
-    {
+    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSelectInputComponentTokensProvider")
         self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG

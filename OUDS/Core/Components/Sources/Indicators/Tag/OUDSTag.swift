@@ -12,7 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A tag is a small element that shows short information like a label, keyword, or category.
@@ -146,8 +145,6 @@ public struct OUDSTag: View { // TODO: #408 - Add documentation hyperlink in doc
     private let shape: Shape
     private let size: Size
     private let type: `Type`
-
-    @Environment(\.theme) private var theme
 
     // MARK: - Configuration enums
 

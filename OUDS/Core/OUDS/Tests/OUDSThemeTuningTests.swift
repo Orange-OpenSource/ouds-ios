@@ -14,7 +14,6 @@
 import Foundation
 import OUDS
 import Testing
-import TestsUtils
 
 /// Some tests on the default theme tuning setup
 struct OUDSThemeTuningTests {

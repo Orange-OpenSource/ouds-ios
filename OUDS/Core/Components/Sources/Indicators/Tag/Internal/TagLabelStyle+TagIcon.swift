@@ -25,8 +25,6 @@ struct TagIcon: View {
     let status: OUDSTag.Status
     let size: OUDSTag.Size
 
-    @Environment(\.theme) private var theme
-
     // MARK: Body
 
     var body: some View {
