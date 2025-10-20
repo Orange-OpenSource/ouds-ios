@@ -168,7 +168,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     let label: String
     let text: Binding<String>
-    let placeholder: Self.Placeholder?
+    let placeholder: String?
+    let prefix: String?
+    let suffix: String?
     let leadingIcon: Image?
     let flipLeadingIcon: Bool
     let trailingAction: TrailingAction?
@@ -206,30 +208,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             self.icon = icon
             self.actionHint = actionHint
             self.action = action
-        }
-    }
-
-    // MARK: - Placeholder
-
-    /// Used to define the placeholder of the text input
-    public struct Placeholder {
-        public let text: String
-        public let suffix: String?
-        public let prefix: String?
-
-        /// Creates a placeholder with text and additional (optional) prefix and suffix.
-        ///
-        /// - Parameters:
-        ///   - text: The placeholder text
-        ///   - prefix: Optional prefix, by default is *nil*
-        ///   - suffix: Optional suffix, by default is *nil*
-        public init(text: String, prefix: String? = nil, suffix: String? = nil) {
-            if text.isEmpty {
-                OL.warning("The placeholder text for the OUDSTextInput is empty, avoid using it in that case.")
-            }
-            self.text = text
-            self.prefix = prefix
-            self.suffix = suffix
         }
     }
 
@@ -308,6 +286,10 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - label: The label displayed above the text input. It describes the purpose of the input
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input. Commonly used to indicate expected formatting like a country code, a unit...
+    ///      The `prefix` is hidden if a `placeholder` is not provided or empty,. But it is visible in focus state or if the value is not empty.
+    ///    - suffix: Text placed after the user's input, often used to display a currency or a unit (kg, %, cm…).
+    ///      The `suffix` is hidden if a `placeholder` is not provided or empty,. But it is visible in focus state or if the value is not empty.
     ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
     ///      envelope for email, etc.), by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
@@ -315,14 +297,16 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
     ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to OUDSTextInput.Status.Error,
-    ///           this `helperText` is ignored.
+    ///      this `helperText` is ignored.
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - status: The current status of the text input, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
-                placeholder: Placeholder? = nil,
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
                 trailingAction: Self.TrailingAction? = nil,
@@ -335,6 +319,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.text = text
         self.helperText = helperText
         self.placeholder = placeholder
+        self.prefix = prefix
+        self.suffix = suffix
         self.leadingIcon = leadingIcon
         self.flipLeadingIcon = flipLeadingIcon
         self.trailingAction = trailingAction
@@ -351,6 +337,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 TextInputContainer(label: label,
                                    text: text,
                                    placeholder: placeholder,
+                                   prefix: prefix,
+                                   suffix: suffix,
                                    leadingIcon: leadingIcon,
                                    flipIcon: flipLeadingIcon,
                                    trailingAction: trailingAction,
@@ -394,7 +382,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
 
         let labelDescription = if label.isEmpty {
-            "\(placeholder?.text ?? "")"
+            "\(placeholder ?? "")"
         } else {
             label
         }
@@ -407,6 +395,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             return ""
         }
 
-        return "\(placeholder?.prefix ?? "") \(text.wrappedValue) \(placeholder?.suffix ?? "")"
+        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
