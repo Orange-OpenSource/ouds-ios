@@ -20,7 +20,9 @@ struct TextInputContainer: View {
 
     let label: String
     let text: Binding<String>
-    let placeholder: OUDSTextInput.Placeholder?
+    let placeholder: String?
+    let prefix: String?
+    let suffix: String?
     let leadingIcon: Image?
     let flipIcon: Bool
     let trailingAction: OUDSTextInput.TrailingAction?
@@ -53,8 +55,9 @@ struct TextInputContainer: View {
 
                         // Prefix container
                         if let placeholder,
-                           let prefix = placeholder.prefix,
-                           !prefix.isEmpty, !placeholder.text.isEmpty
+                           let prefix,
+                           !prefix.isEmpty,
+                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(prefix)
                                 .typeLabelDefaultLarge(theme)
@@ -72,8 +75,9 @@ struct TextInputContainer: View {
 
                         // Suffix container
                         if let placeholder,
-                           let suffix = placeholder.suffix,
-                           !suffix.isEmpty, !placeholder.text.isEmpty
+                           let suffix,
+                           !suffix.isEmpty,
+                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(suffix)
                                 .typeLabelDefaultLarge(theme)
@@ -99,21 +103,26 @@ struct TextInputContainer: View {
     // MARK: - Helpers
 
     private var showLabelInContainer: Bool {
-        !label.isEmpty && (focused || (!focused && (placeholder?.text.isEmpty == false) || !text.wrappedValue.isEmpty))
+        !label.isEmpty && (focused || (!focused && (placeholder?.isEmpty == false) || !text.wrappedValue.isEmpty))
     }
 
     private var textfieldLabel: String {
-        guard let placeholder, !placeholder.text.isEmpty else {
+        guard let placeholder, !placeholder.isEmpty else {
             return focused ? "" : label
         }
-        return placeholder.text
+        return placeholder
     }
 
     private var trailingPadding: CGFloat {
-        if trailingAction != nil || status == .error || status == .loading {
+        if trailingAction != nil {
             theme.textInput.textInputSpacePaddingInlineTrailingAction
         } else {
-            theme.textInput.textInputSpacePaddingInlineDefault
+            switch status {
+            case .error, .loading:
+                theme.textInput.textInputSpacePaddingInlineTrailingAction
+            default:
+                theme.textInput.textInputSpacePaddingInlineDefault
+            }
         }
     }
 
