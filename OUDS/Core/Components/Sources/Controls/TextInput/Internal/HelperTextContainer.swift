@@ -14,11 +14,11 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct HelperTextContainer: View {
+struct HelperErrorTextContainer: View {
 
     // MARK: - Properties
 
-    let helperText: String
+    let helperText: String?
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
@@ -26,11 +26,13 @@ struct HelperTextContainer: View {
     // MARK: - Body
 
     var body: some View {
-        Text(helperText)
-            .typeLabelDefaultMedium(theme)
-            .oudsForegroundColor(color)
-            .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
-            .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+        if !text.isEmpty {
+            Text(text)
+                .typeLabelDefaultMedium(theme)
+                .oudsForegroundColor(color)
+                .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
+                .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+        }
     }
 
     // MARK: - Helper
@@ -45,6 +47,15 @@ struct HelperTextContainer: View {
             theme.colors.colorContentMuted
         case .readOnly, .disabled:
             theme.colors.colorActionDisabled
+        }
+    }
+
+    private var text: String {
+        switch status {
+        case let .error(message):
+            message
+        case .enabled, .readOnly, .disabled, .loading:
+            helperText ?? ""
         }
     }
 }

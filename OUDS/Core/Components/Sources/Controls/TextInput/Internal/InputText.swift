@@ -45,7 +45,12 @@ struct InputText: View {
     // MARK: - Helper
 
     private var cursorColor: MultipleColorSemanticTokens {
-        status == .error ? theme.colors.colorActionNegativePressed : theme.colors.colorContentDefault
+        switch status {
+        case .error:
+            theme.colors.colorActionNegativePressed
+        default:
+            theme.colors.colorContentDefault
+        }
     }
 
     private var inputTextColor: MultipleColorSemanticTokens {

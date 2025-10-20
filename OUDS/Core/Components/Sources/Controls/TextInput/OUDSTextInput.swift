@@ -247,14 +247,14 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Status
 
     /// Define all available status for the text input
-    public enum Status {
+    public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
-        /// accessible error message positioned below the input.
-        case error
+        /// accessible error `message` positioned below the input.
+        case error(message: String)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
         /// text entered. A progress indicator appears to inform the user that an action is in progress.
@@ -266,6 +266,17 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
         /// Note the SwiftUI `View.disabled()` is ignored.
         case disabled
+
+        public static func == (lhs: Self, rhs: Self) -> Bool {
+            switch (lhs, rhs) {
+            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+                true
+            case let (.error(lhsMessage), .error(rhsMessage)):
+                lhsMessage == rhsMessage
+            default:
+                false
+            }
+        }
     }
 
     // MARK: - Helper link
@@ -303,7 +314,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - trailingAction: An optional trailing action related to the field: (clear input,
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
-    ///      information about the input field, such as how it will be used., by default is *nil*
+    ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to OUDSTextInput.Status.Error,
+    ///           this `helperText` is ignored.
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
@@ -345,10 +357,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                                    isOutlined: isOutlined,
                                    status: status)
 
-                if let helperText, !helperText.isEmpty {
-                    HelperTextContainer(helperText: helperText, status: status)
-                        .accessibilityHidden(true)
-                }
+                HelperErrorTextContainer(helperText: helperText, status: status)
+                    .accessibilityHidden(true)
             }
             .accessibilityLabel(accessibilityLabel)
             .accessibilityHint(Text(helperText ?? ""))
@@ -374,17 +384,14 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
         let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
 
-        let errorDescription = if status == .error, helperText?.isEmpty != false {
-            "core_common_onError_a11y".localized()
-        } else {
+        let errorDescription = switch status {
+        case let .error(message):
+            "core_common_onError_a11y".localized() + ": \(message)"
+        default:
             ""
         }
 
-        let loadingDescription = if status == .loading {
-            "core_common_loading_a11y".localized()
-        } else {
-            ""
-        }
+        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
 
         let labelDescription = if label.isEmpty {
             "\(placeholder?.text ?? "")"
