@@ -816,8 +816,8 @@ struct ThemeOverrideOfColorSemanticTokensTests {
     // WARNING: Semantic tokens of colors colorRepository* must not be overridable
     // i.e. defined in the top level provider and that's all.
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryAccentDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryAccentDefault == abstractTheme.colors.colorRepositoryAccentDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryAccentMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryAccentMedium == abstractTheme.colors.colorRepositoryAccentMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryAccentHigh() throws {
@@ -840,8 +840,8 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryAccentLowest == abstractTheme.colors.colorRepositoryAccentLowest)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryInfoDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryInfoDefault == abstractTheme.colors.colorRepositoryInfoDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryInfoMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryInfoMedium == abstractTheme.colors.colorRepositoryInfoMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryInfoHighest() throws {
@@ -856,8 +856,8 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryInfoLowest == abstractTheme.colors.colorRepositoryInfoLowest)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryNegativeDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryNegativeDefault == abstractTheme.colors.colorRepositoryNegativeDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryNegativeMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryNegativeMedium == abstractTheme.colors.colorRepositoryNegativeMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryNegativeHigh() throws {
@@ -1032,8 +1032,8 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryOpacityWhiteTransparent == abstractTheme.colors.colorRepositoryOpacityWhiteTransparent)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryPositiveDefault == abstractTheme.colors.colorRepositoryPositiveDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryPositiveMedium == abstractTheme.colors.colorRepositoryPositiveMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveHigh() throws {
@@ -1052,16 +1052,16 @@ struct ThemeOverrideOfColorSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryPositiveLowest == abstractTheme.colors.colorRepositoryPositiveLowest)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPrimaryDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryPrimaryDefault == abstractTheme.colors.colorRepositoryPrimaryDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPrimaryMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryPrimaryMedium == abstractTheme.colors.colorRepositoryPrimaryMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryPrimaryLow() throws {
         #expect(inheritedTheme.colors.colorRepositoryPrimaryLow == abstractTheme.colors.colorRepositoryPrimaryLow)
     }
 
-    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryWarningDefault() throws {
-        #expect(inheritedTheme.colors.colorRepositoryWarningDefault == abstractTheme.colors.colorRepositoryWarningDefault)
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryWarningMedium() throws {
+        #expect(inheritedTheme.colors.colorRepositoryWarningMedium == abstractTheme.colors.colorRepositoryWarningMedium)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryWarningHighest() throws {

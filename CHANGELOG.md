@@ -12,6 +12,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Color` `OUDS` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Opacity` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Border` semantic tokens for `Sosh` and `Wireframe` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Button` component tokens for `Sosh` theme (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Switch` component tokens for `Orange`, `Orange Business Tools` and `Sosh` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Icon` component tokens for `Orange`, `Sosh` and `Wireframe` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Color` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Control item` component tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - Update `text input` to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
 
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15

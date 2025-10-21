@@ -32,6 +32,7 @@ public protocol ControlItemComponentTokens {
     var controlItemSizeMaxWidth: SizeSemanticToken { get }
     var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var controlItemSizeIcon: SizeSemanticToken { get }
+    var controlItemSizeErrorIcon: SizeSemanticToken { get }
     var controlItemSizeLoader: SizeSemanticToken { get }
 
     // MARK: - Colors
@@ -48,6 +49,7 @@ public protocol ControlItemComponentTokens {
     var controlItemSpaceRowGap: SpaceSemanticToken { get }
     var controlItemSpacePaddingBlock: SpaceSemanticToken { get }
     var controlItemSpacePaddingInline: SpaceSemanticToken { get }
+    var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { get }
 
     // MARK: - Borders
 

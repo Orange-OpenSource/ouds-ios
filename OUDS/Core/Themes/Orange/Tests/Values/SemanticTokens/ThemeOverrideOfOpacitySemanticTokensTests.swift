@@ -38,6 +38,11 @@ struct ThemeOverrideOfOpacitySemanticTokensTests {
         #expect(inheritedTheme.opacities.opacityInvisible == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenOpacityWeakest() throws {
+        #expect(inheritedTheme.opacities.opacityWeakest != abstractTheme.opacities.opacityWeakest)
+        #expect(inheritedTheme.opacities.opacityWeakest == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+    }
+
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityWeaker() throws {
         #expect(inheritedTheme.opacities.opacityWeaker != abstractTheme.opacities.opacityWeaker)
         #expect(inheritedTheme.opacities.opacityWeaker == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
