@@ -54,6 +54,11 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.controlItemSizeIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeErrorIcon() throws {
+        #expect(inheritedTheme.controlItem.controlItemSizeErrorIcon != abstractTheme.controlItem.controlItemSizeErrorIcon)
+        #expect(inheritedTheme.controlItem.controlItemSizeErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+    }
+
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeLoader() throws {
         #expect(inheritedTheme.controlItem.controlItemSizeLoader != abstractTheme.controlItem.controlItemSizeLoader)
         #expect(inheritedTheme.controlItem.controlItemSizeLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
@@ -115,9 +120,14 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.controlItemSpacePaddingBlock == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
-    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceInline() throws {
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingInline() throws {
         #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline != abstractTheme.controlItem.controlItemSpacePaddingInline)
         #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingInlineErrorIcon() throws {
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInlineErrorIcon != abstractTheme.controlItem.controlItemSpacePaddingInlineErrorIcon)
+        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInlineErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 }
 
