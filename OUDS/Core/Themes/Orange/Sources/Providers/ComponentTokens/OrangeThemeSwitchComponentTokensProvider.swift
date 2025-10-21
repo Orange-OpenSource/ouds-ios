@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the switch component tokens you want.
 ///
-///         override var switchColorCursor: MultipleColorSemanticTokens { colors.colorRepositoryPositiveDefault }
+///         override var switchColorCursor: MultipleColorSemanticTokens { colors.colorRepositoryPositiveMedium }
 ///
 ///         override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spaceFixed2xsmall }
 ///
