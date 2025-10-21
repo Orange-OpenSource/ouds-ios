@@ -42,27 +42,27 @@ public enum OUDSVersions {
     // MARK: - Components versions - Actions
 
     /// Version of the Figma specifications for the component button
-    public static let componentButtonVersion = "3.2.0"
+    public static let componentButtonVersion = "3.0.0" // NOTE: Manually fixed, still 3.0.0 implemented and not 3.2.0
 
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link
-    public static let componentLinkVersion = "2.2.0"
+    public static let componentLinkVersion = "2.0.0" // NOTE: Manually fixed, still 2.0.0 implemented and not 2.2.0
     /// Version of the Figma specifications for the component expand link
     public static let componentExpandLinkVersion = "2.3.0"
 
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox
-    public static let componentCheckboxVersion = "2.3.0"
+    public static let componentCheckboxVersion = "2.2.0" // NOTE: Manually fixed, still 2.2.0 implemented and not 2.3.0
     /// Version of the Figma specifications for the component chip
     public static let componentChipVersion = "1.3.0"
     /// Version of the Figma specifications for the component radio button
-    public static let componentRadioButtonVersion = "1.3.0"
+    public static let componentRadioButtonVersion = "1.0.0" // NOTE: Manually fixed, still 1.0.0 implemented and not 1.3.0
     /// Version of the Figma specifications for the component switch
-    public static let componentSwitchVersion = "1.4.0"
+    public static let componentSwitchVersion = "1.0.0" // NOTE: Manually fixed, still 1.0.0 implemented and not 1.4.0
     /// Version of the Figma specifications for the component text input
-    public static let componentTextInputVersion = "1.1.0"
+    public static let componentTextInputVersion = "1.3.0" // NOTE: Manually fixed, 1.3.0 implemented and not 1.1.0
     /// Version of the Figma specifications for the component phone number input
     public static let componentPhoneNumberInputVersion = "1.1.0"
     /// Version of the Figma specifications for the component password input
@@ -79,11 +79,11 @@ public enum OUDSVersions {
     // MARK: - Components versions - Tag
 
     /// Version of the Figma specifications for the component badge
-    public static let componentBadgeVersion = "1.2.0"
+    public static let componentBadgeVersion = "1.1.0" // NOTE: Manually fixed, still 1.1.0 implemented and not 1.2.0
     /// Version of the Figma specifications for the component skeleton
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag
-    public static let componentTagVersion = "1.4.0"
+    public static let componentTagVersion = "1.1.0" // NOTE: Manually fixed, still 1.1.0 implemented and not 1.4.0
 
     // MARK: - Components versions - Divider
 
