@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import SwiftUI
 
 // MARK: - OUDS Input Tag
@@ -18,7 +19,7 @@ import SwiftUI
 /// An `OUDSInputTag` is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by
 /// pressing enter, comma, or tab), each value is transformed into a tag.
 ///
-/// Input tags are often used for adding labels, categories, or participants. They typically support editing, removing, and validating individual tags.
+/// Input tags are often used for adding labels, categories, or participants. They typically support removing.
 ///
 /// ## Code samples
 ///
@@ -77,8 +78,11 @@ public struct OUDSInputTag: View {
     ///
     /// - Parameters:
     ///    - label: The label displayed in the input tag
-    ///    - action: Called when the input tag is clicked
+    ///    - action: Called when the input tag is clicked, supposed for remove / delete action
     public init(label: String, action: @escaping () -> Void) {
+        if label.isEmpty {
+            OL.warning("The OUDSInputTag must not be empty!")
+        }
         self.label = label
         self.action = action
     }
@@ -88,5 +92,10 @@ public struct OUDSInputTag: View {
             InputTagContent(label: label, interactionState: $0)
         }
         .frame(height: theme.tag.tagSizeMinHeightInteractiveArea, alignment: .center)
+        .accessibilityHint(accessibilityHint)
+    }
+
+    private var accessibilityHint: String {
+        "core_inputtag_hint_delete_a11y".localized()
     }
 }
