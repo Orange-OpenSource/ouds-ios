@@ -29,7 +29,7 @@ import SwiftUI
 ///     }
 ///
 ///     // Show in a list and remove when clicked
-///     var names: [String] = [ "Foo", "Bar, "Wizz" ]
+///     var names: [String] = [ "Foo", "Bar", "Wizz" ]
 ///
 ///     ForEach(names, id: \.self) { name in
 ///         OUDSInputTag(label: name) {
