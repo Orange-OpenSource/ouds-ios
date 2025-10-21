@@ -25,6 +25,7 @@ final class MockThemeOpacitySemanticTokensProvider: OrangeThemeOpacitySemanticTo
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 
     override var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityWeakest: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
