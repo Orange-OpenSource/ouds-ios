@@ -43,12 +43,12 @@ extension WireframeThemeElevationSemanticTokensProvider: ElevationCompositeSeman
                                             dark: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragDark))
     }
 
-    @objc public final var elevationOverlayDefault: ElevationCompositeSemanticToken {
+    @objc public final var elevationDefault: ElevationCompositeSemanticToken {
         MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultLight),
                                             dark: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultDark))
     }
 
-    @objc public final var elevationOverlayEmphasized: ElevationCompositeSemanticToken {
+    @objc public final var elevationEmphasized: ElevationCompositeSemanticToken {
         MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedLight),
                                             dark: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedDark))
     }

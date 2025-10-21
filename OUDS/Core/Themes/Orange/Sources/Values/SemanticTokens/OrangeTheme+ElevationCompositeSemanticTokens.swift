@@ -45,12 +45,12 @@ extension OrangeThemeElevationSemanticTokensProvider: ElevationCompositeSemantic
                                             dark: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragDark))
     }
 
-    @objc open var elevationOverlayDefault: ElevationCompositeSemanticToken {
+    @objc open var elevationDefault: ElevationCompositeSemanticToken {
         MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultLight),
                                             dark: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultDark))
     }
 
-    @objc open var elevationOverlayEmphasized: ElevationCompositeSemanticToken {
+    @objc open var elevationEmphasized: ElevationCompositeSemanticToken {
         MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedLight),
                                             dark: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedDark))
     }

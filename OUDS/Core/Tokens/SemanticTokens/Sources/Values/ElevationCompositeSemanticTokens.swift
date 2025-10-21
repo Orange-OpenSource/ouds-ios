@@ -52,8 +52,8 @@ public protocol ElevationCompositeSemanticTokens {
     var elevationNone: ElevationCompositeSemanticToken { get }
     var elevationRaised: ElevationCompositeSemanticToken { get }
     var elevationDrag: ElevationCompositeSemanticToken { get }
-    var elevationOverlayDefault: ElevationCompositeSemanticToken { get }
-    var elevationOverlayEmphasized: ElevationCompositeSemanticToken { get }
+    var elevationDefault: ElevationCompositeSemanticToken { get }
+    var elevationEmphasized: ElevationCompositeSemanticToken { get }
     var elevationSticky: ElevationCompositeSemanticToken { get }
 }
 

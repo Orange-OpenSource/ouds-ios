@@ -35,9 +35,9 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
 
     override var elevationDrag: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 
-    override var elevationOverlayDefault: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
+    override var elevationDefault: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 
-    override var elevationOverlayEmphasized: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
+    override var elevationEmphasized: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 
     override var elevationSticky: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 
