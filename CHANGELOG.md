@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `link` Align sdk version to the figma one  (Orange-OpenSource/ouds-ios#1035)
 - `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - `Color` `OUDS` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - `Opacity` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
