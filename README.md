@@ -66,7 +66,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 
 ## Quick start
 
-You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embe and use OUDS iOS Swift Package for your app.
+You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embed and use OUDS iOS Swift Package for your app.
 
 ### Choose your version
 
@@ -145,6 +145,24 @@ The wiki lists also [the components and their availability](https://github.com/O
 
 > [!IMPORTANT]
 > The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
+
+> [!TIP]
+> Releases are immutable and in most of time cryptographically signed.
+> You can verify integrity of release and assets with commands below
+> using [GitHub CLI](https://cli.github.com/) 
+> and available [release tags](https://github.com/Orange-OpenSource/ouds-ios/releases).
+
+To verify integrity of a release *x.y.z*:
+```shell
+gh release verify x.y.z --repo Orange-OpenSource/ouds-ios
+```
+
+To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
+```shell
+gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios
+```
+
+For these commands a message should say release is verified or asset verification succeeded.
 
 ## Tokens libraries versions
 
