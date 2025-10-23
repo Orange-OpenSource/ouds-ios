@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several radio buttons and choose only one within the others.
@@ -109,20 +110,23 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     /// The type of layout the picker must have
     private let placement: OUDSRadioPickerPlacement
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and displays a divider (except for the last one)
-    private let hasDivider: Bool
-
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to read only mode
-    private let isReadOnly: Bool
-
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to error mode
-    private let isError: Bool
+    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to apply the outlined layout
+    private let isOutlined: Bool
 
     /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to apply the outlined layout
-    private let isOutlined: Bool
+    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to error mode
+    private let isError: Bool
+
+    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and forces them to read only mode
+    private let isReadOnly: Bool
+
+    /// Overrides any configuration applied to embeded ``OUDSRadioItem`` and displays a divider (except for the last one)
+    private let hasDivider: Bool
+
+    /// The custom spacing to apply between items by user
+    private let customItemsSpacing: SpaceSemanticToken?
 
     @Environment(\.theme) private var theme
 
@@ -138,6 +142,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     ///    - isError: If *true*, force all ``OUDSRadioItem`` to be in error mode (default set to *false*)
     ///    - isReadOnly: If *true*, force all ``OUDSRadioItem`` to be in read only mode (default set to *false*)
     ///    - hasDivider: If *true*, force all ``OUDSRadioItem`` except the last one to have a divider (default set to *false*)
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.spaceFixedNone* will be used.
     public init(selection: Binding<Tag>,
                 radios: [OUDSRadioPickerData<Tag>],
                 placement: OUDSRadioPickerPlacement = .vertical,
@@ -145,7 +150,8 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false)
+                hasDivider: Bool = false,
+                itemsSpacing: SpaceSemanticToken? = nil)
     {
         self.selection = selection
         self.radios = radios
@@ -155,21 +161,8 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         self.isError = isError
         self.isReadOnly = isReadOnly
         self.hasDivider = hasDivider
+        customItemsSpacing = itemsSpacing
         verifySelection()
-    }
-
-    // MARK: - Helpers
-
-    /// Checks if the given selection is available only one time within the radio configurations.
-    /// If not, displays a error message in the logs.
-    private func verifySelection() {
-        let selection = selection.wrappedValue
-        let selectionCount = radios.count(where: { $0.tag == selection })
-        if selectionCount == 0 {
-            OL.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
-        } else if selectionCount > 1 {
-            OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
-        }
     }
 
     // MARK: - Body
@@ -178,12 +171,12 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         switch placement {
         case let .horizontal(showsIndicator):
             ScrollView(.horizontal, showsIndicators: showsIndicator) {
-                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                HStack(alignment: .center, spacing: itemsSpacing) {
                     content(for: radios)
                 }
             }
         case .vertical:
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: itemsSpacing) {
                 content(for: radios)
             }
         }
@@ -215,6 +208,25 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                       hasDivider: hasDivider && !noDivider ? true : radio.hasDivider)
         {
             selection.wrappedValue = radio.tag
+        }
+    }
+
+    // MARK: - Helpers
+
+    /// If user does not define a custom spacing, use a default one
+    private var itemsSpacing: SpaceSemanticToken {
+        customItemsSpacing ?? theme.spaces.spaceFixedNone
+    }
+
+    /// Checks if the given selection is available only one time within the radio configurations.
+    /// If not, displays a error message in the logs.
+    private func verifySelection() {
+        let selection = selection.wrappedValue
+        let selectionCount = radios.count(where: { $0.tag == selection })
+        if selectionCount == 0 {
+            OL.error("It seems the selection '\(selection)' is not available inside the radio buttons. Be sure the value is available in only one tag.")
+        } else if selectionCount > 1 {
+            OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
         }
     }
 }
