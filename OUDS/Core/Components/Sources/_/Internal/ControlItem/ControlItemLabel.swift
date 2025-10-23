@@ -38,6 +38,7 @@ struct ControlItemLabel: View {
         let flipIcon: Bool
         let isOutlined: Bool
         let isError: Bool
+        let errorMessage: String?
         let isReadOnly: Bool
         let hasDivider: Bool
         let orientation: ControlItem.Orientation
