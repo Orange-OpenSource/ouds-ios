@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
 - Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
 - Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
+- Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - Update `link` component version (Orange-OpenSource/ouds-ios#1035)
 - `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - `Color` `OUDS` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
