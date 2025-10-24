@@ -91,6 +91,13 @@ import SwiftUI
 ///                   isError: true,
 ///                   hasDivider: true)
 ///
+///     // If on error, add an error message can help user to understand error context
+///     OUDSRadioItem(isOn: $selection,
+///                   label: "Rescue from this world!",
+///                   isError: true,
+///                   errorText: "Something wrong",
+///                   hasDivider: true)
+///
 ///     // A leading radio with a label, but disabled.
 ///     // The default layout will be used here.
 ///     OUDSRadioItem(isOn: $selection, label: "Rescue from this world!")
@@ -173,8 +180,8 @@ public struct OUDSRadioItem: View {
     ///   - isOutlined: Flag to get an outlined radio, default set to `true`
     ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorMessage: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///     **Note:** The `errorMessage`can be different if switch is selected or not.
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///     **Note:** The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
@@ -192,7 +199,7 @@ public struct OUDSRadioItem: View {
                 isOutlined: Bool = true,
                 isReversed: Bool = false,
                 isError: Bool = false,
-                errorMessage: String? = nil,
+                errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
@@ -218,7 +225,7 @@ public struct OUDSRadioItem: View {
             flipIcon: flipIcon,
             isOutlined: isOutlined,
             isError: isError,
-            errorMessage: errorMessage,
+            errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
@@ -243,9 +250,9 @@ public struct OUDSRadioItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorMessagePrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorMessage: String = layoutData.errorMessage?.localized() ?? ""
-        let errorDescription = "\(errorMessagePrefix), \(errorMessage)"
+        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorText: String = layoutData.errorText?.localized() ?? ""
+        let errorDescription = "\(errorPrefix), \(errorText)"
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? "") \(errorDescription), \(radioA11yTrait)"

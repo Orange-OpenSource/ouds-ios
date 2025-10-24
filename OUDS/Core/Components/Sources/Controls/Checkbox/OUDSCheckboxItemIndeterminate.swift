@@ -84,6 +84,13 @@ import SwiftUI
 ///                                   isReversed: true,
 ///                                   icon: Image(decorative: "ic_heart"))
 ///
+///     // If on error, add an error message can help user to understand error context
+///     OUDSCheckboxItemIndeterminate(selection: $selection,
+///                                   label: "We live in a fabled world",
+///                                   isError: true,
+///                                   errorText: "Something wrong",
+///                                   hasDivider: true)
+///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItemIndeterminate(selection: $selection, label: "Hello world")
@@ -165,8 +172,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorMessage: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///     **Note:** The `errorMessage`can be different if switch is selected or not.
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///     **Note:** The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
@@ -180,7 +187,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 flipIcon: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
-                errorMessage: String? = nil,
+                errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
@@ -203,7 +210,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
-            errorMessage: errorMessage,
+            errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
@@ -228,9 +235,9 @@ public struct OUDSCheckboxItemIndeterminate: View {
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
 
-        let errorMessagePrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorMessage: String = layoutData.errorMessage?.localized() ?? ""
-        let errorDescription = "\(errorMessagePrefix), \(errorMessage)"
+        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorText: String = layoutData.errorText?.localized() ?? ""
+        let errorDescription = "\(errorPrefix), \(errorText)"
 
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
