@@ -122,7 +122,7 @@ import SwiftUI
 ///
 /// ![A switch item component in light and dark mode with Wireframe theme](component_switchItem_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.14.0
 public struct OUDSSwitchItem: View {
 
@@ -147,7 +147,8 @@ public struct OUDSSwitchItem: View {
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorMessage: An optional error message to display at the bottom. This message is ignored if `isError` is `false`
+    ///   - errorMessage: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///     **Note:** The `errorMessage`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///
@@ -206,10 +207,13 @@ public struct OUDSSwitchItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorMessagePrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorMessage: String = layoutData.errorMessage?.localized() ?? ""
+        let errorDescription = "\(errorMessagePrefix), \(errorMessage)"
+
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? "") \(errorDescription), \(switchA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? ""), \(errorDescription), \(switchA11yTrait)"
         return result
     }
 

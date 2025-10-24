@@ -61,6 +61,7 @@ struct ControlItemContent: View {
                     .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInline)
             }
         }
+        .frame(maxWidth: theme.controlItem.controlItemSizeMaxWidth)
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
     }
 
