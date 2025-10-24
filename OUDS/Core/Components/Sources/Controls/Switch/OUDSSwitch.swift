@@ -56,7 +56,7 @@ import SwiftUI
 ///
 /// ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.14.0
 public struct OUDSSwitch: View {
 

@@ -139,7 +139,7 @@ import SwiftUI
 ///
 /// ![A checkbox item component in light and dark mode with Wireframe theme](component_checkboxItem_Wireframe)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSCheckboxItemIndeterminate: View {
 
@@ -165,6 +165,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorMessage: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///     **Note:** The `errorMessage`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
@@ -178,6 +180,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 flipIcon: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
+                errorMessage: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
@@ -200,7 +203,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
-            errorMessage: nil,
+            errorMessage: errorMessage,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
@@ -224,7 +227,11 @@ public struct OUDSCheckboxItemIndeterminate: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+
+        let errorMessagePrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorMessage: String = layoutData.errorMessage?.localized() ?? ""
+        let errorDescription = "\(errorMessagePrefix), \(errorMessage)"
+
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.label), \(layoutData.helper ?? "") \(errorDescription), \(checkboxA11yTrait)"

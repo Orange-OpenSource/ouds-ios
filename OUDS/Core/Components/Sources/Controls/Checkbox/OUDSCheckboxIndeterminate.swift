@@ -88,7 +88,7 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSCheckboxIndeterminate: View {
 

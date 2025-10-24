@@ -75,7 +75,7 @@ import SwiftUI
 ///
 /// ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSRadio: View {
 
