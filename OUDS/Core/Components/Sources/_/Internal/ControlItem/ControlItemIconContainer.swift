@@ -31,7 +31,7 @@ struct ControlItemIconContainer: View {
     // MARK: Body
 
     var body: some View {
-        if layoutData.isError, layoutData.icon != nil {
+        if layoutData.isError || layoutData.icon != nil {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }

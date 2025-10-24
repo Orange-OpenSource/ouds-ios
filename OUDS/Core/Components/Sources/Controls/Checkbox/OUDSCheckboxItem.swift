@@ -201,6 +201,7 @@ public struct OUDSCheckboxItem: View {
             flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
+            errorMessage: nil,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)

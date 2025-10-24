@@ -53,11 +53,12 @@ struct ControlItemContent: View {
             .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 
-            if let errorMessage = layoutData.errorMessage, !errorMessage.isEmpty {
+            if layoutData.isError, let errorMessage = layoutData.errorMessage, !errorMessage.isEmpty {
                 Text(errorMessage)
                     .typeLabelDefaultMedium(theme)
                     .oudsForegroundColor(theme.colors.colorContentStatusNegative)
                     .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
+                    .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInline)
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))

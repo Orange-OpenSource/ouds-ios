@@ -215,6 +215,7 @@ public struct OUDSRadioItem: View {
             flipIcon: flipIcon,
             isOutlined: isOutlined,
             isError: isError,
+            errorMessage: nil,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
