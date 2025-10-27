@@ -36,21 +36,32 @@ struct ControlItemContent: View {
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
-            switch layoutData.orientation {
-            case .default:
-                indicatorContainer()
-                labelContainer()
-                iconContainer()
-            case .reversed:
-                iconContainer()
-                labelContainer()
-                indicatorContainer()
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
+                switch layoutData.orientation {
+                case .default:
+                    indicatorContainer()
+                    labelContainer()
+                    iconContainer()
+                case .reversed:
+                    iconContainer()
+                    labelContainer()
+                    indicatorContainer()
+                }
+            }
+            .padding(.all, theme.controlItem.controlItemSpacePaddingBlock)
+            .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
+            .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+
+            if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
+                Text(errorText)
+                    .typeLabelDefaultMedium(theme)
+                    .oudsForegroundColor(theme.colors.colorContentStatusNegative)
+                    .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
+                    .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInline)
             }
         }
-        .padding(.all, theme.controlItem.controlItemSpacePaddingBlock)
-        .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
-        .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+        .frame(maxWidth: theme.controlItem.controlItemSizeMaxWidth)
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
     }
 
@@ -68,7 +79,7 @@ struct ControlItemContent: View {
     }
 
     private func iconContainer() -> some View {
-        ControlItemIconContainer(interactionState: interactionState, icon: layoutData.icon, flip: layoutData.flipIcon)
+        ControlItemIconContainer(interactionState: interactionState, layoutData: layoutData)
     }
 
     // MARK: Computed properties

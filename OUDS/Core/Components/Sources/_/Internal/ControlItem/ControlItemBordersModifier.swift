@@ -22,7 +22,7 @@ import SwiftUI
 /// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
 struct ControlItemBordersModifier: ViewModifier {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let interactionState: InteractionState
     let layoutData: ControlItemLabel.LayoutData
@@ -46,7 +46,7 @@ struct ControlItemBordersModifier: ViewModifier {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
-                    OUDSHorizontalDivider()
+                    Divider().horizontalDivider(force: dividerColor)
                 }
             } else {
                 content
@@ -56,45 +56,45 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Private helpers
 
+    private var dividerColor: MultipleColorSemanticTokens {
+        layoutData.isError ? errorColor : theme.colors.colorBorderDefault
+    }
+
     private var borderColor: MultipleColorSemanticTokens? {
+        layoutData.isError ? errorColor : successColor
+    }
+
+    private var errorColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            enabledColor
+            theme.colors.colorActionNegativeEnabled
         case .pressed:
-            pressedColor
+            theme.colors.colorActionNegativePressed
         case .hover:
-            hoverColor
+            theme.colors.colorActionNegativeHover
         case .readOnly, .disabled:
-            disabledColor
+            OL.fatal("An outlined ControlItem with a disabled or read-only state and an error situation has been detected, which is not allowed."
+                + " Only non-error / non-read-only situation are allowed to have a disabled state.")
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens? {
-        if layoutData.isError {
-            isOn ? theme.colors.colorActionNegativeEnabled : nil
-        } else {
+    private var successColor: MultipleColorSemanticTokens? {
+        switch interactionState {
+        case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {
                 isOn ? theme.colors.colorContentDefault : nil
             } else {
                 isOn ? theme.colors.colorActionSelected : nil
             }
+        case .hover:
+            theme.colors.colorActionHover
+        case .pressed:
+            theme.colors.colorActionPressed
+        case .disabled:
+            isOn ? theme.colors.colorActionDisabled : nil
+        case .readOnly:
+            isOn ? theme.colors.colorActionDisabled : nil
         }
-    }
-
-    private var pressedColor: MultipleColorSemanticTokens? {
-        layoutData.isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
-    }
-
-    private var hoverColor: MultipleColorSemanticTokens? {
-        layoutData.isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
-    }
-
-    private var disabledColor: MultipleColorSemanticTokens? {
-        guard !layoutData.isError else {
-            OL.fatal("An outlined ControlItem with a disabled state and an error situation has been detected, which is not allowed."
-                + " Only non-error situation are allowed to have a disabled state.")
-        }
-        return isOn ? theme.colors.colorActionDisabled : nil
     }
 
     private var borderRadius: BorderRadiusSemanticToken {

@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
+- Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
+- Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
 - Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
 - Update `OUDSTag` to version 1.4 (Orange-OpenSource/ouds-ios#1037)
 - Update `OUDSTag` to version 1.3 (Orange-OpenSource/ouds-ios#945)

@@ -24,23 +24,16 @@ struct ControlItemIconContainer: View {
     // MARK: - Stored properties
 
     let interactionState: InteractionState
-    let icon: Image?
-    let flip: Bool
+    let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        if let icon {
+        if layoutData.isError || layoutData.icon != nil {
             HStack(alignment: .center, spacing: 0) {
                 icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .oudsForegroundStyle(iconColor)
-                    .accessibilityHidden(true)
-                    .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
-                    .toFlip(flip)
             }
             .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
         }
@@ -48,12 +41,49 @@ struct ControlItemIconContainer: View {
 
     // MARK: - Colors
 
+    @ViewBuilder
+    private var icon: some View {
+        if layoutData.isError {
+            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+                .renderingMode(.template)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .accessibilityHidden(true)
+                .oudsForegroundColor(errorIconColor)
+                .frame(width: theme.controlItem.controlItemSizeErrorIcon, height: theme.controlItem.controlItemSizeErrorIcon)
+                .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInlineErrorIcon)
+        } else {
+            if let icon = layoutData.icon {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .accessibilityHidden(true)
+                    .oudsForegroundStyle(iconColor)
+                    .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
+                    .toFlip(layoutData.flipIcon)
+            }
+        }
+    }
+
     private var iconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentDefault
         case .disabled:
             theme.colors.colorContentDisabled
+        }
+    }
+
+    private var errorIconColor: MultipleColorSemanticTokens {
+        switch interactionState {
+        case .enabled:
+            theme.colors.colorActionNegativeEnabled
+        case .pressed:
+            theme.colors.colorActionNegativePressed
+        case .hover:
+            theme.colors.colorActionNegativeHover
+        case .readOnly, .disabled:
+            theme.colors.colorActionDisabled
         }
     }
 }
