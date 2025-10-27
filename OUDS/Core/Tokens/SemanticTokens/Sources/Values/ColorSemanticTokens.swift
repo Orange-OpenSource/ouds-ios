@@ -408,6 +408,7 @@ public protocol ColorSemanticTokens {
     var colorRepositoryWarningHigher: ColorSemanticToken { get }
     var colorRepositoryWarningHighest: ColorSemanticToken { get }
     var colorRepositoryWarningLow: ColorSemanticToken { get }
+    var colorRepositoryWarningLower: ColorSemanticToken { get }
     var colorRepositoryWarningLowest: ColorSemanticToken { get }
 }
 
