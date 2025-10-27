@@ -218,9 +218,11 @@ public struct OUDSRadioItem: View {
             OL.warning("Additional label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
+        // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
             OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
         }
+        // swiftlint:enable force_unwrapping
 
         _isOn = isOn
         layoutData = .init(

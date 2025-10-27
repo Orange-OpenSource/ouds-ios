@@ -14,9 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` which will apply a specific divider under a `View` using color and size semantic token for a specified orientation.
-///
-/// - Since: 0.13.0
+/// A `ViewModifier` which will apply a specific divider under a `View` using color and size semantic tokens for a specified orientation.
 struct DividerModifier: ViewModifier {
 
     /// Divider orientation
@@ -25,38 +23,40 @@ struct DividerModifier: ViewModifier {
         case vertical
     }
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let dividerColor: OUDSDividerColor
-    let tokenColor: MultipleColorSemanticTokens?
+    let forceColor: MultipleColorSemanticTokens?
     let orientation: Orientation
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// Internal usage, create with a `tokenColor`. The `dividerColor` is ignored
-    ///
-    /// - Parameters:
-    ///   - orientation: The divider orientation
-    ///   - tokenColor: The token of the color to apply
-    init(orientation: Orientation, tokenColor: MultipleColorSemanticTokens) {
-        dividerColor = .default
-        self.tokenColor = tokenColor
-        self.orientation = orientation
-    }
+    // MARK: - Init
 
-    /// Normal (public) usage, create with a `dividerColor`
+    /// Normal (public) usage, creates with a `dividerColor`
     ///
     /// - Parameters:
     ///   - orientation: The divider orientation
     ///   - dividerColor: The color allowed for divider in a public usage
     init(orientation: Orientation, dividerColor: OUDSDividerColor) {
         self.dividerColor = dividerColor
-        tokenColor = nil
+        forceColor = nil
         self.orientation = orientation
     }
 
-    // - MARK: Body
+    /// For internal usage, creates with a `forceColor`. The `dividerColor` is ignored.
+    ///
+    /// - Parameters:
+    ///   - orientation: The divider orientation
+    ///   - forceColor: The token of the color to apply
+    init(orientation: Orientation, forceColor: MultipleColorSemanticTokens) {
+        dividerColor = .default
+        self.forceColor = forceColor
+        self.orientation = orientation
+    }
+
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         content
@@ -64,7 +64,7 @@ struct DividerModifier: ViewModifier {
             .overlay(color.color(for: colorScheme))
     }
 
-    // - MARK: Private helper
+    // MARK: - Helpers
 
     private var height: CGFloat? {
         switch orientation {
@@ -85,44 +85,25 @@ struct DividerModifier: ViewModifier {
     }
 
     private var color: MultipleColorSemanticTokens {
-        tokenColor ?? dividerColor.colorToken(in: theme)
+        forceColor ?? dividerColor.colorToken(in: theme)
     }
 }
 
 extension Divider {
-    /// Set the color to the vertical divider with token sementic color for internal usage
+
+    /// Force the color of the vertical divider (for internal usage)
     ///
-    /// ```swift
-    /// HStack {
-    ///     Text("Hello wolrd!")
-    ///
-    ///     Divider()
-    ///        .oudsVerticalDivider(tokenColor: theme.colors.colorContentStatusNegative)
-    ///
-    ///     Text("Happy to see you")
-    /// }
-    /// ```
-    ///
-    /// - Parameter tokenColor: the sementic color token of the divider
+    /// - Parameter color: The color to force for the divider
     @MainActor
-    func oudsVerticalDivider(tokenColor: MultipleColorSemanticTokens) -> some View {
-        modifier(DividerModifier(orientation: .vertical, tokenColor: tokenColor))
+    func verticalDivider(force color: MultipleColorSemanticTokens) -> some View {
+        modifier(DividerModifier(orientation: .vertical, forceColor: color))
     }
 
-    /// Set the color to the horizontal divider with token sementic color for internal usage
-    /// ```swift
-    /// VStack {
-    ///     Text("Hello wolrd!")
+    /// Force the color of the horizontal divider (for internal usage)
     ///
-    ///     Divider()
-    ///        .oudsHorizontalDivider(dividerColor: .brandPrimary)
-    ///
-    ///     Text("Happy to see you")
-    /// }
-    /// ```
-    ///
+    /// - Parameter color: The color to force for the divider
     @MainActor
-    func oudsHorizontalDivider(tokenColor: MultipleColorSemanticTokens) -> some View {
-        modifier(DividerModifier(orientation: .horizontal, tokenColor: tokenColor))
+    func horizontalDivider(force color: MultipleColorSemanticTokens) -> some View {
+        modifier(DividerModifier(orientation: .horizontal, forceColor: color))
     }
 }

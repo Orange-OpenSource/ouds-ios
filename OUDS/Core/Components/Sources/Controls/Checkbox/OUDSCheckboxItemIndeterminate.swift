@@ -202,9 +202,11 @@ public struct OUDSCheckboxItemIndeterminate: View {
             OL.warning("Helper text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
+        // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
             OL.warning("Error text given to an OUDSCheckboxItemIndeterminate must be defined in case of error")
         }
+        // swiftlint:enable force_unwrapping
 
         _selection = selection
         self.action = action

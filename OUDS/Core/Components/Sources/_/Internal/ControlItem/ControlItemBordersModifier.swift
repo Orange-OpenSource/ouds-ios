@@ -22,7 +22,7 @@ import SwiftUI
 /// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
 struct ControlItemBordersModifier: ViewModifier {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let interactionState: InteractionState
     let layoutData: ControlItemLabel.LayoutData
@@ -46,9 +46,7 @@ struct ControlItemBordersModifier: ViewModifier {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
-                    if let dividerColor {
-                        Divider().oudsHorizontalDivider(tokenColor: dividerColor)
-                    }
+                    Divider().horizontalDivider(force: dividerColor)
                 }
             } else {
                 content
@@ -58,15 +56,15 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Private helpers
 
-    private var dividerColor: MultipleColorSemanticTokens? {
+    private var dividerColor: MultipleColorSemanticTokens {
         layoutData.isError ? errorColor : theme.colors.colorBorderDefault
     }
 
     private var borderColor: MultipleColorSemanticTokens? {
-        layoutData.isError ? errorColor : validColor
+        layoutData.isError ? errorColor : successColor
     }
 
-    private var errorColor: MultipleColorSemanticTokens? {
+    private var errorColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
             theme.colors.colorActionNegativeEnabled
@@ -75,12 +73,12 @@ struct ControlItemBordersModifier: ViewModifier {
         case .hover:
             theme.colors.colorActionNegativeHover
         case .readOnly, .disabled:
-            // Not allowed
-            nil
+            OL.fatal("An outlined ControlItem with a disabled or read-only state and an error situation has been detected, which is not allowed."
+                + " Only non-error / non-read-only situation are allowed to have a disabled state.")
         }
     }
 
-    private var validColor: MultipleColorSemanticTokens? {
+    private var successColor: MultipleColorSemanticTokens? {
         switch interactionState {
         case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {

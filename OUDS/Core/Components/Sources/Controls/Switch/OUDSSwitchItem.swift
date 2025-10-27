@@ -182,9 +182,11 @@ public struct OUDSSwitchItem: View {
             OL.warning("Helper text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
+        // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
             OL.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
         }
+        // swiftlint:enable force_unwrapping
 
         _isOn = isOn
 

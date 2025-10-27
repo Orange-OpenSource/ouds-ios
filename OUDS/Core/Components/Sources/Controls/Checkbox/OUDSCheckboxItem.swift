@@ -204,9 +204,11 @@ public struct OUDSCheckboxItem: View {
             OL.warning("Helper text given to an OUDSCheckboxItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
+        // swiftlint:disable force_unwrapping
         if isError, errorText == nil || errorText!.isEmpty {
             OL.warning("Error text given to an OUDSCheckboxItem must be defined in case of error")
         }
+        // swiftlint:enable force_unwrapping
 
         _isOn = isOn
         layoutData = .init(
