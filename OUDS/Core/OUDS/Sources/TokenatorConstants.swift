@@ -83,7 +83,7 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component skeleton
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag
-    public static let componentTagVersion = "1.1.0" // NOTE: Manually fixed, still 1.1.0 implemented and not 1.4.0
+    public static let componentTagVersion = "1.4.0"
 
     // MARK: - Components versions - Divider
 

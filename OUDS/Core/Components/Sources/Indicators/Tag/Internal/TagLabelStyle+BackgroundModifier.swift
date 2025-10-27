@@ -16,11 +16,12 @@ import SwiftUI
 
 struct TagBackgroundModifier: ViewModifier {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+    let appearance: OUDSTag.Appearance
+    let type: OUDSTag.`Type`
 
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
 
     // MARK: Body
@@ -32,16 +33,25 @@ struct TagBackgroundModifier: ViewModifier {
     // MARK: Helpers
 
     private var background: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            emphasizedBackground
-        case .muted:
-            mutedBackground
+        switch type {
+        case let .status(_, status):
+            if isEnabled {
+                switch appearance {
+                case .emphasized:
+                    emphasizedBackground(for: status)
+                case .muted:
+                    mutedBackground(for: status)
+                }
+            } else {
+                theme.colors.colorActionDisabled
+            }
+        case .loader:
+            theme.colors.colorSurfaceSecondary
         }
     }
 
-    private var emphasizedBackground: MultipleColorSemanticTokens {
-        switch status {
+    private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorSurfaceInverseHigh
         case .accent:
@@ -54,13 +64,11 @@ struct TagBackgroundModifier: ViewModifier {
             theme.colors.colorSurfaceStatusNegativeEmphasized
         case .info:
             theme.colors.colorSurfaceStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorActionDisabled
         }
     }
 
-    private var mutedBackground: MultipleColorSemanticTokens {
-        switch status {
+    private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorSurfaceSecondary
         case .accent:
@@ -73,8 +81,6 @@ struct TagBackgroundModifier: ViewModifier {
             theme.colors.colorSurfaceStatusNegativeMuted
         case .info:
             theme.colors.colorSurfaceStatusInfoMuted
-        case .disabled:
-            theme.colors.colorActionDisabled
         }
     }
 }

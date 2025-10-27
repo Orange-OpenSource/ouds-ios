@@ -17,11 +17,10 @@ struct TagLabelStyle: LabelStyle {
 
     // MARK: Stored properties
 
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+    let appearance: OUDSTag.Appearance
     let shape: OUDSTag.Shape
     let size: OUDSTag.Size
-    let hasIcon: Bool
+    let type: OUDSTag.`Type`
 
     @Environment(\.theme) private var theme
 
@@ -35,11 +34,25 @@ struct TagLabelStyle: LabelStyle {
             configuration.title
         }
         .modifier(TagPaddingsAndSizeModifier(size: size, hasIcon: hasIcon))
-        .modifier(TagBackgroundModifier(hierarchy: hierarchy, status: status))
+        .modifier(TagBackgroundModifier(appearance: appearance, type: type))
         .modifier(TagShapeModifier(shape: shape))
     }
 
-    // MARK: Helper
+    // MARK: Helpers
+
+    private var hasIcon: Bool {
+        switch type {
+        case let .status(_, status):
+            switch status.leading {
+            case .icon, .bullet:
+                true
+            default:
+                false
+            }
+        default:
+            true
+        }
+    }
 
     private var spacing: CGFloat {
         switch size {

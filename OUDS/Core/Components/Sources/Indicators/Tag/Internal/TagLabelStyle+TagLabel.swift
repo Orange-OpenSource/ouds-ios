@@ -18,11 +18,12 @@ struct TagLabel: View {
 
     // MARK: Stored Properties
 
-    let label: String
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
+    let type: OUDSTag.`Type`
+
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
@@ -30,29 +31,38 @@ struct TagLabel: View {
         Group {
             switch size {
             case .default:
-                Text(label)
+                Text(type.label)
                     .typeLabelStrongMedium(theme)
             case .small:
-                Text(label)
+                Text(type.label)
                     .typeLabelStrongSmall(theme)
             }
         }
         .oudsForegroundColor(color)
     }
 
-    // MARK: Helper
+    // MARK: Helpers
 
     private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            colorEmphasized
-        case .muted:
-            colorMuted
+        switch type {
+        case let .status(_, status):
+            if isEnabled {
+                switch appearance {
+                case .emphasized:
+                    emphasizedColor(for: status)
+                case .muted:
+                    mutedColor(for: status)
+                }
+            } else {
+                theme.colors.colorContentOnActionDisabled
+            }
+        case .loader:
+            theme.colors.colorContentDefault
         }
     }
 
-    private var colorEmphasized: MultipleColorSemanticTokens {
-        switch status {
+    private func emphasizedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentInverse
         case .accent:
@@ -65,13 +75,11 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
             theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 
-    private var colorMuted: MultipleColorSemanticTokens {
-        switch status {
+    private func mutedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentDefault
         case .accent:
@@ -84,8 +92,6 @@ struct TagLabel: View {
             theme.colors.colorContentOnStatusNegativeMuted
         case .info:
             theme.colors.colorContentOnStatusInfoMuted
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 }

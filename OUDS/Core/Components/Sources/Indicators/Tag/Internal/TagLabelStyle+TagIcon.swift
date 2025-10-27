@@ -18,24 +18,16 @@ import SwiftUI
 
 struct TagIcon: View {
 
-    // MARK: Stored properties
-
-    let type: OUDSTag.`Type`
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
-
-    // MARK: Body
+    let type: OUDSTag.`Type`
 
     var body: some View {
         switch type {
-        case let .textAndIcon(_, icon, flipIcon):
-            if let icon {
-                TagAsset(icon: icon, hierarchy: hierarchy, status: status, size: size)
-                    .toFlip(flipIcon)
-            }
-        case .textAndLoader:
-            TagLoader(hierarchy: hierarchy, status: status, size: size)
+        case let .status(_, status):
+            TagAsset(appearance: appearance, size: size, status: status)
+        case .loader:
+            TagLoader(size: size)
         }
     }
 }
@@ -44,23 +36,15 @@ struct TagIcon: View {
 
 struct TagLoader: View {
 
-    // MARK: Stored Properties
-
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
     let size: OUDSTag.Size
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Body
-
     var body: some View {
-        LoaderIndicator(color: color.color(for: colorScheme))
+        LoaderIndicator(color: theme.colors.colorContentDefault.color(for: colorScheme))
             .padding(.all, padding)
     }
-
-    // MARK: Helpers
 
     private var padding: CGFloat {
         switch size {
@@ -68,53 +52,6 @@ struct TagLoader: View {
             theme.tag.tagSpaceInsetLoaderDefault
         case .small:
             theme.tag.tagSpaceInsetLoaderSmall
-        }
-    }
-
-    private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            colorEmphasized
-        case .muted:
-            colorMuted
-        }
-    }
-
-    private var colorEmphasized: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.colorContentInverse
-        case .accent:
-            theme.colors.colorContentOnStatusAccentEmphasized
-        case .positive:
-            theme.colors.colorContentOnStatusPositiveEmphasized
-        case .warning:
-            theme.colors.colorContentOnStatusWarningEmphasized
-        case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
-        case .info:
-            theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
-        }
-    }
-
-    private var colorMuted: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.colorContentDefault
-        case .accent:
-            theme.colors.colorContentOnStatusAccentMuted
-        case .positive:
-            theme.colors.colorContentOnStatusPositiveMuted
-        case .warning:
-            theme.colors.colorContentOnStatusWarningMuted
-        case .negative:
-            theme.colors.colorContentOnStatusNegativeMuted
-        case .info:
-            theme.colors.colorContentOnStatusInfoMuted
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 }
@@ -125,45 +62,87 @@ struct TagAsset: View {
 
     // MARK: Stored properties
 
-    let icon: OUDSTag.Icon
-    let hierarchy: OUDSTag.Hierarchy
-    let status: OUDSTag.Status
+    let appearance: OUDSTag.Appearance
     let size: OUDSTag.Size
+    let status: OUDSTag.Status
 
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Body
 
     var body: some View {
-        image
-            .renderingMode(.template)
-            .resizable()
-            .oudsForegroundStyle(color)
-            .padding(.all, padding)
+        Group {
+            if appearance == .muted, status.leading == .icon, status.category == .warning, isEnabled {
+                ZStack {
+                    Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningExternalShape)
+                    Image(decorative: "ic_warning_internal_shape", bundle: theme.resourcesBundle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningInternalShape)
+                }
+            } else {
+                iconFromAsset?
+                    .renderingMode(.template)
+                    .resizable()
+                    .toFlip(status.flipIcon)
+                    .oudsForegroundColor(color)
+            }
+        }
+        .padding(.all, padding)
     }
 
     // MARK: Helpers
 
-    private var image: Image {
-        switch icon {
+    private var iconFromAsset: Image? {
+        switch status.leading {
+        case .none:
+            return nil
         case .bullet:
-            Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
-        case let .asset(image):
-            image
+            return Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
+        case .icon:
+            if let alternativeIcon = status.customIcon {
+                return alternativeIcon
+            }
+            return defaultLeadingIcon
+        }
+    }
+
+    private var defaultLeadingIcon: Image? {
+        switch status.category {
+        case .neutral:
+            nil
+        case .accent:
+            nil
+        case .positive:
+            Image(decorative: "ic_success", bundle: theme.resourcesBundle)
+        case .warning:
+            Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
+        case .negative:
+            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+        case .info:
+            Image(decorative: "ic_information", bundle: theme.resourcesBundle)
         }
     }
 
     private var color: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .emphasized:
-            emphasizedColor
-        case .muted:
-            mutedColor
+        if isEnabled {
+            switch appearance {
+            case .emphasized:
+                emphasizedColor
+            case .muted:
+                mutedColor
+            }
+        } else {
+            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var emphasizedColor: MultipleColorSemanticTokens {
-        switch status {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentInverse
         case .accent:
@@ -176,13 +155,11 @@ struct TagAsset: View {
             theme.colors.colorContentOnStatusNegativeEmphasized
         case .info:
             theme.colors.colorContentOnStatusInfoEmphasized
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var mutedColor: MultipleColorSemanticTokens {
-        switch status {
+        switch status.category {
         case .neutral:
             theme.colors.colorContentDefault
         case .accent:
@@ -195,16 +172,16 @@ struct TagAsset: View {
             theme.colors.colorContentStatusNegative
         case .info:
             theme.colors.colorContentStatusInfo
-        case .disabled:
-            theme.colors.colorContentOnActionDisabled
         }
     }
 
     private var padding: CGFloat {
-        switch icon {
+        switch status.leading {
         case .bullet:
             bulletPadding
-        case .asset:
+        case .icon:
+            assetPadding
+        default:
             assetPadding
         }
     }
