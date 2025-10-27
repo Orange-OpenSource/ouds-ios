@@ -12,11 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
 - Update `OUDSTag` to version 1.4 (Orange-OpenSource/ouds-ios#1037)
 - Update `OUDSTag` to version 1.3 (Orange-OpenSource/ouds-ios#945)
-
-### Changed
-
 - Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - Update `link` component version (Orange-OpenSource/ouds-ios#1035)
 - `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
