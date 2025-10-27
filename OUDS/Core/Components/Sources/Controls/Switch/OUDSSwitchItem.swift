@@ -34,6 +34,8 @@ import SwiftUI
 ///
 /// An ``OUDSSwitchItem`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
+/// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
+///
 /// In addition, the ``OUDSSwitchItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 /// The switch can be also outlined in some cases.
@@ -155,7 +157,7 @@ public struct OUDSSwitchItem: View {
     ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///     **Note:** The `errorText`can be different if switch is selected or not.
+    ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///
@@ -178,6 +180,10 @@ public struct OUDSSwitchItem: View {
 
         if let helper, helper.isEmpty {
             OL.warning("Helper text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if isError, errorText == nil || errorText!.isEmpty {
+            OL.warning("Error text given to an OUDSSwitchItem must be defined in case of error")
         }
 
         _isOn = isOn
@@ -215,7 +221,7 @@ public struct OUDSSwitchItem: View {
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorText: String = layoutData.errorText?.localized() ?? ""
+        let errorText = layoutData.errorText?.localized() ?? ""
         let errorDescription = "\(errorPrefix), \(errorText)"
 
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization

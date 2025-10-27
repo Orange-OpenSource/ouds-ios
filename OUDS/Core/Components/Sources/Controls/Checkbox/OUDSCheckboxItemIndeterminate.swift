@@ -39,6 +39,8 @@ import SwiftUI
 ///
 /// An ``OUDSCheckboxItemIndeterminate`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
+/// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
+///
 /// In addition, the ``OUDSCheckboxItemIndeterminate`` can be in read only mode, i.e. the user cannot interact with the component yet
 /// but this component must not be considered as disabled.
 ///
@@ -173,7 +175,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///     **Note:** The `errorText`can be different if switch is selected or not.
+    ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
@@ -193,11 +195,15 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an OUDSCheckboxItemIndeterminate in an error context and in read only mode")
         }
 
         if let helper, helper.isEmpty {
-            OL.warning("Helper text given to an OUDS Checkbox is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Helper text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if isError, errorText == nil || errorText!.isEmpty {
+            OL.warning("Error text given to an OUDSCheckboxItemIndeterminate must be defined in case of error")
         }
 
         _selection = selection
@@ -236,7 +242,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorText: String = layoutData.errorText?.localized() ?? ""
+        let errorText = layoutData.errorText?.localized() ?? ""
         let errorDescription = "\(errorPrefix), \(errorText)"
 
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization

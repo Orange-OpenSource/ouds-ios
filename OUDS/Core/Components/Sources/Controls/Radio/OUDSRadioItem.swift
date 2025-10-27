@@ -36,6 +36,8 @@ import SwiftUI
 ///
 /// An ``OUDSRadioItem`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
+/// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
+///
 /// In addition, the ``OUDSRadioItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 /// The radio can be also outlined in some cases.
@@ -181,7 +183,7 @@ public struct OUDSRadioItem: View {
     ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///     **Note:** The `errorText`can be different if switch is selected or not.
+    ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
@@ -213,7 +215,11 @@ public struct OUDSRadioItem: View {
         }
 
         if let additionalLabel, additionalLabel.isEmpty {
-            OL.warning("Additional label text given to an OUDSRadioitem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Additional label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if isError, errorText == nil || errorText!.isEmpty {
+            OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
         }
 
         _isOn = isOn
@@ -251,7 +257,7 @@ public struct OUDSRadioItem: View {
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorText: String = layoutData.errorText?.localized() ?? ""
+        let errorText = layoutData.errorText?.localized() ?? ""
         let errorDescription = "\(errorPrefix), \(errorText)"
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
