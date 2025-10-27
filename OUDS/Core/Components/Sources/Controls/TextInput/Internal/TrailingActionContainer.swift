@@ -36,7 +36,6 @@ struct TrailingActionContainer: View {
         case .error:
             HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
                 Image(decorative: "ic_important", bundle: theme.resourcesBundle)
-                    .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .oudsForegroundColor(errorIconColor)

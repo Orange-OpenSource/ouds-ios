@@ -123,55 +123,28 @@ private struct ChipContent: View {
         Group {
             switch layout {
             case let .icon(icon, accessibilityLabel):
-                ChipScaledIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                ScaledIcon(icon: icon.renderingMode(.template),
+                           size: theme.chip.chipSizeIcon)
                     .accessibilityLabel(accessibilityLabel)
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, icon, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
                     if iconPosition == .leading {
-                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        FixedIcon(icon: icon.resizable().renderingMode(.template),
+                                  size: theme.chip.chipSizeIcon)
                     }
 
                     ChipText(text: text)
 
                     if iconPosition == .trailing {
-                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        FixedIcon(icon: icon.resizable().renderingMode(.template),
+                                  size: theme.chip.chipSizeIcon)
                     }
                 }
             }
         }
         .modifier(ChipForegroundModifier(state: interactionState, selected: selected))
-    }
-}
-
-// MARK: - Scaled Icon
-
-private struct ChipScaledIcon: View {
-
-    let icon: Image
-    @ScaledMetric var size: CGFloat
-
-    var body: some View {
-        icon
-            .resizable()
-            .renderingMode(.template)
-            .frame(width: size, height: size, alignment: .center)
-    }
-}
-
-// MARK: - Fixed Icon
-
-private struct ChipFixedIcon: View {
-
-    let icon: Image
-    let size: CGFloat
-
-    var body: some View {
-        icon
-            .resizable()
-            .renderingMode(.template)
-            .frame(width: size, height: size, alignment: .center)
     }
 }
 
@@ -204,7 +177,8 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ChipScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
+            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle).renderingMode(.template),
+                       size: theme.chip.chipSizeIcon)
                 .accessibilityHidden(true)
                 .oudsForegroundColor(appliedColor)
         }

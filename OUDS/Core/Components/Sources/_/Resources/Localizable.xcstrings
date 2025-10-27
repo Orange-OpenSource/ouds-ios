@@ -466,6 +466,30 @@
         }
       }
     },
+    "core_inputtag_hint_delete_a11y" : {
+      "comment" : "Component - Input tag",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرا مزدوجا للحذف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to delete"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour supprimer"
+          }
+        }
+      }
+    },
     "core_radio_hint_selected_a11y" : {
       "comment" : "Radio",
       "extractionState" : "manual",

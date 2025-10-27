@@ -128,3 +128,42 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
         ```
     }
 }
+
+### Input Tag
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An input tag component in light and dark mode with Orange theme](component_inputTag_Orange)
+    }
+    @Tab("Orange Business Tools") {
+        ![An input tag component in light and dark mode with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![An input tag component in light and dark mode with Sosh theme](component_inputTag_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An input tag component in light and dark mode with Wireframe theme](component_inputTag_Wireframe)
+    }
+}
+
+An ``OUDSInputTag`` is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.
+
+```swift
+    import OUDSComponents
+    
+    // Create an input tag
+    OUDSInputTag("Label") {
+        // Do something, usually remove itself from a list
+    }
+    
+    // Show in a list and remove when clicked
+    var names: [String] = [ "Foo", "Bar", "Wizz" ]
+    
+    ForEach(names, id: \.self) { name in
+        OUDSInputTag(label: name) {
+            if let index = names.firstIndex(of: name) {
+                names.remove(at: index)
+            }
+        }
+    }
+```

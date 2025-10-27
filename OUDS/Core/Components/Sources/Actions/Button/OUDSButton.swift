@@ -254,7 +254,8 @@ private struct ButtonIcon: View {
     let icon: Image
 
     var body: some View {
-        ScaledIcon(icon: icon, size: theme.button.buttonSizeIconOnly)
+        ScaledIcon(icon: icon.renderingMode(.template),
+                   size: theme.button.buttonSizeIconOnly)
             .padding(.all, theme.button.buttonSpaceInsetIconOnly)
             .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight)
     }
@@ -287,52 +288,14 @@ private struct ButtonTextAndIcon: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.button.buttonSpaceColumnGapIcon) {
-            FixedIcon(icon: icon, size: theme.button.buttonSizeIcon)
+            FixedIcon(icon: icon.resizable().renderingMode(.template),
+                      size: theme.button.buttonSizeIcon)
             TextForButton(text: text)
         }
         .padding(.vertical, theme.button.buttonSpacePaddingBlock)
         .padding(.leading, theme.button.buttonSpacePaddingInlineIconStart)
         .padding(.trailing, theme.button.buttonSpacePaddingInlineEndIconStart)
         .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
-    }
-}
-
-// MARK: - Scaled Icon
-
-private struct ScaledIcon: View {
-
-    let icon: Image
-    @ScaledMetric var size: CGFloat
-
-    var body: some View {
-        IconForButton(icon: icon)
-            .frame(width: size, height: size, alignment: .center)
-    }
-}
-
-// MARK: - Fixed Icon
-
-private struct FixedIcon: View {
-
-    let icon: Image
-    let size: CGFloat
-
-    var body: some View {
-        IconForButton(icon: icon)
-            .frame(width: size, height: size, alignment: .center)
-    }
-}
-
-// MARK: - Icon For Button
-
-private struct IconForButton: View {
-
-    let icon: Image
-
-    var body: some View {
-        icon
-            .resizable()
-            .renderingMode(.template)
     }
 }
 

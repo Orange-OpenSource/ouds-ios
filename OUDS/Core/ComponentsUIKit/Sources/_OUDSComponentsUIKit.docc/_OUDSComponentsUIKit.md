@@ -37,22 +37,23 @@ Checkbox indeterminate        | ✅ yes
 Checkbox item                 | ✅ yes
 Checkbox item indeterminate   | ✅ yes
 Checkbox picker               | ❌ no
+Chip picker                   | ❌ no
+Filter chip                   | ✅ yes
 Radio                         | ✅ yes
 Radio item                    | ✅ yes
 Radio picker                  | ❌ no
+Suggestion chip               | ✅ yes
 Switch                        | ✅ yes
 Switch item                   | ✅ yes
-Filter chip                   | ✅ yes
-Suggestion chip               | ✅ yes
-Chip picker                   | ❌ no
 Text input                    | ❌ no
 
 ### Indicators
 
 Component                     | Available through UIKIt                          
 ----------------------------- | ------------------------------------- 
-Tag                           | ✅ yes
 Badge                         | ✅ yes
+Tag                           | ✅ yes
+Input tag                     | ❌ no
 
 ### Layouts
 
