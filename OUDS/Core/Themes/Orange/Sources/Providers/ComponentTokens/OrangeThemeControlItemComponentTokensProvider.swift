@@ -36,7 +36,7 @@ import OUDSFoundations
 ///
 ///         override var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
-///         override var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+///         override var controlItemSpaceRowGap: SpaceSemanticToken { spaces.paddingInlineTall }
 ///
 ///         // ...
 ///     }

@@ -30,7 +30,7 @@ struct SwitchIndicator: View {
 
     var body: some View {
         Cursor(interactionState: interactionState, isOn: isOn)
-            .padding(.horizontal, spacePadding)
+            .padding(.horizontal, padding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusTrack))
@@ -43,7 +43,7 @@ struct SwitchIndicator: View {
         isOn ? .trailing : .leading
     }
 
-    private var spacePadding: Double {
+    private var padding: Double {
         isOn ? theme.switch.switchSpacePaddingInlineSelected : theme.switch.switchSpacePaddingInlineUnselected
     }
 

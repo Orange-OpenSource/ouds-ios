@@ -148,13 +148,13 @@ struct SomeView: View {
             .frame(width: theme.sizes.iconDecorative2Xl, height: theme.sizes.iconDecorativeXl)
             .foregroundColor(theme.colors.bgSecondary.color(for: colorScheme))
             .shadow(elevation: theme.elevations.raised.elevation(for: colorScheme))
-            .padding(.bottom, theme.spaces.spaceFixedNone)
+            .padding(.bottom, theme.spaces.fixedNone)
     }
 /*
     - The theme provides size semantic tokens "iconDecorative2Xl" and "iconDecorativeXl"
     - The theme provides a color semantic token "bgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
     - The theme provides an elevation semantic token "raised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
-    - The theme provides a space semantic token "spaceFixedNone" usable as is
+    - The theme provides a space semantic token "fixedNone" usable as is
     - Environment variables like color scheme must be retrieved through View, and then given to theme
 */
 }

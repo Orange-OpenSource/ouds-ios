@@ -41,10 +41,10 @@ extension WireframeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token opacities.opaque
     @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opaque }
-    /// Has for value token spaces.spacePaddingInline3xsmall
-    @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc public final var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
+    /// Has for value token spaces.paddingInline3xsmall
+    @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.paddingInline3xsmall }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc public final var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token dimensions._3xlarge
     @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
     /// Has for value token dimensions._Xsmall

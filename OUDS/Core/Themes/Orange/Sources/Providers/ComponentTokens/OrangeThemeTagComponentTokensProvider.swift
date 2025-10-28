@@ -35,7 +35,7 @@ import OUDSFoundations
 ///
 ///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
 ///
 ///         // ...
 ///     }

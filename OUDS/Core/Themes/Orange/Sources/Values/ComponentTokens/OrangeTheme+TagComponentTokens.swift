@@ -22,34 +22,34 @@ import OUDSTokensSemantic
 extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     /// Has for value token borders.radiusPill
     @objc open var tagBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token spaces.spacePaddingInlineSmall
-    @objc open var tagSpacePaddingInlineSmall: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
-    /// Has for value token spaces.spacePaddingInlineMedium
-    @objc open var tagSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    /// Has for value token spaces.spacePaddingInline2xsmall
-    @objc open var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { spaces.spacePaddingInline2xsmall }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc open var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token spaces.spacePaddingBlock3xsmall
-    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.spacePaddingBlock3xsmall }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc open var tagSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spaceInsetNone
-    @objc open var tagSpaceInsetIconSmall: SpaceSemanticToken { spaces.spaceInsetNone }
-    /// Has for value token spaces.spaceInset3xsmall
-    @objc open var tagSpaceInsetBulletSmall: SpaceSemanticToken { spaces.spaceInset3xsmall }
-    /// Has for value token spaces.spaceInset4xsmall
-    @objc open var tagSpaceInsetLoaderSmall: SpaceSemanticToken { spaces.spaceInset4xsmall }
-    /// Has for value token spaces.spaceInset4xsmall
-    @objc open var tagSpaceInsetIconDefault: SpaceSemanticToken { spaces.spaceInset4xsmall }
+    /// Has for value token spaces.paddingInlineSmall
+    @objc open var tagSpacePaddingInlineSmall: SpaceSemanticToken { spaces.paddingInlineSmall }
+    /// Has for value token spaces.paddingInlineMedium
+    @objc open var tagSpacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineMedium }
+    /// Has for value token spaces.paddingInline2xsmall
+    @objc open var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc open var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    /// Has for value token spaces.paddingBlock3xsmall
+    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.paddingBlock3xsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc open var tagSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.insetNone
+    @objc open var tagSpaceInsetIconSmall: SpaceSemanticToken { spaces.insetNone }
+    /// Has for value token spaces.inset3xsmall
+    @objc open var tagSpaceInsetBulletSmall: SpaceSemanticToken { spaces.inset3xsmall }
+    /// Has for value token spaces.inset4xsmall
+    @objc open var tagSpaceInsetLoaderSmall: SpaceSemanticToken { spaces.inset4xsmall }
+    /// Has for value token spaces.inset4xsmall
+    @objc open var tagSpaceInsetIconDefault: SpaceSemanticToken { spaces.inset4xsmall }
     /// Has for value token DimensionRawTokens.outOfSystem75
     @objc open var tagSpaceInsetBulletDefault: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
-    /// Has for value token spaces.spaceInset3xsmall
-    @objc open var tagSpaceInsetLoaderDefault: SpaceSemanticToken { spaces.spaceInset3xsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc open var tagSpaceColumnGapSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc open var tagSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.inset3xsmall
+    @objc open var tagSpaceInsetLoaderDefault: SpaceSemanticToken { spaces.inset3xsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc open var tagSpaceColumnGapSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc open var tagSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelSmallSizeSmall
     @objc open var tagSizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelSmallSizeSmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall

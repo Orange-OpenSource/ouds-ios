@@ -47,7 +47,7 @@ struct BadgeCount: View {
     private var horizontalPadding: SpaceSemanticToken {
         switch size {
         case .extraSmall, .small:
-            theme.spaces.spaceFixedNone
+            theme.spaces.fixedNone
         case .medium:
             theme.badge.badgeSpacePaddingInlineMedium
         case .large:

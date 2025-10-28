@@ -34,16 +34,16 @@ extension OrangeBusinessToolsThemeControlItemComponentTokensProvider: ControlIte
     @objc public final var controlItemBorderRadius: BorderRadiusSemanticToken { borders.radiusNone }
     /// Has for value token borders.radiusDefault
     @objc public final var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc public final var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc public final var controlItemSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInline4xsmall
-    @objc public final var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.spacePaddingInline4xsmall }
-    /// Has for value token spaces.spaceColumnGapMedium
-    @objc public final var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token spaces.spaceRowGapNone
-    @objc public final var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc public final var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc public final var controlItemSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInline4xsmall
+    @objc public final var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
+    /// Has for value token spaces.columnGapMedium
+    @objc public final var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.columnGapMedium }
+    /// Has for value token spaces.rowGapNone
+    @objc public final var controlItemSpaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeMedium
     @objc public final var controlItemSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall

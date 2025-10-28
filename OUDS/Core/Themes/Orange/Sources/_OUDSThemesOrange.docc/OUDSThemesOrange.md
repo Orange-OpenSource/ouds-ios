@@ -210,11 +210,11 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMedium: SpaceSemanticToken {
+    override var fixedMedium: SpaceSemanticToken {
         DimensionRawTokens._400
     }
     override var scaledSmall: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
+        MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
     }
 }
 
@@ -302,7 +302,7 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
     override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
-    override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // Etc.

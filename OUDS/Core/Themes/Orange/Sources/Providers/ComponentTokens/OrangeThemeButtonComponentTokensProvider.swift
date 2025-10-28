@@ -38,7 +38,7 @@ import OUDSFoundations
 ///
 ///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }

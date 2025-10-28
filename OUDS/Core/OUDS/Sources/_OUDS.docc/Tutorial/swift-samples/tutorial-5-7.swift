@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             Group {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                     Text("OUDS Tutorial for new comers")
                         .headingXLarge(theme)
                         .oudsForegroundColor(theme.colors.contentBrandPrimary)
@@ -28,10 +28,10 @@ struct ContentView: View {
                         OUDSTag(label: "OUDS")
                         OUDSTag(label: "Tutorial")
                     }
-                }.padding(.bottom, theme.spaces.spaceFixedLarge)
+                }.padding(.bottom, theme.spaces.fixedLarge)
 
                 Group {
-                    VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+                    VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                         OUDSRadioPicker(selection: $selectedGender,
                                         radios: genderRadioValues(),
                                         placement: .horizontal(false))
@@ -56,7 +56,7 @@ struct ContentView: View {
 
                         OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
                     }
-                    .padding(.horizontal, theme.spaces.spaceFixedSmall)
+                    .padding(.horizontal, theme.spaces.fixedSmall)
                 }
                 .oudsBackground(theme.colors.bgTertiary)
                 .oudsBorder(style: theme.borders.styeDefault,
@@ -64,12 +64,12 @@ struct ContentView: View {
                             radius: theme.borders.radiusMedium,
                             color: theme.colors.actionEnabled)
                 .oudsShadow(theme.elevations.emphasized)
-                .padding(.bottom, theme.spaces.spaceFixedLarge)
+                .padding(.bottom, theme.spaces.fixedLarge)
 
-            }.padding(.horizontal, theme.spaces.spaceFixedSmall)
+            }.padding(.horizontal, theme.spaces.fixedSmall)
 
             OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedXsmall) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
                     OUDSLink(text: "Go to the website", indicator: .next) {
                         openUrl.callAsFunction(URL(string: "https://ios.unified-design-system.orange.com")!)
                     }
@@ -86,10 +86,10 @@ struct ContentView: View {
 
                     OUDSSwitchItem("Switch to dark mode",
                                    isOn: $switchToDarkMode)
-                        .padding(.horizontal, theme.spaces.spaceFixed3xlarge)
+                        .padding(.horizontal, theme.spaces.fixed3xlarge)
                 }
                 .frame(maxWidth: theme.sizes.maxWidthTypeBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
-                .padding(.bottom, theme.spaces.spaceFixedLarge)
+                .padding(.bottom, theme.spaces.fixedLarge)
             }
         }.preferredColorScheme(switchToDarkMode ? .dark : .light)
     }

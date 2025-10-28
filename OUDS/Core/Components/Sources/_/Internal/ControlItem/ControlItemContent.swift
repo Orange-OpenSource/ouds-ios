@@ -36,7 +36,7 @@ struct ControlItemContent: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
                 switch layoutData.orientation {
                 case .default:

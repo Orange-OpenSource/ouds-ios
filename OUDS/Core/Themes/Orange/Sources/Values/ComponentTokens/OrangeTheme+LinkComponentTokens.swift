@@ -36,18 +36,18 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc open var linkColorChevronPressed: MultipleColorSemanticTokens { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
     @objc open var linkColorChevronFocus: MultipleColorSemanticTokens { colors.contentBrandPrimary }
-    /// Has for value token spaces.spacePaddingInlineNone
-    @objc open var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc open var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc open var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc open var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.paddingInlineNone
+    @objc open var linkSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.columnGapSmall
+    @objc open var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc open var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc open var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
     @objc open var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall

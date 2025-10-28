@@ -38,18 +38,18 @@ extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc public final var linkColorChevronPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionEnabled
     @objc public final var linkColorChevronFocus: MultipleColorSemanticTokens { colors.actionEnabled }
-    /// Has for value token spaces.spacePaddingInlineNone
-    @objc public final var linkSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc public final var linkSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc public final var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.paddingInlineNone
+    @objc public final var linkSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc public final var linkSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.columnGapSmall
+    @objc public final var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
     @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall

@@ -54,7 +54,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
     @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider

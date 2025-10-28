@@ -60,129 +60,129 @@ extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     /// Has for value token dimensions._3xlarge
     @objc open var scaled3xlargeTablet: SpaceSemanticToken { dimensions._3xlarge }
     /// Has for value token DimensionRawTokens._0
-    @objc open var spaceFixedNone: SpaceSemanticToken { DimensionRawTokens._0 }
+    @objc open var fixedNone: SpaceSemanticToken { DimensionRawTokens._0 }
     /// Has for value token DimensionRawTokens.outOfSystem50
-    @objc open var spaceFixed3xsmall: SpaceSemanticToken { DimensionRawTokens.outOfSystem50 }
+    @objc open var fixed3xsmall: SpaceSemanticToken { DimensionRawTokens.outOfSystem50 }
     /// Has for value token DimensionRawTokens._50
-    @objc open var spaceFixed2xsmall: SpaceSemanticToken { DimensionRawTokens._50 }
+    @objc open var fixed2xsmall: SpaceSemanticToken { DimensionRawTokens._50 }
     /// Has for value token DimensionRawTokens._100
-    @objc open var spaceFixedXsmall: SpaceSemanticToken { DimensionRawTokens._100 }
+    @objc open var fixedXsmall: SpaceSemanticToken { DimensionRawTokens._100 }
     /// Has for value token DimensionRawTokens._150
-    @objc open var spaceFixedSmall: SpaceSemanticToken { DimensionRawTokens._150 }
+    @objc open var fixedSmall: SpaceSemanticToken { DimensionRawTokens._150 }
     /// Has for value token DimensionRawTokens._200
-    @objc open var spaceFixedMedium: SpaceSemanticToken { DimensionRawTokens._200 }
+    @objc open var fixedMedium: SpaceSemanticToken { DimensionRawTokens._200 }
     /// Has for value token DimensionRawTokens._300
-    @objc open var spaceFixedLarge: SpaceSemanticToken { DimensionRawTokens._300 }
+    @objc open var fixedLarge: SpaceSemanticToken { DimensionRawTokens._300 }
     /// Has for value token DimensionRawTokens._400
-    @objc open var spaceFixedXlarge: SpaceSemanticToken { DimensionRawTokens._400 }
+    @objc open var fixedXlarge: SpaceSemanticToken { DimensionRawTokens._400 }
     /// Has for value token DimensionRawTokens._500
-    @objc open var spaceFixed2xlarge: SpaceSemanticToken { DimensionRawTokens._500 }
+    @objc open var fixed2xlarge: SpaceSemanticToken { DimensionRawTokens._500 }
     /// Has for value token DimensionRawTokens._600
-    @objc open var spaceFixed3xlarge: SpaceSemanticToken { DimensionRawTokens._600 }
+    @objc open var fixed3xlarge: SpaceSemanticToken { DimensionRawTokens._600 }
     /// Has for value token DimensionRawTokens._700
-    @objc open var spaceFixed4xlarge: SpaceSemanticToken { DimensionRawTokens._700 }
+    @objc open var fixed4xlarge: SpaceSemanticToken { DimensionRawTokens._700 }
     /// Has for value token DimensionRawTokens._800
-    @objc open var spaceFixed5xlarge: SpaceSemanticToken { DimensionRawTokens._800 }
+    @objc open var fixed5xlarge: SpaceSemanticToken { DimensionRawTokens._800 }
     /// Has for value token dimensions._None
-    @objc open var spacePaddingInlineNone: SpaceSemanticToken { dimensions._none }
+    @objc open var paddingInlineNone: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._11xsmall
-    @objc open var spacePaddingInline4xsmall: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var paddingInline4xsmall: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spacePaddingInline3xsmall: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var paddingInline3xsmall: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._9xsmall
-    @objc open var spacePaddingInline2xsmall: SpaceSemanticToken { dimensions._9xsmall }
+    @objc open var paddingInline2xsmall: SpaceSemanticToken { dimensions._9xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spacePaddingInlineXsmall: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var paddingInlineXsmall: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._7xsmall
-    @objc open var spacePaddingInlineSmall: SpaceSemanticToken { dimensions._7xsmall }
+    @objc open var paddingInlineSmall: SpaceSemanticToken { dimensions._7xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spacePaddingInlineMedium: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var paddingInlineMedium: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spacePaddingInlineLarge: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var paddingInlineLarge: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._4xsmall
-    @objc open var spacePaddingInlineXlarge: SpaceSemanticToken { dimensions._4xsmall }
+    @objc open var paddingInlineXlarge: SpaceSemanticToken { dimensions._4xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spacePaddingInline2xlarge: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var paddingInline2xlarge: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._2xsmall
-    @objc open var spacePaddingInline3xlarge: SpaceSemanticToken { dimensions._2xsmall }
+    @objc open var paddingInline3xlarge: SpaceSemanticToken { dimensions._2xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var spacePaddingInline4xlarge: SpaceSemanticToken { dimensions._xsmall }
+    @objc open var paddingInline4xlarge: SpaceSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._None
-    @objc open var spacePaddingBlockNone: SpaceSemanticToken { dimensions._none }
+    @objc open var paddingBlockNone: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._11xsmall
-    @objc open var spacePaddingBlock4xsmall: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var paddingBlock4xsmall: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spacePaddingBlock3xsmall: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var paddingBlock3xsmall: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._9xsmall
-    @objc open var spacePaddingBlock2xsmall: SpaceSemanticToken { dimensions._9xsmall }
+    @objc open var paddingBlock2xsmall: SpaceSemanticToken { dimensions._9xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spacePaddingBlockXsmall: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var paddingBlockXsmall: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._7xsmall
-    @objc open var spacePaddingBlockSmall: SpaceSemanticToken { dimensions._7xsmall }
+    @objc open var paddingBlockSmall: SpaceSemanticToken { dimensions._7xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spacePaddingBlockMedium: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var paddingBlockMedium: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spacePaddingBlockLarge: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var paddingBlockLarge: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._4xsmall
-    @objc open var spacePaddingBlockXlarge: SpaceSemanticToken { dimensions._4xsmall }
+    @objc open var paddingBlockXlarge: SpaceSemanticToken { dimensions._4xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spacePaddingBlock2xlarge: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var paddingBlock2xlarge: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._2xsmall
-    @objc open var spacePaddingBlock3xlarge: SpaceSemanticToken { dimensions._2xsmall }
+    @objc open var paddingBlock3xlarge: SpaceSemanticToken { dimensions._2xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var spacePaddingBlock4xlarge: SpaceSemanticToken { dimensions._xsmall }
+    @objc open var paddingBlock4xlarge: SpaceSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._None
-    @objc open var spaceInsetNone: SpaceSemanticToken { dimensions._none }
+    @objc open var insetNone: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._12xsmall
-    @objc open var spaceInset4xsmall: SpaceSemanticToken { dimensions._12xsmall }
+    @objc open var inset4xsmall: SpaceSemanticToken { dimensions._12xsmall }
     /// Has for value token dimensions._11xsmall
-    @objc open var spaceInset3xsmall: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var inset3xsmall: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spaceInset2xsmall: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var inset2xsmall: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._9xsmall
-    @objc open var spaceInsetXsmall: SpaceSemanticToken { dimensions._9xsmall }
+    @objc open var insetXsmall: SpaceSemanticToken { dimensions._9xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spaceInsetSmall: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var insetSmall: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spaceInsetMedium: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var insetMedium: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spaceInsetLarge: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var insetLarge: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spaceInsetXlarge: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var insetXlarge: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var spaceInset2xlarge: SpaceSemanticToken { dimensions._xsmall }
+    @objc open var inset2xlarge: SpaceSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._Medium
-    @objc open var spaceInset3xlarge: SpaceSemanticToken { dimensions._medium }
+    @objc open var inset3xlarge: SpaceSemanticToken { dimensions._medium }
     /// Has for value token dimensions._None
-    @objc open var spaceColumnGapNone: SpaceSemanticToken { dimensions._none }
+    @objc open var columnGapNone: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._11xsmall
-    @objc open var spaceColumnGap3xsmall: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var columnGap3xsmall: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spaceColumnGap2xsmall: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var columnGap2xsmall: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._9xsmall
-    @objc open var spaceColumnGapXsmall: SpaceSemanticToken { dimensions._9xsmall }
+    @objc open var columnGapXsmall: SpaceSemanticToken { dimensions._9xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spaceColumnGapSmall: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var columnGapSmall: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spaceColumnGapMedium: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var columnGapMedium: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spaceColumnGapLarge: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var columnGapLarge: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._4xsmall
-    @objc open var spaceColumnGapXlarge: SpaceSemanticToken { dimensions._4xsmall }
+    @objc open var columnGapXlarge: SpaceSemanticToken { dimensions._4xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spaceColumnGap2xlarge: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var columnGap2xlarge: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._None
-    @objc open var spaceRowGapNone: SpaceSemanticToken { dimensions._none }
+    @objc open var rowGapNone: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._11xsmall
-    @objc open var spaceRowGap3xsmall: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var rowGap3xsmall: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spaceRowGap2xsmall: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var rowGap2xsmall: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._9xsmall
-    @objc open var spaceRowGapXsmall: SpaceSemanticToken { dimensions._9xsmall }
+    @objc open var rowGapXsmall: SpaceSemanticToken { dimensions._9xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spaceRowGapSmall: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var rowGapSmall: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spaceRowGapMedium: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var rowGapMedium: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spaceRowGapLarge: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var rowGapLarge: SpaceSemanticToken { dimensions._5xsmall }
 }

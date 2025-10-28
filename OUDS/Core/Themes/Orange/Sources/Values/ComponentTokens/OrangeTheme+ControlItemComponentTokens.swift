@@ -34,16 +34,16 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var controlItemBorderRadius: BorderRadiusSemanticToken { borders.radiusNone }
     /// Has for value token borders.radiusDefault
     @objc open var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc open var controlItemSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInline4xsmall
-    @objc open var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.spacePaddingInline4xsmall }
-    /// Has for value token spaces.spaceColumnGapMedium
-    @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token spaces.spaceRowGapNone
-    @objc open var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc open var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc open var controlItemSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInline4xsmall
+    @objc open var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
+    /// Has for value token spaces.columnGapMedium
+    @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.columnGapMedium }
+    /// Has for value token spaces.rowGapNone
+    @objc open var controlItemSpaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeMedium
     @objc open var controlItemSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall

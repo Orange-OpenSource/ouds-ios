@@ -40,7 +40,7 @@ struct TrailingActionContainer: View {
                     .aspectRatio(contentMode: .fill)
                     .oudsForegroundColor(errorIconColor)
                     .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
-                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.fixedNone)
 
                 if let trailingAction {
                     trailingButton(for: trailingAction)

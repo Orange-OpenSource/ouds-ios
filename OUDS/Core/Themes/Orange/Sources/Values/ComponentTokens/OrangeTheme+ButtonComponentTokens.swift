@@ -107,28 +107,28 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthNone
     @objc open var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token spaces.spaceInsetMedium
-    @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spacePaddingInline3xlarge
-    @objc open var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
-    /// Has for value token spaces.spacePaddingInline3xlarge
-    @objc open var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
-    /// Has for value token spaces.spacePaddingInline4xlarge
-    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xlarge }
-    /// Has for value token spaces.spacePaddingInlineXlarge
-    @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXlarge }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc open var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc open var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc open var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc open var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc open var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.insetMedium
+    @objc open var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.insetMedium }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingInline3xlarge
+    @objc open var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.paddingInline3xlarge }
+    /// Has for value token spaces.paddingInline3xlarge
+    @objc open var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.paddingInline3xlarge }
+    /// Has for value token spaces.paddingInline4xlarge
+    @objc open var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.paddingInline4xlarge }
+    /// Has for value token spaces.paddingInlineXlarge
+    @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.paddingInlineXlarge }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc open var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc open var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.columnGapSmall
+    @objc open var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc open var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc open var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
     @objc open var buttonSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall

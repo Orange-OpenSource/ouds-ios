@@ -107,28 +107,28 @@ extension OrangeBusinessToolsThemeButtonComponentTokensProvider: ButtonComponent
     @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthNone
     @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token spaces.spaceInsetMedium
-    @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
-    /// Has for value token spaces.spacePaddingBlockMedium
-    @objc public final var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    /// Has for value token spaces.spacePaddingInline3xlarge
-    @objc public final var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
-    /// Has for value token spaces.spacePaddingInline3xlarge
-    @objc public final var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInline3xlarge }
-    /// Has for value token spaces.spacePaddingInline4xlarge
-    @objc public final var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInline4xlarge }
-    /// Has for value token spaces.spacePaddingInlineXlarge
-    @objc public final var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineXlarge }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc public final var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc public final var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc public final var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc public final var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.insetMedium
+    @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.insetMedium }
+    /// Has for value token spaces.paddingBlockMedium
+    @objc public final var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingInline3xlarge
+    @objc public final var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.paddingInline3xlarge }
+    /// Has for value token spaces.paddingInline3xlarge
+    @objc public final var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.paddingInline3xlarge }
+    /// Has for value token spaces.paddingInline4xlarge
+    @objc public final var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.paddingInline4xlarge }
+    /// Has for value token spaces.paddingInlineXlarge
+    @objc public final var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.paddingInlineXlarge }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc public final var buttonSpacePaddingInlineChevronStart: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc public final var buttonSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.columnGapSmall
+    @objc public final var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc public final var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
     @objc public final var buttonSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall

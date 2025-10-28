@@ -38,26 +38,26 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     @objc open var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium
     @objc open var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc open var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInline2xsmall
-    @objc open var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.spacePaddingInline2xsmall }
-    /// Has for value token spaces.spacePaddingInlineSmall
-    @objc open var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc open var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc open var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spacePaddingBlockXsmall
-    @objc open var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.spacePaddingBlockXsmall }
-    /// Has for value token spaces.spaceColumnGapMedium
-    @objc open var textInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc open var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc open var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceRowGapNone
-    @objc open var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc open var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInline2xsmall
+    @objc open var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    /// Has for value token spaces.paddingInlineSmall
+    @objc open var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.paddingInlineSmall }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc open var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc open var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.paddingBlockXsmall
+    @objc open var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.columnGapMedium
+    @objc open var textInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapMedium }
+    /// Has for value token spaces.columnGapXsmall
+    @objc open var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc open var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.rowGapNone
+    @objc open var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
     @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall

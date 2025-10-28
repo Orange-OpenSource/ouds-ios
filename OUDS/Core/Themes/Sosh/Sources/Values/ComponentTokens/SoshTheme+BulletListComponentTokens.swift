@@ -26,12 +26,12 @@ extension SoshThemeBulletListComponentTokensProvider: BulletListComponentTokens 
     @objc public final var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens._450 }
     /// Has for value token DimensionRawTokens._850
     @objc public final var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens._850 }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc public final var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc public final var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc public final var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc public final var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc public final var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc public final var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.columnGapSmall
+    @objc public final var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapSmall
+    @objc public final var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.columnGapSmall }
 }

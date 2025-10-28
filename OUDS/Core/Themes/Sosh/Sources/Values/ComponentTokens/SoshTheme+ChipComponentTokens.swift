@@ -93,22 +93,22 @@ extension SoshThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token borders.widthDefault
     @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthDefault }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spacePaddingBlockXsmall
-    @objc public final var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { spaces.spacePaddingBlockXsmall }
-    /// Has for value token spaces.spacePaddingInlineSmall
-    @objc public final var chipSpacePaddingInlineIcon: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc public final var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc public final var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token spaces.spacePaddingInline4xsmall
-    @objc public final var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { spaces.spacePaddingInline4xsmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var chipSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGap2xsmall
-    @objc public final var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.paddingBlockXsmall
+    @objc public final var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.paddingInlineSmall
+    @objc public final var chipSpacePaddingInlineIcon: SpaceSemanticToken { spaces.paddingInlineSmall }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc public final var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc public final var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    /// Has for value token spaces.paddingInline4xsmall
+    @objc public final var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { spaces.paddingInline4xsmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var chipSpaceColumnGapIcon: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGap2xsmall
+    @objc public final var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall
     @objc public final var chipSizeIcon: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._2xlarge

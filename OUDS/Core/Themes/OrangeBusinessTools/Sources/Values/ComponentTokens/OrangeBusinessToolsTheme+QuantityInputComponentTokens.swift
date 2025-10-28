@@ -22,10 +22,10 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: QuantityInputComponentTokens {
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGapMedium
-    @objc public final var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.spaceColumnGapMedium }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGapMedium
+    @objc public final var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.columnGapMedium }
     /// Has for value token DimensionRawTokens.outOfSystem25
     @objc public final var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
     /// Has for value token DimensionRawTokens._2225

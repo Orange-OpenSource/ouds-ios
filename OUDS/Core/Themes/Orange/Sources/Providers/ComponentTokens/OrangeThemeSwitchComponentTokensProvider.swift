@@ -33,7 +33,7 @@ import OUDSFoundations
 ///
 ///         override var switchColorCursor: MultipleColorSemanticTokens { colors.repositoryPositiveMedium }
 ///
-///         override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spaceFixed2xsmall }
+///         override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.fixed2xsmall }
 ///
 ///         override var switchSize: SizeSemanticToken { sizes.iconWithLabelLargeSizeXl }
 ///         // ...

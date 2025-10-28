@@ -37,7 +37,7 @@ import OUDSFoundations
 ///
 ///         override var chipColorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
-///         override var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+///         override var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.paddingInlineTall }
 ///
 ///         // ...
 ///     }

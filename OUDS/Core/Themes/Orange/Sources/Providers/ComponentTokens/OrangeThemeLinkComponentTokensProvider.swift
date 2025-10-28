@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var linkColorChevronHover: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }

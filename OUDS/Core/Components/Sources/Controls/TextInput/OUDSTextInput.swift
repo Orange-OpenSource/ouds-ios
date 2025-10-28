@@ -337,8 +337,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 TextInputContainer(label: label,
                                    text: text,
                                    placeholder: placeholder,

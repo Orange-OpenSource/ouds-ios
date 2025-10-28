@@ -40,7 +40,7 @@ struct ContentView: View {
             OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
 
             OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedXsmall) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
                     OUDSLink(text: "Go to the website", indicator: .next) {
                         openUrl.callAsFunction(URL(string: "https://ios.unified-design-system.orange.com")!)
                     }
@@ -57,10 +57,10 @@ struct ContentView: View {
 
                     OUDSSwitchItem("Switch to dark mode",
                                    isOn: $switchToDarkMode)
-                        .padding(.horizontal, theme.spaces.spaceFixed3xlarge)
+                        .padding(.horizontal, theme.spaces.fixed3xlarge)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, theme.spaces.spaceFixedLarge)
+                .padding(.bottom, theme.spaces.fixedLarge)
             }
 
         }.preferredColorScheme(switchToDarkMode ? .dark : .light)

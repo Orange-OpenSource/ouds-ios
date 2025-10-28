@@ -38,26 +38,26 @@ extension SoshThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token borders.widthMedium
     @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token spaces.spacePaddingInlineLarge
-    @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
-    /// Has for value token spaces.spacePaddingInline2xsmall
-    @objc public final var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.spacePaddingInline2xsmall }
-    /// Has for value token spaces.spacePaddingInlineSmall
-    @objc public final var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc public final var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc public final var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spacePaddingBlockXsmall
-    @objc public final var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.spacePaddingBlockXsmall }
-    /// Has for value token spaces.spaceColumnGapMedium
-    @objc public final var textInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceColumnGapXsmall
-    @objc public final var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
-    /// Has for value token spaces.spaceRowGapNone
-    @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
+    /// Has for value token spaces.paddingInlineLarge
+    @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInline2xsmall
+    @objc public final var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    /// Has for value token spaces.paddingInlineSmall
+    @objc public final var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.paddingInlineSmall }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc public final var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc public final var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.paddingBlockXsmall
+    @objc public final var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.columnGapMedium
+    @objc public final var textInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapMedium }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.columnGapXsmall
+    @objc public final var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.columnGapXsmall }
+    /// Has for value token spaces.rowGapNone
+    @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
     @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall

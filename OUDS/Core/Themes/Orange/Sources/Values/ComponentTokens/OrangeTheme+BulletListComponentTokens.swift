@@ -26,12 +26,12 @@ extension OrangeThemeBulletListComponentTokensProvider: BulletListComponentToken
     @objc open var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens._450 }
     /// Has for value token DimensionRawTokens._850
     @objc open var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens._850 }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc open var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spacePaddingBlock2xsmall
-    @objc open var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc open var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.spaceColumnGapSmall }
-    /// Has for value token spaces.spaceColumnGapSmall
-    @objc open var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.spaceColumnGapSmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc open var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.paddingBlock2xsmall
+    @objc open var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    /// Has for value token spaces.columnGapSmall
+    @objc open var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.columnGapSmall }
+    /// Has for value token spaces.columnGapSmall
+    @objc open var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.columnGapSmall }
 }
