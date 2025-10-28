@@ -193,13 +193,13 @@ class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvide
 // Token provider for grid
 
 class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
-    override var gridExtraCompactColumnGap: GridSemanticToken {
+    override var extraCompactColumnGap: GridSemanticToken {
         GridRawTokens.columnGap200
     }
-    override var gridCompactColumnGap: GridSemanticToken {
+    override var compactColumnGap: GridSemanticToken {
         GridRawTokens.columnGap200
     }
-    override var gridRegularColumnGap: GridSemanticToken {
+    override var regularColumnGap: GridSemanticToken {
         GridRawTokens.columnGap200
     }
 }

@@ -24,15 +24,15 @@ import OUDSFoundations
 ///
 ///         // Then override the grid semantic tokens you want, using the grid raw tokens available
 ///
-///         override var gridExtraCompactColumnGap: GridSemanticToken {
+///         override var extraCompactColumnGap: GridSemanticToken {
 ///             GridRawTokens.columnGap200
 ///         }
 ///
-///         override var gridCompactColumnGap: GridSemanticToken {
+///         override var compactColumnGap: GridSemanticToken {
 ///             GridRawTokens.columnGap200
 ///         }
 ///
-///         override var gridRegularColumnGap: GridSemanticToken {
+///         override var regularColumnGap: GridSemanticToken {
 ///             GridRawTokens.columnGap200
 ///         }
 /// }
