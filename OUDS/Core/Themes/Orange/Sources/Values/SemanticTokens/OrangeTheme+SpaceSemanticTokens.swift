@@ -20,45 +20,45 @@ import OUDSTokensSemantic
 
 extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     /// Has for value token dimensions._None
-    @objc open var spaceScaledNoneMobile: SpaceSemanticToken { dimensions._none }
+    @objc open var scaledNoneMobile: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._None
-    @objc open var spaceScaledNoneTablet: SpaceSemanticToken { dimensions._none }
+    @objc open var scaledNoneTablet: SpaceSemanticToken { dimensions._none }
     /// Has for value token dimensions._11xsmall
-    @objc open var spaceScaled3xsmallMobile: SpaceSemanticToken { dimensions._11xsmall }
+    @objc open var scaled3xsmallMobile: SpaceSemanticToken { dimensions._11xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spaceScaled3xsmallTablet: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var scaled3xsmallTablet: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._10xsmall
-    @objc open var spaceScaled2xsmallMobile: SpaceSemanticToken { dimensions._10xsmall }
+    @objc open var scaled2xsmallMobile: SpaceSemanticToken { dimensions._10xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spaceScaled2xsmallTablet: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var scaled2xsmallTablet: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var spaceScaledXsmallMobile: SpaceSemanticToken { dimensions._8xsmall }
+    @objc open var scaledXsmallMobile: SpaceSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spaceScaledXsmallTablet: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var scaledXsmallTablet: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var spaceScaledSmallMobile: SpaceSemanticToken { dimensions._6xsmall }
+    @objc open var scaledSmallMobile: SpaceSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spaceScaledSmallTablet: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var scaledSmallTablet: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var spaceScaledMediumMobile: SpaceSemanticToken { dimensions._5xsmall }
+    @objc open var scaledMediumMobile: SpaceSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spaceScaledMediumTablet: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var scaledMediumTablet: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var spaceScaledLargeMobile: SpaceSemanticToken { dimensions._3xsmall }
+    @objc open var scaledLargeMobile: SpaceSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var spaceScaledLargeTablet: SpaceSemanticToken { dimensions._xsmall }
+    @objc open var scaledLargeTablet: SpaceSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var spaceScaledXlargeMobile: SpaceSemanticToken { dimensions._xsmall }
+    @objc open var scaledXlargeMobile: SpaceSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._Medium
-    @objc open var spaceScaledXlargeTablet: SpaceSemanticToken { dimensions._medium }
+    @objc open var scaledXlargeTablet: SpaceSemanticToken { dimensions._medium }
     /// Has for value token dimensions._Medium
-    @objc open var spaceScaled2xlargeMobile: SpaceSemanticToken { dimensions._medium }
+    @objc open var scaled2xlargeMobile: SpaceSemanticToken { dimensions._medium }
     /// Has for value token dimensions._Xlarge
-    @objc open var spaceScaled2xlargeTablet: SpaceSemanticToken { dimensions._xlarge }
+    @objc open var scaled2xlargeTablet: SpaceSemanticToken { dimensions._xlarge }
     /// Has for value token dimensions._Xlarge
-    @objc open var spaceScaled3xlargeMobile: SpaceSemanticToken { dimensions._xlarge }
+    @objc open var scaled3xlargeMobile: SpaceSemanticToken { dimensions._xlarge }
     /// Has for value token dimensions._3xlarge
-    @objc open var spaceScaled3xlargeTablet: SpaceSemanticToken { dimensions._3xlarge }
+    @objc open var scaled3xlargeTablet: SpaceSemanticToken { dimensions._3xlarge }
     /// Has for value token DimensionRawTokens._0
     @objc open var spaceFixedNone: SpaceSemanticToken { DimensionRawTokens._0 }
     /// Has for value token DimensionRawTokens.outOfSystem50

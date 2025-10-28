@@ -29,7 +29,7 @@ import OUDSFoundations
 ///             DimensionRawTokens._400
 ///         }
 ///
-///         override var spaceScaledSmall: MultipleSpaceSemanticTokens {
+///         override var scaledSmall: MultipleSpaceSemanticTokens {
 ///             MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
 ///         }
 /// }
