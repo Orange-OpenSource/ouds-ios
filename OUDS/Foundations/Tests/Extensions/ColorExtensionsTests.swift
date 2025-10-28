@@ -51,8 +51,8 @@ struct ColorExtensionsTests {
         #expect((opacityWhite500.rgba!.blue * 255).rounded() == 255, "Value is instead '\(opacityWhite500.rgba!.blue)'")
         #expect((opacityWhite500.rgba!.alpha * 255).rounded() == 82, "Value is instead '\(opacityWhite500.rgba!.alpha)'")
         /*
-         opacityWhite500 is white with opacity500.
-         In base 16, white is #FFFFFF and opacity500 adds 52 suffix.
+         opacityWhite500 is white with _500.
+         In base 16, white is #FFFFFF and _500 adds 52 suffix.
          FF in base 16 is 255 in base 10, and 52 in base 16 is 82 in base 10.
          So, #FFFFFF52 is RGBA(255, 255, 255, 82)
          */

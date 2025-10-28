@@ -186,7 +186,7 @@ class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensPro
 
 class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
     override var opacityStrong: OpacitySemanticToken {
-        OpacityRawTokens.opacity920
+        OpacityRawTokens._920
     }
 }
 
