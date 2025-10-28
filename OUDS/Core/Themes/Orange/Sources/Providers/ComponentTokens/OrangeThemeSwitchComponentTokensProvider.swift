@@ -35,7 +35,7 @@ import OUDSFoundations
 ///
 ///         override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spaceFixed2xsmall }
 ///
-///         override var switchSize: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var switchSize: SizeSemanticToken { sizes.iconWithLabelLargeSizeXl }
 ///         // ...
 ///     }
 ///

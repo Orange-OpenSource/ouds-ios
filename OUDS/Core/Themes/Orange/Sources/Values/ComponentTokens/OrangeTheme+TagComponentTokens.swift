@@ -50,10 +50,10 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagSpaceColumnGapSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
     @objc open var tagSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token sizes.sizeIconWithLabelSmallSizeSmall
-    @objc open var tagSizeAssetSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
-    @objc open var tagSizeAssetDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
+    /// Has for value token sizes.iconWithLabelSmallSizeSmall
+    @objc open var tagSizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelSmallSizeSmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall
+    @objc open var tagSizeAssetDefault: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._3xsmall
     @objc open var tagSizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._Xsmall
@@ -62,6 +62,6 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagSizeMinWidthSmall: SizeSemanticToken { dimensions._large }
     /// Has for value token dimensions._Xlarge
     @objc open var tagSizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
 }

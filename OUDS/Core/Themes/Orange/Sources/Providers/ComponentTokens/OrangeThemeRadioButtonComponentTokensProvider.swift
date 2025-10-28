@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         // Then override the radio button component tokens you want.
 ///
-///         override var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var checkboxSizeMinWidth: SizeSemanticToken { sizes.iconWithLabelLargeSizeXl }
 ///
 ///         override var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.widthThin }
 ///

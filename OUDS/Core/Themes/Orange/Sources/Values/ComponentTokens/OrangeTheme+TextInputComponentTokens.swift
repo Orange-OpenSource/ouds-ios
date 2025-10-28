@@ -58,10 +58,10 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     @objc open var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
     /// Has for value token spaces.spaceRowGapNone
     @objc open var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc open var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc open var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token dimensions._4xsmall
     @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
     /// Has for value token DimensionRawTokens._600

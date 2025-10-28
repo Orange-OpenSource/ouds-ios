@@ -48,14 +48,14 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc open var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
     @objc open var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc open var linkSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
-    @objc open var linkSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc open var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall
+    @objc open var linkSizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var linkSizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var linkSizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token DimensionRawTokens._550
     @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
     /// Has for value token DimensionRawTokens._550

@@ -48,14 +48,14 @@ extension WireframeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
     @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
-    @objc public final var linkSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall
+    @objc public final var linkSizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token DimensionRawTokens._550
     @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
     /// Has for value token DimensionRawTokens._550

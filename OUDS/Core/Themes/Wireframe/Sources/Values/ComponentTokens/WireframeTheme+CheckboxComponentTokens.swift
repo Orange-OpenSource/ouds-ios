@@ -37,12 +37,12 @@ extension WireframeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens
     @objc public final var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
     @objc public final var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var checkboxSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var checkboxSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var checkboxSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var checkboxSizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var checkboxSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var checkboxSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var checkboxSizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
 }

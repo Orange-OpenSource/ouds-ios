@@ -25,11 +25,11 @@ import OUDSFoundations
 ///
 ///         // Then override the size semantic tokens you want, using the _ raw tokens available
 ///
-///         override var sizeIconDecorative2xl: SizeSemanticToken {
+///         override var iconDecorative2xl: SizeSemanticToken {
 ///             DimensionRawTokens._300
 ///         }
 ///
-///         override var sizeIconDecorativeMd: SizeSemanticToken {
+///         override var iconDecorativeMd: SizeSemanticToken {
 ///             DimensionRawTokens._900
 ///         }
 /// }

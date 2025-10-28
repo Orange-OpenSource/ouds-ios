@@ -109,12 +109,12 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
     @objc open var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
-    @objc open var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
+    /// Has for value token sizes.iconWithLabelMediumSizeSmall
+    @objc open var chipSizeIcon: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._2xlarge
     @objc open var chipSizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
     /// Has for value token dimensions._Xsmall
     @objc open var chipSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var chipSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var chipSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
 }

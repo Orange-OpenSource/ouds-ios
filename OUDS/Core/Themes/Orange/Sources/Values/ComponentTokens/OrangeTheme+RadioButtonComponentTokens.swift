@@ -37,12 +37,12 @@ extension OrangeThemeRadioButtonComponentTokensProvider: RadioButtonComponentTok
     @objc open var radioButtonBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
     @objc open var radioButtonBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc open var radioButtonSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var radioButtonSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var radioButtonSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var radioButtonSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc open var radioButtonSizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var radioButtonSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var radioButtonSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var radioButtonSizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
 }

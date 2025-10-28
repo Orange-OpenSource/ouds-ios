@@ -27,117 +27,117 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithHeadingXlargeSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingLargeSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithHeadingLargeSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingMediumSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithHeadingMediumSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingSmallSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithHeadingSmallSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodyLargeSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithBodyLargeSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodyMediumSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithBodyMediumSizeLargeTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodySmallSizeSmallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeSmallTablet: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeLargeMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeLargeTablet: SizeSemanticToken { get }
+    var iconWithBodySmallSizeSmallMobile: SizeSemanticToken { get }
+    var iconWithBodySmallSizeSmallTablet: SizeSemanticToken { get }
+    var iconWithBodySmallSizeMediumMobile: SizeSemanticToken { get }
+    var iconWithBodySmallSizeMediumTablet: SizeSemanticToken { get }
+    var iconWithBodySmallSizeLargeMobile: SizeSemanticToken { get }
+    var iconWithBodySmallSizeLargeTablet: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    var sizeMaxWidthTypeDisplayLargeMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeDisplayLargeTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeDisplayMediumMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeDisplayMediumTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeDisplaySmallMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeDisplaySmallTablet: SizeSemanticToken { get }
+    var maxWidthTypeDisplayLargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeDisplayLargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeDisplayMediumMobile: SizeSemanticToken { get }
+    var maxWidthTypeDisplayMediumTablet: SizeSemanticToken { get }
+    var maxWidthTypeDisplaySmallMobile: SizeSemanticToken { get }
+    var maxWidthTypeDisplaySmallTablet: SizeSemanticToken { get }
 
-    var sizeMaxWidthTypeHeadingXlargeMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingXlargeTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingLargeMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingLargeTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingMediumMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingMediumTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingSmallMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeHeadingSmallTablet: SizeSemanticToken { get }
+    var maxWidthTypeHeadingXlargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeHeadingXlargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeHeadingLargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeHeadingLargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeHeadingMediumMobile: SizeSemanticToken { get }
+    var maxWidthTypeHeadingMediumTablet: SizeSemanticToken { get }
+    var maxWidthTypeHeadingSmallMobile: SizeSemanticToken { get }
+    var maxWidthTypeHeadingSmallTablet: SizeSemanticToken { get }
 
-    var sizeMaxWidthTypeBodyLargeMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeBodyLargeTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeBodyMediumMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeBodyMediumTablet: SizeSemanticToken { get }
-    var sizeMaxWidthTypeBodySmallMobile: SizeSemanticToken { get }
-    var sizeMaxWidthTypeBodySmallTablet: SizeSemanticToken { get }
+    var maxWidthTypeBodyLargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeBodyLargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeBodyMediumMobile: SizeSemanticToken { get }
+    var maxWidthTypeBodyMediumTablet: SizeSemanticToken { get }
+    var maxWidthTypeBodySmallMobile: SizeSemanticToken { get }
+    var maxWidthTypeBodySmallTablet: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithLabelXlargeSizeSmall: SizeSemanticToken { get }
-    var sizeIconWithLabelXlargeSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelXlargeSizeLarge: SizeSemanticToken { get }
+    var iconWithLabelXlargeSizeSmall: SizeSemanticToken { get }
+    var iconWithLabelXlargeSizeMedium: SizeSemanticToken { get }
+    var iconWithLabelXlargeSizeLarge: SizeSemanticToken { get }
 
-    var sizeIconWithLabelLargeSizeXsmall: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeSmall: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeLarge: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeXlarge: SizeSemanticToken { get }
+    var iconWithLabelLargeSizeXsmall: SizeSemanticToken { get }
+    var iconWithLabelLargeSizeSmall: SizeSemanticToken { get }
+    var iconWithLabelLargeSizeMedium: SizeSemanticToken { get }
+    var iconWithLabelLargeSizeLarge: SizeSemanticToken { get }
+    var iconWithLabelLargeSizeXlarge: SizeSemanticToken { get }
 
-    var sizeIconWithLabelMediumSizeXsmall: SizeSemanticToken { get }
-    var sizeIconWithLabelMediumSizeSmall: SizeSemanticToken { get }
-    var sizeIconWithLabelMediumSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelMediumSizeLarge: SizeSemanticToken { get }
+    var iconWithLabelMediumSizeXsmall: SizeSemanticToken { get }
+    var iconWithLabelMediumSizeSmall: SizeSemanticToken { get }
+    var iconWithLabelMediumSizeMedium: SizeSemanticToken { get }
+    var iconWithLabelMediumSizeLarge: SizeSemanticToken { get }
 
-    var sizeIconWithLabelSmallSizeXsmall: SizeSemanticToken { get }
-    var sizeIconWithLabelSmallSizeSmall: SizeSemanticToken { get }
-    var sizeIconWithLabelSmallSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelSmallSizeLarge: SizeSemanticToken { get }
+    var iconWithLabelSmallSizeXsmall: SizeSemanticToken { get }
+    var iconWithLabelSmallSizeSmall: SizeSemanticToken { get }
+    var iconWithLabelSmallSizeMedium: SizeSemanticToken { get }
+    var iconWithLabelSmallSizeLarge: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
-    var sizeIconDecorative4xsmall: SizeSemanticToken { get }
-    var sizeIconDecorative3xsmall: SizeSemanticToken { get }
-    var sizeIconDecorative2xsmall: SizeSemanticToken { get }
-    var sizeIconDecorativeXsmall: SizeSemanticToken { get }
-    var sizeIconDecorativeSmall: SizeSemanticToken { get }
-    var sizeIconDecorativeMedium: SizeSemanticToken { get }
-    var sizeIconDecorativeLarge: SizeSemanticToken { get }
-    var sizeIconDecorativeXlarge: SizeSemanticToken { get }
-    var sizeIconDecorative2xlarge: SizeSemanticToken { get }
+    var iconDecorative4xsmall: SizeSemanticToken { get }
+    var iconDecorative3xsmall: SizeSemanticToken { get }
+    var iconDecorative2xsmall: SizeSemanticToken { get }
+    var iconDecorativeXsmall: SizeSemanticToken { get }
+    var iconDecorativeSmall: SizeSemanticToken { get }
+    var iconDecorativeMedium: SizeSemanticToken { get }
+    var iconDecorativeLarge: SizeSemanticToken { get }
+    var iconDecorativeXlarge: SizeSemanticToken { get }
+    var iconDecorative2xlarge: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    var sizeMinInteractiveArea: SizeSemanticToken { get }
+    var minInteractiveArea: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

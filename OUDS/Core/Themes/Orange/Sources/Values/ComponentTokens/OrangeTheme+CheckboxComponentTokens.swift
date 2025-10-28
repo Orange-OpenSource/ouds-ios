@@ -37,12 +37,12 @@ extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     @objc open var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
     @objc open var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc open var checkboxSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var checkboxSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc open var checkboxSizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var checkboxSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var checkboxSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var checkboxSizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
 }

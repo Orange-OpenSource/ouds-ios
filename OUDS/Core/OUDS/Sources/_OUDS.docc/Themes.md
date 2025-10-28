@@ -141,10 +141,10 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 // Token provider for sizes
 
 class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
-    override var sizeIconDecorative2xl: SizeSemanticToken {
+    override var iconDecorative2xl: SizeSemanticToken {
         DimensionRawTokens._300
     }
-    override var sizeIconDecorativeMd: SizeSemanticToken {
+    override var iconDecorativeMd: SizeSemanticToken {
         DimensionRawTokens._900
     }
 }

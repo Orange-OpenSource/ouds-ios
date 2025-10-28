@@ -37,12 +37,12 @@ extension SoshThemeRadioButtonComponentTokensProvider: RadioButtonComponentToken
     @objc public final var radioButtonBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
     @objc public final var radioButtonBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var radioButtonSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var radioButtonSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var radioButtonSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var radioButtonSizeMaxHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var radioButtonSizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var radioButtonSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var radioButtonSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var radioButtonSizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
 }

@@ -129,18 +129,18 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc public final var buttonSpaceColumnGapChevron: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
     @objc public final var buttonSpaceColumnGapIconChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc public final var buttonSizeIconOnly: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var buttonSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var buttonSizeMinHeight: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var buttonSizeMinWidth: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var buttonSizeMaxHeightIconOnly: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var buttonSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var buttonSizeIconOnly: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var buttonSizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var buttonSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var buttonSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var buttonSizeMaxHeightIconOnly: SizeSemanticToken { sizes.minInteractiveArea }
 }
 
 // swiftlint:enable line_length

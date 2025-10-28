@@ -49,8 +49,8 @@ extension WireframeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
     /// Has for value token dimensions._Xsmall
     @objc public final var switchSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token dimensions._Xsmall
     @objc public final var switchSizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall

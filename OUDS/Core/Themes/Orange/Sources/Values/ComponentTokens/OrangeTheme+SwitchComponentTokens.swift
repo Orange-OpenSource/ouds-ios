@@ -49,8 +49,8 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchSizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
     /// Has for value token dimensions._Xsmall
     @objc open var switchSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc open var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
+    /// Has for value token sizes.minInteractiveArea
+    @objc open var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token dimensions._Xsmall
     @objc open var switchSizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall

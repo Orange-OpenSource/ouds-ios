@@ -44,12 +44,12 @@ extension OrangeBusinessToolsThemeControlItemComponentTokensProvider: ControlIte
     @objc public final var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapMedium }
     /// Has for value token spaces.spaceRowGapNone
     @objc public final var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeMedium
-    @objc public final var controlItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc public final var controlItemSizeErrorIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc public final var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium
+    @objc public final var controlItemSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var controlItemSizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var controlItemSizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token DimensionRawTokens._500
     @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
     /// Has for value token DimensionRawTokens._1000

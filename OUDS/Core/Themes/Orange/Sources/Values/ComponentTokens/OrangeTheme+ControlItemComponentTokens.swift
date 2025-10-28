@@ -44,12 +44,12 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var controlItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapMedium }
     /// Has for value token spaces.spaceRowGapNone
     @objc open var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeMedium
-    @objc open var controlItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMedium }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc open var controlItemSizeErrorIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc open var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium
+    @objc open var controlItemSizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc open var controlItemSizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc open var controlItemSizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token DimensionRawTokens._650
     @objc open var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._650 }
     /// Has for value token DimensionRawTokens._1200

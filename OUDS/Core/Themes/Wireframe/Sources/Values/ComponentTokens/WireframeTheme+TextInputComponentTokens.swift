@@ -58,10 +58,10 @@ extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentToke
     @objc public final var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
     /// Has for value token spaces.spaceRowGapNone
     @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.spaceRowGapNone }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
-    @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
-    @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token dimensions._4xsmall
     @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
     /// Has for value token DimensionRawTokens._600
