@@ -408,32 +408,32 @@ struct BorderRawTokensTests {
 
     // MARK: - Primitive token - Border - Style
 
-    @Test func styeDashed() throws {
-        #expect(BorderRawTokens.styeDashed == "dashed")
+    @Test func styleDashed() throws {
+        #expect(BorderRawTokens.styleDashed == "dashed")
     }
 
-    @Test func styeDotted() throws {
-        #expect(BorderRawTokens.styeDotted == "dotted")
+    @Test func styleDotted() throws {
+        #expect(BorderRawTokens.styleDotted == "dotted")
     }
 
-    @Test func styeNone() throws {
-        #expect(BorderRawTokens.styeNone == "none")
+    @Test func styleNone() throws {
+        #expect(BorderRawTokens.styleNone == "none")
     }
 
-    @Test func styeSolid() throws {
-        #expect(BorderRawTokens.styeSolid == "solid")
+    @Test func styleSolid() throws {
+        #expect(BorderRawTokens.styleSolid == "solid")
     }
 
     /// Border styles raw tokens must be different
     @Test func nonEqualityForBorderStyles() throws {
-        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeSolid)
-        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeDashed)
-        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeDotted)
+        #expect(BorderRawTokens.styleNone != BorderRawTokens.styleSolid)
+        #expect(BorderRawTokens.styleNone != BorderRawTokens.styleDashed)
+        #expect(BorderRawTokens.styleNone != BorderRawTokens.styleDotted)
 
-        #expect(BorderRawTokens.styeSolid != BorderRawTokens.styeDashed)
-        #expect(BorderRawTokens.styeSolid != BorderRawTokens.styeDotted)
+        #expect(BorderRawTokens.styleSolid != BorderRawTokens.styleDashed)
+        #expect(BorderRawTokens.styleSolid != BorderRawTokens.styleDotted)
 
-        #expect(BorderRawTokens.styeDashed != BorderRawTokens.styeDotted)
+        #expect(BorderRawTokens.styleDashed != BorderRawTokens.styleDotted)
     }
 }
 
