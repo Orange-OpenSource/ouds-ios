@@ -25,10 +25,10 @@ extension OrangeBusinessToolsThemeButtonComponentTokensProvider: ButtonComponent
     @objc public final var buttonColorBgBrandEnabled: MultipleColorSemanticTokens { colors.surfaceBrandPrimary }
     /// Has for value token colors.actionHover
     @objc public final var buttonColorBgBrandHover: MultipleColorSemanticTokens { colors.actionHover }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedLower)
-    @objc public final var buttonColorBgBrandPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedLower) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedLower)
-    @objc public final var buttonColorBgBrandLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedLower) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
+    @objc public final var buttonColorBgBrandPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
+    @objc public final var buttonColorBgBrandLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
     /// Has for value token colors.actionFocus
     @objc public final var buttonColorBgBrandFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token colors.opacityTransparent
@@ -53,10 +53,10 @@ extension OrangeBusinessToolsThemeButtonComponentTokensProvider: ButtonComponent
     @objc public final var buttonColorContentBrandEnabled: MultipleColorSemanticTokens { colors.contentOnBrandPrimary }
     /// Has for value token colors.contentOnActionHover
     @objc public final var buttonColorContentBrandHover: MultipleColorSemanticTokens { colors.contentOnActionHover }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedBlack)
-    @objc public final var buttonColorContentBrandPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedBlack)
-    @objc public final var buttonColorContentBrandLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedBlack) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    @objc public final var buttonColorContentBrandPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    @objc public final var buttonColorContentBrandLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
     /// Has for value token colors.contentOnActionFocus
     @objc public final var buttonColorContentBrandFocus: MultipleColorSemanticTokens { colors.contentOnActionFocus }
     /// Has for value token colors.actionEnabled

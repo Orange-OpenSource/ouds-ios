@@ -36,7 +36,7 @@ import OUDSFoundations
 ///
 ///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
-///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
 ///         override var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 ///

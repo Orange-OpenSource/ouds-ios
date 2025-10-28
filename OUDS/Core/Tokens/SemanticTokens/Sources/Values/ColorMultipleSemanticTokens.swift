@@ -46,7 +46,7 @@
 /// - Since: 0.8.0
 public protocol ColorMultipleSemanticTokens {
 
-    // NOTE: colorRepository* color semantic tokens are closed
+    // NOTE: repository* color semantic tokens are closed
     // used indirectly and it seems to not be that much useful and relevant
     // to wrap them in MultipleColorSemanticTokens.
 

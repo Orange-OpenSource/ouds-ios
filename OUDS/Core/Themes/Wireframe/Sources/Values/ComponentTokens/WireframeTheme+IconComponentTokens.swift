@@ -22,10 +22,10 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension WireframeThemeIconComponentTokensProvider: IconComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryWarningMedium, dark: colors.colorRepositoryWarningLow)
-    @objc public final var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryWarningMedium, dark: colors.colorRepositoryWarningLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.opacityTransparentDark)
-    @objc public final var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.opacityTransparentDark) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
+    @objc public final var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
+    @objc public final var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
 }
 
 // swiftlint:enable identifier_name

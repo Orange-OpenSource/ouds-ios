@@ -32,7 +32,7 @@ import OUDSFoundations
 ///
 ///         override var linkSizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var linkColorChevronHover: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var linkColorChevronHover: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
 ///         override var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 ///

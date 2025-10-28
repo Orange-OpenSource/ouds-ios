@@ -301,7 +301,7 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
     override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
-    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
     override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 }
 

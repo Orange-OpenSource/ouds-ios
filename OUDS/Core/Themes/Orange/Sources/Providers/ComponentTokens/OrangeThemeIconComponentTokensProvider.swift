@@ -29,7 +29,7 @@ import OUDSFoundations
 ///
 ///         // Then override the icon component tokens you want.
 ///
-///         override var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
 ///         // ...
 ///     }
