@@ -178,7 +178,7 @@ class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider 
 
 class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
     override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
-        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+        ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
 }
 

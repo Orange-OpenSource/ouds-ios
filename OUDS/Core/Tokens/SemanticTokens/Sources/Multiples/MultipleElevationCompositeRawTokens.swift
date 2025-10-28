@@ -24,20 +24,20 @@ import SwiftUI
 /// ```swift
 ///         // Assuming in Figma with have a elevation semantic token elevationNone,
 ///         // with values depending to color scheme. These values are defined as elevation raw tokens.
-///         let elevationBottom_0 = ElevationCompositeRawToken(x: elevationX0, y: elevationY0, blur: elevationBlur0, color: ColorRawTokens.opacityBlack0)
-///         let elevationBottom_1_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY100, blur: elevationBlur200, color: ColorRawTokens.opacityBlack100)
+///         let bottom_0 = ElevationCompositeRawToken(x: elevationX0, y: elevationY0, blur: elevationBlur0, color: ColorRawTokens.opacityBlack0)
+///         let bottom_1_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY100, blur: elevationBlur200, color: ColorRawTokens.opacityBlack100)
 ///
 ///         // Then the develoment team declares an "higher" level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
 ///         // and defined inside OrangeTheme+ElevationCompositeSemanticTokens extension
 ///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawTokens to keep same grammar as design kit
 ///         var elevationNone: ElevationCompositeSemanticToken {
-///             ElevationCompositeSemanticToken(light: elevationBottom_0, dark: elevationBottom_1_100)
+///             ElevationCompositeSemanticToken(light: bottom_0, dark: bottom_1_100)
 ///         }
 ///
 ///         // If the same elevation is used whatever the color scheme is
 ///         var elevationNone: ElevationCompositeSemanticToken {
-///             ElevationCompositeSemanticToken(elevationBottom_0)
+///             ElevationCompositeSemanticToken(bottom_0)
 ///         }
 /// ```
 ///

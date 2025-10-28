@@ -27,7 +27,7 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
 
     // MARK: Semantic token - Elevation - Box shadow (Composites)
 
-    static let mockThemeElevationCompositeSemanticToken = ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_600)
+    static let mockThemeElevationCompositeSemanticToken = ElevationCompositeSemanticToken(ElevationRawTokens.bottom_1_600)
 
     override var elevationNone: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 

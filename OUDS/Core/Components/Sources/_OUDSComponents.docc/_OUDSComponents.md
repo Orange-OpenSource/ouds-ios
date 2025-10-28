@@ -34,10 +34,10 @@ Because the design tool in use is _Figma_ which defines such shadow with a _blur
 myView.oudsShadow(theme.elevations.elevationDrag)
 
 // And in the theme this "elevationDrag" has been defined for example like:
-@objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_500) }
+@objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
-// And if you look deeper, the raw token "elevationBottom_3_500" can be like:
-public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY300, blur: elevationBlur400, color: ColorRawTokens.opacityBlack320)
+// And if you look deeper, the raw token "bottom_3_500" can be like:
+public static let bottom_3_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY300, blur: elevationBlur400, color: ColorRawTokens.opacityBlack320)
 
 // Blur will be used to compute the radius value
 ```
