@@ -25,7 +25,7 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     public let familyName: String
 
     /// The font weight
-    public let weight: String
+    public let fontWeight: String
 
     // swiftlint:disable force_unwrapping
     /// - Parameters:
@@ -40,7 +40,7 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     ///    - weight: Some weight for the font to apply
     public init(_ name: String, weight: String? = nil) {
         familyName = name
-        weight = weight != nil ? weight! : ""
+        fontWeight = weight != nil ? weight! : ""
     }
 
     // swiftlint:enable force_unwrapping
@@ -48,7 +48,7 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     /// From `CustomStringConvertible`, defines the description of the key,
     /// concatenating the font family name and the font weight.
     public var description: String {
-        familyName + (weight.isEmpty ? "" : "-\(weight)")
+        familyName + (fontWeight.isEmpty ? "" : "-\(fontWeight)")
     }
 }
 
