@@ -28,45 +28,45 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
 
     // MARK: - Multiple tokens
 
-    @objc public final var modeOnBgPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgPrimary", light: modeOnBgPrimaryLight, dark: modeOnBgPrimaryDark) }
+    @objc public final var onBgPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBgPrimary", light: onBgPrimaryLight, dark: onBgPrimaryDark) }
 
-    @objc public final var modeOnBgSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgSecondary", light: modeOnBgSecondaryLight, dark: modeOnBgSecondaryDark) }
+    @objc public final var onBgSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBgSecondary", light: onBgSecondaryLight, dark: onBgSecondaryDark) }
 
-    @objc public final var modeOnBgTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBgTertiary", light: modeOnBgTertiaryLight, dark: modeOnBgTertiaryDark) }
+    @objc public final var onBgTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBgTertiary", light: onBgTertiaryLight, dark: onBgTertiaryDark) }
 
-    @objc public final var modeOnBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandPrimary", light: modeOnBrandPrimaryLight, dark: modeOnBrandPrimaryDark) }
+    @objc public final var onBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBrandPrimary", light: onBrandPrimaryLight, dark: onBrandPrimaryDark) }
 
-    @objc public final var modeOnBrandSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandSecondary", light: modeOnBrandSecondaryLight, dark: modeOnBrandSecondaryDark) }
+    @objc public final var onBrandSecondary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBrandSecondary", light: onBrandSecondaryLight, dark: onBrandSecondaryDark) }
 
-    @objc public final var modeOnBrandTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnBrandTertiary", light: modeOnBrandTertiaryLight, dark: modeOnBrandTertiaryDark) }
+    @objc public final var onBrandTertiary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onBrandTertiary", light: onBrandTertiaryLight, dark: onBrandTertiaryDark) }
 
-    @objc public final var modeOnOverlayModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnModalOverlay", light: modeOnOverlayModalLight, dark: modeOnOverlayModalDark) }
+    @objc public final var onOverlayModal: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onModalOverlay", light: onOverlayModalLight, dark: onOverlayModalDark) }
 
-    @objc public final var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayDropdown", light: modeOnOverlayDropdownLight, dark: modeOnOverlayDropdownDark) }
+    @objc public final var onOverlayDropdown: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onOverlayDropdown", light: onOverlayDropdownLight, dark: onOverlayDropdownDark) }
 
-    @objc public final var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnOverlayTooltip", light: modeOnOverlayTooltipLight, dark: modeOnOverlayTooltipDark) }
+    @objc public final var onOverlayTooltip: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onOverlayTooltip", light: onOverlayTooltipLight, dark: onOverlayTooltipDark) }
 
-    @objc public final var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusAccentEmphasized", light: modeOnStatusAccentEmphasizedLight, dark: modeOnStatusAccentEmphasizedDark) }
+    @objc public final var onStatusAccentEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusAccentEmphasized", light: onStatusAccentEmphasizedLight, dark: onStatusAccentEmphasizedDark) }
 
-    @objc public final var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusAccentMuted", light: modeOnStatusAccentMutedLight, dark: modeOnStatusAccentMutedDark) }
+    @objc public final var onStatusAccentMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusAccentMuted", light: onStatusAccentMutedLight, dark: onStatusAccentMutedDark) }
 
-    @objc public final var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusInfoEmphasized", light: modeOnStatusInfoEmphasizedLight, dark: modeOnStatusInfoEmphasizedDark) }
+    @objc public final var onStatusInfoEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusInfoEmphasized", light: onStatusInfoEmphasizedLight, dark: onStatusInfoEmphasizedDark) }
 
-    @objc public final var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusInfoMuted", light: modeOnStatusInfoMutedLight, dark: modeOnStatusInfoMutedDark) }
+    @objc public final var onStatusInfoMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusInfoMuted", light: onStatusInfoMutedLight, dark: onStatusInfoMutedDark) }
 
-    @objc public final var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusNegativeEmphasized", light: modeOnStatusNegativeEmphasizedLight, dark: modeOnStatusNegativeEmphasizedDark) }
+    @objc public final var onStatusNegativeEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusNegativeEmphasized", light: onStatusNegativeEmphasizedLight, dark: onStatusNegativeEmphasizedDark) }
 
-    @objc public final var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusNegativeMuted", light: modeOnStatusNegativeMutedLight, dark: modeOnStatusNegativeMutedDark) }
+    @objc public final var onStatusNegativeMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusNegativeMuted", light: onStatusNegativeMutedLight, dark: onStatusNegativeMutedDark) }
 
-    @objc public final var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusPositiveEmphasized", light: modeOnStatusPositiveEmphasizedLight, dark: modeOnStatusPositiveEmphasizedDark) }
+    @objc public final var onStatusPositiveEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusPositiveEmphasized", light: onStatusPositiveEmphasizedLight, dark: onStatusPositiveEmphasizedDark) }
 
-    @objc public final var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusPositiveMuted", light: modeOnStatusPositiveMutedLight, dark: modeOnStatusPositiveMutedDark) }
+    @objc public final var onStatusPositiveMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusPositiveMuted", light: onStatusPositiveMutedLight, dark: onStatusPositiveMutedDark) }
 
-    @objc public final var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningEmphasized", light: modeOnStatusWarningEmphasizedLight, dark: modeOnStatusWarningEmphasizedDark) }
+    @objc public final var onStatusWarningEmphasized: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusWarningEmphasized", light: onStatusWarningEmphasizedLight, dark: onStatusWarningEmphasizedDark) }
 
-    @objc public final var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeOnStatusWarningMuted", light: modeOnStatusWarningMutedLight, dark: modeOnStatusWarningMutedDark) }
+    @objc public final var onStatusWarningMuted: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("onStatusWarningMuted", light: onStatusWarningMutedLight, dark: onStatusWarningMutedDark) }
 
-    @objc public final var modeNavigationBar: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("modeNavigationBarDark", light: modeNavigationBarLight, dark: modeNavigationBarDark) }
+    @objc public final var navigationBar: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens("navigationBarDark", light: navigationBarLight, dark: navigationBarDark) }
 
     // MARK: - Additional rules
 
@@ -130,26 +130,26 @@ extension OrangeBusinessToolsThemeColorModeSemanticTokensProvider: ColorModeMult
             OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Orange Theme")
         }
         // List here all cases where light and dark mode values are NOT undefined
-        if mode.isEqual(modeOnBgPrimary) { return colors.colorBgPrimary }
-        if mode.isEqual(modeOnBgSecondary) { return colors.colorBgSecondary }
-        if mode.isEqual(modeOnBgTertiary) { return colors.colorBgTertiary }
-        if mode.isEqual(modeOnBrandPrimary) { return colors.colorSurfaceBrandPrimary }
-        if mode.isEqual(modeOnBrandSecondary) { return colors.colorSurfaceBrandSecondary }
-        if mode.isEqual(modeOnBrandTertiary) { return colors.colorSurfaceBrandTertiary }
-        if mode.isEqual(modeOnOverlayModal) { return colors.colorOverlayModal }
-        if mode.isEqual(modeOnStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
-        if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
-        if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
-        if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
-        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
-        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
-        if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
-        if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
-        if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
-        if mode.isEqual(modeOnStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
-        if mode.isEqual(modeOnOverlayDropdown) { return colors.colorOverlayDropdown }
-        if mode.isEqual(modeOnOverlayTooltip) { return colors.colorOverlayModal } // FIXME: Not sure of this value
-        if mode.isEqual(modeNavigationBar) { return colors.colorOverlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(onBgPrimary) { return colors.colorBgPrimary }
+        if mode.isEqual(onBgSecondary) { return colors.colorBgSecondary }
+        if mode.isEqual(onBgTertiary) { return colors.colorBgTertiary }
+        if mode.isEqual(onBrandPrimary) { return colors.colorSurfaceBrandPrimary }
+        if mode.isEqual(onBrandSecondary) { return colors.colorSurfaceBrandSecondary }
+        if mode.isEqual(onBrandTertiary) { return colors.colorSurfaceBrandTertiary }
+        if mode.isEqual(onOverlayModal) { return colors.colorOverlayModal }
+        if mode.isEqual(onStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
+        if mode.isEqual(onStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
+        if mode.isEqual(onStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
+        if mode.isEqual(onStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
+        if mode.isEqual(onStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
+        if mode.isEqual(onStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
+        if mode.isEqual(onStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
+        if mode.isEqual(onStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
+        if mode.isEqual(onStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
+        if mode.isEqual(onStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
+        if mode.isEqual(onOverlayDropdown) { return colors.colorOverlayDropdown }
+        if mode.isEqual(onOverlayTooltip) { return colors.colorOverlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(navigationBar) { return colors.colorOverlayModal } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity

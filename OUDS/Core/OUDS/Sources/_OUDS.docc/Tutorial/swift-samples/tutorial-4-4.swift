@@ -39,7 +39,7 @@ struct ContentView: View {
 
             OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
 
-            OUDSColoredSurface(color: theme.colorModes.modeOnStatusInfoEmphasized) {
+            OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedXsmall) {
                     OUDSLink(text: "Go to the website", indicator: .next) {
                         openUrl.callAsFunction(URL(string: "https://ios.unified-design-system.orange.com")!)

@@ -26,58 +26,58 @@ public protocol ColorModeSemanticTokens {
 
     // MARK: - On Background
 
-    var modeOnBgPrimaryLight: ColorModeSemanticToken { get }
-    var modeOnBgPrimaryDark: ColorModeSemanticToken { get }
-    var modeOnBgSecondaryLight: ColorModeSemanticToken { get }
-    var modeOnBgSecondaryDark: ColorModeSemanticToken { get }
-    var modeOnBgTertiaryLight: ColorModeSemanticToken { get }
-    var modeOnBgTertiaryDark: ColorModeSemanticToken { get }
+    var onBgPrimaryLight: ColorModeSemanticToken { get }
+    var onBgPrimaryDark: ColorModeSemanticToken { get }
+    var onBgSecondaryLight: ColorModeSemanticToken { get }
+    var onBgSecondaryDark: ColorModeSemanticToken { get }
+    var onBgTertiaryLight: ColorModeSemanticToken { get }
+    var onBgTertiaryDark: ColorModeSemanticToken { get }
 
     // MARK: - On Brand
 
-    var modeOnBrandPrimaryLight: ColorModeSemanticToken { get }
-    var modeOnBrandPrimaryDark: ColorModeSemanticToken { get }
-    var modeOnBrandSecondaryLight: ColorModeSemanticToken { get }
-    var modeOnBrandSecondaryDark: ColorModeSemanticToken { get }
-    var modeOnBrandTertiaryLight: ColorModeSemanticToken { get }
-    var modeOnBrandTertiaryDark: ColorModeSemanticToken { get }
+    var onBrandPrimaryLight: ColorModeSemanticToken { get }
+    var onBrandPrimaryDark: ColorModeSemanticToken { get }
+    var onBrandSecondaryLight: ColorModeSemanticToken { get }
+    var onBrandSecondaryDark: ColorModeSemanticToken { get }
+    var onBrandTertiaryLight: ColorModeSemanticToken { get }
+    var onBrandTertiaryDark: ColorModeSemanticToken { get }
 
     // MARK: - On Status
 
-    var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { get }
-    var modeOnStatusInfoMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusInfoMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { get }
-    var modeOnStatusWarningMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusWarningMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { get }
-    var modeOnStatusAccentMutedLight: ColorModeSemanticToken { get }
-    var modeOnStatusAccentMutedDark: ColorModeSemanticToken { get }
-    var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { get }
-    var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { get }
+    var onStatusPositiveMutedLight: ColorModeSemanticToken { get }
+    var onStatusPositiveMutedDark: ColorModeSemanticToken { get }
+    var onStatusPositiveEmphasizedLight: ColorModeSemanticToken { get }
+    var onStatusPositiveEmphasizedDark: ColorModeSemanticToken { get }
+    var onStatusInfoMutedLight: ColorModeSemanticToken { get }
+    var onStatusInfoMutedDark: ColorModeSemanticToken { get }
+    var onStatusInfoEmphasizedLight: ColorModeSemanticToken { get }
+    var onStatusInfoEmphasizedDark: ColorModeSemanticToken { get }
+    var onStatusWarningMutedLight: ColorModeSemanticToken { get }
+    var onStatusWarningMutedDark: ColorModeSemanticToken { get }
+    var onStatusWarningEmphasizedLight: ColorModeSemanticToken { get }
+    var onStatusWarningEmphasizedDark: ColorModeSemanticToken { get }
+    var onStatusNegativeMutedLight: ColorModeSemanticToken { get }
+    var onStatusNegativeMutedDark: ColorModeSemanticToken { get }
+    var onStatusNegativeEmphasizedLight: ColorModeSemanticToken { get }
+    var onStatusNegativeEmphasizedDark: ColorModeSemanticToken { get }
+    var onStatusAccentMutedLight: ColorModeSemanticToken { get }
+    var onStatusAccentMutedDark: ColorModeSemanticToken { get }
+    var onStatusAccentEmphasizedLight: ColorModeSemanticToken { get }
+    var onStatusAccentEmphasizedDark: ColorModeSemanticToken { get }
 
     // MARK: - On Overlay
 
-    var modeOnOverlayModalLight: ColorModeSemanticToken { get }
-    var modeOnOverlayModalDark: ColorModeSemanticToken { get }
-    var modeOnOverlayDropdownLight: ColorModeSemanticToken { get }
-    var modeOnOverlayDropdownDark: ColorModeSemanticToken { get }
-    var modeOnOverlayTooltipLight: ColorModeSemanticToken { get }
-    var modeOnOverlayTooltipDark: ColorModeSemanticToken { get }
+    var onOverlayModalLight: ColorModeSemanticToken { get }
+    var onOverlayModalDark: ColorModeSemanticToken { get }
+    var onOverlayDropdownLight: ColorModeSemanticToken { get }
+    var onOverlayDropdownDark: ColorModeSemanticToken { get }
+    var onOverlayTooltipLight: ColorModeSemanticToken { get }
+    var onOverlayTooltipDark: ColorModeSemanticToken { get }
 
     // MARK: - Navigation
 
-    var modeNavigationBarLight: ColorModeSemanticToken { get }
-    var modeNavigationBarDark: ColorModeSemanticToken { get }
+    var navigationBarLight: ColorModeSemanticToken { get }
+    var navigationBarDark: ColorModeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
