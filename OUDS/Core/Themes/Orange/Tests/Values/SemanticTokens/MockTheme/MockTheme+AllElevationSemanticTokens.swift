@@ -46,7 +46,7 @@ final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemant
     static let mockThemeElevationXRawToken: ElevationRawToken = 711
     static let mockThemeElevationYRawToken: ElevationRawToken = 713
     static let mockThemeElevationBlurRawToken: ElevationRawToken = 816
-    static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
+    static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.functionalMalachite500
     static let mockThemeElevationColorSemanticToken = mockThemeElevationColorRawToken
     static let mockThemeElevationMultipleColorSemanticToken = MultipleColorSemanticTokens(mockThemeElevationColorRawToken)
 

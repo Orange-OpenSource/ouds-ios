@@ -31,18 +31,18 @@ extension OrangeBusinessToolsThemeButtonComponentTokensProvider: ButtonComponent
     @objc public final var buttonColorBgBrandLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedLower) }
     /// Has for value token colors.colorActionFocus
     @objc public final var buttonColorBgBrandFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.colorActionSupportHover
     @objc public final var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     /// Has for value token colors.colorActionSupportPressed

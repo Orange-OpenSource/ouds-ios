@@ -23,26 +23,26 @@ extension OrangeBusinessToolsThemeChipComponentTokensProvider: ChipComponentToke
     @objc public final var chipBadgeColorBg: MultipleColorSemanticTokens { colors.colorSurfaceInverseHigh }
     /// Has for value token colors.colorContentInverse
     @objc public final var chipBadgeColorContent: MultipleColorSemanticTokens { colors.colorContentInverse }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgSelectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgSelectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgSelectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgSelectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.colorActionSelected
     @objc public final var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { colors.colorActionSelected }
     /// Has for value token colors.colorActionEnabled

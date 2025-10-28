@@ -60,11 +60,11 @@ extension BorderRawTokens {
     /// Has for value 2_000
     public static let radius9999: BorderRadiusRawToken = 2_000
     /// Has for value "none"
-    public static let styeNone: BorderStyleRawToken = "none"
+    public static let styleNone: BorderStyleRawToken = "none"
     /// Has for value "solid"
-    public static let styeSolid: BorderStyleRawToken = "solid"
+    public static let styleSolid: BorderStyleRawToken = "solid"
     /// Has for value "dashed"
-    public static let styeDashed: BorderStyleRawToken = "dashed"
+    public static let styleDashed: BorderStyleRawToken = "dashed"
     /// Has for value "dotted"
-    public static let styeDotted: BorderStyleRawToken = "dotted"
+    public static let styleDotted: BorderStyleRawToken = "dotted"
 }

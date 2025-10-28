@@ -29,11 +29,11 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Opacity
 
-    @objc open var colorOpacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowestLight, dark: colorOpacityLowestDark) }
+    @objc open var opacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityLowestLight, dark: opacityLowestDark) }
 
-    @objc open var colorOpacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowerLight, dark: colorOpacityLowerDark) }
+    @objc open var opacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityLowerLight, dark: opacityLowerDark) }
 
-    @objc open var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
+    @objc open var opacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
     // MARK: - Color - Action
 

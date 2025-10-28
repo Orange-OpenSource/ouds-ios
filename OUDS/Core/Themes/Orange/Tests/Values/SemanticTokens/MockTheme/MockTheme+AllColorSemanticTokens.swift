@@ -28,12 +28,12 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color semantic tokens - Light and dark
 
-    override public var colorOpacityLowestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityLowestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityLowerLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityTransparentLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityTransparentDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityLowestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityLowestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityLowerLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityTransparentLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var opacityTransparentDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var colorActionDisabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionEnabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -225,9 +225,9 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Opacity
 
-    override public var colorOpacityLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorOpacityLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorOpacityTransparent: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var opacityLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var opacityLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var opacityTransparent: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Action
 

@@ -89,7 +89,7 @@ open class OrangeThemeColorSemanticTokensProvider { }
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Possible to assign raw token of color available in the global package
-    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
 
     // Possible to assign raw token of color available in the the module
     @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
@@ -147,8 +147,8 @@ public enum ColorRawTokens { }
 // Defined in file updated by tokenator
 extension ColorRawTokens { // Gathers all color raw tokens, use enums for namespace optimization with static let
 
-    public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
-    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
+    public static let functionalWhite: ColorRawToken = "#FFFFFF"
+    public static let opacityBlack0: ColorRawToken = "#00000000"
     ...
 }
 

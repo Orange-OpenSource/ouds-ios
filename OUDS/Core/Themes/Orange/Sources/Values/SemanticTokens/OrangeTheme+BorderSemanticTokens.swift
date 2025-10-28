@@ -48,7 +48,7 @@ extension OrangeThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     /// Has for value token BorderRawTokens.radius9999
     @objc open var radiusPill: BorderRadiusSemanticToken { BorderRawTokens.radius9999 }
     /// Has for value token BorderRawTokens.styeSolid
-    @objc open var styeDefault: BorderStyleSemanticToken { BorderRawTokens.styeSolid }
+    @objc open var styeDefault: BorderStyleSemanticToken { BorderRawTokens.styleSolid }
     /// Has for value token BorderRawTokens.styeDashed
-    @objc open var styeDrag: BorderStyleSemanticToken { BorderRawTokens.styeDashed }
+    @objc open var styeDrag: BorderStyleSemanticToken { BorderRawTokens.styleDashed }
 }

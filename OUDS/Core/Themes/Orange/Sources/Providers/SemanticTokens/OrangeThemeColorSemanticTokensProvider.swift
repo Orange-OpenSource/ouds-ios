@@ -29,7 +29,7 @@ import OUDSFoundations
 ///         }
 ///
 ///         override var colorActionEnabled: MultipleColorSemanticTokens {
-///             MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.colorFunctionalScarlet600)
+///             MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
 ///         }
 /// }
 /// ```

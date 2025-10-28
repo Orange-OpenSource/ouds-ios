@@ -23,26 +23,26 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipBadgeColorBg: MultipleColorSemanticTokens { colors.colorSurfaceInverseHigh }
     /// Has for value token colors.colorContentInverse
     @objc open var chipBadgeColorContent: MultipleColorSemanticTokens { colors.colorContentInverse }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgSelectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgSelectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgSelectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgSelectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.colorActionSelected
     @objc open var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { colors.colorActionSelected }
     /// Has for value token colors.colorActionEnabled

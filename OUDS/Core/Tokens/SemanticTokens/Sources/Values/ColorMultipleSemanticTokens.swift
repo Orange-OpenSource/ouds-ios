@@ -52,11 +52,11 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Opacity
 
-    var colorOpacityLowest: MultipleColorSemanticTokens { get }
+    var opacityLowest: MultipleColorSemanticTokens { get }
 
-    var colorOpacityLower: MultipleColorSemanticTokens { get }
+    var opacityLower: MultipleColorSemanticTokens { get }
 
-    var colorOpacityTransparent: MultipleColorSemanticTokens { get }
+    var opacityTransparent: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Action
 

@@ -48,7 +48,7 @@ extension OrangeBusinessToolsThemeBorderSemanticTokensProvider: BorderSemanticTo
     /// Has for value token BorderRawTokens.radius9999
     @objc public final var radiusPill: BorderRadiusSemanticToken { BorderRawTokens.radius9999 }
     /// Has for value token BorderRawTokens.styeSolid
-    @objc public final var styeDefault: BorderStyleSemanticToken { BorderRawTokens.styeSolid }
+    @objc public final var styeDefault: BorderStyleSemanticToken { BorderRawTokens.styleSolid }
     /// Has for value token BorderRawTokens.styeDashed
-    @objc public final var styeDrag: BorderStyleSemanticToken { BorderRawTokens.styeDashed }
+    @objc public final var styeDrag: BorderStyleSemanticToken { BorderRawTokens.styleDashed }
 }

@@ -31,14 +31,14 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Opacity
 
-    var colorOpacityLowestLight: ColorSemanticToken { get }
-    var colorOpacityLowestDark: ColorSemanticToken { get }
+    var opacityLowestLight: ColorSemanticToken { get }
+    var opacityLowestDark: ColorSemanticToken { get }
 
-    var colorOpacityLowerLight: ColorSemanticToken { get }
-    var colorOpacityLowerDark: ColorSemanticToken { get }
+    var opacityLowerLight: ColorSemanticToken { get }
+    var opacityLowerDark: ColorSemanticToken { get }
 
-    var colorOpacityTransparentLight: ColorSemanticToken { get }
-    var colorOpacityTransparentDark: ColorSemanticToken { get }
+    var opacityTransparentLight: ColorSemanticToken { get }
+    var opacityTransparentDark: ColorSemanticToken { get }
 
     // MARK: - Color - Action
 

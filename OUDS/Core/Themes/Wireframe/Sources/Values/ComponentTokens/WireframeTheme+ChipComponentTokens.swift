@@ -33,16 +33,16 @@ extension WireframeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionHover
     @objc public final var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.colorContentOnActionSelected
     @objc public final var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { colors.colorContentOnActionSelected }
     /// Has for value token colors.colorContentOnActionEnabled
@@ -65,16 +65,16 @@ extension WireframeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var chipColorContentUnselectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var chipColorContentUnselectedFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBorderSelectedEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBorderSelectedHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBorderSelectedPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBorderSelectedDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var chipColorBorderSelectedFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBorderSelectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBorderSelectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBorderSelectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBorderSelectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var chipColorBorderSelectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.colorActionEnabled
     @objc public final var chipColorBorderUnselectedEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     /// Has for value token colors.colorActionHover

@@ -83,18 +83,18 @@ extension WireframeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc public final var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc public final var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc public final var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token borders.radiusDefault
     @objc public final var buttonBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusDefault

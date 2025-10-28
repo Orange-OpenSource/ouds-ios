@@ -21,16 +21,16 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeButtonComponentTokensProvider: ButtonMonoComponentTokens {
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc open var buttonMonoColorBgDefaultHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher)
     @objc open var buttonMonoColorBgDefaultPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher)
     @objc open var buttonMonoColorBgDefaultLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityWhiteHigher, dark: colors.colorRepositoryOpacityBlackHigher) }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc open var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigher, dark: colors.colorRepositoryOpacityWhiteHigher) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
@@ -89,16 +89,16 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonMonoComponentTokens {
     @objc open var buttonMonoColorContentStrongFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedBlack) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite)
     @objc open var buttonMonoColorBorderDefaultEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralEmphasizedBlack, dark: colors.colorRepositoryNeutralMutedWhite) }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBorderDefaultHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium)
     @objc open var buttonMonoColorBorderDefaultDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMedium, dark: colors.colorRepositoryOpacityWhiteMedium) }
-    /// Has for value token colors.colorOpacityTransparent
-    @objc open var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    /// Has for value token colors.opacityTransparent
+    @objc open var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
 }
 
 // swiftlint:enable line_length

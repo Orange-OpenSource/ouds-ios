@@ -46,7 +46,7 @@ struct ContentView: View {
                         OUDSChipPicker(selections: $selectedTopics, chips: topicsChipsValues())
 
                         Text("\(selectedTopics.count) topic(s) selected")
-                            .foregroundColor(ColorRawTokens.colorFunctionalDodgerBlue800.color!)
+                            .foregroundColor(ColorRawTokens.functionalDodgerBlue800.color!)
 
                         OUDSHorizontalDivider(color: .brandPrimary)
 

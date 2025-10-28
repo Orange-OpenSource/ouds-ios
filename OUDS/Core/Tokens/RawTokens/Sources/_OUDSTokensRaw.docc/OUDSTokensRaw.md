@@ -41,9 +41,9 @@ public enum ColorRawTokens { } // Gathers all color raw tokens (in the end, in d
 /// Place in another file which can be updated anytime
 extension ColorRawTokens { // All the values
 
-    public static let colorFunctionalWhite: ColorRawToken = "#FFFFF00F"
-    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E00"
-    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
+    public static let functionalWhite: ColorRawToken = "#FFFFF00F"
+    public static let functionalScarlet400: ColorRawToken = "#FF4D4E00"
+    public static let opacityBlack0: ColorRawToken = "#00000000"
     ...
 }
 

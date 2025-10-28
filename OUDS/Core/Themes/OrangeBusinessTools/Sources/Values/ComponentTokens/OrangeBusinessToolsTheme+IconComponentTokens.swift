@@ -24,8 +24,8 @@ import OUDSTokensSemantic
 extension OrangeBusinessToolsThemeIconComponentTokensProvider: IconComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryWarningMedium, dark: colors.colorRepositoryWarningLow)
     @objc public final var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryWarningMedium, dark: colors.colorRepositoryWarningLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.colorOpacityTransparentDark)
-    @objc public final var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.colorOpacityTransparentDark) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.opacityTransparentDark)
+    @objc public final var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryWarningHigh, dark: colors.opacityTransparentDark) }
 }
 
 // swiftlint:enable identifier_name

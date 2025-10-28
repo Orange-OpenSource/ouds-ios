@@ -64,12 +64,12 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryTertiaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token SoshBrandColorRawTokens.colorCitrine950
     @objc public final var colorRepositoryTertiaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorCitrine950 }
-    /// Has for value token ColorRawTokens.colorFunctionalWhite
-    @objc public final var colorRepositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayLight80
-    @objc public final var colorRepositoryNeutralMutedLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight80 }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayLight160
-    @objc public final var colorRepositoryNeutralMutedLower: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayLight160 }
+    /// Has for value token ColorRawTokens.functionalWhite
+    @objc public final var colorRepositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.functionalWhite }
+    /// Has for value token ColorRawTokens.functionalGrayLight80
+    @objc public final var colorRepositoryNeutralMutedLowest: ColorSemanticToken { ColorRawTokens.functionalGrayLight80 }
+    /// Has for value token ColorRawTokens.functionalGrayLight160
+    @objc public final var colorRepositoryNeutralMutedLower: ColorSemanticToken { ColorRawTokens.functionalGrayLight160 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryNeutralMutedLow: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
@@ -84,74 +84,74 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNeutralEmphasizedLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryNeutralEmphasizedLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayDark560
-    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark560 }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayDark640
-    @objc public final var colorRepositoryNeutralEmphasizedMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark640 }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayDark720
-    @objc public final var colorRepositoryNeutralEmphasizedHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark720 }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayDark800
-    @objc public final var colorRepositoryNeutralEmphasizedHigher: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark800 }
-    /// Has for value token ColorRawTokens.colorFunctionalGrayDark880
-    @objc public final var colorRepositoryNeutralEmphasizedHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalGrayDark880 }
-    /// Has for value token ColorRawTokens.colorFunctionalBlack
-    @objc public final var colorRepositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite100
-    @objc public final var colorRepositoryPositiveLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }
+    /// Has for value token ColorRawTokens.functionalGrayDark560
+    @objc public final var colorRepositoryNeutralEmphasizedLow: ColorSemanticToken { ColorRawTokens.functionalGrayDark560 }
+    /// Has for value token ColorRawTokens.functionalGrayDark640
+    @objc public final var colorRepositoryNeutralEmphasizedMedium: ColorSemanticToken { ColorRawTokens.functionalGrayDark640 }
+    /// Has for value token ColorRawTokens.functionalGrayDark720
+    @objc public final var colorRepositoryNeutralEmphasizedHigh: ColorSemanticToken { ColorRawTokens.functionalGrayDark720 }
+    /// Has for value token ColorRawTokens.functionalGrayDark800
+    @objc public final var colorRepositoryNeutralEmphasizedHigher: ColorSemanticToken { ColorRawTokens.functionalGrayDark800 }
+    /// Has for value token ColorRawTokens.functionalGrayDark880
+    @objc public final var colorRepositoryNeutralEmphasizedHighest: ColorSemanticToken { ColorRawTokens.functionalGrayDark880 }
+    /// Has for value token ColorRawTokens.functionalBlack
+    @objc public final var colorRepositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.functionalBlack }
+    /// Has for value token ColorRawTokens.functionalMalachite100
+    @objc public final var colorRepositoryPositiveLowest: ColorSemanticToken { ColorRawTokens.functionalMalachite100 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryPositiveLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite300
-    @objc public final var colorRepositoryPositiveLow: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite600
-    @objc public final var colorRepositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite700
-    @objc public final var colorRepositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite700 }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite750
-    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite750 }
-    /// Has for value token ColorRawTokens.colorFunctionalMalachite900
-    @objc public final var colorRepositoryPositiveHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
-    /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue100
-    @objc public final var colorRepositoryInfoLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue100 }
+    /// Has for value token ColorRawTokens.functionalMalachite300
+    @objc public final var colorRepositoryPositiveLow: ColorSemanticToken { ColorRawTokens.functionalMalachite300 }
+    /// Has for value token ColorRawTokens.functionalMalachite600
+    @objc public final var colorRepositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.functionalMalachite600 }
+    /// Has for value token ColorRawTokens.functionalMalachite700
+    @objc public final var colorRepositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.functionalMalachite700 }
+    /// Has for value token ColorRawTokens.functionalMalachite750
+    @objc public final var colorRepositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.functionalMalachite750 }
+    /// Has for value token ColorRawTokens.functionalMalachite900
+    @objc public final var colorRepositoryPositiveHighest: ColorSemanticToken { ColorRawTokens.functionalMalachite900 }
+    /// Has for value token ColorRawTokens.functionalDodgerBlue100
+    @objc public final var colorRepositoryInfoLowest: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue100 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryInfoLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue300
-    @objc public final var colorRepositoryInfoLow: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue300 }
+    /// Has for value token ColorRawTokens.functionalDodgerBlue300
+    @objc public final var colorRepositoryInfoLow: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue300 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryInfoMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue700
-    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue700 }
+    /// Has for value token ColorRawTokens.functionalDodgerBlue700
+    @objc public final var colorRepositoryInfoHigh: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue700 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryInfoHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalDodgerBlue900
-    @objc public final var colorRepositoryInfoHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue900 }
-    /// Has for value token ColorRawTokens.colorFunctionalSun100
-    @objc public final var colorRepositoryWarningLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun100 }
+    /// Has for value token ColorRawTokens.functionalDodgerBlue900
+    @objc public final var colorRepositoryInfoHighest: ColorSemanticToken { ColorRawTokens.functionalDodgerBlue900 }
+    /// Has for value token ColorRawTokens.functionalSun100
+    @objc public final var colorRepositoryWarningLowest: ColorSemanticToken { ColorRawTokens.functionalSun100 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryWarningLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalSun300
-    @objc public final var colorRepositoryWarningLow: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
-    /// Has for value token ColorRawTokens.colorFunctionalSun500
-    @objc public final var colorRepositoryWarningMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    /// Has for value token ColorRawTokens.colorFunctionalSun750
-    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalSun750 }
+    /// Has for value token ColorRawTokens.functionalSun300
+    @objc public final var colorRepositoryWarningLow: ColorSemanticToken { ColorRawTokens.functionalSun300 }
+    /// Has for value token ColorRawTokens.functionalSun500
+    @objc public final var colorRepositoryWarningMedium: ColorSemanticToken { ColorRawTokens.functionalSun500 }
+    /// Has for value token ColorRawTokens.functionalSun750
+    @objc public final var colorRepositoryWarningHigh: ColorSemanticToken { ColorRawTokens.functionalSun750 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryWarningHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.colorFunctionalSun900
-    @objc public final var colorRepositoryWarningHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalSun900 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet100
-    @objc public final var colorRepositoryNegativeLowest: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet100 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet200
-    @objc public final var colorRepositoryNegativeLower: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet200 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet300
-    @objc public final var colorRepositoryNegativeLow: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet300 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet600
-    @objc public final var colorRepositoryNegativeMedium: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet700
-    @objc public final var colorRepositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet700 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet800
-    @objc public final var colorRepositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet800 }
-    /// Has for value token ColorRawTokens.colorFunctionalScarlet900
-    @objc public final var colorRepositoryNegativeHighest: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet900 }
+    /// Has for value token ColorRawTokens.functionalSun900
+    @objc public final var colorRepositoryWarningHighest: ColorSemanticToken { ColorRawTokens.functionalSun900 }
+    /// Has for value token ColorRawTokens.functionalScarlet100
+    @objc public final var colorRepositoryNegativeLowest: ColorSemanticToken { ColorRawTokens.functionalScarlet100 }
+    /// Has for value token ColorRawTokens.functionalScarlet200
+    @objc public final var colorRepositoryNegativeLower: ColorSemanticToken { ColorRawTokens.functionalScarlet200 }
+    /// Has for value token ColorRawTokens.functionalScarlet300
+    @objc public final var colorRepositoryNegativeLow: ColorSemanticToken { ColorRawTokens.functionalScarlet300 }
+    /// Has for value token ColorRawTokens.functionalScarlet600
+    @objc public final var colorRepositoryNegativeMedium: ColorSemanticToken { ColorRawTokens.functionalScarlet600 }
+    /// Has for value token ColorRawTokens.functionalScarlet700
+    @objc public final var colorRepositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.functionalScarlet700 }
+    /// Has for value token ColorRawTokens.functionalScarlet800
+    @objc public final var colorRepositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
+    /// Has for value token ColorRawTokens.functionalScarlet900
+    @objc public final var colorRepositoryNegativeHighest: ColorSemanticToken { ColorRawTokens.functionalScarlet900 }
     /// Has for value token colorRepositoryPrimaryLowest
     @objc public final var colorRepositoryAccentLowest: ColorSemanticToken { colorRepositoryPrimaryLowest }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
@@ -166,64 +166,64 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryAccentHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryPrimaryHighest
     @objc public final var colorRepositoryAccentHighest: ColorSemanticToken { colorRepositoryPrimaryHighest }
-    /// Has for value token ColorRawTokens.colorOpacityMalachite120
-    @objc public final var colorRepositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.colorOpacityMalachite120 }
-    /// Has for value token ColorRawTokens.colorOpacityMalachite640
-    @objc public final var colorRepositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.colorOpacityMalachite640 }
-    /// Has for value token ColorRawTokens.colorOpacityDodgerBlue80
-    @objc public final var colorRepositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue80 }
-    /// Has for value token ColorRawTokens.colorOpacityDodgerBlue520
-    @objc public final var colorRepositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue520 }
-    /// Has for value token ColorRawTokens.colorOpacitySun160
-    @objc public final var colorRepositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.colorOpacitySun160 }
-    /// Has for value token ColorRawTokens.colorOpacitySun480
-    @objc public final var colorRepositoryOpacityWarningMedium: ColorSemanticToken { ColorRawTokens.colorOpacitySun480 }
-    /// Has for value token ColorRawTokens.colorOpacityScarlet80
-    @objc public final var colorRepositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.colorOpacityScarlet80 }
-    /// Has for value token ColorRawTokens.colorOpacityScarlet320
-    @objc public final var colorRepositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.colorOpacityScarlet320 }
-    /// Has for value token SoshBrandColorRawTokens.colorOpacityMagenta120
-    @objc public final var colorRepositoryOpacityAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.colorOpacityMagenta120 }
-    /// Has for value token SoshBrandColorRawTokens.colorOpacityMagenta640
-    @objc public final var colorRepositoryOpacityAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorOpacityMagenta640 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack0
-    @objc public final var colorRepositoryOpacityBlackTransparent: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack40
-    @objc public final var colorRepositoryOpacityBlackLowest: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack80
-    @objc public final var colorRepositoryOpacityBlackLower: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack120
-    @objc public final var colorRepositoryOpacityBlackLow: ColorSemanticToken { ColorRawTokens.colorOpacityBlack120 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack200
-    @objc public final var colorRepositoryOpacityBlackMediumLow: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack280
-    @objc public final var colorRepositoryOpacityBlackMedium: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack440
-    @objc public final var colorRepositoryOpacityBlackMediumHigh: ColorSemanticToken { ColorRawTokens.colorOpacityBlack440 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack520
-    @objc public final var colorRepositoryOpacityBlackHigh: ColorSemanticToken { ColorRawTokens.colorOpacityBlack520 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack680
-    @objc public final var colorRepositoryOpacityBlackHigher: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
-    /// Has for value token ColorRawTokens.colorOpacityBlack840
-    @objc public final var colorRepositoryOpacityBlackHighest: ColorSemanticToken { ColorRawTokens.colorOpacityBlack840 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite0
-    @objc public final var colorRepositoryOpacityWhiteTransparent: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite40
-    @objc public final var colorRepositoryOpacityWhiteLowest: ColorSemanticToken { ColorRawTokens.colorOpacityWhite40 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite80
-    @objc public final var colorRepositoryOpacityWhiteLower: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite120
-    @objc public final var colorRepositoryOpacityWhiteLow: ColorSemanticToken { ColorRawTokens.colorOpacityWhite120 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite200
-    @objc public final var colorRepositoryOpacityWhiteMediumLow: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite440
-    @objc public final var colorRepositoryOpacityWhiteMedium: ColorSemanticToken { ColorRawTokens.colorOpacityWhite440 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite640
-    @objc public final var colorRepositoryOpacityWhiteHigh: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite800
-    @objc public final var colorRepositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.colorOpacityWhite800 }
-    /// Has for value token ColorRawTokens.colorOpacityWhite920
-    @objc public final var colorRepositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.colorOpacityWhite920 }
+    /// Has for value token ColorRawTokens.opacityMalachite120
+    @objc public final var colorRepositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.opacityMalachite120 }
+    /// Has for value token ColorRawTokens.opacityMalachite640
+    @objc public final var colorRepositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.opacityMalachite640 }
+    /// Has for value token ColorRawTokens.opacityDodgerBlue80
+    @objc public final var colorRepositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.opacityDodgerBlue80 }
+    /// Has for value token ColorRawTokens.opacityDodgerBlue520
+    @objc public final var colorRepositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.opacityDodgerBlue520 }
+    /// Has for value token ColorRawTokens.opacitySun160
+    @objc public final var colorRepositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.opacitySun160 }
+    /// Has for value token ColorRawTokens.opacitySun480
+    @objc public final var colorRepositoryOpacityWarningMedium: ColorSemanticToken { ColorRawTokens.opacitySun480 }
+    /// Has for value token ColorRawTokens.opacityScarlet80
+    @objc public final var colorRepositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.opacityScarlet80 }
+    /// Has for value token ColorRawTokens.opacityScarlet320
+    @objc public final var colorRepositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.opacityScarlet320 }
+    /// Has for value token SoshBrandColorRawTokens.opacityMagenta120
+    @objc public final var colorRepositoryOpacityAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityMagenta120 }
+    /// Has for value token SoshBrandColorRawTokens.opacityMagenta640
+    @objc public final var colorRepositoryOpacityAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityMagenta640 }
+    /// Has for value token ColorRawTokens.opacityBlack0
+    @objc public final var colorRepositoryOpacityBlackTransparent: ColorSemanticToken { ColorRawTokens.opacityBlack0 }
+    /// Has for value token ColorRawTokens.opacityBlack40
+    @objc public final var colorRepositoryOpacityBlackLowest: ColorSemanticToken { ColorRawTokens.opacityBlack40 }
+    /// Has for value token ColorRawTokens.opacityBlack80
+    @objc public final var colorRepositoryOpacityBlackLower: ColorSemanticToken { ColorRawTokens.opacityBlack80 }
+    /// Has for value token ColorRawTokens.opacityBlack120
+    @objc public final var colorRepositoryOpacityBlackLow: ColorSemanticToken { ColorRawTokens.opacityBlack120 }
+    /// Has for value token ColorRawTokens.opacityBlack200
+    @objc public final var colorRepositoryOpacityBlackMediumLow: ColorSemanticToken { ColorRawTokens.opacityBlack200 }
+    /// Has for value token ColorRawTokens.opacityBlack280
+    @objc public final var colorRepositoryOpacityBlackMedium: ColorSemanticToken { ColorRawTokens.opacityBlack280 }
+    /// Has for value token ColorRawTokens.opacityBlack440
+    @objc public final var colorRepositoryOpacityBlackMediumHigh: ColorSemanticToken { ColorRawTokens.opacityBlack440 }
+    /// Has for value token ColorRawTokens.opacityBlack520
+    @objc public final var colorRepositoryOpacityBlackHigh: ColorSemanticToken { ColorRawTokens.opacityBlack520 }
+    /// Has for value token ColorRawTokens.opacityBlack680
+    @objc public final var colorRepositoryOpacityBlackHigher: ColorSemanticToken { ColorRawTokens.opacityBlack680 }
+    /// Has for value token ColorRawTokens.opacityBlack840
+    @objc public final var colorRepositoryOpacityBlackHighest: ColorSemanticToken { ColorRawTokens.opacityBlack840 }
+    /// Has for value token ColorRawTokens.opacityWhite0
+    @objc public final var colorRepositoryOpacityWhiteTransparent: ColorSemanticToken { ColorRawTokens.opacityWhite0 }
+    /// Has for value token ColorRawTokens.opacityWhite40
+    @objc public final var colorRepositoryOpacityWhiteLowest: ColorSemanticToken { ColorRawTokens.opacityWhite40 }
+    /// Has for value token ColorRawTokens.opacityWhite80
+    @objc public final var colorRepositoryOpacityWhiteLower: ColorSemanticToken { ColorRawTokens.opacityWhite80 }
+    /// Has for value token ColorRawTokens.opacityWhite120
+    @objc public final var colorRepositoryOpacityWhiteLow: ColorSemanticToken { ColorRawTokens.opacityWhite120 }
+    /// Has for value token ColorRawTokens.opacityWhite200
+    @objc public final var colorRepositoryOpacityWhiteMediumLow: ColorSemanticToken { ColorRawTokens.opacityWhite200 }
+    /// Has for value token ColorRawTokens.opacityWhite440
+    @objc public final var colorRepositoryOpacityWhiteMedium: ColorSemanticToken { ColorRawTokens.opacityWhite440 }
+    /// Has for value token ColorRawTokens.opacityWhite640
+    @objc public final var colorRepositoryOpacityWhiteHigh: ColorSemanticToken { ColorRawTokens.opacityWhite640 }
+    /// Has for value token ColorRawTokens.opacityWhite800
+    @objc public final var colorRepositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.opacityWhite800 }
+    /// Has for value token ColorRawTokens.opacityWhite920
+    @objc public final var colorRepositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.opacityWhite920 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var colorRepositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
@@ -556,10 +556,10 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorActionSelectedLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositorySecondaryLower
     @objc public final var colorActionSelectedDark: ColorSemanticToken { colorRepositorySecondaryLower }
-    /// Has for value token ColorRawTokens.colorFunctionalAmethyst600
-    @objc public final var colorActionVisitedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalAmethyst600 }
-    /// Has for value token ColorRawTokens.colorFunctionalAmethyst400
-    @objc public final var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalAmethyst400 }
+    /// Has for value token ColorRawTokens.functionalAmethyst600
+    @objc public final var colorActionVisitedLight: ColorSemanticToken { ColorRawTokens.functionalAmethyst600 }
+    /// Has for value token ColorRawTokens.functionalAmethyst400
+    @objc public final var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.functionalAmethyst400 }
     /// Has for value token colorRepositorySecondaryLow
     @objc public final var colorActionHighlightedLight: ColorSemanticToken { colorRepositorySecondaryLow }
     /// Has for value token colorRepositoryNeutralMutedLower
@@ -625,17 +625,17 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token colorRepositorySecondaryHigh
     @objc public final var colorOverlayModalDark: ColorSemanticToken { colorRepositorySecondaryHigh }
     /// Has for value token colorRepositoryOpacityBlackTransparent
-    @objc public final var colorOpacityTransparentLight: ColorSemanticToken { colorRepositoryOpacityBlackTransparent }
+    @objc public final var opacityTransparentLight: ColorSemanticToken { colorRepositoryOpacityBlackTransparent }
     /// Has for value token colorRepositoryOpacityWhiteTransparent
-    @objc public final var colorOpacityTransparentDark: ColorSemanticToken { colorRepositoryOpacityWhiteTransparent }
+    @objc public final var opacityTransparentDark: ColorSemanticToken { colorRepositoryOpacityWhiteTransparent }
     /// Has for value token colorRepositoryOpacityBlackLowest
-    @objc public final var colorOpacityLowestLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
+    @objc public final var opacityLowestLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLowest
-    @objc public final var colorOpacityLowestDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
+    @objc public final var opacityLowestDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
     /// Has for value token colorRepositoryOpacityBlackLower
-    @objc public final var colorOpacityLowerLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
+    @objc public final var opacityLowerLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc public final var colorOpacityLowerDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc public final var opacityLowerDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
     @objc public final var colorAlwaysBlack: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite

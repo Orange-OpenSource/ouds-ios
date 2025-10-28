@@ -28,11 +28,11 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     // MARK: - Color - Opacity
 
-    @objc public final var colorOpacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowestLight, dark: colorOpacityLowestDark) }
+    @objc public final var opacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityLowestLight, dark: opacityLowestDark) }
 
-    @objc public final var colorOpacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowerLight, dark: colorOpacityLowerDark) }
+    @objc public final var opacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityLowerLight, dark: opacityLowerDark) }
 
-    @objc public final var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
+    @objc public final var opacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityTransparentLight, dark: opacityTransparentDark) }
 
     // MARK: - Color - Action
 
