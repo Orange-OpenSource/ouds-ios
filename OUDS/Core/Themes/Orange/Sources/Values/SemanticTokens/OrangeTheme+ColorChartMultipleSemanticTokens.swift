@@ -26,43 +26,43 @@ import OUDSTokensSemantic
 /// Helps to expose color chart semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeThemeColorChartSemanticTokensProvider: ColorChartMultipleSemanticTokens {
 
-    @objc public final var chartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartBorderLight, dark: chartBorderDark) }
+    @objc public final var border: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderLight, dark: borderDark) }
 
-    @objc public final var chartBorderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartBorderContrastLight, dark: chartBorderContrastDark) }
+    @objc public final var borderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderContrastLight, dark: borderContrastDark) }
 
-    @objc public final var chartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier1Light, dark: chartCategoricalTier1Dark) }
+    @objc public final var categoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier1Light, dark: categoricalTier1Dark) }
 
-    @objc public final var chartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier2Light, dark: chartCategoricalTier2Dark) }
+    @objc public final var categoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier2Light, dark: categoricalTier2Dark) }
 
-    @objc public final var chartCategoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier3Light, dark: chartCategoricalTier3Dark) }
+    @objc public final var categoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier3Light, dark: categoricalTier3Dark) }
 
-    @objc public final var chartCategoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier4Light, dark: chartCategoricalTier4Dark) }
+    @objc public final var categoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier4Light, dark: categoricalTier4Dark) }
 
-    @objc public final var chartCategoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier5Light, dark: chartCategoricalTier5Dark) }
+    @objc public final var categoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier5Light, dark: categoricalTier5Dark) }
 
-    @objc public final var chartCategoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier6Light, dark: chartCategoricalTier6Dark) }
+    @objc public final var categoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier6Light, dark: categoricalTier6Dark) }
 
-    @objc public final var chartCategoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier7Light, dark: chartCategoricalTier7Dark) }
+    @objc public final var categoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier7Light, dark: categoricalTier7Dark) }
 
-    @objc public final var chartCategoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier8Light, dark: chartCategoricalTier8Dark) }
+    @objc public final var categoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier8Light, dark: categoricalTier8Dark) }
 
-    @objc public final var chartCategoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier9Light, dark: chartCategoricalTier9Dark) }
+    @objc public final var categoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier9Light, dark: categoricalTier9Dark) }
 
-    @objc public final var chartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartCategoricalTier10Light, dark: chartCategoricalTier10Dark) }
+    @objc public final var categoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier10Light, dark: categoricalTier10Dark) }
 
-    @objc public final var chartFunctionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartFunctionalInfoLight, dark: chartFunctionalInfoDark) }
+    @objc public final var functionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalInfoLight, dark: functionalInfoDark) }
 
-    @objc public final var chartFunctionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartFunctionalNegativeLight, dark: chartFunctionalNegativeDark) }
+    @objc public final var functionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalNegativeLight, dark: functionalNegativeDark) }
 
-    @objc public final var chartFunctionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartFunctionalPositiveLight, dark: chartFunctionalPositiveDark) }
+    @objc public final var functionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalPositiveLight, dark: functionalPositiveDark) }
 
-    @objc public final var chartFunctionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartFunctionalWarningLight, dark: chartFunctionalWarningDark) }
+    @objc public final var functionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalWarningLight, dark: functionalWarningDark) }
 
-    @objc public final var chartGridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartGridlinesLight, dark: chartGridlinesDark) }
+    @objc public final var gridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: gridlinesLight, dark: gridlinesDark) }
 
-    @objc public final var chartHighlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartHighlightLight, dark: chartHighlightDark) }
+    @objc public final var highlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: highlightLight, dark: highlightDark) }
 
-    @objc public final var chartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: chartNeutralLight, dark: chartNeutralDark) }
+    @objc public final var neutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: neutralLight, dark: neutralDark) }
 }
 
 // swiftlint:enable line_length

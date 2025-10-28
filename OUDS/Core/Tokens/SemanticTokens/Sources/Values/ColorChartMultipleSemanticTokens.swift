@@ -26,25 +26,25 @@ import Foundation
 /// - Since: 0.17.0
 public protocol ColorChartMultipleSemanticTokens {
 
-    var chartBorder: MultipleColorSemanticTokens { get }
-    var chartBorderContrast: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier1: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier2: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier3: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier4: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier5: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier6: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier7: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier8: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier9: MultipleColorSemanticTokens { get }
-    var chartCategoricalTier10: MultipleColorSemanticTokens { get }
-    var chartFunctionalInfo: MultipleColorSemanticTokens { get }
-    var chartFunctionalNegative: MultipleColorSemanticTokens { get }
-    var chartFunctionalPositive: MultipleColorSemanticTokens { get }
-    var chartFunctionalWarning: MultipleColorSemanticTokens { get }
-    var chartGridlines: MultipleColorSemanticTokens { get }
-    var chartHighlight: MultipleColorSemanticTokens { get }
-    var chartNeutral: MultipleColorSemanticTokens { get }
+    var border: MultipleColorSemanticTokens { get }
+    var borderContrast: MultipleColorSemanticTokens { get }
+    var categoricalTier1: MultipleColorSemanticTokens { get }
+    var categoricalTier2: MultipleColorSemanticTokens { get }
+    var categoricalTier3: MultipleColorSemanticTokens { get }
+    var categoricalTier4: MultipleColorSemanticTokens { get }
+    var categoricalTier5: MultipleColorSemanticTokens { get }
+    var categoricalTier6: MultipleColorSemanticTokens { get }
+    var categoricalTier7: MultipleColorSemanticTokens { get }
+    var categoricalTier8: MultipleColorSemanticTokens { get }
+    var categoricalTier9: MultipleColorSemanticTokens { get }
+    var categoricalTier10: MultipleColorSemanticTokens { get }
+    var functionalInfo: MultipleColorSemanticTokens { get }
+    var functionalNegative: MultipleColorSemanticTokens { get }
+    var functionalPositive: MultipleColorSemanticTokens { get }
+    var functionalWarning: MultipleColorSemanticTokens { get }
+    var gridlines: MultipleColorSemanticTokens { get }
+    var highlight: MultipleColorSemanticTokens { get }
+    var neutral: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
