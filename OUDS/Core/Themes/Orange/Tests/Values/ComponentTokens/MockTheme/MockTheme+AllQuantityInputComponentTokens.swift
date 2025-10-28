@@ -35,14 +35,14 @@ final class MockThemeQuantityInputComponentTokenProvider: OrangeThemeQuantityInp
 
     // MARK: - Spaces
 
-    override var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
-    override var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
-    override var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var spaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var spaceColumnGapLeadingIcon: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
+    override var spaceColumnGapQuantitySelector: SpaceSemanticToken { Self.mockThemeQuantityInputSpace }
 
     // MARK: - Sizes
 
-    override var quantityInputSizeMinWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
-    override var quantityInputSizeMaxWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
+    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeQuantityInputSize }
 }
 
 // swiftlint:enable required_deinit

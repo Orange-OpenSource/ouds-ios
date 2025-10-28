@@ -58,14 +58,14 @@ struct ControlItemIconContainer: View {
                     .resizable()
                     .renderingMode(.template)
                     .accessibilityHidden(true)
-                    .oudsForegroundStyle(iconColor)
+                    .oudsForegroundStyle(color)
                     .frame(width: theme.controlItem.sizeIcon, height: theme.controlItem.sizeIcon)
                     .toFlip(layoutData.flipIcon)
             }
         }
     }
 
-    private var iconColor: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.contentDefault

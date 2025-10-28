@@ -28,14 +28,14 @@ public protocol QuantityInputComponentTokens {
 
     // MARK: - Spaces
 
-    var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { get }
-    var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { get }
-    var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { get }
+    var spaceColumnGapDefault: SpaceSemanticToken { get }
+    var spaceColumnGapLeadingIcon: SpaceSemanticToken { get }
+    var spaceColumnGapQuantitySelector: SpaceSemanticToken { get }
 
     // MARK: - Sizes
 
-    var quantityInputSizeMinWidth: SizeSemanticToken { get }
-    var quantityInputSizeMaxWidth: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
 }
 
 // swiftlint:enable identifier_name

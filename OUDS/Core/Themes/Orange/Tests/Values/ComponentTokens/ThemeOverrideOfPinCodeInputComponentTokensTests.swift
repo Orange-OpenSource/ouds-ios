@@ -30,20 +30,20 @@ struct ThemeOverrideOfPinCodeInputComponentTokensTests {
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSpaceColumnGapDigitInput() throws {
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSpaceColumnGapDigitInput != abstractTheme.pinCodeInput.pinCodeInputSpaceColumnGapDigitInput)
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSpaceColumnGapDigitInput == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSpace)
+        #expect(inheritedTheme.pinCodeInput.spaceColumnGapDigitInput != abstractTheme.pinCodeInput.spaceColumnGapDigitInput)
+        #expect(inheritedTheme.pinCodeInput.spaceColumnGapDigitInput == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSpace)
     }
 
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMinWidth() throws {
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSizeMinWidth != abstractTheme.pinCodeInput.pinCodeInputSizeMinWidth)
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSizeMinWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
+        #expect(inheritedTheme.pinCodeInput.sizeMinWidth != abstractTheme.pinCodeInput.sizeMinWidth)
+        #expect(inheritedTheme.pinCodeInput.sizeMinWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
     }
 
     @Test func inheritedThemeCanOverridePinCodeInputComponentTokenPinCodeInputSizeMaxWidth() throws {
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSizeMaxWidth != abstractTheme.pinCodeInput.pinCodeInputSizeMaxWidth)
-        #expect(inheritedTheme.pinCodeInput.pinCodeInputSizeMaxWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
+        #expect(inheritedTheme.pinCodeInput.sizeMaxWidth != abstractTheme.pinCodeInput.sizeMaxWidth)
+        #expect(inheritedTheme.pinCodeInput.sizeMaxWidth == MockThemePinCodeInputComponentTokenProvider.mockThemePinCodeInputSize)
     }
 }
 

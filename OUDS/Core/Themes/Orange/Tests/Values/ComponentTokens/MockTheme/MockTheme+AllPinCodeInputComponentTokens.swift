@@ -35,9 +35,9 @@ final class MockThemePinCodeInputComponentTokenProvider: OrangeThemePinCodeInput
 
     // MARK: - Pin code input component tokens
 
-    override var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { Self.mockThemePinCodeInputSpace }
-    override var pinCodeInputSizeMinWidth: SizeSemanticToken { Self.mockThemePinCodeInputSize }
-    override var pinCodeInputSizeMaxWidth: SizeSemanticToken { Self.mockThemePinCodeInputSize }
+    override var spaceColumnGapDigitInput: SpaceSemanticToken { Self.mockThemePinCodeInputSpace }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemePinCodeInputSize }
+    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemePinCodeInputSize }
 }
 
 // swiftlint:enable required_deinit

@@ -23,9 +23,9 @@ import OUDSTokensSemantic
 
 extension WireframeThemeIconComponentTokensProvider: IconComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
-    @objc public final var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
+    @objc public final var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
-    @objc public final var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
+    @objc public final var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
 }
 
 // swiftlint:enable identifier_name

@@ -78,11 +78,11 @@ struct TagAsset: View {
                     Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningExternalShape)
+                        .oudsForegroundColor(theme.icon.colorContentStatusWarningExternalShape)
                     Image(decorative: "ic_warning_internal_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.icon.iconColorContentStatusWarningInternalShape)
+                        .oudsForegroundColor(theme.icon.colorContentStatusWarningInternalShape)
                 }
             } else {
                 iconFromAsset?

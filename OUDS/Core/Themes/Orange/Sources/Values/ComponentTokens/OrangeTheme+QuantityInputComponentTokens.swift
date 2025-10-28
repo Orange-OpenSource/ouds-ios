@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 
 extension OrangeThemeQuantityInputComponentTokensProvider: QuantityInputComponentTokens {
     /// Has for value token spaces.columnGapXsmall
-    @objc open var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc open var spaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGapMedium
-    @objc open var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.columnGapMedium }
+    @objc open var spaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.columnGapMedium }
     /// Has for value token DimensionRawTokens.outOfSystem25
-    @objc open var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
+    @objc open var spaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
     /// Has for value token DimensionRawTokens._2225
-    @objc open var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
+    @objc open var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
     /// Has for value token DimensionRawTokens._3000
-    @objc open var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+    @objc open var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 }
 
 // swiftlint:enable identifier_name

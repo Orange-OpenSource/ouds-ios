@@ -23,45 +23,45 @@ import OUDSTokensSemantic
 
 extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.contentDefault
-    @objc public final var linkColorContentEnabled: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var colorContentEnabled: MultipleColorSemanticTokens { colors.contentDefault }
     /// Has for value token colors.actionHover
-    @objc public final var linkColorContentHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorContentHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var linkColorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc public final var linkColorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token colors.actionEnabled
-    @objc public final var linkColorChevronEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc public final var colorChevronEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
     /// Has for value token MultipleColorSemanticTokens(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark)
-    @objc public final var linkColorChevronHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark) }
+    @objc public final var colorChevronHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark) }
     /// Has for value token colors.actionPressed
-    @objc public final var linkColorChevronPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorChevronPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionEnabled
-    @objc public final var linkColorChevronFocus: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc public final var colorChevronFocus: MultipleColorSemanticTokens { colors.actionEnabled }
     /// Has for value token spaces.paddingInlineNone
-    @objc public final var linkSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
+    @objc public final var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
     /// Has for value token spaces.paddingBlockMedium
-    @objc public final var linkSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
     /// Has for value token spaces.columnGapSmall
-    @objc public final var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
+    @objc public final var spaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
     /// Has for value token spaces.columnGapXsmall
-    @objc public final var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc public final var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc public final var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc public final var spaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc public final var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc public final var spaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc public final var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    @objc public final var sizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall
-    @objc public final var linkSizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    @objc public final var sizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token DimensionRawTokens._550
-    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    @objc public final var sizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
     /// Has for value token DimensionRawTokens._550
-    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    @objc public final var sizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
 }
 
 // swiftlint:enable line_length

@@ -32,9 +32,9 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { spaces.columnGap2Xs }
+///         override var spaceColumnGapQuantitySelector: SpaceSemanticToken { spaces.columnGap2Xs }
 ///
-///         override var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+///         override var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 ///
 ///         // ...
 ///     }

@@ -21,43 +21,43 @@ import OUDSTokensSemantic
 
 extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.actionEnabled
-    @objc open var linkColorContentEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc open var colorContentEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
     /// Has for value token colors.actionHover
-    @objc open var linkColorContentHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc open var colorContentHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc open var linkColorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc open var colorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc open var linkColorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc open var colorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var linkColorChevronEnabled: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronEnabled: MultipleColorSemanticTokens { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var linkColorChevronHover: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronHover: MultipleColorSemanticTokens { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var linkColorChevronPressed: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronPressed: MultipleColorSemanticTokens { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var linkColorChevronFocus: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronFocus: MultipleColorSemanticTokens { colors.contentBrandPrimary }
     /// Has for value token spaces.paddingInlineNone
-    @objc open var linkSpacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
+    @objc open var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
     /// Has for value token spaces.paddingBlockMedium
-    @objc open var linkSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
+    @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockMedium }
     /// Has for value token spaces.columnGapSmall
-    @objc open var linkSpaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
+    @objc open var spaceColumnGapIconDefault: SpaceSemanticToken { spaces.columnGapSmall }
     /// Has for value token spaces.columnGapXsmall
-    @objc open var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc open var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc open var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc open var spaceColumnGapChevronDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc open var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc open var spaceColumnGapChevronSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc open var linkSizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    @objc open var sizeIconDefault: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall
-    @objc open var linkSizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    @objc open var sizeIconSmall: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token sizes.minInteractiveArea
-    @objc open var linkSizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc open var sizeMinHeightDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token sizes.minInteractiveArea
-    @objc open var linkSizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc open var sizeMinWidthDefault: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token DimensionRawTokens._550
-    @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    @objc open var sizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
     /// Has for value token DimensionRawTokens._550
-    @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    @objc open var sizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
 }

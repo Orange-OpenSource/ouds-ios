@@ -23,15 +23,15 @@ import OUDSTokensSemantic
 
 extension SoshThemeQuantityInputComponentTokensProvider: QuantityInputComponentTokens {
     /// Has for value token spaces.columnGapXsmall
-    @objc public final var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc public final var spaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGapMedium
-    @objc public final var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.columnGapMedium }
+    @objc public final var spaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.columnGapMedium }
     /// Has for value token DimensionRawTokens.outOfSystem25
-    @objc public final var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
+    @objc public final var spaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
     /// Has for value token DimensionRawTokens._2225
-    @objc public final var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
+    @objc public final var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
     /// Has for value token DimensionRawTokens._3000
-    @objc public final var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 }
 
 // swiftlint:enable identifier_name
