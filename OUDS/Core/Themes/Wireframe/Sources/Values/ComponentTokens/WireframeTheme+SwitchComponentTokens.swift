@@ -35,10 +35,10 @@ extension WireframeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
-    /// Has for value token borders.borderRadiusSmall
-    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusSmall }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    /// Has for value token borders.radiusSmall
+    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.radiusSmall }
+    /// Has for value token borders.radiusDefault
+    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token opacities.opacityOpaque
     @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
     /// Has for value token spaces.spacePaddingInline3xsmall

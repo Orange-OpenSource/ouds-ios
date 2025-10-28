@@ -56,9 +56,9 @@ struct ContentView: View {
                     .padding(.horizontal, theme.spaces.spaceFixedSmall)
                 }
                 .oudsBackground(theme.colors.colorBgTertiary)
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthThin,
-                            radius: theme.borders.borderRadiusMedium,
+                .oudsBorder(style: theme.borders.styeDefault,
+                            width: theme.borders.widthThin,
+                            radius: theme.borders.radiusMedium,
                             color: theme.colors.colorActionEnabled)
                 .oudsShadow(theme.elevations.elevationEmphasized)
                 .padding(.bottom, theme.spaces.spaceFixedLarge)

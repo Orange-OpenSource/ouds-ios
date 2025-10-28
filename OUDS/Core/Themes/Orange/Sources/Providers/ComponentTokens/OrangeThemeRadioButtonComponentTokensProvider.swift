@@ -36,7 +36,7 @@ import OUDSFoundations
 ///
 ///         override var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
 ///
-///         override var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthThin }
+///         override var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.widthThin }
 ///
 ///         // ...
 ///     }

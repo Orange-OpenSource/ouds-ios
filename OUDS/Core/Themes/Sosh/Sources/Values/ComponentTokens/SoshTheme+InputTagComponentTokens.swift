@@ -43,8 +43,8 @@ extension SoshThemeInputTagComponentTokensProvider: InputTagComponentTokens {
     @objc public final var inputTagColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionFocus
     @objc public final var inputTagColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderWidthThin
-    @objc public final var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThin }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
+    /// Has for value token borders.widthThin
+    @objc public final var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.widthThin }
+    /// Has for value token borders.widthDefault
+    @objc public final var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthDefault }
 }

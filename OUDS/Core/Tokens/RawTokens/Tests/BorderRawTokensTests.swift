@@ -40,400 +40,400 @@ struct BorderRawTokensTests {
 
     // MARK: - Primitive token - Border - Width
 
-    @Test func borderWidthRawToken0NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth0 >= 0)
+    @Test func widthRawToken0NotNegativeValue() throws {
+        #expect(BorderRawTokens.width0 >= 0)
     }
 
-    @Test func borderWidthRawToken0LessThan25() throws {
-        #expect(BorderRawTokens.borderWidth0 < BorderRawTokens.borderWidth25)
+    @Test func widthRawToken0LessThan25() throws {
+        #expect(BorderRawTokens.width0 < BorderRawTokens.width25)
     }
 
-    @Test func borderWidthRawToken0MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width0, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken25NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth25 >= 0)
+    @Test func widthRawToken25NotNegativeValue() throws {
+        #expect(BorderRawTokens.width25 >= 0)
     }
 
-    @Test func borderWidthRawToken25LessThan50() throws {
-        #expect(BorderRawTokens.borderWidth25 < BorderRawTokens.borderWidth50)
+    @Test func widthRawToken25LessThan50() throws {
+        #expect(BorderRawTokens.width25 < BorderRawTokens.width50)
     }
 
-    @Test func borderWidthRawToken25MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width25, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken50NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth50 >= 0)
+    @Test func widthRawToken50NotNegativeValue() throws {
+        #expect(BorderRawTokens.width50 >= 0)
     }
 
-    @Test func borderWidthRawToken50LessThan75() throws {
-        #expect(BorderRawTokens.borderWidth50 < BorderRawTokens.borderWidth75)
+    @Test func widthRawToken50LessThan75() throws {
+        #expect(BorderRawTokens.width50 < BorderRawTokens.width75)
     }
 
-    @Test func borderWidthRawToken50MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width50, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken75NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth75 >= 0)
+    @Test func widthRawToken75NotNegativeValue() throws {
+        #expect(BorderRawTokens.width75 >= 0)
     }
 
-    @Test func borderWidthRawToken75LessThan100() throws {
-        #expect(BorderRawTokens.borderWidth75 < BorderRawTokens.borderWidth100)
+    @Test func widthRawToken75LessThan100() throws {
+        #expect(BorderRawTokens.width75 < BorderRawTokens.width100)
     }
 
-    @Test func borderWidthRawToken75MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width75, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken100NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth100 >= 0)
+    @Test func widthRawToken100NotNegativeValue() throws {
+        #expect(BorderRawTokens.width100 >= 0)
     }
 
-    @Test func borderWidthRawToken100LessThan125() throws {
-        #expect(BorderRawTokens.borderWidth100 < BorderRawTokens.borderWidth125)
+    @Test func widthRawToken100LessThan125() throws {
+        #expect(BorderRawTokens.width100 < BorderRawTokens.width125)
     }
 
-    @Test func borderWidthRawToken100MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width100, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken125NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth125 >= 0)
+    @Test func widthRawToken125NotNegativeValue() throws {
+        #expect(BorderRawTokens.width125 >= 0)
     }
 
-    @Test func borderWidthRawToken125LessThan150() throws {
-        #expect(BorderRawTokens.borderWidth125 < BorderRawTokens.borderWidth150)
+    @Test func widthRawToken125LessThan150() throws {
+        #expect(BorderRawTokens.width125 < BorderRawTokens.width150)
     }
 
-    @Test func borderWidthRawToken125MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth125, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken125MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width125, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken150NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth150 >= 0)
+    @Test func widthRawToken150NotNegativeValue() throws {
+        #expect(BorderRawTokens.width150 >= 0)
     }
 
-    @Test func borderWidthRawToken150LessThan200() throws {
-        #expect(BorderRawTokens.borderWidth150 < BorderRawTokens.borderWidth200)
+    @Test func widthRawToken150LessThan200() throws {
+        #expect(BorderRawTokens.width150 < BorderRawTokens.width200)
     }
 
-    @Test func borderWidthRawToken150MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width150, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderWidthRawToken200NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderWidth200 >= 0)
+    @Test func widthRawToken200NotNegativeValue() throws {
+        #expect(BorderRawTokens.width200 >= 0)
     }
 
-    @Test func borderWidthRawToken200MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
+    @Test func widthRawToken200MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.width200, factor: BorderRawTokens.borderBase)
     }
 
     /// Border width raw tokens must be different
     @Test func nonEqualityForBorderWidths() throws {
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth25)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth50)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth75)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth100)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth125)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth150)
-        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width25)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width50)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width75)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width100)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width125)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width150)
+        #expect(BorderRawTokens.width0 != BorderRawTokens.width200)
 
-        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth75)
-        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth100)
-        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth125)
-        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth150)
-        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width50 != BorderRawTokens.width75)
+        #expect(BorderRawTokens.width50 != BorderRawTokens.width100)
+        #expect(BorderRawTokens.width50 != BorderRawTokens.width125)
+        #expect(BorderRawTokens.width50 != BorderRawTokens.width150)
+        #expect(BorderRawTokens.width50 != BorderRawTokens.width200)
 
-        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth100)
-        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth125)
-        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth150)
-        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width75 != BorderRawTokens.width100)
+        #expect(BorderRawTokens.width75 != BorderRawTokens.width125)
+        #expect(BorderRawTokens.width75 != BorderRawTokens.width150)
+        #expect(BorderRawTokens.width75 != BorderRawTokens.width200)
 
-        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth125)
-        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth150)
-        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width100 != BorderRawTokens.width125)
+        #expect(BorderRawTokens.width100 != BorderRawTokens.width150)
+        #expect(BorderRawTokens.width100 != BorderRawTokens.width200)
 
-        #expect(BorderRawTokens.borderWidth125 != BorderRawTokens.borderWidth150)
-        #expect(BorderRawTokens.borderWidth125 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width125 != BorderRawTokens.width150)
+        #expect(BorderRawTokens.width125 != BorderRawTokens.width200)
 
-        #expect(BorderRawTokens.borderWidth150 != BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.width150 != BorderRawTokens.width200)
     }
 
     // MARK: - Primitive token - Border - Radius
 
-    @Test func borderRadiusRawToken0NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius0 >= 0)
+    @Test func radiusRawToken0NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius0 >= 0)
     }
 
-    @Test func borderRadiusRawToken0LessThan25() throws {
-        #expect(BorderRawTokens.borderRadius0 < BorderRawTokens.borderRadius25)
+    @Test func radiusRawToken0LessThan25() throws {
+        #expect(BorderRawTokens.radius0 < BorderRawTokens.radius25)
     }
 
-    @Test func borderRadiusRawToken0MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius0, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken25NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius25 >= 0)
+    @Test func radiusRawToken25NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius25 >= 0)
     }
 
-    @Test func borderRadiusRawToken25LessThan50() throws {
-        #expect(BorderRawTokens.borderRadius25 < BorderRawTokens.borderRadius50)
+    @Test func radiusRawToken25LessThan50() throws {
+        #expect(BorderRawTokens.radius25 < BorderRawTokens.radius50)
     }
 
-    @Test func borderRadiusRawToken25MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius25, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken50NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius50 >= 0)
+    @Test func radiusRawToken50NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius50 >= 0)
     }
 
-    @Test func borderRadiusRawToken50LessThan75() throws {
-        #expect(BorderRawTokens.borderRadius50 < BorderRawTokens.borderRadius75)
+    @Test func radiusRawToken50LessThan75() throws {
+        #expect(BorderRawTokens.radius50 < BorderRawTokens.radius75)
     }
 
-    @Test func borderRadiusRawToken50MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius50, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken75NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius75 >= 0)
+    @Test func radiusRawToken75NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius75 >= 0)
     }
 
-    @Test func borderRadiusRawToken75LessThan100() throws {
-        #expect(BorderRawTokens.borderRadius75 < BorderRawTokens.borderRadius100)
+    @Test func radiusRawToken75LessThan100() throws {
+        #expect(BorderRawTokens.radius75 < BorderRawTokens.radius100)
     }
 
-    @Test func borderRadiusRawToken75MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius75, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken100NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius100 >= 0)
+    @Test func radiusRawToken100NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius100 >= 0)
     }
 
-    @Test func borderRadiusRawToken100LessThan150() throws {
-        #expect(BorderRawTokens.borderRadius100 < BorderRawTokens.borderRadius150)
+    @Test func radiusRawToken100LessThan150() throws {
+        #expect(BorderRawTokens.radius100 < BorderRawTokens.radius150)
     }
 
-    @Test func borderRadiusRawToken100MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius100, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken150NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius150 >= 0)
+    @Test func radiusRawToken150NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius150 >= 0)
     }
 
-    @Test func borderRadiusRawToken150LessThan200() throws {
-        #expect(BorderRawTokens.borderRadius150 < BorderRawTokens.borderRadius200)
+    @Test func radiusRawToken150LessThan200() throws {
+        #expect(BorderRawTokens.radius150 < BorderRawTokens.radius200)
     }
 
-    @Test func borderRadiusRawToken150MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius150, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken200NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius200 >= 0)
+    @Test func radiusRawToken200NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius200 >= 0)
     }
 
-    @Test func borderRadiusRawToken200LessThan300() throws {
-        #expect(BorderRawTokens.borderRadius200 < BorderRawTokens.borderRadius300)
+    @Test func radiusRawToken200LessThan300() throws {
+        #expect(BorderRawTokens.radius200 < BorderRawTokens.radius300)
     }
 
-    @Test func borderRadiusRawToken200MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken200MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius200, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken300NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius300 >= 0)
+    @Test func radiusRawToken300NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius300 >= 0)
     }
 
-    @Test func borderRadiusRawToken300LessThan400() throws {
-        #expect(BorderRawTokens.borderRadius300 < BorderRawTokens.borderRadius400)
+    @Test func radiusRawToken300LessThan400() throws {
+        #expect(BorderRawTokens.radius300 < BorderRawTokens.radius400)
     }
 
-    @Test func borderRadiusRawToken300MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken300MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius300, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken400NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius400 >= 0)
+    @Test func radiusRawToken400NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius400 >= 0)
     }
 
-    @Test func borderRadiusRawToken400LessThan500() throws {
-        #expect(BorderRawTokens.borderRadius400 < BorderRawTokens.borderRadius500)
+    @Test func radiusRawToken400LessThan500() throws {
+        #expect(BorderRawTokens.radius400 < BorderRawTokens.radius500)
     }
 
-    @Test func borderRadiusRawToken400MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken400MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius400, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken500NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius500 >= 0)
+    @Test func radiusRawToken500NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius500 >= 0)
     }
 
-    @Test func borderRadiusRawToken500LessThan600() throws {
-        #expect(BorderRawTokens.borderRadius500 < BorderRawTokens.borderRadius600)
+    @Test func radiusRawToken500LessThan600() throws {
+        #expect(BorderRawTokens.radius500 < BorderRawTokens.radius600)
     }
 
-    @Test func borderRadiusRawToken500MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken500MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius500, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken600NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius600 >= 0)
+    @Test func radiusRawToken600NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius600 >= 0)
     }
 
-    @Test func borderRadiusRawToken600LessThan800() throws {
-        #expect(BorderRawTokens.borderRadius600 < BorderRawTokens.borderRadius800)
+    @Test func radiusRawToken600LessThan800() throws {
+        #expect(BorderRawTokens.radius600 < BorderRawTokens.radius800)
     }
 
-    @Test func borderRadiusRawToken600MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken600MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius600, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken800NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius800 >= 0)
+    @Test func radiusRawToken800NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius800 >= 0)
     }
 
-    @Test func borderRadiusRawToken800MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
+    @Test func radiusRawToken800MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.radius800, factor: BorderRawTokens.borderBase)
     }
 
-    @Test func borderRadiusRawToken800LessThan9999() throws {
-        #expect(BorderRawTokens.borderRadius800 < BorderRawTokens.borderRadius9999)
+    @Test func radiusRawToken800LessThan9999() throws {
+        #expect(BorderRawTokens.radius800 < BorderRawTokens.radius9999)
     }
 
-    @Test func borderRadiusRawToken9999NotNegativeValue() throws {
-        #expect(BorderRawTokens.borderRadius9999 >= 0)
+    @Test func radiusRawToken9999NotNegativeValue() throws {
+        #expect(BorderRawTokens.radius9999 >= 0)
     }
 
     /// Border radius raw tokens must be different
     @Test func nonEqualityForBorderRadiuses() throws {
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius25)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius50)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius75)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius100)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius150)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius25)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius50)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius75)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius100)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius150)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius0 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius50)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius75)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius100)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius150)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius50)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius75)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius100)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius150)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius25 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius75)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius100)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius150)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius75)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius100)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius150)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius50 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius100)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius150)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius100)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius150)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius75 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius150)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius150)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius100 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius200)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius200)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius150 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius300)
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius300)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius200 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius400)
-        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius300 != BorderRawTokens.radius400)
+        #expect(BorderRawTokens.radius300 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius300 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius300 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius300 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius500)
-        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius400 != BorderRawTokens.radius500)
+        #expect(BorderRawTokens.radius400 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius400 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius400 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius600)
-        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius500 != BorderRawTokens.radius600)
+        #expect(BorderRawTokens.radius500 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius500 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius600 != BorderRawTokens.borderRadius800)
-        #expect(BorderRawTokens.borderRadius600 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius600 != BorderRawTokens.radius800)
+        #expect(BorderRawTokens.radius600 != BorderRawTokens.radius9999)
 
-        #expect(BorderRawTokens.borderRadius800 != BorderRawTokens.borderRadius9999)
+        #expect(BorderRawTokens.radius800 != BorderRawTokens.radius9999)
     }
 
     // MARK: - Primitive token - Border - Style
 
-    @Test func borderStyleDashed() throws {
-        #expect(BorderRawTokens.borderStyleDashed == "dashed")
+    @Test func styeDashed() throws {
+        #expect(BorderRawTokens.styeDashed == "dashed")
     }
 
-    @Test func borderStyleDotted() throws {
-        #expect(BorderRawTokens.borderStyleDotted == "dotted")
+    @Test func styeDotted() throws {
+        #expect(BorderRawTokens.styeDotted == "dotted")
     }
 
-    @Test func borderStyleNone() throws {
-        #expect(BorderRawTokens.borderStyleNone == "none")
+    @Test func styeNone() throws {
+        #expect(BorderRawTokens.styeNone == "none")
     }
 
-    @Test func borderStyleSolid() throws {
-        #expect(BorderRawTokens.borderStyleSolid == "solid")
+    @Test func styeSolid() throws {
+        #expect(BorderRawTokens.styeSolid == "solid")
     }
 
     /// Border styles raw tokens must be different
     @Test func nonEqualityForBorderStyles() throws {
-        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleSolid)
-        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleDashed)
-        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleDotted)
+        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeSolid)
+        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeDashed)
+        #expect(BorderRawTokens.styeNone != BorderRawTokens.styeDotted)
 
-        #expect(BorderRawTokens.borderStyleSolid != BorderRawTokens.borderStyleDashed)
-        #expect(BorderRawTokens.borderStyleSolid != BorderRawTokens.borderStyleDotted)
+        #expect(BorderRawTokens.styeSolid != BorderRawTokens.styeDashed)
+        #expect(BorderRawTokens.styeSolid != BorderRawTokens.styeDotted)
 
-        #expect(BorderRawTokens.borderStyleDashed != BorderRawTokens.borderStyleDotted)
+        #expect(BorderRawTokens.styeDashed != BorderRawTokens.styeDotted)
     }
 }
 

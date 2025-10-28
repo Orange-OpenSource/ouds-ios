@@ -33,7 +33,7 @@ import OUDSFoundations
 ///
 ///         override var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
 ///
-///         override var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthmediumt }
+///         override var chipBorderWidthDefault: BorderWidthSemanticToken { borders.widthmediumt }
 ///
 ///         override var chipColorBgFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
 ///

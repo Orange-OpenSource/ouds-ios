@@ -222,7 +222,7 @@ public struct OUDSBadge: View {
                maxHeight: count != nil ? nil : frameSize, // if count defined, i.e. means a text, don't limit height
                alignment: .center)
         .oudsBackground(backgroundColor)
-        .clipShape(RoundedRectangle(cornerRadius: theme.borders.borderRadiusPill))
+        .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
         .accessibilityHidden(count == nil && icon == nil) // Hide badge from A11Y tools if no content inside
         .accessibilityLabel(accessibilityLabel ?? (count != nil ? "\(count!)" : ""))
     }

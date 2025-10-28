@@ -85,14 +85,14 @@ extension SoshThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderRadiusPill
-    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthThin
-    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthThin }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
+    /// Has for value token borders.radiusPill
+    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.widthNone
+    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
+    /// Has for value token borders.widthThin
+    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
+    /// Has for value token borders.widthDefault
+    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token spaces.spacePaddingBlock2xsmall
     @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
     /// Has for value token spaces.spacePaddingBlockXsmall

@@ -30,10 +30,10 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value token colors.colorContentDefault
     @objc open var controlItemColorContentLoader: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token borders.borderRadiusNone
-    @objc open var controlItemBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
-    /// Has for value token borders.borderRadiusDefault
-    @objc open var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    /// Has for value token borders.radiusNone
+    @objc open var controlItemBorderRadius: BorderRadiusSemanticToken { borders.radiusNone }
+    /// Has for value token borders.radiusDefault
+    @objc open var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token spaces.spacePaddingBlockMedium
     @objc open var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
     /// Has for value token spaces.spacePaddingInlineLarge

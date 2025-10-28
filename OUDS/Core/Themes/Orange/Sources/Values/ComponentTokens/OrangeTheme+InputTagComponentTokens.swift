@@ -43,8 +43,8 @@ extension OrangeThemeInputTagComponentTokensProvider: InputTagComponentTokens {
     @objc open var inputTagColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionFocus
     @objc open var inputTagColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderWidthDefault
-    @objc open var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc open var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.widthDefault
+    @objc open var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc open var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
 }

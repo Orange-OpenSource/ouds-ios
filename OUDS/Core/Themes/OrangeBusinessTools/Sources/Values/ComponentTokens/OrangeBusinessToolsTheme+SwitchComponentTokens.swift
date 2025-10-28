@@ -35,10 +35,10 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
     @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
-    /// Has for value token borders.borderRadiusPill
-    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderRadiusPill
-    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusPill }
+    /// Has for value token borders.radiusPill
+    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.radiusPill
+    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token opacities.opacityOpaque
     @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
     /// Has for value token spaces.spacePaddingInline3xsmall

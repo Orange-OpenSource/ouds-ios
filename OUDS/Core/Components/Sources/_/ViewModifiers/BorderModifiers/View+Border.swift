@@ -24,9 +24,9 @@ extension View {
     ///    var body: some View {
     ///        SomeView()
     ///        .oudsBorder(
-    ///             style: theme.borders.borderStyleDefault,
-    ///             width: theme.borders.borderWidthThin,
-    ///             radius: theme.borders.borderRadiusNone,
+    ///             style: theme.borders.styeDefault,
+    ///             width: theme.borders.widthThin,
+    ///             radius: theme.borders.radiusNone,
     ///             color: theme.colors.colorBorderDefault)
     ///     }
     /// ```

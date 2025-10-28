@@ -243,14 +243,14 @@ class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
 // Token provider for border
 
 class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
-    override var borderStyleDefault: BorderStyleSemanticToken {
-        BorderRawTokens.borderStyleDashed
+    override var styeDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styeDashed
     }
-    override var borderWidthMedium: BorderWidthSemanticToken {
-        BorderRawTokens.borderWidth100
+    override var widthMedium: BorderWidthSemanticToken {
+        BorderRawTokens.width100
     }
-    override var borderRadiusLarge: BorderRadiusSemanticToken {
-        BorderRawTokens.borderRadius800
+    override var radiusLarge: BorderRadiusSemanticToken {
+        BorderRawTokens.radius800
     }
 }
 
@@ -299,8 +299,8 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 
 class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
     override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
-    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
     override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 }

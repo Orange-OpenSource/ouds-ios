@@ -32,9 +32,9 @@ import OUDSFoundations
 ///
 ///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
 ///
-///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
+///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
 ///
-///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMd }
+///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
 ///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 ///

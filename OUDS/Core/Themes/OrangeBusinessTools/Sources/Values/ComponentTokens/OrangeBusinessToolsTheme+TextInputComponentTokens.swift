@@ -30,14 +30,14 @@ extension OrangeBusinessToolsThemeTextInputComponentTokensProvider: TextInputCom
     @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
     /// Has for value token colors.colorBorderEmphasized
     @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token borders.borderRadiusSmall
-    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.borderRadiusSmall }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.radiusDefault
+    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusSmall
+    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusSmall }
+    /// Has for value token borders.widthDefault
+    @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.spacePaddingInlineLarge
     @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
     /// Has for value token spaces.spacePaddingInline2xsmall

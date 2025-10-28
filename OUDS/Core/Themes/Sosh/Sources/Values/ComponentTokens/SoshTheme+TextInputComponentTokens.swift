@@ -30,14 +30,14 @@ extension SoshThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
     /// Has for value token colors.colorBorderEmphasized
     @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token borders.borderWidthThin
-    @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThin }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.radiusDefault
+    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusDefault
+    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.widthThin
+    @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthThin }
+    /// Has for value token borders.widthMedium
+    @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.spacePaddingInlineLarge
     @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.spacePaddingInlineLarge }
     /// Has for value token spaces.spacePaddingInline2xsmall

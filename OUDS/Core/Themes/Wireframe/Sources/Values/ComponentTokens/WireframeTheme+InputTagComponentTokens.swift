@@ -43,8 +43,8 @@ extension WireframeThemeInputTagComponentTokensProvider: InputTagComponentTokens
     @objc public final var inputTagColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token colors.colorActionFocus
     @objc public final var inputTagColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.widthDefault
+    @objc public final var inputTagBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc public final var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
 }

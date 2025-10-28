@@ -39,7 +39,7 @@ import OUDSFoundations
 ///
 ///         override var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 ///
-///         override var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthMedium}
+///         override var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthMedium}
 ///
 ///         // ...
 ///     }

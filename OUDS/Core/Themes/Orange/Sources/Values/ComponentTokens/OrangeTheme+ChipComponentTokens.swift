@@ -85,14 +85,14 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc open var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderRadiusPill
-    @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthMedium
-    @objc open var chipBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
-    /// Has for value token borders.borderWidthDefault
-    @objc open var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc open var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.radiusPill
+    @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.widthMedium
+    @objc open var chipBorderWidthSelected: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.widthDefault
+    @objc open var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc open var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.spacePaddingBlock2xsmall
     @objc open var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
     /// Has for value token spaces.spacePaddingBlockXsmall

@@ -37,9 +37,9 @@ struct ControlItemBordersModifier: ViewModifier {
     func body(content: Content) -> some View {
         if layoutData.isOutlined, let borderColor {
             content
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthDefault,
-                            radius: borderRadius,
+                .oudsBorder(style: theme.borders.styeDefault,
+                            width: theme.borders.widthDefault,
+                            radius: radius,
                             color: borderColor)
         } else {
             if layoutData.hasDivider {
@@ -97,7 +97,7 @@ struct ControlItemBordersModifier: ViewModifier {
         }
     }
 
-    private var borderRadius: BorderRadiusSemanticToken {
+    private var radius: BorderRadiusSemanticToken {
         interactionState == .readOnly ?
             theme.controlItem.controlItemBorderRadiusItemOnly :
             theme.controlItem.controlItemBorderRadius

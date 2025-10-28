@@ -85,14 +85,14 @@ extension OrangeBusinessToolsThemeChipComponentTokensProvider: ChipComponentToke
     @objc public final var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderRadiusPill
-    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.radiusPill
+    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.widthMedium
+    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.widthDefault
+    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.spacePaddingBlock2xsmall
     @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
     /// Has for value token spaces.spacePaddingBlockXsmall

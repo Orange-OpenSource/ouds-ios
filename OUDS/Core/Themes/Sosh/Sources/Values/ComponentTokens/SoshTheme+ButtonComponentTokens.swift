@@ -95,18 +95,18 @@ extension SoshThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc public final var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var buttonBorderRadiusDefault: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var buttonBorderRadiusRounded: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token borders.borderRadiusPill
-    @objc public final var buttonBorderRadiusSocial: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
+    /// Has for value token borders.radiusDefault
+    @objc public final var buttonBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusDefault
+    @objc public final var buttonBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusPill
+    @objc public final var buttonBorderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
+    /// Has for value token borders.widthDefault
+    @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthDefault
+    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthNone
+    @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token spaces.spaceInsetMedium
     @objc public final var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
     /// Has for value token spaces.spacePaddingBlockMedium

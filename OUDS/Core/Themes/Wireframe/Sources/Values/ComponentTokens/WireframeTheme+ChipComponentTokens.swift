@@ -85,14 +85,14 @@ extension WireframeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     /// Has for value token colors.colorActionFocus
     @objc public final var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value token borders.borderRadiusLarge
-    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusLarge }
-    /// Has for value token borders.borderWidthNone
-    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthNone }
-    /// Has for value token borders.borderWidthDefault
-    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthDefault }
-    /// Has for value token borders.borderWidthMedium
-    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    /// Has for value token borders.radiusLarge
+    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.radiusLarge }
+    /// Has for value token borders.widthNone
+    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
+    /// Has for value token borders.widthDefault
+    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium
+    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.spacePaddingBlock2xsmall
     @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlock2xsmall }
     /// Has for value token spaces.spacePaddingBlockXsmall

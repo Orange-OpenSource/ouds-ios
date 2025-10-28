@@ -30,10 +30,10 @@ extension OrangeBusinessToolsThemeControlItemComponentTokensProvider: ControlIte
     @objc public final var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     /// Has for value token colors.colorContentDefault
     @objc public final var controlItemColorContentLoader: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token borders.borderRadiusNone
-    @objc public final var controlItemBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    /// Has for value token borders.radiusNone
+    @objc public final var controlItemBorderRadius: BorderRadiusSemanticToken { borders.radiusNone }
+    /// Has for value token borders.radiusDefault
+    @objc public final var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token spaces.spacePaddingBlockMedium
     @objc public final var controlItemSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
     /// Has for value token spaces.spacePaddingInlineLarge

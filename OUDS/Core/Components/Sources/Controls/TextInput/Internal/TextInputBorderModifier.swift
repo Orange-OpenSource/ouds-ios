@@ -33,7 +33,7 @@ struct TextInputBorderModifier: ViewModifier {
                 content
             } else {
                 content
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                    .oudsBorder(style: theme.borders.styeDefault,
                                 width: size,
                                 radius: cornerRadius,
                                 color: outlinedColor)
@@ -41,7 +41,7 @@ struct TextInputBorderModifier: ViewModifier {
         } else {
             if status == .readOnly {
                 content
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                    .oudsBorder(style: theme.borders.styeDefault,
                                 width: theme.textInput.textInputBorderWidthDefault,
                                 radius: cornerRadius,
                                 color: theme.colors.colorBorderMuted)
