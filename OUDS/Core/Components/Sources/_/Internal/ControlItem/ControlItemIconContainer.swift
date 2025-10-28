@@ -68,22 +68,22 @@ struct ControlItemIconContainer: View {
     private var iconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentDefault
+            theme.colors.contentDefault
         case .disabled:
-            theme.colors.colorContentDisabled
+            theme.colors.contentDisabled
         }
     }
 
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         case .pressed:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         case .hover:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         case .readOnly, .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

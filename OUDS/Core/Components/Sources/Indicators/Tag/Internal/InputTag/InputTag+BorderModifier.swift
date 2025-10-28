@@ -57,10 +57,10 @@ struct InputTagBorderModifier: ViewModifier {
         case .pressed:
             theme.inputTag.inputTagColorBorderPressed
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         case .readOnly:
             // Should not appear
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

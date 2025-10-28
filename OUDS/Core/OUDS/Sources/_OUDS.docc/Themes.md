@@ -152,10 +152,10 @@ class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 // Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
-    override var colorBgSecondary: MultipleColorSemanticTokens {
+    override var bgSecondary: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
-    override var colorActionEnabled: MultipleColorSemanticTokens {
+    override var actionEnabled: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
     }
 }

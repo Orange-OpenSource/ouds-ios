@@ -57,7 +57,7 @@ struct ControlItemBordersModifier: ViewModifier {
     // MARK: Private helpers
 
     private var dividerColor: MultipleColorSemanticTokens {
-        layoutData.isError ? errorColor : theme.colors.colorBorderDefault
+        layoutData.isError ? errorColor : theme.colors.borderDefault
     }
 
     private var borderColor: MultipleColorSemanticTokens? {
@@ -67,11 +67,11 @@ struct ControlItemBordersModifier: ViewModifier {
     private var errorColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         case .pressed:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         case .hover:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         case .readOnly, .disabled:
             OL.fatal("An outlined ControlItem with a disabled or read-only state and an error situation has been detected, which is not allowed."
                 + " Only non-error / non-read-only situation are allowed to have a disabled state.")
@@ -82,18 +82,18 @@ struct ControlItemBordersModifier: ViewModifier {
         switch interactionState {
         case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                isOn ? theme.colors.colorContentDefault : nil
+                isOn ? theme.colors.contentDefault : nil
             } else {
-                isOn ? theme.colors.colorActionSelected : nil
+                isOn ? theme.colors.actionSelected : nil
             }
         case .hover:
-            theme.colors.colorActionHover
+            theme.colors.actionHover
         case .pressed:
-            theme.colors.colorActionPressed
+            theme.colors.actionPressed
         case .disabled:
-            isOn ? theme.colors.colorActionDisabled : nil
+            isOn ? theme.colors.actionDisabled : nil
         case .readOnly:
-            isOn ? theme.colors.colorActionDisabled : nil
+            isOn ? theme.colors.actionDisabled : nil
         }
     }
 

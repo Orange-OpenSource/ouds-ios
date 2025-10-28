@@ -90,7 +90,7 @@ struct ButtonBorderModifier: ViewModifier {
             useMonochrome ? theme.button.buttonMonoColorBorderDefaultPressed : theme.button.buttonColorBorderDefaultPressed
         case .loading:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
                 useMonochrome ? theme.button.buttonMonoColorBorderDefaultLoading : theme.button.buttonColorBorderDefaultLoading
             }

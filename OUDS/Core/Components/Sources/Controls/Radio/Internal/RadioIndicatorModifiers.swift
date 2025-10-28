@@ -78,22 +78,22 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
-                isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+                isOn ? theme.colors.actionSelected : theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
+        isError ? theme.colors.actionNegativeHover : theme.colors.actionHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
+        isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
@@ -101,7 +101,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 }
 
@@ -198,29 +198,29 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
-                isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+                isOn ? theme.colors.actionSelected : theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         } else {
-            theme.colors.colorActionHover
+            theme.colors.actionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         } else {
-            theme.colors.colorActionPressed
+            theme.colors.actionPressed
         }
     }
 
@@ -229,7 +229,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 
     // MARK: - Border width

@@ -27,7 +27,7 @@ extension View {
     ///             style: theme.borders.styeDefault,
     ///             width: theme.borders.widthThin,
     ///             radius: theme.borders.radiusNone,
-    ///             color: theme.colors.colorBorderDefault)
+    ///             color: theme.colors.borderDefault)
     ///     }
     /// ```
     ///

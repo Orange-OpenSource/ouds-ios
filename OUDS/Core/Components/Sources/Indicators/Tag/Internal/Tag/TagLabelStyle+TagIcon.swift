@@ -42,7 +42,7 @@ struct TagLoader: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        LoaderIndicator(color: theme.colors.colorContentDefault.color(for: colorScheme))
+        LoaderIndicator(color: theme.colors.contentDefault.color(for: colorScheme))
             .padding(.all, padding)
     }
 
@@ -137,41 +137,41 @@ struct TagAsset: View {
                 mutedColor
             }
         } else {
-            theme.colors.colorContentOnActionDisabled
+            theme.colors.contentOnActionDisabled
         }
     }
 
     private var emphasizedColor: MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.contentInverse
         case .accent:
-            theme.colors.colorContentOnStatusAccentEmphasized
+            theme.colors.contentOnStatusAccentEmphasized
         case .positive:
-            theme.colors.colorContentOnStatusPositiveEmphasized
+            theme.colors.contentOnStatusPositiveEmphasized
         case .warning:
-            theme.colors.colorContentOnStatusWarningEmphasized
+            theme.colors.contentOnStatusWarningEmphasized
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         case .info:
-            theme.colors.colorContentOnStatusInfoEmphasized
+            theme.colors.contentOnStatusInfoEmphasized
         }
     }
 
     private var mutedColor: MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorContentDefault
+            theme.colors.contentDefault
         case .accent:
-            theme.colors.colorContentStatusAccent
+            theme.colors.contentStatusAccent
         case .positive:
-            theme.colors.colorContentStatusPositive
+            theme.colors.contentStatusPositive
         case .warning:
-            theme.colors.colorContentStatusWarning
+            theme.colors.contentStatusWarning
         case .negative:
-            theme.colors.colorContentStatusNegative
+            theme.colors.contentStatusNegative
         case .info:
-            theme.colors.colorContentStatusInfo
+            theme.colors.contentStatusInfo
         }
     }
 

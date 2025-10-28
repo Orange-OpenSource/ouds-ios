@@ -40,10 +40,10 @@ struct InputTagForegroundModifier: ViewModifier {
         case .pressed:
             theme.inputTag.inputTagColorContentPressed
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         case .readOnly:
             // should not appear
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

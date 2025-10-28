@@ -22,14 +22,14 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentTokens {
-    /// Has for value token colors.colorBorderDefault
-    @objc public final var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.colorBorderDefault }
-    /// Has for value token colors.colorActionHover
-    @objc public final var textInputColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorActionPressed
-    @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionPressed }
-    /// Has for value token colors.colorActionLoading
-    @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    /// Has for value token colors.borderDefault
+    @objc public final var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    /// Has for value token colors.actionHover
+    @objc public final var textInputColorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    /// Has for value token colors.actionPressed
+    @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.actionPressed }
+    /// Has for value token colors.actionLoading
+    @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.actionLoading }
     /// Has for value token borders.radiusDefault
     @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusDefault

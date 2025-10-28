@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+///         override var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
 ///         override var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spacePaddingInlineTall }
 ///

@@ -17,7 +17,7 @@ struct ContentView: View {
             Group {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                     Text("OUDS Tutorial for new comers")
-                        .oudsForegroundColor(theme.colors.colorContentBrandPrimary)
+                        .oudsForegroundColor(theme.colors.contentBrandPrimary)
 
                     Text("Let's play with components, themes and tokens!")
 
@@ -55,7 +55,7 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, theme.spaces.spaceFixedSmall)
                 }
-                .oudsBackground(theme.colors.colorBgTertiary)
+                .oudsBackground(theme.colors.bgTertiary)
                 .padding(.bottom, theme.spaces.spaceFixedLarge)
 
             }.padding(.horizontal, theme.spaces.spaceFixedSmall)

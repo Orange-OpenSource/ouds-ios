@@ -38,18 +38,18 @@ struct LabelContainer: View {
     private var color: MultipleColorSemanticTokens {
         switch status {
         case .enabled, .loading, .readOnly:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .error:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativeFocus
+                theme.colors.actionNegativeFocus
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

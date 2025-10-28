@@ -85,11 +85,11 @@ struct ControlItemLabel: View {
         if layoutData.isError {
             switch interactionState {
             case .enabled:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             case .pressed:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .readOnly, .disabled:
                 OL.fatal("An component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                     + " Only non-error situation are allowed to have a disabled state or a read only mode.")
@@ -97,9 +97,9 @@ struct ControlItemLabel: View {
         } else {
             switch interactionState {
             case .enabled, .hover, .pressed, .readOnly:
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             case .disabled:
-                theme.colors.colorContentDisabled
+                theme.colors.contentDisabled
             }
         }
     }
@@ -107,13 +107,13 @@ struct ControlItemLabel: View {
     private var helperColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .disabled:
-            theme.colors.colorContentDisabled
+            theme.colors.contentDisabled
         }
     }
 
     private var additionalLabelColor: MultipleColorSemanticTokens {
-        interactionState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault
+        interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
     }
 }

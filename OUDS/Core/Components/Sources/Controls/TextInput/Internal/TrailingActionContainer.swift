@@ -57,11 +57,11 @@ struct TrailingActionContainer: View {
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .idle:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         case .focused:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         case .hover:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         }
     }
 

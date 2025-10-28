@@ -130,26 +130,26 @@ extension SoshThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTok
             OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Orange Theme")
         }
         // List here all cases where light and dark mode values are NOT undefined
-        if mode.isEqual(onBgPrimary) { return colors.colorBgPrimary }
-        if mode.isEqual(onBgSecondary) { return colors.colorBgSecondary }
-        if mode.isEqual(onBgTertiary) { return colors.colorBgTertiary }
-        if mode.isEqual(onBrandPrimary) { return colors.colorSurfaceBrandPrimary }
-        if mode.isEqual(onBrandSecondary) { return colors.colorSurfaceBrandSecondary }
-        if mode.isEqual(onBrandTertiary) { return colors.colorSurfaceBrandTertiary }
-        if mode.isEqual(onOverlayModal) { return colors.colorOverlayModal }
-        if mode.isEqual(onStatusAccentEmphasized) { return colors.colorSurfaceStatusAccentEmphasized }
-        if mode.isEqual(onStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
-        if mode.isEqual(onStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
-        if mode.isEqual(onStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
-        if mode.isEqual(onStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
-        if mode.isEqual(onStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
-        if mode.isEqual(onStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
-        if mode.isEqual(onStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
-        if mode.isEqual(onStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
-        if mode.isEqual(onStatusWarningMuted) { return colors.colorSurfaceStatusWarningMuted }
-        if mode.isEqual(onOverlayDropdown) { return colors.colorOverlayDropdown }
-        if mode.isEqual(onOverlayTooltip) { return colors.colorOverlayModal } // FIXME: Not sure of this value
-        if mode.isEqual(navigationBar) { return colors.colorOverlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
+        if mode.isEqual(onBgSecondary) { return colors.bgSecondary }
+        if mode.isEqual(onBgTertiary) { return colors.bgTertiary }
+        if mode.isEqual(onBrandPrimary) { return colors.surfaceBrandPrimary }
+        if mode.isEqual(onBrandSecondary) { return colors.surfaceBrandSecondary }
+        if mode.isEqual(onBrandTertiary) { return colors.surfaceBrandTertiary }
+        if mode.isEqual(onOverlayModal) { return colors.overlayModal }
+        if mode.isEqual(onStatusAccentEmphasized) { return colors.surfaceStatusAccentEmphasized }
+        if mode.isEqual(onStatusAccentMuted) { return colors.surfaceStatusAccentMuted }
+        if mode.isEqual(onStatusInfoEmphasized) { return colors.surfaceStatusInfoEmphasized }
+        if mode.isEqual(onStatusInfoMuted) { return colors.surfaceStatusInfoMuted }
+        if mode.isEqual(onStatusNegativeEmphasized) { return colors.surfaceStatusNegativeEmphasized }
+        if mode.isEqual(onStatusNegativeMuted) { return colors.surfaceStatusNegativeMuted }
+        if mode.isEqual(onStatusPositiveEmphasized) { return colors.surfaceStatusPositiveEmphasized }
+        if mode.isEqual(onStatusPositiveMuted) { return colors.surfaceStatusPositiveMuted }
+        if mode.isEqual(onStatusWarningEmphasized) { return colors.surfaceStatusWarningEmphasized }
+        if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
+        if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown }
+        if mode.isEqual(onOverlayTooltip) { return colors.overlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(navigationBar) { return colors.overlayModal } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity

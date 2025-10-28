@@ -34,7 +34,7 @@ import OUDSFoundations
 ///
 ///         override var inputTagBorderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var inputTagColorBgPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+///         override var inputTagColorBgPressed: MultipleColorSemanticTokens { colors.actionPressed }
 ///
 ///         // ...
 ///     }

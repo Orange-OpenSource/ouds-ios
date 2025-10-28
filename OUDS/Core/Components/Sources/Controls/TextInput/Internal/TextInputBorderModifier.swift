@@ -44,7 +44,7 @@ struct TextInputBorderModifier: ViewModifier {
                     .oudsBorder(style: theme.borders.styeDefault,
                                 width: theme.textInput.textInputBorderWidthDefault,
                                 radius: cornerRadius,
-                                color: theme.colors.colorBorderMuted)
+                                color: theme.colors.borderMuted)
             } else {
                 ZStack(alignment: .bottomLeading) {
                     content
@@ -89,21 +89,21 @@ struct TextInputBorderModifier: ViewModifier {
         case .error:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
 
         case .loading:
             theme.textInput.textInputColorBorderLoading
 
         case .readOnly:
-            theme.colors.colorBorderMuted
+            theme.colors.borderMuted
 
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 
@@ -121,18 +121,18 @@ struct TextInputBorderModifier: ViewModifier {
         case .error:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
         case .loading:
             theme.textInput.textInputColorBorderLoading
         case .readOnly:
-            theme.colors.colorActionDisabled // Should not appear
+            theme.colors.actionDisabled // Should not appear
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

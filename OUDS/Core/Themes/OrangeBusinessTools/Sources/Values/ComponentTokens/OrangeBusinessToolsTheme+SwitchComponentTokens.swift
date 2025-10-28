@@ -23,10 +23,10 @@ import OUDSTokensSemantic
 extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
     @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
-    /// Has for value token colors.colorContentDefault
-    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value token colors.colorContentDefault
-    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorContentDefault }
+    /// Has for value token colors.contentDefault
+    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.contentDefault }
+    /// Has for value token colors.contentDefault
+    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.contentDefault }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveMedium)
     @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigh, dark: colors.colorRepositoryPositiveMedium) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHigher, dark: colors.colorRepositoryPositiveLow)

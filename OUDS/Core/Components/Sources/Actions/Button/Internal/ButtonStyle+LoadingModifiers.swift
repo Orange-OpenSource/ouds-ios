@@ -47,16 +47,16 @@ struct ButtonLoadingContentModifier: ViewModifier {
         switch appearance {
         case .default:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
                 useMonochrome ? theme.button.buttonMonoColorContentDefaultLoading : theme.button.buttonColorContentDefaultLoading
             }
         case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongLoading : theme.colors.colorContentOnActionLoading
+            useMonochrome ? theme.button.buttonMonoColorContentStrongLoading : theme.colors.contentOnActionLoading
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorContentMinimalLoading : theme.button.buttonColorContentMinimalLoading
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         }
     }
 }

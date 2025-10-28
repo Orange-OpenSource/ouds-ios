@@ -41,15 +41,15 @@ public enum OUDSDividerColor {
     public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticTokens {
         switch self {
         case .default:
-            theme.colors.colorBorderDefault
+            theme.colors.borderDefault
         case .muted:
-            theme.colors.colorBorderMuted
+            theme.colors.borderMuted
         case .emphasized:
-            theme.colors.colorBorderEmphasized
+            theme.colors.borderEmphasized
         case .brandPrimary:
-            theme.colors.colorBorderBrandPrimary
+            theme.colors.borderBrandPrimary
         case .onBrandPrimary:
-            theme.colors.colorBorderOnBrandPrimary
+            theme.colors.borderOnBrandPrimary
         case .alwaysBlack:
             MultipleColorSemanticTokens(theme.colors.colorAlwaysBlack)
         case .alwaysWhite:

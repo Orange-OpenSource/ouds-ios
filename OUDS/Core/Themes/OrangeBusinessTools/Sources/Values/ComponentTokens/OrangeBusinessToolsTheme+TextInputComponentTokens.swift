@@ -22,14 +22,14 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeBusinessToolsThemeTextInputComponentTokensProvider: TextInputComponentTokens {
-    /// Has for value token colors.colorBorderDefault
-    @objc public final var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.colorBorderDefault }
-    /// Has for value token colors.colorActionHover
-    @objc public final var textInputColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorBorderEmphasized
-    @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
-    /// Has for value token colors.colorBorderEmphasized
-    @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.colorBorderEmphasized }
+    /// Has for value token colors.borderDefault
+    @objc public final var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    /// Has for value token colors.actionHover
+    @objc public final var textInputColorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    /// Has for value token colors.borderEmphasized
+    @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.borderEmphasized }
+    /// Has for value token colors.borderEmphasized
+    @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.borderEmphasized }
     /// Has for value token borders.radiusDefault
     @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusSmall

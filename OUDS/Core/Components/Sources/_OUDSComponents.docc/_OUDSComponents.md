@@ -92,7 +92,7 @@ The helper is available through `View`, and tokens through the provider of the t
              style: theme.borders.styeDefault,
              width: theme.borders.widthThin,
              radius: theme.borders.radiusNone,
-             color: theme.colors.colorBorderDefault)
+             color: theme.colors.borderDefault)
      }
 ```
 
@@ -102,22 +102,22 @@ Colors can be applied on view for background and foreground colors, foreground s
 Some helpers are available in the OUDS API to avoid to use the `color(for:ColorScheme)` method.
 
 ```swift
-    // Given a color at theme.colors.colorBgPrimary
+    // Given a color at theme.colors.bgPrimary
     // This token can have light and dark declinations 
 
     @Environment(\.theme) private var theme
 
     // Apply a foreground style
-    someView.oudsForegroundStyle(theme.colors.colorBgPrimary)
+    someView.oudsForegroundStyle(theme.colors.bgPrimary)
 
     // Apply a foreground color
-    someView.oudsForegroundColor(theme.colors.colorBgPrimary)
+    someView.oudsForegroundColor(theme.colors.bgPrimary)
 
     // Apply a background
-    someView.oudsBackground(theme.colors.colorBgPrimary)
+    someView.oudsBackground(theme.colors.bgPrimary)
 
     // Apply an accent color
-    someView.oudsAccentColor(theme.colors.colorBgPrimary)
+    someView.oudsAccentColor(theme.colors.bgPrimary)
 ```
 
 ## Change font family according to locale or preferred language

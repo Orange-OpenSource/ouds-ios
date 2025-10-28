@@ -251,38 +251,38 @@ public struct OUDSBadge: View {
     private var backgroundColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorSurfaceInverseHigh
+            theme.colors.surfaceInverseHigh
         case .accent:
-            theme.colors.colorSurfaceStatusAccentEmphasized
+            theme.colors.surfaceStatusAccentEmphasized
         case .positive:
-            theme.colors.colorSurfaceStatusPositiveEmphasized
+            theme.colors.surfaceStatusPositiveEmphasized
         case .info:
-            theme.colors.colorSurfaceStatusInfoEmphasized
+            theme.colors.surfaceStatusInfoEmphasized
         case .warning:
-            theme.colors.colorSurfaceStatusWarningEmphasized
+            theme.colors.surfaceStatusWarningEmphasized
         case .negative:
-            theme.colors.colorSurfaceStatusNegativeEmphasized
+            theme.colors.surfaceStatusNegativeEmphasized
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 
     private var contentColor: MultipleColorSemanticTokens {
         switch status {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.contentInverse
         case .accent:
-            theme.colors.colorContentOnStatusAccentEmphasized
+            theme.colors.contentOnStatusAccentEmphasized
         case .positive:
-            theme.colors.colorContentOnStatusPositiveEmphasized
+            theme.colors.contentOnStatusPositiveEmphasized
         case .info:
-            theme.colors.colorContentOnStatusInfoEmphasized
+            theme.colors.contentOnStatusInfoEmphasized
         case .warning:
-            theme.colors.colorContentOnStatusWarningEmphasized
+            theme.colors.contentOnStatusWarningEmphasized
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         case .disabled:
-            theme.colors.colorContentOnActionDisabled
+            theme.colors.contentOnActionDisabled
         }
     }
 }

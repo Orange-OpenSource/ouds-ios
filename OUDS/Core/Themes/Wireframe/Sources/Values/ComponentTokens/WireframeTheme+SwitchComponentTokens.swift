@@ -23,14 +23,14 @@ import OUDSTokensSemantic
 extension WireframeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
     @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
-    /// Has for value token colors.colorActionSelected
-    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.colorActionSelected }
-    /// Has for value token colors.colorActionHover
-    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorActionSelected
-    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
-    /// Has for value token colors.colorActionHover
-    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.colorActionHover }
+    /// Has for value token colors.actionSelected
+    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.actionSelected }
+    /// Has for value token colors.actionHover
+    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.actionHover }
+    /// Has for value token colors.actionSelected
+    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { colors.actionSelected }
+    /// Has for value token colors.actionHover
+    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh)
     @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
     /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)

@@ -63,6 +63,6 @@ struct LinkColorIndicatorModifier: ViewModifier {
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentDisabled : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.linkMonoColorContentDisabled : theme.colors.actionDisabled
     }
 }

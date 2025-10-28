@@ -56,7 +56,7 @@ struct ControlItemContent: View {
             if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
                 Text(errorText)
                     .typeLabelDefaultMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentStatusNegative)
+                    .oudsForegroundColor(theme.colors.contentStatusNegative)
                     .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
                     .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInline)
             }

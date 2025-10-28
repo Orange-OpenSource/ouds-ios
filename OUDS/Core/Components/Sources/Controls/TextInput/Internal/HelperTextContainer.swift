@@ -40,13 +40,13 @@ struct HelperErrorTextContainer: View {
     private var color: MultipleColorSemanticTokens {
         switch status {
         case .enabled:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .error:
-            theme.colors.colorContentStatusNegative
+            theme.colors.contentStatusNegative
         case .loading: // Should not appear
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .readOnly, .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 

@@ -241,389 +241,389 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
     @objc public final var colorRepositoryOpacityPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorBgPrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var bgPrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedHighest
-    @objc open var colorBgPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    @objc open var bgPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
     /// Has for value token colorRepositoryNeutralMutedLowest
-    @objc open var colorBgSecondaryLight: ColorSemanticToken { colorRepositoryNeutralMutedLowest }
+    @objc open var bgSecondaryLight: ColorSemanticToken { colorRepositoryNeutralMutedLowest }
     /// Has for value token colorRepositoryNeutralEmphasizedHigher
-    @objc open var colorBgSecondaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigher }
+    @objc open var bgSecondaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigher }
     /// Has for value token colorRepositoryAccentLowest
-    @objc open var colorBgTertiaryLight: ColorSemanticToken { colorRepositoryAccentLowest }
+    @objc open var bgTertiaryLight: ColorSemanticToken { colorRepositoryAccentLowest }
     /// Has for value token colorRepositoryAccentHigher
-    @objc open var colorBgTertiaryDark: ColorSemanticToken { colorRepositoryAccentHigher }
+    @objc open var bgTertiaryDark: ColorSemanticToken { colorRepositoryAccentHigher }
     /// Has for value token colorRepositoryNeutralEmphasizedHighest
-    @objc open var colorBgInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    @objc open var bgInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
     /// Has for value token colorRepositoryNeutralEmphasizedMedium
-    @objc open var colorBgInverseLowDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
+    @objc open var bgInverseLowDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
     /// Has for value token colorRepositoryNeutralEmphasizedHighest
-    @objc open var colorBgInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    @objc open var bgInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorBgInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var bgInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var surfaceBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var surfaceBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorSurfaceBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var surfaceBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorSurfaceBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var surfaceBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorSurfaceBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var surfaceBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorSurfaceBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var surfaceBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorSurfacePrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var surfacePrimaryLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryOpacityWhiteLowest
-    @objc open var colorSurfacePrimaryDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
+    @objc open var surfacePrimaryDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
     /// Has for value token colorRepositoryOpacityBlackLowest
-    @objc open var colorSurfaceSecondaryLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
+    @objc open var surfaceSecondaryLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc open var colorSurfaceSecondaryDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc open var surfaceSecondaryDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryOpacityAccentLow
-    @objc open var colorSurfaceTertiaryLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
+    @objc open var surfaceTertiaryLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
     /// Has for value token colorRepositoryOpacityAccentMedium
-    @objc open var colorSurfaceTertiaryDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
+    @objc open var surfaceTertiaryDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
     /// Has for value token colorRepositoryNeutralEmphasizedHigh
-    @objc open var colorSurfaceInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    @objc open var surfaceInverseLowLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
     /// Has for value token colorRepositoryOpacityWhiteLow
-    @objc open var colorSurfaceInverseLowDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
+    @objc open var surfaceInverseLowDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
     /// Has for value token colorRepositoryNeutralEmphasizedHigh
-    @objc open var colorSurfaceInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    @objc open var surfaceInverseHighLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorSurfaceInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var surfaceInverseHighDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityPositiveLow
-    @objc open var colorSurfaceStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryOpacityPositiveLow }
+    @objc open var surfaceStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryOpacityPositiveLow }
     /// Has for value token colorRepositoryOpacityPositiveMedium
-    @objc open var colorSurfaceStatusPositiveMutedDark: ColorSemanticToken { colorRepositoryOpacityPositiveMedium }
+    @objc open var surfaceStatusPositiveMutedDark: ColorSemanticToken { colorRepositoryOpacityPositiveMedium }
     /// Has for value token colorRepositoryPositiveHigher
-    @objc open var colorSurfaceStatusPositiveEmphasizedLight: ColorSemanticToken { colorRepositoryPositiveHigher }
+    @objc open var surfaceStatusPositiveEmphasizedLight: ColorSemanticToken { colorRepositoryPositiveHigher }
     /// Has for value token colorRepositoryPositiveLow
-    @objc open var colorSurfaceStatusPositiveEmphasizedDark: ColorSemanticToken { colorRepositoryPositiveLow }
+    @objc open var surfaceStatusPositiveEmphasizedDark: ColorSemanticToken { colorRepositoryPositiveLow }
     /// Has for value token colorRepositoryOpacityInfoLow
-    @objc open var colorSurfaceStatusInfoMutedLight: ColorSemanticToken { colorRepositoryOpacityInfoLow }
+    @objc open var surfaceStatusInfoMutedLight: ColorSemanticToken { colorRepositoryOpacityInfoLow }
     /// Has for value token colorRepositoryOpacityInfoMedium
-    @objc open var colorSurfaceStatusInfoMutedDark: ColorSemanticToken { colorRepositoryOpacityInfoMedium }
+    @objc open var surfaceStatusInfoMutedDark: ColorSemanticToken { colorRepositoryOpacityInfoMedium }
     /// Has for value token colorRepositoryInfoHigh
-    @objc open var colorSurfaceStatusInfoEmphasizedLight: ColorSemanticToken { colorRepositoryInfoHigh }
+    @objc open var surfaceStatusInfoEmphasizedLight: ColorSemanticToken { colorRepositoryInfoHigh }
     /// Has for value token colorRepositoryInfoLow
-    @objc open var colorSurfaceStatusInfoEmphasizedDark: ColorSemanticToken { colorRepositoryInfoLow }
+    @objc open var surfaceStatusInfoEmphasizedDark: ColorSemanticToken { colorRepositoryInfoLow }
     /// Has for value token colorRepositoryOpacityWarningLow
-    @objc open var colorSurfaceStatusWarningMutedLight: ColorSemanticToken { colorRepositoryOpacityWarningLow }
+    @objc open var surfaceStatusWarningMutedLight: ColorSemanticToken { colorRepositoryOpacityWarningLow }
     /// Has for value token colorRepositoryOpacityWarningMedium
-    @objc open var colorSurfaceStatusWarningMutedDark: ColorSemanticToken { colorRepositoryOpacityWarningMedium }
+    @objc open var surfaceStatusWarningMutedDark: ColorSemanticToken { colorRepositoryOpacityWarningMedium }
     /// Has for value token colorRepositoryWarningMedium
-    @objc open var colorSurfaceStatusWarningEmphasizedLight: ColorSemanticToken { colorRepositoryWarningMedium }
+    @objc open var surfaceStatusWarningEmphasizedLight: ColorSemanticToken { colorRepositoryWarningMedium }
     /// Has for value token colorRepositoryWarningLow
-    @objc open var colorSurfaceStatusWarningEmphasizedDark: ColorSemanticToken { colorRepositoryWarningLow }
+    @objc open var surfaceStatusWarningEmphasizedDark: ColorSemanticToken { colorRepositoryWarningLow }
     /// Has for value token colorRepositoryOpacityNegativeLow
-    @objc open var colorSurfaceStatusNegativeMutedLight: ColorSemanticToken { colorRepositoryOpacityNegativeLow }
+    @objc open var surfaceStatusNegativeMutedLight: ColorSemanticToken { colorRepositoryOpacityNegativeLow }
     /// Has for value token colorRepositoryOpacityNegativeMedium
-    @objc open var colorSurfaceStatusNegativeMutedDark: ColorSemanticToken { colorRepositoryOpacityNegativeMedium }
+    @objc open var surfaceStatusNegativeMutedDark: ColorSemanticToken { colorRepositoryOpacityNegativeMedium }
     /// Has for value token colorRepositoryNegativeMedium
-    @objc open var colorSurfaceStatusNegativeEmphasizedLight: ColorSemanticToken { colorRepositoryNegativeMedium }
+    @objc open var surfaceStatusNegativeEmphasizedLight: ColorSemanticToken { colorRepositoryNegativeMedium }
     /// Has for value token colorRepositoryNegativeLow
-    @objc open var colorSurfaceStatusNegativeEmphasizedDark: ColorSemanticToken { colorRepositoryNegativeLow }
+    @objc open var surfaceStatusNegativeEmphasizedDark: ColorSemanticToken { colorRepositoryNegativeLow }
     /// Has for value token colorRepositoryOpacityAccentLow
-    @objc open var colorSurfaceStatusAccentMutedLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
+    @objc open var surfaceStatusAccentMutedLight: ColorSemanticToken { colorRepositoryOpacityAccentLow }
     /// Has for value token colorRepositoryOpacityAccentMedium
-    @objc open var colorSurfaceStatusAccentMutedDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
+    @objc open var surfaceStatusAccentMutedDark: ColorSemanticToken { colorRepositoryOpacityAccentMedium }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorSurfaceStatusAccentEmphasizedLight: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var surfaceStatusAccentEmphasizedLight: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorSurfaceStatusAccentEmphasizedDark: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var surfaceStatusAccentEmphasizedDark: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentDefaultLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentDefaultLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentDefaultDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentDefaultDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityBlackHigher
-    @objc open var colorContentMutedLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
+    @objc open var contentMutedLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
     /// Has for value token colorRepositoryOpacityWhiteHigh
-    @objc open var colorContentMutedDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
+    @objc open var contentMutedDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
     /// Has for value token colorRepositoryOpacityBlackMediumLow
-    @objc open var colorContentDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
+    @objc open var contentDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow
-    @objc open var colorContentDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
+    @objc open var contentDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
     /// Has for value token colorRepositoryPrimaryMedium
-    @objc open var colorContentBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
+    @objc open var contentBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorContentBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var contentBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryPositiveHigher
-    @objc open var colorContentStatusPositiveLight: ColorSemanticToken { colorRepositoryPositiveHigher }
+    @objc open var contentStatusPositiveLight: ColorSemanticToken { colorRepositoryPositiveHigher }
     /// Has for value token colorRepositoryPositiveLow
-    @objc open var colorContentStatusPositiveDark: ColorSemanticToken { colorRepositoryPositiveLow }
+    @objc open var contentStatusPositiveDark: ColorSemanticToken { colorRepositoryPositiveLow }
     /// Has for value token colorRepositoryInfoHigh
-    @objc open var colorContentStatusInfoLight: ColorSemanticToken { colorRepositoryInfoHigh }
+    @objc open var contentStatusInfoLight: ColorSemanticToken { colorRepositoryInfoHigh }
     /// Has for value token colorRepositoryInfoLow
-    @objc open var colorContentStatusInfoDark: ColorSemanticToken { colorRepositoryInfoLow }
+    @objc open var contentStatusInfoDark: ColorSemanticToken { colorRepositoryInfoLow }
     /// Has for value token colorRepositoryWarningHigh
-    @objc open var colorContentStatusWarningLight: ColorSemanticToken { colorRepositoryWarningHigh }
+    @objc open var contentStatusWarningLight: ColorSemanticToken { colorRepositoryWarningHigh }
     /// Has for value token colorRepositoryWarningLow
-    @objc open var colorContentStatusWarningDark: ColorSemanticToken { colorRepositoryWarningLow }
+    @objc open var contentStatusWarningDark: ColorSemanticToken { colorRepositoryWarningLow }
     /// Has for value token colorRepositoryNegativeMedium
-    @objc open var colorContentStatusNegativeLight: ColorSemanticToken { colorRepositoryNegativeMedium }
+    @objc open var contentStatusNegativeLight: ColorSemanticToken { colorRepositoryNegativeMedium }
     /// Has for value token colorRepositoryNegativeLow
-    @objc open var colorContentStatusNegativeDark: ColorSemanticToken { colorRepositoryNegativeLow }
+    @objc open var contentStatusNegativeDark: ColorSemanticToken { colorRepositoryNegativeLow }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorContentStatusAccentLight: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var contentStatusAccentLight: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorContentStatusAccentDark: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var contentStatusAccentDark: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentOnBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentOnBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentOnBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentOnBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorContentOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var contentOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusPositiveMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentOnStatusPositiveMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentOnStatusPositiveMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnStatusPositiveEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnStatusPositiveEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusPositiveEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusPositiveEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusInfoMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusInfoMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentOnStatusInfoMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentOnStatusInfoMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnStatusInfoEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnStatusInfoEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusInfoEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusInfoEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusWarningMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusWarningMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentOnStatusWarningMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentOnStatusWarningMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusWarningEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusWarningEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusWarningEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusWarningEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusNegativeMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusNegativeMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentOnStatusNegativeMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentOnStatusNegativeMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnStatusNegativeEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnStatusNegativeEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusNegativeEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusNegativeEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusAccentMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusAccentMutedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorContentOnStatusAccentMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var contentOnStatusAccentMutedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusAccentEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusAccentEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnStatusAccentEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnStatusAccentEmphasizedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionEnabledLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionEnabledLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionEnabledDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionEnabledDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionHoverLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionHoverLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionHoverDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionHoverDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionPressedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionPressedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionPressedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionPressedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionLoadingLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionLoadingLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionLoadingDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionLoadingDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionDisabledLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionDisabledLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionDisabledDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionDisabledDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionFocusLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionFocusLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionFocusDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionFocusDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionSelectedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionSelectedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionSelectedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionSelectedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentOnActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentOnActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentOnActionHighlightedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentOnActionHighlightedDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorContentInverseLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var contentInverseLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorContentInverseDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var contentInverseDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryOpacityBlackMediumLow
-    @objc open var colorBorderDefaultLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
+    @objc open var borderDefaultLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow
-    @objc open var colorBorderDefaultDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
+    @objc open var borderDefaultDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
     /// Has for value token colorRepositoryOpacityBlackLower
-    @objc open var colorBorderMutedLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
+    @objc open var borderMutedLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc open var colorBorderMutedDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc open var borderMutedDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorBorderEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var borderEmphasizedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryOpacityWhiteHighest
-    @objc open var colorBorderEmphasizedDark: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
+    @objc open var borderEmphasizedDark: ColorSemanticToken { colorRepositoryOpacityWhiteHighest }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorBorderFocusLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var borderFocusLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorBorderFocusDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var borderFocusDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorBorderFocusInsetLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var borderFocusInsetLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedHighest
-    @objc open var colorBorderFocusInsetDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
+    @objc open var borderFocusInsetDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedHighest }
     /// Has for value token colorRepositoryPrimaryMedium
-    @objc open var colorBorderBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
+    @objc open var borderBrandPrimaryLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorBorderBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var borderBrandPrimaryDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryPositiveHigher
-    @objc open var colorBorderStatusPositiveLight: ColorSemanticToken { colorRepositoryPositiveHigher }
+    @objc open var borderStatusPositiveLight: ColorSemanticToken { colorRepositoryPositiveHigher }
     /// Has for value token colorRepositoryPositiveLow
-    @objc open var colorBorderStatusPositiveDark: ColorSemanticToken { colorRepositoryPositiveLow }
+    @objc open var borderStatusPositiveDark: ColorSemanticToken { colorRepositoryPositiveLow }
     /// Has for value token colorRepositoryInfoHigh
-    @objc open var colorBorderStatusInfoLight: ColorSemanticToken { colorRepositoryInfoHigh }
+    @objc open var borderStatusInfoLight: ColorSemanticToken { colorRepositoryInfoHigh }
     /// Has for value token colorRepositoryInfoLow
-    @objc open var colorBorderStatusInfoDark: ColorSemanticToken { colorRepositoryInfoLow }
+    @objc open var borderStatusInfoDark: ColorSemanticToken { colorRepositoryInfoLow }
     /// Has for value token colorRepositoryWarningMedium
-    @objc open var colorBorderStatusWarningLight: ColorSemanticToken { colorRepositoryWarningMedium }
+    @objc open var borderStatusWarningLight: ColorSemanticToken { colorRepositoryWarningMedium }
     /// Has for value token colorRepositoryWarningLow
-    @objc open var colorBorderStatusWarningDark: ColorSemanticToken { colorRepositoryWarningLow }
+    @objc open var borderStatusWarningDark: ColorSemanticToken { colorRepositoryWarningLow }
     /// Has for value token colorRepositoryNegativeMedium
-    @objc open var colorBorderStatusNegativeLight: ColorSemanticToken { colorRepositoryNegativeMedium }
+    @objc open var borderStatusNegativeLight: ColorSemanticToken { colorRepositoryNegativeMedium }
     /// Has for value token colorRepositoryNegativeLow
-    @objc open var colorBorderStatusNegativeDark: ColorSemanticToken { colorRepositoryNegativeLow }
+    @objc open var borderStatusNegativeDark: ColorSemanticToken { colorRepositoryNegativeLow }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorBorderStatusAccentLight: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var borderStatusAccentLight: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryAccentLow
-    @objc open var colorBorderStatusAccentDark: ColorSemanticToken { colorRepositoryAccentLow }
+    @objc open var borderStatusAccentDark: ColorSemanticToken { colorRepositoryAccentLow }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorBorderOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var borderOnBrandPrimaryLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorBorderOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var borderOnBrandPrimaryDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderOnBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderOnBrandSecondaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderOnBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderOnBrandSecondaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderOnBrandTertiaryLight: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeTheme**
-    @objc open var colorBorderOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
+    @objc open var borderOnBrandTertiaryDark: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorActionEnabledLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var actionEnabledLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorActionEnabledDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var actionEnabledDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityBlackHigher
-    @objc open var colorActionHoverLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
+    @objc open var actionHoverLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
     /// Has for value token colorRepositoryOpacityWhiteHigh
-    @objc open var colorActionHoverDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
+    @objc open var actionHoverDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
     /// Has for value token colorRepositoryPrimaryMedium
-    @objc open var colorActionPressedLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
+    @objc open var actionPressedLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorActionPressedDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var actionPressedDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryPrimaryMedium
-    @objc open var colorActionLoadingLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
+    @objc open var actionLoadingLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorActionLoadingDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var actionLoadingDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token colorRepositoryOpacityBlackMediumLow
-    @objc open var colorActionDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
+    @objc open var actionDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackMediumLow }
     /// Has for value token colorRepositoryOpacityWhiteMediumLow
-    @objc open var colorActionDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
+    @objc open var actionDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteMediumLow }
     /// Has for value token colorRepositoryOpacityBlackHigher
-    @objc open var colorActionFocusLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
+    @objc open var actionFocusLight: ColorSemanticToken { colorRepositoryOpacityBlackHigher }
     /// Has for value token colorRepositoryOpacityWhiteHigh
-    @objc open var colorActionFocusDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
+    @objc open var actionFocusDark: ColorSemanticToken { colorRepositoryOpacityWhiteHigh }
     /// Has for value token colorRepositoryPrimaryMedium
-    @objc open var colorActionSelectedLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
+    @objc open var actionSelectedLight: ColorSemanticToken { colorRepositoryPrimaryMedium }
     /// Has for value token colorRepositoryPrimaryLow
-    @objc open var colorActionSelectedDark: ColorSemanticToken { colorRepositoryPrimaryLow }
+    @objc open var actionSelectedDark: ColorSemanticToken { colorRepositoryPrimaryLow }
     /// Has for value token ColorRawTokens.functionalAmethyst600
-    @objc open var colorActionVisitedLight: ColorSemanticToken { ColorRawTokens.functionalAmethyst600 }
+    @objc open var actionVisitedLight: ColorSemanticToken { ColorRawTokens.functionalAmethyst600 }
     /// Has for value token ColorRawTokens.functionalAmethyst400
-    @objc open var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.functionalAmethyst400 }
+    @objc open var actionVisitedDark: ColorSemanticToken { ColorRawTokens.functionalAmethyst400 }
     /// Has for value token colorRepositoryNeutralEmphasizedBlack
-    @objc open var colorActionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
+    @objc open var actionHighlightedLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedBlack }
     /// Has for value token colorRepositoryNeutralMutedLower
-    @objc open var colorActionHighlightedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
+    @objc open var actionHighlightedDark: ColorSemanticToken { colorRepositoryNeutralMutedLower }
     /// Has for value token colorRepositoryOpacityBlackLowest
-    @objc open var colorActionSupportEnabledLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
+    @objc open var actionSupportEnabledLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLowest
-    @objc open var colorActionSupportEnabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
+    @objc open var actionSupportEnabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
     /// Has for value token colorRepositoryOpacityBlackLower
-    @objc open var colorActionSupportHoverLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
+    @objc open var actionSupportHoverLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc open var colorActionSupportHoverDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc open var actionSupportHoverDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryOpacityBlackLow
-    @objc open var colorActionSupportPressedLight: ColorSemanticToken { colorRepositoryOpacityBlackLow }
+    @objc open var actionSupportPressedLight: ColorSemanticToken { colorRepositoryOpacityBlackLow }
     /// Has for value token colorRepositoryOpacityWhiteLow
-    @objc open var colorActionSupportPressedDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
+    @objc open var actionSupportPressedDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
     /// Has for value token colorRepositoryOpacityBlackLow
-    @objc open var colorActionSupportLoadingLight: ColorSemanticToken { colorRepositoryOpacityBlackLow }
+    @objc open var actionSupportLoadingLight: ColorSemanticToken { colorRepositoryOpacityBlackLow }
     /// Has for value token colorRepositoryOpacityWhiteLow
-    @objc open var colorActionSupportLoadingDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
+    @objc open var actionSupportLoadingDark: ColorSemanticToken { colorRepositoryOpacityWhiteLow }
     /// Has for value token colorRepositoryOpacityBlackLowest
-    @objc open var colorActionSupportDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
+    @objc open var actionSupportDisabledLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLowest
-    @objc open var colorActionSupportDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
+    @objc open var actionSupportDisabledDark: ColorSemanticToken { colorRepositoryOpacityWhiteLowest }
     /// Has for value token colorRepositoryOpacityBlackLower
-    @objc open var colorActionSupportFocusLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
+    @objc open var actionSupportFocusLight: ColorSemanticToken { colorRepositoryOpacityBlackLower }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc open var colorActionSupportFocusDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc open var actionSupportFocusDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryNegativeMedium
-    @objc open var colorActionNegativeEnabledLight: ColorSemanticToken { colorRepositoryNegativeMedium }
+    @objc open var actionNegativeEnabledLight: ColorSemanticToken { colorRepositoryNegativeMedium }
     /// Has for value token colorRepositoryNegativeLow
-    @objc open var colorActionNegativeEnabledDark: ColorSemanticToken { colorRepositoryNegativeLow }
+    @objc open var actionNegativeEnabledDark: ColorSemanticToken { colorRepositoryNegativeLow }
     /// Has for value token colorRepositoryNegativeHigh
-    @objc open var colorActionNegativeHoverLight: ColorSemanticToken { colorRepositoryNegativeHigh }
+    @objc open var actionNegativeHoverLight: ColorSemanticToken { colorRepositoryNegativeHigh }
     /// Has for value token colorRepositoryNegativeLower
-    @objc open var colorActionNegativeHoverDark: ColorSemanticToken { colorRepositoryNegativeLower }
+    @objc open var actionNegativeHoverDark: ColorSemanticToken { colorRepositoryNegativeLower }
     /// Has for value token colorRepositoryNegativeHigher
-    @objc open var colorActionNegativePressedLight: ColorSemanticToken { colorRepositoryNegativeHigher }
+    @objc open var actionNegativePressedLight: ColorSemanticToken { colorRepositoryNegativeHigher }
     /// Has for value token colorRepositoryNegativeLowest
-    @objc open var colorActionNegativePressedDark: ColorSemanticToken { colorRepositoryNegativeLowest }
+    @objc open var actionNegativePressedDark: ColorSemanticToken { colorRepositoryNegativeLowest }
     /// Has for value token colorRepositoryNegativeHigher
-    @objc open var colorActionNegativeLoadingLight: ColorSemanticToken { colorRepositoryNegativeHigher }
+    @objc open var actionNegativeLoadingLight: ColorSemanticToken { colorRepositoryNegativeHigher }
     /// Has for value token colorRepositoryNegativeLowest
-    @objc open var colorActionNegativeLoadingDark: ColorSemanticToken { colorRepositoryNegativeLowest }
+    @objc open var actionNegativeLoadingDark: ColorSemanticToken { colorRepositoryNegativeLowest }
     /// Has for value token colorRepositoryNegativeHigh
-    @objc open var colorActionNegativeFocusLight: ColorSemanticToken { colorRepositoryNegativeHigh }
+    @objc open var actionNegativeFocusLight: ColorSemanticToken { colorRepositoryNegativeHigh }
     /// Has for value token colorRepositoryNegativeLower
-    @objc open var colorActionNegativeFocusDark: ColorSemanticToken { colorRepositoryNegativeLower }
+    @objc open var actionNegativeFocusDark: ColorSemanticToken { colorRepositoryNegativeLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorOverlayDropdownLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var overlayDropdownLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedLow
-    @objc open var colorOverlayDropdownDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedLow }
+    @objc open var overlayDropdownDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedLow }
     /// Has for value token colorRepositoryNeutralEmphasizedHigh
-    @objc open var colorOverlayTooltipLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
+    @objc open var overlayTooltipLight: ColorSemanticToken { colorRepositoryNeutralEmphasizedHigh }
     /// Has for value token colorRepositoryNeutralEmphasizedLow
-    @objc open var colorOverlayTooltipDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedLow }
+    @objc open var overlayTooltipDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedLow }
     /// Has for value token colorRepositoryOpacityBlackLowest
-    @objc open var colorOverlayDragLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
+    @objc open var overlayDragLight: ColorSemanticToken { colorRepositoryOpacityBlackLowest }
     /// Has for value token colorRepositoryOpacityWhiteLower
-    @objc open var colorOverlayDragDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
+    @objc open var overlayDragDark: ColorSemanticToken { colorRepositoryOpacityWhiteLower }
     /// Has for value token colorRepositoryNeutralMutedWhite
-    @objc open var colorOverlayModalLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
+    @objc open var overlayModalLight: ColorSemanticToken { colorRepositoryNeutralMutedWhite }
     /// Has for value token colorRepositoryNeutralEmphasizedMedium
-    @objc open var colorOverlayModalDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
+    @objc open var overlayModalDark: ColorSemanticToken { colorRepositoryNeutralEmphasizedMedium }
     /// Has for value token colorRepositoryOpacityBlackTransparent
     @objc open var opacityTransparentLight: ColorSemanticToken { colorRepositoryOpacityBlackTransparent }
     /// Has for value token colorRepositoryOpacityWhiteTransparent

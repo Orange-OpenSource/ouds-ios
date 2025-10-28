@@ -127,7 +127,7 @@ struct TextInputContainer: View {
     }
 
     private var prefixSuffixColor: MultipleColorSemanticTokens {
-        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
+        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 
     private var interactionState: TextInputInteractionState {

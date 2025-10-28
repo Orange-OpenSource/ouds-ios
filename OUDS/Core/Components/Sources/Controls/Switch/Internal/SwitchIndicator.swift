@@ -54,7 +54,7 @@ struct SwitchIndicator: View {
         case .hover, .pressed:
             isOn ? theme.switch.switchColorTrackSelectedInteraction : theme.switch.switchColorTrackUnselectedInteraction
         case .disabled, .readOnly:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 
@@ -118,7 +118,7 @@ private struct Cursor: View {
             case .pressed:
                 Color.clear
             case .disabled, .readOnly:
-                theme.colors.colorActionDisabled.color(for: colorScheme)
+                theme.colors.actionDisabled.color(for: colorScheme)
             }
         } else {
             Color.clear

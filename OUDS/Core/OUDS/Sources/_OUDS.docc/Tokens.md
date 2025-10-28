@@ -76,9 +76,9 @@ Below is an example about how the component tokens are declared, defined and pro
 // Declare the semantic tokens
 protocol ColorSemanticTokens {
 
-    var colorBgPrimary: ColorSemanticToken { get }
-    var colorBgSecondary: ColorSemanticToken { get }
-    var colorBgTertiary: ColorSemanticToken { get }
+    var bgPrimary: ColorSemanticToken { get }
+    var bgSecondary: ColorSemanticToken { get }
+    var bgTertiary: ColorSemanticToken { get }
     // ...
 }
 
@@ -89,13 +89,13 @@ open class OrangeThemeColorSemanticTokensProvider { }
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Possible to assign raw token of color available in the global package
-    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
+    @objc open var bgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
 
     // Possible to assign raw token of color available in the the module
-    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var bgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
 
     // Possible to refer to another semantic token of color
-    @objc open var colorBgTertiary: ColorSemanticToken { colorBgSecondary }
+    @objc open var bgTertiary: ColorSemanticToken { bgSecondary }
 }
 
 // This provider is then exposed through OUDSTheme as an AllColorSemanticTokensProvider
@@ -113,7 +113,7 @@ In addition, *Figma* exposes the tokens in JSON, which is then parsed with our o
 
 That is the reason why:
 - some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers
-- some tokens do not have full names, e.g. "colorBackground" are named "colorBg"
+- some tokens do not have full names, e.g. "colorBackground" are named "bg"
 - we have thousands of tokens, as thousands of tokens are defined
 - we do not know if there is dead code because API are public
 

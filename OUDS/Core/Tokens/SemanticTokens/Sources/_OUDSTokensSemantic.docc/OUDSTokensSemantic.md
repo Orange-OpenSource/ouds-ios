@@ -35,9 +35,9 @@ Example with ``ColorSemanticTokens``:
 // Declare the semantic tokens
 protocol ColorSemanticTokens {
 
-    var colorBgPrimary: ColorSemanticToken { get }
-    var colorBgSecondary: ColorSemanticToken { get }
-    var colorBgTertiary: ColorSemanticToken { get }
+    var bgPrimary: ColorSemanticToken { get }
+    var bgSecondary: ColorSemanticToken { get }
+    var bgTertiary: ColorSemanticToken { get }
     // ...
 }
 
@@ -46,9 +46,9 @@ open class OrangeThemeColorSemanticTokensProvider { }
 
 // Define the semantic tokens to expose through the theme thanks to the provider
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
-    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
-    @objc open var colorBgTertiary: ColorSemanticToken { colorBgSecondary }
+    @objc open var bgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
+    @objc open var bgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var bgTertiary: ColorSemanticToken { bgSecondary }
 }
 
 // An instance of OrangeThemeColorSemanticTokensProvider will be assigned to OUDSTheme as AllColorSemanticTokensProvider
@@ -146,13 +146,13 @@ struct SomeView: View {
     var body: some View {
         Rectangle()
             .frame(width: theme.sizes.sizeIconDecorative2Xl, height: theme.sizes.sizeIconDecorativeXl)
-            .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))
+            .foregroundColor(theme.colors.bgSecondary.color(for: colorScheme))
             .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
             .padding(.bottom, theme.spaces.spaceFixedNone)
     }
 /*
     - The theme provides size semantic tokens "sizeIconDecorative2Xl" and "sizeIconDecorativeXl"
-    - The theme provides a color semantic token "colorBgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
+    - The theme provides a color semantic token "bgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
     - The theme provides an elevation semantic token "elevationRaised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
     - The theme provides a space semantic token "spaceFixedNone" usable as is
     - Environment variables like color scheme must be retrieved through View, and then given to theme

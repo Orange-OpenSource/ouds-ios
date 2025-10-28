@@ -77,23 +77,23 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                theme.colors.colorActionSelected
+                theme.colors.actionSelected
             case .unselected:
-                theme.colors.colorActionEnabled
+                theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
+        isError ? theme.colors.actionNegativeHover : theme.colors.actionHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
+        isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
@@ -101,7 +101,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 }
 
@@ -201,34 +201,34 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
                 if colorSchemeContrast == .increased, colorScheme == .light {
-                    theme.colors.colorContentDefault
+                    theme.colors.contentDefault
                 } else {
-                    theme.colors.colorActionSelected
+                    theme.colors.actionSelected
                 }
             case .unselected:
-                theme.colors.colorActionEnabled
+                theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         } else {
-            theme.colors.colorActionHover
+            theme.colors.actionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         } else {
-            theme.colors.colorActionPressed
+            theme.colors.actionPressed
         }
     }
 
@@ -237,7 +237,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 
     // MARK: - Border width

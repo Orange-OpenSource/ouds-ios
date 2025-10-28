@@ -59,13 +59,13 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultEnabled : theme.button.buttonColorBgDefaultEnabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongEnabled : theme.colors.colorActionEnabled
+            useMonochrome ? theme.button.buttonMonoColorBgStrongEnabled : theme.colors.actionEnabled
         case .brand:
             theme.button.buttonColorBgBrandEnabled
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         }
     }
 
@@ -74,13 +74,13 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultHover : theme.button.buttonColorBgDefaultHover
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
+            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.actionHover
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
+            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.actionHover
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorBgMinimalHover : theme.button.buttonColorBgMinimalHover
         case .negative:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         }
     }
 
@@ -89,13 +89,13 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultPressed : theme.button.buttonColorBgDefaultPressed
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
+            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.actionPressed
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
+            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.actionPressed
         case .minimal:
             useMonochrome ? theme.button.buttonMonoColorBgMinimalPressed : theme.button.buttonColorBgMinimalPressed
         case .negative:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         }
     }
 
@@ -104,13 +104,13 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultLoading : theme.button.buttonColorBgDefaultLoading
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
+            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.actionLoading
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
+            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.actionLoading
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionNegativeLoading
+            theme.colors.actionNegativeLoading
         }
     }
 
@@ -119,13 +119,13 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             useMonochrome ? theme.button.buttonMonoColorBgDefaultDisabled : theme.button.buttonColorBgDefaultDisabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
+            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.actionDisabled
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
+            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.actionDisabled
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }
