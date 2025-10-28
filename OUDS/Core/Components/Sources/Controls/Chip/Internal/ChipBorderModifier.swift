@@ -33,7 +33,7 @@ struct ChipBorderModifier: ViewModifier {
             .oudsBorder(
                 style: theme.borders.styeDefault,
                 width: width,
-                radius: theme.chip.chipBorderRadius,
+                radius: theme.chip.borderRadius,
                 color: color)
     }
 
@@ -42,22 +42,22 @@ struct ChipBorderModifier: ViewModifier {
     private var width: BorderWidthSemanticToken {
         switch state {
         case .enabled, .disabled:
-            selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselected
+            selected ? theme.chip.borderWidthSelected : theme.chip.borderWidthUnselected
         case .hover, .pressed:
-            selected ? theme.chip.chipBorderWidthSelected : theme.chip.chipBorderWidthUnselectedInteraction
+            selected ? theme.chip.borderWidthSelected : theme.chip.borderWidthUnselectedInteraction
         }
     }
 
     private var color: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            selected ? theme.chip.chipColorBorderSelectedEnabled : theme.chip.chipColorBorderUnselectedEnabled
+            selected ? theme.chip.colorBorderSelectedEnabled : theme.chip.colorBorderUnselectedEnabled
         case .hover:
-            selected ? theme.chip.chipColorBorderSelectedHover : theme.chip.chipColorBorderUnselectedHover
+            selected ? theme.chip.colorBorderSelectedHover : theme.chip.colorBorderUnselectedHover
         case .pressed:
-            selected ? theme.chip.chipColorBorderSelectedPressed : theme.chip.chipColorBorderUnselectedPressed
+            selected ? theme.chip.colorBorderSelectedPressed : theme.chip.colorBorderUnselectedPressed
         case .disabled:
-            selected ? theme.chip.chipColorBorderSelectedDisabled : theme.chip.chipColorBorderUnselectedDisabled
+            selected ? theme.chip.colorBorderSelectedDisabled : theme.chip.colorBorderUnselectedDisabled
         }
     }
 }

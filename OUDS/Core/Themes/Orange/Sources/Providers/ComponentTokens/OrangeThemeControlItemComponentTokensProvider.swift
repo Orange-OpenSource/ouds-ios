@@ -32,11 +32,11 @@ import OUDSFoundations
 ///
 ///         // Then override the control-item-layout-based component tokens you want.
 ///
-///         override var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
+///         override var sizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
+///         override var colorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
-///         override var controlItemSpaceRowGap: SpaceSemanticToken { spaces.paddingInlineTall }
+///         override var spaceRowGap: SpaceSemanticToken { spaces.paddingInlineTall }
 ///
 ///         // ...
 ///     }

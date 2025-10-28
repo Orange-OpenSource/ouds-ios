@@ -27,34 +27,34 @@ public protocol ControlItemComponentTokens {
 
     // MARK: - Sizes
 
-    var controlItemSizeMinHeight: SizeSemanticToken { get }
-    var controlItemSizeMinWidth: SizeSemanticToken { get }
-    var controlItemSizeMaxWidth: SizeSemanticToken { get }
-    var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    var controlItemSizeIcon: SizeSemanticToken { get }
-    var controlItemSizeErrorIcon: SizeSemanticToken { get }
-    var controlItemSizeLoader: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
+    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    var sizeIcon: SizeSemanticToken { get }
+    var sizeErrorIcon: SizeSemanticToken { get }
+    var sizeLoader: SizeSemanticToken { get }
 
     // MARK: - Colors
 
-    var controlItemColorBgHover: MultipleColorSemanticTokens { get }
-    var controlItemColorBgPressed: MultipleColorSemanticTokens { get }
-    var controlItemColorBgLoading: MultipleColorSemanticTokens { get }
-    var controlItemColorBgFocus: MultipleColorSemanticTokens { get }
-    var controlItemColorContentLoader: MultipleColorSemanticTokens { get }
+    var colorBgHover: MultipleColorSemanticTokens { get }
+    var colorBgPressed: MultipleColorSemanticTokens { get }
+    var colorBgLoading: MultipleColorSemanticTokens { get }
+    var colorBgFocus: MultipleColorSemanticTokens { get }
+    var colorContentLoader: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var controlItemSpaceColumnGap: SpaceSemanticToken { get }
-    var controlItemSpaceRowGap: SpaceSemanticToken { get }
-    var controlItemSpacePaddingBlock: SpaceSemanticToken { get }
-    var controlItemSpacePaddingInline: SpaceSemanticToken { get }
-    var controlItemSpacePaddingInlineErrorIcon: SpaceSemanticToken { get }
+    var spaceColumnGap: SpaceSemanticToken { get }
+    var spaceRowGap: SpaceSemanticToken { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingInline: SpaceSemanticToken { get }
+    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
 
     // MARK: - Borders
 
-    var controlItemBorderRadius: BorderRadiusSemanticToken { get }
-    var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
+    var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

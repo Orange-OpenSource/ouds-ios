@@ -26,9 +26,9 @@ struct ControlItemBackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if interactionState == .hover {
-            content.oudsBackground(theme.controlItem.controlItemColorBgHover)
+            content.oudsBackground(theme.controlItem.colorBgHover)
         } else if interactionState == .pressed {
-            content.oudsBackground(theme.controlItem.controlItemColorBgPressed)
+            content.oudsBackground(theme.controlItem.colorBgPressed)
         } else {
             content
         }

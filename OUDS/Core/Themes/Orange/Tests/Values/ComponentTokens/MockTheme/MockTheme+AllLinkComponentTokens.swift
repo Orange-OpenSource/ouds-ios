@@ -67,8 +67,8 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
 
     // MARK: - Expand link component tokens
 
-    override var expandLinkIconStart: Bool { Self.mockThemeExpandLinkIconStart }
-    override var expandLinkIconEnd: Bool { Self.mockThemeExpandLinkIconEnd }
+    override var iconStart: Bool { Self.mockThemeExpandLinkIconStart }
+    override var iconEnd: Bool { Self.mockThemeExpandLinkIconEnd }
 }
 
 // swiftlint:enable required_deinit

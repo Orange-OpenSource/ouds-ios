@@ -99,7 +99,7 @@ struct ControlItemBordersModifier: ViewModifier {
 
     private var radius: BorderRadiusSemanticToken {
         interactionState == .readOnly ?
-            theme.controlItem.controlItemBorderRadiusItemOnly :
-            theme.controlItem.controlItemBorderRadius
+            theme.controlItem.borderRadiusItemOnly :
+            theme.controlItem.borderRadius
     }
 }

@@ -28,243 +28,243 @@ struct ThemeOverrideOfChipComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideChipSizeIcon() throws {
-        #expect(inheritedTheme.chip.chipSizeIcon != abstractTheme.chip.chipSizeIcon)
-        #expect(inheritedTheme.chip.chipSizeIcon == MockThemeChipComponentTokenProvider.mockThemeChipSize)
+        #expect(inheritedTheme.chip.sizeIcon != abstractTheme.chip.sizeIcon)
+        #expect(inheritedTheme.chip.sizeIcon == MockThemeChipComponentTokenProvider.mockThemeChipSize)
     }
 
     @Test func inheritedThemeCanOverrideChipSizeMinWidth() throws {
-        #expect(inheritedTheme.chip.chipSizeMinWidth != abstractTheme.chip.chipSizeMinWidth)
-        #expect(inheritedTheme.chip.chipSizeMinWidth == MockThemeChipComponentTokenProvider.mockThemeChipSize)
+        #expect(inheritedTheme.chip.sizeMinWidth != abstractTheme.chip.sizeMinWidth)
+        #expect(inheritedTheme.chip.sizeMinWidth == MockThemeChipComponentTokenProvider.mockThemeChipSize)
     }
 
     @Test func inheritedThemeCanOverrideChipSizeMinHeight() throws {
-        #expect(inheritedTheme.chip.chipSizeMinHeight != abstractTheme.chip.chipSizeMinHeight)
-        #expect(inheritedTheme.chip.chipSizeMinHeight == MockThemeChipComponentTokenProvider.mockThemeChipSize)
+        #expect(inheritedTheme.chip.sizeMinHeight != abstractTheme.chip.sizeMinHeight)
+        #expect(inheritedTheme.chip.sizeMinHeight == MockThemeChipComponentTokenProvider.mockThemeChipSize)
     }
 
     @Test func inheritedThemeCanOverrideChipSizeMinHeightInteractiveArea() throws {
-        #expect(inheritedTheme.chip.chipSizeMinHeightInteractiveArea != abstractTheme.chip.chipSizeMinHeightInteractiveArea)
-        #expect(inheritedTheme.chip.chipSizeMinHeightInteractiveArea == MockThemeChipComponentTokenProvider.mockThemeChipSize)
+        #expect(inheritedTheme.chip.sizeMinHeightInteractiveArea != abstractTheme.chip.sizeMinHeightInteractiveArea)
+        #expect(inheritedTheme.chip.sizeMinHeightInteractiveArea == MockThemeChipComponentTokenProvider.mockThemeChipSize)
     }
 
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideChipBorderWidthSelected() throws {
-        #expect(inheritedTheme.chip.chipBorderWidthSelected != abstractTheme.chip.chipBorderWidthSelected)
-        #expect(inheritedTheme.chip.chipBorderWidthSelected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+        #expect(inheritedTheme.chip.borderWidthSelected != abstractTheme.chip.borderWidthSelected)
+        #expect(inheritedTheme.chip.borderWidthSelected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideChipBorderWidthUnselected() throws {
-        #expect(inheritedTheme.chip.chipBorderWidthUnselected != abstractTheme.chip.chipBorderWidthUnselected)
-        #expect(inheritedTheme.chip.chipBorderWidthUnselected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+        #expect(inheritedTheme.chip.borderWidthUnselected != abstractTheme.chip.borderWidthUnselected)
+        #expect(inheritedTheme.chip.borderWidthUnselected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideChipBorderWidthUnselectedInteraction() throws {
-        #expect(inheritedTheme.chip.chipBorderWidthUnselectedInteraction != abstractTheme.chip.chipBorderWidthUnselectedInteraction)
-        #expect(inheritedTheme.chip.chipBorderWidthUnselectedInteraction == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+        #expect(inheritedTheme.chip.borderWidthUnselectedInteraction != abstractTheme.chip.borderWidthUnselectedInteraction)
+        #expect(inheritedTheme.chip.borderWidthUnselectedInteraction == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideChipBorderRadius() throws {
-        #expect(inheritedTheme.chip.chipBorderRadius != abstractTheme.chip.chipBorderRadius)
-        #expect(inheritedTheme.chip.chipBorderRadius == MockThemeChipComponentTokenProvider.mockThemeChipBorderRadius)
+        #expect(inheritedTheme.chip.borderRadius != abstractTheme.chip.borderRadius)
+        #expect(inheritedTheme.chip.borderRadius == MockThemeChipComponentTokenProvider.mockThemeChipBorderRadius)
     }
 
     // MARK: - Colors
 
     @Test func inheritedThemeCanOverrideChipBadgeColorBg() throws {
-        #expect(inheritedTheme.chip.chipBadgeColorBg != abstractTheme.chip.chipBadgeColorBg)
-        #expect(inheritedTheme.chip.chipBadgeColorBg == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.badgeColorBg != abstractTheme.chip.badgeColorBg)
+        #expect(inheritedTheme.chip.badgeColorBg == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipBadgeColorContent() throws {
-        #expect(inheritedTheme.chip.chipBadgeColorContent != abstractTheme.chip.chipBadgeColorContent)
-        #expect(inheritedTheme.chip.chipBadgeColorContent == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.badgeColorContent != abstractTheme.chip.badgeColorContent)
+        #expect(inheritedTheme.chip.badgeColorContent == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgSelectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorBgSelectedEnabled != abstractTheme.chip.chipColorBgSelectedEnabled)
-        #expect(inheritedTheme.chip.chipColorBgSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgSelectedEnabled != abstractTheme.chip.colorBgSelectedEnabled)
+        #expect(inheritedTheme.chip.colorBgSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgSelectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorBgSelectedHover != abstractTheme.chip.chipColorBgSelectedHover)
-        #expect(inheritedTheme.chip.chipColorBgSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgSelectedHover != abstractTheme.chip.colorBgSelectedHover)
+        #expect(inheritedTheme.chip.colorBgSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgSelectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorBgSelectedPressed != abstractTheme.chip.chipColorBgSelectedPressed)
-        #expect(inheritedTheme.chip.chipColorBgSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgSelectedPressed != abstractTheme.chip.colorBgSelectedPressed)
+        #expect(inheritedTheme.chip.colorBgSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgSelectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorBgSelectedDisabled != abstractTheme.chip.chipColorBgSelectedDisabled)
-        #expect(inheritedTheme.chip.chipColorBgSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgSelectedDisabled != abstractTheme.chip.colorBgSelectedDisabled)
+        #expect(inheritedTheme.chip.colorBgSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgSelectedFocus() throws {
-        #expect(inheritedTheme.chip.chipColorBgSelectedFocus != abstractTheme.chip.chipColorBgSelectedFocus)
-        #expect(inheritedTheme.chip.chipColorBgSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgSelectedFocus != abstractTheme.chip.colorBgSelectedFocus)
+        #expect(inheritedTheme.chip.colorBgSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgUnselectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorBgUnselectedEnabled != abstractTheme.chip.chipColorBgUnselectedEnabled)
-        #expect(inheritedTheme.chip.chipColorBgUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgUnselectedEnabled != abstractTheme.chip.colorBgUnselectedEnabled)
+        #expect(inheritedTheme.chip.colorBgUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgUnselectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorBgUnselectedHover != abstractTheme.chip.chipColorBgUnselectedHover)
-        #expect(inheritedTheme.chip.chipColorBgUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgUnselectedHover != abstractTheme.chip.colorBgUnselectedHover)
+        #expect(inheritedTheme.chip.colorBgUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgUnselectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorBgUnselectedPressed != abstractTheme.chip.chipColorBgUnselectedPressed)
-        #expect(inheritedTheme.chip.chipColorBgUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgUnselectedPressed != abstractTheme.chip.colorBgUnselectedPressed)
+        #expect(inheritedTheme.chip.colorBgUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgUnselectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorBgUnselectedDisabled != abstractTheme.chip.chipColorBgUnselectedDisabled)
-        #expect(inheritedTheme.chip.chipColorBgUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgUnselectedDisabled != abstractTheme.chip.colorBgUnselectedDisabled)
+        #expect(inheritedTheme.chip.colorBgUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBgUnselectedFocus() throws {
-        #expect(inheritedTheme.chip.chipColorBgUnselectedFocus != abstractTheme.chip.chipColorBgUnselectedFocus)
-        #expect(inheritedTheme.chip.chipColorBgUnselectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBgUnselectedFocus != abstractTheme.chip.colorBgUnselectedFocus)
+        #expect(inheritedTheme.chip.colorBgUnselectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedTickEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedTickEnabled != abstractTheme.chip.chipColorContentSelectedTickEnabled)
-        #expect(inheritedTheme.chip.chipColorContentSelectedTickEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedTickEnabled != abstractTheme.chip.colorContentSelectedTickEnabled)
+        #expect(inheritedTheme.chip.colorContentSelectedTickEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedEnabled != abstractTheme.chip.chipColorContentSelectedEnabled)
-        #expect(inheritedTheme.chip.chipColorContentSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedEnabled != abstractTheme.chip.colorContentSelectedEnabled)
+        #expect(inheritedTheme.chip.colorContentSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedHover != abstractTheme.chip.chipColorContentSelectedHover)
-        #expect(inheritedTheme.chip.chipColorContentSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedHover != abstractTheme.chip.colorContentSelectedHover)
+        #expect(inheritedTheme.chip.colorContentSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedPressed != abstractTheme.chip.chipColorContentSelectedPressed)
-        #expect(inheritedTheme.chip.chipColorContentSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedPressed != abstractTheme.chip.colorContentSelectedPressed)
+        #expect(inheritedTheme.chip.colorContentSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedDisabled != abstractTheme.chip.chipColorContentSelectedDisabled)
-        #expect(inheritedTheme.chip.chipColorContentSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedDisabled != abstractTheme.chip.colorContentSelectedDisabled)
+        #expect(inheritedTheme.chip.colorContentSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentSelectedFocus() throws {
-        #expect(inheritedTheme.chip.chipColorContentSelectedFocus != abstractTheme.chip.chipColorContentSelectedFocus)
-        #expect(inheritedTheme.chip.chipColorContentSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentSelectedFocus != abstractTheme.chip.colorContentSelectedFocus)
+        #expect(inheritedTheme.chip.colorContentSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentUnselectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorContentUnselectedEnabled != abstractTheme.chip.chipColorContentUnselectedEnabled)
-        #expect(inheritedTheme.chip.chipColorContentUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentUnselectedEnabled != abstractTheme.chip.colorContentUnselectedEnabled)
+        #expect(inheritedTheme.chip.colorContentUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentUnselectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorContentUnselectedHover != abstractTheme.chip.chipColorContentUnselectedHover)
-        #expect(inheritedTheme.chip.chipColorContentUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentUnselectedHover != abstractTheme.chip.colorContentUnselectedHover)
+        #expect(inheritedTheme.chip.colorContentUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentUnselectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorContentUnselectedPressed != abstractTheme.chip.chipColorContentUnselectedPressed)
-        #expect(inheritedTheme.chip.chipColorContentUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentUnselectedPressed != abstractTheme.chip.colorContentUnselectedPressed)
+        #expect(inheritedTheme.chip.colorContentUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorContentUnselectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorContentUnselectedDisabled != abstractTheme.chip.chipColorContentUnselectedDisabled)
-        #expect(inheritedTheme.chip.chipColorContentUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorContentUnselectedDisabled != abstractTheme.chip.colorContentUnselectedDisabled)
+        #expect(inheritedTheme.chip.colorContentUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderSelectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorBorderSelectedEnabled != abstractTheme.chip.chipColorBorderSelectedEnabled)
-        #expect(inheritedTheme.chip.chipColorBorderSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderSelectedEnabled != abstractTheme.chip.colorBorderSelectedEnabled)
+        #expect(inheritedTheme.chip.colorBorderSelectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderSelectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorBorderSelectedHover != abstractTheme.chip.chipColorBorderSelectedHover)
-        #expect(inheritedTheme.chip.chipColorBorderSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderSelectedHover != abstractTheme.chip.colorBorderSelectedHover)
+        #expect(inheritedTheme.chip.colorBorderSelectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderSelectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorBorderSelectedPressed != abstractTheme.chip.chipColorBorderSelectedPressed)
-        #expect(inheritedTheme.chip.chipColorBorderSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderSelectedPressed != abstractTheme.chip.colorBorderSelectedPressed)
+        #expect(inheritedTheme.chip.colorBorderSelectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderSelectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorBorderSelectedDisabled != abstractTheme.chip.chipColorBorderSelectedDisabled)
-        #expect(inheritedTheme.chip.chipColorBorderSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderSelectedDisabled != abstractTheme.chip.colorBorderSelectedDisabled)
+        #expect(inheritedTheme.chip.colorBorderSelectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderSelectedFocus() throws {
-        #expect(inheritedTheme.chip.chipColorBorderSelectedFocus != abstractTheme.chip.chipColorBorderSelectedFocus)
-        #expect(inheritedTheme.chip.chipColorBorderSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderSelectedFocus != abstractTheme.chip.colorBorderSelectedFocus)
+        #expect(inheritedTheme.chip.colorBorderSelectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderUnselectedEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedEnabled != abstractTheme.chip.chipColorBorderUnselectedEnabled)
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderUnselectedEnabled != abstractTheme.chip.colorBorderUnselectedEnabled)
+        #expect(inheritedTheme.chip.colorBorderUnselectedEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderUnselectedHover() throws {
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedHover != abstractTheme.chip.chipColorBorderUnselectedHover)
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderUnselectedHover != abstractTheme.chip.colorBorderUnselectedHover)
+        #expect(inheritedTheme.chip.colorBorderUnselectedHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderUnselectedPressed() throws {
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedPressed != abstractTheme.chip.chipColorBorderUnselectedPressed)
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderUnselectedPressed != abstractTheme.chip.colorBorderUnselectedPressed)
+        #expect(inheritedTheme.chip.colorBorderUnselectedPressed == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderUnselectedDisabled() throws {
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedDisabled != abstractTheme.chip.chipColorBorderUnselectedDisabled)
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderUnselectedDisabled != abstractTheme.chip.colorBorderUnselectedDisabled)
+        #expect(inheritedTheme.chip.colorBorderUnselectedDisabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipColorBorderUnselectedFocus() throws {
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedFocus != abstractTheme.chip.chipColorBorderUnselectedFocus)
-        #expect(inheritedTheme.chip.chipColorBorderUnselectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+        #expect(inheritedTheme.chip.colorBorderUnselectedFocus != abstractTheme.chip.colorBorderUnselectedFocus)
+        #expect(inheritedTheme.chip.colorBorderUnselectedFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingBlock() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingBlock != abstractTheme.chip.chipSpacePaddingBlock)
-        #expect(inheritedTheme.chip.chipSpacePaddingBlock == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingBlock != abstractTheme.chip.spacePaddingBlock)
+        #expect(inheritedTheme.chip.spacePaddingBlock == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingBlockIconOnly() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingBlockIconOnly != abstractTheme.chip.chipSpacePaddingBlockIconOnly)
-        #expect(inheritedTheme.chip.chipSpacePaddingBlockIconOnly == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingBlockIconOnly != abstractTheme.chip.spacePaddingBlockIconOnly)
+        #expect(inheritedTheme.chip.spacePaddingBlockIconOnly == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingInlineIcon() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineIcon != abstractTheme.chip.chipSpacePaddingInlineIcon)
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingInlineIcon != abstractTheme.chip.spacePaddingInlineIcon)
+        #expect(inheritedTheme.chip.spacePaddingInlineIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingInlineIconNone() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineIconNone != abstractTheme.chip.chipSpacePaddingInlineIconNone)
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineIconNone == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingInlineIconNone != abstractTheme.chip.spacePaddingInlineIconNone)
+        #expect(inheritedTheme.chip.spacePaddingInlineIconNone == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverridechipSpacePaddingInlineChevronEnd() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineChevronEnd != abstractTheme.chip.chipSpacePaddingInlineChevronEnd)
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineChevronEnd == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingInlineChevronEnd != abstractTheme.chip.spacePaddingInlineChevronEnd)
+        #expect(inheritedTheme.chip.spacePaddingInlineChevronEnd == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpacePaddingInlineBadgeStart() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineBadgeStart != abstractTheme.chip.chipSpacePaddingInlineBadgeStart)
-        #expect(inheritedTheme.chip.chipSpacePaddingInlineBadgeStart == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spacePaddingInlineBadgeStart != abstractTheme.chip.spacePaddingInlineBadgeStart)
+        #expect(inheritedTheme.chip.spacePaddingInlineBadgeStart == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 
     @Test func inheritedThemeCanOverrideChipSpaceColumnGapIcon() throws {
-        #expect(inheritedTheme.chip.chipSpaceColumnGapIcon != abstractTheme.chip.chipSpaceColumnGapIcon)
-        #expect(inheritedTheme.chip.chipSpaceColumnGapIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
+        #expect(inheritedTheme.chip.spaceColumnGapIcon != abstractTheme.chip.spaceColumnGapIcon)
+        #expect(inheritedTheme.chip.spaceColumnGapIcon == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
 }

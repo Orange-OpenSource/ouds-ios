@@ -24,6 +24,10 @@ import OUDSTokensSemantic
 ///
 /// - Since: 0.16.0
 public protocol ButtonMonoComponentTokens {
+
+    // NOTE: Tokens prefixed by "mono" even id redundant with tokens provider and protocol names
+    // because some of the tokens exist in button component tokens gathered in same provider
+
     var monoColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
     var monoColorBgDefaultHover: MultipleColorSemanticTokens { get }
     var monoColorBgDefaultPressed: MultipleColorSemanticTokens { get }

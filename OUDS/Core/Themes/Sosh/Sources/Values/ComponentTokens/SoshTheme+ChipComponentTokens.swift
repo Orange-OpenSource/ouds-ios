@@ -20,101 +20,101 @@ import OUDSTokensSemantic
 
 extension SoshThemeChipComponentTokensProvider: ChipComponentTokens {
     /// Has for value token colors.contentOnActionEnabled
-    @objc public final var chipBadgeColorBg: MultipleColorSemanticTokens { colors.contentOnActionEnabled }
+    @objc public final var badgeColorBg: MultipleColorSemanticTokens { colors.contentOnActionEnabled }
     /// Has for value token colors.contentDefault
-    @objc public final var chipBadgeColorContent: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var badgeColorContent: MultipleColorSemanticTokens { colors.contentDefault }
     /// Has for value token colors.actionSelected
-    @objc public final var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { colors.actionSelected }
+    @objc public final var colorBgSelectedEnabled: MultipleColorSemanticTokens { colors.actionSelected }
     /// Has for value token colors.actionHover
-    @objc public final var chipColorBgSelectedHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorBgSelectedHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var chipColorBgSelectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorBgSelectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionDisabled
-    @objc public final var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
+    @objc public final var colorBgSelectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
     /// Has for value token colors.actionFocus
-    @objc public final var chipColorBgSelectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorBgSelectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBgUnselectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBgUnselectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBgUnselectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBgUnselectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBgUnselectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBgUnselectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.contentOnActionSelected
-    @objc public final var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { colors.contentOnActionSelected }
+    @objc public final var colorContentSelectedTickEnabled: MultipleColorSemanticTokens { colors.contentOnActionSelected }
     /// Has for value token colors.contentOnActionSelected
-    @objc public final var chipColorContentSelectedEnabled: MultipleColorSemanticTokens { colors.contentOnActionSelected }
+    @objc public final var colorContentSelectedEnabled: MultipleColorSemanticTokens { colors.contentOnActionSelected }
     /// Has for value token colors.contentOnActionHover
-    @objc public final var chipColorContentSelectedHover: MultipleColorSemanticTokens { colors.contentOnActionHover }
+    @objc public final var colorContentSelectedHover: MultipleColorSemanticTokens { colors.contentOnActionHover }
     /// Has for value token colors.contentOnActionPressed
-    @objc public final var chipColorContentSelectedPressed: MultipleColorSemanticTokens { colors.contentOnActionPressed }
+    @objc public final var colorContentSelectedPressed: MultipleColorSemanticTokens { colors.contentOnActionPressed }
     /// Has for value token colors.contentOnActionDisabled
-    @objc public final var chipColorContentSelectedDisabled: MultipleColorSemanticTokens { colors.contentOnActionDisabled }
+    @objc public final var colorContentSelectedDisabled: MultipleColorSemanticTokens { colors.contentOnActionDisabled }
     /// Has for value token colors.contentOnActionFocus
-    @objc public final var chipColorContentSelectedFocus: MultipleColorSemanticTokens { colors.contentOnActionFocus }
+    @objc public final var colorContentSelectedFocus: MultipleColorSemanticTokens { colors.contentOnActionFocus }
     /// Has for value token colors.contentDefault
-    @objc public final var chipColorContentUnselectedEnabled: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var colorContentUnselectedEnabled: MultipleColorSemanticTokens { colors.contentDefault }
     /// Has for value token colors.actionHover
-    @objc public final var chipColorContentUnselectedHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorContentUnselectedHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var chipColorContentUnselectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorContentUnselectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionDisabled
-    @objc public final var chipColorContentUnselectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
+    @objc public final var colorContentUnselectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
     /// Has for value token colors.actionFocus
-    @objc public final var chipColorContentUnselectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorContentUnselectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBorderSelectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBorderSelectedEnabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBorderSelectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBorderSelectedHover: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBorderSelectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBorderSelectedPressed: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBorderSelectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBorderSelectedDisabled: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityTransparent
-    @objc public final var chipColorBorderSelectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorBorderSelectedFocus: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.borderEmphasized
-    @objc public final var chipColorBorderUnselectedEnabled: MultipleColorSemanticTokens { colors.borderEmphasized }
+    @objc public final var colorBorderUnselectedEnabled: MultipleColorSemanticTokens { colors.borderEmphasized }
     /// Has for value token colors.actionHover
-    @objc public final var chipColorBorderUnselectedHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorBorderUnselectedHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var chipColorBorderUnselectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorBorderUnselectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
     /// Has for value token colors.actionDisabled
-    @objc public final var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
+    @objc public final var colorBorderUnselectedDisabled: MultipleColorSemanticTokens { colors.actionDisabled }
     /// Has for value token colors.actionFocus
-    @objc public final var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorBorderUnselectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
     /// Has for value token borders.radiusPill
-    @objc public final var chipBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    @objc public final var borderRadius: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.widthNone
-    @objc public final var chipBorderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthThin
-    @objc public final var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
+    @objc public final var borderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token borders.widthDefault
-    @objc public final var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthDefault }
+    @objc public final var borderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token spaces.paddingBlock2xsmall
-    @objc public final var chipSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlock2xsmall }
     /// Has for value token spaces.paddingBlockXsmall
-    @objc public final var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    @objc public final var spacePaddingBlockIconOnly: SpaceSemanticToken { spaces.paddingBlockXsmall }
     /// Has for value token spaces.paddingInlineSmall
-    @objc public final var chipSpacePaddingInlineIcon: SpaceSemanticToken { spaces.paddingInlineSmall }
+    @objc public final var spacePaddingInlineIcon: SpaceSemanticToken { spaces.paddingInlineSmall }
     /// Has for value token spaces.paddingInlineLarge
-    @objc public final var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.paddingInlineLarge }
+    @objc public final var spacePaddingInlineIconNone: SpaceSemanticToken { spaces.paddingInlineLarge }
     /// Has for value token spaces.paddingInlineXsmall
-    @objc public final var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    @objc public final var spacePaddingInlineChevronEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token spaces.paddingInline4xsmall
-    @objc public final var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { spaces.paddingInline4xsmall }
+    @objc public final var spacePaddingInlineBadgeStart: SpaceSemanticToken { spaces.paddingInline4xsmall }
     /// Has for value token spaces.columnGapXsmall
-    @objc public final var chipSpaceColumnGapIcon: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc public final var spaceColumnGapIcon: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc public final var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc public final var spaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall
-    @objc public final var chipSizeIcon: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    @objc public final var sizeIcon: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._2xlarge
-    @objc public final var chipSizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
+    @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
     /// Has for value token dimensions._Xsmall
-    @objc public final var chipSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
+    @objc public final var sizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var chipSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
 }

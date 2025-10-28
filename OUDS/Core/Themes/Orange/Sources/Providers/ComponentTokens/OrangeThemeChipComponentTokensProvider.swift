@@ -31,13 +31,13 @@ import OUDSFoundations
 ///
 ///         // Then override the chip component tokens you want.
 ///
-///         override var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
+///         override var sizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var chipBorderWidthDefault: BorderWidthSemanticToken { borders.widthmediumt }
+///         override var borderWidthDefault: BorderWidthSemanticToken { borders.widthmediumt }
 ///
-///         override var chipColorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
+///         override var colorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
-///         override var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.paddingInlineTall }
+///         override var spaceInsetIconOnly: SpaceSemanticToken { spaces.paddingInlineTall }
 ///
 ///         // ...
 ///     }

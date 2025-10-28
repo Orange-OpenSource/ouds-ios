@@ -47,7 +47,7 @@ struct ControlItemLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.controlItem.controlItemSpaceColumnGap) {
+        HStack(alignment: .center, spacing: theme.controlItem.spaceColumnGap) {
             texts()
         }
     }

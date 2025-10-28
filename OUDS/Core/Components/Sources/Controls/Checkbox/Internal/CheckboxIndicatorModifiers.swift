@@ -144,11 +144,11 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
+        theme.controlItem.colorBgHover.color(for: colorScheme)
     }
 
     private var pressedColor: Color {
-        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
+        theme.controlItem.colorBgPressed.color(for: colorScheme)
     }
 
     private var disabledColor: Color {
@@ -258,43 +258,43 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var enabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.borderWidthSelected
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.borderWidthUnselected
         }
     }
 
     private var hoverWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelectedHover
+            theme.checkbox.borderWidthSelectedHover
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselectedHover
+            theme.checkbox.borderWidthUnselectedHover
         }
     }
 
     private var pressedWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelectedPressed
+            theme.checkbox.borderWidthSelectedPressed
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselectedPressed
+            theme.checkbox.borderWidthUnselectedPressed
         }
     }
 
     private var disabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.borderWidthSelected
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.borderWidthUnselected
         }
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkbox.checkboxBorderRadius
+        theme.checkbox.borderRadius
     }
 }
 
@@ -306,7 +306,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.checkbox.checkboxSizeIndicator,
-                   height: theme.checkbox.checkboxSizeIndicator)
+            .frame(width: theme.checkbox.sizeIndicator,
+                   height: theme.checkbox.sizeIndicator)
     }
 }

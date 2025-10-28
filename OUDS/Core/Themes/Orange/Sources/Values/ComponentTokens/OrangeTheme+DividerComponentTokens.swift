@@ -20,5 +20,5 @@ import OUDSTokensSemantic
 
 extension OrangeThemeDividerComponentTokensProvider: DividerComponentTokens {
     /// Has for value token borders.widthThin
-    @objc open var dividerBorderWidth: BorderWidthSemanticToken { borders.widthThin }
+    @objc open var borderWidth: BorderWidthSemanticToken { borders.widthThin }
 }

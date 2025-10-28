@@ -69,7 +69,7 @@ struct DividerModifier: ViewModifier {
     private var height: CGFloat? {
         switch orientation {
         case .horizontal:
-            theme.divider.dividerBorderWidth
+            theme.divider.borderWidth
         case .vertical:
             nil
         }
@@ -80,7 +80,7 @@ struct DividerModifier: ViewModifier {
         case .horizontal:
             nil
         case .vertical:
-            theme.divider.dividerBorderWidth
+            theme.divider.borderWidth
         }
     }
 

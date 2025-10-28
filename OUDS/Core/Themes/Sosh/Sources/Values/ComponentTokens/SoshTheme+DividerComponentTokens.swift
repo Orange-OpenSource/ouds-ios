@@ -20,5 +20,5 @@ import OUDSTokensSemantic
 
 extension SoshThemeDividerComponentTokensProvider: DividerComponentTokens {
     /// Has for value token borders.widthThin
-    @objc public final var dividerBorderWidth: BorderWidthSemanticToken { borders.widthThin }
+    @objc public final var borderWidth: BorderWidthSemanticToken { borders.widthThin }
 }
