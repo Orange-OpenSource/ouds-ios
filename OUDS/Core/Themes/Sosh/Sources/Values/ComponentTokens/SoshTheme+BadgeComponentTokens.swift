@@ -26,12 +26,12 @@ extension SoshThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     @objc public final var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
     /// Has for value token spaces.spacePaddingInline2xsmall
     @objc public final var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.spacePaddingInline2xsmall }
-    /// Has for value token _s._8xsmall
-    @objc public final var badgeSizeXsmall: SizeSemanticToken { _s._8xsmall }
-    /// Has for value token _s._6xsmall
-    @objc public final var badgeSizeSmall: SizeSemanticToken { _s._6xsmall }
-    /// Has for value token _s._5xsmall
-    @objc public final var badgeSizeMedium: SizeSemanticToken { _s._5xsmall }
-    /// Has for value token _s._4xsmall
-    @objc public final var badgeSizeLarge: SizeSemanticToken { _s._4xsmall }
+    /// Has for value token dimensions._8xsmall
+    @objc public final var badgeSizeXsmall: SizeSemanticToken { dimensions._8xsmall }
+    /// Has for value token dimensions._6xsmall
+    @objc public final var badgeSizeSmall: SizeSemanticToken { dimensions._6xsmall }
+    /// Has for value token dimensions._5xsmall
+    @objc public final var badgeSizeMedium: SizeSemanticToken { dimensions._5xsmall }
+    /// Has for value token dimensions._4xsmall
+    @objc public final var badgeSizeLarge: SizeSemanticToken { dimensions._4xsmall }
 }

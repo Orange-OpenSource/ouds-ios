@@ -69,7 +69,7 @@ struct OrangeThemeTests {
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(theme._s is OrangeThemeDimensionSemanticTokensProvider)
+        #expect(theme.dimensions is OrangeThemeDimensionSemanticTokensProvider)
     }
 
     @Test func defaultSizeSemanticTokensProvider() throws {

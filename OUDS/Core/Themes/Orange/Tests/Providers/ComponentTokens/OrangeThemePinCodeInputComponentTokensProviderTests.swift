@@ -32,7 +32,7 @@ struct OrangeThemePinCodeInputComponentTokensProviderTests {
     }
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider._s is OrangeThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
     }
 }
 

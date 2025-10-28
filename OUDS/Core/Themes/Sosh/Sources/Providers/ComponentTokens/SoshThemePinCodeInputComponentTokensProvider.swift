@@ -30,8 +30,8 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
     /// Provider of spaces semantic tokens to use for pin code input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of _ semantic tokens to use for pin code input _s
-    let _s: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for pin code input dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -40,13 +40,13 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
     /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil,
-         _s: AllDimensionSemanticTokensProvider? = nil)
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshsThemePinCodeInputComponentTokensProvider")
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
-        self._s = (_s ?? SoshThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshsThemePinCodeInputComponentTokensProvider")

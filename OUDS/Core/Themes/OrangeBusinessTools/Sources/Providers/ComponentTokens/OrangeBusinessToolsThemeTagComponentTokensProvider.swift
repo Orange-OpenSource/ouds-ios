@@ -21,7 +21,7 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of _s (`AllDimensionSemanticTokensProvider`) ,
+/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
 /// spaces (from `AllSpaceSemanticTokensProvider`), sizes (from `AllSSizeSemanticTokensProvider`)
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
@@ -38,7 +38,7 @@ final class OrangeBusinessToolsThemeTagComponentTokensProvider: AllTagComponentT
     let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let _s: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -49,17 +49,17 @@ final class OrangeBusinessToolsThemeTagComponentTokensProvider: AllTagComponentT
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         _s: AllDimensionSemanticTokensProvider? = nil)
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeTagComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeBusinessToolsThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
-        self._s = (_s ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeTagComponentTokensProvider")

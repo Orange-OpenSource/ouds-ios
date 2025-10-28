@@ -35,14 +35,14 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
                   colors: AllColorSemanticTokensProvider?,
                   spaces: AllSpaceSemanticTokensProvider?,
                   opacities: AllOpacitySemanticTokensProvider?,
-                  _s: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
         super.init(sizes: sizes,
                    borders: borders,
                    colors: colors,
                    spaces: spaces,
                    opacities: opacities,
-                   _s: _s)
+                   dimensions: dimensions)
     }
 
     // MARK: - Switch component tokens

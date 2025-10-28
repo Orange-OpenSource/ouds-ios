@@ -45,30 +45,30 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
     /// Has for value token spaces.spacePaddingInlineXsmall
     @objc open var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token _s._3xlarge
-    @objc open var switchSizeMinWidth: SizeSemanticToken { _s._3xlarge }
-    /// Has for value token _s._Xsmall
-    @objc open var switchSizeMinHeight: SizeSemanticToken { _s._Xsmall }
+    /// Has for value token dimensions._3xlarge
+    @objc open var switchSizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
+    /// Has for value token dimensions._Xsmall
+    @objc open var switchSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token _s._Xsmall
-    @objc open var switchSizeMaxHeight: SizeSemanticToken { _s._Xsmall }
-    /// Has for value token _s._3xsmall
-    @objc open var switchSizeWidthCursorSelected: SizeSemanticToken { _s._3xsmall }
-    /// Has for value token _s._5xsmall
-    @objc open var switchSizeWidthCursorUnselected: SizeSemanticToken { _s._5xsmall }
-    /// Has for value token _s._Xsmall
-    @objc open var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { _s._Xsmall }
-    /// Has for value token _s._3xsmall
-    @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { _s._3xsmall }
-    /// Has for value token _s._3xlarge
-    @objc open var switchSizeWidthTrack: SizeSemanticToken { _s._3xlarge }
-    /// Has for value token _s._3xsmall
-    @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { _s._3xsmall }
-    /// Has for value token _s._5xsmall
-    @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { _s._5xsmall }
-    /// Has for value token _s._Xsmall
-    @objc open var switchSizeHeightTrack: SizeSemanticToken { _s._Xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc open var switchSizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token dimensions._3xsmall
+    @objc open var switchSizeWidthCursorSelected: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._5xsmall
+    @objc open var switchSizeWidthCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc open var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token dimensions._3xsmall
+    @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._3xlarge
+    @objc open var switchSizeWidthTrack: SizeSemanticToken { dimensions._3xlarge }
+    /// Has for value token dimensions._3xsmall
+    @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._5xsmall
+    @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc open var switchSizeHeightTrack: SizeSemanticToken { dimensions._xsmall }
 }
 
 // swiftlint:enable line_length

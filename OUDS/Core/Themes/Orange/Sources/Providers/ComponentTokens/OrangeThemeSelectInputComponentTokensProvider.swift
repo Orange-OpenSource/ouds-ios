@@ -22,7 +22,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeSelectInputComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `SelectInputComponentTokens` so as to expose the component tokens for *select input* through any `OUDSTheme`.
-/// *Select input* components tokens are defined with semantic tokens of _s (from `AllDimensionSemanticTokensProvider`)
+/// *Select input* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`)
 ///
 /// ```swift
 ///     // Define your own provider for select input component tokens
@@ -70,24 +70,24 @@ import OUDSFoundations
 ///
 ///     // Or use your own _ semantic tokens providers (or only some)
 ///     let selectInputComponentTokensProvider = OrangeThemeSelectInputComponentTokensProvider(
-///                                                 _s: CustomDimensionSemanticTokensProvider())
+///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
 open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
-    /// Provider of _s semantic tokens to use for text input _s
-    public let _s: AllDimensionSemanticTokensProvider
+    /// Provider of dimensions semantic tokens to use for text input dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
-    /// - Parameter _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
-    public init(_s: AllDimensionSemanticTokensProvider? = nil) {
+    /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSelectInputComponentTokensProvider")
-        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeSelectInputComponentTokensProvider")

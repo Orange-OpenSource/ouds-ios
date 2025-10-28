@@ -63,9 +63,9 @@ A semantic token points to a raw token or another semantic token, and is used by
 A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". 
 Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, colors, spacings, elevations, sizings, opacities, grids and fonts. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. 
 Finally, any of these semantic tokens is associated to a raw value which will be - in the end - applied to *SwiftUI* views inside components. *Type aliases* will help to make a simple match between any semantic tokens and raw tokens. 
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition, only their rendering.
+Thus if we need for example to change a warning color, supposing this color is defined as a dimensionsemantic token_, we only have to change its assigned value and all components using the dimensionsemantic token_ won't be impacted in their definition, only their rendering.
 
-Each _semantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through *tokens providers*. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
+Each dimensionsemantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through *tokens providers*. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
 
 To keep the same semantics as the ones used in our specifications, _type aliases_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These *type aliases* are available for those who want to make their own theme. It's only syntaxic sugar to bring _design words_ in our product.
@@ -109,7 +109,7 @@ You may see the source code can be more simple, or the source code does not foll
 
 In fact, we rely to much on *Figma* and how the design system is implemented.
 There are thousands of tokens, and we do not know if they will be used, how and by whom. In addition, the logic behind these tokens, their nature and names, is very tight to the web domain because the design team behind is more used to web environment than mobile ones like Android and iOS. Some tokens like composite tokens are defined in *Figma* but *Figma* is not able to manage them, it is tinkering, and the outputed JSON cannot manage that too.
-In addition, *Figma* exposes the tokens in JSON, which is then parsed with our own fork and implementation of _style dictionary_ tool which struggles to output the JSON to web, Kotlin, Flutter and Swift assets.
+In addition, *Figma* exposes the tokens in JSON, which is then parsed with our own fork and implementation of dimensionstyle dictionary_ tool which struggles to output the JSON to web, Kotlin, Flutter and Swift assets.
 
 That is the reason why:
 - some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers

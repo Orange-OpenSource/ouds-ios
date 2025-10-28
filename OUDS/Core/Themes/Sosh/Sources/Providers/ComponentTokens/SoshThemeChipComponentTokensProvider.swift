@@ -20,7 +20,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `ChipComponentTokens` so as to expose the component tokens for *chip* through any `OUDSTheme`.
 /// *Chip* components tokens are defined with raw and semantic tokens of colors (from `AllColorSemanticTokensProvider`) ,
-/// spaces (from `AllSpaceSemanticTokensProvider`), _s (`AllDimensionSemanticTokensProvider`),
+/// spaces (from `AllSpaceSemanticTokensProvider`), dimensions (`AllDimensionSemanticTokensProvider`),
 /// border  (from `AllBorderSemanticTokensProvider`) and sizes  (`AllDSizeSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
@@ -39,7 +39,7 @@ final class SoshThemeChipComponentTokensProvider: AllChipComponentTokensProvider
     let spaces: AllSpaceSemanticTokensProvider
 
     /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let _s: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -51,19 +51,19 @@ final class SoshThemeChipComponentTokensProvider: AllChipComponentTokensProvider
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         _s: AllDimensionSemanticTokensProvider? = nil)
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
-        self._s = (_s ?? SoshThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeChipComponentTokensProvider")

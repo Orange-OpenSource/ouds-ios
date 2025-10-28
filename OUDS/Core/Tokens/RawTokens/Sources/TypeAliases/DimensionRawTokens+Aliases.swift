@@ -11,5 +11,5 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-/// Raw tokens of _s are finaly `Double`, to keep grammar clean and clear with design system grammar.
+/// Raw tokens of dimensions are finaly `Double`, to keep grammar clean and clear with design system grammar.
 public typealias DimensionRawToken = Double

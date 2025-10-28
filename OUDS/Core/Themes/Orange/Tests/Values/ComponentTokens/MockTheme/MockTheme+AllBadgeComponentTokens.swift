@@ -26,10 +26,10 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
     static let mockThemeBadgeSize: SizeSemanticToken = 118_218
 
     override init(spaces: AllSpaceSemanticTokensProvider?,
-                  _s: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
         super.init(spaces: spaces,
-                   _s: _s)
+                   dimensions: dimensions)
     }
 
     // MARK: - Badge component tokens

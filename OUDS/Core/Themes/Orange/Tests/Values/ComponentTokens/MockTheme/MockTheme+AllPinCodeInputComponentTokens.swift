@@ -28,9 +28,9 @@ final class MockThemePinCodeInputComponentTokenProvider: OrangeThemePinCodeInput
     static let mockThemePinCodeInputSpace: SpaceSemanticToken = 1_312
 
     override init(spaces: AllSpaceSemanticTokensProvider?,
-                  _s: AllDimensionSemanticTokensProvider?)
+                  dimensions: AllDimensionSemanticTokensProvider?)
     {
-        super.init(spaces: spaces, _s: _s)
+        super.init(spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Pin code input component tokens

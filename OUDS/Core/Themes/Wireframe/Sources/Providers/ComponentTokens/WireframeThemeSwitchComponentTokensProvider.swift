@@ -22,7 +22,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `SwitchComponentTokens` so as to expose the component tokens for *switch / toggle* through any `OUDSTheme`.
 /// *Switch* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
-/// spaces (from `AllSpaceSemanticTokensProvider`) , _s (`AllDimensionSemanticTokensProvider`),
+/// spaces (from `AllSpaceSemanticTokensProvider`) , dimensions (`AllDimensionSemanticTokensProvider`),
 /// borders (`AllBorderSemanticTokensProvider`) , opacities (`AllOpacitySemanticTokensProvider`).
 /// and  sizes (`AllSizeSemanticTokensProvider`).
 ///
@@ -45,7 +45,7 @@ final class WireframeThemeSwitchComponentTokensProvider: AllSwitchComponentToken
     let opacities: AllOpacitySemanticTokensProvider
 
     /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let _s: AllDimensionSemanticTokensProvider
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -58,13 +58,13 @@ final class WireframeThemeSwitchComponentTokensProvider: AllSwitchComponentToken
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil a default one will be used (``WireframeThemeOpacitySemanticTokensProvider``)
-    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
          opacities: AllOpacitySemanticTokensProvider? = nil,
-         _s: AllDimensionSemanticTokensProvider? = nil)
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of WireframeThemeSwitchComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
@@ -72,7 +72,7 @@ final class WireframeThemeSwitchComponentTokensProvider: AllSwitchComponentToken
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
         self.opacities = (opacities ?? WireframeThemeOpacitySemanticTokensProvider())
-        self._s = (_s ?? WireframeThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeSwitchComponentTokensProvider")

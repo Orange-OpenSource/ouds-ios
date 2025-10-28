@@ -29,7 +29,7 @@ struct OrangeBusinessToolsThemeSpaceSemanticTokensProviderTests {
     // MARK: - Tests
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider._s is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is OrangeBusinessToolsThemeDimensionSemanticTokensProvider)
     }
 }
 

@@ -54,14 +54,14 @@ extension SoshThemeTagComponentTokensProvider: TagComponentTokens {
     @objc public final var tagSizeAssetSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
     @objc public final var tagSizeAssetDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token _s._3xsmall
-    @objc public final var tagSizeMinHeightSmall: SizeSemanticToken { _s._3xsmall }
-    /// Has for value token _s._Xsmall
-    @objc public final var tagSizeMinHeightDefault: SizeSemanticToken { _s._Xsmall }
-    /// Has for value token _s._Large
-    @objc public final var tagSizeMinWidthSmall: SizeSemanticToken { _s._Large }
-    /// Has for value token _s._Xlarge
-    @objc public final var tagSizeMinWidthDefault: SizeSemanticToken { _s._Xlarge }
+    /// Has for value token dimensions._3xsmall
+    @objc public final var tagSizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var tagSizeMinHeightDefault: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token dimensions._Large
+    @objc public final var tagSizeMinWidthSmall: SizeSemanticToken { dimensions._large }
+    /// Has for value token dimensions._Xlarge
+    @objc public final var tagSizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc public final var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

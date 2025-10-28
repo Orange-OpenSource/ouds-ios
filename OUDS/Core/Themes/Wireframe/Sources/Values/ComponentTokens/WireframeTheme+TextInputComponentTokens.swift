@@ -62,8 +62,8 @@ extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentToke
     @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
     @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token _s._4xsmall
-    @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { _s._4xsmall }
+    /// Has for value token dimensions._4xsmall
+    @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
     /// Has for value token DimensionRawTokens._600
     @objc public final var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._600 }
     /// Has for value token DimensionRawTokens._750

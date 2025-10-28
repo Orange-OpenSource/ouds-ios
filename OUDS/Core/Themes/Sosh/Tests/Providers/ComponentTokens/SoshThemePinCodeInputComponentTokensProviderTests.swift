@@ -32,7 +32,7 @@ struct SoshThemePinCodeInputComponentTokensProviderTests {
     }
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider._s is SoshThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
     }
 }
 

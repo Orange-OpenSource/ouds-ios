@@ -27,8 +27,8 @@ final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputCo
 
     static let mockThemeSelectInputSize: DimensionRawToken = 118
 
-    override init(_s: AllDimensionSemanticTokensProvider?) {
-        super.init(_s: _s)
+    override init(dimensions: AllDimensionSemanticTokensProvider?) {
+        super.init(dimensions: dimensions)
     }
 
     // MARK: - Select Input component tokens

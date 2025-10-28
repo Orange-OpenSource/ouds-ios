@@ -62,8 +62,8 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
     @objc open var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token _s._4xsmall
-    @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { _s._4xsmall }
+    /// Has for value token dimensions._4xsmall
+    @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
     /// Has for value token DimensionRawTokens._600
     @objc open var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._600 }
     /// Has for value token DimensionRawTokens._750

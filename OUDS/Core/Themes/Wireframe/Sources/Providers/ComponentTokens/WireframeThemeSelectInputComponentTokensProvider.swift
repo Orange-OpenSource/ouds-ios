@@ -21,23 +21,23 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllSelectInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `SelectInputComponentTokens` so as to expose the component tokens for *select* through any `OUDSTheme`.
-/// *Select input* components tokens are defined with semantic tokens of _s (from `AllDimensionSemanticTokensProvider`).
+/// *Select input* components tokens are defined with semantic tokens of dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class WireframeThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
-    /// Provider of _s semantic tokens to use for pin code input _s
-    let _s: AllDimensionSemanticTokensProvider
+    /// Provider of dimensions semantic tokens to use for pin code input dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
-    /// - Parameter _s: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
-    init(_s: AllDimensionSemanticTokensProvider? = nil) {
+    /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of WireframeThemeSelectInputComponentTokensProvider")
-        self._s = (_s ?? WireframeThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeSelectInputComponentTokensProvider")

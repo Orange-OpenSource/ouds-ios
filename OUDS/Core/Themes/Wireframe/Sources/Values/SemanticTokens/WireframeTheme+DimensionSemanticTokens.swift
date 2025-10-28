@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 extension WireframeThemeDimensionSemanticTokensProvider: DimensionSemanticTokens {
     /// Has for value token DimensionRawTokens._0
-    @objc public final var _None: DimensionSemanticToken { DimensionRawTokens._0 }
+    @objc public final var _none: DimensionSemanticToken { DimensionRawTokens._0 }
     /// Has for value token DimensionRawTokens.outOfSystem25
     @objc public final var _12xsmall: DimensionSemanticToken { DimensionRawTokens.outOfSystem25 }
     /// Has for value token DimensionRawTokens.outOfSystem50
@@ -44,15 +44,15 @@ extension WireframeThemeDimensionSemanticTokensProvider: DimensionSemanticTokens
     /// Has for value token DimensionRawTokens._350
     @objc public final var _2xsmall: DimensionSemanticToken { DimensionRawTokens._350 }
     /// Has for value token DimensionRawTokens._400
-    @objc public final var _Xsmall: DimensionSemanticToken { DimensionRawTokens._400 }
+    @objc public final var _xsmall: DimensionSemanticToken { DimensionRawTokens._400 }
     /// Has for value token DimensionRawTokens._450
-    @objc public final var _Small: DimensionSemanticToken { DimensionRawTokens._450 }
+    @objc public final var dimensionsmall: DimensionSemanticToken { DimensionRawTokens._450 }
     /// Has for value token DimensionRawTokens._500
-    @objc public final var _Medium: DimensionSemanticToken { DimensionRawTokens._500 }
+    @objc public final var _medium: DimensionSemanticToken { DimensionRawTokens._500 }
     /// Has for value token DimensionRawTokens._550
-    @objc public final var _Large: DimensionSemanticToken { DimensionRawTokens._550 }
+    @objc public final var _large: DimensionSemanticToken { DimensionRawTokens._550 }
     /// Has for value token DimensionRawTokens._600
-    @objc public final var _Xlarge: DimensionSemanticToken { DimensionRawTokens._600 }
+    @objc public final var _xlarge: DimensionSemanticToken { DimensionRawTokens._600 }
     /// Has for value token DimensionRawTokens._650
     @objc public final var _2xlarge: DimensionSemanticToken { DimensionRawTokens._650 }
     /// Has for value token DimensionRawTokens._700

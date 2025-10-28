@@ -32,7 +32,7 @@ import OUDSFoundations
 ///
 /// or to an already existing theme for example:
 /// ```swift
-///     OrangeTheme(_s: OrangeThemeDimensionSemanticTokensProvider())
+///     OrangeTheme(dimensions: OrangeThemeDimensionSemanticTokensProvider())
 /// ```
 ///
 /// These _ semantic tokens are not overridable by design.

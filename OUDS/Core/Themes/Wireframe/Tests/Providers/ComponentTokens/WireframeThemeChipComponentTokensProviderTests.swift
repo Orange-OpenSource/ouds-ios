@@ -44,7 +44,7 @@ struct WireframeThemeChipComponentTokensProviderTests {
     }
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider._s is WireframeThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is WireframeThemeDimensionSemanticTokensProvider)
     }
 }
 

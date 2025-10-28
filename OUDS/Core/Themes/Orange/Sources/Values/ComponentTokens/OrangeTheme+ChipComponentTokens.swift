@@ -111,10 +111,10 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
     @objc open var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token _s._2xlarge
-    @objc open var chipSizeMinWidth: SizeSemanticToken { _s._2xlarge }
-    /// Has for value token _s._Xsmall
-    @objc open var chipSizeMinHeight: SizeSemanticToken { _s._Xsmall }
+    /// Has for value token dimensions._2xlarge
+    @objc open var chipSizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
+    /// Has for value token dimensions._Xsmall
+    @objc open var chipSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var chipSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

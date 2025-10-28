@@ -5,7 +5,7 @@
     @PageImage(purpose: card, source: "ic_theme_intro")
 }
 
-_Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ using in the end _raw tokens_.
+_Themes_ are applications of specific values for _components tokens_ and dimensionsemantic tokens_ using in the end _raw tokens_.
 A _theme_ contains any relevant tokens which can be used for components rendering.
 A _theme_ can use its own assets like fonts and icons.
 
@@ -101,7 +101,7 @@ The tuning to apply must be done at theme init.
 You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets) or `OUDSTheme`.
 You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is, but you can of course, you jusr will have to add your own tokens providers.
 
-Then, you should override the _semantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
+Then, you should override the dimensionsemantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
 
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 

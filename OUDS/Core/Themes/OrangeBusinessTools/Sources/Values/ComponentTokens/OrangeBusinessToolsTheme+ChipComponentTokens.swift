@@ -111,10 +111,10 @@ extension OrangeBusinessToolsThemeChipComponentTokensProvider: ChipComponentToke
     @objc public final var chipSpaceColumnGapBadgeChevron: SpaceSemanticToken { spaces.spaceColumnGap2xsmall }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
     @objc public final var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token _s._2xlarge
-    @objc public final var chipSizeMinWidth: SizeSemanticToken { _s._2xlarge }
-    /// Has for value token _s._Xsmall
-    @objc public final var chipSizeMinHeight: SizeSemanticToken { _s._Xsmall }
+    /// Has for value token dimensions._2xlarge
+    @objc public final var chipSizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var chipSizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc public final var chipSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

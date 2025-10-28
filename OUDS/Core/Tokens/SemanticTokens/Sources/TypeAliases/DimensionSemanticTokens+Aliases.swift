@@ -13,5 +13,5 @@
 
 import OUDSTokensRaw
 
-/// Basically a semantic token for _s is a raw token for _s, to keep grammar clean and clear with design system grammar.
+/// Basically a semantic token for dimensions is a raw token for dimensions, to keep grammar clean and clear with design system grammar.
 public typealias DimensionSemanticToken = DimensionRawToken

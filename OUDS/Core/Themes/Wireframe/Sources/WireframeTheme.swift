@@ -70,29 +70,29 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let fonts = WireframeThemeFontSemanticTokensProvider()
         let grids = WireframeThemeGridSemanticTokensProvider()
         let opacities = WireframeThemeOpacitySemanticTokensProvider()
-        let _s = WireframeThemeDimensionSemanticTokensProvider()
-        let sizes = WireframeThemeSizeSemanticTokensProvider(_s: _s)
-        let spaces = WireframeThemeSpaceSemanticTokensProvider(_s: _s)
+        let dimensions = WireframeThemeDimensionSemanticTokensProvider()
+        let sizes = WireframeThemeSizeSemanticTokensProvider(dimensions: dimensions)
+        let spaces = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
-        let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, _s: _s)
+        let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
-        let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
+        let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-        let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, _s: _s)
+        let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = WireframeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = WireframeThemeSelectInputComponentTokensProvider(_s: _s)
+        let selectInput = WireframeThemeSelectInputComponentTokensProvider(dimensions: dimensions)
         let skeleton = WireframeThemeSkeletonComponentTokensProvider(colors: colors)
-        let `switch` = WireframeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, _s: _s)
-        let tag = WireframeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, _s: _s)
+        let `switch` = WireframeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
+        let tag = WireframeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
         let inputTag = WireframeThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = WireframeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
+        let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
 
         super.init(borders: borders,
                    colors: colors,
@@ -101,7 +101,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   _s: _s,
+                   dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,

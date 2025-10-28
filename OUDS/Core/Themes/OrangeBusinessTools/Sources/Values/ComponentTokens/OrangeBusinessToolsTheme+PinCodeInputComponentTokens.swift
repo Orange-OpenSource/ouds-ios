@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 extension OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: PinCodeInputComponentTokens {
     /// Has for value token spaces.spaceColumnGapMedium
     @objc public final var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token _s._Large
-    @objc public final var pinCodeInputSizeMinWidth: SizeSemanticToken { _s._Large }
-    /// Has for value token _s._3xlarge
-    @objc public final var pinCodeInputSizeMaxWidth: SizeSemanticToken { _s._3xlarge }
+    /// Has for value token dimensions._Large
+    @objc public final var pinCodeInputSizeMinWidth: SizeSemanticToken { dimensions._large }
+    /// Has for value token dimensions._3xlarge
+    @objc public final var pinCodeInputSizeMaxWidth: SizeSemanticToken { dimensions._3xlarge }
 }

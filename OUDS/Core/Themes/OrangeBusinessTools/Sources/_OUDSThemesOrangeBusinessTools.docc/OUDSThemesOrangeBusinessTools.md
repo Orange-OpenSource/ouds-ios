@@ -10,7 +10,7 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The Orange Business Tools theme is dedicated to applications with strong _s constraints.
+The Orange Business Tools theme is dedicated to applications with strong dimensions constraints.
 
 ## Overview
 
@@ -20,7 +20,7 @@ The Orange Business Tools theme is dedicated to applications with strong _s cons
 ```
 
 Some products may have heavy and very rich user interfaces with a lot of components and elements to display and
-with which users can interact. Thus for such products there are specific constraints of _s, spaces and sizes.
+with which users can interact. Thus for such products there are specific constraints of dimensions, spaces and sizes.
 That is the reason why this theme exists.
 
 > Note: This theme is related to Orange theme module to use some raw tokens of colors.

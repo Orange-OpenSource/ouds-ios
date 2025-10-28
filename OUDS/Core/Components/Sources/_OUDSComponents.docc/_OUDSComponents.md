@@ -27,7 +27,7 @@ You can get more details about them in the categories below:
 ### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
-Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
+Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a dimensionspread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
 // For example, apply the elevation effect "elevationDrag" from your theme:
@@ -61,7 +61,7 @@ public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lin
 public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
 ```
 
-However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
+However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the dimensionsystem one_.
 Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the system font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):

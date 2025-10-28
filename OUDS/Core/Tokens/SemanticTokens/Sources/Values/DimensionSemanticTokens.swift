@@ -17,7 +17,7 @@
 
 // swiftlint:disable missing_docs
 
-/// This is a group of semantic tokens for **_s**.
+/// This is a group of semantic tokens for **dimensions**.
 /// It defines all ``DimensionSemanticToken`` a theme must have.
 /// Any _ semantic token must be declared there.
 ///
@@ -28,9 +28,12 @@
 /// - Since: 0.16.0
 public protocol DimensionSemanticTokens {
 
-    var _None: DimensionSemanticToken { get }
+    // NOTE: To keep consistency in variable snames, start all of them by '_'
+    // because those starting with digits do not compile
 
-    var _Xsmall: DimensionSemanticToken { get }
+    var _none: DimensionSemanticToken { get }
+
+    var _xsmall: DimensionSemanticToken { get }
     var _2xsmall: DimensionSemanticToken { get }
     var _3xsmall: DimensionSemanticToken { get }
     var _4xsmall: DimensionSemanticToken { get }
@@ -43,13 +46,13 @@ public protocol DimensionSemanticTokens {
     var _11xsmall: DimensionSemanticToken { get }
     var _12xsmall: DimensionSemanticToken { get }
 
-    var _Small: DimensionSemanticToken { get }
+    var dimensionsmall: DimensionSemanticToken { get }
 
-    var _Medium: DimensionSemanticToken { get }
+    var _medium: DimensionSemanticToken { get }
 
-    var _Large: DimensionSemanticToken { get }
+    var _large: DimensionSemanticToken { get }
 
-    var _Xlarge: DimensionSemanticToken { get }
+    var _xlarge: DimensionSemanticToken { get }
     var _2xlarge: DimensionSemanticToken { get }
     var _3xlarge: DimensionSemanticToken { get }
     var _4xlarge: DimensionSemanticToken { get }

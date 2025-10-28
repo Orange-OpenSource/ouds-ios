@@ -30,9 +30,9 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
     override init(sizes: AllSizeSemanticTokensProvider?,
                   borders: AllBorderSemanticTokensProvider?,
                   spaces: AllSpaceSemanticTokensProvider?,
-                  _s: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
-        super.init(sizes: sizes, borders: borders, spaces: spaces, _s: _s)
+        super.init(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Tag component tokens
