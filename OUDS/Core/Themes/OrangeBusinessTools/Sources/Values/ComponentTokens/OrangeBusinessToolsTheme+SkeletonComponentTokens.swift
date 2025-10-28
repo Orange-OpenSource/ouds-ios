@@ -20,9 +20,9 @@ import OUDSTokensSemantic
 
 extension OrangeBusinessToolsThemeSkeletonComponentTokensProvider: SkeletonComponentTokens {
     /// Has for value token colors.opacityLowest
-    @objc public final var skeletonColorBg: MultipleColorSemanticTokens { colors.opacityLowest }
+    @objc public final var colorBg: MultipleColorSemanticTokens { colors.opacityLowest }
     /// Has for value token colors.opacityTransparent
-    @objc public final var skeletonColorGradientStartEnd: MultipleColorSemanticTokens { colors.opacityTransparent }
+    @objc public final var colorGradientStartEnd: MultipleColorSemanticTokens { colors.opacityTransparent }
     /// Has for value token colors.opacityLower
-    @objc public final var skeletonColorGradientMiddle: MultipleColorSemanticTokens { colors.opacityLower }
+    @objc public final var colorGradientMiddle: MultipleColorSemanticTokens { colors.opacityLower }
 }

@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the skeleton component tokens you want.
 ///
-///         override var skeletonColorGradientMiddle:  MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+///         override var colorGradientMiddle:  MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
 ///         // ...
 ///     }

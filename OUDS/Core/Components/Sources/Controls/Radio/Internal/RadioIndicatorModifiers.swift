@@ -248,25 +248,25 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     }
 
     private var enabledWidth: CGFloat {
-        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
+        isOn ? theme.radioButton.borderWidthSelected : theme.radioButton.borderWidthUnselected
     }
 
     private var hoverWidth: CGFloat {
-        isOn ? theme.radioButton.radioButtonBorderWidthSelectedHover : theme.radioButton.radioButtonBorderWidthUnselectedHover
+        isOn ? theme.radioButton.borderWidthSelectedHover : theme.radioButton.borderWidthUnselectedHover
     }
 
     private var pressedWidth: CGFloat {
-        isOn ? theme.radioButton.radioButtonBorderWidthSelectedPressed : theme.radioButton.radioButtonBorderWidthUnselectedPressed
+        isOn ? theme.radioButton.borderWidthSelectedPressed : theme.radioButton.borderWidthUnselectedPressed
     }
 
     private var disabledWidth: CGFloat {
-        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
+        isOn ? theme.radioButton.borderWidthSelected : theme.radioButton.borderWidthUnselected
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.radioButton.radioButtonBorderRadius
+        theme.radioButton.borderRadius
     }
 }
 
@@ -278,7 +278,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.radioButton.radioButtonSizeIndicator,
-                   height: theme.radioButton.radioButtonSizeIndicator)
+            .frame(width: theme.radioButton.sizeIndicator,
+                   height: theme.radioButton.sizeIndicator)
     }
 }

@@ -22,7 +22,7 @@
 /// Any space semantic token must be declared there.
 ///
 /// - Since: 0.8.0
-public protocol SpaceSemanticTokens {
+public protocol SpaceSemanticTokens { // 👾
 
     // MARK: Semantic token - Spacing - Scaled
 

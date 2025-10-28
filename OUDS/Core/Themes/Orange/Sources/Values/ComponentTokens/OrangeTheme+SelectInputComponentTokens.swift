@@ -20,5 +20,5 @@ import OUDSTokensSemantic
 
 extension OrangeThemeSelectInputComponentTokensProvider: SelectInputComponentTokens {
     /// Has for value token dimensions._8xlarge
-    @objc open var selectInputSizeMinWidth: SizeSemanticToken { dimensions._8xlarge }
+    @objc open var sizeMinWidth: SizeSemanticToken { dimensions._8xlarge }
 }

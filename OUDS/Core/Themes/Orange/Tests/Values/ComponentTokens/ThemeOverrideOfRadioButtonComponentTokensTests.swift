@@ -31,70 +31,70 @@ struct ThemeOverrideOfRadioButtonComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideRadioButtonSizeMaxHeight() throws {
-        #expect(inheritedTheme.radioButton.radioButtonSizeMaxHeight != abstractTheme.radioButton.radioButtonSizeMaxHeight)
-        #expect(inheritedTheme.radioButton.radioButtonSizeMaxHeight == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
+        #expect(inheritedTheme.radioButton.sizeMaxHeight != abstractTheme.radioButton.sizeMaxHeight)
+        #expect(inheritedTheme.radioButton.sizeMaxHeight == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonSizeMinHeight() throws {
-        #expect(inheritedTheme.radioButton.radioButtonSizeMinHeight != abstractTheme.radioButton.radioButtonSizeMinHeight)
-        #expect(inheritedTheme.radioButton.radioButtonSizeMinHeight == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
+        #expect(inheritedTheme.radioButton.sizeMinHeight != abstractTheme.radioButton.sizeMinHeight)
+        #expect(inheritedTheme.radioButton.sizeMinHeight == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonSizeIndicator() throws {
-        #expect(inheritedTheme.radioButton.radioButtonSizeIndicator != abstractTheme.radioButton.radioButtonSizeIndicator)
-        #expect(inheritedTheme.radioButton.radioButtonSizeIndicator == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
+        #expect(inheritedTheme.radioButton.sizeIndicator != abstractTheme.radioButton.sizeIndicator)
+        #expect(inheritedTheme.radioButton.sizeIndicator == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonSizeMinWidth() throws {
-        #expect(inheritedTheme.radioButton.radioButtonSizeMinWidth != abstractTheme.radioButton.radioButtonSizeMinWidth)
-        #expect(inheritedTheme.radioButton.radioButtonSizeMinWidth == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
+        #expect(inheritedTheme.radioButton.sizeMinWidth != abstractTheme.radioButton.sizeMinWidth)
+        #expect(inheritedTheme.radioButton.sizeMinWidth == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
     }
 
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderRadius() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderRadius != abstractTheme.radioButton.radioButtonBorderRadius)
-        #expect(inheritedTheme.radioButton.radioButtonBorderRadius == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderRadius)
+        #expect(inheritedTheme.radioButton.borderRadius != abstractTheme.radioButton.borderRadius)
+        #expect(inheritedTheme.radioButton.borderRadius == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderRadius)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthSelected() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelected != abstractTheme.radioButton.radioButtonBorderWidthSelected)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelected == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthSelected != abstractTheme.radioButton.borderWidthSelected)
+        #expect(inheritedTheme.radioButton.borderWidthSelected == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthSelectedFocus() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedFocus != abstractTheme.radioButton.radioButtonBorderWidthSelectedFocus)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedFocus == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedFocus != abstractTheme.radioButton.borderWidthSelectedFocus)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedFocus == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthSelectedHover() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedHover != abstractTheme.radioButton.radioButtonBorderWidthSelectedHover)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedHover == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedHover != abstractTheme.radioButton.borderWidthSelectedHover)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedHover == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthSelectedPressed() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedPressed != abstractTheme.radioButton.radioButtonBorderWidthSelectedPressed)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthSelectedPressed == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedPressed != abstractTheme.radioButton.borderWidthSelectedPressed)
+        #expect(inheritedTheme.radioButton.borderWidthSelectedPressed == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthUnselected() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselected != abstractTheme.radioButton.radioButtonBorderWidthUnselected)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselected == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthUnselected != abstractTheme.radioButton.borderWidthUnselected)
+        #expect(inheritedTheme.radioButton.borderWidthUnselected == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthUnselectedFocus() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedFocus != abstractTheme.radioButton.radioButtonBorderWidthUnselectedFocus)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedFocus == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedFocus != abstractTheme.radioButton.borderWidthUnselectedFocus)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedFocus == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthUnselectedHover() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedHover != abstractTheme.radioButton.radioButtonBorderWidthUnselectedHover)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedHover == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedHover != abstractTheme.radioButton.borderWidthUnselectedHover)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedHover == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideRadioButtonBorderWidthUnselectedPressed() throws {
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedPressed != abstractTheme.radioButton.radioButtonBorderWidthUnselectedPressed)
-        #expect(inheritedTheme.radioButton.radioButtonBorderWidthUnselectedPressed == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedPressed != abstractTheme.radioButton.borderWidthUnselectedPressed)
+        #expect(inheritedTheme.radioButton.borderWidthUnselectedPressed == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonBorderWidth)
     }
 }
 

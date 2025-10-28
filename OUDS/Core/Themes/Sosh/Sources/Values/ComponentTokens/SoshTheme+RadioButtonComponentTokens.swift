@@ -20,29 +20,29 @@ import OUDSTokensSemantic
 
 extension SoshThemeRadioButtonComponentTokensProvider: RadioButtonComponentTokens {
     /// Has for value token borders.radiusPill
-    @objc public final var radioButtonBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    @objc public final var borderRadius: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.widthNone
-    @objc public final var radioButtonBorderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone
-    @objc public final var radioButtonBorderWidthSelectedHover: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthSelectedHover: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone
-    @objc public final var radioButtonBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthSelectedPressed: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone
-    @objc public final var radioButtonBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthThin
-    @objc public final var radioButtonBorderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
+    @objc public final var borderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
     /// Has for value token borders.widthMedium
-    @objc public final var radioButtonBorderWidthUnselectedHover: BorderWidthSemanticToken { borders.widthMedium }
+    @objc public final var borderWidthUnselectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
-    @objc public final var radioButtonBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
+    @objc public final var borderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium
-    @objc public final var radioButtonBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    @objc public final var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc public final var radioButtonSizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    @objc public final var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var radioButtonSizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMinHeight: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var radioButtonSizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token sizes.minInteractiveArea
-    @objc public final var radioButtonSizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc public final var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
 }

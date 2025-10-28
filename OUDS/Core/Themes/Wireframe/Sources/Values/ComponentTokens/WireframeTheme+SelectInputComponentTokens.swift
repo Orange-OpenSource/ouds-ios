@@ -20,5 +20,5 @@ import OUDSTokensSemantic
 
 extension WireframeThemeSelectInputComponentTokensProvider: SelectInputComponentTokens {
     /// Has for value token dimensions._8xlarge
-    @objc public final var selectInputSizeMinWidth: SizeSemanticToken { dimensions._8xlarge }
+    @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._8xlarge }
 }

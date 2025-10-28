@@ -33,7 +33,7 @@ struct SwitchIndicator: View {
             .padding(.horizontal, padding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
-            .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusTrack))
+            .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
     }
 
@@ -44,26 +44,26 @@ struct SwitchIndicator: View {
     }
 
     private var padding: Double {
-        isOn ? theme.switch.switchSpacePaddingInlineSelected : theme.switch.switchSpacePaddingInlineUnselected
+        isOn ? theme.switch.spacePaddingInlineSelected : theme.switch.spacePaddingInlineUnselected
     }
 
     private var trackColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            isOn ? theme.switch.switchColorTrackSelected : theme.switch.switchColorTrackUnselected
+            isOn ? theme.switch.colorTrackSelected : theme.switch.colorTrackUnselected
         case .hover, .pressed:
-            isOn ? theme.switch.switchColorTrackSelectedInteraction : theme.switch.switchColorTrackUnselectedInteraction
+            isOn ? theme.switch.colorTrackSelectedInteraction : theme.switch.colorTrackUnselectedInteraction
         case .disabled, .readOnly:
             theme.colors.actionDisabled
         }
     }
 
     private var trackWidth: Double {
-        theme.switch.switchSizeWidthTrack
+        theme.switch.sizeWidthTrack
     }
 
     private var trackHeight: Double {
-        theme.switch.switchSizeHeightTrack
+        theme.switch.sizeHeightTrack
     }
 }
 
@@ -86,11 +86,11 @@ private struct Cursor: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(tickColor)
-                .opacity(theme.switch.switchOpacityCheck)
+                .opacity(theme.switch.opacityCheck)
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-        .oudsBackground(theme.switch.switchColorCursor)
-        .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusCursor))
+        .oudsBackground(theme.switch.colorCursor)
+        .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusCursor))
         .oudsShadow(theme.elevations.raised)
         .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
     }
@@ -100,21 +100,21 @@ private struct Cursor: View {
     private var cursorWidth: Double {
         switch interactionState {
         case .pressed:
-            isOn ? theme.switch.switchSizeWidthCursorSelectedPressed : theme.switch.switchSizeWidthCursorUnselectedPressed
+            isOn ? theme.switch.sizeWidthCursorSelectedPressed : theme.switch.sizeWidthCursorUnselectedPressed
         case .disabled, .enabled, .hover, .readOnly:
-            isOn ? theme.switch.switchSizeWidthCursorSelected : theme.switch.switchSizeWidthCursorUnselected
+            isOn ? theme.switch.sizeWidthCursorSelected : theme.switch.sizeWidthCursorUnselected
         }
     }
 
     private var cursorHeight: Double {
-        isOn ? theme.switch.switchSizeHeightCursorSelected : theme.switch.switchSizeHeightCursorUnselected
+        isOn ? theme.switch.sizeHeightCursorSelected : theme.switch.sizeHeightCursorUnselected
     }
 
     private var tickColor: Color {
         if isOn {
             switch interactionState {
             case .enabled, .hover:
-                theme.switch.switchColorCheck.color(for: colorScheme)
+                theme.switch.colorCheck.color(for: colorScheme)
             case .pressed:
                 Color.clear
             case .disabled, .readOnly:
