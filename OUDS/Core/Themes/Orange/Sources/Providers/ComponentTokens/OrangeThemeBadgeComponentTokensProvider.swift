@@ -30,9 +30,9 @@ import OUDSFoundations
 ///
 ///         // Then override the badge component tokens you want.
 ///
-///         override var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens._100 }
+///         override var sizeXsmall: SizeSemanticToken { DimensionRawTokens._100 }
 ///
-///         override var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
+///         override var spaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
 ///
 ///         // ...
 ///     }

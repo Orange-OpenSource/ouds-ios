@@ -298,11 +298,11 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 // MARK: - And also for components tokens
 
 class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
-    override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
+    override public var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
-    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
-    override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
+    override public var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    override public var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // Etc.

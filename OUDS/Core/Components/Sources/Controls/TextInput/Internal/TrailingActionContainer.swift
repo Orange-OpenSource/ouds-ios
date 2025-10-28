@@ -39,8 +39,8 @@ struct TrailingActionContainer: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .oudsForegroundColor(errorIconColor)
-                    .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
-                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.fixedNone)
+                    .frame(width: theme.button.sizeIconOnly, height: theme.button.sizeIconOnly, alignment: .center)
+                    .padding(.all, trailingAction == nil ? theme.button.spaceInsetIconOnly : theme.spaces.fixedNone)
 
                 if let trailingAction {
                     trailingButton(for: trailingAction)

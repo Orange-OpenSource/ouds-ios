@@ -22,11 +22,11 @@ Below is an example about how the component tokens are declared, defined and pro
 ```swift
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
-    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
+    var sizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
-    var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
-    var buttonSpacePaddingBlock: SpaceSemanticToken { get }
+    var colorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
 }
 
 // There is an existing provider for such tokens
@@ -37,14 +37,14 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
+    @objc open var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     
     // And also semantic tokens
 
     @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
-    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
+    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider

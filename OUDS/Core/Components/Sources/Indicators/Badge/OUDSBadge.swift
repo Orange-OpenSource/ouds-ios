@@ -237,13 +237,13 @@ public struct OUDSBadge: View {
     private var frameSize: SizeSemanticToken {
         let rawSize = switch size {
         case .extraSmall:
-            theme.badge.badgeSizeXsmall
+            theme.badge.sizeXsmall
         case .small:
-            theme.badge.badgeSizeSmall
+            theme.badge.sizeSmall
         case .medium:
-            theme.badge.badgeSizeMedium
+            theme.badge.sizeMedium
         case .large:
-            theme.badge.badgeSizeLarge
+            theme.badge.sizeLarge
         }
         return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
     }

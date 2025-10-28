@@ -28,39 +28,39 @@ struct ThemeOverrideOfBadgeComponentTokensTests {
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInset() throws {
-        #expect(inheritedTheme.badge.badgeSpaceInset != abstractTheme.badge.badgeSpaceInset)
-        #expect(inheritedTheme.badge.badgeSpaceInset == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+        #expect(inheritedTheme.badge.spaceInset != abstractTheme.badge.spaceInset)
+        #expect(inheritedTheme.badge.spaceInset == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpacePaddingInlineMedium() throws {
-        #expect(inheritedTheme.badge.badgeSpacePaddingInlineMedium != abstractTheme.badge.badgeSpacePaddingInlineMedium)
-        #expect(inheritedTheme.badge.badgeSpacePaddingInlineMedium == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+        #expect(inheritedTheme.badge.spacePaddingInlineMedium != abstractTheme.badge.spacePaddingInlineMedium)
+        #expect(inheritedTheme.badge.spacePaddingInlineMedium == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpacePaddingInlineLarge() throws {
-        #expect(inheritedTheme.badge.badgeSpacePaddingInlineLarge != abstractTheme.badge.badgeSpacePaddingInlineLarge)
-        #expect(inheritedTheme.badge.badgeSpacePaddingInlineLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+        #expect(inheritedTheme.badge.spacePaddingInlineLarge != abstractTheme.badge.spacePaddingInlineLarge)
+        #expect(inheritedTheme.badge.spacePaddingInlineLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
     }
 
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSizeXsmall() throws {
-        #expect(inheritedTheme.badge.badgeSizeXsmall != abstractTheme.badge.badgeSizeXsmall)
-        #expect(inheritedTheme.badge.badgeSizeXsmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
+        #expect(inheritedTheme.badge.sizeXsmall != abstractTheme.badge.sizeXsmall)
+        #expect(inheritedTheme.badge.sizeXsmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSizeSmall() throws {
-        #expect(inheritedTheme.badge.badgeSizeSmall != abstractTheme.badge.badgeSizeSmall)
-        #expect(inheritedTheme.badge.badgeSizeSmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
+        #expect(inheritedTheme.badge.sizeSmall != abstractTheme.badge.sizeSmall)
+        #expect(inheritedTheme.badge.sizeSmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSizeMedium() throws {
-        #expect(inheritedTheme.badge.badgeSizeMedium != abstractTheme.badge.badgeSizeMedium)
-        #expect(inheritedTheme.badge.badgeSizeMedium == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
+        #expect(inheritedTheme.badge.sizeMedium != abstractTheme.badge.sizeMedium)
+        #expect(inheritedTheme.badge.sizeMedium == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSizeLarge() throws {
-        #expect(inheritedTheme.badge.badgeSizeLarge != abstractTheme.badge.badgeSizeLarge)
-        #expect(inheritedTheme.badge.badgeSizeLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
+        #expect(inheritedTheme.badge.sizeLarge != abstractTheme.badge.sizeLarge)
+        #expect(inheritedTheme.badge.sizeLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
     }
 }

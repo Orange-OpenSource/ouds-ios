@@ -57,11 +57,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var enabledColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultEnabled : theme.button.buttonColorBgDefaultEnabled
+            useMonochrome ? theme.button.monoColorBgDefaultEnabled : theme.button.colorBgDefaultEnabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongEnabled : theme.colors.actionEnabled
+            useMonochrome ? theme.button.monoColorBgStrongEnabled : theme.colors.actionEnabled
         case .brand:
-            theme.button.buttonColorBgBrandEnabled
+            theme.button.colorBgBrandEnabled
         case .minimal:
             nil
         case .negative:
@@ -72,13 +72,13 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var hoverColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultHover : theme.button.buttonColorBgDefaultHover
+            useMonochrome ? theme.button.monoColorBgDefaultHover : theme.button.colorBgDefaultHover
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.actionHover
+            useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.actionHover
+            useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalHover : theme.button.buttonColorBgMinimalHover
+            useMonochrome ? theme.button.monoColorBgMinimalHover : theme.button.colorBgMinimalHover
         case .negative:
             theme.colors.actionNegativeHover
         }
@@ -87,13 +87,13 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var pressedColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultPressed : theme.button.buttonColorBgDefaultPressed
+            useMonochrome ? theme.button.monoColorBgDefaultPressed : theme.button.colorBgDefaultPressed
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.actionPressed
+            useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.actionPressed
+            useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalPressed : theme.button.buttonColorBgMinimalPressed
+            useMonochrome ? theme.button.monoColorBgMinimalPressed : theme.button.colorBgMinimalPressed
         case .negative:
             theme.colors.actionNegativePressed
         }
@@ -102,11 +102,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var loadingColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultLoading : theme.button.buttonColorBgDefaultLoading
+            useMonochrome ? theme.button.monoColorBgDefaultLoading : theme.button.colorBgDefaultLoading
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.actionLoading
+            useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.actionLoading
+            useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
         case .minimal:
             nil
         case .negative:
@@ -117,11 +117,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultDisabled : theme.button.buttonColorBgDefaultDisabled
+            useMonochrome ? theme.button.monoColorBgDefaultDisabled : theme.button.colorBgDefaultDisabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.actionDisabled
+            useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.actionDisabled
+            useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
         case .minimal:
             nil
         case .negative:

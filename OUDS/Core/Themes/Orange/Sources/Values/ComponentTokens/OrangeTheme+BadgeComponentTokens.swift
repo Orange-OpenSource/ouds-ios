@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension OrangeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     /// Has for value token DimensionRawTokens.outOfSystem75
-    @objc open var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
+    @objc open var spaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
     /// Has for value token spaces.paddingInline3xsmall
-    @objc open var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.paddingInline3xsmall }
+    @objc open var spacePaddingInlineMedium: SpaceSemanticToken { spaces.paddingInline3xsmall }
     /// Has for value token spaces.paddingInline2xsmall
-    @objc open var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    @objc open var spacePaddingInlineLarge: SpaceSemanticToken { spaces.paddingInline2xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc open var badgeSizeXsmall: SizeSemanticToken { dimensions._8xsmall }
+    @objc open var sizeXsmall: SizeSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc open var badgeSizeSmall: SizeSemanticToken { dimensions._6xsmall }
+    @objc open var sizeSmall: SizeSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc open var badgeSizeMedium: SizeSemanticToken { dimensions._5xsmall }
+    @objc open var sizeMedium: SizeSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._4xsmall
-    @objc open var badgeSizeLarge: SizeSemanticToken { dimensions._4xsmall }
+    @objc open var sizeLarge: SizeSemanticToken { dimensions._4xsmall }
 }

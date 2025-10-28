@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension SoshThemeBulletListComponentTokensProvider: BulletListComponentTokens {
     /// Has for value token DimensionRawTokens._50
-    @objc public final var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens._50 }
+    @objc public final var spacePaddingInlineLevel0: SpaceSemanticToken { DimensionRawTokens._50 }
     /// Has for value token DimensionRawTokens._450
-    @objc public final var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens._450 }
+    @objc public final var spacePaddingInlineLevel1: SpaceSemanticToken { DimensionRawTokens._450 }
     /// Has for value token DimensionRawTokens._850
-    @objc public final var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens._850 }
+    @objc public final var spacePaddingInlineLevel2: SpaceSemanticToken { DimensionRawTokens._850 }
     /// Has for value token spaces.paddingBlock2xsmall
-    @objc public final var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    @objc public final var spacePaddingBlockBodyLarge: SpaceSemanticToken { spaces.paddingBlock2xsmall }
     /// Has for value token spaces.paddingBlock2xsmall
-    @objc public final var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    @objc public final var spacePaddingBlockBodyMedium: SpaceSemanticToken { spaces.paddingBlock2xsmall }
     /// Has for value token spaces.columnGapSmall
-    @objc public final var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { spaces.columnGapSmall }
+    @objc public final var spaceColumnGapBodyLarge: SpaceSemanticToken { spaces.columnGapSmall }
     /// Has for value token spaces.columnGapSmall
-    @objc public final var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { spaces.columnGapSmall }
+    @objc public final var spaceColumnGapBodyMedium: SpaceSemanticToken { spaces.columnGapSmall }
 }

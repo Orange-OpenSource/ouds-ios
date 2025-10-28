@@ -21,17 +21,17 @@ import OUDSTokensSemantic
 
 extension WireframeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     /// Has for value token DimensionRawTokens.outOfSystem75
-    @objc public final var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
+    @objc public final var spaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
     /// Has for value token spaces.paddingInline3xsmall
-    @objc public final var badgeSpacePaddingInlineMedium: SpaceSemanticToken { spaces.paddingInline3xsmall }
+    @objc public final var spacePaddingInlineMedium: SpaceSemanticToken { spaces.paddingInline3xsmall }
     /// Has for value token spaces.paddingInline2xsmall
-    @objc public final var badgeSpacePaddingInlineLarge: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    @objc public final var spacePaddingInlineLarge: SpaceSemanticToken { spaces.paddingInline2xsmall }
     /// Has for value token dimensions._8xsmall
-    @objc public final var badgeSizeXsmall: SizeSemanticToken { dimensions._8xsmall }
+    @objc public final var sizeXsmall: SizeSemanticToken { dimensions._8xsmall }
     /// Has for value token dimensions._6xsmall
-    @objc public final var badgeSizeSmall: SizeSemanticToken { dimensions._6xsmall }
+    @objc public final var sizeSmall: SizeSemanticToken { dimensions._6xsmall }
     /// Has for value token dimensions._5xsmall
-    @objc public final var badgeSizeMedium: SizeSemanticToken { dimensions._5xsmall }
+    @objc public final var sizeMedium: SizeSemanticToken { dimensions._5xsmall }
     /// Has for value token dimensions._4xsmall
-    @objc public final var badgeSizeLarge: SizeSemanticToken { dimensions._4xsmall }
+    @objc public final var sizeLarge: SizeSemanticToken { dimensions._4xsmall }
 }

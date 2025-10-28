@@ -28,7 +28,7 @@ Some components can be used for **layouts**.
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
-To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *buttonColorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
+To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *colorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
 
 #### How it works
 

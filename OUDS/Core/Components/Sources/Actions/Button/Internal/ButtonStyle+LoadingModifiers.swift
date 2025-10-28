@@ -37,7 +37,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.button.buttonSpacePaddingBlock)
+                    .padding(.vertical, theme.button.spacePaddingBlock)
             }
     }
 
@@ -49,12 +49,12 @@ struct ButtonLoadingContentModifier: ViewModifier {
             if colorSchemeContrast == .increased, colorScheme == .light {
                 theme.colors.contentDefault
             } else {
-                useMonochrome ? theme.button.buttonMonoColorContentDefaultLoading : theme.button.buttonColorContentDefaultLoading
+                useMonochrome ? theme.button.monoColorContentDefaultLoading : theme.button.colorContentDefaultLoading
             }
         case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongLoading : theme.colors.contentOnActionLoading
+            useMonochrome ? theme.button.monoColorContentStrongLoading : theme.colors.contentOnActionLoading
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentMinimalLoading : theme.button.buttonColorContentMinimalLoading
+            useMonochrome ? theme.button.monoColorContentMinimalLoading : theme.button.colorContentMinimalLoading
         case .negative:
             theme.colors.contentOnStatusNegativeEmphasized
         }

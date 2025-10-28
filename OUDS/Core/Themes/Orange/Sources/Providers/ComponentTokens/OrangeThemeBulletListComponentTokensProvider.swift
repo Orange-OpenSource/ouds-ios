@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the bullet list component tokens you want.
 ///
-///         override var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSmall }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSmall }
 ///
 ///         // ...
 ///     }

@@ -49,9 +49,9 @@ struct BadgeCount: View {
         case .extraSmall, .small:
             theme.spaces.fixedNone
         case .medium:
-            theme.badge.badgeSpacePaddingInlineMedium
+            theme.badge.spacePaddingInlineMedium
         case .large:
-            theme.badge.badgeSpacePaddingInlineLarge
+            theme.badge.spacePaddingInlineLarge
         }
     }
 }
