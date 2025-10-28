@@ -21,13 +21,13 @@ import OUDSTokensSemantic
 
 extension OrangeBusinessToolsThemeTextAreaComponentTokensProvider: TextAreaComponentTokens {
     /// Has for value token spaces.paddingBlockSmall
-    @objc public final var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockSmall }
+    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockSmall }
     /// Has for value token DimensionRawTokens._750
-    @objc public final var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._750 }
+    @objc public final var sizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._750 }
     /// Has for value token DimensionRawTokens._2500
-    @objc public final var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens._2500 }
+    @objc public final var sizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._950
-    @objc public final var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._950 }
+    @objc public final var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._950 }
     /// Has for value token DimensionRawTokens._6000
-    @objc public final var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
 }

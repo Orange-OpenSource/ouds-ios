@@ -34,14 +34,14 @@ final class MockThemeTextAreaComponentTokenProvider: OrangeThemeTextAreaComponen
 
     // MARK: - Spaces
 
-    override var textAreaSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
+    override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
 
     // MARK: - Sizes
 
-    override var textAreaSizeMinHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override var textAreaSizeMaxHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override var textAreaSizeMaxWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var sizeMinHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var sizeMaxHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var sizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeTextAreaSize }
+    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
 }
 
 // swiftlint:enable required_deinit

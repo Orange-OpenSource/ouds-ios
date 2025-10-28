@@ -57,7 +57,7 @@ struct ControlItemContent: View {
                 Text(errorText)
                     .labelDefaultMedium(theme)
                     .oudsForegroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
+                    .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
                     .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }

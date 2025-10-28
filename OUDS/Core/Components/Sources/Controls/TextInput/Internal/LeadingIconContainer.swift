@@ -31,7 +31,7 @@ struct LeadingIconContainer: View {
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
-            .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
+            .frame(height: theme.textInput.sizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
             .toFlip(flip)
             .accessibilityHidden(true)

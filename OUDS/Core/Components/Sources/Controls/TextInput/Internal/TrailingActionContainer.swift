@@ -34,7 +34,7 @@ struct TrailingActionContainer: View {
                     .disabled(status == .readOnly || status == .disabled)
             }
         case .error:
-            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
+            HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapTrailingErrorAction) {
                 Image(decorative: "ic_important", bundle: theme.resourcesBundle)
                     .resizable()
                     .aspectRatio(contentMode: .fill)

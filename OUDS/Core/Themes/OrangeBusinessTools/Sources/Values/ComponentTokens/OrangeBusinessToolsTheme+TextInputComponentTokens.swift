@@ -23,55 +23,55 @@ import OUDSTokensSemantic
 
 extension OrangeBusinessToolsThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     /// Has for value token colors.borderDefault
-    @objc public final var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    @objc public final var colorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
     /// Has for value token colors.actionHover
-    @objc public final var textInputColorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
     /// Has for value token colors.borderEmphasized
-    @objc public final var textInputColorBorderFocus: MultipleColorSemanticTokens { colors.borderEmphasized }
+    @objc public final var colorBorderFocus: MultipleColorSemanticTokens { colors.borderEmphasized }
     /// Has for value token colors.borderEmphasized
-    @objc public final var textInputColorBorderLoading: MultipleColorSemanticTokens { colors.borderEmphasized }
+    @objc public final var colorBorderLoading: MultipleColorSemanticTokens { colors.borderEmphasized }
     /// Has for value token borders.radiusDefault
-    @objc public final var textInputBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusSmall
-    @objc public final var textInputBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusSmall }
+    @objc public final var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusSmall }
     /// Has for value token borders.widthDefault
-    @objc public final var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium
-    @objc public final var textInputBorderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
+    @objc public final var borderWidthFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token spaces.paddingInlineLarge
-    @objc public final var textInputSpacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
+    @objc public final var spacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineLarge }
     /// Has for value token spaces.paddingInline2xsmall
-    @objc public final var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    @objc public final var spacePaddingInlineTrailingAction: SpaceSemanticToken { spaces.paddingInline2xsmall }
     /// Has for value token spaces.paddingInlineSmall
-    @objc public final var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.paddingInlineSmall }
+    @objc public final var spacePaddingInlineCountrySelectorStart: SpaceSemanticToken { spaces.paddingInlineSmall }
     /// Has for value token spaces.paddingInlineXsmall
-    @objc public final var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    @objc public final var spacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token spaces.paddingBlock2xsmall
-    @objc public final var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    @objc public final var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
     /// Has for value token spaces.paddingBlockXsmall
-    @objc public final var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    @objc public final var spacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
     /// Has for value token spaces.columnGapMedium
-    @objc public final var textInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapMedium }
+    @objc public final var spaceColumnGapDefault: SpaceSemanticToken { spaces.columnGapMedium }
     /// Has for value token spaces.columnGapXsmall
-    @objc public final var textInputSpaceColumnGapInlineText: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc public final var spaceColumnGapInlineText: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGapXsmall
-    @objc public final var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.columnGapXsmall }
+    @objc public final var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.rowGapNone
-    @objc public final var textInputSpaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
+    @objc public final var spaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
-    @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    @objc public final var sizeLeadingIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    @objc public final var sizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token dimensions._4xsmall
-    @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
+    @objc public final var sizeVerticalDividerHeight: SizeSemanticToken { dimensions._4xsmall }
     /// Has for value token DimensionRawTokens._500
-    @objc public final var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._500 }
+    @objc public final var sizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._500 }
     /// Has for value token DimensionRawTokens._650
-    @objc public final var textInputSizeMinHeight: SizeSemanticToken { DimensionRawTokens._650 }
+    @objc public final var sizeMinHeight: SizeSemanticToken { DimensionRawTokens._650 }
     /// Has for value token DimensionRawTokens._2500
-    @objc public final var textInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
+    @objc public final var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._4000
-    @objc public final var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }
 
 // swiftlint:enable identifier_name

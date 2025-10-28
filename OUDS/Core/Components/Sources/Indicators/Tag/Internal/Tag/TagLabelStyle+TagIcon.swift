@@ -49,9 +49,9 @@ struct TagLoader: View {
     private var padding: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpaceInsetLoaderDefault
+            theme.tag.spaceInsetLoaderDefault
         case .small:
-            theme.tag.tagSpaceInsetLoaderSmall
+            theme.tag.spaceInsetLoaderSmall
         }
     }
 }
@@ -189,18 +189,18 @@ struct TagAsset: View {
     private var bulletPadding: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpaceInsetBulletDefault
+            theme.tag.spaceInsetBulletDefault
         case .small:
-            theme.tag.tagSpaceInsetBulletSmall
+            theme.tag.spaceInsetBulletSmall
         }
     }
 
     private var assetPadding: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpaceInsetIconDefault
+            theme.tag.spaceInsetIconDefault
         case .small:
-            theme.tag.tagSpaceInsetIconSmall
+            theme.tag.spaceInsetIconSmall
         }
     }
 }

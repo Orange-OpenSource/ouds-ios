@@ -21,47 +21,47 @@ import OUDSTokensSemantic
 
 extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     /// Has for value token borders.radiusPill
-    @objc open var tagBorderRadius: BorderRadiusSemanticToken { borders.radiusPill }
+    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token spaces.paddingInlineSmall
-    @objc open var tagSpacePaddingInlineSmall: SpaceSemanticToken { spaces.paddingInlineSmall }
+    @objc open var spacePaddingInlineSmall: SpaceSemanticToken { spaces.paddingInlineSmall }
     /// Has for value token spaces.paddingInlineMedium
-    @objc open var tagSpacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineMedium }
+    @objc open var spacePaddingInlineDefault: SpaceSemanticToken { spaces.paddingInlineMedium }
     /// Has for value token spaces.paddingInline2xsmall
-    @objc open var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { spaces.paddingInline2xsmall }
+    @objc open var spacePaddingInlineAssetSmall: SpaceSemanticToken { spaces.paddingInline2xsmall }
     /// Has for value token spaces.paddingInlineXsmall
-    @objc open var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    @objc open var spacePaddingInlineAssetDefault: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token spaces.paddingBlock3xsmall
-    @objc open var tagSpacePaddingBlockSmall: SpaceSemanticToken { spaces.paddingBlock3xsmall }
+    @objc open var spacePaddingBlockSmall: SpaceSemanticToken { spaces.paddingBlock3xsmall }
     /// Has for value token spaces.paddingBlock2xsmall
-    @objc open var tagSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
+    @objc open var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlock2xsmall }
     /// Has for value token spaces.insetNone
-    @objc open var tagSpaceInsetIconSmall: SpaceSemanticToken { spaces.insetNone }
+    @objc open var spaceInsetIconSmall: SpaceSemanticToken { spaces.insetNone }
     /// Has for value token spaces.inset3xsmall
-    @objc open var tagSpaceInsetBulletSmall: SpaceSemanticToken { spaces.inset3xsmall }
+    @objc open var spaceInsetBulletSmall: SpaceSemanticToken { spaces.inset3xsmall }
     /// Has for value token spaces.inset4xsmall
-    @objc open var tagSpaceInsetLoaderSmall: SpaceSemanticToken { spaces.inset4xsmall }
+    @objc open var spaceInsetLoaderSmall: SpaceSemanticToken { spaces.inset4xsmall }
     /// Has for value token spaces.inset4xsmall
-    @objc open var tagSpaceInsetIconDefault: SpaceSemanticToken { spaces.inset4xsmall }
+    @objc open var spaceInsetIconDefault: SpaceSemanticToken { spaces.inset4xsmall }
     /// Has for value token DimensionRawTokens.outOfSystem75
-    @objc open var tagSpaceInsetBulletDefault: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
+    @objc open var spaceInsetBulletDefault: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
     /// Has for value token spaces.inset3xsmall
-    @objc open var tagSpaceInsetLoaderDefault: SpaceSemanticToken { spaces.inset3xsmall }
+    @objc open var spaceInsetLoaderDefault: SpaceSemanticToken { spaces.inset3xsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc open var tagSpaceColumnGapSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc open var spaceColumnGapSmall: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc open var tagSpaceColumnGapDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc open var spaceColumnGapDefault: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token sizes.iconWithLabelSmallSizeSmall
-    @objc open var tagSizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelSmallSizeSmall }
+    @objc open var sizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelSmallSizeSmall }
     /// Has for value token sizes.iconWithLabelMediumSizeSmall
-    @objc open var tagSizeAssetDefault: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
+    @objc open var sizeAssetDefault: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._3xsmall
-    @objc open var tagSizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
+    @objc open var sizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._Xsmall
-    @objc open var tagSizeMinHeightDefault: SizeSemanticToken { dimensions._xsmall }
+    @objc open var sizeMinHeightDefault: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._Large
-    @objc open var tagSizeMinWidthSmall: SizeSemanticToken { dimensions._large }
+    @objc open var sizeMinWidthSmall: SizeSemanticToken { dimensions._large }
     /// Has for value token dimensions._Xlarge
-    @objc open var tagSizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
+    @objc open var sizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
     /// Has for value token sizes.minInteractiveArea
-    @objc open var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
+    @objc open var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
 }

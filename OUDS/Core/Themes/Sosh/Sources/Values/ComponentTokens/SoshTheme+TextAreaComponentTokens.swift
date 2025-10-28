@@ -21,13 +21,13 @@ import OUDSTokensSemantic
 
 extension SoshThemeTextAreaComponentTokensProvider: TextAreaComponentTokens {
     /// Has for value token spaces.paddingBlockSmall
-    @objc public final var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockSmall }
+    @objc public final var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockSmall }
     /// Has for value token DimensionRawTokens._900
-    @objc public final var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._900 }
+    @objc public final var sizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._900 }
     /// Has for value token DimensionRawTokens._2500
-    @objc public final var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens._2500 }
+    @objc public final var sizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._1100
-    @objc public final var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1100 }
+    @objc public final var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1100 }
     /// Has for value token DimensionRawTokens._6000
-    @objc public final var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
 }

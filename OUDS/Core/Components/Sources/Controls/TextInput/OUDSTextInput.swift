@@ -362,12 +362,12 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
-                    .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+                    .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             }
         }
-        .frame(minWidth: theme.textInput.textInputSizeMinWidth,
-               maxWidth: theme.textInput.textInputSizeMaxWidth,
-               minHeight: theme.textInput.textInputSizeMinHeight,
+        .frame(minWidth: theme.textInput.sizeMinWidth,
+               maxWidth: theme.textInput.sizeMaxWidth,
+               minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
     }
 

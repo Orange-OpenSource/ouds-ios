@@ -22,17 +22,17 @@ struct InputTagContent: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.tag.tagSpaceColumnGapDefault) {
+        HStack(alignment: .center, spacing: theme.tag.spaceColumnGapDefault) {
             Text(label)
                 .labelStrongMedium(theme)
             ScaledIcon(icon: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle).renderingMode(.template),
-                       size: theme.tag.tagSizeAssetDefault)
+                       size: theme.tag.sizeAssetDefault)
                 .aspectRatio(contentMode: .fit)
         }
-        .padding(.vertical, theme.tag.tagSpacePaddingBlockDefault)
-        .padding(.leading, theme.tag.tagSpacePaddingInlineDefault)
-        .padding(.trailing, theme.tag.tagSpacePaddingInlineAssetDefault)
-        .frame(minWidth: theme.tag.tagSizeMinWidthDefault, minHeight: theme.tag.tagSizeMinHeightDefault)
+        .padding(.vertical, theme.tag.spacePaddingBlockDefault)
+        .padding(.leading, theme.tag.spacePaddingInlineDefault)
+        .padding(.trailing, theme.tag.spacePaddingInlineAssetDefault)
+        .frame(minWidth: theme.tag.sizeMinWidthDefault, minHeight: theme.tag.sizeMinHeightDefault)
         .modifier(InputTagBackgroundModifier(state: interactionState))
         .modifier(InputTagForegroundModifier(state: interactionState))
         .modifier(InputTagBorderModifier(state: interactionState))

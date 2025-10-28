@@ -42,7 +42,7 @@ struct TextInputBorderModifier: ViewModifier {
             if status == .readOnly {
                 content
                     .oudsBorder(style: theme.borders.styeDefault,
-                                width: theme.textInput.textInputBorderWidthDefault,
+                                width: theme.textInput.borderWidthDefault,
                                 radius: cornerRadius,
                                 color: theme.colors.borderMuted)
             } else {
@@ -60,17 +60,17 @@ struct TextInputBorderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var cornerRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedTextInputs ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private var size: BorderWidthSemanticToken {
         switch interactionState {
         case .idle:
-            theme.textInput.textInputBorderWidthDefault
+            theme.textInput.borderWidthDefault
         case .focused:
-            theme.textInput.textInputBorderWidthFocus
+            theme.textInput.borderWidthFocus
         case .hover:
-            theme.textInput.textInputBorderWidthDefault
+            theme.textInput.borderWidthDefault
         }
     }
 
@@ -79,11 +79,11 @@ struct TextInputBorderModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.textInput.textInputColorBorderEnabled
+                theme.textInput.colorBorderEnabled
             case .focused:
-                theme.textInput.textInputColorBorderFocus
+                theme.textInput.colorBorderFocus
             case .hover:
-                theme.textInput.textInputColorBorderHover
+                theme.textInput.colorBorderHover
             }
 
         case .error:
@@ -97,7 +97,7 @@ struct TextInputBorderModifier: ViewModifier {
             }
 
         case .loading:
-            theme.textInput.textInputColorBorderLoading
+            theme.textInput.colorBorderLoading
 
         case .readOnly:
             theme.colors.borderMuted
@@ -112,11 +112,11 @@ struct TextInputBorderModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.textInput.textInputColorBorderEnabled
+                theme.textInput.colorBorderEnabled
             case .focused:
-                theme.textInput.textInputColorBorderFocus
+                theme.textInput.colorBorderFocus
             case .hover:
-                theme.textInput.textInputColorBorderHover
+                theme.textInput.colorBorderHover
             }
         case .error:
             switch interactionState {
@@ -128,7 +128,7 @@ struct TextInputBorderModifier: ViewModifier {
                 theme.colors.actionNegativeHover
             }
         case .loading:
-            theme.textInput.textInputColorBorderLoading
+            theme.textInput.colorBorderLoading
         case .readOnly:
             theme.colors.actionDisabled // Should not appear
         case .disabled:

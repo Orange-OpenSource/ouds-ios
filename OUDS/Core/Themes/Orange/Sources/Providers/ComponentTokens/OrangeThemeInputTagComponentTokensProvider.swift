@@ -32,9 +32,9 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var inputTagBorderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
+///         override var borderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var inputTagColorBgPressed: MultipleColorSemanticTokens { colors.actionPressed }
+///         override var colorBgPressed: MultipleColorSemanticTokens { colors.actionPressed }
 ///
 ///         // ...
 ///     }

@@ -33,13 +33,13 @@ import OUDSFoundations
 ///
 ///         // Then override the text input component tokens you want.
 ///
-///         override var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+///         override var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 ///
-///         override var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingInlineSmall }
+///         override var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingInlineSmall }
 ///
-///         override var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+///         override var colorBorderEnabled: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.widthMedium}
+///         override var borderWidthDefault: BorderWidthSemanticToken { borders.widthMedium}
 ///
 ///         // ...
 ///     }

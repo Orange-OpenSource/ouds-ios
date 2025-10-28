@@ -31,11 +31,11 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var tagBorderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
+///         override var borderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens._500 }
+///         override var sizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
+///         override var spacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
 ///
 ///         // ...
 ///     }
