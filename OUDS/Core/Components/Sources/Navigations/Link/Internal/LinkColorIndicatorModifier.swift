@@ -51,18 +51,18 @@ struct LinkColorIndicatorModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentEnabled : theme.link.linkColorChevronEnabled
+        useMonochrome ? theme.link.monoColorContentEnabled : theme.link.colorChevronEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentHover : theme.link.linkColorChevronHover
+        useMonochrome ? theme.link.monoColorContentHover : theme.link.colorChevronHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentPressed : theme.link.linkColorChevronPressed
+        useMonochrome ? theme.link.monoColorContentPressed : theme.link.colorChevronPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentDisabled : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.monoColorContentDisabled : theme.colors.actionDisabled
     }
 }

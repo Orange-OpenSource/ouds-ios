@@ -24,45 +24,49 @@ import OUDSTokensSemantic
 ///
 /// - Since: 0.16.0
 public protocol ButtonMonoComponentTokens {
-    var buttonMonoColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgDefaultHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgDefaultLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgDefaultFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgMinimalFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBgStrongFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentDefaultFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentMinimalFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorContentStrongFocus: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultEnabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultHover: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
-    var buttonMonoColorBorderDefaultFocus: MultipleColorSemanticTokens { get }
+
+    // NOTE: Tokens prefixed by "mono" even id redundant with tokens provider and protocol names
+    // because some of the tokens exist in button component tokens gathered in same provider
+
+    var monoColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
+    var monoColorBgDefaultHover: MultipleColorSemanticTokens { get }
+    var monoColorBgDefaultPressed: MultipleColorSemanticTokens { get }
+    var monoColorBgDefaultLoading: MultipleColorSemanticTokens { get }
+    var monoColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
+    var monoColorBgDefaultFocus: MultipleColorSemanticTokens { get }
+    var monoColorBgMinimalHover: MultipleColorSemanticTokens { get }
+    var monoColorBgMinimalPressed: MultipleColorSemanticTokens { get }
+    var monoColorBgMinimalFocus: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongEnabled: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongHover: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongPressed: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongLoading: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongDisabled: MultipleColorSemanticTokens { get }
+    var monoColorBgStrongFocus: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultEnabled: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultHover: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultPressed: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultLoading: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
+    var monoColorContentDefaultFocus: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalEnabled: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalHover: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalPressed: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalLoading: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalDisabled: MultipleColorSemanticTokens { get }
+    var monoColorContentMinimalFocus: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongEnabled: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongHover: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongPressed: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongLoading: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongDisabled: MultipleColorSemanticTokens { get }
+    var monoColorContentStrongFocus: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultEnabled: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultHover: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
+    var monoColorBorderDefaultFocus: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

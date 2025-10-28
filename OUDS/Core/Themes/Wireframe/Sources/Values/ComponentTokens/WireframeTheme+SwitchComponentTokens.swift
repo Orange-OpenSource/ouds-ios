@@ -21,54 +21,54 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension WireframeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest)
-    @objc public final var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhite, dark: colors.colorRepositoryNeutralEmphasizedHighest) }
-    /// Has for value token colors.colorActionSelected
-    @objc public final var switchColorCheck: MultipleColorSemanticTokens { colors.colorActionSelected }
-    /// Has for value token colors.colorActionHover
-    @objc public final var switchColorCheckInteraction: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token colors.colorActionSelected
-    @objc public final var switchColorTrackSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
-    /// Has for value token colors.colorActionHover
-    @objc public final var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh)
-    @objc public final var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHigh, dark: colors.colorRepositoryOpacityWhiteHigh) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher)
-    @objc public final var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHigh, dark: colors.colorRepositoryOpacityWhiteHigher) }
-    /// Has for value token borders.borderRadiusSmall
-    @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.borderRadiusSmall }
-    /// Has for value token borders.borderRadiusDefault
-    @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.borderRadiusDefault }
-    /// Has for value token opacities.opacityOpaque
-    @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
-    /// Has for value token spaces.spacePaddingInline3xsmall
-    @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
-    /// Has for value token spaces.spacePaddingInlineXsmall
-    @objc public final var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineXsmall }
-    /// Has for value token dimensions.dimension3xlarge
-    @objc public final var switchSizeMinWidth: SizeSemanticToken { dimensions.dimension3xlarge }
-    /// Has for value token dimensions.dimensionXsmall
-    @objc public final var switchSizeMinHeight: SizeSemanticToken { dimensions.dimensionXsmall }
-    /// Has for value token sizes.sizeMinInteractiveArea
-    @objc public final var switchSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token dimensions.dimensionXsmall
-    @objc public final var switchSizeMaxHeight: SizeSemanticToken { dimensions.dimensionXsmall }
-    /// Has for value token dimensions.dimension3xsmall
-    @objc public final var switchSizeWidthCursorSelected: SizeSemanticToken { dimensions.dimension3xsmall }
-    /// Has for value token dimensions.dimension5xsmall
-    @objc public final var switchSizeWidthCursorUnselected: SizeSemanticToken { dimensions.dimension5xsmall }
-    /// Has for value token dimensions.dimensionXsmall
-    @objc public final var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions.dimensionXsmall }
-    /// Has for value token dimensions.dimension3xsmall
-    @objc public final var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions.dimension3xsmall }
-    /// Has for value token dimensions.dimension3xlarge
-    @objc public final var switchSizeWidthTrack: SizeSemanticToken { dimensions.dimension3xlarge }
-    /// Has for value token dimensions.dimension3xsmall
-    @objc public final var switchSizeHeightCursorSelected: SizeSemanticToken { dimensions.dimension3xsmall }
-    /// Has for value token dimensions.dimension5xsmall
-    @objc public final var switchSizeHeightCursorUnselected: SizeSemanticToken { dimensions.dimension5xsmall }
-    /// Has for value token dimensions.dimensionXsmall
-    @objc public final var switchSizeHeightTrack: SizeSemanticToken { dimensions.dimensionXsmall }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest)
+    @objc public final var colorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest) }
+    /// Has for value token colors.actionSelected
+    @objc public final var colorCheck: MultipleColorSemanticTokens { colors.actionSelected }
+    /// Has for value token colors.actionHover
+    @objc public final var colorCheckInteraction: MultipleColorSemanticTokens { colors.actionHover }
+    /// Has for value token colors.actionSelected
+    @objc public final var colorTrackSelected: MultipleColorSemanticTokens { colors.actionSelected }
+    /// Has for value token colors.actionHover
+    @objc public final var colorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.actionHover }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh)
+    @objc public final var colorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh) }
+    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher)
+    @objc public final var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher) }
+    /// Has for value token borders.radiusSmall
+    @objc public final var borderRadiusCursor: BorderRadiusSemanticToken { borders.radiusSmall }
+    /// Has for value token borders.radiusDefault
+    @objc public final var borderRadiusTrack: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token opacities.opaque
+    @objc public final var opacityCheck: OpacitySemanticToken { opacities.opaque }
+    /// Has for value token spaces.paddingInline3xsmall
+    @objc public final var spacePaddingInlineSelected: SpaceSemanticToken { spaces.paddingInline3xsmall }
+    /// Has for value token spaces.paddingInlineXsmall
+    @objc public final var spacePaddingInlineUnselected: SpaceSemanticToken { spaces.paddingInlineXsmall }
+    /// Has for value token dimensions._3xlarge
+    @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var sizeMinHeight: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token sizes.minInteractiveArea
+    @objc public final var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var sizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token dimensions._3xsmall
+    @objc public final var sizeWidthCursorSelected: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._5xsmall
+    @objc public final var sizeWidthCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var sizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions._xsmall }
+    /// Has for value token dimensions._3xsmall
+    @objc public final var sizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._3xlarge
+    @objc public final var sizeWidthTrack: SizeSemanticToken { dimensions._3xlarge }
+    /// Has for value token dimensions._3xsmall
+    @objc public final var sizeHeightCursorSelected: SizeSemanticToken { dimensions._3xsmall }
+    /// Has for value token dimensions._5xsmall
+    @objc public final var sizeHeightCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
+    /// Has for value token dimensions._Xsmall
+    @objc public final var sizeHeightTrack: SizeSemanticToken { dimensions._xsmall }
 }
 
 // swiftlint:enable line_length

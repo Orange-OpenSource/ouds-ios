@@ -24,14 +24,14 @@ import OUDSFoundations
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
 ///
-///         override var borderStyleDefault: BorderStyleSemanticToken {
-///             BorderRawTokens.borderStyleDashed
+///         override var styleDefault: BorderStyleSemanticToken {
+///             BorderRawTokens.styleDashed
 ///         }
-///         override var borderWidthMedium: BorderWidthSemanticToken {
-///             BorderRawTokens.borderWidth100
+///         override var widthMedium: BorderWidthSemanticToken {
+///             BorderRawTokens.width100
 ///         }
-///         override var borderRadiusLarge: BorderRadiusSemanticToken {
-///             BorderRawTokens.borderRadius800
+///         override var radiusLarge: BorderRadiusSemanticToken {
+///             BorderRawTokens.radius800
 ///         }
 /// }
 /// ```

@@ -32,9 +32,9 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { spaces.spaceColumnGap2Xs }
+///         override var spaceColumnGapQuantitySelector: SpaceSemanticToken { spaces.columnGap2Xs }
 ///
-///         override var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+///         override var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 ///
 ///         // ...
 ///     }
@@ -94,7 +94,7 @@ open class OrangeThemeQuantityInputComponentTokensProvider: AllQuantityInputComp
     /// Defines a provider of component tokens dedicated to `OUDSQuantityInput`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil)
     {

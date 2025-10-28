@@ -16,139 +16,139 @@
 
 extension FontRawTokens {
     /// Has for value "Arial"
-    public static let fontFamilySystemArial: FontFamilyRawToken = "Arial"
+    public static let familySystemArial: FontFamilyRawToken = "Arial"
     /// Has for value "Helvetica"
-    public static let fontFamilySystemHelvetica: FontFamilyRawToken = "Helvetica"
+    public static let familySystemHelvetica: FontFamilyRawToken = "Helvetica"
     /// Has for value "Noto Sans"
-    public static let fontFamilySystemNotoSans: FontFamilyRawToken = "Noto Sans"
+    public static let familySystemNotoSans: FontFamilyRawToken = "Noto Sans"
     /// Has for value "SF Pro"
-    public static let fontFamilySystemSfPro: FontFamilyRawToken = "SF Pro"
+    public static let familySystemSfPro: FontFamilyRawToken = "SF Pro"
     /// Has for value "Roboto"
-    public static let fontFamilySystemRoboto: FontFamilyRawToken = "Roboto"
+    public static let familySystemRoboto: FontFamilyRawToken = "Roboto"
     /// Has for value "Menlo"
-    public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = "Menlo"
+    public static let familyMonospaceMenlo: FontFamilyRawToken = "Menlo"
     /// Has for value "Monaco"
-    public static let fontFamilyMonospaceMonaco: FontFamilyRawToken = "Monaco"
+    public static let familyMonospaceMonaco: FontFamilyRawToken = "Monaco"
     /// Has for value "Courier New"
-    public static let fontFamilyMonospaceCourierNew: FontFamilyRawToken = "Courier New"
+    public static let familyMonospaceCourierNew: FontFamilyRawToken = "Courier New"
     /// Has for value "SF Mono"
-    public static let fontFamilyMonospaceSfMono: FontFamilyRawToken = "SF Mono"
+    public static let familyMonospaceSfMono: FontFamilyRawToken = "SF Mono"
     /// Has for value 12
-    public static let fontSize150: FontSizeRawToken = 12
+    public static let size150: FontSizeRawToken = 12
     /// Has for value 13
-    public static let fontSize175: FontSizeRawToken = 13
+    public static let size175: FontSizeRawToken = 13
     /// Has for value 14
-    public static let fontSize200: FontSizeRawToken = 14
+    public static let size200: FontSizeRawToken = 14
     /// Has for value 16
-    public static let fontSize250: FontSizeRawToken = 16
+    public static let size250: FontSizeRawToken = 16
     /// Has for value 18
-    public static let fontSize300: FontSizeRawToken = 18
+    public static let size300: FontSizeRawToken = 18
     /// Has for value 20
-    public static let fontSize350: FontSizeRawToken = 20
+    public static let size350: FontSizeRawToken = 20
     /// Has for value 24
-    public static let fontSize450: FontSizeRawToken = 24
+    public static let size450: FontSizeRawToken = 24
     /// Has for value 28
-    public static let fontSize550: FontSizeRawToken = 28
+    public static let size550: FontSizeRawToken = 28
     /// Has for value 32
-    public static let fontSize650: FontSizeRawToken = 32
+    public static let size650: FontSizeRawToken = 32
     /// Has for value 36
-    public static let fontSize750: FontSizeRawToken = 36
+    public static let size750: FontSizeRawToken = 36
     /// Has for value 40
-    public static let fontSize850: FontSizeRawToken = 40
+    public static let size850: FontSizeRawToken = 40
     /// Has for value 44
-    public static let fontSize950: FontSizeRawToken = 44
+    public static let size950: FontSizeRawToken = 44
     /// Has for value 48
-    public static let fontSize1050: FontSizeRawToken = 48
+    public static let size1050: FontSizeRawToken = 48
     /// Has for value 52
-    public static let fontSize1150: FontSizeRawToken = 52
+    public static let size1150: FontSizeRawToken = 52
     /// Has for value 56
-    public static let fontSize1250: FontSizeRawToken = 56
+    public static let size1250: FontSizeRawToken = 56
     /// Has for value 64
-    public static let fontSize1450: FontSizeRawToken = 64
+    public static let size1450: FontSizeRawToken = 64
     /// Has for value 72
-    public static let fontSize1850: FontSizeRawToken = 72
+    public static let size1850: FontSizeRawToken = 72
     /// Has for value 100
-    public static let fontWeight100: FontWeightRawToken = 100
+    public static let weight100: FontWeightRawToken = 100
     /// Has for value 200
-    public static let fontWeight200: FontWeightRawToken = 200
+    public static let weight200: FontWeightRawToken = 200
     /// Has for value 300
-    public static let fontWeight300: FontWeightRawToken = 300
+    public static let weight300: FontWeightRawToken = 300
     /// Has for value 400
-    public static let fontWeight400: FontWeightRawToken = 400
+    public static let weight400: FontWeightRawToken = 400
     /// Has for value 500
-    public static let fontWeight500: FontWeightRawToken = 500
+    public static let weight500: FontWeightRawToken = 500
     /// Has for value 600
-    public static let fontWeight600: FontWeightRawToken = 600
+    public static let weight600: FontWeightRawToken = 600
     /// Has for value 700
-    public static let fontWeight700: FontWeightRawToken = 700
+    public static let weight700: FontWeightRawToken = 700
     /// Has for value 800
-    public static let fontWeight800: FontWeightRawToken = 800
+    public static let weight800: FontWeightRawToken = 800
     /// Has for value 900
-    public static let fontWeight900: FontWeightRawToken = 900
+    public static let weight900: FontWeightRawToken = 900
     /// Has for value 950
-    public static let fontWeight950: FontWeightRawToken = 950
+    public static let weight950: FontWeightRawToken = 950
     /// Has for value 16
-    public static let fontLineHeight250: FontLineHeightRawToken = 16
+    public static let lineHeight250: FontLineHeightRawToken = 16
     /// Has for value 20
-    public static let fontLineHeight350: FontLineHeightRawToken = 20
+    public static let lineHeight350: FontLineHeightRawToken = 20
     /// Has for value 24
-    public static let fontLineHeight450: FontLineHeightRawToken = 24
+    public static let lineHeight450: FontLineHeightRawToken = 24
     /// Has for value 28
-    public static let fontLineHeight550: FontLineHeightRawToken = 28
+    public static let lineHeight550: FontLineHeightRawToken = 28
     /// Has for value 32
-    public static let fontLineHeight650: FontLineHeightRawToken = 32
+    public static let lineHeight650: FontLineHeightRawToken = 32
     /// Has for value 36
-    public static let fontLineHeight750: FontLineHeightRawToken = 36
+    public static let lineHeight750: FontLineHeightRawToken = 36
     /// Has for value 40
-    public static let fontLineHeight850: FontLineHeightRawToken = 40
+    public static let lineHeight850: FontLineHeightRawToken = 40
     /// Has for value 44
-    public static let fontLineHeight950: FontLineHeightRawToken = 44
+    public static let lineHeight950: FontLineHeightRawToken = 44
     /// Has for value 48
-    public static let fontLineHeight1050: FontLineHeightRawToken = 48
+    public static let lineHeight1050: FontLineHeightRawToken = 48
     /// Has for value 52
-    public static let fontLineHeight1150: FontLineHeightRawToken = 52
+    public static let lineHeight1150: FontLineHeightRawToken = 52
     /// Has for value 56
-    public static let fontLineHeight1250: FontLineHeightRawToken = 56
+    public static let lineHeight1250: FontLineHeightRawToken = 56
     /// Has for value 60
-    public static let fontLineHeight1350: FontLineHeightRawToken = 60
+    public static let lineHeight1350: FontLineHeightRawToken = 60
     /// Has for value 64
-    public static let fontLineHeight1450: FontLineHeightRawToken = 64
+    public static let lineHeight1450: FontLineHeightRawToken = 64
     /// Has for value 72
-    public static let fontLineHeight1850: FontLineHeightRawToken = 72
+    public static let lineHeight1850: FontLineHeightRawToken = 72
     /// Has for value 80
-    public static let fontLineHeight2050: FontLineHeightRawToken = 80
+    public static let lineHeight2050: FontLineHeightRawToken = 80
     /// Has for value 0.18
-    public static let fontLetterSpacing150: FontLetterSpacingRawToken = 0.18
+    public static let letterSpacing150: FontLetterSpacingRawToken = 0.18
     /// Has for value 0.19
-    public static let fontLetterSpacing175: FontLetterSpacingRawToken = 0.19
+    public static let letterSpacing175: FontLetterSpacingRawToken = 0.19
     /// Has for value 0.17
-    public static let fontLetterSpacing200: FontLetterSpacingRawToken = 0.17
+    public static let letterSpacing200: FontLetterSpacingRawToken = 0.17
     /// Has for value 0.2
-    public static let fontLetterSpacing250: FontLetterSpacingRawToken = 0.2
+    public static let letterSpacing250: FontLetterSpacingRawToken = 0.2
     /// Has for value 0.18
-    public static let fontLetterSpacing300: FontLetterSpacingRawToken = 0.18
+    public static let letterSpacing300: FontLetterSpacingRawToken = 0.18
     /// Has for value 0
-    public static let fontLetterSpacing350: FontLetterSpacingRawToken = 0
+    public static let letterSpacing350: FontLetterSpacingRawToken = 0
     /// Has for value -0.12
-    public static let fontLetterSpacing450: FontLetterSpacingRawToken = -0.12
+    public static let letterSpacing450: FontLetterSpacingRawToken = -0.12
     /// Has for value -0.28
-    public static let fontLetterSpacing550: FontLetterSpacingRawToken = -0.28
+    public static let letterSpacing550: FontLetterSpacingRawToken = -0.28
     /// Has for value -0.32
-    public static let fontLetterSpacing650: FontLetterSpacingRawToken = -0.32
+    public static let letterSpacing650: FontLetterSpacingRawToken = -0.32
     /// Has for value -0.36
-    public static let fontLetterSpacing750: FontLetterSpacingRawToken = -0.36
+    public static let letterSpacing750: FontLetterSpacingRawToken = -0.36
     /// Has for value -0.4
-    public static let fontLetterSpacing850: FontLetterSpacingRawToken = -0.4
+    public static let letterSpacing850: FontLetterSpacingRawToken = -0.4
     /// Has for value -0.55
-    public static let fontLetterSpacing950: FontLetterSpacingRawToken = -0.55
+    public static let letterSpacing950: FontLetterSpacingRawToken = -0.55
     /// Has for value -0.6
-    public static let fontLetterSpacing1050: FontLetterSpacingRawToken = -0.6
+    public static let letterSpacing1050: FontLetterSpacingRawToken = -0.6
     /// Has for value -0.65
-    public static let fontLetterSpacing1150: FontLetterSpacingRawToken = -0.65
+    public static let letterSpacing1150: FontLetterSpacingRawToken = -0.65
     /// Has for value -0.7
-    public static let fontLetterSpacing1250: FontLetterSpacingRawToken = -0.7
+    public static let letterSpacing1250: FontLetterSpacingRawToken = -0.7
     /// Has for value -0.96
-    public static let fontLetterSpacing1450: FontLetterSpacingRawToken = -0.96
+    public static let letterSpacing1450: FontLetterSpacingRawToken = -0.96
     /// Has for value -1.08
-    public static let fontLetterSpacing1850: FontLetterSpacingRawToken = -1.08
+    public static let letterSpacing1850: FontLetterSpacingRawToken = -1.08
 }

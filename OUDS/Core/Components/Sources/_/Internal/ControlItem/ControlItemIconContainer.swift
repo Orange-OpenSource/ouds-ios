@@ -35,7 +35,7 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
+            .frame(maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 
@@ -50,40 +50,40 @@ struct ControlItemIconContainer: View {
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)
                 .oudsForegroundColor(errorIconColor)
-                .frame(width: theme.controlItem.controlItemSizeErrorIcon, height: theme.controlItem.controlItemSizeErrorIcon)
-                .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInlineErrorIcon)
+                .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
+                .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
             if let icon = layoutData.icon {
                 icon
                     .resizable()
                     .renderingMode(.template)
                     .accessibilityHidden(true)
-                    .oudsForegroundStyle(iconColor)
-                    .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
+                    .oudsForegroundStyle(color)
+                    .frame(width: theme.controlItem.sizeIcon, height: theme.controlItem.sizeIcon)
                     .toFlip(layoutData.flipIcon)
             }
         }
     }
 
-    private var iconColor: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentDefault
+            theme.colors.contentDefault
         case .disabled:
-            theme.colors.colorContentDisabled
+            theme.colors.contentDisabled
         }
     }
 
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         case .pressed:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         case .hover:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         case .readOnly, .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

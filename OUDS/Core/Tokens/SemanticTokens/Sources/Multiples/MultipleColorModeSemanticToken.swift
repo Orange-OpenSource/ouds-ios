@@ -26,28 +26,28 @@ import SwiftUI
 ///         // It can result with several combinations:
 ///
 ///         // Use the "monochrome light" mode anytime
-///         var modeOnBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var modeOnBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var modeOnBrandPrimary: MultipleColorModeSemanticTokens {
-///             MultipleColorModeSemanticToken("some unique name", modeOnBrandPrimary)
+///         var onBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var onBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var onBrandPrimary: MultipleColorModeSemanticTokens {
+///             MultipleColorModeSemanticToken("some unique name", onBrandPrimary)
 ///         }
 ///
 ///         // Use light mode in light soclor scheme, dark mode in dark color scheme
-///         var modeOnStatusNegativeMutedLight: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.light }
-///         var modeOnStatusNegativeMutedDark: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.dark }
-///         var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens {
+///         var onStatusNegativeMutedLight: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.light }
+///         var onStatusNegativeMutedDark: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.dark }
+///         var onStatusNegativeMuted: MultipleColorModeSemanticTokens {
 ///             MultipleColorModeSemanticToken("some unique name",
-///                                             light: modeOnStatusNegativeMutedLight,
-///                                             dark: modeOnStatusNegativeMutedDark)
+///                                             light: onStatusNegativeMutedLight,
+///                                             dark: onStatusNegativeMutedDark)
 ///         }
 ///
 ///         // Use if light color scheme the monochrome dark mode, and if dark color scheme the monochrome light mode
-///         var modeOnStatusNeutralEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
-///         var modeOnStatusNeutralEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var modeOnStatusNeutralEmphasized: MultipleColorModeSemanticTokens {
+///         var onStatusNeutralEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
+///         var onStatusNeutralEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var onStatusNeutralEmphasized: MultipleColorModeSemanticTokens {
 ///             MultipleColorModeSemanticToken("some unique name",
-///                                             light: modeOnStatusNeutralEmphasizedLight,
-///                                             dark: modeOnStatusNeutralEmphasizedDark)
+///                                             light: onStatusNeutralEmphasizedLight,
+///                                             dark: onStatusNeutralEmphasizedDark)
 ///         }
 /// ```
 ///

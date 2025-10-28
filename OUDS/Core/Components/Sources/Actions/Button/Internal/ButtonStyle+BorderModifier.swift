@@ -37,7 +37,7 @@ struct ButtonBorderModifier: ViewModifier {
         case .default:
             content
                 .oudsBorder(
-                    style: theme.borders.borderStyleDefault,
+                    style: theme.borders.styleDefault,
                     width: defaultWidth,
                     radius: radius,
                     color: defaultColor)
@@ -45,7 +45,7 @@ struct ButtonBorderModifier: ViewModifier {
             if onColoredSurface {
                 content
                     .oudsBorder(
-                        style: theme.borders.borderStyleDefault,
+                        style: theme.borders.styleDefault,
                         width: defaultWidth,
                         radius: radius,
                         color: strongColor)
@@ -83,19 +83,19 @@ struct ButtonBorderModifier: ViewModifier {
     private var defaultColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderDefaultEnabled : theme.button.buttonColorBorderDefaultEnabled
+            useMonochrome ? theme.button.monoColorBorderDefaultEnabled : theme.button.colorBorderDefaultEnabled
         case .hover:
-            useMonochrome ? theme.button.buttonMonoColorBorderDefaultHover : theme.button.buttonColorBorderDefaultHover
+            useMonochrome ? theme.button.monoColorBorderDefaultHover : theme.button.colorBorderDefaultHover
         case .pressed:
-            useMonochrome ? theme.button.buttonMonoColorBorderDefaultPressed : theme.button.buttonColorBorderDefaultPressed
+            useMonochrome ? theme.button.monoColorBorderDefaultPressed : theme.button.colorBorderDefaultPressed
         case .loading:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
-                useMonochrome ? theme.button.buttonMonoColorBorderDefaultLoading : theme.button.buttonColorBorderDefaultLoading
+                useMonochrome ? theme.button.monoColorBorderDefaultLoading : theme.button.colorBorderDefaultLoading
             }
         case .disabled:
-            useMonochrome ? theme.button.buttonMonoColorBorderDefaultDisabled : theme.button.buttonColorBorderDefaultDisabled
+            useMonochrome ? theme.button.monoColorBorderDefaultDisabled : theme.button.colorBorderDefaultDisabled
         }
     }
 
@@ -104,15 +104,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var strongColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.button.buttonMonoColorBorderDefaultEnabled
+            theme.button.monoColorBorderDefaultEnabled
         case .hover:
-            theme.button.buttonMonoColorBorderDefaultHover
+            theme.button.monoColorBorderDefaultHover
         case .pressed:
-            theme.button.buttonMonoColorBorderDefaultPressed
+            theme.button.monoColorBorderDefaultPressed
         case .loading:
-            theme.button.buttonMonoColorBorderDefaultLoading
+            theme.button.monoColorBorderDefaultLoading
         case .disabled:
-            theme.button.buttonMonoColorBorderDefaultDisabled
+            theme.button.monoColorBorderDefaultDisabled
         }
     }
 }

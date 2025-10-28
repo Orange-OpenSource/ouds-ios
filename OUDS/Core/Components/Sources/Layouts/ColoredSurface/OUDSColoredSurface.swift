@@ -22,7 +22,7 @@ import SwiftUI
 /// This variable is useful, for example, to change the style of a component according to its environment (e.g monochrome mode on `OUDSButton`).
 ///
 /// ```swift
-///   OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary) {
+///   OUDSColoredSurface(color: theme.colorModes.onBrandPrimary) {
 ///      OUDSButton(icon: Image("ic_heart"), appearance: .strong) {}
 ///   }
 /// ```

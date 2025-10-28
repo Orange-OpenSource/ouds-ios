@@ -43,44 +43,44 @@ struct TagBackgroundModifier: ViewModifier {
                     mutedBackground(for: status)
                 }
             } else {
-                theme.colors.colorActionDisabled
+                theme.colors.actionDisabled
             }
         case .loader:
-            theme.colors.colorSurfaceSecondary
+            theme.colors.surfaceSecondary
         }
     }
 
     private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorSurfaceInverseHigh
+            theme.colors.surfaceInverseHigh
         case .accent:
-            theme.colors.colorSurfaceStatusAccentEmphasized
+            theme.colors.surfaceStatusAccentEmphasized
         case .positive:
-            theme.colors.colorSurfaceStatusPositiveEmphasized
+            theme.colors.surfaceStatusPositiveEmphasized
         case .warning:
-            theme.colors.colorSurfaceStatusWarningEmphasized
+            theme.colors.surfaceStatusWarningEmphasized
         case .negative:
-            theme.colors.colorSurfaceStatusNegativeEmphasized
+            theme.colors.surfaceStatusNegativeEmphasized
         case .info:
-            theme.colors.colorSurfaceStatusInfoEmphasized
+            theme.colors.surfaceStatusInfoEmphasized
         }
     }
 
     private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorSurfaceSecondary
+            theme.colors.surfaceSecondary
         case .accent:
-            theme.colors.colorSurfaceStatusAccentMuted
+            theme.colors.surfaceStatusAccentMuted
         case .positive:
-            theme.colors.colorSurfaceStatusPositiveMuted
+            theme.colors.surfaceStatusPositiveMuted
         case .warning:
-            theme.colors.colorSurfaceStatusWarningMuted
+            theme.colors.surfaceStatusWarningMuted
         case .negative:
-            theme.colors.colorSurfaceStatusNegativeMuted
+            theme.colors.surfaceStatusNegativeMuted
         case .info:
-            theme.colors.colorSurfaceStatusInfoMuted
+            theme.colors.surfaceStatusInfoMuted
         }
     }
 }

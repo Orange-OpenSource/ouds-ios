@@ -30,104 +30,104 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMinHeight() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeMinHeight != abstractTheme.controlItem.controlItemSizeMinHeight)
-        #expect(inheritedTheme.controlItem.controlItemSizeMinHeight == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeMinHeight != abstractTheme.controlItem.sizeMinHeight)
+        #expect(inheritedTheme.controlItem.sizeMinHeight == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMaxWidth() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeMaxWidth != abstractTheme.controlItem.controlItemSizeMaxWidth)
-        #expect(inheritedTheme.controlItem.controlItemSizeMaxWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeMaxWidth != abstractTheme.controlItem.sizeMaxWidth)
+        #expect(inheritedTheme.controlItem.sizeMaxWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMinWidth() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeMinWidth != abstractTheme.controlItem.controlItemSizeMinWidth)
-        #expect(inheritedTheme.controlItem.controlItemSizeMinWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeMinWidth != abstractTheme.controlItem.sizeMinWidth)
+        #expect(inheritedTheme.controlItem.sizeMinWidth == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeMaxHeightAssetsContainer() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeMaxHeightAssetsContainer != abstractTheme.controlItem.controlItemSizeMaxHeightAssetsContainer)
-        #expect(inheritedTheme.controlItem.controlItemSizeMaxHeightAssetsContainer == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeMaxHeightAssetsContainer != abstractTheme.controlItem.sizeMaxHeightAssetsContainer)
+        #expect(inheritedTheme.controlItem.sizeMaxHeightAssetsContainer == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeIcon() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeIcon != abstractTheme.controlItem.controlItemSizeIcon)
-        #expect(inheritedTheme.controlItem.controlItemSizeIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeIcon != abstractTheme.controlItem.sizeIcon)
+        #expect(inheritedTheme.controlItem.sizeIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeErrorIcon() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeErrorIcon != abstractTheme.controlItem.controlItemSizeErrorIcon)
-        #expect(inheritedTheme.controlItem.controlItemSizeErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeErrorIcon != abstractTheme.controlItem.sizeErrorIcon)
+        #expect(inheritedTheme.controlItem.sizeErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeLoader() throws {
-        #expect(inheritedTheme.controlItem.controlItemSizeLoader != abstractTheme.controlItem.controlItemSizeLoader)
-        #expect(inheritedTheme.controlItem.controlItemSizeLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+        #expect(inheritedTheme.controlItem.sizeLoader != abstractTheme.controlItem.sizeLoader)
+        #expect(inheritedTheme.controlItem.sizeLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideControlItemComponentBorderRadius() throws {
-        #expect(inheritedTheme.controlItem.controlItemBorderRadius != abstractTheme.controlItem.controlItemBorderRadius)
-        #expect(inheritedTheme.controlItem.controlItemBorderRadius == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
+        #expect(inheritedTheme.controlItem.borderRadius != abstractTheme.controlItem.borderRadius)
+        #expect(inheritedTheme.controlItem.borderRadius == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentBorderRadiusItemOnly() throws {
-        #expect(inheritedTheme.controlItem.controlItemBorderRadiusItemOnly != abstractTheme.controlItem.controlItemBorderRadiusItemOnly)
-        #expect(inheritedTheme.controlItem.controlItemBorderRadiusItemOnly == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
+        #expect(inheritedTheme.controlItem.borderRadiusItemOnly != abstractTheme.controlItem.borderRadiusItemOnly)
+        #expect(inheritedTheme.controlItem.borderRadiusItemOnly == MockThemeControlItemComponentTokenProvider.mockThemeControlItemBorderRadius)
     }
 
     // MARK: - Colors
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorBgHover() throws {
-        #expect(inheritedTheme.controlItem.controlItemColorBgHover != abstractTheme.controlItem.controlItemColorBgHover)
-        #expect(inheritedTheme.controlItem.controlItemColorBgHover == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
+        #expect(inheritedTheme.controlItem.colorBgHover != abstractTheme.controlItem.colorBgHover)
+        #expect(inheritedTheme.controlItem.colorBgHover == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorBgPressed() throws {
-        #expect(inheritedTheme.controlItem.controlItemColorBgPressed != abstractTheme.controlItem.controlItemColorBgPressed)
-        #expect(inheritedTheme.controlItem.controlItemColorBgPressed == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
+        #expect(inheritedTheme.controlItem.colorBgPressed != abstractTheme.controlItem.colorBgPressed)
+        #expect(inheritedTheme.controlItem.colorBgPressed == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorBgLoading() throws {
-        #expect(inheritedTheme.controlItem.controlItemColorBgLoading != abstractTheme.controlItem.controlItemColorBgLoading)
-        #expect(inheritedTheme.controlItem.controlItemColorBgLoading == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
+        #expect(inheritedTheme.controlItem.colorBgLoading != abstractTheme.controlItem.colorBgLoading)
+        #expect(inheritedTheme.controlItem.colorBgLoading == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorBgFocus() throws {
-        #expect(inheritedTheme.controlItem.controlItemColorBgFocus != abstractTheme.controlItem.controlItemColorBgFocus)
-        #expect(inheritedTheme.controlItem.controlItemColorBgFocus == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
+        #expect(inheritedTheme.controlItem.colorBgFocus != abstractTheme.controlItem.colorBgFocus)
+        #expect(inheritedTheme.controlItem.colorBgFocus == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorContentLoader() throws {
-        #expect(inheritedTheme.controlItem.controlItemColorContentLoader != abstractTheme.controlItem.controlItemColorContentLoader)
-        #expect(inheritedTheme.controlItem.controlItemColorContentLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
+        #expect(inheritedTheme.controlItem.colorContentLoader != abstractTheme.controlItem.colorContentLoader)
+        #expect(inheritedTheme.controlItem.colorContentLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemColor)
     }
 
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceColumnGap() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpaceColumnGap != abstractTheme.controlItem.controlItemSpaceColumnGap)
-        #expect(inheritedTheme.controlItem.controlItemSpaceColumnGap == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.spaceColumnGap != abstractTheme.controlItem.spaceColumnGap)
+        #expect(inheritedTheme.controlItem.spaceColumnGap == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceRowGap() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpaceRowGap != abstractTheme.controlItem.controlItemSpaceRowGap)
-        #expect(inheritedTheme.controlItem.controlItemSpaceRowGap == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.spaceRowGap != abstractTheme.controlItem.spaceRowGap)
+        #expect(inheritedTheme.controlItem.spaceRowGap == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpaceInset() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingBlock != abstractTheme.controlItem.controlItemSpacePaddingBlock)
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingBlock == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.spacePaddingBlock != abstractTheme.controlItem.spacePaddingBlock)
+        #expect(inheritedTheme.controlItem.spacePaddingBlock == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingInline() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline != abstractTheme.controlItem.controlItemSpacePaddingInline)
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInline == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.spacePaddingInline != abstractTheme.controlItem.spacePaddingInline)
+        #expect(inheritedTheme.controlItem.spacePaddingInline == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingInlineErrorIcon() throws {
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInlineErrorIcon != abstractTheme.controlItem.controlItemSpacePaddingInlineErrorIcon)
-        #expect(inheritedTheme.controlItem.controlItemSpacePaddingInlineErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+        #expect(inheritedTheme.controlItem.spacePaddingInlineErrorIcon != abstractTheme.controlItem.spacePaddingInlineErrorIcon)
+        #expect(inheritedTheme.controlItem.spacePaddingInlineErrorIcon == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 }
 

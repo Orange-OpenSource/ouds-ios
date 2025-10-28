@@ -23,13 +23,13 @@ import UIKit
 
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
 /// so as to define the viewport and use finaly the suitable `MultipleFontCompositeRawTokens`.
-/// In fact _Swift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
+/// In fact dimensionswift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
 /// In few words, contains the font elements to apply a defined typography depending to size classes and categories.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
 struct TypographyModifier: ViewModifier {
 
-    /// The name of a possible custom font family, or `nil` if the font is use is _system font_
-    let fontFamily: FontFamilyRawToken?
+    /// The name of a possible custom font family, or `nil` if the font is use is dimensionsystem font_
+    let family: FontFamilyRawToken?
 
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
     let font: MultipleFontCompositeRawTokens
@@ -57,14 +57,14 @@ struct TypographyModifier: ViewModifier {
     #if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
-        if let fontFamily {
+        if let family {
             // Can be a custom font load from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, adaptiveFont.weight.fontWeight)]
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, adaptiveFont.weight.weight)]
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {
             // Apply the system font with weight, responsive to Dynamic Type
-            return .system(size: scaledFontSize, weight: adaptiveFont.weight.fontWeight, design: .default)
+            return .system(size: scaledFontSize, weight: adaptiveFont.weight.weight, design: .default)
         }
     }
 

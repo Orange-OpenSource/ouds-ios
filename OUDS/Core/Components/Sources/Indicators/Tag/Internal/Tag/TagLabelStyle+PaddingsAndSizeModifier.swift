@@ -38,54 +38,54 @@ struct TagPaddingsAndSizeModifier: ViewModifier {
     private var paddingTop: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpacePaddingBlockDefault
+            theme.tag.spacePaddingBlockDefault
         case .small:
-            theme.tag.tagSpacePaddingBlockSmall
+            theme.tag.spacePaddingBlockSmall
         }
     }
 
     private var paddingBottom: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpacePaddingBlockDefault
+            theme.tag.spacePaddingBlockDefault
         case .small:
-            theme.tag.tagSpacePaddingBlockSmall
+            theme.tag.spacePaddingBlockSmall
         }
     }
 
     private var paddingLeading: CGFloat {
         switch size {
         case .default:
-            hasIcon ? theme.tag.tagSpacePaddingInlineAssetDefault : theme.tag.tagSpacePaddingInlineDefault
+            hasIcon ? theme.tag.spacePaddingInlineAssetDefault : theme.tag.spacePaddingInlineDefault
         case .small:
-            hasIcon ? theme.tag.tagSpacePaddingInlineAssetSmall : theme.tag.tagSpacePaddingInlineSmall
+            hasIcon ? theme.tag.spacePaddingInlineAssetSmall : theme.tag.spacePaddingInlineSmall
         }
     }
 
     private var paddingTrailing: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpacePaddingInlineDefault
+            theme.tag.spacePaddingInlineDefault
         case .small:
-            theme.tag.tagSpacePaddingInlineSmall
+            theme.tag.spacePaddingInlineSmall
         }
     }
 
     private var minWidth: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSizeMinWidthDefault
+            theme.tag.sizeMinWidthDefault
         case .small:
-            theme.tag.tagSizeMinWidthSmall
+            theme.tag.sizeMinWidthSmall
         }
     }
 
     private var minHeight: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSizeMinHeightDefault
+            theme.tag.sizeMinHeightDefault
         case .small:
-            theme.tag.tagSizeMinHeightSmall
+            theme.tag.sizeMinHeightSmall
         }
     }
 }

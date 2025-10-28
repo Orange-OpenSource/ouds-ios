@@ -30,19 +30,19 @@
 /// In few words:
 /// ```swift
 ///         // Some spacing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
-///         public static let dimension0: DimensionRawToken = 0
-///         public static let dimension25: DimensionRawToken = 2
+///         public static let _0: DimensionRawToken = 0
+///         public static let _25: DimensionRawToken = 2
 ///
 ///         // The spacing semantic tokens using them,
 ///         // declared (in SpaceSemanticTokens.swift) and defined (in OUDSTheme+SpaceSemanticTokens.swift) by the tokenator
-///         var spaceScaledNoneMobile: SpaceSemanticToken { DimensionRawTokens.dimension0 }
-///         var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
+///         var scaledNoneMobile: SpaceSemanticToken { DimensionRawTokens._0 }
+///         var scaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.outOfSystem50 }
 ///
 ///         // The 'higher level' spacing semantic tokens wrapping them and exposed to users,
 ///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manualy
-///         var spaceScaledNone: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledNoneMobile, regular: spaceScaledNoneTablet) }
+///         var scaledNone: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledNoneMobile, regular: scaledNoneTablet) }
 ///
-///         // Thus users can in their components use spaceScaledNone as defined in their design system
+///         // Thus users can in their components use scaledNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
 ///
@@ -51,16 +51,16 @@ public protocol SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled
 
-    var spaceScaledNone: MultipleSpaceSemanticTokens { get }
-    var spaceScaled3xsmall: MultipleSpaceSemanticTokens { get }
-    var spaceScaled2xsmall: MultipleSpaceSemanticTokens { get }
-    var spaceScaledXsmall: MultipleSpaceSemanticTokens { get }
-    var spaceScaledSmall: MultipleSpaceSemanticTokens { get }
-    var spaceScaledMedium: MultipleSpaceSemanticTokens { get }
-    var spaceScaledLarge: MultipleSpaceSemanticTokens { get }
-    var spaceScaledXlarge: MultipleSpaceSemanticTokens { get }
-    var spaceScaled2xlarge: MultipleSpaceSemanticTokens { get }
-    var spaceScaled3xlarge: MultipleSpaceSemanticTokens { get }
+    var scaledNone: MultipleSpaceSemanticTokens { get }
+    var scaled3xsmall: MultipleSpaceSemanticTokens { get }
+    var scaled2xsmall: MultipleSpaceSemanticTokens { get }
+    var scaledXsmall: MultipleSpaceSemanticTokens { get }
+    var scaledSmall: MultipleSpaceSemanticTokens { get }
+    var scaledMedium: MultipleSpaceSemanticTokens { get }
+    var scaledLarge: MultipleSpaceSemanticTokens { get }
+    var scaledXlarge: MultipleSpaceSemanticTokens { get }
+    var scaled2xlarge: MultipleSpaceSemanticTokens { get }
+    var scaled3xlarge: MultipleSpaceSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

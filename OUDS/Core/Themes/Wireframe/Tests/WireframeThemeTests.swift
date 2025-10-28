@@ -49,7 +49,7 @@ struct WireframeThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts == nil)
+        #expect(theme.charts == nil)
     }
 
     @Test func defaultElevationSemanticTokensProvider() throws {

@@ -23,14 +23,14 @@ import OUDSFoundations
 ///     // Define your own provider for size semantic tokens
 ///     class CustomSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 ///
-///         // Then override the size semantic tokens you want, using the dimension raw tokens available
+///         // Then override the size semantic tokens you want, using the _ raw tokens available
 ///
-///         override var sizeIconDecorative2xl: SizeSemanticToken {
-///             DimensionRawTokens.dimension300
+///         override var iconDecorative2xl: SizeSemanticToken {
+///             DimensionRawTokens._300
 ///         }
 ///
-///         override var sizeIconDecorativeMd: SizeSemanticToken {
-///             DimensionRawTokens.dimension900
+///         override var iconDecorativeMd: SizeSemanticToken {
+///             DimensionRawTokens._900
 ///         }
 /// }
 /// ```
@@ -55,7 +55,7 @@ import OUDSFoundations
 /// - Since: 0.8.0
 open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
@@ -63,7 +63,7 @@ open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider 
     #endif
 
     /// Intializes the provider
-    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSizeSemanticTokensProvider")
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())

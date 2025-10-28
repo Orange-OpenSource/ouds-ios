@@ -24,14 +24,14 @@
 /// - Since: 0.8.0
 public protocol OpacitySemanticTokens {
 
-    var opacityInvisible: OpacitySemanticToken { get }
-    var opacityWeakest: OpacitySemanticToken { get }
-    var opacityWeaker: OpacitySemanticToken { get }
-    var opacityWeak: OpacitySemanticToken { get }
-    var opacityMedium: OpacitySemanticToken { get }
-    var opacityStrong: OpacitySemanticToken { get }
-    var opacityOpaque: OpacitySemanticToken { get }
-    var opacityDisabled: OpacitySemanticToken { get }
+    var invisible: OpacitySemanticToken { get }
+    var weakest: OpacitySemanticToken { get }
+    var weaker: OpacitySemanticToken { get }
+    var weak: OpacitySemanticToken { get }
+    var medium: OpacitySemanticToken { get }
+    var strong: OpacitySemanticToken { get }
+    var opaque: OpacitySemanticToken { get }
+    var disabled: OpacitySemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

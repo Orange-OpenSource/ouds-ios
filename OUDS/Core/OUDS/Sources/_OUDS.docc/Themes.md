@@ -5,7 +5,7 @@
     @PageImage(purpose: card, source: "ic_theme_intro")
 }
 
-_Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ using in the end _raw tokens_.
+_Themes_ are applications of specific values for _components tokens_ and dimensionsemantic tokens_ using in the end _raw tokens_.
 A _theme_ contains any relevant tokens which can be used for components rendering.
 A _theme_ can use its own assets like fonts and icons.
 
@@ -14,7 +14,7 @@ This framework exposes today following themes:
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
 [Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and dimension constraints           
+[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and _ constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 
@@ -101,7 +101,7 @@ The tuning to apply must be done at theme init.
 You will have to create a _Swift class_ which will inherit from `OrangeTheme` (if you need Orange brand assets) or `OUDSTheme`.
 You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is, but you can of course, you jusr will have to add your own tokens providers.
 
-Then, you should override the _semantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
+Then, you should override the dimensionsemantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons. You can use existing tokens providers or override them.
 
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
@@ -130,88 +130,88 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMedium: SpaceSemanticToken {
-        DimensionRawTokens.dimension400
+    override var fixedMedium: SpaceSemanticToken {
+        DimensionRawTokens._400
     }
-    override var spaceScaledSmall: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
+    override var scaledSmall: MultipleSpaceSemanticTokens {
+        MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
     }
 }
 
 // Token provider for sizes
 
 class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
-    override var sizeIconDecorative2xl: SizeSemanticToken {
-        DimensionRawTokens.dimension300
+    override var iconDecorative2xl: SizeSemanticToken {
+        DimensionRawTokens._300
     }
-    override var sizeIconDecorativeMd: SizeSemanticToken {
-        DimensionRawTokens.dimension900
+    override var iconDecorativeMd: SizeSemanticToken {
+        DimensionRawTokens._900
     }
 }
 
 // Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
-    override var colorBgSecondary: MultipleColorSemanticTokens {
+    override var bgSecondary: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
-    override var colorActionEnabled: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.colorFunctionalScarlet600)
+    override var actionEnabled: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
     }
 }
 
 // Token provider for border
 
 class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider {
-    override var borderStyleDefault: BorderStyleSemanticToken {
-        BorderRawTokens.borderStyleDashed
+    override var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleDashed
     }
-    override var borderWidthw: BorderWidthSemanticToken {
-        BorderRawTokens.borderWidth100
+    override var widthw: BorderWidthSemanticToken {
+        BorderRawTokens.width100
     }
-    override var borderRadiusLarge: BorderRadiusSemanticToken {
-        BorderRawTokens.borderRadius800
+    override var radiusLarge: BorderRadiusSemanticToken {
+        BorderRawTokens.radius800
     }
 }
 
 // Token provider for elevation
 
 class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
-    override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
-        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+    override var stickyEmphasized: ElevationCompositeSemanticToken {
+        ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
 }
 
 // Token provider for opacity
 
 class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
-    override var opacityStrong: OpacitySemanticToken {
-        OpacityRawTokens.opacity920
+    override var strong: OpacitySemanticToken {
+        OpacityRawTokens._920
     }
 }
 
 // Token provider for grid
 
 class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
-    override var gridExtraCompactColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var extraCompactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
-    override var gridCompactColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var compactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
-    override var gridRegularColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var regularColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
 }
 
 // Token provider for font
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
-    override var typeDisplayLarge: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+    override var displayLarge: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
     }
-    override var typeCodeMedium: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+    override var codeMedium: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(FontRawTokens.bold300)
     }
 }
 ```

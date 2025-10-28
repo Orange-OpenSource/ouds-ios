@@ -25,9 +25,9 @@ import OUDSTokensSemantic
 /// - Since: 0.17.0
 public protocol PinCodeInputComponentTokens {
 
-    var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { get }
-    var pinCodeInputSizeMinWidth: SizeSemanticToken { get }
-    var pinCodeInputSizeMaxWidth: SizeSemanticToken { get }
+    var spaceColumnGapDigitInput: SpaceSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

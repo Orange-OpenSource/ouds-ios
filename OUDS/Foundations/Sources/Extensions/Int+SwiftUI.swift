@@ -16,7 +16,7 @@ import SwiftUI
 extension Int {
 
     /// `Int` extension to get `Font.Weight` of *SwiftUI* from its integer representation.
-    public var fontWeight: Font.Weight {
+    public var weight: Font.Weight {
         if self < 0 { return Font.Weight.regular }
         if self <= 100 { return Font.Weight.thin }
         if self <= 200 { return Font.Weight.ultraLight }

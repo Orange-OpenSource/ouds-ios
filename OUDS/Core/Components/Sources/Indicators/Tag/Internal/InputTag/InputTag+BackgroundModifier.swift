@@ -38,11 +38,11 @@ struct InputTagBackgroundModifier: ViewModifier {
     private var color: MultipleColorSemanticTokens? {
         switch state {
         case .enabled:
-            theme.inputTag.inputTagColorBgEnabled
+            theme.inputTag.colorBgEnabled
         case .hover:
-            theme.inputTag.inputTagColorBgHover
+            theme.inputTag.colorBgHover
         case .pressed:
-            theme.inputTag.inputTagColorBgPressed
+            theme.inputTag.colorBgPressed
         case .disabled:
             nil
         case .readOnly:

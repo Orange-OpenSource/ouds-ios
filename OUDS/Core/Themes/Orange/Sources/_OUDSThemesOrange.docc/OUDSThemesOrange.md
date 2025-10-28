@@ -128,11 +128,11 @@ For Orange products the *Helevetica Neue* font family must be used.
 ```swift
     // The three following instanciations are the same
     let theme = OrangeTheme()
-    let theme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
-    let theme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+    let theme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+    let theme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
 
     // This instanciation won't work as the font family is not recognised
-    let theme = OrangeTheme(fontFamily: "Helvetica Neue")
+    let theme = OrangeTheme(family: "Helvetica Neue")
 ```
 
 ### Other fonts
@@ -155,7 +155,7 @@ However if, in very particular cases, you need to use another font family, you c
     // Keep in mind that it might not work because PostScript name is used combining
     // font family name and font weight.
     // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
-    let theme = OrangeTheme(fontFamily: theFontFamilyNameInPostScript)
+    let theme = OrangeTheme(family: theFontFamilyNameInPostScript)
 ```
 
 > Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`
@@ -210,99 +210,99 @@ import OUDSTokensRaw // To use raw tokens if needed
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
-    override var spaceFixedMedium: SpaceSemanticToken {
-        DimensionRawTokens.dimension400
+    override var fixedMedium: SpaceSemanticToken {
+        DimensionRawTokens._400
     }
-    override var spaceScaledSmall: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
+    override var scaledSmall: MultipleSpaceSemanticTokens {
+        MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
     }
 }
 
 // Token provider for sizes
 
 class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
-    override var sizeIconDecorative2xl: SizeSemanticToken {
-        DimensionRawTokens.dimension300
+    override var iconDecorative2xl: SizeSemanticToken {
+        DimensionRawTokens._300
     }
-    override var sizeIconDecorativeMd: SizeSemanticToken {
-        DimensionRawTokens.dimension900
+    override var iconDecorativeMd: SizeSemanticToken {
+        DimensionRawTokens._900
     }
 }
 
 // Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
-    override var colorBgSecondary: MultipleColorSemanticTokens {
+    override var bgSecondary: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
-    override var colorActionEnabled: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.colorFunctionalScarlet600)
+    override var actionEnabled: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
     }
 }
 
 // Token provider for border
 
 class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
-    override var borderStyleDefault: BorderStyleSemanticToken {
-        BorderRawTokens.borderStyleDashed
+    override var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleDashed
     }
-    override var borderWidthMedium: BorderWidthSemanticToken {
-        BorderRawTokens.borderWidth100
+    override var widthMedium: BorderWidthSemanticToken {
+        BorderRawTokens.width100
     }
-    override var borderRadiusLarge: BorderRadiusSemanticToken {
-        BorderRawTokens.borderRadius800
+    override var radiusLarge: BorderRadiusSemanticToken {
+        BorderRawTokens.radius800
     }
 }
 
 // Token provider for elevation
 
 class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
-    override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
-        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+    override var stickyEmphasized: ElevationCompositeSemanticToken {
+        ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
 }
 
 // Token provider for opacity
 
 class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
-    override var opacityStrong: OpacitySemanticToken {
-        OpacityRawTokens.opacity920
+    override var strong: OpacitySemanticToken {
+        OpacityRawTokens._920
     }
 }
 
 // Token provider for grid
 
 class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
-    override var gridExtraCompactColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var extraCompactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
-    override var gridCompactColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var compactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
-    override var gridRegularColumnGap: GridSemanticToken {
-        GridRawTokens.gridColumnGap200
+    override var regularColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
     }
 }
 
 // Token provider for font
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
-    override var typeDisplayLarge: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+    override var displayLarge: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
     }
-    override var typeCodeMedium: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+    override var codeMedium: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(FontRawTokens.bold300)
     }
 }
 
 // MARK: - And also for components tokens
 
 class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
-    override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
-    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
-    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
-    override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    override public var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
+    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
+    override public var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    override public var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // Etc.

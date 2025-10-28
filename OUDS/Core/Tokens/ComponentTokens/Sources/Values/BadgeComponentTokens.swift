@@ -27,16 +27,16 @@ public protocol BadgeComponentTokens {
 
     // MARK: - Sizes
 
-    var badgeSizeXsmall: SizeSemanticToken { get }
-    var badgeSizeSmall: SizeSemanticToken { get }
-    var badgeSizeMedium: SizeSemanticToken { get }
-    var badgeSizeLarge: SizeSemanticToken { get }
+    var sizeXsmall: SizeSemanticToken { get }
+    var sizeSmall: SizeSemanticToken { get }
+    var sizeMedium: SizeSemanticToken { get }
+    var sizeLarge: SizeSemanticToken { get }
 
     // MARK: - Spaces
 
-    var badgeSpaceInset: SpaceSemanticToken { get }
-    var badgeSpacePaddingInlineMedium: SpaceSemanticToken { get }
-    var badgeSpacePaddingInlineLarge: SpaceSemanticToken { get }
+    var spaceInset: SpaceSemanticToken { get }
+    var spacePaddingInlineMedium: SpaceSemanticToken { get }
+    var spacePaddingInlineLarge: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

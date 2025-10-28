@@ -33,7 +33,7 @@ struct TextInputBorderModifier: ViewModifier {
                 content
             } else {
                 content
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                    .oudsBorder(style: theme.borders.styleDefault,
                                 width: size,
                                 radius: cornerRadius,
                                 color: outlinedColor)
@@ -41,10 +41,10 @@ struct TextInputBorderModifier: ViewModifier {
         } else {
             if status == .readOnly {
                 content
-                    .oudsBorder(style: theme.borders.borderStyleDefault,
-                                width: theme.textInput.textInputBorderWidthDefault,
+                    .oudsBorder(style: theme.borders.styleDefault,
+                                width: theme.textInput.borderWidthDefault,
                                 radius: cornerRadius,
-                                color: theme.colors.colorBorderMuted)
+                                color: theme.colors.borderMuted)
             } else {
                 ZStack(alignment: .bottomLeading) {
                     content
@@ -60,17 +60,17 @@ struct TextInputBorderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var cornerRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedTextInputs ? theme.textInput.textInputBorderRadiusRounded : theme.textInput.textInputBorderRadiusDefault
+        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private var size: BorderWidthSemanticToken {
         switch interactionState {
         case .idle:
-            theme.textInput.textInputBorderWidthDefault
+            theme.textInput.borderWidthDefault
         case .focused:
-            theme.textInput.textInputBorderWidthFocus
+            theme.textInput.borderWidthFocus
         case .hover:
-            theme.textInput.textInputBorderWidthDefault
+            theme.textInput.borderWidthDefault
         }
     }
 
@@ -79,31 +79,31 @@ struct TextInputBorderModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.textInput.textInputColorBorderEnabled
+                theme.textInput.colorBorderEnabled
             case .focused:
-                theme.textInput.textInputColorBorderFocus
+                theme.textInput.colorBorderFocus
             case .hover:
-                theme.textInput.textInputColorBorderHover
+                theme.textInput.colorBorderHover
             }
 
         case .error:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
 
         case .loading:
-            theme.textInput.textInputColorBorderLoading
+            theme.textInput.colorBorderLoading
 
         case .readOnly:
-            theme.colors.colorBorderMuted
+            theme.colors.borderMuted
 
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 
@@ -112,27 +112,27 @@ struct TextInputBorderModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.textInput.textInputColorBorderEnabled
+                theme.textInput.colorBorderEnabled
             case .focused:
-                theme.textInput.textInputColorBorderFocus
+                theme.textInput.colorBorderFocus
             case .hover:
-                theme.textInput.textInputColorBorderHover
+                theme.textInput.colorBorderHover
             }
         case .error:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
         case .loading:
-            theme.textInput.textInputColorBorderLoading
+            theme.textInput.colorBorderLoading
         case .readOnly:
-            theme.colors.colorActionDisabled // Should not appear
+            theme.colors.actionDisabled // Should not appear
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

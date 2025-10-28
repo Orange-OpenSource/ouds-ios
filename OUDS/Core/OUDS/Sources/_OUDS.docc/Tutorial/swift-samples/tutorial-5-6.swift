@@ -15,9 +15,9 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             Group {
-                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+                VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                     Text("OUDS Tutorial for new comers")
-                        .oudsForegroundColor(theme.colors.colorContentBrandPrimary)
+                        .oudsForegroundColor(theme.colors.contentBrandPrimary)
 
                     Text("Let's play with components, themes and tokens!")
 
@@ -26,10 +26,10 @@ struct ContentView: View {
                         OUDSTag(label: "OUDS")
                         OUDSTag(label: "Tutorial")
                     }
-                }.padding(.bottom, theme.spaces.spaceFixedLarge)
+                }.padding(.bottom, theme.spaces.fixedLarge)
 
                 Group {
-                    VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
+                    VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
                         OUDSRadioPicker(selection: $selectedGender,
                                         radios: genderRadioValues(),
                                         placement: .horizontal(false))
@@ -47,26 +47,26 @@ struct ContentView: View {
                         OUDSChipPicker(selections: $selectedTopics, chips: topicsChipsValues())
 
                         Text("\(selectedTopics.count) topic(s) selected")
-                            .foregroundColor(ColorRawTokens.colorFunctionalDodgerBlue800.color!)
+                            .foregroundColor(ColorRawTokens.functionalDodgerBlue800.color!)
 
                         OUDSHorizontalDivider(color: .brandPrimary)
 
                         OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
                     }
-                    .padding(.horizontal, theme.spaces.spaceFixedSmall)
+                    .padding(.horizontal, theme.spaces.fixedSmall)
                 }
-                .oudsBackground(theme.colors.colorBgTertiary)
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthThin,
-                            radius: theme.borders.borderRadiusMedium,
-                            color: theme.colors.colorActionEnabled)
-                .oudsShadow(theme.elevations.elevationEmphasized)
-                .padding(.bottom, theme.spaces.spaceFixedLarge)
+                .oudsBackground(theme.colors.bgTertiary)
+                .oudsBorder(style: theme.borders.styleDefault,
+                            width: theme.borders.widthThin,
+                            radius: theme.borders.radiusMedium,
+                            color: theme.colors.actionEnabled)
+                .oudsShadow(theme.elevations.emphasized)
+                .padding(.bottom, theme.spaces.fixedLarge)
 
-            }.padding(.horizontal, theme.spaces.spaceFixedSmall)
+            }.padding(.horizontal, theme.spaces.fixedSmall)
 
-            OUDSColoredSurface(color: theme.colorModes.modeOnStatusInfoEmphasized) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedXsmall) {
+            OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
                     OUDSLink(text: "Go to the website", indicator: .next) {
                         openUrl.callAsFunction(URL(string: "https://ios.unified-design-system.orange.com")!)
                     }
@@ -83,10 +83,10 @@ struct ContentView: View {
 
                     OUDSSwitchItem("Switch to dark mode",
                                    isOn: $switchToDarkMode)
-                        .padding(.horizontal, theme.spaces.spaceFixed3xlarge)
+                        .padding(.horizontal, theme.spaces.fixed3xlarge)
                 }
-                .frame(maxWidth: theme.sizes.sizeMaxWidthTypeBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
-                .padding(.bottom, theme.spaces.spaceFixedLarge)
+                .frame(maxWidth: theme.sizes.maxWidthTypeBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
+                .padding(.bottom, theme.spaces.fixedLarge)
             }
         }.preferredColorScheme(switchToDarkMode ? .dark : .light)
     }

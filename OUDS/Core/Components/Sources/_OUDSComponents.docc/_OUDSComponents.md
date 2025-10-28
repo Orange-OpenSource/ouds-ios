@@ -27,17 +27,17 @@ You can get more details about them in the categories below:
 ### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
-Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
+Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a dimensionspread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
-// For example, apply the elevation effect "elevationDrag" from your theme:
-myView.oudsShadow(theme.elevations.elevationDrag)
+// For example, apply the elevation effect "drag" from your theme:
+myView.oudsShadow(theme.elevations.drag)
 
-// And in the theme this "elevationDrag" has been defined for example like:
-@objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_500) }
+// And in the theme this "drag" has been defined for example like:
+@objc open var drag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
-// And if you look deeper, the raw token "elevationBottom_3_500" can be like:
-public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY300, blur: elevationBlur400, color: ColorRawTokens.colorOpacityBlack320)
+// And if you look deeper, the raw token "bottom_3_500" can be like:
+public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur: blur400, color: ColorRawTokens.opacityBlack320)
 
 // Blur will be used to compute the radius value
 ```
@@ -51,27 +51,27 @@ With OUDS, typography depends to the class size, i.e. wether or not the applicat
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 ```swift
-// Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
-@objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
-    MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
+// Here is a definition of a semantic token inside the theme for typography "displayMedium":
+@objc open var displayMedium: MultipleFontCompositeRawTokens { 
+    MultipleFontCompositeRawTokens(compact: FontRawTokens.bold750, regular: FontRawTokens.bold1050) 
 }
 
 // And here are the raw tokens definitions:
-public static let typeBold750 = FontCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold)
-public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeightBold)
+public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lineHeight850, weight: weightBold)
+public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
 ```
 
-However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the system font will be used.
+However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the dimensionsystem one_.
+Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the system font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
 
 ```swift
 // Apply typography "type body default small"
-myView.typeBodyDefaultSmall(theme)
+myView.bodyDefaultSmall(theme)
 
 // Apply typography "type label strong X large"
-myView.typeLabelStrongXLarge(theme)
+myView.labelStrongXLarge(theme)
 
 // Etc.
 ```
@@ -89,10 +89,10 @@ The helper is available through `View`, and tokens through the provider of the t
     var body: some View {
         SomeView()
         .oudsBorder(
-             style: theme.borders.borderStyleDefault,
-             width: theme.borders.borderWidthThin,
-             radius: theme.borders.borderRadiusNone,
-             color: theme.colors.colorBorderDefault)
+             style: theme.borders.styleDefault,
+             width: theme.borders.widthThin,
+             radius: theme.borders.radiusNone,
+             color: theme.colors.borderDefault)
      }
 ```
 
@@ -102,22 +102,22 @@ Colors can be applied on view for background and foreground colors, foreground s
 Some helpers are available in the OUDS API to avoid to use the `color(for:ColorScheme)` method.
 
 ```swift
-    // Given a color at theme.colors.colorBgPrimary
+    // Given a color at theme.colors.bgPrimary
     // This token can have light and dark declinations 
 
     @Environment(\.theme) private var theme
 
     // Apply a foreground style
-    someView.oudsForegroundStyle(theme.colors.colorBgPrimary)
+    someView.oudsForegroundStyle(theme.colors.bgPrimary)
 
     // Apply a foreground color
-    someView.oudsForegroundColor(theme.colors.colorBgPrimary)
+    someView.oudsForegroundColor(theme.colors.bgPrimary)
 
     // Apply a background
-    someView.oudsBackground(theme.colors.colorBgPrimary)
+    someView.oudsBackground(theme.colors.bgPrimary)
 
     // Apply an accent color
-    someView.oudsAccentColor(theme.colors.colorBgPrimary)
+    someView.oudsAccentColor(theme.colors.bgPrimary)
 ```
 
 ## Change font family according to locale or preferred language
@@ -141,7 +141,7 @@ func localizedHelveticaFont() -> String {
 
 /// Instanciate your Orange theme using the font family.
 /// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
-let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
+let localizedOrangeTheme: OUDSTheme = OrangeTheme(family: localizedHelveticaFont())
 ```
 
 > Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app

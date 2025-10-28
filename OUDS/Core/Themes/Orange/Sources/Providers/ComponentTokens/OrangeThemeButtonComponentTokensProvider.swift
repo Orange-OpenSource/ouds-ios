@@ -30,15 +30,15 @@ import OUDSFoundations
 ///
 ///         // Then override the button component tokens you want.
 ///
-///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
+///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
 ///
-///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMd }
+///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
-///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }

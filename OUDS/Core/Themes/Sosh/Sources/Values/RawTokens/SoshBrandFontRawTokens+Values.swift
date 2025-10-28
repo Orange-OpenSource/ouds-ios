@@ -18,5 +18,5 @@ import OUDSTokensRaw
 
 extension SoshBrandFontRawTokens {
     /// Has for value "Sosh"
-    public static let fontFamilyDefault: FontFamilyRawToken = "Sosh"
+    public static let familyDefault: FontFamilyRawToken = "Sosh"
 }

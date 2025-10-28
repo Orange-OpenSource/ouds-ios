@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the chip component tokens you want.
 ///
-///         override var dividerBorderWidth: BorderWidthSemanticToken { borders.borderWidthmediumt }
+///         override var borderWidth: BorderWidthSemanticToken { borders.widthmediumt }
 ///
 ///         // ...
 ///     }

@@ -27,34 +27,34 @@ public protocol TagComponentTokens {
 
     // MARK: - Borders
 
-    var tagBorderRadius: BorderRadiusSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
 
     // MARK: - Sizes
 
-    var tagSizeAssetDefault: SizeSemanticToken { get }
-    var tagSizeAssetSmall: SizeSemanticToken { get }
-    var tagSizeMinHeightDefault: SizeSemanticToken { get }
-    var tagSizeMinWidthDefault: SizeSemanticToken { get }
-    var tagSizeMinHeightSmall: SizeSemanticToken { get }
-    var tagSizeMinWidthSmall: SizeSemanticToken { get }
-    var tagSizeMinHeightInteractiveArea: SizeSemanticToken { get }
+    var sizeAssetDefault: SizeSemanticToken { get }
+    var sizeAssetSmall: SizeSemanticToken { get }
+    var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinWidthDefault: SizeSemanticToken { get }
+    var sizeMinHeightSmall: SizeSemanticToken { get }
+    var sizeMinWidthSmall: SizeSemanticToken { get }
+    var sizeMinHeightInteractiveArea: SizeSemanticToken { get }
 
     // MARK: - Spaces
 
-    var tagSpacePaddingBlockSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingBlockDefault: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineDefault: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { get }
-    var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { get }
-    var tagSpaceInsetIconSmall: SpaceSemanticToken { get }
-    var tagSpaceInsetBulletSmall: SpaceSemanticToken { get }
-    var tagSpaceInsetLoaderSmall: SpaceSemanticToken { get }
-    var tagSpaceInsetIconDefault: SpaceSemanticToken { get }
-    var tagSpaceInsetBulletDefault: SpaceSemanticToken { get }
-    var tagSpaceInsetLoaderDefault: SpaceSemanticToken { get }
-    var tagSpaceColumnGapSmall: SpaceSemanticToken { get }
-    var tagSpaceColumnGapDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockSmall: SpaceSemanticToken { get }
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineSmall: SpaceSemanticToken { get }
+    var spacePaddingInlineDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineAssetSmall: SpaceSemanticToken { get }
+    var spacePaddingInlineAssetDefault: SpaceSemanticToken { get }
+    var spaceInsetIconSmall: SpaceSemanticToken { get }
+    var spaceInsetBulletSmall: SpaceSemanticToken { get }
+    var spaceInsetLoaderSmall: SpaceSemanticToken { get }
+    var spaceInsetIconDefault: SpaceSemanticToken { get }
+    var spaceInsetBulletDefault: SpaceSemanticToken { get }
+    var spaceInsetLoaderDefault: SpaceSemanticToken { get }
+    var spaceColumnGapSmall: SpaceSemanticToken { get }
+    var spaceColumnGapDefault: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -29,48 +29,48 @@ extension WireframeThemeFontSemanticTokensProvider: FontCompositeSemanticTokens 
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    @objc public final var typeDisplayLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold850, regular: FontRawTokens.typeBold1450) }
-    @objc public final var typeDisplayMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) }
-    @objc public final var typeDisplaySmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold650, regular: FontRawTokens.typeBold850) }
+    @objc public final var displayLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold850, regular: FontRawTokens.bold1450) }
+    @objc public final var displayMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold750, regular: FontRawTokens.bold1050) }
+    @objc public final var displaySmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold650, regular: FontRawTokens.bold850) }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    @objc public final var typeHeadingXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold550, regular: FontRawTokens.typeBold750) }
-    @objc public final var typeHeadingLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold450, regular: FontRawTokens.typeBold550) }
-    @objc public final var typeHeadingMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold350, regular: FontRawTokens.typeBold450) }
-    @objc public final var typeHeadingSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold300, regular: FontRawTokens.typeBold350) }
+    @objc public final var headingXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold550, regular: FontRawTokens.bold750) }
+    @objc public final var headingLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold450, regular: FontRawTokens.bold550) }
+    @objc public final var headingMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold350, regular: FontRawTokens.bold450) }
+    @objc public final var headingSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(compact: FontRawTokens.bold300, regular: FontRawTokens.bold350) }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    @objc public final var typeBodyDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular250) }
-    @objc public final var typeBodyDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
-    @objc public final var typeBodyDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }
-    @objc public final var typeBodyModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium250) }
-    @objc public final var typeBodyModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium200) }
-    @objc public final var typeBodyModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium150) }
-    @objc public final var typeBodyStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
-    @objc public final var typeBodyStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold200) }
-    @objc public final var typeBodyStrongSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold150) }
+    @objc public final var bodyDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular250) }
+    @objc public final var bodyDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
+    @objc public final var bodyDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
+    @objc public final var bodyModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium250) }
+    @objc public final var bodyModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium200) }
+    @objc public final var bodyModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium150) }
+    @objc public final var bodyStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold250) }
+    @objc public final var bodyStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold200) }
+    @objc public final var bodyStrongSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    @objc public final var typeLabelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular300) }
-    @objc public final var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
-    @objc public final var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
-    @objc public final var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }
-    @objc public final var typeLabelModerateXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium300) }
-    @objc public final var typeLabelModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium250) }
-    @objc public final var typeLabelModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium200) }
-    @objc public final var typeLabelModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeMedium150) }
-    @objc public final var typeLabelStrongXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold300) }
-    @objc public final var typeLabelStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
-    @objc public final var typeLabelStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold200) }
-    @objc public final var typeLabelStrongSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold150) }
+    @objc public final var labelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular300) }
+    @objc public final var labelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold250) }
+    @objc public final var labelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
+    @objc public final var labelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
+    @objc public final var labelModerateXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium300) }
+    @objc public final var labelModerateLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium250) }
+    @objc public final var labelModerateMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium200) }
+    @objc public final var labelModerateSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium150) }
+    @objc public final var labelStrongXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold300) }
+    @objc public final var labelStrongLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold250) }
+    @objc public final var labelStrongMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold200) }
+    @objc public final var labelStrongSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    @objc public final var typeCodeMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
-    @objc public final var typeCodeSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }
+    @objc public final var codeMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
+    @objc public final var codeSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
 }
 
 // swiftlint:enable line_length

@@ -39,34 +39,34 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
 
     // MARK: - Borders
 
-    override var tagBorderRadius: BorderRadiusSemanticToken { Self.mockThemeTagBorderRadius }
+    override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeTagBorderRadius }
 
     // MARK: - Sizes
 
-    override var tagSizeAssetDefault: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeAssetSmall: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeMinHeightDefault: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeMinWidthDefault: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeMinHeightSmall: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeMinWidthSmall: SizeSemanticToken { Self.mockThemeTagSize }
-    override var tagSizeMinHeightInteractiveArea: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeAssetDefault: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeAssetSmall: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeMinHeightDefault: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeMinWidthDefault: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeMinHeightSmall: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeMinWidthSmall: SizeSemanticToken { Self.mockThemeTagSize }
+    override var sizeMinHeightInteractiveArea: SizeSemanticToken { Self.mockThemeTagSize }
 
     // MARK: - Spaces
 
-    override var tagSpacePaddingBlockSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpacePaddingInlineSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpacePaddingInlineAssetSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpacePaddingInlineAssetDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetIconSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetBulletSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetLoaderSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetIconDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetBulletDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceInsetLoaderDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceColumnGapSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var tagSpaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingBlockSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingInlineSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingInlineAssetSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spacePaddingInlineAssetDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetIconSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetBulletSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetLoaderSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetIconDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetBulletDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceInsetLoaderDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceColumnGapSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
+    override var spaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
 }
 
 // swiftlint:enable required_deinit

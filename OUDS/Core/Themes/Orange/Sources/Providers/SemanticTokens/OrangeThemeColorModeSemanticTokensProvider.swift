@@ -26,15 +26,15 @@ import OUDSFoundations
 ///
 ///         // Then override the color mode semantic tokens you want, using the color mode raw tokens available
 ///
-///         override var modeOnBrandSecondaryLight: ColorModeSemanticToken {
+///         override var onBrandSecondaryLight: ColorModeSemanticToken {
 ///              ColorModeRawTokens.light
 ///         }
 ///
-///         override var modeOnBrandSecondaryDark: ColorModeSemanticToken {
+///         override var onBrandSecondaryDark: ColorModeSemanticToken {
 ///              ColorModeRawTokens.dark
 ///         }
 ///
-///         override var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens {
+///         override var onStatusAccentEmphasized: MultipleColorModeSemanticTokens {
 ///             MultipleColorModeSemanticTokens(light: ColorModeRawTokens.dark, dark: ColorModeRawTokens.light)
 ///         }
 /// }

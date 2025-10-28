@@ -23,40 +23,40 @@ struct IntSwiftUITests {
     @Test
     func fontWeightValues() throws {
         // Expected values
-        #expect(0.fontWeight == Font.Weight.thin)
-        #expect(1.fontWeight == Font.Weight.thin)
-        #expect(99.fontWeight == Font.Weight.thin)
-        #expect(100.fontWeight == Font.Weight.thin)
+        #expect(0.weight == Font.Weight.thin)
+        #expect(1.weight == Font.Weight.thin)
+        #expect(99.weight == Font.Weight.thin)
+        #expect(100.weight == Font.Weight.thin)
 
-        #expect(101.fontWeight == Font.Weight.ultraLight)
-        #expect(200.fontWeight == Font.Weight.ultraLight)
+        #expect(101.weight == Font.Weight.ultraLight)
+        #expect(200.weight == Font.Weight.ultraLight)
 
-        #expect(201.fontWeight == Font.Weight.light)
-        #expect(300.fontWeight == Font.Weight.light)
+        #expect(201.weight == Font.Weight.light)
+        #expect(300.weight == Font.Weight.light)
 
-        #expect(301.fontWeight == Font.Weight.regular)
-        #expect(400.fontWeight == Font.Weight.regular)
+        #expect(301.weight == Font.Weight.regular)
+        #expect(400.weight == Font.Weight.regular)
 
-        #expect(401.fontWeight == Font.Weight.medium)
-        #expect(500.fontWeight == Font.Weight.medium)
+        #expect(401.weight == Font.Weight.medium)
+        #expect(500.weight == Font.Weight.medium)
 
-        #expect(501.fontWeight == Font.Weight.semibold)
-        #expect(600.fontWeight == Font.Weight.semibold)
+        #expect(501.weight == Font.Weight.semibold)
+        #expect(600.weight == Font.Weight.semibold)
 
-        #expect(601.fontWeight == Font.Weight.bold)
-        #expect(700.fontWeight == Font.Weight.bold)
+        #expect(601.weight == Font.Weight.bold)
+        #expect(700.weight == Font.Weight.bold)
 
-        #expect(701.fontWeight == Font.Weight.black)
-        #expect(800.fontWeight == Font.Weight.black)
-        #expect(801.fontWeight == Font.Weight.black)
-        #expect(900.fontWeight == Font.Weight.black)
-        #expect(901.fontWeight == Font.Weight.black)
-        #expect(950.fontWeight == Font.Weight.black)
+        #expect(701.weight == Font.Weight.black)
+        #expect(800.weight == Font.Weight.black)
+        #expect(801.weight == Font.Weight.black)
+        #expect(900.weight == Font.Weight.black)
+        #expect(901.weight == Font.Weight.black)
+        #expect(950.weight == Font.Weight.black)
 
-        #expect(951.fontWeight == Font.Weight.regular)
+        #expect(951.weight == Font.Weight.regular)
 
         // Other default cases
-        #expect(1_000.fontWeight == Font.Weight.regular)
-        #expect((-1).fontWeight == Font.Weight.regular)
+        #expect(1_000.weight == Font.Weight.regular)
+        #expect((-1).weight == Font.Weight.regular)
     }
 }

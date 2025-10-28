@@ -37,13 +37,13 @@ struct TextInputContainer: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
-            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+        HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
+            HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
                 // Leading icon container
                 LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, status: status)
 
                 // Text container
-                VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
+                VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
                     // Label container
                     if showLabelInContainer {
                         LabelContainer(label: label, status: status, interactionState: interactionState)
@@ -51,7 +51,7 @@ struct TextInputContainer: View {
                     }
 
                     // Input container
-                    HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
+                    HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapInlineText) {
 
                         // Prefix container
                         if let placeholder,
@@ -60,7 +60,7 @@ struct TextInputContainer: View {
                            (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(prefix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }
@@ -80,7 +80,7 @@ struct TextInputContainer: View {
                            (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(suffix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }
@@ -91,10 +91,10 @@ struct TextInputContainer: View {
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
-        .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
-        .padding(.leading, theme.textInput.textInputSpacePaddingInlineDefault)
+        .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
+        .padding(.leading, theme.textInput.spacePaddingInlineDefault)
         .padding(.trailing, trailingPadding)
-        .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .leading)
+        .frame(minHeight: theme.textInput.sizeMinHeight, alignment: .leading)
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .onHover { hover = $0 }
@@ -115,19 +115,19 @@ struct TextInputContainer: View {
 
     private var trailingPadding: CGFloat {
         if trailingAction != nil {
-            theme.textInput.textInputSpacePaddingInlineTrailingAction
+            theme.textInput.spacePaddingInlineTrailingAction
         } else {
             switch status {
             case .error, .loading:
-                theme.textInput.textInputSpacePaddingInlineTrailingAction
+                theme.textInput.spacePaddingInlineTrailingAction
             default:
-                theme.textInput.textInputSpacePaddingInlineDefault
+                theme.textInput.spacePaddingInlineDefault
             }
         }
     }
 
     private var prefixSuffixColor: MultipleColorSemanticTokens {
-        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
+        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 
     private var interactionState: TextInputInteractionState {

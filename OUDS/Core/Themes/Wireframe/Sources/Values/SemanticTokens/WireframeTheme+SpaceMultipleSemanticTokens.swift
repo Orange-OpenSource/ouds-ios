@@ -25,14 +25,14 @@ extension WireframeThemeSpaceSemanticTokensProvider: SpaceMultipleSemanticTokens
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    @objc public final var spaceScaledNone: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledNoneMobile, regular: spaceScaledNoneTablet) }
-    @objc public final var spaceScaled3xsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaled3xsmallMobile, regular: spaceScaled3xsmallTablet) }
-    @objc public final var spaceScaled2xsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaled2xsmallMobile, regular: spaceScaled2xsmallTablet) }
-    @objc public final var spaceScaledXsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledXsmallMobile, regular: spaceScaledXsmallTablet) }
-    @objc public final var spaceScaledSmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledSmallMobile, regular: spaceScaledSmallTablet) }
-    @objc public final var spaceScaledMedium: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledMediumMobile, regular: spaceScaledMediumTablet) }
-    @objc public final var spaceScaledLarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledLargeMobile, regular: spaceScaledLargeTablet) }
-    @objc public final var spaceScaledXlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledXlargeMobile, regular: spaceScaledXlargeTablet) }
-    @objc public final var spaceScaled2xlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaled2xlargeMobile, regular: spaceScaled2xlargeTablet) }
-    @objc public final var spaceScaled3xlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaled3xlargeMobile, regular: spaceScaled3xlargeTablet) }
+    @objc public final var scaledNone: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledNoneMobile, regular: scaledNoneTablet) }
+    @objc public final var scaled3xsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaled3xsmallMobile, regular: scaled3xsmallTablet) }
+    @objc public final var scaled2xsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaled2xsmallMobile, regular: scaled2xsmallTablet) }
+    @objc public final var scaledXsmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledXsmallMobile, regular: scaledXsmallTablet) }
+    @objc public final var scaledSmall: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledSmallMobile, regular: scaledSmallTablet) }
+    @objc public final var scaledMedium: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledMediumMobile, regular: scaledMediumTablet) }
+    @objc public final var scaledLarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledLargeMobile, regular: scaledLargeTablet) }
+    @objc public final var scaledXlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledXlargeMobile, regular: scaledXlargeTablet) }
+    @objc public final var scaled2xlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaled2xlargeMobile, regular: scaled2xlargeTablet) }
+    @objc public final var scaled3xlarge: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaled3xlargeMobile, regular: scaled3xlargeTablet) }
 }

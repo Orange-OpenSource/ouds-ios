@@ -53,8 +53,8 @@ struct LinkButtonStyle: ButtonStyle {
                     .labelStyle(LinkTextAndIconLabelStyle(interactionState: interactionState, size: size, layout: layout))
             }
         }
-        .padding(.horizontal, theme.link.linkSpacePaddingInline)
-        .padding(.vertical, theme.link.linkSpacePaddingBlock)
+        .padding(.horizontal, theme.link.spacePaddingInline)
+        .padding(.vertical, theme.link.spacePaddingBlock)
         .frame(minWidth: minWidth, minHeight: minHeight)
         .onHover { isHover in
             self.isHover = isHover
@@ -64,11 +64,11 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Helpers
 
     private var minWidth: Double {
-        size == .small ? theme.link.linkSizeMinWidthSmall : theme.link.linkSizeMinWidthDefault
+        size == .small ? theme.link.sizeMinWidthSmall : theme.link.sizeMinWidthDefault
     }
 
     private var minHeight: Double {
-        size == .small ? theme.link.linkSizeMinHeightSmall : theme.link.linkSizeMinHeightDefault
+        size == .small ? theme.link.sizeMinHeightSmall : theme.link.sizeMinHeightDefault
     }
 }
 
@@ -103,7 +103,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     }
 
     private var spacing: Double {
-        size == .small ? theme.link.linkSpaceColumnGapChevronSmall : theme.link.linkSpaceColumnGapChevronDefault
+        size == .small ? theme.link.spaceColumnGapChevronSmall : theme.link.spaceColumnGapChevronDefault
     }
 
     private var alignment: VerticalAlignment {
@@ -130,6 +130,6 @@ private struct LinkTextAndIconLabelStyle: LabelStyle {
     }
 
     private var spacing: Double {
-        size == .small ? theme.link.linkSpaceColumnGapIconSmall : theme.link.linkSpaceColumnGapIconDefault
+        size == .small ? theme.link.spaceColumnGapIconSmall : theme.link.spaceColumnGapIconDefault
     }
 }

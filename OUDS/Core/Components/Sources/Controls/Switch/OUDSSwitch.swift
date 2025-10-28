@@ -94,9 +94,9 @@ public struct OUDSSwitch: View {
             VibrationsManager.warning()
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: isOn)
-                .frame(minWidth: theme.switch.switchSizeMinWidth,
-                       minHeight: theme.switch.switchSizeMinHeight,
-                       maxHeight: theme.switch.switchSizeMaxHeight)
+                .frame(minWidth: theme.switch.sizeMinWidth,
+                       minHeight: theme.switch.sizeMinHeight,
+                       maxHeight: theme.switch.sizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)

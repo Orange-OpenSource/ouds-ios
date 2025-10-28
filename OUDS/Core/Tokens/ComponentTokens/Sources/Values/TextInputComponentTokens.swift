@@ -18,7 +18,6 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// Declares all component tokens for links components like `OUDSTextInput`
 /// Use for tokens providers like `OrangeThemeTextInputComponentTokensProvider`.
@@ -28,42 +27,40 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Sizes
 
-    var textInputSizeLeadingIcon: SizeSemanticToken { get }
-    var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { get }
-    var textInputSizeVerticalDividerHeight: SizeSemanticToken { get }
-    var textInputSizeLabelMaxHeight: SizeSemanticToken { get }
-    var textInputSizeMinHeight: SizeSemanticToken { get }
-    var textInputSizeMinWidth: SizeSemanticToken { get }
-    var textInputSizeMaxWidth: SizeSemanticToken { get }
+    var sizeLeadingIcon: SizeSemanticToken { get }
+    var sizeCountrySelectorFlagHeight: SizeSemanticToken { get }
+    var sizeVerticalDividerHeight: SizeSemanticToken { get }
+    var sizeLabelMaxHeight: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
 
     // MARK: - Colors
 
-    var textInputColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var textInputColorBorderHover: MultipleColorSemanticTokens { get }
-    var textInputColorBorderFocus: MultipleColorSemanticTokens { get }
-    var textInputColorBorderLoading: MultipleColorSemanticTokens { get }
+    var colorBorderEnabled: MultipleColorSemanticTokens { get }
+    var colorBorderHover: MultipleColorSemanticTokens { get }
+    var colorBorderFocus: MultipleColorSemanticTokens { get }
+    var colorBorderLoading: MultipleColorSemanticTokens { get }
 
     // MARK: - Borders
 
-    var textInputBorderRadiusDefault: BorderRadiusSemanticToken { get }
-    var textInputBorderRadiusRounded: BorderRadiusSemanticToken { get }
-    var textInputBorderWidthDefault: BorderWidthSemanticToken { get }
-    var textInputBorderWidthFocus: BorderWidthSemanticToken { get }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderRadiusRounded: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthFocus: BorderWidthSemanticToken { get }
 
     // MARK: - Spaces
 
-    var textInputSpacePaddingInlineDefault: SpaceSemanticToken { get }
-    var textInputSpacePaddingInlineTrailingAction: SpaceSemanticToken { get }
-    var textInputSpacePaddingInlineCountrySelectorStart: SpaceSemanticToken { get }
-    var textInputSpacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { get }
-    var textInputSpacePaddingBlockDefault: SpaceSemanticToken { get }
-    var textInputSpacePaddingBlockTopHelperText: SpaceSemanticToken { get }
-
-    var textInputSpaceColumnGapDefault: SpaceSemanticToken { get }
-    var textInputSpaceColumnGapInlineText: SpaceSemanticToken { get }
-    var textInputSpaceColumnGapTrailingErrorAction: SpaceSemanticToken { get }
-    var textInputSpaceRowGapLabelInput: SpaceSemanticToken { get }
+    var spacePaddingInlineDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineTrailingAction: SpaceSemanticToken { get }
+    var spacePaddingInlineCountrySelectorStart: SpaceSemanticToken { get }
+    var spacePaddingInlineCountrySelectorEnd: SpaceSemanticToken { get }
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    var spaceColumnGapDefault: SpaceSemanticToken { get }
+    var spaceColumnGapInlineText: SpaceSemanticToken { get }
+    var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { get }
+    var spaceRowGapLabelInput: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

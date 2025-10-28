@@ -27,22 +27,22 @@ public protocol CheckboxComponentTokens {
 
     // MARK: - Sizes
 
-    var checkboxSizeMaxHeight: SizeSemanticToken { get }
-    var checkboxSizeMinHeight: SizeSemanticToken { get }
-    var checkboxSizeMinWidth: SizeSemanticToken { get }
-    var checkboxSizeIndicator: SizeSemanticToken { get }
+    var sizeMaxHeight: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeIndicator: SizeSemanticToken { get }
 
     // MARK: - Borders
 
-    var checkboxBorderRadius: BorderRadiusSemanticToken { get }
-    var checkboxBorderWidthSelected: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthUnselected: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
+    var borderWidthSelected: BorderWidthSemanticToken { get }
+    var borderWidthSelectedFocus: BorderWidthSemanticToken { get }
+    var borderWidthSelectedHover: BorderWidthSemanticToken { get }
+    var borderWidthSelectedPressed: BorderWidthSemanticToken { get }
+    var borderWidthUnselected: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedFocus: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedHover: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedPressed: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

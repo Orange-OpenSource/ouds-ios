@@ -130,7 +130,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.spaceFixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -148,7 +148,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.spaceFixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -166,7 +166,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selections: Current selected values
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.spaceFixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -182,10 +182,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     // MARK: - Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSmall) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedSmall) {
             if let title, !title.isEmpty {
                 Text(title)
-                    .typeBodyStrongLarge(theme)
+                    .bodyStrongLarge(theme)
                     .accessibilityAddTraits(.isHeader)
             }
 
@@ -206,7 +206,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// If user does not define a custom spacing, use a default one
     private var itemsSpacing: SpaceSemanticToken {
-        customItemsSpacing ?? theme.spaces.spaceFixedSmall
+        customItemsSpacing ?? theme.spaces.fixedSmall
     }
 
     @ViewBuilder

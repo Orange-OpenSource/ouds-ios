@@ -36,8 +36,8 @@ struct ControlItemContent: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
                 switch layoutData.orientation {
                 case .default:
                     indicatorContainer()
@@ -49,20 +49,20 @@ struct ControlItemContent: View {
                     indicatorContainer()
                 }
             }
-            .padding(.all, theme.controlItem.controlItemSpacePaddingBlock)
+            .padding(.all, theme.controlItem.spacePaddingBlock)
             .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 
             if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
                 Text(errorText)
-                    .typeLabelDefaultMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentStatusNegative)
-                    .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
-                    .padding(.horizontal, theme.controlItem.controlItemSpacePaddingInline)
+                    .labelDefaultMedium(theme)
+                    .oudsForegroundColor(theme.colors.contentStatusNegative)
+                    .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                    .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .frame(maxWidth: theme.controlItem.controlItemSizeMaxWidth)
-        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
+        .frame(maxWidth: theme.controlItem.sizeMaxWidth)
+        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
 
     // MARK: Containers
@@ -74,7 +74,7 @@ struct ControlItemContent: View {
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
             .readSize { size in
-                verticalAlignment = size.height > theme.controlItem.controlItemSizeMaxHeightAssetsContainer ? .top : .center
+                verticalAlignment = size.height > theme.controlItem.sizeMaxHeightAssetsContainer ? .top : .center
             }
     }
 

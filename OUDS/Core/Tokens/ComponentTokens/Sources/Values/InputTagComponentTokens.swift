@@ -27,23 +27,23 @@ public protocol InputTagComponentTokens {
 
     // MARK: - Colors
 
-    var inputTagColorBgEnabled: MultipleColorSemanticTokens { get }
-    var inputTagColorBgHover: MultipleColorSemanticTokens { get }
-    var inputTagColorBgPressed: MultipleColorSemanticTokens { get }
-    var inputTagColorBgFocus: MultipleColorSemanticTokens { get }
-    var inputTagColorContentEnabled: MultipleColorSemanticTokens { get }
-    var inputTagColorContentHover: MultipleColorSemanticTokens { get }
-    var inputTagColorContentPressed: MultipleColorSemanticTokens { get }
-    var inputTagColorContentFocus: MultipleColorSemanticTokens { get }
-    var inputTagColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var inputTagColorBorderHover: MultipleColorSemanticTokens { get }
-    var inputTagColorBorderPressed: MultipleColorSemanticTokens { get }
-    var inputTagColorBorderFocus: MultipleColorSemanticTokens { get }
+    var colorBgEnabled: MultipleColorSemanticTokens { get }
+    var colorBgHover: MultipleColorSemanticTokens { get }
+    var colorBgPressed: MultipleColorSemanticTokens { get }
+    var colorBgFocus: MultipleColorSemanticTokens { get }
+    var colorContentEnabled: MultipleColorSemanticTokens { get }
+    var colorContentHover: MultipleColorSemanticTokens { get }
+    var colorContentPressed: MultipleColorSemanticTokens { get }
+    var colorContentFocus: MultipleColorSemanticTokens { get }
+    var colorBorderEnabled: MultipleColorSemanticTokens { get }
+    var colorBorderHover: MultipleColorSemanticTokens { get }
+    var colorBorderPressed: MultipleColorSemanticTokens { get }
+    var colorBorderFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Borders
 
-    var inputTagBorderWidthDefault: BorderWidthSemanticToken { get }
-    var inputTagBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthDefaultInteraction: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

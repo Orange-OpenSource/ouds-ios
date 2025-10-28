@@ -57,18 +57,18 @@ struct TagLabelStyle: LabelStyle {
     private var spacing: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSpaceColumnGapDefault
+            theme.tag.spaceColumnGapDefault
         case .small:
-            theme.tag.tagSpaceColumnGapSmall
+            theme.tag.spaceColumnGapSmall
         }
     }
 
     private var assetSize: CGFloat {
         switch size {
         case .default:
-            theme.tag.tagSizeAssetDefault
+            theme.tag.sizeAssetDefault
         case .small:
-            theme.tag.tagSizeAssetSmall
+            theme.tag.sizeAssetSmall
         }
     }
 }

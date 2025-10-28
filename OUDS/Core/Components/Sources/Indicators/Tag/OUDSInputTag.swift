@@ -91,7 +91,7 @@ public struct OUDSInputTag: View {
         InteractionButton(action: action) {
             InputTagContent(label: label, interactionState: $0)
         }
-        .frame(height: theme.tag.tagSizeMinHeightInteractiveArea, alignment: .center)
+        .frame(height: theme.tag.sizeMinHeightInteractiveArea, alignment: .center)
         .accessibilityHint(accessibilityHint)
     }
 

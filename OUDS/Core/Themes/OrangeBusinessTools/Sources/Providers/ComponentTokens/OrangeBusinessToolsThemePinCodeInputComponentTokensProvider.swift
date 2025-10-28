@@ -34,7 +34,7 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     /// Provider of spaces semantic tokens to use for pin code input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for pin code input dimensions
+    /// Provider of _ semantic tokens to use for pin code input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
@@ -45,7 +45,7 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)

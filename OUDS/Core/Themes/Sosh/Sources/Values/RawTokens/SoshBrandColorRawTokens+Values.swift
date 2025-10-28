@@ -112,7 +112,7 @@ extension SoshBrandColorRawTokens {
     /// Has for value "#061618FF"
     public static let colorBlueDuckDark960: ColorRawToken = "#061618FF"
     /// Has for value "#E552771F"
-    public static let colorOpacityMagenta120: ColorRawToken = "#E552771F"
+    public static let magenta120: ColorRawToken = "#E552771F"
     /// Has for value "#851430A3"
-    public static let colorOpacityMagenta640: ColorRawToken = "#851430A3"
+    public static let magenta640: ColorRawToken = "#851430A3"
 }
