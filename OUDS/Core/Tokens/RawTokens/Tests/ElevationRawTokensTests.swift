@@ -80,172 +80,172 @@ struct ElevationRawTokensTests {
     // MARK: - Primitive token - Elevation - Y
 
     @Test func elevationYRawToken100NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY100 >= 0)
+        #expect(ElevationRawTokens.y100 >= 0)
     }
 
     @Test func elevationYRawToken0LessThanY100() throws {
-        #expect(ElevationRawTokens.elevationY0 < ElevationRawTokens.elevationY100)
+        #expect(ElevationRawTokens.y0 < ElevationRawTokens.y100)
     }
 
     @Test func elevationYRawToken200NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY200 >= 0)
+        #expect(ElevationRawTokens.y200 >= 0)
     }
 
     @Test func elevationYRawToken100LessThanY200() throws {
-        #expect(ElevationRawTokens.elevationY100 < ElevationRawTokens.elevationY200)
+        #expect(ElevationRawTokens.y100 < ElevationRawTokens.y200)
     }
 
     @Test func elevationYRawToken200LessThanY300() throws {
-        #expect(ElevationRawTokens.elevationY200 < ElevationRawTokens.elevationY300)
+        #expect(ElevationRawTokens.y200 < ElevationRawTokens.y300)
     }
 
     @Test func elevationYRawToken300NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY300 >= 0)
+        #expect(ElevationRawTokens.y300 >= 0)
     }
 
     @Test func elevationYRawToken300LessThanY400() throws {
-        #expect(ElevationRawTokens.elevationY300 < ElevationRawTokens.elevationY400)
+        #expect(ElevationRawTokens.y300 < ElevationRawTokens.y400)
     }
 
     @Test func elevationYRawToken400NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY400 >= 0)
+        #expect(ElevationRawTokens.y400 >= 0)
     }
 
     @Test func elevationYRawToken400LessThanY500() throws {
-        #expect(ElevationRawTokens.elevationY400 < ElevationRawTokens.elevationY500)
+        #expect(ElevationRawTokens.y400 < ElevationRawTokens.y500)
     }
 
     @Test func elevationYRawToken500NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY500 >= 0)
+        #expect(ElevationRawTokens.y500 >= 0)
     }
 
     @Test func elevationYRawToken500LessThanY600() throws {
-        #expect(ElevationRawTokens.elevationY500 < ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y500 < ElevationRawTokens.y600)
     }
 
     @Test func elevationYRawToken600NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationY600 >= 0)
+        #expect(ElevationRawTokens.y600 >= 0)
     }
 
     @Test func nonEqualityForElevationY() throws {
-        #expect(ElevationRawTokens.elevationY100 != ElevationRawTokens.elevationY200)
-        #expect(ElevationRawTokens.elevationY100 != ElevationRawTokens.elevationY300)
-        #expect(ElevationRawTokens.elevationY100 != ElevationRawTokens.elevationY400)
-        #expect(ElevationRawTokens.elevationY100 != ElevationRawTokens.elevationY500)
-        #expect(ElevationRawTokens.elevationY100 != ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y100 != ElevationRawTokens.y200)
+        #expect(ElevationRawTokens.y100 != ElevationRawTokens.y300)
+        #expect(ElevationRawTokens.y100 != ElevationRawTokens.y400)
+        #expect(ElevationRawTokens.y100 != ElevationRawTokens.y500)
+        #expect(ElevationRawTokens.y100 != ElevationRawTokens.y600)
 
-        #expect(ElevationRawTokens.elevationY200 != ElevationRawTokens.elevationY300)
-        #expect(ElevationRawTokens.elevationY200 != ElevationRawTokens.elevationY400)
-        #expect(ElevationRawTokens.elevationY200 != ElevationRawTokens.elevationY500)
-        #expect(ElevationRawTokens.elevationY200 != ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y200 != ElevationRawTokens.y300)
+        #expect(ElevationRawTokens.y200 != ElevationRawTokens.y400)
+        #expect(ElevationRawTokens.y200 != ElevationRawTokens.y500)
+        #expect(ElevationRawTokens.y200 != ElevationRawTokens.y600)
 
-        #expect(ElevationRawTokens.elevationY300 != ElevationRawTokens.elevationY400)
-        #expect(ElevationRawTokens.elevationY300 != ElevationRawTokens.elevationY500)
-        #expect(ElevationRawTokens.elevationY300 != ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y300 != ElevationRawTokens.y400)
+        #expect(ElevationRawTokens.y300 != ElevationRawTokens.y500)
+        #expect(ElevationRawTokens.y300 != ElevationRawTokens.y600)
 
-        #expect(ElevationRawTokens.elevationY400 != ElevationRawTokens.elevationY500)
-        #expect(ElevationRawTokens.elevationY400 != ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y400 != ElevationRawTokens.y500)
+        #expect(ElevationRawTokens.y400 != ElevationRawTokens.y600)
 
-        #expect(ElevationRawTokens.elevationY500 != ElevationRawTokens.elevationY600)
+        #expect(ElevationRawTokens.y500 != ElevationRawTokens.y600)
     }
 
     // MARK: - Primitive token - Elevation - Blur
 
     @Test func elevationBlurRawToken0NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur0 >= 0)
+        #expect(ElevationRawTokens.blur0 >= 0)
     }
 
     @Test func elevationBlurRawToken0LessThanBlur100() throws {
-        #expect(ElevationRawTokens.elevationBlur0 < ElevationRawTokens.elevationBlur100)
+        #expect(ElevationRawTokens.blur0 < ElevationRawTokens.blur100)
     }
 
     @Test func elevationBlurRawToken100NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur100 >= 0)
+        #expect(ElevationRawTokens.blur100 >= 0)
     }
 
     @Test func elevationBlurRawToken100LessThanBlur200() throws {
-        #expect(ElevationRawTokens.elevationBlur100 < ElevationRawTokens.elevationBlur200)
+        #expect(ElevationRawTokens.blur100 < ElevationRawTokens.blur200)
     }
 
     @Test func elevationBlurRawToken200NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur200 >= 0)
+        #expect(ElevationRawTokens.blur200 >= 0)
     }
 
     @Test func elevationBlurRawToken200LessThanBlur300() throws {
-        #expect(ElevationRawTokens.elevationBlur200 < ElevationRawTokens.elevationBlur300)
+        #expect(ElevationRawTokens.blur200 < ElevationRawTokens.blur300)
     }
 
     @Test func elevationBlurRawToken300NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur300 >= 0)
+        #expect(ElevationRawTokens.blur300 >= 0)
     }
 
     @Test func elevationBlurRawToken300LessThanBlur400() throws {
-        #expect(ElevationRawTokens.elevationBlur300 < ElevationRawTokens.elevationBlur400)
+        #expect(ElevationRawTokens.blur300 < ElevationRawTokens.blur400)
     }
 
     @Test func elevationBlurRawToken400NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur400 >= 0)
+        #expect(ElevationRawTokens.blur400 >= 0)
     }
 
     @Test func elevationBlurRawToken400LessThanBlur500() throws {
-        #expect(ElevationRawTokens.elevationBlur400 < ElevationRawTokens.elevationBlur500)
+        #expect(ElevationRawTokens.blur400 < ElevationRawTokens.blur500)
     }
 
     @Test func elevationBlurRawToken500NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur500 >= 0)
+        #expect(ElevationRawTokens.blur500 >= 0)
     }
 
     @Test func elevationBlurRawToken500LessThanBlur600() throws {
-        #expect(ElevationRawTokens.elevationBlur500 < ElevationRawTokens.elevationBlur600)
+        #expect(ElevationRawTokens.blur500 < ElevationRawTokens.blur600)
     }
 
     @Test func elevationBlurRawToken600NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur600 >= 0)
+        #expect(ElevationRawTokens.blur600 >= 0)
     }
 
     @Test func elevationBlurRawToken600LessThanBlur700() throws {
-        #expect(ElevationRawTokens.elevationBlur600 < ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur600 < ElevationRawTokens.blur700)
     }
 
     @Test func elevationBlurRawToken700NotNegativeValue() throws {
-        #expect(ElevationRawTokens.elevationBlur700 >= 0)
+        #expect(ElevationRawTokens.blur700 >= 0)
     }
 
     @Test func nonEqualityForElevationBlurs() throws {
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur100)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur200)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur300)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur400)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur500)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur0 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur100)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur200)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur300)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur400)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur500)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur0 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur200)
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur300)
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur400)
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur500)
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur100 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur200)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur300)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur400)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur500)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur100 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur200 != ElevationRawTokens.elevationBlur300)
-        #expect(ElevationRawTokens.elevationBlur200 != ElevationRawTokens.elevationBlur400)
-        #expect(ElevationRawTokens.elevationBlur200 != ElevationRawTokens.elevationBlur500)
-        #expect(ElevationRawTokens.elevationBlur200 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur200 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur200 != ElevationRawTokens.blur300)
+        #expect(ElevationRawTokens.blur200 != ElevationRawTokens.blur400)
+        #expect(ElevationRawTokens.blur200 != ElevationRawTokens.blur500)
+        #expect(ElevationRawTokens.blur200 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur200 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur300 != ElevationRawTokens.elevationBlur400)
-        #expect(ElevationRawTokens.elevationBlur300 != ElevationRawTokens.elevationBlur500)
-        #expect(ElevationRawTokens.elevationBlur300 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur300 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur300 != ElevationRawTokens.blur400)
+        #expect(ElevationRawTokens.blur300 != ElevationRawTokens.blur500)
+        #expect(ElevationRawTokens.blur300 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur300 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur400 != ElevationRawTokens.elevationBlur500)
-        #expect(ElevationRawTokens.elevationBlur400 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur400 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur400 != ElevationRawTokens.blur500)
+        #expect(ElevationRawTokens.blur400 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur400 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur500 != ElevationRawTokens.elevationBlur600)
-        #expect(ElevationRawTokens.elevationBlur500 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur500 != ElevationRawTokens.blur600)
+        #expect(ElevationRawTokens.blur500 != ElevationRawTokens.blur700)
 
-        #expect(ElevationRawTokens.elevationBlur600 != ElevationRawTokens.elevationBlur700)
+        #expect(ElevationRawTokens.blur600 != ElevationRawTokens.blur700)
     }
 
     // MARK: - Primitive token - Elevation - Box Shadow

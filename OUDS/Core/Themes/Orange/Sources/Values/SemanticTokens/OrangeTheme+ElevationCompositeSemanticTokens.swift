@@ -32,32 +32,32 @@ extension OrangeThemeElevationSemanticTokensProvider: ElevationCompositeSemantic
     // MARK: Semantic token - Elevation - Box shadow
 
     @objc open var elevationNone: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(ElevationCompositeRawToken(x: elevationXNone, y: elevationYNone, blur: elevationBlurNone, color: elevationColorNone))
+        MultipleElevationCompositeRawTokens(ElevationCompositeRawToken(x: xNone, y: yNone, blur: blurNone, color: elevationColorNone))
     }
 
     @objc open var elevationRaised: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXRaised, y: elevationYRaised, blur: elevationBlurRaised, color: elevationColorRaisedLight),
-                                            dark: ElevationCompositeRawToken(x: elevationXRaised, y: elevationYRaised, blur: elevationBlurRaised, color: elevationColorRaisedDark))
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: elevationColorRaisedLight),
+                                            dark: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: elevationColorRaisedDark))
     }
 
     @objc open var elevationDrag: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragLight),
-                                            dark: ElevationCompositeRawToken(x: elevationXDrag, y: elevationYDrag, blur: elevationBlurDrag, color: elevationColorDragDark))
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: elevationColorDragLight),
+                                            dark: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: elevationColorDragDark))
     }
 
     @objc open var elevationDefault: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultLight),
-                                            dark: ElevationCompositeRawToken(x: elevationXDefault, y: elevationYDefault, blur: elevationBlurDefault, color: elevationColorDefaultDark))
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: elevationColorDefaultLight),
+                                            dark: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: elevationColorDefaultDark))
     }
 
     @objc open var elevationEmphasized: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedLight),
-                                            dark: ElevationCompositeRawToken(x: elevationXEmphasized, y: elevationYEmphasized, blur: elevationBlurEmphasized, color: elevationColorEmphasizedDark))
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: elevationColorEmphasizedLight),
+                                            dark: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: elevationColorEmphasizedDark))
     }
 
     @objc open var elevationSticky: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: elevationXSticky, y: elevationYSticky, blur: elevationBlurSticky, color: elevationColorStickyLight),
-                                            dark: ElevationCompositeRawToken(x: elevationXSticky, y: elevationYSticky, blur: elevationBlurSticky, color: elevationColorStickyDark))
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: elevationColorStickyLight),
+                                            dark: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: elevationColorStickyDark))
     }
 }
 

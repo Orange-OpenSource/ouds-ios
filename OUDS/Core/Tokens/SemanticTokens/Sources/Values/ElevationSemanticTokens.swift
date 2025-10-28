@@ -29,30 +29,30 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - X
 
-    var elevationXNone: ElevationXSemanticToken { get }
-    var elevationXRaised: ElevationXSemanticToken { get }
-    var elevationXDefault: ElevationXSemanticToken { get }
-    var elevationXEmphasized: ElevationXSemanticToken { get }
-    var elevationXDrag: ElevationXSemanticToken { get }
-    var elevationXSticky: ElevationXSemanticToken { get }
+    var xNone: ElevationXSemanticToken { get }
+    var xRaised: ElevationXSemanticToken { get }
+    var xDefault: ElevationXSemanticToken { get }
+    var xEmphasized: ElevationXSemanticToken { get }
+    var xDrag: ElevationXSemanticToken { get }
+    var xSticky: ElevationXSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Y
 
-    var elevationYNone: ElevationYSemanticToken { get }
-    var elevationYRaised: ElevationYSemanticToken { get }
-    var elevationYDefault: ElevationYSemanticToken { get }
-    var elevationYEmphasized: ElevationYSemanticToken { get }
-    var elevationYDrag: ElevationYSemanticToken { get }
-    var elevationYSticky: ElevationYSemanticToken { get }
+    var yNone: ElevationYSemanticToken { get }
+    var yRaised: ElevationYSemanticToken { get }
+    var yDefault: ElevationYSemanticToken { get }
+    var yEmphasized: ElevationYSemanticToken { get }
+    var yDrag: ElevationYSemanticToken { get }
+    var ySticky: ElevationYSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Blur
 
-    var elevationBlurNone: ElevationBlurSemanticToken { get }
-    var elevationBlurRaised: ElevationBlurSemanticToken { get }
-    var elevationBlurDefault: ElevationBlurSemanticToken { get }
-    var elevationBlurEmphasized: ElevationBlurSemanticToken { get }
-    var elevationBlurDrag: ElevationBlurSemanticToken { get }
-    var elevationBlurSticky: ElevationBlurSemanticToken { get }
+    var blurNone: ElevationBlurSemanticToken { get }
+    var blurRaised: ElevationBlurSemanticToken { get }
+    var blurDefault: ElevationBlurSemanticToken { get }
+    var blurEmphasized: ElevationBlurSemanticToken { get }
+    var blurDrag: ElevationBlurSemanticToken { get }
+    var blurSticky: ElevationBlurSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color
 

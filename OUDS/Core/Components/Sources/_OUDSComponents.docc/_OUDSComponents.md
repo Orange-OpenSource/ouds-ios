@@ -37,7 +37,7 @@ myView.oudsShadow(theme.elevations.elevationDrag)
 @objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
 // And if you look deeper, the raw token "bottom_3_500" can be like:
-public static let bottom_3_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY300, blur: elevationBlur400, color: ColorRawTokens.opacityBlack320)
+public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur: blur400, color: ColorRawTokens.opacityBlack320)
 
 // Blur will be used to compute the radius value
 ```
