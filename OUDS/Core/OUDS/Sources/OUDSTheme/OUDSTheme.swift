@@ -55,7 +55,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
-    public let colorCharts: AllColorChartSemanticTokensProvider!
+    public let charts: AllColorChartSemanticTokensProvider!
     // swiftlint:enable implicitly_unwrapped_optional
 
     /// All elevation semantic tokens exposed in one object
@@ -161,7 +161,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - colorCharts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
+    ///    - charts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -194,7 +194,7 @@ open class OUDSTheme: @unchecked Sendable {
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
-                colorCharts: AllColorChartSemanticTokensProvider? = nil,
+                charts: AllColorChartSemanticTokensProvider? = nil,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -230,7 +230,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.borders = borders
         self.colors = colors
         self.colorModes = colorModes
-        self.colorCharts = colorCharts
+        self.charts = charts
         self.elevations = elevations
         self.fonts = fonts
         self.grids = grids

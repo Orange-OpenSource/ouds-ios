@@ -149,7 +149,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - colorCharts: All semantic tokens of color charts
+    ///    - charts: All semantic tokens of color charts
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -182,7 +182,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
-                         colorCharts: AllColorChartSemanticTokensProvider? = nil,
+                         charts: AllColorChartSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -217,7 +217,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
-        let colorCharts = (colorCharts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let charts = (charts ?? OrangeThemeColorChartSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -249,7 +249,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   colorCharts: colorCharts,
+                   charts: charts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

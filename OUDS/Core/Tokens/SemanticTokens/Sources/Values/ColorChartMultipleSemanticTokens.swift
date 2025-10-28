@@ -26,25 +26,25 @@ import Foundation
 /// - Since: 0.17.0
 public protocol ColorChartMultipleSemanticTokens {
 
-    var colorChartBorder: MultipleColorSemanticTokens { get }
-    var colorChartBorderContrast: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier2: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier3: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier4: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier5: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier6: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier7: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier8: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier9: MultipleColorSemanticTokens { get }
-    var colorChartCategoricalTier10: MultipleColorSemanticTokens { get }
-    var colorChartFunctionalInfo: MultipleColorSemanticTokens { get }
-    var colorChartFunctionalNegative: MultipleColorSemanticTokens { get }
-    var colorChartFunctionalPositive: MultipleColorSemanticTokens { get }
-    var colorChartFunctionalWarning: MultipleColorSemanticTokens { get }
-    var colorChartGridlines: MultipleColorSemanticTokens { get }
-    var colorChartHighlight: MultipleColorSemanticTokens { get }
-    var colorChartNeutral: MultipleColorSemanticTokens { get }
+    var chartBorder: MultipleColorSemanticTokens { get }
+    var chartBorderContrast: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier1: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier2: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier3: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier4: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier5: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier6: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier7: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier8: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier9: MultipleColorSemanticTokens { get }
+    var chartCategoricalTier10: MultipleColorSemanticTokens { get }
+    var chartFunctionalInfo: MultipleColorSemanticTokens { get }
+    var chartFunctionalNegative: MultipleColorSemanticTokens { get }
+    var chartFunctionalPositive: MultipleColorSemanticTokens { get }
+    var chartFunctionalWarning: MultipleColorSemanticTokens { get }
+    var chartGridlines: MultipleColorSemanticTokens { get }
+    var chartHighlight: MultipleColorSemanticTokens { get }
+    var chartNeutral: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

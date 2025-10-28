@@ -49,7 +49,7 @@ struct OrangeBusinessToolsThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.colorCharts is OrangeBusinessToolsThemeColorChartSemanticTokensProvider)
+        #expect(theme.charts is OrangeBusinessToolsThemeColorChartSemanticTokensProvider)
     }
 
     @Test func defaultElevationSemanticTokensProvider() throws {

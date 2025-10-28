@@ -24,62 +24,62 @@ import Foundation
 /// - Since: 0.17.0
 public protocol ColorChartSemanticTokens {
 
-    var colorChartBorderLight: ColorSemanticToken { get }
-    var colorChartBorderDark: ColorSemanticToken { get }
+    var chartBorderLight: ColorSemanticToken { get }
+    var chartBorderDark: ColorSemanticToken { get }
 
-    var colorChartBorderContrastLight: ColorSemanticToken { get }
-    var colorChartBorderContrastDark: ColorSemanticToken { get }
+    var chartBorderContrastLight: ColorSemanticToken { get }
+    var chartBorderContrastDark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier1Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier1Dark: ColorSemanticToken { get }
+    var chartCategoricalTier1Light: ColorSemanticToken { get }
+    var chartCategoricalTier1Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier2Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier2Dark: ColorSemanticToken { get }
+    var chartCategoricalTier2Light: ColorSemanticToken { get }
+    var chartCategoricalTier2Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier3Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier3Dark: ColorSemanticToken { get }
+    var chartCategoricalTier3Light: ColorSemanticToken { get }
+    var chartCategoricalTier3Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier4Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier4Dark: ColorSemanticToken { get }
+    var chartCategoricalTier4Light: ColorSemanticToken { get }
+    var chartCategoricalTier4Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier5Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier5Dark: ColorSemanticToken { get }
+    var chartCategoricalTier5Light: ColorSemanticToken { get }
+    var chartCategoricalTier5Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier6Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier6Dark: ColorSemanticToken { get }
+    var chartCategoricalTier6Light: ColorSemanticToken { get }
+    var chartCategoricalTier6Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier7Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier7Dark: ColorSemanticToken { get }
+    var chartCategoricalTier7Light: ColorSemanticToken { get }
+    var chartCategoricalTier7Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier8Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier8Dark: ColorSemanticToken { get }
+    var chartCategoricalTier8Light: ColorSemanticToken { get }
+    var chartCategoricalTier8Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier9Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier9Dark: ColorSemanticToken { get }
+    var chartCategoricalTier9Light: ColorSemanticToken { get }
+    var chartCategoricalTier9Dark: ColorSemanticToken { get }
 
-    var colorChartCategoricalTier10Light: ColorSemanticToken { get }
-    var colorChartCategoricalTier10Dark: ColorSemanticToken { get }
+    var chartCategoricalTier10Light: ColorSemanticToken { get }
+    var chartCategoricalTier10Dark: ColorSemanticToken { get }
 
-    var colorChartFunctionalInfoLight: ColorSemanticToken { get }
-    var colorChartFunctionalInfoDark: ColorSemanticToken { get }
+    var chartFunctionalInfoLight: ColorSemanticToken { get }
+    var chartFunctionalInfoDark: ColorSemanticToken { get }
 
-    var colorChartFunctionalNegativeLight: ColorSemanticToken { get }
-    var colorChartFunctionalNegativeDark: ColorSemanticToken { get }
+    var chartFunctionalNegativeLight: ColorSemanticToken { get }
+    var chartFunctionalNegativeDark: ColorSemanticToken { get }
 
-    var colorChartFunctionalPositiveLight: ColorSemanticToken { get }
-    var colorChartFunctionalPositiveDark: ColorSemanticToken { get }
+    var chartFunctionalPositiveLight: ColorSemanticToken { get }
+    var chartFunctionalPositiveDark: ColorSemanticToken { get }
 
-    var colorChartFunctionalWarningLight: ColorSemanticToken { get }
-    var colorChartFunctionalWarningDark: ColorSemanticToken { get }
+    var chartFunctionalWarningLight: ColorSemanticToken { get }
+    var chartFunctionalWarningDark: ColorSemanticToken { get }
 
-    var colorChartGridlinesLight: ColorSemanticToken { get }
-    var colorChartGridlinesDark: ColorSemanticToken { get }
+    var chartGridlinesLight: ColorSemanticToken { get }
+    var chartGridlinesDark: ColorSemanticToken { get }
 
-    var colorChartHighlightLight: ColorSemanticToken { get }
-    var colorChartHighlightDark: ColorSemanticToken { get }
+    var chartHighlightLight: ColorSemanticToken { get }
+    var chartHighlightDark: ColorSemanticToken { get }
 
-    var colorChartNeutralLight: ColorSemanticToken { get }
-    var colorChartNeutralDark: ColorSemanticToken { get }
+    var chartNeutralLight: ColorSemanticToken { get }
+    var chartNeutralDark: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

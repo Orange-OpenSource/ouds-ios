@@ -181,7 +181,7 @@ Semantic tokens provider       | Description
 borders                        | For borders (width, styles, radius...)  
 colors                         | For colors with also meta objects combining light and dark versions)           
 colorModes                     | Kind of frozen and not generated tokens about management of colors           
-colorCharts                    | For charts, but optional and not defined in all themes
+charts                    | For charts, but optional and not defined in all themes
 elevations                     | For elevations to produc shadow effects
 fonts                          | For fonts (weights, letter spacings, sizes, line heights...)
 grids                          | For grids
