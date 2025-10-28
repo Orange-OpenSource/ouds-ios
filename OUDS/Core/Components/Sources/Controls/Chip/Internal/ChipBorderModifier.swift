@@ -31,7 +31,7 @@ struct ChipBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .oudsBorder(
-                style: theme.borders.styeDefault,
+                style: theme.borders.styleDefault,
                 width: width,
                 radius: theme.chip.borderRadius,
                 color: color)

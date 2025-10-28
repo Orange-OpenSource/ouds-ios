@@ -178,7 +178,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsBorder(style: theme.borders.styeDefault,
+            .oudsBorder(style: theme.borders.styleDefault,
                         width: appliedBorderWidth,
                         radius: appliedBorderRadius,
                         color: appliedColor)

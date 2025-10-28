@@ -46,8 +46,8 @@ public protocol BorderSemanticTokens {
 
     // MARK: - Semantic token - Border - Style
 
-    var styeDefault: BorderStyleSemanticToken { get }
-    var styeDrag: BorderStyleSemanticToken { get }
+    var styleDefault: BorderStyleSemanticToken { get }
+    var styleDrag: BorderStyleSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

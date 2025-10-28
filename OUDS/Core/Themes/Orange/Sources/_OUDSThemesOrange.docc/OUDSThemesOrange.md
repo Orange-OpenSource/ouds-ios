@@ -243,8 +243,8 @@ class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
 // Token provider for border
 
 class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
-    override var styeDefault: BorderStyleSemanticToken {
-        BorderRawTokens.styeDashed
+    override var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleDashed
     }
     override var widthMedium: BorderWidthSemanticToken {
         BorderRawTokens.width100

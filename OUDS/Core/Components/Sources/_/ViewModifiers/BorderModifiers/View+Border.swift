@@ -24,7 +24,7 @@ extension View {
     ///    var body: some View {
     ///        SomeView()
     ///        .oudsBorder(
-    ///             style: theme.borders.styeDefault,
+    ///             style: theme.borders.styleDefault,
     ///             width: theme.borders.widthThin,
     ///             radius: theme.borders.radiusNone,
     ///             color: theme.colors.borderDefault)

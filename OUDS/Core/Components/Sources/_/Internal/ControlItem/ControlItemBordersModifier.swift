@@ -37,7 +37,7 @@ struct ControlItemBordersModifier: ViewModifier {
     func body(content: Content) -> some View {
         if layoutData.isOutlined, let borderColor {
             content
-                .oudsBorder(style: theme.borders.styeDefault,
+                .oudsBorder(style: theme.borders.styleDefault,
                             width: theme.borders.widthDefault,
                             radius: radius,
                             color: borderColor)

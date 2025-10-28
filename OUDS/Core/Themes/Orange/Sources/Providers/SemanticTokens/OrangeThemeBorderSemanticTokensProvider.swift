@@ -24,8 +24,8 @@ import OUDSFoundations
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
 ///
-///         override var styeDefault: BorderStyleSemanticToken {
-///             BorderRawTokens.styeDashed
+///         override var styleDefault: BorderStyleSemanticToken {
+///             BorderRawTokens.styleDashed
 ///         }
 ///         override var widthMedium: BorderWidthSemanticToken {
 ///             BorderRawTokens.width100

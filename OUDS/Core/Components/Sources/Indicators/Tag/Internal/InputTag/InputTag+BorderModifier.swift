@@ -28,7 +28,7 @@ struct InputTagBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .oudsBorder(
-                style: theme.borders.styeDefault,
+                style: theme.borders.styleDefault,
                 width: width,
                 radius: theme.tag.borderRadius,
                 color: color)

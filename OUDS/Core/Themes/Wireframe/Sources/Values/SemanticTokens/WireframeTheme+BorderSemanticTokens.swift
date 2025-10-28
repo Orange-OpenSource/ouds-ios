@@ -47,8 +47,8 @@ extension WireframeThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     @objc public final var radiusLarge: BorderRadiusSemanticToken { BorderRawTokens.radius300 }
     /// Has for value token BorderRawTokens.radius9999
     @objc public final var radiusPill: BorderRadiusSemanticToken { BorderRawTokens.radius9999 }
-    /// Has for value token BorderRawTokens.styeSolid
-    @objc public final var styeDefault: BorderStyleSemanticToken { BorderRawTokens.styleSolid }
-    /// Has for value token BorderRawTokens.styeDashed
-    @objc public final var styeDrag: BorderStyleSemanticToken { BorderRawTokens.styleDashed }
+    /// Has for value token BorderRawTokens.styleSolid
+    @objc public final var styleDefault: BorderStyleSemanticToken { BorderRawTokens.styleSolid }
+    /// Has for value token BorderRawTokens.styleDashed
+    @objc public final var styleDrag: BorderStyleSemanticToken { BorderRawTokens.styleDashed }
 }

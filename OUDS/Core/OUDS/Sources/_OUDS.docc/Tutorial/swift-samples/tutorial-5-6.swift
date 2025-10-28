@@ -56,7 +56,7 @@ struct ContentView: View {
                     .padding(.horizontal, theme.spaces.fixedSmall)
                 }
                 .oudsBackground(theme.colors.bgTertiary)
-                .oudsBorder(style: theme.borders.styeDefault,
+                .oudsBorder(style: theme.borders.styleDefault,
                             width: theme.borders.widthThin,
                             radius: theme.borders.radiusMedium,
                             color: theme.colors.actionEnabled)

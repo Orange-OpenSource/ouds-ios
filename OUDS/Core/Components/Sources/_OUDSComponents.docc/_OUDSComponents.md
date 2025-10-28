@@ -89,7 +89,7 @@ The helper is available through `View`, and tokens through the provider of the t
     var body: some View {
         SomeView()
         .oudsBorder(
-             style: theme.borders.styeDefault,
+             style: theme.borders.styleDefault,
              width: theme.borders.widthThin,
              radius: theme.borders.radiusNone,
              color: theme.colors.borderDefault)

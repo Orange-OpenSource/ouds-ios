@@ -109,12 +109,12 @@ struct ThemeOverrideOfBorderSemanticTokensTests {
     // MARK: - Semantic token - Border - Style
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderStyleDefault() throws {
-        #expect(inheritedTheme.borders.styeDefault != abstractTheme.borders.styeDefault)
-        #expect(inheritedTheme.borders.styeDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
+        #expect(inheritedTheme.borders.styleDefault != abstractTheme.borders.styleDefault)
+        #expect(inheritedTheme.borders.styleDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderStyleDrag() throws {
-        #expect(inheritedTheme.borders.styeDrag != abstractTheme.borders.styeDrag)
-        #expect(inheritedTheme.borders.styeDrag == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
+        #expect(inheritedTheme.borders.styleDrag != abstractTheme.borders.styleDrag)
+        #expect(inheritedTheme.borders.styleDrag == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
     }
 }

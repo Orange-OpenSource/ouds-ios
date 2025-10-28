@@ -48,8 +48,8 @@ final class MockThemeBorderSemanticTokensProvider: OrangeThemeBorderSemanticToke
 
     // MARK: Semantic token - Border - Style
 
-    override var styeDefault: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
-    override var styeDrag: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
+    override var styleDefault: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
+    override var styleDrag: BorderStyleSemanticToken { Self.mockThemeBorderStyleRawToken }
 }
 
 // swiftlint:enable required_deinit
