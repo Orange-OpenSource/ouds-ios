@@ -185,7 +185,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSmall) {
             if let title, !title.isEmpty {
                 Text(title)
-                    .typeBodyStrongLarge(theme)
+                    .bodyStrongLarge(theme)
                     .accessibilityAddTraits(.isHeader)
             }
 

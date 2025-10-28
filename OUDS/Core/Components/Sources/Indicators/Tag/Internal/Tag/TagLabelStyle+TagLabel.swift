@@ -32,10 +32,10 @@ struct TagLabel: View {
             switch size {
             case .default:
                 Text(type.label)
-                    .typeLabelStrongMedium(theme)
+                    .labelStrongMedium(theme)
             case .small:
                 Text(type.label)
-                    .typeLabelStrongSmall(theme)
+                    .labelStrongSmall(theme)
             }
         }
         .oudsForegroundColor(color)

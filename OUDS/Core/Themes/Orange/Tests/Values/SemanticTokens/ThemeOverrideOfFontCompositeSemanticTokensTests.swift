@@ -36,161 +36,161 @@ struct ThemeOverrideOfFontCompositeSemanticTokensTests {
     // MARK: - Semantic tokens - Typography - Composites - Display
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDisplayLarge() throws {
-        #expect(inheritedTheme.fonts.typeDisplayLarge != abstractTheme.fonts.typeDisplayLarge)
-        #expect(inheritedTheme.fonts.typeDisplayLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.displayLarge != abstractTheme.fonts.displayLarge)
+        #expect(inheritedTheme.fonts.displayLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDisplayMedium() throws {
-        #expect(inheritedTheme.fonts.typeDisplayMedium != abstractTheme.fonts.typeDisplayMedium)
-        #expect(inheritedTheme.fonts.typeDisplayMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.displayMedium != abstractTheme.fonts.displayMedium)
+        #expect(inheritedTheme.fonts.displayMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDisplaySmall() throws {
-        #expect(inheritedTheme.fonts.typeDisplaySmall != abstractTheme.fonts.typeDisplaySmall)
-        #expect(inheritedTheme.fonts.typeDisplaySmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.displaySmall != abstractTheme.fonts.displaySmall)
+        #expect(inheritedTheme.fonts.displaySmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeHeadingXLarge() throws {
-        #expect(inheritedTheme.fonts.typeHeadingXLarge != abstractTheme.fonts.typeHeadingXLarge)
-        #expect(inheritedTheme.fonts.typeHeadingXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.headingXLarge != abstractTheme.fonts.headingXLarge)
+        #expect(inheritedTheme.fonts.headingXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeHeadingLarge() throws {
-        #expect(inheritedTheme.fonts.typeHeadingLarge != abstractTheme.fonts.typeHeadingLarge)
-        #expect(inheritedTheme.fonts.typeHeadingLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.headingLarge != abstractTheme.fonts.headingLarge)
+        #expect(inheritedTheme.fonts.headingLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeHeadingMedium() throws {
-        #expect(inheritedTheme.fonts.typeHeadingMedium != abstractTheme.fonts.typeHeadingMedium)
-        #expect(inheritedTheme.fonts.typeHeadingMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.headingMedium != abstractTheme.fonts.headingMedium)
+        #expect(inheritedTheme.fonts.headingMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeHeadingSmall() throws {
-        #expect(inheritedTheme.fonts.typeHeadingSmall != abstractTheme.fonts.typeHeadingSmall)
-        #expect(inheritedTheme.fonts.typeHeadingSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.headingSmall != abstractTheme.fonts.headingSmall)
+        #expect(inheritedTheme.fonts.headingSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDefaultLarge() throws {
-        #expect(inheritedTheme.fonts.typeBodyDefaultLarge != abstractTheme.fonts.typeBodyDefaultLarge)
-        #expect(inheritedTheme.fonts.typeBodyDefaultLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyDefaultLarge != abstractTheme.fonts.bodyDefaultLarge)
+        #expect(inheritedTheme.fonts.bodyDefaultLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDefaultMedium() throws {
-        #expect(inheritedTheme.fonts.typeBodyDefaultMedium != abstractTheme.fonts.typeBodyDefaultMedium)
-        #expect(inheritedTheme.fonts.typeBodyDefaultMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyDefaultMedium != abstractTheme.fonts.bodyDefaultMedium)
+        #expect(inheritedTheme.fonts.bodyDefaultMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeDefaultSmall() throws {
-        #expect(inheritedTheme.fonts.typeBodyDefaultSmall != abstractTheme.fonts.typeBodyDefaultSmall)
-        #expect(inheritedTheme.fonts.typeBodyDefaultSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyDefaultSmall != abstractTheme.fonts.bodyDefaultSmall)
+        #expect(inheritedTheme.fonts.bodyDefaultSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeModerateLarge() throws {
-        #expect(inheritedTheme.fonts.typeBodyModerateLarge != abstractTheme.fonts.typeBodyModerateLarge)
-        #expect(inheritedTheme.fonts.typeBodyModerateLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyModerateLarge != abstractTheme.fonts.bodyModerateLarge)
+        #expect(inheritedTheme.fonts.bodyModerateLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeModerateMedium() throws {
-        #expect(inheritedTheme.fonts.typeBodyModerateMedium != abstractTheme.fonts.typeBodyModerateMedium)
-        #expect(inheritedTheme.fonts.typeBodyModerateMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyModerateMedium != abstractTheme.fonts.bodyModerateMedium)
+        #expect(inheritedTheme.fonts.bodyModerateMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeModerateSmall() throws {
-        #expect(inheritedTheme.fonts.typeBodyModerateSmall != abstractTheme.fonts.typeBodyModerateSmall)
-        #expect(inheritedTheme.fonts.typeBodyModerateSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyModerateSmall != abstractTheme.fonts.bodyModerateSmall)
+        #expect(inheritedTheme.fonts.bodyModerateSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeStrongLarge() throws {
-        #expect(inheritedTheme.fonts.typeBodyStrongLarge != abstractTheme.fonts.typeBodyStrongLarge)
-        #expect(inheritedTheme.fonts.typeBodyStrongLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyStrongLarge != abstractTheme.fonts.bodyStrongLarge)
+        #expect(inheritedTheme.fonts.bodyStrongLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeStrongMedium() throws {
-        #expect(inheritedTheme.fonts.typeBodyStrongMedium != abstractTheme.fonts.typeBodyStrongMedium)
-        #expect(inheritedTheme.fonts.typeBodyStrongMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyStrongMedium != abstractTheme.fonts.bodyStrongMedium)
+        #expect(inheritedTheme.fonts.bodyStrongMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeStrongSmall() throws {
-        #expect(inheritedTheme.fonts.typeBodyStrongSmall != abstractTheme.fonts.typeBodyStrongSmall)
-        #expect(inheritedTheme.fonts.typeBodyStrongSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.bodyStrongSmall != abstractTheme.fonts.bodyStrongSmall)
+        #expect(inheritedTheme.fonts.bodyStrongSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelDefaultXLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelDefaultXLarge != abstractTheme.fonts.typeLabelDefaultXLarge)
-        #expect(inheritedTheme.fonts.typeLabelDefaultXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelDefaultXLarge != abstractTheme.fonts.labelDefaultXLarge)
+        #expect(inheritedTheme.fonts.labelDefaultXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelDefaultLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelDefaultLarge != abstractTheme.fonts.typeLabelDefaultLarge)
-        #expect(inheritedTheme.fonts.typeLabelDefaultLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelDefaultLarge != abstractTheme.fonts.labelDefaultLarge)
+        #expect(inheritedTheme.fonts.labelDefaultLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelDefaultMedium() throws {
-        #expect(inheritedTheme.fonts.typeLabelDefaultMedium != abstractTheme.fonts.typeLabelDefaultMedium)
-        #expect(inheritedTheme.fonts.typeLabelDefaultMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelDefaultMedium != abstractTheme.fonts.labelDefaultMedium)
+        #expect(inheritedTheme.fonts.labelDefaultMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelDefaultSmall() throws {
-        #expect(inheritedTheme.fonts.typeLabelDefaultSmall != abstractTheme.fonts.typeLabelDefaultSmall)
-        #expect(inheritedTheme.fonts.typeLabelDefaultSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelDefaultSmall != abstractTheme.fonts.labelDefaultSmall)
+        #expect(inheritedTheme.fonts.labelDefaultSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabeModerateXLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelModerateXLarge != abstractTheme.fonts.typeLabelModerateXLarge)
-        #expect(inheritedTheme.fonts.typeLabelModerateXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelModerateXLarge != abstractTheme.fonts.labelModerateXLarge)
+        #expect(inheritedTheme.fonts.labelModerateXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelModerateLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelModerateLarge != abstractTheme.fonts.typeLabelModerateLarge)
-        #expect(inheritedTheme.fonts.typeLabelModerateLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelModerateLarge != abstractTheme.fonts.labelModerateLarge)
+        #expect(inheritedTheme.fonts.labelModerateLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelModerateMedium() throws {
-        #expect(inheritedTheme.fonts.typeLabelModerateMedium != abstractTheme.fonts.typeLabelModerateMedium)
-        #expect(inheritedTheme.fonts.typeLabelModerateMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelModerateMedium != abstractTheme.fonts.labelModerateMedium)
+        #expect(inheritedTheme.fonts.labelModerateMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelModerateSmall() throws {
-        #expect(inheritedTheme.fonts.typeLabelModerateSmall != abstractTheme.fonts.typeLabelModerateSmall)
-        #expect(inheritedTheme.fonts.typeLabelModerateSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelModerateSmall != abstractTheme.fonts.labelModerateSmall)
+        #expect(inheritedTheme.fonts.labelModerateSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelStrongXLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelStrongXLarge != abstractTheme.fonts.typeLabelStrongXLarge)
-        #expect(inheritedTheme.fonts.typeLabelStrongXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelStrongXLarge != abstractTheme.fonts.labelStrongXLarge)
+        #expect(inheritedTheme.fonts.labelStrongXLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelStrongLarge() throws {
-        #expect(inheritedTheme.fonts.typeLabelStrongLarge != abstractTheme.fonts.typeLabelStrongLarge)
-        #expect(inheritedTheme.fonts.typeLabelStrongLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelStrongLarge != abstractTheme.fonts.labelStrongLarge)
+        #expect(inheritedTheme.fonts.labelStrongLarge == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelStrongMedium() throws {
-        #expect(inheritedTheme.fonts.typeLabelStrongMedium != abstractTheme.fonts.typeLabelStrongMedium)
-        #expect(inheritedTheme.fonts.typeLabelStrongMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelStrongMedium != abstractTheme.fonts.labelStrongMedium)
+        #expect(inheritedTheme.fonts.labelStrongMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeLabelStrongSmall() throws {
-        #expect(inheritedTheme.fonts.typeLabelStrongSmall != abstractTheme.fonts.typeLabelStrongSmall)
-        #expect(inheritedTheme.fonts.typeLabelStrongSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.labelStrongSmall != abstractTheme.fonts.labelStrongSmall)
+        #expect(inheritedTheme.fonts.labelStrongSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeCodeMedium() throws {
-        #expect(inheritedTheme.fonts.typeCodeMedium != abstractTheme.fonts.typeCodeMedium)
-        #expect(inheritedTheme.fonts.typeCodeMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.codeMedium != abstractTheme.fonts.codeMedium)
+        #expect(inheritedTheme.fonts.codeMedium == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenTypeCodeSmall() throws {
-        #expect(inheritedTheme.fonts.typeCodeSmall != abstractTheme.fonts.typeCodeSmall)
-        #expect(inheritedTheme.fonts.typeCodeSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
+        #expect(inheritedTheme.fonts.codeSmall != abstractTheme.fonts.codeSmall)
+        #expect(inheritedTheme.fonts.codeSmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontCompositeRawTokens)
     }
 }
 

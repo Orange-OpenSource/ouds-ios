@@ -309,7 +309,7 @@ private struct TextForButton: View {
 
     var body: some View {
         Text(LocalizedStringKey(text))
-            .typeLabelStrongLarge(theme)
+            .labelStrongLarge(theme)
             .multilineTextAlignment(.center)
     }
 }

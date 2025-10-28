@@ -51,8 +51,8 @@ With OUDS, typography depends to the class size, i.e. wether or not the applicat
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 ```swift
-// Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
-@objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
+// Here is a definition of a semantic token inside the theme for typography "displayMedium":
+@objc open var displayMedium: MultipleFontCompositeRawTokens { 
     MultipleFontCompositeRawTokens(compact: FontRawTokens.bold750, regular: FontRawTokens.bold1050) 
 }
 
@@ -68,10 +68,10 @@ Thus, if you want to apply a specific typography to a `View`, supposing you defi
 
 ```swift
 // Apply typography "type body default small"
-myView.typeBodyDefaultSmall(theme)
+myView.bodyDefaultSmall(theme)
 
 // Apply typography "type label strong X large"
-myView.typeLabelStrongXLarge(theme)
+myView.labelStrongXLarge(theme)
 
 // Etc.
 ```

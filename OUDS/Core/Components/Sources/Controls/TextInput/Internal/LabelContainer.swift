@@ -28,7 +28,7 @@ struct LabelContainer: View {
 
     var body: some View {
         Text(label)
-            .typeLabelDefaultSmall(theme)
+            .labelDefaultSmall(theme)
             .oudsForegroundColor(color)
             .frame(maxWidth: .infinity, alignment: .leading)
     }

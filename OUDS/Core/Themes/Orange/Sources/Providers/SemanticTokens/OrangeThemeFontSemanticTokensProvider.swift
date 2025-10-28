@@ -24,11 +24,11 @@ import OUDSFoundations
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
-///         override var typeDisplayLarge: MultipleFontCompositeRawTokens {
+///         override var displayLarge: MultipleFontCompositeRawTokens {
 ///             MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
 ///         }
 ///
-///         override var typeCodeMedium: MultipleFontCompositeRawTokens {
+///         override var codeMedium: MultipleFontCompositeRawTokens {
 ///             MultipleFontCompositeRawTokens(FontRawTokens.bold300)
 ///         }
 /// }

@@ -20,7 +20,7 @@ import SwiftUI
 /// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeRawTokens``.
 ///
 /// ```swift
-///         // Assuming in Figma with have a font semantic token typeDisplayLarge,
+///         // Assuming in Figma with have a font semantic token displayLarge,
 ///         // with values depending to size class. These values are defined as font composite raw tokens.
 ///         let bold850 = FontCompositeRawToken(size: size850, lineHeight: lineHeight1050, weight: weight700, letterSpacing: letterSpacing850)
 ///         let bold1450 = FontCompositeRawToken(size: size1450, lineHeight: lineHeight1850, weight: weight700, letterSpacing: letterSpacing1450)
@@ -28,12 +28,12 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level font semantic token
 ///         // inside FontCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+FontCompositeSemanticTokens extension
-///         var typeDisplayLarge: MultipleFontCompositeRawTokens {
+///         var displayLarge: MultipleFontCompositeRawTokens {
 ///             MultipleFontCompositeRawTokens(compact: FontRawTokens.bold850, regular: FontRawTokens.bold1450)
 ///         }
 ///
 ///         // If the same font is used whatever the size class is
-///         var typeDisplayLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold650) }
+///         var displayLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold650) }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.

@@ -44,11 +44,11 @@ struct ContentView: View {
             Group {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                     Text("OUDS Tutorial for new comers")
-                        .typeHeadingXLarge(theme)
+                        .headingXLarge(theme)
                         .oudsForegroundColor(theme.colors.contentBrandPrimary)
 
                     Text("Let's play with components, themes and tokens!")
-                        .typeHeadingSmall(theme)
+                        .headingSmall(theme)
 
                     HStack {
                         OUDSTag(label: "Welcome")
@@ -76,7 +76,7 @@ struct ContentView: View {
                         OUDSChipPicker(selections: $selectedTopics, chips: topicsChipsValues())
 
                         Text("\(selectedTopics.count) topic(s) selected")
-                            .typeLabelDefaultSmall(theme)
+                            .labelDefaultSmall(theme)
                             .foregroundColor(ColorRawTokens.functionalDodgerBlue800.color!)
 
                         OUDSHorizontalDivider(color: .brandPrimary)

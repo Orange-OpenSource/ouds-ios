@@ -34,11 +34,11 @@ struct BadgeCount: View {
                 EmptyView()
             case .medium:
                 Text(text)
-                    .typeLabelDefaultSmall(theme)
+                    .labelDefaultSmall(theme)
                     .padding(.horizontal, horizontalPadding)
             case .large:
                 Text(text)
-                    .typeLabelDefaultMedium(theme)
+                    .labelDefaultMedium(theme)
                     .padding(.horizontal, horizontalPadding)
             }
         }

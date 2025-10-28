@@ -33,7 +33,7 @@ struct InputText: View {
         TextField(text: text) {
             Text(label)
                 .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-                .typeLabelDefaultLarge(theme)
+                .labelDefaultLarge(theme)
                 .oudsForegroundStyle(placeholderColor)
         }
         .oudsForegroundColor(inputTextColor)

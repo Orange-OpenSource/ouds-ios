@@ -60,7 +60,7 @@ struct TextInputContainer: View {
                            (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(prefix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }
@@ -80,7 +80,7 @@ struct TextInputContainer: View {
                            (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(suffix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }

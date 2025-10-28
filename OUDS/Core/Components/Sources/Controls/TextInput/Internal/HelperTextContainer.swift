@@ -28,7 +28,7 @@ struct HelperErrorTextContainer: View {
     var body: some View {
         if !text.isEmpty {
             Text(text)
-                .typeLabelDefaultMedium(theme)
+                .labelDefaultMedium(theme)
                 .oudsForegroundColor(color)
                 .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
                 .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
