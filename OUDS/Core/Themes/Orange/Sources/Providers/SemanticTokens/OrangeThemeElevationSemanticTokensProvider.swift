@@ -26,7 +26,7 @@ import OUDSFoundations
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
 ///
-///         override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
+///         override var stickyEmphasized: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
 ///         }
 /// }

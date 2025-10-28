@@ -22,7 +22,7 @@ import SwiftUI
 /// If an elevation token exists with its value depending to the color scheme, it must be packed in such ``MultipleElevationCompositeRawTokens`
 ///
 /// ```swift
-///         // Assuming in Figma with have a elevation semantic token elevationNone,
+///         // Assuming in Figma with have a elevation semantic token none,
 ///         // with values depending to color scheme. These values are defined as elevation raw tokens.
 ///         let bottom_0 = ElevationCompositeRawToken(x: x0, y: y0, blur: blur0, color: ColorRawTokens.opacityBlack0)
 ///         let bottom_1_100 = ElevationCompositeRawToken(x: x0, y: y100, blur: blur200, color: ColorRawTokens.opacityBlack100)
@@ -31,12 +31,12 @@ import SwiftUI
 ///         // inside ElevationCompositeSemanticTokens protocol,
 ///         // and defined inside OrangeTheme+ElevationCompositeSemanticTokens extension
 ///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawTokens to keep same grammar as design kit
-///         var elevationNone: ElevationCompositeSemanticToken {
+///         var none: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(light: bottom_0, dark: bottom_1_100)
 ///         }
 ///
 ///         // If the same elevation is used whatever the color scheme is
-///         var elevationNone: ElevationCompositeSemanticToken {
+///         var none: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(bottom_0)
 ///         }
 /// ```
@@ -48,17 +48,17 @@ import SwiftUI
 ///         @Environment(\.theme) var theme
 ///         @Environment(\.colorScheme) var colorScheme
 ///
-///         // Given you want to apply the elevation token "elevationRaised"
+///         // Given you want to apply the elevation token "raised"
 ///         var body: some View {
 ///             // Apply the token of elevation for the shadow effect without managing yourself the color scheme
 ///             Rectangle()
-///                 .shadow(elevation: theme.elevations.elevationRaised))
+///                 .shadow(elevation: theme.elevations.raised))
 ///         }
 /// ```
 ///
 /// ```swift
 ///     // Or get the token depending to the color scheme and do whatever you want with
-///     theme.elevations.elevationRaised.elevation(for: colorScheme)
+///     theme.elevations.raised.elevation(for: colorScheme)
 /// ```
 ///
 /// The case of this `MultipleElevationCompositeRawTokens` is quite particular because in fact it contains `MultipleElevationCompositeRawTokens` (i.e. raw tokens) instead of semantic tokens.

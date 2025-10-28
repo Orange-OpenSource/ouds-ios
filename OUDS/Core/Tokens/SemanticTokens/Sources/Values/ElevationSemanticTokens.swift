@@ -56,17 +56,17 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
-    var elevationColorNone: ElevationColorSemanticToken { get }
-    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
-    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
-    var elevationColorDragLight: ElevationColorSemanticToken { get }
-    var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorEmphasizedDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyDark: ElevationColorSemanticToken { get }
+    var colorNone: ElevationColorSemanticToken { get }
+    var colorDefaultLight: ElevationColorSemanticToken { get }
+    var colorDefaultDark: ElevationColorSemanticToken { get }
+    var colorRaisedLight: ElevationColorSemanticToken { get }
+    var colorRaisedDark: ElevationColorSemanticToken { get }
+    var colorDragLight: ElevationColorSemanticToken { get }
+    var colorDragDark: ElevationColorSemanticToken { get }
+    var colorEmphasizedLight: ElevationColorSemanticToken { get }
+    var colorEmphasizedDark: ElevationColorSemanticToken { get }
+    var colorStickyLight: ElevationColorSemanticToken { get }
+    var colorStickyDark: ElevationColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

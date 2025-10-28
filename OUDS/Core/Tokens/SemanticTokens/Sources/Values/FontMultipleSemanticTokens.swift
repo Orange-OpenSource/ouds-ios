@@ -47,7 +47,7 @@
 ///         // declared (in this FontMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+FontMultipleSemanticTokens.swift)
 ///         var sizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeDisplayLargeMobile, regular: sizeDisplayLargeTablet) }
 ///
-///         // Thus users can in their components use elevationColorNone as defined in their design system
+///         // Thus users can in their components use colorNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
 ///

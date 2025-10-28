@@ -33,28 +33,28 @@
 ///      @Environment(\.theme) var theme
 ///      @Environment(\.colorScheme) var colorScheme
 ///
-///     // Given you want to apply the elevation token "elevationRaised"
+///     // Given you want to apply the elevation token "raised"
 ///     var body: some View {
 ///         // Apply the token of elevation for the shadow effect without managing yourself the color scheme
 ///         Rectangle()
-///             .shadow(elevation: theme.elevations.elevationRaised))
+///             .shadow(elevation: theme.elevations.raised))
 ///     }
 /// ```
 ///
 /// ```swift
 ///     // Or get the token depending to the color scheme and do whatever you want with
-///     theme.elevations.elevationRaised.elevation(for: colorScheme)
+///     theme.elevations.raised.elevation(for: colorScheme)
 /// ```
 ///
 /// - Since: 0.8.0
 public protocol ElevationCompositeSemanticTokens {
 
-    var elevationNone: ElevationCompositeSemanticToken { get }
-    var elevationRaised: ElevationCompositeSemanticToken { get }
-    var elevationDrag: ElevationCompositeSemanticToken { get }
-    var elevationDefault: ElevationCompositeSemanticToken { get }
-    var elevationEmphasized: ElevationCompositeSemanticToken { get }
-    var elevationSticky: ElevationCompositeSemanticToken { get }
+    var none: ElevationCompositeSemanticToken { get }
+    var raised: ElevationCompositeSemanticToken { get }
+    var drag: ElevationCompositeSemanticToken { get }
+    var `default`: ElevationCompositeSemanticToken { get }
+    var emphasized: ElevationCompositeSemanticToken { get }
+    var sticky: ElevationCompositeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

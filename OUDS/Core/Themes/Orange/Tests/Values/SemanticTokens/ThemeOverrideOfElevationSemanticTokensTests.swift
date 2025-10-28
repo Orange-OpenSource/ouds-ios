@@ -132,58 +132,58 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
     // MARK: - Semantic token - Elevation - Colors
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorNone() throws {
-        #expect(inheritedTheme.elevations.elevationColorNone != abstractTheme.elevations.elevationColorNone)
-        #expect(inheritedTheme.elevations.elevationColorNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorNone != abstractTheme.elevations.colorNone)
+        #expect(inheritedTheme.elevations.colorNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDefaultLight() throws {
-        #expect(inheritedTheme.elevations.elevationColorDefaultLight != abstractTheme.elevations.elevationColorDefaultLight)
-        #expect(inheritedTheme.elevations.elevationColorDefaultLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorDefaultLight != abstractTheme.elevations.colorDefaultLight)
+        #expect(inheritedTheme.elevations.colorDefaultLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDefaultDark() throws {
-        #expect(inheritedTheme.elevations.elevationColorDefaultDark != abstractTheme.elevations.elevationColorDefaultDark)
-        #expect(inheritedTheme.elevations.elevationColorDefaultDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorDefaultDark != abstractTheme.elevations.colorDefaultDark)
+        #expect(inheritedTheme.elevations.colorDefaultDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorRaisedLight() throws {
-        #expect(inheritedTheme.elevations.elevationColorRaisedLight != abstractTheme.elevations.elevationColorRaisedLight)
-        #expect(inheritedTheme.elevations.elevationColorRaisedLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorRaisedLight != abstractTheme.elevations.colorRaisedLight)
+        #expect(inheritedTheme.elevations.colorRaisedLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorRaisedDark() throws {
-        #expect(inheritedTheme.elevations.elevationColorRaisedDark != abstractTheme.elevations.elevationColorRaisedDark)
-        #expect(inheritedTheme.elevations.elevationColorRaisedDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorRaisedDark != abstractTheme.elevations.colorRaisedDark)
+        #expect(inheritedTheme.elevations.colorRaisedDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDragLight() throws {
-        #expect(inheritedTheme.elevations.elevationColorDragLight != abstractTheme.elevations.elevationColorDragLight)
-        #expect(inheritedTheme.elevations.elevationColorDragLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorDragLight != abstractTheme.elevations.colorDragLight)
+        #expect(inheritedTheme.elevations.colorDragLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDragDark() throws {
-        #expect(inheritedTheme.elevations.elevationColorDragDark != abstractTheme.elevations.elevationColorDragDark)
-        #expect(inheritedTheme.elevations.elevationColorDragDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorDragDark != abstractTheme.elevations.colorDragDark)
+        #expect(inheritedTheme.elevations.colorDragDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorEmphasizedLight() throws {
-        #expect(inheritedTheme.elevations.elevationColorEmphasizedLight != abstractTheme.elevations.elevationColorEmphasizedLight)
-        #expect(inheritedTheme.elevations.elevationColorEmphasizedLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorEmphasizedLight != abstractTheme.elevations.colorEmphasizedLight)
+        #expect(inheritedTheme.elevations.colorEmphasizedLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorEmphasizedDark() throws {
-        #expect(inheritedTheme.elevations.elevationColorEmphasizedDark != abstractTheme.elevations.elevationColorEmphasizedDark)
-        #expect(inheritedTheme.elevations.elevationColorEmphasizedDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorEmphasizedDark != abstractTheme.elevations.colorEmphasizedDark)
+        #expect(inheritedTheme.elevations.colorEmphasizedDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorStickyLight() throws {
-        #expect(inheritedTheme.elevations.elevationColorStickyLight != abstractTheme.elevations.elevationColorStickyLight)
-        #expect(inheritedTheme.elevations.elevationColorStickyLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorStickyLight != abstractTheme.elevations.colorStickyLight)
+        #expect(inheritedTheme.elevations.colorStickyLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorStickyDark() throws {
-        #expect(inheritedTheme.elevations.elevationColorStickyDark != abstractTheme.elevations.elevationColorStickyDark)
-        #expect(inheritedTheme.elevations.elevationColorStickyDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+        #expect(inheritedTheme.elevations.colorStickyDark != abstractTheme.elevations.colorStickyDark)
+        #expect(inheritedTheme.elevations.colorStickyDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 }
 

@@ -29,33 +29,33 @@ import OUDSTokensSemantic
 /// It defines in fact box shadows effects.
 extension SoshThemeElevationSemanticTokensProvider: ElevationCompositeSemanticTokens {
 
-    @objc public final var elevationNone: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(ElevationCompositeRawToken(x: xNone, y: yNone, blur: blurNone, color: elevationColorNone))
+    @objc public final var none: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(ElevationCompositeRawToken(x: xNone, y: yNone, blur: blurNone, color: colorNone))
     }
 
-    @objc public final var elevationRaised: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: elevationColorRaisedLight),
-                                            dark: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: elevationColorRaisedDark))
+    @objc public final var raised: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: colorRaisedLight),
+                                            dark: ElevationCompositeRawToken(x: xRaised, y: yRaised, blur: blurRaised, color: colorRaisedDark))
     }
 
-    @objc public final var elevationDrag: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: elevationColorDragLight),
-                                            dark: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: elevationColorDragDark))
+    @objc public final var drag: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: colorDragLight),
+                                            dark: ElevationCompositeRawToken(x: xDrag, y: yDrag, blur: blurDrag, color: colorDragDark))
     }
 
-    @objc public final var elevationDefault: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: elevationColorDefaultLight),
-                                            dark: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: elevationColorDefaultDark))
+    @objc public final var `default`: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultLight),
+                                            dark: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultDark))
     }
 
-    @objc public final var elevationEmphasized: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: elevationColorEmphasizedLight),
-                                            dark: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: elevationColorEmphasizedDark))
+    @objc public final var emphasized: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: colorEmphasizedLight),
+                                            dark: ElevationCompositeRawToken(x: xEmphasized, y: yEmphasized, blur: blurEmphasized, color: colorEmphasizedDark))
     }
 
-    @objc public final var elevationSticky: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: elevationColorStickyLight),
-                                            dark: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: elevationColorStickyDark))
+    @objc public final var sticky: ElevationCompositeSemanticToken {
+        MultipleElevationCompositeRawTokens(light: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: colorStickyLight),
+                                            dark: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: colorStickyDark))
     }
 }
 

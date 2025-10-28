@@ -257,7 +257,7 @@ class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
 // Token provider for elevation
 
 class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
-    override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
+    override var stickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
     }
 }

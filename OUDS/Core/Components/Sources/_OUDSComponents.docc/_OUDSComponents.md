@@ -30,11 +30,11 @@ The unified design system implemented by OUDS iOS library allows to apply *eleva
 Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a dimensionspread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
-// For example, apply the elevation effect "elevationDrag" from your theme:
-myView.oudsShadow(theme.elevations.elevationDrag)
+// For example, apply the elevation effect "drag" from your theme:
+myView.oudsShadow(theme.elevations.drag)
 
-// And in the theme this "elevationDrag" has been defined for example like:
-@objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
+// And in the theme this "drag" has been defined for example like:
+@objc open var drag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
 // And if you look deeper, the raw token "bottom_3_500" can be like:
 public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur: blur400, color: ColorRawTokens.opacityBlack320)

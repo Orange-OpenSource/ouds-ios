@@ -56,25 +56,25 @@ extension WireframeThemeElevationSemanticTokensProvider: ElevationSemanticTokens
     /// Has for value token ElevationRawTokens.blur400
     @objc public final var blurSticky: ElevationBlurSemanticToken { ElevationRawTokens.blur400 }
     /// Has for value token ColorRawTokens.opacityBlack0
-    @objc public final var elevationColorNone: ElevationColorSemanticToken { ColorRawTokens.opacityBlack0 }
+    @objc public final var colorNone: ElevationColorSemanticToken { ColorRawTokens.opacityBlack0 }
     /// Has for value token ColorRawTokens.opacityBlack240
-    @objc public final var elevationColorRaisedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
+    @objc public final var colorRaisedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Has for value token ColorRawTokens.opacityBlack320
-    @objc public final var elevationColorRaisedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
+    @objc public final var colorRaisedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
     /// Has for value token ColorRawTokens.opacityBlack240
-    @objc public final var elevationColorDefaultLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
+    @objc public final var colorDefaultLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Has for value token ColorRawTokens.opacityBlack240
-    @objc public final var elevationColorDefaultDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
+    @objc public final var colorDefaultDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Has for value token ColorRawTokens.opacityBlack160
-    @objc public final var elevationColorEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
+    @objc public final var colorEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Has for value token ColorRawTokens.opacityBlack160
-    @objc public final var elevationColorEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
+    @objc public final var colorEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Has for value token ColorRawTokens.opacityBlack240
-    @objc public final var elevationColorDragLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
+    @objc public final var colorDragLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack240 }
     /// Has for value token ColorRawTokens.opacityBlack320
-    @objc public final var elevationColorDragDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
+    @objc public final var colorDragDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack320 }
     /// Has for value token ColorRawTokens.opacityBlack160
-    @objc public final var elevationColorStickyLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
+    @objc public final var colorStickyLight: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
     /// Has for value token ColorRawTokens.opacityBlack160
-    @objc public final var elevationColorStickyDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
+    @objc public final var colorStickyDark: ElevationColorSemanticToken { ColorRawTokens.opacityBlack160 }
 }

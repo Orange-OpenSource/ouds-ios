@@ -56,7 +56,7 @@ struct ContentView: View {
                     .padding(.horizontal, theme.spaces.spaceFixedSmall)
                 }
                 .oudsBackground(theme.colors.bgTertiary)
-                .oudsShadow(theme.elevations.elevationEmphasized)
+                .oudsShadow(theme.elevations.emphasized)
                 .padding(.bottom, theme.spaces.spaceFixedLarge)
 
             }.padding(.horizontal, theme.spaces.spaceFixedSmall)

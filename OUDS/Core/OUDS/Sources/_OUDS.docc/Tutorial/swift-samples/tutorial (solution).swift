@@ -90,7 +90,7 @@ struct ContentView: View {
                             width: theme.borders.widthThin,
                             radius: theme.borders.radiusMedium,
                             color: theme.colors.actionEnabled)
-                .oudsShadow(theme.elevations.elevationEmphasized)
+                .oudsShadow(theme.elevations.emphasized)
                 .padding(.bottom, theme.spaces.spaceFixedLarge)
 
             }.padding(.horizontal, theme.spaces.spaceFixedSmall)

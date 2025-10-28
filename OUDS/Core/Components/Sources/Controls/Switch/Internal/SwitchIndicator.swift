@@ -91,7 +91,7 @@ private struct Cursor: View {
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
         .oudsBackground(theme.switch.switchColorCursor)
         .clipShape(RoundedRectangle(cornerRadius: theme.switch.switchBorderRadiusCursor))
-        .oudsShadow(theme.elevations.elevationRaised)
+        .oudsShadow(theme.elevations.raised)
         .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
     }
 
