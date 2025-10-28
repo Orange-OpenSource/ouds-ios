@@ -41,7 +41,7 @@ The *Orange Unified Design System* framework provides today five themes:
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
 Orange                    | The default one for Orange products and can be enriched / derivated  
-Orange Business Tools     | For some Orange products with heavy / rich UI and dimension constraints           
+Orange Business Tools     | For some Orange products with heavy / rich UI and _ constraints           
 Sosh                      | For Sosh products
 Wireframe                 | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 

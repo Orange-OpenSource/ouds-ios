@@ -24,8 +24,8 @@ import OUDSFoundations
 ///
 ///         // Then override the opacity semantic tokens you want, using the opacity raw tokens available
 ///
-///         override var opacityStrong: OpacitySemanticToken {
-///             OpacityRawTokens.opacity920
+///         override var strong: OpacitySemanticToken {
+///             OpacityRawTokens._920
 ///         }
 /// }
 /// ```

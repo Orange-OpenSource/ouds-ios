@@ -28,9 +28,9 @@ struct InputTagBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .oudsBorder(
-                style: theme.borders.borderStyleDefault,
+                style: theme.borders.styleDefault,
                 width: width,
-                radius: theme.tag.tagBorderRadius,
+                radius: theme.tag.borderRadius,
                 color: color)
     }
 
@@ -39,28 +39,28 @@ struct InputTagBorderModifier: ViewModifier {
     private var width: BorderWidthSemanticToken {
         switch state {
         case .enabled, .disabled:
-            theme.inputTag.inputTagBorderWidthDefault
+            theme.inputTag.borderWidthDefault
         case .hover, .pressed:
-            theme.inputTag.inputTagBorderWidthDefaultInteraction
+            theme.inputTag.borderWidthDefaultInteraction
         case .readOnly:
             // Should not appear
-            theme.inputTag.inputTagBorderWidthDefault
+            theme.inputTag.borderWidthDefault
         }
     }
 
     private var color: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.inputTag.inputTagColorBorderEnabled
+            theme.inputTag.colorBorderEnabled
         case .hover:
-            theme.inputTag.inputTagColorBorderHover
+            theme.inputTag.colorBorderHover
         case .pressed:
-            theme.inputTag.inputTagColorBorderPressed
+            theme.inputTag.colorBorderPressed
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         case .readOnly:
             // Should not appear
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

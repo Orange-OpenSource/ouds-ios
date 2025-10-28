@@ -25,7 +25,7 @@ import OUDSTokensSemantic
 /// - Since: 0.17.0
 public protocol SelectInputComponentTokens {
 
-    var selectInputSizeMinWidth: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

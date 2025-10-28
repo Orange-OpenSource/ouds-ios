@@ -28,18 +28,18 @@ struct ThemeOverrideOfSkeletonComponentTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideSkeletonComponentTokenColorBg() throws {
-        #expect(inheritedTheme.skeleton.skeletonColorBg != abstractTheme.skeleton.skeletonColorBg)
-        #expect(inheritedTheme.skeleton.skeletonColorBg == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
+        #expect(inheritedTheme.skeleton.colorBg != abstractTheme.skeleton.colorBg)
+        #expect(inheritedTheme.skeleton.colorBg == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
     }
 
     @Test func inheritedThemeCanOverrideSkeletonComponentTokenColorGradientMiddle() throws {
-        #expect(inheritedTheme.skeleton.skeletonColorGradientMiddle != abstractTheme.skeleton.skeletonColorGradientMiddle)
-        #expect(inheritedTheme.skeleton.skeletonColorGradientMiddle == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
+        #expect(inheritedTheme.skeleton.colorGradientMiddle != abstractTheme.skeleton.colorGradientMiddle)
+        #expect(inheritedTheme.skeleton.colorGradientMiddle == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
     }
 
     @Test func inheritedThemeCanOverrideSkeletonComponentTokenColorGradientStartEnd() throws {
-        #expect(inheritedTheme.skeleton.skeletonColorGradientStartEnd != abstractTheme.skeleton.skeletonColorGradientStartEnd)
-        #expect(inheritedTheme.skeleton.skeletonColorGradientStartEnd == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
+        #expect(inheritedTheme.skeleton.colorGradientStartEnd != abstractTheme.skeleton.colorGradientStartEnd)
+        #expect(inheritedTheme.skeleton.colorGradientStartEnd == MockThemeSkeletonComponentTokenProvider.mockThemeSkeletonColor)
     }
 }
 

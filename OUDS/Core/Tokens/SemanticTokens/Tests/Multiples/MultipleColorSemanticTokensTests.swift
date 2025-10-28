@@ -31,7 +31,7 @@ struct MultipleColorSemanticTokensTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
-        let unique: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
+        let unique: ColorRawToken = ColorRawTokens.functionalMalachite300
         let token = MultipleColorSemanticTokens(unique)
 
         #expect(token.light == unique)
@@ -40,8 +40,8 @@ struct MultipleColorSemanticTokensTests {
 
     /// Tests if light and dark values are preserved when defined with two assigned non nil values
     @Test func initTwoNonNilValues() {
-        let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
-        let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
+        let light: ColorRawToken = ColorRawTokens.functionalMalachite300
+        let dark: ColorRawToken = ColorRawTokens.functionalScarlet900
         let token = MultipleColorSemanticTokens(light: light, dark: dark)
 
         #expect(token.light == light)
@@ -51,11 +51,11 @@ struct MultipleColorSemanticTokensTests {
     /// Tests comparisons between two `MultipleColorSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same light and dark values and have the same types.
     @Test func isEqual() {
-        let first = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let second = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalGrayDark80, dark: ColorRawTokens.colorFunctionalSun100)
-        let third = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
-        let fourth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalGrayDark80, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let fifth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let first = MultipleColorSemanticTokens(light: ColorRawTokens.functionalMalachite300, dark: ColorRawTokens.functionalScarlet900)
+        let second = MultipleColorSemanticTokens(light: ColorRawTokens.functionalGrayDark80, dark: ColorRawTokens.functionalSun100)
+        let third = MultipleColorSemanticTokens(light: ColorRawTokens.functionalMalachite300, dark: ColorRawTokens.functionalSun100)
+        let fourth = MultipleColorSemanticTokens(light: ColorRawTokens.functionalGrayDark80, dark: ColorRawTokens.functionalScarlet900)
+        let fifth = MultipleColorSemanticTokens(light: ColorRawTokens.functionalMalachite300, dark: ColorRawTokens.functionalScarlet900)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         #expect(first.isEqual(first))
@@ -70,7 +70,7 @@ struct MultipleColorSemanticTokensTests {
     @Test func hasForbiddenColorValues() {
         // Given
         let forbiddenColorValue = "ouds-forbidden-color-value"
-        let notForbiddenColorValue = ColorRawTokens.colorFunctionalMalachite300
+        let notForbiddenColorValue = ColorRawTokens.functionalMalachite300
 
         // When, then
         var multipleColorSemanticTokens = MultipleColorSemanticTokens(light: notForbiddenColorValue, dark: notForbiddenColorValue)

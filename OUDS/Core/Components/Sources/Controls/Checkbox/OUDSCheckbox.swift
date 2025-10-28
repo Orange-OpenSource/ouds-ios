@@ -130,10 +130,10 @@ public struct OUDSCheckbox: View {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)
-                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
-                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
-                       minHeight: theme.checkbox.checkboxSizeMinHeight,
-                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .frame(minWidth: theme.checkbox.sizeMinWidth,
+                       maxWidth: theme.checkbox.sizeMinWidth,
+                       minHeight: theme.checkbox.sizeMinHeight,
+                       maxHeight: theme.checkbox.sizeMaxHeight)
                 .contentShape(Rectangle())
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }

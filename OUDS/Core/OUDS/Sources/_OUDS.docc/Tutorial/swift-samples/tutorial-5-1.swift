@@ -75,8 +75,8 @@ struct ContentView: View {
                 }
             }
 
-            OUDSColoredSurface(color: theme.colorModes.modeOnStatusInfoEmphasized) {
-                VStack(alignment: .center, spacing: theme.spaces.spaceFixedXsmall) {
+            OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
+                VStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {
                     OUDSLink(text: "Go to the website", indicator: .next) {
                         openUrl.callAsFunction(URL(string: "https://ios.unified-design-system.orange.com")!)
                     }

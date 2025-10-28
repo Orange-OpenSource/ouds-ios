@@ -34,11 +34,11 @@ struct BadgeCount: View {
                 EmptyView()
             case .medium:
                 Text(text)
-                    .typeLabelDefaultSmall(theme)
+                    .labelDefaultSmall(theme)
                     .padding(.horizontal, horizontalPadding)
             case .large:
                 Text(text)
-                    .typeLabelDefaultMedium(theme)
+                    .labelDefaultMedium(theme)
                     .padding(.horizontal, horizontalPadding)
             }
         }
@@ -47,11 +47,11 @@ struct BadgeCount: View {
     private var horizontalPadding: SpaceSemanticToken {
         switch size {
         case .extraSmall, .small:
-            theme.spaces.spaceFixedNone
+            theme.spaces.fixedNone
         case .medium:
-            theme.badge.badgeSpacePaddingInlineMedium
+            theme.badge.spacePaddingInlineMedium
         case .large:
-            theme.badge.badgeSpacePaddingInlineLarge
+            theme.badge.spacePaddingInlineLarge
         }
     }
 }

@@ -18,5 +18,5 @@ import OUDSTokensRaw
 
 extension WireframeBrandFontRawTokens {
     /// Has for value "Shantell Sans"
-    public static let fontFamilyDefault: FontFamilyRawToken = "Shantell Sans"
+    public static let familyDefault: FontFamilyRawToken = "Shantell Sans"
 }

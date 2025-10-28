@@ -22,7 +22,7 @@ struct MultipleFontLetterSpacingSemanticTokensTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
-        let unique: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing250
+        let unique: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing250
         let token = MultipleFontLetterSpacingSemanticTokens(unique)
 
         #expect(token.compact == unique)
@@ -31,8 +31,8 @@ struct MultipleFontLetterSpacingSemanticTokensTests {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     @Test func initWithTwoValues() {
-        let compact: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing300
-        let regular: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing650
+        let compact: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing300
+        let regular: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing650
         let token = MultipleFontLetterSpacingSemanticTokens(compact: compact, regular: regular)
 
         #expect(token.compact == compact)
@@ -42,11 +42,11 @@ struct MultipleFontLetterSpacingSemanticTokensTests {
     /// Tests comparisons between two `MultipleFontLetterSpacingSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     @Test func isEqual() {
-        let first = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.fontLetterSpacing300, regular: FontRawTokens.fontLetterSpacing300)
-        let second = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.fontLetterSpacing650, regular: FontRawTokens.fontLineHeight250)
-        let third = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.fontLetterSpacing300, regular: FontRawTokens.fontLineHeight250)
-        let fourth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.fontLetterSpacing650, regular: FontRawTokens.fontLineHeight850)
-        let fifth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.fontLetterSpacing300, regular: FontRawTokens.fontLetterSpacing300)
+        let first = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
+        let second = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight250)
+        let third = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.lineHeight250)
+        let fourth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight850)
+        let fifth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         #expect(first.isEqual(first))

@@ -23,59 +23,59 @@ extension FontRawTokens {
 
     // MARK: Primitive token - Typography - Composite
 
-    public static let typeRegular150 = FontCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight400, letterSpacing: fontLetterSpacing150)
+    public static let regular150 = FontCompositeRawToken(size: size150, lineHeight: lineHeight250, weight: weight400, letterSpacing: letterSpacing150)
 
-    public static let typeRegular175 = FontCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight400, letterSpacing: fontLetterSpacing175)
+    public static let regular175 = FontCompositeRawToken(size: size175, lineHeight: lineHeight250, weight: weight400, letterSpacing: letterSpacing175)
 
-    public static let typeRegular200 = FontCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight350, weight: fontWeight400, letterSpacing: fontLetterSpacing200)
+    public static let regular200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight350, weight: weight400, letterSpacing: letterSpacing200)
 
-    public static let typeRegular250 = FontCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400, letterSpacing: fontLetterSpacing250)
+    public static let regular250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight350, weight: weight400, letterSpacing: letterSpacing250)
 
-    public static let typeRegular300 = FontCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight400, letterSpacing: fontLetterSpacing300)
+    public static let regular300 = FontCompositeRawToken(size: size300, lineHeight: lineHeight450, weight: weight400, letterSpacing: letterSpacing300)
 
-    public static let typeMedium150 = FontCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight500, letterSpacing: fontLetterSpacing150)
+    public static let medium150 = FontCompositeRawToken(size: size150, lineHeight: lineHeight250, weight: weight500, letterSpacing: letterSpacing150)
 
-    public static let typeMedium175 = FontCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight500, letterSpacing: fontLetterSpacing175)
+    public static let medium175 = FontCompositeRawToken(size: size175, lineHeight: lineHeight250, weight: weight500, letterSpacing: letterSpacing175)
 
-    public static let typeMedium200 = FontCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight450, weight: fontWeight500, letterSpacing: fontLetterSpacing200)
+    public static let medium200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight450, weight: weight500, letterSpacing: letterSpacing200)
 
-    public static let typeMedium250 = FontCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight450, weight: fontWeight500, letterSpacing: fontLetterSpacing250)
+    public static let medium250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight450, weight: weight500, letterSpacing: letterSpacing250)
 
-    public static let typeMedium300 = FontCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight500, letterSpacing: fontLetterSpacing300)
+    public static let medium300 = FontCompositeRawToken(size: size300, lineHeight: lineHeight450, weight: weight500, letterSpacing: letterSpacing300)
 
-    public static let typeBold150 = FontCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight700, letterSpacing: fontLetterSpacing150)
+    public static let bold150 = FontCompositeRawToken(size: size150, lineHeight: lineHeight250, weight: weight700, letterSpacing: letterSpacing150)
 
-    public static let typeBold175 = FontCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700, letterSpacing: fontLetterSpacing175)
+    public static let bold175 = FontCompositeRawToken(size: size175, lineHeight: lineHeight250, weight: weight700, letterSpacing: letterSpacing175)
 
-    public static let typeBold200 = FontCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight350, weight: fontWeight700, letterSpacing: fontLetterSpacing200)
+    public static let bold200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight350, weight: weight700, letterSpacing: letterSpacing200)
 
-    public static let typeBold250 = FontCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight450, weight: fontWeight700, letterSpacing: fontLetterSpacing250)
+    public static let bold250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight450, weight: weight700, letterSpacing: letterSpacing250)
 
-    public static let typeBold300 = FontCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight700, letterSpacing: fontLetterSpacing300)
+    public static let bold300 = FontCompositeRawToken(size: size300, lineHeight: lineHeight450, weight: weight700, letterSpacing: letterSpacing300)
 
-    public static let typeBold350 = FontCompositeRawToken(size: fontSize350, lineHeight: fontLineHeight550, weight: fontWeight700, letterSpacing: fontLetterSpacing350)
+    public static let bold350 = FontCompositeRawToken(size: size350, lineHeight: lineHeight550, weight: weight700, letterSpacing: letterSpacing350)
 
-    public static let typeBold450 = FontCompositeRawToken(size: fontSize450, lineHeight: fontLineHeight650, weight: fontWeight700, letterSpacing: fontLetterSpacing450)
+    public static let bold450 = FontCompositeRawToken(size: size450, lineHeight: lineHeight650, weight: weight700, letterSpacing: letterSpacing450)
 
-    public static let typeBold550 = FontCompositeRawToken(size: fontSize550, lineHeight: fontLineHeight750, weight: fontWeight700, letterSpacing: fontLetterSpacing550)
+    public static let bold550 = FontCompositeRawToken(size: size550, lineHeight: lineHeight750, weight: weight700, letterSpacing: letterSpacing550)
 
-    public static let typeBold650 = FontCompositeRawToken(size: fontSize650, lineHeight: fontLineHeight850, weight: fontWeight700, letterSpacing: fontLetterSpacing650)
+    public static let bold650 = FontCompositeRawToken(size: size650, lineHeight: lineHeight850, weight: weight700, letterSpacing: letterSpacing650)
 
-    public static let typeBold750 = FontCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight950, weight: fontWeight700, letterSpacing: fontLetterSpacing750)
+    public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lineHeight950, weight: weight700, letterSpacing: letterSpacing750)
 
-    public static let typeBold850 = FontCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight1050, weight: fontWeight700, letterSpacing: fontLetterSpacing850)
+    public static let bold850 = FontCompositeRawToken(size: size850, lineHeight: lineHeight1050, weight: weight700, letterSpacing: letterSpacing850)
 
-    public static let typeBold950 = FontCompositeRawToken(size: fontSize950, lineHeight: fontLineHeight1150, weight: fontWeight700, letterSpacing: fontLetterSpacing950)
+    public static let bold950 = FontCompositeRawToken(size: size950, lineHeight: lineHeight1150, weight: weight700, letterSpacing: letterSpacing950)
 
-    public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1250, weight: fontWeight700, letterSpacing: fontLetterSpacing1050)
+    public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1250, weight: weight700, letterSpacing: letterSpacing1050)
 
-    public static let typeBold1150 = FontCompositeRawToken(size: fontSize1150, lineHeight: fontLineHeight1350, weight: fontWeight700, letterSpacing: fontLetterSpacing1150)
+    public static let bold1150 = FontCompositeRawToken(size: size1150, lineHeight: lineHeight1350, weight: weight700, letterSpacing: letterSpacing1150)
 
-    public static let typeBold1250 = FontCompositeRawToken(size: fontSize1250, lineHeight: fontLineHeight1450, weight: fontWeight700, letterSpacing: fontLetterSpacing1250)
+    public static let bold1250 = FontCompositeRawToken(size: size1250, lineHeight: lineHeight1450, weight: weight700, letterSpacing: letterSpacing1250)
 
-    public static let typeBold1450 = FontCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1850, weight: fontWeight700, letterSpacing: fontLetterSpacing1450)
+    public static let bold1450 = FontCompositeRawToken(size: size1450, lineHeight: lineHeight1850, weight: weight700, letterSpacing: letterSpacing1450)
 
-    public static let typeBold1850 = FontCompositeRawToken(size: fontSize1850, lineHeight: fontLineHeight2050, weight: fontWeight700, letterSpacing: fontLetterSpacing1850)
+    public static let bold1850 = FontCompositeRawToken(size: size1850, lineHeight: lineHeight2050, weight: weight700, letterSpacing: letterSpacing1850)
 }
 
 // swiftlint:enable missing_docs

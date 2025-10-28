@@ -22,7 +22,7 @@ struct ColorSemanticTokensTests {
     @Test func hasForbiddenColorValues() {
         // Given
         let forbiddenColorValue = "ouds-forbidden-color-value"
-        let notForbiddenColorValue = ColorRawTokens.colorFunctionalMalachite300
+        let notForbiddenColorValue = ColorRawTokens.functionalMalachite300
 
         // When, then
         var colorSemanticToken: ColorSemanticToken = notForbiddenColorValue

@@ -27,62 +27,62 @@ public protocol ChipComponentTokens {
 
     // MARK: - Sizes
 
-    var chipSizeIcon: SizeSemanticToken { get }
-    var chipSizeMinWidth: SizeSemanticToken { get }
-    var chipSizeMinHeight: SizeSemanticToken { get }
-    var chipSizeMinHeightInteractiveArea: SizeSemanticToken { get }
+    var sizeIcon: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinHeightInteractiveArea: SizeSemanticToken { get }
 
     // MARK: - Borders
 
-    var chipBorderWidthSelected: BorderWidthSemanticToken { get }
-    var chipBorderWidthUnselected: BorderWidthSemanticToken { get }
-    var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { get }
-    var chipBorderRadius: BorderRadiusSemanticToken { get }
+    var borderWidthSelected: BorderWidthSemanticToken { get }
+    var borderWidthUnselected: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedInteraction: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
 
-    var chipBadgeColorBg: MultipleColorSemanticTokens { get }
-    var chipBadgeColorContent: MultipleColorSemanticTokens { get }
-    var chipColorBgSelectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBgSelectedHover: MultipleColorSemanticTokens { get }
-    var chipColorBgSelectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorBgSelectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBgSelectedFocus: MultipleColorSemanticTokens { get }
-    var chipColorBgUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBgUnselectedHover: MultipleColorSemanticTokens { get }
-    var chipColorBgUnselectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorBgUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBgUnselectedFocus: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedTickEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedHover: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorContentSelectedFocus: MultipleColorSemanticTokens { get }
-    var chipColorContentUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentUnselectedHover: MultipleColorSemanticTokens { get }
-    var chipColorContentUnselectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorContentUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelectedHover: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelectedFocus: MultipleColorSemanticTokens { get }
-    var chipColorBorderUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderUnselectedHover: MultipleColorSemanticTokens { get }
-    var chipColorBorderUnselectedPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderUnselectedFocus: MultipleColorSemanticTokens { get }
+    var badgeColorBg: MultipleColorSemanticTokens { get }
+    var badgeColorContent: MultipleColorSemanticTokens { get }
+    var colorBgSelectedEnabled: MultipleColorSemanticTokens { get }
+    var colorBgSelectedHover: MultipleColorSemanticTokens { get }
+    var colorBgSelectedPressed: MultipleColorSemanticTokens { get }
+    var colorBgSelectedDisabled: MultipleColorSemanticTokens { get }
+    var colorBgSelectedFocus: MultipleColorSemanticTokens { get }
+    var colorBgUnselectedEnabled: MultipleColorSemanticTokens { get }
+    var colorBgUnselectedHover: MultipleColorSemanticTokens { get }
+    var colorBgUnselectedPressed: MultipleColorSemanticTokens { get }
+    var colorBgUnselectedDisabled: MultipleColorSemanticTokens { get }
+    var colorBgUnselectedFocus: MultipleColorSemanticTokens { get }
+    var colorContentSelectedTickEnabled: MultipleColorSemanticTokens { get }
+    var colorContentSelectedEnabled: MultipleColorSemanticTokens { get }
+    var colorContentSelectedPressed: MultipleColorSemanticTokens { get }
+    var colorContentSelectedHover: MultipleColorSemanticTokens { get }
+    var colorContentSelectedDisabled: MultipleColorSemanticTokens { get }
+    var colorContentSelectedFocus: MultipleColorSemanticTokens { get }
+    var colorContentUnselectedEnabled: MultipleColorSemanticTokens { get }
+    var colorContentUnselectedHover: MultipleColorSemanticTokens { get }
+    var colorContentUnselectedPressed: MultipleColorSemanticTokens { get }
+    var colorContentUnselectedDisabled: MultipleColorSemanticTokens { get }
+    var colorBorderSelectedEnabled: MultipleColorSemanticTokens { get }
+    var colorBorderSelectedHover: MultipleColorSemanticTokens { get }
+    var colorBorderSelectedPressed: MultipleColorSemanticTokens { get }
+    var colorBorderSelectedDisabled: MultipleColorSemanticTokens { get }
+    var colorBorderSelectedFocus: MultipleColorSemanticTokens { get }
+    var colorBorderUnselectedEnabled: MultipleColorSemanticTokens { get }
+    var colorBorderUnselectedHover: MultipleColorSemanticTokens { get }
+    var colorBorderUnselectedPressed: MultipleColorSemanticTokens { get }
+    var colorBorderUnselectedDisabled: MultipleColorSemanticTokens { get }
+    var colorBorderUnselectedFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var chipSpacePaddingBlock: SpaceSemanticToken { get }
-    var chipSpacePaddingBlockIconOnly: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIcon: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineChevronEnd: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineBadgeStart: SpaceSemanticToken { get }
-    var chipSpaceColumnGapIcon: SpaceSemanticToken { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockIconOnly: SpaceSemanticToken { get }
+    var spacePaddingInlineIcon: SpaceSemanticToken { get }
+    var spacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var spacePaddingInlineChevronEnd: SpaceSemanticToken { get }
+    var spacePaddingInlineBadgeStart: SpaceSemanticToken { get }
+    var spaceColumnGapIcon: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

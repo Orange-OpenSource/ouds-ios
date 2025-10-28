@@ -34,43 +34,43 @@ struct ThemeOverrideOfOpacitySemanticTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityInvisible() throws {
-        #expect(inheritedTheme.opacities.opacityInvisible != abstractTheme.opacities.opacityInvisible)
-        #expect(inheritedTheme.opacities.opacityInvisible == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.invisible != abstractTheme.opacities.invisible)
+        #expect(inheritedTheme.opacities.invisible == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityWeakest() throws {
-        #expect(inheritedTheme.opacities.opacityWeakest != abstractTheme.opacities.opacityWeakest)
-        #expect(inheritedTheme.opacities.opacityWeakest == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.weakest != abstractTheme.opacities.weakest)
+        #expect(inheritedTheme.opacities.weakest == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityWeaker() throws {
-        #expect(inheritedTheme.opacities.opacityWeaker != abstractTheme.opacities.opacityWeaker)
-        #expect(inheritedTheme.opacities.opacityWeaker == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.weaker != abstractTheme.opacities.weaker)
+        #expect(inheritedTheme.opacities.weaker == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityWeak() throws {
-        #expect(inheritedTheme.opacities.opacityWeak != abstractTheme.opacities.opacityWeak)
-        #expect(inheritedTheme.opacities.opacityWeak == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.weak != abstractTheme.opacities.weak)
+        #expect(inheritedTheme.opacities.weak == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityMedium() throws {
-        #expect(inheritedTheme.opacities.opacityMedium != abstractTheme.opacities.opacityMedium)
-        #expect(inheritedTheme.opacities.opacityMedium == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.medium != abstractTheme.opacities.medium)
+        #expect(inheritedTheme.opacities.medium == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityEmphasized() throws {
-        #expect(inheritedTheme.opacities.opacityStrong != abstractTheme.opacities.opacityStrong)
-        #expect(inheritedTheme.opacities.opacityStrong == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.strong != abstractTheme.opacities.strong)
+        #expect(inheritedTheme.opacities.strong == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityOpaque() throws {
-        #expect(inheritedTheme.opacities.opacityOpaque != abstractTheme.opacities.opacityOpaque)
-        #expect(inheritedTheme.opacities.opacityOpaque == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.opaque != abstractTheme.opacities.opaque)
+        #expect(inheritedTheme.opacities.opaque == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenOpacityDisabled() throws {
-        #expect(inheritedTheme.opacities.opacityDisabled != abstractTheme.opacities.opacityDisabled)
-        #expect(inheritedTheme.opacities.opacityDisabled == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
+        #expect(inheritedTheme.opacities.disabled != abstractTheme.opacities.disabled)
+        #expect(inheritedTheme.opacities.disabled == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 }
 

@@ -38,7 +38,7 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {

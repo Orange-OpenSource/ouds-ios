@@ -35,7 +35,7 @@ final class WireframeThemeTagComponentTokensProvider: AllTagComponentTokensProvi
     /// Provider of space semantic tokens to use for tag spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
@@ -47,7 +47,7 @@ final class WireframeThemeTagComponentTokensProvider: AllTagComponentTokensProvi
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,

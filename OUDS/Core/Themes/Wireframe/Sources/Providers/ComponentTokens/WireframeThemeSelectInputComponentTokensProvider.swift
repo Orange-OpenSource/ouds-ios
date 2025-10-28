@@ -34,7 +34,7 @@ final class WireframeThemeSelectInputComponentTokensProvider: AllSelectInputComp
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
-    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of WireframeThemeSelectInputComponentTokensProvider")
         self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())

@@ -26,8 +26,8 @@ public protocol ExpandLinkComponentTokens {
     // TODO: #1001 - Maybe update documentation above if expand link is not within OUDSLink
     // or protocol implemented in another provider
 
-    var expandLinkIconStart: Bool { get }
-    var expandLinkIconEnd: Bool { get }
+    var iconStart: Bool { get }
+    var iconEnd: Bool { get }
 }
 
 // swiftlint:enable missing_docs

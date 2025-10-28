@@ -19,7 +19,7 @@ import OUDSTokensComponent
 
 extension OrangeThemeLinkComponentTokensProvider: ExpandLinkComponentTokens {
     /// Has for value token false
-    @objc open var expandLinkIconStart: Bool { false }
+    @objc open var iconStart: Bool { false }
     /// Has for value token true
-    @objc open var expandLinkIconEnd: Bool { true }
+    @objc open var iconEnd: Bool { true }
 }

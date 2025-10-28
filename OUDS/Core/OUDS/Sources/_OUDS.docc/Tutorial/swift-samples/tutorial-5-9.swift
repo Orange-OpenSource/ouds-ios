@@ -9,7 +9,7 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+    let myTheme = OrangeTheme(family: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
 
     var body: some Scene {
         WindowGroup {

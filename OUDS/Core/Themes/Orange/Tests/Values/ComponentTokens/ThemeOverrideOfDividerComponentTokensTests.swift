@@ -30,8 +30,8 @@ struct ThemeOverrideOfDividerComponentTokensTests {
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideDividerComponentTokenBorderWidth() throws {
-        #expect(inheritedTheme.divider.dividerBorderWidth != abstractTheme.divider.dividerBorderWidth)
-        #expect(inheritedTheme.divider.dividerBorderWidth == MockThemeDividerComponentTokenProvider.mockThemeDividerBorderWidth)
+        #expect(inheritedTheme.divider.borderWidth != abstractTheme.divider.borderWidth)
+        #expect(inheritedTheme.divider.borderWidth == MockThemeDividerComponentTokenProvider.mockThemeDividerBorderWidth)
     }
 }
 

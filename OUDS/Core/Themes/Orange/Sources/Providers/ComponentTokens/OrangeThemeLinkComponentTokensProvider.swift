@@ -30,11 +30,11 @@ import OUDSFoundations
 ///
 ///         // Then override the link component tokens you want.
 ///
-///         override var linkSizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var sizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var linkColorChevronHover: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorChevronHover: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }

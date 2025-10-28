@@ -34,13 +34,13 @@ struct TrailingActionContainer: View {
                     .disabled(status == .readOnly || status == .disabled)
             }
         case .error:
-            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapTrailingErrorAction) {
+            HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapTrailingErrorAction) {
                 Image(decorative: "ic_important", bundle: theme.resourcesBundle)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .oudsForegroundColor(errorIconColor)
-                    .frame(width: theme.button.buttonSizeIconOnly, height: theme.button.buttonSizeIconOnly, alignment: .center)
-                    .padding(.all, trailingAction == nil ? theme.button.buttonSpaceInsetIconOnly : theme.spaces.spaceFixedNone)
+                    .frame(width: theme.button.sizeIconOnly, height: theme.button.sizeIconOnly, alignment: .center)
+                    .padding(.all, trailingAction == nil ? theme.button.spaceInsetIconOnly : theme.spaces.fixedNone)
 
                 if let trailingAction {
                     trailingButton(for: trailingAction)
@@ -57,11 +57,11 @@ struct TrailingActionContainer: View {
     private var errorIconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .idle:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         case .focused:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         case .hover:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         }
     }
 

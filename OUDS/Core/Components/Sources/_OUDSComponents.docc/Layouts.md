@@ -28,7 +28,7 @@ Some components can be used for **layouts**.
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
 The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
-To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *buttonColorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
+To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *colorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
 
 #### How it works
 
@@ -39,15 +39,15 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
 #### How to use
 
 ```swift
-    // The folowing view has a colored background "modeOnStatusPositiveEmphasized" with
+    // The folowing view has a colored background "onStatusPositiveEmphasized" with
     // - a text with the color adapted according to the adjusted colorScheme      
     // - a button that uses the mono version of tokens
 
     // As view
-    OUDSColoredSurface(color: theme.colorModes.modeOnStatusPositiveEmphasized) {
+    OUDSColoredSurface(color: theme.colorModes.onStatusPositiveEmphasized) {
         VStack {
             Text("Status Positive Emphasized")
-            .oudsForegroundColor(theme.colors.colorContentDefault)
+            .oudsForegroundColor(theme.colors.contentDefault)
 
             OUDSButton(text: "Button") {}
         }
@@ -57,11 +57,11 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
 
     VStack {
         Text("Status Positive Emphasized")
-        .oudsForegroundColor(theme.colors.colorContentDefault)
+        .oudsForegroundColor(theme.colors.contentDefault)
 
         OUDSButton(text: "Button") {}
     }
-    .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
+    .oudsColoredSurface(theme.colorModes.onStatusPositiveEmphasized)
 ```
 
 #### Debuging contrast ratios

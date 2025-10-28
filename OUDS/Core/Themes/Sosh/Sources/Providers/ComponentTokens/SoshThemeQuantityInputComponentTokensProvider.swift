@@ -37,7 +37,7 @@ final class SoshThemeQuantityInputComponentTokensProvider: AllQuantityInputCompo
     /// Defines a provider of component tokens dedicated to `OUDSQuantityInput`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {

@@ -26,42 +26,42 @@ extension SoshThemeFontSemanticTokensProvider: FontMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Size
 
-    @objc public final var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
-    @objc public final var fontSizeDisplayMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayMediumMobile, regular: fontSizeDisplayMediumTablet) }
-    @objc public final var fontSizeDisplaySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplaySmallMobile, regular: fontSizeDisplaySmallTablet) }
-    @objc public final var fontSizeHeadingXlarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingXlargeMobile, regular: fontSizeHeadingXlargeTablet) }
-    @objc public final var fontSizeHeadingLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingLargeMobile, regular: fontSizeHeadingLargeTablet) }
-    @objc public final var fontSizeHeadingMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingMediumMobile, regular: fontSizeHeadingMediumTablet) }
-    @objc public final var fontSizeHeadingSmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingSmallMobile, regular: fontSizeHeadingSmallTablet) }
-    @objc public final var fontSizeBodyLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodyLargeMobile, regular: fontSizeBodyLargeTablet) }
-    @objc public final var fontSizeBodyMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodyMediumMobile, regular: fontSizeBodyMediumTablet) }
-    @objc public final var fontSizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodySmallMobile, regular: fontSizeBodySmallTablet) }
+    @objc public final var sizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeDisplayLargeMobile, regular: sizeDisplayLargeTablet) }
+    @objc public final var sizeDisplayMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeDisplayMediumMobile, regular: sizeDisplayMediumTablet) }
+    @objc public final var sizeDisplaySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeDisplaySmallMobile, regular: sizeDisplaySmallTablet) }
+    @objc public final var sizeHeadingXlarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeHeadingXlargeMobile, regular: sizeHeadingXlargeTablet) }
+    @objc public final var sizeHeadingLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeHeadingLargeMobile, regular: sizeHeadingLargeTablet) }
+    @objc public final var sizeHeadingMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeHeadingMediumMobile, regular: sizeHeadingMediumTablet) }
+    @objc public final var sizeHeadingSmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeHeadingSmallMobile, regular: sizeHeadingSmallTablet) }
+    @objc public final var sizeBodyLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeBodyLargeMobile, regular: sizeBodyLargeTablet) }
+    @objc public final var sizeBodyMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeBodyMediumMobile, regular: sizeBodyMediumTablet) }
+    @objc public final var sizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeBodySmallMobile, regular: sizeBodySmallTablet) }
 
     // MARK: - Semantic token - Typography - Font - Line height
 
-    @objc public final var fontLineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplayLargeMobile, regular: fontLineHeightDisplayLargeTablet) }
-    @objc public final var fontLineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplayMediumMobile, regular: fontLineHeightDisplayMediumTablet) }
-    @objc public final var fontLineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplaySmallMobile, regular: fontLineHeightDisplaySmallTablet) }
-    @objc public final var fontLineHeightHeadingXlarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingXlargeMobile, regular: fontLineHeightHeadingXlargeTablet) }
-    @objc public final var fontLineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingLargeMobile, regular: fontLineHeightHeadingLargeTablet) }
-    @objc public final var fontLineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingMediumMobile, regular: fontLineHeightHeadingMediumTablet) }
-    @objc public final var fontLineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingSmallMobile, regular: fontLineHeightHeadingSmallTablet) }
-    @objc public final var fontLineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodyLargeMobile, regular: fontLineHeightBodyLargeTablet) }
-    @objc public final var fontLineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodyMediumMobile, regular: fontLineHeightBodyMediumTablet) }
-    @objc public final var fontLineHeightBodySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodySmallMobile, regular: fontLineHeightBodySmallTablet) }
+    @objc public final var lineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightDisplayLargeMobile, regular: lineHeightDisplayLargeTablet) }
+    @objc public final var lineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightDisplayMediumMobile, regular: lineHeightDisplayMediumTablet) }
+    @objc public final var lineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightDisplaySmallMobile, regular: lineHeightDisplaySmallTablet) }
+    @objc public final var lineHeightHeadingXlarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightHeadingXlargeMobile, regular: lineHeightHeadingXlargeTablet) }
+    @objc public final var lineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightHeadingLargeMobile, regular: lineHeightHeadingLargeTablet) }
+    @objc public final var lineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightHeadingMediumMobile, regular: lineHeightHeadingMediumTablet) }
+    @objc public final var lineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightHeadingSmallMobile, regular: lineHeightHeadingSmallTablet) }
+    @objc public final var lineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightBodyLargeMobile, regular: lineHeightBodyLargeTablet) }
+    @objc public final var lineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightBodyMediumMobile, regular: lineHeightBodyMediumTablet) }
+    @objc public final var lineHeightBodySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: lineHeightBodySmallMobile, regular: lineHeightBodySmallTablet) }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
-    @objc public final var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingDisplayLargeMobile, regular: fontLetterSpacingDisplayLargeTablet) }
-    @objc public final var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingDisplayMediumMobile, regular: fontLetterSpacingDisplayMediumTablet) }
-    @objc public final var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingDisplaySmallMobile, regular: fontLetterSpacingDisplaySmallTablet) }
-    @objc public final var fontLetterSpacingHeadingXlarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingHeadingXlargeMobile, regular: fontLetterSpacingHeadingXlargeTablet) }
-    @objc public final var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingHeadingLargeMobile, regular: fontLetterSpacingHeadingLargeTablet) }
-    @objc public final var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingHeadingMediumMobile, regular: fontLetterSpacingHeadingMediumTablet) }
-    @objc public final var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingHeadingSmallMobile, regular: fontLetterSpacingHeadingSmallTablet) }
-    @objc public final var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingBodyLargeMobile, regular: fontLetterSpacingBodyLargeTablet) }
-    @objc public final var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingBodyMediumMobile, regular: fontLetterSpacingBodyMediumTablet) }
-    @objc public final var fontLetterSpacingBodySmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingBodySmallMobile, regular: fontLetterSpacingBodySmallTablet) }
+    @objc public final var letterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingDisplayLargeMobile, regular: letterSpacingDisplayLargeTablet) }
+    @objc public final var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingDisplayMediumMobile, regular: letterSpacingDisplayMediumTablet) }
+    @objc public final var letterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingDisplaySmallMobile, regular: letterSpacingDisplaySmallTablet) }
+    @objc public final var letterSpacingHeadingXlarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingHeadingXlargeMobile, regular: letterSpacingHeadingXlargeTablet) }
+    @objc public final var letterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingHeadingLargeMobile, regular: letterSpacingHeadingLargeTablet) }
+    @objc public final var letterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingHeadingMediumMobile, regular: letterSpacingHeadingMediumTablet) }
+    @objc public final var letterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingHeadingSmallMobile, regular: letterSpacingHeadingSmallTablet) }
+    @objc public final var letterSpacingBodyLarge: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingBodyLargeMobile, regular: letterSpacingBodyLargeTablet) }
+    @objc public final var letterSpacingBodyMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingBodyMediumMobile, regular: letterSpacingBodyMediumTablet) }
+    @objc public final var letterSpacingBodySmall: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingBodySmallMobile, regular: letterSpacingBodySmallTablet) }
 }
 
 // swiftlint:enable line_length

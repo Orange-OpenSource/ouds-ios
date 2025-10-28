@@ -55,14 +55,14 @@ open class OUDSTheme: @unchecked Sendable {
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
-    public let colorCharts: AllColorChartSemanticTokensProvider!
+    public let charts: AllColorChartSemanticTokensProvider!
     // swiftlint:enable implicitly_unwrapped_optional
 
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokensProvider
 
     /// A theme can have a custom font which is not the system font
-    public let fontFamily: FontFamilySemanticToken?
+    public let family: FontFamilySemanticToken?
 
     /// All font semantic tokens exposed in one object
     public let fonts: AllFontSemanticTokensProvider
@@ -73,7 +73,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// All opacity semantic tokens exposed in one object
     public let opacities: AllOpacitySemanticTokensProvider
 
-    /// All dimension semantic tokens exposed in one object
+    /// All _ semantic tokens exposed in one object
     public let dimensions: AllDimensionSemanticTokensProvider
 
     /// All size semantic tokens exposed in one object
@@ -161,12 +161,12 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - colorCharts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
+    ///    - charts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
-    ///    - dimensions: All dimensions tokens of dimensions
+    ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -189,12 +189,12 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
-    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
-                colorCharts: AllColorChartSemanticTokensProvider? = nil,
+                charts: AllColorChartSemanticTokensProvider? = nil,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -222,7 +222,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
-                fontFamily: FontFamilySemanticToken? = nil,
+                family: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
 
@@ -230,7 +230,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.borders = borders
         self.colors = colors
         self.colorModes = colorModes
-        self.colorCharts = colorCharts
+        self.charts = charts
         self.elevations = elevations
         self.fonts = fonts
         self.grids = grids
@@ -262,7 +262,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
-        self.fontFamily = fontFamily
+        self.family = family
         self.tuning = tuning
     }
 

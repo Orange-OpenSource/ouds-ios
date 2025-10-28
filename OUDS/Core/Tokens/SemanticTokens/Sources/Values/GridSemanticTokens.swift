@@ -26,24 +26,24 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
 
-    var gridExtraCompactMinWidth: GridSemanticToken { get }
-    var gridExtraCompactMaxWidth: GridSemanticToken { get }
-    var gridExtraCompactMargin: GridSemanticToken { get }
-    var gridExtraCompactColumnGap: GridSemanticToken { get }
+    var extraCompactMinWidth: GridSemanticToken { get }
+    var extraCompactMaxWidth: GridSemanticToken { get }
+    var extraCompactMargin: GridSemanticToken { get }
+    var extraCompactColumnGap: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Compact
 
-    var gridCompactMinWidth: GridSemanticToken { get }
-    var gridCompactMaxWidth: GridSemanticToken { get }
-    var gridCompactMargin: GridSemanticToken { get }
-    var gridCompactColumnGap: GridSemanticToken { get }
+    var compactMinWidth: GridSemanticToken { get }
+    var compactMaxWidth: GridSemanticToken { get }
+    var compactMargin: GridSemanticToken { get }
+    var compactColumnGap: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    var gridRegularMinWidth: GridSemanticToken { get }
-    var gridRegularMaxWidth: GridSemanticToken { get }
-    var gridRegularMargin: GridSemanticToken { get }
-    var gridRegularColumnGap: GridSemanticToken { get }
+    var regularMinWidth: GridSemanticToken { get }
+    var regularMaxWidth: GridSemanticToken { get }
+    var regularMargin: GridSemanticToken { get }
+    var regularColumnGap: GridSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -19,7 +19,7 @@ import OUDSTokensComponent
 
 extension WireframeThemeLinkComponentTokensProvider: ExpandLinkComponentTokens {
     /// Has for value token true
-    @objc public final var expandLinkIconStart: Bool { true }
+    @objc public final var iconStart: Bool { true }
     /// Has for value token false
-    @objc public final var expandLinkIconEnd: Bool { false }
+    @objc public final var iconEnd: Bool { false }
 }

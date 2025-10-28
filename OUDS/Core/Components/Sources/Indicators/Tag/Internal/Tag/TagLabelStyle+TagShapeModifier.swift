@@ -34,9 +34,9 @@ struct TagShapeModifier: ViewModifier {
     private var cornerRadius: CGFloat {
         switch shape {
         case .square:
-            theme.borders.borderRadiusNone
+            theme.borders.radiusNone
         case .rounded:
-            theme.tag.tagBorderRadius
+            theme.tag.borderRadius
         }
     }
 }

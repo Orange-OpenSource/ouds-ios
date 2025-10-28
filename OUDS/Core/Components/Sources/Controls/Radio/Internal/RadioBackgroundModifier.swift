@@ -28,9 +28,9 @@ struct RadioBackgroundModifier: ViewModifier {
         case .enabled, .disabled, .readOnly:
             content
         case .hover:
-            content.oudsBackground(theme.controlItem.controlItemColorBgHover)
+            content.oudsBackground(theme.controlItem.colorBgHover)
         case .pressed:
-            content.oudsBackground(theme.controlItem.controlItemColorBgPressed)
+            content.oudsBackground(theme.controlItem.colorBgPressed)
         }
     }
 }

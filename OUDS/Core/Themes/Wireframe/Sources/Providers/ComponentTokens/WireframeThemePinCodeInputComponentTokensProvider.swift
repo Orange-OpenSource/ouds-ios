@@ -40,7 +40,7 @@ final class WireframeThemePinCodeInputComponentTokensProvider: AllPinCodeInputCo
     /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil,
          dimensions: AllDimensionSemanticTokensProvider? = nil)
     {

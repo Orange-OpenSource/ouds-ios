@@ -31,8 +31,8 @@ import OUDSFoundations
 ///
 ///         // Then override the text area component tokens you want.
 ///
-///         override var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockXl }
-///         override var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens.dimension1000 }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockXl }
+///         override var sizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._1000 }
 ///
 ///         // ...
 ///     }

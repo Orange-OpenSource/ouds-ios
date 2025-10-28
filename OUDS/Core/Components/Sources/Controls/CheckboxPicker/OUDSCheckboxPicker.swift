@@ -139,7 +139,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - isError: If *true*, force all ``OUDSCheckboxItem`` to be in error mode (default set to *false*)
     ///    - isReadOnly: If *true*, force all ``OUDSCheckboxItem`` to be in read only mode (default set to *false*)
     ///    - hasDivider: If *true*, force all ``OUDSCheckboxItem`` except the last one to have a divider (default set to *false*)
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.spaceFixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selections: Binding<[Tag]>,
                 checkboxes: [OUDSCheckboxPickerData<Tag>],
                 placement: OUDSCheckboxPickerPlacement = .vertical,
@@ -305,7 +305,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     /// If user does not define a custom spacing, use a default one
     private var itemsSpacing: SpaceSemanticToken {
-        customItemsSpacing ?? theme.spaces.spaceFixedNone
+        customItemsSpacing ?? theme.spaces.fixedNone
     }
 
     /// Checks if the given selections are available within the checkbox configurations.

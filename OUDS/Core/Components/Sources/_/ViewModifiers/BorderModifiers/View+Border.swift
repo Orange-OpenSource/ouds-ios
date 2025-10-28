@@ -24,10 +24,10 @@ extension View {
     ///    var body: some View {
     ///        SomeView()
     ///        .oudsBorder(
-    ///             style: theme.borders.borderStyleDefault,
-    ///             width: theme.borders.borderWidthThin,
-    ///             radius: theme.borders.borderRadiusNone,
-    ///             color: theme.colors.colorBorderDefault)
+    ///             style: theme.borders.styleDefault,
+    ///             width: theme.borders.widthThin,
+    ///             radius: theme.borders.radiusNone,
+    ///             color: theme.colors.borderDefault)
     ///     }
     /// ```
     ///

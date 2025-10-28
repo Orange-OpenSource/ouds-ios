@@ -27,13 +27,13 @@ public protocol BulletListComponentTokens {
 
     // MARK: - Spaces
 
-    var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { get }
-    var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { get }
-    var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { get }
-    var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { get }
+    var spaceColumnGapBodyLarge: SpaceSemanticToken { get }
+    var spaceColumnGapBodyMedium: SpaceSemanticToken { get }
+    var spacePaddingBlockBodyLarge: SpaceSemanticToken { get }
+    var spacePaddingBlockBodyMedium: SpaceSemanticToken { get }
+    var spacePaddingInlineLevel0: SpaceSemanticToken { get }
+    var spacePaddingInlineLevel1: SpaceSemanticToken { get }
+    var spacePaddingInlineLevel2: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

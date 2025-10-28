@@ -32,14 +32,14 @@
 /// ```swift
 ///      @Environment(\.theme) var theme
 ///
-///      // Apply theme.fonts.typeDisplayLarge
-///      Text("Foo bar wizz").typeDisplayLarge(theme)
+///      // Apply theme.fonts.displayLarge
+///      Text("Foo bar wizz").displayLarge(theme)
 ///
-///      // Apply theme.fonts.typeHeadingMedium
-///      Text("Foo bar wizz").typeHeadingMedium(theme)
+///      // Apply theme.fonts.headingMedium
+///      Text("Foo bar wizz").headingMedium(theme)
 ///
-///      // Apply theme.fonts.typeBodyDefaultSmall
-///      Text("Foo bar wizz").typeBodyDefaultSmall(theme)
+///      // Apply theme.fonts.bodyDefaultSmall
+///      Text("Foo bar wizz").bodyDefaultSmall(theme)
 ///
 ///      // Etc.
 /// ```
@@ -49,48 +49,48 @@ public protocol FontCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    var typeDisplayLarge: MultipleFontCompositeRawTokens { get }
-    var typeDisplayMedium: MultipleFontCompositeRawTokens { get }
-    var typeDisplaySmall: MultipleFontCompositeRawTokens { get }
+    var displayLarge: MultipleFontCompositeRawTokens { get }
+    var displayMedium: MultipleFontCompositeRawTokens { get }
+    var displaySmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    var typeHeadingXLarge: MultipleFontCompositeRawTokens { get }
-    var typeHeadingLarge: MultipleFontCompositeRawTokens { get }
-    var typeHeadingMedium: MultipleFontCompositeRawTokens { get }
-    var typeHeadingSmall: MultipleFontCompositeRawTokens { get }
+    var headingXLarge: MultipleFontCompositeRawTokens { get }
+    var headingLarge: MultipleFontCompositeRawTokens { get }
+    var headingMedium: MultipleFontCompositeRawTokens { get }
+    var headingSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    var typeBodyDefaultLarge: MultipleFontCompositeRawTokens { get }
-    var typeBodyDefaultMedium: MultipleFontCompositeRawTokens { get }
-    var typeBodyDefaultSmall: MultipleFontCompositeRawTokens { get }
-    var typeBodyModerateLarge: MultipleFontCompositeRawTokens { get }
-    var typeBodyModerateSmall: MultipleFontCompositeRawTokens { get }
-    var typeBodyModerateMedium: MultipleFontCompositeRawTokens { get }
-    var typeBodyStrongLarge: MultipleFontCompositeRawTokens { get }
-    var typeBodyStrongMedium: MultipleFontCompositeRawTokens { get }
-    var typeBodyStrongSmall: MultipleFontCompositeRawTokens { get }
+    var bodyDefaultLarge: MultipleFontCompositeRawTokens { get }
+    var bodyDefaultMedium: MultipleFontCompositeRawTokens { get }
+    var bodyDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var bodyModerateLarge: MultipleFontCompositeRawTokens { get }
+    var bodyModerateSmall: MultipleFontCompositeRawTokens { get }
+    var bodyModerateMedium: MultipleFontCompositeRawTokens { get }
+    var bodyStrongLarge: MultipleFontCompositeRawTokens { get }
+    var bodyStrongMedium: MultipleFontCompositeRawTokens { get }
+    var bodyStrongSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    var typeLabelDefaultXLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { get }
-    var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { get }
-    var typeLabelModerateXLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelModerateLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelModerateMedium: MultipleFontCompositeRawTokens { get }
-    var typeLabelModerateSmall: MultipleFontCompositeRawTokens { get }
-    var typeLabelStrongXLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelStrongLarge: MultipleFontCompositeRawTokens { get }
-    var typeLabelStrongMedium: MultipleFontCompositeRawTokens { get }
-    var typeLabelStrongSmall: MultipleFontCompositeRawTokens { get }
+    var labelDefaultXLarge: MultipleFontCompositeRawTokens { get }
+    var labelDefaultLarge: MultipleFontCompositeRawTokens { get }
+    var labelDefaultMedium: MultipleFontCompositeRawTokens { get }
+    var labelDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var labelModerateXLarge: MultipleFontCompositeRawTokens { get }
+    var labelModerateLarge: MultipleFontCompositeRawTokens { get }
+    var labelModerateMedium: MultipleFontCompositeRawTokens { get }
+    var labelModerateSmall: MultipleFontCompositeRawTokens { get }
+    var labelStrongXLarge: MultipleFontCompositeRawTokens { get }
+    var labelStrongLarge: MultipleFontCompositeRawTokens { get }
+    var labelStrongMedium: MultipleFontCompositeRawTokens { get }
+    var labelStrongSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    var typeCodeMedium: MultipleFontCompositeRawTokens { get }
-    var typeCodeSmall: MultipleFontCompositeRawTokens { get }
+    var codeMedium: MultipleFontCompositeRawTokens { get }
+    var codeSmall: MultipleFontCompositeRawTokens { get }
 }
 
 // swiftlint:enable missing_docs

@@ -32,11 +32,11 @@ Example with ``ButtonComponentTokens``:
 ```swift
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
-    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
+    var sizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
-    var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
-    var buttonSpacePaddingBlock: SpaceSemanticToken { get }
+    var colorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
 }
 
 // There is an existing provider for such tokens
@@ -47,14 +47,14 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     
     // And also semantic tokens
 
-    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
-    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
-    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
+    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
@@ -79,9 +79,9 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.buttonBorderRadius)
         }
-        .padding(.leading, theme.button.buttonSpacePaddingInlineChevronStart)
-        .padding(.trailing, theme.button.buttonSpacePaddingInlineChevronEnd)
-        .background(theme.button.buttonColorBgStrongEnabledMono)
+        .padding(.leading, theme.button.spacePaddingInlineChevronStart)
+        .padding(.trailing, theme.button.spacePaddingInlineChevronEnd)
+        .background(theme.button.colorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.buttonBorderRadius)
                 .stroke(Color.blue, lineWidth: theme.button.buttonBorderWidthDefault)
@@ -89,8 +89,8 @@ struct SomeView: View {
     }
 /*
     - The theme provides border semantic tokens "buttonBorderRadius" and "buttonBorderWidthDefault"
-    - The theme provides a color semantic token "buttonColorBgStrongEnabledMono"
-    - The theme provides spaces semantic token "buttonSpacePaddingInlineChevronStart" and "buttonSpacePaddingInlineChevronEnd"
+    - The theme provides a color semantic token "colorBgStrongEnabledMono"
+    - The theme provides spaces semantic token "spacePaddingInlineChevronStart" and "spacePaddingInlineChevronEnd"
 */
 }
 

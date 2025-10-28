@@ -24,11 +24,11 @@ import OUDSTokensSemantic
 ///
 /// - Since: 0.17.0
 public protocol TextAreaComponentTokens {
-    var textAreaSpacePaddingBlock: SpaceSemanticToken { get }
-    var textAreaSizeMinHeightInput: SizeSemanticToken { get }
-    var textAreaSizeMaxHeightInput: SizeSemanticToken { get }
-    var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    var textAreaSizeMaxWidth: SizeSemanticToken { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
+    var sizeMinHeightInput: SizeSemanticToken { get }
+    var sizeMaxHeightInput: SizeSemanticToken { get }
+    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

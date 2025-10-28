@@ -20,7 +20,7 @@ struct MultipleElevationCompositeRawTokensTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
-        let unique: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_4_100
+        let unique: ElevationCompositeRawToken = ElevationRawTokens.bottom_4_100
         let token = MultipleElevationCompositeRawTokens(unique)
 
         #expect(token.light == unique)
@@ -29,8 +29,8 @@ struct MultipleElevationCompositeRawTokensTests {
 
     /// Tests if light and dark values are preserved when defined with two assigned non nil values
     @Test func initWithTwoValues() {
-        let light: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_1_200
-        let dark: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_1_300
+        let light: ElevationCompositeRawToken = ElevationRawTokens.bottom_1_200
+        let dark: ElevationCompositeRawToken = ElevationRawTokens.bottom_1_300
         let token = MultipleElevationCompositeRawTokens(light: light, dark: dark)
 
         #expect(token.light == light)
@@ -40,11 +40,11 @@ struct MultipleElevationCompositeRawTokensTests {
     /// Tests comparisons between two `MultipleElevationCompositeRawTokens` to ensure tokens are considered as equal
     /// if an only if they have the same light and dark values and have the same types.
     @Test func isEqual() {
-        let first = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
-        let second = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_3_500)
-        let third = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_3_500)
-        let fourth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_2_500)
-        let fifth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
+        let first = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.bottom_4_100, dark: ElevationRawTokens.bottom_2_500)
+        let second = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.bottom_3_300, dark: ElevationRawTokens.bottom_3_500)
+        let third = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.bottom_4_100, dark: ElevationRawTokens.bottom_3_500)
+        let fourth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.bottom_3_300, dark: ElevationRawTokens.bottom_2_500)
+        let fifth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.bottom_4_100, dark: ElevationRawTokens.bottom_2_500)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         #expect(first.isEqual(first))

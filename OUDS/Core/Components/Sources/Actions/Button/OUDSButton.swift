@@ -255,9 +255,9 @@ private struct ButtonIcon: View {
 
     var body: some View {
         ScaledIcon(icon: icon.renderingMode(.template),
-                   size: theme.button.buttonSizeIconOnly)
-            .padding(.all, theme.button.buttonSpaceInsetIconOnly)
-            .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight)
+                   size: theme.button.sizeIconOnly)
+            .padding(.all, theme.button.spaceInsetIconOnly)
+            .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight)
     }
 }
 
@@ -271,9 +271,9 @@ private struct ButtonText: View {
 
     var body: some View {
         TextForButton(text: text)
-            .padding(.vertical, theme.button.buttonSpacePaddingBlock)
-            .padding(.horizontal, theme.button.buttonSpacePaddingInlineIconNone)
-            .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
+            .padding(.vertical, theme.button.spacePaddingBlock)
+            .padding(.horizontal, theme.button.spacePaddingInlineIconNone)
+            .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight, alignment: .center)
     }
 }
 
@@ -287,15 +287,15 @@ private struct ButtonTextAndIcon: View {
     let icon: Image
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.button.buttonSpaceColumnGapIcon) {
+        HStack(alignment: .center, spacing: theme.button.spaceColumnGapIcon) {
             FixedIcon(icon: icon.resizable().renderingMode(.template),
-                      size: theme.button.buttonSizeIcon)
+                      size: theme.button.sizeIcon)
             TextForButton(text: text)
         }
-        .padding(.vertical, theme.button.buttonSpacePaddingBlock)
-        .padding(.leading, theme.button.buttonSpacePaddingInlineIconStart)
-        .padding(.trailing, theme.button.buttonSpacePaddingInlineEndIconStart)
-        .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
+        .padding(.vertical, theme.button.spacePaddingBlock)
+        .padding(.leading, theme.button.spacePaddingInlineIconStart)
+        .padding(.trailing, theme.button.spacePaddingInlineEndIconStart)
+        .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight, alignment: .center)
     }
 }
 
@@ -309,7 +309,7 @@ private struct TextForButton: View {
 
     var body: some View {
         Text(LocalizedStringKey(text))
-            .typeLabelStrongLarge(theme)
+            .labelStrongLarge(theme)
             .multilineTextAlignment(.center)
     }
 }

@@ -19,7 +19,7 @@ import OUDSTokensComponent
 
 extension SoshThemeLinkComponentTokensProvider: ExpandLinkComponentTokens {
     /// Has for value token false
-    @objc public final var expandLinkIconStart: Bool { false }
+    @objc public final var iconStart: Bool { false }
     /// Has for value token true
-    @objc public final var expandLinkIconEnd: Bool { true }
+    @objc public final var iconEnd: Bool { true }
 }

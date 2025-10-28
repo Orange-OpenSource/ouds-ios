@@ -57,75 +57,75 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var enabledColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultEnabled : theme.button.buttonColorBgDefaultEnabled
+            useMonochrome ? theme.button.monoColorBgDefaultEnabled : theme.button.colorBgDefaultEnabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongEnabled : theme.colors.colorActionEnabled
+            useMonochrome ? theme.button.monoColorBgStrongEnabled : theme.colors.actionEnabled
         case .brand:
-            theme.button.buttonColorBgBrandEnabled
+            theme.button.colorBgBrandEnabled
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultHover : theme.button.buttonColorBgDefaultHover
+            useMonochrome ? theme.button.monoColorBgDefaultHover : theme.button.colorBgDefaultHover
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
+            useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongHover : theme.colors.colorActionHover
+            useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalHover : theme.button.buttonColorBgMinimalHover
+            useMonochrome ? theme.button.monoColorBgMinimalHover : theme.button.colorBgMinimalHover
         case .negative:
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultPressed : theme.button.buttonColorBgDefaultPressed
+            useMonochrome ? theme.button.monoColorBgDefaultPressed : theme.button.colorBgDefaultPressed
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
+            useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongPressed : theme.colors.colorActionPressed
+            useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorBgMinimalPressed : theme.button.buttonColorBgMinimalPressed
+            useMonochrome ? theme.button.monoColorBgMinimalPressed : theme.button.colorBgMinimalPressed
         case .negative:
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         }
     }
 
     private var loadingColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultLoading : theme.button.buttonColorBgDefaultLoading
+            useMonochrome ? theme.button.monoColorBgDefaultLoading : theme.button.colorBgDefaultLoading
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
+            useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongLoading : theme.colors.colorActionLoading
+            useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionNegativeLoading
+            theme.colors.actionNegativeLoading
         }
     }
 
     private var disabledColor: MultipleColorSemanticTokens? {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorBgDefaultDisabled : theme.button.buttonColorBgDefaultDisabled
+            useMonochrome ? theme.button.monoColorBgDefaultDisabled : theme.button.colorBgDefaultDisabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
+            useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
         case .brand:
-            useMonochrome ? theme.button.buttonMonoColorBgStrongDisabled : theme.colors.colorActionDisabled
+            useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
         case .minimal:
             nil
         case .negative:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

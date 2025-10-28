@@ -32,10 +32,10 @@ struct TagLabel: View {
             switch size {
             case .default:
                 Text(type.label)
-                    .typeLabelStrongMedium(theme)
+                    .labelStrongMedium(theme)
             case .small:
                 Text(type.label)
-                    .typeLabelStrongSmall(theme)
+                    .labelStrongSmall(theme)
             }
         }
         .oudsForegroundColor(color)
@@ -54,44 +54,44 @@ struct TagLabel: View {
                     mutedColor(for: status)
                 }
             } else {
-                theme.colors.colorContentOnActionDisabled
+                theme.colors.contentOnActionDisabled
             }
         case .loader:
-            theme.colors.colorContentDefault
+            theme.colors.contentDefault
         }
     }
 
     private func emphasizedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorContentInverse
+            theme.colors.contentInverse
         case .accent:
-            theme.colors.colorContentOnStatusAccentEmphasized
+            theme.colors.contentOnStatusAccentEmphasized
         case .positive:
-            theme.colors.colorContentOnStatusPositiveEmphasized
+            theme.colors.contentOnStatusPositiveEmphasized
         case .warning:
-            theme.colors.colorContentOnStatusWarningEmphasized
+            theme.colors.contentOnStatusWarningEmphasized
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         case .info:
-            theme.colors.colorContentOnStatusInfoEmphasized
+            theme.colors.contentOnStatusInfoEmphasized
         }
     }
 
     private func mutedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
         switch status.category {
         case .neutral:
-            theme.colors.colorContentDefault
+            theme.colors.contentDefault
         case .accent:
-            theme.colors.colorContentOnStatusAccentMuted
+            theme.colors.contentOnStatusAccentMuted
         case .positive:
-            theme.colors.colorContentOnStatusPositiveMuted
+            theme.colors.contentOnStatusPositiveMuted
         case .warning:
-            theme.colors.colorContentOnStatusWarningMuted
+            theme.colors.contentOnStatusWarningMuted
         case .negative:
-            theme.colors.colorContentOnStatusNegativeMuted
+            theme.colors.contentOnStatusNegativeMuted
         case .info:
-            theme.colors.colorContentOnStatusInfoMuted
+            theme.colors.contentOnStatusInfoMuted
         }
     }
 }

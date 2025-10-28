@@ -25,7 +25,7 @@ import OUDSTokensSemantic
 /// - Since: 0.13.0
 public protocol DividerComponentTokens {
 
-    var dividerBorderWidth: BorderWidthSemanticToken { get }
+    var borderWidth: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

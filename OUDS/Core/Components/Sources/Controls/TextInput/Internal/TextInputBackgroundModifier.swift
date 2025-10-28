@@ -45,26 +45,26 @@ struct TextInputBackgroundModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.colors.colorActionSupportEnabled
+                theme.colors.actionSupportEnabled
             case .focused:
-                theme.colors.colorActionSupportPressed
+                theme.colors.actionSupportPressed
             case .hover:
-                theme.colors.colorActionSupportHover
+                theme.colors.actionSupportHover
             }
         case .error:
-            theme.colors.colorSurfaceStatusNegativeMuted
+            theme.colors.surfaceStatusNegativeMuted
         case .loading:
-            theme.colors.colorActionSupportLoading
+            theme.colors.actionSupportLoading
         case .readOnly:
             nil
         case .disabled:
-            theme.colors.colorActionSupportDisabled
+            theme.colors.actionSupportDisabled
         }
     }
 
     private var outlinedColor: MultipleColorSemanticTokens? {
         if status == .readOnly {
-            theme.colors.colorActionSupportDisabled
+            theme.colors.actionSupportDisabled
         } else {
             nil
         }

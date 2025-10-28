@@ -31,70 +31,70 @@ struct ThemeOverrideOfCheckboxComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeMinWidth() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeMinWidth != abstractTheme.checkbox.checkboxSizeMinWidth)
-        #expect(inheritedTheme.checkbox.checkboxSizeMinWidth == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
+        #expect(inheritedTheme.checkbox.sizeMinWidth != abstractTheme.checkbox.sizeMinWidth)
+        #expect(inheritedTheme.checkbox.sizeMinWidth == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeMaxHeight() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeMaxHeight != abstractTheme.checkbox.checkboxSizeMaxHeight)
-        #expect(inheritedTheme.checkbox.checkboxSizeMaxHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
+        #expect(inheritedTheme.checkbox.sizeMaxHeight != abstractTheme.checkbox.sizeMaxHeight)
+        #expect(inheritedTheme.checkbox.sizeMaxHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeMinHeight() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeMinHeight != abstractTheme.checkbox.checkboxSizeMinHeight)
-        #expect(inheritedTheme.checkbox.checkboxSizeMinHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
+        #expect(inheritedTheme.checkbox.sizeMinHeight != abstractTheme.checkbox.sizeMinHeight)
+        #expect(inheritedTheme.checkbox.sizeMinHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeIndicator() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicator != abstractTheme.checkbox.checkboxSizeIndicator)
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicator == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
+        #expect(inheritedTheme.checkbox.sizeIndicator != abstractTheme.checkbox.sizeIndicator)
+        #expect(inheritedTheme.checkbox.sizeIndicator == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderRadius() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderRadius != abstractTheme.checkbox.checkboxBorderRadius)
-        #expect(inheritedTheme.checkbox.checkboxBorderRadius == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderRadius)
+        #expect(inheritedTheme.checkbox.borderRadius != abstractTheme.checkbox.borderRadius)
+        #expect(inheritedTheme.checkbox.borderRadius == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderRadius)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthSelected() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelected != abstractTheme.checkbox.checkboxBorderWidthSelected)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthSelected != abstractTheme.checkbox.borderWidthSelected)
+        #expect(inheritedTheme.checkbox.borderWidthSelected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthSelectedHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedHover != abstractTheme.checkbox.checkboxBorderWidthSelectedHover)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedHover != abstractTheme.checkbox.borderWidthSelectedHover)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthSelectedPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedPressed != abstractTheme.checkbox.checkboxBorderWidthSelectedPressed)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedPressed != abstractTheme.checkbox.borderWidthSelectedPressed)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthSelectedFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedFocus != abstractTheme.checkbox.checkboxBorderWidthSelectedFocus)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthSelectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedFocus != abstractTheme.checkbox.borderWidthSelectedFocus)
+        #expect(inheritedTheme.checkbox.borderWidthSelectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthUnselected() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselected != abstractTheme.checkbox.checkboxBorderWidthUnselected)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthUnselected != abstractTheme.checkbox.borderWidthUnselected)
+        #expect(inheritedTheme.checkbox.borderWidthUnselected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthUnselectedHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedHover != abstractTheme.checkbox.checkboxBorderWidthUnselectedHover)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedHover != abstractTheme.checkbox.borderWidthUnselectedHover)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthUnselectedPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedPressed != abstractTheme.checkbox.checkboxBorderWidthUnselectedPressed)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedPressed != abstractTheme.checkbox.borderWidthUnselectedPressed)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthUnselectedFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedFocus != abstractTheme.checkbox.checkboxBorderWidthUnselectedFocus)
-        #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedFocus != abstractTheme.checkbox.borderWidthUnselectedFocus)
+        #expect(inheritedTheme.checkbox.borderWidthUnselectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
     }
 }
 
