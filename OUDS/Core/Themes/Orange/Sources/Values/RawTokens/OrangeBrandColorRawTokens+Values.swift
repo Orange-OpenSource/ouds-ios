@@ -168,7 +168,7 @@ extension OrangeBrandColorRawTokens {
     /// Has for value "#2E2014FF"
     public static let colorDecorativeDeepPeach900: ColorRawToken = "#2E2014FF"
     /// Has for value "#BD793C14"
-    public static let opacityWarmGray80: ColorRawToken = "#BD793C14"
+    public static let warmGray80: ColorRawToken = "#BD793C14"
     /// Has for value "#685D5066"
-    public static let opacityWarmGray400: ColorRawToken = "#685D5066"
+    public static let warmGray400: ColorRawToken = "#685D5066"
 }

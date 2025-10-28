@@ -84,7 +84,7 @@ open class OrangeThemeColorSemanticTokensProvider { ... }
 // The provider is composed by protocols containing tokens
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var opacityTransparentLight: ColorSemanticToken { ColorRawTokens.opacityBlack0 }
-    @objc open var opacityTransparentDark: ColorSemanticToken { ColorRawTokens.opacityWhite0 }
+    @objc open var opacityTransparentDark: ColorSemanticToken { ColorRawTokens.white0 }
     ...
 }
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
@@ -100,7 +100,7 @@ open class OUDSTheme: @unchecked Sendable {
 // And finaly, the default theme, which can be subclassed, exposes the tokens through the provider
 open class OrangeTheme: OUDSTheme, @unchecked Sendable { ... }
 
-// e.g.: theme.colors.opacityInvisibleBlack
+// e.g.: theme.colors.invisibleBlack
 ```
 
 ## Semantic tokens management

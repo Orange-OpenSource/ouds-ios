@@ -45,13 +45,13 @@ struct ColorExtensionsTests {
         #expect((malachite500.rgba!.blue * 255).rounded() == 90, "Value is instead '\(malachite500.rgba!.blue)'")
 
         // Color with transparency
-        let opacityWhite500 = Color(hexadecimalCode: "#FFFFFF52")!
-        #expect((opacityWhite500.rgba!.red * 255).rounded() == 255, "Value is instead '\(opacityWhite500.rgba!.red)'")
-        #expect((opacityWhite500.rgba!.green * 255).rounded() == 255, "Value is instead '\(opacityWhite500.rgba!.green)'")
-        #expect((opacityWhite500.rgba!.blue * 255).rounded() == 255, "Value is instead '\(opacityWhite500.rgba!.blue)'")
-        #expect((opacityWhite500.rgba!.alpha * 255).rounded() == 82, "Value is instead '\(opacityWhite500.rgba!.alpha)'")
+        let white500 = Color(hexadecimalCode: "#FFFFFF52")!
+        #expect((white500.rgba!.red * 255).rounded() == 255, "Value is instead '\(white500.rgba!.red)'")
+        #expect((white500.rgba!.green * 255).rounded() == 255, "Value is instead '\(white500.rgba!.green)'")
+        #expect((white500.rgba!.blue * 255).rounded() == 255, "Value is instead '\(white500.rgba!.blue)'")
+        #expect((white500.rgba!.alpha * 255).rounded() == 82, "Value is instead '\(white500.rgba!.alpha)'")
         /*
-         opacityWhite500 is white with _500.
+         white500 is white with _500.
          In base 16, white is #FFFFFF and _500 adds 52 suffix.
          FF in base 16 is 255 in base 10, and 52 in base 16 is 82 in base 10.
          So, #FFFFFF52 is RGBA(255, 255, 255, 82)

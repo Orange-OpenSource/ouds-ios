@@ -84,11 +84,11 @@ struct OrangeBrandColorRawTokensTests {
     }
 
     @Test func orangeBrandColorRawTokenColoOpacityWarmGray80Format() throws {
-        TestsUtils.assertMatches(OrangeBrandColorRawTokens.opacityWarmGray80, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.warmGray80, regexp: Self.colorFormat)
     }
 
     @Test func orangeBrandColorRawTokenColoOpacityWarmGray400Format() throws {
-        TestsUtils.assertMatches(OrangeBrandColorRawTokens.opacityWarmGray400, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.warmGray400, regexp: Self.colorFormat)
     }
 
     @Test func orangeBrandColorRawTokenColorOrange50Format() throws {
@@ -541,7 +541,7 @@ struct OrangeBrandColorRawTokensTests {
     }
 
     @Test func orangeBrandOpacityAreAllDifferent() throws {
-        #expect(OrangeBrandColorRawTokens.opacityWarmGray80 != OrangeBrandColorRawTokens.opacityWarmGray400)
+        #expect(OrangeBrandColorRawTokens.warmGray80 != OrangeBrandColorRawTokens.warmGray400)
     }
 
     // MARK: Primitive token - Colors - Emerald
@@ -968,7 +968,7 @@ struct OrangeBrandColorRawTokensTests {
     // MARK: Primitive token - Colors - Opacity
 
     @Test func colorRawTokenColorOpacity80DarkerThan400() throws {
-        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.opacityWarmGray80, OrangeBrandColorRawTokens.opacityWarmGray400)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.warmGray80, OrangeBrandColorRawTokens.warmGray400)
     }
 }
 

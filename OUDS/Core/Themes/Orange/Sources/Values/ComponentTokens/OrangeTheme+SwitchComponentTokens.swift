@@ -39,8 +39,8 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusPill
     @objc open var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token opacities.opacityOpaque
-    @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
+    /// Has for value token opacities.opaque
+    @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opaque }
     /// Has for value token spaces.spacePaddingInline3xsmall
     @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
     /// Has for value token spaces.spacePaddingInlineXsmall

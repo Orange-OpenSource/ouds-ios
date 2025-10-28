@@ -167,26 +167,26 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorSemanticToke
     @objc public final var repositoryAccentHigher: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
     /// Has for value token OrangeBrandColorRawTokens.colorWarmGray1000
     @objc public final var repositoryAccentHighest: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray1000 }
-    /// Has for value token ColorRawTokens.opacityMalachite120
-    @objc public final var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.opacityMalachite120 }
-    /// Has for value token ColorRawTokens.opacityMalachite640
-    @objc public final var repositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.opacityMalachite640 }
-    /// Has for value token ColorRawTokens.opacityDodgerBlue80
-    @objc public final var repositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.opacityDodgerBlue80 }
-    /// Has for value token ColorRawTokens.opacityDodgerBlue520
-    @objc public final var repositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.opacityDodgerBlue520 }
-    /// Has for value token ColorRawTokens.opacitySun160
-    @objc public final var repositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.opacitySun160 }
-    /// Has for value token ColorRawTokens.opacitySun480
-    @objc public final var repositoryOpacityWarningMedium: ColorSemanticToken { ColorRawTokens.opacitySun480 }
-    /// Has for value token ColorRawTokens.opacityScarlet80
-    @objc public final var repositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.opacityScarlet80 }
-    /// Has for value token ColorRawTokens.opacityScarlet320
-    @objc public final var repositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.opacityScarlet320 }
-    /// Has for value token OrangeBrandColorRawTokens.opacityWarmGray80
-    @objc public final var repositoryOpacityAccentLow: ColorSemanticToken { OrangeBrandColorRawTokens.opacityWarmGray80 }
-    /// Has for value token OrangeBrandColorRawTokens.opacityWarmGray400
-    @objc public final var repositoryOpacityAccentMedium: ColorSemanticToken { OrangeBrandColorRawTokens.opacityWarmGray400 }
+    /// Has for value token ColorRawTokens.malachite120
+    @objc public final var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.malachite120 }
+    /// Has for value token ColorRawTokens.malachite640
+    @objc public final var repositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.malachite640 }
+    /// Has for value token ColorRawTokens.dodgerBlue80
+    @objc public final var repositoryOpacityInfoLow: ColorSemanticToken { ColorRawTokens.dodgerBlue80 }
+    /// Has for value token ColorRawTokens.dodgerBlue520
+    @objc public final var repositoryOpacityInfoMedium: ColorSemanticToken { ColorRawTokens.dodgerBlue520 }
+    /// Has for value token ColorRawTokens.sun160
+    @objc public final var repositoryOpacityWarningLow: ColorSemanticToken { ColorRawTokens.sun160 }
+    /// Has for value token ColorRawTokens.sun480
+    @objc public final var repositoryOpacityWarningMedium: ColorSemanticToken { ColorRawTokens.sun480 }
+    /// Has for value token ColorRawTokens.scarlet80
+    @objc public final var repositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.scarlet80 }
+    /// Has for value token ColorRawTokens.scarlet320
+    @objc public final var repositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.scarlet320 }
+    /// Has for value token OrangeBrandColorRawTokens.warmGray80
+    @objc public final var repositoryOpacityAccentLow: ColorSemanticToken { OrangeBrandColorRawTokens.warmGray80 }
+    /// Has for value token OrangeBrandColorRawTokens.warmGray400
+    @objc public final var repositoryOpacityAccentMedium: ColorSemanticToken { OrangeBrandColorRawTokens.warmGray400 }
     /// Has for value token ColorRawTokens.opacityBlack0
     @objc public final var repositoryOpacityBlackTransparent: ColorSemanticToken { ColorRawTokens.opacityBlack0 }
     /// Has for value token ColorRawTokens.opacityBlack40
@@ -207,24 +207,24 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorSemanticToke
     @objc public final var repositoryOpacityBlackHigher: ColorSemanticToken { ColorRawTokens.opacityBlack680 }
     /// Has for value token ColorRawTokens.opacityBlack840
     @objc public final var repositoryOpacityBlackHighest: ColorSemanticToken { ColorRawTokens.opacityBlack840 }
-    /// Has for value token ColorRawTokens.opacityWhite0
-    @objc public final var repositoryOpacityWhiteTransparent: ColorSemanticToken { ColorRawTokens.opacityWhite0 }
-    /// Has for value token ColorRawTokens.opacityWhite40
-    @objc public final var repositoryOpacityWhiteLowest: ColorSemanticToken { ColorRawTokens.opacityWhite40 }
-    /// Has for value token ColorRawTokens.opacityWhite80
-    @objc public final var repositoryOpacityWhiteLower: ColorSemanticToken { ColorRawTokens.opacityWhite80 }
-    /// Has for value token ColorRawTokens.opacityWhite120
-    @objc public final var repositoryOpacityWhiteLow: ColorSemanticToken { ColorRawTokens.opacityWhite120 }
-    /// Has for value token ColorRawTokens.opacityWhite200
-    @objc public final var repositoryOpacityWhiteMediumLow: ColorSemanticToken { ColorRawTokens.opacityWhite200 }
-    /// Has for value token ColorRawTokens.opacityWhite440
-    @objc public final var repositoryOpacityWhiteMedium: ColorSemanticToken { ColorRawTokens.opacityWhite440 }
-    /// Has for value token ColorRawTokens.opacityWhite640
-    @objc public final var repositoryOpacityWhiteHigh: ColorSemanticToken { ColorRawTokens.opacityWhite640 }
-    /// Has for value token ColorRawTokens.opacityWhite800
-    @objc public final var repositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.opacityWhite800 }
-    /// Has for value token ColorRawTokens.opacityWhite920
-    @objc public final var repositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.opacityWhite920 }
+    /// Has for value token ColorRawTokens.white0
+    @objc public final var repositoryOpacityWhiteTransparent: ColorSemanticToken { ColorRawTokens.white0 }
+    /// Has for value token ColorRawTokens.white40
+    @objc public final var repositoryOpacityWhiteLowest: ColorSemanticToken { ColorRawTokens.white40 }
+    /// Has for value token ColorRawTokens.white80
+    @objc public final var repositoryOpacityWhiteLower: ColorSemanticToken { ColorRawTokens.white80 }
+    /// Has for value token ColorRawTokens.white120
+    @objc public final var repositoryOpacityWhiteLow: ColorSemanticToken { ColorRawTokens.white120 }
+    /// Has for value token ColorRawTokens.white200
+    @objc public final var repositoryOpacityWhiteMediumLow: ColorSemanticToken { ColorRawTokens.white200 }
+    /// Has for value token ColorRawTokens.white440
+    @objc public final var repositoryOpacityWhiteMedium: ColorSemanticToken { ColorRawTokens.white440 }
+    /// Has for value token ColorRawTokens.white640
+    @objc public final var repositoryOpacityWhiteHigh: ColorSemanticToken { ColorRawTokens.white640 }
+    /// Has for value token ColorRawTokens.white800
+    @objc public final var repositoryOpacityWhiteHigher: ColorSemanticToken { ColorRawTokens.white800 }
+    /// Has for value token ColorRawTokens.white920
+    @objc public final var repositoryOpacityWhiteHighest: ColorSemanticToken { ColorRawTokens.white920 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeBusinessToolsTheme**
     @objc public final var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this OrangeBusinessToolsTheme**

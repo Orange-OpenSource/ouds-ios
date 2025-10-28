@@ -39,8 +39,8 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var switchBorderRadiusCursor: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusPill
     @objc public final var switchBorderRadiusTrack: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token opacities.opacityOpaque
-    @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
+    /// Has for value token opacities.opaque
+    @objc public final var switchOpacityCheck: OpacitySemanticToken { opacities.opaque }
     /// Has for value token spaces.spacePaddingInline3xsmall
     @objc public final var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInline3xsmall }
     /// Has for value token spaces.spacePaddingInlineXsmall

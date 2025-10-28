@@ -20,19 +20,19 @@ import OUDSTokensSemantic
 
 extension OrangeThemeOpacitySemanticTokensProvider: OpacitySemanticTokens {
     /// Has for value token OpacityRawTokens._0
-    @objc open var opacityInvisible: OpacitySemanticToken { OpacityRawTokens._0 }
+    @objc open var invisible: OpacitySemanticToken { OpacityRawTokens._0 }
     /// Has for value token OpacityRawTokens._40
-    @objc open var opacityWeakest: OpacitySemanticToken { OpacityRawTokens._40 }
+    @objc open var weakest: OpacitySemanticToken { OpacityRawTokens._40 }
     /// Has for value token OpacityRawTokens._160
-    @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens._160 }
+    @objc open var weaker: OpacitySemanticToken { OpacityRawTokens._160 }
     /// Has for value token OpacityRawTokens._320
-    @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens._320 }
+    @objc open var weak: OpacitySemanticToken { OpacityRawTokens._320 }
     /// Has for value token OpacityRawTokens._560
-    @objc open var opacityMedium: OpacitySemanticToken { OpacityRawTokens._560 }
+    @objc open var medium: OpacitySemanticToken { OpacityRawTokens._560 }
     /// Has for value token OpacityRawTokens._640
-    @objc open var opacityStrong: OpacitySemanticToken { OpacityRawTokens._640 }
+    @objc open var strong: OpacitySemanticToken { OpacityRawTokens._640 }
     /// Has for value token OpacityRawTokens._1000
-    @objc open var opacityOpaque: OpacitySemanticToken { OpacityRawTokens._1000 }
+    @objc open var opaque: OpacitySemanticToken { OpacityRawTokens._1000 }
     /// Has for value token OpacityRawTokens._200
-    @objc open var opacityDisabled: OpacitySemanticToken { OpacityRawTokens._200 }
+    @objc open var disabled: OpacitySemanticToken { OpacityRawTokens._200 }
 }

@@ -256,99 +256,99 @@ struct WireframeBrandColorRawTokensTests {
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite0DarkerThanColorOpacityWhite40() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite0, WireframeBrandColorRawTokens.opacityWhite40)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white0, WireframeBrandColorRawTokens.white40)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite40DarkerThanColorOpacityWhite80() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite40, WireframeBrandColorRawTokens.opacityWhite80)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white40, WireframeBrandColorRawTokens.white80)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite80DarkerThanColorOpacityWhite120() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite80, WireframeBrandColorRawTokens.opacityWhite120)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white80, WireframeBrandColorRawTokens.white120)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite120DarkerThanColorOpacityWhite160() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite120, WireframeBrandColorRawTokens.opacityWhite160)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white120, WireframeBrandColorRawTokens.white160)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite160DarkerThanColorOpacityWhite200() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite160, WireframeBrandColorRawTokens.opacityWhite200)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white160, WireframeBrandColorRawTokens.white200)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite200DarkerThanColorOpacityWhite240() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite200, WireframeBrandColorRawTokens.opacityWhite240)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white200, WireframeBrandColorRawTokens.white240)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite240DarkerThanColorOpacityWhite280() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite240, WireframeBrandColorRawTokens.opacityWhite280)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white240, WireframeBrandColorRawTokens.white280)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite280DarkerThanColorOpacityWhite320() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite280, WireframeBrandColorRawTokens.opacityWhite320)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white280, WireframeBrandColorRawTokens.white320)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite320DarkerThanColorOpacityWhite360() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite320, WireframeBrandColorRawTokens.opacityWhite360)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white320, WireframeBrandColorRawTokens.white360)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite360DarkerThanColorOpacityWhite400() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite360, WireframeBrandColorRawTokens.opacityWhite400)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white360, WireframeBrandColorRawTokens.white400)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite400DarkerThanColorOpacityWhite440() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite400, WireframeBrandColorRawTokens.opacityWhite440)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white400, WireframeBrandColorRawTokens.white440)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite440DarkerThanColorOpacityWhite480() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite440, WireframeBrandColorRawTokens.opacityWhite480)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white440, WireframeBrandColorRawTokens.white480)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite480DarkerThanColorOpacityWhite520() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite480, WireframeBrandColorRawTokens.opacityWhite520)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white480, WireframeBrandColorRawTokens.white520)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite520DarkerThanColorOpacityWhite560() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite520, WireframeBrandColorRawTokens.opacityWhite560)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white520, WireframeBrandColorRawTokens.white560)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite560DarkerThanColorOpacityWhite600() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite560, WireframeBrandColorRawTokens.opacityWhite600)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white560, WireframeBrandColorRawTokens.white600)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite600DarkerThanColorOpacityWhite640() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite600, WireframeBrandColorRawTokens.opacityWhite640)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white600, WireframeBrandColorRawTokens.white640)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite640DarkerThanColorOpacityWhite680() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite640, WireframeBrandColorRawTokens.opacityWhite680)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white640, WireframeBrandColorRawTokens.white680)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite680DarkerThanColorOpacityWhite720() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite680, WireframeBrandColorRawTokens.opacityWhite720)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white680, WireframeBrandColorRawTokens.white720)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite720DarkerThanColorOpacityWhite760() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite720, WireframeBrandColorRawTokens.opacityWhite760)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white720, WireframeBrandColorRawTokens.white760)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite760DarkerThanColorOpacityWhite800() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite760, WireframeBrandColorRawTokens.opacityWhite800)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white760, WireframeBrandColorRawTokens.white800)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite800DarkerThanColorOpacityWhite840() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite800, WireframeBrandColorRawTokens.opacityWhite840)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white800, WireframeBrandColorRawTokens.white840)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite840DarkerThanColorOpacityWhite880() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite840, WireframeBrandColorRawTokens.opacityWhite880)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white840, WireframeBrandColorRawTokens.white880)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite880DarkerThanColorOpacityWhite920() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite880, WireframeBrandColorRawTokens.opacityWhite920)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white880, WireframeBrandColorRawTokens.white920)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityWhite920DarkerThanColorOpacityWhite960() throws {
-        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.opacityWhite920, WireframeBrandColorRawTokens.opacityWhite960)
+        TestsUtils.assertColorDarkerThan(WireframeBrandColorRawTokens.white920, WireframeBrandColorRawTokens.white960)
     }
 
     @Test func wireframeBrandColorRawTokenColorOpacityBlack0DarkerThanColorOpacityBlack40() throws {
@@ -786,103 +786,103 @@ struct WireframeBrandColorRawTokensTests {
     }
 
     @Test func colorRawTokenColorOpacityWhite0Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite0, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white0, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite40Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite40, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white40, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite80Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite80, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white80, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite120Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite120, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white120, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite160Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite160, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white160, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite200Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite200, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white200, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite240Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite240, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white240, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite280Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite280, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white280, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite320Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite320, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white320, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite360Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite360, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white360, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite400Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite400, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white400, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite440Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite440, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white440, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite480Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite480, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white480, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite520Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite520, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white520, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite560Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite560, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white560, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite600Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite600, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white600, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite640Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite640, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white640, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite680Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite680, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white680, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite720Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite720, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white720, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite760Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite760, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white760, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite800Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite800, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white800, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite840Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite840, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white840, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite880Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite880, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white880, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite920Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite920, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white920, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityWhite960Format() throws {
-        TestsUtils.assertMatches(WireframeBrandColorRawTokens.opacityWhite960, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(WireframeBrandColorRawTokens.white960, regexp: Self.colorFormat)
     }
 
     @Test func colorRawTokenColorOpacityBlack0Format() throws {
