@@ -16,7 +16,6 @@
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all ``SizeSemanticToken`` a theme must have.
@@ -141,4 +140,3 @@ public protocol SizeSemanticTokens {
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

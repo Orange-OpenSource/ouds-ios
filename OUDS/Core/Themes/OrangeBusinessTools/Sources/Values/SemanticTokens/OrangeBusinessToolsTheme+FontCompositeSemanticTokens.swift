@@ -19,8 +19,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-
 /// Defines basic values common to all themes for `FontCompositeSemanticToken`.
 /// The aim of this extensions is to make relationships between all composite semantic tokens for typography / fonts and associated composite raw tokens.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
@@ -71,5 +69,3 @@ extension OrangeBusinessToolsThemeFontSemanticTokensProvider: FontCompositeSeman
     @objc public final var codeMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
     @objc public final var codeSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
 }
-
-// swiftlint:enable line_length

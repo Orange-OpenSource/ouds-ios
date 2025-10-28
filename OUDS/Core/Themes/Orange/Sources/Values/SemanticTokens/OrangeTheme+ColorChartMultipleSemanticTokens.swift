@@ -18,8 +18,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-
 /// Defines provider objects for `ColorChartSemanticTokens` so as to pack them as light and dark mode colors.
 /// These values cannot be overriden as not specified / allowed, forbidden by design.
 ///
@@ -64,5 +62,3 @@ extension OrangeThemeColorChartSemanticTokensProvider: ColorChartMultipleSemanti
 
     @objc public final var neutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: neutralLight, dark: neutralDark) }
 }
-
-// swiftlint:enable line_length

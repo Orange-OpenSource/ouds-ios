@@ -19,8 +19,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-
 /// Defines basic values common to all themes for `ElevationCompositeSemanticTokens``.
 /// These values can be overriden inside ``OrangeThemeElevationSemanticTokensProvider`` subclasses
 /// (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
@@ -60,5 +58,3 @@ extension OrangeThemeElevationSemanticTokensProvider: ElevationCompositeSemantic
                                             dark: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: colorStickyDark))
     }
 }
-
-// swiftlint:enable line_length

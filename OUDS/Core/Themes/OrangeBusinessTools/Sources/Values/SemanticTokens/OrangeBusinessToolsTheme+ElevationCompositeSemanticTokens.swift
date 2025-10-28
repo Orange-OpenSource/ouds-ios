@@ -19,8 +19,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-
 /// Defines basic values common to all themes for `ElevationCompositeSemanticTokens``.
 /// The aim of this extension is to make relationships between all semantic tokens for elevations and associated raw tokens.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
@@ -56,5 +54,3 @@ extension OrangeBusinessToolsThemeElevationSemanticTokensProvider: ElevationComp
                                             dark: ElevationCompositeRawToken(x: xSticky, y: ySticky, blur: blurSticky, color: colorStickyDark))
     }
 }
-
-// swiftlint:enable line_length
