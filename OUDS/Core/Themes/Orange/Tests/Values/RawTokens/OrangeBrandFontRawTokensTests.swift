@@ -23,10 +23,10 @@ import Testing
 struct OrangeBrandFontRawTokensTests {
 
     @Test func orangeBrandFontRawTokenFontFamilyBrandDefault() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrandDefault == "Helvetica Neue")
+        #expect(OrangeBrandFontRawTokens.familyBrandDefault == "Helvetica Neue")
     }
 
     @Test func orangeBrandFontRawTokenFontFamilyBrandTV() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrandTv == "Helvetica Neue LT")
+        #expect(OrangeBrandFontRawTokens.familyBrandTv == "Helvetica Neue LT")
     }
 }

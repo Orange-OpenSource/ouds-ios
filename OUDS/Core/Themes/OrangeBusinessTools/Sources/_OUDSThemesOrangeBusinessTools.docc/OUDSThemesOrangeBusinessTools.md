@@ -116,11 +116,11 @@ It is possible to use another typography, by the ones recommended are the ones d
 ```swift
     // The three following instanciations are the same
     let theme = OrangeBusinessToolsTheme()
-    let theme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
-    let theme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+    let theme = OrangeBusinessToolsTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+    let theme = OrangeBusinessToolsTheme(family: "HelveticaNeue") // Which is PostScript name of the font
 
     // This instanciation won't work as the font family is not recognised
-    let theme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
+    let theme = OrangeBusinessToolsTheme(family: "Helvetica Neue")
 ```
 
 ### Other fonts
@@ -143,7 +143,7 @@ However if, in very particular cases, you need to use another font family, you c
     // Keep in mind that it might not work because PostScript name is used combining
     // font family name and font weight.
     // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
-    let theme = OrangeBusinessToolsTheme(fontFamily: theFontFamilyNameInPostScript)
+    let theme = OrangeBusinessToolsTheme(family: theFontFamilyNameInPostScript)
 ```
 
 > Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`

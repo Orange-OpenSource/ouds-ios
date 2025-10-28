@@ -53,16 +53,16 @@ The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the co
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
 @objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
-    MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
+    MultipleFontCompositeRawTokens(compact: FontRawTokens.bold750, regular: FontRawTokens.bold1050) 
 }
 
 // And here are the raw tokens definitions:
-public static let typeBold750 = FontCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold)
-public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeightBold)
+public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lineHeight850, weight: weightBold)
+public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the system font will be used.
+Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the system font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
 
@@ -141,7 +141,7 @@ func localizedHelveticaFont() -> String {
 
 /// Instanciate your Orange theme using the font family.
 /// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
-let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
+let localizedOrangeTheme: OUDSTheme = OrangeTheme(family: localizedHelveticaFont())
 ```
 
 > Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app

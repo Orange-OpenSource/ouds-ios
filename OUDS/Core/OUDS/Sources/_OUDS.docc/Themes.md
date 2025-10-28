@@ -208,10 +208,10 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+        MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
     }
     override var typeCodeMedium: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+        MultipleFontCompositeRawTokens(FontRawTokens.bold300)
     }
 }
 ```

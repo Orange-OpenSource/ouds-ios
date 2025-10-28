@@ -128,11 +128,11 @@ For Orange products the *Helevetica Neue* font family must be used.
 ```swift
     // The three following instanciations are the same
     let theme = OrangeTheme()
-    let theme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
-    let theme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+    let theme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+    let theme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
 
     // This instanciation won't work as the font family is not recognised
-    let theme = OrangeTheme(fontFamily: "Helvetica Neue")
+    let theme = OrangeTheme(family: "Helvetica Neue")
 ```
 
 ### Other fonts
@@ -155,7 +155,7 @@ However if, in very particular cases, you need to use another font family, you c
     // Keep in mind that it might not work because PostScript name is used combining
     // font family name and font weight.
     // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
-    let theme = OrangeTheme(fontFamily: theFontFamilyNameInPostScript)
+    let theme = OrangeTheme(family: theFontFamilyNameInPostScript)
 ```
 
 > Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`
@@ -288,10 +288,10 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+        MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
     }
     override var typeCodeMedium: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+        MultipleFontCompositeRawTokens(FontRawTokens.bold300)
     }
 }
 

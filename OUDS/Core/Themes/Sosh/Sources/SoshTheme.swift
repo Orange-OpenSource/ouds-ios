@@ -128,7 +128,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
-                   fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
+                   family: SoshBrandFontRawTokens.familyDefault)
 
         registerFonts()
     }

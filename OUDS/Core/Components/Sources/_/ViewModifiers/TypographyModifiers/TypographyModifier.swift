@@ -29,7 +29,7 @@ import UIKit
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
-    let fontFamily: FontFamilyRawToken?
+    let family: FontFamilyRawToken?
 
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
     let font: MultipleFontCompositeRawTokens
@@ -57,14 +57,14 @@ struct TypographyModifier: ViewModifier {
     #if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
-        if let fontFamily {
+        if let family {
             // Can be a custom font load from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, adaptiveFont.weight.fontWeight)]
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, adaptiveFont.weight.weight)]
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {
             // Apply the system font with weight, responsive to Dynamic Type
-            return .system(size: scaledFontSize, weight: adaptiveFont.weight.fontWeight, design: .default)
+            return .system(size: scaledFontSize, weight: adaptiveFont.weight.weight, design: .default)
         }
     }
 

@@ -124,7 +124,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.WireframeTheme,
-                   fontFamily: WireframeBrandFontRawTokens.fontFamilyDefault)
+                   family: WireframeBrandFontRawTokens.familyDefault)
 
         registerFonts()
     }

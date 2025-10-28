@@ -18,7 +18,7 @@ import OUDSTokensRaw
 
 extension OrangeBrandFontRawTokens {
     /// Has for value "Helvetica Neue"
-    public static let fontFamilyBrandDefault: FontFamilyRawToken = "Helvetica Neue"
+    public static let familyBrandDefault: FontFamilyRawToken = "Helvetica Neue"
     /// Has for value "Helvetica Neue LT"
-    public static let fontFamilyBrandTv: FontFamilyRawToken = "Helvetica Neue LT"
+    public static let familyBrandTv: FontFamilyRawToken = "Helvetica Neue LT"
 }

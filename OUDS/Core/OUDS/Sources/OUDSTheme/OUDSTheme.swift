@@ -62,7 +62,7 @@ open class OUDSTheme: @unchecked Sendable {
     public let elevations: AllElevationSemanticTokensProvider
 
     /// A theme can have a custom font which is not the system font
-    public let fontFamily: FontFamilySemanticToken?
+    public let family: FontFamilySemanticToken?
 
     /// All font semantic tokens exposed in one object
     public let fonts: AllFontSemanticTokensProvider
@@ -189,7 +189,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
-    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
@@ -222,7 +222,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
-                fontFamily: FontFamilySemanticToken? = nil,
+                family: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
 
@@ -262,7 +262,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
-        self.fontFamily = fontFamily
+        self.family = family
         self.tuning = tuning
     }
 
