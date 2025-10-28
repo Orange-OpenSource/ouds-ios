@@ -56,8 +56,8 @@ extension OrangeBusinessToolsThemeLinkComponentTokensProvider: LinkComponentToke
     @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token DimensionRawTokens.dimension450
-    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension450 }
-    /// Has for value token DimensionRawTokens.dimension450
-    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension450 }
+    /// Has for value token DimensionRawTokens._450
+    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._450 }
+    /// Has for value token DimensionRawTokens._450
+    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._450 }
 }

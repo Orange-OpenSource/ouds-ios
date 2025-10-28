@@ -50,12 +50,12 @@ extension WireframeThemeControlItemComponentTokensProvider: ControlItemComponent
     @objc public final var controlItemSizeErrorIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
     @objc public final var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token DimensionRawTokens.dimension650
-    @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension650 }
-    /// Has for value token DimensionRawTokens.dimension1200
-    @objc public final var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
-    /// Has for value token DimensionRawTokens.dimension2000
-    @objc public final var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2000 }
-    /// Has for value token DimensionRawTokens.dimension4000
-    @objc public final var controlItemSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    /// Has for value token DimensionRawTokens._650
+    @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._650 }
+    /// Has for value token DimensionRawTokens._1200
+    @objc public final var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1200 }
+    /// Has for value token DimensionRawTokens._2000
+    @objc public final var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2000 }
+    /// Has for value token DimensionRawTokens._4000
+    @objc public final var controlItemSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }

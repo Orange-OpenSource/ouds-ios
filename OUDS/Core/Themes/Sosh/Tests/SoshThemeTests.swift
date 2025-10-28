@@ -69,7 +69,7 @@ struct SoshThemeTests {
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(theme.dimensions is SoshThemeDimensionSemanticTokensProvider)
+        #expect(theme._s is SoshThemeDimensionSemanticTokensProvider)
     }
 
     @Test func defaultSizeSemanticTokensProvider() throws {

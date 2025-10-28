@@ -24,7 +24,7 @@ import OUDSFoundations
 /// It implements also the protocol `TextInputComponentTokens` so as to expose the component tokens for *input text* through any `OUDSTheme`.
 /// *Inout text* components tokens are defined with raw and semantic tokens of colors (`AllColorSemanticTokensProvider`),
 /// borders (from `AllBorderSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`)
-/// and  dimensions (from `AllDimensionSemanticTokensProvider`).
+/// and  _s (from `AllDimensionSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for input text component tokens
@@ -33,7 +33,7 @@ import OUDSFoundations
 ///
 ///         // Then override the text input component tokens you want.
 ///
-///         override var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+///         override var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 ///
 ///         override var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
 ///
@@ -77,16 +77,16 @@ import OUDSFoundations
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
-///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
+///     // - OrangeThemeDimensionSemanticTokensProvider for _s
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider()
 ///
-///     // Or use your own size, border, color, space and dimension semantic tokens providers (or only some)
+///     // Or use your own size, border, color, space and _ semantic tokens providers (or only some)
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider(
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 space: CustomSpaceSemanticTokensProvider(),
-///                                                 dimensions: CustomDimensionSemanticTokensProvider())
+///                                                 _s: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
@@ -104,8 +104,8 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     /// Provider of spaces semantic tokens to use for text input spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimensions semantic tokens to use for text input dimensions
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _s semantic tokens to use for text input _s
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -117,19 +117,19 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+                _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeTextInputComponentTokensProvider")

@@ -30,8 +30,8 @@ final class OrangeBusinessToolsThemeBadgeComponentTokensProvider: AllBadgeCompon
     /// Provider of spaces semantic tokens to use for badge spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -40,13 +40,13 @@ final class OrangeBusinessToolsThemeBadgeComponentTokensProvider: AllBadgeCompon
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens, if nil, default one will be used ( ``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeBadgeComponentTokensProvider")
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeBadgeComponentTokensProvider")

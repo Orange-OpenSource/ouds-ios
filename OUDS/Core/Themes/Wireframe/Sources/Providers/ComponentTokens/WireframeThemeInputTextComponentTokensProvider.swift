@@ -39,8 +39,8 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
     /// Provider of spaces semantic tokens to use for  text input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimensions semantic tokens to use for  text input dimensions
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _s semantic tokens to use for  text input _s
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -52,19 +52,19 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`WireframeThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`WireframeThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`WireframeThemeSpaceSemanticTokensProvider`)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`WireframeThemeDimensionSemanticTokensProvider`)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (`WireframeThemeDimensionSemanticTokensProvider`)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of WireframeThemeTextInputComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeTextInputComponentTokensProvider")

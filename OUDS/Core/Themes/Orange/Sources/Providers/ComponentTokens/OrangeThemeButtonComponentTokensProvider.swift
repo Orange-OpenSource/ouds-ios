@@ -30,7 +30,7 @@ import OUDSFoundations
 ///
 ///         // Then override the button component tokens you want.
 ///
-///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
 ///
 ///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
 ///

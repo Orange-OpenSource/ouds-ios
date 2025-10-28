@@ -30,8 +30,8 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
     /// Provider of size semantic tokens to use for select input sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for select input dimensions
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for select input _s
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -40,13 +40,13 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
     /// Defines a provider of component tokens dedicated to `OUDSSelect`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimensions semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _s semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeSelectInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeSelectInputComponentTokensProvider")

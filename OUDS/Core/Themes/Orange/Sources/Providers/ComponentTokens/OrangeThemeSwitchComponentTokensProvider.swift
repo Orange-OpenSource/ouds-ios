@@ -21,7 +21,7 @@ import OUDSFoundations
 /// Custom themes can use subclass of ``OrangeThemeSwitchComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `SwitchComponentTokens` so as to expose the component tokens for *switch / toggle* through any `OUDSTheme`.
 /// *Switch* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
-/// spaces (from `AllSpacesSemanticTokensProvider`) ,  dimensions (`AllDimensionSemanticTokensProvider`),
+/// spaces (from `AllSpacesSemanticTokensProvider`) ,  _s (`AllDimensionSemanticTokensProvider`),
 /// sizes (`AllSizeSemanticTokensProvider`), borders (`AllBorderSemanticTokensProvider`) and opacities (`AllOpacitiySemanticTokensProvider`).
 ///
 /// ```swift
@@ -69,21 +69,21 @@ import OUDSFoundations
 /// ```swift
 ///     // Uses by default here:
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
-///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
+///     // - OrangeThemeDimensionSemanticTokensProvider for _s
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     // - OrangeThemeOpacitySemanticTokensProvider for opacities
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider()
 ///
-///     // Or use your own dimension, color, border, space and opacities semantic tokens providers (or only some)
+///     // Or use your own _, color, border, space and opacities semantic tokens providers (or only some)
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider(
 ///                                                 sizes: CustomSizesSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 spaces: CustomSpaceSemanticTokensProvider(),
 ///                                                 opacities: CustomOpacitySemanticTokensProvider()
-///                                                 dimensions: CustomDimensionSemanticTokensProvider())
+///                                                 _s: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0
@@ -104,8 +104,8 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
     /// Provider of opacities semantic tokens to use for switch spaces
     public let opacities: AllOpacitySemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -118,13 +118,13 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil a default one will be used (``OrangeThemeOpacitySemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
                 opacities: AllOpacitySemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+                _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeSwitchComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
@@ -132,7 +132,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
         self.opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeSwitchComponentTokensProvider")

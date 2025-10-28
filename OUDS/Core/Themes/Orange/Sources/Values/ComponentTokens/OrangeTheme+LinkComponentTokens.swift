@@ -56,8 +56,8 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc open var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc open var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    /// Has for value token DimensionRawTokens._550
+    @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    /// Has for value token DimensionRawTokens._550
+    @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
 }

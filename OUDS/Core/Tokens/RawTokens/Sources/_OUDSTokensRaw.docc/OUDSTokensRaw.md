@@ -86,7 +86,7 @@ Raw tokens enums               | Description
 ``BorderRawTokens``            | For borders (width, styles, radius...)  
 ``ColorRawTokens``             | For colors common to all modules (different to `OrangeBrandColorRawTokens`)           
 ``ColorModeRawTokens``         | Kind of frozen and not generated tokens about management of colors           
-``DimensionRawTokens``         | For dimensions used in sizes and spaces
+``DimensionRawTokens``         | For _s used in sizes and spaces
 ``ElevationRawTokens``         | For elevations to produc shadow effects
 ``FontRawTokens``              | For fonts (weights, letter spacings, sizes, line heights...)
 ``GridRawTokens``              | For grids

@@ -22,7 +22,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `SwitchComponentTokens` so as to expose the component tokens for *switch / toggle* through any `OUDSTheme`.
 /// *Switch* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
-/// spaces (from `AllSpacesSemanticTokensProvider`) , dimensions (`AllDimensionSemanticTokensProvider`),
+/// spaces (from `AllSpacesSemanticTokensProvider`) , _s (`AllDimensionSemanticTokensProvider`),
 /// borders (`AllBorderSemanticTokensProvider`), opacities (`AllOpacitySemanticTokensProvider`)
 /// and sizes (`AllSizesSemanticTokensProvider`).
 ///
@@ -44,8 +44,8 @@ final class OrangeBusinessToolsThemeSwitchComponentTokensProvider: AllSwitchComp
     /// Provider of opacities semantic tokens to use for switch spaces
     let opacities: AllOpacitySemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -58,13 +58,13 @@ final class OrangeBusinessToolsThemeSwitchComponentTokensProvider: AllSwitchComp
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil a default one will be used (``OrangeBusinessToolsThemeOpacitySemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
          opacities: AllOpacitySemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemeSwitchComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
@@ -72,7 +72,7 @@ final class OrangeBusinessToolsThemeSwitchComponentTokensProvider: AllSwitchComp
         self.colors = (colors ?? OrangeBusinessToolsThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
         self.opacities = (opacities ?? OrangeBusinessToolsThemeOpacitySemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeSwitchComponentTokensProvider")

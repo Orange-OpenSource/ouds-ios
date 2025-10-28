@@ -26,12 +26,12 @@ extension OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: Quantity
     @objc public final var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { spaces.spaceColumnGapXsmall }
     /// Has for value token spaces.spaceColumnGapMedium
     @objc public final var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token DimensionRawTokens.dimensionOutOfSystem25
-    @objc public final var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem25 }
-    /// Has for value token DimensionRawTokens.dimension2225
-    @objc public final var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2225 }
-    /// Has for value token DimensionRawTokens.dimension3000
-    @objc public final var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+    /// Has for value token DimensionRawTokens.outOfSystem25
+    @objc public final var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { DimensionRawTokens.outOfSystem25 }
+    /// Has for value token DimensionRawTokens._2225
+    @objc public final var quantityInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
+    /// Has for value token DimensionRawTokens._3000
+    @objc public final var quantityInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 }
 
 // swiftlint:enable identifier_name

@@ -26,8 +26,8 @@ import OUDSFoundations
 /// - Since: 0.17.0
 final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
-    /// Provider of dimension semantic tokens to use for pin code input dimensions
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for pin code input _s
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -35,10 +35,10 @@ final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponent
 
     /// Defines a provider of component tokens dedicated to `OUDSSelectInput`
     /// - Parameters:
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
-    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    init(_s: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSelectInputComponentTokensProvider")
-        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeSelectInputComponentTokensProvider")

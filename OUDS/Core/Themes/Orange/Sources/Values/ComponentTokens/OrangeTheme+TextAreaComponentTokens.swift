@@ -22,12 +22,12 @@ import OUDSTokensSemantic
 extension OrangeThemeTextAreaComponentTokensProvider: TextAreaComponentTokens {
     /// Has for value token spaces.spacePaddingBlockSmall
     @objc open var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockSmall }
-    /// Has for value token DimensionRawTokens.dimension900
-    @objc open var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens.dimension900 }
-    /// Has for value token DimensionRawTokens.dimension2500
-    @objc open var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens.dimension2500 }
-    /// Has for value token DimensionRawTokens.dimension1100
-    @objc open var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1100 }
-    /// Has for value token DimensionRawTokens.dimension6000
-    @objc open var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    /// Has for value token DimensionRawTokens._900
+    @objc open var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._900 }
+    /// Has for value token DimensionRawTokens._2500
+    @objc open var textAreaSizeMaxHeightInput: SizeSemanticToken { DimensionRawTokens._2500 }
+    /// Has for value token DimensionRawTokens._1100
+    @objc open var textAreaSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1100 }
+    /// Has for value token DimensionRawTokens._6000
+    @objc open var textAreaSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
 }

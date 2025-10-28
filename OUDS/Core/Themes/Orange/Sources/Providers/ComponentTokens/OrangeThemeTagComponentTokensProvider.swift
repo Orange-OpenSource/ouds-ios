@@ -20,7 +20,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTagComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProvider`) ,
+/// *Tags* components tokens are defined with semantic tokens of _s (`AllDimensionSemanticTokensProvider`) ,
 /// spaces (from `AllSpaceSemanticTokensProvider`) , sizes (from `AllSizesSemanticTokensProvider`)
 /// and borders (from `AllBorderSemanticTokensProvider`).
 ///
@@ -33,7 +33,7 @@ import OUDSFoundations
 ///
 ///         override var tagBorderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens._500 }
 ///
 ///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
 ///
@@ -71,16 +71,16 @@ import OUDSFoundations
 ///     // Uses by default here:
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
-///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
+///     // - OrangeThemeDimensionSemanticTokensProvider for _s
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider()
 ///
-///     // Or use your own size, space, dimension and border semantic tokens providers (or only some)
+///     // Or use your own size, space, _ and border semantic tokens providers (or only some)
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider(
 ///                                             sizes: CustomSizeSemanticTokensProvider(),
 ///                                             borders: CustomBorderSemanticTokensProvider(),
 ///                                             spaces: CustomSpaceSemanticTokensProvider,
-///                                             dimensions: CustomDimensionSemanticTokensProvider())
+///                                             _s: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0
@@ -95,8 +95,8 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     /// Provider of space semantic tokens to use for tag spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -107,17 +107,17 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+                _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeTagComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeTagComponentTokensProvider")

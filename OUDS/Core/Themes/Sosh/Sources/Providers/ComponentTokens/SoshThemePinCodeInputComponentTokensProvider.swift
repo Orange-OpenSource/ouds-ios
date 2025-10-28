@@ -21,7 +21,7 @@ import OUDSFoundations
 /// This provider should be integrated as a `AllPinCodeInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `PinCodeInputComponentTokens` so as to expose the component tokens for *pin code input* through any `OUDSTheme`.
-/// *Pint code input* components tokens are defined with semantic tokens of dimension (from `AllDimensionSemanticTokensProvider`),
+/// *Pint code input* components tokens are defined with semantic tokens of _ (from `AllDimensionSemanticTokensProvider`),
 /// ans spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
@@ -30,8 +30,8 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
     /// Provider of spaces semantic tokens to use for pin code input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for pin code input dimensions
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for pin code input _s
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -40,13 +40,13 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
     /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(spaces: AllSpaceSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshsThemePinCodeInputComponentTokensProvider")
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshsThemePinCodeInputComponentTokensProvider")

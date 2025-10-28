@@ -132,30 +132,30 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let fonts = OrangeBusinessToolsThemeFontSemanticTokensProvider()
         let grids = OrangeBusinessToolsThemeGridSemanticTokensProvider()
         let opacities = OrangeBusinessToolsThemeOpacitySemanticTokensProvider()
-        let dimensions = OrangeBusinessToolsThemeDimensionSemanticTokensProvider()
-        let sizes = OrangeBusinessToolsThemeSizeSemanticTokensProvider(dimensions: dimensions)
-        let spaces = OrangeBusinessToolsThemeSpaceSemanticTokensProvider(dimensions: dimensions)
+        let _s = OrangeBusinessToolsThemeDimensionSemanticTokensProvider()
+        let sizes = OrangeBusinessToolsThemeSizeSemanticTokensProvider(_s: _s)
+        let spaces = OrangeBusinessToolsThemeSpaceSemanticTokensProvider(_s: _s)
 
-        let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(spaces: spaces, _s: _s)
         let button = OrangeBusinessToolsThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeBusinessToolsThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = OrangeBusinessToolsThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
-        let chip = OrangeBusinessToolsThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let chip = OrangeBusinessToolsThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
         let controlItem = OrangeBusinessToolsThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeBusinessToolsThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
 
-        let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
+        let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, _s: _s)
         let quantityInput = OrangeBusinessToolsThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeBusinessToolsThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = OrangeBusinessToolsThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
+        let selectInput = OrangeBusinessToolsThemeSelectInputComponentTokensProvider(sizes: sizes, _s: _s)
         let skeleton = OrangeBusinessToolsThemeSkeletonComponentTokensProvider(colors: colors)
-        let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
-        let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
+        let `switch` = OrangeBusinessToolsThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, _s: _s)
+        let tag = OrangeBusinessToolsThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, _s: _s)
         let inputTag = OrangeBusinessToolsThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = OrangeBusinessToolsThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
-        let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let textInput = OrangeBusinessToolsThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
 
         super.init(borders: borders,
                    colors: colors,
@@ -165,7 +165,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   dimensions: dimensions,
+                   _s: _s,
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,

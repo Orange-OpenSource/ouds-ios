@@ -62,16 +62,16 @@ extension OrangeBusinessToolsThemeTextInputComponentTokensProvider: TextInputCom
     @objc public final var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
     @objc public final var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token dimensions.dimension4xsmall
-    @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions.dimension4xsmall }
-    /// Has for value token DimensionRawTokens.dimension500
-    @objc public final var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
-    /// Has for value token DimensionRawTokens.dimension650
-    @objc public final var textInputSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension650 }
-    /// Has for value token DimensionRawTokens.dimension2500
-    @objc public final var textInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2500 }
-    /// Has for value token DimensionRawTokens.dimension4000
-    @objc public final var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    /// Has for value token _s._4xsmall
+    @objc public final var textInputSizeVerticalDividerHeight: SizeSemanticToken { _s._4xsmall }
+    /// Has for value token DimensionRawTokens._500
+    @objc public final var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._500 }
+    /// Has for value token DimensionRawTokens._650
+    @objc public final var textInputSizeMinHeight: SizeSemanticToken { DimensionRawTokens._650 }
+    /// Has for value token DimensionRawTokens._2500
+    @objc public final var textInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
+    /// Has for value token DimensionRawTokens._4000
+    @objc public final var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }
 
 // swiftlint:enable identifier_name

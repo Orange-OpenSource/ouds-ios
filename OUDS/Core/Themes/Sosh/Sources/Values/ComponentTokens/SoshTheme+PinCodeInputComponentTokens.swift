@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 extension SoshThemePinCodeInputComponentTokensProvider: PinCodeInputComponentTokens {
     /// Has for value token spaces.spaceColumnGapMedium
     @objc public final var pinCodeInputSpaceColumnGapDigitInput: SpaceSemanticToken { spaces.spaceColumnGapMedium }
-    /// Has for value token dimensions.dimensionLarge
-    @objc public final var pinCodeInputSizeMinWidth: SizeSemanticToken { dimensions.dimensionLarge }
-    /// Has for value token dimensions.dimension3xlarge
-    @objc public final var pinCodeInputSizeMaxWidth: SizeSemanticToken { dimensions.dimension3xlarge }
+    /// Has for value token _s._Large
+    @objc public final var pinCodeInputSizeMinWidth: SizeSemanticToken { _s._Large }
+    /// Has for value token _s._3xlarge
+    @objc public final var pinCodeInputSizeMaxWidth: SizeSemanticToken { _s._3xlarge }
 }

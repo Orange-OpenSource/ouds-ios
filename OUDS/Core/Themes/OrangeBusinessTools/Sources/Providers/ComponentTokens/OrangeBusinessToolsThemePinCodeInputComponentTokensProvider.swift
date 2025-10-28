@@ -23,7 +23,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `PinCodeInputComponentTokens` so as to expose the component tokens for *pin code input* through any `OUDSTheme`.
 /// *Pint code input* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// spaces (from `AllSpaceSemanticTokensProvider`) and dimensions (from `AllDimensionSemanticTokensProvider`).
+/// spaces (from `AllSpaceSemanticTokensProvider`) and _s (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinCodeInputComponentTokensProvider {
@@ -34,8 +34,8 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     /// Provider of spaces semantic tokens to use for pin code input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for pin code input dimensions
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for pin code input _s
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -45,15 +45,15 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeBusinessToolsThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil,
-         dimensions: AllDimensionSemanticTokensProvider? = nil)
+         _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeBusinessToolsThemePinCodeInputComponentTokensProvider")
         self.sizes = (sizes ?? OrangeBusinessToolsThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeBusinessToolsThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeBusinessToolsThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemePinCodeInputComponentTokensProvider")

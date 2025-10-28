@@ -58,10 +58,10 @@ extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc public final var linkSizeMinHeightDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc public final var linkSizeMinWidthDefault: SizeSemanticToken { sizes.sizeMinInteractiveArea }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    /// Has for value token DimensionRawTokens.dimension550
-    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    /// Has for value token DimensionRawTokens._550
+    @objc public final var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens._550 }
+    /// Has for value token DimensionRawTokens._550
+    @objc public final var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens._550 }
 }
 
 // swiftlint:enable line_length

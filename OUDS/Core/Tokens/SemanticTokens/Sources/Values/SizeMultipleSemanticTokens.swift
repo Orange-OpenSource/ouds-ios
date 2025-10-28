@@ -31,13 +31,13 @@
 /// In few words:
 /// ```swift
 ///         // Some sizing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
-///         public static let dimension550: DimensionRawToken = 44
-///         public static let dimension650: DimensionRawToken = 52
+///         public static let _550: DimensionRawToken = 44
+///         public static let _650: DimensionRawToken = 52
 ///
 ///         // The sizing semantic tokens using them,
 ///         // declared (in SizeSemanticTokens.swift) and defined (in OUDSTheme+SizeSemanticTokens.swift) by the tokenator
-///         var sizeIconWithHeadingXlargeSizeSmMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
-///         var sizeIconWithHeadingXlargeSizeSmTablet: SizeSemanticToken { DimensionRawTokens.dimension650 }
+///         var sizeIconWithHeadingXlargeSizeSmMobile: SizeSemanticToken { DimensionRawTokens._550 }
+///         var sizeIconWithHeadingXlargeSizeSmTablet: SizeSemanticToken { DimensionRawTokens._650 }
 ///
 ///         // The 'higher level' size semantic tokens wrapping them and exposed to users,
 ///         // declared (in SizeMultipleSemanticTokens.swift) and defined (in OUDSTheme+SizeMultipleSemanticTokens.swift) manualy

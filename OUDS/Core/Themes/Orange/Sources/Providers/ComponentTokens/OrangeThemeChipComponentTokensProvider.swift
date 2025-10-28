@@ -21,7 +21,7 @@ import OUDSFoundations
 /// Custom themes can use subclass of ``OrangeThemeChipComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ChipComponentTokens` so as to expose the component tokens for *chip* through any `OUDSTheme`.
 /// *Chip* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`) ,
-/// spaces (from `AllSpaceSemanticTokensProvider`), dimensions (`AllDimensionSemanticTokensProvider`)
+/// spaces (from `AllSpaceSemanticTokensProvider`), _s (`AllDimensionSemanticTokensProvider`)
 /// and border  (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the chip component tokens you want.
 ///
-///         override var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///         override var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
 ///         override var chipBorderWidthDefault: BorderWidthSemanticToken { borders.widthmediumt }
 ///
@@ -74,15 +74,15 @@ import OUDSFoundations
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
-///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
+///     // - OrangeThemeDimensionSemanticTokensProvider for _s
 ///     let chipComponentTokensProvider = OrangeThemeChipComponentTokensProvider()
 ///
-///     // Or use your own dimension, border, color and space semantic tokens providers (or only some)
+///     // Or use your own _, border, color and space semantic tokens providers (or only some)
 ///     let chipComponentTokensProvider = OrangeThemeChipComponentTokensProvider(
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
 ///                                                 colors: CustomColorSemanticTokensProvider(),
 ///                                                 space: CustomSpaceSemanticTokensProvider(),
-///                                                 dimensions: CustomDimensionSemanticTokensProvider())
+///                                                 _s: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
@@ -100,8 +100,8 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     /// Provider of spaces semantic tokens to use for chip spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -113,19 +113,19 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+                _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeChipComponentTokensProvider")

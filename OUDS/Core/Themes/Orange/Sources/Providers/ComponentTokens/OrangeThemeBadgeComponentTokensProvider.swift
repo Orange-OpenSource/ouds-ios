@@ -20,7 +20,7 @@ import OUDSFoundations
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeBadgeComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `BadgeComponentTokens` so as to expose the component tokens for *badge* through any `OUDSTheme`.
-/// *Badge* components tokens are defined with semantic tokens of dimensions (`AllDimensionSemanticTokensProviders`),
+/// *Badge* components tokens are defined with semantic tokens of _s (`AllDimensionSemanticTokensProviders`),
 /// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
@@ -30,9 +30,9 @@ import OUDSFoundations
 ///
 ///         // Then override the badge component tokens you want.
 ///
-///         override var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens.dimension100 }
+///         override var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens._100 }
 ///
-///         override var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
+///         override var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
 ///
 ///         // ...
 ///     }
@@ -69,10 +69,10 @@ import OUDSFoundations
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
 ///
-///     // Or use your own dimension and space semantic tokens provider
+///     // Or use your own _ and space semantic tokens provider
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(
 ///                     spaces: CustomSpaceSemanticTokensProvider(),
-///                     dimensions: CustomDimensionSemanticTokensProvider())
+///                     _s: CustomDimensionSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
@@ -81,8 +81,8 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// Provider of spaces semantic tokens to use for badge spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
@@ -90,13 +90,13 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - _s: Provider for _ semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
     public init(spaces: AllSpaceSemanticTokensProvider? = nil,
-                dimensions: AllDimensionSemanticTokensProvider? = nil)
+                _s: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeBadgeComponentTokensProvider")
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeBadgeComponentTokensProvider")

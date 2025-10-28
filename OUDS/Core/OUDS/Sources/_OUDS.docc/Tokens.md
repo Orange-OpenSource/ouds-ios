@@ -37,7 +37,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     
     // And also semantic tokens
 

@@ -50,12 +50,12 @@ extension OrangeBusinessToolsThemeControlItemComponentTokensProvider: ControlIte
     @objc public final var controlItemSizeErrorIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeSmall
     @objc public final var controlItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
-    /// Has for value token DimensionRawTokens.dimension500
-    @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
-    /// Has for value token DimensionRawTokens.dimension1000
-    @objc public final var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1000 }
-    /// Has for value token DimensionRawTokens.dimension1800
-    @objc public final var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1800 }
-    /// Has for value token DimensionRawTokens.dimension4000
-    @objc public final var controlItemSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    /// Has for value token DimensionRawTokens._500
+    @objc public final var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
+    /// Has for value token DimensionRawTokens._1000
+    @objc public final var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1000 }
+    /// Has for value token DimensionRawTokens._1800
+    @objc public final var controlItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens._1800 }
+    /// Has for value token DimensionRawTokens._4000
+    @objc public final var controlItemSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }

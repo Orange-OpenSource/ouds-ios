@@ -32,7 +32,7 @@ struct OrangeThemeBadgeComponentTokensProviderTests {
     }
 
     @Test func defaultDimensionsSemanticTokensProvider() throws {
-        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
+        #expect(provider._s is OrangeThemeDimensionSemanticTokensProvider)
     }
 }
 

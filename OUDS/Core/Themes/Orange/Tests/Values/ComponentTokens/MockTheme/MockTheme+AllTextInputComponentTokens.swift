@@ -33,9 +33,9 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
                   borders: AllBorderSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
                   spaces: AllSpaceSemanticTokensProvider?,
-                  dimensions: AllDimensionSemanticTokensProvider?)
+                  _s: AllDimensionSemanticTokensProvider?)
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
     }
 
     // MARK: - Sizes

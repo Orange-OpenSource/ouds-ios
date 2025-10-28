@@ -24,7 +24,7 @@ import OUDSTokensSemantic
 ///
 /// # Usages
 ///
-/// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
+/// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and _s for example.
 /// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDS.
 /// This theme also provides colors charts tokens.
 ///
@@ -154,7 +154,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
-    ///    - dimensions: All semantic tokens of dimension
+    ///    - _s: All semantic tokens of _
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -187,7 +187,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
                          opacities: AllOpacitySemanticTokensProvider? = nil,
-                         dimensions: AllDimensionSemanticTokensProvider? = nil,
+                         _s: AllDimensionSemanticTokensProvider? = nil,
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
@@ -222,29 +222,29 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
         let opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
-        let dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
-        let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions))
-        let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
+        let _s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
+        let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(_s: _s))
+        let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(_s: _s))
 
-        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, _s: _s))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
-        let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s))
         let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-        let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, _s: _s))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
-        let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(dimensions: dimensions))
+        let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(_s: _s))
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
-        let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
-        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions))
+        let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, _s: _s))
+        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, _s: _s))
         let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
-        let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s))
 
         super.init(borders: borders,
                    colors: colors,
@@ -254,7 +254,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   dimensions: dimensions,
+                   _s: _s,
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,

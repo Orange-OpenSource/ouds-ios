@@ -17,20 +17,20 @@ import OUDSFoundations
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSizeSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// Closed tokens of dimensions (`AllDimensionSemanticTokensProvider`) are used so as to keep consistancy beweetn Figma specifications and library for developers.
+/// Closed tokens of _s (`AllDimensionSemanticTokensProvider`) are used so as to keep consistancy beweetn Figma specifications and library for developers.
 ///
 /// ```swift
 ///     // Define your own provider for size semantic tokens
 ///     class CustomSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 ///
-///         // Then override the size semantic tokens you want, using the dimension raw tokens available
+///         // Then override the size semantic tokens you want, using the _ raw tokens available
 ///
 ///         override var sizeIconDecorative2xl: SizeSemanticToken {
-///             DimensionRawTokens.dimension300
+///             DimensionRawTokens._300
 ///         }
 ///
 ///         override var sizeIconDecorativeMd: SizeSemanticToken {
-///             DimensionRawTokens.dimension900
+///             DimensionRawTokens._900
 ///         }
 /// }
 /// ```
@@ -41,7 +41,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(sizes: CustomSizeTokensProvider(dimensions: CustomDimensionSemanticTokensProvider()))
+///         super.init(sizes: CustomSizeTokensProvider(_s: CustomDimensionSemanticTokensProvider()))
 ///     }
 /// }
 /// ```
@@ -49,24 +49,24 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(sizes: CustomSizeTokensProvider(dimensions: CustomDimensionSemanticTokensProvider()))
+///     OrangeTheme(sizes: CustomSizeTokensProvider(_s: CustomDimensionSemanticTokensProvider()))
 /// ```
 ///
 /// - Since: 0.8.0
 open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    public let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    public let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
-    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
-    public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    /// - Parameter _s: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    public init(_s: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSizeSemanticTokensProvider")
-        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeSizeSemanticTokensProvider")

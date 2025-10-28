@@ -26,8 +26,8 @@ import SwiftUI
 ///         // its value can vary if compact or regular modes.
 ///         // They can be declared in protocol SpaceSemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+SpaceSemanticTokens extension
-///         @objc open var spaceScaled2xsMobile: SpaceSemanticToken { DimensionRawTokens.dimension50 }
-///         @objc open var spaceScaled2xsTablet: SpaceSemanticToken { DimensionRawTokens.dimension100 }
+///         @objc open var spaceScaled2xsMobile: SpaceSemanticToken { DimensionRawTokens._50 }
+///         @objc open var spaceScaled2xsTablet: SpaceSemanticToken { DimensionRawTokens._100 }
 ///
 ///         // Then the develoment team declares an "higher" level space semantic token for spaceScaled2xs
 ///         // inside SpaceMultipleSemanticTokens protocol,
@@ -69,7 +69,7 @@ public final class MultipleSpaceSemanticTokens: NSObject, Sendable {
         return compact == other.compact && regular == other.regular
     }
 
-    /// Returns the right dimension according to the `userInterfaceSizeClass`.
+    /// Returns the right _ according to the `userInterfaceSizeClass`.
     /// - Parameter userInterfaceSizeClass: The user interface size class (could be the horizontal or the vertical size class)
     /// - Returns: The right `DimensionRawToken`
     public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> DimensionRawToken {

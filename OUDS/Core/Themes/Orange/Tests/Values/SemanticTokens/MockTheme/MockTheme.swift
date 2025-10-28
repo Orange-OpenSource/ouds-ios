@@ -52,7 +52,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   dimensions: OrangeThemeDimensionSemanticTokensProvider(),
+                   _s: OrangeThemeDimensionSemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
@@ -65,16 +65,16 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),
+                   pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, _s: nil),
                    quantityInput: MockThemeQuantityInputComponentTokenProvider(sizes: sizes, spaces: spaces),
                    radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),
-                   selectInput: MockThemeSelectInputComponentTokenProvider(dimensions: nil),
+                   selectInput: MockThemeSelectInputComponentTokenProvider(_s: nil),
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
                    tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    inputTag: MockThemeInputTagComponentTokenProvider(borders: borders, colors: colors),
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
-                   textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
+                   textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: nil),
                    resourcesBundle: Bundle.OrangeTheme,
                    fontFamily: fontFamily)
     }

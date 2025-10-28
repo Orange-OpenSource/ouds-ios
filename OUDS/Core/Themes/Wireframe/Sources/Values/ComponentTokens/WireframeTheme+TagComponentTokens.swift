@@ -42,8 +42,8 @@ extension WireframeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc public final var tagSpaceInsetLoaderSmall: SpaceSemanticToken { spaces.spaceInset4xsmall }
     /// Has for value token spaces.spaceInset4xsmall
     @objc public final var tagSpaceInsetIconDefault: SpaceSemanticToken { spaces.spaceInset4xsmall }
-    /// Has for value token DimensionRawTokens.dimensionOutOfSystem75
-    @objc public final var tagSpaceInsetBulletDefault: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
+    /// Has for value token DimensionRawTokens.outOfSystem75
+    @objc public final var tagSpaceInsetBulletDefault: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
     /// Has for value token spaces.spaceInset3xsmall
     @objc public final var tagSpaceInsetLoaderDefault: SpaceSemanticToken { spaces.spaceInset3xsmall }
     /// Has for value token spaces.spaceColumnGap2xsmall
@@ -54,14 +54,14 @@ extension WireframeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc public final var tagSizeAssetSmall: SizeSemanticToken { sizes.sizeIconWithLabelSmallSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSmall
     @objc public final var tagSizeAssetDefault: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSmall }
-    /// Has for value token dimensions.dimension3xsmall
-    @objc public final var tagSizeMinHeightSmall: SizeSemanticToken { dimensions.dimension3xsmall }
-    /// Has for value token dimensions.dimensionXsmall
-    @objc public final var tagSizeMinHeightDefault: SizeSemanticToken { dimensions.dimensionXsmall }
-    /// Has for value token dimensions.dimensionLarge
-    @objc public final var tagSizeMinWidthSmall: SizeSemanticToken { dimensions.dimensionLarge }
-    /// Has for value token dimensions.dimensionXlarge
-    @objc public final var tagSizeMinWidthDefault: SizeSemanticToken { dimensions.dimensionXlarge }
+    /// Has for value token _s._3xsmall
+    @objc public final var tagSizeMinHeightSmall: SizeSemanticToken { _s._3xsmall }
+    /// Has for value token _s._Xsmall
+    @objc public final var tagSizeMinHeightDefault: SizeSemanticToken { _s._Xsmall }
+    /// Has for value token _s._Large
+    @objc public final var tagSizeMinWidthSmall: SizeSemanticToken { _s._Large }
+    /// Has for value token _s._Xlarge
+    @objc public final var tagSizeMinWidthDefault: SizeSemanticToken { _s._Xlarge }
     /// Has for value token sizes.sizeMinInteractiveArea
     @objc public final var tagSizeMinHeightInteractiveArea: SizeSemanticToken { sizes.sizeMinInteractiveArea }
 }

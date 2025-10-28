@@ -94,7 +94,7 @@ open class OrangeThemeInputTagComponentTokensProvider: AllInputTagComponentToken
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - colors: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil)
     {

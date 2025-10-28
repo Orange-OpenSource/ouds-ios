@@ -38,7 +38,7 @@ final class WireframeThemeTextAreaComponentTokensProvider: AllTextAreaComponentT
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {

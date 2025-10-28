@@ -120,7 +120,7 @@ Thus when the *tokenator* generates tokens without managing composites, the file
 
 There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `colorRepository*` tokens. They are only defined at once and are considered as "closed tokens".
 
-Also the dimension semantic tokens are closed.
+Also the _ semantic tokens are closed.
 
 #### Semantic tokens with forbidden values
 

@@ -69,7 +69,7 @@ struct WireframeThemeTests {
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(theme.dimensions is WireframeThemeDimensionSemanticTokensProvider)
+        #expect(theme._s is WireframeThemeDimensionSemanticTokensProvider)
     }
 
     @Test func defaultSizeSemanticTokensProvider() throws {

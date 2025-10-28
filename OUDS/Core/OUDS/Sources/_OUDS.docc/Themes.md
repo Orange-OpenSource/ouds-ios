@@ -14,7 +14,7 @@ This framework exposes today following themes:
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
 [Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and dimension constraints           
+[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and _ constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 
@@ -131,7 +131,7 @@ import OUDSTokensRaw // To use raw tokens if needed
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
-        DimensionRawTokens.dimension400
+        DimensionRawTokens._400
     }
     override var spaceScaledSmall: MultipleSpaceSemanticTokens {
         MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
@@ -142,10 +142,10 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 
 class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
     override var sizeIconDecorative2xl: SizeSemanticToken {
-        DimensionRawTokens.dimension300
+        DimensionRawTokens._300
     }
     override var sizeIconDecorativeMd: SizeSemanticToken {
-        DimensionRawTokens.dimension900
+        DimensionRawTokens._900
     }
 }
 

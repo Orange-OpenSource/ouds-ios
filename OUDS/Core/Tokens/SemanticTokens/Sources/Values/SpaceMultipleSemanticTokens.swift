@@ -30,13 +30,13 @@
 /// In few words:
 /// ```swift
 ///         // Some spacing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
-///         public static let dimension0: DimensionRawToken = 0
-///         public static let dimension25: DimensionRawToken = 2
+///         public static let _0: DimensionRawToken = 0
+///         public static let _25: DimensionRawToken = 2
 ///
 ///         // The spacing semantic tokens using them,
 ///         // declared (in SpaceSemanticTokens.swift) and defined (in OUDSTheme+SpaceSemanticTokens.swift) by the tokenator
-///         var spaceScaledNoneMobile: SpaceSemanticToken { DimensionRawTokens.dimension0 }
-///         var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem50 }
+///         var spaceScaledNoneMobile: SpaceSemanticToken { DimensionRawTokens._0 }
+///         var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.outOfSystem50 }
 ///
 ///         // The 'higher level' spacing semantic tokens wrapping them and exposed to users,
 ///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manualy

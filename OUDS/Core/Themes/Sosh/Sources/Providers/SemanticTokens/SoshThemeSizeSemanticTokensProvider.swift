@@ -17,23 +17,23 @@ import OUDSFoundations
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSizeSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
-/// Closed tokens of dimensions (`AllDimensionSemanticTokensProvider`) are used so as to keep consistancy between Figma specifications and library for developers.
+/// Closed tokens of _s (`AllDimensionSemanticTokensProvider`) are used so as to keep consistancy between Figma specifications and library for developers.
 ///
 /// - Since: 0.17.0
 final class SoshThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
-    let dimensions: AllDimensionSemanticTokensProvider
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    let _s: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     private nonisolated(unsafe) static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
-    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
-    init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
+    /// - Parameter _s: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    init(_s: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of SoshThemeSizeSemanticTokensProvider")
-        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
+        self._s = (_s ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeSizeSemanticTokensProvider")

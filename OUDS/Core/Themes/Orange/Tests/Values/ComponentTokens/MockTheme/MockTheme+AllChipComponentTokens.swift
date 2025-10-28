@@ -34,9 +34,9 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
                   borders: AllBorderSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
                   spaces: AllSpaceSemanticTokensProvider?,
-                  dimensions: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
+                  _s: AllDimensionSemanticTokensProvider? = OrangeThemeDimensionSemanticTokensProvider())
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, _s: _s)
     }
 
     // MARK: - Chip component tokens

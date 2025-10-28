@@ -62,16 +62,16 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     @objc open var textInputSizeLeadingIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSmall }
     /// Has for value token sizes.sizeIconWithLabelLargeSizeXsmall
     @objc open var textInputSizeCountrySelectorFlagHeight: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXsmall }
-    /// Has for value token dimensions.dimension4xsmall
-    @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { dimensions.dimension4xsmall }
-    /// Has for value token DimensionRawTokens.dimension600
-    @objc open var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    /// Has for value token DimensionRawTokens.dimension750
-    @objc open var textInputSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension750 }
-    /// Has for value token DimensionRawTokens.dimension2500
-    @objc open var textInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension2500 }
-    /// Has for value token DimensionRawTokens.dimension4000
-    @objc open var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    /// Has for value token _s._4xsmall
+    @objc open var textInputSizeVerticalDividerHeight: SizeSemanticToken { _s._4xsmall }
+    /// Has for value token DimensionRawTokens._600
+    @objc open var textInputSizeLabelMaxHeight: SizeSemanticToken { DimensionRawTokens._600 }
+    /// Has for value token DimensionRawTokens._750
+    @objc open var textInputSizeMinHeight: SizeSemanticToken { DimensionRawTokens._750 }
+    /// Has for value token DimensionRawTokens._2500
+    @objc open var textInputSizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
+    /// Has for value token DimensionRawTokens._4000
+    @objc open var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }
 
 // swiftlint:enable identifier_name

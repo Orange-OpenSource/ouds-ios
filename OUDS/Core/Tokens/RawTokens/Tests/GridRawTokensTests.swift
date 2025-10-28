@@ -27,7 +27,7 @@ import TestsUtils
 /// - the higher the grid margin token is, the higher its value is
 /// - the higher the grid column count token is, the higher its value is
 /// - the higher the grid column gap token is, the higher its value is
-/// - grid column gap tokens must be factor of `DimensionRawTokens.dimensionBase`
+/// - grid column gap tokens must be factor of `DimensionRawTokens.base`
 /// - grid column count tokens must be all different
 /// - grid column count tokens must be greater than 0
 /// - grid column gap tokens must be all different
@@ -80,7 +80,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin100MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin100, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin100, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin300GreaterThan0() throws {
@@ -92,7 +92,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin300MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin300, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin300, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin400GreaterThan0() throws {
@@ -104,7 +104,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin400MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin400, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin500GreaterThan0() throws {
@@ -116,7 +116,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin500MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin500, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin500, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin600GreaterThan0() throws {
@@ -128,7 +128,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin600MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin600, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin700GreaterThan0() throws {
@@ -140,7 +140,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin700MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin700, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin700, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin1000GreaterThan0() throws {
@@ -152,7 +152,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin1000MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin1100GreaterThan0() throws {
@@ -164,7 +164,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin1100MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin1700GreaterThan0() throws {
@@ -176,7 +176,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin1700MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1700, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1700, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridMargin250GreaterThan0() throws {
@@ -184,7 +184,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenMargin2500MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin2500, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin2500, factor: DimensionRawTokens.base)
     }
 
     @Test func nonEqualityForGridMargins() throws {
@@ -254,7 +254,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap10MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap10, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap10, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap100GreaterThan0() throws {
@@ -266,7 +266,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap100MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap100, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap100, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap200GreaterThan0() throws {
@@ -278,7 +278,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap200MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap200, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap200, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap300GreaterThan0() throws {
@@ -290,7 +290,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap300MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap300, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap300, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap400GreaterThan0() throws {
@@ -302,7 +302,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap400MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap400, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap600GreaterThan0() throws {
@@ -314,7 +314,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap600MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap600, factor: DimensionRawTokens.base)
     }
 
     @Test func gridRawTokenGridColumnGap800GreaterThan0() throws {
@@ -322,7 +322,7 @@ struct GridRawTokensTests {
     }
 
     @Test func gridRawTokenColumnGap800MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap800, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap800, factor: DimensionRawTokens.base)
     }
 
     @Test func nonEqualityForGridColumnGaps() throws {

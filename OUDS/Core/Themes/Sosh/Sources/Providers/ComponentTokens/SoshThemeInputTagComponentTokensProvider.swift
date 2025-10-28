@@ -36,7 +36,7 @@ final class SoshThemeInputTagComponentTokensProvider: AllInputTagComponentTokens
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
+    ///    - colors: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     init(borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil)
     {
