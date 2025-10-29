@@ -46,10 +46,8 @@ public protocol DimensionSemanticTokens {
     var _11xsmall: DimensionSemanticToken { get }
     var _12xsmall: DimensionSemanticToken { get }
 
-    var dimensionsmall: DimensionSemanticToken { get }
-
+    var _small: DimensionSemanticToken { get }
     var _medium: DimensionSemanticToken { get }
-
     var _large: DimensionSemanticToken { get }
 
     var _xlarge: DimensionSemanticToken { get }

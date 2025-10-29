@@ -254,10 +254,10 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Always
 
-    override public var colorAlwaysBlack: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorAlwaysOnBlack: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorAlwaysOnWhite: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorAlwaysWhite: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var alwaysBlack: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var alwaysOnBlack: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var alwaysOnWhite: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var alwaysWhite: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     // MARK: - Color - Background
 

@@ -46,7 +46,7 @@ extension OrangeBusinessToolsThemeDimensionSemanticTokensProvider: DimensionSema
     /// Has for value token DimensionRawTokens._350
     @objc public final var _xsmall: DimensionSemanticToken { DimensionRawTokens._350 }
     /// Has for value token DimensionRawTokens._400
-    @objc public final var dimensionsmall: DimensionSemanticToken { DimensionRawTokens._400 }
+    @objc public final var _small: DimensionSemanticToken { DimensionRawTokens._400 }
     /// Has for value token DimensionRawTokens._450
     @objc public final var _medium: DimensionSemanticToken { DimensionRawTokens._450 }
     /// Has for value token DimensionRawTokens._500
