@@ -56,11 +56,11 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var sizeAssetDefault: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._3xsmall
     @objc open var sizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc open var sizeMinHeightDefault: SizeSemanticToken { dimensions._xsmall }
-    /// Has for value token dimensions._Large
+    /// Has for value token dimensions._large
     @objc open var sizeMinWidthSmall: SizeSemanticToken { dimensions._large }
-    /// Has for value token dimensions._Xlarge
+    /// Has for value token dimensions._xlarge
     @objc open var sizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
     /// Has for value token sizes.minInteractiveArea
     @objc open var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }

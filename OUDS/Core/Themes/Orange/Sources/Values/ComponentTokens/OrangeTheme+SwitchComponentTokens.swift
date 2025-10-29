@@ -47,17 +47,17 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var spacePaddingInlineUnselected: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token dimensions._3xlarge
     @objc open var sizeMinWidth: SizeSemanticToken { dimensions._3xlarge }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc open var sizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.minInteractiveArea
     @objc open var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc open var sizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall
     @objc open var sizeWidthCursorSelected: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._5xsmall
     @objc open var sizeWidthCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc open var sizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall
     @objc open var sizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions._3xsmall }
@@ -67,7 +67,7 @@ extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var sizeHeightCursorSelected: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._5xsmall
     @objc open var sizeHeightCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc open var sizeHeightTrack: SizeSemanticToken { dimensions._xsmall }
 }
 

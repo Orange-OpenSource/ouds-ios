@@ -636,11 +636,11 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositoryOpacityWhiteLower
     @objc public final var opacityLowerDark: ColorSemanticToken { repositoryOpacityWhiteLower }
     /// Has for value token repositoryNeutralEmphasizedBlack
-    @objc public final var colorAlwaysBlack: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
+    @objc public final var alwaysBlack: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
     /// Has for value token repositoryNeutralMutedWhite
-    @objc public final var colorAlwaysWhite: ColorSemanticToken { repositoryNeutralMutedWhite }
+    @objc public final var alwaysWhite: ColorSemanticToken { repositoryNeutralMutedWhite }
     /// Has for value token repositoryNeutralMutedLower
-    @objc public final var colorAlwaysOnBlack: ColorSemanticToken { repositoryNeutralMutedLower }
+    @objc public final var alwaysOnBlack: ColorSemanticToken { repositoryNeutralMutedLower }
     /// Has for value token repositoryNeutralEmphasizedBlack
-    @objc public final var colorAlwaysOnWhite: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
+    @objc public final var alwaysOnWhite: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
 }

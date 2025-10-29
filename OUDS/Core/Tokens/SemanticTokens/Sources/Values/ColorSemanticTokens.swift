@@ -103,10 +103,10 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Always
 
-    var colorAlwaysBlack: ColorSemanticToken { get }
-    var colorAlwaysOnBlack: ColorSemanticToken { get }
-    var colorAlwaysOnWhite: ColorSemanticToken { get }
-    var colorAlwaysWhite: ColorSemanticToken { get }
+    var alwaysBlack: ColorSemanticToken { get }
+    var alwaysOnBlack: ColorSemanticToken { get }
+    var alwaysOnWhite: ColorSemanticToken { get }
+    var alwaysWhite: ColorSemanticToken { get }
 
     // MARK: - Color - Background
 

@@ -47,17 +47,17 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var spacePaddingInlineUnselected: SpaceSemanticToken { spaces.paddingInlineXsmall }
     /// Has for value token dimensions._2xlarge
     @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.minInteractiveArea
     @objc public final var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeMaxHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall
     @objc public final var sizeWidthCursorSelected: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._5xsmall
     @objc public final var sizeWidthCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeWidthCursorSelectedPressed: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token dimensions._3xsmall
     @objc public final var sizeWidthCursorUnselectedPressed: SizeSemanticToken { dimensions._3xsmall }
@@ -67,7 +67,7 @@ extension OrangeBusinessToolsThemeSwitchComponentTokensProvider: SwitchComponent
     @objc public final var sizeHeightCursorSelected: SizeSemanticToken { dimensions._3xsmall }
     /// Has for value token dimensions._5xsmall
     @objc public final var sizeHeightCursorUnselected: SizeSemanticToken { dimensions._5xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeHeightTrack: SizeSemanticToken { dimensions._xsmall }
 }
 

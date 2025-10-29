@@ -113,7 +113,7 @@ extension SoshThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc public final var sizeIcon: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._2xlarge
     @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._2xlarge }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeMinHeight: SizeSemanticToken { dimensions._xsmall }
     /// Has for value token sizes.minInteractiveArea
     @objc public final var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }

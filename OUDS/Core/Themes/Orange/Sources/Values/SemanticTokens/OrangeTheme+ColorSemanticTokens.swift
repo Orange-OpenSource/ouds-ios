@@ -636,11 +636,11 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     /// Has for value token repositoryOpacityWhiteLower
     @objc open var opacityLowerDark: ColorSemanticToken { repositoryOpacityWhiteLower }
     /// Has for value token repositoryNeutralEmphasizedBlack
-    @objc open var colorAlwaysBlack: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
+    @objc open var alwaysBlack: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
     /// Has for value token repositoryNeutralMutedWhite
-    @objc open var colorAlwaysWhite: ColorSemanticToken { repositoryNeutralMutedWhite }
+    @objc open var alwaysWhite: ColorSemanticToken { repositoryNeutralMutedWhite }
     /// Has for value token repositoryNeutralMutedLower
-    @objc open var colorAlwaysOnBlack: ColorSemanticToken { repositoryNeutralMutedLower }
+    @objc open var alwaysOnBlack: ColorSemanticToken { repositoryNeutralMutedLower }
     /// Has for value token repositoryNeutralEmphasizedBlack
-    @objc open var colorAlwaysOnWhite: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
+    @objc open var alwaysOnWhite: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
 }
