@@ -32,7 +32,7 @@ final class WireframeThemeInputTagComponentTokensProvider: AllInputTagComponentT
     let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`

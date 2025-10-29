@@ -126,7 +126,7 @@ extension OUDSWCAG21Ratio {
     ///     OUDSWCAG21Ratios.oudsDebugWCAG21Colors = false
     /// #endif
     /// ```
-    public nonisolated(unsafe) static var oudsDebugWCAG21Colors: Bool = false
+    nonisolated(unsafe) public static var oudsDebugWCAG21Colors: Bool = false
 
     /// Lists the type of elements under tests for constrat ratio check.
     /// Textual elements should have higher contrasts than non-textual ones.

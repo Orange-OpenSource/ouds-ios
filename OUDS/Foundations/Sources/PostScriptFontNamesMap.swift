@@ -98,7 +98,7 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 /// - do not collide with one of the Apple available fonts (in iOS side)
 ///
 /// Defines also kind of fallbacks if the weight or the style is not defined.
-public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap =
+nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
         // MARK: OUDS

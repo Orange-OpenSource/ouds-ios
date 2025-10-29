@@ -15,7 +15,7 @@
 
 --exclude Resources/CodeGen/**,Pods/**
 
---disable blankLinesAroundMark,blankLinesAtStartOfScope,redundantRawValues
+--disable blankLinesAroundMark,blankLinesAtStartOfScope,redundantRawValues,modifierOrder
 
 --closingparen same-line
 --decimalgrouping 3,4

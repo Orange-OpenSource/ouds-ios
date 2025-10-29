@@ -57,7 +57,7 @@ import SwiftUI
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
     /// Flag to avoid to register severals the fonts making some errors happen
-    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
+    nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
     // MARK: - Initializers
 

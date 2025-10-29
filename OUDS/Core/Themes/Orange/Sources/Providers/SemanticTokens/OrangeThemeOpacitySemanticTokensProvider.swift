@@ -51,7 +51,7 @@ import OUDSFoundations
 open class OrangeThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensProvider {
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider

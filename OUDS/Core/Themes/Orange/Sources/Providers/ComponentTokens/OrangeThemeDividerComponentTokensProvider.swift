@@ -80,7 +80,7 @@ open class OrangeThemeDividerComponentTokensProvider: AllDividerComponentTokensP
     public let borders: AllBorderSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSHorizontalDivider` and `OUDSVerticalDivider`

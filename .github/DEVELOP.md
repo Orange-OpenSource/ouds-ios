@@ -64,13 +64,13 @@ brew install periphery
 brew install gitleaks
 # or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.59.1)
+# For SwiftLint (at least 0.62.2)
 brew install swiftlint
-# or `brew reinstall swiftlint` to get updates if old version installed
+# or `brew upgrade swiftlint` to get updates if old version installed
 
-# For SwiftFormat (at least 0.56.2)
+# For SwiftFormat (at least 0.58.5)
 brew install swiftformat
-# or `brew reinstall swiftformat` to get updates if old version installed
+# or `brew upgrade swiftformat` to get updates if old version installed
 
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
