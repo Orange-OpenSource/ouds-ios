@@ -56,11 +56,11 @@ extension OrangeBusinessToolsThemeTagComponentTokensProvider: TagComponentTokens
     @objc public final var sizeAssetDefault: SizeSemanticToken { sizes.iconWithLabelMediumSizeSmall }
     /// Has for value token dimensions._3xsmall
     @objc public final var sizeMinHeightSmall: SizeSemanticToken { dimensions._3xsmall }
-    /// Has for value token dimensions._Xsmall
+    /// Has for value token dimensions._xsmall
     @objc public final var sizeMinHeightDefault: SizeSemanticToken { dimensions._xsmall }
-    /// Has for value token dimensions._Large
+    /// Has for value token dimensions._large
     @objc public final var sizeMinWidthSmall: SizeSemanticToken { dimensions._large }
-    /// Has for value token dimensions._Xlarge
+    /// Has for value token dimensions._xlarge
     @objc public final var sizeMinWidthDefault: SizeSemanticToken { dimensions._xlarge }
     /// Has for value token sizes.minInteractiveArea
     @objc public final var sizeMinHeightInteractiveArea: SizeSemanticToken { sizes.minInteractiveArea }
