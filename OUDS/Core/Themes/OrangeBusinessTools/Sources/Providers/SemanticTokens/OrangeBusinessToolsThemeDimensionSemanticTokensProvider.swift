@@ -28,7 +28,7 @@ import OUDSFoundations
 final class OrangeBusinessToolsThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
