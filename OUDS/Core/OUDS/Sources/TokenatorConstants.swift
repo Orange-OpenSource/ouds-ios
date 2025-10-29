@@ -42,7 +42,7 @@ public enum OUDSVersions {
     // MARK: - Components versions - Actions
 
     /// Version of the Figma specifications for the component button
-    public static let componentButtonVersion = "3.0.0" // NOTE: Manually fixed, still 3.0.0 implemented and not 3.2.0
+    public static let componentButtonVersion = "3.2.0"
 
     // MARK: - Components versions - Navigation
 
@@ -62,24 +62,24 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component switch
     public static let componentSwitchVersion = "1.4.0"
     /// Version of the Figma specifications for the component text input
-    public static let componentTextInputVersion = "1.3.0" // NOTE: Manually fixed, 1.3.0 implemented and not 1.1.0
+    public static let componentTextInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component phone number input
-    public static let componentPhoneNumberInputVersion = "1.1.0"
+    public static let componentPhoneNumberInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component password input
-    public static let componentPasswordInputVersion = "1.1.0"
+    public static let componentPasswordInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component pin code input
-    public static let componentPinCodeInputVersion = "1.1.0"
+    public static let componentPinCodeInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component quantity input
-    public static let componentQuantityInputVersion = "1.1.0"
+    public static let componentQuantityInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component select input
-    public static let componentSelectInputVersion = "1.1.0"
+    public static let componentSelectInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component text area
-    public static let componentTextAreaVersion = "1.0.0"
+    public static let componentTextAreaVersion = "1.1.0"
 
     // MARK: - Components versions - Tag
 
     /// Version of the Figma specifications for the component badge
-    public static let componentBadgeVersion = "1.1.0" // NOTE: Manually fixed, still 1.1.0 implemented and not 1.2.0
+    public static let componentBadgeVersion = "1.2.0"
     /// Version of the Figma specifications for the component skeleton
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag
