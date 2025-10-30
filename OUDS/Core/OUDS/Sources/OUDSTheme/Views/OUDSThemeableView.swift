@@ -107,19 +107,27 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
     private static let extraCompactMaxWidth = 390.0
 
     private var horizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        #if os(iOS)
         if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
             .extraCompact
         } else {
             horizontalSizeClass == .compact ? .compact : .regular
         }
+        #else
+        horizontalSizeClass == .compact ? .compact : .regular
+        #endif
     }
 
     private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        #if os(iOS)
         if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
             .extraCompact
         } else {
             verticalSizeClass == .compact ? .compact : .regular
         }
+        #else
+        verticalSizeClass == .compact ? .compact : .regular
+        #endif
     }
 
     func body(content: Content) -> some View {

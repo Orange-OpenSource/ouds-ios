@@ -87,7 +87,7 @@ struct TypographyModifier: ViewModifier {
         // `tracking()` only available for iOS 16+
         // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), #available(tvOS 16.0, *) {
             content
                 .font(adaptiveTypography)
                 .lineSpacing(adaptiveLineHeight)

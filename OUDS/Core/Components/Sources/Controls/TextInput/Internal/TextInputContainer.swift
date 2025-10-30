@@ -97,7 +97,9 @@ struct TextInputContainer: View {
         .frame(minHeight: theme.textInput.sizeMinHeight, alignment: .leading)
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
-        .onHover { hover = $0 }
+        #if !os(tvOS)
+            .onHover { hover = $0 }
+        #endif
     }
 
     // MARK: - Helpers

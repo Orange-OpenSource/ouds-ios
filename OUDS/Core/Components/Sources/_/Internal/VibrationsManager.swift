@@ -11,11 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(iOS)
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import Foundation
-#if canImport(UIKit)
 import UIKit
-#endif
 
 /// For vibrations using the standard feedback generator
 struct VibrationsManager {
@@ -24,25 +23,20 @@ struct VibrationsManager {
 
     @MainActor
     static func success() {
-        #if canImport(UIKit)
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
-        #endif
     }
 
     @MainActor
     static func warning() {
-        #if canImport(UIKit)
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.warning)
-        #endif
     }
 
     @MainActor
     static func error() {
-        #if canImport(UIKit)
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
-        #endif
     }
 }
+#endif
