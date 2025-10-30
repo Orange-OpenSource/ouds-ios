@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - `actions/upload-artifact` action from v4.6.2 to v5.0.0 for `scorecard` workflow
 - `ruby/setup-ruby` action from v1.26.0 to v1.267.0 for `build-and-test` workflow 
 - `SwiftLintPlugins` Swift package from v0.62.1 to v0.62.2
