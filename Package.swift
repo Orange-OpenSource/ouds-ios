@@ -24,7 +24,7 @@ let package = Package(
 
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15), .macOS(.v13)], // No official support of macOS, but mandatory for swift-docc-plugin
+    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v13)], // No official support of macOS, but mandatory for swift-docc-plugin
 
     // MARK: - Products
 
