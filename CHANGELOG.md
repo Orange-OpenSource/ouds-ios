@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Experimental support for macOS (Orange-OpenSource/ouds-ios#1102) 
 - `input tag` component (Orange-OpenSource/ouds-ios#917)
 - Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
 
