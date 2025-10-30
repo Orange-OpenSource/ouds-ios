@@ -106,7 +106,7 @@ let package = Package(
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.5"),
         // Linter for Swift code
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.1"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
         // Formatter for Swift code
         .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.5"),
     ],
