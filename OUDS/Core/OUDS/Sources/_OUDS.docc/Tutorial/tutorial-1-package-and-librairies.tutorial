@@ -65,15 +65,15 @@
                 OUDS supports officialy all Apple OS like visionOS, tvOS, watchOS, iPadOS, iOS and also CarPlay.
 
                 @Justification(reaction: "Try again!") {
-                    The main supported OS is iOS / iPadOS. However we keep in mind macOS, visionOS, tvOS, watchOS and CarPlay. 
+                    The main supported targets are iOS / iPadOS. However we do our best to support macOS and visionOS. tvOS, watchOS and CarPlay are not scoped yet. 
                 }
             }
 
             @Choice(isCorrect: false) {
                 OUDS provides UIKit components 
                   
-                @Justification(reaction: "Ttry again!") {
-                    OUDS supports officialy only SwftUI. UIKit is very experimental and not recommended 
+                @Justification(reaction: "Try again!") {
+                    OUDS supports officialy only SwiftUI. UIKit is very experimental and not recommended.
                 }
             }
         }
