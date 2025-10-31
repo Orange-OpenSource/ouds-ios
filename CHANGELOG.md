@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.26.0 to v1.267.0 for `build-and-test` workflow 
 - `SwiftLintPlugins` Swift package from v0.62.1 to v0.62.2
 - `SwiftFormat` Swift package from v0.58.3 to v0.58.5
 - Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
