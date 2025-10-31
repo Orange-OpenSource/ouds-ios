@@ -44,10 +44,10 @@
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
-[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
-[![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
-[![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
-[![visionOS 26.0](https://img.shields.io/badge/visionOS-26.0-FF1AB2?style=for-the-badge)
+![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
+![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
+![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
+![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
 [![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
