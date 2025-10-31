@@ -67,7 +67,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > This Swift Package is dedicated to SwiftUI. UIKit and other frameworks are not supported.
 
 > [!NOTE]
-> Main targets are iOS / iPadOS, but we do our best to support macOS and visionOS!
+> Main targets are iOS / iPadOS, and we do our best to support macOS and visionOS!
 
 ## Quick start
 

@@ -51,7 +51,7 @@ private struct LinkUnderlineModifier: ViewModifier {
     @State private var textWidth: CGFloat = 0
 
     func body(content: Content) -> some View {
-        if #available(iOS 16.0, *), #available(tvOS 16.0, *) {
+        if #available(iOS 16.0, *) {
             content.underline(underlineActive, pattern: .solid)
         } else {
             if underlineActive {

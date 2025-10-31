@@ -54,7 +54,7 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? font.compact : font.regular
     }
 
-    #if canImport(UIKit)
+    #if os(iOS) || os(visionOS)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
         if let family {
@@ -87,13 +87,17 @@ struct TypographyModifier: ViewModifier {
         // `tracking()` only available for iOS 16+
         // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
-        if #available(iOS 16.0, *), #available(tvOS 16.0, *) {
+        if #available(iOS 16.0, *) {
             content
                 .font(adaptiveTypography)
                 .lineSpacing(adaptiveLineHeight)
                 .tracking(adaptiveFont.letterSpacing)
                 .minimumScaleFactor(0.5)
+            #if os(visionOS)
+                .onChange(of: sizeCategory) { _, _ in }
+            #else
                 .onChange(of: sizeCategory) { _ in }
+            #endif
         } else {
             content
                 .font(adaptiveTypography)
@@ -157,7 +161,7 @@ struct TypographyModifier: ViewModifier {
             content
                 .tracking(adaptiveFont.letterSpacing)
                 .minimumScaleFactor(0.5)
-                .onChange(of: sizeCategory) { _ in }
+                .onChange(of: sizeCategory) { _, _ in }
         } else {
             content
                 .minimumScaleFactor(0.5)
