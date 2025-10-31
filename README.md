@@ -23,8 +23,6 @@
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/periphery.yml" title="Periphery status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/periphery.yml/badge.svg" alt="Periphery status"></a>
-&nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" title="GitHub Pages deployment status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Pages deployment status"></a>

@@ -421,10 +421,12 @@ To apply it, run in your project (e.g. once cloned):
 git config --local --add core.hooksPath .git-hooks
 ```
 
+*SwiftFormat* is not used in GitHub Actions CI/CD because sources should be formatted before beeing pushed, not after.
+
 ## Dead code
 
 We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
-This tool is run in CI/CD side and can be run localy using *Fastlane*:
+This tool should be run locally, for example using *Fastlane*:
 
 Install *Periphery*:
 ```shell
@@ -435,6 +437,8 @@ And run:
 ```shell
 bundle exec fastlane check_dead_code
 ```
+
+Because _Periphery_ has several issues about false positive, and needs to compile the project to look for symbols, this tool is not used anymore in CI/CD on GitHub Actions. Indeed we needed to allow errors and treat errors as warnings, so as manual check was still needed.
 
 ## Software Bill of Materials
 
@@ -479,7 +483,6 @@ Workflows are the following:
 - [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
 - [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
-- [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
 - [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
 - [swiftlint](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
 - [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles

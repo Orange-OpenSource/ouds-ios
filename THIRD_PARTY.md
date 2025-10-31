@@ -35,7 +35,7 @@ You may download the source code on the [following website](https://github.com/g
 You may download the source code on the [following website](https://github.com/anchore/grype).
 
 ### Periphery
-<!-- GitHub Action workflow -->
+<!-- (CI/CD, tools, etc.) -->
 
 Copyright (c) 2019 Ian Leitch
 
