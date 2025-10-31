@@ -31,11 +31,11 @@ Using these resources will allow you to create Orange branded applications faste
 
 You can get details about the this design system in [the official website unified-design-system.orange.com](https://unified-design-system.orange.com/).
 
-> Note: Orange Unified Design System framework supports iOS 15 and later.
+> Note: Orange Unified Design System framework supports iOS / iPadOS 15 and later.
 
-> Important: Orange Unified Design System framework focuses on iOS / iPadOS, other platforms like visionOS, watchOS, macOS and tvOS are not scoped yet.
+> Important: Orange Unified Design System framework focuses first on iOS / iPadOS, but some other platforms like visionOS and macOS are supported.
 
-> Tip: Feel free to submit pull requests if you can improve the support of macOS, visionOS, tvOS and watchOS!
+> Tip: Feel free to submit pull requests if you can improve / add the support of macOS, visionOS, tvOS and watchOS!
 
 ## Data and privacy
 
