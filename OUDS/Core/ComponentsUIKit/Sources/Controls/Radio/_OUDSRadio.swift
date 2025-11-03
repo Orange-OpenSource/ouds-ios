@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -17,7 +17,7 @@ import OUDSFoundations // NOTE: "unused" false positive by periphery (https://gi
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Radio View Controller
+// MARK: - OUDSThemesContract Radio View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSRadio`
 /// Helps to manage the states and values of the `OUDSRadio` and tries to expose a UIKit-like API for actions.
@@ -136,7 +136,7 @@ public final class OUDSRadioViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Radio Wrapper
+// MARK: - OUDSThemesContract Radio Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSRadio` and exposes bindings
 /// and view model.
@@ -162,7 +162,7 @@ struct OUDSRadioWrapper: View {
     }
 }
 
-// MARK: - OUDS Radio View Model
+// MARK: - OUDSThemesContract Radio View Model
 
 /// The `SwiftUI` view model used inside the `OUDSRadioWrapper` to manage the state of the embeded `OUDSRadio`
 @MainActor final class OUDSRadioViewModel: ObservableObject {
@@ -188,7 +188,7 @@ struct OUDSRadioWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDS SwiftUI Bridge
+// MARK: - OUDSThemesContract SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

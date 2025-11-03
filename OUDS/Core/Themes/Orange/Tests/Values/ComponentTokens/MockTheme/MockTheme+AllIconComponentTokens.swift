@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensSemantic

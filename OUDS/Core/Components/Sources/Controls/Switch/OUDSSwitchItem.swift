@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Switch Item
+// MARK: - OUDSThemesContract Switch Item
 
 /// The ``OUDSSwitchItem`` proposes layouts to add in your views some swith components.
 /// If you want to use a switch with only an indicator, prefer instead ``OUDSSwitch``.

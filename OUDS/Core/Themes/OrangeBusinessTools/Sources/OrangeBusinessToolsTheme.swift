@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SwiftUI
@@ -31,7 +31,7 @@ import SwiftUI
 ///
 /// To get the theme:
 /// ```swift
-///     import OUDS
+///     import OUDSThemesContract
 ///
 ///     @Environment(\.theme) var theme
 /// ```
@@ -41,7 +41,7 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDS                            // To get OUDSThemeableView
+///     import OUDSThemesContract                            // To get OUDSThemeableView
 ///     import OUDSThemesOrangeBusinessTools  // To get OrangeBusinessToolsTheme
 ///     import SwiftUI
 ///

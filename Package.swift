@@ -30,6 +30,21 @@ let package = Package(
 
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
+        // Umbrella product to improve Developer eXperience and let users use OUDS in one import
+        .library(name: "OUDSSwiftUI",
+                 targets: ["OUDSThemesOrange",
+                           "OUDSThemesOrangeBusinessTools",
+                           "OUDSThemesSosh",
+                           "OUDSThemesWireframe",
+                           "OUDSThemesContract",
+                           "OUDSModules",
+                           "OUDSComponents",
+                           "OUDSTokensComponent",
+                           "OUDSTokensSemantic",
+                           "OUDSTokensRaw",
+                           "OUDSFoundations"]),
+        // Better user of products, choose only the one users want
+        // Helps to isolate packages ouf OUDS
         .library(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
@@ -43,8 +58,8 @@ let package = Package(
             name: "OUDSThemesWireframe",
             targets: ["OUDSThemesWireframe"]),
         .library(
-            name: "OUDS",
-            targets: ["OUDS"]),
+            name: "OUDSThemesContract",
+            targets: ["OUDSThemesContract"]),
         .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
@@ -89,7 +104,7 @@ let package = Package(
     targets: [
         .target(
             name: "OUDSThemesOrange",
-            dependencies: ["OUDS"],
+            dependencies: ["OUDSThemesContract"],
             path: "OUDS/Core/Themes/Orange/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
@@ -98,7 +113,7 @@ let package = Package(
             path: "OUDS/Core/Themes/Orange/Tests"),
         .target(
             name: "OUDSThemesOrangeBusinessTools",
-            dependencies: ["OUDS", "OUDSThemesOrange"],
+            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/OrangeBusinessTools/Sources"),
         .testTarget(
             name: "OUDSThemesOrangeBusinessTools-Tests",
@@ -106,7 +121,7 @@ let package = Package(
             path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
         .target(
             name: "OUDSThemesSosh",
-            dependencies: ["OUDS"],
+            dependencies: ["OUDSThemesContract"],
             path: "OUDS/Core/Themes/Sosh/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
@@ -115,7 +130,7 @@ let package = Package(
             path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
             name: "OUDSThemesWireframe",
-            dependencies: ["OUDS", "OUDSThemesOrange"],
+            dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Wireframe/Sources",
             resources: [.process("Resources/")]),
         .testTarget(
@@ -123,20 +138,20 @@ let package = Package(
             dependencies: ["TestsUtils", "OUDSThemesWireframe"],
             path: "OUDS/Core/Themes/Wireframe/Tests"),
         .target(
-            name: "OUDS",
+            name: "OUDSThemesContract",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/OUDS/Sources"),
+            path: "OUDS/Core/OUDSThemesContract/Sources"),
         .testTarget(
             name: "OUDS-Tests",
-            dependencies: ["OUDS", "TestsUtils"],
-            path: "OUDS/Core/OUDS/Tests"),
+            dependencies: ["OUDSThemesContract", "TestsUtils"],
+            path: "OUDS/Core/OUDSThemesContract/Tests"),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDS"],
+            dependencies: ["OUDSTokensComponent", "OUDSThemesContract"],
             path: "OUDS/Core/Components/Sources",
             resources: [.process("_/Resources/")]),
         .testTarget(

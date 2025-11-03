@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -16,7 +16,7 @@ import OUDSFoundations
 
 extension Bundle {
 
-    /// The OUDS bundle, useful to find resources
+    /// The OUDSThemesContract bundle, useful to find resources
     public static let OUDSComponents = Bundle.module
 
     /// Loads the first  preferred localization from main Bundle or if not defined the english one

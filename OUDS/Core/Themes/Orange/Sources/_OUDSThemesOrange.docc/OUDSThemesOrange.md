@@ -10,7 +10,7 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
+The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDSThemesContract library with the Orange brand colors for example.
 
 ## Overview
 
@@ -31,7 +31,7 @@ In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses 
 You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDS // To get OUDSThemeableView
+import OUDSThemesContract // To get OUDSThemeableView
 import OUDSThemesOrange // To get OrangeTheme
 import SwiftUI
 
@@ -50,12 +50,12 @@ struct YourApp: App {
 Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDS // To get the theme environment variable
+import OUDSThemesContract // To get the theme environment variable
 import SwiftUI
 
 struct SomeView: View {
 
-    // Get OUDS environment variable for theme thanks to themeable view
+    // Get OUDSThemesContract environment variable for theme thanks to themeable view
     @Environment(\.theme) var theme
     
     var body: some View {
@@ -336,7 +336,7 @@ class YourAppTheme: OrangeTheme {
 Then add the theme:
 
 ```swift
-import OUDS  // To get OUDSThemeableView
+import OUDSThemesContract // To get OUDSThemeableView
 
 @main
 struct YourApp: App {
@@ -356,7 +356,7 @@ Quite simple and similar to the previous solution, but give only the providers t
 But we recommend to define your own theme for clarity reasons.
 
 ```swift
-import OUDS // To get OUDSThemeableView
+import OUDSThemesContract // To get OUDSThemeableView
 
 @main
 struct YourApp: App {

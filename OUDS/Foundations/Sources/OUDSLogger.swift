@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -17,7 +17,7 @@ import os
 /// To keep code smaller
 public typealias OL = OUDSLogger
 
-/// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.
+/// The `os.Logger` wrapper used in the *OUDSThemesContract iOS* library so as to logs things in standard output or elsewhere.
 ///
 /// - Since: 0.8.0
 public struct OUDSLogger {

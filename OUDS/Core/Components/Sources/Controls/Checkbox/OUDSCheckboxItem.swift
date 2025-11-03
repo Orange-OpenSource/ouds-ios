@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Checkbox Item
+// MARK: - OUDSThemesContract Checkbox Item
 
 /// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components with labels and icons.
 /// If you want to use a checkbox with only an indicator prefer instead ``OUDSCheckbox``.
@@ -52,7 +52,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
-/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///

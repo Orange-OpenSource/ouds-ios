@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -19,7 +19,7 @@ import SwiftUI
 /// WCAG 2.1 AA and AAA requirements use ratio for textual and non textual components
 public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 
-// MARK: - OUDS WCAG 21 Ratio
+// MARK: - OUDSThemesContract WCAG 21 Ratio
 
 /// Some countries set up new laws so as to force companies to have a better accessibility of their digital services.
 /// This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr),

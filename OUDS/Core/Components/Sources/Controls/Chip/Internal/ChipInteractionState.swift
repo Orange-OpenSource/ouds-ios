@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -38,7 +38,7 @@ enum ChipInteractionState {
         case .disabled:
             self = .disabled
         case .readOnly:
-            OL.fatal("An OUDS chip is a component which cannot be in read-only mode")
+            OL.fatal("An OUDSThemesContract chip is a component which cannot be in read-only mode")
         }
     }
 }

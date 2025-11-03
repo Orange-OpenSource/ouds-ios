@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -17,7 +17,7 @@ import OUDSFoundations // NOTE: "unused" false positive by periphery (https://gi
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox Indetermiante View Controller
+// MARK: - OUDSThemesContract Checkbox Indetermiante View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckboxIndeterminate`
 /// Helps to manage the states and values of the `OUDSCheckboxIndeterminate` and tries to expose a UIKit-like API for actions.
@@ -136,7 +136,7 @@ public final class OUDSCheckboxIndeterminateViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Checkbox Indeterminate Wrapper
+// MARK: - OUDSThemesContract Checkbox Indeterminate Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckboxIndeterminate` and exposes bindings
 /// and view model.
@@ -162,7 +162,7 @@ struct OUDSCheckboxIndeterminateWrapper: View {
     }
 }
 
-// MARK: - OUDS Checkbox View Model
+// MARK: - OUDSThemesContract Checkbox View Model
 
 /// The `SwiftUI` view model used inside the `OUDSCheckboxIndeterminateWrapper` to manage the state of the embeded `OUDSCheckboxIndeterminate`
 @MainActor final class OUDSCheckboxIndeterminateViewModel: ObservableObject {
@@ -188,7 +188,7 @@ struct OUDSCheckboxIndeterminateWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDS SwiftUI Bridge
+// MARK: - OUDSThemesContract SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

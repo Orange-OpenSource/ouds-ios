@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Input Tag
+// MARK: - OUDSThemesContract Input Tag
 
 /// An `OUDSInputTag` is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by
 /// pressing enter, comma, or tab), each value is transformed into a tag.

@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDS Checkbox Indeterminate
+// MARK: - OUDSThemesContract Checkbox Indeterminate
 
 /// The ``OUDSCheckboxIndeterminate`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons components.
 /// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.

@@ -10,7 +10,7 @@ Do not add @PageImage(purpose: card) because not managed for landing page of onl
 See https://github.com/swiftlang/swift-docc/issues/1283
 -->
 
-The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
+The catalog of all components provided by OUDSThemesContract. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:
 *Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* groups is dedicated to things like dividers.
@@ -26,7 +26,7 @@ You can get more details about them in the categories below:
 
 ### Apply a specific shadow effect (elevation tokens)
 
-The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
+The unified design system implemented by OUDSThemesContract iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
 Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a dimensionspread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
@@ -46,7 +46,7 @@ public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDSThemesContract, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
@@ -99,7 +99,7 @@ The helper is available through `View`, and tokens through the provider of the t
 ### Apply specific colors
 
 Colors can be applied on view for background and foreground colors, foreground style or also accent color.
-Some helpers are available in the OUDS API to avoid to use the `color(for:ColorScheme)` method.
+Some helpers are available in the OUDSThemesContract API to avoid to use the `color(for:ColorScheme)` method.
 
 ```swift
     // Given a color at theme.colors.bgPrimary
@@ -144,7 +144,7 @@ func localizedHelveticaFont() -> String {
 let localizedOrangeTheme: OUDSTheme = OrangeTheme(family: localizedHelveticaFont())
 ```
 
-> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app
+> Caution: For legal reasons OUDSThemesContract does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app
 
 > Note: For cyrillic alphabet the Orange Brand does not provide *Helvetica Neue* variant, you can use *Arial* instead
 
@@ -167,7 +167,7 @@ private func registerFonts() {
 
 ## UIKit backports (experimental)
 
-It is possible, but not recommended at all, to use OUDS components but wrapped for UIKit.
+It is possible, but not recommended at all, to use OUDSThemesContract components but wrapped for UIKit.
 Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
 
 First, you will need to import the dedicated Swift Package product

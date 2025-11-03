@@ -1,5 +1,5 @@
 //
-// Software Name: OUDS iOS
+// Software Name: OUDSThemesContract iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
 //
@@ -101,7 +101,7 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
-        // MARK: OUDS
+        // MARK: OUDSThemesContract
 
         PSFNMK("Arial", Font.Weight.regular): "ArialMT",
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",
