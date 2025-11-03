@@ -14,7 +14,7 @@
 # About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
 # Runners details: https://github.com/actions/runner-images/tree/main/images/macos
 
-name: Check localizables
+name: Check localizables with SwiftPolyglot
 
 # Rules for this GitHub Actions workflow
 # - workflow can be triggered manually if needed (workflow_dispatch)

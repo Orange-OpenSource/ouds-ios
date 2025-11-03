@@ -20,7 +20,7 @@
 # - automatically triggered when pull request is opened and has new commits (synchronize)
 # But beware, triggered on commit push, so do not be a push-machine-gun!
 
-name: Build DocC documentation
+name: Build Swift DocC documentation
 
 on:
   push:

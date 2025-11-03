@@ -21,7 +21,7 @@
 # - automatically triggered when pull request is opened and has new commits (synchronize)
 # But beware, triggered on commit push, so do not be a push-machine-gun!
 
-name: Build and Test
+name: Build and est Swift Package
 
 on:
   push:
@@ -87,6 +87,6 @@ jobs:
         run: |
           bundle install
 
-      - name: Run unit tests of Swift Package-
+      - name: Run unit tests of Swift Package
         run: |
           bundle exec fastlane test_unit
