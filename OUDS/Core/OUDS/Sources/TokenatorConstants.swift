@@ -79,7 +79,7 @@ public enum OUDSVersions {
     // MARK: - Components versions - Tag
 
     /// Version of the Figma specifications for the component badge
-    public static let componentBadgeVersion = "1.1.0" // NOTE: Manually fixed, still 1.1.0 implemented and not 1.2.0
+    public static let componentBadgeVersion = "1.2.0"
     /// Version of the Figma specifications for the component skeleton
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag

@@ -54,7 +54,7 @@ import SwiftUI
 ///
 /// ![A filter chip component in light and dark mode with Wireframe theme](component_filterChip_Wireframe)
 ///
-/// - Version:1.3.0
+/// - Version: 1.3.0
 /// - Since: 0.17.0
 public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink in doc above
 
