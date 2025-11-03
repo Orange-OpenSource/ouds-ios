@@ -1,0 +1,44 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/
+
+# Each night, at 8:00 pm Paris hour (i.e. 18h UTC)
+# moves the SNAPSHOT tag
+# to let CI/CD or users pick the last development version by tag
+
+name: Update SNAPSHOT Tag
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  # 20h Paris
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -f SNAPSHOT
+          git push origin SNAPSHOT --force

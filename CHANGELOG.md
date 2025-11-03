@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- GitHub Actions workflow to move the SNAPSHOT tag
 - Display in standard ouput information message about tokens libraries versions in use
 - Support for `visionOS` (Orange-OpenSource/ouds-ios#1102) 
 - Support for `macOS` (Orange-OpenSource/ouds-ios#1102) 
