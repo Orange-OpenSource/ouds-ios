@@ -30,19 +30,10 @@ let package = Package(
 
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
-        // Umbrella product to improve Developer eXperience and let users use OUDS in one import
-        .library(name: "OUDSSwiftUI",
-                 targets: ["OUDSThemesOrange",
-                           "OUDSThemesOrangeBusinessTools",
-                           "OUDSThemesSosh",
-                           "OUDSThemesWireframe",
-                           "OUDSThemesContract",
-                           "OUDSModules",
-                           "OUDSComponents",
-                           "OUDSTokensComponent",
-                           "OUDSTokensSemantic",
-                           "OUDSTokensRaw",
-                           "OUDSFoundations"]),
+        // Umbrella product to improve Developer eXperience and let users use OUDS in only one import
+        .library(
+            name: "OUDSSwiftUI",
+            targets: ["OUDSSwiftUI"]),
         // Better user of products, choose only the one users want
         // Helps to isolate packages ouf OUDS
         .library(
@@ -102,6 +93,22 @@ let package = Package(
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
+        .target(
+            name: "OUDSSwiftUI",
+            dependencies: [
+                "OUDSThemesOrange",
+                "OUDSThemesOrangeBusinessTools",
+                "OUDSThemesSosh",
+                "OUDSThemesWireframe",
+                "OUDSThemesContract",
+                "OUDSModules",
+                "OUDSComponents",
+                "OUDSTokensComponent",
+                "OUDSTokensSemantic",
+                "OUDSTokensRaw",
+                "OUDSFoundations",
+            ],
+            path: "OUDS/exported/Sources"),
         .target(
             name: "OUDSThemesOrange",
             dependencies: ["OUDSThemesContract"],
