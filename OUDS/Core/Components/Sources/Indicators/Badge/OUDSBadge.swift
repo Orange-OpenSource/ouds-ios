@@ -69,7 +69,7 @@ import SwiftUI
 ///
 /// ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
 ///
-/// - Version:1.1.0 (Figma component design version)
+/// - Version:1.2.0 (Figma component design version)
 /// - Since: 0.17.0
 public struct OUDSBadge: View {
 
