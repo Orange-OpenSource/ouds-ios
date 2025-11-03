@@ -41,6 +41,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `periphery` workfow on GitHub Actions
 
+### Fixed
+
+- Apply rounded corners for hover and pressed states of radio button and checkbox components (Orange-OpenSource/ouds-ios#1078)
+
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
 
 ### Added
