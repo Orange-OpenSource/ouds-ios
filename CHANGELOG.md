@@ -17,14 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update `OUDSBadge` to version 1.2 (Orange-OpenSource/ouds-ios#1043)
+- Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
 - Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
-- Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
-- Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
-- Update `checkbox item` to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
+- Update `radio item` component to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
+- Update `switch item` component to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
+- Update `checkbox item` component to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
 - Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
-- Update `OUDSTag` to version 1.4 (Orange-OpenSource/ouds-ios#1037)
-- Update `OUDSTag` to version 1.3 (Orange-OpenSource/ouds-ios#945)
+- Update `tag` component to version 1.4 (Orange-OpenSource/ouds-ios#1037)
+- Update `tag` component to version 1.3 (Orange-OpenSource/ouds-ios#945)
 - Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
 - Update `link` component version (Orange-OpenSource/ouds-ios#1035)
 - `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Icon` component tokens for `Orange`, `Sosh` and `Wireframe` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - `Color` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
 - `Control item` component tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
-- Update `text input` to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
+- Update `text input` component to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
 
 ### Removed
 
