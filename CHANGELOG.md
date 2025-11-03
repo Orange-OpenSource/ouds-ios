@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Standalone checkbox and radio button should have rounded corners with Sosh and Wireframe themes (Orange-OpenSource/ouds-ios#1079)
 - Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
 - Update `radio item` to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
 - Update `switch item` to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
@@ -39,6 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - `periphery` workfow on GitHub Actions
+
+### Fixed
+
+- Apply rounded corners for hover and pressed states of radio button and checkbox components (Orange-OpenSource/ouds-ios#1078)
 
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
 
