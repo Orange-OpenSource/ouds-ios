@@ -264,6 +264,8 @@ open class OUDSTheme: @unchecked Sendable {
         self.resourcesBundle = resourcesBundle
         self.family = family
         self.tuning = tuning
+
+        OUDSVersions.logTokensLibrairiesVersions()
     }
 
     // swiftlint:enable function_default_parameter_at_end
