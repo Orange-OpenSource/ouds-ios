@@ -30,8 +30,6 @@ import OUDSTokensSemantic
 ///
 /// The theme can be got through environment variable:
 /// ```swift
-///     import OUDSThemesContract
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -39,10 +37,6 @@ import OUDSTokensSemantic
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 /// ```swift
-///     import OUDSThemesContract   // To get OUDSThemeableView
-///     import OUDSThemesOrange    // To get OrangeTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
@@ -113,7 +107,6 @@ import OUDSTokensSemantic
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
 /// For example:
 /// ```swift
-///
 ///    // Use some already defined providers
 ///    let borders = OrangeThemeBorderSemanticTokensProvider()
 ///    let sizes = OrangeThemeSizeSemanticTokensProvider()

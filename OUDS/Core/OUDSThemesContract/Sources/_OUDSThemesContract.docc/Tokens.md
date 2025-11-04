@@ -152,7 +152,7 @@ extension ColorRawTokens { // Gathers all color raw tokens, use enums for namesp
     ...
 }
 
-// The OUDSThemesContract library still exposes this computed property
+// The OUDS library still exposes this computed property
 extension String {
     public var color: Color {
         Color(hexadecimalCode: self)

@@ -7,7 +7,7 @@
 
 How to add the package as dependency, import libraries and use theme and components for your apps.
 
-## Integrate OUDSThemesContract
+## Integrate OUDS
 
 ### Use Swift Package Manager
 
@@ -17,12 +17,12 @@ You are free to choose wether or not you want a branch or a specific tag, pick t
 
 You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *0.18.0*) and release candidates tags (e.g. *0.18.0-rc3*).
 
-### Import the library you need
+### Import the library or librairies you need
 
 You should use one (or several) of the following imports for your needs, which are basically _Swift Package_ products.
 
 ```swift
-import OUDSThemesContract // If you want to define your theme or use OUDSThemeableView
+import OUDSThemesContract // If you want to define your theme, use themes or OUDSThemeableView
 import OUDSModules // To use modules
 import OUDSComponents // To use components
 import OUDSThemesOrange // To use the default Orange theme
@@ -32,11 +32,12 @@ import OUDSThemesWireframe // To use the Wireframe theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import OUDSTokensRaw // If you need to override or use directly raw tokens
+import OUDSFoundations // For some utilities
 ```
 
 ### Or more simple, import umbrella library
 
-We do not recommend this solution is from our point of view use of tailored imports is better to import
+We do not recommend this solution because from our point of view use of tailored imports is better to import
 only the needed elements.
 
 ```swift
@@ -50,7 +51,7 @@ The *Orange Unified Design System* framework provides today five themes:
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
 Orange                    | The default one for Orange products and can be enriched / derivated  
-Orange Business Tools     | For some Orange products with heavy / rich UI and _ constraints           
+Orange Business Tools     | For some Orange products with heavy / rich UI and dimensions constraints           
 Sosh                      | For Sosh products
 Wireframe                 | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 

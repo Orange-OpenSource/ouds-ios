@@ -27,8 +27,6 @@ import SwiftUI
 ///
 /// To get it:
 /// ```swift
-///     import OUDSThemesContract
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -37,10 +35,6 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDSThemesContract           // To get OUDSThemeableView
-///     import OUDSThemesSosh // To get SoshTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {

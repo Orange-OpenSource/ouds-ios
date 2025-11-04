@@ -9,7 +9,7 @@ _Components_ are the `View` objects you can add in the views of your apps, like 
 
 ## How to use components
 
-Import the target of components, and use the component you want:
+Import the product of components, and use the component you want:
 
 ```swift
 import OUDSSwiftUI

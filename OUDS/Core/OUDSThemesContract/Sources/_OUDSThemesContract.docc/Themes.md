@@ -240,8 +240,8 @@ class YourAppTheme: OrangeTheme {
 Finaly for your app root view:
 
 ```swift
+import OUDSSwiftUI
 import SwiftUI
-import OUDSThemesContract // To get OUDSThemeableView
 
 struct MyAppRootView: View {
 
@@ -263,8 +263,8 @@ public enum MyOwnFontRawTokens {
 }
 ```
 
-All components the OUDSThemesContract library provides are based on themes, handle through the abstract `OUDSTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
-In few words, if you want to change the look and feel for the OUDSThemesContract components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
+All components the OUDS library provides are based on themes, handle through the abstract `OUDSTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
+In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens* or *component tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
 
 You are also able to define your *components tokens* and your *semantic tokens* used by them.
 

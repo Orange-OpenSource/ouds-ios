@@ -27,7 +27,7 @@ Some components can be used for **layouts**.
 }
 
 Colored backgrounds use surface colors to maximize the contrast with content. 
-The colors of several OUDSThemesContract components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
+The colors of several OUDS components (for instance ``OUDSButton`` or ``OUDSLink``) are automatically adjusted if they are placed on ``OUDSColoredSurface``.
 To do so, some tokens associated with these specific colors can be customized and are identified with the *Mono* suffix (for instance *colorBgDefaultEnabledMono* of *OrangeThemeButtonComponentTokensProvider*).
 
 #### How it works
@@ -95,10 +95,10 @@ OUDSWCAG21Ratios.oudsDebugWCAG21Colors = true
 // where colorTokenToApply is the color to apply from a theme:
 
 // Non-textual components, in AA
-OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
 
 // Textual components and AAA to check
-OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 ```
 
 ### Divider
@@ -106,8 +106,8 @@ OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
 #### How it works
 
 A divider is used to separate content elements in a view. Two kinds of divider are proposed:
-- ``OUDSHorizontalDivider``: to separate elements stacked vertivally (VStask).
-- ``OUDSVerticalDivider``: to separate elements stacked Horizontally (HStask).
+- ``OUDSHorizontalDivider``: to separate elements stacked vertically (e.g. in `VStack`)
+- ``OUDSVerticalDivider``: to separate elements stacked horizontally (e.g. in `HStack)
 
 A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
@@ -150,33 +150,33 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSSwiftUI
+        import OUDSSwiftUI
         
-            // Add a vertical divider between items
-            HStack {
-                Text("Hello world!")
-                OUDSVerticalDivider(color: .brandPrimary)
-                Text("Happy to see you")
-            }
+        // Add a vertical divider between items
+        HStack {
+            Text("Hello world!")
+            OUDSVerticalDivider(color: .brandPrimary)
+            Text("Happy to see you")
+        }
 
-            // Add an horizontal divider between items
-            VStack {
-                Text("Hello world!")
-                OUDSHorizontalDivider(color: .brandPrimary)
-                Text("Happy to see you")
-            }
+        // Add an horizontal divider between items
+        VStack {
+            Text("Hello world!")
+            OUDSHorizontalDivider(color: .brandPrimary)
+            Text("Happy to see you")
+        }
         ```
     }
     @Tab("UIKit (experimental)") {
         ```swift
-            import OUDSSwiftUI
-            import OUDSComponentsUIKit
+        import OUDSSwiftUI
+        import OUDSComponentsUIKit
             
-            // Add a vertical divider between items
-            OUDSUIKit.createVerticalDivider(color: .brandPrimary)
+        // Add a vertical divider between items
+        OUDSUIKit.createVerticalDivider(color: .brandPrimary)
             
-            // Add an horizontal divider between items
-            OUDSUIKit.createHorizontalDivider(color: .brandPrimary)
+        // Add an horizontal divider between items
+        OUDSUIKit.createHorizontalDivider(color: .brandPrimary)
         ```
     }
 }

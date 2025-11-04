@@ -19,7 +19,7 @@ The Apple OS Swift Package of *Orange Unified Design System*, the new design sys
 🧬 Core version: 1.8.0
 ```
 
-Orange is providing a full design system to build Orange mobile aplications. The objective of *Orange Unified Design System* (OUDSThemesContract) is to propose a set of guidelines about how to apply the Orange brand on mobile applications. *Orange Unified Design System* also provides series of components and modules that show in details how to use this in the Orange apps.
+Orange is providing a full design system to build Orange mobile aplications. The objective of *Orange Unified Design System* (OUDS) is to propose a set of guidelines about how to apply the Orange brand on mobile applications. *Orange Unified Design System* also provides series of components and modules that show in details how to use this in the Orange apps.
 
 *Orange Unified Design System* has been implemented in two code repositories:
 

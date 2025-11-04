@@ -28,8 +28,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 You can use ``WireframeTheme`` directly. To use the ``WireframeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``WireframeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDSThemesContract // To get OUDSThemeableView
-import OUDSThemesWireframe // To get WireframeTheme
+import OUDSSwiftUI
 import SwiftUI
 
 @main
@@ -47,12 +46,12 @@ struct YourApp: App {
 Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDSThemesContract // To get the theme environment variable
+import OUDSSwiftUI
 import SwiftUI
 
 struct SomeView: View {
 
-    // Get OUDSThemesContract environment variable for theme thanks to themeable view
+    // Get OUDS environment variable for theme thanks to themeable view
     @Environment(\.theme) var theme
     
     var body: some View {
@@ -150,9 +149,16 @@ You cannot derivate the *Wireframe* theme.
 
 ![A badge component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Wireframe.png)
 
-#### Tag
+#### Tags
 
-![A tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Wireframe.png)
+@TabNavigator {
+    @Tab("Tag") {
+        ![A tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Wireframe.png)        
+    }
+    @Tab("Input tag") {
+        ![An input tag component in light and dark mode with Wireframe theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Wireframe.png)
+    }
+}
 
 ### Layouts
 
