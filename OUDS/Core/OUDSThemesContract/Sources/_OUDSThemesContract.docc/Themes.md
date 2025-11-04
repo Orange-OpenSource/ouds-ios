@@ -40,9 +40,6 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 ## Use themeable view
 
 ```swift
-// Make import for everything
-import OUDSSwiftUI
-
 // Add themeable view to your root view to use the OrangeTheme
 OUDSThemeableView(theme: OrangeTheme()) {
     YourRootView()
@@ -120,8 +117,6 @@ You must consider the tokens provider you need (to inherit from for overriding, 
 Find bellow some example
 
 ```swift
-import OUDSSwiftUI 
-
 // Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
@@ -240,9 +235,6 @@ class YourAppTheme: OrangeTheme {
 Finaly for your app root view:
 
 ```swift
-import OUDSSwiftUI
-import SwiftUI
-
 struct MyAppRootView: View {
 
     var body: some View {

@@ -103,9 +103,6 @@ In the root view of your app, add the `OUDSThemeableView` with inside the _theme
 You can instanciate the theme object on the fly, but only once.
 
 ```swift
-import OUDSSwiftUI
-import SwiftUI
-
 @main
 struct YourApp: App {
 

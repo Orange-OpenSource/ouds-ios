@@ -82,7 +82,7 @@
             Which imports of the OUDS Swift Package products can I choose?
 
             @Choice(isCorrect: true) {
-                Some of the available products depending to my needs, or only `OUDSSwiftUI` if I am a bit lazy.
+                Some of the available products depending to my needs, or only `OUDSSwiftUI` if I am very lazy and don't care about my app size.
 
                 @Justification(reaction: "Correct!") {
                     You can import all products provided by the Swift Package, and tailor your choice to keep only the ones needed.
@@ -94,7 +94,7 @@
                 None, only the Swift package dependency matter 
                   
                 @Justification(reaction: "Try again!") {
-                    You need to chose the products thz Swift package provdes
+                    You need to chose the products the Swift package provides
                 }
             }
         }        

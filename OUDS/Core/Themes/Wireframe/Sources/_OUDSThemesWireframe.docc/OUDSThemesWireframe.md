@@ -28,9 +28,6 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 You can use ``WireframeTheme`` directly. To use the ``WireframeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``WireframeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDSSwiftUI
-import SwiftUI
-
 @main
 struct YourApp: App {
     var body: some Scene {
@@ -46,9 +43,6 @@ struct YourApp: App {
 Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDSSwiftUI
-import SwiftUI
-
 struct SomeView: View {
 
     // Get OUDS environment variable for theme thanks to themeable view

@@ -40,6 +40,8 @@ import OUDSFoundations // For some utilities
 ### Or more simple, import umbrella library
 
 > Note: We do not recommend this solution because from our point of view use of tailored imports is better to import only the needed elements.
+> use of umbrella products can increase app sizes and needed storage because it emebds plenty of assets (images, fonts, etc.)
+> and useless constants.
 
 Import the _Swift Package_ product which suits your needs:
 
@@ -71,9 +73,6 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
         }
         @Column {
             ```swift
-            import OUDSSwiftUI
-            import SwiftUI
-
             @main
             struct YourApp: App {
                 var body: some Scene {
@@ -95,8 +94,6 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
     }
     @Column {
         ```swift
-        import OUDSSwiftUI
-
         // Use it in views as an environment variable
         @Environment(\.theme) var theme
         ```

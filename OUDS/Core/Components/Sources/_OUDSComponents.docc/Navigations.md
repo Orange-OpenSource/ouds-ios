@@ -32,9 +32,7 @@ The link can be displayed in `small` or `default` size.
 
 @TabNavigator {
     @Tab("SwiftUI") {
-        ```swift
-        import OUDSSwiftUI
-        
+        ```swift        
         // Text only in small size
         OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 
@@ -47,7 +45,6 @@ The link can be displayed in `small` or `default` size.
     }
     @Tab("UIKit (experimental)") {
         ```swift
-        import OUDSSwiftUI
         import OUDSComponentsUIKit
         
         // Text only in small size
