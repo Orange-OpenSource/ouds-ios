@@ -41,7 +41,7 @@ struct ButtonBorderModifier: ViewModifier {
                     width: defaultWidth,
                     radius: radius,
                     color: defaultColor)
-        case .strong, .brand:
+        case .strong:
             if onColoredSurface {
                 content
                     .oudsBorder(
@@ -52,6 +52,8 @@ struct ButtonBorderModifier: ViewModifier {
             } else {
                 content.clipShape(RoundedRectangle(cornerRadius: radius))
             }
+        case .brand:
+            content.clipShape(RoundedRectangle(cornerRadius: radius))
         case .minimal, .negative:
             content.clipShape(RoundedRectangle(cornerRadius: radius))
         }

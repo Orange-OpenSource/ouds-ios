@@ -107,7 +107,7 @@ import SwiftUI
 ///
 /// ![A button component in light and dark mode with Wireframe theme](component_button_Wireframe)
 ///
-/// - Version: 3.0.0 (Figma component design version)
+/// - Version: 3.2.0 (Figma component design version)
 /// - Since: 0.10.0
 public struct OUDSButton: View {
 
