@@ -28,7 +28,7 @@
             }
          
             @Step {
-                Import the needed librairies in your file (*OUDS* and *OUDSThemeOrange*).
+                Import the needed librairies in your file (we suppose here *OUDSSwiftUI* during all the tutorial).
                 Instanciate a new object of type `OrangeTheme`.
                 In your app root view, add the `OUDSThemeableView` and give it the new theme object.
                 

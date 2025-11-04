@@ -1,3 +1,6 @@
+import OUDSSwiftUI
+import SwiftUI
+
 struct ContentView: View {
 
     @State var selectedGender: Genders = .male
@@ -37,12 +40,11 @@ struct ContentView: View {
                                         placement: .horizontal(false))
 
                         let identityDeleteAction = OUDSTextInput.TrailingAction(icon: Image(systemName: "trash"), actionHint: "Delete") { identity = "" }
-                        let identityPlaceholder = OUDSTextInput.Placeholder(text: "Firstname and lastname")
-                        OUDSTextInput(label: "Identity", text: $identity, placeholder: identityPlaceholder, trailingAction: identityDeleteAction)
+                        OUDSTextInput(label: "Identity", text: $identity, placeholder: "Firstname and lastname", trailingAction: identityDeleteAction)
 
-                        let emailPlaceholder = OUDSTextInput.Placeholder(text: "Email address", suffix: ".com")
                         OUDSTextInput(label: "Email", text: $email,
-                                      placeholder: emailPlaceholder,
+                                      placeholder: "Email address",
+                                      suffix: ".com",
                                       leadingIcon: Image(systemName: "envelope"),
                                       helperText: "The email will be automatically completed with @orange.com")
 

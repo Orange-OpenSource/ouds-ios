@@ -1,9 +1,4 @@
-import OUDSComponents
-import OUDSFoundations
-import OUDSThemesContract
-import OUDSThemesOrange
-import OUDSTokensRaw
-import OUDSTokensSemantic
+import OUDSSwiftUI
 import SwiftUI
 
 @main

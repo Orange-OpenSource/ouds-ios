@@ -45,7 +45,7 @@
             
             @Step {
                 Tokens of colors can also be used as they are, even if it is not recommended. 
-                The *OUDS* library provides *core raw tokens*, and some themes like *Orange*, *Sosh* and *Wireframe* have their own *brand raw tokens*. In the package these tokens have primitive types to reduce the memory footprint. Thus, for example for colors, it is needed to convert these raw values to SwiftUI color to apply them.
+                The *OUDS* package provides *core raw tokens*, and some themes like *Orange*, *Sosh* and *Wireframe* have their own *brand raw tokens*. In the package these tokens have primitive types to reduce the memory footprint. Thus, for example for colors, it is needed to convert these raw values to SwiftUI color to apply them.
                 
                 Try to apply a raw token of color to a text field.
                 
@@ -64,7 +64,7 @@
         
         @Steps {
             @Step {
-                The *OUDSComponents* library provides also view modifiers to apply effects on views, using the power of tokens.
+                The *OUDS* package provides also view modifiers to apply effects on views, using the power of tokens.
                 For example, it is possible de define a foreground color and also a background color using a semantic token of color which will provide light and dark mode variants.
                 
                 Try to change these colors in the title of the view and the formular.
@@ -139,7 +139,7 @@
             @Step {
                 If you followed this tutorial and apply the code snippets, here is what should looks like the app in light mode and dark mode.
                 
-                Do not hesitate yo test new API and integrate other components!
+                Do not hesitate to test new API and integrate other components!
                 
                 @Image(source: "tutorial-light-dark (result).png", alt: "Tutorial app in light and dark mode")
             }

@@ -17,15 +17,14 @@
         
         @Steps {
             @Step {
-                First, prepare the `ContentView` by adding inside it a `ScrollView`. 
-                Import also the `OUDSComponents` library.  
+                First, prepare the `ContentView` by adding inside it a `ScrollView`.   
                 
                 @Code(name: "Tutorial.swift", file: "tutorial-3-1.swift", previousFile: "tutorial-2-2.swift") 
             }
             
             @Step {
                 Now, let's add radio buttons to let the user choose its gender.
-                The official components are `OUDSRadio` and `OUDSRadioItem`, but the library has also a `OUDSRadioPicker` to implement quicky a group of radios.
+                The official components are `OUDSRadio` and `OUDSRadioItem`, but the package has also a `OUDSRadioPicker` to implement quicky a group of radios.
                 This component can be replaced by your own.
                 The radio picker is defined by an array of values to display radio items associated to a tag, i.e. an `Hashable` thing shared through a `Binding`.
                 Inside a picker the user can select only one value, not zero.

@@ -1,5 +1,4 @@
-import OUDSThemesContract
-import OUDSThemesOrange
+import OUDSSwiftUI
 import SwiftUI
 
 // MARK: - App
