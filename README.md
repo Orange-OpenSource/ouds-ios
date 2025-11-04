@@ -92,10 +92,10 @@ You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases ar
 ### Add the librairies
 
 In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
-In most of cases, the `OUDS` library at least must be imported, it brings abstraction layer.
-Components are available with `OUDSComponents`. Themes are available through their librairies too (`OUDSThemeOrange`, `OUDSThemeSosh`, `OUDSThemeWireframe`, etc.).
+The `OUDSSwiftUI` library embeds everything, but you may prefer instead tailor your imports.
+You can get the [detailed list of available librairies in the documentation](https://ios.unified-design-system.orange.com/documentation/ouds/gettingstarted).
 
-You can have more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
+More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
 
 ### Instanciate and inject theme
 

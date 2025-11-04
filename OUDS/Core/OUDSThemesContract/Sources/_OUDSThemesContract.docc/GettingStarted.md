@@ -17,9 +17,11 @@ You are free to choose wether or not you want a branch or a specific tag, pick t
 
 You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *0.18.0*) and release candidates tags (e.g. *0.18.0-rc3*).
 
-### Import the library or librairies you need
+### Import the librairies you need
 
 You should use one (or several) of the following imports for your needs, which are basically _Swift Package_ products.
+
+> Tip: We recommend to embed in your apps only the ones you need to avoid to embed useless assets.
 
 ```swift
 import OUDSThemesContract // If you want to define your theme, use themes or OUDSThemeableView
@@ -37,16 +39,20 @@ import OUDSFoundations // For some utilities
 
 ### Or more simple, import umbrella library
 
-We do not recommend this solution because from our point of view use of tailored imports is better to import
-only the needed elements.
+> Note: We do not recommend this solution because from our point of view use of tailored imports is better to import only the needed elements.
 
-```swift
-import OUDSSwiftUI
-```
+Import the _Swift Package_ product which suits your needs:
+
+Umbrella                  | Description                          
+------------------------- | ------------------------------------- 
+OUDSSwiftUI               | All librairies listed above and all themes  
+OUDSSwiftUIOrange         | All librairies listed above but with only Orange and Orange Business Tools themes
+OUDSSwiftUIWireframe      | All librairies listed above but with only Wireframe theme
+OUDSSwiftUIOrangeSosh     | All librairies listed above but with only Orange and Sosh themes
 
 ### Chose your theme
 
-The *Orange Unified Design System* framework provides today five themes:
+The *Orange Unified Design System* framework provides today four themes:
 
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
