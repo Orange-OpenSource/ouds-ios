@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **opacity semantic tokens** and expose them.
 /// This provider should be integrated as a `AllOpacitySemanticTokensProvider` implementation inside `OUDSTheme` so as to provide

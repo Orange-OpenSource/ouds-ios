@@ -13,7 +13,7 @@ See https://github.com/swiftlang/swift-docc/issues/1283
 The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:
-*Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* groups is dedicated to things like dividers.
+*Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* group is dedicated to things like dividers.
 You can get more details about them in the categories below:
 
 - <doc:Actions>
@@ -27,13 +27,16 @@ You can get more details about them in the categories below:
 ### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
-Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a dimensionspread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
+Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
 // For example, apply the elevation effect "drag" from your theme:
 myView.oudsShadow(theme.elevations.drag)
+```
 
-// And in the theme this "drag" has been defined for example like:
+In details how it works:
+```
+// In the theme this "drag" has been defined for example like:
 @objc open var drag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
 // And if you look deeper, the raw token "bottom_3_500" can be like:
@@ -50,6 +53,22 @@ With OUDS, typography depends to the class size, i.e. wether or not the applicat
 
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
+However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
+Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the default system font will be used.
+
+Thus, if you want to apply a specific typography to a `View` (supposing the semantic tokens are defined in the theme), just call the method you want and gives as parameter the theme (to get the custom font if defined):
+
+```swift
+// Apply typography "body default small"
+myView.bodyDefaultSmall(theme)
+
+// Apply typography "label strong X large"
+myView.labelStrongXLarge(theme)
+
+// Etc.
+```
+
+In details how it works:
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "displayMedium":
 @objc open var displayMedium: MultipleFontCompositeRawTokens { 
@@ -61,21 +80,6 @@ public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lin
 public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
 ```
 
-However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the dimensionsystem one_.
-Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the system font will be used.
-
-Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
-
-```swift
-// Apply typography "type body default small"
-myView.bodyDefaultSmall(theme)
-
-// Apply typography "type label strong X large"
-myView.labelStrongXLarge(theme)
-
-// Etc.
-```
-
 These view modifiers are available for any `View` object, [you can get the curated list in the documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents/swiftuicore/view).
 
 ### Apply a specific border (border tokens)
@@ -84,40 +88,40 @@ This module exposes the helper `oudsBorder(style:width:radius:color)` so as to a
 The helper is available through `View`, and tokens through the provider of the theme.
 
 ```swift
-    @Environment(\.theme) private var theme
+@Environment(\.theme) private var theme
 
-    var body: some View {
-        SomeView()
+var body: some View {
+    SomeView()
         .oudsBorder(
-             style: theme.borders.styleDefault,
+            style: theme.borders.styleDefault,
              width: theme.borders.widthThin,
              radius: theme.borders.radiusNone,
              color: theme.colors.borderDefault)
-     }
+}
 ```
 
 ### Apply specific colors
 
 Colors can be applied on view for background and foreground colors, foreground style or also accent color.
-Some helpers are available in the OUDS API to avoid to use the `color(for:ColorScheme)` method.
+Some helpers are available in the OUDS API to avoid to use the `color(for:)` method.
 
 ```swift
-    // Given a color at theme.colors.bgPrimary
-    // This token can have light and dark declinations 
+// Given a color at theme.colors.bgPrimary
+// This token can have light and dark declinations 
 
-    @Environment(\.theme) private var theme
+@Environment(\.theme) private var theme
 
-    // Apply a foreground style
-    someView.oudsForegroundStyle(theme.colors.bgPrimary)
+// Apply a foreground style
+someView.oudsForegroundStyle(theme.colors.bgPrimary)
 
-    // Apply a foreground color
-    someView.oudsForegroundColor(theme.colors.bgPrimary)
+// Apply a foreground color
+someView.oudsForegroundColor(theme.colors.bgPrimary)
 
-    // Apply a background
-    someView.oudsBackground(theme.colors.bgPrimary)
+// Apply a background
+someView.oudsBackground(theme.colors.bgPrimary)
 
-    // Apply an accent color
-    someView.oudsAccentColor(theme.colors.bgPrimary)
+// Apply an accent color
+someView.oudsAccentColor(theme.colors.bgPrimary)
 ```
 
 ## Change font family according to locale or preferred language
@@ -144,7 +148,7 @@ func localizedHelveticaFont() -> String {
 let localizedOrangeTheme: OUDSTheme = OrangeTheme(family: localizedHelveticaFont())
 ```
 
-> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic assets. You will have to get them and register the fonts files in your app
+> Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic nore Helvetica Neue assets. You will have to get them and register the fonts files in your app
 
 > Note: For cyrillic alphabet the Orange Brand does not provide *Helvetica Neue* variant, you can use *Arial* instead
 
@@ -155,7 +159,7 @@ If you need to use some fonts like *Helvetica Neue Arabic*, you will need to add
 ```swift
 private static var fontsAlreadyRegistered = false
 
-/// Fonts are defined in Resources/Fonts in TTF files.
+// Fonts are defined in Resources/Fonts in TTF files.
 private func registerFonts() {
     if !Self.fontsAlreadyRegistered {
         let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
@@ -167,30 +171,31 @@ private func registerFonts() {
 
 ## UIKit backports (experimental)
 
-It is possible, but not recommended at all, to use OUDS components but wrapped for UIKit.
+> Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
+
+It is possible, but not recommended at all, to use OUDS components wrapped for UIKit.
 Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
 
-First, you will need to import the dedicated Swift Package product
+First, you will need to import at least the dedicated Swift Package product `OUDSComponentsUIKit`.
+Other products can be needed, you can import theme on by one or use the umbrella product `OUDSSwiftUI`.
 
 ```swift
-    import OUDSComponentsUIKit
+import OUDSComponentsUIKit
 ```
 
 Then, send to the bridge the theme you want to use
 
 ```swift
-    OUDSUIKit.`init`(theme: theme) // e.g. OrangeTheme()
+OUDSUIKit.`init`(theme: theme) // e.g. OrangeTheme()
 ```
 
 After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
 
 ```swift
-    OUDSUIKit.createButton(text: "Destructive button",
-                           appearance: .negative,
-                           style: .default,
-                           action: {})
+OUDSUIKit.createButton(text: "Destructive button",
+                       appearance: .negative,
+                       style: .default,
+                       action: {})
 ```
 
-> Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
-
-> Tip: You can also [open a new discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/returns-of-experiences-and-feedbacks) if you have ideas!
+> Tip: You can [open a new discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/returns-of-experiences-and-feedbacks) if you have ideas!

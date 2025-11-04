@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import SwiftUI
 
 /// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.

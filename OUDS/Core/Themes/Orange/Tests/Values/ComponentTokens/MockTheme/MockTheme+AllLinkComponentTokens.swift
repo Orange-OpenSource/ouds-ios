@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw

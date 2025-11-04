@@ -12,26 +12,24 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSTokensSemantic
 
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
 /// The Orange theme is the bsic, default, theme for any Orange products.
-/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
+/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDSThemesContract library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
 /// # Usages
 ///
 /// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
-/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDS.
+/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDSThemesContract.
 /// This theme also provides colors charts tokens.
 ///
 /// The theme can be got through environment variable:
 /// ```swift
-///     import OUDS
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -39,10 +37,6 @@ import OUDSTokensSemantic
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 /// ```swift
-///     import OUDS                 // To get OUDSThemeableView
-///     import OUDSThemesOrange    // To get OrangeTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
@@ -113,7 +107,6 @@ import OUDSTokensSemantic
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
 /// For example:
 /// ```swift
-///
 ///    // Use some already defined providers
 ///    let borders = OrangeThemeBorderSemanticTokensProvider()
 ///    let sizes = OrangeThemeSizeSemanticTokensProvider()

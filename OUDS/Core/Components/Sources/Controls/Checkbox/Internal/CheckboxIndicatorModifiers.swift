@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -98,7 +98,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled
@@ -153,7 +153,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -234,7 +234,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionDisabled

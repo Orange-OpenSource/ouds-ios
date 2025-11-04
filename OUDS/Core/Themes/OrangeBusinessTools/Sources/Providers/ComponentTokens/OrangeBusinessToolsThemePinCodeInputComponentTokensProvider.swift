@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable line_length
 // swiftlint:disable type_name

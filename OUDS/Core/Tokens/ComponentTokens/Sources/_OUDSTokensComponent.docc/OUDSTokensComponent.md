@@ -131,7 +131,7 @@ switch                         | For switch components like `OUDSSwitch` and `OU
 tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
-textInput                      |
+textInput                      | For text field input components like `OUDSTextInput`
 
 ## Topics
 

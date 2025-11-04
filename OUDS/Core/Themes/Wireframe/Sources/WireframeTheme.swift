@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import SwiftUI
 
 // swiftlint:disable function_body_length
@@ -23,8 +23,6 @@ import SwiftUI
 ///
 /// To get it:
 /// ```swift
-///     import OUDS
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -33,10 +31,6 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDS           // To get OUDSThemeableView
-///     import OUDSThemesWireframe // To get WireframeTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {

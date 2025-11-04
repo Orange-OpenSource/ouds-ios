@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define the background

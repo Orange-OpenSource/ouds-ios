@@ -11,16 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
 /// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
 /// - Since: 0.14.0
 public enum OUDSDividerColor {

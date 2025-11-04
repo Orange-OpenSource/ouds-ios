@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add umbrella Swift Package product to wrap all others (Orange-OpenSource/ouds-ios#1117)
 - GitHub Actions workflow to move the SNAPSHOT tag
 - Display in standard ouput information message about tokens libraries versions in use
 - Support for `visionOS` (Orange-OpenSource/ouds-ios#1102) 
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
 - Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
+- Reduce number of imports by using higher level Swift Package product (Orange-OpenSource/ouds-ios#1117)
 - Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
 - Update `radio item` component to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
 - Update `switch item` component to v1.4.0 (Orange-OpenSource/ouds-ios#1071)

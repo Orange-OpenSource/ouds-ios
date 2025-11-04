@@ -161,13 +161,13 @@ extension OUDSWCAG21Ratio {
     /// let colorToApply = theme.colors.someColor
     ///
     /// // If you want to check for textual component
-    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor)
+    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
     ///
     /// // If you want to check for non-textual component (i.e. images, chevrons, indicators, ...)
-    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
     ///
     /// // If you want to check the AAA requirements instead of AA (by default)
-    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+    /// OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .AAA)
     /// ```
     ///
     /// - Parameters:

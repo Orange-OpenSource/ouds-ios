@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.

@@ -198,7 +198,7 @@ public struct OUDSBadge: View {
                 size: IllustrationSize = .medium)
     {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDS Badge with an icon should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The OUDSThemesContract Badge with an icon should not have an empty accessibility label, think about your disabled users!")
         }
         self.status = status
         self.size = size.standardSize

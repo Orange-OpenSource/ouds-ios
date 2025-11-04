@@ -12,24 +12,24 @@
 //
 
 #if canImport(UIKit)
-import OUDS // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSThemesContract // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 
 // MARK: - Type aliases
 
-/// OUDS UIKit is not managed with implementation from scratch, but a bridge exists
+/// OUDSThemesContract UIKit is not managed with implementation from scratch, but a bridge exists
 public typealias OUDSUIKit = OUDSUIKitBrige
 
 /// An component interfaction is defined by a target (like a `UIViewController`), a triggered action (e.g. `Selector`) and an event (e.g. *value changed*)
 public typealias ComponentInteraction = (target: AnyObject, action: Selector, events: UIControl.Event)
 
-// MARK: OUDS SwiftUI Bridge
+// MARK: OUDSThemesContract SwiftUI Bridge
 
-/// Helps to wrap OUDS components written in SwiftUI for UIKit views.
+/// Helps to wrap OUDSThemesContract components written in SwiftUI for UIKit views.
 /// Contains environement objects like themes or observers.
-/// Provides utilities to to get OUDS SwiftUI components wrapper in UIKit controllers.
+/// Provides utilities to to get OUDSThemesContract SwiftUI components wrapper in UIKit controllers.
 ///
 /// **This is still an experimental feature and it is recommended to use SwiftUI components**
 ///
@@ -61,10 +61,10 @@ public enum OUDSUIKitBrige {
     /// - Returns: True if everyting is ok, false otherwise
     @discardableResult public static func checkPrerequisites() -> Bool {
         guard theme != nil else {
-            OL.warning("The theme is not assigned to OUDS SwiftUI Brige, call init(theme:) before using it!")
+            OL.warning("The theme is not assigned to OUDSThemesContract SwiftUI Brige, call init(theme:) before using it!")
             return false
         }
-        OL.debug("Everything is ok for OUDS SwiftUI Brige!")
+        OL.debug("Everything is ok for OUDSThemesContract SwiftUI Brige!")
         return true
     }
 
@@ -72,7 +72,7 @@ public enum OUDSUIKitBrige {
 
     /// Gives objects as environment values and wraps the given view inside a `UIHostingController`
     ///
-    /// - Parameter view: The SwiftUI view (supposed to be OUDS component)
+    /// - Parameter view: The SwiftUI view (supposed to be OUDSThemesContract component)
     /// - Returns: A `UIViewController` containing the given `view`
     @MainActor public static func wrap(component view: any View) -> UIViewController {
         checkPrerequisites()

@@ -72,12 +72,7 @@ The raw tokens values are defined in extensions of `enum` in dedicated files for
 
 ### How to use raw tokens
 
-To use raw tokens you will have to make the suitable import for our _OUDS iOS Swift Package_ product:
-
-```swift
-// Import the product
-import OUDSTokensRaw
-```
+To use raw tokens you will have to make the suitable import for the _OUDS iOS Swift Package_ product.
 
 Then choose the tokens you want within the enums below:
 

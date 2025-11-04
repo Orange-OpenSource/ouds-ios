@@ -31,10 +31,6 @@ In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses 
 You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDS // To get OUDSThemeableView
-import OUDSThemesOrange // To get OrangeTheme
-import SwiftUI
-
 @main
 struct YourApp: App {
     var body: some Scene {
@@ -50,9 +46,6 @@ struct YourApp: App {
 Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDS // To get the theme environment variable
-import SwiftUI
-
 struct SomeView: View {
 
     // Get OUDS environment variable for theme thanks to themeable view
@@ -95,27 +88,50 @@ Some tuning object exists.
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
 
-A default tuning is applied for this theme:
+### "Orang France" tuning
 
-Tunable elements               | Default values                          
------------------------------- | ------------------------------------- 
-rounded corners buttons        | false  
-rounded corners text inputs    | false  
-
-### "Max it" case
-
-A predefined tuning configuration is also available for "Max it":
+A predefined tuning configuration is also available for Orange France, which is also the default tuning:
 
 ```swift
-    let theme = OrangeTheme(tuning: Tuning.MaxIt)
+let theme = OrangeTheme(tuning: Tuning.OrangeFrance)
 ```
 
 It applies the following settings:
 
 Tunable elements               | Default values                          
 ------------------------------ | ------------------------------------- 
-rounded corners buttons        | true  
-rounded corners text inputs    | true  
+rounded corners buttons        | ❌ false  
+rounded corners text inputs    | ❌ false  
+
+### "Orange Business" tuning
+
+A predefined tuning configuration is also available for Orange Business:
+
+```swift
+let theme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+```
+
+It applies the following settings:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | ❌ false  
+rounded corners text inputs    | ✅ true 
+
+### "Max it" tuning
+
+A predefined tuning configuration is also available for "Max it":
+
+```swift
+let theme = OrangeTheme(tuning: Tuning.MaxIt)
+```
+
+It applies the following settings:
+
+Tunable elements               | Default values                          
+------------------------------ | ------------------------------------- 
+rounded corners buttons        | ✅ true  
+rounded corners text inputs    | ✅ true  
 
 ## Typography
 
@@ -126,13 +142,13 @@ It is possible to use another typography, by the ones recommended are the ones d
 For Orange products the *Helevetica Neue* font family must be used.
 
 ```swift
-    // The three following instanciations are the same
-    let theme = OrangeTheme()
-    let theme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
-    let theme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
+// The three following instanciations are the same
+let theme = OrangeTheme()
+let theme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+let theme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
 
-    // This instanciation won't work as the font family is not recognised
-    let theme = OrangeTheme(family: "Helvetica Neue")
+// This instanciation won't work as the font family is not recognised
+let theme = OrangeTheme(family: "Helvetica Neue")
 ```
 
 ### Other fonts
@@ -140,22 +156,22 @@ For Orange products the *Helevetica Neue* font family must be used.
 However if, in very particular cases, you need to use another font family, you can try using it by changing the value in the theme init.
 
 ```swift
-    // Supposing you want to use another font:
-    // - like the Luciole font (https://luciole-vision.com/) (very good for accessibility)
-    // - or the Robot font (https://fonts.google.com/specimen/Roboto) (to support arabic and cyrillic alphabets)
-    // 1. Add the TTF files in your project
+// Supposing you want to use another font:
+// - like the Luciole font (https://luciole-vision.com/) (very good for accessibility)
+// - or the Robot font (https://fonts.google.com/specimen/Roboto) (to support arabic and cyrillic alphabets)
+// 1. Add the TTF files in your project
     
-    // 2. Register the fonts with, for example, the function below
-    private func registerFonts() {
-        let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
-        fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
-    }
+// 2. Register the fonts with, for example, the function below
+private func registerFonts() {
+    let fonts = Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)
+    fonts?.forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+}
 
-    // 3. At theme init, given the font family name, add it to the theme.
-    // Keep in mind that it might not work because PostScript name is used combining
-    // font family name and font weight.
-    // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
-    let theme = OrangeTheme(family: theFontFamilyNameInPostScript)
+// 3. At theme init, given the font family name, add it to the theme.
+// Keep in mind that it might not work because PostScript name is used combining
+// font family name and font weight.
+// For Luciole font, use "Luciole". For Roboto font, use "Roboto""
+   let theme = OrangeTheme(family: theFontFamilyNameInPostScript)
 ```
 
 > Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`
@@ -201,11 +217,7 @@ Have a look [on the documentation](https://ios.unified-design-system.orange.com/
 Example for semantic tokens providers:
 
 ```swift
-import OUDSTokensComponent // To use component tokens if needed
-import OUDSTokensSemantic // To use semantic tokens if needed
-import OUDSTokensRaw // To use raw tokens if needed
-
-// MAKR: - For semantic tokens
+// MARK: - For semantic tokens
 
 // Token provider for spaces
 
@@ -313,8 +325,6 @@ You can instead of overriding existing semantic tokens provider implement your o
 Then define your own theme class and assign the providers you want to override. If some are missing, default implementation will be used.
 
 ```swift
-import OUDSThemesOrange // To get OrangeTheme
-
 // Define your theme
 class YourAppTheme: OrangeTheme {
     
@@ -336,8 +346,6 @@ class YourAppTheme: OrangeTheme {
 Then add the theme:
 
 ```swift
-import OUDS  // To get OUDSThemeableView
-
 @main
 struct YourApp: App {
     var body: some Scene {
@@ -356,8 +364,6 @@ Quite simple and similar to the previous solution, but give only the providers t
 But we recommend to define your own theme for clarity reasons.
 
 ```swift
-import OUDS // To get OUDSThemeableView
-
 @main
 struct YourApp: App {
     var body: some Scene {
@@ -437,9 +443,16 @@ struct YourApp: App {
 
 ![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
 
-#### Tag
+#### Tags
 
-![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)
+@TabNavigator {
+    @Tab("Tag") {
+        ![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)        
+    }
+    @Tab("Input tag") {
+        ![An input tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Orange.png)
+    }
+}
 
 ### Layouts
 
