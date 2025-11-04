@@ -35,7 +35,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // Icon only with default appearance
             OUDSButton(icon: Image("ic_heart"), appearance: .default) {}
@@ -46,6 +46,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             OUDSUIKit.createButton(icon: Image("ic_heart"), // Image here is from SwiftUI

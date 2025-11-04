@@ -12,7 +12,7 @@ _Components_ are the `View` objects you can add in the views of your apps, like 
 Import the target of components, and use the component you want:
 
 ```swift
-import OUDSComponents // To get the components
+import OUDSSwiftUI
 ```
 
 Of course you must use in your root view the <doc:/OUDSThemesContract/OUDSThemeableView> with the suitable theme to asign it in environement variable so as to allow components to load their tokens:

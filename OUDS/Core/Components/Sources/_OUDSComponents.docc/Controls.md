@@ -35,7 +35,7 @@ This checkbox can provide two values (selected and unselected) or three values (
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // A simple checkbox, with only an indicator
             // The component must be instanciated with a string parameter used as accessibility label that will be
@@ -50,6 +50,7 @@ This checkbox can provide two values (selected and unselected) or three values (
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI        
             import OUDSComponentsUIKit
 
             // A simple checkbox, with only an indicator
@@ -92,7 +93,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // A leading checkbox with a label, with only two states
             OUDSCheckboxItem(isOn: $isOn, label: "Hello world", target: self, action: action)
@@ -119,6 +120,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             // Where target is a reference to the hosting UIViewController
@@ -169,6 +171,8 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 Checkboxes can be embeded in a checkbox picker (``OUDSCheckboxPicker``) so as to let the users to select one or more items within several.
 
 ```swift
+     import OUDSSwiftUI
+
      // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
      // This object has the same properties as the OUDSCheckboxItem,
      // and some of them are optional with default values set
@@ -237,7 +241,7 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // A simple radio, with only an indicator
             // The component must be instanciated with a string parameter used as accessibility label that will 
@@ -247,6 +251,7 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
     }
     @Tab("UIKit (experimental)") {
         ```swift
+             import OUDSSwiftUI
              import OUDSComponentsUIKit
              
              // Where target is a reference to the hosting UIViewController
@@ -304,6 +309,7 @@ The indicator can be leading or trailing.
     }
     @Tab("UIKit (experimental)") {
         ```swift
+             import OUDSSwiftUI
              import OUDSComponentsUIKit
              
              // Where target is a reference to the hosting UIViewController
@@ -345,6 +351,8 @@ The indicator can be leading or trailing.
 Radio items can be embeded in a radio picker so as to let the users to select only one item within several (``OUDSRadioPicker``).
 
 ```swift
+    import OUDSSwiftUI
+
     // Define the elements to display in radio buttons using OUDSRadioPickerData.
     // This object has the same properties as the OUDSRadioItem,
     // and some of them are optional withdefault values set
@@ -400,7 +408,7 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // A simple switch, with only an indicator
             // The component must be instanciated with a string parameter used as accessibility label that will be
@@ -412,6 +420,7 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
 
             // Where target is a reference to the hosting UIViewController
@@ -450,7 +459,7 @@ The indicator can be leading or trailing.
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
 
             // A leading switch with a label and exposing the state through isOn binding
             OUDSSwitchItem("Hello world", isOn: $isOn)
@@ -473,6 +482,7 @@ The indicator can be leading or trailing.
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             // Where target is a reference to the hosting UIViewController
@@ -527,7 +537,7 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
 
             // Suggestion chip with icon only 
             OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
@@ -541,6 +551,7 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
 
             // Suggestion chip with icon only 
@@ -577,7 +588,7 @@ The library proposes filter chip component to make some filtering with selected 
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // Filter chip with icon only as selected 
             OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
@@ -591,6 +602,7 @@ The library proposes filter chip component to make some filtering with selected 
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             // Filter chip with icon only as selected 
@@ -629,6 +641,8 @@ The library proposes a chip picker to make easily filtering with two kinds of se
 - **multiple**: to select several options
 
 ```swift
+    import OUDSSwiftUI
+
     // Define the elements to display in filter chip using OUDSChipPickerData.
     enum Drink: String, CaseIterable {
         case virginHolyLava, ipaBeer, mineralWater
@@ -696,6 +710,8 @@ The library provides useful components for forms like ``OUDSTextInput`` to let u
 Such components can have or not a leading icon or a trailing action with or without placeholders.
 
 ```swift
+     import OUDSSwiftUI
+
      // The text to display and edit
      @State var text: String = ""
 

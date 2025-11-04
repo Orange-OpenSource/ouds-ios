@@ -31,7 +31,7 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // Neutral badge in medium size without information
             OUDSBadge(status: .neutral, size: .medium)
@@ -45,6 +45,7 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             // Neutral badge in medium size without information
@@ -81,7 +82,7 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift
-            import OUDSComponents
+            import OUDSSwiftUI
             
             // Text only with neutral status, for emphasized appearance with rounded shape in default size
             OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
@@ -106,6 +107,7 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
     }
     @Tab("UIKit (experimental)") {
         ```swift
+            import OUDSSwiftUI
             import OUDSComponentsUIKit
             
             // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
@@ -149,7 +151,7 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
 An ``OUDSInputTag`` is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.
 
 ```swift
-    import OUDSComponents
+    import OUDSSwiftUI
     
     // Create an input tag
     OUDSInputTag("Label") {

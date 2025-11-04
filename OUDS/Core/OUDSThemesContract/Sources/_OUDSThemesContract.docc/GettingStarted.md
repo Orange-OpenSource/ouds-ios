@@ -1,4 +1,4 @@
-# Getting Started with OUDSThemesContract
+# Getting Started with OUDS
 
 @Metadata {
     @PageImage(purpose: icon, source: "ic_unified_ds")
@@ -34,6 +34,15 @@ import OUDSTokenSemantic // If you need to override or use directly semantic tok
 import OUDSTokensRaw // If you need to override or use directly raw tokens
 ```
 
+### Or more simple, import umbrella library
+
+We do not recommend this solution is from our point of view use of tailored imports is better to import
+only the needed elements.
+
+```swift
+import OUDSSwiftUI
+```
+
 ### Chose your theme
 
 The *Orange Unified Design System* framework provides today five themes:
@@ -55,8 +64,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
         }
         @Column {
             ```swift
-            import OUDSThemesContract  // To get OUDSThemeableView
-            import OUDSThemesOrange // To get OrangeTheme
+            import OUDSSwiftUI
             import SwiftUI
 
             @main
@@ -80,7 +88,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
     }
     @Column {
         ```swift
-        import OUDSThemesContract // To load the theme as environment variabme
+        import OUDSSwiftUI
 
         // Use it in views as an environment variable
         @Environment(\.theme) var theme

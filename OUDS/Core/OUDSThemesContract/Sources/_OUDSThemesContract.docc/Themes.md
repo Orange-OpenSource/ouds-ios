@@ -40,12 +40,8 @@ A theme can use its own tokens providers, implemented from scratch or by inherit
 ## Use themeable view
 
 ```swift
-// Make imports
-import OUDSThemesContract // For OUDSThemeableView
-import OUDSThemesOrange // For OrangeTheme
-import OUDSThemesOrangeBusinessTools // For OrangeBusinessToolsTheme
-import OUDSThemesSosh // For SoshTheme
-import OUDSThemesWireframe // For WrieframeTheme
+// Make import for everything
+import OUDSSwiftUI
 
 // Add themeable view to your root view to use the OrangeTheme
 OUDSThemeableView(theme: OrangeTheme()) {
@@ -124,8 +120,7 @@ You must consider the tokens provider you need (to inherit from for overriding, 
 Find bellow some example
 
 ```swift
-import OUDSTokensSemantic // To use semantic tokens if needed
-import OUDSTokensRaw // To use raw tokens if needed
+import OUDSSwiftUI 
 
 // Token provider for spaces
 
