@@ -17,12 +17,12 @@ set -euo pipefail
 # Configuration
 # -------------
 
-OUDS_VERSION_SWIFT_FILE="../OUDS/Core/OUDS/Sources/TokenatorConstants.swift"
+OUDS_VERSION_SWIFT_FILE="../OUDS/Core/OUDSThemesContract/Sources/TokenatorConstants.swift"
 OUDS_README_FILE="../README.md"
 RAW_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
 SEMANTIC_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"
 COMPONENT_TOKENS_MARKDOWN_FILE="../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
-CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDS/Sources/_OUDS.docc/_OUDS.md"
+CORE_THEME_MARKDOWN_FILE="../OUDS/Core/OUDSThemesContract/Sources/_OUDSThemesContract.docc/_OUDSThemesContract.md"
 ORANGE_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/OUDSThemesOrange.md"
 ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/OUDSThemesOrangeBusinessTools.md"
 SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"

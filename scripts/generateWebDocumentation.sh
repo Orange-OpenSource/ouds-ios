@@ -193,7 +193,7 @@ swift package \
     --allow-writing-to-directory "$DOCUMENTATION_HTML_LOCATION" \
     generate-documentation \
     --enable-experimental-combined-documentation \
-    --target OUDS \
+    --target OUDSThemesContract \
     --target OUDSModules \
     --target OUDSComponents \
     --target OUDSThemesOrange \
@@ -230,7 +230,7 @@ fi
 # Landing page of generated documentation is broken, real content is in /documentation
 # Override this page and force by code redirection
 # See Orange-OpenSource/ouds-ios#636
-echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/ouds"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/ouds</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/oudsthemescontract"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/oudsthemescontract</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
 
 # Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
@@ -280,11 +280,11 @@ if [[ $use_git -eq 1 ]]; then
     # It seems there is an issue with references of images
     # Need to copy them also in root images folder at least for landing page
     # See https://github.com/swiftlang/swift-docc/issues/1284
-    cp "$DOCS_DIRECTORY/images/OUDS/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDS/ic_design_token_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDS/ic_theme_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDS/ic_module_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDS/ic_component_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_design_token_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_theme_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_module_intro.png" "$DOCS_DIRECTORY/images"
+    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_component_intro.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"
