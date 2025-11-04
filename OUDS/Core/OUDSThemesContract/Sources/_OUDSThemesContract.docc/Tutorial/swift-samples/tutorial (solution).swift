@@ -57,7 +57,6 @@ struct ContentView: View {
                                         placement: .horizontal(false))
 
                         let identityDeleteAction = OUDSTextInput.TrailingAction(icon: Image(systemName: "trash"), actionHint: "Delete") { identity = "" }
-                        let identityDeleteAction = OUDSTextInput.TrailingAction(icon: Image(systemName: "trash"), actionHint: "Delete") { identity = "" }
                         OUDSTextInput(label: "Identity", text: $identity, placeholder: "Firstname and lastname", trailingAction: identityDeleteAction)
 
                         OUDSTextInput(label: "Email", text: $email,
