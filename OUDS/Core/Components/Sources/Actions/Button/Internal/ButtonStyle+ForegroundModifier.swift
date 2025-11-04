@@ -77,8 +77,10 @@ struct ButtonForegroundModifier: ViewModifier {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultHover : theme.button.colorContentDefaultHover
-        case .strong, .brand:
+        case .strong:
             useMonochrome ? theme.button.monoColorContentStrongHover : theme.colors.contentOnActionHover
+        case .brand:
+            theme.button.colorContentBrandHover
         case .minimal:
             useMonochrome ? theme.button.monoColorContentMinimalHover : theme.button.colorContentMinimalHover
         case .negative:
@@ -90,8 +92,10 @@ struct ButtonForegroundModifier: ViewModifier {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultPressed : theme.button.colorContentDefaultPressed
-        case .strong, .brand:
+        case .strong:
             useMonochrome ? theme.button.monoColorContentStrongPressed : theme.colors.contentOnActionPressed
+        case .brand:
+            theme.button.colorContentBrandPressed
         case .minimal:
             useMonochrome ? theme.button.monoColorContentDefaultPressed : theme.button.colorContentDefaultPressed
         case .negative:
@@ -103,8 +107,10 @@ struct ButtonForegroundModifier: ViewModifier {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultDisabled : theme.button.colorContentDefaultDisabled
-        case .strong, .brand:
+        case .strong:
             useMonochrome ? theme.button.monoColorContentStrongDisabled : theme.colors.contentOnActionDisabled
+        case .brand:
+            theme.colors.contentOnActionDisabled
         case .minimal:
             useMonochrome ? theme.button.monoColorContentMinimalDisabled : theme.button.colorContentMinimalDisabled
         case .negative:

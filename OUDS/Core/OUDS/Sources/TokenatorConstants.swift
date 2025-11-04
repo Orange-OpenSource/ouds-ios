@@ -42,7 +42,7 @@ public enum OUDSVersions {
     // MARK: - Components versions - Actions
 
     /// Version of the Figma specifications for the component button
-    public static let componentButtonVersion = "3.0.0" // NOTE: Manually fixed, still 3.0.0 implemented and not 3.2.0
+    public static let componentButtonVersion = "3.2.0"
 
     // MARK: - Components versions - Navigation
 

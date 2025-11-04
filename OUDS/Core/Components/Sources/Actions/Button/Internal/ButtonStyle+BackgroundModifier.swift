@@ -76,7 +76,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .strong:
             useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
         case .brand:
-            useMonochrome ? theme.button.monoColorBgStrongHover : theme.colors.actionHover
+            theme.button.colorBgBrandHover
         case .minimal:
             useMonochrome ? theme.button.monoColorBgMinimalHover : theme.button.colorBgMinimalHover
         case .negative:
@@ -91,7 +91,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .strong:
             useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
         case .brand:
-            useMonochrome ? theme.button.monoColorBgStrongPressed : theme.colors.actionPressed
+            theme.button.colorBgBrandPressed
         case .minimal:
             useMonochrome ? theme.button.monoColorBgMinimalPressed : theme.button.colorBgMinimalPressed
         case .negative:
@@ -106,7 +106,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .strong:
             useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
         case .brand:
-            useMonochrome ? theme.button.monoColorBgStrongLoading : theme.colors.actionLoading
+            theme.button.colorBgBrandLoading
         case .minimal:
             nil
         case .negative:
@@ -121,7 +121,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .strong:
             useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
         case .brand:
-            useMonochrome ? theme.button.monoColorBgStrongDisabled : theme.colors.actionDisabled
+            theme.colors.actionDisabled
         case .minimal:
             nil
         case .negative:

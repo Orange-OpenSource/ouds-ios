@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
 - Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
 - Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
 - Update `radio item` component to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
