@@ -35,7 +35,7 @@ myView.oudsShadow(theme.elevations.drag)
 ```
 
 In details how it works:
-```
+```swift
 // In the theme this "drag" has been defined for example like:
 @objc open var drag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.bottom_3_500) }
 
@@ -122,6 +122,25 @@ someView.oudsBackground(theme.colors.bgPrimary)
 
 // Apply an accent color
 someView.oudsAccentColor(theme.colors.bgPrimary)
+```
+
+## Flip images according to layouts
+
+Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
+of your app changes, the images in use can loose meanings or have another one (except if they are asymetruc).
+If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout.
+
+```swift
+// Get the layout direction in your View
+@Environment(\.layoutDirection) private var layoutDirection
+
+// Because by default icons are not flipped, i.e. more LTR flavoured, use a simple comparison
+// (layoutDirection == .rightToLeft)
+
+// For example in a checkbox item
+OUDSCheckboxItem(...,
+                 flipIcon: (layoutDirection == .rightToLeft),
+                 )
 ```
 
 ## Change font family according to locale or preferred language
