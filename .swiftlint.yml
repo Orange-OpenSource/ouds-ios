@@ -28,7 +28,7 @@ included:
 # ========
 
 excluded:
-- OUDS/Core/OUDSThemesContract/Sources/_OUDSThemesContract.docc/Tutorial
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial
 
 # ==============
 # Disabled rules

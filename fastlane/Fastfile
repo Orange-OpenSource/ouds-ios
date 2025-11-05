@@ -37,7 +37,7 @@ platform :ios do
         puts "👉 Run Swift Format to format sources"
 
         template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
-        sh "cd .. && swiftformat . --exclude OUDS/Core/OUDSThemesContract/Sources/_OUDSThemesContract.docc/Tutorial --header \"#{template}\""
+        sh "cd .. && swiftformat . --exclude OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial --header \"#{template}\""
     end
 
     # ------------------------------------------------------------

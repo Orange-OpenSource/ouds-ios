@@ -224,11 +224,11 @@ let package = Package(
         .target(
             name: "OUDSThemesContract",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/OUDSThemesContract/Sources"),
+            path: "OUDS/Core/ThemesContract/Sources"),
         .testTarget(
             name: "OUDSThemesContract-Tests",
             dependencies: ["OUDSThemesContract", "TestsUtils"],
-            path: "OUDS/Core/OUDSThemesContract/Tests"),
+            path: "OUDS/Core/ThemesContract/Tests"),
 
         .target(
             name: "OUDSModules",
