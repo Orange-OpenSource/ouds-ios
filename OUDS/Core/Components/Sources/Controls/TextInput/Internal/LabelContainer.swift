@@ -16,24 +16,54 @@ import SwiftUI
 
 struct LabelContainer: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let label: String
     let status: OUDSTextInput.Status
     let interactionState: TextInputInteractionState
+    let position: Position
 
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Enums
+
+    enum Position {
+        case top
+        case middle
+    }
+
+    // MARK: Body
 
     var body: some View {
-        Text(label)
-            .labelDefaultSmall(theme)
-            .oudsForegroundColor(color)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        if !label.isEmpty {
+            switch position {
+            case .top:
+                content.labelDefaultSmall(theme)
+            case .middle:
+                content.labelDefaultLarge(theme)
+            }
+        }
     }
 
     // MARK: Helper
+
+    private var content: some View {
+        Text(label)
+            .lineLimit(numberOfLines)
+            .minimumScaleFactor(1.0)
+            .oudsForegroundColor(color)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityHidden(true)
+    }
+
+    private var numberOfLines: Int {
+        switch position {
+        case .top:
+            1
+        case .middle:
+            2
+        }
+    }
 
     private var color: MultipleColorSemanticTokens {
         switch status {

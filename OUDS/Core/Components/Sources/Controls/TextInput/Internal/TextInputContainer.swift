@@ -42,49 +42,37 @@ struct TextInputContainer: View {
                 // Leading icon container
                 LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, status: status)
 
-                // Text container
-                VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
-                    // Label container
-                    if showLabelInContainer {
-                        LabelContainer(label: label, status: status, interactionState: interactionState)
-                            .accessibilityHidden(true)
+                // ZStack here to add the label above the textField when
+                // the text is empty, the placeholder is empty and not focused
+                // Otherwise the label is placed at the top
+                ZStack {
+                    if labelPosition == .middle {
+                        LabelContainer(label: label,
+                                       status: status,
+                                       interactionState: interactionState,
+                                       position: .middle)
                     }
 
-                    // Input container
-                    HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapInlineText) {
-
-                        // Prefix container
-                        if let placeholder,
-                           let prefix,
-                           !prefix.isEmpty,
-                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
-                        {
-                            Text(prefix)
-                                .labelDefaultLarge(theme)
-                                .oudsForegroundColor(prefixSuffixColor)
-                                .accessibilityHidden(true)
+                    VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
+                        if labelPosition == .top {
+                            LabelContainer(label: label,
+                                           status: status,
+                                           interactionState: interactionState,
+                                           position: .top)
                         }
 
-                        // Input text container
-                        InputText(label: textfieldLabel,
-                                  text: text,
-                                  labelAsPlaceholder: textfieldLabel == label,
-                                  status: status,
-                                  interactionState: interactionState)
+                        InputContainer(text: text,
+                                       label: labelPosition == .top ? "" : label,
+                                       placeholder: placeholder,
+                                       prefix: prefix,
+                                       suffix: suffix,
+                                       status: status,
+                                       interactionState: interactionState)
                             .focused($focused, equals: true)
-
-                        // Suffix container
-                        if let placeholder,
-                           let suffix,
-                           !suffix.isEmpty,
-                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
-                        {
-                            Text(suffix)
-                                .labelDefaultLarge(theme)
-                                .oudsForegroundColor(prefixSuffixColor)
-                                .accessibilityHidden(true)
-                        }
                     }
+                }
+                .onTapGesture {
+                    focused = true
                 }
             }
 
@@ -102,15 +90,12 @@ struct TextInputContainer: View {
 
     // MARK: - Helpers
 
-    private var showLabelInContainer: Bool {
-        !label.isEmpty && (focused || (!focused && (placeholder?.isEmpty == false) || !text.wrappedValue.isEmpty))
-    }
-
-    private var textfieldLabel: String {
-        guard let placeholder, !placeholder.isEmpty else {
-            return focused ? "" : label
+    private var labelPosition: LabelContainer.Position {
+        if !text.wrappedValue.isEmpty || placeholder?.isEmpty == false || focused {
+            .top
+        } else {
+            .middle
         }
-        return placeholder
     }
 
     private var trailingPadding: CGFloat {
@@ -124,10 +109,6 @@ struct TextInputContainer: View {
                 theme.textInput.spacePaddingInlineDefault
             }
         }
-    }
-
-    private var prefixSuffixColor: MultipleColorSemanticTokens {
-        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 
     private var interactionState: TextInputInteractionState {

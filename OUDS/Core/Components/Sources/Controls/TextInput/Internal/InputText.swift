@@ -20,7 +20,6 @@ struct InputText: View {
 
     let label: String
     let text: Binding<String>
-    let labelAsPlaceholder: Bool
     let status: OUDSTextInput.Status
     let interactionState: TextInputInteractionState
 
@@ -34,7 +33,7 @@ struct InputText: View {
             Text(label)
                 .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
                 .labelDefaultLarge(theme)
-                .oudsForegroundStyle(placeholderColor)
+                .oudsForegroundStyle(theme.colors.contentMuted)
         }
         .oudsForegroundColor(inputTextColor)
         .multilineTextAlignment(.leading)
@@ -59,31 +58,10 @@ struct InputText: View {
 
     private var placeholderColor: MultipleColorSemanticTokens {
         switch status {
-        case .enabled:
-            theme.colors.contentMuted
-        case .error:
-            placeholderErrorColor
-        case .loading:
-            theme.colors.contentMuted
-        case .readOnly:
+        case .enabled, .error, .loading, .readOnly:
             theme.colors.contentMuted
         case .disabled:
             theme.colors.actionDisabled
-        }
-    }
-
-    private var placeholderErrorColor: MultipleColorSemanticTokens {
-        if labelAsPlaceholder {
-            switch interactionState {
-            case .idle:
-                theme.colors.actionNegativeEnabled
-            case .focused:
-                theme.colors.actionNegativeFocus
-            case .hover:
-                theme.colors.actionNegativeHover
-            }
-        } else {
-            theme.colors.contentMuted
         }
     }
 }
