@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `ruby/setup-ruby` action from v1.26.0 to v1.267.0 for `build-and-test` workflow 
 - `SwiftLintPlugins` Swift package from v0.62.1 to v0.62.2
 - `SwiftFormat` Swift package from v0.58.3 to v0.58.5
+- Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise  (Orange-OpenSource/ouds-ios#1086) 
 - Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
 - Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
 - Reduce number of imports by using higher level Swift Package product (Orange-OpenSource/ouds-ios#1117)
