@@ -17,6 +17,9 @@ The products are written in Swift with SwiftUI as UI framework and Swift 6 (form
 - *raw token*: a family of tokens which have for value a raw type value like String, Int, or CGFloat
 - *semantic token*: a family of tokens which point to raw tokens and bring meanings in their name, used inside components
 - *component tokens*: a family of tokens for some components if semantic tokens are not enough, and have for values semantic tokens
+- *theme*: a set of tokens, assets like fonts and images, to use in app to style it and change their look and feels
+- *tuning*: some small configuration elements for a theme like rounded corners
+- *token provider*: an object in a theme gathering tokens (semantics and components)
 
 ## Code formating
 
@@ -177,4 +180,84 @@ bundle exec fastlane check_leaks
 To update the Software Bill of Materials:
 ```shell
 bundle exec fastlane update_sbom
+```
+
+## Code samples
+
+### Import OUDS product
+
+Import OUDS umbrella product gathering all other librairies:
+```swift
+import OUDSSwiftUI
+```
+
+### Instanciate a theme object
+
+Create a theme for Orange product:
+```swift
+    let theme = OrangeTheme()
+```
+
+### Inject a theme in an app
+
+Use an `OUDSThemeableView` to inject the theme:
+
+```swift
+OUDSThemeableView(theme: theme) {
+
+}
+```
+
+### Get the theme object
+
+Get the theme object as environement object:
+```swift
+@Environment(\.theme) private var theme
+```
+
+### Use tokens from theme
+
+Use colors (semantic tokens) defined in a theme:
+```swift
+theme.colors
+```
+
+Use borders (semantic tokens) defined in a theme:
+```swift
+theme.borders
+```
+
+Use fonts (semantic tokens) defined in a theme:
+```swift
+theme.fonts
+```
+
+Use sizes (semantic tokens) defined in a theme:
+```swift
+theme.sizes
+```
+
+Use spaces (semantic tokens) defined in a theme:
+```swift
+theme.spaces
+```
+
+Use dimensions (semantic tokens) defined in a theme:
+```swift
+theme.dimensions
+```
+
+Use elevations (semantic tokens) defined in a theme:
+```swift
+theme.elevations
+```
+
+Use grids (semantic tokens) defined in a theme:
+```swift
+theme.grids
+```
+
+Use opacities (semantic tokens) defined in a theme:
+```swift
+theme.opacities
 ```
