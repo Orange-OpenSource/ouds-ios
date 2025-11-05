@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -31,8 +31,8 @@ import OUDSFoundations
 ///
 ///         // Then override the text area component tokens you want.
 ///
-///         override var textAreaSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockXl }
-///         override var textAreaSizeMinHeightInput: SizeSemanticToken { DimensionRawTokens.dimension1000 }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingBlockXl }
+///         override var sizeMinHeightInput: SizeSemanticToken { DimensionRawTokens._1000 }
 ///
 ///         // ...
 ///     }
@@ -86,7 +86,7 @@ open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentToken
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`

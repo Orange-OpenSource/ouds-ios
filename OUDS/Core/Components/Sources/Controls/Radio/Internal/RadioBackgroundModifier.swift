@@ -28,9 +28,11 @@ struct RadioBackgroundModifier: ViewModifier {
         case .enabled, .disabled, .readOnly:
             content
         case .hover:
-            content.oudsBackground(theme.controlItem.controlItemColorBgHover)
+            content.oudsBackground(theme.controlItem.colorBgHover)
+                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         case .pressed:
-            content.oudsBackground(theme.controlItem.controlItemColorBgPressed)
+            content.oudsBackground(theme.controlItem.colorBgPressed)
+                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         }
     }
 }

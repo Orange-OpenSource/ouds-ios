@@ -32,18 +32,18 @@ struct LinkSizeIconModifier: ViewModifier {
     private var width: Double {
         switch size {
         case .small:
-            theme.link.linkSizeIconSmall
+            theme.link.sizeIconSmall
         case .default:
-            theme.link.linkSizeIconDefault
+            theme.link.sizeIconDefault
         }
     }
 
     private var height: Double {
         switch size {
         case .small:
-            theme.link.linkSizeIconSmall
+            theme.link.sizeIconSmall
         case .default:
-            theme.link.linkSizeIconDefault
+            theme.link.sizeIconDefault
         }
     }
 }

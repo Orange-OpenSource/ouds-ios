@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **space semantic tokens**, *multiple* or not, and expose them.
 /// This provider should be integrated as a `AllSpaceSemanticTokens` implementation inside `OUDSTheme` so as to provide
@@ -23,14 +23,14 @@ import OUDSFoundations
 ///     // Define your own provider for space semantic tokens
 ///     class CustomSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 ///
-///         // Then override the space semantic tokens you want, using the dimension raw tokens available
+///         // Then override the space semantic tokens you want, using the _ raw tokens available
 ///
-///         override var spaceFixedMedium: SpaceSemanticToken {
-///             DimensionRawTokens.dimension400
+///         override var fixedMedium: SpaceSemanticToken {
+///             DimensionRawTokens._400
 ///         }
 ///
-///         override var spaceScaledSmall: MultipleSpaceSemanticTokens {
-///             MultipleSpaceSemanticTokens(compact: spaceFixed5xl, regular: spaceFixed5xl)
+///         override var scaledSmall: MultipleSpaceSemanticTokens {
+///             MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
 ///         }
 /// }
 /// ```
@@ -55,15 +55,15 @@ import OUDSFoundations
 /// - Since: 0.8.0
 open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider
-    /// - Parameter dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    /// - Parameter dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(dimensions: AllDimensionSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
         self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())

@@ -67,7 +67,7 @@ import SwiftUI
 ///
 /// ![A link component in light and dark mode with Wireframe theme](component_link_Wireframe)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 2.2.0 (Figma component design version)
 /// - Since: 0.11.0
 public struct OUDSLink: View {
 
@@ -176,6 +176,6 @@ public struct OUDSLink: View {
         if case let .indicator(nav) = layout, nav == .next {
             return layoutDirection == .leftToRight ? "ic_chevron_right" : "ic_chevron_left"
         }
-        OL.fatal("Tried to load an icon for an OUDS Link which is not a back or next indicator, report an issue at https://github.com/Orange-OpenSource/ouds-ios/issues")
+        OL.fatal("Tried to load an icon for an OUDSLink which is not a back or next indicator, report an issue at https://github.com/Orange-OpenSource/ouds-ios/issues")
     }
 }

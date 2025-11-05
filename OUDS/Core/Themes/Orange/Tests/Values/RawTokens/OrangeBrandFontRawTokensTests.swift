@@ -13,9 +13,7 @@
 
 import Foundation
 import OUDSThemesOrange
-import OUDSTokensRaw
 import Testing
-import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **Orange brand font raw tokens**.
 ///
@@ -25,10 +23,10 @@ import TestsUtils
 struct OrangeBrandFontRawTokensTests {
 
     @Test func orangeBrandFontRawTokenFontFamilyBrandDefault() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrandDefault == "Helvetica Neue")
+        #expect(OrangeBrandFontRawTokens.familyBrandDefault == "Helvetica Neue")
     }
 
     @Test func orangeBrandFontRawTokenFontFamilyBrandTV() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrandTv == "Helvetica Neue LT")
+        #expect(OrangeBrandFontRawTokens.familyBrandTv == "Helvetica Neue LT")
     }
 }

@@ -27,22 +27,22 @@ public protocol RadioButtonComponentTokens {
 
     // MARK: - Sizes
 
-    var radioButtonSizeMaxHeight: SizeSemanticToken { get }
-    var radioButtonSizeMinHeight: SizeSemanticToken { get }
-    var radioButtonSizeMinWidth: SizeSemanticToken { get }
-    var radioButtonSizeIndicator: SizeSemanticToken { get }
+    var sizeMaxHeight: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeIndicator: SizeSemanticToken { get }
 
     // MARK: - Borders
 
-    var radioButtonBorderRadius: BorderRadiusSemanticToken { get }
-    var radioButtonBorderWidthSelected: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthSelectedFocus: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthSelectedHover: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthSelectedPressed: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthUnselected: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthUnselectedFocus: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthUnselectedHover: BorderWidthSemanticToken { get }
-    var radioButtonBorderWidthUnselectedPressed: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
+    var borderWidthSelected: BorderWidthSemanticToken { get }
+    var borderWidthSelectedFocus: BorderWidthSemanticToken { get }
+    var borderWidthSelectedHover: BorderWidthSemanticToken { get }
+    var borderWidthSelectedPressed: BorderWidthSemanticToken { get }
+    var borderWidthUnselected: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedFocus: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedHover: BorderWidthSemanticToken { get }
+    var borderWidthUnselectedPressed: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

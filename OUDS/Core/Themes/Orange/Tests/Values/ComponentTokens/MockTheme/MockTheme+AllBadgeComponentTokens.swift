@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensSemantic
@@ -34,14 +34,14 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
 
     // MARK: - Badge component tokens
 
-    override var badgeSizeXsmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override var badgeSizeSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override var badgeSizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override var badgeSizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var sizeXsmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var sizeSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var sizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
+    override var sizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
 
-    override var badgeSpaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
-    override var badgeSpacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
-    override var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
 }
 
 // swiftlint:enable required_deinit

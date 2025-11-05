@@ -19,47 +19,48 @@
 
 /// This is a group of semantic tokens for **dimensions**.
 /// It defines all ``DimensionSemanticToken`` a theme must have.
-/// Any dimension semantic token must be declared there.
+/// Any _ semantic token must be declared there.
 ///
-/// These dimension semantic tokens should not be overriden by design.
+/// These _ semantic tokens should not be overriden by design.
 /// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
 /// and library. The tokens are not hidden from developers.
 ///
 /// - Since: 0.16.0
 public protocol DimensionSemanticTokens {
 
-    var dimensionNone: DimensionSemanticToken { get }
+    // NOTE: To keep consistency in variable snames, start all of them by '_'
+    // because those starting with digits do not compile
 
-    var dimensionXsmall: DimensionSemanticToken { get }
-    var dimension2xsmall: DimensionSemanticToken { get }
-    var dimension3xsmall: DimensionSemanticToken { get }
-    var dimension4xsmall: DimensionSemanticToken { get }
-    var dimension5xsmall: DimensionSemanticToken { get }
-    var dimension6xsmall: DimensionSemanticToken { get }
-    var dimension7xsmall: DimensionSemanticToken { get }
-    var dimension8xsmall: DimensionSemanticToken { get }
-    var dimension9xsmall: DimensionSemanticToken { get }
-    var dimension10xsmall: DimensionSemanticToken { get }
-    var dimension11xsmall: DimensionSemanticToken { get }
-    var dimension12xsmall: DimensionSemanticToken { get }
+    var _none: DimensionSemanticToken { get }
 
-    var dimensionSmall: DimensionSemanticToken { get }
+    var _xsmall: DimensionSemanticToken { get }
+    var _2xsmall: DimensionSemanticToken { get }
+    var _3xsmall: DimensionSemanticToken { get }
+    var _4xsmall: DimensionSemanticToken { get }
+    var _5xsmall: DimensionSemanticToken { get }
+    var _6xsmall: DimensionSemanticToken { get }
+    var _7xsmall: DimensionSemanticToken { get }
+    var _8xsmall: DimensionSemanticToken { get }
+    var _9xsmall: DimensionSemanticToken { get }
+    var _10xsmall: DimensionSemanticToken { get }
+    var _11xsmall: DimensionSemanticToken { get }
+    var _12xsmall: DimensionSemanticToken { get }
 
-    var dimensionMedium: DimensionSemanticToken { get }
+    var _small: DimensionSemanticToken { get }
+    var _medium: DimensionSemanticToken { get }
+    var _large: DimensionSemanticToken { get }
 
-    var dimensionLarge: DimensionSemanticToken { get }
-
-    var dimensionXlarge: DimensionSemanticToken { get }
-    var dimension2xlarge: DimensionSemanticToken { get }
-    var dimension3xlarge: DimensionSemanticToken { get }
-    var dimension4xlarge: DimensionSemanticToken { get }
-    var dimension5xlarge: DimensionSemanticToken { get }
-    var dimension6xlarge: DimensionSemanticToken { get }
-    var dimension7xlarge: DimensionSemanticToken { get }
-    var dimension8xlarge: DimensionSemanticToken { get }
-    var dimension9xlarge: DimensionSemanticToken { get }
-    var dimension10xlarge: DimensionSemanticToken { get }
-    var dimension11xlarge: DimensionSemanticToken { get }
+    var _xlarge: DimensionSemanticToken { get }
+    var _2xlarge: DimensionSemanticToken { get }
+    var _3xlarge: DimensionSemanticToken { get }
+    var _4xlarge: DimensionSemanticToken { get }
+    var _5xlarge: DimensionSemanticToken { get }
+    var _6xlarge: DimensionSemanticToken { get }
+    var _7xlarge: DimensionSemanticToken { get }
+    var _8xlarge: DimensionSemanticToken { get }
+    var _9xlarge: DimensionSemanticToken { get }
+    var _10xlarge: DimensionSemanticToken { get }
+    var _11xlarge: DimensionSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

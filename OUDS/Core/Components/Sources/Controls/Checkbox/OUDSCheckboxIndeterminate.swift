@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDS Checkbox Indeterminate
+// MARK: - OUDSThemesContract Checkbox Indeterminate
 
 /// The ``OUDSCheckboxIndeterminate`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons components.
 /// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
@@ -88,7 +88,7 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.0.0 (Figma component design version)
+/// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSCheckboxIndeterminate: View {
 
@@ -130,10 +130,10 @@ public struct OUDSCheckboxIndeterminate: View {
             $selection.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)
-                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
-                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
-                       minHeight: theme.checkbox.checkboxSizeMinHeight,
-                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .frame(minWidth: theme.checkbox.sizeMinWidth,
+                       maxWidth: theme.checkbox.sizeMinWidth,
+                       minHeight: theme.checkbox.sizeMinHeight,
+                       maxHeight: theme.checkbox.sizeMaxHeight)
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+

@@ -13,9 +13,7 @@
 
 import Foundation
 import OUDSThemesWireframe
-import OUDSTokensRaw
 import Testing
-import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **Wriframe brand font raw tokens**.
 ///
@@ -25,6 +23,6 @@ import TestsUtils
 struct WireframeBrandFontRawTokensTests {
 
     @Test func wireframeBrandFontRawTokenFontFamilyBrandDefault() throws {
-        #expect(WireframeBrandFontRawTokens.fontFamilyDefault == "Shantell Sans")
+        #expect(WireframeBrandFontRawTokens.familyDefault == "Shantell Sans")
     }
 }

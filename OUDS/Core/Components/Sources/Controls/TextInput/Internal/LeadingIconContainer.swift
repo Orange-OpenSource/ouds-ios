@@ -31,7 +31,7 @@ struct LeadingIconContainer: View {
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
-            .frame(height: theme.textInput.textInputSizeLeadingIcon, alignment: .center)
+            .frame(height: theme.textInput.sizeLeadingIcon, alignment: .center)
             .oudsForegroundColor(color)
             .toFlip(flip)
             .accessibilityHidden(true)
@@ -42,9 +42,9 @@ struct LeadingIconContainer: View {
     private var color: MultipleColorSemanticTokens {
         switch status {
         case .enabled, .error, .loading, .readOnly:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 }

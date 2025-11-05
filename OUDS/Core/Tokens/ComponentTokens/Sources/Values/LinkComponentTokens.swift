@@ -27,32 +27,53 @@ public protocol LinkComponentTokens {
 
     // MARK: - Sizes
 
-    var linkSizeMinHeightSmall: SizeSemanticToken { get }
-    var linkSizeMinHeightDefault: SizeSemanticToken { get }
-    var linkSizeMinWidthSmall: SizeSemanticToken { get }
-    var linkSizeMinWidthDefault: SizeSemanticToken { get }
-    var linkSizeIconSmall: SizeSemanticToken { get }
-    var linkSizeIconDefault: SizeSemanticToken { get }
+    var sizeMinHeightSmall: SizeSemanticToken { get }
+    var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinWidthSmall: SizeSemanticToken { get }
+    var sizeMinWidthDefault: SizeSemanticToken { get }
+    var sizeIconSmall: SizeSemanticToken { get }
+    var sizeIconDefault: SizeSemanticToken { get }
 
     // MARK: - Colors
 
-    var linkColorContentEnabled: MultipleColorSemanticTokens { get }
-    var linkColorContentHover: MultipleColorSemanticTokens { get }
-    var linkColorContentPressed: MultipleColorSemanticTokens { get }
-    var linkColorContentFocus: MultipleColorSemanticTokens { get }
-    var linkColorChevronEnabled: MultipleColorSemanticTokens { get }
-    var linkColorChevronHover: MultipleColorSemanticTokens { get }
-    var linkColorChevronPressed: MultipleColorSemanticTokens { get }
-    var linkColorChevronFocus: MultipleColorSemanticTokens { get }
+    var colorContentEnabled: MultipleColorSemanticTokens { get }
+    var colorContentHover: MultipleColorSemanticTokens { get }
+    var colorContentPressed: MultipleColorSemanticTokens { get }
+    var colorContentFocus: MultipleColorSemanticTokens { get }
+    var colorChevronEnabled: MultipleColorSemanticTokens { get }
+    var colorChevronHover: MultipleColorSemanticTokens { get }
+    var colorChevronPressed: MultipleColorSemanticTokens { get }
+    var colorChevronFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var linkSpacePaddingInline: SpaceSemanticToken { get }
-    var linkSpacePaddingBlock: SpaceSemanticToken { get }
-    var linkSpaceColumnGapIconSmall: SpaceSemanticToken { get }
-    var linkSpaceColumnGapChevronSmall: SpaceSemanticToken { get }
-    var linkSpaceColumnGapIconDefault: SpaceSemanticToken { get }
-    var linkSpaceColumnGapChevronDefault: SpaceSemanticToken { get }
+    var spacePaddingInline: SpaceSemanticToken { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
+    var spaceColumnGapIconSmall: SpaceSemanticToken { get }
+    var spaceColumnGapChevronSmall: SpaceSemanticToken { get }
+    var spaceColumnGapIconDefault: SpaceSemanticToken { get }
+    var spaceColumnGapChevronDefault: SpaceSemanticToken { get }
+
+    /*
+
+     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⠀⠀⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣄⠀⠀⠀⠀⠀⠀⣿⣆⠀⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⠀⠀⠀⠀⣿⣿⡄⠀⠀⠀⠀
+     ⠀⠀⠀⠀⣠⡿⠿⠻⢿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⢹⣿⡇⠀⠀⠀⠀
+     ⠀⠀⠀⠀⣀⣤⣶⡀⠀⠻⢛⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠈⣿⣷⠀⠀⠀⠀
+     ⠀⠀⢠⣾⣿⣿⣿⣿⡦⣼⣯⣵⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⢹⣿⠀⠀⠀⠀
+     ⠀⢠⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⡿⣿⣿⣦⣀⢀⡘⣿⡇⠀⠀⠀
+     ⠀⣾⣿⣿⣿⣿⡟⠉⠀⠀⣾⣿⣿⣿⣿⠟⠁⠀⠉⠻⣿⣿⣿⣿⣧⣠⣶⠄
+     ⢰⣿⣿⣿⡿⠋⠀⠀⠀⢀⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠙⠻⣿⣿⣿⡟⠁⠀
+     ⢸⣿⡿⠋⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠙⢻⡃⠀⠀
+     ⠀⠁⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⣿⡿⢿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠘⠃⠀⠀
+     ⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠙⢿⣿⣶⣶⣤⠀⠀⠀⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡟⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⠀⠀⠀⣻⣿⣿⠀⠀⠀⠀⠀⠀⠀⠉⢻⣿⣿⣇⠀⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⠀⢰⣾⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣦⠀⠀⠀⠀
+     ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠿⠀⠀⠀⠀
+
+     */
 }
 
 // swiftlint:enable missing_docs

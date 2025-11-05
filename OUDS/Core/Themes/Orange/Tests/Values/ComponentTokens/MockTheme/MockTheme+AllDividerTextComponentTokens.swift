@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw
@@ -32,7 +32,7 @@ final class MockThemeDividerComponentTokenProvider: OrangeThemeDividerComponentT
 
     // MARK: - Divider component tokens
 
-    override var dividerBorderWidth: BorderWidthSemanticToken { Self.mockThemeDividerBorderWidth }
+    override var borderWidth: BorderWidthSemanticToken { Self.mockThemeDividerBorderWidth }
 }
 
 // swiftlint:enable required_deinit

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -66,13 +66,13 @@ struct CheckboxIndicator: View {
         if isError {
             switch interactionState {
             case .enabled:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             case .pressed:
-                theme.colors.colorActionNegativePressed
+                theme.colors.actionNegativePressed
             case .disabled, .readOnly:
-                OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
+                OL.fatal("An OUDSThemesContract Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                     + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
 
@@ -81,16 +81,16 @@ struct CheckboxIndicator: View {
             switch interactionState {
             case .enabled:
                 if colorSchemeContrast == .increased, colorScheme == .light {
-                    theme.colors.colorContentDefault
+                    theme.colors.contentDefault
                 } else {
-                    theme.colors.colorActionSelected
+                    theme.colors.actionSelected
                 }
             case .hover:
-                theme.colors.colorActionHover
+                theme.colors.actionHover
             case .pressed:
-                theme.colors.colorActionPressed
+                theme.colors.actionPressed
             case .disabled, .readOnly:
-                theme.colors.colorActionDisabled
+                theme.colors.actionDisabled
             }
         }
     }

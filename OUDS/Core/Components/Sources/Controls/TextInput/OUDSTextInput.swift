@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -76,7 +76,7 @@ import SwiftUI
 ///
 /// - **error**: The `error` status indicates that the user input does not meet validation rules or
 /// expected formatting. It provides immediate visual feedback, typically through a red border,
-/// error icon, and a clear, accessible error message positioned below the input.
+/// error icon, and a clear, accessible error message positioned below the input. The error messages replaces the helper text.
 ///
 /// - **loading**: The `loading` state indicates that the system is processing or retrieving data
 /// related to the text entered. A progress indicator appears to inform the user that an action is in progress.
@@ -110,21 +110,25 @@ import SwiftUI
 ///     // Empty text and no placeholder
 ///     OUDSTextInput(label: "Email", text: $text)
 ///
-///     // Empty text with placeholder
-///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "firstName.lastName", suffix "@orange.com"))
+///     // Empty text with placeholder and suffix
+///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com")
+///
+///     // Empty text with prefix and suffix
+///     OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 ///
 ///     // Add a leading icon for more context
-///     OUDSTextInput(label: "Email", text: $text, placeholder: .init(text: "Enter email"), leadingIcon: Image(systemName: "envelope"))
+///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
-///     // Add a trailing button for additional action
+///     // Add a trailing button with local image namde "ic_cross" for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
-///     let placeholder =
-///     OUDSTextInput(label: "Email", text: $text,
-///                      placeholder: .init(text: "firstName.lastName", suffix "@orange.com"),
-///                      helperText: "The email will be automatically completed with @orange.com")
+///     OUDSTextInput(label: "Email",
+///                   text: $text,
+///                   placeholder: "firstName.lastName",
+///                   suffix: "@orange.com",
+///                   helperText: "The email will be automatically completed with @orange.com")
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -133,7 +137,7 @@ import SwiftUI
 ///        openUrl.callAsFunction(url)
 ///     }
 ///
-///     OUDSTextInput(label: "Label", text: $text, placeholder: .init(text: "Placeholder"), helperLink: helperLink)
+///     OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 /// ```
 ///
 /// ## Design documentation
@@ -158,17 +162,17 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
 
-    @Environment(\.theme) private var theme
-
     let label: String
     let text: Binding<String>
-    let placeholder: Self.Placeholder?
+    let placeholder: String?
+    let prefix: String?
+    let suffix: String?
     let leadingIcon: Image?
     let flipLeadingIcon: Bool
     let trailingAction: TrailingAction?
@@ -176,6 +180,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
+
+    @Environment(\.theme) private var theme
 
     // MARK: - Trailing Action
 
@@ -209,30 +215,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         }
     }
 
-    // MARK: - Placeholder
-
-    /// Used to define the placeholder of the text input
-    public struct Placeholder {
-        public let text: String
-        public let suffix: String?
-        public let prefix: String?
-
-        /// Creates a placeholder with text and additional (optional) prefix and suffix.
-        ///
-        /// - Parameters:
-        ///   - text: The placeholder text
-        ///   - prefix: Optional prefix, by default is *nil*
-        ///   - suffix: Optional suffix, by default is *nil*
-        public init(text: String, prefix: String? = nil, suffix: String? = nil) {
-            if text.isEmpty {
-                OL.warning("The placeholder text for the OUDSTextInput is empty, avoid using it in that case.")
-            }
-            self.text = text
-            self.prefix = prefix
-            self.suffix = suffix
-        }
-    }
-
     // MARK: - Style
 
     /// The prefered style of the text input
@@ -240,6 +222,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// An input with a subtle background fill and a visible bottom border,
         /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
         case `default`
+
         /// A minimalist input with a transparent background and a visible stroke outlining the field.
         case alternative
     }
@@ -247,14 +230,14 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Status
 
     /// Define all available status for the text input
-    public enum Status {
+    public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
-        /// accessible error message positioned below the input.
-        case error
+        /// accessible error `message` positioned below the input.
+        case error(message: String)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
         /// text entered. A progress indicator appears to inform the user that an action is in progress.
@@ -266,6 +249,17 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// In `disabled` status, the field is non-interactive and grayed out to indicate it cannot be changed.
         /// Note the SwiftUI `View.disabled()` is ignored.
         case disabled
+
+        public static func == (lhs: Self, rhs: Self) -> Bool {
+            switch (lhs, rhs) {
+            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
+                true
+            case let (.error(lhsMessage), .error(rhsMessage)):
+                lhsMessage == rhsMessage
+            default:
+                false
+            }
+        }
     }
 
     // MARK: - Helper link
@@ -297,20 +291,27 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - label: The label displayed above the text input. It describes the purpose of the input
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input. Commonly used to indicate expected formatting like a country code, a unit...
+    ///      The `prefix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
+    ///    - suffix: Text placed after the user's input, often used to display a currency or a unit (kg, %, cm…).
+    ///      The `suffix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
     ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
     ///      envelope for email, etc.), by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
     ///    - trailingAction: An optional trailing action related to the field: (clear input,
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
-    ///      information about the input field, such as how it will be used., by default is *nil*
+    ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to OUDSTextInput.Status.Error,
+    ///      this `helperText` is ignored.
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - status: The current status of the text input, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
-                placeholder: Placeholder? = nil,
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
                 trailingAction: Self.TrailingAction? = nil,
@@ -323,6 +324,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.text = text
         self.helperText = helperText
         self.placeholder = placeholder
+        self.prefix = prefix
+        self.suffix = suffix
         self.leadingIcon = leadingIcon
         self.flipLeadingIcon = flipLeadingIcon
         self.trailingAction = trailingAction
@@ -334,21 +337,21 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 TextInputContainer(label: label,
                                    text: text,
                                    placeholder: placeholder,
+                                   prefix: prefix,
+                                   suffix: suffix,
                                    leadingIcon: leadingIcon,
                                    flipIcon: flipLeadingIcon,
                                    trailingAction: trailingAction,
                                    isOutlined: isOutlined,
                                    status: status)
 
-                if let helperText, !helperText.isEmpty {
-                    HelperTextContainer(helperText: helperText, status: status)
-                        .accessibilityHidden(true)
-                }
+                HelperErrorTextContainer(helperText: helperText, status: status)
+                    .accessibilityHidden(true)
             }
             .accessibilityLabel(accessibilityLabel)
             .accessibilityHint(Text(helperText ?? ""))
@@ -359,35 +362,31 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
-                    .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+                    .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             }
         }
-        .frame(minWidth: theme.textInput.textInputSizeMinWidth,
-               maxWidth: theme.textInput.textInputSizeMaxWidth,
-               minHeight: theme.textInput.textInputSizeMinHeight,
+        .frame(minWidth: theme.textInput.sizeMinWidth,
+               maxWidth: theme.textInput.sizeMaxWidth,
+               minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
     }
 
     // MARK: Helpers
 
     private var accessibilityLabel: String {
-
         let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
 
-        let errorDescription = if status == .error, helperText?.isEmpty != false {
-            "core_common_onError_a11y".localized()
-        } else {
+        let errorDescription = switch status {
+        case let .error(message):
+            "core_common_onError_a11y".localized() + ": \(message)"
+        default:
             ""
         }
 
-        let loadingDescription = if status == .loading {
-            "core_common_loading_a11y".localized()
-        } else {
-            ""
-        }
+        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
 
         let labelDescription = if label.isEmpty {
-            "\(placeholder?.text ?? "")"
+            "\(placeholder ?? "")"
         } else {
             label
         }
@@ -400,6 +399,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             return ""
         }
 
-        return "\(placeholder?.prefix ?? "") \(text.wrappedValue) \(placeholder?.suffix ?? "")"
+        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -30,8 +30,8 @@ struct ThemeOverrideOfSelectInputComponentTokensTests {
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideSelectInputComponentTokenSizeMinWidth() throws {
-        #expect(inheritedTheme.selectInput.selectInputSizeMinWidth != abstractTheme.selectInput.selectInputSizeMinWidth)
-        #expect(inheritedTheme.selectInput.selectInputSizeMinWidth == MockThemeSelectInputComponentTokenProvider.mockThemeSelectInputSize)
+        #expect(inheritedTheme.selectInput.sizeMinWidth != abstractTheme.selectInput.sizeMinWidth)
+        #expect(inheritedTheme.selectInput.sizeMinWidth == MockThemeSelectInputComponentTokenProvider.mockThemeSelectInputSize)
     }
 }
 

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -34,9 +34,9 @@ import OUDSFoundations
 ///
 ///         // Then override the checkbox component tokens you want.
 ///
-///         override var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var sizeMinWidth: SizeSemanticToken { sizes.iconWithLabelLargeSizeXl }
 ///
-///         override var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthThin }
+///         override var borderWidthSelected: BorderWidthSemanticToken { borders.widthThin }
 ///
 ///         // ...
 ///     }
@@ -89,7 +89,7 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
     public let borders: AllBorderSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSCheckbox` and `OUDSCheckboxItem`

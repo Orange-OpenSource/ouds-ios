@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of buttons** for *button* objects like `OUDSButton`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -30,15 +30,15 @@ import OUDSFoundations
 ///
 ///         // Then override the button component tokens you want.
 ///
-///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
+///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
 ///
-///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMd }
+///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
-///         override var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }
@@ -102,7 +102,7 @@ open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensPro
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSButton`

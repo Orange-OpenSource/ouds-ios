@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SwiftUI
@@ -31,8 +31,6 @@ import SwiftUI
 ///
 /// To get the theme:
 /// ```swift
-///     import OUDS
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -41,10 +39,6 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDS                            // To get OUDSThemeableView
-///     import OUDSThemesOrangeBusinessTools  // To get OrangeBusinessToolsTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
@@ -85,7 +79,7 @@ import SwiftUI
 ///
 /// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
 /// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
-/// By default an instance of `OrangeBusinessToolsTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
+/// By default an instance of `OrangeBusinessToolsTheme` uses as font family the token `OrangeBrandFontRawTokens.familyBrandDefault`, which is today *Helvetica Neue*.
 /// If you want to use another font family, you will have to send the suitable token or the suitable font family.
 /// However, beware, iOS API relies also on the PostScript name of the font.
 /// To be sure of the value to use, look at the font book of your device.
@@ -94,9 +88,9 @@ import SwiftUI
 /// ```swift
 ///     // The following instanciations work
 ///     let orangeTheme = OrangeBusinessToolsTheme()
-///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
-///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
-///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
+///     let orangeTheme = OrangeBusinessToolsTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+///     let orangeTheme = OrangeBusinessToolsTheme(family: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeBusinessToolsTheme(family: "Helvetica Neue")
 /// ```
 ///
 /// ### Helvetica Neue Arabic
@@ -107,7 +101,7 @@ import SwiftUI
 /// register them and define the font family name to use.
 ///
 /// ```swift
-///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue Arabic")
+///     let orangeTheme = OrangeBusinessToolsTheme(family: "Helvetica Neue Arabic")
 /// ```
 ///
 /// - Since: 0.17.0
@@ -119,15 +113,15 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
     /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
     ///
     /// - Parameters:
-    ///    - fontFamily: The font family to apply, by default `OrangeBrandFontRawTokens.fontFamilyBrandDefault`
+    ///    - family: The font family to apply, by default `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.default`
-    public init(fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.fontFamilyBrandDefault,
+    public init(family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                 tuning: Tuning = Tuning.default)
     {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
-        let colorCharts = OrangeBusinessToolsThemeColorChartSemanticTokensProvider()
+        let charts = OrangeBusinessToolsThemeColorChartSemanticTokensProvider()
         let elevations = OrangeBusinessToolsThemeElevationSemanticTokensProvider()
         let fonts = OrangeBusinessToolsThemeFontSemanticTokensProvider()
         let grids = OrangeBusinessToolsThemeGridSemanticTokensProvider()
@@ -160,7 +154,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   colorCharts: colorCharts,
+                   charts: charts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -188,7 +182,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
-                   fontFamily: fontFamily,
+                   family: family,
                    tuning: tuning)
     }
 

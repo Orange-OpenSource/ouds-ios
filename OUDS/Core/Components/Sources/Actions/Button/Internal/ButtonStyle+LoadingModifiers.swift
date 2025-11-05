@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -37,7 +37,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.button.buttonSpacePaddingBlock)
+                    .padding(.vertical, theme.button.spacePaddingBlock)
             }
     }
 
@@ -47,16 +47,16 @@ struct ButtonLoadingContentModifier: ViewModifier {
         switch appearance {
         case .default:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                theme.colors.contentDefault
             } else {
-                useMonochrome ? theme.button.buttonMonoColorContentDefaultLoading : theme.button.buttonColorContentDefaultLoading
+                useMonochrome ? theme.button.monoColorContentDefaultLoading : theme.button.colorContentDefaultLoading
             }
         case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongLoading : theme.colors.colorContentOnActionLoading
+            useMonochrome ? theme.button.monoColorContentStrongLoading : theme.colors.contentOnActionLoading
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentMinimalLoading : theme.button.buttonColorContentMinimalLoading
+            useMonochrome ? theme.button.monoColorContentMinimalLoading : theme.button.colorContentMinimalLoading
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         }
     }
 }

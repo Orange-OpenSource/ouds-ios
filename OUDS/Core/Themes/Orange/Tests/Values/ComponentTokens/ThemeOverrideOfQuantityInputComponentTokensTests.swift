@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -30,30 +30,30 @@ struct ThemeOverrideOfQuantityInputComponentTokensTests {
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapDefault() throws {
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapDefault != abstractTheme.quantityInput.quantityInputSpaceColumnGapDefault)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapDefault == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapDefault != abstractTheme.quantityInput.spaceColumnGapDefault)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapDefault == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapLeadingIcon() throws {
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon != abstractTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapLeadingIcon != abstractTheme.quantityInput.spaceColumnGapLeadingIcon)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapLeadingIcon == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSpaceColumnGapQuantitySelector() throws {
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapLeadingIcon != abstractTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector)
-        #expect(inheritedTheme.quantityInput.quantityInputSpaceColumnGapQuantitySelector == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapLeadingIcon != abstractTheme.quantityInput.spaceColumnGapQuantitySelector)
+        #expect(inheritedTheme.quantityInput.spaceColumnGapQuantitySelector == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSpace)
     }
 
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideQuantityInputSizeMinWidth() throws {
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMinWidth != abstractTheme.quantityInput.quantityInputSizeMinWidth)
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMinWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
+        #expect(inheritedTheme.quantityInput.sizeMinWidth != abstractTheme.quantityInput.sizeMinWidth)
+        #expect(inheritedTheme.quantityInput.sizeMinWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
     }
 
     @Test func inheritedThemeCanOverrideQuantityInputSizeMaxWidth() throws {
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth != abstractTheme.quantityInput.quantityInputSizeMaxWidth)
-        #expect(inheritedTheme.quantityInput.quantityInputSizeMaxWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
+        #expect(inheritedTheme.quantityInput.sizeMaxWidth != abstractTheme.quantityInput.sizeMaxWidth)
+        #expect(inheritedTheme.quantityInput.sizeMaxWidth == MockThemeQuantityInputComponentTokenProvider.mockThemeQuantityInputSize)
     }
 }
 

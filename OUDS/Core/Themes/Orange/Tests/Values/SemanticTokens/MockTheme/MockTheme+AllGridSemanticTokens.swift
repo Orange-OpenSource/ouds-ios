@@ -24,20 +24,20 @@ final class MockThemeGridSemanticTokensProvider: OrangeThemeGridSemanticTokensPr
 
     static let mockThemeGridRawToken: GridRawToken = 3_630
 
-    override var gridExtraCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridExtraCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridExtraCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridExtraCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var extraCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var extraCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var extraCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var extraCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
 
-    override var gridCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var compactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var compactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var compactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var compactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
 
-    override var gridRegularMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridRegularMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridRegularMargin: GridSemanticToken { Self.mockThemeGridRawToken }
-    override var gridRegularColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var regularMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var regularMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var regularMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override var regularColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
 }
 
 // swiftlint:enable required_deinit

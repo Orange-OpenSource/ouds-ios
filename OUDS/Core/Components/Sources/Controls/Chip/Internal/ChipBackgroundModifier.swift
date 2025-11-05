@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -37,13 +37,13 @@ struct ChipBackgroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            selected ? theme.chip.chipColorBgSelectedEnabled : theme.chip.chipColorBgUnselectedEnabled
+            selected ? theme.chip.colorBgSelectedEnabled : theme.chip.colorBgUnselectedEnabled
         case .hover:
-            selected ? theme.chip.chipColorBgSelectedHover : theme.chip.chipColorBgUnselectedHover
+            selected ? theme.chip.colorBgSelectedHover : theme.chip.colorBgUnselectedHover
         case .pressed:
-            selected ? theme.chip.chipColorBgSelectedPressed : theme.chip.chipColorBgUnselectedPressed
+            selected ? theme.chip.colorBgSelectedPressed : theme.chip.colorBgUnselectedPressed
         case .disabled:
-            selected ? theme.chip.chipColorBgSelectedDisabled : theme.chip.chipColorBgUnselectedDisabled
+            selected ? theme.chip.colorBgSelectedDisabled : theme.chip.colorBgUnselectedDisabled
         }
     }
 }

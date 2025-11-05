@@ -22,7 +22,7 @@ public typealias PSFNMK = PostScriptFontNamesMapKey
 public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
 
     /// The font family name as defined in raw tokens
-    public let fontFamilyName: String
+    public let familyName: String
 
     /// The font weight
     public let fontWeight: String
@@ -39,7 +39,7 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     ///    - name: The same of the font family
     ///    - weight: Some weight for the font to apply
     public init(_ name: String, weight: String? = nil) {
-        fontFamilyName = name
+        familyName = name
         fontWeight = weight != nil ? weight! : ""
     }
 
@@ -48,7 +48,7 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     /// From `CustomStringConvertible`, defines the description of the key,
     /// concatenating the font family name and the font weight.
     public var description: String {
-        fontFamilyName + (fontWeight.isEmpty ? "" : "-\(fontWeight)")
+        familyName + (fontWeight.isEmpty ? "" : "-\(fontWeight)")
     }
 }
 
@@ -98,10 +98,10 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 /// - do not collide with one of the Apple available fonts (in iOS side)
 ///
 /// Defines also kind of fallbacks if the weight or the style is not defined.
-public nonisolated(unsafe) let kApplePostScriptFontNames: PostScriptFontNamesMap =
+nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
-        // MARK: OUDS
+        // MARK: OUDSThemesContract
 
         PSFNMK("Arial", Font.Weight.regular): "ArialMT",
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",

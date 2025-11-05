@@ -64,7 +64,9 @@ struct ControlItem: View {
 
     var body: some View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
+            #if os(iOS)
             VibrationsManager.success()
+            #endif
             switch indicatorType {
             case let .switch(binding):
                 withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {

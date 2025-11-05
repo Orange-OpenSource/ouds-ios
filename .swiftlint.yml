@@ -23,6 +23,13 @@ strict: true
 included:
 - OUDS
 
+# ========
+# Excluded
+# ========
+
+excluded:
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial
+
 # ==============
 # Disabled rules
 # ==============

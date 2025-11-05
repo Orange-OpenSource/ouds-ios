@@ -56,14 +56,14 @@ struct Chip: View {
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
+        HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
             ChipSelectionIndicator(state: interactionState, selected: selected)
             ChipContent(layout: layout, selected: selected, interactionState: interactionState)
         }
-        .padding(.vertical, theme.chip.chipSpacePaddingBlock)
+        .padding(.vertical, theme.chip.spacePaddingBlock)
         .padding(.leading, leadingPadding)
         .padding(.trailing, trailingPadding)
-        .frame(minWidth: theme.chip.chipSizeMinWidth, minHeight: theme.chip.chipSizeMinHeight)
+        .frame(minWidth: theme.chip.sizeMinWidth, minHeight: theme.chip.sizeMinHeight)
         .modifier(ChipBackgroundModifier(state: interactionState, selected: selected))
         .modifier(ChipBorderModifier(state: interactionState, selected: selected))
     }
@@ -72,18 +72,18 @@ struct Chip: View {
 
     private var leadingPadding: CGFloat {
         if selected {
-            theme.chip.chipSpacePaddingInlineIcon
+            theme.chip.spacePaddingInlineIcon
         } else {
             switch layout {
             case .text:
-                theme.chip.chipSpacePaddingInlineIconNone
+                theme.chip.spacePaddingInlineIconNone
             case .icon:
-                theme.chip.chipSpacePaddingInlineIcon
+                theme.chip.spacePaddingInlineIcon
             case let .textAndIcon(_, _, iconPosition):
                 if iconPosition == .leading {
-                    theme.chip.chipSpacePaddingInlineIcon
+                    theme.chip.spacePaddingInlineIcon
                 } else {
-                    theme.chip.chipSpacePaddingInlineIconNone
+                    theme.chip.spacePaddingInlineIconNone
                 }
             }
         }
@@ -92,14 +92,14 @@ struct Chip: View {
     private var trailingPadding: CGFloat {
         switch layout {
         case .text:
-            theme.chip.chipSpacePaddingInlineIconNone
+            theme.chip.spacePaddingInlineIconNone
         case .icon:
-            theme.chip.chipSpacePaddingInlineIcon
+            theme.chip.spacePaddingInlineIcon
         case let .textAndIcon(_, _, iconPosition):
             if iconPosition == .trailing {
-                theme.chip.chipSpacePaddingInlineIcon
+                theme.chip.spacePaddingInlineIcon
             } else {
-                theme.chip.chipSpacePaddingInlineIconNone
+                theme.chip.spacePaddingInlineIconNone
             }
         }
     }
@@ -123,55 +123,28 @@ private struct ChipContent: View {
         Group {
             switch layout {
             case let .icon(icon, accessibilityLabel):
-                ChipScaledIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                ScaledIcon(icon: icon.renderingMode(.template),
+                           size: theme.chip.sizeIcon)
                     .accessibilityLabel(accessibilityLabel)
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, icon, iconPosition):
-                HStack(alignment: .center, spacing: theme.chip.chipSpaceColumnGapIcon) {
+                HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
                     if iconPosition == .leading {
-                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        FixedIcon(icon: icon.resizable().renderingMode(.template),
+                                  size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
                     if iconPosition == .trailing {
-                        ChipFixedIcon(icon: icon, size: theme.chip.chipSizeIcon)
+                        FixedIcon(icon: icon.resizable().renderingMode(.template),
+                                  size: theme.chip.sizeIcon)
                     }
                 }
             }
         }
         .modifier(ChipForegroundModifier(state: interactionState, selected: selected))
-    }
-}
-
-// MARK: - Scaled Icon
-
-private struct ChipScaledIcon: View {
-
-    let icon: Image
-    @ScaledMetric var size: CGFloat
-
-    var body: some View {
-        icon
-            .resizable()
-            .renderingMode(.template)
-            .frame(width: size, height: size, alignment: .center)
-    }
-}
-
-// MARK: - Fixed Icon
-
-private struct ChipFixedIcon: View {
-
-    let icon: Image
-    let size: CGFloat
-
-    var body: some View {
-        icon
-            .resizable()
-            .renderingMode(.template)
-            .frame(width: size, height: size, alignment: .center)
     }
 }
 
@@ -184,7 +157,7 @@ private struct ChipText: View {
 
     var body: some View {
         Text(LocalizedStringKey(text))
-            .typeLabelStrongMedium(theme)
+            .labelStrongMedium(theme)
             .multilineTextAlignment(.center)
     }
 }
@@ -204,7 +177,8 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ChipScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle), size: theme.chip.chipSizeIcon)
+            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle).renderingMode(.template),
+                       size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .oudsForegroundColor(appliedColor)
         }
@@ -215,13 +189,13 @@ private struct ChipSelectionIndicator: View {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            theme.chip.chipColorContentSelectedTickEnabled
+            theme.chip.colorContentSelectedTickEnabled
         case .hover:
-            theme.chip.chipColorContentSelectedHover
+            theme.chip.colorContentSelectedHover
         case .pressed:
-            theme.chip.chipColorContentSelectedPressed
+            theme.chip.colorContentSelectedPressed
         case .disabled:
-            theme.chip.chipColorContentSelectedDisabled
+            theme.chip.colorContentSelectedDisabled
         }
     }
 }

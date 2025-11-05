@@ -17,7 +17,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable identifier_name
 // swiftlint:disable missing_docs
 
 /// Declares all component tokens for tags components like `OUDSQuantityInput`
@@ -28,15 +27,14 @@ public protocol QuantityInputComponentTokens {
 
     // MARK: - Spaces
 
-    var quantityInputSpaceColumnGapDefault: SpaceSemanticToken { get }
-    var quantityInputSpaceColumnGapLeadingIcon: SpaceSemanticToken { get }
-    var quantityInputSpaceColumnGapQuantitySelector: SpaceSemanticToken { get }
+    var spaceColumnGapDefault: SpaceSemanticToken { get }
+    var spaceColumnGapLeadingIcon: SpaceSemanticToken { get }
+    var spaceColumnGapQuantitySelector: SpaceSemanticToken { get }
 
     // MARK: - Sizes
 
-    var quantityInputSizeMinWidth: SizeSemanticToken { get }
-    var quantityInputSizeMaxWidth: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
 }
 
-// swiftlint:enable identifier_name
 // swiftlint:enable missing_docs

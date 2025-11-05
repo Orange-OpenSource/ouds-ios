@@ -27,40 +27,40 @@ public protocol SwitchComponentTokens {
 
     // MARK: - Sizes
 
-    var switchSizeHeightCursorSelected: SizeSemanticToken { get }
-    var switchSizeHeightCursorUnselected: SizeSemanticToken { get }
-    var switchSizeHeightTrack: SizeSemanticToken { get }
-    var switchSizeMaxHeight: SizeSemanticToken { get }
-    var switchSizeMinHeight: SizeSemanticToken { get }
-    var switchSizeMinWidth: SizeSemanticToken { get }
-    var switchSizeWidthCursorSelected: SizeSemanticToken { get }
-    var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { get }
-    var switchSizeWidthCursorUnselected: SizeSemanticToken { get }
-    var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { get }
-    var switchSizeWidthTrack: SizeSemanticToken { get }
+    var sizeHeightCursorSelected: SizeSemanticToken { get }
+    var sizeHeightCursorUnselected: SizeSemanticToken { get }
+    var sizeHeightTrack: SizeSemanticToken { get }
+    var sizeMaxHeight: SizeSemanticToken { get }
+    var sizeMinHeight: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeWidthCursorSelected: SizeSemanticToken { get }
+    var sizeWidthCursorSelectedPressed: SizeSemanticToken { get }
+    var sizeWidthCursorUnselected: SizeSemanticToken { get }
+    var sizeWidthCursorUnselectedPressed: SizeSemanticToken { get }
+    var sizeWidthTrack: SizeSemanticToken { get }
 
     // MARK: - Border
 
-    var switchBorderRadiusCursor: BorderRadiusSemanticToken { get }
-    var switchBorderRadiusTrack: BorderRadiusSemanticToken { get }
+    var borderRadiusCursor: BorderRadiusSemanticToken { get }
+    var borderRadiusTrack: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
 
-    var switchColorCursor: MultipleColorSemanticTokens { get }
-    var switchColorTrackSelected: MultipleColorSemanticTokens { get }
-    var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { get }
-    var switchColorTrackUnselected: MultipleColorSemanticTokens { get }
-    var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { get }
-    var switchColorCheck: MultipleColorSemanticTokens { get }
+    var colorCursor: MultipleColorSemanticTokens { get }
+    var colorTrackSelected: MultipleColorSemanticTokens { get }
+    var colorTrackSelectedInteraction: MultipleColorSemanticTokens { get }
+    var colorTrackUnselected: MultipleColorSemanticTokens { get }
+    var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { get }
+    var colorCheck: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var switchSpacePaddingInlineUnselected: SpaceSemanticToken { get }
-    var switchSpacePaddingInlineSelected: SpaceSemanticToken { get }
+    var spacePaddingInlineUnselected: SpaceSemanticToken { get }
+    var spacePaddingInlineSelected: SpaceSemanticToken { get }
 
     // MARK: - Opacities
 
-    var switchOpacityCheck: OpacitySemanticToken { get }
+    var opacityCheck: OpacitySemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

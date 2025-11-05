@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Radio Item
+// MARK: - OUDSThemesContract Radio Item
 
 /// The ``OUDSRadioItem`` proposes layouts to add in your views some radios components.
 /// If you want to use a radio with only an indicator, prefer instead ``OUDSRadio``.
@@ -36,6 +36,8 @@ import SwiftUI
 ///
 /// An ``OUDSRadioItem`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
+/// In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.
+///
 /// In addition, the ``OUDSRadioItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 /// The radio can be also outlined in some cases.
@@ -49,7 +51,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
-/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -89,6 +91,13 @@ import SwiftUI
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
 ///                   isError: true,
+///                   hasDivider: true)
+///
+///     // If on error, add an error message can help user to understand error context
+///     OUDSRadioItem(isOn: $selection,
+///                   label: "Rescue from this world!",
+///                   isError: true,
+///                   errorText: "Something wrong",
 ///                   hasDivider: true)
 ///
 ///     // A leading radio with a label, but disabled.
@@ -135,7 +144,7 @@ import SwiftUI
 ///
 /// ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
 ///
-/// - Version: 1.1.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSRadioItem: View {
 
@@ -173,6 +182,8 @@ public struct OUDSRadioItem: View {
     ///   - isOutlined: Flag to get an outlined radio, default set to `true`
     ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
@@ -190,6 +201,7 @@ public struct OUDSRadioItem: View {
                 isOutlined: Bool = true,
                 isReversed: Bool = false,
                 isError: Bool = false,
+                errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
@@ -203,8 +215,14 @@ public struct OUDSRadioItem: View {
         }
 
         if let additionalLabel, additionalLabel.isEmpty {
-            OL.warning("Additional label text given to an OUDSRadioitem is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Additional label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
+
+        // swiftlint:disable force_unwrapping
+        if isError, errorText == nil || errorText!.isEmpty {
+            OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+        }
+        // swiftlint:enable force_unwrapping
 
         _isOn = isOn
         layoutData = .init(
@@ -215,6 +233,7 @@ public struct OUDSRadioItem: View {
             flipIcon: flipIcon,
             isOutlined: isOutlined,
             isError: isError,
+            errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
@@ -239,7 +258,9 @@ public struct OUDSRadioItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorText = layoutData.errorText?.localized() ?? ""
+        let errorDescription = "\(errorPrefix), \(errorText)"
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? "") \(errorDescription), \(radioA11yTrait)"

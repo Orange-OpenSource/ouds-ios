@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -33,13 +33,13 @@ import OUDSFoundations
 ///
 ///         // Then override the text input component tokens you want.
 ///
-///         override var textInputSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+///         override var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 ///
-///         override var textInputSpacePaddingBlockDefault: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
+///         override var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingInlineSmall }
 ///
-///         override var textInputColorBorderEnabled: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorBorderEnabled: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var textInputBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthMedium}
+///         override var borderWidthDefault: BorderWidthSemanticToken { borders.widthMedium}
 ///
 ///         // ...
 ///     }
@@ -80,7 +80,7 @@ import OUDSFoundations
 ///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider()
 ///
-///     // Or use your own size, border, color, space and dimension semantic tokens providers (or only some)
+///     // Or use your own size, border, color, space and _ semantic tokens providers (or only some)
 ///     let inputTextComponentTokensProvider = OrangeThemeTextInputComponentTokensProvider(
 ///                                                 sizes: CustomSizeSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
@@ -108,7 +108,7 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSTextInput`
@@ -117,7 +117,7 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,

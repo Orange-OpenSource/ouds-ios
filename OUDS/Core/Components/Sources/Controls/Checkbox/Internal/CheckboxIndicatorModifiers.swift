@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -77,31 +77,31 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                theme.colors.colorActionSelected
+                theme.colors.actionSelected
             case .unselected:
-                theme.colors.colorActionEnabled
+                theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
+        isError ? theme.colors.actionNegativeHover : theme.colors.actionHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
+        isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 }
 
@@ -144,16 +144,16 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
+        theme.controlItem.colorBgHover.color(for: colorScheme)
     }
 
     private var pressedColor: Color {
-        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
+        theme.controlItem.colorBgPressed.color(for: colorScheme)
     }
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
@@ -178,7 +178,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsBorder(style: theme.borders.borderStyleDefault,
+            .oudsBorder(style: theme.borders.styleDefault,
                         width: appliedBorderWidth,
                         radius: appliedBorderRadius,
                         color: appliedColor)
@@ -201,43 +201,43 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.actionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
                 if colorSchemeContrast == .increased, colorScheme == .light {
-                    theme.colors.colorContentDefault
+                    theme.colors.contentDefault
                 } else {
-                    theme.colors.colorActionSelected
+                    theme.colors.actionSelected
                 }
             case .unselected:
-                theme.colors.colorActionEnabled
+                theme.colors.actionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativeHover
+            theme.colors.actionNegativeHover
         } else {
-            theme.colors.colorActionHover
+            theme.colors.actionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            theme.colors.colorActionNegativePressed
+            theme.colors.actionNegativePressed
         } else {
-            theme.colors.colorActionPressed
+            theme.colors.actionPressed
         }
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDSThemesContract Checkbox with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
-        return theme.colors.colorActionDisabled
+        return theme.colors.actionDisabled
     }
 
     // MARK: - Border width
@@ -258,43 +258,43 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var enabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.borderWidthSelected
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.borderWidthUnselected
         }
     }
 
     private var hoverWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelectedHover
+            theme.checkbox.borderWidthSelectedHover
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselectedHover
+            theme.checkbox.borderWidthUnselectedHover
         }
     }
 
     private var pressedWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelectedPressed
+            theme.checkbox.borderWidthSelectedPressed
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselectedPressed
+            theme.checkbox.borderWidthUnselectedPressed
         }
     }
 
     private var disabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.borderWidthSelected
         case .unselected:
-            theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.borderWidthUnselected
         }
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkbox.checkboxBorderRadius
+        theme.checkbox.borderRadius
     }
 }
 
@@ -306,7 +306,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.checkbox.checkboxSizeIndicator,
-                   height: theme.checkbox.checkboxSizeIndicator)
+            .frame(width: theme.checkbox.sizeIndicator,
+                   height: theme.checkbox.sizeIndicator)
     }
 }

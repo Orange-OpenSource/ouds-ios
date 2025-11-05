@@ -11,8 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
+import OUDSThemesContract
 import SwiftUI
 
 /// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.
@@ -37,22 +36,33 @@ struct ControlItemContent: View {
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
-            switch layoutData.orientation {
-            case .default:
-                indicatorContainer()
-                labelContainer()
-                iconContainer()
-            case .reversed:
-                iconContainer()
-                labelContainer()
-                indicatorContainer()
+        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+            HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
+                switch layoutData.orientation {
+                case .default:
+                    indicatorContainer()
+                    labelContainer()
+                    iconContainer()
+                case .reversed:
+                    iconContainer()
+                    labelContainer()
+                    indicatorContainer()
+                }
+            }
+            .padding(.all, theme.controlItem.spacePaddingBlock)
+            .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
+            .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+
+            if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
+                Text(errorText)
+                    .labelDefaultMedium(theme)
+                    .oudsForegroundColor(theme.colors.contentStatusNegative)
+                    .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                    .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .padding(.all, theme.controlItem.controlItemSpacePaddingBlock)
-        .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
-        .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
-        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.controlItemBorderRadius))
+        .frame(maxWidth: theme.controlItem.sizeMaxWidth)
+        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
 
     // MARK: Containers
@@ -64,12 +74,12 @@ struct ControlItemContent: View {
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
             .readSize { size in
-                verticalAlignment = size.height > theme.controlItem.controlItemSizeMaxHeightAssetsContainer ? .top : .center
+                verticalAlignment = size.height > theme.controlItem.sizeMaxHeightAssetsContainer ? .top : .center
             }
     }
 
     private func iconContainer() -> some View {
-        ControlItemIconContainer(interactionState: interactionState, icon: layoutData.icon, flip: layoutData.flipIcon)
+        ControlItemIconContainer(interactionState: interactionState, layoutData: layoutData)
     }
 
     // MARK: Computed properties

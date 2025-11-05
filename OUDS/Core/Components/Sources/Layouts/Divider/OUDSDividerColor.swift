@@ -11,16 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
 /// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
-///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
 /// - Since: 0.14.0
 public enum OUDSDividerColor {
@@ -41,23 +37,23 @@ public enum OUDSDividerColor {
     public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticTokens {
         switch self {
         case .default:
-            theme.colors.colorBorderDefault
+            theme.colors.borderDefault
         case .muted:
-            theme.colors.colorBorderMuted
+            theme.colors.borderMuted
         case .emphasized:
-            theme.colors.colorBorderEmphasized
+            theme.colors.borderEmphasized
         case .brandPrimary:
-            theme.colors.colorBorderBrandPrimary
+            theme.colors.borderBrandPrimary
         case .onBrandPrimary:
-            theme.colors.colorBorderOnBrandPrimary
+            theme.colors.borderOnBrandPrimary
         case .alwaysBlack:
-            MultipleColorSemanticTokens(theme.colors.colorAlwaysBlack)
+            MultipleColorSemanticTokens(theme.colors.alwaysBlack)
         case .alwaysWhite:
-            MultipleColorSemanticTokens(theme.colors.colorAlwaysWhite)
+            MultipleColorSemanticTokens(theme.colors.alwaysWhite)
         case .alwaysOnBlack:
-            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnBlack)
+            MultipleColorSemanticTokens(theme.colors.alwaysOnBlack)
         case .alwaysOnWhite:
-            MultipleColorSemanticTokens(theme.colors.colorAlwaysOnWhite)
+            MultipleColorSemanticTokens(theme.colors.alwaysOnWhite)
         }
     }
 }

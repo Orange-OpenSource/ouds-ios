@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -30,30 +30,30 @@ struct ThemeOverrideOfTextAreaComponentTokensTests {
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideTextAreaSpacePaddingBlock() throws {
-        #expect(inheritedTheme.textArea.textAreaSpacePaddingBlock != abstractTheme.textArea.textAreaSpacePaddingBlock)
-        #expect(inheritedTheme.textArea.textAreaSpacePaddingBlock == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSpace)
+        #expect(inheritedTheme.textArea.spacePaddingBlock != abstractTheme.textArea.spacePaddingBlock)
+        #expect(inheritedTheme.textArea.spacePaddingBlock == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSpace)
     }
 
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideTextAreaSizeMinHeightInput() throws {
-        #expect(inheritedTheme.textArea.textAreaSizeMinHeightInput != abstractTheme.textArea.textAreaSizeMinHeightInput)
-        #expect(inheritedTheme.textArea.textAreaSizeMinHeightInput == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
+        #expect(inheritedTheme.textArea.sizeMinHeightInput != abstractTheme.textArea.sizeMinHeightInput)
+        #expect(inheritedTheme.textArea.sizeMinHeightInput == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
     }
 
     @Test func inheritedThemeCanOverrideTextAreaSizeMaxHeightInput() throws {
-        #expect(inheritedTheme.textArea.textAreaSizeMaxHeightInput != abstractTheme.textArea.textAreaSizeMaxHeightInput)
-        #expect(inheritedTheme.textArea.textAreaSizeMaxHeightInput == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
+        #expect(inheritedTheme.textArea.sizeMaxHeightInput != abstractTheme.textArea.sizeMaxHeightInput)
+        #expect(inheritedTheme.textArea.sizeMaxHeightInput == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
     }
 
     @Test func inheritedThemeCanOverrideTextAreaSizeMaxHeightAssetsContainer() throws {
-        #expect(inheritedTheme.textArea.textAreaSizeMaxHeightAssetsContainer != abstractTheme.textArea.textAreaSizeMaxHeightAssetsContainer)
-        #expect(inheritedTheme.textArea.textAreaSizeMaxHeightAssetsContainer == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
+        #expect(inheritedTheme.textArea.sizeMaxHeightAssetsContainer != abstractTheme.textArea.sizeMaxHeightAssetsContainer)
+        #expect(inheritedTheme.textArea.sizeMaxHeightAssetsContainer == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
     }
 
     @Test func inheritedThemeCanOverrideTextAreaSizeMaxWidth() throws {
-        #expect(inheritedTheme.textArea.textAreaSizeMaxWidth != abstractTheme.textArea.textAreaSizeMaxWidth)
-        #expect(inheritedTheme.textArea.textAreaSizeMaxWidth == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
+        #expect(inheritedTheme.textArea.sizeMaxWidth != abstractTheme.textArea.sizeMaxWidth)
+        #expect(inheritedTheme.textArea.sizeMaxWidth == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSize)
     }
 }
 

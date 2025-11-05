@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several *filter chips* and proposing two kinds of selection:
@@ -70,7 +71,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDS one.
+/// There is no online specification as this component is not an official OUDSThemesContract one.
 ///
 /// ## Theme rendering
 ///
@@ -102,6 +103,9 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     /// The list of data to wrap in ``OUDSFilterChip`` inside this picker
     private let chips: [OUDSChipPickerData<Tag>]
 
+    /// The custom spacing to apply between items by user
+    private let customItemsSpacing: SpaceSemanticToken?
+
     @Environment(\.theme) private var theme
 
     /// The type of selection
@@ -126,12 +130,14 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>]) {
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
+        customItemsSpacing = itemsSpacing
         selectionType = .singleOrNone(selection)
     }
 
@@ -142,12 +148,14 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>]) {
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
         self.chips = chips
+        customItemsSpacing = itemsSpacing
         selectionType = .single(selection)
     }
 
@@ -158,13 +166,15 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selections: Current selected values
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>]) {
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
-        selectionType = .multiple(selections)
         self.chips = chips
+        customItemsSpacing = itemsSpacing
+        selectionType = .multiple(selections)
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -172,11 +182,10 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     // MARK: - Body
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedSmall) {
+        VStack(alignment: .leading, spacing: theme.spaces.fixedSmall) {
             if let title, !title.isEmpty {
                 Text(title)
-                    .typeBodyStrongLarge(theme)
-                    .padding(.leading, theme.spaces.spaceFixedMedium)
+                    .bodyStrongLarge(theme)
                     .accessibilityAddTraits(.isHeader)
             }
 
@@ -188,13 +197,17 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
                         }
                     }
                 }
-                .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
         }
-        .padding(.vertical, theme.spaces.spaceFixedSmall)
+        .padding(itemsSpacing)
     }
 
-    // MARK: - Private helpers
+    // MARK: - Helpers
+
+    /// If user does not define a custom spacing, use a default one
+    private var itemsSpacing: SpaceSemanticToken {
+        customItemsSpacing ?? theme.spaces.fixedSmall
+    }
 
     @ViewBuilder
     private func filterChip(from data: OUDSChipPickerData<Tag>, action: @escaping () -> Void) -> some View {

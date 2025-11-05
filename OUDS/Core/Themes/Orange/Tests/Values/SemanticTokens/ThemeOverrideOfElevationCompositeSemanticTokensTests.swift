@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -34,33 +34,33 @@ struct ThemeOverrideOfElevationCompositeSemanticTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeNone() throws {
-        #expect(inheritedTheme.elevations.elevationNone != abstractTheme.elevations.elevationNone)
-        #expect(inheritedTheme.elevations.elevationNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+        #expect(inheritedTheme.elevations.none != abstractTheme.elevations.none)
+        #expect(inheritedTheme.elevations.none == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeRaised() throws {
-        #expect(inheritedTheme.elevations.elevationRaised != abstractTheme.elevations.elevationRaised)
-        #expect(inheritedTheme.elevations.elevationRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+        #expect(inheritedTheme.elevations.raised != abstractTheme.elevations.raised)
+        #expect(inheritedTheme.elevations.raised == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeDrag() throws {
-        #expect(inheritedTheme.elevations.elevationDrag != abstractTheme.elevations.elevationDrag)
-        #expect(inheritedTheme.elevations.elevationDrag == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+        #expect(inheritedTheme.elevations.drag != abstractTheme.elevations.drag)
+        #expect(inheritedTheme.elevations.drag == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefault() throws {
-        #expect(inheritedTheme.elevations.elevationOverlayDefault != abstractTheme.elevations.elevationOverlayDefault)
-        #expect(inheritedTheme.elevations.elevationOverlayDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeDefault() throws {
+        #expect(inheritedTheme.elevations.default != abstractTheme.elevations.default)
+        #expect(inheritedTheme.elevations.default == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasized() throws {
-        #expect(inheritedTheme.elevations.elevationOverlayEmphasized != abstractTheme.elevations.elevationOverlayEmphasized)
-        #expect(inheritedTheme.elevations.elevationOverlayEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeEmphasized() throws {
+        #expect(inheritedTheme.elevations.emphasized != abstractTheme.elevations.emphasized)
+        #expect(inheritedTheme.elevations.emphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeSticky() throws {
-        #expect(inheritedTheme.elevations.elevationSticky != abstractTheme.elevations.elevationSticky)
-        #expect(inheritedTheme.elevations.elevationSticky == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+        #expect(inheritedTheme.elevations.sticky != abstractTheme.elevations.sticky)
+        #expect(inheritedTheme.elevations.sticky == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 }
 

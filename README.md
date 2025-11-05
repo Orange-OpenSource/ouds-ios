@@ -1,7 +1,7 @@
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
-  OUDS iOS provides Orange iOS components to developers.
+  OUDS iOS provides SwiftUI components to Orange developers 
   <br>
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
@@ -22,8 +22,6 @@
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
-&nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/periphery.yml" title="Periphery status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/periphery.yml/badge.svg" alt="Periphery status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 &nbsp;
@@ -46,7 +44,11 @@
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
-[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
+![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
+![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
+![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
+![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
+
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
 [![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
 
@@ -64,7 +66,12 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > [!CAUTION]
 > This Swift Package is dedicated to SwiftUI. UIKit and other frameworks are not supported.
 
+> [!NOTE]
+> Main targets are iOS / iPadOS, and we do our best to support macOS and visionOS!
+
 ## Quick start
+
+You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embed and use OUDS iOS Swift Package for your app.
 
 ### Choose your version
 
@@ -85,10 +92,10 @@ You can choose the _dependency rule_ you want. Keep in mind OUDS iOS releases ar
 ### Add the librairies
 
 In your Xcode _targets_, add the librairies you need. Everything is splitted so as to let users choose the content to embed they want.
-In most of cases, the `OUDS` library at least must be imported, it brings abstraction layer.
-Components are available with `OUDSComponents`. Themes are available through their librairies too (`OUDSThemeOrange`, `OUDSThemeSosh`, `OUDSThemeWireframe`, etc.).
+The `OUDSSwiftUI` library embeds everything, but you may prefer instead tailor your imports.
+You can get the [detailed list of available librairies in the documentation](https://ios.unified-design-system.orange.com/documentation/ouds/gettingstarted).
 
-You can have more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
+More technical details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture#the-ouds-ios-swift-package).
 
 ### Instanciate and inject theme
 
@@ -96,9 +103,6 @@ In the root view of your app, add the `OUDSThemeableView` with inside the _theme
 You can instanciate the theme object on the fly, but only once.
 
 ```swift
-import OUDS
-import SwiftUI
-
 @main
 struct YourApp: App {
 
@@ -144,20 +148,38 @@ The wiki lists also [the components and their availability](https://github.com/O
 > [!IMPORTANT]
 > The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
+> [!TIP]
+> Releases are immutable and in most of time cryptographically signed.
+> You can verify integrity of release and assets with commands below
+> using [GitHub CLI](https://cli.github.com/) 
+> and available [release tags](https://github.com/Orange-OpenSource/ouds-ios/releases).
+
+To verify integrity of a release *x.y.z*:
+```shell
+gh release verify x.y.z --repo Orange-OpenSource/ouds-ios
+```
+
+To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
+```shell
+gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios
+```
+
+For these commands a message should say release is verified or asset verification succeeded.
+
 ## Tokens libraries versions
 
 > [!TIP]
 > This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.7.0
+- Core OUDS version: 1.8.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.0.1
+- Brand Orange version: 2.1.0
 - Core Sosh version: 1.2.0
-- Brand Sosh version: 2.0.1
-- Core Wireframe version: 1.2.0
-- Brand Wireframe version: 2.0.1
-- Brand Orange Business Tools version: 2.0.1
+- Brand Sosh version: 2.1.0
+- Core Wireframe version: 1.3.0
+- Brand Wireframe version: 2.1.0
+- Brand Orange Business Tools version: 2.1.0
 
 ## Bugs, feature requests and discussions
 
@@ -190,5 +212,5 @@ As such:
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 
 <p align="center">
-<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Desin Sysem Design System Toolbox page"><img src="./docs_release/images/design-toolbox-download-page-qrcode.png" alt="QrCode redirecting to Orange Unified Desin Sysem Design System Toolbox page" width="125" height="125"></a>
+<a href="https://web.unified-design-system.orange.com/docs/0.5/examples/download-app/" title="Orange Unified Desin Sysem Design System Toolbox page"><img src="./images/design-toolbox-download-page-qrcode.png" alt="QrCode redirecting to Orange Unified Desin Sysem Design System Toolbox page" width="125" height="125"></a>
 </p>

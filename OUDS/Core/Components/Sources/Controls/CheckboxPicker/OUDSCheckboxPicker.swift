@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several checkboxes and select some of them within the others.
@@ -81,7 +82,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDS one
+/// There is no online specification as this component is not an official OUDSThemesContract one
 ///
 /// ## Themes rendering
 ///
@@ -103,17 +104,20 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// The type of layout the picker must have
     private let placement: OUDSCheckboxPickerPlacement
 
-    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and displays a divider (except for the last one)
-    private let hasDivider: Bool
-
-    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to read only mode
-    private let isReadOnly: Bool
+    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the reversed layout
+    private let isReversed: Bool
 
     /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to error mode
     private let isError: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the reversed layout
-    private let isReversed: Bool
+    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to read only mode
+    private let isReadOnly: Bool
+
+    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and displays a divider (except for the last one)
+    private let hasDivider: Bool
+
+    /// The custom spacing to apply between items by user
+    private let customItemsSpacing: SpaceSemanticToken?
 
     /// View model acting as coordinator between root checkbox and children checkboxes
     @StateObject private var coordinator: CheckboxPickerCoordinator
@@ -135,13 +139,15 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - isError: If *true*, force all ``OUDSCheckboxItem`` to be in error mode (default set to *false*)
     ///    - isReadOnly: If *true*, force all ``OUDSCheckboxItem`` to be in read only mode (default set to *false*)
     ///    - hasDivider: If *true*, force all ``OUDSCheckboxItem`` except the last one to have a divider (default set to *false*)
+    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(selections: Binding<[Tag]>,
                 checkboxes: [OUDSCheckboxPickerData<Tag>],
                 placement: OUDSCheckboxPickerPlacement = .vertical,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false)
+                hasDivider: Bool = false,
+                itemsSpacing: SpaceSemanticToken? = nil)
     {
         self.selections = selections
         self.checkboxes = checkboxes
@@ -150,6 +156,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         self.isError = isError
         self.isReadOnly = isReadOnly
         self.hasDivider = hasDivider
+        customItemsSpacing = itemsSpacing
         _coordinator = StateObject(wrappedValue: CheckboxPickerCoordinator(selections.count, checkboxes.count))
         verifySelections()
     }
@@ -160,16 +167,16 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         switch placement {
         case let .horizontal(showsIndicator):
             ScrollView(.horizontal, showsIndicators: showsIndicator) {
-                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                HStack(alignment: .center, spacing: itemsSpacing) {
                     content(for: checkboxes)
                 }
             }
         case .vertical:
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: itemsSpacing) {
                 content(for: checkboxes)
             }
         case let .verticalRooted(label, type):
-            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: itemsSpacing) {
                 rootItem(labeled: label, of: type)
                 content(for: checkboxes)
             }
@@ -295,6 +302,11 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     }
 
     // MARK: - Helpers
+
+    /// If user does not define a custom spacing, use a default one
+    private var itemsSpacing: SpaceSemanticToken {
+        customItemsSpacing ?? theme.spaces.fixedNone
+    }
 
     /// Checks if the given selections are available within the checkbox configurations.
     /// If not, displays a error message in the logs.

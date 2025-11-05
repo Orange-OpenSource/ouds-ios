@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -26,11 +26,11 @@ struct ThemeOverrideOfThemePropertiesTests {
 
     init() {
         abstractTheme = OrangeTheme()
-        inheritedTheme = MockTheme(fontFamily: "Mr R08øT")
+        inheritedTheme = MockTheme(family: "Mr R08øT")
     }
 
     @Test func inheritedThemeCanOverrideFontFamily() throws {
-        #expect(inheritedTheme.fontFamily != abstractTheme.fontFamily)
-        #expect(inheritedTheme.fontFamily == "Mr R08øT")
+        #expect(inheritedTheme.family != abstractTheme.family)
+        #expect(inheritedTheme.family == "Mr R08øT")
     }
 }

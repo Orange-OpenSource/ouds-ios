@@ -26,28 +26,28 @@ public protocol BorderSemanticTokens {
 
     // MARK: - Semantic token - Border - Width
 
-    var borderWidthNone: BorderWidthSemanticToken { get }
-    var borderWidthDefault: BorderWidthSemanticToken { get }
-    var borderWidthThin: BorderWidthSemanticToken { get }
-    var borderWidthMedium: BorderWidthSemanticToken { get }
-    var borderWidthThick: BorderWidthSemanticToken { get }
-    var borderWidthThicker: BorderWidthSemanticToken { get }
-    var borderWidthFocus: BorderWidthSemanticToken { get }
-    var borderWidthFocusInset: BorderWidthSemanticToken { get }
+    var widthNone: BorderWidthSemanticToken { get }
+    var widthDefault: BorderWidthSemanticToken { get }
+    var widthThin: BorderWidthSemanticToken { get }
+    var widthMedium: BorderWidthSemanticToken { get }
+    var widthThick: BorderWidthSemanticToken { get }
+    var widthThicker: BorderWidthSemanticToken { get }
+    var widthFocus: BorderWidthSemanticToken { get }
+    var widthFocusInset: BorderWidthSemanticToken { get }
 
     // MARK: - Semantic token - Border - Radius
 
-    var borderRadiusNone: BorderRadiusSemanticToken { get }
-    var borderRadiusDefault: BorderRadiusSemanticToken { get }
-    var borderRadiusSmall: BorderRadiusSemanticToken { get }
-    var borderRadiusMedium: BorderRadiusSemanticToken { get }
-    var borderRadiusLarge: BorderRadiusSemanticToken { get }
-    var borderRadiusPill: BorderRadiusSemanticToken { get }
+    var radiusNone: BorderRadiusSemanticToken { get }
+    var radiusDefault: BorderRadiusSemanticToken { get }
+    var radiusSmall: BorderRadiusSemanticToken { get }
+    var radiusMedium: BorderRadiusSemanticToken { get }
+    var radiusLarge: BorderRadiusSemanticToken { get }
+    var radiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Semantic token - Border - Style
 
-    var borderStyleDefault: BorderStyleSemanticToken { get }
-    var borderStyleDrag: BorderStyleSemanticToken { get }
+    var styleDefault: BorderStyleSemanticToken { get }
+    var styleDrag: BorderStyleSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

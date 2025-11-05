@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable line_length
 // swiftlint:disable type_name
@@ -30,11 +30,11 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
     /// Provider of size semantic tokens to use for select input sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for select input dimensions
+    /// Provider of _ semantic tokens to use for select input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSelect`

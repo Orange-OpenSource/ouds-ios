@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -32,11 +32,11 @@ import OUDSFoundations
 ///
 ///         // Then override the control-item-layout-based component tokens you want.
 ///
-///         override var controlItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///         override var sizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var controlItemColorBgFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+///         override var colorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
 ///
-///         override var controlItemSpaceRowGap: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+///         override var spaceRowGap: SpaceSemanticToken { spaces.paddingInlineTall }
 ///
 ///         // ...
 ///     }
@@ -100,7 +100,7 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to control-item-layout-based components.

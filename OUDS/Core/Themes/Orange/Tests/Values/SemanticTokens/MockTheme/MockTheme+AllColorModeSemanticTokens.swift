@@ -27,89 +27,89 @@ open class MockThemeColorModeSemanticTokensProvider: OrangeThemeColorModeSemanti
 
     // MARK: - Multiple tokens
 
-    override public var modeOnBgPrimary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBgPrimary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnBgSecondary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBgSecondary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnBgTertiary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBgTertiary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnOverlayModal: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onOverlayModal: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnOverlayDropdown: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onOverlayDropdown: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnOverlayTooltip: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onOverlayTooltip: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnBrandPrimary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBrandPrimary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnBrandSecondary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBrandSecondary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnBrandTertiary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onBrandTertiary: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusAccentEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusAccentMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusAccentMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusInfoEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusInfoEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusInfoMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusInfoMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusNegativeEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusNegativeEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusNegativeMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusNegativeMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusPositiveEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusPositiveEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusPositiveMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusPositiveMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusWarningEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusWarningEmphasized: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeOnStatusWarningMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var onStatusWarningMuted: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
-    override public var modeNavigationBar: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
+    override public var navigationBar: MultipleColorModeSemanticTokens { Self.mockThemeMultipleColorModeSemanticTokens }
 
     // MARK: - Non multiple tokens
 
-    override public var modeOnBgPrimaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBgSecondaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBgTertiaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandPrimaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandSecondaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandTertiaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusAccentEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusAccentMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusInfoEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusInfoMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusNegativeEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusNegativeMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusPositiveEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusPositiveMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusWarningEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusWarningMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayModalLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayDropdownLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayTooltipLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeNavigationBarLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgPrimaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgSecondaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgTertiaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandPrimaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandSecondaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandTertiaryLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusAccentEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusAccentMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusInfoEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusInfoMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusNegativeEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusNegativeMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusPositiveEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusPositiveMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusWarningEmphasizedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusWarningMutedLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayModalLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayDropdownLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayTooltipLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var navigationBarLight: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
 
-    override public var modeOnBgPrimaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBgSecondaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBgTertiaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandPrimaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandSecondaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnBrandTertiaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusAccentEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusAccentMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusInfoEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusInfoMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusNegativeEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusNegativeMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusPositiveEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusPositiveMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusWarningEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnStatusWarningMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayModalDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayDropdownDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeOnOverlayTooltipDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
-    override public var modeNavigationBarDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgPrimaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgSecondaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBgTertiaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandPrimaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandSecondaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onBrandTertiaryDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusAccentEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusAccentMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusInfoEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusInfoMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusNegativeEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusNegativeMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusPositiveEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusPositiveMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusWarningEmphasizedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onStatusWarningMutedDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayModalDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayDropdownDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var onOverlayTooltipDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
+    override public var navigationBarDark: ColorModeSemanticToken { Self.mockThemeColorModeSemanticToken }
 }
 
 // swiftlint:enable required_deinit

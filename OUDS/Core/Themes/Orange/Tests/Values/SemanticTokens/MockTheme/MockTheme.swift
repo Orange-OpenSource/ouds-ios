@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
@@ -32,10 +32,10 @@ import OUDSThemesOrange
 final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
-        self.init(fontFamily: nil)
+        self.init(family: nil)
     }
 
-    init(fontFamily: String?) {
+    init(family: String?) {
         let borders = MockThemeBorderSemanticTokensProvider()
         let colors = MockThemeColorSemanticTokensProvider()
         let colorModes = MockThemeColorModeSemanticTokensProvider()
@@ -76,7 +76,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
                    resourcesBundle: Bundle.OrangeTheme,
-                   fontFamily: fontFamily)
+                   family: family)
     }
 
     deinit {}

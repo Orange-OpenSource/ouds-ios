@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import SwiftUI
 
 // swiftlint:disable function_body_length
@@ -27,8 +27,6 @@ import SwiftUI
 ///
 /// To get it:
 /// ```swift
-///     import OUDS
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -37,10 +35,6 @@ import SwiftUI
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///
 /// ```swift
-///     import OUDS           // To get OUDSThemeableView
-///     import OUDSThemesSosh // To get SoshTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
@@ -61,7 +55,7 @@ import SwiftUI
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
     /// Flag to avoid to register severals the fonts making some errors happen
-    private nonisolated(unsafe) static var fontsAlreadyRegistered: Bool = false
+    nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
     // MARK: - Initializers
 
@@ -90,7 +84,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
-        let selectInput = SoshThemeSelectInputComponentTokensProvider(sizes: sizes, dimensions: dimensions)
+        let selectInput = SoshThemeSelectInputComponentTokensProvider(dimensions: dimensions)
         let skeleton = SoshThemeSkeletonComponentTokensProvider(colors: colors)
         let `switch` = SoshThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
         let tag = SoshThemeTagComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces, dimensions: dimensions)
@@ -128,7 +122,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
-                   fontFamily: SoshBrandFontRawTokens.fontFamilyDefault)
+                   family: SoshBrandFontRawTokens.familyDefault)
 
         registerFonts()
     }

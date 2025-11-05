@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesWireframe
 import Testing
 
@@ -27,23 +27,23 @@ struct WireframeThemeBorderSemanticTokensTests {
         theme = WireframeTheme()
     }
 
-    @Test func borderWidthSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderWidthNone < theme.borders.borderWidthDefault)
-        #expect(theme.borders.borderWidthThin <= theme.borders.borderWidthDefault) // Confirmed by design team, can be equal
-        #expect(theme.borders.borderWidthThin < theme.borders.borderWidthMedium)
-        #expect(theme.borders.borderWidthMedium < theme.borders.borderWidthThick)
-        #expect(theme.borders.borderWidthThick < theme.borders.borderWidthThicker)
+    @Test func widthSemanticTokensAreBiggerAndBigger() throws {
+        #expect(theme.borders.widthNone < theme.borders.widthDefault)
+        #expect(theme.borders.widthThin <= theme.borders.widthDefault) // Confirmed by design team, can be equal
+        #expect(theme.borders.widthThin < theme.borders.widthMedium)
+        #expect(theme.borders.widthMedium < theme.borders.widthThick)
+        #expect(theme.borders.widthThick < theme.borders.widthThicker)
 
-        #expect(theme.borders.borderWidthFocusInset < theme.borders.borderWidthFocus)
+        #expect(theme.borders.widthFocusInset < theme.borders.widthFocus)
 
-        #expect(theme.borders.borderRadiusNone <= theme.borders.borderRadiusDefault)
+        #expect(theme.borders.radiusNone <= theme.borders.radiusDefault)
     }
 
-    @Test func borderRadiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.borderRadiusNone < theme.borders.borderRadiusSmall)
-        #expect(theme.borders.borderRadiusSmall < theme.borders.borderRadiusDefault)
-        #expect(theme.borders.borderRadiusDefault < theme.borders.borderRadiusMedium)
-        #expect(theme.borders.borderRadiusMedium < theme.borders.borderRadiusLarge)
-        #expect(theme.borders.borderRadiusLarge < theme.borders.borderRadiusPill)
+    @Test func radiusSemanticTokensAreBiggerAndBigger() throws {
+        #expect(theme.borders.radiusNone < theme.borders.radiusSmall)
+        #expect(theme.borders.radiusSmall < theme.borders.radiusDefault)
+        #expect(theme.borders.radiusDefault < theme.borders.radiusMedium)
+        #expect(theme.borders.radiusMedium < theme.borders.radiusLarge)
+        #expect(theme.borders.radiusLarge < theme.borders.radiusPill)
     }
 }

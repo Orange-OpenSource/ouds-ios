@@ -12,26 +12,24 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSTokensSemantic
 
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
 /// The Orange theme is the bsic, default, theme for any Orange products.
-/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
+/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDSThemesContract library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
 /// # Usages
 ///
 /// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
-/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDS.
+/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDSThemesContract.
 /// This theme also provides colors charts tokens.
 ///
 /// The theme can be got through environment variable:
 /// ```swift
-///     import OUDS
-///
 ///     @Environment(\.theme) var theme
 /// ```
 ///
@@ -39,10 +37,6 @@ import OUDSTokensSemantic
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 /// ```swift
-///     import OUDS                 // To get OUDSThemeableView
-///     import OUDSThemesOrange    // To get OrangeTheme
-///     import SwiftUI
-///
 ///     @main
 ///     struct YourApp: App {
 ///         var body: some Scene {
@@ -83,7 +77,7 @@ import OUDSTokensSemantic
 ///
 /// The Orange brand strongly relies on the *Helvetica Neue* font family. Thus each Orange brand should, or must, use it.
 /// For iOS the *Helvetica Neue* font family is available at system level, so it is not needed to get it through external assets.
-/// By default an instance of `OrangeTheme` uses as font family the token `OrangeBrandFontRawTokens.fontFamilyBrandDefault`, which is today *Helvetica Neue*.
+/// By default an instance of `OrangeTheme` uses as font family the token `OrangeBrandFontRawTokens.familyBrandDefault`, which is today *Helvetica Neue*.
 /// If you want to use another font family, you will have to send the suitable token or the suitable font family.
 /// However, beware, iOS API relies also on the PostScript name of the font.
 /// To be sure of the value to use, look at the font book of your device.
@@ -92,9 +86,9 @@ import OUDSTokensSemantic
 /// ```swift
 ///     // The following instanciations work
 ///     let orangeTheme = OrangeTheme()
-///     let orangeTheme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.fontFamilyBrandDefault)
-///     let orangeTheme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
-///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue") // Which is font family nale
+///     let orangeTheme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
+///     let orangeTheme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeTheme(family: "Helvetica Neue") // Which is font family nale
 /// ```
 ///
 /// ### Helvetica Neue Arabic
@@ -105,7 +99,7 @@ import OUDSTokensSemantic
 /// register them and define the font family name to use.
 ///
 /// ```swift
-///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue Arabic")
+///     let orangeTheme = OrangeTheme(family: "Helvetica Neue Arabic")
 /// ```
 ///
 /// ## Tokens loading
@@ -113,7 +107,6 @@ import OUDSTokensSemantic
 /// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
 /// For example:
 /// ```swift
-///
 ///    // Use some already defined providers
 ///    let borders = OrangeThemeBorderSemanticTokensProvider()
 ///    let sizes = OrangeThemeSizeSemanticTokensProvider()
@@ -149,12 +142,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - colorCharts: All semantic tokens of color charts
+    ///    - charts: All semantic tokens of color charts
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
-    ///    - dimensions: All semantic tokens of dimension
+    ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
@@ -177,12 +170,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
-    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.fontFamilyBrandDefault`
+    ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
-                         colorCharts: AllColorChartSemanticTokensProvider? = nil,
+                         charts: AllColorChartSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -210,14 +203,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
-                         fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.fontFamilyBrandDefault,
+                         family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
-        let colorCharts = (colorCharts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let charts = (charts ?? OrangeThemeColorChartSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -249,7 +242,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   colorCharts: colorCharts,
+                   charts: charts,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -277,7 +270,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,
-                   fontFamily: fontFamily,
+                   family: family,
                    tuning: tuning)
     }
 

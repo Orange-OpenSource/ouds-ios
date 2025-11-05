@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
 /// This provider should be integrated as a `AllFontSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -24,12 +24,12 @@ import OUDSFoundations
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
-///         override var typeDisplayLarge: MultipleFontCompositeRawTokens {
-///             MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+///         override var displayLarge: MultipleFontCompositeRawTokens {
+///             MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
 ///         }
 ///
-///         override var typeCodeMedium: MultipleFontCompositeRawTokens {
-///             MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+///         override var codeMedium: MultipleFontCompositeRawTokens {
+///             MultipleFontCompositeRawTokens(FontRawTokens.bold300)
 ///         }
 /// }
 /// ```
@@ -55,7 +55,7 @@ import OUDSFoundations
 open class OrangeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider

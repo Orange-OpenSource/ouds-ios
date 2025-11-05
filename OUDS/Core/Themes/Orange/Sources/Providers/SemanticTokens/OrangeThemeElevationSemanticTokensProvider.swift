@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -26,8 +26,8 @@ import OUDSFoundations
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
 ///
-///         override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
-///             ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+///         override var stickyEmphasized: ElevationCompositeSemanticToken {
+///             ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
 ///         }
 /// }
 /// ```
@@ -53,7 +53,7 @@ import OUDSFoundations
 open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticTokensProvider {
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider

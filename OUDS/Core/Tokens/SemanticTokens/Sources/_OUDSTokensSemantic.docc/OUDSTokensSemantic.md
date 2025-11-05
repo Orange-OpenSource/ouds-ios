@@ -17,7 +17,7 @@ They can be seen as an high level of usage with functional meanings.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.7.0
+🧬 Core version: 1.8.0
 ```
 
 If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
@@ -35,9 +35,9 @@ Example with ``ColorSemanticTokens``:
 // Declare the semantic tokens
 protocol ColorSemanticTokens {
 
-    var colorBgPrimary: ColorSemanticToken { get }
-    var colorBgSecondary: ColorSemanticToken { get }
-    var colorBgTertiary: ColorSemanticToken { get }
+    var bgPrimary: ColorSemanticToken { get }
+    var bgSecondary: ColorSemanticToken { get }
+    var bgTertiary: ColorSemanticToken { get }
     // ...
 }
 
@@ -46,9 +46,9 @@ open class OrangeThemeColorSemanticTokensProvider { }
 
 // Define the semantic tokens to expose through the theme thanks to the provider
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
-    @objc open var colorBgTertiary: ColorSemanticToken { colorBgSecondary }
+    @objc open var bgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
+    @objc open var bgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var bgTertiary: ColorSemanticToken { bgSecondary }
 }
 
 // An instance of OrangeThemeColorSemanticTokensProvider will be assigned to OUDSTheme as AllColorSemanticTokensProvider
@@ -83,12 +83,12 @@ open class OrangeThemeColorSemanticTokensProvider { ... }
 
 // The provider is composed by protocols containing tokens
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    @objc open var colorOpacityTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
-    @objc open var colorOpacityTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
+    @objc open var opacityTransparentLight: ColorSemanticToken { ColorRawTokens.opacityBlack0 }
+    @objc open var opacityTransparentDark: ColorSemanticToken { ColorRawTokens.white0 }
     ...
 }
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
-    @objc open var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
+    @objc open var opacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: opacityTransparentLight, dark: opacityTransparentDark) }
     ...
 }
 
@@ -100,7 +100,7 @@ open class OUDSTheme: @unchecked Sendable {
 // And finaly, the default theme, which can be subclassed, exposes the tokens through the provider
 open class OrangeTheme: OUDSTheme, @unchecked Sendable { ... }
 
-// e.g.: theme.colors.colorOpacityInvisibleBlack
+// e.g.: theme.colors.invisibleBlack
 ```
 
 ## Semantic tokens management
@@ -118,9 +118,9 @@ Thus when the *tokenator* generates tokens without managing composites, the file
 
 #### Closed semantic tokens
 
-There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `colorRepository*` tokens. They are only defined at once and are considered as "closed tokens".
+There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `repository*` tokens. They are only defined at once and are considered as "closed tokens".
 
-Also the dimension semantic tokens are closed.
+Also the _dimension_ semantic tokens are closed.
 
 #### Semantic tokens with forbidden values
 
@@ -129,7 +129,8 @@ Indeed some themes can use just a smaller set of colors, thus some semantic toke
 Because Figma cannot manage "optional" tokens, and because it will make heavier the management of tokens in Swift pakcage side, the forbidden value is used. 
 This forbidden value is in tokenator side the "transparent red", i.e. #FF000000. 
 But in Swift package side, this value is converted to "ouds-forbidden-color-value", and associated documentation updated. 
-Then, even if users use these tokens, even if not specified in theme and documentation and Figma specifications, this value won't be successfully parsed as color and program will crash. 
+
+> Important: Then, even if users use these tokens, even if not specified in theme and documentation and Figma specifications, this value won't be successfully parsed as color and program will crash. 
 
 ## How to use semantic tokens
 
@@ -145,16 +146,16 @@ struct SomeView: View {
 
     var body: some View {
         Rectangle()
-            .frame(width: theme.sizes.sizeIconDecorative2Xl, height: theme.sizes.sizeIconDecorativeXl)
-            .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))
-            .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
-            .padding(.bottom, theme.spaces.spaceFixedNone)
+            .frame(width: theme.sizes.iconDecorative2Xl, height: theme.sizes.iconDecorativeXl)
+            .foregroundColor(theme.colors.bgSecondary.color(for: colorScheme))
+            .shadow(elevation: theme.elevations.raised.elevation(for: colorScheme))
+            .padding(.bottom, theme.spaces.fixedNone)
     }
 /*
-    - The theme provides size semantic tokens "sizeIconDecorative2Xl" and "sizeIconDecorativeXl"
-    - The theme provides a color semantic token "colorBgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
-    - The theme provides an elevation semantic token "elevationRaised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
-    - The theme provides a space semantic token "spaceFixedNone" usable as is
+    - The theme provides size semantic tokens "iconDecorative2Xl" and "iconDecorativeXl"
+    - The theme provides a color semantic token "bgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
+    - The theme provides an elevation semantic token "raised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
+    - The theme provides a space semantic token "fixedNone" usable as is
     - Environment variables like color scheme must be retrieved through View, and then given to theme
 */
 }
@@ -181,7 +182,7 @@ Semantic tokens provider       | Description
 borders                        | For borders (width, styles, radius...)  
 colors                         | For colors with also meta objects combining light and dark versions)           
 colorModes                     | Kind of frozen and not generated tokens about management of colors           
-colorCharts                    | For charts, but optional and not defined in all themes
+charts                         | For charts, but optional and not defined in all themes
 elevations                     | For elevations to produc shadow effects
 fonts                          | For fonts (weights, letter spacings, sizes, line heights...)
 grids                          | For grids

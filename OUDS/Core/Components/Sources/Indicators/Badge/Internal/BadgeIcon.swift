@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import SwiftUI
 
 struct BadgeIcon: View {
@@ -31,7 +31,7 @@ struct BadgeIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .padding(.all, theme.badge.badgeSpaceInset)
+                .padding(.all, theme.badge.spaceInset)
                 .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
         }
     }

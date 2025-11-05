@@ -12,47 +12,60 @@
 //
 
 #if canImport(UIKit)
-import OUDSComponents
-import OUDSFoundations
+import OUDSComponents // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 
 extension OUDSUIKitBrige {
 
-    /// Create a SwiftUI `OUDSTag` with simple label and maybe an icon.
+    /// Create a SwiftUI `OUDSTag` with  label and style.
     ///
-    /// **This is an experimental feature, feedback and support is appreciated**
+    /// **This is an experimental feature, feedback and support are appreciated**
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
-    ///    - icon: The icon displayed before the label, or `nil` if there is no icon
-    ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically).
-    ///     Usefull for example in RTL case to prevent loose of meanings for some images.
-    ///    - hierarchy: The importance of the tag. Its background color and its content color are based on this hierarchy combined to the `status` of the tag
-    ///    - status: The status of the tag. Its background color and its content color are based on this status combined to
-    ///    the `hierarchy` of the tag
-    ///    - shape: The shape of the tag that allows to play with its corners appearance.
-    ///    - size: The size of the tag
-    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not. It will
-    ///    replace the `icon` if provided.
+    ///    - status: The status of the tag. Its background color and its content color are based on
+    ///    this `OUDSTag.Status` combined to the `OUDSTag.Appearance` of the tag. Default set to *neutral*.
+    ///    - appearance: The importance of the tag. Its background color and its content color are based on
+    ///    this `OUDSTag.Appearance` combined to the `OUDSTag.Status` of the tag. Default set to *emphasized*
+    ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
+    ///    - size: The size of the tag. Default set to *default*.
+    ///    - hasLoader: If an optional loader (or progress indicator) is displayed before the `label` or not.
+    ///    It will replace the `icon` if provided. Default set to *false*.
     @MainActor public static func createTag(label: String,
-                                            icon: OUDSTag.Icon? = nil,
-                                            flipIcon: Bool = false,
-                                            hierarchy: OUDSTag.Hierarchy = .emphasized,
-                                            status: OUDSTag.Status = .neutral,
+                                            status: OUDSTag.Status = .neutral(),
+                                            appearance: OUDSTag.Appearance = .emphasized,
                                             shape: OUDSTag.Shape = .rounded,
                                             size: OUDSTag.Size = .default,
                                             hasLoader: Bool = false) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSTag(label:icon:flipIcon:hierarchy:status:shape:size:hasLoader)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSTag(label:status:appearance:shape:size:hasLoader)")
         let swiftUITag = OUDSTag(label: label,
-                                 icon: icon,
-                                 flipIcon: flipIcon,
-                                 hierarchy: hierarchy,
                                  status: status,
+                                 appearance: appearance,
                                  shape: shape,
                                  size: size,
                                  hasLoader: hasLoader)
+        return wrap(component: swiftUITag)
+    }
+
+    /// Create a SwiftUI `OUDSTag` with  label and style in loading state.
+    ///
+    /// **This is an experimental feature, feedback and support are appreciated**
+    ///
+    /// - Parameters:
+    ///    - loadingLabel: The label displayed in the tag
+    ///    - shape: The shape of the tag, i.e. the corners style. Default set to *rounded*.
+    ///    - size: The size of the tag. Default set to *default*.
+    @MainActor public static func createTag(loadingLabel: String,
+                                            shape: OUDSTag.Shape = .rounded,
+                                            size: OUDSTag.Size = .default) -> UIViewController
+    {
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSTag(loadingLabel:shape:size)")
+        let swiftUITag = OUDSTag(label: loadingLabel,
+                                 shape: shape,
+                                 size: size)
         return wrap(component: swiftUITag)
     }
 }

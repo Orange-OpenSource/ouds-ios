@@ -31,9 +31,9 @@ struct LinkTextModifier: ViewModifier {
         Group {
             switch size {
             case .small:
-                content.typeLabelStrongMedium(theme)
+                content.labelStrongMedium(theme)
             case .default:
-                content.typeLabelStrongLarge(theme)
+                content.labelStrongLarge(theme)
             }
         }
         .multilineTextAlignment(.leading)

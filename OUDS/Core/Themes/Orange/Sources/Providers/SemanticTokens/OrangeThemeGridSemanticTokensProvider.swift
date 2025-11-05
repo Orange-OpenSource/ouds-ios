@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **grid semantic tokens** and expose them.
 /// This provider should be integrated as a `AllGridSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -24,16 +24,16 @@ import OUDSFoundations
 ///
 ///         // Then override the grid semantic tokens you want, using the grid raw tokens available
 ///
-///         override var gridExtraCompactColumnGap: GridSemanticToken {
-///             GridRawTokens.gridColumnGap200
+///         override var extraCompactColumnGap: GridSemanticToken {
+///             GridRawTokens.columnGap200
 ///         }
 ///
-///         override var gridCompactColumnGap: GridSemanticToken {
-///             GridRawTokens.gridColumnGap200
+///         override var compactColumnGap: GridSemanticToken {
+///             GridRawTokens.columnGap200
 ///         }
 ///
-///         override var gridRegularColumnGap: GridSemanticToken {
-///             GridRawTokens.gridColumnGap200
+///         override var regularColumnGap: GridSemanticToken {
+///             GridRawTokens.columnGap200
 ///         }
 /// }
 /// ```
@@ -59,7 +59,7 @@ import OUDSFoundations
 open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider {
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Intializes the provider

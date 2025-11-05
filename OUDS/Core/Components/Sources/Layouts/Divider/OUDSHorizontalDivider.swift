@@ -78,6 +78,8 @@ extension Divider {
     /// ```swift
     /// VStack {
     ///     Text("Hello wolrd!")
+    ///
+    ///     Divider()
     ///        .oudsHorizontalDivider(dividerColor: .brandPrimary)
     ///
     ///     Text("Happy to see you")
@@ -89,6 +91,6 @@ extension Divider {
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
     @MainActor
     public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .default) -> some View {
-        modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
+        modifier(DividerModifier(orientation: .horizontal, dividerColor: dividerColor))
     }
 }

@@ -22,6 +22,6 @@ import Testing
 struct SoshBrandFontRawTokensTests {
 
     @Test func fontRawTokenFontFamilyDefault() throws {
-        #expect(SoshBrandFontRawTokens.fontFamilyDefault == "Sosh")
+        #expect(SoshBrandFontRawTokens.familyDefault == "Sosh")
     }
 }

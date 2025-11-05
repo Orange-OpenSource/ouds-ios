@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the skeleton component tokens you want.
 ///
-///         override var skeletonColorGradientMiddle:  MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorGradientMiddle:  MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
 ///         // ...
 ///     }
@@ -80,7 +80,7 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
     public let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`

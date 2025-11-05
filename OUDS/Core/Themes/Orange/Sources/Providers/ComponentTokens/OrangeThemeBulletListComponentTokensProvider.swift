@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -31,7 +31,7 @@ import OUDSFoundations
 ///
 ///         // Then override the bullet list component tokens you want.
 ///
-///         override var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSmall }
+///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSmall }
 ///
 ///         // ...
 ///     }
@@ -80,7 +80,7 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`

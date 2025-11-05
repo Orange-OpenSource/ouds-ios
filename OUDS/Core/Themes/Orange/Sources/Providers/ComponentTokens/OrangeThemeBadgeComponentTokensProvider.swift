@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of badge** for *badge* objects like `OUDSBadge`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -30,9 +30,9 @@ import OUDSFoundations
 ///
 ///         // Then override the badge component tokens you want.
 ///
-///         override var badgeSizeXsmall: SizeSemanticToken { DimensionRawTokens.dimension100 }
+///         override var sizeXsmall: SizeSemanticToken { DimensionRawTokens._100 }
 ///
-///         override var badgeSpaceInset: SpaceSemanticToken { DimensionRawTokens.dimensionOutOfSystem75 }
+///         override var spaceInset: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
 ///
 ///         // ...
 ///     }
@@ -69,7 +69,7 @@ import OUDSFoundations
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
 ///
-///     // Or use your own dimension and space semantic tokens provider
+///     // Or use your own _ and space semantic tokens provider
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(
 ///                     spaces: CustomSpaceSemanticTokensProvider(),
 ///                     dimensions: CustomDimensionSemanticTokensProvider())
@@ -81,16 +81,16 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// Provider of spaces semantic tokens to use for badge spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
     public init(spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {

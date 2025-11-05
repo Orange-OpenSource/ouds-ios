@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of links** for *link* objects like `OUDSLink`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -30,11 +30,11 @@ import OUDSFoundations
 ///
 ///         // Then override the link component tokens you want.
 ///
-///         override var linkSizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var sizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var linkColorChevronHover: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+///         override var colorChevronHover: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
 ///
-///         override var linkSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+///         override var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///
 ///         // ...
 ///     }
@@ -93,7 +93,7 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`

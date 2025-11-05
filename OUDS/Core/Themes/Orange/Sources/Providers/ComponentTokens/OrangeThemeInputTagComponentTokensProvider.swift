@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -32,9 +32,9 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var inputTagBorderRadius: BorderRadiusSemanticToken  { borders.borderRadiusNone }
+///         override var borderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var inputTagColorBgPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+///         override var colorBgPressed: MultipleColorSemanticTokens { colors.actionPressed }
 ///
 ///         // ...
 ///     }
@@ -88,13 +88,13 @@ open class OrangeThemeInputTagComponentTokensProvider: AllInputTagComponentToken
     public let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - colors: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil)
     {

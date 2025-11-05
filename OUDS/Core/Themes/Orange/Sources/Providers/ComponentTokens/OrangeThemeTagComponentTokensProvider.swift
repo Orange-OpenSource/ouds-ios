@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of tag** for *tag* objects like `OUDSTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -31,11 +31,11 @@ import OUDSFoundations
 ///
 ///         // Then override the tag component tokens you want.
 ///
-///         override var tagBorderRadius: BorderRadiusSemanticToken  { borders.borderRadiusNone }
+///         override var borderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///         override var sizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+///         override var spacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.paddingInlineMedium }
 ///
 ///         // ...
 ///     }
@@ -75,7 +75,7 @@ import OUDSFoundations
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider()
 ///
-///     // Or use your own size, space, dimension and border semantic tokens providers (or only some)
+///     // Or use your own size, space, _ and border semantic tokens providers (or only some)
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider(
 ///                                             sizes: CustomSizeSemanticTokensProvider(),
 ///                                             borders: CustomBorderSemanticTokensProvider(),
@@ -95,11 +95,11 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     /// Provider of space semantic tokens to use for tag spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSTag`
@@ -107,7 +107,7 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,

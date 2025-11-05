@@ -94,6 +94,10 @@ Feature requests are welcome. But take a moment to find out whether your idea fi
 
 ## Pull Requests
 
+> [!IMPORTANT]
+> Be sure you have an iOS-ready environment, i.e. macOS and Xcode. 
+> Please refer to DEVELOP file for more details.
+
 Good pull requests (patches, improvements, new features) are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
 **Please ask first** before embarking on any **significant** pull request (e.g. implementing features, refactoring code, porting to a different language), otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project. For trivial things, or things that don't require a lot of your time, you can go ahead and make a PR.

@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -61,54 +61,60 @@ struct ButtonForegroundModifier: ViewModifier {
     private var enabledColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorContentDefaultEnabled : theme.button.buttonColorContentDefaultEnabled
+            useMonochrome ? theme.button.monoColorContentDefaultEnabled : theme.button.colorContentDefaultEnabled
         case .strong:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongEnabled : theme.colors.colorContentOnActionEnabled
+            useMonochrome ? theme.button.monoColorContentStrongEnabled : theme.colors.contentOnActionEnabled
         case .brand:
-            theme.button.buttonColorContentBrandEnabled
+            theme.button.colorContentBrandEnabled
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentMinimalEnabled : theme.button.buttonColorContentMinimalEnabled
+            useMonochrome ? theme.button.monoColorContentMinimalEnabled : theme.button.colorContentMinimalEnabled
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorContentDefaultHover : theme.button.buttonColorContentDefaultHover
-        case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongHover : theme.colors.colorContentOnActionHover
+            useMonochrome ? theme.button.monoColorContentDefaultHover : theme.button.colorContentDefaultHover
+        case .strong:
+            useMonochrome ? theme.button.monoColorContentStrongHover : theme.colors.contentOnActionHover
+        case .brand:
+            theme.button.colorContentBrandHover
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentMinimalHover : theme.button.buttonColorContentMinimalHover
+            useMonochrome ? theme.button.monoColorContentMinimalHover : theme.button.colorContentMinimalHover
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorContentDefaultPressed : theme.button.buttonColorContentDefaultPressed
-        case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongPressed : theme.colors.colorContentOnActionPressed
+            useMonochrome ? theme.button.monoColorContentDefaultPressed : theme.button.colorContentDefaultPressed
+        case .strong:
+            useMonochrome ? theme.button.monoColorContentStrongPressed : theme.colors.contentOnActionPressed
+        case .brand:
+            theme.button.colorContentBrandPressed
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentDefaultPressed : theme.button.buttonColorContentDefaultPressed
+            useMonochrome ? theme.button.monoColorContentDefaultPressed : theme.button.colorContentDefaultPressed
         case .negative:
-            theme.colors.colorContentOnStatusNegativeEmphasized
+            theme.colors.contentOnStatusNegativeEmphasized
         }
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
         switch appearance {
         case .default:
-            useMonochrome ? theme.button.buttonMonoColorContentDefaultDisabled : theme.button.buttonColorContentDefaultDisabled
-        case .strong, .brand:
-            useMonochrome ? theme.button.buttonMonoColorContentStrongDisabled : theme.colors.colorContentOnActionDisabled
+            useMonochrome ? theme.button.monoColorContentDefaultDisabled : theme.button.colorContentDefaultDisabled
+        case .strong:
+            useMonochrome ? theme.button.monoColorContentStrongDisabled : theme.colors.contentOnActionDisabled
+        case .brand:
+            theme.colors.contentOnActionDisabled
         case .minimal:
-            useMonochrome ? theme.button.buttonMonoColorContentMinimalDisabled : theme.button.buttonColorContentMinimalDisabled
+            useMonochrome ? theme.button.monoColorContentMinimalDisabled : theme.button.colorContentMinimalDisabled
         case .negative:
-            theme.colors.colorContentOnActionDisabled
+            theme.colors.contentOnActionDisabled
         }
     }
 }

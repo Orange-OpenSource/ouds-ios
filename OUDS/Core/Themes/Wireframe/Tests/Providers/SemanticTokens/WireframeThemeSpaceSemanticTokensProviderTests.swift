@@ -12,7 +12,6 @@
 //
 
 @testable import OUDSThemesWireframe
-import OUDSTokensSemantic
 import SwiftUI
 import Testing
 

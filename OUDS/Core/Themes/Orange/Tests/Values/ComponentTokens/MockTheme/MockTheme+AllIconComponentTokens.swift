@@ -12,10 +12,9 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
-import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
@@ -32,8 +31,8 @@ final class MockThemeIconComponentTokenProvider: OrangeThemeIconComponentTokensP
 
     // MARK: - Icon component tokens
 
-    override var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
-    override var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
+    override var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
+    override var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
 }
 
 // swiftlint:enable required_deinit

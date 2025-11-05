@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -32,62 +32,62 @@ struct ThemeOverrideOfGridSemanticTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactMinWidth() throws {
-        #expect(inheritedTheme.grids.gridExtraCompactMinWidth != abstractTheme.grids.gridExtraCompactMinWidth)
-        #expect(inheritedTheme.grids.gridExtraCompactMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.extraCompactMinWidth != abstractTheme.grids.extraCompactMinWidth)
+        #expect(inheritedTheme.grids.extraCompactMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactMaxWidth() throws {
-        #expect(inheritedTheme.grids.gridExtraCompactMaxWidth != abstractTheme.grids.gridExtraCompactMaxWidth)
-        #expect(inheritedTheme.grids.gridExtraCompactMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.extraCompactMaxWidth != abstractTheme.grids.extraCompactMaxWidth)
+        #expect(inheritedTheme.grids.extraCompactMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactMargin() throws {
-        #expect(inheritedTheme.grids.gridExtraCompactMargin != abstractTheme.grids.gridExtraCompactMargin)
-        #expect(inheritedTheme.grids.gridExtraCompactMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.extraCompactMargin != abstractTheme.grids.extraCompactMargin)
+        #expect(inheritedTheme.grids.extraCompactMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactColumnGap() throws {
-        #expect(inheritedTheme.grids.gridExtraCompactColumnGap != abstractTheme.grids.gridExtraCompactColumnGap)
-        #expect(inheritedTheme.grids.gridExtraCompactColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.extraCompactColumnGap != abstractTheme.grids.extraCompactColumnGap)
+        #expect(inheritedTheme.grids.extraCompactColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSCompactMinWidth() throws {
-        #expect(inheritedTheme.grids.gridCompactMinWidth != abstractTheme.grids.gridCompactMinWidth)
-        #expect(inheritedTheme.grids.gridCompactMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.compactMinWidth != abstractTheme.grids.compactMinWidth)
+        #expect(inheritedTheme.grids.compactMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSCompactMaxWidth() throws {
-        #expect(inheritedTheme.grids.gridCompactMaxWidth != abstractTheme.grids.gridCompactMaxWidth)
-        #expect(inheritedTheme.grids.gridCompactMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.compactMaxWidth != abstractTheme.grids.compactMaxWidth)
+        #expect(inheritedTheme.grids.compactMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSCompactMargin() throws {
-        #expect(inheritedTheme.grids.gridCompactMargin != abstractTheme.grids.gridCompactMargin)
-        #expect(inheritedTheme.grids.gridCompactMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.compactMargin != abstractTheme.grids.compactMargin)
+        #expect(inheritedTheme.grids.compactMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSCompactColumnGap() throws {
-        #expect(inheritedTheme.grids.gridCompactColumnGap != abstractTheme.grids.gridCompactColumnGap)
-        #expect(inheritedTheme.grids.gridCompactColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.compactColumnGap != abstractTheme.grids.compactColumnGap)
+        #expect(inheritedTheme.grids.compactColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSRegularMinWidth() throws {
-        #expect(inheritedTheme.grids.gridRegularMinWidth != abstractTheme.grids.gridRegularMinWidth)
-        #expect(inheritedTheme.grids.gridRegularMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.regularMinWidth != abstractTheme.grids.regularMinWidth)
+        #expect(inheritedTheme.grids.regularMinWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSRegularMaxWidth() throws {
-        #expect(inheritedTheme.grids.gridRegularMaxWidth != abstractTheme.grids.gridRegularMaxWidth)
-        #expect(inheritedTheme.grids.gridRegularMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.regularMaxWidth != abstractTheme.grids.regularMaxWidth)
+        #expect(inheritedTheme.grids.regularMaxWidth == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSRegularMargin() throws {
-        #expect(inheritedTheme.grids.gridRegularMargin != abstractTheme.grids.gridRegularMargin)
-        #expect(inheritedTheme.grids.gridRegularMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.regularMargin != abstractTheme.grids.regularMargin)
+        #expect(inheritedTheme.grids.regularMargin == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenGridIOSRegularColumnGap() throws {
-        #expect(inheritedTheme.grids.gridRegularColumnGap != abstractTheme.grids.gridRegularColumnGap)
-        #expect(inheritedTheme.grids.gridRegularColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
+        #expect(inheritedTheme.grids.regularColumnGap != abstractTheme.grids.regularColumnGap)
+        #expect(inheritedTheme.grids.regularColumnGap == MockThemeGridSemanticTokensProvider.mockThemeGridRawToken)
     }
 }

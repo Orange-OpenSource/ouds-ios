@@ -24,6 +24,10 @@
 ## Technical preconditions
 
 > [!IMPORTANT]
+> You must have an iOS-ready environment to contribute to the project or at least build it.
+> Thus macOS is mandatory and Xcode 26.
+
+> [!IMPORTANT]
 > You should check wether or not you have the tools in use in the project like Fastlane, SwiftLint, SwiftFormat, etc.
 > You can have a look for example in the THIRD_PARTY.md file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, project).
 > Have a look on the locks file to know which versions we are using (Podfile, Podfile.lock, Gemfile, Gemfile.lock, etc.).
@@ -60,13 +64,13 @@ brew install periphery
 brew install gitleaks
 # or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.59.1)
+# For SwiftLint (at least 0.62.2)
 brew install swiftlint
-# or `brew reinstall swiftlint` to get updates if old version installed
+# or `brew upgrade swiftlint` to get updates if old version installed
 
-# For SwiftFormat (at least 0.56.2)
+# For SwiftFormat (at least 0.58.5)
 brew install swiftformat
-# or `brew reinstall swiftformat` to get updates if old version installed
+# or `brew upgrade swiftformat` to get updates if old version installed
 
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
@@ -235,20 +239,21 @@ git config --local --add core.hooksPath .git-hooks
 We can add metafields picked from [this good guideline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) in the commit messages.
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
+Because feedbacks of our users are important, you can also mention people who suggested issues to thanks them (*Suggested-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, acked by Maxime and suggested by Thomas:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
+Suggested-by: Thomas Martin <thomas2.martin@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
-Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
 Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
 Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
+Acked-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
-Acked-by: Stephen McCarthy <stephen.mccarthy@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
@@ -416,10 +421,12 @@ To apply it, run in your project (e.g. once cloned):
 git config --local --add core.hooksPath .git-hooks
 ```
 
+*SwiftFormat* is not used in GitHub Actions CI/CD because sources should be formatted before beeing pushed, not after.
+
 ## Dead code
 
 We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
-This tool is run in CI/CD side and can be run localy using *Fastlane*:
+This tool should be run locally, for example using *Fastlane*:
 
 Install *Periphery*:
 ```shell
@@ -430,6 +437,8 @@ And run:
 ```shell
 bundle exec fastlane check_dead_code
 ```
+
+Because _Periphery_ has several issues about false positive, and needs to compile the project to look for symbols, this tool is not used anymore in CI/CD on GitHub Actions. Indeed we needed to allow errors and treat errors as warnings, so as manual check was still needed.
 
 ## Software Bill of Materials
 
@@ -474,8 +483,8 @@ Workflows are the following:
 - [build-documentation](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-documentation.yml) to ensure documentation can be built from sources without warnings
 - [dependency-review](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/dependency-review.yml) to scan dependency manifest files surfacing known-vulnerable versions of the packages declared or updated in pull requests
 - [gitleaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml) to check if there are secrets leaks
-- [periphery](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml) to check if there is dead code
-- [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to buold the OpenSSF score card on README
+- [scorecard](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/scorecard.yml) to build the OpenSSF score card on README
+- [snapshot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/sapshot.yml) to move the SNAPSHOT tag to the last commit on develop branch
 - [swiftlint](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml) to check if there is no linter warnings
 - [swiftpolyglot](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml) to check if there are localizations troubles
 

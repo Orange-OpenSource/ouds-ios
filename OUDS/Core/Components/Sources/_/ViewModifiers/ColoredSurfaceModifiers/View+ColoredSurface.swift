@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic // NOTE: Seen as unused for Periphery (https://github.com/peripheryapp/periphery/issues/943)
+import OUDSTokensSemantic // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/943)
 import SwiftUI
 
 extension View {

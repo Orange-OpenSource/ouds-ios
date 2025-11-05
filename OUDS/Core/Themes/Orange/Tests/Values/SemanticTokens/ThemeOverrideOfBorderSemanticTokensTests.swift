@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -35,86 +35,86 @@ struct ThemeOverrideOfBorderSemanticTokensTests {
     // MARK: - Semantic token - Border - Width
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthNone() throws {
-        #expect(inheritedTheme.borders.borderWidthNone != abstractTheme.borders.borderWidthNone)
-        #expect(inheritedTheme.borders.borderWidthNone == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthNone != abstractTheme.borders.widthNone)
+        #expect(inheritedTheme.borders.widthNone == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthDefault() throws {
-        #expect(inheritedTheme.borders.borderWidthDefault != abstractTheme.borders.borderWidthDefault)
-        #expect(inheritedTheme.borders.borderWidthDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthDefault != abstractTheme.borders.widthDefault)
+        #expect(inheritedTheme.borders.widthDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthThin() throws {
-        #expect(inheritedTheme.borders.borderWidthThin != abstractTheme.borders.borderWidthThin)
-        #expect(inheritedTheme.borders.borderWidthThin == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthThin != abstractTheme.borders.widthThin)
+        #expect(inheritedTheme.borders.widthThin == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthMedium() throws {
-        #expect(inheritedTheme.borders.borderWidthMedium != abstractTheme.borders.borderWidthMedium)
-        #expect(inheritedTheme.borders.borderWidthMedium == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthMedium != abstractTheme.borders.widthMedium)
+        #expect(inheritedTheme.borders.widthMedium == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthThick() throws {
-        #expect(inheritedTheme.borders.borderWidthThick != abstractTheme.borders.borderWidthThick)
-        #expect(inheritedTheme.borders.borderWidthThick == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthThick != abstractTheme.borders.widthThick)
+        #expect(inheritedTheme.borders.widthThick == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthThicker() throws {
-        #expect(inheritedTheme.borders.borderWidthThicker != abstractTheme.borders.borderWidthThicker)
-        #expect(inheritedTheme.borders.borderWidthThicker == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthThicker != abstractTheme.borders.widthThicker)
+        #expect(inheritedTheme.borders.widthThicker == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthFocus() throws {
-        #expect(inheritedTheme.borders.borderWidthFocus != abstractTheme.borders.borderWidthFocus)
-        #expect(inheritedTheme.borders.borderWidthFocus == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthFocus != abstractTheme.borders.widthFocus)
+        #expect(inheritedTheme.borders.widthFocus == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderWidthFocusInset() throws {
-        #expect(inheritedTheme.borders.borderWidthFocusInset != abstractTheme.borders.borderWidthFocusInset)
-        #expect(inheritedTheme.borders.borderWidthFocusInset == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
+        #expect(inheritedTheme.borders.widthFocusInset != abstractTheme.borders.widthFocusInset)
+        #expect(inheritedTheme.borders.widthFocusInset == MockThemeBorderSemanticTokensProvider.mockThemeBorderWidthRawToken)
     }
 
     // MARK: - Semantic token - Border - Radius
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusNone() throws {
-        #expect(inheritedTheme.borders.borderRadiusNone != abstractTheme.borders.borderRadiusNone)
-        #expect(inheritedTheme.borders.borderRadiusNone == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusNone != abstractTheme.borders.radiusNone)
+        #expect(inheritedTheme.borders.radiusNone == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusDefault() throws {
-        #expect(inheritedTheme.borders.borderRadiusDefault != abstractTheme.borders.borderRadiusDefault)
-        #expect(inheritedTheme.borders.borderRadiusDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusDefault != abstractTheme.borders.radiusDefault)
+        #expect(inheritedTheme.borders.radiusDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusSmall() throws {
-        #expect(inheritedTheme.borders.borderRadiusSmall != abstractTheme.borders.borderRadiusSmall)
-        #expect(inheritedTheme.borders.borderRadiusSmall == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusSmall != abstractTheme.borders.radiusSmall)
+        #expect(inheritedTheme.borders.radiusSmall == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusMedium() throws {
-        #expect(inheritedTheme.borders.borderRadiusMedium != abstractTheme.borders.borderRadiusMedium)
-        #expect(inheritedTheme.borders.borderRadiusMedium == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusMedium != abstractTheme.borders.radiusMedium)
+        #expect(inheritedTheme.borders.radiusMedium == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusLarge() throws {
-        #expect(inheritedTheme.borders.borderRadiusLarge != abstractTheme.borders.borderRadiusLarge)
-        #expect(inheritedTheme.borders.borderRadiusLarge == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusLarge != abstractTheme.borders.radiusLarge)
+        #expect(inheritedTheme.borders.radiusLarge == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderRadiusPill() throws {
-        #expect(inheritedTheme.borders.borderRadiusPill != abstractTheme.borders.borderRadiusPill)
-        #expect(inheritedTheme.borders.borderRadiusPill == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
+        #expect(inheritedTheme.borders.radiusPill != abstractTheme.borders.radiusPill)
+        #expect(inheritedTheme.borders.radiusPill == MockThemeBorderSemanticTokensProvider.mockThemeBorderRadiusRawToken)
     }
 
     // MARK: - Semantic token - Border - Style
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderStyleDefault() throws {
-        #expect(inheritedTheme.borders.borderStyleDefault != abstractTheme.borders.borderStyleDefault)
-        #expect(inheritedTheme.borders.borderStyleDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
+        #expect(inheritedTheme.borders.styleDefault != abstractTheme.borders.styleDefault)
+        #expect(inheritedTheme.borders.styleDefault == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenBorderStyleDrag() throws {
-        #expect(inheritedTheme.borders.borderStyleDrag != abstractTheme.borders.borderStyleDrag)
-        #expect(inheritedTheme.borders.borderStyleDrag == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
+        #expect(inheritedTheme.borders.styleDrag != abstractTheme.borders.styleDrag)
+        #expect(inheritedTheme.borders.styleDrag == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
     }
 }

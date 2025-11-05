@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw
@@ -33,7 +33,7 @@ final class MockThemeSelectInputComponentTokenProvider: OrangeThemeSelectInputCo
 
     // MARK: - Select Input component tokens
 
-    override var selectInputSizeMinWidth: SizeSemanticToken { Self.mockThemeSelectInputSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeSelectInputSize }
 }
 
 // swiftlint:enable required_deinit

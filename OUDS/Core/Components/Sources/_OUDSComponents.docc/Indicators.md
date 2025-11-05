@@ -30,9 +30,7 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 @TabNavigator {
     @Tab("SwiftUI") {
-        ```swift
-            import OUDSComponents
-            
+        ```swift            
             // Neutral badge in medium size without information
             OUDSBadge(status: .neutral, size: .medium)
 
@@ -80,53 +78,86 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
 
 @TabNavigator {
     @Tab("SwiftUI") {
-        ```swift
-            import OUDSComponents
+        ```swift            
+        // Text only with neutral status, for emphasized appearance with rounded shape in default size
+        OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
+        // Or also
+        OUDSTag(label: "Label")
             
-            // Text only with neutral status, for emphasized hierarchy with rounded shape in default size
-            OUDSTag(label: "Label", hierarchy: .emphasized, status: .neutral, shape: .rounded, size: .default)
-            // Or also
-            OUDSTag(label: "Label")
-
-            // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-            OUDSTag(label: "Label", icon: .bullet, status: .negative)
-
-            // Tag with label and icon with image
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")))
-
-            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
-
-            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
-            // you can flip the icon
-            OUDSTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true)
+        // Tag with negative status with bullet
+        OUDSTag(label: "Label", status: .negative(leading: .bullet)
+            
+        // Tag with neutral status with a custom decorative icon
+        OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+        // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
+        // you can flip the icon
+        OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+            
+        // Text with neutral status with bullet
+        OUDSTag(label: "Label", status: .neutral(bullet: true))
+            
+        // Tag with loader with rounded shape in small size
+        OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
         ```
     }
     @Tab("UIKit (experimental)") {
         ```swift
-            import OUDSComponentsUIKit
+        import OUDSComponentsUIKit
             
-            // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
-            OUDSUIKit.createTag(label: "label",
-                                hierarchy: .emphasized,
-                                status: .neutral,
-                                shape: .rounded,
-                                size: .default,
-            // Or also
-            OUDSUIKit.createTag(label: "label")
+        // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
+        OUDSUIKit.createTag(label: "label",
+                            status: .neutral,
+                            appearance: .emphasized,
+                            shape: .rounded,
+                            size: .default,
+        // Or also
+        OUDSUIKit.createTag(label: "label")
             
-            // Text with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-            OUDSUIKit.createTag(label: "Label", icon: .bullet, status: .negative)
+        // ext with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
+            OUDSUIKit.createTag(label: "Label", status: .negative(leading: .bullet)
 
-            // Tag with label and icon with image
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")))
+        // Tag with label and icon with image
+        OUDSUIKit.createTag((label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
 
-            // Tag with label and loader, but defined with an image which won't be displayed while loader is active
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), hasLoader: true)
-
-            // If your layout is in RTL model but your tag has an icon with another meaning because of bad orientation,
-            // you can flip the icon
-            OUDSUIKit.createTag(label: "Label", icon: .asset(Image("ic_heart")), flipIcon: true) // Import of SwiftUI mandatory
+        // Tag with label and loader
+        OUDSUIKit.createTag(loadingLabel: "Label", shape: .rounded, size: .small)
         ```
     }
 }
+
+### Input Tag
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An input tag component in light and dark mode with Orange theme](component_inputTag_Orange)
+    }
+    @Tab("Orange Business Tools") {
+        ![An input tag component in light and dark mode with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![An input tag component in light and dark mode with Sosh theme](component_inputTag_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An input tag component in light and dark mode with Wireframe theme](component_inputTag_Wireframe)
+    }
+}
+
+An ``OUDSInputTag`` is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.
+
+```swift    
+// Create an input tag
+OUDSInputTag("Label") {
+    // Do something, usually remove itself from a list
+}
+    
+// Show in a list and remove when clicked
+var names: [String] = [ "Foo", "Bar", "Wizz" ]
+    
+ForEach(names, id: \.self) { name in
+    OUDSInputTag(label: name) {
+        if let index = names.firstIndex(of: name) {
+            names.remove(at: index)
+        }
+    }
+}
+```

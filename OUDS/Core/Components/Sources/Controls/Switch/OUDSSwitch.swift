@@ -56,7 +56,7 @@ import SwiftUI
 ///
 /// ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.14.0
 public struct OUDSSwitch: View {
 
@@ -91,12 +91,14 @@ public struct OUDSSwitch: View {
             withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                 $isOn.wrappedValue.toggle()
             }
+            #if os(iOS)
             VibrationsManager.warning()
+            #endif
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: isOn)
-                .frame(minWidth: theme.switch.switchSizeMinWidth,
-                       minHeight: theme.switch.switchSizeMinHeight,
-                       maxHeight: theme.switch.switchSizeMaxHeight)
+                .frame(minWidth: theme.switch.sizeMinWidth,
+                       minHeight: theme.switch.sizeMinHeight,
+                       maxHeight: theme.switch.sizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)

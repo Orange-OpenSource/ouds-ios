@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensSemantic
@@ -38,22 +38,22 @@ final class MockThemeRadioButtonComponentTokenProvider: OrangeThemeRadioButtonCo
 
     // MARK: Sizes
 
-    override var radioButtonSizeMaxHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
-    override var radioButtonSizeMinHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
-    override var radioButtonSizeMinWidth: SizeSemanticToken { Self.mockThemeRadioButtonSize }
-    override var radioButtonSizeIndicator: SizeSemanticToken { Self.mockThemeRadioButtonSize }
+    override var sizeMaxHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
+    override var sizeMinHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeRadioButtonSize }
+    override var sizeIndicator: SizeSemanticToken { Self.mockThemeRadioButtonSize }
 
     // MARK: Borders
 
-    override var radioButtonBorderRadius: BorderRadiusSemanticToken { Self.mockThemeRadioButtonBorderRadius }
-    override var radioButtonBorderWidthSelected: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthSelectedFocus: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthSelectedHover: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthSelectedPressed: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthUnselectedFocus: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthUnselectedHover: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
-    override var radioButtonBorderWidthUnselectedPressed: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeRadioButtonBorderRadius }
+    override var borderWidthSelected: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthSelectedFocus: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthSelectedHover: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthSelectedPressed: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthUnselectedFocus: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthUnselectedHover: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
+    override var borderWidthUnselectedPressed: BorderWidthSemanticToken { Self.mockThemeRadioButtonBorderWidth }
 }
 
 // swiftlint:enable required_deinit

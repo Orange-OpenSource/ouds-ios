@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw
@@ -32,13 +32,13 @@ final class MockThemeBulletListComponentTokenProvider: OrangeThemeBulletListComp
 
     // MARK: - Bullet list component tokens
 
-    override var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { Self.mockThemeBulletListSpace }
-    override var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spaceColumnGapBodyLarge: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spaceColumnGapBodyMedium: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spacePaddingBlockBodyLarge: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spacePaddingBlockBodyMedium: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spacePaddingInlineLevel0: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spacePaddingInlineLevel1: SpaceSemanticToken { Self.mockThemeBulletListSpace }
+    override var spacePaddingInlineLevel2: SpaceSemanticToken { Self.mockThemeBulletListSpace }
 }
 
 // swiftlint:enable required_deinit

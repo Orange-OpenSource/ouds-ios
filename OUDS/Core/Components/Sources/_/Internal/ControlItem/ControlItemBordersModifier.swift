@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -22,7 +22,7 @@ import SwiftUI
 /// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
 struct ControlItemBordersModifier: ViewModifier {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let interactionState: InteractionState
     let layoutData: ControlItemLabel.LayoutData
@@ -37,16 +37,16 @@ struct ControlItemBordersModifier: ViewModifier {
     func body(content: Content) -> some View {
         if layoutData.isOutlined, let borderColor {
             content
-                .oudsBorder(style: theme.borders.borderStyleDefault,
-                            width: theme.borders.borderWidthDefault,
-                            radius: borderRadius,
+                .oudsBorder(style: theme.borders.styleDefault,
+                            width: theme.borders.widthDefault,
+                            radius: radius,
                             color: borderColor)
         } else {
             if layoutData.hasDivider {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
-                    OUDSHorizontalDivider()
+                    Divider().horizontalDivider(force: dividerColor)
                 }
             } else {
                 content
@@ -56,50 +56,50 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Private helpers
 
+    private var dividerColor: MultipleColorSemanticTokens {
+        layoutData.isError ? errorColor : theme.colors.borderDefault
+    }
+
     private var borderColor: MultipleColorSemanticTokens? {
+        layoutData.isError ? errorColor : successColor
+    }
+
+    private var errorColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            enabledColor
+            theme.colors.actionNegativeEnabled
         case .pressed:
-            pressedColor
+            theme.colors.actionNegativePressed
         case .hover:
-            hoverColor
+            theme.colors.actionNegativeHover
         case .readOnly, .disabled:
-            disabledColor
+            OL.fatal("An outlined ControlItem with a disabled or read-only state and an error situation has been detected, which is not allowed."
+                + " Only non-error / non-read-only situation are allowed to have a disabled state.")
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens? {
-        if layoutData.isError {
-            isOn ? theme.colors.colorActionNegativeEnabled : nil
-        } else {
+    private var successColor: MultipleColorSemanticTokens? {
+        switch interactionState {
+        case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                isOn ? theme.colors.colorContentDefault : nil
+                isOn ? theme.colors.contentDefault : nil
             } else {
-                isOn ? theme.colors.colorActionSelected : nil
+                isOn ? theme.colors.actionSelected : nil
             }
+        case .hover:
+            theme.colors.actionHover
+        case .pressed:
+            theme.colors.actionPressed
+        case .disabled:
+            isOn ? theme.colors.actionDisabled : nil
+        case .readOnly:
+            isOn ? theme.colors.actionDisabled : nil
         }
     }
 
-    private var pressedColor: MultipleColorSemanticTokens? {
-        layoutData.isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
-    }
-
-    private var hoverColor: MultipleColorSemanticTokens? {
-        layoutData.isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
-    }
-
-    private var disabledColor: MultipleColorSemanticTokens? {
-        guard !layoutData.isError else {
-            OL.fatal("An outlined ControlItem with a disabled state and an error situation has been detected, which is not allowed."
-                + " Only non-error situation are allowed to have a disabled state.")
-        }
-        return isOn ? theme.colors.colorActionDisabled : nil
-    }
-
-    private var borderRadius: BorderRadiusSemanticToken {
+    private var radius: BorderRadiusSemanticToken {
         interactionState == .readOnly ?
-            theme.controlItem.controlItemBorderRadiusItemOnly :
-            theme.controlItem.controlItemBorderRadius
+            theme.controlItem.borderRadiusItemOnly :
+            theme.controlItem.borderRadius
     }
 }

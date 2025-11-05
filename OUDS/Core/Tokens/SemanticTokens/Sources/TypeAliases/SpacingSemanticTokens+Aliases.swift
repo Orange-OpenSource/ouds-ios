@@ -13,5 +13,5 @@
 
 import OUDSTokensRaw
 
-/// Basically a space semantic token is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
+/// Basically a space semantic token is a _ raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
 public typealias SpaceSemanticToken = DimensionRawToken

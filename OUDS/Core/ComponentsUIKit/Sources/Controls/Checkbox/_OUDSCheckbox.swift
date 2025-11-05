@@ -12,12 +12,12 @@
 //
 
 #if canImport(UIKit)
-import OUDSComponents
-import OUDSFoundations
+import OUDSComponents // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox View Controller
+// MARK: - OUDSThemesContract Checkbox View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSCheckbox`
 /// Helps to manage the states and values of the `OUDSCheckbox` and tries to expose a UIKit-like API for actions.
@@ -136,7 +136,7 @@ public final class OUDSCheckboxViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Checkbox Wrapper
+// MARK: - OUDSThemesContract Checkbox Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckbox` and exposes bindings
 /// and view model.
@@ -162,7 +162,7 @@ struct OUDSCheckboxWrapper: View {
     }
 }
 
-// MARK: - OUDS Checkbox View Model
+// MARK: - OUDSThemesContract Checkbox View Model
 
 /// The `SwiftUI` view model used inside the `OUDSCheckboxWrapper` to manage the state of the embeded `OUDSCheckbox`
 @MainActor final class OUDSCheckboxViewModel: ObservableObject {
@@ -188,7 +188,7 @@ struct OUDSCheckboxWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDS SwiftUI Bridge
+// MARK: - OUDSThemesContract SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

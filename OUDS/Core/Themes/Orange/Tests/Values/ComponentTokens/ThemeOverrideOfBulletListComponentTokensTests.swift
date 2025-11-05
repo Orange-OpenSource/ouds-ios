@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
@@ -30,38 +30,38 @@ struct ThemeOverrideOfBulletListComponentTokensTests {
     // MARK: - Spaces
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenColumnGapBodyLarge() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyLarge != abstractTheme.bulletList.bulletListSpaceColumnGapBodyLarge)
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spaceColumnGapBodyLarge != abstractTheme.bulletList.spaceColumnGapBodyLarge)
+        #expect(inheritedTheme.bulletList.spaceColumnGapBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenColumnGapBodyMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyMedium != abstractTheme.bulletList.bulletListSpaceColumnGapBodyMedium)
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spaceColumnGapBodyMedium != abstractTheme.bulletList.spaceColumnGapBodyMedium)
+        #expect(inheritedTheme.bulletList.spaceColumnGapBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenPaddingBlockBodyLarge() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyLarge != abstractTheme.bulletList.bulletListSpacePaddingBlockBodyLarge)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spacePaddingBlockBodyLarge != abstractTheme.bulletList.spacePaddingBlockBodyLarge)
+        #expect(inheritedTheme.bulletList.spacePaddingBlockBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingBlockBodyMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyMedium != abstractTheme.bulletList.bulletListSpacePaddingBlockBodyMedium)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spacePaddingBlockBodyMedium != abstractTheme.bulletList.spacePaddingBlockBodyMedium)
+        #expect(inheritedTheme.bulletList.spacePaddingBlockBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel0() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel0 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel0)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel0 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel0 != abstractTheme.bulletList.spacePaddingInlineLevel0)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel0 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel1() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel1 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel1)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel1 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel1 != abstractTheme.bulletList.spacePaddingInlineLevel1)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel1 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
     @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel2() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel2 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel2)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel2 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel2 != abstractTheme.bulletList.spacePaddingInlineLevel2)
+        #expect(inheritedTheme.bulletList.spacePaddingInlineLevel2 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 }
 

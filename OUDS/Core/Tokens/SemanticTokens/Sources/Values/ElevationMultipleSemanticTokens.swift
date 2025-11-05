@@ -25,11 +25,11 @@ public protocol ElevationMultipleSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
-    var elevationColorDefault: ElevationMultipleColorSemanticToken { get }
-    var elevationColorRaised: ElevationMultipleColorSemanticToken { get }
-    var elevationColorDrag: ElevationMultipleColorSemanticToken { get }
-    var elevationColorEmphasized: ElevationMultipleColorSemanticToken { get }
-    var elevationColorSticky: ElevationMultipleColorSemanticToken { get }
+    var colorDefault: ElevationMultipleColorSemanticToken { get }
+    var colorRaised: ElevationMultipleColorSemanticToken { get }
+    var colorDrag: ElevationMultipleColorSemanticToken { get }
+    var colorEmphasized: ElevationMultipleColorSemanticToken { get }
+    var colorSticky: ElevationMultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

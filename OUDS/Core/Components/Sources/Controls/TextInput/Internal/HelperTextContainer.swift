@@ -14,11 +14,11 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct HelperTextContainer: View {
+struct HelperErrorTextContainer: View {
 
     // MARK: - Properties
 
-    let helperText: String
+    let helperText: String?
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
@@ -26,11 +26,13 @@ struct HelperTextContainer: View {
     // MARK: - Body
 
     var body: some View {
-        Text(helperText)
-            .typeLabelDefaultMedium(theme)
-            .oudsForegroundColor(color)
-            .padding(.top, theme.textInput.textInputSpacePaddingBlockTopHelperText)
-            .padding(.horizontal, theme.textInput.textInputSpacePaddingInlineDefault)
+        if !text.isEmpty {
+            Text(text)
+                .labelDefaultMedium(theme)
+                .oudsForegroundColor(color)
+                .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
+        }
     }
 
     // MARK: - Helper
@@ -38,13 +40,22 @@ struct HelperTextContainer: View {
     private var color: MultipleColorSemanticTokens {
         switch status {
         case .enabled:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .error:
-            theme.colors.colorContentStatusNegative
+            theme.colors.contentStatusNegative
         case .loading: // Should not appear
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .readOnly, .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
+        }
+    }
+
+    private var text: String {
+        switch status {
+        case let .error(message):
+            message
+        case .enabled, .readOnly, .disabled, .loading:
+            helperText ?? ""
         }
     }
 }

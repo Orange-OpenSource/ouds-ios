@@ -12,12 +12,12 @@
 //
 
 #if canImport(UIKit)
-import OUDSComponents
-import OUDSFoundations
+import OUDSComponents // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Checkbox Item Indeterminate View Controller
+// MARK: - OUDSThemesContract Checkbox Item Indeterminate View Controller
 
 // swiftlint:disable type_name
 
@@ -163,7 +163,7 @@ public final class OUDSCheckboxItemIndeterminateViewController: UIViewController
 
 // swiftlint:enable type_name
 
-// MARK: - OUDS Checkbox Wrapper
+// MARK: - OUDSThemesContract Checkbox Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSCheckboxIndeterminateItem` and exposes bindings
 /// and view model.
@@ -196,7 +196,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
     }
 }
 
-// MARK: - OUDS Checkbox View Indeterminate Model
+// MARK: - OUDSThemesContract Checkbox View Indeterminate Model
 
 /// The `SwiftUI` view model used inside the `OUDSCheckboxItemIndeterminateWrapper` to manage the state of the embeded `OUDSCheckboxItemIndeterminate`
 @MainActor final class OUDSCheckboxItemIndeterminateViewModel: ObservableObject {
@@ -250,7 +250,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDS SwiftUI Bridge
+// MARK: - OUDSThemesContract SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

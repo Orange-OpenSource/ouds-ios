@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -40,11 +40,11 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
     /// Provider of spaces semantic tokens to use for  text input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of dimension semantic tokens to use for pin code input dimensions
+    /// Provider of _ semantic tokens to use for pin code input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSTextInput
@@ -53,7 +53,7 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (`SoshThemeBorderSemanticTokensProvider`)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (`SoshThemeColorSemanticTokensProvider`)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (`SoshThemeSpaceSemanticTokensProvider`)
-    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (`SoshThemeDimensionSemanticTokensProvider`)
+    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (`SoshThemeDimensionSemanticTokensProvider`)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,

@@ -20,7 +20,9 @@ struct TextInputContainer: View {
 
     let label: String
     let text: Binding<String>
-    let placeholder: OUDSTextInput.Placeholder?
+    let placeholder: String?
+    let prefix: String?
+    let suffix: String?
     let leadingIcon: Image?
     let flipIcon: Bool
     let trailingAction: OUDSTextInput.TrailingAction?
@@ -35,13 +37,13 @@ struct TextInputContainer: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
-            HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapDefault) {
+        HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
+            HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
                 // Leading icon container
                 LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, status: status)
 
                 // Text container
-                VStack(alignment: .leading, spacing: theme.textInput.textInputSpaceRowGapLabelInput) {
+                VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
                     // Label container
                     if showLabelInContainer {
                         LabelContainer(label: label, status: status, interactionState: interactionState)
@@ -49,15 +51,16 @@ struct TextInputContainer: View {
                     }
 
                     // Input container
-                    HStack(alignment: .center, spacing: theme.textInput.textInputSpaceColumnGapInlineText) {
+                    HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapInlineText) {
 
                         // Prefix container
                         if let placeholder,
-                           let prefix = placeholder.prefix,
-                           !prefix.isEmpty, !placeholder.text.isEmpty
+                           let prefix,
+                           !prefix.isEmpty,
+                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(prefix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }
@@ -72,11 +75,12 @@ struct TextInputContainer: View {
 
                         // Suffix container
                         if let placeholder,
-                           let suffix = placeholder.suffix,
-                           !suffix.isEmpty, !placeholder.text.isEmpty
+                           let suffix,
+                           !suffix.isEmpty,
+                           (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty
                         {
                             Text(suffix)
-                                .typeLabelDefaultLarge(theme)
+                                .labelDefaultLarge(theme)
                                 .oudsForegroundColor(prefixSuffixColor)
                                 .accessibilityHidden(true)
                         }
@@ -87,10 +91,10 @@ struct TextInputContainer: View {
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
         }
-        .padding(.vertical, theme.textInput.textInputSpacePaddingBlockDefault)
-        .padding(.leading, theme.textInput.textInputSpacePaddingInlineDefault)
+        .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
+        .padding(.leading, theme.textInput.spacePaddingInlineDefault)
         .padding(.trailing, trailingPadding)
-        .frame(minHeight: theme.textInput.textInputSizeMinHeight, alignment: .leading)
+        .frame(minHeight: theme.textInput.sizeMinHeight, alignment: .leading)
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .onHover { hover = $0 }
@@ -98,31 +102,32 @@ struct TextInputContainer: View {
 
     // MARK: - Helpers
 
-    private var showPlaceholder: Bool {
-        focused || !text.wrappedValue.isEmpty
-    }
-
     private var showLabelInContainer: Bool {
-        !label.isEmpty && (focused || (!focused && (placeholder?.text.isEmpty == false) || !text.wrappedValue.isEmpty))
+        !label.isEmpty && (focused || (!focused && (placeholder?.isEmpty == false) || !text.wrappedValue.isEmpty))
     }
 
     private var textfieldLabel: String {
-        guard let placeholder, !placeholder.text.isEmpty else {
+        guard let placeholder, !placeholder.isEmpty else {
             return focused ? "" : label
         }
-        return placeholder.text
+        return placeholder
     }
 
     private var trailingPadding: CGFloat {
-        if trailingAction != nil || status == .error || status == .loading {
-            theme.textInput.textInputSpacePaddingInlineTrailingAction
+        if trailingAction != nil {
+            theme.textInput.spacePaddingInlineTrailingAction
         } else {
-            theme.textInput.textInputSpacePaddingInlineDefault
+            switch status {
+            case .error, .loading:
+                theme.textInput.spacePaddingInlineTrailingAction
+            default:
+                theme.textInput.spacePaddingInlineDefault
+            }
         }
     }
 
     private var prefixSuffixColor: MultipleColorSemanticTokens {
-        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentMuted
+        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 
     private var interactionState: TextInputInteractionState {

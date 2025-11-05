@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDS
+import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw
@@ -40,23 +40,25 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
 
     // MARK: - ControlItem component tokens
 
-    override var controlItemSizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemSizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemSizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemSizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemSizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var controlItemColorBgHover: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var controlItemColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var controlItemColorBgLoading: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var controlItemColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var controlItemColorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var controlItemSpaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var controlItemSpaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var controlItemSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var controlItemSpacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var controlItemBorderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
-    override var controlItemBorderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var sizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeErrorIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var colorBgHover: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var colorBgPressed: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var colorBgLoading: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var colorBgFocus: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var colorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var spaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingInlineErrorIcon: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var borderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
 }
 
 // swiftlint:enable required_deinit

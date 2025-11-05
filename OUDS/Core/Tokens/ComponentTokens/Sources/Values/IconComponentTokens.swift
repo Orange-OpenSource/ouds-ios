@@ -18,7 +18,6 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// Declares all component tokens for components using icons (like `OUDSTag`).
 /// Use for tokens providers like `OrangeThemeIconComponentTokensProvider`.
@@ -26,9 +25,8 @@ import OUDSTokensSemantic
 /// - Since: 0.20.0
 public protocol IconComponentTokens {
 
-    var iconColorContentStatusWarningExternalShape: MultipleColorSemanticTokens { get }
-    var iconColorContentStatusWarningInternalShape: MultipleColorSemanticTokens { get }
+    var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { get }
+    var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

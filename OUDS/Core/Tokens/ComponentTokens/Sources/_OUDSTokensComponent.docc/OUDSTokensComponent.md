@@ -17,7 +17,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.7.0
+🧬 Core version: 1.8.0
 ```
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
@@ -32,11 +32,11 @@ Example with ``ButtonComponentTokens``:
 ```swift
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
-    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
+    var sizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
-    var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
-    var buttonSpacePaddingBlock: SpaceSemanticToken { get }
+    var colorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
 }
 
 // There is an existing provider for such tokens
@@ -47,14 +47,14 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     
     // And also semantic tokens
 
-    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
-    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
-    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
-    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
+    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
@@ -79,9 +79,9 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.buttonBorderRadius)
         }
-        .padding(.leading, theme.button.buttonSpacePaddingInlineChevronStart)
-        .padding(.trailing, theme.button.buttonSpacePaddingInlineChevronEnd)
-        .background(theme.button.buttonColorBgStrongEnabledMono)
+        .padding(.leading, theme.button.spacePaddingInlineChevronStart)
+        .padding(.trailing, theme.button.spacePaddingInlineChevronEnd)
+        .background(theme.button.colorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.buttonBorderRadius)
                 .stroke(Color.blue, lineWidth: theme.button.buttonBorderWidthDefault)
@@ -89,8 +89,8 @@ struct SomeView: View {
     }
 /*
     - The theme provides border semantic tokens "buttonBorderRadius" and "buttonBorderWidthDefault"
-    - The theme provides a color semantic token "buttonColorBgStrongEnabledMono"
-    - The theme provides spaces semantic token "buttonSpacePaddingInlineChevronStart" and "buttonSpacePaddingInlineChevronEnd"
+    - The theme provides a color semantic token "colorBgStrongEnabledMono"
+    - The theme provides spaces semantic token "spacePaddingInlineChevronStart" and "spacePaddingInlineChevronEnd"
 */
 }
 
@@ -131,7 +131,7 @@ switch                         | For switch components like `OUDSSwitch` and `OU
 tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
-textInput                      |
+textInput                      | For text field input components like `OUDSTextInput`
 
 ## Topics
 

@@ -4,6 +4,56 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.20.0...0.21.0) - 2025-11-05
+
+### Added
+
+- Add umbrella Swift Package product to wrap all others (Orange-OpenSource/ouds-ios#1117)
+- GitHub Actions workflow to move the SNAPSHOT tag
+- Display in standard ouput information message about tokens libraries versions in use
+- Support for `visionOS` (Orange-OpenSource/ouds-ios#1102) 
+- Support for `macOS` (Orange-OpenSource/ouds-ios#1102) 
+- `input tag` component (Orange-OpenSource/ouds-ios#917)
+- Swift DocC tutorial (Orange-OpenSource/ouds-ios#919)
+
+### Changed
+
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- `actions/upload-artifact` action from v4.6.2 to v5.0.0 for `scorecard` workflow
+- `ruby/setup-ruby` action from v1.26.0 to v1.267.0 for `build-and-test` workflow 
+- `SwiftLintPlugins` Swift package from v0.62.1 to v0.62.2
+- `SwiftFormat` Swift package from v0.58.3 to v0.58.5
+- Update `button` component to version v3.2.0 (Orange-OpenSource/ouds-ios#1034)
+- Update `badge` component to version v1.2.0 (Orange-OpenSource/ouds-ios#1043)
+- Reduce number of imports by using higher level Swift Package product (Orange-OpenSource/ouds-ios#1117)
+- Shorten names of raw, semantic and components tokens and associated modifiers (Orange-OpenSource/ouds-ios#1030)
+- Update `radio item` component to v1.3.0 (Orange-OpenSource/ouds-ios#1072)
+- Update `switch item` component to v1.4.0 (Orange-OpenSource/ouds-ios#1071)
+- Update `checkbox item` component to v2.3.0 (Orange-OpenSource/ouds-ios#1069)
+- Provide predefined icons for `OUDSTag` components (Orange-OpenSource/ouds-ios#912)
+- Update `tag` component to version 1.4 (Orange-OpenSource/ouds-ios#1037)
+- Update `tag` component to version 1.3 (Orange-OpenSource/ouds-ios#945)
+- Expose dimensions for pickers components (Orange-OpenSource/ouds-ios#1080)
+- Update `link` component version (Orange-OpenSource/ouds-ios#1035)
+- `Color` `Wireframe` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Color` `OUDS` raw tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Opacity` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Border` semantic tokens for `Sosh` and `Wireframe` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Button` component tokens for `Sosh` theme (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Switch` component tokens for `Orange`, `Orange Business Tools` and `Sosh` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Icon` component tokens for `Orange`, `Sosh` and `Wireframe` themes (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Color` semantic tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- `Control item` component tokens (tokens library v1.8.0) (Orange-OpenSource/ouds-ios#1070)
+- Update `text input` component to display error message if error, and display suffix/prefix even if placeholder empty (Orange-OpenSource/ouds-ios#1063)
+
+### Removed
+
+- `periphery` workfow on GitHub Actions
+
+### Fixed
+
+- Apply rounded corners for hover and pressed states of radio button and checkbox components (Orange-OpenSource/ouds-ios#1078)
+
 ## [0.20.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.19.0...0.20.0) - 2025-10-15
 
 ### Added

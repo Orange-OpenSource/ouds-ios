@@ -16,7 +16,7 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.7.0
+🧬 Core version: 1.8.0
 ```
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than Swift `struct` or `class` objects. Keeping primitive types helps today to expose objects using Objective-C runtime.
@@ -41,9 +41,9 @@ public enum ColorRawTokens { } // Gathers all color raw tokens (in the end, in d
 /// Place in another file which can be updated anytime
 extension ColorRawTokens { // All the values
 
-    public static let colorFunctionalWhite: ColorRawToken = "#FFFFF00F"
-    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E00"
-    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
+    public static let functionalWhite: ColorRawToken = "#FFFFF00F"
+    public static let functionalScarlet400: ColorRawToken = "#FF4D4E00"
+    public static let opacityBlack0: ColorRawToken = "#00000000"
     ...
 }
 
@@ -61,7 +61,7 @@ In fact the design system implementations should expose pack of values so as to 
 All such *composites* instances are defined in separated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
 
 The raw tokens groups are declared in `enum` objects which will gather the raw tokens in extensions.
-In fact, raw tokens are defined as `static let` _stored properties_, an adding them in an `enum` is more optimized for namespaces reasons. Thus all `public enum` gathering raw tokens are defined there.
+In fact, raw tokens are defined as `static let` dimensionstored properties_, an adding them in an `enum` is more optimized for namespaces reasons. Thus all `public enum` gathering raw tokens are defined there.
 
 There are also *typealias* values used for the raw tokens.
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a light level of abstraction with meanings, without having to define real types with `struct` or `class`.
@@ -72,12 +72,7 @@ The raw tokens values are defined in extensions of `enum` in dedicated files for
 
 ### How to use raw tokens
 
-To use raw tokens you will have to make the suitable import for our _OUDS iOS Swift Package_ product:
-
-```swift
-// Import the product
-import OUDSTokensRaw
-```
+To use raw tokens you will have to make the suitable import for the _OUDS iOS Swift Package_ product.
 
 Then choose the tokens you want within the enums below:
 

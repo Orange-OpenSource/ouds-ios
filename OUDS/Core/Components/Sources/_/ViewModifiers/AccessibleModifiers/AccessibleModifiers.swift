@@ -50,6 +50,7 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 
     /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: Bool
+    // NOTE: "never used" false positive with periphery (https://github.com/peripheryapp/periphery/issues/979)
 
     /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
@@ -91,6 +92,7 @@ struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
 
     /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: AccessibilityFocusable?
+    // NOTE: "never used" false positive with periphery (https://github.com/peripheryapp/periphery/issues/979)
 
     /// The target to give the focus after the deadLine` delay
     let target: AccessibilityFocusable

@@ -12,7 +12,6 @@
 //
 
 @testable import OUDSThemesOrange
-import OUDSTokensSemantic
 import Testing
 
 // swiftlint:disable type_name

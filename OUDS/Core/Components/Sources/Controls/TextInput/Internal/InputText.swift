@@ -33,7 +33,7 @@ struct InputText: View {
         TextField(text: text) {
             Text(label)
                 .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-                .typeLabelDefaultLarge(theme)
+                .labelDefaultLarge(theme)
                 .oudsForegroundStyle(placeholderColor)
         }
         .oudsForegroundColor(inputTextColor)
@@ -45,25 +45,30 @@ struct InputText: View {
     // MARK: - Helper
 
     private var cursorColor: MultipleColorSemanticTokens {
-        status == .error ? theme.colors.colorActionNegativePressed : theme.colors.colorContentDefault
+        switch status {
+        case .error:
+            theme.colors.actionNegativePressed
+        default:
+            theme.colors.contentDefault
+        }
     }
 
     private var inputTextColor: MultipleColorSemanticTokens {
-        status == .disabled ? theme.colors.colorActionDisabled : theme.colors.colorContentDefault
+        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentDefault
     }
 
     private var placeholderColor: MultipleColorSemanticTokens {
         switch status {
         case .enabled:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .error:
             placeholderErrorColor
         case .loading:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .readOnly:
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         case .disabled:
-            theme.colors.colorActionDisabled
+            theme.colors.actionDisabled
         }
     }
 
@@ -71,14 +76,14 @@ struct InputText: View {
         if labelAsPlaceholder {
             switch interactionState {
             case .idle:
-                theme.colors.colorActionNegativeEnabled
+                theme.colors.actionNegativeEnabled
             case .focused:
-                theme.colors.colorActionNegativeFocus
+                theme.colors.actionNegativeFocus
             case .hover:
-                theme.colors.colorActionNegativeHover
+                theme.colors.actionNegativeHover
             }
         } else {
-            theme.colors.colorContentMuted
+            theme.colors.contentMuted
         }
     }
 }

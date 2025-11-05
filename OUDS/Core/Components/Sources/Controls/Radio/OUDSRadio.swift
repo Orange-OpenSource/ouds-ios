@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDS Radio
+// MARK: - OUDSThemesContract Radio
 
 /// The ``OUDSRadio`` proposes layout to add in your views a lonely radio, without labels, texts nor icons radios components
 /// If you want to use a radio with additional texts and icon, prefer instead ``OUDSRadioItem``.
@@ -30,7 +30,7 @@ import SwiftUI
 /// Note also the component must be instanciated with a string parameter used as accessibility label.
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for radio.
-/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
 ///
 /// ## Cases forbidden by design
 ///
@@ -75,7 +75,7 @@ import SwiftUI
 ///
 /// ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.12.0
 public struct OUDSRadio: View {
 
@@ -117,9 +117,9 @@ public struct OUDSRadio: View {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
-                .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
-                       minHeight: theme.radioButton.radioButtonSizeMinHeight,
-                       maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
+                .frame(minWidth: theme.radioButton.sizeMinWidth,
+                       minHeight: theme.radioButton.sizeMinHeight,
+                       maxHeight: theme.radioButton.sizeMaxHeight)
                 .modifier(RadioBackgroundModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+

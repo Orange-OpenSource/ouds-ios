@@ -12,12 +12,12 @@
 //
 
 #if canImport(UIKit)
-import OUDSComponents
-import OUDSFoundations
+import OUDSComponents // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
+import OUDSFoundations // NOTE: "unused" false positive by periphery (https://github.com/peripheryapp/periphery/issues/908)
 import SwiftUI
 import UIKit
 
-// MARK: - OUDS Switch View Controller
+// MARK: - OUDSThemesContract Switch View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSSwitch`
 /// Helps to manage the states and values of the `OUDSSwitch` and tries to expose a UIKit-like API for actions.
@@ -134,7 +134,7 @@ public final class OUDSSwitchViewController: UIViewController {
     }
 }
 
-// MARK: - OUDS Switch Wrapper
+// MARK: - OUDSThemesContract Switch Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSSwitch` and exposes bindings
 /// and view model.
@@ -159,7 +159,7 @@ struct OUDSSwitchWrapper: View {
     }
 }
 
-// MARK: - OUDS Switch View Model
+// MARK: - OUDSThemesContract Switch View Model
 
 /// The `SwiftUI` view model used inside the `OUDSSwitchWrapper` to manage the state of the embeded `OUDSSwitch`
 @MainActor final class OUDSSwitchViewModel: ObservableObject {
@@ -181,7 +181,7 @@ struct OUDSSwitchWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDS SwiftUI Bridge
+// MARK: - OUDSThemesContract SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

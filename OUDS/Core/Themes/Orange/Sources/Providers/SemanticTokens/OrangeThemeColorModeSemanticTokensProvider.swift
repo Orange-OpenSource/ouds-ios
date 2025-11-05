@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 // swiftlint:disable type_name
 
@@ -26,15 +26,15 @@ import OUDSFoundations
 ///
 ///         // Then override the color mode semantic tokens you want, using the color mode raw tokens available
 ///
-///         override var modeOnBrandSecondaryLight: ColorModeSemanticToken {
+///         override var onBrandSecondaryLight: ColorModeSemanticToken {
 ///              ColorModeRawTokens.light
 ///         }
 ///
-///         override var modeOnBrandSecondaryDark: ColorModeSemanticToken {
+///         override var onBrandSecondaryDark: ColorModeSemanticToken {
 ///              ColorModeRawTokens.dark
 ///         }
 ///
-///         override var modeOnStatusAccentEmphasized: MultipleColorModeSemanticTokens {
+///         override var onStatusAccentEmphasized: MultipleColorModeSemanticTokens {
 ///             MultipleColorModeSemanticTokens(light: ColorModeRawTokens.dark, dark: ColorModeRawTokens.light)
 ///         }
 /// }
@@ -64,7 +64,7 @@ open class OrangeThemeColorModeSemanticTokensProvider: AllColorModeSemanticToken
     public let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of color mode semantic tokens

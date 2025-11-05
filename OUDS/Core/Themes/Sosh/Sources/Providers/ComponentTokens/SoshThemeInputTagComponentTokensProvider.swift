@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 
 /// A class which wraps all **component  tokens of tag input** objects like `OUDSInputTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -30,13 +30,13 @@ final class SoshThemeInputTagComponentTokensProvider: AllInputTagComponentTokens
     let colors: AllColorSemanticTokensProvider
 
     #if DEBUG
-    private nonisolated(unsafe) static var instanceCount: Int = 0
+    nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSInputTag`
     /// - Parameters:
     ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
+    ///    - colors: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     init(borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil)
     {

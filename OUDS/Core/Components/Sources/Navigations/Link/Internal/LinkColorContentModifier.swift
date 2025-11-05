@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
 import OUDSFoundations
+import OUDSThemesContract
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -51,18 +51,18 @@ struct LinkColorContentModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentEnabled : theme.link.linkColorContentEnabled
+        useMonochrome ? theme.link.monoColorContentEnabled : theme.link.colorContentEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentHover : theme.link.linkColorContentHover
+        useMonochrome ? theme.link.monoColorContentHover : theme.link.colorContentHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentPressed : theme.link.linkColorContentPressed
+        useMonochrome ? theme.link.monoColorContentPressed : theme.link.colorContentPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        useMonochrome ? theme.link.linkMonoColorContentDisabled : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.monoColorContentDisabled : theme.colors.actionDisabled
     }
 }
