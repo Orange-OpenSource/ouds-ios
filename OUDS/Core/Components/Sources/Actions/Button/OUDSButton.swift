@@ -223,9 +223,11 @@ public struct OUDSButton: View {
         .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
-        .onHover { isHover in
-            self.isHover = isHover
-        }
+        #if !os(watchOS)
+            .onHover { isHover in
+                self.isHover = isHover
+            }
+        #endif
     }
 
     // swiftlint:enable line_length
