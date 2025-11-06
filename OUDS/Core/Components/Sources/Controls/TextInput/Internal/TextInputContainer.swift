@@ -36,6 +36,8 @@ struct TextInputContainer: View {
 
     // MARK: - Body
 
+    // swiftlint:disable accessibility_trait_for_button
+    // Not a button and a11y trait for text field defined elsewhere
     var body: some View {
         HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
             HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
@@ -86,6 +88,7 @@ struct TextInputContainer: View {
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .onHover { hover = $0 }
+        // swiftlint:enable accessibility_trait_for_button
     }
 
     // MARK: - Helpers

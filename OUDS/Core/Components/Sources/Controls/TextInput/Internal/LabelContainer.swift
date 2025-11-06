@@ -25,7 +25,7 @@ struct LabelContainer: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Enums
+    // MARK: Positions
 
     enum Position {
         case top
