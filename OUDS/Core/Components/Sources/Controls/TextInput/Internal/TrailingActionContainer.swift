@@ -69,6 +69,7 @@ struct TrailingActionContainer: View {
     private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
         OUDSButton(icon: trailingAction.icon,
                    accessibilityLabel: trailingAction.actionHint,
+                   flipIcon: trailingAction.flipIcon,
                    appearance: .minimal,
                    style: status == .loading ? .loading : .default,
                    action: trailingAction.action)

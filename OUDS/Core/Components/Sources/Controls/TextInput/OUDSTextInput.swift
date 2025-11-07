@@ -198,6 +198,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
+        let flipIcon: Bool
         let actionHint: String
         let action: () -> Void
 
@@ -205,13 +206,15 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         ///
         /// - Parameters:
         ///   - icon: The icon set in the ``OUDSButton``
+        ///   - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: Image, actionHint: String, action: @escaping () -> Void) {
+        public init(icon: Image, flipIcon: Bool = false, actionHint: String, action: @escaping () -> Void) {
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
+            self.flipIcon = flipIcon
             self.actionHint = actionHint
             self.action = action
         }
