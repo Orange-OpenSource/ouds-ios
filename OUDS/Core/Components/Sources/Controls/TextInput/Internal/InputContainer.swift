@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -65,3 +66,4 @@ struct InputContainer: View {
         status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 }
+#endif

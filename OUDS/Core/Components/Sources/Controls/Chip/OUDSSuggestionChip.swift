@@ -41,7 +41,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/77fdea-chip/b/6578e5/t/2d71fd4bb4)
 ///
 /// ## Themes rendering
 ///

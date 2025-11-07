@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -87,7 +88,7 @@ struct TextInputContainer: View {
         .frame(minHeight: theme.textInput.sizeMinHeight, alignment: .leading)
         .modifier(TextInputBackgroundModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
         .modifier(TextInputBorderModifier(status: status, isOutlined: isOutlined, interactionState: interactionState))
-        #if !os(watchOS)
+        #if !os(watchOS) && !os(tvOS)
             .onHover { hover = $0 }
         #endif
         // swiftlint:enable accessibility_trait_for_button
@@ -120,3 +121,4 @@ struct TextInputContainer: View {
         TextInputInteractionState(focused: focused, hover: hover)
     }
 }
+#endif

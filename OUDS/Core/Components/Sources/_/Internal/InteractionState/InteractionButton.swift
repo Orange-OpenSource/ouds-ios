@@ -77,7 +77,7 @@ private struct InteractionButtonStyle<Content>: ButtonStyle where Content: View 
 
     func makeBody(configuration: Configuration) -> some View {
         content(InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: isReadOnly))
-        #if !os(watchOS)
+        #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
                 self.isHover = isHover
             }

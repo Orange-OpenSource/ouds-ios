@@ -24,7 +24,7 @@ let package = Package(
 
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v15), .visionOS(.v1), .watchOS(.v11)],
+    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v15), .visionOS(.v1), .watchOS(.v11), .tvOS(.v16)],
 
     // MARK: - Products
 

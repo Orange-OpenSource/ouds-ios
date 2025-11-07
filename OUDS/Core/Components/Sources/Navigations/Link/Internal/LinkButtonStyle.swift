@@ -56,7 +56,7 @@ struct LinkButtonStyle: ButtonStyle {
         .padding(.horizontal, theme.link.spacePaddingInline)
         .padding(.vertical, theme.link.spacePaddingBlock)
         .frame(minWidth: minWidth, minHeight: minHeight)
-        #if !os(watchOS)
+        #if !os(watchOS) && !os(tvOS)
             .onHover { isHover in
                 self.isHover = isHover
             }
