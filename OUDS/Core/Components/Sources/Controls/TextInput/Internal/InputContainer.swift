@@ -45,8 +45,7 @@ struct InputContainer: View {
             // Input text container
             InputText(label: placeholder ?? label,
                       text: text,
-                      status: status,
-                      interactionState: interactionState)
+                      status: status)
 
             // Suffix container
             if let placeholder,

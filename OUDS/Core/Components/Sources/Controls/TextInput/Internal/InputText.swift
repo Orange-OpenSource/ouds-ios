@@ -22,7 +22,6 @@ struct InputText: View {
     let label: String
     let text: Binding<String>
     let status: OUDSTextInput.Status
-    let interactionState: TextInputInteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -55,15 +54,6 @@ struct InputText: View {
 
     private var inputTextColor: MultipleColorSemanticTokens {
         status == .disabled ? theme.colors.actionDisabled : theme.colors.contentDefault
-    }
-
-    private var placeholderColor: MultipleColorSemanticTokens {
-        switch status {
-        case .enabled, .error, .loading, .readOnly:
-            theme.colors.contentMuted
-        case .disabled:
-            theme.colors.actionDisabled
-        }
     }
 }
 #endif
