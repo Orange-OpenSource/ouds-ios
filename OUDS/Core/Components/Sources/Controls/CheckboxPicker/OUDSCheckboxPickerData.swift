@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
 /// The data to use to populate the picker of ``OUDSCheckboxItem`` objects.
@@ -84,3 +85,4 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
         self.accessibilityIdentifier = accessibilityIdentifier
     }
 }
+#endif

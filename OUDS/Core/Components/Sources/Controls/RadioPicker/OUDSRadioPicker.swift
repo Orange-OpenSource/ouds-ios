@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
@@ -231,3 +232,4 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         }
     }
 }
+#endif
