@@ -63,7 +63,8 @@ import SwiftUI
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
-public struct OUDSSuggestionChip: View { // TODO: #407 - Add documentation hyperlink in doc above
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSSuggestionChip: View {
 
     // MARK: - Stored Properties
 

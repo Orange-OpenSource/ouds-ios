@@ -92,6 +92,7 @@ import SwiftUI
 /// ![A chip picker component in light and dark mode with Wireframe theme](component_chipPicker_Wireframe)
 ///
 /// - Since: 0.17.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
 
     /// The title of the picker
