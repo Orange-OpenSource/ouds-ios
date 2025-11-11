@@ -151,22 +151,9 @@ The wiki lists also [the components and their availability](https://github.com/O
 > The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
 > [!TIP]
-> Releases are immutable and in most of time cryptographically signed.
-> You can verify integrity of release and assets with commands below
-> using [GitHub CLI](https://cli.github.com/) 
-> and available [release tags](https://github.com/Orange-OpenSource/ouds-ios/releases).
-
-To verify integrity of a release *x.y.z*:
-```shell
-gh release verify x.y.z --repo Orange-OpenSource/ouds-ios
-```
-
-To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
-```shell
-gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios
-```
-
-For these commands a message should say release is verified or asset verification succeeded.
+> Releases are immutable and in most of time cryptographically signed (commits, tags and artifacts).
+> You can verify their integrity with commands from GPG tool of GitHub CLI client.
+> Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
 
 ## Tokens libraries versions
 
