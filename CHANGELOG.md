@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `actions/dependency-review-action` action from v4.8.1 to v4.8.2 for `dependency-review` workflow
 - `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
 - `icon` component tokens (tokens libraries Core v1.9, System v2.2)
 - `control item` component tokens (tokens libraries Core v1.9, System v2.2) 
