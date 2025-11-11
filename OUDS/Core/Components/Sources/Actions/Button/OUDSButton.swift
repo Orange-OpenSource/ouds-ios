@@ -109,6 +109,7 @@ import SwiftUI
 ///
 /// - Version: 3.2.0 (Figma component design version)
 /// - Since: 0.10.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
@@ -223,9 +224,11 @@ public struct OUDSButton: View {
         .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
-        .onHover { isHover in
-            self.isHover = isHover
-        }
+        #if !os(watchOS) && !os(tvOS)
+            .onHover { isHover in
+                self.isHover = isHover
+            }
+        #endif
     }
 
     // swiftlint:enable line_length

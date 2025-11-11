@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import Foundation
 
 /// Enumerates the types of layouts a ``OUDSCheckboxPicker`` can have
@@ -47,3 +48,4 @@ public enum OUDSCheckboxPickerPlacement {
         case textAndPositiveCount
     }
 }
+#endif

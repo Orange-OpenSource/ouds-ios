@@ -33,9 +33,9 @@ You can get details about the this design system in [the official website unifie
 
 > Note: Orange Unified Design System framework supports iOS / iPadOS 15 and later.
 
-> Important: Orange Unified Design System framework focuses first on iOS / iPadOS, but some other platforms like visionOS and macOS are supported.
+> Important: Orange Unified Design System framework focuses first on iOS / iPadOS, but other platforms like macOS, visionOS, watchOS and tvOS are supported.
 
-> Tip: Feel free to submit pull requests if you can improve / add the support of macOS, visionOS, tvOS and watchOS!
+> Tip: Feel free to submit pull requests if you can improve the support of any platforms!
 
 ## Data and privacy
 

@@ -203,6 +203,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
+                         name: String = "Orange",
                          family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
@@ -270,6 +271,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,
+                   name: name,
                    family: family,
                    tuning: tuning)
     }

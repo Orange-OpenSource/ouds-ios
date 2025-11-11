@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensComponent
@@ -164,6 +165,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
@@ -402,3 +404,4 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
+#endif

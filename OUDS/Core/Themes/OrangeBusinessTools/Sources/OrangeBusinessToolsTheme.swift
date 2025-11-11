@@ -182,6 +182,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
+                   name: "Orange Business Tools",
                    family: family,
                    tuning: tuning)
     }

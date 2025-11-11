@@ -127,8 +127,10 @@ someView.oudsAccentColor(theme.colors.bgPrimary)
 ## Flip images according to layouts
 
 Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
-of your app changes, the images in use can loose meanings or have another one (except if they are asymetruc).
-If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout.
+of your app changes, the images in use can loose meanings or have another one (except if they are asymetric).
+Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
+
+If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want. The `flipIcon` flag available in components can be used.
 
 ```swift
 // Get the layout direction in your View
