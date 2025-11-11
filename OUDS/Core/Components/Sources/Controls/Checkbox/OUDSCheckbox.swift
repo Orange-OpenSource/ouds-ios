@@ -89,6 +89,7 @@ import SwiftUI
 ///
 /// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckbox: View {
 
     // MARK: Properties

@@ -76,6 +76,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
                    resourcesBundle: Bundle.OrangeTheme,
+                   name: "Mock",
                    family: family)
     }
 

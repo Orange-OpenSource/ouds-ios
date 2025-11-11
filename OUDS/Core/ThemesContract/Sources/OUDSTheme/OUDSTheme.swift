@@ -144,6 +144,9 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Other elements
 
+    /// The name of the name, can be sued for debugging for example
+    public let name: String
+
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
     /// Supposed to have, for a given resurce, the same name accross themes.
     public let resourcesBundle: Bundle
@@ -188,6 +191,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
@@ -222,6 +226,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
+                name: String,
                 family: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
@@ -262,6 +267,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
+        self.name = name
         self.family = family
         self.tuning = tuning
 

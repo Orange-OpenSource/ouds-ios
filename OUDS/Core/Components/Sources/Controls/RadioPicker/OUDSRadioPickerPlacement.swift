@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 /// Enumerates the types of layouts a ``OUDSRadioPicker`` can have
 ///
 /// - Since: 0.14.0
@@ -22,3 +23,4 @@ public enum OUDSRadioPickerPlacement {
     /// All radio buttons are in one column
     case vertical
 }
+#endif

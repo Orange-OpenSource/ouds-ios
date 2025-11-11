@@ -146,6 +146,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadioItem: View {
 
     // MARK: - Properties
@@ -179,7 +180,7 @@ public struct OUDSRadioItem: View {
     ///   - helper: An additonal helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isOutlined: Flag to get an outlined radio, default set to `true`
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -198,7 +199,7 @@ public struct OUDSRadioItem: View {
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isOutlined: Bool = true,
+                isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,

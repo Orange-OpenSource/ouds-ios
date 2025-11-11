@@ -169,7 +169,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - inputTag: All component tokens for tag input
     ///    - textInput: All component tokens for text input
     ///    - textArea: All component tokens for text area
-    ///    - resourcesBundle: The `Bundle` of the module containing assets to laod like images
+    ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
+    ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
     ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
@@ -203,6 +204,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
+                         name: String = "Orange",
                          family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
@@ -270,6 +272,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,
+                   name: name,
                    family: family,
                    tuning: tuning)
     }
