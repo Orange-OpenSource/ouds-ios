@@ -109,6 +109,13 @@ import SwiftUI
 ///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, flipLeadingIcon: layoutDirection == .rightToLeft)
+/// ```
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)

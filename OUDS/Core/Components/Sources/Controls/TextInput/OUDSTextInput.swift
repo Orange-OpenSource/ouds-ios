@@ -141,6 +141,13 @@ import SwiftUI
 ///     OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 /// ```
 ///
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSTextInput(label: "Label", text: $text, flipLeadingIcon: layoutDirection == .rightToLeft)
+/// ```
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
@@ -198,6 +205,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
+        let flipIcon: Bool
         let actionHint: String
         let action: () -> Void
 
@@ -206,12 +214,14 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// - Parameters:
         ///   - icon: The icon set in the ``OUDSButton``
         ///   - actionHint: A string that describes the purpose of the button's `action`
+        ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: Image, actionHint: String, action: @escaping () -> Void) {
+        public init(icon: Image, actionHint: String, flipIcon: Bool = false, action: @escaping () -> Void) {
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
+            self.flipIcon = flipIcon
             self.actionHint = actionHint
             self.action = action
         }
