@@ -47,7 +47,8 @@ public protocol ControlItemComponentTokens {
 
     var spaceColumnGap: SpaceSemanticToken { get }
     var spaceRowGap: SpaceSemanticToken { get }
-    var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockTopErrorText: SpaceSemanticToken { get }
     var spacePaddingInline: SpaceSemanticToken { get }
     var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
 

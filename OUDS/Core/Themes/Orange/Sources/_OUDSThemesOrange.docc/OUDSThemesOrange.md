@@ -16,7 +16,7 @@ The Orange theme overrides some tokens from the basic `OUDSTheme` and should be 
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.1.0
+🧬 Theme version: 2.2.0
 ```
 
 This is the default theme any Orange branded app should use, and can be subclassed to define for example themes dedicated to countries.

@@ -49,7 +49,7 @@ struct ControlItemContent: View {
                     indicatorContainer()
                 }
             }
-            .padding(.all, theme.controlItem.spacePaddingBlock)
+            .padding(.all, theme.controlItem.spacePaddingBlockDefault)
             .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 

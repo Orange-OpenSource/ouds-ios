@@ -101,6 +101,15 @@ public protocol ColorSemanticTokens {
     var actionVisitedLight: ColorSemanticToken { get }
     var actionVisitedDark: ColorSemanticToken { get }
 
+    var actionReadOnlyPrimaryLight: ColorSemanticToken { get }
+    var actionReadOnlyPrimaryDark: ColorSemanticToken { get }
+
+    var actionReadOnlySecondaryLight: ColorSemanticToken { get }
+    var actionReadOnlySecondaryDark: ColorSemanticToken { get }
+
+    var actionAccentLight: ColorSemanticToken { get }
+    var actionAccentDark: ColorSemanticToken { get }
+
     // MARK: - Color - Always
 
     var alwaysBlack: ColorSemanticToken { get }
@@ -147,6 +156,9 @@ public protocol ColorSemanticTokens {
 
     var borderOnBrandPrimaryLight: ColorSemanticToken { get }
     var borderOnBrandPrimaryDark: ColorSemanticToken { get }
+
+    var borderMinimalLight: ColorSemanticToken { get }
+    var borderMinimalDark: ColorSemanticToken { get }
 
     // MARK: - Color - Content
 
