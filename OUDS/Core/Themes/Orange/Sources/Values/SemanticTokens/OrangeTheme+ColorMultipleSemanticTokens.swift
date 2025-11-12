@@ -119,7 +119,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
 
-    @objc open var borderMinmal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
+    @objc open var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
     // MARK: - Color - Content
 

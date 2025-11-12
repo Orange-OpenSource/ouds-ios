@@ -142,7 +142,7 @@ public protocol ColorMultipleSemanticTokens {
 
     var borderOnBrandTertiary: MultipleColorSemanticTokens { get }
 
-    var borderDefault: MultipleColorSemanticTokens { get }
+    var borderMinimal: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
 

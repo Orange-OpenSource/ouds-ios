@@ -116,7 +116,7 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
 
-    @objc public final var borderMinmal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
+    @objc public final var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
     // MARK: - Color - Content
 

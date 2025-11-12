@@ -114,7 +114,8 @@ import SwiftUI
 ///
 /// Use the mention “(optional)” at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
 ///
-/// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password), no mention is necessary since the fields are essential to the formular's functionality.
+/// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password),
+/// no mention is necessary since the fields are essential to the formular's functionality.
 ///
 /// ## Code samples
 ///
