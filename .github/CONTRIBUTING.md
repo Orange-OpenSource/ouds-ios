@@ -10,6 +10,7 @@
 - [Commits Style](#commits-style)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Review Workflow](#review-workflow)
+- [LLMs, GitHub bot accounts, and AI agents](#llms-github-bot-accounts-and-ai-agents)
 - [License](#license)
 
 Looking to contribute something OUDS iOS? **Here's how you can help.**
@@ -294,6 +295,22 @@ Pull requests will be merged if no conditions / prerequisites / checks are red (
 - another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
 - the almost-optional-one checking [DCO is applied](https://probot.github.io/apps/dco/) ;
 - and the one [for the linter warnings](https://github.com/cirruslabs/swiftlint-action).
+
+## LLMs, GitHub bot accounts, and AI agents
+
+This project does not accept contributions from bot GitHub accounts. All pull requests that appear to come from such an account will be closed.
+
+Patches created by LLMs and AI agents are also viewed with suspicion unless a human has reviewed them.
+All LLM generated patches MUST have text in the git log and in the pull request description that indicates the patch was created using an LLM with the pattern below
+
+```text
+Assisted-by: MODEL (SERVICE)
+```
+
+For example, if you use GPT-4o-mini LLM with GitHub Copilot:
+```text
+Assisted-by: GPT-4o-mini (GitHub Copilot)
+```
 
 ## License
 
