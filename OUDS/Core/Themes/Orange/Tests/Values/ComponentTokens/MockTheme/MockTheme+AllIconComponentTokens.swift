@@ -33,6 +33,7 @@ final class MockThemeIconComponentTokenProvider: OrangeThemeIconComponentTokensP
 
     override var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
     override var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
+    override var colorContentDefault: MultipleColorSemanticTokens { Self.mockThemeIconColor }
 }
 
 // swiftlint:enable required_deinit

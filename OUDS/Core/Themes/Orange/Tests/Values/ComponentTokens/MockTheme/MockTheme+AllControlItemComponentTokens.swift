@@ -54,7 +54,8 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     override var colorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
     override var spaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockTopErrorText: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingInlineErrorIcon: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
