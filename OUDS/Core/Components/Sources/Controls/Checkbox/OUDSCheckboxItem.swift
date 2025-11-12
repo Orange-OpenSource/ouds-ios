@@ -104,7 +104,7 @@ import SwiftUI
 ///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
-/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
