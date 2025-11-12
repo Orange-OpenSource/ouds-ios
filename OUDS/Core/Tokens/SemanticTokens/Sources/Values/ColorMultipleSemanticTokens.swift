@@ -100,6 +100,12 @@ public protocol ColorMultipleSemanticTokens {
 
     var actionVisited: MultipleColorSemanticTokens { get }
 
+    var actionReadOnlyPrimary: MultipleColorSemanticTokens { get }
+
+    var actionReadOnlySecondary: MultipleColorSemanticTokens { get }
+
+    var actionAccent: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Background
 
     var bgPrimary: MultipleColorSemanticTokens { get }
@@ -135,6 +141,8 @@ public protocol ColorMultipleSemanticTokens {
     var borderOnBrandSecondary: MultipleColorSemanticTokens { get }
 
     var borderOnBrandTertiary: MultipleColorSemanticTokens { get }
+
+    var borderDefault: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
 

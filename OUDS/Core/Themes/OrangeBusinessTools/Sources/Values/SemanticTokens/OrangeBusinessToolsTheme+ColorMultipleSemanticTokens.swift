@@ -74,6 +74,12 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var actionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionVisitedLight, dark: actionVisitedDark) }
 
+    @objc public final var actionReadOnlyPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlyPrimaryLight, dark: actionReadOnlyPrimaryDark) }
+
+    @objc public final var actionReadOnlySecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
+
+    @objc public final var actionAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionAccentLight, dark: actionAccentDark) }
+
     // MARK: - Color - Background
 
     @objc public final var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgPrimaryLight, dark: bgPrimaryDark) }
@@ -109,6 +115,8 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
     @objc public final var borderOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandSecondaryLight, dark: borderOnBrandSecondaryDark) }
 
     @objc public final var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
+
+    @objc public final var borderMinmal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
     // MARK: - Color - Content
 

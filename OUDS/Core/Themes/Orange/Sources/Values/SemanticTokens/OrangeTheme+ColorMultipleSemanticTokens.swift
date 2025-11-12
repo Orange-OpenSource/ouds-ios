@@ -77,6 +77,12 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var actionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionVisitedLight, dark: actionVisitedDark) }
 
+    @objc open var actionReadOnlyPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlyPrimaryLight, dark: actionReadOnlyPrimaryDark) }
+
+    @objc open var actionReadOnlySecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
+
+    @objc open var actionAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionAccentLight, dark: actionAccentDark) }
+
     // MARK: - Color - Background
 
     @objc open var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgPrimaryLight, dark: bgPrimaryDark) }
@@ -112,6 +118,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var borderOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandSecondaryLight, dark: borderOnBrandSecondaryDark) }
 
     @objc open var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
+
+    @objc open var borderMinmal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
     // MARK: - Color - Content
 
