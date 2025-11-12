@@ -141,12 +141,16 @@ public struct OUDSButton: View {
     public enum Appearance {
         /// Default button is used for action
         case `default`
+
         /// Strong button on the page should be singular and prominent
         case strong
+
         /// A brand primary color alternative to the Strong button.
         case brand
+
         /// Minimal button for actions that are considered less crucial
         case minimal
+
         /// Negative button used for destructive action
         case negative
     }
@@ -167,7 +171,7 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - text: The text to display in the button
     ///    - icon: An image which shoud contains an icon
-    ///    - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
@@ -185,7 +189,7 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
-    ///    - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
