@@ -18,10 +18,19 @@ import SwiftUI
 struct FixedIcon: View {
 
     let icon: Image
+    let flipped: Bool
     let size: CGFloat
 
+    init(icon: Image, size: CGFloat, flipped: Bool = false) {
+        self.icon = icon
+        self.size = size
+        self.flipped = flipped
+    }
+
     var body: some View {
-        icon.resizable().frame(width: size, height: size, alignment: .center)
+        icon.resizable()
+            .frame(width: size, height: size, alignment: .center)
+            .toFlip(flipped)
     }
 }
 
@@ -30,9 +39,18 @@ struct FixedIcon: View {
 struct ScaledIcon: View {
 
     let icon: Image
+    let flipped: Bool
     @ScaledMetric var size: CGFloat
 
+    init(icon: Image, size: CGFloat, flipped: Bool = false) {
+        self.icon = icon
+        self.flipped = flipped
+        _size = ScaledMetric(wrappedValue: size)
+    }
+
     var body: some View {
-        icon.resizable().frame(width: size, height: size, alignment: .center)
+        icon.resizable()
+            .frame(width: size, height: size, alignment: .center)
+            .toFlip(flipped)
     }
 }
