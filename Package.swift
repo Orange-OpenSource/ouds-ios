@@ -1,6 +1,5 @@
 // swift-tools-version: 6.2
 
-//
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT

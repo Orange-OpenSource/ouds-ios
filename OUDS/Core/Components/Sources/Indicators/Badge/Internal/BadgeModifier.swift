@@ -1,10 +1,15 @@
 //
-//  BadgeModifier.swift.tmp.swift
-//  OUDS
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
 //
-//  Created by Ludovie Pinel Le Roux on 12/11/2025.
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
 //
-
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -126,19 +131,27 @@ extension OUDSBadge.StatusWithIcon {
 
     var status: OUDSBadge.Status {
         switch self {
-        case .neutral: .neutral
-        case .accent: .accent
-        case .positive: .positive
-        case .info: .info
-        case .warning: .warning
-        case .negative: .negative
+        case .neutral:
+            .neutral
+        case .accent:
+            .accent
+        case .positive:
+            .positive
+        case .info:
+            .info
+        case .warning:
+            .warning
+        case .negative:
+            .negative
         }
     }
 
     var icon: (image: Image, flipped: Bool)? {
         switch self {
-        case let .neutral(icon, flipped): (icon, flipped)
-        case let .accent(icon, flipped): (icon, flipped)
+        case let .neutral(icon, flipped):
+            (icon, flipped)
+        case let .accent(icon, flipped):
+            (icon, flipped)
         default: nil
         }
     }

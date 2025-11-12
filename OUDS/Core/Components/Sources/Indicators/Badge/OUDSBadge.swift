@@ -215,7 +215,6 @@ public struct OUDSBadge: View {
 
     // MARK: Body
 
-    // swiftlint:disable force_unwrapping
     public var body: some View {
         HStack(alignment: .center) {
             BadgeCount(layout: layout)
