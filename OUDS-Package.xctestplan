@@ -1,0 +1,80 @@
+{
+  "configurations" : [
+    {
+      "id" : "BE90E73A-003C-4E66-9B6F-4E6D308568DD",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSComponents-Tests",
+        "name" : "OUDSComponents-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSFoundations-Tests",
+        "name" : "OUDSFoundations-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesContract-Tests",
+        "name" : "OUDSThemesContract-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesOrange-Tests",
+        "name" : "OUDSThemesOrange-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesOrangeBusinessTools-Tests",
+        "name" : "OUDSThemesOrangeBusinessTools-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesSosh-Tests",
+        "name" : "OUDSThemesSosh-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSThemesWirefame-Tests",
+        "name" : "OUDSThemesWirefame-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSTokensRaw-Tests",
+        "name" : "OUDSTokensRaw-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OUDSTokensSemantic-Tests",
+        "name" : "OUDSTokensSemantic-Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
