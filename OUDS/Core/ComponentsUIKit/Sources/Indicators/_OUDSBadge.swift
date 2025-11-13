@@ -61,17 +61,15 @@ extension OUDSUIKitBrige {
     /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
-    ///    - icon: The icon displayed in the badge
+    ///    - status: The status of this badge, with a predefined icon or not
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
-    ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    @MainActor public static func createBadge(icon: Image,
+    @MainActor public static func createBadge(status: OUDSBadge.StatusWithIcon,
                                               accessibilityLabel: String,
-                                              status: OUDSBadge.Status = .neutral,
                                               size: OUDSBadge.IllustrationSize = .medium) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSBadge(icon:accessibilityLabel:status:size)")
-        let swiftUIBadge = OUDSBadge(icon: icon, accessibilityLabel: accessibilityLabel, status: status, size: size)
+        let swiftUIBadge = OUDSBadge(status: status, accessibilityLabel: accessibilityLabel, size: size)
         return wrap(component: swiftUIBadge)
     }
 }

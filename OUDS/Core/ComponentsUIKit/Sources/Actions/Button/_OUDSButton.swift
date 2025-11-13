@@ -36,8 +36,8 @@ extension OUDSUIKitBrige {
                                                action: @escaping () -> Void) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSButton(icon:text:appearance:style:action)")
-        let swiftUIButton = OUDSButton(icon: icon,
-                                       text: text,
+        let swiftUIButton = OUDSButton(text: text,
+                                       icon: icon,
                                        appearance: appearance,
                                        style: style,
                                        action: action)
