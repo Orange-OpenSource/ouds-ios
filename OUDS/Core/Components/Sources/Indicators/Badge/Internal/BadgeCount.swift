@@ -12,7 +12,6 @@
 //
 
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 struct BadgeCount: View {

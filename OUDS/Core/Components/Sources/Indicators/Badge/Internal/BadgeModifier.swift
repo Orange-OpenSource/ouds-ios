@@ -118,7 +118,7 @@ struct BadgeModifier: ViewModifier {
 extension OUDSBadge.IllustrationSize {
 
     /// Internal usage: convert to standard size
-    var standardSize: OUDSBadge.StandardSize {
+    public var standardSize: OUDSBadge.StandardSize {
         switch self {
         case .medium:
             .medium
@@ -130,7 +130,8 @@ extension OUDSBadge.IllustrationSize {
 
 extension OUDSBadge.StatusWithIcon {
 
-    var status: OUDSBadge.Status {
+    /// The standardized status of the badge contaning an icon
+    public var status: OUDSBadge.Status {
         switch self {
         case .neutral:
             .neutral
