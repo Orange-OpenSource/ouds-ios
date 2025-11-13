@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDSThemesContract Radio
+// MARK: - OUDS Radio
 
 /// The ``OUDSRadio`` proposes layout to add in your views a lonely radio, without labels, texts nor icons radios components
 /// If you want to use a radio with additional texts and icon, prefer instead ``OUDSRadioItem``.
@@ -30,7 +30,7 @@ import SwiftUI
 /// Note also the component must be instanciated with a string parameter used as accessibility label.
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for radio.
-/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Cases forbidden by design
 ///

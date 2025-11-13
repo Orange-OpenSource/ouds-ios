@@ -72,7 +72,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDSThemesContract one.
+/// There is no online specification as this component is not an official OUDS one.
 ///
 /// ## Theme rendering
 ///

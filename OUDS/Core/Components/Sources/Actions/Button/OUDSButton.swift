@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Button
+// MARK: - OUDS Button
 
 /// The ``OUDSButton`` proposes layout with text only, icon only or text with icon.
 ///
@@ -137,7 +137,7 @@ public struct OUDSButton: View {
         case textAndIcon(text: String, icon: Image, flipIcon: Bool)
     }
 
-    /// Represents the appearance of an OUDSThemesContract button, i.e. a kind of type
+    /// Represents the appearance of an OUDS button, i.e. a kind of type
     public enum Appearance {
         /// Default button is used for action
         case `default`

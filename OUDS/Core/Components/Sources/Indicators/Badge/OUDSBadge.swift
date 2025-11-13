@@ -165,11 +165,11 @@ public struct OUDSBadge: View {
 
     /// Creates a basic badge.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    ///
-    /// Use the `View/disabled(_:)` method to have Badge in disabled state.
     public init(status: Status = .neutral, size: StandardSize = .medium) {
         layout = BadgeLayout(type: .empty(size: size), status: status)
         accessibilityLabel = ""
@@ -180,12 +180,12 @@ public struct OUDSBadge: View {
     /// Negative values are not allowed by design.
     /// The background color of the badge and the number color are based on the given `status`.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    ///
-    /// Use the `View/disabled(_:)` method to have Badge in disabled state.
     public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
         layout = BadgeLayout(type: .count(value: count, size: size), status: status)
         accessibilityLabel = "\(count)"
@@ -195,18 +195,19 @@ public struct OUDSBadge: View {
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
     /// The background color of the badge and the icon color are based on the given `status`.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
-    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent** and **neutral** status whrere a decorative icon is required)
+    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
+    ///    and **neutral** status whrere a decorative icon is required)
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     ///    - size: The size of this badge, default set to *medium*
-    ///
-    /// Use the `View/disabled(_:)` method to have Badge in disabled state.
     public init(status: StatusWithIcon,
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
     {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSThemesContract.OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
         }
 
         layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)

@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Switch Item
+// MARK: - OUDS Switch Item
 
 /// The ``OUDSSwitchItem`` proposes layouts to add in your views some swith components.
 /// If you want to use a switch with only an indicator, prefer instead ``OUDSSwitch``.

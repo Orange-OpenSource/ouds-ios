@@ -10,6 +10,7 @@
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
+
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -36,9 +37,9 @@ struct BadgeModifier: ViewModifier {
             .accessibilityLabel(accessibilityLabel)
     }
 
-    // MARK: Private helpers
+    // MARK: Helpers
 
-    /// Returns the value to apply to compute frame wize.
+    /// Returns the value to apply to compute frame size.
     /// If the text is not large, uses the expected tokens.
     /// Otherwise uses the largest token and applies a factor based on the text size rate to have bigger size.
     private var frameSize: SizeSemanticToken {
@@ -55,7 +56,7 @@ struct BadgeModifier: ViewModifier {
         return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
     }
 
-    /// Returns the max width,
+    /// Returns the max width.
     /// If count defined, i.e. means a text, don't limit width
     private var maxWidth: CGFloat? {
         if case .count = layout.type {
@@ -65,7 +66,7 @@ struct BadgeModifier: ViewModifier {
         }
     }
 
-    /// Returns the max height,
+    /// Returns the max height.
     /// If count defined, i.e. means a text, don't limit width
     private var maxHeight: CGFloat? {
         if case .count = layout.type {
@@ -152,7 +153,8 @@ extension OUDSBadge.StatusWithIcon {
             (icon, flipped)
         case let .accent(icon, flipped):
             (icon, flipped)
-        default: nil
+        default:
+            nil
         }
     }
 }

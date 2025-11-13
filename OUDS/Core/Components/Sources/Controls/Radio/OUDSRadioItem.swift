@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Radio Item
+// MARK: - OUDS Radio Item
 
 /// The ``OUDSRadioItem`` proposes layouts to add in your views some radios components.
 /// If you want to use a radio with only an indicator, prefer instead ``OUDSRadio``.
@@ -51,7 +51,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
-/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///

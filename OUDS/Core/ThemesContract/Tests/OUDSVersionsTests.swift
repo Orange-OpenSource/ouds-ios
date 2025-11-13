@@ -16,7 +16,7 @@ import OUDSThemesContract
 import Testing
 import TestsUtils
 
-/// Some tests on versions of of OUDSThemesContract parts to be sure they are well defined
+/// Some tests on versions of OUDS parts to be sure they are well defined
 struct OUDSVersionsTests {
 
     // swiftlint:disable force_try

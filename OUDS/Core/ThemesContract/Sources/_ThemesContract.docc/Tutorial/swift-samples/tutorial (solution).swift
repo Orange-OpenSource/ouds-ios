@@ -49,7 +49,7 @@ struct ContentView: View {
         ScrollView {
             Group {
                 VStack(alignment: .leading, spacing: theme.spaces.fixedMedium) {
-                    Text("OUDSThemesContract Tutorial for new comers")
+                    Text("OUDS Tutorial for new comers")
                         .headingXLarge(theme)
                         .oudsForegroundColor(theme.colors.contentBrandPrimary)
 
@@ -58,7 +58,7 @@ struct ContentView: View {
 
                     HStack {
                         OUDSTag(label: "Welcome")
-                        OUDSTag(label: "OUDSThemesContract")
+                        OUDSTag(label: "OUDS")
                         OUDSTag(label: "Tutorial")
                     }
                 }.padding(.bottom, theme.spaces.fixedLarge)

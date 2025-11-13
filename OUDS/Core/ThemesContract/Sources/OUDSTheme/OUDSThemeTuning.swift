@@ -16,7 +16,7 @@
 /// Type alais to keep things simple and short
 public typealias Tuning = OUDSThemeTuning
 
-// MARK: - OUDSThemesContract Theme Tuning
+// MARK: - OUDS Theme Tuning
 
 /// To ease flexiblity of themes and enhance their adoption some parts of the theme can be tuned.
 /// This allows for example to have a theme defined by the Brand but to apply some customization.

@@ -17,7 +17,7 @@ import SwiftUI
 
 struct BadgeCount: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let layout: BadgeLayout
 

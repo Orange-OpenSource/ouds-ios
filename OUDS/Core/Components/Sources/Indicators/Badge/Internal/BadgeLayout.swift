@@ -13,23 +13,23 @@
 
 import SwiftUI
 
-/// The status of an `OUDSBadge` determines the leading element, the background
-/// and the content colors of the tag according to the category.
+/// The status of a `OUDSBadge` determines the leading element, the background
+/// and the content colors of the badge according to the category.
 struct BadgeLayout {
 
     let type: Self.`Type`
     let status: OUDSBadge.Status
 
-    /// The type element of the badge
+    /// The type of the badge
     enum `Type` {
-        /// Means no element on badge
+        /// Means no element on badge, only pure colored shape
         case empty(size: OUDSBadge.StandardSize)
 
         /// To display a count on badge
         case count(value: UInt, size: OUDSBadge.IllustrationSize)
 
         /// To display an icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
-        /// the decorative icon need to be provided. For other categories, a default icon is already provided.
+        /// the decorative icon must be provided. For other categories, a default icon is already provided.
         case icon(customIcon: Image? = nil, flipIcon: Bool = false, size: OUDSBadge.IllustrationSize)
     }
 

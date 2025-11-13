@@ -17,7 +17,7 @@ import OUDSFoundations // NOTE: "unused" false positive by periphery (https://gi
 import SwiftUI
 import UIKit
 
-// MARK: - OUDSThemesContract Radio Item View Controller
+// MARK: - OUDS Radio Item View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSRadioItem`
 /// Helps to manage the states and values of the `OUDSRadioItem` and tries to expose a UIKit-like API for actions.
@@ -159,7 +159,7 @@ public final class OUDSRadioItemViewController: UIViewController {
     }
 }
 
-// MARK: - OUDSThemesContract Radio Wrapper
+// MARK: - OUDS Radio Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSRadioItem` and exposes bindings
 /// and view model.
@@ -192,7 +192,7 @@ struct OUDSRadioItemWrapper: View {
     }
 }
 
-// MARK: - OUDSThemesContract Radio View Model
+// MARK: - OUDS Radio View Model
 
 /// The `SwiftUI` view model used inside the `OUDSRadioItemWrapper` to manage the state of the embeded `OUDSRadioItem`
 @MainActor final class OUDSRadioItemViewModel: ObservableObject {
@@ -246,7 +246,7 @@ struct OUDSRadioItemWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDSThemesContract SwiftUI Bridge
+// MARK: - OUDS SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

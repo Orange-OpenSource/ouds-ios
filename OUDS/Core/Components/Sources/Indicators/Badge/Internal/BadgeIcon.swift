@@ -16,7 +16,7 @@ import SwiftUI
 
 struct BadgeIcon: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
     let layout: BadgeLayout
 
