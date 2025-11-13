@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Input Tag
+// MARK: - OUDS Input Tag
 
 /// An `OUDSInputTag` is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by
 /// pressing enter, comma, or tab), each value is transformed into a tag.

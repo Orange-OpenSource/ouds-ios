@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+-  Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
 - `SwiftFormat` Swift package plugin from v0.58.5 to v0.58.6
 - `actions/dependency-review-action` action from v4.8.1 to v4.8.2 for `dependency-review` workflow
 - `color` semantic tokens (tokens libraries Core v1.9, System v2.2)

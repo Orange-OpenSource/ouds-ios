@@ -19,13 +19,13 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// The Orange theme is the bsic, default, theme for any Orange products.
-/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDSThemesContract library**.
+/// This is an override of the abtract `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 ///
 /// # Usages
 ///
 /// Any Orange products must use this theme. It provides core and Orange colors and any elements for sizings, spacings and dimensions for example.
-/// The system font families are used; no *Helevetica* font family is embeded nor provider by OUDSThemesContract.
+/// The system font families are used; no *Helevetica* font family is embeded nor providd  by OUDS.
 /// This theme also provides colors charts tokens.
 ///
 /// The theme can be got through environment variable:

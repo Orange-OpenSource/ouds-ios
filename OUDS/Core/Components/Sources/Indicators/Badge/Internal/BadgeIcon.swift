@@ -16,27 +16,43 @@ import SwiftUI
 
 struct BadgeIcon: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
-    let icon: Image?
-    let size: OUDSBadge.StandardSize
+    let layout: BadgeLayout
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        if let icon, validIconSize {
-            icon
-                .resizable()
+        switch layout.type {
+        case .empty, .count:
+            EmptyView()
+        case let .icon(icon, flipped, _):
+            (icon ?? defaultLeadingIcon)?
                 .renderingMode(.template)
+                .resizable()
                 .aspectRatio(contentMode: .fit)
+                .toFlip(flipped)
                 .padding(.all, theme.badge.spaceInset)
                 .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
         }
     }
 
-    private var validIconSize: Bool {
-        size == .medium || size == .large
+    // MARK: Helpers
+
+    private var defaultLeadingIcon: Image? {
+        switch layout.status {
+        case .neutral, .accent:
+            nil
+        case .positive:
+            Image(decorative: "ic_success", bundle: theme.resourcesBundle)
+        case .warning:
+            Image(decorative: "ic_warning_external_shape", bundle: theme.resourcesBundle)
+        case .negative:
+            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+        case .info:
+            Image(decorative: "ic_information", bundle: theme.resourcesBundle)
+        }
     }
 }

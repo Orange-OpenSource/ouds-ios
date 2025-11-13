@@ -72,7 +72,7 @@ struct CheckboxIndicator: View {
             case .pressed:
                 theme.colors.actionNegativePressed
             case .disabled, .readOnly:
-                OL.fatal("An OUDSThemesContract Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
+                OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                     + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
 

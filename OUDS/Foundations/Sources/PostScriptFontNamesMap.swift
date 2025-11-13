@@ -101,7 +101,7 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
-        // MARK: OUDSThemesContract
+        // MARK: OUDS
 
         PSFNMK("Arial", Font.Weight.regular): "ArialMT",
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",

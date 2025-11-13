@@ -28,7 +28,7 @@ struct ContentView: View {
         VStack {
             HStack {
                 OUDSTag(label: "Welcome")
-                OUDSTag(label: "OUDSThemesContract")
+                OUDSTag(label: "OUDS")
                 OUDSTag(label: "Tutorial")
             }
 

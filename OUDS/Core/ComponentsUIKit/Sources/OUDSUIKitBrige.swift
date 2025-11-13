@@ -19,17 +19,17 @@ import UIKit
 
 // MARK: - Type aliases
 
-/// OUDSThemesContract UIKit is not managed with implementation from scratch, but a bridge exists
+/// OUDS UIKit is not managed with implementation from scratch, but a bridge exists
 public typealias OUDSUIKit = OUDSUIKitBrige
 
 /// An component interfaction is defined by a target (like a `UIViewController`), a triggered action (e.g. `Selector`) and an event (e.g. *value changed*)
 public typealias ComponentInteraction = (target: AnyObject, action: Selector, events: UIControl.Event)
 
-// MARK: OUDSThemesContract SwiftUI Bridge
+// MARK: OUDS SwiftUI Bridge
 
-/// Helps to wrap OUDSThemesContract components written in SwiftUI for UIKit views.
+/// Helps to wrap OUDS components written in SwiftUI for UIKit views.
 /// Contains environement objects like themes or observers.
-/// Provides utilities to to get OUDSThemesContract SwiftUI components wrapper in UIKit controllers.
+/// Provides utilities to to get OUDS SwiftUI components wrapper in UIKit controllers.
 ///
 /// **This is still an experimental feature and it is recommended to use SwiftUI components**
 ///
@@ -64,7 +64,7 @@ public enum OUDSUIKitBrige {
             OL.warning("The theme is not assigned to OUDSThemesContract SwiftUI Brige, call init(theme:) before using it!")
             return false
         }
-        OL.debug("Everything is ok for OUDSThemesContract SwiftUI Brige!")
+        OL.debug("Everything is ok for OUDS SwiftUI Brige!")
         return true
     }
 
@@ -72,7 +72,7 @@ public enum OUDSUIKitBrige {
 
     /// Gives objects as environment values and wraps the given view inside a `UIHostingController`
     ///
-    /// - Parameter view: The SwiftUI view (supposed to be OUDSThemesContract component)
+    /// - Parameter view: The SwiftUI view (supposed to be OUDS component)
     /// - Returns: A `UIViewController` containing the given `view`
     @MainActor public static func wrap(component view: any View) -> UIViewController {
         checkPrerequisites()
