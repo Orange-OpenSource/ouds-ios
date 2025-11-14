@@ -31,28 +31,28 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 @TabNavigator {
     @Tab("SwiftUI") {
         ```swift            
-            // Neutral badge in medium size without information
-            OUDSBadge(status: .neutral, size: .medium)
+            // Info badge in medium size without information
+            OUDSBadge(status: .info, size: .medium)
 
             // Negative badge in medium size with count information
             OUDSBadge(count: 1, status: .negative, size: .medium)
 
-            // Info badge in medium size with icon information
-            OUDSBadge(icon: Image("ic_heart"), status: .info, size: .medium)
+            // Neutral badge in medium size with an image
+            OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
         ```
     }
     @Tab("UIKit (experimental)") {
         ```swift
             import OUDSComponentsUIKit
             
-            // Neutral badge in medium size without information
-            OUDSUIKit.createBadge(status: .neutral, size: .medium)
+            // Info badge in medium size without information
+            OUDSUIKit.createBadge(status: .info, size: .medium)
 
             // Negative badge in medium size with count information
-            OUOUDSUIKit.createBadgeDSBadge(count: 1, status: .negative, size: .medium)
+            OUOUDSUIKit.createBadge(count: 1, status: .negative, size: .medium)
 
-            // Info badge in medium size with icon information
-            OUDSUIKit.createBadge(icon: Image("ic_heart"), status: .info, size: .medium)
+            // Neutral badge in medium size with an image
+            OUDSUIKit.createBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
         ```
     }
 }
