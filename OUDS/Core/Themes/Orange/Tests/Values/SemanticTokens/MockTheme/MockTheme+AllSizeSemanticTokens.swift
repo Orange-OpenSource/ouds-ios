@@ -198,6 +198,23 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
     override var maxWidthTypeBodySmallMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override var maxWidthTypeBodySmallTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
+    override var maxWidthTypeLabelXlargeMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthTypeLabelXlargeTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var maxWidthTypeLabelLargeMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthTypeLabelLargeTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var maxWidthTypeLabelMediumMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthTypeLabelMediumTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var maxWidthTypeLabelSmallMobile: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override var maxWidthTypeLabelSmallTablet: SizeSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var maxWidthTypeLabelXlarge: MultipleSizeSemanticTokens { Self.mockThemeSizeCompositeToken }
+    override var maxWidthTypeLabelLarge: MultipleSizeSemanticTokens { Self.mockThemeSizeCompositeToken }
+    override var maxWidthTypeLabelMedium: MultipleSizeSemanticTokens { Self.mockThemeSizeCompositeToken }
+    override var maxWidthTypeLabelSmall: MultipleSizeSemanticTokens { Self.mockThemeSizeCompositeToken }
+
     // MARK: - Semantic token - Sizing - Interactive area
 
     override var minInteractiveArea: SizeSemanticToken { Self.mockThemeSizeRawToken }

@@ -15,10 +15,11 @@ import OUDSThemesContract
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable file_length
 // swiftlint:disable type_body_length
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
-/// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols dimensionsizing semantic tokens_.
+/// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols dimensionsizing semantic tokens.
 /// These semantic tokens should be overridable by subclasses like the ``OrangeThemeSizeSemanticTokensProvider``.
 ///
 /// **These tests checks if any dimensionsize semantic tokens_ can be surcharged by a child theme**
@@ -472,6 +473,46 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodySmallTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthTypeBodySmallTablet != abstractTheme.sizes.maxWidthTypeBodySmallTablet)
         #expect(inheritedTheme.sizes.maxWidthTypeBodySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelXlargeMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlargeMobile != abstractTheme.sizes.maxWidthTypeLabelXlargeMobile)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelXlargeTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlargeTablet != abstractTheme.sizes.maxWidthTypeLabelXlargeTablet)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelLargeMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLargeMobile != abstractTheme.sizes.maxWidthTypeLabelLargeMobile)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelLargeTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLargeTablet != abstractTheme.sizes.maxWidthTypeLabelLargeTablet)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelMediumMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMediumMobile != abstractTheme.sizes.maxWidthTypeLabelMediumMobile)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMediumMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelMediumTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMediumTablet != abstractTheme.sizes.maxWidthTypeLabelMediumTablet)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMediumTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelSmallMobile() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmallMobile != abstractTheme.sizes.maxWidthTypeLabelSmallMobile)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmallMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelSmallTablet() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmallTablet != abstractTheme.sizes.maxWidthTypeLabelSmallTablet)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     // MARK: - Semantic token - Sizing - Interactive area

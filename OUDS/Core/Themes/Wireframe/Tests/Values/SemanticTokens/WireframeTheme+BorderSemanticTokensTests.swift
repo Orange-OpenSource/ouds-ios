@@ -29,7 +29,7 @@ struct WireframeThemeBorderSemanticTokensTests {
 
     @Test func widthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.widthNone < theme.borders.widthDefault)
-        #expect(theme.borders.widthThin <= theme.borders.widthDefault) // Confirmed by design team, can be equal
+        #expect(theme.borders.widthDefault < theme.borders.widthThin)
         #expect(theme.borders.widthThin < theme.borders.widthMedium)
         #expect(theme.borders.widthMedium < theme.borders.widthThick)
         #expect(theme.borders.widthThick < theme.borders.widthThicker)
