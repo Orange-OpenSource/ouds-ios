@@ -16,7 +16,7 @@ The Orange Business Tools theme is dedicated to applications with strong dimensi
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.2.0
+🧬 Theme version: 2.3.0
 ```
 
 Some products may have heavy and very rich user interfaces with a lot of components and elements to display and
