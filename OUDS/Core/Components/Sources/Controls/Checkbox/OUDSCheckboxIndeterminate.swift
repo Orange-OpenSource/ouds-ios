@@ -88,7 +88,7 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxIndeterminate: View {
@@ -144,13 +144,13 @@ public struct OUDSCheckboxIndeterminate: View {
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(selection.a11yHint)
+        .accessibilityHint(isEnabled && !isReadOnly ? selection.a11yHint : "")
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
     /// - Parameter isDisabled: True if component is disabled, false otherwise
     private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled ? "core_common_disabled_a11y".localized() : ""
+        let stateDescription = isDisabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 

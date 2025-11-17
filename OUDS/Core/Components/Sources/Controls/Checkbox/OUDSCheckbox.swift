@@ -163,7 +163,7 @@ public struct OUDSCheckbox: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
     private func a11yHint() -> String {
-        if !isEnabled {
+        if !isEnabled || isReadOnly {
             ""
         } else {
             isOn
@@ -175,7 +175,7 @@ public struct OUDSCheckbox: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state
     /// - Parameter isDisabled: True if component is disabled, false otherwise
     private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled ? "core_common_disabled_a11y".localized() : ""
+        let stateDescription = isDisabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 

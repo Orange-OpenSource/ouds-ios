@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions `checkout` from v5 to v6 for all workflows
 - Gem `fastlane` gem from v2.228.0 to v2.229.1
 - `Wireframe` color raw tokens names
+- Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
 - `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 -  Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)

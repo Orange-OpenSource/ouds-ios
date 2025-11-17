@@ -28,7 +28,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     let label: String
 
     /// An optional helper text the ``OUDSCheckboxItem`` can have
-    let helper: String?
+    let description: String?
 
     /// An optional image the ``OUDSCheckboxItem`` can have
     let icon: Image?
@@ -54,7 +54,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
-    ///    - helper: Another optional text, default set to nil
+    ///    - description: An optional text, default set to nil
     ///    - icon: An optional image, default set to nil
     ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
@@ -66,7 +66,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// provide the localized string if key is stored in another bundle.**
     public init(tag: Tag,
                 label: String,
-                helper: String? = nil,
+                description: String? = nil,
                 icon: Image? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -76,7 +76,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     {
         self.tag = tag
         self.label = label
-        self.helper = helper
+        self.description = description
         self.icon = icon
         self.isReversed = isReversed
         self.isError = isError

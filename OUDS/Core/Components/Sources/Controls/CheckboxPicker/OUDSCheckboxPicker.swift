@@ -235,7 +235,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSCheckboxItem(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          label: checkbox.label,
-                         helper: checkbox.helper,
+                         description: checkbox.description,
                          icon: checkbox.icon,
                          isReversed: isReversed ? true : checkbox.isReversed,
                          isError: isError ? true : checkbox.isError,

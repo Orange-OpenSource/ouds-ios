@@ -33,7 +33,7 @@ struct ControlItemLabel: View {
     struct LayoutData {
         let label: String
         let additionalLabel: String?
-        let helper: String?
+        let description: String?
         let icon: Image?
         let flipIcon: Bool
         let isOutlined: Bool
@@ -69,8 +69,8 @@ struct ControlItemLabel: View {
                     .oudsForegroundStyle(additionalLabelColor)
             }
 
-            if let helper = layoutData.helper, !helper.isEmpty {
-                Text(helper)
+            if let description = layoutData.description, !description.isEmpty {
+                Text(description)
                     .labelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
                     .oudsForegroundStyle(helperColor)
