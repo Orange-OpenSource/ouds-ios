@@ -95,8 +95,9 @@ public struct OUDSCheckboxIndeterminate: View {
 
     // MARK: - Properties
 
-    private let isError: Bool
     private let a11yLabel: String
+    private let isError: Bool
+    private let isReadOnly: Bool
 
     @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
@@ -112,22 +113,25 @@ public struct OUDSCheckboxIndeterminate: View {
     ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _selection = selection
-        self.isError = isError
         a11yLabel = accessibilityLabel
+        self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $selection.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)

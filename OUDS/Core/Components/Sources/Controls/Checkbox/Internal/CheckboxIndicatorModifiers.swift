@@ -70,7 +70,9 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
             hoverColor
         case .pressed:
             pressedColor
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyColor
+        case .disabled:
             disabledColor
         }
     }
@@ -94,6 +96,14 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var pressedColor: MultipleColorSemanticTokens {
         isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
+    }
+
+    private var readOnlyColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
+                + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return theme.colors.actionReadOnlyPrimary
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
@@ -134,7 +144,9 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
             hoverColor
         case .pressed:
             pressedColor
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyColor
+        case .disabled:
             disabledColor
         }
     }
@@ -151,6 +163,14 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
         theme.controlItem.colorBgPressed.color(for: colorScheme)
     }
 
+    private var readOnlyColor: Color {
+        guard !isError else {
+            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed."
+                + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return Color.clear
+    }
+
     private var disabledColor: Color {
         guard !isError else {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
@@ -160,7 +180,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 }
 
-// MARK: - Checkbox IndicIndicatorator Border Modifier
+// MARK: - Checkbox Indicator Border Modifier
 
 private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
@@ -194,7 +214,9 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
             hoverColor
         case .pressed:
             pressedColor
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyColor
+        case .disabled:
             disabledColor
         }
     }
@@ -232,6 +254,14 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
         }
     }
 
+    private var readOnlyColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDS Checkbox with a readonly state and an error situation has been detected, which is not allowed"
+                + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return theme.colors.actionReadOnlySecondary
+    }
+
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
@@ -250,7 +280,9 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
             hoverWidth
         case .pressed:
             pressedWidth
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyWidth
+        case .disabled:
             disabledWidth
         }
     }
@@ -279,6 +311,15 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
             theme.checkbox.borderWidthSelectedPressed
         case .unselected:
             theme.checkbox.borderWidthUnselectedPressed
+        }
+    }
+
+    private var readOnlyWidth: CGFloat {
+        switch indicatorState {
+        case .selected, .indeterminate:
+            theme.checkbox.borderWidthSelected
+        case .unselected:
+            theme.checkbox.borderWidthUnselected
         }
     }
 

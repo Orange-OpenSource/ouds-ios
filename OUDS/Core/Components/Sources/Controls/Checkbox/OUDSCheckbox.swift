@@ -87,15 +87,16 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckbox: View {
 
     // MARK: Properties
 
-    private let isError: Bool
     private let a11yLabel: String
+    private let isError: Bool
+    private let isReadOnly: Bool
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -106,28 +107,31 @@ public struct OUDSCheckbox: View {
 
     /// Creates a checkbox with only an indicator.
     ///
-    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
+    /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (not selected)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
-        self.isError = isError
         a11yLabel = accessibilityLabel
+        self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)

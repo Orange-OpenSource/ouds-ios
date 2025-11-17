@@ -169,6 +169,9 @@ public struct OUDSCheckboxItem: View {
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
+    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
+    ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (unselected)
     ///   - label: The main label text of the checkbox.
@@ -182,9 +185,6 @@ public struct OUDSCheckboxItem: View {
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    ///
-    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
-    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
                 helper: String? = nil,
