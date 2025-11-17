@@ -44,9 +44,9 @@
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
-![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
-![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
-![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
+![iOS 15](https://img.shields.io/badge/iOS-15-FF1AB2?style=for-the-badge)
+![iPadOS 15](https://img.shields.io/badge/iPadOS-15-FF1AB2?style=for-the-badge)
+![macOS 15](https://img.shields.io/badge/macOS-15-FF1AB2?style=for-the-badge)
 ![visionOS 1](https://img.shields.io/badge/visionOS-1-FF1AB2?style=for-the-badge)
 ![watchOS 11](https://img.shields.io/badge/watchOS-11-FF1AB2?style=for-the-badge)
 ![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)
