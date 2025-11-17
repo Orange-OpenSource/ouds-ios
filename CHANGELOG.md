@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow 
 - GitHub Actions `checkout` from v5 to v6 for all workflows
 - Gem `fastlane` gem from v2.228.0 to v2.229.1
 - `Wireframe` color raw tokens names
