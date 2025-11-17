@@ -191,6 +191,26 @@ struct ThemeOverrideOfSizeMultipleSemanticTokensTests {
         #expect(inheritedTheme.sizes.maxWidthTypeBodySmall != abstractTheme.sizes.maxWidthTypeBodySmall)
         #expect(inheritedTheme.sizes.maxWidthTypeBodySmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelXlarge() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlarge != abstractTheme.sizes.maxWidthTypeLabelXlarge)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelXlarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelLarge() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLarge != abstractTheme.sizes.maxWidthTypeLabelLarge)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelMedium() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMedium != abstractTheme.sizes.maxWidthTypeLabelMedium)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeLabelSmall() throws {
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmall != abstractTheme.sizes.maxWidthTypeLabelSmall)
+        #expect(inheritedTheme.sizes.maxWidthTypeLabelSmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    }
 }
 
 // swiftlint:enable type_name
