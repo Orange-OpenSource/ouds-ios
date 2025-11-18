@@ -213,7 +213,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         self.action = action
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: nil,
+            extraLabel: nil,
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,

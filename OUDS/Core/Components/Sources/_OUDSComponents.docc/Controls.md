@@ -283,7 +283,7 @@ The indicator can be leading or trailing.
         // error with a reversed layout
         OUDSRadioItem(isOn: $isOn,
                       label: "Lucy in the Sky with Diamonds",
-                      additionalLabel: "The Beatles"
+                      extraLabel: "The Beatles"
                       description: "1967",
                       icon: Image(decorative: "ic_heart"),
                       isReversed: true,
@@ -306,7 +306,7 @@ The indicator can be leading or trailing.
           // A trailing radio with a label, an additional label, a description, an icon, a divider and is about an rror with a reversed layout
           OUDSUIKit.createRadioItem(isOn: isOn,
                                     label: "Lucy in the Sky with Diamonds",
-                                    additionalLabel: "The Beatles"
+                                    extraLabel: "The Beatles"
                                     description: "1967",
                                     icon: Image(decorative: "ic_heart"),
                                     isReversed: true,
@@ -343,7 +343,7 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
     [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
+                                        extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame")),
 

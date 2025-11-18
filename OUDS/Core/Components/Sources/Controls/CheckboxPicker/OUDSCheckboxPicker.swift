@@ -44,7 +44,7 @@ import SwiftUI
 ///         [
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
-///                                        additionalLabel: "Very spicy",
+///                                        extraLabel: "Very spicy",
 ///                                        helper: "No alcohol, only tasty flavors",
 ///                                        icon: Image(systemName: "flame")),
 ///

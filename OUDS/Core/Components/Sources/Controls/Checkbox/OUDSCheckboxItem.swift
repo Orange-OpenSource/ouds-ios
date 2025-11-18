@@ -214,7 +214,7 @@ public struct OUDSCheckboxItem: View {
         _isOn = isOn
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: nil,
+            extraLabel: nil,
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,

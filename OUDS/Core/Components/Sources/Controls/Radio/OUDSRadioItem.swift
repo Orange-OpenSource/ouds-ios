@@ -77,11 +77,11 @@ import SwiftUI
 ///
 ///     // A leading radio with a label, and an additional label but without text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles")
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", description: "1967")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles", description: "1967")
 ///
 ///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
 ///     // The reversed layout will be used here.
@@ -166,7 +166,7 @@ public struct OUDSRadioItem: View {
     /// ```swift
     ///     OUDSRadioItem(isOn: $selection,
     ///                   label: "Virgin Holy Lava",
-    ///                   additionalLabel: "Very spicy",
+    ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
     ///                   icon: Image(systemName: "flame")
     /// ```
@@ -176,7 +176,7 @@ public struct OUDSRadioItem: View {
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the radio.
-    ///   - additionalLabel: An additional label text of the radio, default set to `nil`
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: An description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
@@ -195,7 +195,7 @@ public struct OUDSRadioItem: View {
     /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
-                additionalLabel: String? = nil,
+                extraLabel: String? = nil,
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
@@ -215,8 +215,8 @@ public struct OUDSRadioItem: View {
             OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
-        if let additionalLabel, additionalLabel.isEmpty {
-            OL.warning("Additional label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        if let extraLabel, extraLabel.isEmpty {
+            OL.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
@@ -228,7 +228,7 @@ public struct OUDSRadioItem: View {
         _isOn = isOn
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: additionalLabel?.localized(),
+            extraLabel: extraLabel?.localized(),
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
@@ -267,7 +267,7 @@ public struct OUDSRadioItem: View {
         }
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.description ?? "") \(errorDescription), \(radioA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.label), \(layoutData.extraLabel ?? ""), \(layoutData.description ?? "") \(errorDescription), \(radioA11yTrait)"
         return result
     }
 

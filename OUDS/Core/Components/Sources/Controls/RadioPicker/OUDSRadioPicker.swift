@@ -43,7 +43,7 @@ import SwiftUI
 ///         [
 ///             OUDSRadioPickerData<String>(tag: "Choice_1",
 ///                                         label: "Virgin Holy Lava",
-///                                         additionalLabel: "Very spicy",
+///                                         extraLabel: "Very spicy",
 ///                                         description: "No alcohol, only tasty flavors",
 ///                                         icon: Image(systemName: "flame")),
 ///
@@ -200,7 +200,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSRadioItem(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       label: radio.label,
-                      additionalLabel: radio.additionalLabel,
+                      extraLabel: radio.extraLabel,
                       description: radio.description,
                       icon: radio.icon,
                       isOutlined: isOutlined ? true : radio.isOutlined,

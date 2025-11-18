@@ -32,7 +32,7 @@ struct ControlItemLabel: View {
     /// Gathers any details and content to add in the ``ControlItemLabel``
     struct LayoutData {
         let label: String
-        let additionalLabel: String?
+        let extraLabel: String?
         let description: String?
         let icon: Image?
         let flipIcon: Bool
@@ -62,11 +62,11 @@ struct ControlItemLabel: View {
                 .oudsForegroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let additionalLabel = layoutData.additionalLabel, !additionalLabel.isEmpty {
-                Text(additionalLabel)
+            if let extraLabel = layoutData.extraLabel, !extraLabel.isEmpty {
+                Text(extraLabel)
                     .labelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(additionalLabelColor)
+                    .oudsForegroundStyle(extraLabelColor)
             }
 
             if let description = layoutData.description, !description.isEmpty {
@@ -113,7 +113,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var additionalLabelColor: MultipleColorSemanticTokens {
+    private var extraLabelColor: MultipleColorSemanticTokens {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
     }
 }

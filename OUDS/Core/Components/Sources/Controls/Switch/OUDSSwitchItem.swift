@@ -70,13 +70,13 @@ import SwiftUI
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, additionalLabel: "The Beatles", description: "1967")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, extraLabel: "The Beatles", description: "1967")
 ///
 ///     // A trailing switch with a label, an additonal label, a description text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
-///                    additionalLabel: "The Beatles",
+///                    extraLabel: "The Beatles",
 ///                    description: "1967",
 ///                    isReversed: true,
 ///                    icon: Image(decorative: "ic_heart"))
@@ -200,7 +200,7 @@ public struct OUDSSwitchItem: View {
 
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: nil,
+            extraLabel: nil,
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
@@ -240,7 +240,7 @@ public struct OUDSSwitchItem: View {
 
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.description ?? ""), \(errorDescription), \(switchA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.label), \(layoutData.extraLabel ?? ""), \(layoutData.description ?? ""), \(errorDescription), \(switchA11yTrait)"
         return result
     }
 
