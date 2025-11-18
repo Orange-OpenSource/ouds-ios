@@ -24,6 +24,10 @@ import SwiftUI
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for switch.
 ///
+/// ## Cases forbidden by design
+///
+/// **The design system does not allow to have both a read-only situation and a disabled component.**
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -74,6 +78,8 @@ public struct OUDSSwitch: View {
     // MARK: - Initializers
 
     /// Creates a switch with only an indicator.
+    ///
+    /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.

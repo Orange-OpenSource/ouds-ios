@@ -23,7 +23,7 @@ import SwiftUI
 ///
 /// The component can be rendered as two different layouts:
 ///
-/// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
+/// - **default**: the component has a leading indicator, a label and optional texts, and an optional trailing decorative icon
 /// - **reversed**: like the *default* layout but with a trailing radio indicator and a leading optional decorative icon
 ///
 /// ## Indicator states
@@ -50,7 +50,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
+/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and optional texts and a custom radio trait.
 /// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
@@ -81,13 +81,13 @@ import SwiftUI
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", description: "1967")
 ///
-///     // A trailing radio with a label, an helper text, an icon, a divider and is about an error.
+///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
 ///     // The reversed layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
 ///                   label: "Rescue from this world!",
-///                   helper: "Put your hand in mine",
+///                   description: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
 ///                   isError: true,
@@ -144,7 +144,7 @@ import SwiftUI
 ///
 /// ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadioItem: View {
@@ -160,14 +160,14 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Initializer
 
-    /// Creates a radio with label and optional helper text, icon, divider.
+    /// Creates a radio with label and optional helper text as description, icon, divider.
     /// Supposed to be integrated inside a ``OUDSRadioPicker``.
     ///
     /// ```swift
     ///     OUDSRadioItem(isOn: $selection,
     ///                   label: "Virgin Holy Lava",
     ///                   additionalLabel: "Very spicy",
-    ///                   helper: "No alcohol, only tasty flavors",
+    ///                   description: "No alcohol, only tasty flavors",
     ///                   icon: Image(systemName: "flame")
     /// ```
     ///
@@ -177,7 +177,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the radio.
     ///   - additionalLabel: An additional label text of the radio, default set to `nil`
-    ///   - helper: An additonal helper text, should not be empty, default set to `nil`
+    ///   - description: An description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
@@ -191,12 +191,12 @@ public struct OUDSRadioItem: View {
     ///
     /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     ///
-    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
                 additionalLabel: String? = nil,
-                helper: String? = nil,
+                description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
                 isOutlined: Bool = false,
@@ -211,8 +211,8 @@ public struct OUDSRadioItem: View {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
-        if let helper, helper.isEmpty {
-            OL.warning("Helper text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        if let description, description.isEmpty {
+            OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         if let additionalLabel, additionalLabel.isEmpty {
@@ -229,7 +229,7 @@ public struct OUDSRadioItem: View {
         layoutData = .init(
             label: label.localized(),
             additionalLabel: additionalLabel?.localized(),
-            helper: helper?.localized(),
+            description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: isOutlined,
@@ -264,7 +264,7 @@ public struct OUDSRadioItem: View {
         let errorDescription = "\(errorPrefix), \(errorText)"
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? "") \(errorDescription), \(radioA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.description ?? "") \(errorDescription), \(radioA11yTrait)"
         return result
     }
 

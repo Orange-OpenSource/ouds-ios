@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// ## Cases forbidden by design
 ///
-/// **The design system does not allow to have both an error situation and a disabled component.**
+/// **The design system does not allow to have both an error or read-only situation and a disabled component.**
 ///
 /// ## Code samples
 ///
@@ -75,15 +75,16 @@ import SwiftUI
 ///
 /// ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadio: View {
 
     // MARK: - Properties
 
-    private let isError: Bool
     private let accessibilityLabel: String
+    private let isError: Bool
+    private let isReadOnly: Bool
 
     @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
@@ -93,15 +94,17 @@ public struct OUDSRadio: View {
 
     /// Creates a radio with only an indicator.
     ///
-    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
+    /// **The design system does not allow to have both an error or a read-only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True iif the component should be in read only mode, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
@@ -109,12 +112,13 @@ public struct OUDSRadio: View {
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
         self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
@@ -131,7 +135,7 @@ public struct OUDSRadio: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
     private var a11yLabel: String {
-        let stateDescription = isEnabled ? "" : "core_common_disabled_a11y".localized()
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
@@ -146,7 +150,7 @@ public struct OUDSRadio: View {
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        if !isEnabled {
+        if !isEnabled || isReadOnly {
             ""
         } else {
             _isOn.wrappedValue
