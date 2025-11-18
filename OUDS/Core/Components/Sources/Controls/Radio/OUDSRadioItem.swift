@@ -259,9 +259,12 @@ public struct OUDSRadioItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
-        let errorText = layoutData.errorText?.localized() ?? ""
-        let errorDescription = "\(errorPrefix), \(errorText)"
+        var errorDescription = ""
+        if layoutData.isError {
+            let errorPrefix = "core_common_onError_a11y".localized()
+            let errorText = layoutData.errorText?.localized() ?? ""
+            errorDescription = "\(errorPrefix), \(errorText)"
+        }
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.description ?? "") \(errorDescription), \(radioA11yTrait)"
