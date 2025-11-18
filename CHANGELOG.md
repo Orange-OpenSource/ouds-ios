@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Keyboard focus and VoiceOver focus issue on chip component (Orange-OpenSource/ouds-ios#914)
 - `outlined` default value for `radio item` component
 
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.20.0...0.21.0) - 2025-11-05

@@ -122,6 +122,7 @@ public struct OUDSSuggestionChip: View {
     public var body: some View {
         InteractionButton(action: action) {
             Chip(layout: layout, selected: false, interactionState: ChipInteractionState(with: $0))
+                .accessibilityHidden(true)
         }
         .accessibilityLabel(accessibilityLabel)
     }
