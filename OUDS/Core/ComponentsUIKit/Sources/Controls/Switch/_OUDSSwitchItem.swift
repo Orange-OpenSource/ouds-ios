@@ -54,7 +54,7 @@ public final class OUDSSwitchItemViewController: UIViewController {
     /// - Parameters:
     ///   - label: The main label text of the switch.
     ///   - isOn: A property that determines wether the indicator is ticked (selected) or not (unselected)
-    ///   - helper: An additonal helper text, should not be empty
+    ///   - description: An description, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` if the switch indicator must be in trailing position,` false` otherwise.
@@ -63,7 +63,7 @@ public final class OUDSSwitchItemViewController: UIViewController {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     init(label: String,
          isOn: Bool,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -73,7 +73,7 @@ public final class OUDSSwitchItemViewController: UIViewController {
     {
         switchItemViewModel = OUDSSwitchItemViewModel(label: label,
                                                       isOn: isOn,
-                                                      helper: helper,
+                                                      description: description,
                                                       icon: icon,
                                                       flipIcon: flipIcon,
                                                       isReversed: isReversed,
@@ -176,7 +176,7 @@ struct OUDSSwitchItemWrapper: View {
     var body: some View {
         OUDSSwitchItem(model.label,
                        isOn: switchItemBinding,
-                       helper: model.helper,
+                       description: model.description,
                        icon: model.icon,
                        flipIcon: model.flipIcon,
                        isReversed: model.isReversed,
@@ -196,8 +196,8 @@ struct OUDSSwitchItemWrapper: View {
     var label: String
     /// For `OUDSSwitchItem/isOn`
     @Published var isOn: Bool
-    /// For `OUDSSwitchItem/helper`
-    var helper: String?
+    /// For `OUDSSwitchItem/description`
+    var description: String?
     /// For `OUDSSwitchItem/icon`
     var icon: Image?
     /// For `OUDSSwitchItem/flipIcon`
@@ -254,7 +254,7 @@ extension OUDSUIKitBrige {
     ///     // Then create the OUDSSwitchItem inside your UIViewController
     ///     OUDSUIKit.createSwitchItem(isOn: true,
     ///                                label: "An awesome label"
-    ///                                helper: "A smaller text",
+    ///                                description: "A smaller text",
     ///                                icon: Image("ic_heart"),
     ///                                action: #selector(switchChanged(_:)))
     /// ```
@@ -264,7 +264,7 @@ extension OUDSUIKitBrige {
     /// - Parameters:
     ///    - label: The main label text of the switch.
     ///    - isOn: A flag indicating wether or not the switch is selected
-    ///    - helper: An additonal helper text, should not be empty, default set to `nil`
+    ///    - description: A description, should not be empty, default set to `nil`
     ///    - icon: An optional icon,  default set to `nil`
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - isReversed: `true` if the switch indicator must be in trailing position,` false` otherwise. Default to `false`
@@ -275,7 +275,7 @@ extension OUDSUIKitBrige {
     ///    - action: The `Selector` called when the switch value changed
     @MainActor public static func createSwitchItem(_ label: String,
                                                    isOn: Bool,
-                                                   helper: String? = nil,
+                                                   description: String? = nil,
                                                    icon: Image? = nil,
                                                    flipIcon: Bool = false,
                                                    isReversed: Bool = false,
@@ -289,7 +289,7 @@ extension OUDSUIKitBrige {
 
         let uikitSwitchItemViewController = OUDSSwitchItemViewController(label: label,
                                                                          isOn: isOn,
-                                                                         helper: helper,
+                                                                         description: description,
                                                                          icon: icon,
                                                                          flipIcon: flipIcon,
                                                                          isReversed: isReversed,

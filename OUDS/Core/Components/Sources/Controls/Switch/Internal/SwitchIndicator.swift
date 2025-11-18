@@ -90,7 +90,9 @@ struct SwitchIndicator: View {
             isOn ? theme.switch.colorTrackSelected : theme.switch.colorTrackUnselected
         case .hover, .pressed:
             isOn ? theme.switch.colorTrackSelectedInteraction : theme.switch.colorTrackUnselectedInteraction
-        case .disabled, .readOnly:
+        case .readOnly:
+            theme.colors.actionReadOnlySecondary
+        case .disabled:
             theme.colors.actionDisabled
         }
     }
@@ -156,7 +158,9 @@ private struct Cursor: View {
                 theme.switch.colorCheck.color(for: colorScheme)
             case .pressed:
                 Color.clear
-            case .disabled, .readOnly:
+            case .readOnly:
+                theme.colors.actionReadOnlyPrimary.color(for: colorScheme)
+            case .disabled:
                 theme.colors.actionDisabled.color(for: colorScheme)
             }
         } else {
