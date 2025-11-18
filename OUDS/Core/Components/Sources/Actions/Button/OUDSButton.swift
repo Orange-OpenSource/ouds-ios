@@ -41,9 +41,9 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only with default appearance
-///     OUDSButton(icon: Image("ic_heart"), appearance: .default) { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(icon: Image("ic_heart")) { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { /* the action to process */ }
 ///
 ///     // Text only with negative appearance
 ///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
