@@ -215,7 +215,7 @@ struct OUDSSwitchItemWrapper: View {
 
     init(label: String,
          isOn: Bool,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -225,7 +225,7 @@ struct OUDSSwitchItemWrapper: View {
     {
         self.label = label
         self.isOn = isOn
-        self.helper = helper
+        self.description = description
         self.icon = icon
         self.flipIcon = flipIcon
         self.isReversed = isReversed

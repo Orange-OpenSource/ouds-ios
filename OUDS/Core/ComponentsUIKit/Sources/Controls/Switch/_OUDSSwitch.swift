@@ -191,6 +191,7 @@ struct OUDSSwitchWrapper: View {
 
 extension OUDSUIKitBrige {
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates SwiftUI `OUDSSwitch` with only an indicator.
     ///
     /// ```swift
@@ -230,5 +231,6 @@ extension OUDSUIKitBrige {
         uikitSwitchViewController.addTarget(target, action: action, for: .valueChanged)
         return uikitSwitchViewController
     }
+    // swiftlint:enable function_default_parameter_at_end
 }
 #endif
