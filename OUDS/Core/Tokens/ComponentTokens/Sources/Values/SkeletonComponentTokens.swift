@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for links components like `OUDSSkeleton`
+/// Declares all component tokens for skeleton components like `OUDSSkeleton`
 /// Use for tokens providers like `OrangeThemeSkeletonComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

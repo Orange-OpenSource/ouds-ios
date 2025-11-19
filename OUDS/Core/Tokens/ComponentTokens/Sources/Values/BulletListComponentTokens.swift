@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for links components like `OUDSBulletList`
+/// Declares all component tokens for bullet list components like `OUDSBulletList`
 /// Use for tokens providers like `OrangeThemeBulletListComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

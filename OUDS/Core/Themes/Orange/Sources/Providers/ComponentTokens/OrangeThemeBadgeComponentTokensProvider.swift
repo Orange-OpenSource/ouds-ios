@@ -69,7 +69,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
 ///
-///     // Or use your own _ and space semantic tokens provider
+///     // Or use your own dimension and space semantic tokens provider
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(
 ///                     spaces: CustomSpaceSemanticTokensProvider(),
 ///                     dimensions: CustomDimensionSemanticTokensProvider())
@@ -90,7 +90,7 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for _ semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens, if nil, default one will be used ( ``OrangeThemeDimensionSemanticTokensProvider``)
     public init(spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {

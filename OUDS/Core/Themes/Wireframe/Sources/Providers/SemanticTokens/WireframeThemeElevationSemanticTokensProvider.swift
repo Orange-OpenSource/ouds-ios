@@ -20,7 +20,7 @@ import OUDSThemesContract
 /// This provider should be integrated as a `AllElevationSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
-/// - Since: 0.17.0
+/// - Since: 0.22.0
 final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticTokensProvider {
 
     #if DEBUG

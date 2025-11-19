@@ -60,6 +60,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let borders = WireframeThemeBorderSemanticTokensProvider()
         let colors = WireframeThemeColorSemanticTokensProvider()
         let colorModes = WireframeThemeColorModeSemanticTokensProvider(colors: colors)
+        let effects = WireframeThemeEffectSemanticTokensProvider()
         let elevations = WireframeThemeElevationSemanticTokensProvider()
         let fonts = WireframeThemeFontSemanticTokensProvider()
         let grids = WireframeThemeGridSemanticTokensProvider()
@@ -69,6 +70,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
         let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -91,6 +93,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -99,6 +102,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,

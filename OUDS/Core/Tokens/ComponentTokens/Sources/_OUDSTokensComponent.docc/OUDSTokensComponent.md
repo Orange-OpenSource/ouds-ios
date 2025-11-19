@@ -113,6 +113,7 @@ The components tokens are wrapped in tokens provider acessible through the theme
 
 Components tokens provider     | Target component                          
 ------------------------------ | ------------------------------------- 
+bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadge`
 button                         | For buttons like `OUDSButton` 
 bulletList                     | For list of elements with bullets 
@@ -137,6 +138,7 @@ textInput                      | For text field input components like `OUDSTextI
 
 ### Group
 
+- ``BarComponentTokens``
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``

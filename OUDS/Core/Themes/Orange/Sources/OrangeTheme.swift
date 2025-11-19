@@ -143,6 +143,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
     ///    - charts: All semantic tokens of color charts
+    ///    - effects: All semantic tokens of effects
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -151,6 +152,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
+    ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
@@ -177,6 +179,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
                          charts: AllColorChartSemanticTokensProvider? = nil,
+                         effects: AllEffectSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -185,6 +188,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
+                         bar: AllBarComponentTokensProvider? = nil,
                          bulletList: AllBulletListComponentTokensProvider? = nil,
                          button: AllButtonComponentTokensProvider? = nil,
                          checkbox: AllCheckboxComponentTokensProvider? = nil,
@@ -213,6 +217,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
         let charts = (charts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let effects = (effects ?? OrangeThemeEffectSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -222,6 +227,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
@@ -245,6 +251,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    colors: colors,
                    colorModes: colorModes,
                    charts: charts,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -253,6 +260,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,
