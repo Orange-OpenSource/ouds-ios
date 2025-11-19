@@ -14,8 +14,6 @@
 import OUDSFoundations
 import OUDSThemesContract
 
-// swiftlint:disable type_name
-
 /// A class which wraps all **effect semantic tokens**, and expose them.
 /// This provider should be integrated as a `AllEffectSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
@@ -63,5 +61,3 @@ open class OrangeThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvi
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+EffectSemanticTokens.swift
     // This declaration of OrangeThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }
-
-// swiftlint:enable type_name

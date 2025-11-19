@@ -14,6 +14,8 @@
 import OUDSFoundations
 import OUDSThemesContract
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **component  tokens of bar**.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllBarComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
@@ -82,3 +84,5 @@ final class OrangeBusinessToolsThemeBarComponentTokensProvider: AllBarComponentT
     // the implemention of BarComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BarComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeBarComponentTokensProvider is here also to allow to write documentation.
 }
+
+// swiftlint:enable type_name

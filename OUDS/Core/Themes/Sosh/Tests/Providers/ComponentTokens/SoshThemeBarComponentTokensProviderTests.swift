@@ -14,8 +14,6 @@
 @testable import OUDSThemesSosh
 import Testing
 
-// swiftlint:disable type_name
-
 /// Check if the component tokens provider under tests has the default semantic token providers with the expected types.
 struct SoshThemeBarComponentTokensProviderTests {
 
@@ -47,5 +45,3 @@ struct SoshThemeBarComponentTokensProviderTests {
         #expect(provider.effects is SoshThemeEffectSemanticTokensProvider)
     }
 }
-
-// swiftlint:enable type_name
