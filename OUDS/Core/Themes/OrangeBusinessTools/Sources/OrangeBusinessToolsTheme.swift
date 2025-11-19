@@ -122,6 +122,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
         let charts = OrangeBusinessToolsThemeColorChartSemanticTokensProvider()
+        let effects = OrangeBusinessToolsThemeEffectSemanticTokensProvider()
         let elevations = OrangeBusinessToolsThemeElevationSemanticTokensProvider()
         let fonts = OrangeBusinessToolsThemeFontSemanticTokensProvider()
         let grids = OrangeBusinessToolsThemeGridSemanticTokensProvider()
@@ -155,6 +156,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    colors: colors,
                    colorModes: colorModes,
                    charts: charts,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

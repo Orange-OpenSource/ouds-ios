@@ -16,12 +16,12 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **elevation semantic tokens**, *multiple*, *composite* or not, and expose them.
-/// This provider should be integrated as a `AllElevationSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// A class which wraps all **effect semantic tokens**, and expose them.
+/// This provider should be integrated as a `AllEffectSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
 /// - Since: 0.22.0
-final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticTokensProvider {
+final class OrangeBusinessToolsThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -29,10 +29,10 @@ final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticT
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of WireframeThemeElevationSemanticTokensProvider")
+        OL.debug("Init of OrangeBusinessToolsThemeEffectSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "WireframeThemeElevationSemanticTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeBusinessToolsThemeEffectSemanticTokensProvider")
         #endif
     }
 
@@ -44,10 +44,9 @@ final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
-    // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ElevationSemanticTokens.swift,
-    // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ElevationCompositeSemanticTokens.swift.
-    // This declaration of WireframeThemeElevationSemanticTokensProvider is here to allow to write documentation.
+    // the implemention of EffectSemanticTokens is not here
+    // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+EffectSemanticTokens.swift
+    // This declaration of OrangeBusinessToolsThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }
 
 // swiftlint:enable type_name

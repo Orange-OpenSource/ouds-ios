@@ -183,7 +183,8 @@ borders                        | For borders (width, styles, radius...)
 colors                         | For colors with also meta objects combining light and dark versions)           
 colorModes                     | Kind of frozen and not generated tokens about management of colors           
 charts                         | For charts, but optional and not defined in all themes
-elevations                     | For elevations to produc shadow effects
+effects                        | For effects to apply to some component like navigation bars
+elevations                     | For elevations to product shadow effects
 fonts                          | For fonts (weights, letter spacings, sizes, line heights...)
 grids                          | For grids
 opacities                      | For opacities
@@ -201,6 +202,7 @@ spaces                         | For paddings and margins
 - ``ColorModeMultipleSemanticTokens``
 - ``ColorChartSemanticTokens``
 - ``ColorChartMultipleSemanticTokens``
+- ``EffectSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationMultipleSemanticTokens``
 - ``ElevationCompositeSemanticTokens``

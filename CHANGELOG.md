@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `effect` raw and semantic tokens (Orange-OpenSource/ouds-ios#1169)
 - Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)
 - Icon flip option for `button` component (Orange-OpenSource/ouds-ios#1124)
 - Support for `watchOS` (Orange-OpenSource/ouds-ios#1110)

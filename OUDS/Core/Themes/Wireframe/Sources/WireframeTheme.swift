@@ -60,6 +60,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let borders = WireframeThemeBorderSemanticTokensProvider()
         let colors = WireframeThemeColorSemanticTokensProvider()
         let colorModes = WireframeThemeColorModeSemanticTokensProvider(colors: colors)
+        let effects = WireframeThemeEffectSemanticTokensProvider()
         let elevations = WireframeThemeElevationSemanticTokensProvider()
         let fonts = WireframeThemeFontSemanticTokensProvider()
         let grids = WireframeThemeGridSemanticTokensProvider()
@@ -91,6 +92,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

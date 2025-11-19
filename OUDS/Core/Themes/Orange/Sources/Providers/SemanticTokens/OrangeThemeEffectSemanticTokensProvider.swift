@@ -16,8 +16,8 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **dimension semantic tokens**, and expose them.
-/// This provider should be integrated as a `AllDimensionSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// A class which wraps all **effect semantic tokens**, and expose them.
+/// This provider should be integrated as a `AllEffectSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
 /// To use it:
@@ -25,22 +25,18 @@ import OUDSThemesContract
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(dimensions: OrangeThemeDimensionSemanticTokensProvider())
+///         super.init(effects: OrangeThemeEffectSemanticTokensProvider())
 ///     }
 /// }
 /// ```
 ///
 /// or to an already existing theme for example:
 /// ```swift
-///     OrangeTheme(dimensions: OrangeThemeDimensionSemanticTokensProvider())
+///     OrangeTheme(effects: OrangeThemeEffectSemanticTokensProvider())
 /// ```
 ///
-/// These dimension semantic tokens are not overridable by design.
-/// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
-/// and library. The tokens are not hidden from developers.
-///
-/// - Since: 0.16.0
-open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
+/// - Since: 0.22.0
+open class OrangeThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -48,10 +44,10 @@ open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticToken
 
     /// Intializes the provider
     public init() {
-        OL.debug("Init of OrangeThemeDimensionSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeEffectSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "OrangeThemeDimensionSemanticTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "OrangeThemeEffectSemanticTokensProvider")
         #endif
     }
 
@@ -63,9 +59,9 @@ open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of DimensionSemanticTokens is not here
-    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+DimensionSemanticTokens.swift
-    // This declaration of OrangeThemeDimensionSemanticTokensProvider is here to allow to write documentation.
+    // the implemention of EffectSemanticTokens is not here
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+EffectSemanticTokens.swift
+    // This declaration of OrangeThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }
 
 // swiftlint:enable type_name

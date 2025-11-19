@@ -143,6 +143,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
     ///    - charts: All semantic tokens of color charts
+    ///    - effects: All semantic tokens of effects
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -177,6 +178,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
                          charts: AllColorChartSemanticTokensProvider? = nil,
+                         effects: AllEffectSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -213,6 +215,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
         let charts = (charts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let effects = (effects ?? OrangeThemeEffectSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -245,6 +248,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    colors: colors,
                    colorModes: colorModes,
                    charts: charts,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

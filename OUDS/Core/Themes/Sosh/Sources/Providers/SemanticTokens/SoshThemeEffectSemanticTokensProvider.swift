@@ -14,16 +14,12 @@
 import OUDSFoundations
 import OUDSThemesContract
 
-/// A class which wraps all **dimension semantic tokens**, and expose them.
-/// This provider should be integrated as a `AllDimensionSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// A class which wraps all **effect semantic tokens**, and expose them.
+/// This provider should be integrated as a `AllEffectSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
-/// These dimension semantic tokens are not overridable by design.
-/// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
-/// and library. The tokens are not hidden from developers.
-///
-/// - Since: 0.17.0
-final class SoshThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokensProvider {
+/// - Since: 0.22.0
+final class SoshThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvider {
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -31,10 +27,10 @@ final class SoshThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokens
 
     /// Intializes the provider
     init() {
-        OL.debug("Init of SoshThemeDimensionSemanticTokensProvider")
+        OL.debug("Init of SoshThemeEffectSemanticTokensProvider")
         #if DEBUG
         Self.instanceCount++
-        checkInstances(count: Self.instanceCount, for: "SoshThemeDimensionSemanticTokensProvider")
+        checkInstances(count: Self.instanceCount, for: "SoshThemeEffectSemanticTokensProvider")
         #endif
     }
 
@@ -47,6 +43,6 @@ final class SoshThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokens
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of DimensionSemanticTokens is not here
-    // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+DimensionSemanticTokens.swift
-    // This declaration of SoshThemeDimensionSemanticTokensProvider is here to allow to write documentation.
+    // but in Core/Themes/Sosh/Values/Semanticokens/SoshTheme+EffectSemanticTokens.swift
+    // This declaration of SoshThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }

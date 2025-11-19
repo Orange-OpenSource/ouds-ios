@@ -52,6 +52,10 @@ struct SoshThemeTests {
         #expect(theme.charts == nil)
     }
 
+    @Test func defaultEffectSemanticTokensProvider() throws {
+        #expect(theme.effects is SoshThemeEffectSemanticTokensProvider)
+    }
+
     @Test func defaultElevationSemanticTokensProvider() throws {
         #expect(theme.elevations is SoshThemeElevationSemanticTokensProvider)
     }
