@@ -180,7 +180,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
-    ///    - babardge: All component tokens for bar
+    ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox

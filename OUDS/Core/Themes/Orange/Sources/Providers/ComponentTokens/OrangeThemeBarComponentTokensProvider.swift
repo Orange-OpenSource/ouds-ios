@@ -109,10 +109,10 @@ open class OrangeThemeBarComponentTokensProvider: AllBarComponentTokensProvider 
     ///
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``OrangeThemeBordersSemanticTokensProvider``)
-    ///    - colors: Provider for colors semantic tokens, if nil, a default one will be used (``OrangeThemeColorsSemanticTokensProvider``)
-    ///    - opacities: Provider for opacities semantic tokens, if nil, a default one will be used (``OrangeThemeOpacitiesSemanticTokensProvider``)
-    ///    - effects: Provider for effects semantic tokens, if nil, a default one will be used (``OrangeThemeEffectsSemanticTokensProvider``)
+    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for colors semantic tokens, if nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - opacities: Provider for opacities semantic tokens, if nil, a default one will be used (``OrangeThemeOpacitySemanticTokensProvider``)
+    ///    - effects: Provider for effects semantic tokens, if nil, a default one will be used (``OrangeThemeEffectSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
