@@ -152,6 +152,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
+    ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
@@ -187,6 +188,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
+                         bar: AllBarComponentTokensProvider? = nil,
                          bulletList: AllBulletListComponentTokensProvider? = nil,
                          button: AllButtonComponentTokensProvider? = nil,
                          checkbox: AllCheckboxComponentTokensProvider? = nil,
@@ -225,6 +227,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
@@ -257,6 +260,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,

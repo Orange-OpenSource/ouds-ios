@@ -88,6 +88,9 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Component tokens
     // Keep things alhabetically ordered
 
+    /// All components tokens related to bar components
+    public let bar: AllBarComponentTokensProvider
+
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
 
@@ -177,6 +180,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
+    ///    - babardge: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
@@ -212,6 +216,7 @@ open class OUDSTheme: @unchecked Sendable {
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
+                bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
@@ -252,6 +257,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Save component tokens providers
         self.badge = badge
+        self.bar = bar
         self.button = button
         self.bulletList = bulletList
         self.checkbox = checkbox

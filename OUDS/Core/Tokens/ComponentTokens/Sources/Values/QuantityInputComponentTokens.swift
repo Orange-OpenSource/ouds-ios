@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for tags components like `OUDSQuantityInput`
+/// Declares all component tokens for input components like `OUDSQuantityInput`
 /// Used for tokens providers like `OrangeThemeQuantityInputComponentTokensProvider`.
 ///
 /// - Since: 0.17.0

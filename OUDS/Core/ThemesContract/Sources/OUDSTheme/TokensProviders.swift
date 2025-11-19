@@ -68,6 +68,9 @@ public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTok
 
 // Keep things alphabetically sorted
 
+/// Something which provides all component tokens of abrs
+public protocol AllBarComponentTokensProvider: TokensProvider, BarComponentTokens {}
+
 /// Something which provides all component tokens of badge
 public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentTokens {}
 

@@ -1,0 +1,84 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSFoundations
+import OUDSThemesContract
+
+/// A class which wraps all **component  tokens of bar**.
+/// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
+/// This provider should be integrated as a `AllBarComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
+/// all tokens to the users.
+/// It implements also the protocol `BarComponentTokens` so as to expose the component tokens for *bar* through any `OUDSTheme`.
+/// *Bar* components tokens are defined with semantic tokens of colors (`AllColorSemanticTokensProviders`),
+/// sizes (from `AllSizeSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
+/// and effects (from `AllEffectSemanticTokensProvider`).
+///
+/// - Since: 0.22.0
+final class SoshThemeBarComponentTokensProvider: AllBarComponentTokensProvider {
+
+    /// Provider of sizes semantic tokens to use for bar sizes
+    let sizes: AllSizeSemanticTokensProvider
+
+    /// Provider of borders semantic tokens to use for bar borders
+    let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of colors semantic tokens to use for bar colors
+    let colors: AllColorSemanticTokensProvider
+
+    /// Provider of opacities semantic tokens to use for bar opacities
+    let opacities: AllOpacitySemanticTokensProvider
+
+    /// Provider of effects semantic tokens to use for bar effects
+    let effects: AllEffectSemanticTokensProvider
+
+    #if DEBUG
+    nonisolated(unsafe) private static var instanceCount: Int = 0
+    #endif
+
+    /// Defines a provider of component tokens dedicated to bars components
+    ///
+    /// - Parameters:
+    ///    - sizes: Provider for sizes semantic tokens, if nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``OrangeTBusinessToolshemeBordersSemanticTokensProvider``)
+    ///    - colors: Provider for colors semantic tokens, if nil, a default one will be used (``SoshThemeColorsSemanticTokensProvider``)
+    ///    - opacities: Provider for opacities semantic tokens, if nil, a default one will be used (``SoshThemeOpacitiesSemanticTokensProvider``)
+    ///    - effects: Provider for effects semantic tokens, if nil, a default one will be used (``SoshThemeEffectsSemanticTokensProvider``)
+    init(sizes: AllSizeSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil,
+         opacities: AllOpacitySemanticTokensProvider? = nil,
+         effects: AllEffectSemanticTokensProvider? = nil)
+    {
+        OL.debug("Init of SoshBarComponentTokensProvider")
+        self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
+        self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
+        self.opacities = (opacities ?? SoshThemeOpacitySemanticTokensProvider())
+        self.effects = (effects ?? SoshThemeEffectSemanticTokensProvider())
+        #if DEBUG
+        Self.instanceCount++
+        checkInstances(count: Self.instanceCount, for: "SoshBarComponentTokensProvider")
+        #endif
+    }
+
+    deinit {
+        #if DEBUG
+        Self.instanceCount--
+        #endif
+    }
+
+    // ଘ( ･ω･)_/ﾟ･:*:･｡☆
+    // Note: So as to help the integration of generated code produced by the tokenator
+    // the implemention of BarComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+BarComponentTokens.swift
+    // This declaration of SoshThemeBarComponentTokensProvider is here also to allow to write documentation.
+}

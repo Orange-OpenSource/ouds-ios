@@ -90,6 +90,10 @@ struct SoshThemeTests {
         #expect(theme.badge is SoshThemeBadgeComponentTokensProvider)
     }
 
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is SoshThemeBarComponentTokensProvider)
+    }
+
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is SoshThemeBulletListComponentTokensProvider)
     }

@@ -74,6 +74,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let spaces = SoshThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -105,6 +106,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,

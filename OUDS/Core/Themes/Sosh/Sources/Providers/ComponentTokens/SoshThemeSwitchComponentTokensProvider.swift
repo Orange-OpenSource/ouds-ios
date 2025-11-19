@@ -55,7 +55,7 @@ final class SoshThemeSwitchComponentTokensProvider: AllSwitchComponentTokensProv
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil a default one will be used (``SoshThemeOpacitySemanticTokensProvider``)
-    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,

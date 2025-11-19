@@ -53,7 +53,7 @@ final class WireframeThemeChipComponentTokensProvider: AllChipComponentTokensPro
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,

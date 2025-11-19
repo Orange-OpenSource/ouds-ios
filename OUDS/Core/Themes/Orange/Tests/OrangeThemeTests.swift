@@ -90,6 +90,10 @@ struct OrangeThemeTests {
         #expect(theme.badge is OrangeThemeBadgeComponentTokensProvider)
     }
 
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is OrangeThemeBarComponentTokensProvider)
+    }
+
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is OrangeThemeBulletListComponentTokensProvider)
     }

@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for links components like `OUDSSelectInput`
+/// Declares all component tokens for input components like `OUDSSelectInput`
 /// Use for tokens providers like `OrangeThemeSelectInputComponentTokensProvider`.
 ///
 /// - Since: 0.17.0

@@ -90,6 +90,10 @@ struct WireframeThemeTests {
         #expect(theme.badge is WireframeThemeBadgeComponentTokensProvider)
     }
 
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is WireframeThemeBarComponentTokensProvider)
+    }
+
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is WireframeThemeBulletListComponentTokensProvider)
     }

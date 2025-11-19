@@ -76,7 +76,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider()
 ///
-///     // Or use your own _, color, border, space and opacities semantic tokens providers (or only some)
+///     // Or use your own dimension, color, border, space and opacities semantic tokens providers (or only some)
 ///     let switchComponentTokensProvider = OrangeThemeSwitchComponentTokensProvider(
 ///                                                 sizes: CustomSizesSemanticTokensProvider(),
 ///                                                 borders: CustomBorderSemanticTokensProvider(),
@@ -118,7 +118,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     ///    - opacities: Provider for opacity semantic tokens. If nil a default one will be used (``OrangeThemeOpacitySemanticTokensProvider``)
-    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,

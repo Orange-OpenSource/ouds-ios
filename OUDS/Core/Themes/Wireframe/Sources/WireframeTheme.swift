@@ -70,6 +70,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
         let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = WireframeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -101,6 +102,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,
