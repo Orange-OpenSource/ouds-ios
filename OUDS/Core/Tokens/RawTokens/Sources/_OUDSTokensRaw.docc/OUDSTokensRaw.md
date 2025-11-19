@@ -82,7 +82,8 @@ Raw tokens enums               | Description
 ``ColorRawTokens``             | For colors common to all modules (different to `OrangeBrandColorRawTokens`)           
 ``ColorModeRawTokens``         | Kind of frozen and not generated tokens about management of colors           
 ``DimensionRawTokens``         | For dimensions used in sizes and spaces
-``ElevationRawTokens``         | For elevations to produc shadow effects
+``ElevationRawTokens``         | For elevations to product shadow effects
+``EffectRawTokens``            | For effects to apply on some components like navigation bars
 ``FontRawTokens``              | For fonts (weights, letter spacings, sizes, line heights...)
 ``GridRawTokens``              | For grids
 ``OpacityRawTokens``           | For opacities
@@ -96,6 +97,7 @@ Raw tokens enums               | Description
 - ``ColorModeRawTokens``
 - ``DimensionRawTokens``
 - ``ElevationRawTokens``
+- ``EffectRawTokens``
 - ``GridRawTokens``
 - ``OpacityRawTokens``
 - ``FontRawTokens``

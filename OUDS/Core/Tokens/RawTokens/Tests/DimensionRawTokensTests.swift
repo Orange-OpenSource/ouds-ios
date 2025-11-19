@@ -19,18 +19,18 @@ import TestsUtils
 // swiftlint:disable function_body_length
 // swiftlint:disable file_length
 
-/// The aim of this tests class is to look for regressions in **_ raw tokens**.
+/// The aim of this tests class is to look for regressions in **dimension raw tokens**.
 ///
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
-/// However, in the semantics of **_ raw tokens**, there will be some unchanged things like relationships between tokens.
+/// However, in the semantics of **dimension raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 ///
 /// Here are some rules to follow:
-/// - _ must not be negative value
-/// - _ value must be a factor of `DimensionRawTokens.base`
-/// - _ values must be all different
-/// - the "bigger" the _ token is, the higher the value is
+/// - dimension must not be negative value
+/// - dimension value must be a factor of `DimensionRawTokens.base`
+/// - dimension values must be all different
+/// - the "bigger" the dimension token is, the higher the value is
 struct DimensionRawTokensTests {
 
     @Test
