@@ -103,7 +103,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func bodyModerateLarge(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultLarge))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyModerateLarge))
     }
 
     /// Modifies the current `View` to apply a *body moderate medium* typography.
@@ -111,7 +111,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func bodyModerateMedium(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultMedium))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyModerateMedium))
     }
 
     /// Modifies the current `View` to apply a *body moderate small* typography.
@@ -119,7 +119,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func bodyModerateSmall(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultSmall))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyModerateSmall))
     }
 
     /// Modifies the current `View` to apply a *body strong large* typography.
@@ -159,7 +159,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func labelDefaultLarge(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultLarge))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.labelDefaultLarge))
     }
 
     /// Modifies the current `View` to apply a *label default medium* typography.
@@ -167,7 +167,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func labelDefaultMedium(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultMedium))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.labelDefaultMedium))
     }
 
     /// Modifies the current `View` to apply a *label default small* typography.
@@ -175,7 +175,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func labelDefaultSmall(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.bodyDefaultSmall))
+        modifier(TypographyModifier(family: theme.family, font: theme.fonts.labelDefaultSmall))
     }
 
     /// Modifies the current `View` to apply a *label moderate x large* typography.
