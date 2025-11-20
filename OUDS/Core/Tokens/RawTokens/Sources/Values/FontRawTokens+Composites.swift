@@ -29,7 +29,7 @@ extension FontRawTokens {
 
     public static let regular200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight350, weight: weight400, letterSpacing: letterSpacing200)
 
-    public static let regular250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight350, weight: weight400, letterSpacing: letterSpacing250)
+    public static let regular250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight450, weight: weight400, letterSpacing: letterSpacing250)
 
     public static let regular300 = FontCompositeRawToken(size: size300, lineHeight: lineHeight450, weight: weight400, letterSpacing: letterSpacing300)
 
@@ -37,7 +37,7 @@ extension FontRawTokens {
 
     public static let medium175 = FontCompositeRawToken(size: size175, lineHeight: lineHeight250, weight: weight500, letterSpacing: letterSpacing175)
 
-    public static let medium200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight450, weight: weight500, letterSpacing: letterSpacing200)
+    public static let medium200 = FontCompositeRawToken(size: size200, lineHeight: lineHeight350, weight: weight500, letterSpacing: letterSpacing200)
 
     public static let medium250 = FontCompositeRawToken(size: size250, lineHeight: lineHeight450, weight: weight500, letterSpacing: letterSpacing250)
 
