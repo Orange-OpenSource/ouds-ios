@@ -21,32 +21,32 @@ import OUDSTokensSemantic
 // swiftlint:disable file_length
 
 extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue100
-    @objc public final var repositoryPrimaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue100 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue200
-    @objc public final var repositoryPrimaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue200 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue300
-    @objc public final var repositoryPrimaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue300 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue600
-    @objc public final var repositoryPrimaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue600 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue800
-    @objc public final var repositoryPrimaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue800 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue900
-    @objc public final var repositoryPrimaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue900 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRoyalBlue950
-    @objc public final var repositoryPrimaryHighest: ColorSemanticToken { WireframeBrandColorRawTokens.colorRoyalBlue950 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed200
-    @objc public final var repositorySecondaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed200 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed300
-    @objc public final var repositorySecondaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed300 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed400
-    @objc public final var repositorySecondaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed400 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed600
-    @objc public final var repositorySecondaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed600 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed700
-    @objc public final var repositorySecondaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed700 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed800
-    @objc public final var repositorySecondaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed800 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue100
+    @objc public final var repositoryPrimaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue100 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue200
+    @objc public final var repositoryPrimaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue200 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue300
+    @objc public final var repositoryPrimaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue300 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue600
+    @objc public final var repositoryPrimaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue600 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue800
+    @objc public final var repositoryPrimaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue800 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue900
+    @objc public final var repositoryPrimaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue900 }
+    /// Has for value token WireframeBrandColorRawTokens.royalBlue950
+    @objc public final var repositoryPrimaryHighest: ColorSemanticToken { WireframeBrandColorRawTokens.royalBlue950 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed200
+    @objc public final var repositorySecondaryLowest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed200 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed300
+    @objc public final var repositorySecondaryLower: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed300 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed400
+    @objc public final var repositorySecondaryLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed400 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed600
+    @objc public final var repositorySecondaryMedium: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed600 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed700
+    @objc public final var repositorySecondaryHigh: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed700 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed800
+    @objc public final var repositorySecondaryHigher: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed800 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc public final var repositorySecondaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
@@ -151,20 +151,20 @@ extension WireframeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
     /// Has for value token ColorRawTokens.functionalScarlet900
     @objc public final var repositoryNegativeHighest: ColorSemanticToken { ColorRawTokens.functionalScarlet900 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed50
-    @objc public final var repositoryAccentLowest: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed50 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed50
+    @objc public final var repositoryAccentLowest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed50 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc public final var repositoryAccentLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed300
-    @objc public final var repositoryAccentLow: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed300 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed600
-    @objc public final var repositoryAccentMedium: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed600 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed300
+    @objc public final var repositoryAccentLow: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed300 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed600
+    @objc public final var repositoryAccentMedium: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed600 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this WireframeTheme**
     @objc public final var repositoryAccentHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed900
-    @objc public final var repositoryAccentHigher: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed900 }
-    /// Has for value token WireframeBrandColorRawTokens.colorRustyRed1000
-    @objc public final var repositoryAccentHighest: ColorSemanticToken { WireframeBrandColorRawTokens.colorRustyRed1000 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed900
+    @objc public final var repositoryAccentHigher: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed900 }
+    /// Has for value token WireframeBrandColorRawTokens.rustyRed1000
+    @objc public final var repositoryAccentHighest: ColorSemanticToken { WireframeBrandColorRawTokens.rustyRed1000 }
     /// Has for value token ColorRawTokens.malachite120
     @objc public final var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.malachite120 }
     /// Has for value token ColorRawTokens.malachite640
