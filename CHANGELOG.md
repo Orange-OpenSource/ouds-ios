@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Wireframe` color raw tokens names
 - `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 -  Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
