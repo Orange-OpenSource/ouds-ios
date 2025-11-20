@@ -55,7 +55,7 @@ extension OrangeThemeFontSemanticTokensProvider: FontCompositeSemanticTokens {
     // MARK: - Semantic tokens - Typography - Composites - Label
 
     @objc open var labelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular300) }
-    @objc open var labelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold250) }
+    @objc open var labelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular250) }
     @objc open var labelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
     @objc open var labelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
     @objc open var labelModerateXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium300) }

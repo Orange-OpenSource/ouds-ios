@@ -52,7 +52,7 @@ extension OrangeBusinessToolsThemeFontSemanticTokensProvider: FontCompositeSeman
     // MARK: - Semantic tokens - Typography - Composites - Label
 
     @objc public final var labelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular300) }
-    @objc public final var labelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold250) }
+    @objc public final var labelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular250) }
     @objc public final var labelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular200) }
     @objc public final var labelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.regular150) }
     @objc public final var labelModerateXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.medium300) }
