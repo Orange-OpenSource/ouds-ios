@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 
 /// Kind of semantic tokens which will wrap a combination of ``FontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
@@ -41,7 +42,7 @@ import Foundation
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
+public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontLineHeightSemanticToken
@@ -63,6 +64,9 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
     public init(compact: FontLineHeightSemanticToken, regular: FontLineHeightSemanticToken) {
         self.compact = compact
         self.regular = regular
+        if compact > regular {
+            OL.warning("A multiple font line height semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+        }
     }
 
     deinit {}
@@ -73,5 +77,18 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
     override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleFontLineHeightSemanticTokens else { return false }
         return compact == object.compact && regular == object.regular
+    }
+
+    // MARK: - Comparable
+
+    /// Operator which will return `true` if `lhs` is smaller than `rhs`.
+    /// By "smaller" we mean smaller `FontLineHeightSemanticToken`
+    ///
+    /// - Parameters:
+    ///    - lhs: The font size semantic token we expect to be smaller than `rhs`
+    ///    - rhs: The font size semantic tokenwe expect to be bigger than `lhs`
+    /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
+    public static func < (lhs: MultipleFontLineHeightSemanticTokens, rhs: MultipleFontLineHeightSemanticTokens) -> Bool {
+        lhs.compact <= rhs.compact && lhs.regular <= rhs.regular
     }
 }

@@ -47,7 +47,7 @@ public struct FontCompositeRawToken: Equatable, Sendable {
     ///    - lhs: The font composite token we expect to be smaller than `rhs`
     ///    - rhs: The font composite token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    static func <| (lhs: FontCompositeRawToken, rhs: FontCompositeRawToken) -> Bool {
+    public static func <| (lhs: FontCompositeRawToken, rhs: FontCompositeRawToken) -> Bool {
         lhs.size < rhs.size
             && lhs.lineHeight <= rhs.lineHeight
             && lhs.weight <= rhs.weight

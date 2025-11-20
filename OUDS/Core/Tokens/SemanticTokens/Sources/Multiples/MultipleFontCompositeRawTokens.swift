@@ -44,7 +44,7 @@ import SwiftUI
 /// In fact there is not "font composite semantic tokens" defined in the *Figma* kit.
 ///
 /// - Since: 0.8.0
-public final class MultipleFontCompositeRawTokens: NSObject, Sendable {
+public final class MultipleFontCompositeRawTokens: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontCompositeRawToken
@@ -83,5 +83,21 @@ public final class MultipleFontCompositeRawTokens: NSObject, Sendable {
     /// - Returns: The composite raw token to use (of type `FontCompositeRawToken`)
     public func fontToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontCompositeRawToken {
         userInterfaceSizeClass == .compact ? compact : regular
+    }
+
+    // MARK: - Comparable
+
+    /// Operator which will return `true` if `lhs` is smaller than `rhs`.
+    /// By "smaller" we mean smaller `FontCompositeRawToken`
+    ///
+    /// - Parameters:
+    ///    - lhs: The multiple font composite raw token we expect to be smaller than `rhs`
+    ///    - rhs: The multiple font composite raw token we expect to be bigger than `lhs`
+    /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
+    public static func < (lhs: MultipleFontCompositeRawTokens, rhs: MultipleFontCompositeRawTokens) -> Bool {
+        let lhsCompact = lhs.compact, lhsRegular = lhs.regular
+        let rhsCompact = rhs.compact, rhsRegular = rhs.regular
+
+        return (lhsCompact <| rhsCompact) && (lhsRegular <| rhsRegular)
     }
 }

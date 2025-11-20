@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 
 // swiftlint:disable line_length
 
@@ -65,6 +66,9 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
     public init(compact: FontLetterSpacingSemanticToken, regular: FontLetterSpacingSemanticToken) {
         self.compact = compact
         self.regular = regular
+        if compact > regular {
+            OL.warning("A multiple font letter spacing semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+        }
     }
 
     deinit {}
@@ -78,4 +82,8 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
         }
         return compact == object.compact && regular == object.regular
     }
+
+    // NOTE: Cannot be Comparable
+    // Indeed values are decimals which can be negative, positive or zero
+    // And are not homogenic: some vales one by one can be bigger then lower
 } // swiftlint:enable line_length

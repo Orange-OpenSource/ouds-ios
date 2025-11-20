@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 
 /// Kind of semantic tokens which will wrap a combination of ``FontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
@@ -39,7 +40,7 @@ import Foundation
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
+public final class MultipleFontSizeSemanticTokens: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontSizeSemanticToken
@@ -61,6 +62,9 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
     public init(compact: FontSizeSemanticToken, regular: FontSizeSemanticToken) {
         self.compact = compact
         self.regular = regular
+        if compact > regular {
+            OL.warning("A multiple font size semantic token as a compact value (\(compact)) bigger than the regular one (\(regular)), it's strange")
+        }
     }
 
     deinit {}
@@ -73,5 +77,18 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
             return false
         }
         return compact == object.compact && regular == object.regular
+    }
+
+    // MARK: - Comparable
+
+    /// Operator which will return `true` if `lhs` is smaller than `rhs`.
+    /// By "smaller" we mean smaller `FontSizeSemanticToken`
+    ///
+    /// - Parameters:
+    ///    - lhs: The font size semantic token we expect to be smaller than `rhs`
+    ///    - rhs: The font size semantic tokenwe expect to be bigger than `lhs`
+    /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
+    public static func < (lhs: MultipleFontSizeSemanticTokens, rhs: MultipleFontSizeSemanticTokens) -> Bool {
+        lhs.compact <= rhs.compact && lhs.regular <= rhs.regular
     }
 }

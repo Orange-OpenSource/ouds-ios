@@ -15,13 +15,11 @@ import OUDSThemesContract
 import OUDSThemesOrangeBusinessTools
 import Testing
 
-// swiftlint:disable type_name
-
 /// The aim of this tests class is to look for regressions in **Orange Business Tools brand border semantic tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// In the semantics of **border semantic tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
-struct OrangeBusinessToolsThemeBorderSemanticTokensTests {
+struct OrangeThemeBorderSemanticTokensTests {
 
     private var theme: OUDSTheme
 
@@ -31,7 +29,7 @@ struct OrangeBusinessToolsThemeBorderSemanticTokensTests {
 
     @Test func widthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.widthNone < theme.borders.widthDefault)
-        #expect(theme.borders.widthThin <= theme.borders.widthDefault)
+        #expect(theme.borders.widthDefault <= theme.borders.widthThin)
         #expect(theme.borders.widthThin < theme.borders.widthMedium)
         #expect(theme.borders.widthMedium < theme.borders.widthThick)
         #expect(theme.borders.widthThick < theme.borders.widthThicker)
@@ -43,11 +41,9 @@ struct OrangeBusinessToolsThemeBorderSemanticTokensTests {
 
     @Test func radiusSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.radiusNone <= theme.borders.radiusDefault)
-        #expect(theme.borders.radiusDefault <= theme.borders.radiusSmall) // Confirmed by Mdesign team, can be equal
+        #expect(theme.borders.radiusDefault < theme.borders.radiusSmall)
         #expect(theme.borders.radiusSmall < theme.borders.radiusMedium)
         #expect(theme.borders.radiusMedium < theme.borders.radiusLarge)
         #expect(theme.borders.radiusLarge < theme.borders.radiusPill)
     }
 }
-
-// swiftlint:enable type_name
