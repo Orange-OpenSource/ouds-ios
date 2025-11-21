@@ -42,6 +42,11 @@ on:
 permissions:
   contents: read
 
+# Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   # Build the library
   build:
