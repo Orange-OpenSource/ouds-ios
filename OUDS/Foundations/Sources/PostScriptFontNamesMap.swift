@@ -46,9 +46,9 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
     // swiftlint:enable force_unwrapping
 
     /// From `CustomStringConvertible`, defines the description of the key,
-    /// concatenating the font family name and the font weight.
+    /// i.e. only the font family name without whitespaces.
     public var description: String {
-        familyName + (fontWeight.isEmpty ? "" : "-\(fontWeight)")
+        familyName.replacingOccurrences(of: " ", with: "")
     }
 }
 
@@ -57,22 +57,31 @@ public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
 extension [PostScriptFontNamesMapKey: String] {
 
     /// If there is no value for the given `key`, returns the description of this key,
-    /// i.e.font family name and font weight.
+    /// i.e.font family name without the font weight in the end and without whitespaces.
+    ///
+    /// In fact if it seems some rules are missing, or weight are not managed, if the font family only is returned
+    /// the user has an higher probability to use the expected font. Because if a mashup of family name and weight is returned
+    /// it can produce a PostScript identifier not available, so not usable, so implying a fallback to default system font like *San Francisco*.
+    /// Because PostScript identifiers in most of cases do not have whitespaces, remove them.
     ///
     /// ```swift
     ///     // Given a dictionary with one value
-    ///     let myDict: PostScriptFontNamesMap = [PSFNMK("Arial", Font.Weight.regular): "ArialMT"]
+    ///     let myDict: PostScriptFontNamesMap = [PSFNMK("Arial", Font.Weight.bold): "Aria-BoldMT"]
     ///
-    ///     // The given value is returned is the key exists
-    ///     let keyExists = myDict[PSFNMK("Arial", Font.Weight.regular)] // ArialMT
+    ///     // The given value is returned if the key exists
+    ///     let keyExists = myDict[PSFNMK("Arial", Font.Weight.bold)] // Arial-BoldMT
     ///
-    ///     // But if the key does not exist, the description of the key is returned
-    ///     let keyDoesNotExist = myDict[PSFNMK("Luciole", Font.Weight.bold)] // Luciole-Bold
+    ///     // But if the key does not exist, the only the key is returned
+    ///     let keyDoesNotExist = myDict[PSFNMK("Luciole", Font.Weight.bold)] // Luciole
     /// ```
     ///
     /// - Parameter key: The key to use to get a value
     public subscript(orKey key: Key) -> String {
-        self[key] ?? key.description
+        guard let value = self[key] else {
+            OL.warning("It seems there is missing rule for PostScript identifier with '\(key.familyName)'/'\(key.fontWeight)'. Fallback to '\(key.description)'")
+            return key.description
+        }
+        return value
     }
 }
 
@@ -105,6 +114,7 @@ nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap
 
         PSFNMK("Arial", Font.Weight.regular): "ArialMT",
         PSFNMK("Arial", Font.Weight.bold): "Arial-BoldMT",
+        PSFNMK("Arial", nil): "ArialMT",
 
         PSFNMK("Helvetica", Font.Weight.light): "Helvetica-Light",
         PSFNMK("Helvetica", nil /* courant */ ): "Helvetica",
@@ -126,6 +136,7 @@ nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap
         // "Roboto" defined in FontRawTokens but does not exist at all in font books
 
         PSFNMK("Menlo", Font.Weight.regular): "Menlo-Regular",
+        PSFNMK("Menlo", nil): "Menlo-Regular",
         PSFNMK("Menlo", Font.Weight.bold): "Menlo-Bold",
 
         PSFNMK("Courier New", nil /* normal */ ): "CourierNewPSMT",
@@ -138,10 +149,8 @@ nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Helvetica Neue", Font.Weight.ultraLight): "HelveticaNeue-Ultralight",
         PSFNMK("Helvetica Neue", Font.Weight.thin): "HelveticaNeue-Thin",
         PSFNMK("Helvetica Neue", Font.Weight.light): "HelveticaNeue-Light",
-        PSFNMK("Helvetica Neue", Font.Weight.regular): "HelveticaNeue-Regular",
         PSFNMK("Helvetica Neue", nil /* normal */ ): "HelveticaNeue",
         PSFNMK("Helvetica Neue", Font.Weight.medium): "HelveticaNeue-Medium",
-        PSFNMK("Helvetica Neue", Font.Weight.semibold): "HelveticaNeue-Semibold",
         PSFNMK("Helvetica Neue", Font.Weight.bold): "HelveticaNeue-Bold",
         // NOTE: "Helvetica Neue 75" in Orange Brand TTF has "HelveticaNeue-Bold" PostScript Name
         // ┬─┬ ︵ /(.□. \）

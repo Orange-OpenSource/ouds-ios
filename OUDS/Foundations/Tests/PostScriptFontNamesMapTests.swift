@@ -142,7 +142,7 @@ struct PostScriptFontNamesMapTests {
 
     @Test
     func helveticaNeueRegular() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Helvetica Neue", Font.Weight.regular)] == "HelveticaNeue-Regular")
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK("Helvetica Neue", Font.Weight.regular)] == "HelveticaNeue")
     }
 
     @Test
@@ -153,11 +153,6 @@ struct PostScriptFontNamesMapTests {
     @Test
     func helveticaNeueMedium() throws {
         #expect(kApplePostScriptFontNames[PSFNMK("Helvetica Neue", Font.Weight.medium)] == "HelveticaNeue-Medium")
-    }
-
-    @Test
-    func helveticaNeueSemiBold() throws {
-        #expect(kApplePostScriptFontNames[PSFNMK("Helvetica Neue", Font.Weight.semibold)] == "HelveticaNeue-Semibold")
     }
 
     @Test
@@ -259,7 +254,7 @@ struct PostScriptFontNamesMapTests {
         #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, nil)] == unknownFontFamily)
         #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, weight: nil)] == unknownFontFamily)
         #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, weight: "")] == unknownFontFamily)
-        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.bold)] == "\(unknownFontFamily)-Bold")
-        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.regular)] == "\(unknownFontFamily)-Regular")
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.bold)] == "\(unknownFontFamily)")
+        #expect(kApplePostScriptFontNames[orKey: PSFNMK(unknownFontFamily, Font.Weight.regular)] == "\(unknownFontFamily)")
     }
 }

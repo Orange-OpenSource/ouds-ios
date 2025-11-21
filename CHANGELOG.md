@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- PostScript rules for typographies
 - `font` composite semantic tokens
 - View modifiers for typography 
 - `font` composite raw tokens
