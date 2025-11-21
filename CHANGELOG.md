@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `tab bar` component (Orange-OpenSource/ouds-ios#1135)
 - `bar` component tokens (Orange-OpenSource/ouds-ios#1169)
 - `effect` raw and semantic tokens (Orange-OpenSource/ouds-ios#1169)
 - Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)

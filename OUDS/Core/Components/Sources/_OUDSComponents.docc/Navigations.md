@@ -59,3 +59,5 @@ The link can be displayed in `small` or `default` size.
 
     }
 }
+
+### Tab bars
