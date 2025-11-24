@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - Font composite tokens and typography
 - PostScript rules for typographies
 - `font` composite semantic tokens
