@@ -63,6 +63,7 @@ struct ControlItemContent: View {
             }
         }
         .frame(maxWidth: theme.controlItem.sizeMaxWidth)
+        .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
 
