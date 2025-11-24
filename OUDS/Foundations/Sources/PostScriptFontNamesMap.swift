@@ -149,6 +149,8 @@ nonisolated(unsafe) public let kApplePostScriptFontNames: PostScriptFontNamesMap
         PSFNMK("Helvetica Neue", Font.Weight.ultraLight): "HelveticaNeue-Ultralight",
         PSFNMK("Helvetica Neue", Font.Weight.thin): "HelveticaNeue-Thin",
         PSFNMK("Helvetica Neue", Font.Weight.light): "HelveticaNeue-Light",
+        PSFNMK("Helvetica Neue", Font.Weight.regular): "HelveticaNeue",
+        PSFNMK("Helvetica Neue", Font.Weight.semibold): "HelveticaNeue",
         PSFNMK("Helvetica Neue", nil /* normal */ ): "HelveticaNeue",
         PSFNMK("Helvetica Neue", Font.Weight.medium): "HelveticaNeue-Medium",
         PSFNMK("Helvetica Neue", Font.Weight.bold): "HelveticaNeue-Bold",
