@@ -249,12 +249,4 @@ extension View {
     public func codeMedium(_ theme: OUDSTheme) -> some View {
         modifier(TypographyModifier(family: theme.family, font: theme.fonts.codeMedium))
     }
-
-    /// Modifies the current `View` to apply a *code small* typography.
-    /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
-    /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
-    /// - Returns some View: The current `View` but with new typography applied
-    public func codeSmall(_ theme: OUDSTheme) -> some View {
-        modifier(TypographyModifier(family: theme.family, font: theme.fonts.codeSmall))
-    }
 }

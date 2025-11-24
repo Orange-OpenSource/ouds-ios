@@ -14,56 +14,58 @@
 import OUDSTokensRaw
 import SwiftUI
 
-/// Kind of semantic tokens which will wrap a combination of `FontCompositeRawToken` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of `FontCompositeSemanticToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeRawTokens``.
+/// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeSemanticTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font semantic token displayLarge,
 ///         // with values depending to size class. These values are defined as font composite raw tokens.
-///         let bold850 = FontCompositeRawToken(size: size850, lineHeight: lineHeight1050, weight: weight700, letterSpacing: letterSpacing850)
-///         let bold1450 = FontCompositeRawToken(size: size1450, lineHeight: lineHeight1850, weight: weight700, letterSpacing: letterSpacing1450)
+///         let bold850 = FontCompositeSemanticToken(size: size850, lineHeight: lineHeight1050, weight: weight700, letterSpacing: letterSpacing850)
+///         let bold1450 = FontCompositeSemanticToken(size: size1450, lineHeight: lineHeight1850, weight: weight700, letterSpacing: letterSpacing1450)
 ///
 ///         // Then the develoment team declares an "higher" level font semantic token
 ///         // inside FontCompositeSemanticTokens protocol,
-///         // and defined inside OUDSTheme+FontCompositeSemanticTokens extension
-///         var displayLarge: MultipleFontCompositeRawTokens {
-///             MultipleFontCompositeRawTokens(compact: FontRawTokens.bold850, regular: FontRawTokens.bold1450)
+///         // and defined inside OrangeTheme+FontCompositeSemanticTokens extension
+///         var displayLarge: MultipleFontCompositeSemanticTokens {
+///             MultipleFontCompositeSemanticTokens(compact: bold850, regular: bold1450)
 ///         }
 ///
 ///         // If the same font is used whatever the size class is
-///         var displayLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.bold650) }
+///         var displayLarge: MultipleFontCompositeSemanticTokens { MultipleFontCompositeSemanticTokens(bold650) }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-/// The case of this ``MultipleFontCompositeRawTokens`` is quite particular because in fact it contains `FontCompositeRawToken`
+/// The case of this ``MultipleFontCompositeSemanticTokens`` is quite particular because in fact it contains `FontCompositeSemanticToken`
 /// (i.e. raw tokens) instead of semantic tokens.
 /// In fact there is not "font composite semantic tokens" defined in the *Figma* kit.
 ///
-/// - Since: 0.8.0
-public final class MultipleFontCompositeRawTokens: NSObject, Sendable, Comparable {
+/// - Since: 0.22.0
+public final class MultipleFontCompositeSemanticTokens: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: FontCompositeRawToken
+    public let compact: FontCompositeSemanticToken
 
     /// For **regular** and **medium** viewports
-    public let regular: FontCompositeRawToken
+    public let regular: FontCompositeSemanticToken
 
     /// Initializes a new font composite semantic token.
-    /// - Parameter unique: The `FontCompositeRawToken` to apply for both in *compact* and *regular* modes
-    public init(_ unique: FontCompositeRawToken) {
+    ///
+    /// - Parameter unique: The `FontCompositeSemanticToken` to apply for both in *compact* and *regular* modes
+    public init(_ unique: FontCompositeSemanticToken) {
         compact = unique
         regular = unique
     }
 
     /// Initializes a new font composite semantic token.
+    ///
     /// - Parameters:
-    ///    - compact: The `FontCompositeRawToken` to apply if device in *compact* mode
-    ///    - regular: The `FontCompositeRawToken` to apply if device in *regular* mode
-    public init(compact: FontCompositeRawToken, regular: FontCompositeRawToken) {
+    ///    - compact: The `FontCompositeSemanticToken` to apply if device in *compact* mode
+    ///    - regular: The `FontCompositeSemanticToken` to apply if device in *regular* mode
+    public init(compact: FontCompositeSemanticToken, regular: FontCompositeSemanticToken) {
         self.compact = compact
         self.regular = regular
     }
@@ -71,30 +73,31 @@ public final class MultipleFontCompositeRawTokens: NSObject, Sendable, Comparabl
     deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleFontCompositeRawTokens`. Otherwise returns `false`.
+    /// as a `MultipleFontCompositeSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontCompositeRawTokens else { return false }
+        guard let object = object as? MultipleFontCompositeSemanticTokens else { return false }
         return compact == object.compact && regular == object.regular
     }
 
     /// Returns the composite raw token of font to use according to the `userInterfaceSizeClass` (i.e. `compact` or `regular`)
+    ///
     /// - Parameter userInterfaceSizeClass: The user interface size class
     /// - Returns: The composite raw token to use (of type `FontCompositeRawToken`)
-    public func fontToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontCompositeRawToken {
+    public func fontToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontCompositeSemanticToken {
         userInterfaceSizeClass == .compact ? compact : regular
     }
 
     // MARK: - Comparable
 
     /// Operator which will return `true` if `lhs` is smaller than `rhs`.
-    /// By "smaller" we mean smaller `FontCompositeRawToken`
+    /// By "smaller" we mean smaller `FontCompositeSemanticToken`
     ///
     /// - Parameters:
-    ///    - lhs: The multiple font composite raw token we expect to be smaller than `rhs`
-    ///    - rhs: The multiple font composite raw token we expect to be bigger than `lhs`
+    ///    - lhs: The multiple font composite semantic token we expect to be smaller than `rhs`
+    ///    - rhs: The multiple font composite semantic token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    public static func < (lhs: MultipleFontCompositeRawTokens, rhs: MultipleFontCompositeRawTokens) -> Bool {
+    public static func < (lhs: MultipleFontCompositeSemanticTokens, rhs: MultipleFontCompositeSemanticTokens) -> Bool {
         let lhsCompact = lhs.compact, lhsRegular = lhs.regular
         let rhsCompact = rhs.compact, rhsRegular = rhs.regular
 

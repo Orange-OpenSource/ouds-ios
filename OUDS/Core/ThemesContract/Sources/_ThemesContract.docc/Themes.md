@@ -197,11 +197,12 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 // Token provider for font
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
-    override var displayLarge: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
-    }
-    override var codeMedium: MultipleFontCompositeRawTokens {
-        MultipleFontCompositeRawTokens(FontRawTokens.bold300)
+    override var displayLarge: MultipleFontCompositeSemanticTokens { 
+        MultipleFontCompositeSemanticTokens(FontCompositeSemanticToken(
+        size: sizeDisplayLargeMobile,
+        lineHeight: lineHeightDisplayLargeMobile,
+        weight: weightDisplay,
+        letterSpacing: letterSpacingDisplayLargeMobile))) 
     }
 }
 ```

@@ -112,10 +112,4 @@ struct FontCompositeSemanticTokensValuesTests {
     @Test func labelStrongLargeSmallerThanLabelStrongXLarge() throws {
         #expect(theme.fonts.labelStrongLarge < theme.fonts.labelStrongXLarge)
     }
-
-    // MARK: - Code
-
-    @Test func codeSmallSmallerThanCodeMedium() throws {
-        #expect(theme.fonts.codeSmall < theme.fonts.codeMedium)
-    }
 }
