@@ -27,40 +27,40 @@ import UIKit
 /// In few words, contains the font elements to apply a defined typography depending to size classes and categories.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
 struct TypographyModifier: ViewModifier {
-    
+
     /// The name of a possible custom font family, or `nil` if the font is use is dimensionsystem font_
     let family: FontFamilyRawToken?
-    
+
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
     let font: MultipleFontCompositeSemanticTokens
-    
+
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    
+
     /// To get programatically and on the fly the vertical layout size
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    
+
     /// Environment variable to observe Dynamic Type changes in accessibility settings
     @Environment(\.sizeCategory) private var sizeCategory
-    
+
     /// Says wether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
         horizontalSizeClass == .compact || verticalSizeClass == .compact
     }
-    
+
     /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
     private var adaptiveFontToken: FontCompositeSemanticToken {
         isCompactMode ? font.compact : font.regular
     }
-    
-#if os(macOS)
+
+    #if os(macOS)
     typealias NativeFont = NSFont
     typealias NativeWeight = NSFont.Weight
-#else
+    #else
     typealias NativeFont = UIFont
     typealias NativeWeight = UIFont.Weight
-#endif
-    
+    #endif
+
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `UIFont`
     /// We prefer this `UIFont` to the `Font` because we need the `lineHeight`to compute the `lineSpacing`.
     private var adaptativeFont: NativeFont {
@@ -72,52 +72,52 @@ struct TypographyModifier: ViewModifier {
                 return customFont
             }
         }
-        
+
         // If no family or not loaded
         // Apply the system font with weight, responsive to Dynamic Type
         return NativeFont.systemFont(ofSize: scaledFontSize, weight: adaptiveFontToken.weight.weight.nativeFontWeight)
     }
-    
+
     /// Adjusts the font size dynamically based on the user's accessibility settings
     /// using UIFontMetrics to scale the font size, ensuring Dynamic Type support
     private var scaledFontSize: CGFloat {
-#if os(macOS)
+        #if os(macOS)
         adaptiveFontToken.size
-#else
+        #else
         UIFontMetrics.default.scaledValue(for: adaptiveFontToken.size)
-#endif
+        #endif
     }
-    
+
     /// Computes the line height value scaled according to Dynamic Type.
     private var scaledLineHeight: CGFloat {
-#if os(macOS)
+        #if os(macOS)
         adaptiveFontToken.lineHeight
-#else
+        #else
         UIFontMetrics.default.scaledValue(for: adaptiveFontToken.lineHeight)
-#endif
+        #endif
     }
-    
+
     private var fontLineHeight: CGFloat {
-#if os(macOS)
+        #if os(macOS)
         NSLayoutManager().defaultLineHeight(for: adaptativeFont)
-#else
+        #else
         adaptativeFont.lineHeight
-#endif
+        #endif
     }
-    
+
     /// Computes the line spacing value to apply on the typography.
     /// Difference between the token line height scaled according to Dynamic Type and the height
     /// of the font used.
     private var lineSpacing: CGFloat {
         scaledLineHeight - fontLineHeight
     }
-    
+
     /// Computes the extra padding should be added at top and bottom to conform the line height.
     /// Used by os version < 26
     private var padding: CGFloat {
         lineSpacing / 2
     }
-    
+
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeSemanticTokens`.
     func body(content: Content) -> some View {
@@ -137,33 +137,10 @@ struct TypographyModifier: ViewModifier {
                     .padding(.vertical, padding)
             }
         }
-#if os(visionOS) || os(macOS)
+        #if os(visionOS) || os(macOS)
         .onChange(of: sizeCategory) { _, _ in }
-#else
+        #else
         .onChange(of: sizeCategory) { _ in }
-#endif
-        .onAppear {
-            dump()
-        }
-    }
-    
-    private func dump() {
-#if DEBUG
-        print("----")
-        print("| family: \(family ?? "Unknown")")
-        print("| Size: \(adaptiveFontToken.size)")
-        print("| scaledFontSize: \(scaledFontSize)")
-        print("| lineHeight: \(adaptiveFontToken.lineHeight)")
-        print("| scaledLineHeight: \(scaledLineHeight)")
-        print("| letterSpacing: \(adaptiveFontToken.letterSpacing)")
-        print("| weight: \(adaptiveFontToken.weight.weight)")
-        print("|-")
-        print("| composedFontFamily: \(String(describing: adaptativeFont.fontDescriptor.postscriptName))")
-        print("| size: \(adaptativeFont.pointSize)")
-        print("| lineHeight: \(fontLineHeight)")
-        print("| lineSpacing: \(lineSpacing)")
-        print("| padding: \(padding)")
-        print("----")
-#endif // DEBUG
+        #endif
     }
 }
