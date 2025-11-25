@@ -27,7 +27,7 @@ extension View {
     ///
     /// - Parameter onChange: Called when the size changes
     @MainActor
-    public func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+    func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
         background(
             GeometryReader { geometryProxy in
                 Color.clear

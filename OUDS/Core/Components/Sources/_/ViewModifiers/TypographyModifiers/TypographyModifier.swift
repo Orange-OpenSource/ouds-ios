@@ -144,3 +144,5 @@ struct TypographyModifier: ViewModifier {
         #endif
     }
 }
+
+// swiftlint:enable line_length

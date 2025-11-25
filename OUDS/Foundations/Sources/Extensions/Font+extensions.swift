@@ -46,14 +46,22 @@ extension Font.Weight: @retroactive CustomStringConvertible {
     #if os(macOS)
     public var nativeFontWeight: NSFont.Weight {
         switch self {
-        case .ultraLight: .ultraLight
-        case .thin: .thin
-        case .light: .light
-        case .regular: .regular
-        case .medium: .medium
-        case .semibold: .semibold
-        case .bold: .bold
-        case .heavy: .heavy
+        case .ultraLight:
+            .ultraLight
+        case .thin:
+            .thin
+        case .light:
+            .light
+        case .regular:
+            .regular
+        case .medium:
+            .medium
+        case .semibold:
+            .semibold
+        case .bold:
+            .bold
+        case .heavy:
+            .heavy
         default:
             .regular
         }
@@ -61,14 +69,22 @@ extension Font.Weight: @retroactive CustomStringConvertible {
     #else
     public var nativeFontWeight: UIFont.Weight {
         switch self {
-        case .ultraLight: .ultraLight
-        case .thin: .thin
-        case .light: .light
-        case .regular: .regular
-        case .medium: .medium
-        case .semibold: .semibold
-        case .bold: .bold
-        case .heavy: .heavy
+        case .ultraLight:
+            .ultraLight
+        case .thin:
+            .thin
+        case .light:
+            .light
+        case .regular:
+            .regular
+        case .medium:
+            .medium
+        case .semibold:
+            .semibold
+        case .bold:
+            .bold
+        case .heavy:
+            .heavy
         default:
             .regular
         }
