@@ -18,38 +18,57 @@ import SwiftUI
 
 // MARK: - OUDS Tab Bar
 
-/// The ``OUDSTabBar`` ...
-///
-///    /// Note please that:
-/// - SwiftUI API is not isofunctional with UIKit API
-/// - background color of tab bar can be changed for iOS lower than 26
-/// - background color of tab bar does not change for iOS 26 and greater
-/// - normal / unselected color can be changed for both image and text only for iOS lower than 26
-/// - normal / unselected color can be changed for text only if iOS 26 and greater
-/// - normal / unselected color for image in tab bar item cannot be changed even if image is defined with "rempalte" rendering and changed with a foreground color
-///
+/// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies a ``OUDSTabBarViewModifier`` on its content supposing to be
+/// views with *tab bar items*.
+/// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges.
 ///
 /// ## Appearances
 ///
-/// ...
+/// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
+/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old versions:
+/// - background color of tab bar can be changed for iOS lower than 26
+/// - background color of tab bar does not change since iOS 26
+/// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
+/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed and not the text making theme not readable in dark color scheme
+///
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These aprticular badges do not rely on ``OUDSBadge`` component.
+///
+/// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified.
+///
+/// ## Guidelines
+///
+/// OUDS guidelines recommends to:
+/// - limit when possible the number of items to 5
+/// - use both images and texts in tab bar items
+/// - use badges only when needed to avoid to have heavy tab bar
+/// - be sure the selected information is not only defined by the color of the tab ; you may need to change the shape or the fill of the image
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     ...
+///     // Use the OUDS tab bar to wrap tab bar items and associated views
+///     OUDSTabBar {
+///
+///         // Add the views with the SwiftUI tab item and labels
+///         // No need to define colors, everything is done inside OUDSTabBar
+///         SomeView()
+///             .tabItem {
+///                 Label("Label 1", image: "image_1")
+///             }
+///         OtherView()
+///             .tabItem {
+///                 Label("Label 2", image: "image_2")
+///             }
+///         LastView()
+///             .tabItem {
+///                 Label("Label 3", image: "image_3")
+///             }
+///     }
 /// ```
-///
-/// ## Styles
-///
-/// ...
-///
-/// ## Specific behavior
-///
-/// ...
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](...)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
 /// ## Themes rendering
 ///
@@ -69,8 +88,8 @@ import SwiftUI
 ///
 /// ![A  tab bar component in light and dark mode with Wireframe theme](component_tabBar_Wireframe)
 ///
-/// - Version: xxx (Figma component design version)
-/// - Since: 0.xxx.0
+/// - Version: 1.0.0 (Figma component design version)
+/// - Since: 0.23.0
 @available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTabBar<Content>: View where Content: View {
 
@@ -100,27 +119,65 @@ public struct OUDSTabBar<Content>: View where Content: View {
 // MARK: - OUDS Tab Bar View Modifier
 
 /// Defines the look and feel the tab bar must have by applying the OUDS tokens.
+/// This `ViewModifier` can be used directly on a `TabView`.
+///
+/// ## Rendering
+///
+/// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
+/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old versions:
+/// - background color of tab bar can be changed for iOS lower than 26
+/// - background color of tab bar does not change since iOS 26
+/// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
+/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed and not the text making theme not readable in dark color scheme
+///
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These aprticular badges do not rely on ``OUDSBadge`` component.
+///
+/// ## Guidelines
+///
+/// OUDS guidelines recommends to:
+/// - limit when possible the number of items to 5
+/// - use both images and texts in tab bar items
+/// - use badges only when needed to avoid to have heavy tab bar
+/// - be sure the selected information is not only defined by the color of the tab ; you may need to change the shape or the fill of the image
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Wrap your items in the tab view
+///     TabView {
+///
+///         SomeView()
+///             .tabItem {
+///                 Label("Label 1", image: "image_1")
+///             }
+///         OtherView()
+///             .tabItem {
+///                 Label("Label 2", image: "image_2")
+///             }
+///         LastView()
+///             .tabItem {
+///                 Label("Label 3", image: "image_3")
+///             }
+///
+///     // Add the view modifier to apply OUDS style
+///     }.modifier(OUDSTabBarViewModifier())
+/// ```
+///
+/// - Version: 1.0.0 (Figma component design version)
+/// - Since: 0.23.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTabBarViewModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    public init() {}
+
     public func body(content: Content) -> some View {
-        // The border must be added only if OS lower than 26
-        // otherwise with Liquid Glass a small horizontal stroke dividing the screen will appear
-        // and will not be related to the tab bar
-        if #unavailable(iOS 26.0) {
-            content
-                .task {
-                    setupTabBarAppearance()
-                }
-                .border(theme.colors.borderMinimal.color(for: colorScheme))
-        } else {
-            content
-                .task {
-                    setupTabBarAppearance()
-                }
-        }
+        content
+            .task {
+                setupTabBarAppearance()
+            }
     }
 
     /// Defines the selected and unselected states, and background colors for the tab bar
@@ -131,16 +188,18 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         let tabBarItemAppearance = UITabBarItemAppearance()
 
         // Tab bar item badge
-        let badgeUIColor = theme.colors.contentOnStatusNegativeEmphasized.color(for: colorScheme).uiColor
+        let badgeUIColor = theme.colors.surfaceStatusNegativeEmphasized.color(for: colorScheme).uiColor
         tabBarItemAppearance.normal.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.selected.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.focused.badgeBackgroundColor = badgeUIColor
 
         // Tab bar background
-        if #available(iOS 26.0, *) {
+        if #available(iOS 26.0, *) { // May not work with Liquid Glass
             tabBarAppearance.backgroundColor = theme.bar.colorBgOpaque.color(for: colorScheme).uiColor
         } else {
             tabBarAppearance.backgroundColor = theme.bar.colorBgTranslucent.color(for: colorScheme).uiColor
+            // Define the color for the top border of the tab view, but does not work on all cases
+            tabBarAppearance.shadowColor = theme.colors.borderMinimal.color(for: colorScheme).uiColor
         }
 
         // Tab bar unselected item
