@@ -37,6 +37,9 @@ struct SwitchIndicator: View {
             .oudsBackground(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
+        #if os(iOS)
+            .modifier(VibrateModifier(isOn: $isOn))
+        #endif
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
@@ -151,6 +154,23 @@ private struct Cursor: View {
             }
         } else {
             Color.clear
+        }
+    }
+}
+
+private struct VibrateModifier: ViewModifier {
+
+    @Binding var isOn: Bool
+
+    func body(content: Content) -> some View {
+        if #available(iOS 17.0, *) {
+            content.onChange(of: isOn) {
+                VibrationsManager.warning()
+            }
+        } else {
+            content.onChange(of: isOn) { _ in
+                VibrationsManager.warning()
+            }
         }
     }
 }

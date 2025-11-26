@@ -92,9 +92,6 @@ public struct OUDSSwitch: View {
             withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                 $isOn.wrappedValue.toggle()
             }
-            #if os(iOS)
-            VibrationsManager.warning()
-            #endif
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: $isOn)
                 .frame(minWidth: theme.switch.sizeMinWidth,
