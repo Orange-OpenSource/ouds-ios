@@ -157,7 +157,7 @@ public struct OUDSSwitchItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - label: The main label text of the switch.
+    ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - description: An additonal helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
@@ -184,6 +184,10 @@ public struct OUDSSwitchItem: View {
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
+        }
+
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSSwitchItem is empty, prefer OUDSSwitch(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {

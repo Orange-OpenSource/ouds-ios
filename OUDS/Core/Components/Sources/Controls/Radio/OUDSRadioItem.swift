@@ -175,7 +175,7 @@ public struct OUDSRadioItem: View {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
-    ///   - label: The main label text of the radio.
+    ///   - label: The main label text of the radio, must not be empty
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: An description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
@@ -209,6 +209,10 @@ public struct OUDSRadioItem: View {
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+        }
+
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {

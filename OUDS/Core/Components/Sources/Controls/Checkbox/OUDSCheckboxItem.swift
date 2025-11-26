@@ -174,7 +174,7 @@ public struct OUDSCheckboxItem: View {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (unselected)
-    ///   - label: The main label text of the checkbox.
+    ///   - label: The main label text of the checkbox, must not be empty
     ///   - description: An additonal helper text, a description, which should not be empty, default set to `nil`. Will be repalced by `errorText` in case of error.
     ///   - icon: An optional icon,  default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
@@ -199,6 +199,10 @@ public struct OUDSCheckboxItem: View {
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSCheckboxItem in an error context and in read only mode")
+        }
+
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSCheckboxItem is empty, prefer OUDSCheckbox(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {

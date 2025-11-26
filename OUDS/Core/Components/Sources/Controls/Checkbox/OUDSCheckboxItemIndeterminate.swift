@@ -169,7 +169,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     /// - Parameters:
     ///   - selection: A binding to a property that determines wether the indicator is ticked, unticker or preticked.
-    ///   - label: The main label text of the checkbox.
+    ///   - label: The main label text of the checkbox, must not be empty
     ///   - description: A description, an additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
@@ -197,6 +197,10 @@ public struct OUDSCheckboxItemIndeterminate: View {
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSCheckboxItemIndeterminate in an error context and in read only mode")
+        }
+
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSCheckboxItemIndeterminate is empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {
