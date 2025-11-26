@@ -1,8 +1,14 @@
 //
-//  OUDSTabBar.swift.tmp.swift
-//  OUDS
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
 //
-//  Created by Pierre-Yves Lapersonne on 21/11/2025.
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSThemesContract
@@ -70,13 +76,14 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: - Properties
 
+    /// Must return the tab bar items
     @ViewBuilder private let content: () -> Content
 
     // MARK: - Initializers
 
-    /// Defines the tab bar component embeding the given `content` containing tab bar items.
+    /// Defines the tab bar component with given tab bar items
     ///
-    /// - Parameter content: The `View` containing tab bar items to wrap in the SwiftUI `TabView` in the end
+    /// - Parameter content: The list of items to add in the tab bar
     public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
@@ -92,8 +99,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
 // MARK: - OUDS Tab Bar View Modifier
 
-/// Defines the look and feel the tab bar must have by applying the OUDS tokes.
-///
+/// Defines the look and feel the tab bar must have by applying the OUDS tokens.
 public struct OUDSTabBarViewModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -124,6 +130,12 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()
 
+        // Tab bar item badge
+        let badgeUIColor = theme.colors.contentOnStatusNegativeEmphasized.color(for: colorScheme).uiColor
+        tabBarItemAppearance.normal.badgeBackgroundColor = badgeUIColor
+        tabBarItemAppearance.selected.badgeBackgroundColor = badgeUIColor
+        tabBarItemAppearance.focused.badgeBackgroundColor = badgeUIColor
+
         // Tab bar background
         if #available(iOS 26.0, *) {
             tabBarAppearance.backgroundColor = theme.bar.colorBgOpaque.color(for: colorScheme).uiColor
@@ -144,7 +156,6 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .foregroundColor: unselectedUIColor,
             ]
-            tabBarItemAppearance.normal.badgeBackgroundColor = unselectedUIColor
         }
 
         // Tab bar selected item
@@ -153,7 +164,6 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         tabBarItemAppearance.selected.titleTextAttributes = [
             .foregroundColor: selectedUIColor,
         ]
-        tabBarItemAppearance.selected.badgeBackgroundColor = selectedUIColor
 
         // Tab bar focused item
         let focusedUIColor = theme.bar.colorContentSelectedFocus.color(for: colorScheme).uiColor
@@ -161,7 +171,6 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         tabBarItemAppearance.focused.titleTextAttributes = [
             .foregroundColor: focusedUIColor,
         ]
-        tabBarItemAppearance.focused.badgeBackgroundColor = focusedUIColor
 
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
