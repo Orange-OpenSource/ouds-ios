@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Switch control cannot be toggled by swipe (Orange-OpenSource/ouds-ios#995)
 - Fonts and typography not applied (Orange, Sosh, Wireframe) on watchOS (Orange-OpenSource/ouds-ios#1142)
 - Fonts and typography not applied (Orange, Sosh, Wireframe) on tvOS (Orange-OpenSource/ouds-ios#1145)
 - Typography with line height token and dedicated line spacing and paddings (Orange-OpenSource/ouds-ios#594)
