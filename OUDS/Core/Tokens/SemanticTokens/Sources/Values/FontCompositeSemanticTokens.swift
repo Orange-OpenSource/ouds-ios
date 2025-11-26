@@ -23,8 +23,8 @@
 ///
 /// It defines all composite font semantic tokens a theme must have, i.e. tokens including properties for font family, font weight, font size or line height for example.
 ///
-/// This protocol makes themes able to provide and override `FontCompositeRawToken` gathered in ``MultipleFontCompositeSemanticTokens`` instances.
-/// This `FontCompositeRawToken` is not managed by tokenator yet as it is composed by several properties.
+/// This protocol makes themes able to provide and override `FontCompositeSemanticToken` gathered in ``MultipleFontCompositeSemanticTokens`` instances.
+/// This `FontCompositeSemanticToken` is not managed by tokenator yet as it is composed by several properties.
 ///
 /// This ``FontCompositeSemanticTokens`` protocol contains a set of ``MultipleFontCompositeSemanticTokens``.
 /// They can be applied to views and components using the helpers provided through `View`, loading four the the font famoly to use:

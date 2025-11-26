@@ -48,24 +48,23 @@ struct TypographyModifier: ViewModifier {
         horizontalSizeClass == .compact || verticalSizeClass == .compact
     }
 
-    /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
+    /// Returns the `FontCompositeSemanticToken` to apply depending to the layout mode
     private var adaptiveFontToken: FontCompositeSemanticToken {
         isCompactMode ? font.compact : font.regular
     }
 
     #if os(macOS)
-    typealias NativeFont = NSFont
-    typealias NativeWeight = NSFont.Weight
+    private typealias NativeFont = NSFont
     #else
-    typealias NativeFont = UIFont
-    typealias NativeWeight = UIFont.Weight
+    private typealias NativeFont = UIFont
     #endif
 
-    /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `UIFont`
-    /// We prefer this `UIFont` to the `Font` because we need the `lineHeight`to compute the `lineSpacing`.
+    /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `NativeFont`
+    /// The `UIFont` is preferred to the `Font` because the `lineHeight`to compute the `lineSpacing` is needed.
+    /// In addition, SwiftUI line height dedicated API stack text to the top, and OUDS requires to have text centered.
     private var adaptativeFont: NativeFont {
         if let family {
-            // Can be a custom font load from side assets or another custom font available in the OS
+            // Can be a custom font loaded from side assets or another custom font available in the OS
             let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, adaptiveFontToken.weight.weight)]
             let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize)
             if let customFont {
@@ -79,7 +78,7 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Adjusts the font size dynamically based on the user's accessibility settings
-    /// using UIFontMetrics to scale the font size, ensuring Dynamic Type support
+    /// using `UIFontMetrics` for non-macOS OS to scale the font size, ensuring Dynamic Type support
     private var scaledFontSize: CGFloat {
         #if os(macOS)
         adaptiveFontToken.size
@@ -88,7 +87,7 @@ struct TypographyModifier: ViewModifier {
         #endif
     }
 
-    /// Computes the line height value scaled according to Dynamic Type.
+    /// Computes the line height value scaled according to Dynamic Type (if not macOS)
     private var scaledLineHeight: CGFloat {
         #if os(macOS)
         adaptiveFontToken.lineHeight
@@ -97,6 +96,7 @@ struct TypographyModifier: ViewModifier {
         #endif
     }
 
+    /// Computes the font line height depending to the `adaptiveFont`
     private var fontLineHeight: CGFloat {
         #if os(macOS)
         NSLayoutManager().defaultLineHeight(for: adaptativeFont)
@@ -106,19 +106,18 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Computes the line spacing value to apply on the typography.
-    /// Difference between the token line height scaled according to Dynamic Type and the height
+    /// The returned value is the difference between the token line height scaled according to Dynamic Type and the height
     /// of the font used.
     private var lineSpacing: CGFloat {
         scaledLineHeight - fontLineHeight
     }
 
-    /// Computes the extra padding should be added at top and bottom to conform the line height.
-    /// Used by os version < 26
+    /// Computes the extra padding which should be added at top and bottom to conform the line height.
     private var padding: CGFloat {
         lineSpacing / 2
     }
 
-    /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
+    /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*)
     /// depending to the current `MultipleFontCompositeSemanticTokens`.
     func body(content: Content) -> some View {
         Group {
@@ -137,7 +136,7 @@ struct TypographyModifier: ViewModifier {
                     .padding(.vertical, padding)
             }
         }
-        #if os(visionOS) || os(macOS)
+        #if os(visionOS) || os(macOS) || os(watchOS)
         .onChange(of: sizeCategory) { _, _ in }
         #else
         .onChange(of: sizeCategory) { _ in }
