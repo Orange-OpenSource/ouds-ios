@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of `FontCompositeSemanticToken` depending to size classes.
@@ -83,7 +82,7 @@ public final class MultipleFontCompositeSemanticTokens: NSObject, Sendable, Comp
     /// Returns the composite raw token of font to use according to the `userInterfaceSizeClass` (i.e. `compact` or `regular`)
     ///
     /// - Parameter userInterfaceSizeClass: The user interface size class
-    /// - Returns: The composite raw token to use (of type `FontCompositeRawToken`)
+    /// - Returns: The composite raw token to use (of type `FontCompositeSemanticToken`)
     public func fontToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontCompositeSemanticToken {
         userInterfaceSizeClass == .compact ? compact : regular
     }
