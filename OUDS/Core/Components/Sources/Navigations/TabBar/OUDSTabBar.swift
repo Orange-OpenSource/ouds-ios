@@ -10,7 +10,18 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - OUDS Tab Bar
+
 /// The ``OUDSTabBar`` ...
+///
+///    /// Note please that:
+/// - SwiftUI API is not isofunctional with UIKit API
+/// - background color of tab bar can be changed for iOS lower than 26
+/// - background color of tab bar does not change for iOS 26 and greater
+/// - normal / unselected color can be changed for both image and text only for iOS lower than 26
+/// - normal / unselected color can be changed for text only if iOS 26 and greater
+/// - normal / unselected color for image in tab bar item cannot be changed even if image is defined with "rempalte" rendering and changed with a foreground color
+///
 ///
 /// ## Appearances
 ///
@@ -59,102 +70,98 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: - Properties
 
-    private var selectedColor: MultipleColorSemanticTokens?
-    private var unselectedColor: MultipleColorSemanticTokens?
-    private var backgroundColor: MultipleColorSemanticTokens?
-
     @ViewBuilder private let content: () -> Content
+
+    // MARK: - Initializers
+
+    /// Defines the tab bar component embeding the given `content` containing tab bar items.
+    ///
+    /// - Parameter content: The `View` containing tab bar items to wrap in the SwiftUI `TabView` in the end
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
+
+    /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
+    /// Warning: rendering wil change depending to OS version!
+    public var body: some View {
+        TabView {
+            content()
+        }.modifier(OUDSTabBarViewModifier())
+    }
+}
+
+// MARK: - OUDS Tab Bar View Modifier
+
+/// Defines the look and feel the tab bar must have by applying the OUDS tokes.
+///
+public struct OUDSTabBarViewModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: - Initializers
-
-    /// Defines the tab bar component to use with some colors to apply.
-    ///
-    /// - Parameters:
-    ///    - selectedColor: The raw color to apply to the selected tab bar item (both image and text for iOS 18 and lower, only text for iOS 26 and greater)
-    ///    - unselectedColor: The raw color to apply to the unselected tab bar item (both image and text for iOS 18 and lower, only text for iOS 26 and greater)
-    ///    - backgroundColor: The raw of color to apply to the tab bar background (only for iOS 18 and lower)
-    public init(selectedColor: ColorRawToken,
-                unselectedColor: ColorRawToken,
-                backgroundColor: ColorRawToken,
-                @ViewBuilder content: @escaping () -> Content)
-    {
-        self.init(selectedColor: MultipleColorSemanticTokens(selectedColor),
-                  unselectedColor: MultipleColorSemanticTokens(unselectedColor),
-                  backgroundColor: MultipleColorSemanticTokens(backgroundColor),
-                  content: content)
-    }
-
-    /// Defines the tab bar component to use with some colors to apply.
-    ///
-    /// - Parameters:
-    ///    - selectedColor: The token of color to apply to the selected tab bar item (both image and text for iOS 18 and lower, only text for iOS 26 and greater)
-    ///    - unselectedColor: The token of color to apply to the unselected tab bar item (both image and text for iOS 18 and lower, only text for iOS 26 and greater)
-    ///    - backgroundColor: The token of color to apply to the tab bar background(only for iOS 18 and lower)
-    public init(selectedColor: MultipleColorSemanticTokens? = nil,
-                unselectedColor: MultipleColorSemanticTokens? = nil,
-                backgroundColor: MultipleColorSemanticTokens? = nil,
-                @ViewBuilder content: @escaping () -> Content)
-    {
-        self.selectedColor = selectedColor
-        self.unselectedColor = unselectedColor
-        self.backgroundColor = backgroundColor
-        self.content = content
-        setupTabBarAppearance()
-    }
-
-    /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
-    /// Warning: rendering wil change depending to OS version
-    public var body: some View {
-        TabView {
-            content()
+    public func body(content: Content) -> some View {
+        // The border must be added only if OS lower than 26
+        // otherwise with Liquid Glass a small horizontal stroke dividing the screen will appear
+        // and will not be related to the tab bar
+        if #unavailable(iOS 26.0) {
+            content
+                .task {
+                    setupTabBarAppearance()
+                }
+                .border(theme.colors.borderMinimal.color(for: colorScheme))
+        } else {
+            content
+                .task {
+                    setupTabBarAppearance()
+                }
         }
     }
 
-    // MARK: - Helpers
-
     /// Defines the selected and unselected states, and background colors for the tab bar
-    ///
-    /// Note please that:
-    /// - SwiftUI API is not isofunctional with UIKit API
-    /// - background color of tab bar can be changed for iOS lower than 26
-    /// - background color of tab bar does not change for iOS 26 and greater
-    /// - normal / unselected color can be changed for both image and text only for iOS lower than 26
-    /// - normal / unselected color can be changed for text only if iOS 26 and greater
-    /// - normal / unselected color for image in tab bar item cannot be changed even if image is defined with "rempalte" rendering and changed with a foreground color
     ///
     /// More details: https://github.com/Orange-OpenSource/ouds-ios/discussions/1076
     private func setupTabBarAppearance() {
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()
 
-        // Tab bar background color
-        if let backgroundColor {
-            tabBarAppearance.backgroundColor = backgroundColor.color(for: colorScheme).uiColor
-        }
-
-        // Tab bar select item
-        if let selectedColor {
-            let selectedUIColor = selectedColor.color(for: colorScheme).uiColor
-            tabBarItemAppearance.selected.iconColor = selectedUIColor
-            tabBarItemAppearance.selected.titleTextAttributes = [
-                .foregroundColor: selectedUIColor,
-            ]
-            tabBarItemAppearance.selected.badgeBackgroundColor = selectedUIColor
-            tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        // Tab bar background
+        if #available(iOS 26.0, *) {
+            tabBarAppearance.backgroundColor = theme.bar.colorBgOpaque.color(for: colorScheme).uiColor
+        } else {
+            tabBarAppearance.backgroundColor = theme.bar.colorBgTranslucent.color(for: colorScheme).uiColor
         }
 
         // Tab bar unselected item
-        if let unselectedColor {
-            let unselectedUIColor = unselectedColor.color(for: colorScheme).uiColor
+        /*
+         With iOS 26+, if a color is applied to a tab bar item in unselected state,
+         only the image is changed and not the text.
+         It could mean in dark mode the text is not readable at all.
+         Thus apply the unselector color only for cases where everything works.
+         */
+        if #unavailable(iOS 26.0) {
+            let unselectedUIColor = theme.bar.colorContentUnselectedEnabled.color(for: colorScheme).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .foregroundColor: unselectedUIColor,
             ]
             tabBarItemAppearance.normal.badgeBackgroundColor = unselectedUIColor
         }
+
+        // Tab bar selected item
+        let selectedUIColor = theme.colors.actionAccent.color(for: colorScheme).uiColor
+        tabBarItemAppearance.selected.iconColor = selectedUIColor
+        tabBarItemAppearance.selected.titleTextAttributes = [
+            .foregroundColor: selectedUIColor,
+        ]
+        tabBarItemAppearance.selected.badgeBackgroundColor = selectedUIColor
+
+        // Tab bar focused item
+        let focusedUIColor = theme.bar.colorContentSelectedFocus.color(for: colorScheme).uiColor
+        tabBarItemAppearance.focused.iconColor = focusedUIColor
+        tabBarItemAppearance.focused.titleTextAttributes = [
+            .foregroundColor: focusedUIColor,
+        ]
+        tabBarItemAppearance.focused.badgeBackgroundColor = focusedUIColor
 
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
