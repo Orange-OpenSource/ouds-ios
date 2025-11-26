@@ -22,22 +22,51 @@ struct SwitchIndicator: View {
     // MARK: Stored properties
 
     let interactionState: InteractionState
-    let isOn: Bool
+    @Binding var isOn: Bool
 
     @Environment(\.theme) private var theme
+    @State private var offset = CGSize.zero
+    @State private var isDragging: Bool = false
 
     // MARK: Body
 
     var body: some View {
-        Cursor(interactionState: interactionState, isOn: isOn)
+        Cursor(interactionState: interactionStateComputed, isOn: isOn)
             .padding(.horizontal, padding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        if !(interactionState == .disabled || interactionState == .readOnly) {
+
+                            isDragging = true
+                            offset = gesture.translation
+
+                            if offset.width >= 10 {
+                                isOn = true
+                            }
+
+                            if offset.width <= -10 {
+                                isOn = false
+                            }
+                        }
+                    }
+                    .onEnded { _ in
+                        isDragging = false
+                    })
     }
 
     // MARK: Private Helpers
+
+    private var interactionStateComputed: InteractionState {
+        if isDragging {
+            return .pressed
+        }
+        return interactionState
+    }
 
     private var cursorHorizontalAlignment: Alignment {
         isOn ? .trailing : .leading

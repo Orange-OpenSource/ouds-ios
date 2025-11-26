@@ -96,7 +96,7 @@ public struct OUDSSwitch: View {
             VibrationsManager.warning()
             #endif
         } content: { interactionState in
-            SwitchIndicator(interactionState: interactionState, isOn: isOn)
+            SwitchIndicator(interactionState: interactionState, isOn: $isOn)
                 .frame(minWidth: theme.switch.sizeMinWidth,
                        minHeight: theme.switch.sizeMinHeight,
                        maxHeight: theme.switch.sizeMaxHeight)
