@@ -123,19 +123,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A switch item component in light and dark mode with Orange theme](component_switchItem_Orange)
+/// ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A switch item  component in light and dark mode with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
+/// ![A switch item  component in light and dark modes with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A switch item component in light and dark mode with Sosh theme](component_switchItem_Sosh)
+/// ![A switch item component in light and dark modes with Sosh theme](component_switchItem_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A switch item component in light and dark mode with Wireframe theme](component_switchItem_Wireframe)
+/// ![A switch item component in light and dark modes with Wireframe theme](component_switchItem_Wireframe)
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0

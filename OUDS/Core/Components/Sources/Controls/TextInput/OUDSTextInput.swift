@@ -171,19 +171,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A text input component in light and dark mode with Orange theme](component_textInput_Orange)
+/// ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+/// ![A text input component in light and dark modes with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A text input component in light and dark mode with Sosh theme](component_textInput_Sosh)
+/// ![A text input component in light and dark modes with Sosh theme](component_textInput_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
+/// ![A text input component in light and dark modes with Wireframe theme](component_textInput_Wireframe)
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0

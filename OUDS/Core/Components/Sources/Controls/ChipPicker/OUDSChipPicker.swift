@@ -78,19 +78,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
+/// ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+/// ![A chip picker component in light and dark modes with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
+/// ![A chip picker component in light and dark modes with Sosh theme](component_chipPicker_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A chip picker component in light and dark mode with Wireframe theme](component_chipPicker_Wireframe)
+/// ![A chip picker component in light and dark modes with Wireframe theme](component_chipPicker_Wireframe)
 ///
 /// - Since: 0.17.0
 @available(iOS 15, macOS 15, visionOS 1, *)

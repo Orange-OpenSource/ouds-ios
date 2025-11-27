@@ -128,19 +128,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
+/// ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A checkbox item component in light and dark mode with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
+/// ![A checkbox item component in light and dark modes with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
+/// ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A checkbox item component in light and dark mode with Wireframe theme](component_checkboxItem_Wireframe)
+/// ![A checkbox item component in light and dark modes with Wireframe theme](component_checkboxItem_Wireframe)
 ///
 /// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0

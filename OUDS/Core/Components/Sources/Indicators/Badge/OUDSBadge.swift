@@ -61,19 +61,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
+/// ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+/// ![A badge component in light and dark modes with Orange Business Tools theme](component_badge_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A badge component in light and dark mode with Sosh theme](component_badge_Sosh)
+/// ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
+/// ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.17.0

@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark mode colors.
+/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark modes colors.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 

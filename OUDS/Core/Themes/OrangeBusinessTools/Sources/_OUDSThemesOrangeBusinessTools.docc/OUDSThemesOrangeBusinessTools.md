@@ -161,7 +161,7 @@ You cannot derivate the *Orange Business Tools* theme.
 
 ### Actions
 
-![A button component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_OrangeBusinessTools.png)
+![A button component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_OrangeBusinessTools.png)
 
 ### Controls
 
@@ -169,10 +169,10 @@ You cannot derivate the *Orange Business Tools* theme.
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_OrangeBusinessTools.png)        
+        ![A checkbox component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_OrangeBusinessTools.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_OrangeBusinessTools.png)
+        ![A checkbox item component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_OrangeBusinessTools.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -181,10 +181,10 @@ You cannot derivate the *Orange Business Tools* theme.
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_OrangeBusinessTools.png)        
+        ![A radio button component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_OrangeBusinessTools.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_OrangeBusinessTools.png)
+        ![A radio item component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_OrangeBusinessTools.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -193,10 +193,10 @@ You cannot derivate the *Orange Business Tools* theme.
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_OrangeBusinessTools.png)        
+        ![A switch component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_OrangeBusinessTools.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_OrangeBusinessTools.png)
+        ![A switch item component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_OrangeBusinessTools.png)
     }
 }
 
@@ -204,32 +204,32 @@ You cannot derivate the *Orange Business Tools* theme.
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_OrangeBusinessTools.png)        
+        ![A filter chip component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_OrangeBusinessTools.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_OrangeBusinessTools.png)
+        ![A suggestion chip component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_OrangeBusinessTools.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
 
 #### Text inputs
 
-![A text input component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_OrangeBusinessTools.png)
+![A text input component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_OrangeBusinessTools.png)
 
 ### Indicators
 
 #### Badge
 
-![A badge component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeBusinessTools.png)
+![A badge component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_OrangeBusinessTools.png)
 
 #### Tags
 
 @TabNavigator {
     @Tab("Tag") {
-        ![A tag component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_OrangeBusinessTools.png)        
+        ![A tag component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_OrangeBusinessTools.png)        
     }
     @Tab("Input tag") {
-        ![An input tag component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_OrangeBusinessTools.png)
+        ![An input tag component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_OrangeBusinessTools.png)
     }
 }
 
@@ -241,10 +241,10 @@ You cannot derivate the *Orange Business Tools* theme.
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_OrangeBusinessTools.png)
+        ![An horizontal divider component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_OrangeBusinessTools.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_OrangeBusinessTools.png)
+        ![A vertical divider component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_OrangeBusinessTools.png)
     }
 }
 
@@ -252,7 +252,18 @@ You cannot derivate the *Orange Business Tools* theme.
 
 #### Link
 
-![A link component in light and dark mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_OrangeBusinessTools.png)
+![A link component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_OrangeBusinessTools.png)
+
+#### Tab bar
+
+@TabNavigator {
+    @Tab("With Liquid Glass") {
+        ![A tab component in light mode with Orange Business Tools theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_OrangeBusinessTools_light.png)        
+    }
+    @Tab("Without Liquid Glass") {
+        ![A tab component in light mode with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_OrangeBusinessTools_light.png)
+    }
+}
 
 ## Topics
 

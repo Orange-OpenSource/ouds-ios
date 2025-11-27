@@ -49,19 +49,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![An input tag component in light and dark mode with Orange theme](component_inputTag_Orange)
+/// ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![An input tag component in light and dark mode with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+/// ![An input tag component in light and dark modes with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![An input tag component in light and dark mode with Sosh theme](component_inputTag_Sosh)
+/// ![An input tag component in light and dark modes with Sosh theme](component_inputTag_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![An input tag component in light and dark mode with Wireframe theme](component_inputTag_Wireframe)
+/// ![An input tag component in light and dark modes with Wireframe theme](component_inputTag_Wireframe)
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.21.0

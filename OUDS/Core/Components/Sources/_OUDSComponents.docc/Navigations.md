@@ -13,16 +13,16 @@ Some components can be used for **navigation**.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A link component in light and dark mode with Orange theme](component_link_Orange)
+        ![A link component in light and dark modes with Orange theme](component_link_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A link component in light and dark mode with Orange Business Tools theme](component_link_OrangeBusinessTools)
+        ![A link component in light and dark modes with Orange Business Tools theme](component_link_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A link component in light and dark mode with Sosh theme](component_link_Sosh)
+        ![A link component in light and dark modes with Sosh theme](component_link_Sosh)
     }
     @Tab("Wireframe") {
-        ![A link component in light and dark mode with Wireframe theme](component_link_Wireframe)
+        ![A link component in light and dark modes with Wireframe theme](component_link_Wireframe)
     }
 }
 
@@ -64,38 +64,46 @@ The link can be displayed in `small` or `default` size.
 
 @TabNavigator {
     @Tab("Orange (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light and dark mode with Orange theme](component_tabBar_LiquidGlass_Orange)
+        ![A tab bar component with Liquid Glass in light mode with Orange theme](component_tabBar_LiquidGlass_Orange_light)
+        ![A tab bar component with Liquid Glass in dark mode with Orange theme](component_tabBar_LiquidGlass_Orange_dark)
     }
     @Tab("Orange Business Tools (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light and dark mode with Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools)
+        ![A tab bar component with Liquid Glass in light mode with Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_light)
+        ![A tab bar component with Liquid Glass in dark mode with Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_dark)
     }
     @Tab("Sosh (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light and dark mode with Sosh theme](component_tabBar_LiquidGlass_Sosh)
+        ![A tab bar component with Liquid Glass in light mode with Sosh theme](component_tabBar_LiquidGlass_Sosh_light)
+        ![A tab bar component with Liquid Glass in dark mode with Sosh theme](component_tabBar_LiquidGlass_Sosh_dark)
     }
     @Tab("Wireframe (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light and dark mode with Wireframe theme](component_tabBar_LiquidGlass_Wireframe)
+        ![A tab bar component with Liquid Glass in light mode with Wireframe theme](component_tabBar_LiquidGlass_Wireframe_light)
+        ![A tab bar component with Liquid Glass in dark mode with Wireframe theme](component_tabBar_LiquidGlass_Wireframe_dark)
     }
 }
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A tab bar component without Liquid Glass in light and dark mode with Orange theme](component_tabBar_Orange)
+        ![A tab bar component without Liquid Glass in light mode with Orange theme](component_tabBar_Orange_light)
+        ![A tab bar component without Liquid Glass in dark mode with Orange theme](component_tabBar_Orange_dark)
     }
     @Tab("Orange Business Tools") {
-        ![A tab bar component without Liquid Glass in light and dark mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools)
+        ![A tab bar component without Liquid Glass in light mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools_light)
+        ![A tab bar component without Liquid Glass in dark mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools_dark)
     }
     @Tab("Sosh") {
-        ![A tab bar component without Liquid Glass in light and dark mode with Sosh theme](component_tabBar_Sosh)
+        ![A tab bar component without Liquid Glass in light mode with Sosh theme](component_tabBar_Sosh_light)
+        ![A tab bar component without Liquid Glass in dark mode with Sosh theme](component_tabBar_Sosh_dark)
     }
     @Tab("Wireframe") {
-        ![A tab bar component without Liquid Glass in light and dark mode with Wireframe theme](component_tabBar_Wireframe)
+        ![A tab bar component without Liquid Glass in light mode with Wireframe theme](component_tabBar_Wireframe_light)
+        ![A tab bar component without Liquid Glass in dark mode with Wireframe theme](component_tabBar_Wireframe_dark)
     }
 }
 
-The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects and styles thanks to the ``OUDSSTabBarViewModifier``.
+The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects and styles thanks to the ``OUDSTabBarViewModifier``.
 The ``OUDSTabBar`` lets users define their own hierarchy of views associated to tab items.
 
-Users can also apply ``OUDSSTabBarViewModifier`` to keep their own `TabView` and jusy apply the style.
+Users can also apply ``OUDSTabBarViewModifier`` to keep their own `TabView` and jusy apply the style.
 
 @TabNavigator {
     @Tab("OUDSTabBar") {
@@ -120,7 +128,7 @@ Users can also apply ``OUDSSTabBarViewModifier`` to keep their own `TabView` and
         }
         ```
     }
-    @Tab("OUDSSTabBarViewModifier) {
+    @Tab("OUDSTabBarViewModifier") {
         ```swift
         TabView {
         

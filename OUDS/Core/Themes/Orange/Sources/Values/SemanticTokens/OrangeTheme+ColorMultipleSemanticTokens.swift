@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark mode colors.
+/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark modes colors.
 /// These values can be overriden inside `OrangeThemeColorSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 /// Some tokens must be overriden in `OrangeTheme` side because they rely on Orange brand colors.

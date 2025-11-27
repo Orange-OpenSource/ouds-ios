@@ -30,7 +30,8 @@ import SwiftUI
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
-/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed and not the text making theme not readable in dark color scheme
+/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
+/// and not the text making theme not readable in dark color scheme
 ///
 /// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
 ///
@@ -84,21 +85,49 @@ import SwiftUI
 ///
 /// ## Themes rendering
 ///
-/// ### Orange
+/// ### Liquid Glass
 ///
-/// ![A tab bar component in light and dark mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange)
+/// #### Orange
 ///
-/// ### Orange Business Tools
+/// ![A tab bar component in light mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_light)
+/// ![A tab bar component in dark mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_dark)
 ///
-/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools)
+/// #### Orange Business Tools
 ///
-/// ### Sosh
+/// ![A  tab bar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_light)
+/// ![A  tab bar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_dark)
 ///
-/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh)
+/// #### Sosh
 ///
-/// ### Wireframe
+/// ![A  tab bar component in light mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh_light)
+/// ![A  tab bar component in dark mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh_dark)
 ///
-/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Wireframe theme](component_tabBar_LiquidGlass_Wireframe)
+/// #### Wireframe
+///
+/// ![A  tab bar component in light mode with Liquid Glass effect and Wireframe theme](component_tabBar_LiquidGlass_Wireframe_light)
+/// ![A  tab bar component in dark mode with Liquid Glass effect and Wireframe theme](component_tabBar_LiquidGlass_Wireframe_dark)
+///
+/// ### Without Liquid Glass
+///
+/// #### Orange
+///
+/// ![A tab bar component in light mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_light)
+/// ![A tab bar component in dark mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_dark)
+///
+/// #### Orange Business Tools
+///
+/// ![A  tab bar component in light mode without Liquid Glass effect and Orange Business Tools theme](component_tabBar_OrangeBusinessTools_light)
+/// ![A  tab bar component in dark mode without Liquid Glass effect and Orange Business Tools theme](component_tabBar_OrangeBusinessTools_dark)
+///
+/// #### Sosh
+///
+/// ![A  tab bar component in light mode without Liquid Glass effect and Sosh theme](component_tabBar_Sosh_light)
+/// ![A  tab bar component in dark mode without Liquid Glass effect and Sosh theme](component_tabBar_Sosh_dark)
+///
+/// #### Wireframe
+///
+/// ![A  tab bar component in light mode without Liquid Glass effect and Wireframe theme](component_tabBar_Wireframe_light)
+/// ![A  tab bar component in dark mode without Liquid Glass effect and Wireframe theme](component_tabBar_Wireframe_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.23.0
@@ -150,7 +179,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
-/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed and not the text making theme not readable in dark color scheme
+/// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
+/// and not the text making theme not readable in dark color scheme
 ///
 /// In addition the badges colors will be the same and cannot be changed (except with token definition). These aprticular badges do not rely on ``OUDSBadge`` component.
 ///
@@ -226,6 +256,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         #endif
     }
 
+    // swiftlint:disable function_body_length
     /// Defines the selected and unselected states, and background colors for the tab bar.
     /// Can use forced values for color scheme and theme in some edge cases (app refresh).
     /// More details: https://github.com/Orange-OpenSource/ouds-ios/discussions/1076
@@ -317,6 +348,8 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             updateExistingTabBars(with: tabBarAppearance)
         }
     }
+
+    // swiftlint:enable function_body_length
 
     /// Force the update of all tab baes within the hosted app
     private func updateExistingTabBars(with appearance: UITabBarAppearance) {
