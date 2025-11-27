@@ -86,9 +86,9 @@ import OUDSTokensSemantic
 /// ```swift
 ///     // The following instanciations work
 ///     let orangeTheme = OrangeTheme()
-///     let orangeTheme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
-///     let orangeTheme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
-///     let orangeTheme = OrangeTheme(family: "Helvetica Neue") // Which is font family nale
+///     let orangeTheme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.familyBrandDefault)
+///     let orangeTheme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeTheme(fontFamily: "Helvetica Neue") // Which is font family nale
 /// ```
 ///
 /// ### Helvetica Neue Arabic
@@ -173,7 +173,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - textArea: All component tokens for text area
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
-    ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: A set of configurations to tune a theme, by default `Tuning.default`
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
@@ -209,7 +209,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
                          name: String = "Orange",
-                         family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
+                         fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
 
@@ -281,7 +281,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeTheme,
                    name: name,
-                   family: family,
+                   fontFamily: fontFamily,
                    tuning: tuning)
     }
 

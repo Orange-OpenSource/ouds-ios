@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
+
 // MARK: - Type aliases
 
 /// Type alais to keep things simple and short
@@ -23,6 +25,9 @@ public typealias Tuning = OUDSThemeTuning
 ///
 /// - Since: 0.19.0
 public struct OUDSThemeTuning: @unchecked Sendable {
+
+    /// Unique identifier for the tuning
+    private let id = UUID()
 
     // MARK: Tuned properties
 
@@ -47,7 +52,17 @@ public struct OUDSThemeTuning: @unchecked Sendable {
 
 // MARK: - Equatable
 
-extension Tuning: Equatable {}
+extension Tuning: Equatable {
+
+    /// Checks if tunings are equals
+    ///
+    /// - Parameters:
+    ///    - lhs: One of the tuning to test
+    ///    - rhs: One of the tuning to test
+    public static func == (lhs: Tuning, rhs: Tuning) -> Bool {
+        lhs.id == rhs.id
+    }
+}
 
 // MARK: - Predefine tunings
 

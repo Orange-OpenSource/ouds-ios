@@ -123,7 +123,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    textInput: textInput,
                    resourcesBundle: Bundle.WireframeTheme,
                    name: "Wireframe",
-                   family: WireframeBrandFontRawTokens.familyDefault)
+                   fontFamily: WireframeBrandFontRawTokens.familyDefault)
 
         registerFonts()
     }

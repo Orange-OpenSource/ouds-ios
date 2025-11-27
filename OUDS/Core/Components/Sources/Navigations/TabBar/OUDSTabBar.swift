@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -34,6 +35,17 @@ import SwiftUI
 /// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
 ///
 /// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version.
+///
+/// If you use SF Symbols for images, if they exists their *fill* variant will be automatically used in the tab bar (native behaviour).
+///
+/// ## Platform considerations
+///
+/// - This component is tailored for iOS
+/// - On iPadOS the tabs do not apply the fonts
+/// - Because macOS does not support UIKit and because UIKIt is used to define the style of the tab bar, there is not styling of the tab bar for macOS
+/// - visionOS with is specific UI does not apply colors on tab bars and things are glasssified
+/// - The component is not available for watchOS
+/// - The component is not available for tvOS
 ///
 /// ## Guidelines
 ///
@@ -74,19 +86,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A tab bar component in light and dark mode with Orange theme](component_tabBar_Orange)
+/// ![A tab bar component in light and dark mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A  tab bar component in light and dark mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools)
+/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A  tab bar component in light and dark mode with Sosh theme](component_tabBar_Sosh)
+/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Sosh theme](component_tabBar_LiquidGlass_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A  tab bar component in light and dark mode with Wireframe theme](component_tabBar_Wireframe)
+/// ![A  tab bar component in light and dark mode with Liquid Glass effect and Wireframe theme](component_tabBar_LiquidGlass_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.23.0
@@ -112,11 +124,19 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
     /// Warning: rendering wil change depending to OS version!
     public var body: some View {
+        #if !os(macOS) && !os(watchOS) // iOS, iPadOS, tvOS, visionOS
         TabView {
             content()
         }.modifier(OUDSTabBarViewModifier())
+        #else // macOS, watchOS
+        TabView {
+            content()
+        }
+        #endif
     }
 }
+
+#if !os(macOS) && !os(watchOS)
 
 // MARK: - OUDS Tab Bar View Modifier
 
@@ -167,7 +187,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.23.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, *)
 public struct OUDSTabBarViewModifier: ViewModifier {
 
     // MARK: Properties
@@ -185,34 +205,71 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         content
             // Do not use task(), it's async, effects may be applied too late
             .onAppear {
-                setupTabBarAppearance(with: colorScheme)
+                setupTabBarAppearance(withColor: colorScheme)
             }
-            // Color scheme changes can rise a bit later after onAppear()
-            // Thus we need to catch the most up-to-date value to apply
+        // Color scheme changes can rise a bit later after onAppear()
+        // Thus we need to catch the most up-to-date value to apply
+        #if os(visionOS) || os(watchOS)
+            .onChange(of: colorScheme) { _, newColorScheme in
+                setupTabBarAppearance(withColor: newColorScheme)
+            }
+            .onChange(of: theme) { _, newTheme in
+                setupTabBarAppearance(andTheme: newTheme)
+            }
+        #else // iOS, iPadOS
             .onChange(of: colorScheme) { newColorScheme in
-                setupTabBarAppearance(with: newColorScheme)
+                setupTabBarAppearance(withColor: newColorScheme)
             }
+            .onChange(of: theme) { newTheme in
+                setupTabBarAppearance(andTheme: newTheme)
+            }
+        #endif
     }
 
-    /// Defines the selected and unselected states, and background colors for the tab bar
+    /// Defines the selected and unselected states, and background colors for the tab bar.
+    /// Can use forced values for color scheme and theme in some edge cases (app refresh).
     /// More details: https://github.com/Orange-OpenSource/ouds-ios/discussions/1076
-    private func setupTabBarAppearance(with colorScheme: ColorScheme) {
+    ///
+    /// - Parameters:
+    ///    - scheme: The color scheme to apply if defined
+    ///    - theme: The theme to apply if defined
+    private func setupTabBarAppearance(withColor scheme: ColorScheme? = nil, andTheme theme: OUDSTheme? = nil) {
+
+        // Get forced or most fresh theme and color scheme
+        let colorSchemeToApply = scheme ?? colorScheme
+        let themeToApply = theme ?? self.theme
+
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()
 
         // Tab bar item badge
-        let badgeUIColor = theme.colors.surfaceStatusNegativeEmphasized.color(for: colorScheme).uiColor
+        let badgeUIColor = themeToApply.colors.surfaceStatusNegativeEmphasized.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.normal.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.selected.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.focused.badgeBackgroundColor = badgeUIColor
 
         // Tab bar background
         if #available(iOS 26.0, *) { // May not work with Liquid Glass
-            tabBarAppearance.backgroundColor = theme.bar.colorBgOpaque.color(for: colorScheme).uiColor
+            tabBarAppearance.backgroundColor = themeToApply.bar.colorBgOpaque.color(for: colorSchemeToApply).uiColor
         } else {
-            tabBarAppearance.backgroundColor = theme.bar.colorBgTranslucent.color(for: colorScheme).uiColor
+            tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
             // Define the color for the top border of the tab view, but does not work on all cases
-            tabBarAppearance.shadowColor = theme.colors.borderMinimal.color(for: colorScheme).uiColor
+            tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
+        }
+
+        // Fonts
+        // In Apple apps even if the user increases the text sizes the tab bar texts does not change
+        // We keep about 12px in Figma i.e. sizeLabelSmall
+        let fontSize = themeToApply.fonts.sizeLabelSmall
+        var normalFont: UIFont, selectedFont: UIFont
+        if let fontFamily = themeToApply.fontFamily {
+            let normalFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.regular)]
+            let selectedFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.bold)]
+            normalFont = UIFont(name: normalFontName, size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)
+            selectedFont = UIFont(name: selectedFontName, size: fontSize) ?? UIFont.boldSystemFont(ofSize: fontSize)
+        } else {
+            normalFont = UIFont.systemFont(ofSize: fontSize)
+            selectedFont = UIFont.boldSystemFont(ofSize: fontSize)
         }
 
         // Tab bar unselected item
@@ -223,28 +280,36 @@ public struct OUDSTabBarViewModifier: ViewModifier {
          Thus apply the unselector color only for cases where everything works.
          */
         if #unavailable(iOS 26.0) {
-            let unselectedUIColor = theme.bar.colorContentUnselectedEnabled.color(for: colorScheme).uiColor
+            let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .foregroundColor: unselectedUIColor,
+                .font: normalFont,
+            ]
+        } else {
+            tabBarItemAppearance.normal.titleTextAttributes = [
+                .font: normalFont,
             ]
         }
 
         // Tab bar selected item
-        let selectedUIColor = theme.colors.actionAccent.color(for: colorScheme).uiColor
+        let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.selected.iconColor = selectedUIColor
         tabBarItemAppearance.selected.titleTextAttributes = [
             .foregroundColor: selectedUIColor,
+            .font: selectedFont,
         ]
 
         // Tab bar focused item
-        let focusedUIColor = theme.bar.colorContentSelectedFocus.color(for: colorScheme).uiColor
+        let focusedUIColor = themeToApply.bar.colorContentSelectedFocus.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.focused.iconColor = focusedUIColor
         tabBarItemAppearance.focused.titleTextAttributes = [
             .foregroundColor: focusedUIColor,
+            .font: selectedFont,
         ]
 
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
 
@@ -280,3 +345,4 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         }
     }
 }
+#endif

@@ -88,9 +88,9 @@ import SwiftUI
 /// ```swift
 ///     // The following instanciations work
 ///     let orangeTheme = OrangeBusinessToolsTheme()
-///     let orangeTheme = OrangeBusinessToolsTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
-///     let orangeTheme = OrangeBusinessToolsTheme(family: "HelveticaNeue") // Which is PostScript name of the font
-///     let orangeTheme = OrangeBusinessToolsTheme(family: "Helvetica Neue")
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.familyBrandDefault)
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
 /// ```
 ///
 /// ### Helvetica Neue Arabic
@@ -101,7 +101,7 @@ import SwiftUI
 /// register them and define the font family name to use.
 ///
 /// ```swift
-///     let orangeTheme = OrangeBusinessToolsTheme(family: "Helvetica Neue Arabic")
+///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue Arabic")
 /// ```
 ///
 /// - Since: 0.17.0
@@ -113,9 +113,9 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
     /// It uses also the providers of charts colors from Orange theme (`OrangeThemeColorChartSemanticTokensProvider`).
     ///
     /// - Parameters:
-    ///    - family: The font family to apply, by default `OrangeBrandFontRawTokens.familyBrandDefault`
+    ///    - fontFamily: The font family to apply, by default `OrangeBrandFontRawTokens.familyBrandDefault`
     ///    - tuning: The `Tuning` to apply to the theme, by default `Tuning.default`
-    public init(family: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
+    public init(fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                 tuning: Tuning = Tuning.default)
     {
         let borders = OrangeBusinessToolsThemeBorderSemanticTokensProvider()
@@ -187,7 +187,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
                    name: "Orange Business Tools",
-                   family: family,
+                   fontFamily: fontFamily,
                    tuning: tuning)
     }
 

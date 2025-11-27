@@ -109,11 +109,11 @@ It is possible to use another typography, by the ones recommended are the ones d
 ```swift
 // The three following instanciations are the same
 let theme = OrangeBusinessToolsTheme()
-let theme = OrangeBusinessToolsTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
-let theme = OrangeBusinessToolsTheme(family: "HelveticaNeue") // Which is PostScript name of the font
+let theme = OrangeBusinessToolsTheme(fontFamily: OrangeBrandFontRawTokens.familyBrandDefault)
+let theme = OrangeBusinessToolsTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
 
 // This instanciation won't work as the font family is not recognised
-let theme = OrangeBusinessToolsTheme(family: "Helvetica Neue")
+let theme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue")
 ```
 
 ### Other fonts
