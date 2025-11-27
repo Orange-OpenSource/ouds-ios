@@ -25,15 +25,15 @@ import SwiftUI
 /// ## Appearances
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
-/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old versions:
+/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old erversions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These aprticular badges do not rely on ``OUDSBadge`` component.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
 ///
-/// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified.
+/// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version.
 ///
 /// ## Guidelines
 ///
@@ -41,7 +41,7 @@ import SwiftUI
 /// - limit when possible the number of items to 5
 /// - use both images and texts in tab bar items
 /// - use badges only when needed to avoid to have heavy tab bar
-/// - be sure the selected information is not only defined by the color of the tab ; you may need to change the shape or the fill of the image
+/// - be sure the selected information is not only defined by the color of the tab; you may need to change the shape or the fill of the image
 ///
 /// ## Code samples
 ///
@@ -93,12 +93,12 @@ import SwiftUI
 @available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTabBar<Content>: View where Content: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
-    /// Must return the tab bar items
+    /// Contains the tab bar items
     @ViewBuilder private let content: () -> Content
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     /// Defines the tab bar component with given tab bar items
     ///
@@ -106,6 +106,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
     public init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
+
+    // MARK: Body
 
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
     /// Warning: rendering wil change depending to OS version!
@@ -168,22 +170,33 @@ public struct OUDSTabBar<Content>: View where Content: View {
 @available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTabBarViewModifier: ViewModifier {
 
+    // MARK: Properties
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: Init
+
     public init() {}
+
+    // MARK: Body
 
     public func body(content: Content) -> some View {
         content
-            .task {
-                setupTabBarAppearance()
+            // Do not use task(), it's async, effects may be applied too late
+            .onAppear {
+                setupTabBarAppearance(with: colorScheme)
+            }
+            // Color scheme changes can rise a bit later after onAppear()
+            // Thus we need to catch the most up-to-date value to apply
+            .onChange(of: colorScheme) { newColorScheme in
+                setupTabBarAppearance(with: newColorScheme)
             }
     }
 
     /// Defines the selected and unselected states, and background colors for the tab bar
-    ///
     /// More details: https://github.com/Orange-OpenSource/ouds-ios/discussions/1076
-    private func setupTabBarAppearance() {
+    private func setupTabBarAppearance(with colorScheme: ColorScheme) {
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()
 
@@ -234,5 +247,36 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+
+        DispatchQueue.main.async {
+            updateExistingTabBars(with: tabBarAppearance)
+        }
+    }
+
+    /// Force the update of all tab baes within the hosted app
+    private func updateExistingTabBars(with appearance: UITabBarAppearance) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+
+        for window in windowScene.windows {
+            updateTabBars(in: window.rootViewController, with: appearance)
+        }
+    }
+
+    /// Find and update recursively the tab bars
+    private func updateTabBars(in viewController: UIViewController?, with appearance: UITabBarAppearance) {
+        guard let viewController else { return }
+
+        if let tabBarController = viewController as? UITabBarController {
+            tabBarController.tabBar.standardAppearance = appearance
+            tabBarController.tabBar.scrollEdgeAppearance = appearance
+        }
+
+        for child in viewController.children {
+            updateTabBars(in: child, with: appearance)
+        }
+
+        if let presented = viewController.presentedViewController {
+            updateTabBars(in: presented, with: appearance)
+        }
     }
 }
