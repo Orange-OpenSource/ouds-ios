@@ -35,9 +35,9 @@ struct CheckboxIndicatorModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .modifier(SizeFrameModifier())
-            .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
             .modifier(CheckboxIndicatorForegroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
             .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, isError: isError))
+            .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
     }
 }
 
@@ -198,6 +198,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+            .clipShape(RoundedRectangle(cornerRadius: appliedBorderRadius))
             .oudsBorder(style: theme.borders.styleDefault,
                         width: appliedBorderWidth,
                         radius: appliedBorderRadius,
