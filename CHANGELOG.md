@@ -17,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Add an accessible label for badge standard type (Orange-OpenSource/ouds-ios#1056)
 - `Wireframe` color raw tokens names
 - `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
 - `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)

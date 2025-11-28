@@ -15,6 +15,8 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Switch Indicator
+
 /// The indicator of the switch.
 /// Its content depends mainly to the ``InteractionState`` and from flags also.
 struct SwitchIndicator: View {
@@ -24,9 +26,10 @@ struct SwitchIndicator: View {
     let interactionState: InteractionState
     @Binding var isOn: Bool
 
-    @Environment(\.theme) private var theme
     @State private var offset = CGSize.zero
     @State private var isDragging: Bool = false
+
+    @Environment(\.theme) private var theme
 
     // MARK: Body
 
@@ -40,26 +43,28 @@ struct SwitchIndicator: View {
         #if os(iOS)
             .modifier(VibrateModifier(isOn: $isOn))
         #endif
-            .gesture(
-                DragGesture()
-                    .onChanged { gesture in
-                        if !(interactionState == .disabled || interactionState == .readOnly) {
+        #if os(iOS) || os(visionOS) || os(macOS)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    if !(interactionState == .disabled || interactionState == .readOnly) {
 
-                            isDragging = true
-                            offset = gesture.translation
+                        isDragging = true
+                        offset = gesture.translation
 
-                            if offset.width >= 10 {
-                                isOn = true
-                            }
+                        if offset.width >= 10 {
+                            isOn = true
+                        }
 
-                            if offset.width <= -10 {
-                                isOn = false
-                            }
+                        if offset.width <= -10 {
+                            isOn = false
                         }
                     }
-                    .onEnded { _ in
-                        isDragging = false
-                    })
+                }
+                .onEnded { _ in
+                    isDragging = false
+                })
+        #endif
     }
 
     // MARK: Private Helpers
@@ -98,6 +103,8 @@ struct SwitchIndicator: View {
         theme.switch.sizeHeightTrack
     }
 }
+
+// MARK: - Cursor
 
 private struct Cursor: View {
 
@@ -158,6 +165,9 @@ private struct Cursor: View {
     }
 }
 
+// MARK: - Vibrate Modifier
+
+#if os(iOS)
 private struct VibrateModifier: ViewModifier {
 
     @Binding var isOn: Bool
@@ -174,3 +184,4 @@ private struct VibrateModifier: ViewModifier {
         }
     }
 }
+#endif
