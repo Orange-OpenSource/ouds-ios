@@ -34,7 +34,7 @@ struct ControlItemIndicatorContainer: View {
         HStack(alignment: .center, spacing: 0) {
             switch indicatorType {
             case let .switch(binding):
-                SwitchIndicator(interactionState: interactionState, isOn: binding.wrappedValue)
+                SwitchIndicator(interactionState: interactionState, isOn: binding)
             case let .radioButton(binding):
                 RadioIndicator(interactionState: interactionState, isOn: binding.wrappedValue, isError: layoutData.isError)
             case let .checkBox(binding):

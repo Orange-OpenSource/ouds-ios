@@ -15,6 +15,8 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Switch Indicator
+
 /// The indicator of the switch.
 /// Its content depends mainly to the ``InteractionState`` and from flags also.
 struct SwitchIndicator: View {
@@ -22,22 +24,57 @@ struct SwitchIndicator: View {
     // MARK: Stored properties
 
     let interactionState: InteractionState
-    let isOn: Bool
+    @Binding var isOn: Bool
+
+    @State private var offset = CGSize.zero
+    @State private var isDragging: Bool = false
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        Cursor(interactionState: interactionState, isOn: isOn)
+        Cursor(interactionState: interactionStateComputed, isOn: isOn)
             .padding(.horizontal, padding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
             .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
+        #if os(iOS)
+            .modifier(VibrateModifier(isOn: $isOn))
+        #endif
+        #if os(iOS) || os(visionOS) || os(macOS)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    if !(interactionState == .disabled || interactionState == .readOnly) {
+
+                        isDragging = true
+                        offset = gesture.translation
+
+                        if offset.width >= 10 {
+                            isOn = true
+                        }
+
+                        if offset.width <= -10 {
+                            isOn = false
+                        }
+                    }
+                }
+                .onEnded { _ in
+                    isDragging = false
+                })
+        #endif
     }
 
     // MARK: Private Helpers
+
+    private var interactionStateComputed: InteractionState {
+        if isDragging {
+            return .pressed
+        }
+        return interactionState
+    }
 
     private var cursorHorizontalAlignment: Alignment {
         isOn ? .trailing : .leading
@@ -66,6 +103,8 @@ struct SwitchIndicator: View {
         theme.switch.sizeHeightTrack
     }
 }
+
+// MARK: - Cursor
 
 private struct Cursor: View {
 
@@ -125,3 +164,24 @@ private struct Cursor: View {
         }
     }
 }
+
+// MARK: - Vibrate Modifier
+
+#if os(iOS)
+private struct VibrateModifier: ViewModifier {
+
+    @Binding var isOn: Bool
+
+    func body(content: Content) -> some View {
+        if #available(iOS 17.0, *) {
+            content.onChange(of: isOn) {
+                VibrationsManager.warning()
+            }
+        } else {
+            content.onChange(of: isOn) { _ in
+                VibrationsManager.warning()
+            }
+        }
+    }
+}
+#endif
