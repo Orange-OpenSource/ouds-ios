@@ -39,6 +39,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         let borders = MockThemeBorderSemanticTokensProvider()
         let colors = MockThemeColorSemanticTokensProvider()
         let colorModes = MockThemeColorModeSemanticTokensProvider()
+        let effects = MockThemeEffectSemanticTokensProvider()
         let elevations = MockThemeElevationSemanticTokensProvider()
         let fonts = MockThemeFontSemanticTokensProvider()
         let grids = MockThemeGridSemanticTokensProvider()
@@ -48,6 +49,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -56,13 +58,13 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
+                   bar: MockThemeBarComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects),
                    bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
-
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),
@@ -76,6 +78,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
                    resourcesBundle: Bundle.OrangeTheme,
+                   name: "Mock",
                    family: family)
     }
 

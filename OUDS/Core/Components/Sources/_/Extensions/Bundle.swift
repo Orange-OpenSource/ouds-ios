@@ -16,7 +16,7 @@ import OUDSFoundations
 
 extension Bundle {
 
-    /// The OUDSThemesContract bundle, useful to find resources
+    /// The OUDS bundle, useful to find resources
     public static let OUDSComponents = Bundle.module
 
     /// Loads the first  preferred localization from main Bundle or if not defined the english one

@@ -25,7 +25,7 @@ actor LowPowerModeActor {
     }
 }
 
-// MARK: - OUDSThemesContract Low Power Mode Observer
+// MARK: - OUDS Low Power Mode Observer
 
 /// An `ObservableObject` providing through a published state a flag saying if the device  is in low pover mode or not.
 /// This object is exposed as *environement object* through the `OUDSThemeableView`, and can be used in any view

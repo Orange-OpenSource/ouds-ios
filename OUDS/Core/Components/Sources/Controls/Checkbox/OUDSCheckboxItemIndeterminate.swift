@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Checkbox Item Indeterminate
+// MARK: - OUDS Checkbox Item Indeterminate
 
 /// The ``OUDSCheckboxItemIndeterminate`` proposes layouts to add in your views some checkboxes components.
 /// If you want to use a checkbox with only an indicator prefer instead ``OUDSCheckboxIndeterminate``.
@@ -150,6 +150,7 @@ import SwiftUI
 ///
 /// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxItemIndeterminate: View {
 
     // MARK: - Properties

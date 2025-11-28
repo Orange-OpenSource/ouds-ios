@@ -52,6 +52,10 @@ struct WireframeThemeTests {
         #expect(theme.charts == nil)
     }
 
+    @Test func defaultEffectSemanticTokensProvider() throws {
+        #expect(theme.effects is WireframeThemeEffectSemanticTokensProvider)
+    }
+
     @Test func defaultElevationSemanticTokensProvider() throws {
         #expect(theme.elevations is WireframeThemeElevationSemanticTokensProvider)
     }
@@ -84,6 +88,10 @@ struct WireframeThemeTests {
 
     @Test func defaultBadgeComponentTokensProvider() throws {
         #expect(theme.badge is WireframeThemeBadgeComponentTokensProvider)
+    }
+
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is WireframeThemeBarComponentTokensProvider)
     }
 
     @Test func defaultBulletListComponentTokensProvider() throws {

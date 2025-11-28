@@ -1,6 +1,5 @@
 // swift-tools-version: 6.2
 
-//
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
@@ -24,7 +23,7 @@ let package = Package(
 
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v15), .visionOS(.v1)],
+    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v15), .visionOS(.v1), .watchOS(.v11), .tvOS(.v16)],
 
     // MARK: - Products
 
@@ -108,7 +107,7 @@ let package = Package(
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.5"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.6"),
     ],
 
     // MARK: - Targets

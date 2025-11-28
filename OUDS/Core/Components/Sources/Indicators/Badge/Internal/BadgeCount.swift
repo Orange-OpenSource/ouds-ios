@@ -12,46 +12,34 @@
 //
 
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 struct BadgeCount: View {
 
-    // MARK: Stored properties
+    // MARK: Properties
 
-    let count: UInt?
-    let size: OUDSBadge.StandardSize
+    let layout: BadgeLayout
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        if let count {
+        switch layout.type {
+        case .empty, .icon:
+            EmptyView()
+        case let .count(count, size):
             let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
             switch size {
-            case .extraSmall, .small:
-                EmptyView()
             case .medium:
                 Text(text)
                     .labelDefaultSmall(theme)
-                    .padding(.horizontal, horizontalPadding)
+                    .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
             case .large:
                 Text(text)
                     .labelDefaultMedium(theme)
-                    .padding(.horizontal, horizontalPadding)
+                    .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
             }
-        }
-    }
-
-    private var horizontalPadding: SpaceSemanticToken {
-        switch size {
-        case .extraSmall, .small:
-            theme.spaces.fixedNone
-        case .medium:
-            theme.badge.spacePaddingInlineMedium
-        case .large:
-            theme.badge.spacePaddingInlineLarge
         }
     }
 }

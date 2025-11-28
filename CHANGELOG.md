@@ -4,6 +4,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.21.0...0.22.0) - 2025-11-28
+
+### Added
+
+- `bar` component tokens (Orange-OpenSource/ouds-ios#1169)
+- `effect` raw and semantic tokens (Orange-OpenSource/ouds-ios#1169)
+- Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)
+- Icon flip option for `button` component (Orange-OpenSource/ouds-ios#1124)
+- Support for `watchOS` (Orange-OpenSource/ouds-ios#1110)
+- Support for `tvOS` (Orange-OpenSource/ouds-ios#1109)
+
+### Changed
+
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow 
+- GitHub Actions `checkout` from v5 to v6 for all workflows
+- Gem `fastlane` gem from v2.228.0 to v2.229.1
+- `Wireframe` color raw tokens names
+- `Wireframe` theme `border` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+- `size` semantic tokens (tokens libraries System v2.3) (Orange-OpenSource/ouds-ios#1158)
+-  Update `badge` to use internal icons for some status (Orange-OpenSource/ouds-ios#1136)
+- `SwiftFormat` Swift package plugin from v0.58.5 to v0.58.6
+- `actions/dependency-review-action` action from v4.8.1 to v4.8.2 for `dependency-review` workflow
+- `color` semantic tokens (tokens libraries Core v1.9, System v2.2)
+- `icon` component tokens (tokens libraries Core v1.9, System v2.2)
+- `control item` component tokens (tokens libraries Core v1.9, System v2.2) 
+- Update `text input` to display the label on two lines and in the middle when no placeholder and one line at top otherwise (Orange-OpenSource/ouds-ios#1086)
+
+### Fixed
+
+- Switch control cannot be toggled by swipe (Orange-OpenSource/ouds-ios#995)
+- Fonts and typography not applied (Orange, Sosh, Wireframe) on watchOS (Orange-OpenSource/ouds-ios#1142)
+- Fonts and typography not applied (Orange, Sosh, Wireframe) on tvOS (Orange-OpenSource/ouds-ios#1145)
+- Typography with line height token and dedicated line spacing and paddings (Orange-OpenSource/ouds-ios#594)
+- Font composite tokens and typography
+- PostScript rules for typographies
+- `font` composite semantic tokens
+- View modifiers for typography 
+- `font` composite raw tokens
+- Keyboard focus and VoiceOver focus issue on chip component (Orange-OpenSource/ouds-ios#914)
+- `outlined` default value for `radio item` component
+
 ## [0.21.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.20.0...0.21.0) - 2025-11-05
 
 ### Added

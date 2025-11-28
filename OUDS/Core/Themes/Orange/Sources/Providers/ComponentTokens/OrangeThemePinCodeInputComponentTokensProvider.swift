@@ -72,7 +72,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let pintCodeInputComponentTokensProvider = OrangeThemePinCodeInputComponentTokensProvider()
 ///
-///     // Or use your own _ and space semantic tokens providers (or only some)
+///     // Or use your own dimension and space semantic tokens providers (or only some)
 ///     let pintCodeInputComponentTokensProvider = OrangeThemePinCodeInputComponentTokensProvider(
 ///                                                 sizes: CustomSpaceSemanticTokensProvider(),
 ///                                                 dimensions: CustomDimensionSemanticTokensProvider())
@@ -94,7 +94,7 @@ open class OrangeThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompon
     /// Defines a provider of component tokens dedicated to `OUDSPinCodeInput`
     /// - Parameters:
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - dimensions: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(spaces: AllSpaceSemanticTokensProvider? = nil,
                 dimensions: AllDimensionSemanticTokensProvider? = nil)
     {

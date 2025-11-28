@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
@@ -76,7 +77,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDSThemesContract one
+/// There is no online specification as this component is not an official OUDS one
 ///
 /// ## Theme rendering
 ///
@@ -97,6 +98,7 @@ import SwiftUI
 /// ![A radio picker component in light and dark mode with Wirefraùe theme](component_radioPicker_Wireframe)
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
@@ -230,3 +232,4 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
         }
     }
 }
+#endif

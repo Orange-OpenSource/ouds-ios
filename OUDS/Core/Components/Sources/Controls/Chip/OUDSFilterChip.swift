@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/77fdea-chip/b/6578e5/t/14bf4bd854)
 ///
 /// ## Themes rendering
 ///
@@ -56,7 +56,8 @@ import SwiftUI
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
-public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink in doc above
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSFilterChip: View {
 
     // MARK: - Stored Properties
 
@@ -118,6 +119,7 @@ public struct OUDSFilterChip: View { // TODO: #407 - Add documentation hyperlink
     public var body: some View {
         InteractionButton(action: action) {
             Chip(layout: layout, selected: selected, interactionState: ChipInteractionState(with: $0))
+                .accessibilityHidden(true)
         }
         .accessibilityAddTraits(selected ? [.isSelected] : [])
         .accessibilityAddTraits(.isButton)

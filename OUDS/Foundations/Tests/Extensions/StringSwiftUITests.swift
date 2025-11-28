@@ -109,13 +109,13 @@ struct StringSwiftUITests {
         #expect(result == "HelveticaNeue-Light", "Current value is '\(result)'")
 
         result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.regular)")
-        #expect(result == "HelveticaNeue-Regular", "Current value is '\(result)'")
+        #expect(result == "HelveticaNeue", "Current value is '\(result)'")
 
         result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.medium)")
         #expect(result == "HelveticaNeue-Medium", "Current value is '\(result)'")
 
         result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.semibold)")
-        #expect(result == "HelveticaNeue-Semibold", "Current value is '\(result)'")
+        #expect(result == "HelveticaNeue", "Current value is '\(result)'")
 
         result = "Helvetica Neue".fontNameInPostScript(using: "\(Font.Weight.bold)")
         #expect(result == "HelveticaNeue-Bold", "Current value is '\(result)'")

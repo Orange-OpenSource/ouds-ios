@@ -20,7 +20,7 @@
 ///     - the *font size* (``FontSizeRawToken``)
 ///     - the line height (``FontLineHeightRawToken``)
 ///     - and the *font letter spacing* (``FontLetterSpacingRawToken``).
-/// Combinations of these raw tokens can be made inside ``FontCompositeRawToken``, which are composite tokens defining in the end a specific font to apply.
+/// Combinations of these raw tokens can be made inside `FontCompositeSemanticToken`, which are composite tokens defining in the end a specific font to apply.
 ///
 /// Primitive types such as `Int` and `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else

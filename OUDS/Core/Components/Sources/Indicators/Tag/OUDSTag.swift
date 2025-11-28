@@ -139,6 +139,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.18.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSTag: View {
 
     // MARK: Stored Properties

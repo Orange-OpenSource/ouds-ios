@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Button
+// MARK: - OUDS Button
 
 /// The ``OUDSButton`` proposes layout with text only, icon only or text with icon.
 ///
@@ -41,9 +41,9 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only with default appearance
-///     OUDSButton(icon: Image("ic_heart"), appearance: .default) { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(icon: Image("ic_heart")) { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { /* the action to process */ }
 ///
 ///     // Text only with negative appearance
 ///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
@@ -54,7 +54,16 @@ import SwiftUI
 ///     OUDSButton(text: "Delete", style: .loading) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance
-///     OUDSButton(icon: Image("ic_heart"), text: "Validate", appearance: .strong) { /* the action to process */ }
+///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong) { /* the action to process */ }
+/// ```
+///
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSButton(text: "Button",
+///                icon: Image(systemName: "figure.handball"),
+///                flipIcon: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Styles
@@ -109,6 +118,7 @@ import SwiftUI
 ///
 /// - Version: 3.2.0 (Figma component design version)
 /// - Since: 0.10.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
@@ -123,20 +133,24 @@ public struct OUDSButton: View {
 
     private enum `Type` {
         case text(String)
-        case icon(Image, String)
-        case textAndIcon(text: String, icon: Image)
+        case icon(Image, flipIcon: Bool, String)
+        case textAndIcon(text: String, icon: Image, flipIcon: Bool)
     }
 
-    /// Represents the appearance of an OUDSThemesContract button, i.e. a kind of type
+    /// Represents the appearance of an OUDS button, i.e. a kind of type
     public enum Appearance {
         /// Default button is used for action
         case `default`
+
         /// Strong button on the page should be singular and prominent
         case strong
+
         /// A brand primary color alternative to the Strong button.
         case brand
+
         /// Minimal button for actions that are considered less crucial
         case minimal
+
         /// Negative button used for destructive action
         case negative
     }
@@ -155,13 +169,14 @@ public struct OUDSButton: View {
     /// Creates a button with text and icon.
     ///
     /// - Parameters:
-    ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the button
+    ///    - icon: An image which shoud contains an icon
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, text: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
-        type = .textAndIcon(text: text, icon: icon)
+    public init(text: String, icon: Image, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
+        type = .textAndIcon(text: text, icon: icon, flipIcon: flipIcon)
         self.appearance = appearance
         self.style = style
         self.action = action
@@ -174,11 +189,12 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, accessibilityLabel: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
-        type = .icon(icon, accessibilityLabel)
+    public init(icon: Image, accessibilityLabel: String, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
+        type = .icon(icon, flipIcon: flipIcon, accessibilityLabel)
         self.appearance = appearance
         self.style = style
         self.action = action
@@ -212,20 +228,22 @@ public struct OUDSButton: View {
 
         Button(action: action) {
             switch type {
-            case let .icon(icon, _):
-                ButtonIcon(icon: icon)
+            case let .icon(icon, flipped, _):
+                ButtonIcon(icon: icon, flipped: flipped)
             case let .text(text):
                 ButtonText(text: text)
-            case let .textAndIcon(text, icon):
-                ButtonTextAndIcon(text: text, icon: icon)
+            case let .textAndIcon(text, icon, flipped):
+                ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
             }
         }
         .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
-        .onHover { isHover in
-            self.isHover = isHover
-        }
+        #if !os(watchOS) && !os(tvOS)
+            .onHover { isHover in
+                self.isHover = isHover
+            }
+        #endif
     }
 
     // swiftlint:enable line_length
@@ -238,7 +256,7 @@ public struct OUDSButton: View {
             "core_common_loading_a11y".localized()
         } else {
             switch type {
-            case let .text(text), let .textAndIcon(text, _), let .icon(_, text):
+            case let .text(text), let .textAndIcon(text, _, _), let .icon(_, _, text):
                 text
             }
         }
@@ -252,10 +270,12 @@ private struct ButtonIcon: View {
     @Environment(\.theme) private var theme
 
     let icon: Image
+    let flipped: Bool
 
     var body: some View {
         ScaledIcon(icon: icon.renderingMode(.template),
-                   size: theme.button.sizeIconOnly)
+                   size: theme.button.sizeIconOnly,
+                   flipped: flipped)
             .padding(.all, theme.button.spaceInsetIconOnly)
             .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight)
     }
@@ -285,11 +305,14 @@ private struct ButtonTextAndIcon: View {
 
     let text: String
     let icon: Image
+    let flipIcon: Bool
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.button.spaceColumnGapIcon) {
             FixedIcon(icon: icon.resizable().renderingMode(.template),
-                      size: theme.button.sizeIcon)
+                      size: theme.button.sizeIcon,
+                      flipped: flipIcon)
+
             TextForButton(text: text)
         }
         .padding(.vertical, theme.button.spacePaddingBlock)

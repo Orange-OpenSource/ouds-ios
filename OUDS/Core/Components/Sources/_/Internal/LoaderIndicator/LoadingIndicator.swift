@@ -12,7 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSThemesContract
 import SwiftUI
 
 struct LoaderIndicator: View {

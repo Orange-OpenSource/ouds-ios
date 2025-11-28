@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Checkbox Item
+// MARK: - OUDS Checkbox Item
 
 /// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components with labels and icons.
 /// If you want to use a checkbox with only an indicator prefer instead ``OUDSCheckbox``.
@@ -52,7 +52,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
-/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -104,7 +104,7 @@ import SwiftUI
 ///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
-/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
@@ -144,6 +144,7 @@ import SwiftUI
 ///
 /// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxItem: View {
 
     // MARK: - Properties

@@ -12,7 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization
@@ -30,8 +29,15 @@ import SwiftUI
 ///     // Negative badge in large size with count information
 ///     OUDSBadge(count: 1, status: .negative, size: .large)
 ///
-///     // Info badge in medium size (default size) with icon information
-///     OUDSBadge(icon: Image("ic_heart"), accessibilityLabel: "Like", status: .info)
+///     // Info badge in medium size (default size) with default icon information
+///     OUDSBadge(status: .info, accessibilityLabel: "Like", size: .medium)
+///
+///     // Badge with neutral status with a custom decorative icon
+///     OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+///
+///     // If your layout is in RTL mode but your badge has an icon with another meaning because of bad orientation,
+///     // you can flip the icon
+///     OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart"), flipped: true), accessibilityLabel: "Like", size: .medium)
 /// ```
 ///
 /// ## Accessibility considerations
@@ -71,20 +77,15 @@ import SwiftUI
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.17.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadge: View {
 
     static let maxCount = 99
 
     // MARK: Stored properties
 
-    private let status: Status
-    private let size: StandardSize
-    private let count: UInt?
-    private let icon: Image?
-    private let accessibilityLabel: String?
-
-    @Environment(\.theme) private var theme
-    @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
+    private let layout: BadgeLayout
+    private let accessibilityLabel: String
 
     // MARK: - Configurations
 
@@ -109,10 +110,29 @@ public struct OUDSBadge: View {
         /// Draws attention to important or critical information.
         /// Often used for errors, restrictions, or urgent messages, but not exclusively for failures.
         case negative
+    }
 
-        /// Indicates when the user isn’t allowed to interact with an element.
-        /// They remove all interactivity from a text or icon elements.
-        case disabled
+    /// The status depends on the context of the information it represents.
+    public enum StatusWithIcon {
+
+        /// Used for general labels without specific emphasis
+        case neutral(icon: Image, flipped: Bool = false)
+
+        /// Employed to highlight discovery or exploration-related content
+        case accent(icon: Image, flipped: Bool = false)
+
+        /// Indicates success, completion, or approval
+        case positive
+
+        /// Provides informational context without urgency
+        case info
+
+        /// Notifies the user to potential risks or cautionary messages
+        case warning
+
+        /// Draws attention to important or critical information.
+        /// Often used for errors, restrictions, or urgent messages, but not exclusively for failures.
+        case negative
     }
 
     /// All available sizes of a badge as *standard* type
@@ -139,31 +159,20 @@ public struct OUDSBadge: View {
 
         /// A prominent badge for drawing more attention, often used in dashboards or highlighted sections.
         case large
-
-        /// Internal usage: convert to standard size
-        public var standardSize: StandardSize {
-            switch self {
-            case .medium:
-                .medium
-            case .large:
-                .large
-            }
-        }
     }
 
     // MARK: Initializers
 
     /// Creates a basic badge.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
     public init(status: Status = .neutral, size: StandardSize = .medium) {
-        self.status = status
-        self.size = size
-        icon = nil
-        accessibilityLabel = nil
-        count = nil
+        layout = BadgeLayout(type: .empty(size: size), status: status)
+        accessibilityLabel = ""
     }
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
@@ -171,118 +180,47 @@ public struct OUDSBadge: View {
     /// Negative values are not allowed by design.
     /// The background color of the badge and the number color are based on the given `status`.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
     public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
-        self.status = status
-        self.size = size.standardSize
-        self.count = count
-        icon = nil
-        accessibilityLabel = nil
+        layout = BadgeLayout(type: .count(value: count, size: size), status: status)
+        accessibilityLabel = "\(count)"
     }
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
     /// The background color of the badge and the icon color are based on the given `status`.
     ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
     /// - Parameters:
-    ///    - icon: The icon displayed in the badge
+    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
+    ///    and **neutral** status whrere a decorative icon is required)
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
-    ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(icon: Image,
+    public init(status: StatusWithIcon,
                 accessibilityLabel: String,
-                status: Status = .neutral,
                 size: IllustrationSize = .medium)
     {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSThemesContract Badge with an icon should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
         }
-        self.status = status
-        self.size = size.standardSize
-        count = nil
-        self.icon = icon
+
+        layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
         self.accessibilityLabel = accessibilityLabel
     }
 
     // MARK: Body
 
-    // swiftlint:disable force_unwrapping
     public var body: some View {
         HStack(alignment: .center) {
-            BadgeCount(count: count, size: size)
-            BadgeIcon(icon: icon, size: size)
+            BadgeCount(layout: layout)
+            BadgeIcon(layout: layout)
         }
-        .oudsForegroundColor(contentColor)
-        .frame(minWidth: frameSize,
-               maxWidth: count != nil ? nil : frameSize, // if count defined, i.e. means a text, don't limit width
-               minHeight: frameSize,
-               maxHeight: count != nil ? nil : frameSize, // if count defined, i.e. means a text, don't limit height
-               alignment: .center)
-        .oudsBackground(backgroundColor)
-        .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
-        .accessibilityHidden(count == nil && icon == nil) // Hide badge from A11Y tools if no content inside
-        .accessibilityLabel(accessibilityLabel ?? (count != nil ? "\(count!)" : ""))
-    }
-
-    // swiftlint:enable force_unwrapping
-
-    // MARK: Private helpers
-
-    /// Returns the value to apply to compute frame wize.
-    /// If the text is not large, uses the expected tokens.
-    /// Otherwise uses the largest token and applies a factor based on the text size rate to have bigger size.
-    private var frameSize: SizeSemanticToken {
-        let rawSize = switch size {
-        case .extraSmall:
-            theme.badge.sizeXsmall
-        case .small:
-            theme.badge.sizeSmall
-        case .medium:
-            theme.badge.sizeMedium
-        case .large:
-            theme.badge.sizeLarge
-        }
-        return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
-    }
-
-    private var backgroundColor: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.surfaceInverseHigh
-        case .accent:
-            theme.colors.surfaceStatusAccentEmphasized
-        case .positive:
-            theme.colors.surfaceStatusPositiveEmphasized
-        case .info:
-            theme.colors.surfaceStatusInfoEmphasized
-        case .warning:
-            theme.colors.surfaceStatusWarningEmphasized
-        case .negative:
-            theme.colors.surfaceStatusNegativeEmphasized
-        case .disabled:
-            theme.colors.actionDisabled
-        }
-    }
-
-    private var contentColor: MultipleColorSemanticTokens {
-        switch status {
-        case .neutral:
-            theme.colors.contentInverse
-        case .accent:
-            theme.colors.contentOnStatusAccentEmphasized
-        case .positive:
-            theme.colors.contentOnStatusPositiveEmphasized
-        case .info:
-            theme.colors.contentOnStatusInfoEmphasized
-        case .warning:
-            theme.colors.contentOnStatusWarningEmphasized
-        case .negative:
-            theme.colors.contentOnStatusNegativeEmphasized
-        case .disabled:
-            theme.colors.contentOnActionDisabled
-        }
+        .modifier(BadgeModifier(layout: layout, accessibilityLabel: accessibilityLabel))
     }
 }

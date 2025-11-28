@@ -49,7 +49,8 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0
-public struct OUDSHorizontalDivider: View { // TODO: #511 - Update documentation hyperlink
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSHorizontalDivider: View {
 
     // MARK: - Stored properties
 

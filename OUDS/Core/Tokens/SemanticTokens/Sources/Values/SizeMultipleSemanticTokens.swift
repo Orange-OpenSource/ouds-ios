@@ -96,6 +96,11 @@ public protocol SizeMultipleSemanticTokens {
     var maxWidthTypeBodyLarge: MultipleSizeSemanticTokens { get }
     var maxWidthTypeBodyMedium: MultipleSizeSemanticTokens { get }
     var maxWidthTypeBodySmall: MultipleSizeSemanticTokens { get }
+
+    var maxWidthTypeLabelXlarge: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeLabelLarge: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeLabelMedium: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeLabelSmall: MultipleSizeSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

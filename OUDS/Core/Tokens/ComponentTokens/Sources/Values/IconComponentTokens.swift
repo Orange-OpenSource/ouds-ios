@@ -27,6 +27,7 @@ public protocol IconComponentTokens {
 
     var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { get }
     var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { get }
+    var colorContentDefault: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

@@ -52,6 +52,10 @@ struct OrangeBusinessToolsThemeTests {
         #expect(theme.charts is OrangeBusinessToolsThemeColorChartSemanticTokensProvider)
     }
 
+    @Test func defaultEffectSemanticTokensProvider() throws {
+        #expect(theme.effects is OrangeBusinessToolsThemeEffectSemanticTokensProvider)
+    }
+
     @Test func defaultElevationSemanticTokensProvider() throws {
         #expect(theme.elevations is OrangeBusinessToolsThemeElevationSemanticTokensProvider)
     }
@@ -84,6 +88,10 @@ struct OrangeBusinessToolsThemeTests {
 
     @Test func defaultBadgeComponentTokensProvider() throws {
         #expect(theme.badge is OrangeBusinessToolsThemeBadgeComponentTokensProvider)
+    }
+
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is OrangeBusinessToolsThemeBarComponentTokensProvider)
     }
 
     @Test func defaultBulletListComponentTokensProvider() throws {

@@ -100,6 +100,15 @@ public protocol SizeSemanticTokens {
     var maxWidthTypeBodySmallMobile: SizeSemanticToken { get }
     var maxWidthTypeBodySmallTablet: SizeSemanticToken { get }
 
+    var maxWidthTypeLabelXlargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeLabelXlargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeLabelLargeMobile: SizeSemanticToken { get }
+    var maxWidthTypeLabelLargeTablet: SizeSemanticToken { get }
+    var maxWidthTypeLabelMediumMobile: SizeSemanticToken { get }
+    var maxWidthTypeLabelMediumTablet: SizeSemanticToken { get }
+    var maxWidthTypeLabelSmallMobile: SizeSemanticToken { get }
+    var maxWidthTypeLabelSmallTablet: SizeSemanticToken { get }
+
     // MARK: - Semantic token - Sizing - Icon with typography
 
     var iconWithLabelXlargeSizeSmall: SizeSemanticToken { get }

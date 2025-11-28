@@ -28,11 +28,16 @@ on:
 permissions:
   contents: write
 
+# Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   snapshot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           ref: develop
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -19,9 +19,9 @@
 
 /// This is a group of semantic tokens for **dimensions**.
 /// It defines all ``DimensionSemanticToken`` a theme must have.
-/// Any _ semantic token must be declared there.
+/// Any dimension semantic token must be declared there.
 ///
-/// These _ semantic tokens should not be overriden by design.
+/// These dimension semantic tokens should not be overriden by design.
 /// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
 /// and library. The tokens are not hidden from developers.
 ///

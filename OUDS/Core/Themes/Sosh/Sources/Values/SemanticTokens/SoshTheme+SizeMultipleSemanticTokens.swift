@@ -68,6 +68,11 @@ extension SoshThemeSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
     @objc public final var maxWidthTypeBodyLarge: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeBodyLargeMobile, regular: maxWidthTypeBodyLargeTablet) }
     @objc public final var maxWidthTypeBodyMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeBodyMediumMobile, regular: maxWidthTypeBodyMediumTablet) }
     @objc public final var maxWidthTypeBodySmall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeBodySmallMobile, regular: maxWidthTypeBodySmallTablet) }
+
+    @objc public final var maxWidthTypeLabelXlarge: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeLabelXlargeMobile, regular: maxWidthTypeLabelXlargeTablet) }
+    @objc public final var maxWidthTypeLabelLarge: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeLabelLargeMobile, regular: maxWidthTypeLabelLargeTablet) }
+    @objc public final var maxWidthTypeLabelMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeLabelMediumMobile, regular: maxWidthTypeLabelMediumTablet) }
+    @objc public final var maxWidthTypeLabelSmall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: maxWidthTypeLabelSmallMobile, regular: maxWidthTypeLabelSmallTablet) }
 }
 
 // swiftlint:enable line_length

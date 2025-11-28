@@ -49,9 +49,9 @@ public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleFontCompositeSemanticTokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
-The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
+The _theme_ contains lots of `MultipleFontCompositeSemanticTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
 Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the default system font will be used.
@@ -71,13 +71,13 @@ myView.labelStrongXLarge(theme)
 In details how it works:
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "displayMedium":
-@objc open var displayMedium: MultipleFontCompositeRawTokens { 
-    MultipleFontCompositeRawTokens(compact: FontRawTokens.bold750, regular: FontRawTokens.bold1050) 
+@objc open var displayMedium: MultipleFontCompositeSemanticTokens { 
+    MultipleFontCompositeSemanticTokens(compact: bold750, regular: bold1050) 
 }
 
 // And here are the raw tokens definitions:
-public static let bold750 = FontCompositeRawToken(size: size750, lineHeight: lineHeight850, weight: weightBold)
-public static let bold1050 = FontCompositeRawToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
+let bold750 = FontCompositeSemanticToken(size: size750, lineHeight: lineHeight850, weight: weightBold)
+let bold1050 = FontCompositeSemanticToken(size: size1050, lineHeight: lineHeight1150, weight: weightBold)
 ```
 
 These view modifiers are available for any `View` object, [you can get the curated list in the documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents/swiftuicore/view).
@@ -127,8 +127,10 @@ someView.oudsAccentColor(theme.colors.bgPrimary)
 ## Flip images according to layouts
 
 Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
-of your app changes, the images in use can loose meanings or have another one (except if they are asymetruc).
-If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout.
+of your app changes, the images in use can loose meanings or have another one (except if they are asymetric).
+Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
+
+If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want. The `flipIcon` flag available in components can be used.
 
 ```swift
 // Get the layout direction in your View

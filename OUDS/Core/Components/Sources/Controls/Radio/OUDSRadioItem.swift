@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Radio Item
+// MARK: - OUDS Radio Item
 
 /// The ``OUDSRadioItem`` proposes layouts to add in your views some radios components.
 /// If you want to use a radio with only an indicator, prefer instead ``OUDSRadio``.
@@ -51,7 +51,7 @@ import SwiftUI
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
-/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
 ///
@@ -111,7 +111,7 @@ import SwiftUI
 ///     OUDSRadioItem(isOn: $selection, label: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
-/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
@@ -146,6 +146,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadioItem: View {
 
     // MARK: - Properties
@@ -179,7 +180,7 @@ public struct OUDSRadioItem: View {
     ///   - helper: An additonal helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isOutlined: Flag to get an outlined radio, default set to `true`
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -198,7 +199,7 @@ public struct OUDSRadioItem: View {
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isOutlined: Bool = true,
+                isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,

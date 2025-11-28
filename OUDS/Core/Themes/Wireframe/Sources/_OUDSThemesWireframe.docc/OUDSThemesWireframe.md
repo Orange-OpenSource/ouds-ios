@@ -16,7 +16,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.1.0
+🧬 Theme version: 2.3.0
 ```
 
 > Note: The Wireframe theme uses the Shantell Sans font family

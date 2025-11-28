@@ -42,20 +42,25 @@ on:
 permissions:
   contents: read
 
+# Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   # Build the library
   build:
     runs-on: macos-26
     steps:
       - name: Checkout code
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
 
       - name: Set up Xcode 26.0.1
         run: |
           sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@8aeb6ff8030dd539317f8e1769a044873b56ea71 # v1.268.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.4.7'
 
@@ -72,14 +77,14 @@ jobs:
     runs-on: macos-26
     steps:
       - name: Checkout code
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
 
       - name: Set up Xcode 26.0.1
         run: |
           sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@8aeb6ff8030dd539317f8e1769a044873b56ea71 # v1.268.0, https://github.com/ruby/setup-ruby
         with:
           ruby-version: '3.4.7'
 

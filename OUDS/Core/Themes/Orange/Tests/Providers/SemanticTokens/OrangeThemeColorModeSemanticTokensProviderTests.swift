@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesContract
 import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -23,10 +22,16 @@ import Testing
 /// Check if the semantic tokens provider for color mode tokens under test as the good rules implementations
 struct OrangeThemeColorModeSemanticTokensProviderTests {
 
-    private var provider: AllColorModeSemanticTokensProvider
+    private var provider: OrangeThemeColorModeSemanticTokensProvider
 
     init() {
         provider = OrangeThemeColorModeSemanticTokensProvider()
+    }
+
+    // MARK: - Types
+
+    @Test func typeOfProviders() throws {
+        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
     }
 
     // MARK: - Tests for useColorScheme

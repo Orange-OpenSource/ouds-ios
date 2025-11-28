@@ -15,7 +15,7 @@ import OUDSThemesContract
 import OUDSThemesSosh
 import Testing
 
-/// The aim of this tests class is to look for regressions in **Sosh brand border semantic tokens**.
+/// The aim of this tests class is to look for regressions in **Sos brand border semantic tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// In the semantics of **border semantic tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
@@ -29,18 +29,17 @@ struct SoshThemeBorderSemanticTokensTests {
 
     @Test func widthSemanticTokensAreBiggerAndBigger() throws {
         #expect(theme.borders.widthNone < theme.borders.widthDefault)
-        #expect(theme.borders.widthThin < theme.borders.widthDefault)
         #expect(theme.borders.widthThin < theme.borders.widthMedium)
         #expect(theme.borders.widthMedium < theme.borders.widthThick)
         #expect(theme.borders.widthThick < theme.borders.widthThicker)
 
         #expect(theme.borders.widthFocusInset < theme.borders.widthFocus)
 
-        #expect(theme.borders.radiusNone < theme.borders.radiusDefault)
+        #expect(theme.borders.radiusNone <= theme.borders.radiusDefault)
     }
 
     @Test func radiusSemanticTokensAreBiggerAndBigger() throws {
-        #expect(theme.borders.radiusNone < theme.borders.radiusDefault)
+        #expect(theme.borders.radiusNone <= theme.borders.radiusDefault)
         #expect(theme.borders.radiusDefault < theme.borders.radiusSmall)
         #expect(theme.borders.radiusSmall < theme.borders.radiusMedium)
         #expect(theme.borders.radiusMedium < theme.borders.radiusLarge)

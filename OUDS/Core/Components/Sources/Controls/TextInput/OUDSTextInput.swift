@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensComponent
@@ -101,6 +102,21 @@ import SwiftUI
 /// However you should think about cases wher you will have to make the devices vibrates.
 /// You can refer to the [Human Interface Guidelines of Apple](https://developer.apple.com/design/human-interface-guidelines/playing-haptics).
 ///
+/// ## Mandatory field indication
+///
+/// If all fields are mandatory (several fields present): display the message “All fields are mandatory” at the top of your formular.
+/// Do not use an asterisk at the end of each field label, nor the word “mandatory.”
+///
+/// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your formular.
+/// Use an asterisk (\*) at the end of each mandatory field label, and ensures this is well vocalized.
+///
+/// UI rendering of the asterisk must be done with *fbold font weight* and *negative content color* (red-.
+///
+/// Use the mention “(optional)” at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
+///
+/// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password),
+/// no mention is necessary since the fields are essential to the formular's functionality.
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -140,6 +156,13 @@ import SwiftUI
 ///     OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 /// ```
 ///
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSTextInput(label: "Label", text: $text, flipLeadingIcon: layoutDirection == .rightToLeft)
+/// ```
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
@@ -164,6 +187,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
@@ -196,6 +220,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
+        let flipIcon: Bool
         let actionHint: String
         let action: () -> Void
 
@@ -204,12 +229,14 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// - Parameters:
         ///   - icon: The icon set in the ``OUDSButton``
         ///   - actionHint: A string that describes the purpose of the button's `action`
+        ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: Image, actionHint: String, action: @escaping () -> Void) {
+        public init(icon: Image, actionHint: String, flipIcon: Bool = false, action: @escaping () -> Void) {
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
+            self.flipIcon = flipIcon
             self.actionHint = actionHint
             self.action = action
         }
@@ -402,3 +429,4 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
+#endif

@@ -16,7 +16,7 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **_ semantic tokens**, and expose them.
+/// A class which wraps all **dimension semantic tokens**, and expose them.
 /// This provider should be integrated as a `AllDimensionSemanticTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 ///
@@ -25,7 +25,7 @@ import OUDSThemesContract
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(sizes: OrangeThemeDimensionSemanticTokensProvider())
+///         super.init(dimensions: OrangeThemeDimensionSemanticTokensProvider())
 ///     }
 /// }
 /// ```
@@ -35,7 +35,7 @@ import OUDSThemesContract
 ///     OrangeTheme(dimensions: OrangeThemeDimensionSemanticTokensProvider())
 /// ```
 ///
-/// These _ semantic tokens are not overridable by design.
+/// These dimension semantic tokens are not overridable by design.
 /// They are considered as "closed" tokens but still defined in this library so as to keep consistancy between Figma specifications
 /// and library. The tokens are not hidden from developers.
 ///
@@ -64,7 +64,7 @@ open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticToken
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of DimensionSemanticTokens is not here
-    // but in Core/Themes/Orange/Values/DimensionTokens/OrangeTheme+DimensionSemanticTokens.swift
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+DimensionSemanticTokens.swift
     // This declaration of OrangeThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }
 

@@ -17,6 +17,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 // swiftlint:disable required_deinit
+// swiftlint:disable identifier_name
 
 /// Overrides **all** the font semantic tokens, both simple, multiple and composites (from its super class, i.e. ``OrangeThemeFontSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
@@ -185,53 +186,53 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: Semantic tokens - Composites
 
-    static let mockThemeMultipleFontCompositeRawTokens = MultipleFontCompositeRawTokens(FontRawTokens.bold1850)
+    static let mockThemeMultipleFontCompositeSemanticTokens = MultipleFontCompositeSemanticTokens(FontCompositeSemanticToken(size: 123, lineHeight: 456, weight: 789, letterSpacing: 42))
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    override var displayLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var displayMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var displaySmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
+    override var displayLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var displayMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var displaySmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    override var headingXLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var headingLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var headingMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var headingSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
+    override var headingXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var headingLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var headingMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var headingSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    override var bodyDefaultLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyDefaultMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyDefaultSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyModerateLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyModerateMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyModerateSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyStrongLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyStrongMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var bodyStrongSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
+    override var bodyDefaultLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyDefaultMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyDefaultSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyModerateLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyModerateMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyModerateSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyStrongLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyStrongMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyStrongSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    override var labelDefaultXLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelDefaultLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelDefaultMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelDefaultSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelModerateXLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelModerateLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelModerateMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelModerateSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelStrongXLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelStrongLarge: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelStrongMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var labelStrongSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
+    override var labelDefaultXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelDefaultLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelDefaultMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelDefaultSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelModerateXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelModerateLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelModerateMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelModerateSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelStrongXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelStrongLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelStrongMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelStrongSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    override var codeMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
-    override var codeSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
+    override var codeMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
 }
 
 // swiftlint:enable line_length
 // swiftlint:enable required_deinit
+// swiftlint:enable identifier_name

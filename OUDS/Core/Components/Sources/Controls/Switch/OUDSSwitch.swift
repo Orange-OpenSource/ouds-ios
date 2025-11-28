@@ -58,6 +58,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.14.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSwitch: View {
 
     // MARK: - Properties
@@ -91,11 +92,8 @@ public struct OUDSSwitch: View {
             withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                 $isOn.wrappedValue.toggle()
             }
-            #if os(iOS)
-            VibrationsManager.warning()
-            #endif
         } content: { interactionState in
-            SwitchIndicator(interactionState: interactionState, isOn: isOn)
+            SwitchIndicator(interactionState: interactionState, isOn: $isOn)
                 .frame(minWidth: theme.switch.sizeMinWidth,
                        minHeight: theme.switch.sizeMinHeight,
                        maxHeight: theme.switch.sizeMaxHeight)

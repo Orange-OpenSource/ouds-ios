@@ -47,13 +47,13 @@ struct ContentView: View {
         ScrollView {
             Group {
                 VStack(alignment: .leading) {
-                    Text("OUDSThemesContract Tutorial for new comers")
+                    Text("OUDS Tutorial for new comers")
 
                     Text("Let's play with components, themes and tokens!")
 
                     HStack {
                         OUDSTag(label: "Welcome")
-                        OUDSTag(label: "OUDSThemesContract")
+                        OUDSTag(label: "OUDS")
                         OUDSTag(label: "Tutorial")
                     }
                 }

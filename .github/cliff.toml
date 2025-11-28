@@ -66,6 +66,7 @@ commit_parsers = [
   { message = "^refactor:", group = "🧰 Chore" },
   { message = "^test:", group = "🧰 Chore" },
   { message = "^ci:", group = "🧰 Chore" },
+  { message = "^style:", group = "🧰 Chore" },
   { message = "^feat!:", group = "💥 Breaking changes" },
   { message = "^fix!:", group = "💥 Breaking changes" },
   { message = "^docs!:", group = "💥 Breaking changes" },
@@ -73,6 +74,7 @@ commit_parsers = [
   { message = "^refactor!:", group = "💥 Breaking changes" },
   { message = "^test!:", group = "💥 Breaking changes" },
   { message = "^ci!:", group = "💥 Breaking changes" },
+  { message = "^.*:", group = "🧰 Chore" },
 ]
 commit_preprocessors = [
     { pattern = '.*', replace_command = 'git show -s --format=%B $COMMIT_SHA' }
@@ -85,10 +87,10 @@ protect_breaking_commits = false
 filter_commits = true
 
 # Regex for matching git tags
-tag_pattern = "[0-9].*"
+tag_pattern = "v[0-9].*"
 
 # Regex for skipping tags
-skip_tags = "0.1.0-beta.1"
+skip_tags = "v0.1.0-beta.1"
 
 # Regex for ignoring tags
 ignore_tags = ""

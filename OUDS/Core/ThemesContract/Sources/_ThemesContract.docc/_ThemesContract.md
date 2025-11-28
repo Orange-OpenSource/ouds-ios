@@ -16,7 +16,7 @@ The Apple OS Swift Package of *Orange Unified Design System*, the new design sys
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.8.0
+🧬 Core version: 1.9.0
 ```
 
 Orange is providing a full design system to build Orange mobile aplications. The objective of *Orange Unified Design System* (OUDS) is to propose a set of guidelines about how to apply the Orange brand on mobile applications. *Orange Unified Design System* also provides series of components and modules that show in details how to use this in the Orange apps.
@@ -33,9 +33,9 @@ You can get details about the this design system in [the official website unifie
 
 > Note: Orange Unified Design System framework supports iOS / iPadOS 15 and later.
 
-> Important: Orange Unified Design System framework focuses first on iOS / iPadOS, but some other platforms like visionOS and macOS are supported.
+> Important: Orange Unified Design System framework focuses first on iOS / iPadOS, but other platforms like macOS, visionOS, watchOS and tvOS are supported.
 
-> Tip: Feel free to submit pull requests if you can improve / add the support of macOS, visionOS, tvOS and watchOS!
+> Tip: Feel free to submit pull requests if you can improve the support of any platforms!
 
 ## Data and privacy
 

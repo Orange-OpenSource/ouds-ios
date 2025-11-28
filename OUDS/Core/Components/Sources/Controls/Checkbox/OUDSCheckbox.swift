@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-// MARK: - OUDSThemesContract Checkbox
+// MARK: - OUDS Checkbox
 
 /// The ``OUDSCheckbox`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons components.
 /// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
@@ -38,7 +38,7 @@ import SwiftUI
 /// Note also the component must be instanciated with a string parameter used as accessibility label.
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for checkbox.
-/// No accessibility identifier is defined in OUDSThemesContract side as this value remains in the users hands.
+/// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Cases forbidden by design
 ///
@@ -89,6 +89,7 @@ import SwiftUI
 ///
 /// - Version: 2.3.0 (Figma component design version)
 /// - Since: 0.12.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckbox: View {
 
     // MARK: Properties

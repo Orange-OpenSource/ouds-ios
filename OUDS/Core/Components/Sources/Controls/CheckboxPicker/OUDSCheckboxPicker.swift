@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
@@ -82,7 +83,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// There is no online specification as this component is not an official OUDSThemesContract one
+/// There is no online specification as this component is not an official OUDS one
 ///
 /// ## Themes rendering
 ///
@@ -91,6 +92,7 @@ import SwiftUI
 /// ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
 ///
 /// - Since: 0.14.0
+@available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
@@ -364,3 +366,4 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         }
     }
 }
+#endif

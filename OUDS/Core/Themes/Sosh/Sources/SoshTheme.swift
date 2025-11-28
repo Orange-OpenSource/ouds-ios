@@ -64,6 +64,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let borders = SoshThemeBorderSemanticTokensProvider()
         let colors = SoshThemeColorSemanticTokensProvider()
         let colorModes = SoshThemeColorModeSemanticTokensProvider(colors: colors)
+        let effects = SoshThemeEffectSemanticTokensProvider()
         let elevations = SoshThemeElevationSemanticTokensProvider()
         let fonts = SoshThemeFontSemanticTokensProvider()
         let grids = SoshThemeGridSemanticTokensProvider()
@@ -73,6 +74,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let spaces = SoshThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -95,6 +97,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -103,6 +106,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,
@@ -122,6 +126,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
+                   name: "Sosh",
                    family: SoshBrandFontRawTokens.familyDefault)
 
         registerFonts()

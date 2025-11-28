@@ -17,7 +17,7 @@ import OUDSFoundations // NOTE: "unused" false positive by periphery (https://gi
 import SwiftUI
 import UIKit
 
-// MARK: - OUDSThemesContract Switch Item View Controller
+// MARK: - OUDS Switch Item View Controller
 
 /// UIKit `UIViewController`  hosting view controllers so as to expose the SwiftUI `OUDSSwitchItem`
 /// Helps to manage the states and values of the `OUDSSwitchItem` and tries to expose a UIKit-like API for actions.
@@ -156,7 +156,7 @@ public final class OUDSSwitchItemViewController: UIViewController {
     }
 }
 
-// MARK: - OUDSThemesContract Switch Item Wrapper
+// MARK: - OUDS Switch Item Wrapper
 
 /// A SwiftUI `View` which embeds the SwiftUI `OUDSSwitchItem` and exposes bindings
 /// and view model.
@@ -187,7 +187,7 @@ struct OUDSSwitchItemWrapper: View {
     }
 }
 
-// MARK: - OUDSThemesContract Switch View Model
+// MARK: - OUDS Switch View Model
 
 /// The `SwiftUI` view model used inside the `OUDSSwitchItemWrapper` to manage the state of the embeded `OUDSSwitchItem`
 @MainActor final class OUDSSwitchItemViewModel: ObservableObject {
@@ -237,7 +237,7 @@ struct OUDSSwitchItemWrapper: View {
     deinit {}
 }
 
-// MARK: - OUDSThemesContract SwiftUI Bridge
+// MARK: - OUDS SwiftUI Bridge
 
 extension OUDSUIKitBrige {
 

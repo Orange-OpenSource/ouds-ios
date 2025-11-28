@@ -52,6 +52,10 @@ struct SoshThemeTests {
         #expect(theme.charts == nil)
     }
 
+    @Test func defaultEffectSemanticTokensProvider() throws {
+        #expect(theme.effects is SoshThemeEffectSemanticTokensProvider)
+    }
+
     @Test func defaultElevationSemanticTokensProvider() throws {
         #expect(theme.elevations is SoshThemeElevationSemanticTokensProvider)
     }
@@ -84,6 +88,10 @@ struct SoshThemeTests {
 
     @Test func defaultBadgeComponentTokensProvider() throws {
         #expect(theme.badge is SoshThemeBadgeComponentTokensProvider)
+    }
+
+    @Test func defaultBarComponentTokensProvider() throws {
+        #expect(theme.bar is SoshThemeBarComponentTokensProvider)
     }
 
     @Test func defaultBulletListComponentTokensProvider() throws {

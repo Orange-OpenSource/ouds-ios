@@ -21,8 +21,6 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark mode colors.
-/// These values can be overriden inside `WireframeThemeColorSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-/// Some tokens do not have values assigned in the design system, and must be overriden.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
@@ -76,6 +74,12 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var actionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionVisitedLight, dark: actionVisitedDark) }
 
+    @objc public final var actionReadOnlyPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlyPrimaryLight, dark: actionReadOnlyPrimaryDark) }
+
+    @objc public final var actionReadOnlySecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
+
+    @objc public final var actionAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: actionAccentLight, dark: actionAccentDark) }
+
     // MARK: - Color - Background
 
     @objc public final var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgPrimaryLight, dark: bgPrimaryDark) }
@@ -111,6 +115,8 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     @objc public final var borderOnBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandSecondaryLight, dark: borderOnBrandSecondaryDark) }
 
     @objc public final var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
+
+    @objc public final var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
     // MARK: - Color - Content
 

@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDSThemesContract Switch Item
+// MARK: - OUDS Switch Item
 
 /// The ``OUDSSwitchItem`` proposes layouts to add in your views some swith components.
 /// If you want to use a switch with only an indicator, prefer instead ``OUDSSwitch``.
@@ -109,6 +109,13 @@ import SwiftUI
 ///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
+/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, flipLeadingIcon: layoutDirection == .rightToLeft)
+/// ```
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
@@ -133,6 +140,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.14.0
+@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSwitchItem: View {
 
     // MARK: - Properties

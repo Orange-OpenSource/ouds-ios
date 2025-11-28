@@ -16,7 +16,7 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.8.0
+🧬 Core version: 1.9.0
 ```
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than Swift `struct` or `class` objects. Keeping primitive types helps today to expose objects using Objective-C runtime.
@@ -57,7 +57,7 @@ extension String {
 ## Architecture
 
 There are several _composite class_ defined to match the objects available in *Figma*.
-In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple ``ElevationCompositeRawToken`` can be used for predefined elevations / box shadows effects, and ``FontCompositeRawToken`` can be used for predefined typography / fonts.
+In fact the design system implementations should expose pack of values so as to gather several tokens in one object.
 All such *composites* instances are defined in separated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
 
 The raw tokens groups are declared in `enum` objects which will gather the raw tokens in extensions.
@@ -82,7 +82,8 @@ Raw tokens enums               | Description
 ``ColorRawTokens``             | For colors common to all modules (different to `OrangeBrandColorRawTokens`)           
 ``ColorModeRawTokens``         | Kind of frozen and not generated tokens about management of colors           
 ``DimensionRawTokens``         | For dimensions used in sizes and spaces
-``ElevationRawTokens``         | For elevations to produc shadow effects
+``ElevationRawTokens``         | For elevations to product shadow effects
+``EffectRawTokens``            | For effects to apply on some components like navigation bars
 ``FontRawTokens``              | For fonts (weights, letter spacings, sizes, line heights...)
 ``GridRawTokens``              | For grids
 ``OpacityRawTokens``           | For opacities
@@ -96,6 +97,7 @@ Raw tokens enums               | Description
 - ``ColorModeRawTokens``
 - ``DimensionRawTokens``
 - ``ElevationRawTokens``
+- ``EffectRawTokens``
 - ``GridRawTokens``
 - ``OpacityRawTokens``
 - ``FontRawTokens``

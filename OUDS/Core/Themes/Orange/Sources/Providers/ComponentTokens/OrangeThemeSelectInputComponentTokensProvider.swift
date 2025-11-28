@@ -68,7 +68,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeDimensionSemanticTokensProvider for _
 ///     let selectInputComponentTokensProvider = OrangeThemeSelectInputComponentTokensProvider()
 ///
-///     // Or use your own _ semantic tokens providers (or only some)
+///     // Or use your own dimension semantic tokens providers (or only some)
 ///     let selectInputComponentTokensProvider = OrangeThemeSelectInputComponentTokensProvider(
 ///                                                 dimensions: CustomDimensionSemanticTokensProvider())
 /// ```

@@ -36,7 +36,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
     @Tab("SwiftUI") {
         ```swift
         // Icon only with default appearance
-        OUDSButton(icon: Image("ic_heart"), appearance: .default) {}
+        OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 
         // Text only with negative appearance
         OUDSButton(text: "Delete", appearance: .negative) {}
@@ -47,6 +47,7 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
         import OUDSComponentsUIKit
             
         OUDSUIKit.createButton(icon: Image("ic_heart"), // Image here is from SwiftUI
+                               accessibilityLabel: "Like",
                                appearance: .default,
                                action: {})
                                           

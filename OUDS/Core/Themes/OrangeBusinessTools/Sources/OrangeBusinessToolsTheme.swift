@@ -122,6 +122,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let colors = OrangeBusinessToolsThemeColorSemanticTokensProvider()
         let colorModes = OrangeBusinessToolsThemeColorModeSemanticTokensProvider(colors: colors)
         let charts = OrangeBusinessToolsThemeColorChartSemanticTokensProvider()
+        let effects = OrangeBusinessToolsThemeEffectSemanticTokensProvider()
         let elevations = OrangeBusinessToolsThemeElevationSemanticTokensProvider()
         let fonts = OrangeBusinessToolsThemeFontSemanticTokensProvider()
         let grids = OrangeBusinessToolsThemeGridSemanticTokensProvider()
@@ -131,6 +132,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let spaces = OrangeBusinessToolsThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
         let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let bar = OrangeBusinessToolsThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeBusinessToolsThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let bulletList = OrangeBusinessToolsThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = OrangeBusinessToolsThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
@@ -155,6 +157,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    colors: colors,
                    colorModes: colorModes,
                    charts: charts,
+                   effects: effects,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
@@ -163,6 +166,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    badge: badge,
+                   bar: bar,
                    bulletList: bulletList,
                    button: button,
                    checkbox: checkbox,
@@ -182,6 +186,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeBusinessToolsTheme,
+                   name: "Orange Business Tools",
                    family: family,
                    tuning: tuning)
     }

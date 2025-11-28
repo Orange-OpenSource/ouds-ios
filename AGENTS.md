@@ -7,7 +7,7 @@ This file provides guidance to AI coding agents when working with code in this r
 OUDS means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
 It provides a Swift Package (this repository) and a demo application called Design System Tooblox which embeds the Swift Package to expose its public API.
 The project is open source under MIT license and hosted on GitHub in Orange-OpenSource organization.
-The products support iOS 15, iPadOS 15, macOS 15 and visionOS 1.
+The products support iOS 15, iPadOS 15, macOS 15, visionOS 1, watchOS 11 and tvOS 16.
 The products are written in Swift with SwiftUI as UI framework and Swift 6 (format, grammar and concurrency).
 
 ## Vocabulary
@@ -105,7 +105,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - Use Swift's type system for safety
 - Use public modifier only when needed, prefer internal or private
 - **IMPORTANT**: The project supports iOS 26 SDK while maintaining iOS 15 as the minimum deployment target. Use `#available` checks when adopting iOS 15+ APIs.
-- **IMPORTANT**: The project runs for iOS / iPadOS, macOS and visionOS. Use `#if os` checks to compile only code avaialble for specific API
+- **IMPORTANT**: The project runs for iOS / iPadOS, macOS, visionOS, tvOS and watchOS. Use `#if os` checks to compile only code avaialble for specific API / OS
 - If a third party dependency is added or updated, update the Software Bill of Material
 - Apply Clean Code, DRY, SOLID and TDD principes
 
@@ -120,7 +120,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 - Minimum Swift 6.2
 - Xcode 26 or later 
-- Minimum deployment: iOS 15.0, iPad 0S 15.0, macOS 15.0, visionOS 1.0
+- Minimum deployment: iOS 15.0, iPad 0S 15.0, macOS 15.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
 ## Building commands

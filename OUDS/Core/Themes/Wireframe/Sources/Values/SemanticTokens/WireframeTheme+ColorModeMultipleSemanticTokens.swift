@@ -127,7 +127,7 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
     /// - Returns: The colors to apply
     public func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens {
         guard !mode.hasUndefinedValue() else {
-            OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Orange Theme")
+            OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Wireframe Theme")
         }
         // List here all cases where light and dark mode values are NOT undefined
         if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
@@ -150,7 +150,7 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
         if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown }
         if mode.isEqual(onOverlayTooltip) { return colors.overlayModal } // FIXME: Not sure of this value
         if mode.isEqual(navigationBar) { return colors.overlayModal } // FIXME: Not sure of this value
-        OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
+        OL.fatal("The color mode '\(mode.name)' for Wireframe Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity
 }

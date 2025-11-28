@@ -17,7 +17,7 @@ They can be seen as an high level of usage with functional meanings.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.8.0
+🧬 Core version: 1.9.0
 ```
 
 If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
@@ -183,7 +183,8 @@ borders                        | For borders (width, styles, radius...)
 colors                         | For colors with also meta objects combining light and dark versions)           
 colorModes                     | Kind of frozen and not generated tokens about management of colors           
 charts                         | For charts, but optional and not defined in all themes
-elevations                     | For elevations to produc shadow effects
+effects                        | For effects to apply to some component like navigation bars
+elevations                     | For elevations to product shadow effects
 fonts                          | For fonts (weights, letter spacings, sizes, line heights...)
 grids                          | For grids
 opacities                      | For opacities
@@ -201,6 +202,7 @@ spaces                         | For paddings and margins
 - ``ColorModeMultipleSemanticTokens``
 - ``ColorChartSemanticTokens``
 - ``ColorChartMultipleSemanticTokens``
+- ``EffectSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationMultipleSemanticTokens``
 - ``ElevationCompositeSemanticTokens``

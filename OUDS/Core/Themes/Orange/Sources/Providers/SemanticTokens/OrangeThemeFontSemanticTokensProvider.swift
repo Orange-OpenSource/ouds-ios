@@ -24,13 +24,21 @@ import OUDSThemesContract
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
-///         override var displayLarge: MultipleFontCompositeRawTokens {
-///             MultipleFontCompositeRawTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
+///         override var displayLarge: MultipleFontCompositeSemanticTokens {
+///             MultipleFontCompositeSemanticTokens(compact: FontRawTokens.regular150, regular: FontRawTokens.regular150)
 ///         }
 ///
-///         override var codeMedium: MultipleFontCompositeRawTokens {
-///             MultipleFontCompositeRawTokens(FontRawTokens.bold300)
-///         }
+///         override var displayLarge: MultipleFontCompositeSemanticTokens {
+///             MultipleFontCompositeSemanticTokens(compact:
+///                 FontCompositeSemanticToken(size: sizeDisplayLargeMobile,
+///                                            lineHeight: lineHeightDisplayLargeMobile,
+///                                            weight: weightDisplay,
+///                                            letterSpacing: letterSpacingDisplayLargeMobile),
+///                                                 regular:
+///                FontCompositeSemanticToken(size: sizeDisplayLargeTablet,
+///                                           lineHeight: lineHeightDisplayLargeTablet,
+///                                           weight: weightDisplay,
+///                                           letterSpacing: letterSpacingDisplayLargeTablet)) }
 /// }
 /// ```
 ///

@@ -44,10 +44,12 @@
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
-![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)
-![iPadOS 15.0](https://img.shields.io/badge/iPadOS-15.0-FF1AB2?style=for-the-badge)
-![macOS 15.0](https://img.shields.io/badge/macOS-15.0-FF1AB2?style=for-the-badge)
-![visionOS 1.3](https://img.shields.io/badge/visionOS-1.3-FF1AB2?style=for-the-badge)
+![iOS 15](https://img.shields.io/badge/iOS-15-FF1AB2?style=for-the-badge)
+![iPadOS 15](https://img.shields.io/badge/iPadOS-15-FF1AB2?style=for-the-badge)
+![macOS 15](https://img.shields.io/badge/macOS-15-FF1AB2?style=for-the-badge)
+![visionOS 1](https://img.shields.io/badge/visionOS-1-FF1AB2?style=for-the-badge)
+![watchOS 11](https://img.shields.io/badge/watchOS-11-FF1AB2?style=for-the-badge)
+![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
 [![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
@@ -67,7 +69,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > This Swift Package is dedicated to SwiftUI. UIKit and other frameworks are not supported.
 
 > [!NOTE]
-> Main targets are iOS / iPadOS, and we do our best to support macOS and visionOS!
+> Main targets are iOS / iPadOS, and we do our best to support macOS, visionOS, tvOS and watchOS!
 
 ## Quick start
 
@@ -149,22 +151,9 @@ The wiki lists also [the components and their availability](https://github.com/O
 > The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
 > [!TIP]
-> Releases are immutable and in most of time cryptographically signed.
-> You can verify integrity of release and assets with commands below
-> using [GitHub CLI](https://cli.github.com/) 
-> and available [release tags](https://github.com/Orange-OpenSource/ouds-ios/releases).
-
-To verify integrity of a release *x.y.z*:
-```shell
-gh release verify x.y.z --repo Orange-OpenSource/ouds-ios
-```
-
-To verify integrity of an *asset* (previously downloaded at current location) associated to the release *x.y.z*:
-```shell
-gh release verify-asset x.y.z asset --repo Orange-OpenSource/ouds-ios
-```
-
-For these commands a message should say release is verified or asset verification succeeded.
+> Releases are immutable and in most of time cryptographically signed (commits, tags and artifacts).
+> You can verify their integrity with commands from GPG tool of GitHub CLI client.
+> Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
 
 ## Tokens libraries versions
 
@@ -172,14 +161,14 @@ For these commands a message should say release is verified or asset verificatio
 > This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.8.0
+- Core OUDS version: 1.9.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.1.0
+- Brand Orange version: 2.3.0
 - Core Sosh version: 1.2.0
-- Brand Sosh version: 2.1.0
+- Brand Sosh version: 2.3.0
 - Core Wireframe version: 1.3.0
-- Brand Wireframe version: 2.1.0
-- Brand Orange Business Tools version: 2.1.0
+- Brand Wireframe version: 2.3.0
+- Brand Orange Business Tools version: 2.3.0
 
 ## Bugs, feature requests and discussions
 

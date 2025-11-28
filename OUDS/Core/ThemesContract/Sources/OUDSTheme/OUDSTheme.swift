@@ -58,6 +58,9 @@ open class OUDSTheme: @unchecked Sendable {
     public let charts: AllColorChartSemanticTokensProvider!
     // swiftlint:enable implicitly_unwrapped_optional
 
+    /// All effect semantic tokens exposed in one object
+    public let effects: AllEffectSemanticTokensProvider
+
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokensProvider
 
@@ -84,6 +87,9 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Component tokens
     // Keep things alhabetically ordered
+
+    /// All components tokens related to bar components
+    public let bar: AllBarComponentTokensProvider
 
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
@@ -144,6 +150,9 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Other elements
 
+    /// The name of the name, can be sued for debugging for example
+    public let name: String
+
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
     /// Supposed to have, for a given resurce, the same name accross themes.
     public let resourcesBundle: Bundle
@@ -162,6 +171,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
     ///    - charts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
+    ///    - effects: All semantic tokens of effects
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -170,6 +180,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
     ///    - badge: All component tokens for badge
+    ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
@@ -188,6 +199,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
@@ -195,6 +207,7 @@ open class OUDSTheme: @unchecked Sendable {
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
                 charts: AllColorChartSemanticTokensProvider? = nil,
+                effects: AllEffectSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -203,6 +216,7 @@ open class OUDSTheme: @unchecked Sendable {
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
+                bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 button: AllButtonComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
@@ -222,6 +236,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
+                name: String,
                 family: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
@@ -232,6 +247,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.colorModes = colorModes
         self.charts = charts
         self.elevations = elevations
+        self.effects = effects
         self.fonts = fonts
         self.grids = grids
         self.opacities = opacities
@@ -241,6 +257,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Save component tokens providers
         self.badge = badge
+        self.bar = bar
         self.button = button
         self.bulletList = bulletList
         self.checkbox = checkbox
@@ -262,6 +279,7 @@ open class OUDSTheme: @unchecked Sendable {
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
+        self.name = name
         self.family = family
         self.tuning = tuning
 

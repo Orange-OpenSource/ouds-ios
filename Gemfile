@@ -24,7 +24,7 @@ gem 'abbrev', '0.1.2'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.228.0'
+gem 'fastlane', '2.229.1'
 
 # Magic
 
