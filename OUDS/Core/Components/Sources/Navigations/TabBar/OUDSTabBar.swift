@@ -19,25 +19,26 @@ import SwiftUI
 
 // MARK: - OUDS Tab Bar
 
-/// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies a ``OUDSTabBarViewModifier`` on its content supposing to be
+/// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies an ``OUDSTabBarViewModifier`` on its content supposing to be
 /// views with *tab bar items*.
 /// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges.
 ///
 /// ## Appearances
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
-/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old erversions:
+/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component,
+/// the native API is sued instead.
 ///
-/// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version.
+/// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version, not before.
 ///
-/// If you use SF Symbols for images, if they exists their *fill* variant will be automatically used in the tab bar (native behaviour).
+/// If you use SF Symbols for images, if they exist their *fill* variant will be automatically used in the tab bar (native behaviour).
 ///
 /// ## Platform considerations
 ///
@@ -55,12 +56,20 @@ import SwiftUI
 /// - use both images and texts in tab bar items
 /// - use badges only when needed to avoid to have heavy tab bar
 /// - be sure the selected information is not only defined by the color of the tab; you may need to change the shape or the fill of the image
+/// - if possible displayed a selected tab indicator for the selected tab
+///
+/// ## Selection of tabs
+///
+/// For iOS lower than 26, a selected tab indicator can be displayed in the `OUDSTabBar` if the `count` parameter is defined (to the number of tabs in the component)
+/// and if the `selected` parameter is equal to a given tag associated to a tab item.
+/// Otherwise the indicator won't appear; these parameters are mandatory to computer the location of the indicator.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Use the OUDS tab bar to wrap tab bar items and associated views
-///     OUDSTabBar {
+///     // Item tagged 0 will be selected first, 3 tabs are embeded.
+///     OUDSTabBar(selected: 0, count: 3) {
 ///
 ///         // Add the views with the SwiftUI tab item and labels
 ///         // No need to define colors, everything is done inside OUDSTabBar
@@ -68,14 +77,17 @@ import SwiftUI
 ///             .tabItem {
 ///                 Label("Label 1", image: "image_1")
 ///             }
+///             .tag(0)
 ///         OtherView()
 ///             .tabItem {
 ///                 Label("Label 2", image: "image_2")
 ///             }
+///             .tag(1)
 ///         LastView()
 ///             .tabItem {
 ///                 Label("Label 3", image: "image_3")
 ///             }
+///             .tag(2)
 ///     }
 /// ```
 ///
@@ -130,21 +142,51 @@ import SwiftUI
 /// ![A  tab bar component in dark mode without Liquid Glass effect and Wireframe theme](component_tabBar_Wireframe_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 0.23.0
+/// - Since: 1.0.0
 @available(iOS 15, macOS 15, visionOS 1, *)
 public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Properties
+
+    /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
+    let tabCount: Int
+
+    /// State to keep the selected tab reference and refresh the view
+    @State private var selectedTab: Int
 
     /// Contains the tab bar items
     @ViewBuilder private let content: () -> Content
 
     // MARK: Initializers
 
-    /// Defines the tab bar component with given tab bar items
+    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// Defines the tab bar component with given tab bar items.
     ///
-    /// - Parameter content: The list of items to add in the tab bar
+    /// Number if tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
+    /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
+    ///
+    /// - Parameters:
+    ///    - selected: The identifier of the selected tab, i.e. its rank starting from 0, default set to *0*, assoiated to a *tag*  on a *tab bar item*
+    ///    - count: The current number of tabs hosted in the tab bar, must be positive non null integer
+    ///    - content: The list of items to add in the tab bar
+    public init(selected: Int = 0,
+                count: Int,
+                @ViewBuilder content: @escaping () -> Content)
+    {
+        selectedTab = selected
+        tabCount = count
+        self.content = content
+    }
+
+    /// Defines the tab bar component with given tab bar items.
+    ///
+    /// If you target iOS lower than 26 you should use instead `OUDSTabBar(selected:count:content)` to get the active tab indicator
+    ///
+    /// - Parameters:
+    ///    - content: The list of items to add in the tab bar
     public init(@ViewBuilder content: @escaping () -> Content) {
+        selectedTab = 0
+        tabCount = 0
         self.content = content
     }
 
@@ -153,24 +195,134 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
     /// Warning: rendering wil change depending to OS version!
     public var body: some View {
-        #if !os(macOS) && !os(watchOS) // iOS, iPadOS, tvOS, visionOS
-        TabView {
-            content()
-        }.modifier(OUDSTabBarViewModifier())
-        #else // macOS, watchOS
-        TabView {
+        #if os(iOS)
+        ZStack(alignment: .bottom) {
+            TabView(selection: $selectedTab) {
+                content()
+            }
+            .modifier(OUDSTabBarViewModifier())
+
+            // Without Liquid Glass, an indicator for the tab bar is mandatory with iOS
+            if #unavailable(iOS 26.0) {
+                SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+            }
+        }
+        #else // visionOS, macOS
+        TabView(selection: $selectedTab) {
             content()
         }
         #endif
+        /*
+         #if !os(macOS) && !os(watchOS)
+         ZStack(alignment: .bottom) {
+             TabView(selection: $selectedTab) {
+                 content()
+             }
+             .modifier(OUDSTabBarViewModifier())
+
+             #if os(iOS)
+             // Without Liquid Glass, an indicator for the tab bar is mandatory with iOS
+             if #unavailable(iOS 26.0) {
+                 SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+             }
+             #endif
+         }
+         #else
+         TabView {
+             content()
+         }
+         #endif
+          */
     }
 }
 
-#if !os(macOS) && !os(watchOS)
+#if os(iOS)
+// MARK: - Selected Tab Indicator
 
+private let kTabBarAnimationDuration: CGFloat = 0.3
+private let kAsyncDelay: CGFloat = 0.1
+private let kArbitraryPhoneLandscapeTabBarHeight: CGFloat = 32
+private let kArbitraryDefaultTabBarHeight: CGFloat = 49
+
+/// An indicator to display in the top of the selected tab for iOS lwoer than 26 (i.e. no Liquid Glass)
+private struct SelectedTabIndicator: View {
+
+    @Binding var selected: Int
+    let count: Int
+
+    @State private var tabBarHeight: CGFloat = 0
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        GeometryReader { geometry in
+            let tabWidth = geometry.size.width / CGFloat(count)
+            let indicatorWidth = theme.bar.sizeWidthActiveIndicatorCustomTop
+
+            let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
+            let yOffset = geometry.size.height - tabBarHeight + theme.bar.sizeHeightActiveIndicatorCustom / 2
+
+            Rectangle()
+                .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                .position(x: xOffset + indicatorWidth / 2, y: yOffset)
+                .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
+        }
+        .onAppear {
+            loadTabBarHeight()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                loadTabBarHeight()
+            }
+        }
+    }
+
+    /// Used when the view appears or whtne the orientation of the device changed, find the tab bar and ge tit sheight and the safe area bottom inset.
+    private func loadTabBarHeight() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else { return }
+
+        if let tabBar = findTabBar(in: window.rootViewController) {
+            tabBarHeight = tabBar.frame.height
+        } else {
+            tabBarHeight = UIDevice.current.userInterfaceIdiom == .phone &&
+                UIDevice.current.orientation.isLandscape ? kArbitraryPhoneLandscapeTabBarHeight : kArbitraryDefaultTabBarHeight
+        }
+    }
+
+    /// Get from a given view controller the tab bar if it exists
+    private func findTabBar(in viewController: UIViewController?) -> UITabBar? {
+        guard let viewController else { return nil }
+
+        if let tabBarController = viewController as? UITabBarController {
+            return tabBarController.tabBar
+        }
+
+        // Recherche dans les enfants
+        for child in viewController.children {
+            if let tabBar = findTabBar(in: child) {
+                return tabBar
+            }
+        }
+
+        // Recherche dans les vues présentées
+        if let presented = viewController.presentedViewController {
+            return findTabBar(in: presented)
+        }
+
+        return nil
+    }
+}
+#endif
+
+#if !os(macOS) && !os(watchOS)
 // MARK: - OUDS Tab Bar View Modifier
 
 /// Defines the look and feel the tab bar must have by applying the OUDS tokens.
-/// This `ViewModifier` can be used directly on a `TabView`.
+///
+/// **This `ViewModifier` can be used directly on a `TabView`, but for iOS 26 and more (i.e. with Liquid Glass), otherwise the selected tab indicator won't appear.**
 ///
 /// ## Rendering
 ///
@@ -184,6 +336,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
 ///
 /// In addition the badges colors will be the same and cannot be changed (except with token definition). These aprticular badges do not rely on ``OUDSBadge`` component.
 ///
+/// **Warning: this view modifier does not add the selected tab indicator. Prefer `OUDSTabBar` instead**.
+///
 /// ## Guidelines
 ///
 /// OUDS guidelines recommends to:
@@ -191,6 +345,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 /// - use both images and texts in tab bar items
 /// - use badges only when needed to avoid to have heavy tab bar
 /// - be sure the selected information is not only defined by the color of the tab ; you may need to change the shape or the fill of the image
+/// - if possible displayed a selected tab indicator for the selected tab
 ///
 /// ## Code samples
 ///
@@ -216,7 +371,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 /// ```
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 0.23.0
+/// - Since: 1.0.0
 @available(iOS 15, *)
 public struct OUDSTabBarViewModifier: ViewModifier {
 
@@ -224,6 +379,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     // MARK: Init
 
@@ -236,6 +392,12 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             // Do not use task(), it's async, effects may be applied too late
             .onAppear {
                 setupTabBarAppearance(withColor: colorScheme)
+            }
+            // If change of orientation
+            .onChange(of: verticalSizeClass) { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                    setupTabBarAppearance(withColor: colorScheme)
+                }
             }
         // Color scheme changes can rise a bit later after onAppear()
         // Thus we need to catch the most up-to-date value to apply
@@ -254,6 +416,11 @@ public struct OUDSTabBarViewModifier: ViewModifier {
                 setupTabBarAppearance(andTheme: newTheme)
             }
         #endif
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                    setupTabBarAppearance(withColor: colorScheme)
+                }
+            }
     }
 
     // swiftlint:disable function_body_length
@@ -282,9 +449,9 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         // MARK: Tab bar background
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
         tabBarAppearance.configureWithTransparentBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemThinMaterial)
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemThinMaterial) // TODO: #1135 - Check which material must be used
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
-        // Define the color for the top border of the tab view, but does not work on all cases
+        // Define the color for the top border of the tab view, but does not work on all cases (ノಠ益ಠ)ノ彡┻━┻
         tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
@@ -339,6 +506,8 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         ]
 
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance
+        tabBarAppearance.compactInlineLayoutAppearance = tabBarItemAppearance
 
         UITabBar.appearance().standardAppearance = tabBarAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
@@ -350,7 +519,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
 
     // swiftlint:enable function_body_length
 
-    /// Force the update of all tab baes within the hosted app
+    /// Force the update of all tab bars within the hosted app
     private func updateExistingTabBars(with appearance: UITabBarAppearance) {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
 
@@ -366,6 +535,9 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         if let tabBarController = viewController as? UITabBarController {
             tabBarController.tabBar.standardAppearance = appearance
             tabBarController.tabBar.scrollEdgeAppearance = appearance
+
+            tabBarController.tabBar.setNeedsLayout()
+            tabBarController.tabBar.layoutIfNeeded()
         }
 
         for child in viewController.children {
