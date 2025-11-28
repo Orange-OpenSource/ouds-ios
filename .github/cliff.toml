@@ -57,16 +57,16 @@ filter_unconventional = true
 split_commits = false
 
 # Regex for parsing and grouping commits
-# We assume commits of build and style should not appear in generate release note
+# We assume commits of build (build:) and style (style:) should not appear in generate release note
 commit_parsers = [
   { message = "^feat:", group = "🚀 Features" },
   { message = "^fix:", group = "🐛 Fixes" },
   { message = "^docs:", group = "📖 Docs" },
   { message = "^chore:", group = "🧰 Chore" },
+  { message = "^chore\\(deps\\):", group = "🧰 Chore" },
   { message = "^refactor:", group = "🧰 Chore" },
   { message = "^test:", group = "🧰 Chore" },
   { message = "^ci:", group = "🧰 Chore" },
-  { message = "^style:", group = "🧰 Chore" },
   { message = "^feat!:", group = "💥 Breaking changes" },
   { message = "^fix!:", group = "💥 Breaking changes" },
   { message = "^docs!:", group = "💥 Breaking changes" },
@@ -74,7 +74,6 @@ commit_parsers = [
   { message = "^refactor!:", group = "💥 Breaking changes" },
   { message = "^test!:", group = "💥 Breaking changes" },
   { message = "^ci!:", group = "💥 Breaking changes" },
-  { message = "^.*:", group = "🧰 Chore" },
 ]
 commit_preprocessors = [
     { pattern = '.*', replace_command = 'git show -s --format=%B $COMMIT_SHA' }
