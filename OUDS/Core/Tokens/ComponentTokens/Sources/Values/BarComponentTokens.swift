@@ -63,6 +63,12 @@ public protocol BarComponentTokens {
     var sizeWidthActiveIndicatorCustomTop: SizeSemanticToken { get }
     var sizeWidthActiveIndicatorCustomBottom: SizeSemanticToken { get }
     var sizeHeightActiveIndicatorCustom: SizeSemanticToken { get }
+    
+    /*
+     NOTE:
+     - tab bar does not have active indicator, so many tokens here are useless
+     - colorBgOpaque not used as we use colorBgTranslucent
+     */
 }
 
 // swiftlint:enable missing_docs

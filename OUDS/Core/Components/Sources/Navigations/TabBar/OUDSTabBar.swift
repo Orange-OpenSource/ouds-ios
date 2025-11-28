@@ -273,22 +273,21 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         let tabBarAppearance = UITabBarAppearance()
         let tabBarItemAppearance = UITabBarItemAppearance()
 
-        // Tab bar item badge
+        // MARK: Tab bar item badge
         let badgeUIColor = themeToApply.colors.surfaceStatusNegativeEmphasized.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.normal.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.selected.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.focused.badgeBackgroundColor = badgeUIColor
 
-        // Tab bar background
-        if #available(iOS 26.0, *) { // May not work with Liquid Glass
-            tabBarAppearance.backgroundColor = themeToApply.bar.colorBgOpaque.color(for: colorSchemeToApply).uiColor
-        } else {
-            tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
-            // Define the color for the top border of the tab view, but does not work on all cases
-            tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
-        }
+        // MARK: Tab bar background
+        // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
+        tabBarAppearance.configureWithTransparentBackground()
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemThinMaterial)
+        tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
+        // Define the color for the top border of the tab view, but does not work on all cases
+        tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
 
-        // Fonts
+        // MARK: Fonts
         // In Apple apps even if the user increases the text sizes the tab bar texts does not change
         // We keep about 12px in Figma i.e. sizeLabelSmall
         let fontSize = themeToApply.fonts.sizeLabelSmall
@@ -303,7 +302,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             selectedFont = UIFont.boldSystemFont(ofSize: fontSize)
         }
 
-        // Tab bar unselected item
+        // MARK: Tab bar unselected item
         /*
          With iOS 26+, if a color is applied to a tab bar item in unselected state,
          only the image is changed and not the text.
@@ -323,7 +322,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             ]
         }
 
-        // Tab bar selected item
+        // MARK: Tab bar selected item
         let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.selected.iconColor = selectedUIColor
         tabBarItemAppearance.selected.titleTextAttributes = [
@@ -331,7 +330,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
             .font: selectedFont,
         ]
 
-        // Tab bar focused item
+        // MARK: Tab bar focused item
         let focusedUIColor = themeToApply.bar.colorContentSelectedFocus.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.focused.iconColor = focusedUIColor
         tabBarItemAppearance.focused.titleTextAttributes = [
@@ -378,4 +377,5 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         }
     }
 }
+
 #endif
