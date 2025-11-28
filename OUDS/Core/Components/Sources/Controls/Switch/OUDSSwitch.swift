@@ -105,7 +105,8 @@ public struct OUDSSwitch: View {
             SwitchIndicator(interactionState: interactionState, isOn: $isOn)
                 .frame(minWidth: theme.switch.sizeMinWidth,
                        minHeight: theme.switch.sizeMinHeight,
-                       maxHeight: theme.switch.sizeMaxHeight)
+                       maxHeight: theme.switch.sizeMaxHeight,
+                       alignment: .center)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)

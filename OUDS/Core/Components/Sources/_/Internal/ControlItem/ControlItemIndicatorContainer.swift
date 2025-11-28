@@ -41,6 +41,6 @@ struct ControlItemIndicatorContainer: View {
                 CheckboxIndicator(interactionState: interactionState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
-        .frame(maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+        .frame(minHeight: theme.controlItem.sizeIcon, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
     }
 }
