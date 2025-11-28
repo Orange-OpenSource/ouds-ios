@@ -169,7 +169,7 @@ public struct OUDSCheckboxItem: View {
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
-    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     ///
     /// - Parameters:

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
 - Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
 - Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
+- Read only variant for `checkbox` and  `checkbox indeterminate` component (Orange-OpenSource/ouds-ios#1137)
 
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.21.0...0.22.0) - 2025-11-28
 
@@ -19,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `bar` component tokens (Orange-OpenSource/ouds-ios#1169)
 - `effect` raw and semantic tokens (Orange-OpenSource/ouds-ios#1169)
-- Read only variant for `checkbox` and  `checkbox indeterminate` component (Orange-OpenSource/ouds-ios#1137)
 - Icon flip option for `text input` component trailing action (Orange-OpenSource/ouds-ios#1041)
 - Icon flip option for `button` component (Orange-OpenSource/ouds-ios#1124)
 - Support for `watchOS` (Orange-OpenSource/ouds-ios#1110)

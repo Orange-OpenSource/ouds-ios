@@ -181,7 +181,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     ///
-    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 label: String,
