@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift package `SwifFormat` from v0.58.6 to v0.58.7
 - Define timeout of 1 hour for all GitHub Actions workflows
 - Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
