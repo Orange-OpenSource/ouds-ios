@@ -28,6 +28,7 @@ struct TextInputContainer: View {
     let trailingAction: OUDSTextInput.TrailingAction?
     let isOutlined: Bool
     let status: OUDSTextInput.Status
+    let accessibilityHint: String?
     @State var hover: Bool = false
 
     @FocusState private var focused: Bool
@@ -77,6 +78,9 @@ struct TextInputContainer: View {
                     focused = true
                 }
             }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint ?? "")
 
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
@@ -118,6 +122,35 @@ struct TextInputContainer: View {
 
     private var interactionState: TextInputInteractionState {
         TextInputInteractionState(focused: focused, hover: hover)
+    }
+
+    private var accessibilityLabel: String {
+        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
+
+        let errorDescription = switch status {
+        case let .error(message):
+            "core_common_onError_a11y".localized() + ": \(message)"
+        default:
+            ""
+        }
+
+        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
+
+        let labelDescription = if label.isEmpty {
+            "\(placeholder ?? "")"
+        } else {
+            label
+        }
+
+        return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"
+    }
+
+    private var accessibilityValue: String {
+        guard !text.wrappedValue.isEmpty else {
+            return ""
+        }
+
+        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
 #endif

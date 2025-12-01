@@ -375,17 +375,13 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                                    flipIcon: flipLeadingIcon,
                                    trailingAction: trailingAction,
                                    isOutlined: isOutlined,
-                                   status: status)
+                                   status: status,
+                                   accessibilityHint: helperText)
 
                 HelperErrorTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
             }
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityHint(Text(helperText ?? ""))
-            .accessibilityValue(accessibilityValue)
-            .accessibilityAction(named: Text(trailingAction?.actionHint ?? "")) {
-                trailingAction?.action()
-            }
+            .accessibilityElement(children: .contain)
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
