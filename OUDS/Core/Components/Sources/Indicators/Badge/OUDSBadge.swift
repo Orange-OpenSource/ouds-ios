@@ -170,9 +170,9 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    public init(accessibilityLabel: String, status: Status = .neutral, size: StandardSize = .medium) {
-        self.init(layout: .init(type: .empty(size: size), status: status),
-                  accessibilityLabel: accessibilityLabel)
+    public init(status: Status = .neutral, size: StandardSize = .medium) {
+        layout = BadgeLayout(type: .empty(size: size), status: status)
+        accessibilityLabel = ""
     }
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
@@ -187,9 +187,9 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(count: UInt, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
-        self.init(layout: .init(type: .count(value: count, size: size), status: status),
-                  accessibilityLabel: accessibilityLabel)
+    public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
+        layout = BadgeLayout(type: .count(value: count, size: size), status: status)
+        accessibilityLabel = "\(count)"
     }
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
@@ -208,16 +208,11 @@ public struct OUDSBadge: View {
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
     {
-        self.init(layout: .init(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status),
-                  accessibilityLabel: accessibilityLabel)
-    }
-
-    private init(layout: BadgeLayout, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
         }
 
-        self.layout = layout
+        layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
         self.accessibilityLabel = accessibilityLabel
     }
 
