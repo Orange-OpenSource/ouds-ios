@@ -125,8 +125,6 @@ struct TextInputContainer: View {
     }
 
     private var accessibilityLabel: String {
-        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
-
         let errorDescription = switch status {
         case let .error(message):
             "core_common_onError_a11y".localized() + ": \(message)"
@@ -142,12 +140,12 @@ struct TextInputContainer: View {
             label
         }
 
-        return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"
+        return "\(labelDescription), \(errorDescription), \(loadingDescription)"
     }
 
     private var accessibilityValue: String {
         guard !text.wrappedValue.isEmpty else {
-            return ""
+            return "core_textInput_empty_a11y".localized()
         }
 
         return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"

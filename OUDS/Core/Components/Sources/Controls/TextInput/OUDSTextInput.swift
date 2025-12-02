@@ -393,34 +393,5 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
     }
-
-    // MARK: Helpers
-
-    private var accessibilityLabel: String {
-        let errorDescription = switch status {
-        case let .error(message):
-            "core_common_onError_a11y".localized() + ": \(message)"
-        default:
-            ""
-        }
-
-        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
-
-        let labelDescription = if label.isEmpty {
-            "\(placeholder ?? "")"
-        } else {
-            label
-        }
-
-        return "\(labelDescription), \(errorDescription), \(loadingDescription)"
-    }
-
-    private var accessibilityValue: String {
-        guard !text.wrappedValue.isEmpty else {
-            return "core_textInput_empty_a11y".localized()
-        }
-
-        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
-    }
 }
 #endif
