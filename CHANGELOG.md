@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 - Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
 - Add an accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060)
+- Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)
+### Fixed
+
+- Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.21.0...0.22.0) - 2025-11-28
 
