@@ -257,7 +257,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a readonly state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDS Checkbox with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary

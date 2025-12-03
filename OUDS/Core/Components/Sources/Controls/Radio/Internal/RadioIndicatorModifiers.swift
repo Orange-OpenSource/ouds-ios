@@ -101,7 +101,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     private var readOnlyColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
-                + " Only non-error situation are allowed to have a read-only state.")
+                + " Only non-error situation are allowed to have a read only state.")
         }
         return theme.colors.actionReadOnlyPrimary
     }
@@ -238,7 +238,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var readOnlyColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDSRadio with a read-only state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.actionReadOnlySecondary

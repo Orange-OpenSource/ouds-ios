@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// ## Cases forbidden by design
 ///
-/// **The design system does not allow to have both an error or read-only situation and a disabled component.**
+/// **The design system does not allow to have both an error or read only situation and a disabled component.**
 ///
 /// ## Code samples
 ///
@@ -94,7 +94,7 @@ public struct OUDSRadio: View {
 
     /// Creates a radio with only an indicator.
     ///
-    /// **The design system does not allow to have both an error or a read-only situation and a disabled state for the component.**
+    /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.

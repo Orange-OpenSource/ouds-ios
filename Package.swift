@@ -32,7 +32,7 @@ let package = Package(
 
         // MARK: Umbrella products
 
-        // Umbrella product to improve Developer eXperience and let users use OUDS in only one import
+        // Umbrella library to improve Developer eXperience and let users use OUDS in only one import
 
         // Embeds all librairies and all themes
         .library(

@@ -26,7 +26,7 @@ import SwiftUI
 ///
 /// ## Cases forbidden by design
 ///
-/// **The design system does not allow to have both a read-only situation and a disabled component.**
+/// **The design system does not allow to have both a read only situation and a disabled component.**
 ///
 /// ## Code samples
 ///

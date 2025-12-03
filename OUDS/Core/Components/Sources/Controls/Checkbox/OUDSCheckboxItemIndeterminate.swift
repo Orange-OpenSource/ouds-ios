@@ -200,7 +200,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         }
 
         if label.isEmpty {
-            OL.warning("Label given to an OUDSCheckboxItemIndeterminate is empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
+            OL.warning("Label given to an OUDSCheckboxItemIndeterminate is defined but empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
         }
 
         if let description, description.isEmpty {

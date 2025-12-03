@@ -25,7 +25,7 @@ In other words, this ``SoshTheme`` is based on the abstract `OUDSTheme`, uses al
 
 > Tip: This theme embeds and registers the fonts for the Sosh theme, you just need to use the theme object as is.
 
-> Important: The Sosh theme does not embed colors for charts yet and is read-only: it cannot be subclassed or derivated
+> Important: The Sosh theme does not embed colors for charts yet and is read only: it cannot be subclassed or derivated
 
 ## How to use the theme
 

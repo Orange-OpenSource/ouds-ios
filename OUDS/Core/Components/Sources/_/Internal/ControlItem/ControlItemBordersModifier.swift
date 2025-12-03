@@ -73,8 +73,8 @@ struct ControlItemBordersModifier: ViewModifier {
         case .hover:
             theme.colors.actionNegativeHover
         case .readOnly, .disabled:
-            OL.fatal("An outlined ControlItem with a disabled or read-only state and an error situation has been detected, which is not allowed."
-                + " Only non-error / non-read-only situation are allowed to have a disabled state.")
+            OL.fatal("An outlined ControlItem with a disabled or read only state and an error situation has been detected, which is not allowed."
+                + " Only non-error / non-read only situation are allowed to have a disabled state.")
         }
     }
 
