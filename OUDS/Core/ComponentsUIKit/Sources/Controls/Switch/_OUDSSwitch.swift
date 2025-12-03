@@ -54,10 +54,12 @@ public final class OUDSSwitchViewController: UIViewController {
     /// - Parameters:
     ///    - isOn: If the switch button is checked or not
     ///    - accessibilityLabel: The accessibility label to vocalise for the switch
-    init(isOn: Bool, accessibilityLabel: String) {
+    ///    - isReadOnly: If component must have look and feel and behavior of a read only component
+    init(isOn: Bool, accessibilityLabel: String, isReadOnly: Bool) {
         switchViewModel = OUDSSwitchViewModel(
             isOn: isOn,
-            accessibilityLabel: accessibilityLabel)
+            accessibilityLabel: accessibilityLabel,
+            isReadOnly: isReadOnly)
         targets = []
         super.init(nibName: nil, bundle: nil)
         setupInternalCallback()
@@ -168,14 +170,18 @@ struct OUDSSwitchWrapper: View {
     @Published var isOn: Bool
     /// For `OUDSSwitch/accessibilityLabel`
     var accessibilityLabel: String
+    /// For `OUDSSwitch/isReadOnly`
+    var isReadOnly: Bool
 
     var onInternalValueChanged: ((Bool) -> Void)?
 
     init(isOn: Bool,
-         accessibilityLabel: String)
+         accessibilityLabel: String,
+         isReadOnly: Bool)
     {
         self.isOn = isOn
         self.accessibilityLabel = accessibilityLabel
+        self.isReadOnly = isReadOnly
     }
 
     deinit {}
@@ -185,6 +191,7 @@ struct OUDSSwitchWrapper: View {
 
 extension OUDSUIKitBrige {
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates SwiftUI `OUDSSwitch` with only an indicator.
     ///
     /// ```swift
@@ -206,10 +213,12 @@ extension OUDSUIKitBrige {
     /// - Parameters:
     ///    - isOn: True if switch is selected, false otherwise
     ///    - accessibilityLabel: The accessibility label the component must have
+    ///    - isReadOnly: If component must have look and feel and behavior of a read only component, default set to false
     ///    - target: Reference to the `UIViewController` hosting the component to create
     ///    - action: The action to trigger defined in the `target` when the value of the `OUDSSwitch` has changed
     @MainActor public static func createSwitch(isOn: Bool,
                                                accessibilityLabel: String,
+                                               isReadOnly: Bool = false,
                                                target: Any?,
                                                action: Selector) -> UIViewController
     {
@@ -217,9 +226,11 @@ extension OUDSUIKitBrige {
 
         let uikitSwitchViewController = OUDSSwitchViewController(
             isOn: isOn,
-            accessibilityLabel: accessibilityLabel)
+            accessibilityLabel: accessibilityLabel,
+            isReadOnly: isReadOnly)
         uikitSwitchViewController.addTarget(target, action: action, for: .valueChanged)
         return uikitSwitchViewController
     }
+    // swiftlint:enable function_default_parameter_at_end
 }
 #endif

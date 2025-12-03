@@ -24,6 +24,10 @@ import SwiftUI
 /// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
 /// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for switch.
 ///
+/// ## Cases forbidden by design
+///
+/// **The design system does not allow to have both a read only situation and a disabled component.**
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -56,7 +60,7 @@ import SwiftUI
 ///
 /// ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
 ///
-/// - Version: 1.4.0 (Figma component design version)
+/// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSwitch: View {
@@ -66,6 +70,7 @@ public struct OUDSSwitch: View {
     @Binding var isOn: Bool
 
     private let accessibilityLabel: String
+    private let isReadOnly: Bool
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -74,21 +79,25 @@ public struct OUDSSwitch: View {
 
     /// Creates a switch with only an indicator.
     ///
+    /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
+    ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///    - accessibilityLabel: The accessibility label the component must have
-    public init(isOn: Binding<Bool>, accessibilityLabel: String) {
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
+    public init(isOn: Binding<Bool>, accessibilityLabel: String, isReadOnly: Bool = false) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSSwitch should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                 $isOn.wrappedValue.toggle()
             }
@@ -96,7 +105,8 @@ public struct OUDSSwitch: View {
             SwitchIndicator(interactionState: interactionState, isOn: $isOn)
                 .frame(minWidth: theme.switch.sizeMinWidth,
                        minHeight: theme.switch.sizeMinHeight,
-                       maxHeight: theme.switch.sizeMaxHeight)
+                       maxHeight: theme.switch.sizeMaxHeight,
+                       alignment: .center)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
@@ -106,7 +116,7 @@ public struct OUDSSwitch: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
     private var a11yLabel: String {
-        let stateDescription = isEnabled ? "" : "core_common_disabled_a11y".localized()
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(accessibilityLabel), \(stateDescription), \(switchA11yTrait)"
@@ -120,7 +130,7 @@ public struct OUDSSwitch: View {
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        if !isEnabled {
+        if !isEnabled || isReadOnly {
             ""
         } else {
             "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()

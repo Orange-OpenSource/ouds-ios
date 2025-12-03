@@ -71,7 +71,9 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
             hoverColor
         case .pressed:
             pressedColor
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyColor
+        case .disabled:
             disabledColor
         }
     }
@@ -94,6 +96,14 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var pressedColor: MultipleColorSemanticTokens {
         isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
+    }
+
+    private var readOnlyColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
+                + " Only non-error situation are allowed to have a read only state.")
+        }
+        return theme.colors.actionReadOnlyPrimary
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
@@ -191,7 +201,9 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
             hoverColor
         case .pressed:
             pressedColor
-        case .disabled, .readOnly:
+        case .readOnly:
+            readOnlyColor
+        case .disabled:
             disabledColor
         }
     }
@@ -222,6 +234,14 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         } else {
             theme.colors.actionPressed
         }
+    }
+
+    private var readOnlyColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
+                + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return theme.colors.actionReadOnlySecondary
     }
 
     private var disabledColor: MultipleColorSemanticTokens {

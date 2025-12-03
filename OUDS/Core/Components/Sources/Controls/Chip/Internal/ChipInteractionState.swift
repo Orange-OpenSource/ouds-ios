@@ -38,7 +38,7 @@ enum ChipInteractionState {
         case .disabled:
             self = .disabled
         case .readOnly:
-            OL.fatal("An OUDS chip is a component which cannot be in read-only mode")
+            OL.fatal("An OUDS chip is a component which cannot be in read only mode")
         }
     }
 }

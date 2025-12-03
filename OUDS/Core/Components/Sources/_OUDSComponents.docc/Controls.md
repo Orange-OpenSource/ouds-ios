@@ -96,15 +96,15 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
         OUDSCheckboxItemIndeterminate(selection: $selection, 
                                       label: "Dead Robot Zombie Cop",
-                                      helper: "from Outer Space II",
+                                      description: "from Outer Space II",
                                       target: self, 
-                                    action: action)
+                                      action: action)
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
         // with a reversed layout, and exposing only two states through isOn binding
         OUDSCheckboxItem(isOn: $isOn,
                          label: "We live in a fabled world",
-                         helper: "Of dreaming boys and wide-eyed girls",
+                         description: "Of dreaming boys and wide-eyed girls",
                          icon: Image(decorative: "ic_heart"),
                          isReversed: true,
                          isError: true,
@@ -126,7 +126,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         // A leading checkbox with a label, an helper text, and with a three-values-based state with selection binding
         OUDSUIKit.createCheckboxItemIndeterminate(selection: selection,
                                                   label: "Dead Robot Zombie Cop",
-                                                  helper: "from Outer Space II"
+                                                  description: "from Outer Space II"
                                                   target: self,
                                                   action: action)
 
@@ -134,7 +134,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         // with a reversed layout, and with two states
         OUDSUIKit.createCheckboxItem(isOn: isOn,
                                      label: "We live in a fabled world",
-                                     helper: "Of dreaming boys and wide-eyed girls",
+                                     description: "Of dreaming boys and wide-eyed girls",
                                      icon: Image(decorative: "ic_heart"),
                                      isReversed: true,
                                      isError: true,
@@ -172,13 +172,12 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
     [
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
+                                        description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame")),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
-                                       label: "IPA beer",
-                                        helper: "From Brewdog company",
+                                        label: "IPA beer",
+                                        description: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill")),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
@@ -280,12 +279,12 @@ The indicator can be leading or trailing.
         // A leading radio with a label
         OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", target: target, action: action)
 
-        // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
+        // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
         // error with a reversed layout
         OUDSRadioItem(isOn: $isOn,
                       label: "Lucy in the Sky with Diamonds",
-                      additionalLabel: "The Beatles"
-                      helper: "1967",
+                      extraLabel: "The Beatles"
+                      description: "1967",
                       icon: Image(decorative: "ic_heart"),
                       isReversed: true,
                       isError: true,
@@ -304,11 +303,11 @@ The indicator can be leading or trailing.
           // A leading radio with a label
           OUDSUIKit.createRadioItem(isOn: isOn, label: "Lucy in the Sky with Diamonds")
 
-          // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an rror with a reversed layout
+          // A trailing radio with a label, an additional label, a description, an icon, a divider and is about an rror with a reversed layout
           OUDSUIKit.createRadioItem(isOn: isOn,
                                     label: "Lucy in the Sky with Diamonds",
-                                    additionalLabel: "The Beatles"
-                                    helper: "1967",
+                                    extraLabel: "The Beatles"
+                                    description: "1967",
                                     icon: Image(decorative: "ic_heart"),
                                     isReversed: true,
                                     isError: true,
@@ -344,13 +343,13 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
     [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
+                                        extraLabel: "Very spicy",
+                                        description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame")),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
-                                        helper: "From Brewdog company",
+                                        description: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill")),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
@@ -443,16 +442,16 @@ The indicator can be leading or trailing.
         // A leading switch with a label and exposing the state through isOn binding
         OUDSSwitchItem("Hello world", isOn: $isOn)
 
-        // A leading switch with a label, an helper text
+        // A leading switch with a label and a description
         OUDSSwitchItem("Dead Robot Zombie Cop",
                        isOn: $isOn,
-                       helper: "from Outer Space II")
+                       description: "from Outer Space II")
 
-        // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+        // A trailing switch with a label, a description, an icon, a divider and is about an error
         // with an inverse layout
         OUDSSwitchItem("We live in a fabled world",
                         isOn: $isOn,
-                        helper: "Of dreaming boys and wide-eyed girls",
+                        description: "Of dreaming boys and wide-eyed girls",
                         icon: Image(decorative: "ic_heart"),
                         isReversed: true,
                         isError: true,
@@ -476,11 +475,11 @@ The indicator can be leading or trailing.
                                   target: target, 
                                   action: action)
 
-        // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+        // A trailing switch with a label, a description text, an icon, a divider and is about an error
         // with an inverse layout
         OUDSUIKit.createSwitchItem("We live in a fabled world",
                                    isOn: isOn,
-                                   helper: "Of dreaming boys and wide-eyed girls",
+                                   description: "Of dreaming boys and wide-eyed girls",
                                    icon: Image(decorative: "ic_heart"),
                                    isReversed: true,
                                    isError: true,

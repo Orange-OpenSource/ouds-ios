@@ -27,7 +27,7 @@ That is the reason why this theme exists.
 
 > Note: It contains also colors dedicated to charts.
 
-> Important: The Orange Business Tools theme is read-only: it cannot be suclassed or derivated.
+> Important: The Orange Business Tools theme is read only: it cannot be suclassed or derivated.
 
 ## How to use the theme
 

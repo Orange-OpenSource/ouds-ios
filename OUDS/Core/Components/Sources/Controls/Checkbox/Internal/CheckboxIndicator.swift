@@ -75,7 +75,6 @@ struct CheckboxIndicator: View {
                 OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                     + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
-
             // Not error case
         } else {
             switch interactionState {
@@ -89,7 +88,9 @@ struct CheckboxIndicator: View {
                 theme.colors.actionHover
             case .pressed:
                 theme.colors.actionPressed
-            case .disabled, .readOnly:
+            case .readOnly:
+                theme.colors.actionReadOnlyPrimary
+            case .disabled:
                 theme.colors.actionDisabled
             }
         }

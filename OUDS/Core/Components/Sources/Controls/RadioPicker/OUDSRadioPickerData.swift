@@ -28,10 +28,10 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     let label: String
 
     /// An optional additional label the ``OUDSRadioItem`` can have
-    let additionalLabel: String?
+    let extraLabel: String?
 
-    /// An optional helper text the ``OUDSRadioItem`` can have
-    let helper: String?
+    /// A description the ``OUDSRadioItem`` can have
+    let description: String?
 
     /// An optional image the ``OUDSRadioItem`` can have
     let icon: Image?
@@ -60,8 +60,8 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     /// - Parameters:
     ///    - tag: a value to discriminate one radio to another
     ///    - label: the mandatory text to add to ``OUDSRadioItem``
-    ///    - additionalLabel: An optional additinal text, default set to nil
-    ///    - helper: Another optional text, default set to nil
+    ///    - extraLabel: An optional additinal text, default set to nil
+    ///    - description: Another optional text, a description, default set to nil
     ///    - icon: An optional image, default set to nil
     ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
     ///    - isReversed: True to use to reversed layour of the ``OUDSRadioItem``, false otherwise (default)
@@ -70,12 +70,12 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
     ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
     ///
-    /// **Remark: If `label`, `additionalLabel` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// **Remark: If `label`, `extraLabel` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
     /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
     public init(tag: Tag,
                 label: String,
-                additionalLabel: String? = nil,
-                helper: String? = nil,
+                extraLabel: String? = nil,
+                description: String? = nil,
                 icon: Image? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
@@ -86,8 +86,8 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     {
         self.tag = tag
         self.label = label
-        self.additionalLabel = additionalLabel
-        self.helper = helper
+        self.extraLabel = extraLabel
+        self.description = description
         self.icon = icon
         self.isOutlined = isOutlined
         self.isReversed = isReversed

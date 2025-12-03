@@ -32,8 +32,8 @@ struct ControlItemLabel: View {
     /// Gathers any details and content to add in the ``ControlItemLabel``
     struct LayoutData {
         let label: String
-        let additionalLabel: String?
-        let helper: String?
+        let extraLabel: String?
+        let description: String?
         let icon: Image?
         let flipIcon: Bool
         let isOutlined: Bool
@@ -55,22 +55,22 @@ struct ControlItemLabel: View {
     // MARK: - Layout Items
 
     private func texts() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+        VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
             Text(layoutData.label)
                 .labelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
                 .oudsForegroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let additionalLabel = layoutData.additionalLabel, !additionalLabel.isEmpty {
-                Text(additionalLabel)
+            if let extraLabel = layoutData.extraLabel, !extraLabel.isEmpty {
+                Text(extraLabel)
                     .labelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(additionalLabelColor)
+                    .oudsForegroundStyle(extraLabelColor)
             }
 
-            if let helper = layoutData.helper, !helper.isEmpty {
-                Text(helper)
+            if let description = layoutData.description, !description.isEmpty {
+                Text(description)
                     .labelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
                     .oudsForegroundStyle(helperColor)
@@ -113,7 +113,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var additionalLabelColor: MultipleColorSemanticTokens {
+    private var extraLabelColor: MultipleColorSemanticTokens {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
     }
 }

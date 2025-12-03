@@ -35,7 +35,7 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+            .frame(minHeight: theme.controlItem.sizeIcon, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 

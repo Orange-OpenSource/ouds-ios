@@ -21,7 +21,7 @@ This Wireframe theme is a theme for some specific usages, like for prototyping a
 
 > Note: The Wireframe theme uses the Shantell Sans font family
 
-> Important: The Wireframe theme does not embed charts colors yet, and is read-only: it cannot be suclassed or derivated.
+> Important: The Wireframe theme does not embed charts colors yet, and is read only: it cannot be suclassed or derivated.
 
 ## How to use the theme
 

@@ -55,11 +55,13 @@ public final class OUDSRadioViewController: UIViewController {
     ///    - isOn: If the radio button is checked or not
     ///    - accessibilityLabel: The accessibility label to vocalise for the radio button
     ///    - isError: If the radio button is in error state or not
-    init(isOn: Bool, accessibilityLabel: String, isError: Bool) {
+    ///    - isReadOnly: If the radio button is in read only state or not
+    init(isOn: Bool, accessibilityLabel: String, isError: Bool, isReadOnly: Bool) {
         radioViewModel = OUDSRadioViewModel(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
-            isError: isError)
+            isError: isError,
+            isReadOnly: isReadOnly)
         targets = []
         super.init(nibName: nil, bundle: nil)
         setupInternalCallback()
@@ -157,7 +159,8 @@ struct OUDSRadioWrapper: View {
         OUDSRadio(
             isOn: radioButtonBinding,
             accessibilityLabel: model.accessibilityLabel,
-            isError: model.isError)
+            isError: model.isError,
+            isReadOnly: model.isReadOnly)
             .environment(\._theme, OUDSUIKit.theme)
     }
 }
@@ -171,6 +174,8 @@ struct OUDSRadioWrapper: View {
     @Published var isOn: Bool
     /// For `OUDSRadio/isError`
     var isError: Bool
+    /// For `OUDSRadio/isReadOnly`
+    var isReadOnly: Bool
     /// For `OUDSRadio/accessibilityLabel`
     var accessibilityLabel: String
 
@@ -178,11 +183,13 @@ struct OUDSRadioWrapper: View {
 
     init(isOn: Bool,
          accessibilityLabel: String,
-         isError: Bool)
+         isError: Bool,
+         isReadOnly: Bool)
     {
         self.isOn = isOn
         self.accessibilityLabel = accessibilityLabel
         self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     deinit {}
@@ -216,20 +223,23 @@ extension OUDSUIKitBrige {
     ///    - isOn: True if radio is selected, false otherwise
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect an read only state, default set to `false`
     ///    - target: Reference to the `UIViewController` hosting the component to create
     ///    - action: The action to trigger defined in the `target` when the value of the `OUDSRadio` has changed
     @MainActor public static func createRadio(isOn: Bool,
                                               accessibilityLabel: String,
                                               isError: Bool = false,
+                                              isReadOnly: Bool = false,
                                               target: Any?,
                                               action: Selector) -> UIViewController
     {
-        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSRadio(isOn:accessibilityLabel:isError)")
+        OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSRadio(isOn:accessibilityLabel:)")
 
         let uikitRadioViewController = OUDSRadioViewController(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
-            isError: isError)
+            isError: isError,
+            isReadOnly: isReadOnly)
         uikitRadioViewController.addTarget(target, action: action, for: .valueChanged)
         return uikitRadioViewController
     }
