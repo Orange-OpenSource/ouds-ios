@@ -21,13 +21,13 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Default badge is neutral with medium size
-///     OUDSBadge()
+///     OUDSBadge(accessibilityLabel: "New feature available")
 ///
 ///     // Accent badge in small size without information
-///     OUDSBadge(status: .accent, size: .small)
+///     OUDSBadge(accessibilityLabel: "New feature available", status: .accent, size: .small)
 ///
 ///     // Negative badge in large size with count information
-///     OUDSBadge(count: 1, status: .negative, size: .large)
+///     OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
 ///
 ///     // Info badge in medium size (default size) with default icon information
 ///     OUDSBadge(status: .info, accessibilityLabel: "Like", size: .medium)
@@ -50,8 +50,7 @@ import SwiftUI
 ///
 /// ### Vocalizations
 ///
-/// A badge without content will be ignored instead of a count badge for which its value wil be vocalized.
-/// For badge with icon, if the accessibility label is defined (and it should be) it will be vocalized.
+/// A badge needs an accessibility label to decribe the meaning that will be vocalized.
 ///
 /// ## Design documentation
 ///
@@ -168,11 +167,12 @@ public struct OUDSBadge: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// - Parameters:
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    public init(status: Status = .neutral, size: StandardSize = .medium) {
-        layout = BadgeLayout(type: .empty(size: size), status: status)
-        accessibilityLabel = ""
+    public init(accessibilityLabel: String, status: Status = .neutral, size: StandardSize = .medium) {
+        self.init(layout: .init(type: .empty(size: size), status: status),
+                  accessibilityLabel: accessibilityLabel)
     }
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
@@ -184,11 +184,12 @@ public struct OUDSBadge: View {
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
-        layout = BadgeLayout(type: .count(value: count, size: size), status: status)
-        accessibilityLabel = "\(count)"
+    public init(count: UInt, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
+        self.init(layout: .init(type: .count(value: count, size: size), status: status),
+                  accessibilityLabel: accessibilityLabel)
     }
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
@@ -200,17 +201,23 @@ public struct OUDSBadge: View {
     /// - Parameters:
     ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
     ///    and **neutral** status whrere a decorative icon is required)
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     ///    - size: The size of this badge, default set to *medium*
     public init(status: StatusWithIcon,
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
     {
+        self.init(layout: .init(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status),
+                  accessibilityLabel: accessibilityLabel)
+    }
+
+    private init(layout: BadgeLayout, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
         }
 
-        layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
+        self.layout = layout
         self.accessibilityLabel = accessibilityLabel
     }
 
