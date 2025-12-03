@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
 - Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
 - Read only variant for `checkbox` and  `checkbox indeterminate` components (Orange-OpenSource/ouds-ios#1137)
+
 ### Fixed
 
 - Add an accessibility label for badge "standard" and "count" types (Orange-OpenSource/ouds-ios#1060)

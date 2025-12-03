@@ -27,7 +27,7 @@ import SwiftUI
 ///     OUDSBadge(accessibilityLabel: "New feature available", status: .accent, size: .small)
 ///
 ///     // Negative badge in large size with count information
-///     OUDSBadge(count: 9, "9 new messages", status: .negative, size: .large)
+///     OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
 ///
 ///     // Info badge in medium size (default size) with default icon information
 ///     OUDSBadge(status: .info, accessibilityLabel: "Like", size: .medium)
@@ -50,7 +50,7 @@ import SwiftUI
 ///
 /// ### Vocalizations
 ///
-/// A badge need an accessibility label to decribe the meaning that will be vocalized.
+/// A badge needs an accessibility label to decribe the meaning that will be vocalized.
 ///
 /// ## Design documentation
 ///
