@@ -142,19 +142,28 @@ public struct OUDSCheckboxIndeterminate: View {
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(isEnabled && !isReadOnly ? selection.a11yHint : "")
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isDisabled: True if component is disabled, false otherwise
-    private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+    /// Forges a string to vocalize with *Voice Over* describing the component
+    private var accessibilityLabel: String {
+        a11yLabel
+    }
 
-        let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
-        return result
+    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    private var accessibilityValue: String {
+        let disabledDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
+        let valueDescription = selection.a11yDescription.localized()
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+
+        return "\(disabledDescription),\(errorDescription),\(valueDescription),\(traitDescription)"
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
+        !isEnabled && isReadOnly ? "" : selection.a11yHint
     }
 }

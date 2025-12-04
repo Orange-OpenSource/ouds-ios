@@ -143,9 +143,9 @@ public struct OUDSCheckbox: View {
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(a11yValue())
-        .accessibilityHint(a11yHint())
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
     // MARK: Computed value
@@ -156,13 +156,23 @@ public struct OUDSCheckbox: View {
 
     // MARK: - A11Y helpers
 
-    /// Forges a string to vocalize with *Voice Over* describing the component value
-    private func a11yValue() -> String {
-        isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+    /// Forges a string to vocalize with *Voice Over* describing the component
+    private var accessibilityLabel: String {
+        a11yLabel
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    private var accessibilityValue: String {
+        let disabledDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
+        let valueDescription = isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+
+        return "\(disabledDescription),\(errorDescription),\(valueDescription),\(traitDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
-    private func a11yHint() -> String {
+    private var accessibilityHint: String {
         if !isEnabled || isReadOnly {
             ""
         } else {
@@ -170,16 +180,5 @@ public struct OUDSCheckbox: View {
                 ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
                 : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         }
-    }
-
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isDisabled: True if component is disabled, false otherwise
-    private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(a11yLabel), \(stateDescription), \(errorDescription), \(checkboxA11yTrait)"
-        return result
     }
 }
