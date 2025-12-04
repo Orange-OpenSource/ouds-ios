@@ -232,7 +232,9 @@ public struct OUDSSwitchItem: View {
 
     /// Forge a string to vocalize the component label based on label and description
     private var accessibilityLabel: String {
-        "\(layoutData.label), \(layoutData.extraLabel ?? ""), \(layoutData.description ?? "")"
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait

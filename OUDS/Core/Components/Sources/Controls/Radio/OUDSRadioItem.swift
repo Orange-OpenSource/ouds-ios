@@ -264,7 +264,9 @@ public struct OUDSRadioItem: View {
 
     /// Forge a string to vocalize the component label based on label and description
     private var accessibilityLabel: String {
-        "\(layoutData.label), \(layoutData.extraLabel ?? ""), \(layoutData.description ?? "")"
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
