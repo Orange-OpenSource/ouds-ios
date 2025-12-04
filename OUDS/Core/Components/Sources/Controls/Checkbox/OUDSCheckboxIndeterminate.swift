@@ -95,7 +95,7 @@ public struct OUDSCheckboxIndeterminate: View {
 
     // MARK: - Properties
 
-    private let a11yLabel: String
+    private let accessibilityLabel: String
     private let isError: Bool
     private let isReadOnly: Bool
 
@@ -123,7 +123,7 @@ public struct OUDSCheckboxIndeterminate: View {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _selection = selection
-        a11yLabel = accessibilityLabel
+        self.accessibilityLabel = accessibilityLabel
         self.isError = isError
         self.isReadOnly = isReadOnly
     }
@@ -147,19 +147,14 @@ public struct OUDSCheckboxIndeterminate: View {
         .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component
-    private var accessibilityLabel: String {
-        a11yLabel
-    }
-
     /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
     private var accessibilityValue: String {
-        let disabledDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let valueDescription = selection.a11yDescription.localized()
         let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = selection.a11yDescription
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
 
-        return "\(disabledDescription),\(errorDescription),\(valueDescription),\(traitDescription)"
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint

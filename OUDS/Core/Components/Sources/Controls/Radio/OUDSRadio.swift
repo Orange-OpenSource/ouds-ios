@@ -128,28 +128,23 @@ public struct OUDSRadio: View {
                 .modifier(RadioBackgroundModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
-    }
-
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    private var a11yLabel: String {
-        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(accessibilityLabel), \(stateDescription),  \(errorDescription), \(radioA11yTrait)"
-        return result
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue.localized())
+        .accessibilityHint(accessibilityHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+    private var accessibilityValue: String {
+        let traitDescription = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
+
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
-    private var a11yHint: String {
+    private var accessibilityHint: String {
         if !isEnabled || isReadOnly {
             ""
         } else {

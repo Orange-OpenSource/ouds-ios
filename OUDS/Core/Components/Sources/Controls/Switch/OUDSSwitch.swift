@@ -109,27 +109,22 @@ public struct OUDSSwitch: View {
                        alignment: .center)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    private var a11yLabel: String {
+    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    private var accessibilityValue: String {
+        let traitDescription = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
         let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
-        let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(accessibilityLabel), \(stateDescription), \(switchA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription)"
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
-    }
-
-    /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
-    private var a11yHint: String {
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
         if !isEnabled || isReadOnly {
             ""
         } else {
