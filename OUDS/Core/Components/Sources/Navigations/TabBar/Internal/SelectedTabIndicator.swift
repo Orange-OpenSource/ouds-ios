@@ -58,7 +58,7 @@ struct SelectedTabIndicator: View {
         let basePosition = geometry.size.height - tabBarHeight + safeAreaBottom
 
         // Ajuster selon l'orientation et le type d'appareil
-        let topOffset = getTopOffset()
+        let topOffset = 3.0
 
         let finalPosition = basePosition + topOffset + (indicatorHeight / 2)
 
@@ -70,47 +70,6 @@ struct SelectedTabIndicator: View {
         print("   - Final Y position: \(finalPosition)")
 
         return finalPosition
-    }
-
-    /// Retourne l'offset depuis le haut de la tab bar selon l'appareil et l'orientation
-    private func getTopOffset() -> CGFloat {
-        switch deviceModel {
-        case .se1, .se2, .se3, .regular6to8, .plus6to8:
-            // Appareils avec Touch ID
-            isLandscape ? 1.5 : 2.0
-
-        case .x, .xs, .pro11:
-            // iPhone X, XS, 11 Pro (écrans plus petits avec Face ID)
-            isLandscape ? 2.0 : 3.0
-
-        case .xr, .regular11:
-            // iPhone XR, 11 (écrans moyens avec Face ID)
-            isLandscape ? 2.5 : 3.5
-
-        case .xsMax, .proMax11:
-            // iPhone XS Max, 11 Pro Max (écrans plus grands - ajustement spécial)
-            isLandscape ? 4.0 : 6.0
-
-        case .mini12, .mini13:
-            // iPhone 12 mini, 13 mini (écrans compacts avec Face ID)
-            isLandscape ? 2.0 : 3.0
-
-        case .regular12, .pro12, .regular13, .pro13, .regular14:
-            // iPhone 12/13/14 standard
-            isLandscape ? 2.5 : 4.0
-
-        case .proMax12, .proMax13, .plus14:
-            // iPhone 12/13 Pro Max, 14 Plus (grands écrans)
-            isLandscape ? 4.0 : 6.0
-
-        case .pro14, .regular15, .pro15:
-            // iPhone 14 Pro, 15, 15 Pro (avec Dynamic Island)
-            isLandscape ? 3.0 : 4.5
-
-        case .proMax14, .plus15, .proMax15:
-            // iPhone 14 Pro Max, 15 Plus, 15 Pro Max (très grands écrans)
-            isLandscape ? 4.5 : 7.0
-        }
     }
 
     /// Charge la configuration de la tab bar selon l'appareil et l'orientation
@@ -220,23 +179,40 @@ struct SelectedTabIndicator: View {
 
 extension SelectedTabIndicator {
 
-    /// Modèles d'iPhone avec leurs caractéristiques
     enum iPhoneModel: CustomStringConvertible {
-        case se1, se2, se3
-        case regular6to8
-        case plus6to8
-        case x, xs, pro11
-        case xr, regular11
-        case xsMax, proMax11
-        case mini12, mini13
-        case regular12, pro12, regular13, pro13, regular14
-        case proMax12, proMax13, plus14
-        case pro14, regular15, pro15
-        case proMax14, plus15, proMax15
+        // iPhone SE series
+        case se1, se2, se3, se4
+
+        // iPhone 6-8 series
+        case regular6to8, plus6to8
+
+        // iPhone X series
+        case x, xs, xsMax
+
+        // iPhone 11 series
+        case xr, regular11, pro11, proMax11
+
+        // iPhone 12 series
+        case mini12, regular12, pro12, proMax12
+
+        // iPhone 13 series
+        case mini13, regular13, pro13, proMax13
+
+        // iPhone 14 series
+        case regular14, plus14, pro14, proMax14
+
+        // iPhone 15 series
+        case regular15, plus15, pro15, proMax15
+
+        // iPhone 16 series
+        case regular16, plus16, pro16, proMax16
+
+        // iPhone 17 series (futurs)
+        case regular17, plus17, pro17, proMax17
 
         var hasHomeButton: Bool {
             switch self {
-            case .se1, .se2, .se3, .regular6to8, .plus6to8:
+            case .se1, .se2, .se3, .se4, .regular6to8, .plus6to8:
                 true
             default:
                 false
@@ -253,34 +229,53 @@ extension SelectedTabIndicator {
 
         var description: String {
             switch self {
+            // SE series
             case .se1: "iPhone SE (1st gen)"
             case .se2: "iPhone SE (2nd gen)"
             case .se3: "iPhone SE (3rd gen)"
+            case .se4: "iPhone SE (4th gen)"
+            // 6-8 series
             case .regular6to8: "iPhone 6/7/8"
             case .plus6to8: "iPhone 6/7/8 Plus"
+            // X series
             case .x: "iPhone X"
             case .xs: "iPhone XS"
-            case .pro11: "iPhone 11 Pro"
+            case .xsMax: "iPhone XS Max"
+            // 11 series
             case .xr: "iPhone XR"
             case .regular11: "iPhone 11"
-            case .xsMax: "iPhone XS Max"
+            case .pro11: "iPhone 11 Pro"
             case .proMax11: "iPhone 11 Pro Max"
+            // 12 series
             case .mini12: "iPhone 12 mini"
-            case .mini13: "iPhone 13 mini"
             case .regular12: "iPhone 12"
             case .pro12: "iPhone 12 Pro"
+            case .proMax12: "iPhone 12 Pro Max"
+            // 13 series
+            case .mini13: "iPhone 13 mini"
             case .regular13: "iPhone 13"
             case .pro13: "iPhone 13 Pro"
-            case .regular14: "iPhone 14"
-            case .proMax12: "iPhone 12 Pro Max"
             case .proMax13: "iPhone 13 Pro Max"
+            // 14 series
+            case .regular14: "iPhone 14"
             case .plus14: "iPhone 14 Plus"
             case .pro14: "iPhone 14 Pro"
-            case .regular15: "iPhone 15"
-            case .pro15: "iPhone 15 Pro"
             case .proMax14: "iPhone 14 Pro Max"
+            // 15 series
+            case .regular15: "iPhone 15"
             case .plus15: "iPhone 15 Plus"
+            case .pro15: "iPhone 15 Pro"
             case .proMax15: "iPhone 15 Pro Max"
+            // 16 series
+            case .regular16: "iPhone 16"
+            case .plus16: "iPhone 16 Plus"
+            case .pro16: "iPhone 16 Pro"
+            case .proMax16: "iPhone 16 Pro Max"
+            // 17 series
+            case .regular17: "iPhone 17"
+            case .plus17: "iPhone 17 Plus"
+            case .pro17: "iPhone 17 Pro"
+            case .proMax17: "iPhone 17 Pro Max"
             }
         }
     }
@@ -299,7 +294,6 @@ extension SelectedTabIndicator {
             return .plus6to8
         case 2_436:
             // Peut être X, XS, 11 Pro, 12 mini, 13 mini
-            // Utiliser d'autres critères pour différencier si nécessaire
             return .xs
         case 2_688:
             return .xsMax // iPhone XS Max, 11 Pro Max
@@ -313,6 +307,14 @@ extension SelectedTabIndicator {
             return .pro14 // iPhone 14 Pro, 15, 15 Pro
         case 2_796:
             return .proMax14 // iPhone 14 Pro Max, 15 Plus, 15 Pro Max
+        case 2_622:
+            return .regular16 // iPhone 16, 16 Pro (estimation)
+        case 2_868:
+            return .proMax16 // iPhone 16 Plus, 16 Pro Max (estimation)
+        case 2_650:
+            return .regular17 // iPhone 17, 17 Pro (estimation future)
+        case 2_900:
+            return .proMax17 // iPhone 17 Plus, 17 Pro Max (estimation future)
         default:
             return .regular12 // Fallback
         }
