@@ -34,7 +34,6 @@ struct SelectedTabIndicator: View {
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
-    @State private var isLandscape: Bool = false
 
     @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
@@ -47,7 +46,7 @@ struct SelectedTabIndicator: View {
             let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
             let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
 
-            Rectangle()
+            RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
                 .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
                 .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
                 .position(
@@ -56,40 +55,36 @@ struct SelectedTabIndicator: View {
                 .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
         }
         .onAppear {
-            loadTabBarConfiguration()
+            updateTabBarHeight()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                loadTabBarConfiguration()
+                updateTabBarHeight()
             }
         }
     }
 
     // MARK: Tab bar heights
 
-    /// Gets from device some metrucs like bottom safe area and flags to help to compute indicator location
-    private func loadTabBarConfiguration() {
+    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension
+    private func updateTabBarHeight() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first,
               iPhoneInUse != iPhoneDevice.unknown else { return }
 
         safeAreaBottom = window.safeAreaInsets.bottom
-        isLandscape = window.bounds.width > window.bounds.height
-        updateTabBarHeight()
-    }
 
-    /// Get the tab bar height depending to the state of the device
-    private func updateTabBarHeight() {
         if let detectedTabBar = findTabBar() {
             tabBarHeight = detectedTabBar.frame.height
         } else {
-            // If not possible to compute tab abr height, get recommended / precomptued value
+            // If not possible to compute tab bar height, get recommended / precomptued value
             let heights = iPhoneInUse.tabBarHeights
+            let isLandscape = window.bounds.width > window.bounds.height
             tabBarHeight = isLandscape ? heights.landscape : heights.portrait
         }
     }
 
-    // MARK: - Tab bar search
+    // MARK: Tab bar search
 
     /// Get the tab bar within the view hierarchy
     private func findTabBar() -> UITabBar? {
