@@ -12,10 +12,37 @@
 //
 
 import Foundation
+import SwiftUI
+
+// MARK: - Environment
+
+private struct iPhoneDeviceEnvironmentKey: EnvironmentKey {
+
+    static let defaultValue = iPhoneDevice.unknown
+}
+
+extension EnvironmentValues {
+
+    /// The `iPhoneDevice` in use, defined depending to screen dimensions.
+    /// No need to get more details (at least for privacy concerns), just to know why group of devices it is part of.
+    /// Can be useful to compute some lements like indicators of tab bars.
+    public var iPhoneInUse: iPhoneDevice {
+        get {
+            self[iPhoneDeviceEnvironmentKey.self]
+        }
+        set {
+            self[iPhoneDeviceEnvironmentKey.self] = newValue
+        }
+    }
+}
+
+// MARK: - iPhone Device
 
 /// List some iPhone devices which can use OUDS, i.e. supposed to support at least iOS 15.
 /// Helps to define some metrics like tab bar heights.
-public enum iPhoneDevice: CustomStringConvertible {
+///
+/// - Since: 1.0.0
+public enum iPhoneDevice: CustomStringConvertible, Sendable {
 
     /*
      Following iPhones not suppsoed to support iOS 15:
@@ -25,6 +52,9 @@ public enum iPhoneDevice: CustomStringConvertible {
      - iPhone 3GS, 3G
      - iPhone 1
      */
+
+    /// Not managed nor recognized
+    case unknown
 
     /// iPhone SE series
     case se1, se2, se3
@@ -83,6 +113,7 @@ public enum iPhoneDevice: CustomStringConvertible {
     /// For `CustomStringConvertible`
     public var description: String {
         switch self {
+        case .unknown: "Unknown"
         // SE series
         case .se1: "iPhone SE (1st gen)"
         case .se2: "iPhone SE (2nd gen)"
@@ -146,7 +177,7 @@ public enum iPhoneDevice: CustomStringConvertible {
     ///    - width: Screen native bounds width
     ///    - height: Screen native bounds width
     ///    - safeAreaBottom: The bottom safe area dimension, default set to 0
-    public init?(_ width: Double, _ height: Double, _ safeAreaBottom: CGFloat = 0) {
+    public init(_ width: Double, _ height: Double, _ safeAreaBottom: CGFloat = 0) {
         let maxDimension = max(width, height)
 
         switch maxDimension {
@@ -180,7 +211,7 @@ public enum iPhoneDevice: CustomStringConvertible {
             self = .proMax16
         default:
             OL.warning("iPhone device not recognized (with max dimension \(maxDimension)), please submit an issue with the device reference and computed dimension (https://github.com/Orange-OpenSource/ouds-ios/issues)")
-            return nil
+            self = iPhoneDevice.unknown
         }
     }
 }

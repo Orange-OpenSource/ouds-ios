@@ -212,27 +212,6 @@ public struct OUDSTabBar<Content>: View where Content: View {
             content()
         }
         #endif
-        /*
-         #if !os(macOS) && !os(watchOS)
-         ZStack(alignment: .bottom) {
-             TabView(selection: $selectedTab) {
-                 content()
-             }
-             .modifier(OUDSTabBarViewModifier())
-
-             #if os(iOS)
-             // Without Liquid Glass, an indicator for the tab bar is mandatory with iOS
-             if #unavailable(iOS 26.0) {
-                 SelectedTabIndicator(selected: $selectedTab, count: tabCount)
-             }
-             #endif
-         }
-         #else
-         TabView {
-             content()
-         }
-         #endif
-          */
     }
 }
 

@@ -85,6 +85,9 @@ public struct OUDSThemeableView<Content>: View where Content: View {
             .environment(\._theme, theme)
             .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
+        #if os(iOS)
+            .modifier(DeviceModifier())
+        #endif
         #else
         content()
             .environment(\._theme, theme)
@@ -131,6 +134,27 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
         content
             .environment(\.oudsHorizontalSizeClass, horizontalUserInterfaceSizeClass)
             .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
+    }
+}
+#endif
+
+#if os(iOS)
+/// Private modifier used to define as environment variable the type of iPhone device
+private struct DeviceModifier: ViewModifier {
+
+    private func getDevice() -> iPhoneDevice {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else { return iPhoneDevice.unknown }
+
+        let screenBounds = UIScreen.main.nativeBounds
+        let safeAreaBottom = window.safeAreaInsets.bottom
+
+        return OUDSFoundations.iPhoneDevice(screenBounds.width, screenBounds.height, safeAreaBottom)
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .environment(\.iPhoneInUse, getDevice())
     }
 }
 #endif
