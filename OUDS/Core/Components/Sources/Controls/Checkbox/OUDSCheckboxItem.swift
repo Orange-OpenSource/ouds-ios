@@ -254,7 +254,7 @@ public struct OUDSCheckboxItem: View {
 
     // MARK: - A11Y helpers
 
-    /// Forge a string to vocalize the component label based on label and description
+    /// Forge a string to vocalize the component label based on label, extraLabel and description
     private var accessibilityLabel: String {
         let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
         let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"

@@ -125,13 +125,11 @@ struct TextInputContainer: View {
     }
 
     /// Forge a string to vocalize the component label based on label and description
-    ///
     private var accessibilityLabel: String {
         label.isEmpty ? placeholder ?? "" : label
     }
 
-    /// The text to vocalize with *Voice Over* for the value of the text input
-    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    /// Forges a string to vocalize with *Voice Over* describing the component input value and error, loading, disabled state
     private var accessibilityValue: String {
 
         let emptyDescription = "core_textInput_empty_a11y".localized()
