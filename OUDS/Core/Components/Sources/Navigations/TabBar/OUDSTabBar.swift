@@ -159,6 +159,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Initializers
 
+    // swiftlint:disable function_default_parameter_at_end
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     ///
@@ -177,6 +178,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
         tabCount = count
         self.content = content
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     /// Defines the tab bar component with given tab bar items.
     ///
@@ -347,7 +350,7 @@ public struct OUDSTabBarViewModifier: ViewModifier {
         // MARK: Tab bar background
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
         tabBarAppearance.configureWithTransparentBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemThinMaterial) // TODO: #1135 - Check which material must be used
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular) // TODO: #1135 - Check which material must be used
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
         // Define the color for the top border of the tab view, but does not work on all cases (ノಠ益ಠ)ノ彡┻━┻
         tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor

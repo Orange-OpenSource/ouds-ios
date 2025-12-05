@@ -14,6 +14,10 @@
 import Foundation
 import SwiftUI
 
+// swiftlint:disable type_name
+// swiftlint:disable line_length
+// swiftlint:disable switch_case_on_newline
+
 // MARK: - Environment
 
 private struct iPhoneDeviceEnvironmentKey: EnvironmentKey {
@@ -215,3 +219,7 @@ public enum iPhoneDevice: CustomStringConvertible, Sendable {
         }
     }
 }
+
+// swiftlint:enable type_name
+// swiftlint:enable line_length
+// swiftlint:enable switch_case_on_newline
