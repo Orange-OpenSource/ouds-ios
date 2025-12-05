@@ -124,7 +124,7 @@ struct TextInputContainer: View {
         TextInputInteractionState(focused: focused, hover: hover)
     }
 
-    /// Forge a string to vocalize the component label based on label and description
+    /// Forge a string to vocalize the component label based on label and placeholder
     private var accessibilityLabel: String {
         label.isEmpty ? placeholder ?? "" : label
     }
