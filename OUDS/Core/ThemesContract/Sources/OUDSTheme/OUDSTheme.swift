@@ -150,7 +150,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
 
     // MARK: - Other elements
 
-    /// The name of the name, can be sued for debugging for example
+    /// The name of the name, can be used for debugging for example
     public let name: String
 
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.

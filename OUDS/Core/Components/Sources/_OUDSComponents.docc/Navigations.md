@@ -100,54 +100,29 @@ The link can be displayed in `small` or `default` size.
     }
 }
 
-The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects and styles thanks to the ``OUDSTabBarViewModifier``.
+The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects and styles.
 The ``OUDSTabBar`` lets users define their own hierarchy of views associated to tab items.
 
-Users can also apply ``OUDSTabBarViewModifier`` to keep their own `TabView` and jusy apply the style.
-
-@TabNavigator {
-    @Tab("OUDSTabBar") {
-        ```swift        
-        // Use the OUDS tab bar to wrap tab bar items and associated views
-        OUDSTabBar {
+```swift        
+// Use the OUDS tab bar to wrap tab bar items and associated views
+OUDSTabBar(selected: 0, count: 3) {
         
-            // Add the views with the SwiftUI tab item and labels
-            // No need to define colors, everything is done inside OUDSTabBar
-            SomeView()
-                .tabItem {
-                    Label("Label 1", image: "image_1")
-                }
-            OtherView()
-                .tabItem {
-                    Label("Label 2", image: "image_2")
-                }
-            LastView()
-                .tabItem {
-                    Label("Label 3", image: "image_3")
-                }
+    // Add the views with the SwiftUI tab item and labels
+    // No need to define colors, everything is done inside OUDSTabBar
+    SomeView()
+        .tabItem {
+            Label("Label 1", image: "image_1")
         }
-        ```
-    }
-    @Tab("OUDSTabBarViewModifier") {
-        ```swift
-        TabView {
-        
-            // Add the views with the SwiftUI tab item and labels
-            // No need to define colors, everything is done inside OUDSTabBar
-            SomeView()
-                .tabItem {
-                    Label("Label 1", image: "image_1")
-                }
-            OtherView()
-                .tabItem {
-                    Label("Label 2", image: "image_2")
-                }
-            LastView()
-                .tabItem {
-                    Label("Label 3", image: "image_3")
-                }
+        .tag(0)
+    OtherView()
+        .tabItem {
+            Label("Label 2", image: "image_2")
         }
-        .modifier(OUDSTabBarViewModifier())
-        ```
-    }
+        .tag(1)
+    LastView()
+        .tabItem {
+            Label("Label 3", image: "image_3")
+        }
+        .tag(2)
 }
+```

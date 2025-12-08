@@ -11,13 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(iOS)
+
 import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
-
-#if os(iOS)
 
 // MARK: - Constants
 
@@ -30,7 +30,7 @@ let kAsyncDelay: CGFloat = 0.1
 struct SelectedTabIndicator: View {
 
     @Binding var selected: Int
-    let count: Int
+    var count: Int
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
