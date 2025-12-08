@@ -143,7 +143,7 @@ public struct OUDSLink: View {
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    Image(linkIconResourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
+                    Image(decorative: resourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
                         .toFlip(layoutDirection == .rightToLeft)
@@ -171,7 +171,7 @@ public struct OUDSLink: View {
 
     // MARK: - Helpers
 
-    private func linkIconResourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
+    private func resourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
         switch navigationIndicator {
         case .back:
             "ic_link_previous"
