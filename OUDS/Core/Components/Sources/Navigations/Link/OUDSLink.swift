@@ -139,13 +139,14 @@ public struct OUDSLink: View {
     public var body: some View {
         Button(action: action) {
             switch layout {
-            case .indicator:
+            case let .indicator(navigationIndicator):
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    Image(decorative: linkIconResourceName, bundle: theme.resourcesBundle)
+                    Image(linkIconResourceName(for: navigationIndicator), bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
+                        .toFlip(layoutDirection == .rightToLeft)
                 }
             case .textOnly:
                 Label {
@@ -170,13 +171,12 @@ public struct OUDSLink: View {
 
     // MARK: - Helpers
 
-    private var linkIconResourceName: String {
-        if case let .indicator(nav) = layout, nav == .back {
-            return layoutDirection == .leftToRight ? "ic_chevron_left" : "ic_chevron_right"
+    private func linkIconResourceName(for navigationIndicator: OUDSLink.Indicator) -> String {
+        switch navigationIndicator {
+        case .back:
+            "ic_link_previous"
+        case .next:
+            "ic_link_next"
         }
-        if case let .indicator(nav) = layout, nav == .next {
-            return layoutDirection == .leftToRight ? "ic_chevron_right" : "ic_chevron_left"
-        }
-        OL.fatal("Tried to load an icon for an OUDSLink which is not a back or next indicator, report an issue at https://github.com/Orange-OpenSource/ouds-ios/issues")
     }
 }

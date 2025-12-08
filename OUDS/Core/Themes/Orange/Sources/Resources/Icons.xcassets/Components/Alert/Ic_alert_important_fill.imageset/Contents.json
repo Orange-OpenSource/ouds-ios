@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Ic_alert_important_fill.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

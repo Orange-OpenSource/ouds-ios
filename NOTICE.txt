@@ -29,26 +29,19 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ## OUDS / Core / Themes / Orange
 
 ./OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/Resources/_/ic_theme_orange.png
-
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_chevron_down.imageset/ic_chevron_down.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_chevron_left.imageset/ic_chevron_left.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_chevron_right.imageset/ic_chevron_right.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_information.imageset/ic_information.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_search.imageset/ic_search.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_success.imageset/ic_success.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_warning_external_shape.imageset/ic_warning_external_shape.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_warning_internal_shape.imageset/ic_warning_internal_shape.svg
 
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg
-./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_2.imageset/ic_bullet_nested_2.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Link/ic_link_next.imageset/ic_link_next.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Link/ic_link_previous.imageset/ic_link_previous.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Chip/ic_chip_tick.imageset/ic_chip_tick.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
@@ -62,25 +55,17 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/Resources/_/ic_theme_sosh.png
 
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_chevron_down.imageset/ic_chevron_down.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_chevron_left.imageset/ic_chevron_left.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_chevron_right.imageset/ic_chevron_right.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_information.imageset/ic_information.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_search.imageset/ic_search.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_success.imageset/ic_success.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_warning_external_shape.imageset/ic_warning_external_shape.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/_/ic_warning_internal_shape.imageset/ic_warning_internal_shape.svg
-
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg
-./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_2.imageset/ic_bullet_nested_2.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Chip/ic_chip_tick.imageset/ic_chip_tick.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Link/ic_link_next.imageset/ic_link_next.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Link/ic_link_previous.imageset/ic_link_previous.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
@@ -96,24 +81,19 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/Wireframe/Sources/_OUDSThemesWireframe.docc/Resources/_/ic_theme_wireframe.png
 
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_chevron_down.imageset/ic_chevron_down.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_chevron_left.imageset/ic_chevron_left.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_chevron_right.imageset/ic_chevron_right.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_chevron_up.imageset/ic_chevron_up.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_delete.imageset/ic_delete.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_important.imageset/ic_important.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_information.imageset/ic_information.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_success.imageset/ic_success.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_tick.imageset/ic_tick.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_warning_external_shape.imageset/ic_warning_external_shape.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_warning_internal_shape.imageset/ic_warning_internal_shape.svg
 
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet.imageset/ic_bullet.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_1.imageset/ic_bullet_nested_1.svg
-./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_nested_2.imageset/ic_bullet_nested_2.svg
+./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
+./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Chip/ic_chip_tick.imageset/ic_chip_tick.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Link/ic_link_next.imageset/ic_link_next.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Link/ic_link_previous.imageset/ic_link_previous.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Radio/ic_radio-button_selected.imageset/ic_radio-button_selected.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Switch/ic_switch_selected.imageset/ic_switch_selected.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
