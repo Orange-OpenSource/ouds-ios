@@ -108,7 +108,7 @@ struct TabBarViewModifier: ViewModifier {
         // MARK: Tab bar background
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
         tabBarAppearance.configureWithTransparentBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular) // TODO: #1135 - Check which material must be used
+        tabBarAppearance.backgroundEffect = UIBlurEffect(radius: themeToApply.bar.effectBgBlur)
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
         // Define the color for the top border of the tab view, but does not work on all cases (ノಠ益ಠ)ノ彡┻━┻
         tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
@@ -135,26 +135,35 @@ struct TabBarViewModifier: ViewModifier {
          It could mean in dark mode the text is not readable at all.
          Thus apply the unselector color only for cases where everything works.
          */
-        if #unavailable(iOS 26.0) {
+        if #unavailable(iOS 26.0) { // No Liquid Glass
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .foregroundColor: unselectedUIColor,
                 .font: normalFont,
             ]
-        } else {
+        } else { // Liquid Glass
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .font: normalFont,
             ]
         }
 
         // MARK: Tab bar selected item
-        let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
-        tabBarItemAppearance.selected.iconColor = selectedUIColor
-        tabBarItemAppearance.selected.titleTextAttributes = [
-            .foregroundColor: selectedUIColor,
-            .font: selectedFont,
-        ]
+        if #available(iOS 26.0, *) { // Liquid Glass
+            let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
+            tabBarItemAppearance.selected.iconColor = selectedUIColor
+            tabBarItemAppearance.selected.titleTextAttributes = [
+                .foregroundColor: selectedUIColor,
+                .font: selectedFont,
+            ]
+        } else { // No Liquid Glass
+            let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
+            tabBarItemAppearance.selected.iconColor = selectedUIColor
+            tabBarItemAppearance.selected.titleTextAttributes = [
+                .foregroundColor: selectedUIColor,
+                .font: selectedFont,
+            ]
+        }
 
         // MARK: Tab bar focused item
         let focusedUIColor = themeToApply.bar.colorContentSelectedFocus.color(for: colorSchemeToApply).uiColor
