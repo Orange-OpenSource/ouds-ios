@@ -11,7 +11,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تم فحصه"
+            "value" : "تم الفحص"
           }
         },
         "en" : {
@@ -59,7 +59,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "غير محدد"
+            "value" : "نصف محددة"
           }
         },
         "en" : {
@@ -83,7 +83,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربع الاختيار"
+            "value" : "خانة الاختيار"
           }
         },
         "en" : {
@@ -281,7 +281,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عاجز"
+            "value" : "غير مفعّل"
           }
         },
         "en" : {
@@ -298,30 +298,6 @@
         }
       }
     },
-    "core_common_enabled_a11y" : {
-      "comment" : "Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مُمَكَّن"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enabled"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activé"
-          }
-        }
-      }
-    },
     "core_common_loading_a11y" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -329,7 +305,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تحميل"
+            "value" : "جاري التحميل"
           }
         },
         "en" : {
@@ -377,7 +353,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مُختار"
+            "value" : "محدد"
           }
         },
         "en" : {
@@ -418,7 +394,7 @@
         }
       }
     },
-    "core_filterchip_hint_selected_a11y" : {
+    "core_filterChip_hint_selected_a11y" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
       "localizations" : {
@@ -442,7 +418,7 @@
         }
       }
     },
-    "core_filterchip_hint_unselected_a11y" : {
+    "core_filterChip_hint_unselected_a11y" : {
       "comment" : "Component - Chip",
       "extractionState" : "manual",
       "localizations" : {
