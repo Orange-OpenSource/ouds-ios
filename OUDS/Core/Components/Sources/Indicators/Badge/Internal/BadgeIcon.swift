@@ -48,7 +48,7 @@ struct BadgeIcon: View {
         case .positive:
             Image(decorative: "ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
         case .warning:
-            Image(decorative: "ic_alert_warning", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
         case .negative:
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
         case .info:
