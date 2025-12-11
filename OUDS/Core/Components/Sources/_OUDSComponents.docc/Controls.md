@@ -692,7 +692,7 @@ OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 
 // Add a trailing button with local image namde "ic_cross" for additional action
-let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 
 // With helper text

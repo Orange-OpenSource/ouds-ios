@@ -136,7 +136,7 @@ import SwiftUI
 ///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
 ///     // Add a trailing button with local image namde "ic_cross" for additional action
-///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
@@ -220,8 +220,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
-        let flipIcon: Bool
         let actionHint: String
+        let flipIcon: Bool
         let action: () -> Void
 
         /// Creates a trailing action.
@@ -236,8 +236,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
-            self.flipIcon = flipIcon
             self.actionHint = actionHint
+            self.flipIcon = flipIcon
             self.action = action
         }
     }
