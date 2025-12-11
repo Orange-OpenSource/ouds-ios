@@ -54,8 +54,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// - Count badge: [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge-count)
-/// - Icon badge: [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge-icon)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge)
 ///
 /// ## Themes rendering
 ///
