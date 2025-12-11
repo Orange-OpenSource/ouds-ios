@@ -136,7 +136,7 @@ import SwiftUI
 ///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
 ///     // Add a trailing button with local image namde "ic_cross" for additional action
-///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
@@ -220,8 +220,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
-        let flipIcon: Bool
         let actionHint: String
+        let flipIcon: Bool
         let action: () -> Void
 
         /// Creates a trailing action.
@@ -236,8 +236,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
-            self.flipIcon = flipIcon
             self.actionHint = actionHint
+            self.flipIcon = flipIcon
             self.action = action
         }
     }
@@ -375,17 +375,13 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                                    flipIcon: flipLeadingIcon,
                                    trailingAction: trailingAction,
                                    isOutlined: isOutlined,
-                                   status: status)
+                                   status: status,
+                                   accessibilityHint: helperText)
 
                 HelperErrorTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
             }
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityHint(Text(helperText ?? ""))
-            .accessibilityValue(accessibilityValue)
-            .accessibilityAction(named: Text(trailingAction?.actionHint ?? "")) {
-                trailingAction?.action()
-            }
+            .accessibilityElement(children: .contain)
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
@@ -396,37 +392,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                maxWidth: theme.textInput.sizeMaxWidth,
                minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
-    }
-
-    // MARK: Helpers
-
-    private var accessibilityLabel: String {
-        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
-
-        let errorDescription = switch status {
-        case let .error(message):
-            "core_common_onError_a11y".localized() + ": \(message)"
-        default:
-            ""
-        }
-
-        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
-
-        let labelDescription = if label.isEmpty {
-            "\(placeholder ?? "")"
-        } else {
-            label
-        }
-
-        return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"
-    }
-
-    private var accessibilityValue: String {
-        guard !text.wrappedValue.isEmpty else {
-            return ""
-        }
-
-        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
 #endif
