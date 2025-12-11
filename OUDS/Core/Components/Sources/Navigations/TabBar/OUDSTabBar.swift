@@ -230,6 +230,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
                 }
                 .modifier(TabBarViewModifier())
 
+                TabBarTopDivider()
+
                 SelectedTabIndicator(selected: $selectedTab, count: tabCount)
             }
             // Liquid Glass or iPadOS < 26

@@ -19,18 +19,8 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Constants
-
-let kTabBarAnimationDuration: CGFloat = 0.3
-let kAsyncDelay: CGFloat = 0.1
-
-// MARK: - Selected Tab Indicator
-
-/// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. no Liquid Glass)
-struct SelectedTabIndicator: View {
-
-    @Binding var selected: Int
-    var count: Int
+/// A small stroke, like a divider, to display in the top of the tab bar
+struct TabBarTopDivider: View {
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
@@ -41,18 +31,14 @@ struct SelectedTabIndicator: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let tabWidth = geometry.size.width / CGFloat(count)
-            let indicatorWidth = theme.bar.sizeWidthActiveIndicatorCustomTop + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
-            let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
-            let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
+            let dividerPosition = geometry.size.height - tabBarHeight + safeAreaBottom
 
-            RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
-                .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
-                .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+            Rectangle()
+                .fill(theme.colors.borderMinimal.color(for: colorScheme))
+                .frame(height: BorderRawTokens.width25) // 1 px
                 .position(
-                    x: xOffset + indicatorWidth / 2,
-                    y: indicatorPosition)
-                .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
+                    x: geometry.size.width / 2,
+                    y: dividerPosition)
         }
         .onAppear {
             updateTabBarHeight()
@@ -84,4 +70,5 @@ struct SelectedTabIndicator: View {
         }
     }
 }
+
 #endif
