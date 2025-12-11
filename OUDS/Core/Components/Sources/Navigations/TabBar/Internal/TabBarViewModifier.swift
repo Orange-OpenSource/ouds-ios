@@ -52,34 +52,36 @@ struct TabBarViewModifier: ViewModifier {
             .onAppear {
                 setupTabBarAppearance(withColor: colorScheme)
             }
+        #if os(iOS)
             // If change of orientation
             .onChange(of: verticalSizeClass) { _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
                     setupTabBarAppearance(withColor: colorScheme)
                 }
             }
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                    setupTabBarAppearance(withColor: colorScheme)
+                }
+            }
+        #endif
         // Color scheme changes can rise a bit later after onAppear()
         // Thus we need to catch the most up-to-date value to apply
         #if os(visionOS)
             .onChange(of: colorScheme) { _, newColorScheme in
                 setupTabBarAppearance(withColor: newColorScheme)
-            }
-            .onChange(of: theme) { _, newTheme in
-                setupTabBarAppearance(andTheme: newTheme)
-            }
+        }
+        .onChange(of: theme) { _, newTheme in
+            setupTabBarAppearance(andTheme: newTheme)
+        }
         #else // iOS, iPadOS
-            .onChange(of: colorScheme) { newColorScheme in
+        .onChange(of: colorScheme) { newColorScheme in
                 setupTabBarAppearance(withColor: newColorScheme)
             }
             .onChange(of: theme) { newTheme in
                 setupTabBarAppearance(andTheme: newTheme)
             }
         #endif
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                    setupTabBarAppearance(withColor: colorScheme)
-                }
-            }
     }
 
     // swiftlint:disable function_body_length
@@ -131,9 +133,10 @@ struct TabBarViewModifier: ViewModifier {
         // MARK: Tab bar unselected item
         /*
          With iOS 26+, if a color is applied to a tab bar item in unselected state,
-         only the image is changed and not the text.
+         only the text is changed and not the image (test with iOS 26.0 and 26.1, Xcode 26.0).
+         Maybe it is a glitch or a bug in the API.
          It could mean in dark mode the text is not readable at all.
-         Thus apply the unselector color only for cases where everything works.
+         Thus apply the unselector color only for cases where everything works, i.e. not Liquid Glass
          */
         if #unavailable(iOS 26.0) { // No Liquid Glass
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
