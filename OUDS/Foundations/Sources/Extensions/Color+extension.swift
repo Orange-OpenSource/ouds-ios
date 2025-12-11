@@ -26,6 +26,12 @@ extension Color {
     /// `Color` extension to get a `Color` from its hexadecimal string representation, in RGB or RGBA format.
     public init?(hexadecimalCode: String) {
 
+        #if DEBUG
+        if hexadecimalCode == "ouds-forbidden-color-value" {
+            OL.error("Trying to parse forbidden color as SwiftUI Color, it will crash")
+        }
+        #endif
+
         let hexadecimalCodeSanitized = hexadecimalCode.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "#", with: "")
 

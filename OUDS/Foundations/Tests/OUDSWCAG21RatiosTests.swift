@@ -172,31 +172,31 @@ struct OUDSWCAG21RatioTests {
 
     @Test("#FFFFFFFF has luminance of 1", .enabled(if: Self.doesRunOniOS))
     func luminanceForFFFFFFFF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: "#FFFFFFFF".color)
+        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#FFFFFFFF")!)
         #expect(luminance == 1, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#000000FF has luminance of 0.0722", .enabled(if: Self.doesRunOniOS))
     func luminanceFor000000FF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: "#000000FF".color)
+        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#000000FF")!)
         #expect(luminance == 0.0, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#F15E00FF has luminance of 0.339261794", .enabled(if: Self.doesRunOniOS))
     func luminanceForF15E00FF() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: "#F15E00FF".color)
+        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#F15E00FF")!)
         #expect(luminance == 0.267061825736296, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#26B2FF14 has luminance of 0.3230336529", .enabled(if: Self.doesRunOniOS))
     func luminanceFor26B2FF14() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: "#26B2FF14".color)
+        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#26B2FF14")!)
         #expect(luminance == 0.3947286020914061, "luminance = \(String(describing: luminance))")
     }
 
     @Test("#3DE35A1F has luminance of 0.5602919883", .enabled(if: Self.doesRunOniOS))
     func luminanceFor3DE35A1F() throws {
-        let luminance = OUDSWCAG21Ratio.luminance(for: "#3DE35A1F".color)
+        let luminance = OUDSWCAG21Ratio.luminance(for: Color(hexadecimalCode: "#3DE35A1F")!)
         #expect(luminance == 0.5666845580578855, "luminance = \(String(describing: luminance))")
     }
 

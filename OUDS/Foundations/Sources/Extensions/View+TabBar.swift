@@ -1,12 +1,19 @@
 //
-//  View+TabBar.swift.tmp.swift
-//  OUDS
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
 //
-//  Created by Pierre-Yves Lapersonne on 11/12/2025.
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
 
+#if os(iOS)
 extension View {
 
     /// Get the tab bar within the view hierarchy
@@ -59,3 +66,4 @@ extension View {
         return nil
     }
 }
+#endif
