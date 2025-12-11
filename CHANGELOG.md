@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210) (Orange-OpenSource/ouds-ios#1212)
+- Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
 - Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
 - Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
