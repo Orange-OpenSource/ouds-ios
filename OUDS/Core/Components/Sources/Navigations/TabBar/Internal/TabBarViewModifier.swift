@@ -110,7 +110,7 @@ struct TabBarViewModifier: ViewModifier {
         // MARK: Tab bar background
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
         tabBarAppearance.configureWithTransparentBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .systemThinMaterial)
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
         // Define the color for the top border of the tab view, but does not work on all cases (ノಠ益ಠ)ノ彡┻━┻
         tabBarAppearance.shadowColor = themeToApply.colors.borderMinimal.color(for: colorSchemeToApply).uiColor
