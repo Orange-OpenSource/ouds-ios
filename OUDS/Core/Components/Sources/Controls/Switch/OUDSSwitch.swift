@@ -40,7 +40,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
+/// [unified-design-system.orange.com]( https://r.orange.fr/r/S-ouds-doc-switch)
 ///
 /// ## Themes rendering
 ///

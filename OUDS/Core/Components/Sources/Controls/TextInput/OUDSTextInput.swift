@@ -165,7 +165,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com]( https://r.orange.fr/r/S-ouds-doc-text-input)
 ///
 /// ## Themes rendering
 ///

@@ -124,7 +124,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-radio-button)
 ///
 /// ## Themes rendering
 ///

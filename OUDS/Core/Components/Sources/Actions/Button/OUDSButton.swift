@@ -96,7 +96,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-button)
 ///
 /// ## Themes rendering
 ///
