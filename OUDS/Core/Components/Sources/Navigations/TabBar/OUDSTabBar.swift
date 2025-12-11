@@ -207,6 +207,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     ///
     /// - Parameters:
     ///    - content: The list of items to add in the tab bar
+    @available(iOS 26, *)
     public init(@ViewBuilder content: @escaping () -> Content) {
         selectedTab = 0
         tabCount = 0
@@ -219,18 +220,23 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// Warning: rendering wil change depending to OS version!
     public var body: some View {
         #if os(iOS)
-        ZStack(alignment: .bottom) {
-            TabView(selection: $selectedTab) {
-                content()
-            }
-            .modifier(TabBarViewModifier())
+        // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones
+        // Must not be added for iPads (as tabs are not managed the same way by the OS)
+        // and can pollute some rendering like in demo app particular cases
+        if #unavailable(iOS 26.0), UIDevice.current.userInterfaceIdiom == .phone {
+            ZStack(alignment: .bottom) {
+                TabView(selection: $selectedTab) {
+                    content()
+                }
+                .modifier(TabBarViewModifier())
 
-            // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones
-            // Must not be added for iPads (as tabs are not managed the same way by the OS)
-            // and can pollute some rendering like in demo app particular cases
-            if #unavailable(iOS 26.0), UIDevice.current.userInterfaceIdiom == .phone {
                 SelectedTabIndicator(selected: $selectedTab, count: tabCount)
             }
+            // Liquid Glass or iPadOS < 26
+        } else {
+            TabView(selection: $selectedTab) {
+                content()
+            }.modifier(TabBarViewModifier())
         }
         #else // visionOS, macOS
         TabView(selection: $selectedTab) {
