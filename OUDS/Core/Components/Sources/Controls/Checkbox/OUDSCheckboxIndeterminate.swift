@@ -63,12 +63,12 @@ import SwiftUI
 ///
 /// ## Suggestions
 ///
-/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox/b/6578e5/t/3dd013a529),
+/// According to the [documentation](https://r.orange.fr/r/S-ouds-doc-checkbox),
 /// the checkbox by default must be used in unselected state.
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-checkbox)
 ///
 /// ## Themes rendering
 ///

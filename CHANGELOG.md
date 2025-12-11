@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
 - Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
 - Update `radio` components to v1.4.0 (Orange-OpenSource/ouds-ios#1139)
 - Update `checkbox` components to v2.4.0 (Orange-OpenSource/ouds-ios#1137)
