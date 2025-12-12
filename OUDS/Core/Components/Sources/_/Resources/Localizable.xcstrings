@@ -329,7 +329,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يوجد خطأ"
+            "value" : "مفعل في حالة الخطأ"
           }
         },
         "en" : {
@@ -449,7 +449,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "انقر نقرا مزدوجا للحذف"
+            "value" : "انقر مرتين للحذف "
           }
         },
         "en" : {
