@@ -50,6 +50,7 @@ jobs:
   # Build the documentation to check if everything works well
   build-documentation:
     runs-on: macos-26
+    timeout-minutes: 120
     steps:
       - name: Checkout code
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0

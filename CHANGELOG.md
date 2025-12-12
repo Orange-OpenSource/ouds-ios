@@ -9,8 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
-- References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
+- Define timeout of 2 hours for all GitHub Actions workflows
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210) (Orange-OpenSource/ouds-ios#1212)
 - Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)
