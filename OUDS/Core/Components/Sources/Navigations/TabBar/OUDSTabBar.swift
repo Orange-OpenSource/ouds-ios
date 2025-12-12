@@ -21,6 +21,12 @@ import SwiftUI
 /// views with *tab bar items*.
 /// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges.
 ///
+/// ## Technical considerations
+///
+/// In order to improve the Developer eXperience the current `OUDSTabBar` implementation let users define their own tab items.
+/// OUDS applies only apperances and styles on elements to prevent users to define raw data to assign to the component ebfore being rendered like a *picker*.
+/// Thus users will need to add their own accessiiblity label if badges are used or also applying *template* rendering mode on images if needed.
+///
 /// ## Appearances
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
@@ -56,6 +62,7 @@ import SwiftUI
 /// - be sure the selected information is not only defined by the color of the tab; you may need to change the shape or the fill of the image
 /// - if possible displayed a selected tab indicator for the selected tab
 /// - if a badge must be displayed, prefer short texts. If the text is a decimal value greater than 99, prefer display "+99"
+/// - If decorative images are used for tab bar item, apply *template* rendering mode on it to apply color on tabs
 ///
 /// ## Accessibility considerations
 ///
@@ -101,8 +108,12 @@ import SwiftUI
 ///             .tag(0)
 ///         OtherView()
 ///             .tabItem {
-///                 Label("Label 2", image: "image_2")
-///             }
+///                 Label {
+///                     Text("Label 2")
+///                 } icon: {
+///                     Image(decorative: "image_2")
+///                         .renderingMode(.template) // Mandatory to apply color on selected item
+///                 }
 ///             .tag(1)
 ///         LastView()
 ///             .tabItem {
