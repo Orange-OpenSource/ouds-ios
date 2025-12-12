@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Define timeout of 2 hours for all GitHub Actions workflows
+- Review wording keys (Orange-OpenSource/ouds-ios#1200)
+- References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210) (Orange-OpenSource/ouds-ios#1212)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
@@ -37,7 +39,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Review wording keys (Orange-OpenSource/ouds-ios#1200)
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow 
 - GitHub Actions `checkout` from v5 to v6 for all workflows
