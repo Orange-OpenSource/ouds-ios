@@ -55,6 +55,7 @@ import SwiftUI
 /// - use badges only when needed to avoid to have heavy tab bar
 /// - be sure the selected information is not only defined by the color of the tab; you may need to change the shape or the fill of the image
 /// - if possible displayed a selected tab indicator for the selected tab
+/// - if a badge must be displayed, prefer short texts. If the text is a decimal value greater than 99, prefer display "+99"
 ///
 /// ## Accessibility considerations
 ///
@@ -113,7 +114,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-ios-tab-bar)
 ///
 /// ## Themes rendering
 ///
