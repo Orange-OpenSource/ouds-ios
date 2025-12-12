@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Review wording keys (Orange-OpenSource/ouds-ios#1200)
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - `ruby/setup-ruby` action from v1.267.0 to v1.268.0 for `build-and-test` workflow 
 - GitHub Actions `checkout` from v5 to v6 for all workflows
