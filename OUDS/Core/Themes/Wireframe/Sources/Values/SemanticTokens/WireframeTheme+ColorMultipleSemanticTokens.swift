@@ -88,9 +88,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var bgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgTertiaryLight, dark: bgTertiaryDark) }
 
-    @objc public final var bgInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgInverseHighLight, dark: bgInverseHighDark) }
-
     @objc public final var bgInverseLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgInverseLowLight, dark: bgInverseLowDark) }
+
+    @objc public final var bgInverseHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgInverseHighLight, dark: bgInverseHighDark) }
 
     // MARK: - Color - Border
 
@@ -117,6 +117,16 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     @objc public final var borderOnBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderOnBrandTertiaryLight, dark: borderOnBrandTertiaryDark) }
 
     @objc public final var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
+
+    @objc public final var borderStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusPositiveLight, dark: borderStatusPositiveDark) }
+
+    @objc public final var borderStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusInfoLight, dark: borderStatusInfoDark) }
+
+    @objc public final var borderStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusWarningLight, dark: borderStatusWarningDark) }
+
+    @objc public final var borderStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusNegativeLight, dark: borderStatusNegativeDark) }
+
+    @objc public final var borderStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusAccentLight, dark: borderStatusAccentDark) }
 
     // MARK: - Color - Content
 
@@ -189,6 +199,8 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
     // MARK: - Color - Overlay
 
     @objc public final var overlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDropdownLight, dark: overlayDropdownDark) }
+
+    @objc public final var overlayTooltip: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayTooltipLight, dark: overlayTooltipDark) }
 
     @objc public final var overlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDragLight, dark: overlayDragDark) }
 
