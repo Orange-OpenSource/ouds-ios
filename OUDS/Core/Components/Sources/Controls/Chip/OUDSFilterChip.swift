@@ -128,7 +128,7 @@ public struct OUDSFilterChip: View {
     }
 
     private var accessibilityHint: String {
-        (selected ? "core_filterchip_hint_selected_a11y" : "core_filterchip_hint_unselected_a11y").localized()
+        (selected ? "core_filterChip_hint_selected_a11y" : "core_filterChip_hint_unselected_a11y").localized()
     }
 
     private var accessibilityLabel: String {

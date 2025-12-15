@@ -97,6 +97,6 @@ public struct OUDSInputTag: View {
     }
 
     private var accessibilityHint: String {
-        "core_inputtag_hint_delete_a11y".localized()
+        "core_inputTag_delete_hint_a11y".localized()
     }
 }
