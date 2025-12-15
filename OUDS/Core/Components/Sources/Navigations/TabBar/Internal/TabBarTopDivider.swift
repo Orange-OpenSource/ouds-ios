@@ -35,7 +35,7 @@ struct TabBarTopDivider: View {
 
             Rectangle()
                 .fill(theme.colors.borderMinimal.color(for: colorScheme))
-                .frame(height: BorderRawTokens.width25) // 1 px
+                .frame(height: 1)
                 .position(
                     x: geometry.size.width / 2,
                     y: dividerPosition)

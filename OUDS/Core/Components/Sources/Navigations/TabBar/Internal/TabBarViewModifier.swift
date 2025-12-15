@@ -116,9 +116,7 @@ struct TabBarViewModifier: ViewModifier {
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
-        // In Apple apps even if the user increases the text sizes the tab bar texts does not change
-        // We keep about 12px in Figma i.e. sizeLabelSmall
-        let fontSize = themeToApply.fonts.sizeLabelSmall
+        let fontSize: CGFloat = 10
         var normalFont: UIFont, selectedFont: UIFont
         if let fontFamily = themeToApply.fontFamily {
             let normalFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.regular)]
