@@ -442,7 +442,7 @@
         }
       }
     },
-    "core_inputtag_hint_delete_a11y" : {
+    "core_inputTag_delete_hint_a11y" : {
       "comment" : "Component - Input tag",
       "extractionState" : "manual",
       "localizations" : {

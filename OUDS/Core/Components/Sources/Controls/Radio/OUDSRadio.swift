@@ -128,7 +128,6 @@ public struct OUDSRadio: View {
                 .modifier(RadioBackgroundModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityAddTraits(.isSelected)
         .accessibilityLabel(a11yLabel)
         .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
