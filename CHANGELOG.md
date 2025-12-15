@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Define timeout of 2 hours for all GitHub Actions workflows
 - Review wording keys (Orange-OpenSource/ouds-ios#1200)
+- Define timeout of 2 hours for all GitHub Actions workflows
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210)
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210) (Orange-OpenSource/ouds-ios#1212)
