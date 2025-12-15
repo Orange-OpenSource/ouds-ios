@@ -236,6 +236,31 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.borderOnBrandTertiary == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderStatusPositive() throws {
+        #expect(inheritedTheme.colors.borderStatusPositive != abstractTheme.colors.borderStatusPositive)
+        #expect(inheritedTheme.colors.borderStatusPositive == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderStatusInfo() throws {
+        #expect(inheritedTheme.colors.borderStatusInfo != abstractTheme.colors.borderStatusInfo)
+        #expect(inheritedTheme.colors.borderStatusInfo == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderStatusWarning() throws {
+        #expect(inheritedTheme.colors.borderStatusWarning != abstractTheme.colors.borderStatusWarning)
+        #expect(inheritedTheme.colors.borderStatusWarning == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderStatusNegative() throws {
+        #expect(inheritedTheme.colors.borderStatusNegative != abstractTheme.colors.borderStatusNegative)
+        #expect(inheritedTheme.colors.borderStatusNegative == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorBorderStatusAccent() throws {
+        #expect(inheritedTheme.colors.borderStatusAccent != abstractTheme.colors.borderStatusAccent)
+        #expect(inheritedTheme.colors.borderStatusAccent == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
     // MARK: - Color - Content
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorContentBrandPrimary() throws {
@@ -403,6 +428,11 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDropDown() throws {
         #expect(inheritedTheme.colors.overlayDropdown != abstractTheme.colors.overlayDropdown)
         #expect(inheritedTheme.colors.overlayDropdown == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayTooltip() throws {
+        #expect(inheritedTheme.colors.overlayTooltip != abstractTheme.colors.overlayTooltip)
+        #expect(inheritedTheme.colors.overlayTooltip == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDrag() throws {

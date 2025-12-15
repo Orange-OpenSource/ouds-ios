@@ -121,6 +121,16 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
+    @objc open var borderStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusPositiveLight, dark: borderStatusPositiveDark) }
+
+    @objc open var borderStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusInfoLight, dark: borderStatusInfoDark) }
+
+    @objc open var borderStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusWarningLight, dark: borderStatusWarningDark) }
+
+    @objc open var borderStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusNegativeLight, dark: borderStatusNegativeDark) }
+
+    @objc open var borderStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusAccentLight, dark: borderStatusAccentDark) }
+
     // MARK: - Color - Content
 
     @objc open var contentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: contentBrandPrimaryLight, dark: contentBrandPrimaryDark) }
@@ -192,6 +202,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     // MARK: - Color - Overlay
 
     @objc open var overlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDropdownLight, dark: overlayDropdownDark) }
+
+    @objc open var overlayTooltip: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayTooltipLight, dark: overlayTooltipDark) }
 
     @objc open var overlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDragLight, dark: overlayDragDark) }
 

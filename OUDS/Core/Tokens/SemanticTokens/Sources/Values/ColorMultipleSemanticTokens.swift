@@ -144,6 +144,16 @@ public protocol ColorMultipleSemanticTokens {
 
     var borderMinimal: MultipleColorSemanticTokens { get }
 
+    var borderStatusPositive: MultipleColorSemanticTokens { get }
+
+    var borderStatusInfo: MultipleColorSemanticTokens { get }
+
+    var borderStatusWarning: MultipleColorSemanticTokens { get }
+
+    var borderStatusNegative: MultipleColorSemanticTokens { get }
+
+    var borderStatusAccent: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Content
 
     var contentBrandPrimary: MultipleColorSemanticTokens { get }
@@ -215,6 +225,8 @@ public protocol ColorMultipleSemanticTokens {
     // MARK: - Color - Overlay
 
     var overlayDropdown: MultipleColorSemanticTokens { get }
+
+    var overlayTooltip: MultipleColorSemanticTokens { get }
 
     var overlayDrag: MultipleColorSemanticTokens { get }
 

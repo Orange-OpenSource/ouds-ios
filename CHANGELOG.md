@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
 - Define timeout of 2 hours for all GitHub Actions workflows
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
