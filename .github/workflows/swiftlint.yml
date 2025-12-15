@@ -47,7 +47,7 @@ jobs:
     runs-on: macos-26
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - uses: cirruslabs/swiftlint-action@37b78e658ba6bcb1679df34819a4a8d8c269a940 # v1.1.0, https://github.com/cirruslabs/swiftlint-action
         with:
           version: latest
