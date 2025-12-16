@@ -187,6 +187,9 @@ public struct OUDSRadioItem: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the radio button has been pressed
     ///
     /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
@@ -205,6 +208,7 @@ public struct OUDSRadioItem: View {
                 errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
@@ -241,6 +245,7 @@ public struct OUDSRadioItem: View {
             errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
         self.action = action
     }

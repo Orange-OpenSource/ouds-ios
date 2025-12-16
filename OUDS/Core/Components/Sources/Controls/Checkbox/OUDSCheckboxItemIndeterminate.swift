@@ -179,6 +179,9 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     ///
     /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
@@ -193,6 +196,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
@@ -226,6 +230,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
     }
 
