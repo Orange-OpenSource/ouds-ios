@@ -215,7 +215,7 @@ public struct OUDSBadge: View {
 
     private init(layout: BadgeLayout, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
+            OL.warning("The OUDSBadge should not have an empty accessibility label, think about your disabled users!")
         }
         self.layout = layout
         self.accessibilityLabel = accessibilityLabel
