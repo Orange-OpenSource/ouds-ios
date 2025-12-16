@@ -95,7 +95,7 @@ struct ControlItemContent: View {
         }
     }
 
-    private var maxWidth: CGFloat? {
-        layoutData.constrainedMaxWidth ? theme.controlItem.sizeMaxWidth : nil
+    private var maxWidth: CGFloat {
+        layoutData.constrainedMaxWidth ? theme.controlItem.sizeMaxWidth : .infinity
     }
 }
