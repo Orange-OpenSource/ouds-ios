@@ -41,6 +41,7 @@ struct ControlItemLabel: View {
         let errorText: String?
         let isReadOnly: Bool
         let hasDivider: Bool
+        let constrainedMaxWidth: Bool
         let orientation: ControlItem.Orientation
     }
 

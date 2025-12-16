@@ -62,7 +62,7 @@ struct ControlItemContent: View {
                     .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: theme.controlItem.sizeMaxWidth, minHeight: theme.controlItem.sizeMinHeight, alignment: .center)
+        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeight, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
@@ -93,5 +93,9 @@ struct ControlItemContent: View {
         case let .checkBox(selectionState):
             selectionState.wrappedValue == .selected
         }
+    }
+
+    private var maxWidth: CGFloat? {
+        layoutData.constrainedMaxWidth ? theme.controlItem.sizeMaxWidth : nil
     }
 }

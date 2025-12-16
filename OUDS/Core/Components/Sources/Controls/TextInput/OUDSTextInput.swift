@@ -204,6 +204,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
+    let constrainedMaxWidth: Bool
 
     @Environment(\.theme) private var theme
 
@@ -333,6 +334,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
+    ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///      modifier. Defaults to `false`.
     ///    - status: The current status of the text input, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
@@ -345,6 +349,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
     {
         self.label = label
@@ -359,6 +364,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.helperLink = helperLink
         self.status = status
         self.isOutlined = isOutlined
+        self.constrainedMaxWidth = constrainedMaxWidth
     }
 
     // MARK: Body
@@ -389,7 +395,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             }
         }
         .frame(minWidth: theme.textInput.sizeMinWidth,
-               maxWidth: theme.textInput.sizeMaxWidth,
+               maxWidth: constrainedMaxWidth ? theme.textInput.sizeMaxWidth : .infinity,
                minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
     }

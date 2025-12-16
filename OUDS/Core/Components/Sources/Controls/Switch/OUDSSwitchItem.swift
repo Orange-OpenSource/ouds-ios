@@ -168,6 +168,9 @@ public struct OUDSSwitchItem: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   -  constrainedMaxWidth When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
     ///
     /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
     /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
@@ -180,7 +183,8 @@ public struct OUDSSwitchItem: View {
                 isError: Bool = false,
                 errorText: String? = nil,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false)
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
@@ -213,6 +217,7 @@ public struct OUDSSwitchItem: View {
             errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
     }
 
