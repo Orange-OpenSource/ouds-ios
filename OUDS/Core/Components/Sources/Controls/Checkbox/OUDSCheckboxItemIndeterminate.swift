@@ -179,7 +179,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    ///   -  constrainedMaxWidth When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
