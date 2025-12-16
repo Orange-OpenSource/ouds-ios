@@ -83,9 +83,7 @@ struct SelectedTabIndicator: View {
         } else {
             // If not possible to compute tab bar height, get recommended / precomputed value as fallback
             let heights = iPhoneInUse.tabBarHeights
-            let isLandscape = UIDevice.current.orientation.isLandscape ||
-                (UIDevice.current.orientation == .unknown && window.bounds.width > window.bounds.height)
-            tabBarHeight = isLandscape ? heights.landscape : heights.portrait
+            tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
         }
     }
 }

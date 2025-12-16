@@ -60,9 +60,14 @@ import SwiftUI
 /// - use both images and texts in tab bar items
 /// - use badges only when needed to avoid to have heavy tab bar
 /// - be sure the selected information is not only defined by the color of the tab; you may need to change the shape or the fill of the image
-/// - if possible displayed a selected tab indicator for the selected tab
 /// - if a badge must be displayed, prefer short texts. If the text is a decimal value greater than 99, prefer display "+99"
-/// - If decorative images are used for tab bar item, apply *template* rendering mode on it to apply color on tabs
+/// - if decorative images are used for tab bar item, apply *template* rendering mode on it to apply color on tabs
+///
+/// ## Technical constraints
+///
+/// - You must use in your tab bar items images with **a size of 26 x 26**, otherwise rendering could be unaligned with Figma specifications
+/// - Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width absed on the tab bar item content,
+/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS lower than 18.
 ///
 /// ## Accessibility considerations
 ///
@@ -97,6 +102,7 @@ import SwiftUI
 /// ```swift
 ///     // Use the OUDS tab bar to wrap tab bar items and associated views
 ///     // Item tagged 0 will be selected first, 3 tabs are embeded.
+///     // Image with size of 26 x 26
 ///     OUDSTabBar(selected: 0, count: 3) {
 ///
 ///         // Add the views with the SwiftUI tab item and labels
@@ -105,7 +111,7 @@ import SwiftUI
 ///             .tabItem {
 ///                 Label("Label 1", image: "image_1")
 ///             }
-///             .tag(0)
+///             .tag(0) // Must match the selected parameter
 ///         OtherView()
 ///             .tabItem {
 ///                 Label {
@@ -114,12 +120,12 @@ import SwiftUI
 ///                     Image(decorative: "image_2")
 ///                         .renderingMode(.template) // Mandatory to apply color on selected item
 ///                 }
-///             .tag(1)
+///             .tag(1) // Must be used for the selected parameter
 ///         LastView()
 ///             .tabItem {
 ///                 Label("Label 3", image: "image_3")
 ///             }
-///             .tag(2)
+///             .tag(2) // Must be used for the selected parameter
 ///     }
 /// ```
 ///
@@ -181,13 +187,16 @@ public struct OUDSTabBar<Content>: View where Content: View {
     // MARK: Properties
 
     /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
-    let tabCount: Int
+    private let tabCount: Int
 
     /// State to keep the selected tab reference and refresh the view
     @State private var selectedTab: Int
 
     /// Contains the tab bar items
     @ViewBuilder private let content: () -> Content
+
+    /// Track orientation changes to trigger view refresh
+    @State private var isLandscape: Bool
 
     // MARK: Initializers
 
@@ -209,6 +218,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
         selectedTab = selected
         tabCount = count
         self.content = content
+        _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -217,13 +227,13 @@ public struct OUDSTabBar<Content>: View where Content: View {
     ///
     /// If you target iOS lower than 26 you should use instead `OUDSTabBar(selected:count:content)` to get the active tab indicator
     ///
-    /// - Parameters:
-    ///    - content: The list of items to add in the tab bar
+    /// - Parameter content: The list of items to add in the tab bar
     @available(iOS 26, *)
     public init(@ViewBuilder content: @escaping () -> Content) {
         selectedTab = 0
         tabCount = 0
         self.content = content
+        _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
     // MARK: Body
@@ -232,10 +242,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// Warning: rendering wil change depending to OS version!
     public var body: some View {
         #if os(iOS)
-        // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones
-        // and some iPads if iPadOS < 18
-        // Must not be added for iPads with iPadOS >= 18 (as tabs are not managed the same way by the OS)
-        // and can pollute some rendering like in demo app particular cases
+        // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
+        // not for iPhone in landscape mode nor iPads.
         if hasLegacyLayout {
             ZStack(alignment: .bottom) {
                 TabView(selection: $selectedTab) {
@@ -245,7 +253,18 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
                 TabBarTopDivider()
 
-                SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+                if shouldShowTabIndicator {
+                    SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+                }
+            }
+            .onAppear {
+                isLandscape = Self.isInLandscapeViewport()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                // Delay to ensure the orientation change is complete
+                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                    isLandscape = Self.isInLandscapeViewport()
+                }
             }
             // Liquid Glass or iPadOS < 26
         } else {
@@ -280,5 +299,12 @@ public struct OUDSTabBar<Content>: View where Content: View {
         }
         // iOS 26+ / Liquid Glass
         return false
+    }
+
+    /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
+    private var shouldShowTabIndicator: Bool {
+        guard #unavailable(iOS 26.0) else { return false }
+        guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
+        return !isLandscape
     }
 }
