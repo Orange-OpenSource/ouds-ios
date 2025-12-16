@@ -53,9 +53,14 @@ struct SelectedTabIndicator: View {
                     x: xOffset + indicatorWidth / 2,
                     y: indicatorPosition)
                 .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
+                .onChange(of: geometry.size) { _ in
+                    updateTabBarHeight()
+                }
         }
         .onAppear {
-            updateTabBarHeight()
+            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                updateTabBarHeight()
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
@@ -79,7 +84,8 @@ struct SelectedTabIndicator: View {
         } else {
             // If not possible to compute tab bar height, get recommended / precomputed value as fallback
             let heights = iPhoneInUse.tabBarHeights
-            let isLandscape = window.bounds.width > window.bounds.height
+            let isLandscape = UIDevice.current.orientation.isLandscape ||
+                (UIDevice.current.orientation == .unknown && window.bounds.width > window.bounds.height)
             tabBarHeight = isLandscape ? heights.landscape : heights.portrait
         }
     }
