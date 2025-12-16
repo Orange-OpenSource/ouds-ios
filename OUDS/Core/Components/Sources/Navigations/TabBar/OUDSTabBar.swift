@@ -233,9 +233,10 @@ public struct OUDSTabBar<Content>: View where Content: View {
     public var body: some View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones
-        // Must not be added for iPads (as tabs are not managed the same way by the OS)
+        // and some iPads if iPadOS < 18
+        // Must not be added for iPads with iPadOS >= 18 (as tabs are not managed the same way by the OS)
         // and can pollute some rendering like in demo app particular cases
-        if #unavailable(iOS 26.0), UIDevice.current.userInterfaceIdiom == .phone {
+        if hasLegacyLayout {
             ZStack(alignment: .bottom) {
                 TabView(selection: $selectedTab) {
                     content()
@@ -257,5 +258,27 @@ public struct OUDSTabBar<Content>: View where Content: View {
             content()
         }
         #endif
+    }
+
+    // MARK: - Helpers
+
+    /// "Legacy layout" here means:
+    /// - iPhone with iOS lower than 26, i.e. not Liquid Glass
+    /// - iPad with iPadOS lower than 18, i.e. with same tab bar and navigations layouts as iOS. Since iOS 18 tab bar is not anymore in bottom.
+    private var hasLegacyLayout: Bool {
+        // iOS < 26
+        if #unavailable(iOS 26.0) {
+            // iPhone
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                return true
+                // iPad with iPadOS < 18
+            } else if UIDevice.current.userInterfaceIdiom == .pad {
+                if #unavailable(iOS 18.0) {
+                    return true
+                }
+            }
+        }
+        // iOS 26+ / Liquid Glass
+        return false
     }
 }

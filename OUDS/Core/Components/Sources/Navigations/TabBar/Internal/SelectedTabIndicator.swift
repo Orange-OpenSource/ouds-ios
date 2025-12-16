@@ -74,8 +74,7 @@ struct SelectedTabIndicator: View {
     /// Get the tab bar height depending to the state of the device and updates the same area stored dimension
     private func updateTabBarHeight() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first,
-              iPhoneInUse != iPhoneDevice.unknown else { return }
+              let window = windowScene.windows.first else { return }
 
         safeAreaBottom = window.safeAreaInsets.bottom
 
