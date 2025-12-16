@@ -116,7 +116,8 @@ struct TabBarViewModifier: ViewModifier {
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
-        let fontSize: CGFloat = 10
+        // Font size is needed, 10 is recommendation for iPhone, 13 is for iPad
+        let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .pad ? 13 : 10)
         var normalFont: UIFont, selectedFont: UIFont
         if let fontFamily = themeToApply.fontFamily {
             let normalFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.regular)]
