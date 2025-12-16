@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.22.0..develop)
 
+### Added
+
+- `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
+
 ### Changed
 
-- Add constrainedMaxWidth parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
 - Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
 - Define timeout of 2 hours for all GitHub Actions workflows
