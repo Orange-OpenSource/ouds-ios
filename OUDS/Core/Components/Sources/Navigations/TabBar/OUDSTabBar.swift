@@ -201,7 +201,6 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Initializers
 
-    // swiftlint:disable function_default_parameter_at_end
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     ///
@@ -209,10 +208,10 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
     ///
     /// - Parameters:
-    ///    - selected: The identifier of the selected tab, i.e. its rank starting from 0, default set to *0*, assoiated to a *tag*  on a *tab bar item*
+    ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
     ///    - count: The current number of tabs hosted in the tab bar, must be positive non null integer
     ///    - content: The list of items to add in the tab bar
-    public init(selected: Int = 0,
+    public init(selected: Int,
                 count: Int,
                 @ViewBuilder content: @escaping () -> Content)
     {
@@ -221,8 +220,6 @@ public struct OUDSTabBar<Content>: View where Content: View {
         self.content = content
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
-
-    // swiftlint:enable function_default_parameter_at_end
 
     /// Defines the tab bar component with given tab bar items.
     ///
