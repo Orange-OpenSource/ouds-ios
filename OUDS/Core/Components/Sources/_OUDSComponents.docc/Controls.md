@@ -30,7 +30,7 @@ Some components can be used for **controls** and **inputs**.
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
-This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)
+This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with ``OUDSCheckboxIndeterminate``.
 
 @TabNavigator {
     @Tab("SwiftUI") {
@@ -91,14 +91,12 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("SwiftUI") {
         ```swift
         // A leading checkbox with a label, with only two states
-        OUDSCheckboxItem(isOn: $isOn, label: "Hello world", target: self, action: action)
+        OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
 
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
         OUDSCheckboxItemIndeterminate(selection: $selection, 
                                       label: "Dead Robot Zombie Cop",
-                                      description: "from Outer Space II",
-                                      target: self, 
-                                      action: action)
+                                      description: "from Outer Space II")
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
         // with a reversed layout, and exposing only two states through isOn binding
@@ -108,9 +106,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
                          icon: Image(decorative: "ic_heart"),
                          isReversed: true,
                          isError: true,
-                         hasDivider: true,
-                         target: self, 
-                         action: action)
+                         hasDivider: true)
         ```
     }
     @Tab("UIKit (experimental)") {
@@ -190,7 +186,7 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
 // Use the data and the binding for the picker.
 @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
 // Here the picker is vertical by default
- OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
 
 // The picker can be vertical and have a root item with a label and a counter
 OUDSCheckboxPicker(selections: $selections,
@@ -277,7 +273,7 @@ The indicator can be leading or trailing.
     @Tab("SwiftUI") {
         ```swift        
         // A leading radio with a label
-        OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", target: target, action: action)
+        OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
 
         // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
         // error with a reversed layout
@@ -288,9 +284,7 @@ The indicator can be leading or trailing.
                       icon: Image(decorative: "ic_heart"),
                       isReversed: true,
                       isError: true,
-                      hasDivider: true,
-                      target: target, 
-                      action: action)
+                      hasDivider: true)
         ```
     }
     @Tab("UIKit (experimental)") {
@@ -557,7 +551,7 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
     }
 }
 
-The library proposes filter chip component to make some filtering with selected or unselected options.
+The library proposes filter chip component (``OUDSFilterChip``) to make some filtering with selected or unselected options.
 
 @TabNavigator {
     @Tab("SwiftUI") {
@@ -606,7 +600,7 @@ The library proposes filter chip component to make some filtering with selected 
     }
 }
 
-The library proposes a chip picker to make easily filtering with two kinds of selection:
+The library proposes a chip picker (``OUDSChipPicker``) to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only
 - **single**: to select at least one option
 - **multiple**: to select several options
@@ -620,10 +614,10 @@ enum Drink: String, CaseIterable {
 var someDataToPopulate: [OUDSChipPickerData<Drink>] {
     [
         OUDSChipPickerData(tag: Drink.virginHolyLava,
-                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame"))),
 
         OUDSChipPickerData(tag: Dring.ipaBeer,
-                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill"))),
 
         OUDSChipPickerData(tag: Drink.mineralWater,
                            layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
@@ -637,7 +631,7 @@ var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 @State var selection: Drink? = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Simple selection
 
@@ -646,7 +640,7 @@ OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPo
 @State var selection: Drink = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Multiple selection
 
@@ -655,7 +649,7 @@ OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPo
 @State var selections: [Drink] = [.mineralWater]
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
 ```
 
 ### Text input
@@ -691,7 +685,7 @@ OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 // Add a leading icon for more context
 OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 
-// Add a trailing button with local image namde "ic_cross" for additional action
+// Add a trailing button with local image named "ic_cross" for additional action
 let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 

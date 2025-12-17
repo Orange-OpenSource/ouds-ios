@@ -70,14 +70,13 @@ import SwiftUI
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, extraLabel: "The Beatles", description: "1967")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
 ///
 ///     // A trailing switch with a label, an additonal label, a description text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
-///                    extraLabel: "The Beatles",
-///                    description: "1967",
+///                    description: "The Beatles",
 ///                    isReversed: true,
 ///                    icon: Image(decorative: "ic_heart"))
 ///
