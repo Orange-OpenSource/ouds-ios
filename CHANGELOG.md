@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `tab bar` component (Orange-OpenSource/ouds-ios#1135)
-- `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
+- `constrainedMaxWidth` parameter to `control items` and `text input` components (Orange-OpenSource/ouds-ios#1211)
 
 ### Changed
 
@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Accessibility hint on placeholder if no helper text in `text input` (Orange-OpenSource/ouds-ios#1083)
+- Separate label from trait, state, value and error message in `text input`, `checkbox`, `radio` and `switch` (Orange-OpenSource/ouds-ios#1188)
 - The warning icon for Orange theme is not the right one used on `tag` and `badge` (Orange-OpenSource/ouds-ios#1219)
 - Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
 - Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)

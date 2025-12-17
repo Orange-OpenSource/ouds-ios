@@ -95,7 +95,7 @@ public struct OUDSCheckboxIndeterminate: View {
 
     // MARK: - Properties
 
-    private let a11yLabel: String
+    private let accessibilityLabel: String
     private let isError: Bool
     private let isReadOnly: Bool
 
@@ -123,7 +123,7 @@ public struct OUDSCheckboxIndeterminate: View {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _selection = selection
-        a11yLabel = accessibilityLabel
+        self.accessibilityLabel = accessibilityLabel
         self.isError = isError
         self.isReadOnly = isReadOnly
     }
@@ -142,19 +142,23 @@ public struct OUDSCheckboxIndeterminate: View {
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(isEnabled && !isReadOnly ? selection.a11yHint : "")
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isDisabled: True if component is disabled, false otherwise
-    private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
+    private var accessibilityValue: String {
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = selection.a11yDescription
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
+        !isEnabled && isReadOnly ? "" : selection.a11yHint
     }
 }

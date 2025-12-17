@@ -225,36 +225,30 @@ public struct OUDSSwitchItem: View {
     public var body: some View {
         ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-            .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue)
-            .accessibilityHint(a11yHint)
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint)
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
+    /// Forge a string to vocalize the component label based on label, extraLabel and description
+    private var accessibilityLabel: String {
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state.
-    private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value and state
+    private var accessibilityValue: String {
+        let traitDescription = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
+        let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
-        var errorDescription = ""
-        if layoutData.isError {
-            let errorPrefix = "core_common_onError_a11y".localized()
-            let errorText = layoutData.errorText?.localized() ?? ""
-            errorDescription = "\(errorPrefix), \(errorText)"
-        }
-
-        let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.extraLabel ?? ""), \(layoutData.description ?? ""), \(errorDescription), \(switchA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
-    private var a11yHint: String {
-        if layoutData.isReadOnly || !isEnabled {
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
+        if !isEnabled || layoutData.isReadOnly {
             ""
         } else {
             "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()

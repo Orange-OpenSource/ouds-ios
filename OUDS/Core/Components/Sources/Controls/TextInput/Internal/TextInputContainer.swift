@@ -124,31 +124,30 @@ struct TextInputContainer: View {
         TextInputInteractionState(focused: focused, hover: hover)
     }
 
+    /// Forge a string to vocalize the component label based on label and placeholder
     private var accessibilityLabel: String {
-        let errorDescription = switch status {
+        label.isEmpty ? placeholder ?? "" : label
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component input value and error, loading, disabled state
+    private var accessibilityValue: String {
+
+        let emptyDescription = "core_textInput_empty_a11y".localized()
+        let inputValue = "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
+        let valueDescription = text.wrappedValue.isEmpty ? emptyDescription : inputValue
+
+        let stateDescription = switch status {
+        case .disabled, .readOnly:
+            "core_common_disabled_a11y".localized()
         case let .error(message):
             "core_common_onError_a11y".localized() + ": \(message)"
-        default:
+        case .loading:
+            "core_common_loading_a11y".localized()
+        case .enabled:
             ""
         }
 
-        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
-
-        let labelDescription = if label.isEmpty {
-            "\(placeholder ?? "")"
-        } else {
-            label
-        }
-
-        return "\(labelDescription), \(errorDescription), \(loadingDescription)"
-    }
-
-    private var accessibilityValue: String {
-        guard !text.wrappedValue.isEmpty else {
-            return "core_textInput_empty_a11y".localized()
-        }
-
-        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
+        return "\(valueDescription). \(stateDescription)"
     }
 }
 #endif
