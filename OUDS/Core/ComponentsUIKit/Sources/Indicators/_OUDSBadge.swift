@@ -48,7 +48,7 @@ extension OUDSUIKitBrige {
     ///    - accessibilityLabel: The accessibility label bringing meanings about the count value
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    @MainActor public static func createBadge(count: UInt,
+    @MainActor public static func createBadge(count: UInt8,
                                               accessibilityLabel: String,
                                               status: OUDSBadge.Status = .neutral,
                                               size: OUDSBadge.IllustrationSize = .medium) -> UIViewController
