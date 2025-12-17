@@ -224,7 +224,7 @@ public struct OUDSBadge: View {
     // MARK: Body
 
     public var body: some View {
-        Group {
+        HStack {
             switch layout.type {
             case .empty:
                 EmptyView()
