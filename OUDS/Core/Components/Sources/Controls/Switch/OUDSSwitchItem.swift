@@ -237,7 +237,7 @@ public struct OUDSSwitchItem: View {
         return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value and state
     private var accessibilityValue: String {
         let traitDescription = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
         let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()

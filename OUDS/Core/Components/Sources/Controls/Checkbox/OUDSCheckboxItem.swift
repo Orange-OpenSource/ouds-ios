@@ -261,8 +261,7 @@ public struct OUDSCheckboxItem: View {
         return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the indicator
-    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
     private var accessibilityValue: String {
         let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
         let valueDescription = isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()

@@ -147,7 +147,7 @@ public struct OUDSCheckboxIndeterminate: View {
         .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
     private var accessibilityValue: String {
         let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
         let valueDescription = selection.a11yDescription
