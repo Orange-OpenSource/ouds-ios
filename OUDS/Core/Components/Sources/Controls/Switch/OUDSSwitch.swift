@@ -117,7 +117,7 @@ public struct OUDSSwitch: View {
     /// Forges a string to vocalize with *Voice Over* describing the component value, error, state and trait
     private var accessibilityValue: String {
         let traitDescription = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
-        let valueDescription = _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
         let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription)"

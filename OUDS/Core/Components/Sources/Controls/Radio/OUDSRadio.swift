@@ -129,14 +129,14 @@ public struct OUDSRadio: View {
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(accessibilityLabel)
-        .accessibilityValue(accessibilityValue.localized())
+        .accessibilityValue(accessibilityValue)
         .accessibilityHint(accessibilityHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
     private var accessibilityValue: String {
         let traitDescription = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
-        let valueDescription = _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
         let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
 
