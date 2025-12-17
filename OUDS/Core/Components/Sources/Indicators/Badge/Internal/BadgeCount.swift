@@ -27,19 +27,16 @@ struct BadgeCount: View {
     // MARK: Body
 
     var body: some View {
-        Group {
-            let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
-            switch size {
-            case .medium:
-                Text(text)
-                    .labelDefaultSmall(theme)
-                    .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
-            case .large:
-                Text(text)
-                    .labelDefaultMedium(theme)
-                    .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
-            }
+        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
+        switch size {
+        case .medium:
+            Text(text)
+                .labelDefaultSmall(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
+        case .large:
+            Text(text)
+                .labelDefaultMedium(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
         }
-        .modifier(BadgeContentModifier(status: status))
     }
 }

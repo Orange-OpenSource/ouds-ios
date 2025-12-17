@@ -29,13 +29,11 @@ struct BadgeIcon: View {
 
     var body: some View {
         Group {
-            if let customIcon {
-                customIcon
-                    .badgeAssetModifier(flipped)
-                    .modifier(BadgeContentModifier(status: status))
-            } else {
-                defaultIcon
-            }
+            (customIcon ?? defaultIcon)?
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
+                .toFlip(flipped)
         }
         .padding(.all, theme.badge.spaceInset)
         .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
@@ -43,42 +41,18 @@ struct BadgeIcon: View {
 
     // MARK: Helpers
 
-    @ViewBuilder
-    private var defaultIcon: some View {
+    private var defaultIcon: Image? {
         switch status {
         case .neutral, .accent:
-            EmptyView()
+            nil
         case .warning:
-            ZStack {
-                Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
-                    .badgeAssetModifier(false)
-                    .oudsForegroundColor(theme.colors.contentOnStatusWarningEmphasized)
-                Image(decorative: "ic_alert_warning_internal_shape", bundle: theme.resourcesBundle)
-                    .badgeAssetModifier(false)
-                    .oudsForegroundColor(theme.icon.colorContentStatusWarningInternalShape)
-            }
+            Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
         case .positive:
             Image(decorative: "ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
-                .badgeAssetModifier(flipped)
-                .modifier(BadgeContentModifier(status: status))
         case .negative:
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
-                .badgeAssetModifier(flipped)
-                .modifier(BadgeContentModifier(status: status))
         case .info:
             Image(decorative: "ic_alert_info_fill", bundle: theme.resourcesBundle)
-                .badgeAssetModifier(flipped)
-                .modifier(BadgeContentModifier(status: status))
         }
-    }
-}
-
-extension Image {
-    @MainActor
-    fileprivate func badgeAssetModifier(_ flipped: Bool) -> some View {
-        renderingMode(.template)
-            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .toFlip(flipped)
     }
 }
