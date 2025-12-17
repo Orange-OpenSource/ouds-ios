@@ -32,7 +32,7 @@ import OUDSTokensSemantic
 /// Theme can have also non-provider properties like *font family* to apply.
 ///
 /// - Since: 0.8.0
-open class OUDSTheme: @unchecked Sendable {
+open class OUDSTheme: @unchecked Sendable, Equatable {
 
     // MARK: - Semantic tokens
     // Keep things alhabetically ordered
@@ -65,7 +65,7 @@ open class OUDSTheme: @unchecked Sendable {
     public let elevations: AllElevationSemanticTokensProvider
 
     /// A theme can have a custom font which is not the system font
-    public let family: FontFamilySemanticToken?
+    public let fontFamily: FontFamilySemanticToken?
 
     /// All font semantic tokens exposed in one object
     public let fonts: AllFontSemanticTokensProvider
@@ -150,7 +150,7 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Other elements
 
-    /// The name of the name, can be sued for debugging for example
+    /// The name of the name, can be used for debugging for example
     public let name: String
 
     /// The `Bundle` of the effective theme (e.g. `OrangeTheme`, `SoshTheme`, etc.) where resources can be loaded.
@@ -201,7 +201,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - textInput: All component tokens for text input
     ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
-    ///    - family: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - tuning: A set of configurations to tune a theme, by default `ThemeTuning.default`
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
@@ -237,7 +237,7 @@ open class OUDSTheme: @unchecked Sendable {
                 textInput: AllTextInputComponentTokensProvider,
                 resourcesBundle: Bundle,
                 name: String,
-                family: FontFamilySemanticToken? = nil,
+                fontFamily: FontFamilySemanticToken? = nil,
                 tuning: Tuning = Tuning.default)
     {
 
@@ -280,7 +280,7 @@ open class OUDSTheme: @unchecked Sendable {
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle
         self.name = name
-        self.family = family
+        self.fontFamily = fontFamily
         self.tuning = tuning
 
         OUDSVersions.logTokensLibrairiesVersions()
@@ -289,4 +289,15 @@ open class OUDSTheme: @unchecked Sendable {
     // swiftlint:enable function_default_parameter_at_end
 
     deinit {}
+
+    // MARK: - Equatable
+
+    /// Themes are considered equals if they have the same name and same tuning identifier
+    ///
+    /// - Parameters:
+    ///    - lhs: One of the themes to test
+    ///    - rhs: One of the themes to test
+    public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
+        lhs.name == rhs.name && lhs.tuning == rhs.tuning
+    }
 }

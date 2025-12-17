@@ -9,13 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `tab bar` component (Orange-OpenSource/ouds-ios#1135)
 - `constrainedMaxWidth` parameter to control items and text input components (Orange-OpenSource/ouds-ios#1211)
 
 ### Changed
 
+- Define timeout of 1 hour for all GitHub Actions workflows
 - Color semantic tokens (Orange-OpenSource/ouds-ios#1206)
 - Update wording keys and translations (Orange-OpenSource/ouds-ios#1200)
-- Define timeout of 2 hours for all GitHub Actions workflows
 - Update icons to v1.4.0 (Orange-OpenSource/ouds-ios#1193)
 - References to DSM documentation (Orange-OpenSource/ouds-ios#1210) (Orange-OpenSource/ouds-ios#1212)
 - Update `switch` components to v1.5.0 (Orange-OpenSource/ouds-ios#1138)

@@ -26,11 +26,11 @@ struct ThemeOverrideOfThemePropertiesTests {
 
     init() {
         abstractTheme = OrangeTheme()
-        inheritedTheme = MockTheme(family: "Mr R08øT")
+        inheritedTheme = MockTheme(fontFamily: "Mr R08øT")
     }
 
     @Test func inheritedThemeCanOverrideFontFamily() throws {
-        #expect(inheritedTheme.family != abstractTheme.family)
-        #expect(inheritedTheme.family == "Mr R08øT")
+        #expect(inheritedTheme.fontFamily != abstractTheme.fontFamily)
+        #expect(inheritedTheme.fontFamily == "Mr R08øT")
     }
 }

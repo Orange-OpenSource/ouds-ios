@@ -13,16 +13,16 @@ Some components can be used for **layouts**.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
+        ![A colored surface with text, button and link in light and dark modes with Orange theme](component_coloredSurface_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A colored surface with text, button and link in light and dark mode with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
+        ![A colored surface with text, button and link in light and dark modes with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A colored surface with text, button and link in light and dark mode with Sosh theme](component_coloredSurface_Sosh)
+        ![A colored surface with text, button and link in light and dark modes with Sosh theme](component_coloredSurface_Sosh)
     }
     @Tab("Wireframe") {
-        ![A colored surface with text, button and link in light and dark mode with Wireframe theme](component_coloredSurface_Wireframe)
+        ![A colored surface with text, button and link in light and dark modes with Wireframe theme](component_coloredSurface_Wireframe)
     }
 }
 
@@ -115,16 +115,16 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![An horizontal divider in light and dark mode with Orange theme](component_horizontalDivider_Orange)
+        ![An horizontal divider in light and dark modes with Orange theme](component_horizontalDivider_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![An horizontal divider in light and dark mode with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
+        ![An horizontal divider in light and dark modes with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![An horizontal divider in light and dark mode with Sosh theme](component_horizontalDivider_Sosh)
+        ![An horizontal divider in light and dark modes with Sosh theme](component_horizontalDivider_Sosh)
     }
     @Tab("Wireframe") {
-        ![An horizontal divider in light and dark mode with Wireframe theme](component_horizontalDivider_Wireframe)
+        ![An horizontal divider in light and dark modes with Wireframe theme](component_horizontalDivider_Wireframe)
     }
 }
 
@@ -132,16 +132,16 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![An vertical divider in light and dark mode with Orange theme](component_verticalDivider_Orange)
+        ![An vertical divider in light and dark modes with Orange theme](component_verticalDivider_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![An vertical divider in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
+        ![An vertical divider in light and dark modes with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![An vertical divider in light and dark mode with Sosh theme](component_verticalDivider_Sosh)
+        ![An vertical divider in light and dark modes with Sosh theme](component_verticalDivider_Sosh)
     }
     @Tab("Wireframe") {
-        ![An vertical divider in light and dark mode with Wireframe theme](component_verticalDivider_Wireframe)
+        ![An vertical divider in light and dark modes with Wireframe theme](component_verticalDivider_Wireframe)
     }
 }
 

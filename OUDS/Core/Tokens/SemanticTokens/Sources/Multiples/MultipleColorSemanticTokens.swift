@@ -96,12 +96,17 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
         return light == other.light && dark == other.dark
     }
 
-    /// Returns the right color according to the `colorScheme`.
+    // swiftlint:disable force_unwrapping
+    /// Returns the right color according to the `colorScheme
+    ///
     /// - Parameter colorScheme: The color scheme in use to define the value to use
     /// - Returns: The `SwiftUI.Color` value to use
+    /// - Note: The colors are supposed to be well formatted, otherwise convertion will fail and crash
     public func color(for colorScheme: ColorScheme) -> Color {
-        (colorScheme == .light ? light : dark).color
+        Color(hexadecimalCode: colorScheme == .light ? light : dark)!
     }
+
+    // swiftlint:enable force_unwrapping
 
     /// Because some color semantic tokens can be forbidden values,
     /// this helpers returns a flag saying if its the case or not

@@ -12,8 +12,31 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension String {
+
+    // MARK: - Fonts
+
+    /// Some font families have names which cannot be used as they are to load fonts.
+    /// For example the "Helvetica Neue" font family must be loaded using the PostScript name "HelveticaNeue".
+    /// The name of the font to load depends to its PostScript name and the weight.
+    /// For example a "bold Helvetica Neue" exists in iOS as "HelveticaNeue-Bold"
+    ///
+    /// - Parameter weight: The weight to apply to the font
+    /// - Returns: The PostScript name with the weight, or the font name is the PostScript name is unknown or not managed
+    public func fontNameInPostScript(using weight: String) -> String {
+        kApplePostScriptFontNames[orKey: PSFNMK(self, weight: weight)]
+    }
+
+    // MARK: - Format
+
+    /// Returns `self` but with first letter capitalized
+    public var camelCase: String {
+        prefix(1).capitalized + dropFirst()
+    }
+
+    // MARK: - Hexadecimal
 
     /// Converts *self*, supposed to be hexadecimal representation, to int value
     /// - Returns Int: The associated value, or nil if failed
@@ -50,7 +73,7 @@ extension String {
             return self
         }
 
-        guard let rgba = color.rgba else {
+        guard let rgba = Color(hexadecimalCode: self)?.rgba else {
             return nil
         }
 

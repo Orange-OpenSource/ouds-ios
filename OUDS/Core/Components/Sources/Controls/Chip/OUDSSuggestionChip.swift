@@ -47,19 +47,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A suggestion chip component in light and dark mode with Orange theme](component_suggestionChip_Orange)
+/// ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A suggestion chip component in light and dark mode with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
+/// ![A suggestion chip component in light and dark modes with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A suggestion chip component in light and dark mode with Sosh theme](component_suggestionChip_Sosh)
+/// ![A suggestion chip component in light and dark modes with Sosh theme](component_suggestionChip_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A suggestion chip component in light and dark mode with Wireframe theme](component_suggestionChip_Wireframe)
+/// ![A suggestion chip component in light and dark modes with Wireframe theme](component_suggestionChip_Wireframe)
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0

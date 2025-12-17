@@ -166,7 +166,7 @@ func localizedHelveticaFont() -> String {
 
 /// Instanciate your Orange theme using the font family.
 /// Thus when the user will change the app language the app will be restarted, repainted and the theme updated
-let localizedOrangeTheme: OUDSTheme = OrangeTheme(family: localizedHelveticaFont())
+let localizedOrangeTheme: OUDSTheme = OrangeTheme(fontFamily: localizedHelveticaFont())
 ```
 
 > Caution: For legal reasons OUDS does not provide the Helvetica Neue Arabic nore Helvetica Neue assets. You will have to get them and register the fonts files in your app

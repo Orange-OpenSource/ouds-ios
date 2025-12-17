@@ -13,16 +13,16 @@ Some components can be used for **indicators**.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
+        ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+        ![A badge component in light and dark modes with Orange Business Tools theme](component_badge_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A badge component in light and dark mode with Sosh theme](component_badge_Sosh)
+        ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
     }
     @Tab("Wireframe") {
-        ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
+        ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
     }
 }
 
@@ -61,16 +61,16 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A tag component in light and dark mode with Orange theme](component_tag_Orange)
+        ![A tag component in light and dark modes with Orange theme](component_tag_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A tag component in light and dark mode with Orange Business Tools theme](component_tag_OrangeBusinessTools)
+        ![A tag component in light and dark modes with Orange Business Tools theme](component_tag_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A tag component in light and dark mode with Sosh theme](component_tag_Sosh)
+        ![A tag component in light and dark modes with Sosh theme](component_tag_Sosh)
     }
     @Tab("Wireframe") {
-        ![A tag component in light and dark mode with Wireframe theme](component_tag_Wireframe)
+        ![A tag component in light and dark modes with Wireframe theme](component_tag_Wireframe)
     }
 }
 
@@ -129,16 +129,16 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
 
 @TabNavigator {
     @Tab("Orange") {
-        ![An input tag component in light and dark mode with Orange theme](component_inputTag_Orange)
+        ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![An input tag component in light and dark mode with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+        ![An input tag component in light and dark modes with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![An input tag component in light and dark mode with Sosh theme](component_inputTag_Sosh)
+        ![An input tag component in light and dark modes with Sosh theme](component_inputTag_Sosh)
     }
     @Tab("Wireframe") {
-        ![An input tag component in light and dark mode with Wireframe theme](component_inputTag_Wireframe)
+        ![An input tag component in light and dark modes with Wireframe theme](component_inputTag_Wireframe)
     }
 }
 

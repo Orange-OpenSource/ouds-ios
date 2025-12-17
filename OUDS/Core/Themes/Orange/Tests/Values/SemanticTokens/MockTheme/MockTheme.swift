@@ -32,10 +32,10 @@ import OUDSThemesOrange
 final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
-        self.init(family: nil)
+        self.init(fontFamily: nil)
     }
 
-    init(family: String?) {
+    init(fontFamily: String?) {
         let borders = MockThemeBorderSemanticTokensProvider()
         let colors = MockThemeColorSemanticTokensProvider()
         let colorModes = MockThemeColorModeSemanticTokensProvider()
@@ -79,7 +79,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
                    resourcesBundle: Bundle.OrangeTheme,
                    name: "Mock",
-                   family: family)
+                   fontFamily: fontFamily)
     }
 
     deinit {}

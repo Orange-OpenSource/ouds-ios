@@ -682,3 +682,59 @@ or with an image:
 ```swift
 OUDSLink(text: "Text", icon: Image("image_name"), size: .default) { /* the action to process */ }
 ```
+
+##### Tab bar
+
+Tab bar is a navigation component, based a lot on the iOS native component, and displays tabs to the user which redirect to views and journeys.
+Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstabbar).
+
+If iOS lower than 26 is managed, a selected tab indicator must be displayed, thus the component must know the number of items to display and get
+a selected item info associated to a tag:
+
+```swift
+OUDSTabBar(selected: 0, count: 3) {
+
+    // Add the views with the SwiftUI tab item and labels
+    // No need to define colors, everything is done inside OUDSTabBar
+    // Image must be in 26 x 26
+    // Tag value must be used in "selected" parameter
+    SomeView()
+        .tabItem {
+            Label("Label 1", image: "image_1")
+        }
+        .tag(0)
+    OtherView()
+        .tabItem {
+            Label("Label 2", image: "image_2")
+        }
+        .tag(1)
+    LastView()
+        .tabItem {
+            Label("Label 3", image: "image_3")
+        }
+        .tag(2)
+}
+```
+
+If the user targets iOS 26 and greater, prefer this definition of tab bar:
+```swift
+OUDSTabBar {
+
+    // Add the views with the SwiftUI tab item and labels
+    // No need to define colors, everything is done inside OUDSTabBar
+    // Image must be in 26 x 26
+    SomeView()
+        .tabItem {
+            Label("Label 1", image: "image_1")
+        }
+    OtherView()
+        .tabItem {
+            Label("Label 2", image: "image_2")
+        }
+    LastView()
+        .tabItem {
+            Label("Label 3", image: "image_3")
+        }
+}
+```
+

@@ -22,7 +22,7 @@ import SwiftUI
 
 // swiftlint:disable line_length
 
-/// Defines provider objects for `ColorModeSemanticTokens` so as to pack them as light and dark mode colors.
+/// Defines provider objects for `ColorModeSemanticTokens` so as to pack them as light and dark modes colors.
 /// These values can be overriden inside `WireframeThemeColorModeSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticTokens {
 
@@ -129,7 +129,7 @@ extension WireframeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemant
         guard !mode.hasUndefinedValue() else {
             OL.fatal("Trying to use color mode '\(mode.name)' with undefined value / forbidden color value for Wireframe Theme")
         }
-        // List here all cases where light and dark mode values are NOT undefined
+        // List here all cases where light and dark modes values are NOT undefined
         if mode.isEqual(onBgPrimary) { return colors.bgPrimary }
         if mode.isEqual(onBgSecondary) { return colors.bgSecondary }
         if mode.isEqual(onBgTertiary) { return colors.bgTertiary }
