@@ -18,37 +18,37 @@ struct BadgeIcon: View {
 
     // MARK: Properties
 
-    let layout: BadgeLayout
+    let customIcon: Image?
+    let flipped: Bool
+    let size: OUDSBadge.IllustrationSize
+    let status: OUDSBadge.Status
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        switch layout.type {
-        case .empty, .count:
-            EmptyView()
-        case let .icon(icon, flipped, _):
-            (icon ?? defaultLeadingIcon)?
-                .renderingMode(.template)
+        Group {
+            (customIcon ?? defaultIcon)?
                 .resizable()
+                .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .toFlip(flipped)
-                .padding(.all, theme.badge.spaceInset)
-                .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
         }
+        .padding(.all, theme.badge.spaceInset)
+        .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
     }
 
     // MARK: Helpers
 
-    private var defaultLeadingIcon: Image? {
-        switch layout.status {
+    private var defaultIcon: Image? {
+        switch status {
         case .neutral, .accent:
             nil
-        case .positive:
-            Image(decorative: "ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
         case .warning:
             Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
+        case .positive:
+            Image(decorative: "ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
         case .negative:
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
         case .info:

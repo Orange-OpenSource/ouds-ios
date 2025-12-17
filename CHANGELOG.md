@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The warning icon for Orange theme is not the right one used on `tag` and `badge` (Orange-OpenSource/ouds-ios#1219)
+- Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
 - Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)
 - Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 - Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
