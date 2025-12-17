@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Ruby` version from v3.4.7 to v3.4.8 for `build-and-test` workflows
 - `actions/upload-artifact` action from v5.0.0 to v6.0.0 for `scorecard` workflow
 - `ruby/setup-ruby` action from v1.268.0 to v1.271.0 for `build-and-test` workflow 
 - GitHub Actions `checkout` from v6.0.0 to v6.0.1 for all workflows
