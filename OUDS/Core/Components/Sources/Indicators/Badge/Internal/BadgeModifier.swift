@@ -29,7 +29,6 @@ struct BadgeModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsForegroundColor(contentColor)
             .frame(minWidth: frameSize, maxWidth: maxWidth, minHeight: frameSize, maxHeight: maxHeight, alignment: .center)
             .oudsBackground(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
@@ -93,25 +92,6 @@ struct BadgeModifier: ViewModifier {
         }
 
         return isEnabled ? enabbledColor : theme.colors.actionDisabled
-    }
-
-    private var contentColor: MultipleColorSemanticTokens {
-        let enabbledColor = switch layout.status {
-        case .neutral:
-            theme.colors.contentInverse
-        case .accent:
-            theme.colors.contentOnStatusAccentEmphasized
-        case .positive:
-            theme.colors.contentOnStatusPositiveEmphasized
-        case .info:
-            theme.colors.contentOnStatusInfoEmphasized
-        case .warning:
-            theme.colors.contentOnStatusWarningEmphasized
-        case .negative:
-            theme.colors.contentOnStatusNegativeEmphasized
-        }
-
-        return isEnabled ? enabbledColor : theme.colors.contentOnActionDisabled
     }
 }
 

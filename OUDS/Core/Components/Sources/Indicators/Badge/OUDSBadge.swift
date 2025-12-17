@@ -188,7 +188,7 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(count: UInt, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
+    public init(count: UInt8, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
         self.init(layout: .init(type: .count(value: count, size: size), status: status),
                   accessibilityLabel: accessibilityLabel)
     }
@@ -224,9 +224,15 @@ public struct OUDSBadge: View {
     // MARK: Body
 
     public var body: some View {
-        HStack(alignment: .center) {
-            BadgeCount(layout: layout)
-            BadgeIcon(layout: layout)
+        Group {
+            switch layout.type {
+            case .empty:
+                EmptyView()
+            case let .count(value, size):
+                BadgeCount(value: value, size: size, status: layout.status)
+            case let .icon(customIcon, flipIcon, size):
+                BadgeIcon(customIcon: customIcon, flipped: flipIcon, size: size, status: layout.status)
+            }
         }
         .modifier(BadgeModifier(layout: layout, accessibilityLabel: accessibilityLabel))
     }
