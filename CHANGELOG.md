@@ -26,12 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
+- Set accessibility hint on placeholder if no helper text in `text input` (Orange-OpenSource/ouds-ios#1083)
 - Separate label from trait, state, value and error message in `text input`, `checkbox`, `radio and `switch` (Orange-OpenSource/ouds-ios#1188)
 - The warning icon for Orange theme is not the right one used on `tag` and `badge` (Orange-OpenSource/ouds-ios#1219)
 - Icon not shown for negative `tag` and `badge` types (Orange-OpenSource/ouds-ios#1216)
 - Missing accessibility label for badge `standard` and `count` types (Orange-OpenSource/ouds-ios#1060) (Orange-OpenSource/ouds-ios#1222)
-- Set accessibility hint on placeholder if no helper text in `text input` (Orange-OpenSource/ouds-ios#1083)
+- Set own accessibility label to trailing action in `TextInput` (Orange-OpenSource/ouds-ios#1087)
 - Scale icons with information for tag and badge components (Orange-OpenSource/ouds-ios#1179)
 
 ## [0.22.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.21.0...0.22.0) - 2025-11-28
