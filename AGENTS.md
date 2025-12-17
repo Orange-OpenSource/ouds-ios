@@ -322,6 +322,39 @@ Use effects (semantic tokens) defined in a theme:
 theme.effects
 ```
 
+### Use helpers and view modifiers
+
+#### Apply typography
+
+OUDS framework provides SwiftUI view modifiers to apply typography on texts (using a token).
+For example, if a user wants to apply typography `theme.fonts.bodyDefaultMedium` he must not use the `font()` method from SwiftUI but instead
+the dedicated OUDS view modifier with the same name as the typography, i.e. `bodyDefaultMedium(theme)`.
+
+#### Background and foreground color
+
+OUDS framework provides a SwiftUI view modifier to apply foreground color (using a token).
+For example if a user want to apply in foreground the color `theme.colors.contentDefault`, he must not use the `foregroundColor()` method from SwiftUI but instead
+the dedicated OUDS view modifier `oudsForegroundColor(color)`.
+
+The logic is the same for `backgroundColor` which must be replaced by `oudsBackground(color)`.
+
+#### Add border
+
+Border can be defined using the OUDS view modifier `oudsBorder(style:width:radius:color)` with tokens in parameters like:
+```swift
+.oudsBorder(style: theme.borders.styleDefault,
+            width: theme.borders.widthThin,
+            radius: theme.borders.radiusMedium,
+            color: theme.colors.actionEnabled)
+```
+
+#### Add shadow / elevation effect
+
+Elevations effets or box shadows can be applied to view with a dedicated view modifier `oudsShadow(elevation)` with an elevation token like:
+```swift
+.oudsShadow(theme.elevations.emphasized)
+```
+
 ### Use components
 
 #### Actions
@@ -334,6 +367,11 @@ Its documentation is [available online](https://ios.unified-design-system.orange
 Button can be intantiated like:
 ```swift
 OUDSButton(text: "Some text", appearance: .default,  style: .default) { /* the action to process */ }
+```
+
+or in loading state:
+```swift
+OUDSButton(text: "Some text", appearance: .default,  style: .loading) { /* the action to process */ }
 ```
 
 or with an image and a text inside:
@@ -444,7 +482,7 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
 @State var selection: String = "Choice_1"
 
 // Here the picker is vertical
-OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+OUDSRadioPicker(selection: $selection, radios: someDataToPopulate, placement: .vertical)
 ```
 
 ##### Switch / toggle
@@ -561,14 +599,26 @@ OUDSTextInput(label: "Some label", text: $text)
 or with a prefix and/or a suffix to bring more context to the user:
 ```swift
 @State var text: String = ""
-OUDSTextInput(label: "Some label", text: $text, prefix: "Prefix", suffix: "Suffix")
+OUDSTextInput(label: "Some label", text: $text, placeholder: "Placeholder", prefix: "Prefix", suffix: "Suffix")
 ```
 
 or with a trailing action button:
 ```swift
 @State var text: String = ""
-let trailingAction = OUDSTextInput.TrailingAction(icon: Image("image_name"), accessibilityLabel: "Some label") { /* Action to process */ }
+let trailingAction = OUDSTextInput.TrailingAction(icon: Image("image_name"), actionHint: "Some label") { /* Action to process */ }
 OUDSTextInput(label: "Label", text: $text, trailingAction: trailingAction)
+```
+
+Text input can also manage errors like:
+```swift
+OUDSTextInput(label: "Label",
+              text: $text,
+              status: .error(message: "Error message"))
+```
+
+or have also a leading icon:
+```swift
+OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("image_name"))
 ```
 
 #### Indicators
