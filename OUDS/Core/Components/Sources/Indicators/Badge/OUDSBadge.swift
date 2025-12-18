@@ -21,13 +21,13 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Default badge is neutral with medium size
-///     OUDSBadge()
+///     OUDSBadge(accessibilityLabel: "New feature available")
 ///
 ///     // Accent badge in small size without information
-///     OUDSBadge(status: .accent, size: .small)
+///     OUDSBadge(accessibilityLabel: "New feature available", status: .accent, size: .small)
 ///
 ///     // Negative badge in large size with count information
-///     OUDSBadge(count: 1, status: .negative, size: .large)
+///     OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
 ///
 ///     // Info badge in medium size (default size) with default icon information
 ///     OUDSBadge(status: .info, accessibilityLabel: "Like", size: .medium)
@@ -50,30 +50,30 @@ import SwiftUI
 ///
 /// ### Vocalizations
 ///
-/// A badge without content will be ignored instead of a count badge for which its value wil be vocalized.
-/// For badge with icon, if the accessibility label is defined (and it should be) it will be vocalized.
+/// A badge needs an accessibility label to decribe the meaning that will be vocalized.
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/698ea8-badge)
+/// - Count badge: [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge-count)
+/// - Icon badge: [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-badge-icon)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A badge component in light and dark mode with Orange theme](component_badge_Orange)
+/// ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A badge component in light and dark mode with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+/// ![A badge component in light and dark modes with Orange Business Tools theme](component_badge_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A badge component in light and dark mode with Sosh theme](component_badge_Sosh)
+/// ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A badge component in light and dark mode with Wireframe theme](component_badge_Wireframe)
+/// ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.17.0
@@ -168,11 +168,12 @@ public struct OUDSBadge: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// - Parameters:
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    public init(status: Status = .neutral, size: StandardSize = .medium) {
-        layout = BadgeLayout(type: .empty(size: size), status: status)
-        accessibilityLabel = ""
+    public init(accessibilityLabel: String, status: Status = .neutral, size: StandardSize = .medium) {
+        self.init(layout: .init(type: .empty(size: size), status: status),
+                  accessibilityLabel: accessibilityLabel)
     }
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
@@ -184,11 +185,12 @@ public struct OUDSBadge: View {
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    public init(count: UInt, status: Status = .neutral, size: IllustrationSize = .medium) {
-        layout = BadgeLayout(type: .count(value: count, size: size), status: status)
-        accessibilityLabel = "\(count)"
+    public init(count: UInt8, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
+        self.init(layout: .init(type: .count(value: count, size: size), status: status),
+                  accessibilityLabel: accessibilityLabel)
     }
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
@@ -206,20 +208,31 @@ public struct OUDSBadge: View {
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
     {
-        if accessibilityLabel.isEmpty {
-            OL.warning("The OUDSBadge with an icon should not have an empty accessibility label, think about your disabled users!")
-        }
+        let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
 
-        layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
+        self.init(layout: layout, accessibilityLabel: accessibilityLabel)
+    }
+
+    private init(layout: BadgeLayout, accessibilityLabel: String) {
+        if accessibilityLabel.isEmpty {
+            OL.warning("The OUDSBadge should not have an empty accessibility label, think about your disabled users!")
+        }
+        self.layout = layout
         self.accessibilityLabel = accessibilityLabel
     }
 
     // MARK: Body
 
     public var body: some View {
-        HStack(alignment: .center) {
-            BadgeCount(layout: layout)
-            BadgeIcon(layout: layout)
+        HStack {
+            switch layout.type {
+            case .empty:
+                EmptyView()
+            case let .count(value, size):
+                BadgeCount(value: value, size: size, status: layout.status)
+            case let .icon(customIcon, flipIcon, size):
+                BadgeIcon(customIcon: customIcon, flipped: flipIcon, size: size, status: layout.status)
+            }
         }
         .modifier(BadgeModifier(layout: layout, accessibilityLabel: accessibilityLabel))
     }

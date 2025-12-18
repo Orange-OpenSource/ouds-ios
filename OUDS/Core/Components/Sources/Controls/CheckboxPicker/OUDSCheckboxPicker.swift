@@ -44,7 +44,7 @@ import SwiftUI
 ///         [
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
-///                                        additionalLabel: "Very spicy",
+///                                        extraLabel: "Very spicy",
 ///                                        helper: "No alcohol, only tasty flavors",
 ///                                        icon: Image(systemName: "flame")),
 ///
@@ -89,7 +89,7 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
+/// ![A checkbox picker component in light and dark modes with Orange theme](component_checkboxPicker_Orange)
 ///
 /// - Since: 0.14.0
 @available(iOS 15, macOS 15, visionOS 1, *)
@@ -235,7 +235,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSCheckboxItem(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          label: checkbox.label,
-                         helper: checkbox.helper,
+                         description: checkbox.description,
                          icon: checkbox.icon,
                          isReversed: isReversed ? true : checkbox.isReversed,
                          isError: isError ? true : checkbox.isError,

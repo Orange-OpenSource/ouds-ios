@@ -34,25 +34,25 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/77fdea-chip/b/6578e5/t/14bf4bd854)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-filter-chip)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A filter chip component in light and dark mode with Orange theme](component_filterChip_Orange)
+/// ![A filter chip component in light and dark modes with Orange theme](component_filterChip_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A filter chip component in light and dark mode with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
+/// ![A filter chip component in light and dark modes with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A filter chip component in light and dark mode with Sosh theme](component_filterChip_Sosh)
+/// ![A filter chip component in light and dark modes with Sosh theme](component_filterChip_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A filter chip component in light and dark mode with Wireframe theme](component_filterChip_Wireframe)
+/// ![A filter chip component in light and dark modes with Wireframe theme](component_filterChip_Wireframe)
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
@@ -128,7 +128,7 @@ public struct OUDSFilterChip: View {
     }
 
     private var accessibilityHint: String {
-        (selected ? "core_filterchip_hint_selected_a11y" : "core_filterchip_hint_unselected_a11y").localized()
+        (selected ? "core_filterChip_hint_selected_a11y" : "core_filterChip_hint_unselected_a11y").localized()
     }
 
     private var accessibilityLabel: String {

@@ -144,11 +144,11 @@ For Orange products the *Helevetica Neue* font family must be used.
 ```swift
 // The three following instanciations are the same
 let theme = OrangeTheme()
-let theme = OrangeTheme(family: OrangeBrandFontRawTokens.familyBrandDefault)
-let theme = OrangeTheme(family: "HelveticaNeue") // Which is PostScript name of the font
+let theme = OrangeTheme(fontFamily: OrangeBrandFontRawTokens.familyBrandDefault)
+let theme = OrangeTheme(fontFamily: "HelveticaNeue") // Which is PostScript name of the font
 
 // This instanciation won't work as the font family is not recognised
-let theme = OrangeTheme(family: "Helvetica Neue")
+let theme = OrangeTheme(fontFamily: "Helvetica Neue")
 ```
 
 ### Other fonts
@@ -171,7 +171,7 @@ private func registerFonts() {
 // Keep in mind that it might not work because PostScript name is used combining
 // font family name and font weight.
 // For Luciole font, use "Luciole". For Roboto font, use "Roboto""
-   let theme = OrangeTheme(family: theFontFamilyNameInPostScript)
+   let theme = OrangeTheme(fontFamily: theFontFamilyNameInPostScript)
 ```
 
 > Note: Specific rules to compute PostScript value are defined in `PostScriptFontNamesMap.swift`
@@ -384,7 +384,7 @@ struct YourApp: App {
 
 ### Actions
 
-![A button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Orange.png)
+![A button component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_Orange.png)
 
 ### Controls
 
@@ -392,10 +392,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Checkbox") {
-        ![A checkbox component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Orange.png)        
+        ![A checkbox component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkbox_Orange.png)        
     }
     @Tab("Checkbox item") {
-        ![A checkbox item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Orange.png)
+        ![A checkbox item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_checkboxItem_Orange.png)
     }
 }
 <!-- Maybe not relevant to display checkbox picker -->
@@ -404,10 +404,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Radio") {
-        ![A radio button component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Orange.png)        
+        ![A radio button component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radio_Orange.png)        
     }
     @Tab("Radio item") {
-        ![A radio item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Orange.png)
+        ![A radio item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_radioItem_Orange.png)
     }
 }
 <!-- Maybe not relevant to display radio picker -->
@@ -416,10 +416,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Switch") {
-        ![A switch component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Orange.png)        
+        ![A switch component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switch_Orange.png)        
     }
     @Tab("Switch item") {
-        ![A switch item component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Orange.png)
+        ![A switch item component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_switchItem_Orange.png)
     }
 }
 
@@ -427,32 +427,32 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Filter chip") {
-        ![A filter chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
+        ![A filter chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_filterChip_Orange.png)        
     }
     @Tab("Suggestion chip") {
-        ![A suggestion chip component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
+        ![A suggestion chip component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_suggestionChip_Orange.png)
     }
 }
 <!-- Maybe not relevant to display chip picker -->
 
 #### Text inputs
 
-![A text input component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Orange.png)
+![A text input component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_Orange.png)
 
 ### Indicators
 
 #### Badge
 
-![A badge component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
+![A badge component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_badge_Orange.png)
 
 #### Tags
 
 @TabNavigator {
     @Tab("Tag") {
-        ![A tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)        
+        ![A tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tag_Orange.png)        
     }
     @Tab("Input tag") {
-        ![An input tag component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Orange.png)
+        ![An input tag component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_inputTag_Orange.png)
     }
 }
 
@@ -464,10 +464,10 @@ struct YourApp: App {
 
 @TabNavigator {
     @Tab("Horizontal divider") {
-        ![An horizontal divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Orange.png)
+        ![An horizontal divider component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_horizontalDivider_Orange.png)
     }
     @Tab("Vertical divider") {
-        ![A vertical divider component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Orange.png)
+        ![A vertical divider component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_verticalDivider_Orange.png)
     }
 }
 
@@ -475,7 +475,18 @@ struct YourApp: App {
 
 #### Link
 
-![A link component in light and dark mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Orange.png)
+![A link component in light and dark modes with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_link_Orange.png)
+
+#### Tab bar
+
+@TabNavigator {
+    @Tab("With Liquid Glass") {
+        ![A tab component in light mode with Orange theme and Liquid Glass](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_LiquidGlass_Orange_light.png)        
+    }
+    @Tab("Without Liquid Glass") {
+        ![A tab component in light mode with Orange theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_tabBar_Orange_light.png)
+    }
+}
 
 ## Topics
 

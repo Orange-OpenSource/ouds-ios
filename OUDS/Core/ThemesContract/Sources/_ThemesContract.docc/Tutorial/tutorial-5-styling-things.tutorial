@@ -65,7 +65,7 @@
         @Steps {
             @Step {
                 The *OUDS* package provides also view modifiers to apply effects on views, using the power of tokens.
-                For example, it is possible de define a foreground color and also a background color using a semantic token of color which will provide light and dark mode variants.
+                For example, it is possible de define a foreground color and also a background color using a semantic token of color which will provide light and dark modes variants.
                 
                 Try to change these colors in the title of the view and the formular.
                 

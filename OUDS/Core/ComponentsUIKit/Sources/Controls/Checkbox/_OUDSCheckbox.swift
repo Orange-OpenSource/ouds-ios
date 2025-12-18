@@ -55,11 +55,13 @@ public final class OUDSCheckboxViewController: UIViewController {
     ///    - isOn: If the checkbox is checked or not
     ///    - accessibilityLabel: The accessibility label to vocalise for the checkbox
     ///    - isError: If the checkbox is in error state or not
-    init(isOn: Bool, accessibilityLabel: String, isError: Bool) {
+    ///    - isReadOnly: If the checkbox is in ready only state or not
+    init(isOn: Bool, accessibilityLabel: String, isError: Bool, isReadOnly: Bool) {
         checkboxViewModel = OUDSCheckboxViewModel(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
-            isError: isError)
+            isError: isError,
+            isReadOnly: isReadOnly)
         targets = []
         super.init(nibName: nil, bundle: nil)
         setupInternalCallback()
@@ -157,7 +159,8 @@ struct OUDSCheckboxWrapper: View {
         OUDSCheckbox(
             isOn: checkboxBinding,
             accessibilityLabel: model.accessibilityLabel,
-            isError: model.isError)
+            isError: model.isError,
+            isReadOnly: model.isReadOnly)
             .environment(\._theme, OUDSUIKit.theme)
     }
 }
@@ -171,6 +174,8 @@ struct OUDSCheckboxWrapper: View {
     @Published var isOn: Bool
     /// For `OUDSCheckbox/isError`
     var isError: Bool
+    /// For `OUDSCheckbox/isReadOnly`
+    var isReadOnly: Bool
     /// For `OUDSCheckbox/accessibilityLabel`
     var accessibilityLabel: String
 
@@ -178,11 +183,13 @@ struct OUDSCheckboxWrapper: View {
 
     init(isOn: Bool,
          accessibilityLabel: String,
-         isError: Bool)
+         isError: Bool,
+         isReadOnly: Bool)
     {
         self.isOn = isOn
         self.accessibilityLabel = accessibilityLabel
         self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     deinit {}
@@ -216,11 +223,13 @@ extension OUDSUIKitBrige {
     ///    - isOn: True if checkbox is selected, false otherwise
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     ///    - target: Reference to the `UIViewController` hosting the component to create
     ///    - action: The action to trigger defined in the `target` when the value of the `OUDSCheckbox` has changed
     @MainActor public static func createCheckbox(isOn: Bool,
                                                  accessibilityLabel: String,
                                                  isError: Bool = false,
+                                                 isReadOnly: Bool = false,
                                                  target: Any?,
                                                  action: Selector) -> UIViewController
     {
@@ -229,7 +238,8 @@ extension OUDSUIKitBrige {
         let uikitCheckboxViewController = OUDSCheckboxViewController(
             isOn: isOn,
             accessibilityLabel: accessibilityLabel,
-            isError: isError)
+            isError: isError,
+            isReadOnly: isReadOnly)
         uikitCheckboxViewController.addTarget(target, action: action, for: .valueChanged)
         return uikitCheckboxViewController
     }

@@ -23,7 +23,7 @@ import SwiftUI
 ///
 /// The component can be rendered as two different layouts:
 ///
-/// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
+/// - **default**: the component has a leading indicator, a label and optional texts, and an optional trailing decorative icon
 /// - **reversed**: like the *default* layout but with a trailing radio indicator and a leading optional decorative icon
 ///
 /// ## Indicator states
@@ -50,7 +50,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
+/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and optional texts and a custom radio trait.
 /// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
 ///
 /// ## Forbidden by design
@@ -77,17 +77,17 @@ import SwiftUI
 ///
 ///     // A leading radio with a label, and an additional label but without text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles")
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
+///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles", description: "1967")
 ///
-///     // A trailing radio with a label, an helper text, an icon, a divider and is about an error.
+///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
 ///     // The reversed layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
 ///                   label: "Rescue from this world!",
-///                   helper: "Put your hand in mine",
+///                   description: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
 ///                   isError: true,
@@ -124,27 +124,27 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-radio-button)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
+/// ![A radio item component in light and dark modes with Orange theme](component_radioItem_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
+/// ![A radio item component in light and dark modes with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A radio item component in light and dark mode with Sosh theme](component_radioItem_Sosh)
+/// ![A radio item component in light and dark modes with Sosh theme](component_radioItem_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
+/// ![A radio item component in light and dark modes with Wireframe theme](component_radioItem_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadioItem: View {
@@ -160,14 +160,14 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Initializer
 
-    /// Creates a radio with label and optional helper text, icon, divider.
+    /// Creates a radio with label and optional helper text as description, icon, divider.
     /// Supposed to be integrated inside a ``OUDSRadioPicker``.
     ///
     /// ```swift
     ///     OUDSRadioItem(isOn: $selection,
     ///                   label: "Virgin Holy Lava",
-    ///                   additionalLabel: "Very spicy",
-    ///                   helper: "No alcohol, only tasty flavors",
+    ///                   extraLabel: "Very spicy",
+    ///                   description: "No alcohol, only tasty flavors",
     ///                   icon: Image(systemName: "flame")
     /// ```
     ///
@@ -175,9 +175,9 @@ public struct OUDSRadioItem: View {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
-    ///   - label: The main label text of the radio.
-    ///   - additionalLabel: An additional label text of the radio, default set to `nil`
-    ///   - helper: An additonal helper text, should not be empty, default set to `nil`
+    ///   - label: The main label text of the radio, must not be empty
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
+    ///   - description: An description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
@@ -187,16 +187,19 @@ public struct OUDSRadioItem: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the radio button has been pressed
     ///
     /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     ///
-    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
-                additionalLabel: String? = nil,
-                helper: String? = nil,
+                extraLabel: String? = nil,
+                description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
                 isOutlined: Bool = false,
@@ -205,18 +208,23 @@ public struct OUDSRadioItem: View {
                 errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
-        if let helper, helper.isEmpty {
-            OL.warning("Helper text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
         }
 
-        if let additionalLabel, additionalLabel.isEmpty {
-            OL.warning("Additional label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        if let description, description.isEmpty {
+            OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if let extraLabel, extraLabel.isEmpty {
+            OL.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
@@ -228,8 +236,8 @@ public struct OUDSRadioItem: View {
         _isOn = isOn
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: additionalLabel?.localized(),
-            helper: helper?.localized(),
+            extraLabel: extraLabel?.localized(),
+            description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: isOutlined,
@@ -237,6 +245,7 @@ public struct OUDSRadioItem: View {
             errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
         self.action = action
     }
@@ -246,38 +255,41 @@ public struct OUDSRadioItem: View {
     public var body: some View {
         ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-            .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue)
-            .accessibilityHint(a11yHint)
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint)
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
+    // MARK: - A11Y helpers
+
+    /// Forge a string to vocalize the component label based on label, extraLabel and description
+    private var accessibilityLabel: String {
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state.
-    private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
-        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
+    private var accessibilityValue: String {
+        let traitDescription = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
+        let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
+
+        let errorPrefix = "core_common_onError_a11y".localized()
         let errorText = layoutData.errorText?.localized() ?? ""
-        let errorDescription = "\(errorPrefix), \(errorText)"
-        let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.additionalLabel ?? ""), \(layoutData.helper ?? "") \(errorDescription), \(radioA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
-    private var a11yHint: String {
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
         if layoutData.isReadOnly || !isEnabled {
             ""
         } else {
-            if _isOn.wrappedValue {
-                "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
-            } else {
-                "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
-            }
+            _isOn.wrappedValue
+                ? "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+                : "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
         }
     }
 }

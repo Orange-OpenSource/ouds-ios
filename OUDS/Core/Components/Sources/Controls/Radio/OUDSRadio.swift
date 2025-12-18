@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// ## Cases forbidden by design
 ///
-/// **The design system does not allow to have both an error situation and a disabled component.**
+/// **The design system does not allow to have both an error or read only situation and a disabled component.**
 ///
 /// ## Code samples
 ///
@@ -55,35 +55,36 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-radio-button)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A radio button component in light and dark mode with Orange theme](component_radio_Orange)
+/// ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A radio button component in light and dark mode with Orange Business Tools theme](component_radio_OrangeBusinessTools)
+/// ![A radio button component in light and dark modes with Orange Business Tools theme](component_radio_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A radio button component in light and dark mode with Sosh theme](component_radio_Sosh)
+/// ![A radio button component in light and dark modes with Sosh theme](component_radio_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
+/// ![A radio button component in light and dark modes with Wireframe theme](component_radio_Wireframe)
 ///
-/// - Version: 1.3.0 (Figma component design version)
+/// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadio: View {
 
     // MARK: - Properties
 
-    private let isError: Bool
     private let accessibilityLabel: String
+    private let isError: Bool
+    private let isReadOnly: Bool
 
     @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
@@ -93,15 +94,17 @@ public struct OUDSRadio: View {
 
     /// Creates a radio with only an indicator.
     ///
-    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
+    /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True iif the component should be in read only mode, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
@@ -109,12 +112,13 @@ public struct OUDSRadio: View {
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
         self.isError = isError
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
@@ -124,29 +128,24 @@ public struct OUDSRadio: View {
                 .modifier(RadioBackgroundModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
-    }
-
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    private var a11yLabel: String {
-        let stateDescription = isEnabled ? "" : "core_common_disabled_a11y".localized()
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(accessibilityLabel), \(stateDescription),  \(errorDescription), \(radioA11yTrait)"
-        return result
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+    private var accessibilityValue: String {
+        let traitDescription = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
+
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
-    private var a11yHint: String {
-        if !isEnabled {
+    private var accessibilityHint: String {
+        if !isEnabled || isReadOnly {
             ""
         } else {
             _isOn.wrappedValue

@@ -136,7 +136,7 @@ import SwiftUI
 ///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
 ///     // Add a trailing button with local image namde "ic_cross" for additional action
-///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
@@ -165,25 +165,25 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com]( https://r.orange.fr/r/S-ouds-doc-text-input)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A text input component in light and dark mode with Orange theme](component_textInput_Orange)
+/// ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+/// ![A text input component in light and dark modes with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A text input component in light and dark mode with Sosh theme](component_textInput_Sosh)
+/// ![A text input component in light and dark modes with Sosh theme](component_textInput_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
+/// ![A text input component in light and dark modes with Wireframe theme](component_textInput_Wireframe)
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
@@ -204,6 +204,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
+    let constrainedMaxWidth: Bool
 
     @Environment(\.theme) private var theme
 
@@ -220,8 +221,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public struct TrailingAction {
 
         let icon: Image
-        let flipIcon: Bool
         let actionHint: String
+        let flipIcon: Bool
         let action: () -> Void
 
         /// Creates a trailing action.
@@ -236,8 +237,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
-            self.flipIcon = flipIcon
             self.actionHint = actionHint
+            self.flipIcon = flipIcon
             self.action = action
         }
     }
@@ -333,6 +334,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
     ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
     ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
+    ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///      modifier. Defaults to `false`.
     ///    - status: The current status of the text input, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
@@ -345,6 +349,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
     {
         self.label = label
@@ -359,6 +364,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.helperLink = helperLink
         self.status = status
         self.isOutlined = isOutlined
+        self.constrainedMaxWidth = constrainedMaxWidth
     }
 
     // MARK: Body
@@ -375,17 +381,13 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                                    flipIcon: flipLeadingIcon,
                                    trailingAction: trailingAction,
                                    isOutlined: isOutlined,
-                                   status: status)
+                                   status: status,
+                                   accessibilityHint: helperText)
 
                 HelperErrorTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
             }
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityHint(Text(helperText ?? ""))
-            .accessibilityValue(accessibilityValue)
-            .accessibilityAction(named: Text(trailingAction?.actionHint ?? "")) {
-                trailingAction?.action()
-            }
+            .accessibilityElement(children: .contain)
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
@@ -393,40 +395,9 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             }
         }
         .frame(minWidth: theme.textInput.sizeMinWidth,
-               maxWidth: theme.textInput.sizeMaxWidth,
+               maxWidth: constrainedMaxWidth ? theme.textInput.sizeMaxWidth : .infinity,
                minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
-    }
-
-    // MARK: Helpers
-
-    private var accessibilityLabel: String {
-        let emptyValueDescription = text.wrappedValue.isEmpty ? "core_textInput_empty_a11y".localized() : ""
-
-        let errorDescription = switch status {
-        case let .error(message):
-            "core_common_onError_a11y".localized() + ": \(message)"
-        default:
-            ""
-        }
-
-        let loadingDescription = status == .loading ? "core_common_loading_a11y".localized() : ""
-
-        let labelDescription = if label.isEmpty {
-            "\(placeholder ?? "")"
-        } else {
-            label
-        }
-
-        return "\(labelDescription), \(emptyValueDescription), \(errorDescription), \(loadingDescription)"
-    }
-
-    private var accessibilityValue: String {
-        guard !text.wrappedValue.isEmpty else {
-            return ""
-        }
-
-        return "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
     }
 }
 #endif

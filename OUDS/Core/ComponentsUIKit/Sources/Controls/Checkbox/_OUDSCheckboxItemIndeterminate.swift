@@ -56,7 +56,7 @@ public final class OUDSCheckboxItemIndeterminateViewController: UIViewController
     /// - Parameters:
     ///   - selection:A property that determines wether the indicator is ticked (selected) or not (unselected)
     ///   - label: The main label text of the checkbox.
-    ///   - helper: An additonal helper text, should not be empty
+    ///   - description: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position,` false` otherwise.
@@ -66,7 +66,7 @@ public final class OUDSCheckboxItemIndeterminateViewController: UIViewController
     ///   - action: An additional action to trigger when the checkbox has been pressed
     init(selection: OUDSCheckboxIndicatorState,
          label: String,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -77,7 +77,7 @@ public final class OUDSCheckboxItemIndeterminateViewController: UIViewController
     {
         checkboxViewModel = OUDSCheckboxItemIndeterminateViewModel(selection: selection,
                                                                    label: label,
-                                                                   helper: helper,
+                                                                   description: description,
                                                                    icon: icon,
                                                                    flipIcon: flipIcon,
                                                                    isReversed: isReversed,
@@ -184,7 +184,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
         OUDSCheckboxItemIndeterminate(
             selection: checkboxBinding,
             label: model.label,
-            helper: model.helper,
+            description: model.description,
             icon: model.icon,
             flipIcon: model.flipIcon,
             isReversed: model.isReversed,
@@ -205,8 +205,8 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
     @Published var selection: OUDSCheckboxIndicatorState
     /// For `OUDSCheckboxItemIndeterminate/label`
     var label: String
-    /// For `OUDSCheckboxItemIndeterminate/helper`
-    var helper: String?
+    /// For `OUDSCheckboxItemIndeterminate/description`
+    var description: String?
     /// For `OUDSCheckboxItemIndeterminate/icon`
     var icon: Image?
     /// For `OUDSCheckboxItemIndeterminate/flipIcon`
@@ -226,7 +226,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
 
     init(selection: OUDSCheckboxIndicatorState,
          label: String,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -237,7 +237,7 @@ struct OUDSCheckboxItemIndeterminateWrapper: View {
     {
         self.selection = selection
         self.label = label
-        self.helper = helper
+        self.description = description
         self.icon = icon
         self.flipIcon = flipIcon
         self.isReversed = isReversed
@@ -267,7 +267,7 @@ extension OUDSUIKitBrige {
     ///     // Then create the OUDSCheckboxItemIndeterminate inside your UIViewController
     ///     OUDSUIKit.createCheckboxItemIndeterminate(selection: .indeterminate,
     ///                                               label: "An awesome label"
-    ///                                               helper: "A smaller text",
+    ///                                               description: "A smaller text",
     ///                                               icon: Image("ic_heart"),
     ///                                               action: #selector(checkboxChanged(_:)))
     /// ```
@@ -277,7 +277,7 @@ extension OUDSUIKitBrige {
     /// - Parameters:
     ///    - selection: A property indicating wether or not the checkbox is selected or in indeterminate state
     ///    - label: The main label text of the checkbox.
-    ///    - helper: An additonal helper text, should not be empty, default set to `nil`
+    ///    - description: An additonal helper text, should not be empty, default set to `nil`
     ///    - icon: An optional icon,  default set to `nil`
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - isReversed: `true` if the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
@@ -289,7 +289,7 @@ extension OUDSUIKitBrige {
     ///    - action: The `Selector` called when the checkbox value changed
     @MainActor public static func createCheckboxItemIndeterminate(selection: OUDSCheckboxIndicatorState,
                                                                   label: String,
-                                                                  helper: String? = nil,
+                                                                  description: String? = nil,
                                                                   icon: Image? = nil,
                                                                   flipIcon: Bool = false,
                                                                   isReversed: Bool = false,
@@ -304,7 +304,7 @@ extension OUDSUIKitBrige {
 
         let uikitViewController = OUDSCheckboxItemIndeterminateViewController(selection: selection,
                                                                               label: label,
-                                                                              helper: helper,
+                                                                              description: description,
                                                                               icon: icon,
                                                                               flipIcon: flipIcon,
                                                                               isReversed: isReversed,

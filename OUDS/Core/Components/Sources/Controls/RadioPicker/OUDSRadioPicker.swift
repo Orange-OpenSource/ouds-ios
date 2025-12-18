@@ -43,13 +43,13 @@ import SwiftUI
 ///         [
 ///             OUDSRadioPickerData<String>(tag: "Choice_1",
 ///                                         label: "Virgin Holy Lava",
-///                                         additionalLabel: "Very spicy",
-///                                         helper: "No alcohol, only tasty flavors",
+///                                         extraLabel: "Very spicy",
+///                                         description: "No alcohol, only tasty flavors",
 ///                                         icon: Image(systemName: "flame")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_2",
 ///                                         label: "IPA beer",
-///                                         helper: "From Brewdog company",
+///                                         description: "From Brewdog company",
 ///                                         icon: Image(systemName: "dog.fill")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_3",
@@ -83,19 +83,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A radio picker component in light and dark mode with Orange theme](component_radioPicker_Orange)
+/// ![A radio picker component in light and dark modes with Orange theme](component_radioPicker_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A radio picker component in light and dark mode with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
+/// ![A radio picker component in light and dark modes with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A radio picker component in light and dark mode with Sosh theme](component_radioPicker_Sosh)
+/// ![A radio picker component in light and dark modes with Sosh theme](component_radioPicker_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A radio picker component in light and dark mode with Wirefraùe theme](component_radioPicker_Wireframe)
+/// ![A radio picker component in light and dark modes with Wirefraùe theme](component_radioPicker_Wireframe)
 ///
 /// - Since: 0.14.0
 @available(iOS 15, macOS 15, visionOS 1, *)
@@ -200,8 +200,8 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSRadioItem(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       label: radio.label,
-                      additionalLabel: radio.additionalLabel,
-                      helper: radio.helper,
+                      extraLabel: radio.extraLabel,
+                      description: radio.description,
                       icon: radio.icon,
                       isOutlined: isOutlined ? true : radio.isOutlined,
                       isReversed: isReversed ? true : radio.isReversed,

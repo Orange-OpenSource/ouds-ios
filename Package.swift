@@ -32,7 +32,7 @@ let package = Package(
 
         // MARK: Umbrella products
 
-        // Umbrella product to improve Developer eXperience and let users use OUDS in only one import
+        // Umbrella library to improve Developer eXperience and let users use OUDS in only one import
 
         // Embeds all librairies and all themes
         .library(
@@ -107,7 +107,7 @@ let package = Package(
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.6"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.7"),
     ],
 
     // MARK: - Targets

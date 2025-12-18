@@ -145,7 +145,7 @@ public struct OUDSWCAG21Ratio {
             return nil
         }
 
-        guard let lhsColor = lhsHexa6.color, let rhsColor = rhsHexa6.color else {
+        guard let lhsColor = Color(hexadecimalCode: lhsHexa6), let rhsColor = Color(hexadecimalCode: rhsHexa6) else {
             OL.error("Not possible to convert string to colors to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }

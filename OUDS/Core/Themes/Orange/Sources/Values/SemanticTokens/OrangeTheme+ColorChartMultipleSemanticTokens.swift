@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-/// Defines provider objects for `ColorChartSemanticTokens` so as to pack them as light and dark mode colors.
+/// Defines provider objects for `ColorChartSemanticTokens` so as to pack them as light and dark modes colors.
 /// These values cannot be overriden as not specified / allowed, forbidden by design.
 ///
 /// Helps to expose color chart semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).

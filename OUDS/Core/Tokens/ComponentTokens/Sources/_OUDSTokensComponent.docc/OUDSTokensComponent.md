@@ -119,7 +119,7 @@ button                         | For buttons like `OUDSButton`
 bulletList                     | For list of elements with bullets 
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip` 
-controlItem                    | Shared and sued for switch, checkbox and radio items layouts 
+controlItem                    | Shared and used for switch, checkbox and radio items layouts 
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 

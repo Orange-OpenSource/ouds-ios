@@ -54,7 +54,7 @@ public final class OUDSRadioItemViewController: UIViewController {
     /// - Parameters:
     ///   - isOn: A property that determines wether the indicator is ticked (selected) or not (unselected)
     ///   - label: The main label text of the radio.
-    ///   - helper: An additonal helper text, should not be empty
+    ///   - description: An description text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` if the radio indicator must be in trailing position,` false` otherwise.
@@ -64,7 +64,7 @@ public final class OUDSRadioItemViewController: UIViewController {
     ///   - action: An additional action to trigger when the radio has been pressed
     init(isOn: Bool,
          label: String,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -75,7 +75,7 @@ public final class OUDSRadioItemViewController: UIViewController {
     {
         radioViewModel = OUDSRadioItemViewModel(isOn: isOn,
                                                 label: label,
-                                                helper: helper,
+                                                description: description,
                                                 icon: icon,
                                                 flipIcon: flipIcon,
                                                 isReversed: isReversed,
@@ -180,7 +180,7 @@ struct OUDSRadioItemWrapper: View {
         OUDSRadioItem(
             isOn: radioBinding,
             label: model.label,
-            helper: model.helper,
+            description: model.description,
             icon: model.icon,
             flipIcon: model.flipIcon,
             isReversed: model.isReversed,
@@ -201,8 +201,8 @@ struct OUDSRadioItemWrapper: View {
     @Published var isOn: Bool
     /// For `OUDSRadioItem/label`
     var label: String
-    /// For `OUDSRadioItem/helper`
-    var helper: String?
+    /// For `OUDSRadioItem/description`
+    var description: String?
     /// For `OUDSRadioItem/icon`
     var icon: Image?
     /// For `OUDSRadioItem/flipIcon`
@@ -222,7 +222,7 @@ struct OUDSRadioItemWrapper: View {
 
     init(isOn: Bool,
          label: String,
-         helper: String?,
+         description: String?,
          icon: Image?,
          flipIcon: Bool,
          isReversed: Bool,
@@ -233,7 +233,7 @@ struct OUDSRadioItemWrapper: View {
     {
         self.isOn = isOn
         self.label = label
-        self.helper = helper
+        self.description = description
         self.icon = icon
         self.flipIcon = flipIcon
         self.isReversed = isReversed
@@ -263,7 +263,7 @@ extension OUDSUIKitBrige {
     ///     // Then create the OUDSRadioItem inside your UIViewController
     ///     OUDSUIKit.createRadioItem(isOn: true,
     ///                               label: "An awesome label"
-    ///                               helper: "A smaller text",
+    ///                               description: "A smaller text",
     ///                               icon: Image("ic_heart"),
     ///                               action: #selector(radioChanged(_:)))
     /// ```
@@ -273,7 +273,7 @@ extension OUDSUIKitBrige {
     /// - Parameters:
     ///    - isOn: A flag indicating wether or not the radio is selected
     ///    - label: The main label text of the radio.
-    ///    - helper: An additonal helper text, should not be empty, default set to `nil`
+    ///    - description: An descrption, an helper text, should not be empty, default set to `nil`
     ///    - icon: An optional icon,  default set to `nil`
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - isReversed: `true` if the radio indicator must be in trailing position,` false` otherwise. Default to `false`
@@ -285,7 +285,7 @@ extension OUDSUIKitBrige {
     ///    - action: The `Selector` called when the radio value changed
     @MainActor public static func createRadioItem(isOn: Bool,
                                                   label: String,
-                                                  helper: String? = nil,
+                                                  description: String? = nil,
                                                   icon: Image? = nil,
                                                   flipIcon: Bool = false,
                                                   isReversed: Bool = false,
@@ -300,7 +300,7 @@ extension OUDSUIKitBrige {
 
         let uikitRadioItemViewController = OUDSRadioItemViewController(isOn: isOn,
                                                                        label: label,
-                                                                       helper: helper,
+                                                                       description: description,
                                                                        icon: icon,
                                                                        flipIcon: flipIcon,
                                                                        isReversed: isReversed,

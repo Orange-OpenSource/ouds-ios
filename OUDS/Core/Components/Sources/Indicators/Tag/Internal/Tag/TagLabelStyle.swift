@@ -23,6 +23,7 @@ struct TagLabelStyle: LabelStyle {
     let type: OUDSTag.`Type`
 
     @Environment(\.theme) private var theme
+    @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
 
     // MARK: Body
 
@@ -64,11 +65,12 @@ struct TagLabelStyle: LabelStyle {
     }
 
     private var assetSize: CGFloat {
-        switch size {
+        let rawSize = switch size {
         case .default:
             theme.tag.sizeAssetDefault
         case .small:
             theme.tag.sizeAssetSmall
         }
+        return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
     }
 }

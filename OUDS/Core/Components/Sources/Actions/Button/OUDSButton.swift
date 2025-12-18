@@ -96,25 +96,25 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-button)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A button component in light and dark mode with Orange theme](component_button_Orange)
+/// ![A button component in light and dark modes with Orange theme](component_button_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A button component in light and dark mode with Orange Business Tools theme](component_button_OrangeBusinessTools)
+/// ![A button component in light and dark modes with Orange Business Tools theme](component_button_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A button component in light and dark mode with Sosh theme](component_button_Sosh)
+/// ![A button component in light and dark modes with Sosh theme](component_button_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A button component in light and dark mode with Wireframe theme](component_button_Wireframe)
+/// ![A button component in light and dark modes with Wireframe theme](component_button_Wireframe)
 ///
 /// - Version: 3.2.0 (Figma component design version)
 /// - Since: 0.10.0

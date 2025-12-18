@@ -18,28 +18,25 @@ struct BadgeCount: View {
 
     // MARK: Properties
 
-    let layout: BadgeLayout
+    let value: UInt8
+    let size: OUDSBadge.IllustrationSize
+    let status: OUDSBadge.Status
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        switch layout.type {
-        case .empty, .icon:
-            EmptyView()
-        case let .count(count, size):
-            let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
-            switch size {
-            case .medium:
-                Text(text)
-                    .labelDefaultSmall(theme)
-                    .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
-            case .large:
-                Text(text)
-                    .labelDefaultMedium(theme)
-                    .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
-            }
+        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
+        switch size {
+        case .medium:
+            Text(text)
+                .labelDefaultSmall(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
+        case .large:
+            Text(text)
+                .labelDefaultMedium(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
         }
     }
 }

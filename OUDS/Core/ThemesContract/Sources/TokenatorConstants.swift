@@ -50,17 +50,19 @@ public enum OUDSVersions {
     public static let componentLinkVersion = "2.2.0"
     /// Version of the Figma specifications for the component expand link
     public static let componentExpandLinkVersion = "2.3.0"
+    /// Version of the Figma specifications for the navigation bar and tab bar components
+    public static let componentNavigationBarVersion = "1.0.0"
 
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox
-    public static let componentCheckboxVersion = "2.3.0" // NOTE: Manualy changed as v2.4.0 not implemented yet
+    public static let componentCheckboxVersion = "2.4.0"
     /// Version of the Figma specifications for the component chip
     public static let componentChipVersion = "1.3.0"
     /// Version of the Figma specifications for the component radio button
-    public static let componentRadioButtonVersion = "1.3.0" // NOTE: Manualy changed as v1.4.0 not implemented yet
+    public static let componentRadioButtonVersion = "1.4.0"
     /// Version of the Figma specifications for the component switch
-    public static let componentSwitchVersion = "1.4.0" // NOTE: Manualy changed as v1.5.0 not implemented yetC
+    public static let componentSwitchVersion = "1.5.0"
     /// Version of the Figma specifications for the component text input
     public static let componentTextInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component phone number input

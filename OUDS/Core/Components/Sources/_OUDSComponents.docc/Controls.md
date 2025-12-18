@@ -15,22 +15,22 @@ Some components can be used for **controls** and **inputs**.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
+        ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+        ![A checkbox component in light and dark modes with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)
+        ![A checkbox component in light and dark modes with Sosh theme](component_checkbox_Sosh)
     }
     @Tab("Wireframe") {
-        ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
+        ![A checkbox component in light and dark modes with Wireframe theme](component_checkbox_Wireframe)
     }
 }
 
 The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
-This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate)
+This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with ``OUDSCheckboxIndeterminate``.
 
 @TabNavigator {
     @Tab("SwiftUI") {
@@ -70,16 +70,16 @@ This checkbox can provide two values (selected and unselected) or three values (
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
+        ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A checkbox item component in light and dark mode with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
+        ![A checkbox item component in light and dark modes with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
+        ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
     }
     @Tab("Wireframe") {
-        ![A checkbox item component in light and dark mode with Wireframe theme](component_checkboxItem_Wireframe)
+        ![A checkbox item component in light and dark modes with Wireframe theme](component_checkboxItem_Wireframe)
     }
 }
 
@@ -91,26 +91,22 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("SwiftUI") {
         ```swift
         // A leading checkbox with a label, with only two states
-        OUDSCheckboxItem(isOn: $isOn, label: "Hello world", target: self, action: action)
+        OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
 
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
         OUDSCheckboxItemIndeterminate(selection: $selection, 
                                       label: "Dead Robot Zombie Cop",
-                                      helper: "from Outer Space II",
-                                      target: self, 
-                                    action: action)
+                                      description: "from Outer Space II")
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
         // with a reversed layout, and exposing only two states through isOn binding
         OUDSCheckboxItem(isOn: $isOn,
                          label: "We live in a fabled world",
-                         helper: "Of dreaming boys and wide-eyed girls",
+                         description: "Of dreaming boys and wide-eyed girls",
                          icon: Image(decorative: "ic_heart"),
                          isReversed: true,
                          isError: true,
-                         hasDivider: true,
-                         target: self, 
-                         action: action)
+                         hasDivider: true)
         ```
     }
     @Tab("UIKit (experimental)") {
@@ -126,7 +122,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         // A leading checkbox with a label, an helper text, and with a three-values-based state with selection binding
         OUDSUIKit.createCheckboxItemIndeterminate(selection: selection,
                                                   label: "Dead Robot Zombie Cop",
-                                                  helper: "from Outer Space II"
+                                                  description: "from Outer Space II"
                                                   target: self,
                                                   action: action)
 
@@ -134,7 +130,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         // with a reversed layout, and with two states
         OUDSUIKit.createCheckboxItem(isOn: isOn,
                                      label: "We live in a fabled world",
-                                     helper: "Of dreaming boys and wide-eyed girls",
+                                     description: "Of dreaming boys and wide-eyed girls",
                                      icon: Image(decorative: "ic_heart"),
                                      isReversed: true,
                                      isError: true,
@@ -149,16 +145,16 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A checkbox picker component in light and dark mode with Orange theme](component_checkboxPicker_Orange)
+        ![A checkbox picker component in light and dark modes with Orange theme](component_checkboxPicker_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A checkbox picker component in light and dark mode with Orange Business Tools theme](component_checkboxPicker_OrangeBusinessTools)
+        ![A checkbox picker component in light and dark modes with Orange Business Tools theme](component_checkboxPicker_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A checkbox picker component in light and dark mode with Sosh theme](component_checkboxPicker_Sosh)
+        ![A checkbox picker component in light and dark modes with Sosh theme](component_checkboxPicker_Sosh)
     }
     @Tab("Wireframe") {
-        ![A checkbox picker component in light and dark mode with Wireframe theme](component_checkboxPicker_Wireframe)
+        ![A checkbox picker component in light and dark modes with Wireframe theme](component_checkboxPicker_Wireframe)
     }
 }
 
@@ -172,13 +168,12 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
     [
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
+                                        description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame")),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
-                                       label: "IPA beer",
-                                        helper: "From Brewdog company",
+                                        label: "IPA beer",
+                                        description: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill")),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
@@ -191,7 +186,7 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
 // Use the data and the binding for the picker.
 @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
 // Here the picker is vertical by default
- OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
 
 // The picker can be vertical and have a root item with a label and a counter
 OUDSCheckboxPicker(selections: $selections,
@@ -214,16 +209,16 @@ OUDSCheckboxPicker(selections: $selections,
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A radio button component in light and dark mode with Orange theme](component_radio_Orange)
+        ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A radio button component in light and dark mode with Orange Business Tools theme](component_radio_OrangeBusinessTools)
+        ![A radio button component in light and dark modes with Orange Business Tools theme](component_radio_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A radio button component in light and dark mode with Sosh theme](component_radio_Sosh)
+        ![A radio button component in light and dark modes with Sosh theme](component_radio_Sosh)
     }
     @Tab("Wireframe") {
-        ![A radio button component in light and dark mode with Wireframe theme](component_radio_Wireframe)
+        ![A radio button component in light and dark modes with Wireframe theme](component_radio_Wireframe)
     }
 }
 
@@ -258,16 +253,16 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A radio item component in light and dark mode with Orange theme](component_radioItem_Orange)
+        ![A radio item component in light and dark modes with Orange theme](component_radioItem_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A radio item component in light and dark mode with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
+        ![A radio item component in light and dark modes with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A radio item component in light and dark mode with Sosh theme](component_radioItem_Sosh)
+        ![A radio item component in light and dark modes with Sosh theme](component_radioItem_Sosh)
     }
     @Tab("Wireframe") {
-        ![A radio item component in light and dark mode with Wireframe theme](component_radioItem_Wireframe)
+        ![A radio item component in light and dark modes with Wireframe theme](component_radioItem_Wireframe)
     }
 }
 
@@ -278,20 +273,18 @@ The indicator can be leading or trailing.
     @Tab("SwiftUI") {
         ```swift        
         // A leading radio with a label
-        OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", target: target, action: action)
+        OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
 
-        // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
+        // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
         // error with a reversed layout
         OUDSRadioItem(isOn: $isOn,
                       label: "Lucy in the Sky with Diamonds",
-                      additionalLabel: "The Beatles"
-                      helper: "1967",
+                      extraLabel: "The Beatles"
+                      description: "1967",
                       icon: Image(decorative: "ic_heart"),
                       isReversed: true,
                       isError: true,
-                      hasDivider: true,
-                      target: target, 
-                      action: action)
+                      hasDivider: true)
         ```
     }
     @Tab("UIKit (experimental)") {
@@ -304,11 +297,11 @@ The indicator can be leading or trailing.
           // A leading radio with a label
           OUDSUIKit.createRadioItem(isOn: isOn, label: "Lucy in the Sky with Diamonds")
 
-          // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an rror with a reversed layout
+          // A trailing radio with a label, an additional label, a description, an icon, a divider and is about an rror with a reversed layout
           OUDSUIKit.createRadioItem(isOn: isOn,
                                     label: "Lucy in the Sky with Diamonds",
-                                    additionalLabel: "The Beatles"
-                                    helper: "1967",
+                                    extraLabel: "The Beatles"
+                                    description: "1967",
                                     icon: Image(decorative: "ic_heart"),
                                     isReversed: true,
                                     isError: true,
@@ -321,16 +314,16 @@ The indicator can be leading or trailing.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A radio picker component in light and dark mode with Orange theme](component_radioPicker_Orange)
+        ![A radio picker component in light and dark modes with Orange theme](component_radioPicker_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A radio picker component in light and dark mode with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
+        ![A radio picker component in light and dark modes with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A radio picker component in light and dark mode with Sosh theme](component_radioPicker_Sosh)
+        ![A radio picker component in light and dark modes with Sosh theme](component_radioPicker_Sosh)
     }
     @Tab("Wireframe") {
-        ![A radio picker component in light and dark mode with Wireframe theme](component_radioPicker_Wireframe)
+        ![A radio picker component in light and dark modes with Wireframe theme](component_radioPicker_Wireframe)
     }
 }
 
@@ -344,13 +337,13 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
     [
             OUDSRadioPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
+                                        extraLabel: "Very spicy",
+                                        description: "No alcohol, only tasty flavors",
                                         icon: Image(systemName: "flame")),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
-                                        helper: "From Brewdog company",
+                                        description: "From Brewdog company",
                                         icon: Image(systemName: "dog.fill")),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
@@ -373,16 +366,16 @@ OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A switch component in light and dark mode with Orange theme](component_switch_Orange)
+        ![A switch component in light and dark modes with Orange theme](component_switch_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A switch component in light and dark mode with Orange Business Tools theme](component_switch_OrangeBusinessTools)
+        ![A switch component in light and dark modes with Orange Business Tools theme](component_switch_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A switch component in light and dark mode with Sosh theme](component_switch_Sosh)
+        ![A switch component in light and dark modes with Sosh theme](component_switch_Sosh)
     }
     @Tab("Wireframe") {
-        ![A switch component in light and dark mode with Wireframe theme](component_switch_Wireframe)
+        ![A switch component in light and dark modes with Wireframe theme](component_switch_Wireframe)
     }
 }
 
@@ -421,16 +414,16 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A switch item component in light and dark mode with Orange theme](component_switchItem_Orange)
+        ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A switch item component in light and dark mode with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
+        ![A switch item component in light and dark modes with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A switch item component in light and dark mode with Sosh theme](component_switchItem_Sosh)
+        ![A switch item component in light and dark modes with Sosh theme](component_switchItem_Sosh)
     }
     @Tab("Wireframe") {
-        ![A switch item component in light and dark mode with Wireframe theme](component_switchItem_Wireframe)
+        ![A switch item component in light and dark modes with Wireframe theme](component_switchItem_Wireframe)
     }
 }
 
@@ -443,16 +436,16 @@ The indicator can be leading or trailing.
         // A leading switch with a label and exposing the state through isOn binding
         OUDSSwitchItem("Hello world", isOn: $isOn)
 
-        // A leading switch with a label, an helper text
+        // A leading switch with a label and a description
         OUDSSwitchItem("Dead Robot Zombie Cop",
                        isOn: $isOn,
-                       helper: "from Outer Space II")
+                       description: "from Outer Space II")
 
-        // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+        // A trailing switch with a label, a description, an icon, a divider and is about an error
         // with an inverse layout
         OUDSSwitchItem("We live in a fabled world",
                         isOn: $isOn,
-                        helper: "Of dreaming boys and wide-eyed girls",
+                        description: "Of dreaming boys and wide-eyed girls",
                         icon: Image(decorative: "ic_heart"),
                         isReversed: true,
                         isError: true,
@@ -476,11 +469,11 @@ The indicator can be leading or trailing.
                                   target: target, 
                                   action: action)
 
-        // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+        // A trailing switch with a label, a description text, an icon, a divider and is about an error
         // with an inverse layout
         OUDSUIKit.createSwitchItem("We live in a fabled world",
                                    isOn: isOn,
-                                   helper: "Of dreaming boys and wide-eyed girls",
+                                   description: "Of dreaming boys and wide-eyed girls",
                                    icon: Image(decorative: "ic_heart"),
                                    isReversed: true,
                                    isError: true,
@@ -497,16 +490,16 @@ The indicator can be leading or trailing.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A suggestion chip component in light and dark mode with Orange theme](component_suggestionChip_Orange)
+        ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A suggestion chip component in light and dark mode with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
+        ![A suggestion chip component in light and dark modes with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A suggestion chip component in light and dark mode with Sosh theme](component_suggestionChip_Sosh)
+        ![A suggestion chip component in light and dark modes with Sosh theme](component_suggestionChip_Sosh)
     }
     @Tab("Wireframe") {
-        ![A suggestion chip component in light and dark mode with Wireframe theme](component_suggestionChip_Wireframe)
+        ![A suggestion chip component in light and dark modes with Wireframe theme](component_suggestionChip_Wireframe)
     }
 }
 
@@ -545,20 +538,20 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A fiter chip component in light and dark mode with Orange theme](component_filterChip_Orange)
+        ![A fiter chip component in light and dark modes with Orange theme](component_filterChip_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A fiter chip component in light and dark mode with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
+        ![A fiter chip component in light and dark modes with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A fiter chip component in light and dark mode with Sosh theme](component_filterChip_Sosh)
+        ![A fiter chip component in light and dark modes with Sosh theme](component_filterChip_Sosh)
     }
     @Tab("Wireframe") {
-        ![A fiter chip component in light and dark mode with Wireframe theme](component_filterChip_Wireframe)
+        ![A fiter chip component in light and dark modes with Wireframe theme](component_filterChip_Wireframe)
     }
 }
 
-The library proposes filter chip component to make some filtering with selected or unselected options.
+The library proposes filter chip component (``OUDSFilterChip``) to make some filtering with selected or unselected options.
 
 @TabNavigator {
     @Tab("SwiftUI") {
@@ -594,20 +587,20 @@ The library proposes filter chip component to make some filtering with selected 
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A chip picker component in light and dark mode with Orange theme](component_chipPicker_Orange)
+        ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A chip picker component in light and dark mode with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+        ![A chip picker component in light and dark modes with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A chip picker component in light and dark mode with Sosh theme](component_chipPicker_Sosh)
+        ![A chip picker component in light and dark modes with Sosh theme](component_chipPicker_Sosh)
     }
     @Tab("Wireframe") {
-        ![A chip picker component in light and dark mode with Wireframe theme](component_chipPicker_Wireframe)
+        ![A chip picker component in light and dark modes with Wireframe theme](component_chipPicker_Wireframe)
     }
 }
 
-The library proposes a chip picker to make easily filtering with two kinds of selection:
+The library proposes a chip picker (``OUDSChipPicker``) to make easily filtering with two kinds of selection:
 - **single or none**: to select or unselect one option only
 - **single**: to select at least one option
 - **multiple**: to select several options
@@ -621,10 +614,10 @@ enum Drink: String, CaseIterable {
 var someDataToPopulate: [OUDSChipPickerData<Drink>] {
     [
         OUDSChipPickerData(tag: Drink.virginHolyLava,
-                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame"))),
 
         OUDSChipPickerData(tag: Dring.ipaBeer,
-                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill"))),
 
         OUDSChipPickerData(tag: Drink.mineralWater,
                            layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
@@ -638,7 +631,7 @@ var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 @State var selection: Drink? = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Simple selection
 
@@ -647,7 +640,7 @@ OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPo
 @State var selection: Drink = .mineralWater
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
 
 // MARK: - Multiple selection
 
@@ -656,23 +649,23 @@ OUDSChipPicker(title: Select a drink, selection: $selection, chips: someDataToPo
 @State var selections: [Drink] = [.mineralWater]
 
 // Here the picker with title, selection and data
-OUDSChipPicker(title: Select a drink, selections: $selections, chips: someDataToPopulate)
+OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
 ```
 
 ### Text input
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A text input component in light and dark mode with Orange theme](component_textInput_Orange)
+        ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A text input component in light and dark mode with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+        ![A text input component in light and dark modes with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A text input component in light and dark mode with Sosh theme](component_textInput_Sosh)
+        ![A text input component in light and dark modes with Sosh theme](component_textInput_Sosh)
     }
     @Tab("Wireframe") {
-        ![A text input component in light and dark mode with Wireframe theme](component_textInput_Wireframe)
+        ![A text input component in light and dark modes with Wireframe theme](component_textInput_Wireframe)
     }
 }
 
@@ -692,8 +685,8 @@ OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 // Add a leading icon for more context
 OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 
-// Add a trailing button with local image namde "ic_cross" for additional action
-let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), accessibilityLabel: "Delete") { text = "" }
+// Add a trailing button with local image named "ic_cross" for additional action
+let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 
 // With helper text

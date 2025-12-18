@@ -63,40 +63,41 @@ import SwiftUI
 ///
 /// ## Suggestions
 ///
-/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox/b/6578e5/t/3dd013a529),
+/// According to the [documentation](https://r.orange.fr/r/S-ouds-doc-checkbox),
 /// the checkbox by default must be used in unselected state.
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-checkbox)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
+/// ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+/// ![A checkbox component in light and dark modes with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)
+/// ![A checkbox component in light and dark modes with Sosh theme](component_checkbox_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
+/// ![A checkbox component in light and dark modes with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxIndeterminate: View {
 
     // MARK: - Properties
 
+    private let accessibilityLabel: String
     private let isError: Bool
-    private let a11yLabel: String
+    private let isReadOnly: Bool
 
     @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
@@ -112,22 +113,25 @@ public struct OUDSCheckboxIndeterminate: View {
     ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _selection = selection
+        self.accessibilityLabel = accessibilityLabel
         self.isError = isError
-        a11yLabel = accessibilityLabel
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $selection.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)
@@ -138,19 +142,23 @@ public struct OUDSCheckboxIndeterminate: View {
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(selection.a11yHint)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isDisabled: True if component is disabled, false otherwise
-    private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled ? "core_common_disabled_a11y".localized() : ""
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
+    private var accessibilityValue: String {
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = selection.a11yDescription
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
+        !isEnabled && isReadOnly ? "" : selection.a11yHint
     }
 }

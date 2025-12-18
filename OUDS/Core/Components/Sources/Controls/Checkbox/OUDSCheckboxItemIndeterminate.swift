@@ -74,15 +74,15 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItemIndeterminate(selection: $selection, label: "Hello world", isReadOnly: true)
 ///
-///     // A leading checkbox with a label, and an helper text.
+///     // A leading checkbox with a label and a description as helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItemIndeterminate(selection: $selection, label: "Bazinga!", helper: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItemIndeterminate(selection: $selection, label: "Bazinga!", description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The reversed layout will be used here.
 ///     OUDSCheckboxItemIndeterminate(selection: $selection,
 ///                                   label: "We live in a fabled world",
-///                                   helper: "Of dreaming boys and wide-eyed girls",
+///                                   description: "Of dreaming boys and wide-eyed girls",
 ///                                   isReversed: true,
 ///                                   icon: Image(decorative: "ic_heart"))
 ///
@@ -100,7 +100,7 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label and and icon but with the icon flipped vertically
 ///     OUDSCheckboxItemIndeterminate(isOn: $selection,
-///                                   labelText: "Cocorico !",
+///                                   label: "Cocorico !",
 ///                                   icon: Image(systemName: "figure.handball"),
 ///                                   flipIcon: true)
 ///
@@ -115,7 +115,7 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSCheckboxItemIndeterminate(isOn: $selection,
-///                                   labelText: "Cocorico !",
+///                                   label: "Cocorico !",
 ///                                   icon: Image(systemName: "figure.handball"),
 ///                                   flipIcon: layoutDirection == .rightToLeft,
 ///                                   isInversed: layoutDirection == .rightToLeft)
@@ -123,32 +123,32 @@ import SwiftUI
 ///
 /// ## Suggestions
 ///
-/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox/b/6578e5/t/3dd013a529),
+/// According to the [documentation](https://r.orange.fr/r/S-ouds-doc-checkbox),
 /// the checkbox by default must be used in unselected state.
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-checkbox)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A checkbox item component in light and dark mode with Orange theme](component_checkboxItem_Orange)
+/// ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A checkbox item component in light and dark mode with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
+/// ![A checkbox item component in light and dark modes with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A checkbox item component in light and dark mode with Sosh theme](component_checkboxItem_Sosh)
+/// ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A checkbox item component in light and dark mode with Wireframe theme](component_checkboxItem_Wireframe)
+/// ![A checkbox item component in light and dark modes with Wireframe theme](component_checkboxItem_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxItemIndeterminate: View {
@@ -169,8 +169,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     /// - Parameters:
     ///   - selection: A binding to a property that determines wether the indicator is ticked, unticker or preticked.
-    ///   - label: The main label text of the checkbox.
-    ///   - helper: An additonal helper text, should not be empty
+    ///   - label: The main label text of the checkbox, must not be empty
+    ///   - description: A description, an additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
@@ -179,13 +179,16 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     ///
-    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 label: String,
-                helper: String? = nil,
+                description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
                 isReversed: Bool = false,
@@ -193,14 +196,19 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 errorText: String? = nil,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
         if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSCheckboxItemIndeterminate in an error context and in read only mode")
         }
 
-        if let helper, helper.isEmpty {
-            OL.warning("Helper text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSCheckboxItemIndeterminate is defined but empty, prefer OUDSCheckboxIndeterminate(isOn:accessibilityLabel:) instead")
+        }
+
+        if let description, description.isEmpty {
+            OL.warning("Description text given to an OUDSCheckboxItemIndeterminate is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         // swiftlint:disable force_unwrapping
@@ -213,8 +221,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
         self.action = action
         layoutData = .init(
             label: label.localized(),
-            additionalLabel: nil,
-            helper: helper?.localized(),
+            extraLabel: nil,
+            description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: false,
@@ -222,6 +230,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             errorText: errorText,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
     }
 
@@ -230,32 +239,35 @@ public struct OUDSCheckboxItemIndeterminate: View {
     public var body: some View {
         ControlItem(indicatorType: .checkBox($selection), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-            .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue)
-            .accessibilityHint(a11yHint)
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint)
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the indicator
-    private var a11yValue: String {
-        selection.a11yDescription
+    // MARK: - A11Y helpers
+
+    /// Forge a string to vocalize the component label based on label, extraLabel and description
+    private var accessibilityLabel: String {
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state.
-    private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
+    private var accessibilityValue: String {
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = selection.a11yDescription
+        let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
-        let errorPrefix = layoutData.isError ? "core_common_onError_a11y".localized() : ""
+        let errorPrefix = "core_common_onError_a11y".localized()
         let errorText = layoutData.errorText?.localized() ?? ""
-        let errorDescription = "\(errorPrefix), \(errorText)"
+        let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(stateDescription), \(layoutData.label), \(layoutData.helper ?? "") \(errorDescription), \(checkboxA11yTrait)"
-        return result
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
-    /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
-    private var a11yHint: String {
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private var accessibilityHint: String {
         if layoutData.isReadOnly || !isEnabled {
             ""
         } else {

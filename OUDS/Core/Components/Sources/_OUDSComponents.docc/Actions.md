@@ -13,16 +13,16 @@ Some components can be used for **actions**.
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A button component in light and dark mode with Orange theme](component_button_Orange)
+        ![A button component in light and dark modes with Orange theme](component_button_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A button component in light and dark mode with Orange Business Tools theme](component_button_OrangeBusinessTools)
+        ![A button component in light and dark modes with Orange Business Tools theme](component_button_OrangeBusinessTools)
     }
     @Tab("Sosh") {
-        ![A button component in light and dark mode with Sosh theme](component_button_Sosh)
+        ![A button component in light and dark modes with Sosh theme](component_button_Sosh)
     }
     @Tab("Wireframe") {
-        ![A button component in light and dark mode with Wireframe theme](component_button_Wireframe)
+        ![A button component in light and dark modes with Wireframe theme](component_button_Wireframe)
     }
 }
 

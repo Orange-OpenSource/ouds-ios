@@ -139,6 +139,12 @@ public protocol ColorSemanticTokens {
     var borderBrandPrimaryLight: ColorSemanticToken { get }
     var borderBrandPrimaryDark: ColorSemanticToken { get }
 
+    var borderBrandSecondaryLight: ColorSemanticToken { get }
+    var borderBrandSecondaryDark: ColorSemanticToken { get }
+
+    var borderBrandTertiaryLight: ColorSemanticToken { get }
+    var borderBrandTertiaryDark: ColorSemanticToken { get }
+
     var borderDefaultLight: ColorSemanticToken { get }
     var borderDefaultDark: ColorSemanticToken { get }
 
@@ -157,13 +163,40 @@ public protocol ColorSemanticTokens {
     var borderOnBrandPrimaryLight: ColorSemanticToken { get }
     var borderOnBrandPrimaryDark: ColorSemanticToken { get }
 
+    var borderOnBrandSecondaryLight: ColorSemanticToken { get }
+    var borderOnBrandSecondaryDark: ColorSemanticToken { get }
+
+    var borderOnBrandTertiaryLight: ColorSemanticToken { get }
+    var borderOnBrandTertiaryDark: ColorSemanticToken { get }
+
     var borderMinimalLight: ColorSemanticToken { get }
     var borderMinimalDark: ColorSemanticToken { get }
+
+    var borderStatusPositiveLight: ColorSemanticToken { get }
+    var borderStatusPositiveDark: ColorSemanticToken { get }
+
+    var borderStatusInfoLight: ColorSemanticToken { get }
+    var borderStatusInfoDark: ColorSemanticToken { get }
+
+    var borderStatusWarningLight: ColorSemanticToken { get }
+    var borderStatusWarningDark: ColorSemanticToken { get }
+
+    var borderStatusNegativeLight: ColorSemanticToken { get }
+    var borderStatusNegativeDark: ColorSemanticToken { get }
+
+    var borderStatusAccentLight: ColorSemanticToken { get }
+    var borderStatusAccentDark: ColorSemanticToken { get }
 
     // MARK: - Color - Content
 
     var contentBrandPrimaryLight: ColorSemanticToken { get }
     var contentBrandPrimaryDark: ColorSemanticToken { get }
+
+    var contentBrandSecondaryLight: ColorSemanticToken { get }
+    var contentBrandSecondaryDark: ColorSemanticToken { get }
+
+    var contentBrandTertiaryLight: ColorSemanticToken { get }
+    var contentBrandTertiaryDark: ColorSemanticToken { get }
 
     var contentDefaultLight: ColorSemanticToken { get }
     var contentDefaultDark: ColorSemanticToken { get }
@@ -201,14 +234,17 @@ public protocol ColorSemanticTokens {
     var contentOnBrandPrimaryLight: ColorSemanticToken { get }
     var contentOnBrandPrimaryDark: ColorSemanticToken { get }
 
+    var contentOnBrandSecondaryLight: ColorSemanticToken { get }
+    var contentOnBrandSecondaryDark: ColorSemanticToken { get }
+
+    var contentOnBrandTertiaryLight: ColorSemanticToken { get }
+    var contentOnBrandTertiaryDark: ColorSemanticToken { get }
+
     var contentOnStatusPositiveMutedLight: ColorSemanticToken { get }
     var contentOnStatusPositiveMutedDark: ColorSemanticToken { get }
 
     var contentOnStatusPositiveEmphasizedLight: ColorSemanticToken { get }
     var contentOnStatusPositiveEmphasizedDark: ColorSemanticToken { get }
-
-    var contentInverseLight: ColorSemanticToken { get }
-    var contentInverseDark: ColorSemanticToken { get }
 
     var contentOnStatusNegativeMutedLight: ColorSemanticToken { get }
     var contentOnStatusNegativeMutedDark: ColorSemanticToken { get }
@@ -228,6 +264,12 @@ public protocol ColorSemanticTokens {
     var contentOnStatusAccentEmphasizedLight: ColorSemanticToken { get }
     var contentOnStatusAccentEmphasizedDark: ColorSemanticToken { get }
 
+    var contentOnStatusInfoMutedLight: ColorSemanticToken { get }
+    var contentOnStatusInfoMutedDark: ColorSemanticToken { get }
+
+    var contentOnStatusInfoEmphasizedLight: ColorSemanticToken { get }
+    var contentOnStatusInfoEmphasizedDark: ColorSemanticToken { get }
+
     var contentStatusInfoLight: ColorSemanticToken { get }
     var contentStatusInfoDark: ColorSemanticToken { get }
 
@@ -240,10 +282,19 @@ public protocol ColorSemanticTokens {
     var contentStatusWarningLight: ColorSemanticToken { get }
     var contentStatusWarningDark: ColorSemanticToken { get }
 
+    var contentStatusAccentLight: ColorSemanticToken { get }
+    var contentStatusAccentDark: ColorSemanticToken { get }
+
+    var contentInverseLight: ColorSemanticToken { get }
+    var contentInverseDark: ColorSemanticToken { get }
+
     // MARK: - Color - Overlay
 
     var overlayDropdownLight: ColorSemanticToken { get }
     var overlayDropdownDark: ColorSemanticToken { get }
+
+    var overlayTooltipLight: ColorSemanticToken { get }
+    var overlayTooltipDark: ColorSemanticToken { get }
 
     var overlayDragLight: ColorSemanticToken { get }
     var overlayDragDark: ColorSemanticToken { get }
@@ -333,13 +384,28 @@ public protocol ColorSemanticTokens {
     var repositoryNegativeLower: ColorSemanticToken { get }
     var repositoryNegativeLowest: ColorSemanticToken { get }
 
+    var repositoryWarningMedium: ColorSemanticToken { get }
+    var repositoryWarningHigh: ColorSemanticToken { get }
+    var repositoryWarningHigher: ColorSemanticToken { get }
+    var repositoryWarningHighest: ColorSemanticToken { get }
+    var repositoryWarningLow: ColorSemanticToken { get }
+    var repositoryWarningLower: ColorSemanticToken { get }
+    var repositoryWarningLowest: ColorSemanticToken { get }
+
     var repositoryNeutralEmphasizedBlack: ColorSemanticToken { get }
     var repositoryNeutralEmphasizedHigh: ColorSemanticToken { get }
     var repositoryNeutralEmphasizedHigher: ColorSemanticToken { get }
     var repositoryNeutralEmphasizedHighest: ColorSemanticToken { get }
     var repositoryNeutralEmphasizedMedium: ColorSemanticToken { get }
     var repositoryNeutralEmphasizedLow: ColorSemanticToken { get }
+    var repositoryNeutralEmphasizedLower: ColorSemanticToken { get }
+    var repositoryNeutralEmphasizedLowest: ColorSemanticToken { get }
 
+    var repositoryNeutralMutedHigh: ColorSemanticToken { get }
+    var repositoryNeutralMutedHigher: ColorSemanticToken { get }
+    var repositoryNeutralMutedHighest: ColorSemanticToken { get }
+    var repositoryNeutralMutedMedium: ColorSemanticToken { get }
+    var repositoryNeutralMutedLow: ColorSemanticToken { get }
     var repositoryNeutralMutedLower: ColorSemanticToken { get }
     var repositoryNeutralMutedLowest: ColorSemanticToken { get }
     var repositoryNeutralMutedWhite: ColorSemanticToken { get }
@@ -355,6 +421,16 @@ public protocol ColorSemanticTokens {
     var repositoryOpacityBlackMediumHigh: ColorSemanticToken { get }
     var repositoryOpacityBlackTransparent: ColorSemanticToken { get }
 
+    var repositoryOpacityWhiteHigh: ColorSemanticToken { get }
+    var repositoryOpacityWhiteHigher: ColorSemanticToken { get }
+    var repositoryOpacityWhiteHighest: ColorSemanticToken { get }
+    var repositoryOpacityWhiteMedium: ColorSemanticToken { get }
+    var repositoryOpacityWhiteMediumLow: ColorSemanticToken { get }
+    var repositoryOpacityWhiteLow: ColorSemanticToken { get }
+    var repositoryOpacityWhiteLower: ColorSemanticToken { get }
+    var repositoryOpacityWhiteLowest: ColorSemanticToken { get }
+    var repositoryOpacityWhiteTransparent: ColorSemanticToken { get }
+
     var repositoryOpacityInfoLow: ColorSemanticToken { get }
     var repositoryOpacityInfoMedium: ColorSemanticToken { get }
     var repositoryOpacityAccentLow: ColorSemanticToken { get }
@@ -365,15 +441,8 @@ public protocol ColorSemanticTokens {
     var repositoryOpacityPositiveMedium: ColorSemanticToken { get }
     var repositoryOpacityWarningLow: ColorSemanticToken { get }
     var repositoryOpacityWarningMedium: ColorSemanticToken { get }
-    var repositoryOpacityWhiteHigh: ColorSemanticToken { get }
-    var repositoryOpacityWhiteHigher: ColorSemanticToken { get }
-    var repositoryOpacityWhiteHighest: ColorSemanticToken { get }
-    var repositoryOpacityWhiteMedium: ColorSemanticToken { get }
-    var repositoryOpacityWhiteMediumLow: ColorSemanticToken { get }
-    var repositoryOpacityWhiteLow: ColorSemanticToken { get }
-    var repositoryOpacityWhiteLower: ColorSemanticToken { get }
-    var repositoryOpacityWhiteLowest: ColorSemanticToken { get }
-    var repositoryOpacityWhiteTransparent: ColorSemanticToken { get }
+
+    var repositoryOpacityPrimaryTransparent: ColorSemanticToken { get }
     var repositoryOpacityPrimaryLow: ColorSemanticToken { get }
     var repositoryOpacityPrimaryLower: ColorSemanticToken { get }
     var repositoryOpacityPrimaryLowest: ColorSemanticToken { get }
@@ -413,14 +482,6 @@ public protocol ColorSemanticTokens {
     var repositoryTertiaryLow: ColorSemanticToken { get }
     var repositoryTertiaryLower: ColorSemanticToken { get }
     var repositoryTertiaryLowest: ColorSemanticToken { get }
-
-    var repositoryWarningMedium: ColorSemanticToken { get }
-    var repositoryWarningHigh: ColorSemanticToken { get }
-    var repositoryWarningHigher: ColorSemanticToken { get }
-    var repositoryWarningHighest: ColorSemanticToken { get }
-    var repositoryWarningLow: ColorSemanticToken { get }
-    var repositoryWarningLower: ColorSemanticToken { get }
-    var repositoryWarningLowest: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

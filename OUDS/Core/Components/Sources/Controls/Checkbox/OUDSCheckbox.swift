@@ -42,7 +42,7 @@ import SwiftUI
 ///
 /// ## Cases forbidden by design
 ///
-/// **The design system does not allow to have both an error situation and a disabled component.**
+/// **The design system does not allow to have both an error or a read only situation and a disabled component.**
 ///
 /// ## Code samples
 ///
@@ -63,39 +63,40 @@ import SwiftUI
 ///
 /// ## Suggestions
 ///
-/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox/t/14bf4bd854), the checkbox by default must be used in unselected state.
+/// According to the [documentation](https://r.orange.fr/r/S-ouds-doc-checkbox), the checkbox by default must be used in unselected state.
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-checkbox)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A checkbox component in light and dark mode with Orange theme](component_checkbox_Orange)
+/// ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A checkbox component in light and dark mode with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+/// ![A checkbox component in light and dark modes with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A checkbox component in light and dark mode with Sosh theme](component_checkbox_Sosh)
+/// ![A checkbox component in light and dark modes with Sosh theme](component_checkbox_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A checkbox component in light and dark mode with Wireframe theme](component_checkbox_Wireframe)
+/// ![A checkbox component in light and dark modes with Wireframe theme](component_checkbox_Wireframe)
 ///
-/// - Version: 2.3.0 (Figma component design version)
+/// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckbox: View {
 
     // MARK: Properties
 
+    private let accessibilityLabel: String
     private let isError: Bool
-    private let a11yLabel: String
+    private let isReadOnly: Bool
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -106,28 +107,31 @@ public struct OUDSCheckbox: View {
 
     /// Creates a checkbox with only an indicator.
     ///
-    /// **The design system does not allow to have both an error situation and a disabled state for the component.**
+    /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (not selected)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false)
+                isError: Bool = false,
+                isReadOnly: Bool = false)
     {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
         _isOn = isOn
+        self.accessibilityLabel = accessibilityLabel
         self.isError = isError
-        a11yLabel = accessibilityLabel
+        self.isReadOnly = isReadOnly
     }
 
     // MARK: Body
 
     public var body: some View {
-        InteractionButton {
+        InteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)
@@ -139,9 +143,9 @@ public struct OUDSCheckbox: View {
                 .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(a11yValue())
-        .accessibilityHint(a11yHint())
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityValue(accessibilityValue)
+        .accessibilityHint(accessibilityHint)
     }
 
     // MARK: Computed value
@@ -152,30 +156,24 @@ public struct OUDSCheckbox: View {
 
     // MARK: - A11Y helpers
 
-    /// Forges a string to vocalize with *Voice Over* describing the component value
-    private func a11yValue() -> String {
-        isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+    /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
+    private var accessibilityValue: String {
+        let traitDescription = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
+        let valueDescription = isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+        let stateDescription = !isEnabled || isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
+
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
-    private func a11yHint() -> String {
-        if !isEnabled {
+    private var accessibilityHint: String {
+        if !isEnabled || isReadOnly {
             ""
         } else {
             isOn
                 ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
                 : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         }
-    }
-
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isDisabled: True if component is disabled, false otherwise
-    private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled ? "core_common_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
-        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
-
-        let result = "\(a11yLabel), \(stateDescription), \(errorDescription), \(checkboxA11yTrait)"
-        return result
     }
 }

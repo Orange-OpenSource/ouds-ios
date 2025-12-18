@@ -7,6 +7,7 @@
   * [Illustrations](#illustrations)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [On devices tests](#on-devices-tests)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
   * [About commits](#about-commits)
@@ -193,6 +194,47 @@ Then, we want to know when tokens have been removed so as to warn our users and 
 Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
 
 Beware, UI tests and snapshots tests (i.e. visual regression) are designed in the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox): we need an app to build, generated views and tigger some user inputs.
+
+### On devices tests
+
+End to end tests must be done on several devices so as to check the behaviours of the Swift Package and the design toolbox app.
+Thus we suggest to test on all platforms, if possible on real devices, otherwise on simulators, and also with some specific OS versions to cover breaking changes like Liquid Glass.
+We try to cover several devices types and OS max version according to [iosref.com](https://iosref.com/ios).
+
+> ![NOTE]
+> Keep in mind focus is on iOS and iPadOS first
+
+#### iPhone / iOS
+
+- iPhone 17 Pro (iOS 26.1)
+- iPhone 14 Pro (iOS 17.5)
+- iPhone Xs Max (iOS 18.6)
+- iPhone 8 Plus (iOS 16.4)
+- iPhone SE Gen 1 (iOS 15.5)
+
+#### iPad / iPadOS
+
+- iPad (A16) (iPadOS 26.1)
+- iPad (A16) (iPadOS 18.6)
+- iPad Pro 11" (3rd generation) (iPadOS 17.5)
+- iPad Air (5th generation) (iPadOS 16.4)
+- iPad Air (3rd generation) (iPadOS 15.5)
+
+#### Vision Pro / visionOS
+
+- Apple Vision Pro (visionOS 26.0)
+
+#### Apple TV / tvOS
+
+- Apple TV 4K (3rd generation) (tvOS 26.0)
+
+#### Apple Watch / watchOS
+
+- Appel Watch Series 11 (46mm) (watchOS 26.0)
+
+#### Mac / macOS
+
+- macOS Tahoe 26.1
 
 ## Developer Certificate of Origin
 

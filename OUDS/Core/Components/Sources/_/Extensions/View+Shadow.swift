@@ -44,12 +44,14 @@ private struct ColorSchemeBasedElevationViewModifier: ViewModifier {
 
     @Environment(\.colorScheme) private var colorScheme
 
+    // swiftlint:disable force_unwrapping
     func body(content: Content) -> some View {
         content
             .compositingGroup()
-            .shadow(color: colorSchemeBasedElevation.color.color,
+            .shadow(color: Color(hexadecimalCode: colorSchemeBasedElevation.color)!, // Assuming to crash if color not expected
                     radius: colorSchemeBasedElevation.radius,
                     x: CGFloat(colorSchemeBasedElevation.x),
                     y: CGFloat(colorSchemeBasedElevation.y))
     }
+    // swiftlint:enable force_unwrapping
 }

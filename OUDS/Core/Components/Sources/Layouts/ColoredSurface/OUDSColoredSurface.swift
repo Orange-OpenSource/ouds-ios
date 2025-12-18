@@ -31,7 +31,7 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A colored surface with text, button and link in light and dark mode with Orange theme](component_coloredSurface_Orange)
+/// ![A colored surface with text, button and link in light and dark modes with Orange theme](component_coloredSurface_Orange)
 ///
 /// - Since: 0.13.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)

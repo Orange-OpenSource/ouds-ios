@@ -35,7 +35,7 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+            .frame(minHeight: theme.controlItem.sizeIcon, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 
@@ -44,7 +44,7 @@ struct ControlItemIconContainer: View {
     @ViewBuilder
     private var icon: some View {
         if layoutData.isError {
-            Image(decorative: "ic_important", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
                 .resizable()
                 .aspectRatio(contentMode: .fill)

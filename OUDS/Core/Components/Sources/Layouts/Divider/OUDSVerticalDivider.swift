@@ -27,25 +27,25 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-divider)
 ///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![An vertical divider component in light and dark mode with Orange theme](component_verticalDivider_Orange)
+/// ![An vertical divider component in light and dark modes with Orange theme](component_verticalDivider_Orange)
 ///
 /// ### Orange Business Tools
 ///
-/// ![A vertical divider component in light and dark mode with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
+/// ![A vertical divider component in light and dark modes with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
 ///
 /// ### Sosh
 ///
-/// ![A vertical divider component in light and dark mode with Sosh theme](component_verticalDivider_Sosh)
+/// ![A vertical divider component in light and dark modes with Sosh theme](component_verticalDivider_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A vertical divider component in light and dark mode with Wireframe theme](component_verticalDivider_Wireframe)
+/// ![A vertical divider component in light and dark modes with Wireframe theme](component_verticalDivider_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 0.14.0

@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark mode colors.
+/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark modes colors.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
@@ -118,6 +118,16 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
 
     @objc public final var borderMinimal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderMinimalLight, dark: borderMinimalDark) }
 
+    @objc public final var borderStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusPositiveLight, dark: borderStatusPositiveDark) }
+
+    @objc public final var borderStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusInfoLight, dark: borderStatusInfoDark) }
+
+    @objc public final var borderStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusWarningLight, dark: borderStatusWarningDark) }
+
+    @objc public final var borderStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusNegativeLight, dark: borderStatusNegativeDark) }
+
+    @objc public final var borderStatusAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderStatusAccentLight, dark: borderStatusAccentDark) }
+
     // MARK: - Color - Content
 
     @objc public final var contentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: contentBrandPrimaryLight, dark: contentBrandPrimaryDark) }
@@ -189,6 +199,8 @@ extension OrangeBusinessToolsThemeColorSemanticTokensProvider: ColorMultipleSema
     // MARK: - Color - Overlay
 
     @objc public final var overlayDropdown: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDropdownLight, dark: overlayDropdownDark) }
+
+    @objc public final var overlayTooltip: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayTooltipLight, dark: overlayTooltipDark) }
 
     @objc public final var overlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: overlayDragLight, dark: overlayDragDark) }
 

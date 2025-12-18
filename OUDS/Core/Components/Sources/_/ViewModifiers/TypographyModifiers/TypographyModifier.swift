@@ -65,7 +65,7 @@ struct TypographyModifier: ViewModifier {
     private var adaptativeFont: NativeFont {
         if let family {
             // Can be a custom font loaded from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, adaptiveFontToken.weight.weight)]
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
             let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize)
             if let customFont {
                 return customFont
@@ -74,7 +74,7 @@ struct TypographyModifier: ViewModifier {
 
         // If no family or not loaded
         // Apply the system font with weight, responsive to Dynamic Type
-        return NativeFont.systemFont(ofSize: scaledFontSize, weight: adaptiveFontToken.weight.weight.nativeFontWeight)
+        return NativeFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
     }
 
     /// Adjusts the font size dynamically based on the user's accessibility settings
@@ -125,7 +125,7 @@ struct TypographyModifier: ViewModifier {
             if #available(iOS 16.0, macOS 13.0, tvOS 16.0, visionOS 16.0, watchOS 9.0, *) {
                 content
                     .font(Font(adaptativeFont))
-                    .fontWeight(adaptiveFontToken.weight.weight)
+                    .fontWeight(Font.Weight(weight: adaptiveFontToken.weight))
                     .kerning(adaptiveFontToken.letterSpacing)
                     .lineSpacing(lineSpacing)
                     .padding(.vertical, padding)

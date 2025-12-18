@@ -24,13 +24,15 @@ extension OUDSUIKitBrige {
     /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
+    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or bringing meanings
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    @MainActor public static func createBadge(status: OUDSBadge.Status = .neutral,
+    @MainActor public static func createBadge(accessibilityLabel: String,
+                                              status: OUDSBadge.Status = .neutral,
                                               size: OUDSBadge.StandardSize = .medium) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSBadge(status:size)")
-        let swiftUIBadge = OUDSBadge(status: status, size: size)
+        let swiftUIBadge = OUDSBadge(accessibilityLabel: accessibilityLabel, status: status, size: size)
         return wrap(component: swiftUIBadge)
     }
 
@@ -42,15 +44,17 @@ extension OUDSUIKitBrige {
     /// **This is an experimental feature, feedback and support is appreciated**
     ///
     /// - Parameters:
-    ///    - count:The number displayed in the badge.
+    ///    - count:The number displayed in the badge
+    ///    - accessibilityLabel: The accessibility label bringing meanings about the count value
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    @MainActor public static func createBadge(count: UInt,
+    @MainActor public static func createBadge(count: UInt8,
+                                              accessibilityLabel: String,
                                               status: OUDSBadge.Status = .neutral,
                                               size: OUDSBadge.IllustrationSize = .medium) -> UIViewController
     {
         OL.warning("Avoid UIKit wrapper and prefer SwiftUI component instead OUDSBadge(count:status:size)")
-        let swiftUIBadge = OUDSBadge(count: count, status: status, size: size)
+        let swiftUIBadge = OUDSBadge(count: count, accessibilityLabel: accessibilityLabel, status: status, size: size)
         return wrap(component: swiftUIBadge)
     }
 
@@ -62,7 +66,7 @@ extension OUDSUIKitBrige {
     ///
     /// - Parameters:
     ///    - status: The status of this badge, with a predefined icon or not
-    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
+    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or bringing meanings
     ///    - size: The size of this badge, default set to *medium*
     @MainActor public static func createBadge(status: OUDSBadge.StatusWithIcon,
                                               accessibilityLabel: String,

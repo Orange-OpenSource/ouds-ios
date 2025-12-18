@@ -177,7 +177,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ScaledIcon(icon: Image(decorative: "ic_tick", bundle: theme.resourcesBundle).renderingMode(.template),
+            ScaledIcon(icon: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle).renderingMode(.template),
                        size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .oudsForegroundColor(appliedColor)

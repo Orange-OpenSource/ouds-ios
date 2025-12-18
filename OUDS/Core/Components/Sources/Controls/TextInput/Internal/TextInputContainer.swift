@@ -28,6 +28,7 @@ struct TextInputContainer: View {
     let trailingAction: OUDSTextInput.TrailingAction?
     let isOutlined: Bool
     let status: OUDSTextInput.Status
+    let accessibilityHint: String?
     @State var hover: Bool = false
 
     @FocusState private var focused: Bool
@@ -77,6 +78,9 @@ struct TextInputContainer: View {
                     focused = true
                 }
             }
+            .accessibilityLabel(accessibilityLabel)
+            .accessibilityValue(accessibilityValue)
+            .accessibilityHint(accessibilityHint ?? "")
 
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
@@ -118,6 +122,32 @@ struct TextInputContainer: View {
 
     private var interactionState: TextInputInteractionState {
         TextInputInteractionState(focused: focused, hover: hover)
+    }
+
+    /// Forge a string to vocalize the component label based on label and placeholder
+    private var accessibilityLabel: String {
+        label.isEmpty ? placeholder ?? "" : label
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component input value and error, loading, disabled state
+    private var accessibilityValue: String {
+
+        let emptyDescription = "core_textInput_empty_a11y".localized()
+        let inputValue = "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
+        let valueDescription = text.wrappedValue.isEmpty ? emptyDescription : inputValue
+
+        let stateDescription = switch status {
+        case .disabled, .readOnly:
+            "core_common_disabled_a11y".localized()
+        case let .error(message):
+            "core_common_onError_a11y".localized() + ": \(message)"
+        case .loading:
+            "core_common_loading_a11y".localized()
+        case .enabled:
+            ""
+        }
+
+        return "\(valueDescription). \(stateDescription)"
     }
 }
 #endif
