@@ -283,7 +283,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// - iPhone with iOS lower than 26, i.e. not Liquid Glass
     /// - iPad with iPadOS lower than 18, i.e. with same tab bar and navigations layouts as iOS. Since iOS 18 tab bar is not anymore in bottom.
     private var hasLegacyLayout: Bool {
-        #if canImport(UIKit)
+        #if canImport(UIKit) && !os(watchOS)
         // iOS < 26
         if #unavailable(iOS 26.0) {
             // iPhone
@@ -305,7 +305,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
-        #if canImport(UIKit)
+        #if canImport(UIKit) && !os(watchOS)
         guard #unavailable(iOS 26.0) else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
