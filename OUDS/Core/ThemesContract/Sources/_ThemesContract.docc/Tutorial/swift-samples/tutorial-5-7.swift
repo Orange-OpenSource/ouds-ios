@@ -65,7 +65,7 @@ struct ContentView: View {
 
                         Text("\(selectedTopics.count) topic(s) selected")
                             .labelDefaultSmall(theme)
-                            .foregroundColor(ColorRawTokens.functionalDodgerBlue800.color!)
+                            .foregroundColor(Color(hexadecimalCode: ColorRawTokens.functionalDodgerBlue800)!)
 
                         OUDSHorizontalDivider(color: .brandPrimary)
 

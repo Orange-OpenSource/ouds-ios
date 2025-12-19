@@ -19,7 +19,10 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+    let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
+                              colors: MyOwnProviderOfColorTokens(),
+                              fontFamily: "Menlo",
+                              tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
 
     var body: some Scene {
         WindowGroup {
@@ -82,7 +85,7 @@ struct ContentView: View {
 
                         Text("\(selectedTopics.count) topic(s) selected")
                             .labelDefaultSmall(theme)
-                            .foregroundColor(ColorRawTokens.functionalDodgerBlue800.color!)
+                            .foregroundColor(Color(hexadecimalCode: ColorRawTokens.functionalDodgerBlue800)!)
 
                         OUDSHorizontalDivider(color: .brandPrimary)
 
@@ -154,5 +157,36 @@ struct ContentView: View {
             OUDSRadioPickerData(tag: Genders.female, label: "Ms"),
             OUDSRadioPickerData(tag: Genders.nonBinary, label: "Other"),
         ]
+    }
+}
+
+// MARK: - Custom tokens providers
+// WARNING: Can have side effects, use with care!
+
+class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
+
+    // Some tokens have light and dark values used according to color scheme
+    override var actionEnabledLight: ColorSemanticToken {
+        ColorRawTokens.functionalAmethyst600
+    }
+
+    // This token can contain up to two values (light and dark), or only one for both
+    override var bgTertiary: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(ColorRawTokens.sun160)
+    }
+}
+
+class MyOwnProviderOfBorderTokens: OrangeThemeBorderSemanticTokensProvider {
+
+    override var widthThin: BorderWidthSemanticToken {
+        BorderRawTokens.width75
+    }
+
+    override var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleDashed
+    }
+
+    override var radiusMedium: BorderRadiusSemanticToken {
+        40 // Remember, thanks to use of typealias, in the end each token is a raw type
     }
 }
