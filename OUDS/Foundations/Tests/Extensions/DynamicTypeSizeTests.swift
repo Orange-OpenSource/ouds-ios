@@ -16,7 +16,7 @@ import SwiftUI
 import Testing
 
 /// To test some extensions of `SwiftUI.DynamicTypeSize` so as to be sure applied size categories
-/// are well cnsidered as large texts or have the suitable values uses for factors computations.
+/// are well considered as large texts or have the suitable values used for factors computations.
 struct DynamicTypeSizeTests {
 
     // MARK: - Is large text used
@@ -27,7 +27,7 @@ struct DynamicTypeSizeTests {
     }
 
     @Test("Content size category small must NOT be considered as large text")
-    func smallsLargeText() throws {
+    func smallIsLargeText() throws {
         #expect(DynamicTypeSize.small.isLargeTextUsed == false)
     }
 
@@ -44,6 +44,11 @@ struct DynamicTypeSizeTests {
     @Test("Content size category xLarge must be considered as large text")
     func xLargeIsLargeText() throws {
         #expect(DynamicTypeSize.xLarge.isLargeTextUsed == true)
+    }
+
+    @Test("Content size category xxLarge must be considered as large text")
+    func xxLargeIsLargeText() throws {
+        #expect(DynamicTypeSize.xxLarge.isLargeTextUsed == true)
     }
 
     @Test("Content size category xxxLarge must be considered as large text")

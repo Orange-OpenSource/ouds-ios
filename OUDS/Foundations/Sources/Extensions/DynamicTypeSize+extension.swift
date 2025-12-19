@@ -18,11 +18,11 @@ extension DynamicTypeSize {
     /// True if sizes greater or equal than XL (110 %) are used, accessible sizes too
     public var isLargeTextUsed: Bool {
         switch self {
-        case .accessibility1,
-             .accessibility2,
-             .accessibility3,
+        case .accessibility5,
              .accessibility4,
-             .accessibility5,
+             .accessibility3,
+             .accessibility2,
+             .accessibility1,
              .xxxLarge,
              .xxLarge,
              .xLarge:
