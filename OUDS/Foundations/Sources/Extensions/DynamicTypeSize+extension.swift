@@ -13,33 +13,19 @@
 
 import SwiftUI
 
-extension ContentSizeCategory {
-
-    /// True if the size in use is an accessible size (greater or equal than AM, i.e. 160 %)
-    public var isAccessible: Bool {
-        switch self {
-        case .accessibilityExtraExtraExtraLarge,
-             .accessibilityExtraExtraLarge,
-             .accessibilityExtraLarge,
-             .accessibilityLarge,
-             .accessibilityMedium:
-            true
-        default:
-            false
-        }
-    }
+extension DynamicTypeSize {
 
     /// True if sizes greater or equal than XL (110 %) are used, accessible sizes too
     public var isLargeTextUsed: Bool {
         switch self {
-        case .accessibilityExtraExtraExtraLarge,
-             .accessibilityExtraExtraLarge,
-             .accessibilityExtraLarge,
-             .accessibilityLarge,
-             .accessibilityMedium,
-             .extraExtraExtraLarge,
-             .extraExtraLarge,
-             .extraLarge:
+        case .accessibility1,
+             .accessibility2,
+             .accessibility3,
+             .accessibility4,
+             .accessibility5,
+             .xxxLarge,
+             .xxLarge,
+             .xLarge:
             true
         default:
             false
@@ -50,21 +36,21 @@ extension ContentSizeCategory {
     /// *Percentage values have been picked from system debug.*
     public var percentageRate: Double {
         switch self {
-        case .accessibilityExtraExtraExtraLarge:
+        case .accessibility5:
             310
-        case .accessibilityExtraExtraLarge:
+        case .accessibility4:
             275
-        case .accessibilityExtraLarge:
+        case .accessibility3:
             235
-        case .accessibilityLarge:
+        case .accessibility2:
             190
-        case .accessibilityMedium:
+        case .accessibility1:
             160
-        case .extraExtraExtraLarge:
+        case .xxxLarge:
             135
-        case .extraExtraLarge:
+        case .xxLarge:
             120
-        case .extraLarge:
+        case .xLarge:
             110
         case .large:
             100
@@ -72,7 +58,7 @@ extension ContentSizeCategory {
             90
         case .small:
             85
-        case .extraSmall:
+        case .xSmall:
             80
         default:
             0
