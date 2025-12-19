@@ -22,7 +22,7 @@ struct BadgeModifier: ViewModifier {
     let accessibilityLabel: String
 
     @Environment(\.theme) private var theme
-    @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
     @Environment(\.isEnabled) private var isEnabled: Bool
 
     // MARK: Body
@@ -53,7 +53,7 @@ struct BadgeModifier: ViewModifier {
         case .large:
             theme.badge.sizeLarge
         }
-        return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
+        return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
     }
 
     /// Returns the max width.
