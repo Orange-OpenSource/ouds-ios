@@ -372,7 +372,9 @@ Elevations effets or box shadows can be applied to view with a dedicated view mo
 
 ##### Button
 
-A button proposes layout with text only, icon only or text and icon. Four hierarchies are proposed for all layouts: default, strong, minimal and negative. Two style are available: default and loading
+A button proposes layout with text only, icon only or text and icon. Four hierarchies are proposed for all layouts: default, strong, minimal and negative. 
+Button has several styles: default and loading.
+Button has several appearances: default, strong, brand, minimal and negative.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton/).
 
 Button can be intantiated like:
@@ -638,6 +640,9 @@ OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("image_name"))
 
 A badge is a small UI element used to highlight status, notifications, or categorization within an interface. 
 It is often displayed as a label or indicator with a distinct background color and text. It is richer than the native iOS component.
+Badge has several status: neutral, accent, positive, info, warning and negative.
+Badge has several sizes: extraSmall, small, medium and large.
+
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbadge).
 
 Badge can be used like:
@@ -658,7 +663,11 @@ OUDSBadge(status: .neutral(icon: Image("image_name")), accessibilityLabel: "Labe
 ##### Tag
 
 An tag is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
-it is not an iOS native component.
+It is not an iOS native component.
+Tag has several status: positive, info, negative, warning, neutral and accent.
+Tag has several appearances: emphasized and muted.
+Tag has several shapes: square and rounded.
+Tag has several sizes: default and small.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstag).
 
 The tag can be used like:
