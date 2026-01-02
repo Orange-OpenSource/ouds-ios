@@ -46,5 +46,6 @@ Package.swift @pylapp @ludovic35
 
 README.md @ludovic35 @pylapp
 
+AGENTS.md @pylapp
 THIRD_PARTY.md @pylapp
 renovate.json @pylapp

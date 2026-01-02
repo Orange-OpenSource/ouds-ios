@@ -21,6 +21,9 @@
 - [Software Bill of Materials](#software-bill-of-materials)
 - [Update of dependencies](#update-of-dependencies)
 - [CI/CD](#cicd)
+- [Use of GenAI](#use-of-genai)
+  * [Note in commits](#note-in-commits)
+  * [OpenAI Codex](#openai-codex)
 
 ## Technical preconditions
 
@@ -548,3 +551,35 @@ However of course you will have to define all the variables, secrets and have th
 You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
+
+## Use of GenAI
+
+### Note in commits
+
+The use of generative artifical intelligence (in short "GenAI") is not forbidden.
+However, to keep records of this new usage, contributors and maintainers must add inside the commit body if they use GenAI, which model and how.
+Indeed GenAI can be used to generate source code and also review pull requests.
+In all cases, the field *Assisted-by* must be added with the Large Language Model ("LLM") name and product.
+
+For example, if the Orange tool named _Dinootoo_ has been used with GPT-4o-mini as LLM to generate some code:
+
+```text
+Assisted-by: GPT-4o-mini (Orange Dinootoo)
+```
+
+Or if the Codex product has been used to make some pull request reviews or to work on issues, using the GitHub Connector (see [here for LLM for Codex cloud details](https://openai.com/fr-FR/index/introducing-codex/)):
+
+```text
+Assisted-by: codex-1 (OpenAI Codex)
+```
+
+The main things to note are the LLM in use and the products bebind with, if relevant, company name to have no doubt.
+
+### OpenAI Codex
+
+You may notice [Codex (OpenAI product)](https://chatgpt.com/codex) is used. Indeed this product can be integrated to GitHub repositories thanks to environments and [ChatGPT Plus, Pro, Business, Edu, and Enterprise plans](https://developers.openai.com/codex/quickstart). We do not use [codex GitHub Action](https://github.com/openai/codex-action) nor the [lightweight terminal agent](https://github.com/openai/codex) but the [GitHub ChatGPT Codex Connector](https://developers.openai.com/codex/cloud).
+
+For any commits or content provided by Codex, apply the same rules as explained previously.
+
+Keep in mind the repositories of OUDS iOS (Swift Package and design system toolbox) are two different enviroments. Thus you must not ask Codex to work on an issue for the design toolbox, as the issues are all gathered in the Swift Package repository (to help manaement of projects and milestones); Codex will try to work for the app on the package which is not acceptable and won't work. However Codex can be used for pull requests reviews and to work on issues (for Swift Package repo only so). To use Codex, mention `@codex` and it will react.
+

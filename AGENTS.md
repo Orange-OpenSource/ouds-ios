@@ -192,6 +192,17 @@ To update the Software Bill of Materials:
 bundle exec fastlane update_sbom
 ```
 
+## Review guidelines
+
+- Check if sources are formatted
+- Run linter, no error must appear
+- Run tests, they must all pass
+- Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
+- Build documentation, no error must appear
+- Check leaks, no leak must appear
+- Check if functions are too long or too complicated, complexity must be low
+- Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
+
 ## How to use OUDS framwork
 
 ### Basic setup
