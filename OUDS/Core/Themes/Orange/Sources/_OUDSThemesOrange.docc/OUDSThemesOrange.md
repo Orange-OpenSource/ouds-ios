@@ -74,7 +74,6 @@ Some tuning object exists.
 
 ```swift
     // Define your theme tuning
-
     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
 
     // Apply it to your theme
@@ -88,7 +87,7 @@ Some tuning object exists.
     let maxitTheme = OrangeTheme(tuning: Tuning.MaxIt)
 ```
 
-### "Orang France" tuning
+### "Orange France" tuning
 
 A predefined tuning configuration is also available for Orange France, which is also the default tuning:
 
