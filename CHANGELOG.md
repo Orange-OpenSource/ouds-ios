@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
 - Various cleanings in the documentation
 - Update constants file with versions values in comments for documentation
 - Display tokens librairies versions in themes Swift files
