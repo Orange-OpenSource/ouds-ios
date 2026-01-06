@@ -42,7 +42,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable, Comparable {
+public final class MultipleFontLineHeightSemanticToken: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontLineHeightSemanticToken
@@ -75,7 +75,7 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable, Com
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontLineHeightSemanticTokens else { return false }
+        guard let object = object as? MultipleFontLineHeightSemanticToken else { return false }
         return compact == object.compact && regular == object.regular
     }
 
@@ -88,7 +88,7 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable, Com
     ///    - lhs: The font size semantic token we expect to be smaller than `rhs`
     ///    - rhs: The font size semantic tokenwe expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    public static func < (lhs: MultipleFontLineHeightSemanticTokens, rhs: MultipleFontLineHeightSemanticTokens) -> Bool {
+    public static func < (lhs: MultipleFontLineHeightSemanticToken, rhs: MultipleFontLineHeightSemanticToken) -> Bool {
         lhs.compact <= rhs.compact && lhs.regular <= rhs.regular
     }
 }

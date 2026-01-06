@@ -66,7 +66,7 @@ import SwiftUI
 /// but in the *Figma* kit this is composite raw tokens which are defined for ligh and dark mode as only one token.
 ///
 /// - Since: 0.8.0
-public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
+public final class MultipleElevationCompositeRawToken: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ElevationCompositeRawToken
@@ -96,7 +96,7 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
     /// as a `MultipleElevationCompositeRawTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleElevationCompositeRawTokens else { return false }
+        guard let other = object as? MultipleElevationCompositeRawToken else { return false }
         return light == other.light && dark == other.dark
     }
 

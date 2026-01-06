@@ -40,7 +40,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleFontSizeSemanticTokens: NSObject, Sendable, Comparable {
+public final class MultipleFontSizeSemanticToken: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontSizeSemanticToken
@@ -73,7 +73,7 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable, Comparabl
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontSizeSemanticTokens else {
+        guard let object = object as? MultipleFontSizeSemanticToken else {
             return false
         }
         return compact == object.compact && regular == object.regular
@@ -88,7 +88,7 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable, Comparabl
     ///    - lhs: The font size semantic token we expect to be smaller than `rhs`
     ///    - rhs: The font size semantic tokenwe expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    public static func < (lhs: MultipleFontSizeSemanticTokens, rhs: MultipleFontSizeSemanticTokens) -> Bool {
+    public static func < (lhs: MultipleFontSizeSemanticToken, rhs: MultipleFontSizeSemanticToken) -> Bool {
         lhs.compact <= rhs.compact && lhs.regular <= rhs.regular
     }
 }

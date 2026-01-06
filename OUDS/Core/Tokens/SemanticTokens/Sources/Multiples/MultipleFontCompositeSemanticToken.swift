@@ -43,7 +43,7 @@ import SwiftUI
 /// In fact there is not "font composite semantic tokens" defined in the *Figma* kit.
 ///
 /// - Since: 0.22.0
-public final class MultipleFontCompositeSemanticTokens: NSObject, Sendable, Comparable {
+public final class MultipleFontCompositeSemanticToken: NSObject, Sendable, Comparable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontCompositeSemanticToken
@@ -75,7 +75,7 @@ public final class MultipleFontCompositeSemanticTokens: NSObject, Sendable, Comp
     /// as a `MultipleFontCompositeSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontCompositeSemanticTokens else { return false }
+        guard let object = object as? MultipleFontCompositeSemanticToken else { return false }
         return compact == object.compact && regular == object.regular
     }
 
@@ -96,7 +96,7 @@ public final class MultipleFontCompositeSemanticTokens: NSObject, Sendable, Comp
     ///    - lhs: The multiple font composite semantic token we expect to be smaller than `rhs`
     ///    - rhs: The multiple font composite semantic token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    public static func < (lhs: MultipleFontCompositeSemanticTokens, rhs: MultipleFontCompositeSemanticTokens) -> Bool {
+    public static func < (lhs: MultipleFontCompositeSemanticToken, rhs: MultipleFontCompositeSemanticToken) -> Bool {
         let lhsCompact = lhs.compact, lhsRegular = lhs.regular
         let rhsCompact = rhs.compact, rhsRegular = rhs.regular
 
