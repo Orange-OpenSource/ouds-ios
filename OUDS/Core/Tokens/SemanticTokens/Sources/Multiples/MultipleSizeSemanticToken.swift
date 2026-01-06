@@ -43,7 +43,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleSizeSemanticTokens: NSObject, Sendable {
+public final class MultipleSizeSemanticToken: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: SizeSemanticToken
@@ -73,7 +73,7 @@ public final class MultipleSizeSemanticTokens: NSObject, Sendable {
     /// as a `MultipleSizeSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleSizeSemanticTokens else {
+        guard let other = object as? MultipleSizeSemanticToken else {
             return false
         }
         return compact == other.compact && regular == other.regular

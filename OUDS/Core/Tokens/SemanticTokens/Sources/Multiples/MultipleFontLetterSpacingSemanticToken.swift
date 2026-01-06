@@ -44,7 +44,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
+public final class MultipleFontLetterSpacingSemanticToken: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: FontLetterSpacingSemanticToken
@@ -77,7 +77,7 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontLetterSpacingSemanticTokens else {
+        guard let object = object as? MultipleFontLetterSpacingSemanticToken else {
             return false
         }
         return compact == object.compact && regular == object.regular

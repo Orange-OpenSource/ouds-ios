@@ -42,7 +42,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleSpaceSemanticTokens: NSObject, Sendable {
+public final class MultipleSpaceSemanticToken: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: DimensionRawToken
@@ -65,7 +65,7 @@ public final class MultipleSpaceSemanticTokens: NSObject, Sendable {
     /// as a `MultipleSpaceSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleSpaceSemanticTokens else { return false }
+        guard let other = object as? MultipleSpaceSemanticToken else { return false }
         return compact == other.compact && regular == other.regular
     }
 

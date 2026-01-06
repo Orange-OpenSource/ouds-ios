@@ -62,7 +62,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.8.0
-public final class MultipleColorSemanticTokens: NSObject, Sendable {
+public final class MultipleColorSemanticToken: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ColorSemanticToken
@@ -92,7 +92,7 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     /// as a `MultipleColorRawToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleColorSemanticTokens else { return false }
+        guard let other = object as? MultipleColorSemanticToken else { return false }
         return light == other.light && dark == other.dark
     }
 
@@ -183,8 +183,8 @@ extension OUDSWCAG21Ratio {
     ///    - source: Default set to `#file` to log the calling file to ease debugging
     /// - Returns Bool: `true` if light an dark colors pass tests, false otherwise or if flag not set
     @discardableResult
-    public static func debugContrastRatio(_ lhs: MultipleColorSemanticTokens,
-                                          _ rhs: MultipleColorSemanticTokens,
+    public static func debugContrastRatio(_ lhs: MultipleColorSemanticToken,
+                                          _ rhs: MultipleColorSemanticToken,
                                           _ target: OUDSWCAG21Ratio.Target = .textual,
                                           _ criteria: OUDSWCAG21Ratio.Criteria = .AA,
                                           _ source: String = #file) -> Bool
