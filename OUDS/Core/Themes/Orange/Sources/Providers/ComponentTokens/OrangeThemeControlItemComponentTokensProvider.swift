@@ -34,7 +34,7 @@ import OUDSThemesContract
 ///
 ///         override var sizeMinHeight: SizeSemanticToken { DimensionRawTokens._500 }
 ///
-///         override var colorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
+///         override var colorBgFocus: MultipleColorSemanticToken { colors.contentDefault }
 ///
 ///         override var spaceRowGap: SpaceSemanticToken { spaces.paddingInlineTall }
 ///

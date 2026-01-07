@@ -30,9 +30,9 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
     static let mockThemeFontSizeRawToken: FontSizeRawToken = 666
     static let mockThemeFontLineHeightRawToken: FontLineHeightRawToken = 321
     static let mockThemeFontLetterSpacingRawToken: FontLetterSpacingRawToken = 24_032_025
-    static let mockThemeMultipleFontSizeTokens = MultipleFontSizeSemanticTokens(mockThemeFontSizeRawToken)
-    static let mockThemeMultipleFontLineHeightTokens = MultipleFontLineHeightSemanticTokens(mockThemeFontLineHeightRawToken)
-    static let mockThemeMultipleFontLetterSpacingTokens = MultipleFontLetterSpacingSemanticTokens(mockThemeFontLetterSpacingRawToken)
+    static let mockThemeMultipleFontSizeTokens = MultipleFontSizeSemanticToken(mockThemeFontSizeRawToken)
+    static let mockThemeMultipleFontLineHeightTokens = MultipleFontLineHeightSemanticToken(mockThemeFontLineHeightRawToken)
+    static let mockThemeMultipleFontLetterSpacingTokens = MultipleFontLetterSpacingSemanticToken(mockThemeFontLetterSpacingRawToken)
 
     // MARK: Semantic token - Typography - Font - Family
 
@@ -61,16 +61,16 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: Semantic token - Typography - Font - Size
 
-    override var sizeDisplayLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeDisplayMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeDisplaySmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeHeadingXlarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeHeadingLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeHeadingMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeHeadingSmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeBodyLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeBodyMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
-    override var sizeBodySmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeDisplayLarge: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeDisplayMedium: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeDisplaySmall: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeHeadingXlarge: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeHeadingLarge: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeHeadingMedium: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeHeadingSmall: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeBodyLarge: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeBodyMedium: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
+    override var sizeBodySmall: MultipleFontSizeSemanticToken { Self.mockThemeMultipleFontSizeTokens }
     override var sizeLabelXlarge: FontSizeSemanticToken { Self.mockThemeFontSizeRawToken }
     override var sizeLabelLarge: FontSizeSemanticToken { Self.mockThemeFontSizeRawToken }
     override var sizeLabelMedium: FontSizeSemanticToken { Self.mockThemeFontSizeRawToken }
@@ -79,16 +79,16 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: - Semantic token - Typography - Font - Line height
 
-    override var lineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightHeadingXlarge: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
-    override var lineHeightBodySmall: MultipleFontLineHeightSemanticTokens { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightDisplayLarge: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightDisplayMedium: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightDisplaySmall: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightHeadingXlarge: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightHeadingLarge: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightHeadingMedium: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightHeadingSmall: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightBodyLarge: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightBodyMedium: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
+    override var lineHeightBodySmall: MultipleFontLineHeightSemanticToken { Self.mockThemeMultipleFontLineHeightTokens }
     override var lineHeightLabelXlarge: FontLineHeightSemanticToken { Self.mockThemeFontLineHeightRawToken }
     override var lineHeightLabelLarge: FontLineHeightSemanticToken { Self.mockThemeFontLineHeightRawToken }
     override var lineHeightLabelMedium: FontLineHeightSemanticToken { Self.mockThemeFontLineHeightRawToken }
@@ -97,16 +97,16 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
-    override var letterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingHeadingXlarge: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingBodyLarge: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingBodyMedium: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
-    override var letterSpacingBodySmall: MultipleFontLetterSpacingSemanticTokens { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingHeadingXlarge: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingBodyLarge: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingBodyMedium: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
+    override var letterSpacingBodySmall: MultipleFontLetterSpacingSemanticToken { Self.mockThemeMultipleFontLetterSpacingTokens }
     override var letterSpacingLabelXlarge: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
     override var letterSpacingLabelLarge: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
     override var letterSpacingLabelMedium: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
@@ -186,51 +186,51 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: Semantic tokens - Composites
 
-    static let mockThemeMultipleFontCompositeSemanticTokens = MultipleFontCompositeSemanticTokens(FontCompositeSemanticToken(size: 123, lineHeight: 456, weight: 789, letterSpacing: 42))
+    static let mockThemeMultipleFontCompositeSemanticToken = MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(size: 123, lineHeight: 456, weight: 789, letterSpacing: 42))
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    override var displayLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var displayMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var displaySmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var displayLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var displayMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var displaySmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    override var headingXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var headingLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var headingMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var headingSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var headingXLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var headingLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var headingMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var headingSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    override var bodyDefaultLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyDefaultMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyDefaultSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyModerateLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyModerateMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyModerateSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyStrongLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyStrongMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var bodyStrongSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var bodyDefaultLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyDefaultMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyDefaultSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyModerateLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyModerateMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyModerateSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyStrongLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyStrongMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var bodyStrongSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    override var labelDefaultXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelDefaultLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelDefaultMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelDefaultSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelModerateXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelModerateLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelModerateMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelModerateSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelStrongXLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelStrongLarge: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelStrongMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
-    override var labelStrongSmall: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var labelDefaultXLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelDefaultLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelDefaultMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelDefaultSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelModerateXLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelModerateLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelModerateMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelModerateSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelStrongXLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelStrongLarge: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelStrongMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
+    override var labelStrongSmall: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    override var codeMedium: MultipleFontCompositeSemanticTokens { Self.mockThemeMultipleFontCompositeSemanticTokens }
+    override var codeMedium: MultipleFontCompositeSemanticToken { Self.mockThemeMultipleFontCompositeSemanticToken }
 }
 
 // swiftlint:enable line_length

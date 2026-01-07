@@ -29,8 +29,8 @@ import OUDSThemesContract
 ///             DimensionRawTokens._400
 ///         }
 ///
-///         override var scaledSmall: MultipleSpaceSemanticTokens {
-///             MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
+///         override var scaledSmall: MultipleSpaceSemanticToken {
+///             MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
 ///         }
 /// }
 /// ```

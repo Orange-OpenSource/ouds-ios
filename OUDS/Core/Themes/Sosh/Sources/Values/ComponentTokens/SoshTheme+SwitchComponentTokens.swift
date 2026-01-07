@@ -21,20 +21,20 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension SoshThemeSwitchComponentTokensProvider: SwitchComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest)
-    @objc public final var colorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest)
+    @objc public final var colorCursor: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest) }
     /// Has for value token colors.contentDefault
-    @objc public final var colorCheck: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var colorCheck: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.contentDefault
-    @objc public final var colorCheckInteraction: MultipleColorSemanticTokens { colors.contentDefault }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositorySecondaryLow, dark: colors.repositorySecondaryLower)
-    @objc public final var colorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositorySecondaryLow, dark: colors.repositorySecondaryLower) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositorySecondaryMedium, dark: colors.repositorySecondaryLowest)
-    @objc public final var colorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositorySecondaryMedium, dark: colors.repositorySecondaryLowest) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh)
-    @objc public final var colorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher)
-    @objc public final var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher) }
+    @objc public final var colorCheckInteraction: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositorySecondaryLow, dark: colors.repositorySecondaryLower)
+    @objc public final var colorTrackSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositorySecondaryLow, dark: colors.repositorySecondaryLower) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositorySecondaryMedium, dark: colors.repositorySecondaryLowest)
+    @objc public final var colorTrackSelectedInteraction: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositorySecondaryMedium, dark: colors.repositorySecondaryLowest) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh)
+    @objc public final var colorTrackUnselected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher)
+    @objc public final var colorTrackUnselectedInteraction: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher) }
     /// Has for value token borders.radiusPill
     @objc public final var borderRadiusCursor: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusPill

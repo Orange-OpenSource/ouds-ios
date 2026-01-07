@@ -35,7 +35,7 @@ import OUDSThemesContract
 ///
 ///         override var borderWidthDefault: BorderWidthSemanticToken { borders.widthmediumt }
 ///
-///         override var colorBgFocus: MultipleColorSemanticTokens { colors.contentDefault }
+///         override var colorBgFocus: MultipleColorSemanticToken { colors.contentDefault }
 ///
 ///         override var spaceInsetIconOnly: SpaceSemanticToken { spaces.paddingInlineTall }
 ///

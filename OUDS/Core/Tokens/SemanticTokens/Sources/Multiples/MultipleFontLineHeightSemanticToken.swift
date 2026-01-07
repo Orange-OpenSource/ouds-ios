@@ -16,7 +16,7 @@ import OUDSFoundations
 
 /// Kind of semantic tokens which will wrap a combination of ``FontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightSemanticTokens`
+/// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightSemanticToken`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font letter spacing semantic token lineHeightLabelXLarge,
@@ -30,12 +30,12 @@ import OUDSFoundations
 ///         // Then the develoment team declares an "higher" level line height semantic token for lineHeightLabelXLarge
 ///         // inside FontMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+FontMultipleSemanticTokens extension
-///         var lineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens {
-///             MultipleFontLineHeightSemanticTokens(compact: lineHeightLabelXLargeMobile, regular: lineHeightLabelXLargeTablet)
+///         var lineHeightLabelXLarge: MultipleFontLineHeightSemanticToken {
+///             MultipleFontLineHeightSemanticToken(compact: lineHeightLabelXLargeMobile, regular: lineHeightLabelXLargeTablet)
 ///         }
 ///
 ///         // If the same value is used whatever the size class is
-///         var lineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(lineHeightLabelXLargeMobile) }
+///         var lineHeightLabelXLarge: MultipleFontLineHeightSemanticToken { MultipleFontLineHeightSemanticToken(lineHeightLabelXLargeMobile) }
 ///
 ///         // The theme exposes both generated font line height semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.

@@ -21,21 +21,21 @@ import OUDSTokensSemantic
 
 extension SoshThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.contentDefault
-    @objc public final var colorContentEnabled: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var colorContentEnabled: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.actionHover
-    @objc public final var colorContentHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorContentHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var colorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorContentPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc public final var colorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorContentFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token colors.actionEnabled
-    @objc public final var colorChevronEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark)
-    @objc public final var colorChevronHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark) }
+    @objc public final var colorChevronEnabled: MultipleColorSemanticToken { colors.actionEnabled }
+    /// Has for value token MultipleColorSemanticToken(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark)
+    @objc public final var colorChevronHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.contentBrandPrimaryLight, dark: colors.actionEnabledDark) }
     /// Has for value token colors.actionPressed
-    @objc public final var colorChevronPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorChevronPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionEnabled
-    @objc public final var colorChevronFocus: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc public final var colorChevronFocus: MultipleColorSemanticToken { colors.actionEnabled }
     /// Has for value token spaces.paddingInlineNone
     @objc public final var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
     /// Has for value token spaces.paddingBlockMedium

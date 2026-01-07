@@ -75,7 +75,7 @@ struct TextInputBorderModifier: ViewModifier {
         }
     }
 
-    private var defaultColor: MultipleColorSemanticTokens {
+    private var defaultColor: MultipleColorSemanticToken {
         switch status {
         case .enabled:
             switch interactionState {
@@ -108,7 +108,7 @@ struct TextInputBorderModifier: ViewModifier {
         }
     }
 
-    private var outlinedColor: MultipleColorSemanticTokens {
+    private var outlinedColor: MultipleColorSemanticToken {
         switch status {
         case .enabled:
             switch interactionState {

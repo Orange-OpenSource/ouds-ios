@@ -21,12 +21,12 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension SoshThemeIconComponentTokensProvider: IconComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
-    @objc public final var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
-    @objc public final var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
-    @objc public final var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
+    @objc public final var colorContentStatusWarningExternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
+    @objc public final var colorContentStatusWarningInternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
+    @objc public final var colorContentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
 }
 
 // swiftlint:enable line_length

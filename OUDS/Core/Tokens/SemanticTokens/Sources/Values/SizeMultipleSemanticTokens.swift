@@ -18,15 +18,15 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **size** but using ``MultipleSizeSemanticTokens``
+/// This is a group of semantic tokens for **size** but using ``MultipleSizeSemanticToken``
 ///
-/// In fact the ``MultipleSizeSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSizeSemanticTokens``.
+/// In fact the ``MultipleSizeSemanticToken`` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSizeSemanticToken``.
 /// A major part the "real" size semantic tokens are declared in ``SizeSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes), and othershere.
 /// These tokens are updated by the *tokenator*.
-/// Then they are gathered and wrapped so as to be used easily thanks to this ``MultipleSizeSemanticTokens`` which must be updated manually.
+/// Then they are gathered and wrapped so as to be used easily thanks to this ``MultipleSizeSemanticToken`` which must be updated manually.
 ///
-/// Each token declared in this protocol must have its version *Mobile* and *Tablet* deczlre in ``SizeSemanticTokens`` protocol in order to define ``MultipleSizeSemanticTokens`` for each pair of them.
+/// Each token declared in this protocol must have its version *Mobile* and *Tablet* deczlre in ``SizeSemanticTokens`` protocol in order to define ``MultipleSizeSemanticToken`` for each pair of them.
 ///
 /// In few words:
 /// ```swift
@@ -41,8 +41,8 @@
 ///
 ///         // The 'higher level' size semantic tokens wrapping them and exposed to users,
 ///         // declared (in SizeMultipleSemanticTokens.swift) and defined (in OUDSTheme+SizeMultipleSemanticTokens.swift) manualy
-///         var iconWithHeadingXlargeSizeSmall: MultipleSizeSemanticTokens {
-///             MultipleSizeSemanticTokens(compact: iconWithHeadingXlargeSizeSmMobile, regular: iconWithHeadingXlargeSizeSmTablet)
+///         var iconWithHeadingXlargeSizeSmall: MultipleSizeSemanticToken {
+///             MultipleSizeSemanticToken(compact: iconWithHeadingXlargeSizeSmMobile, regular: iconWithHeadingXlargeSizeSmTablet)
 ///         }
 ///
 ///         // Thus users can in their components use iconWithHeadingXlargeSizeSm as defined in their design system
@@ -54,53 +54,53 @@ public protocol SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var iconWithHeadingXlargeSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingXlargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingXlargeSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithHeadingXlargeSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithHeadingXlargeSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithHeadingLargeSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingLargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingLargeSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithHeadingLargeSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithHeadingLargeSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithHeadingLargeSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithHeadingMediumSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingMediumSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingMediumSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithHeadingMediumSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithHeadingMediumSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithHeadingMediumSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithHeadingSmallSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingSmallSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithHeadingSmallSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithHeadingSmallSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithHeadingSmallSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithHeadingSmallSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithBodyLargeSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithBodyLargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithBodyLargeSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithBodyLargeSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithBodyLargeSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithBodyLargeSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithBodyMediumSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithBodyMediumSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithBodyMediumSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithBodyMediumSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithBodyMediumSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithBodyMediumSizeLarge: MultipleSizeSemanticToken { get }
 
-    var iconWithBodySmallSizeSmall: MultipleSizeSemanticTokens { get }
-    var iconWithBodySmallSizeMedium: MultipleSizeSemanticTokens { get }
-    var iconWithBodySmallSizeLarge: MultipleSizeSemanticTokens { get }
+    var iconWithBodySmallSizeSmall: MultipleSizeSemanticToken { get }
+    var iconWithBodySmallSizeMedium: MultipleSizeSemanticToken { get }
+    var iconWithBodySmallSizeLarge: MultipleSizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    var maxWidthTypeDisplayLarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeDisplayMedium: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeDisplaySmall: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeDisplayLarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeDisplayMedium: MultipleSizeSemanticToken { get }
+    var maxWidthTypeDisplaySmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeHeadingXlarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeHeadingLarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeHeadingMedium: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeHeadingSmall: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeHeadingXlarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeHeadingLarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeHeadingMedium: MultipleSizeSemanticToken { get }
+    var maxWidthTypeHeadingSmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeBodyLarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeBodyMedium: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeBodySmall: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeBodyLarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeBodyMedium: MultipleSizeSemanticToken { get }
+    var maxWidthTypeBodySmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeLabelXlarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeLabelLarge: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeLabelMedium: MultipleSizeSemanticTokens { get }
-    var maxWidthTypeLabelSmall: MultipleSizeSemanticTokens { get }
+    var maxWidthTypeLabelXlarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeLabelLarge: MultipleSizeSemanticToken { get }
+    var maxWidthTypeLabelMedium: MultipleSizeSemanticToken { get }
+    var maxWidthTypeLabelSmall: MultipleSizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

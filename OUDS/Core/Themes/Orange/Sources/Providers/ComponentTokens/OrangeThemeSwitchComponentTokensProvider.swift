@@ -31,7 +31,7 @@ import OUDSThemesContract
 ///
 ///         // Then override the switch component tokens you want.
 ///
-///         override var colorCursor: MultipleColorSemanticTokens { colors.repositoryPositiveMedium }
+///         override var colorCursor: MultipleColorSemanticToken { colors.repositoryPositiveMedium }
 ///
 ///         override var spacePaddingInlineUnselected: SpaceSemanticToken { spaces.fixed2xsmall }
 ///

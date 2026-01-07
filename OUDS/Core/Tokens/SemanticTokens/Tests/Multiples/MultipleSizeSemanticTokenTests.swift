@@ -14,13 +14,13 @@
 import OUDSTokensSemantic
 import Testing
 
-/// To ensure the `MultipleSizeSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-struct MultipleSizeSemanticTokensTests {
+/// To ensure the `MultipleSizeSemanticToken` is tested as a provider of semantic tokens for compact and regular size classes.
+struct MultipleSizeSemanticTokenTests {
 
     /// Tests if compact and regular values are preserved when defined
     @Test func initWithOneValues() {
         let unique: SizeSemanticToken = 888
-        let token = MultipleSizeSemanticTokens(unique)
+        let token = MultipleSizeSemanticToken(unique)
 
         #expect(token.compact == unique)
         #expect(token.regular == unique)
@@ -30,21 +30,21 @@ struct MultipleSizeSemanticTokensTests {
     @Test func initTwoValues() {
         let compact: SizeSemanticToken = 123
         let regular: SizeSemanticToken = 456
-        let token = MultipleSizeSemanticTokens(compact: compact, regular: regular)
+        let token = MultipleSizeSemanticToken(compact: compact, regular: regular)
 
         #expect(token.compact == compact)
         #expect(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleSizeSemanticTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleSizeSemanticToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     @Test func isEqual() {
-        let first = MultipleSizeSemanticTokens(compact: 12, regular: 34)
-        let second = MultipleSizeSemanticTokens(compact: 56, regular: 78)
-        let third = MultipleSizeSemanticTokens(compact: 12, regular: 78)
-        let fourth = MultipleSizeSemanticTokens(compact: 56, regular: 34)
-        let fifth = MultipleSizeSemanticTokens(compact: 12, regular: 34)
-        let sixth = MultipleColorSemanticTokens("#000000")
+        let first = MultipleSizeSemanticToken(compact: 12, regular: 34)
+        let second = MultipleSizeSemanticToken(compact: 56, regular: 78)
+        let third = MultipleSizeSemanticToken(compact: 12, regular: 78)
+        let fourth = MultipleSizeSemanticToken(compact: 56, regular: 34)
+        let fifth = MultipleSizeSemanticToken(compact: 12, regular: 34)
+        let sixth = MultipleColorSemanticToken("#000000")
 
         #expect(first.isEqual(first))
         #expect(!first.isEqual(second))

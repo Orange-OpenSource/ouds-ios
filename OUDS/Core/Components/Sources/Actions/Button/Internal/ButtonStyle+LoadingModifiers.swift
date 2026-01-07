@@ -43,7 +43,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     // MARK: Private helper
 
-    private var colorToken: MultipleColorSemanticTokens {
+    private var colorToken: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             if colorSchemeContrast == .increased, colorScheme == .light {

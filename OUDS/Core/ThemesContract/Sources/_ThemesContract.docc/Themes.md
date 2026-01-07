@@ -123,8 +123,8 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
     override var fixedMedium: SpaceSemanticToken {
         DimensionRawTokens._400
     }
-    override var scaledSmall: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
+    override var scaledSmall: MultipleSpaceSemanticToken {
+        MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
     }
 }
 
@@ -142,11 +142,11 @@ class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 // Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
-    override var bgSecondary: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+    override var bgSecondary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
-    override var actionEnabled: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
+    override var actionEnabled: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
     }
 }
 
@@ -197,12 +197,12 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 // Token provider for font
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
-    override var displayLarge: MultipleFontCompositeSemanticTokens { 
-        MultipleFontCompositeSemanticTokens(FontCompositeSemanticToken(
-        size: sizeDisplayLargeMobile,
-        lineHeight: lineHeightDisplayLargeMobile,
-        weight: weightDisplay,
-        letterSpacing: letterSpacingDisplayLargeMobile))) 
+    override var displayLarge: MultipleFontCompositeSemanticToken { 
+        MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
+            size: sizeDisplayLargeMobile,
+            lineHeight: lineHeightDisplayLargeMobile,
+            weight: weightDisplay,
+            letterSpacing: letterSpacingDisplayLargeMobile))) 
     }
 }
 ```

@@ -24,7 +24,7 @@ final class MockThemeBarComponentTokenProvider: OrangeThemeBarComponentTokensPro
 
     static let mockThemeBarSize: SizeSemanticToken = 118_218
     static let mockThemeBarBorderRadius: BorderRadiusSemanticToken = 118_218
-    static let mockThemeBarColor = MultipleColorSemanticTokens("#FF000000")
+    static let mockThemeBarColor = MultipleColorSemanticToken("#FF000000")
     static let mockThemeBarOpacitiy: OpacitySemanticToken = 0.0000000042
     static let mockThemeBarEffect: EffectSemanticToken = 0.0000000000001
 
@@ -39,22 +39,22 @@ final class MockThemeBarComponentTokenProvider: OrangeThemeBarComponentTokensPro
 
     // MARK: - Colors
 
-    override var colorBgOpaque: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorBgTranslucent: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentSelectedHover: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentUnselectedFocus: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorContentOnAccent: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorBorderBadge: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeBarColor }
+    override var colorBgOpaque: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorBgTranslucent: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentSelectedHover: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentSelectedPressed: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentSelectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentUnselectedEnabled: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentUnselectedHover: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentUnselectedPressed: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentUnselectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorContentOnAccent: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorBorderBadge: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
 
     // MARK: - Opacities
 

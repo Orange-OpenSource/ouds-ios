@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.0.0...develop)
 
+### Added
+
+- Python script to find dead / unused tokens (Orange-OpenSource/ouds-ios#1237)
+
 ### Changed
 
+- **BREAKING**: Rename some multiple token object (from plural to singular form)
 - Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
 - Gem `fastlane` gem from v2.229.1 to v2.230.0
 

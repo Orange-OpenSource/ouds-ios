@@ -27,9 +27,9 @@ public protocol SkeletonComponentTokens {
 
     // MARK: - Color
 
-    var colorBg: MultipleColorSemanticTokens { get }
-    var colorGradientMiddle: MultipleColorSemanticTokens { get }
-    var colorGradientStartEnd: MultipleColorSemanticTokens { get }
+    var colorBg: MultipleColorSemanticToken { get }
+    var colorGradientMiddle: MultipleColorSemanticToken { get }
+    var colorGradientStartEnd: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

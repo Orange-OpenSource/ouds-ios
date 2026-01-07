@@ -48,7 +48,7 @@ struct ChipBorderModifier: ViewModifier {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             selected ? theme.chip.colorBorderSelectedEnabled : theme.chip.colorBorderUnselectedEnabled

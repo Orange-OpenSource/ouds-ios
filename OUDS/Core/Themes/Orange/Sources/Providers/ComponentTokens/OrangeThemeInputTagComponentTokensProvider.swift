@@ -34,7 +34,7 @@ import OUDSThemesContract
 ///
 ///         override var borderRadius: BorderRadiusSemanticToken  { borders.radiusNone }
 ///
-///         override var colorBgPressed: MultipleColorSemanticTokens { colors.actionPressed }
+///         override var colorBgPressed: MultipleColorSemanticToken { colors.actionPressed }
 ///
 ///         // ...
 ///     }

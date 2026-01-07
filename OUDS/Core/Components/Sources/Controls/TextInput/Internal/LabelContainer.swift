@@ -66,7 +66,7 @@ struct LabelContainer: View {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch status {
         case .enabled, .loading, .readOnly:
             theme.colors.contentMuted

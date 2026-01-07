@@ -26,7 +26,7 @@ struct DividerModifier: ViewModifier {
     // MARK: Properties
 
     let dividerColor: OUDSDividerColor
-    let forceColor: MultipleColorSemanticTokens?
+    let forceColor: MultipleColorSemanticToken?
     let orientation: Orientation
 
     @Environment(\.theme) private var theme
@@ -50,7 +50,7 @@ struct DividerModifier: ViewModifier {
     /// - Parameters:
     ///   - orientation: The divider orientation
     ///   - forceColor: The token of the color to apply
-    init(orientation: Orientation, forceColor: MultipleColorSemanticTokens) {
+    init(orientation: Orientation, forceColor: MultipleColorSemanticToken) {
         dividerColor = .default
         self.forceColor = forceColor
         self.orientation = orientation
@@ -84,7 +84,7 @@ struct DividerModifier: ViewModifier {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         forceColor ?? dividerColor.colorToken(in: theme)
     }
 }
@@ -95,7 +95,7 @@ extension Divider {
     ///
     /// - Parameter color: The color to force for the divider
     @MainActor
-    func verticalDivider(force color: MultipleColorSemanticTokens) -> some View {
+    func verticalDivider(force color: MultipleColorSemanticToken) -> some View {
         modifier(DividerModifier(orientation: .vertical, forceColor: color))
     }
 
@@ -103,7 +103,7 @@ extension Divider {
     ///
     /// - Parameter color: The color to force for the divider
     @MainActor
-    func horizontalDivider(force color: MultipleColorSemanticTokens) -> some View {
+    func horizontalDivider(force color: MultipleColorSemanticToken) -> some View {
         modifier(DividerModifier(orientation: .horizontal, forceColor: color))
     }
 }

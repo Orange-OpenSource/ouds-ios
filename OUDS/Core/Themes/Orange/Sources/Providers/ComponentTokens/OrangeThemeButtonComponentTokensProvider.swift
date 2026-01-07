@@ -36,7 +36,7 @@ import OUDSThemesContract
 ///
 ///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
-///         override var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+///         override var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
 ///
 ///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///

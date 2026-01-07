@@ -17,7 +17,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of ``SizeSemanticToken`` depending to viewports / size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a size token exists with its value depending to the size class, it must be packed in such ``MultipleSizeSemanticTokens``.
+/// If a size token exists with its value depending to the size class, it must be packed in such ``MultipleSizeSemanticToken``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a size semantic token iconWithHeadingXLargeTall,
@@ -31,12 +31,12 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level size semantic token for iconWithHeadingXLargeTall
 ///         // inside SizeMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+SizeMultipleSemanticTokens extension
-///         var iconWithHeadingXLargeTall: MultipleSizeSemanticTokens {
-///             MultipleSizeSemanticTokens(compact: iconWithHeadingXLargeTallMobile, regular: iconWithHeadingXLargeTallTablet)
+///         var iconWithHeadingXLargeTall: MultipleSizeSemanticToken {
+///             MultipleSizeSemanticToken(compact: iconWithHeadingXLargeTallMobile, regular: iconWithHeadingXLargeTallTablet)
 ///         }
 ///
 ///         // If the same value is used whatever the size class is
-///         var iconWithHeadingXLargeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(iconWithHeadingXLargeTallTablet) }
+///         var iconWithHeadingXLargeTall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(iconWithHeadingXLargeTallTablet) }
 ///
 ///         // The theme exposes both generated font size semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
@@ -70,7 +70,7 @@ public final class MultipleSizeSemanticToken: NSObject, Sendable {
     deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleSizeSemanticTokens`. Otherwise returns `false`.
+    /// as a `MultipleSizeSemanticToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSizeSemanticToken else {

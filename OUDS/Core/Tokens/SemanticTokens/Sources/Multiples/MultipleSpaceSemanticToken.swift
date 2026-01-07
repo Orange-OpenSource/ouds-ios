@@ -18,7 +18,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceSemanticTokens``.
+/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceSemanticToken``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a space semantic token scaled2xs,
@@ -32,10 +32,10 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level space semantic token for scaled2xs
 ///         // inside SpaceMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+SpaceMultipleSemanticTokens extension
-///         var scaled2xs: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaled2xsMobile, regular: scaled2xsTablet) }
+///         var scaled2xs: MultipleSpaceSemanticToken { MultipleSpaceSemanticToken(compact: scaled2xsMobile, regular: scaled2xsTablet) }
 ///
 ///         // If the same value is used whatever the size class is
-///         var scaled2xs: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(scaled2xsTabley) }
+///         var scaled2xs: MultipleSpaceSemanticToken { MultipleSpaceSemanticToken(scaled2xsTabley) }
 ///
 ///         // The theme exposes both generated font space semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
@@ -62,7 +62,7 @@ public final class MultipleSpaceSemanticToken: NSObject, Sendable {
     deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleSpaceSemanticTokens`. Otherwise returns `false`.
+    /// as a `MultipleSizeSemanticToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSpaceSemanticToken else { return false }

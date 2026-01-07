@@ -46,12 +46,12 @@ public protocol SwitchComponentTokens {
 
     // MARK: - Colors
 
-    var colorCursor: MultipleColorSemanticTokens { get }
-    var colorTrackSelected: MultipleColorSemanticTokens { get }
-    var colorTrackSelectedInteraction: MultipleColorSemanticTokens { get }
-    var colorTrackUnselected: MultipleColorSemanticTokens { get }
-    var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { get }
-    var colorCheck: MultipleColorSemanticTokens { get }
+    var colorCursor: MultipleColorSemanticToken { get }
+    var colorTrackSelected: MultipleColorSemanticToken { get }
+    var colorTrackSelectedInteraction: MultipleColorSemanticToken { get }
+    var colorTrackUnselected: MultipleColorSemanticToken { get }
+    var colorTrackUnselectedInteraction: MultipleColorSemanticToken { get }
+    var colorCheck: MultipleColorSemanticToken { get }
 
     // MARK: - Spaces
 

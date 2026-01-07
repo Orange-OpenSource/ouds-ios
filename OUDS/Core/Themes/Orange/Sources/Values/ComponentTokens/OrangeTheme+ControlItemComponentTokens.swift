@@ -21,15 +21,15 @@ import OUDSTokensSemantic
 
 extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTokens {
     /// Has for value token colors.actionSupportHover
-    @objc open var colorBgHover: MultipleColorSemanticTokens { colors.actionSupportHover }
+    @objc open var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
     /// Has for value token colors.actionSupportPressed
-    @objc open var colorBgPressed: MultipleColorSemanticTokens { colors.actionSupportPressed }
+    @objc open var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
     /// Has for value token colors.actionSupportLoading
-    @objc open var colorBgLoading: MultipleColorSemanticTokens { colors.actionSupportLoading }
+    @objc open var colorBgLoading: MultipleColorSemanticToken { colors.actionSupportLoading }
     /// Has for value token colors.actionSupportFocus
-    @objc open var colorBgFocus: MultipleColorSemanticTokens { colors.actionSupportFocus }
+    @objc open var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
     /// Has for value token colors.contentDefault
-    @objc open var colorContentLoader: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc open var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token borders.radiusNone
     @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
     /// Has for value token borders.radiusDefault

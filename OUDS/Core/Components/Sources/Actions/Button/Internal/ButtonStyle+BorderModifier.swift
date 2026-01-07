@@ -82,7 +82,7 @@ struct ButtonBorderModifier: ViewModifier {
         }
     }
 
-    private var defaultColor: MultipleColorSemanticTokens {
+    private var defaultColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             useMonochrome ? theme.button.monoColorBorderDefaultEnabled : theme.button.colorBorderDefaultEnabled
@@ -103,7 +103,7 @@ struct ButtonBorderModifier: ViewModifier {
 
     // MARK: Strong appearance
 
-    private var strongColor: MultipleColorSemanticTokens {
+    private var strongColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             theme.button.monoColorBorderDefaultEnabled

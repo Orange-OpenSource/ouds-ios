@@ -17,17 +17,17 @@
 extension ColorModeRawTokens {
 
     /// Related to the light mode color scheme
-    public static let light: ColorRawToken = "light"
+    public static let light: ColorModeRawToken = "light"
 
     /// Related to the dark mdoe color scheme
-    public static let dark: ColorRawToken = "dark"
+    public static let dark: ColorModeRawToken = "dark"
 
     /// Related to a light monochrome mode
-    public static let monochromeLight: ColorRawToken = "monoLight"
+    public static let monochromeLight: ColorModeRawToken = "monoLight"
 
     /// Related to a dark monochrome mode
-    public static let monochromeDark: ColorRawToken = "monoDark"
+    public static let monochromeDark: ColorModeRawToken = "monoDark"
 
     /// The component in use does not have a defined color mode
-    public static let undefined: ColorRawToken = "⛔️"
+    public static let undefined: ColorModeRawToken = "⛔️"
 }

@@ -65,7 +65,7 @@ struct ControlItemIconContainer: View {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.contentDefault
@@ -74,7 +74,7 @@ struct ControlItemIconContainer: View {
         }
     }
 
-    private var errorIconColor: MultipleColorSemanticTokens {
+    private var errorIconColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             theme.colors.actionNegativeEnabled

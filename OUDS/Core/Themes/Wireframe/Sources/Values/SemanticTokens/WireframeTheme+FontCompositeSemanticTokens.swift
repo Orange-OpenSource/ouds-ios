@@ -26,227 +26,227 @@ import OUDSTokensSemantic
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
 extension WireframeThemeFontSemanticTokensProvider: FontCompositeSemanticTokens {
 
-    private typealias MCT /* Multiple Composite Tokens */ = MultipleFontCompositeSemanticTokens
+    private typealias MCT /* Multiple Composite Tokens */ = MultipleFontCompositeSemanticToken
     private typealias CT /* Composite Token */ = FontCompositeSemanticToken
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    @objc public final var displayLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeDisplayLargeMobile,
-                                                                                               lineHeight: lineHeightDisplayLargeMobile,
-                                                                                               weight: weightDisplay,
-                                                                                               letterSpacing: letterSpacingDisplayLargeMobile),
-                                                                                   regular: CT(size: sizeDisplayLargeTablet,
-                                                                                               lineHeight: lineHeightDisplayLargeTablet,
-                                                                                               weight: weightDisplay,
-                                                                                               letterSpacing: letterSpacingDisplayLargeTablet)) }
+    @objc public final var displayLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeDisplayLargeMobile,
+                                                                                              lineHeight: lineHeightDisplayLargeMobile,
+                                                                                              weight: weightDisplay,
+                                                                                              letterSpacing: letterSpacingDisplayLargeMobile),
+                                                                                  regular: CT(size: sizeDisplayLargeTablet,
+                                                                                              lineHeight: lineHeightDisplayLargeTablet,
+                                                                                              weight: weightDisplay,
+                                                                                              letterSpacing: letterSpacingDisplayLargeTablet)) }
 
-    @objc public final var displayMedium: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeDisplayMediumMobile,
-                                                                                                lineHeight: lineHeightDisplayMediumMobile,
-                                                                                                weight: weightDisplay,
-                                                                                                letterSpacing: letterSpacingDisplayMediumMobile),
-                                                                                    regular: CT(size: sizeDisplayMediumTablet,
-                                                                                                lineHeight: lineHeightDisplayMediumTablet,
-                                                                                                weight: weightDisplay,
-                                                                                                letterSpacing: letterSpacingDisplayMediumTablet)) }
+    @objc public final var displayMedium: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeDisplayMediumMobile,
+                                                                                               lineHeight: lineHeightDisplayMediumMobile,
+                                                                                               weight: weightDisplay,
+                                                                                               letterSpacing: letterSpacingDisplayMediumMobile),
+                                                                                   regular: CT(size: sizeDisplayMediumTablet,
+                                                                                               lineHeight: lineHeightDisplayMediumTablet,
+                                                                                               weight: weightDisplay,
+                                                                                               letterSpacing: letterSpacingDisplayMediumTablet)) }
 
-    @objc public final var displaySmall: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeDisplaySmallMobile,
-                                                                                               lineHeight: lineHeightDisplaySmallMobile,
-                                                                                               weight: weightDisplay,
-                                                                                               letterSpacing: letterSpacingDisplaySmallMobile),
-                                                                                   regular: CT(size: sizeDisplaySmallTablet,
-                                                                                               lineHeight: lineHeightDisplaySmallTablet,
-                                                                                               weight: weightDisplay,
-                                                                                               letterSpacing: letterSpacingDisplaySmallTablet)) }
+    @objc public final var displaySmall: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeDisplaySmallMobile,
+                                                                                              lineHeight: lineHeightDisplaySmallMobile,
+                                                                                              weight: weightDisplay,
+                                                                                              letterSpacing: letterSpacingDisplaySmallMobile),
+                                                                                  regular: CT(size: sizeDisplaySmallTablet,
+                                                                                              lineHeight: lineHeightDisplaySmallTablet,
+                                                                                              weight: weightDisplay,
+                                                                                              letterSpacing: letterSpacingDisplaySmallTablet)) }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    @objc public final var headingXLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeHeadingXlargeMobile,
-                                                                                                lineHeight: lineHeightHeadingXlargeMobile,
-                                                                                                weight: weightHeading,
-                                                                                                letterSpacing: letterSpacingHeadingXlargeMobile),
-                                                                                    regular: CT(size: sizeHeadingXlargeTablet,
-                                                                                                lineHeight: lineHeightHeadingXlargeTablet,
-                                                                                                weight: weightHeading,
-                                                                                                letterSpacing: letterSpacingHeadingXlargeTablet)) }
+    @objc public final var headingXLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeHeadingXlargeMobile,
+                                                                                               lineHeight: lineHeightHeadingXlargeMobile,
+                                                                                               weight: weightHeading,
+                                                                                               letterSpacing: letterSpacingHeadingXlargeMobile),
+                                                                                   regular: CT(size: sizeHeadingXlargeTablet,
+                                                                                               lineHeight: lineHeightHeadingXlargeTablet,
+                                                                                               weight: weightHeading,
+                                                                                               letterSpacing: letterSpacingHeadingXlargeTablet)) }
 
-    @objc public final var headingLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeHeadingLargeMobile,
-                                                                                               lineHeight: lineHeightHeadingLargeMobile,
-                                                                                               weight: weightHeading,
-                                                                                               letterSpacing: letterSpacingHeadingLargeMobile),
-                                                                                   regular: CT(size: sizeHeadingLargeTablet,
-                                                                                               lineHeight: lineHeightHeadingLargeTablet,
-                                                                                               weight: weightHeading,
-                                                                                               letterSpacing: letterSpacingHeadingLargeTablet)) }
+    @objc public final var headingLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeHeadingLargeMobile,
+                                                                                              lineHeight: lineHeightHeadingLargeMobile,
+                                                                                              weight: weightHeading,
+                                                                                              letterSpacing: letterSpacingHeadingLargeMobile),
+                                                                                  regular: CT(size: sizeHeadingLargeTablet,
+                                                                                              lineHeight: lineHeightHeadingLargeTablet,
+                                                                                              weight: weightHeading,
+                                                                                              letterSpacing: letterSpacingHeadingLargeTablet)) }
 
-    @objc public final var headingMedium: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeHeadingMediumMobile,
-                                                                                                lineHeight: lineHeightHeadingMediumMobile,
-                                                                                                weight: weightHeading,
-                                                                                                letterSpacing: letterSpacingHeadingMediumMobile),
-                                                                                    regular: CT(size: sizeHeadingMediumTablet,
-                                                                                                lineHeight: lineHeightHeadingMediumTablet,
-                                                                                                weight: weightHeading,
-                                                                                                letterSpacing: letterSpacingHeadingMediumTablet)) }
+    @objc public final var headingMedium: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeHeadingMediumMobile,
+                                                                                               lineHeight: lineHeightHeadingMediumMobile,
+                                                                                               weight: weightHeading,
+                                                                                               letterSpacing: letterSpacingHeadingMediumMobile),
+                                                                                   regular: CT(size: sizeHeadingMediumTablet,
+                                                                                               lineHeight: lineHeightHeadingMediumTablet,
+                                                                                               weight: weightHeading,
+                                                                                               letterSpacing: letterSpacingHeadingMediumTablet)) }
 
-    @objc public final var headingSmall: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeHeadingSmallMobile,
-                                                                                               lineHeight: lineHeightHeadingSmallMobile,
-                                                                                               weight: weightHeading,
-                                                                                               letterSpacing: letterSpacingHeadingSmallMobile),
-                                                                                   regular: CT(size: sizeHeadingSmallTablet,
-                                                                                               lineHeight: lineHeightHeadingSmallTablet,
-                                                                                               weight: weightHeading,
-                                                                                               letterSpacing: letterSpacingHeadingSmallTablet)) }
+    @objc public final var headingSmall: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeHeadingSmallMobile,
+                                                                                              lineHeight: lineHeightHeadingSmallMobile,
+                                                                                              weight: weightHeading,
+                                                                                              letterSpacing: letterSpacingHeadingSmallMobile),
+                                                                                  regular: CT(size: sizeHeadingSmallTablet,
+                                                                                              lineHeight: lineHeightHeadingSmallTablet,
+                                                                                              weight: weightHeading,
+                                                                                              letterSpacing: letterSpacingHeadingSmallTablet)) }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    @objc public final var bodyDefaultLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyLargeMobile,
-                                                                                                   lineHeight: lineHeightBodyLargeMobile,
-                                                                                                   weight: weightBodyDefault,
-                                                                                                   letterSpacing: letterSpacingBodyLargeMobile),
-                                                                                       regular: CT(size: sizeBodyLargeTablet,
-                                                                                                   lineHeight: lineHeightBodyLargeTablet,
-                                                                                                   weight: weightBodyDefault,
-                                                                                                   letterSpacing: letterSpacingBodyLargeTablet)) }
-
-    @objc public final var bodyDefaultMedium: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyMediumMobile,
-                                                                                                    lineHeight: lineHeightBodyMediumMobile,
-                                                                                                    weight: weightBodyDefault,
-                                                                                                    letterSpacing: letterSpacingBodyMediumMobile),
-                                                                                        regular: CT(size: sizeBodyMediumTablet,
-                                                                                                    lineHeight: lineHeightBodyMediumTablet,
-                                                                                                    weight: weightBodyDefault,
-                                                                                                    letterSpacing: letterSpacingBodyMediumTablet)) }
-
-    @objc public final var bodyDefaultSmall: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodySmallMobile,
-                                                                                                   lineHeight: lineHeightBodySmallMobile,
-                                                                                                   weight: weightBodyDefault,
-                                                                                                   letterSpacing: letterSpacingBodySmallMobile),
-                                                                                       regular: CT(size: sizeBodySmallTablet,
-                                                                                                   lineHeight: lineHeightBodySmallTablet,
-                                                                                                   weight: weightBodyDefault,
-                                                                                                   letterSpacing: letterSpacingBodySmallTablet)) }
-
-    @objc public final var bodyModerateLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyLargeMobile,
-                                                                                                    lineHeight: lineHeightBodyLargeMobile,
-                                                                                                    weight: weightBodyModerate,
-                                                                                                    letterSpacing: letterSpacingBodyLargeMobile),
-                                                                                        regular: CT(size: sizeBodyLargeTablet,
-                                                                                                    lineHeight: lineHeightBodyLargeTablet,
-                                                                                                    weight: weightBodyModerate,
-                                                                                                    letterSpacing: letterSpacingBodyLargeTablet)) }
-
-    @objc public final var bodyModerateMedium: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyMediumMobile,
-                                                                                                     lineHeight: lineHeightBodyMediumMobile,
-                                                                                                     weight: weightBodyModerate,
-                                                                                                     letterSpacing: letterSpacingBodyMediumMobile),
-                                                                                         regular: CT(size: sizeBodyMediumTablet,
-                                                                                                     lineHeight: lineHeightBodyMediumTablet,
-                                                                                                     weight: weightBodyModerate,
-                                                                                                     letterSpacing: letterSpacingBodyMediumTablet)) }
-
-    @objc public final var bodyModerateSmall: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodySmallMobile,
-                                                                                                    lineHeight: lineHeightBodySmallMobile,
-                                                                                                    weight: weightBodyModerate,
-                                                                                                    letterSpacing: letterSpacingBodySmallMobile),
-                                                                                        regular: CT(size: sizeBodySmallTablet,
-                                                                                                    lineHeight: lineHeightBodySmallTablet,
-                                                                                                    weight: weightBodyModerate,
-                                                                                                    letterSpacing: letterSpacingBodySmallTablet)) }
-
-    @objc public final var bodyStrongLarge: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyLargeMobile,
+    @objc public final var bodyDefaultLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyLargeMobile,
                                                                                                   lineHeight: lineHeightBodyLargeMobile,
-                                                                                                  weight: weightBodyStrong,
+                                                                                                  weight: weightBodyDefault,
                                                                                                   letterSpacing: letterSpacingBodyLargeMobile),
                                                                                       regular: CT(size: sizeBodyLargeTablet,
                                                                                                   lineHeight: lineHeightBodyLargeTablet,
-                                                                                                  weight: weightBodyStrong,
+                                                                                                  weight: weightBodyDefault,
                                                                                                   letterSpacing: letterSpacingBodyLargeTablet)) }
 
-    @objc public final var bodyStrongMedium: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodyMediumMobile,
+    @objc public final var bodyDefaultMedium: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyMediumMobile,
                                                                                                    lineHeight: lineHeightBodyMediumMobile,
-                                                                                                   weight: weightBodyStrong,
+                                                                                                   weight: weightBodyDefault,
                                                                                                    letterSpacing: letterSpacingBodyMediumMobile),
                                                                                        regular: CT(size: sizeBodyMediumTablet,
                                                                                                    lineHeight: lineHeightBodyMediumTablet,
-                                                                                                   weight: weightBodyStrong,
+                                                                                                   weight: weightBodyDefault,
                                                                                                    letterSpacing: letterSpacingBodyMediumTablet)) }
 
-    @objc public final var bodyStrongSmall: MultipleFontCompositeSemanticTokens { MCT(compact: CT(size: sizeBodySmallMobile,
+    @objc public final var bodyDefaultSmall: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodySmallMobile,
                                                                                                   lineHeight: lineHeightBodySmallMobile,
-                                                                                                  weight: weightBodyStrong,
+                                                                                                  weight: weightBodyDefault,
                                                                                                   letterSpacing: letterSpacingBodySmallMobile),
                                                                                       regular: CT(size: sizeBodySmallTablet,
                                                                                                   lineHeight: lineHeightBodySmallTablet,
-                                                                                                  weight: weightBodyStrong,
+                                                                                                  weight: weightBodyDefault,
                                                                                                   letterSpacing: letterSpacingBodySmallTablet)) }
+
+    @objc public final var bodyModerateLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyLargeMobile,
+                                                                                                   lineHeight: lineHeightBodyLargeMobile,
+                                                                                                   weight: weightBodyModerate,
+                                                                                                   letterSpacing: letterSpacingBodyLargeMobile),
+                                                                                       regular: CT(size: sizeBodyLargeTablet,
+                                                                                                   lineHeight: lineHeightBodyLargeTablet,
+                                                                                                   weight: weightBodyModerate,
+                                                                                                   letterSpacing: letterSpacingBodyLargeTablet)) }
+
+    @objc public final var bodyModerateMedium: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyMediumMobile,
+                                                                                                    lineHeight: lineHeightBodyMediumMobile,
+                                                                                                    weight: weightBodyModerate,
+                                                                                                    letterSpacing: letterSpacingBodyMediumMobile),
+                                                                                        regular: CT(size: sizeBodyMediumTablet,
+                                                                                                    lineHeight: lineHeightBodyMediumTablet,
+                                                                                                    weight: weightBodyModerate,
+                                                                                                    letterSpacing: letterSpacingBodyMediumTablet)) }
+
+    @objc public final var bodyModerateSmall: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodySmallMobile,
+                                                                                                   lineHeight: lineHeightBodySmallMobile,
+                                                                                                   weight: weightBodyModerate,
+                                                                                                   letterSpacing: letterSpacingBodySmallMobile),
+                                                                                       regular: CT(size: sizeBodySmallTablet,
+                                                                                                   lineHeight: lineHeightBodySmallTablet,
+                                                                                                   weight: weightBodyModerate,
+                                                                                                   letterSpacing: letterSpacingBodySmallTablet)) }
+
+    @objc public final var bodyStrongLarge: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyLargeMobile,
+                                                                                                 lineHeight: lineHeightBodyLargeMobile,
+                                                                                                 weight: weightBodyStrong,
+                                                                                                 letterSpacing: letterSpacingBodyLargeMobile),
+                                                                                     regular: CT(size: sizeBodyLargeTablet,
+                                                                                                 lineHeight: lineHeightBodyLargeTablet,
+                                                                                                 weight: weightBodyStrong,
+                                                                                                 letterSpacing: letterSpacingBodyLargeTablet)) }
+
+    @objc public final var bodyStrongMedium: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodyMediumMobile,
+                                                                                                  lineHeight: lineHeightBodyMediumMobile,
+                                                                                                  weight: weightBodyStrong,
+                                                                                                  letterSpacing: letterSpacingBodyMediumMobile),
+                                                                                      regular: CT(size: sizeBodyMediumTablet,
+                                                                                                  lineHeight: lineHeightBodyMediumTablet,
+                                                                                                  weight: weightBodyStrong,
+                                                                                                  letterSpacing: letterSpacingBodyMediumTablet)) }
+
+    @objc public final var bodyStrongSmall: MultipleFontCompositeSemanticToken { MCT(compact: CT(size: sizeBodySmallMobile,
+                                                                                                 lineHeight: lineHeightBodySmallMobile,
+                                                                                                 weight: weightBodyStrong,
+                                                                                                 letterSpacing: letterSpacingBodySmallMobile),
+                                                                                     regular: CT(size: sizeBodySmallTablet,
+                                                                                                 lineHeight: lineHeightBodySmallTablet,
+                                                                                                 weight: weightBodyStrong,
+                                                                                                 letterSpacing: letterSpacingBodySmallTablet)) }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    @objc public final var labelDefaultXLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelXlarge,
-                                                                                            lineHeight: lineHeightLabelXlarge,
-                                                                                            weight: weightLabelDefault,
-                                                                                            letterSpacing: letterSpacingLabelXlarge)) }
-
-    @objc public final var labelDefaultLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelLarge,
-                                                                                           lineHeight: lineHeightLabelLarge,
-                                                                                           weight: weightLabelDefault,
-                                                                                           letterSpacing: letterSpacingLabelLarge)) }
-
-    @objc public final var labelDefaultMedium: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelMedium,
-                                                                                            lineHeight: lineHeightLabelMedium,
-                                                                                            weight: weightLabelDefault,
-                                                                                            letterSpacing: letterSpacingLabelMedium)) }
-
-    @objc public final var labelDefaultSmall: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelSmall,
-                                                                                           lineHeight: lineHeightLabelSmall,
-                                                                                           weight: weightLabelDefault,
-                                                                                           letterSpacing: letterSpacingLabelSmall)) }
-
-    @objc public final var labelModerateXLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelXlarge,
-                                                                                             lineHeight: lineHeightLabelXlarge,
-                                                                                             weight: weightLabelModerate,
-                                                                                             letterSpacing: letterSpacingLabelXlarge)) }
-
-    @objc public final var labelModerateLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelLarge,
-                                                                                            lineHeight: lineHeightLabelLarge,
-                                                                                            weight: weightLabelModerate,
-                                                                                            letterSpacing: letterSpacingLabelLarge)) }
-
-    @objc public final var labelModerateMedium: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelMedium,
-                                                                                             lineHeight: lineHeightLabelMedium,
-                                                                                             weight: weightLabelModerate,
-                                                                                             letterSpacing: letterSpacingLabelMedium)) }
-
-    @objc public final var labelModerateSmall: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelSmall,
-                                                                                            lineHeight: lineHeightLabelSmall,
-                                                                                            weight: weightLabelModerate,
-                                                                                            letterSpacing: letterSpacingLabelSmall)) }
-
-    @objc public final var labelStrongXLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelXlarge,
+    @objc public final var labelDefaultXLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelXlarge,
                                                                                            lineHeight: lineHeightLabelXlarge,
-                                                                                           weight: weightLabelStrong,
+                                                                                           weight: weightLabelDefault,
                                                                                            letterSpacing: letterSpacingLabelXlarge)) }
 
-    @objc public final var labelStrongLarge: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelLarge,
+    @objc public final var labelDefaultLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelLarge,
                                                                                           lineHeight: lineHeightLabelLarge,
-                                                                                          weight: weightLabelStrong,
+                                                                                          weight: weightLabelDefault,
                                                                                           letterSpacing: letterSpacingLabelLarge)) }
 
-    @objc public final var labelStrongMedium: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelMedium,
+    @objc public final var labelDefaultMedium: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelMedium,
                                                                                            lineHeight: lineHeightLabelMedium,
-                                                                                           weight: weightLabelStrong,
+                                                                                           weight: weightLabelDefault,
                                                                                            letterSpacing: letterSpacingLabelMedium)) }
 
-    @objc public final var labelStrongSmall: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeLabelSmall,
+    @objc public final var labelDefaultSmall: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelSmall,
                                                                                           lineHeight: lineHeightLabelSmall,
-                                                                                          weight: weightLabelStrong,
+                                                                                          weight: weightLabelDefault,
                                                                                           letterSpacing: letterSpacingLabelSmall)) }
+
+    @objc public final var labelModerateXLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelXlarge,
+                                                                                            lineHeight: lineHeightLabelXlarge,
+                                                                                            weight: weightLabelModerate,
+                                                                                            letterSpacing: letterSpacingLabelXlarge)) }
+
+    @objc public final var labelModerateLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelLarge,
+                                                                                           lineHeight: lineHeightLabelLarge,
+                                                                                           weight: weightLabelModerate,
+                                                                                           letterSpacing: letterSpacingLabelLarge)) }
+
+    @objc public final var labelModerateMedium: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelMedium,
+                                                                                            lineHeight: lineHeightLabelMedium,
+                                                                                            weight: weightLabelModerate,
+                                                                                            letterSpacing: letterSpacingLabelMedium)) }
+
+    @objc public final var labelModerateSmall: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelSmall,
+                                                                                           lineHeight: lineHeightLabelSmall,
+                                                                                           weight: weightLabelModerate,
+                                                                                           letterSpacing: letterSpacingLabelSmall)) }
+
+    @objc public final var labelStrongXLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelXlarge,
+                                                                                          lineHeight: lineHeightLabelXlarge,
+                                                                                          weight: weightLabelStrong,
+                                                                                          letterSpacing: letterSpacingLabelXlarge)) }
+
+    @objc public final var labelStrongLarge: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelLarge,
+                                                                                         lineHeight: lineHeightLabelLarge,
+                                                                                         weight: weightLabelStrong,
+                                                                                         letterSpacing: letterSpacingLabelLarge)) }
+
+    @objc public final var labelStrongMedium: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelMedium,
+                                                                                          lineHeight: lineHeightLabelMedium,
+                                                                                          weight: weightLabelStrong,
+                                                                                          letterSpacing: letterSpacingLabelMedium)) }
+
+    @objc public final var labelStrongSmall: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeLabelSmall,
+                                                                                         lineHeight: lineHeightLabelSmall,
+                                                                                         weight: weightLabelStrong,
+                                                                                         letterSpacing: letterSpacingLabelSmall)) }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    @objc public final var codeMedium: MultipleFontCompositeSemanticTokens { MCT(CT(size: sizeCodeMedium,
-                                                                                    lineHeight: lineHeightCodeMedium,
-                                                                                    weight: weightCode,
-                                                                                    letterSpacing: letterSpacingCodeMedium)) }
+    @objc public final var codeMedium: MultipleFontCompositeSemanticToken { MCT(CT(size: sizeCodeMedium,
+                                                                                   lineHeight: lineHeightCodeMedium,
+                                                                                   weight: weightCode,
+                                                                                   letterSpacing: letterSpacingCodeMedium)) }
 }
 
 // swiftlint:enable line_length

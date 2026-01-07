@@ -15,15 +15,13 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import Testing
 
-// swiftlint:disable type_name
-
-/// To ensure the `MultipleFontLineHeightSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-struct MultipleFontLineHeightSemanticTokensTests {
+/// To ensure the `MultipleFontLineHeightSemanticToken` is tested as a provider of semantic tokens for compact and regular size classes.
+struct MultipleFontLineHeightSemanticTokenTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
         let unique: FontLineHeightSemanticToken = FontRawTokens.lineHeight250
-        let token = MultipleFontLineHeightSemanticTokens(unique)
+        let token = MultipleFontLineHeightSemanticToken(unique)
 
         #expect(token.compact == unique)
         #expect(token.regular == unique)
@@ -33,21 +31,21 @@ struct MultipleFontLineHeightSemanticTokensTests {
     @Test func initWithTwoValues() {
         let compact: FontLineHeightSemanticToken = FontRawTokens.lineHeight450
         let regular: FontLineHeightSemanticToken = FontRawTokens.lineHeight550
-        let token = MultipleFontLineHeightSemanticTokens(compact: compact, regular: regular)
+        let token = MultipleFontLineHeightSemanticToken(compact: compact, regular: regular)
 
         #expect(token.compact == compact)
         #expect(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleFontLineHeightSemanticTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleFontLineHeightSemanticToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     @Test func isEqual() {
-        let first = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight450)
-        let second = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.lineHeight650, regular: FontRawTokens.lineHeight550)
-        let third = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight550)
-        let fourth = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.lineHeight650, regular: FontRawTokens.lineHeight750)
-        let fifth = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight450)
-        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
+        let first = MultipleFontLineHeightSemanticToken(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight450)
+        let second = MultipleFontLineHeightSemanticToken(compact: FontRawTokens.lineHeight650, regular: FontRawTokens.lineHeight550)
+        let third = MultipleFontLineHeightSemanticToken(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight550)
+        let fourth = MultipleFontLineHeightSemanticToken(compact: FontRawTokens.lineHeight650, regular: FontRawTokens.lineHeight750)
+        let fifth = MultipleFontLineHeightSemanticToken(compact: FontRawTokens.lineHeight450, regular: FontRawTokens.lineHeight450)
+        let sixth = MultipleSizeSemanticToken(compact: 12, regular: 12)
 
         #expect(first.isEqual(first))
         #expect(!first.isEqual(second))
@@ -57,5 +55,3 @@ struct MultipleFontLineHeightSemanticTokensTests {
         #expect(!first.isEqual(sixth))
     }
 }
-
-// swiftlint:enable type_name

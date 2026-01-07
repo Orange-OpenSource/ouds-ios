@@ -31,7 +31,7 @@ import OUDSThemesContract
 ///
 ///         // Then override the bar component tokens you want.
 ///
-///         override var colorBgOpaque: MultipleColorSemanticTokens { colors.bgTertiary }
+///         override var colorBgOpaque: MultipleColorSemanticToken { colors.bgTertiary }
 ///
 ///         override var effectBgBlur: EffectSemanticToken { EffectRawTokens.blur320 }
 ///

@@ -43,7 +43,7 @@ struct TagLabel: View {
 
     // MARK: Helpers
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch type {
         case let .status(_, status):
             if isEnabled {
@@ -61,7 +61,7 @@ struct TagLabel: View {
         }
     }
 
-    private func emphasizedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+    private func emphasizedColor(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.contentInverse
@@ -78,7 +78,7 @@ struct TagLabel: View {
         }
     }
 
-    private func mutedColor(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+    private func mutedColor(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.contentDefault

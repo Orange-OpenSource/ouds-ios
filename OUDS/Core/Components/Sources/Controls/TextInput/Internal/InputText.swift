@@ -43,7 +43,7 @@ struct InputText: View {
 
     // MARK: - Helper
 
-    private var cursorColor: MultipleColorSemanticTokens {
+    private var cursorColor: MultipleColorSemanticToken {
         switch status {
         case .error:
             theme.colors.actionNegativePressed
@@ -52,7 +52,7 @@ struct InputText: View {
         }
     }
 
-    private var inputTextColor: MultipleColorSemanticTokens {
+    private var inputTextColor: MultipleColorSemanticToken {
         status == .disabled ? theme.colors.actionDisabled : theme.colors.contentDefault
     }
 }

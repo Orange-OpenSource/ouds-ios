@@ -24,37 +24,37 @@ import OUDSTokensSemantic
 
 extension OrangeThemeBarComponentTokensProvider: BarComponentTokens {
     /// Has for value token colors.bgSecondary
-    @objc open var colorBgOpaque: MultipleColorSemanticTokens { colors.bgSecondary }
-    /// Has for value token MultipleColorSemanticTokens(light: ColorRawTokens.opacityGrayLight80800, dark: ColorRawTokens.opacityGrayDark800800)
-    @objc open var colorBgTranslucent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: ColorRawTokens.opacityGrayLight80800, dark: ColorRawTokens.opacityGrayDark800800) }
+    @objc open var colorBgOpaque: MultipleColorSemanticToken { colors.bgSecondary }
+    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.opacityGrayLight80800, dark: ColorRawTokens.opacityGrayDark800800)
+    @objc open var colorBgTranslucent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: ColorRawTokens.opacityGrayLight80800, dark: ColorRawTokens.opacityGrayDark800800) }
     /// Has for value token colors.contentDefault
-    @objc open var colorContentSelectedEnabled: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc open var colorContentSelectedEnabled: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.actionHover
-    @objc open var colorContentSelectedHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc open var colorContentSelectedHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc open var colorContentSelectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc open var colorContentSelectedPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc open var colorContentSelectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
-    /// Has for value token MultipleColorSemanticTokens(light: ColorRawTokens.opacityBlack600, dark: ColorRawTokens.white600)
-    @objc open var colorContentUnselectedEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: ColorRawTokens.opacityBlack600, dark: ColorRawTokens.white600) }
+    @objc open var colorContentSelectedFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.opacityBlack600, dark: ColorRawTokens.white600)
+    @objc open var colorContentUnselectedEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: ColorRawTokens.opacityBlack600, dark: ColorRawTokens.white600) }
     /// Has for value token colors.contentDefault
-    @objc open var colorContentUnselectedHover: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc open var colorContentUnselectedHover: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.actionPressed
-    @objc open var colorContentUnselectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc open var colorContentUnselectedPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.contentDefault
-    @objc open var colorContentUnselectedFocus: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc open var colorContentUnselectedFocus: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.contentOnActionSelected
-    @objc open var colorContentOnAccent: MultipleColorSemanticTokens { colors.contentOnActionSelected }
+    @objc open var colorContentOnAccent: MultipleColorSemanticToken { colors.contentOnActionSelected }
     /// Has for value token colors.bgSecondary
-    @objc open var colorBorderBadge: MultipleColorSemanticTokens { colors.bgSecondary }
+    @objc open var colorBorderBadge: MultipleColorSemanticToken { colors.bgSecondary }
     /// Has for value token colors.actionSelected
-    @objc open var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticTokens { colors.actionSelected }
+    @objc open var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { colors.actionSelected }
     /// Has for value token colors.actionHover
-    @objc open var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc open var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc open var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc open var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc open var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc open var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token opacities.opaque
     @objc open var opacityActiveIndicatorCustom: OpacitySemanticToken { opacities.opaque }
     /// Has for value token EffectRawTokens.blur160

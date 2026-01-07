@@ -37,11 +37,11 @@ public protocol ControlItemComponentTokens {
 
     // MARK: - Colors
 
-    var colorBgHover: MultipleColorSemanticTokens { get }
-    var colorBgPressed: MultipleColorSemanticTokens { get }
-    var colorBgLoading: MultipleColorSemanticTokens { get }
-    var colorBgFocus: MultipleColorSemanticTokens { get }
-    var colorContentLoader: MultipleColorSemanticTokens { get }
+    var colorBgHover: MultipleColorSemanticToken { get }
+    var colorBgPressed: MultipleColorSemanticToken { get }
+    var colorBgLoading: MultipleColorSemanticToken { get }
+    var colorBgFocus: MultipleColorSemanticToken { get }
+    var colorContentLoader: MultipleColorSemanticToken { get }
 
     // MARK: - Spaces
 

@@ -34,7 +34,7 @@ public enum OUDSDividerColor {
     /// Provides the color sementic token in theme associated to the divider color
     ///
     /// - Parameter theme: The theme that defines the token color
-    public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticTokens {
+    public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticToken {
         switch self {
         case .default:
             theme.colors.borderDefault
@@ -47,13 +47,13 @@ public enum OUDSDividerColor {
         case .onBrandPrimary:
             theme.colors.borderOnBrandPrimary
         case .alwaysBlack:
-            MultipleColorSemanticTokens(theme.colors.alwaysBlack)
+            MultipleColorSemanticToken(theme.colors.alwaysBlack)
         case .alwaysWhite:
-            MultipleColorSemanticTokens(theme.colors.alwaysWhite)
+            MultipleColorSemanticToken(theme.colors.alwaysWhite)
         case .alwaysOnBlack:
-            MultipleColorSemanticTokens(theme.colors.alwaysOnBlack)
+            MultipleColorSemanticToken(theme.colors.alwaysOnBlack)
         case .alwaysOnWhite:
-            MultipleColorSemanticTokens(theme.colors.alwaysOnWhite)
+            MultipleColorSemanticToken(theme.colors.alwaysOnWhite)
         }
     }
 }

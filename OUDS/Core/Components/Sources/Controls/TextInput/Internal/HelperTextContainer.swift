@@ -38,7 +38,7 @@ struct HelperErrorTextContainer: View {
 
     // MARK: - Helper
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch status {
         case .enabled:
             theme.colors.contentMuted

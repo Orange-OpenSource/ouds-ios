@@ -76,7 +76,7 @@ struct BadgeModifier: ViewModifier {
         }
     }
 
-    private var foregroundColor: MultipleColorSemanticTokens {
+    private var foregroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
         case .neutral:
             theme.colors.contentInverse
@@ -95,7 +95,7 @@ struct BadgeModifier: ViewModifier {
         return isEnabled ? enabbledColor : theme.colors.contentOnActionDisabled
     }
 
-    private var backgroundColor: MultipleColorSemanticTokens {
+    private var backgroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
         case .neutral:
             theme.colors.surfaceInverseHigh

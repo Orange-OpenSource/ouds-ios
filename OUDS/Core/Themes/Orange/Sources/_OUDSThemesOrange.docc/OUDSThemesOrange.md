@@ -224,8 +224,8 @@ class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
     override var fixedMedium: SpaceSemanticToken {
         DimensionRawTokens._400
     }
-    override var scaledSmall: MultipleSpaceSemanticTokens {
-        MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
+    override var scaledSmall: MultipleSpaceSemanticToken {
+        MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
     }
 }
 
@@ -243,11 +243,11 @@ class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 // Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
-    override var bgSecondary: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+    override var bgSecondary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
-    override var actionEnabled: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
+    override var actionEnabled: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
     }
 }
 
@@ -299,12 +299,12 @@ class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 
 class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
    
-    override var displayLarge: MultipleFontCompositeSemanticTokens { 
-        MultipleFontCompositeSemanticTokens(FontCompositeSemanticToken(
-        size: sizeDisplayLargeMobile,
-        lineHeight: lineHeightDisplayLargeMobile,
-        weight: weightDisplay,
-        letterSpacing: letterSpacingDisplayLargeMobile))) 
+    override var displayLarge: MultipleFontCompositeSemanticToken { 
+        MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
+            size: sizeDisplayLargeMobile,
+            lineHeight: lineHeightDisplayLargeMobile,
+            weight: weightDisplay,
+            letterSpacing: letterSpacingDisplayLargeMobile))) 
     }
 }
 
@@ -314,7 +314,7 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
     override public var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
-    override public var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    override public var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
     override public var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 

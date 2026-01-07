@@ -25,7 +25,7 @@ public protocol ButtonComponentTokens {
     var sizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
-    var colorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
+    var colorBgDefaultPressedMono: MultipleColorSemanticToken { get }
     var spacePaddingBlock: SpaceSemanticToken { get }
 }
 
@@ -43,7 +43,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
-    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
     @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
 
