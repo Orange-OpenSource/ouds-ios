@@ -108,6 +108,8 @@ let package = Package(
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
         // Formatter for Swift code
         .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.7"),
+        // Figma code connect
+        .package(url: "https://github.com/figma/code-connect", from: "1.0.0"),
     ],
 
     // MARK: - Targets
@@ -283,6 +285,13 @@ let package = Package(
             name: "TestsUtils",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/TestsUtils"),
+
+        .target(name: "FigmaCodeConnect",
+                dependencies: [
+                    "OUDSComponents",
+                    .product(name: "Figma", package: "code-connect"),
+                ],
+                path: "OUDS/Core/Components/Figma"),
     ],
 
     // MARK: - Swift language modes

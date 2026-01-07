@@ -1,0 +1,19 @@
+{
+  "codeConnect": {
+    "parser": "swift",
+    "include": [
+        "OUDS/Core/Components/Figma/**"
+    ],
+    "exclude": [],
+    "swiftPackagePath": "./Package.swift",
+    "documentUrlSubstitutions": {
+        "<FIGMA_COMPONENTS_BUTTON>":
+        "https://www.figma.com/design/QtOWrH1m3RHOAkfyy0XFil/-OUDS-Lib--Components-library?node-id=65123-34697",
+      "<FIGMA_COMPONENTS_DIVIDER>": "https://www.figma.com/design/QtOWrH1m3RHOAkfyy0XFil/-OUDS-Lib--Components-library?node-id=954-51563",
+        "<FIGMA_COMPONENTS_SWITCH>": "https://www.figma.com/design/QtOWrH1m3RHOAkfyy0XFil/-OUDS-Lib--Components-library?node-id=57320-50574",
+        "<FIGMA_COMPONENTS_RADIO_BUTTON_ITEM>": "https://www.figma.com/design/QtOWrH1m3RHOAkfyy0XFil/-OUDS-Lib--Components-library?node-id=76315-6190"
+    },
+    "mode": "default",
+    "paths": "OUDS/Core/Components/Figma/*.swift"
+  }
+}
