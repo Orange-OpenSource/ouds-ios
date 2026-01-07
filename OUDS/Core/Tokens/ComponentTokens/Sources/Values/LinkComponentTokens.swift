@@ -36,14 +36,14 @@ public protocol LinkComponentTokens {
 
     // MARK: - Colors
 
-    var colorContentEnabled: MultipleColorSemanticTokens { get }
-    var colorContentHover: MultipleColorSemanticTokens { get }
-    var colorContentPressed: MultipleColorSemanticTokens { get }
-    var colorContentFocus: MultipleColorSemanticTokens { get }
-    var colorChevronEnabled: MultipleColorSemanticTokens { get }
-    var colorChevronHover: MultipleColorSemanticTokens { get }
-    var colorChevronPressed: MultipleColorSemanticTokens { get }
-    var colorChevronFocus: MultipleColorSemanticTokens { get }
+    var colorContentEnabled: MultipleColorSemanticToken { get }
+    var colorContentHover: MultipleColorSemanticToken { get }
+    var colorContentPressed: MultipleColorSemanticToken { get }
+    var colorContentFocus: MultipleColorSemanticToken { get }
+    var colorChevronEnabled: MultipleColorSemanticToken { get }
+    var colorChevronHover: MultipleColorSemanticToken { get }
+    var colorChevronPressed: MultipleColorSemanticToken { get }
+    var colorChevronFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Spaces
 

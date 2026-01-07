@@ -16,7 +16,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of `FontCompositeSemanticToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeSemanticTokens``.
+/// If a font token exists with its value depending to the size class, it must be packed in such ``MultipleFontCompositeSemanticToken``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font semantic token displayLarge,
@@ -27,18 +27,18 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level font semantic token
 ///         // inside FontCompositeSemanticTokens protocol,
 ///         // and defined inside OrangeTheme+FontCompositeSemanticTokens extension
-///         var displayLarge: MultipleFontCompositeSemanticTokens {
-///             MultipleFontCompositeSemanticTokens(compact: bold850, regular: bold1450)
+///         var displayLarge: MultipleFontCompositeSemanticToken {
+///             MultipleFontCompositeSemanticToken(compact: bold850, regular: bold1450)
 ///         }
 ///
 ///         // If the same font is used whatever the size class is
-///         var displayLarge: MultipleFontCompositeSemanticTokens { MultipleFontCompositeSemanticTokens(bold650) }
+///         var displayLarge: MultipleFontCompositeSemanticToken { MultipleFontCompositeSemanticToken(bold650) }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-/// The case of this ``MultipleFontCompositeSemanticTokens`` is quite particular because in fact it contains `FontCompositeSemanticToken`
+/// The case of this ``MultipleFontCompositeSemanticToken`` is quite particular because in fact it contains `FontCompositeSemanticToken`
 /// (i.e. raw tokens) instead of semantic tokens.
 /// In fact there is not "font composite semantic tokens" defined in the *Figma* kit.
 ///
@@ -72,7 +72,7 @@ public final class MultipleFontCompositeSemanticToken: NSObject, Sendable, Compa
     deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleFontCompositeSemanticTokens`. Otherwise returns `false`.
+    /// as a `MultipleFontCompositeSemanticToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleFontCompositeSemanticToken else { return false }

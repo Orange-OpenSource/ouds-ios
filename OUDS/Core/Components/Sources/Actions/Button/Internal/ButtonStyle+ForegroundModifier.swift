@@ -39,7 +39,7 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Private helpers
 
     private func appliedColor() -> Color {
-        let colorToApply: MultipleColorSemanticTokens
+        let colorToApply: MultipleColorSemanticToken
         switch state {
         case .enabled:
             colorToApply = enabledColor
@@ -58,7 +58,7 @@ struct ButtonForegroundModifier: ViewModifier {
         return colorToApply.color(for: colorScheme)
     }
 
-    private var enabledColor: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultEnabled : theme.button.colorContentDefaultEnabled
@@ -73,7 +73,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var hoverColor: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultHover : theme.button.colorContentDefaultHover
@@ -88,7 +88,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var pressedColor: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultPressed : theme.button.colorContentDefaultPressed
@@ -103,7 +103,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var disabledColor: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorContentDefaultDisabled : theme.button.colorContentDefaultDisabled

@@ -16,7 +16,7 @@ import OUDSFoundations
 
 /// Kind of semantic tokens which will wrap a combination of ``FontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeSemanticTokens``.
+/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeSemanticToken``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font size semantic token sizeBodySmall,
@@ -30,10 +30,10 @@ import OUDSFoundations
 ///         // Then the develoment team declares an "higher" level font size semantic token for sizeBodySmall
 ///         // inside FontMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+FontMultipleSemanticTokens extension
-///         var sizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: sizeBodySmallMobile, regular: sizeBodySmallTablet) }
+///         var sizeBodySmall: MultipleFontSizeSemanticToken { MultipleFontSizeSemanticToken(compact: sizeBodySmallMobile, regular: sizeBodySmallTablet) }
 ///
 ///         // If the same value is used whatever the size class is
-///         var sizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(sizeBodySmallMobile) }
+///         var sizeBodySmall: MultipleFontSizeSemanticToken { MultipleFontSizeSemanticToken(sizeBodySmallMobile) }
 ///
 ///         // The theme exposes both generated font size semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.

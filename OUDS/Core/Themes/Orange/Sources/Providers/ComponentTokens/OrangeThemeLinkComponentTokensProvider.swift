@@ -32,7 +32,7 @@ import OUDSThemesContract
 ///
 ///         override var sizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var colorChevronHover: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+///         override var colorChevronHover: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
 ///
 ///         override var spaceColumnGapIconSmall: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///

@@ -26,7 +26,7 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
 
     static let mockThemeLinkSize: DimensionRawToken = 118
     static let mockThemeLinkSpace: DimensionRawToken = 218
-    static let mockThemeLinkColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeLinkColor = MultipleColorSemanticToken("#00FF00")
     static let mockThemeExpandLinkIconStart = true // false in Orange Theme
     static let mockThemeExpandLinkIconEnd = false // true in Orange Theme
 
@@ -43,11 +43,11 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override var sizeMinWidthDefault: SizeSemanticToken { Self.mockThemeLinkSize }
     override var sizeMinHeightSmall: SizeSemanticToken { Self.mockThemeLinkSize }
     override var sizeMinWidthSmall: SizeSemanticToken { Self.mockThemeLinkSize }
-    override var monoColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var monoColorContentHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var monoColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var monoColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var monoColorContentDisabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override var monoColorContentEnabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var monoColorContentHover: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var monoColorContentPressed: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var monoColorContentFocus: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var monoColorContentDisabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
     override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spaceColumnGapIconDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }
@@ -56,14 +56,14 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override var spaceColumnGapChevronSmall: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var sizeIconDefault: SizeSemanticToken { Self.mockThemeLinkSize }
     override var sizeIconSmall: SizeSemanticToken { Self.mockThemeLinkSize }
-    override var colorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorContentHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorContentPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorContentFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorChevronEnabled: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorChevronHover: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorChevronPressed: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
-    override var colorChevronFocus: MultipleColorSemanticTokens { Self.mockThemeLinkColor }
+    override var colorContentEnabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorContentHover: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorContentPressed: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorContentFocus: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorChevronEnabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorChevronHover: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorChevronPressed: MultipleColorSemanticToken { Self.mockThemeLinkColor }
+    override var colorChevronFocus: MultipleColorSemanticToken { Self.mockThemeLinkColor }
 
     // MARK: - Expand link component tokens
 

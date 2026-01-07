@@ -28,7 +28,7 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     static let mockThemeChipBorderRadius: BorderRadiusSemanticToken = 42
     static let mockThemeChipBorderWidth: BorderWidthSemanticToken = 42
     static let mockThemeChipSpace: DimensionRawToken = 218
-    static let mockThemeChipColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeChipColor = MultipleColorSemanticToken("#00FF00")
 
     override init(sizes: AllSizeSemanticTokensProvider?,
                   borders: AllBorderSemanticTokensProvider?,
@@ -51,38 +51,38 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override var borderWidthUnselectedInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeChipBorderWidth }
 
-    override var badgeColorBg: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var badgeColorContent: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBgUnselectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedTickEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorContentUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderSelectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderSelectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderSelectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderSelectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderSelectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderUnselectedEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderUnselectedHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderUnselectedPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderUnselectedDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override var colorBorderUnselectedFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
+    override var badgeColorBg: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var badgeColorContent: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgSelectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgSelectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgSelectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgSelectedFocus: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgUnselectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgUnselectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgUnselectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgUnselectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBgUnselectedFocus: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedTickEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentSelectedFocus: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentUnselectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentUnselectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentUnselectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorContentUnselectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderSelectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderSelectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderSelectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderSelectedFocus: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderUnselectedEnabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderUnselectedHover: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderUnselectedPressed: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderUnselectedDisabled: MultipleColorSemanticToken { Self.mockThemeChipColor }
+    override var colorBorderUnselectedFocus: MultipleColorSemanticToken { Self.mockThemeChipColor }
 
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeChipSpace }
     override var spacePaddingBlockIconOnly: SpaceSemanticToken { Self.mockThemeChipSpace }

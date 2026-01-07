@@ -30,7 +30,7 @@ struct BorderModifier: ViewModifier {
     private let radius: BorderRadiusSemanticToken
 
     /// The color token used for the border
-    private let color: MultipleColorSemanticTokens
+    private let color: MultipleColorSemanticToken
 
     /// To know if the device is in light mode or in dark mode
     @Environment(\.colorScheme) private var colorScheme
@@ -40,7 +40,7 @@ struct BorderModifier: ViewModifier {
     init(_ style: BorderStyleSemanticToken,
          _ width: BorderWidthSemanticToken,
          _ radius: BorderRadiusSemanticToken,
-         _ color: MultipleColorSemanticTokens)
+         _ color: MultipleColorSemanticToken)
     {
         self.style = style
         self.width = width

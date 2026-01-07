@@ -40,103 +40,103 @@ struct ThemeOverrideOfColorModeMultipleSemanticTokensTests {
 
     @Test func inheritedThemeCanOverrideModeOnBgPrimary() throws {
         #expect(inheritedTheme.colorModes.onBgPrimary != abstractTheme.colorModes.onBgPrimary)
-        #expect(inheritedTheme.colorModes.onBgPrimary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBgPrimary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnBgSecondary() throws {
         #expect(inheritedTheme.colorModes.onBgSecondary != abstractTheme.colorModes.onBgSecondary)
-        #expect(inheritedTheme.colorModes.onBgSecondary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBgSecondary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnBgTertiary() throws {
         #expect(inheritedTheme.colorModes.onBgTertiary != abstractTheme.colorModes.onBgTertiary)
-        #expect(inheritedTheme.colorModes.onBgTertiary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBgTertiary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     // MARK: - On Brand
 
     @Test func inheritedThemeCanOverrideModeOnBrandPrimary() throws {
         #expect(inheritedTheme.colorModes.onBrandPrimary != abstractTheme.colorModes.onBrandPrimary)
-        #expect(inheritedTheme.colorModes.onBrandPrimary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBrandPrimary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnBrandSecondary() throws {
         #expect(inheritedTheme.colorModes.onBrandSecondary != abstractTheme.colorModes.onBrandSecondary)
-        #expect(inheritedTheme.colorModes.onBrandSecondary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBrandSecondary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnBrandTertiary() throws {
         #expect(inheritedTheme.colorModes.onBrandTertiary != abstractTheme.colorModes.onBrandTertiary)
-        #expect(inheritedTheme.colorModes.onBrandTertiary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onBrandTertiary == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     // MARK: - On Status
 
     @Test func inheritedThemeCanOverrideModeOnStatusInfoEmphasized() throws {
         #expect(inheritedTheme.colorModes.onStatusInfoEmphasized != abstractTheme.colorModes.onStatusInfoEmphasized)
-        #expect(inheritedTheme.colorModes.onStatusInfoEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusInfoEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusInfoMuted() throws {
         #expect(inheritedTheme.colorModes.onStatusInfoMuted != abstractTheme.colorModes.onStatusInfoMuted)
-        #expect(inheritedTheme.colorModes.onStatusInfoMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusInfoMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusNegativeEmphasized() throws {
         #expect(inheritedTheme.colorModes.onStatusNegativeEmphasized != abstractTheme.colorModes.onStatusNegativeEmphasized)
-        #expect(inheritedTheme.colorModes.onStatusNegativeEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusNegativeEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusNegativeMuted() throws {
         #expect(inheritedTheme.colorModes.onStatusNegativeMuted != abstractTheme.colorModes.onStatusNegativeMuted)
-        #expect(inheritedTheme.colorModes.onStatusNegativeMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusNegativeMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusAccentEmphasized() throws {
         #expect(inheritedTheme.colorModes.onStatusAccentEmphasized != abstractTheme.colorModes.onStatusAccentEmphasized)
-        #expect(inheritedTheme.colorModes.onStatusAccentEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusAccentEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusAccentMuted() throws {
         #expect(inheritedTheme.colorModes.onStatusAccentMuted != abstractTheme.colorModes.onStatusAccentMuted)
-        #expect(inheritedTheme.colorModes.onStatusAccentMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusAccentMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusPositiveEmphasized() throws {
         #expect(inheritedTheme.colorModes.onStatusPositiveEmphasized != abstractTheme.colorModes.onStatusPositiveEmphasized)
-        #expect(inheritedTheme.colorModes.onStatusPositiveEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusPositiveEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusPositiveMuted() throws {
         #expect(inheritedTheme.colorModes.onStatusPositiveMuted != abstractTheme.colorModes.onStatusPositiveMuted)
-        #expect(inheritedTheme.colorModes.onStatusPositiveMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusPositiveMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusWarningEmphasized() throws {
         #expect(inheritedTheme.colorModes.onStatusWarningEmphasized != abstractTheme.colorModes.onStatusWarningEmphasized)
-        #expect(inheritedTheme.colorModes.onStatusWarningEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusWarningEmphasized == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOnStatusWarningMuted() throws {
         #expect(inheritedTheme.colorModes.onStatusWarningMuted != abstractTheme.colorModes.onStatusWarningMuted)
-        #expect(inheritedTheme.colorModes.onStatusWarningMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onStatusWarningMuted == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     // MARK: - On Overlay
 
     @Test func inheritedThemeCanOverrideModeOverlayModal() throws {
         #expect(inheritedTheme.colorModes.onOverlayModal != abstractTheme.colorModes.onOverlayModal)
-        #expect(inheritedTheme.colorModes.onOverlayModal == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onOverlayModal == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOverlayDropdown() throws {
         #expect(inheritedTheme.colorModes.onOverlayDropdown != abstractTheme.colorModes.onOverlayDropdown)
-        #expect(inheritedTheme.colorModes.onOverlayDropdown == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onOverlayDropdown == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideModeOverlayTooltip() throws {
         #expect(inheritedTheme.colorModes.onOverlayTooltip != abstractTheme.colorModes.onOverlayTooltip)
-        #expect(inheritedTheme.colorModes.onOverlayTooltip == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticTokens)
+        #expect(inheritedTheme.colorModes.onOverlayTooltip == MockThemeColorModeSemanticTokensProvider.mockThemeMultipleColorModeSemanticToken)
     }
 }
 

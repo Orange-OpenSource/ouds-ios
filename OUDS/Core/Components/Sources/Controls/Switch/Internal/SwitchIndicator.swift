@@ -84,7 +84,7 @@ struct SwitchIndicator: View {
         isOn ? theme.switch.spacePaddingInlineSelected : theme.switch.spacePaddingInlineUnselected
     }
 
-    private var trackColor: MultipleColorSemanticTokens {
+    private var trackColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             isOn ? theme.switch.colorTrackSelected : theme.switch.colorTrackUnselected

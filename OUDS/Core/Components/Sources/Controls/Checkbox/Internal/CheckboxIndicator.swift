@@ -61,7 +61,7 @@ struct CheckboxIndicator: View {
             .oudsForegroundColor(appliedColor)
     }
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticToken {
         // Error case
         if isError {
             switch interactionState {

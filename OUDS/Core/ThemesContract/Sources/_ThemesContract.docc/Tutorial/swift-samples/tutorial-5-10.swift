@@ -42,8 +42,8 @@ class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
     }
 
     // This token can contain up to two values (light and dark), or only one for both
-    override var bgTertiary: MultipleColorSemanticTokens {
-        MultipleColorSemanticTokens(ColorRawTokens.sun160)
+    override var bgTertiary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(ColorRawTokens.sun160)
     }
 }
 

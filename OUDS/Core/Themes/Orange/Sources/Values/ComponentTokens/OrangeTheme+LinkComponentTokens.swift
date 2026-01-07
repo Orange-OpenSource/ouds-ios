@@ -21,21 +21,21 @@ import OUDSTokensSemantic
 
 extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     /// Has for value token colors.actionEnabled
-    @objc open var colorContentEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc open var colorContentEnabled: MultipleColorSemanticToken { colors.actionEnabled }
     /// Has for value token colors.actionHover
-    @objc open var colorContentHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc open var colorContentHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc open var colorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc open var colorContentPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc open var colorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc open var colorContentFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var colorChevronEnabled: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronEnabled: MultipleColorSemanticToken { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var colorChevronHover: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronHover: MultipleColorSemanticToken { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var colorChevronPressed: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronPressed: MultipleColorSemanticToken { colors.contentBrandPrimary }
     /// Has for value token colors.contentBrandPrimary
-    @objc open var colorChevronFocus: MultipleColorSemanticTokens { colors.contentBrandPrimary }
+    @objc open var colorChevronFocus: MultipleColorSemanticToken { colors.contentBrandPrimary }
     /// Has for value token spaces.paddingInlineNone
     @objc open var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineNone }
     /// Has for value token spaces.paddingBlockMedium

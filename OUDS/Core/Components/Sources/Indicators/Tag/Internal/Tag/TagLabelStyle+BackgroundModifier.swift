@@ -32,7 +32,7 @@ struct TagBackgroundModifier: ViewModifier {
 
     // MARK: Helpers
 
-    private var background: MultipleColorSemanticTokens {
+    private var background: MultipleColorSemanticToken {
         switch type {
         case let .status(_, status):
             if isEnabled {
@@ -50,7 +50,7 @@ struct TagBackgroundModifier: ViewModifier {
         }
     }
 
-    private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+    private func emphasizedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.surfaceInverseHigh
@@ -67,7 +67,7 @@ struct TagBackgroundModifier: ViewModifier {
         }
     }
 
-    private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticTokens {
+    private func mutedBackground(for status: OUDSTag.Status) -> MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.surfaceSecondary

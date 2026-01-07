@@ -23,7 +23,7 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Mocks and setup
 
-    static let mockThemeTextInputColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeTextInputColor = MultipleColorSemanticToken("#00FF00")
     static let mockThemeTextInputBorderWidth: BorderWidthSemanticToken = 666
     static let mockThemeTextInputBorderRadius: BorderRadiusSemanticToken = 999
     static let mockThemeTextInputSize: SizeSemanticToken = 123
@@ -50,10 +50,10 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
 
     // MARK: - Colors
 
-    override var colorBorderEnabled: MultipleColorSemanticTokens { Self.mockThemeTextInputColor }
-    override var colorBorderHover: MultipleColorSemanticTokens { Self.mockThemeTextInputColor }
-    override var colorBorderFocus: MultipleColorSemanticTokens { Self.mockThemeTextInputColor }
-    override var colorBorderLoading: MultipleColorSemanticTokens { Self.mockThemeTextInputColor }
+    override var colorBorderEnabled: MultipleColorSemanticToken { Self.mockThemeTextInputColor }
+    override var colorBorderHover: MultipleColorSemanticToken { Self.mockThemeTextInputColor }
+    override var colorBorderFocus: MultipleColorSemanticToken { Self.mockThemeTextInputColor }
+    override var colorBorderLoading: MultipleColorSemanticToken { Self.mockThemeTextInputColor }
 
     // MARK: - Borders
 

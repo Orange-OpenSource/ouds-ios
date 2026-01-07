@@ -21,13 +21,13 @@ import OUDSTokensSemantic
 
 extension WireframeThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     /// Has for value token colors.borderDefault
-    @objc public final var colorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    @objc public final var colorBorderEnabled: MultipleColorSemanticToken { colors.borderDefault }
     /// Has for value token colors.actionHover
-    @objc public final var colorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorBorderHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var colorBorderFocus: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorBorderFocus: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionLoading
-    @objc public final var colorBorderLoading: MultipleColorSemanticTokens { colors.actionLoading }
+    @objc public final var colorBorderLoading: MultipleColorSemanticToken { colors.actionLoading }
     /// Has for value token borders.radiusDefault
     @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusDefault

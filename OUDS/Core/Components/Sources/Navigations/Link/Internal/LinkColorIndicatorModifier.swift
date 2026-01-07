@@ -35,8 +35,8 @@ struct LinkColorIndicatorModifier: ViewModifier {
 
     // MARK: - Helpers
 
-    private func appliedColor() -> MultipleColorSemanticTokens {
-        let colorToApply: MultipleColorSemanticTokens = switch interactionState {
+    private func appliedColor() -> MultipleColorSemanticToken {
+        let colorToApply: MultipleColorSemanticToken = switch interactionState {
         case .enabled:
             enabledColor
         case .hover:
@@ -50,19 +50,19 @@ struct LinkColorIndicatorModifier: ViewModifier {
         return colorToApply
     }
 
-    private var enabledColor: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticToken {
         useMonochrome ? theme.link.monoColorContentEnabled : theme.link.colorChevronEnabled
     }
 
-    private var hoverColor: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticToken {
         useMonochrome ? theme.link.monoColorContentHover : theme.link.colorChevronHover
     }
 
-    private var pressedColor: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticToken {
         useMonochrome ? theme.link.monoColorContentPressed : theme.link.colorChevronPressed
     }
 
-    private var disabledColor: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticToken {
         useMonochrome ? theme.link.monoColorContentDisabled : theme.colors.actionDisabled
     }
 }

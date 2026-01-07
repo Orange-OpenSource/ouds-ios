@@ -40,7 +40,7 @@ struct LeadingIconContainer: View {
 
     // MARK: - Helper
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch status {
         case .enabled, .error, .loading, .readOnly:
             theme.colors.contentMuted

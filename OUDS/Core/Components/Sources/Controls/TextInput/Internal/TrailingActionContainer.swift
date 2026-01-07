@@ -55,7 +55,7 @@ struct TrailingActionContainer: View {
 
     // MARK: Helpers
 
-    private var errorIconColor: MultipleColorSemanticTokens {
+    private var errorIconColor: MultipleColorSemanticToken {
         switch interactionState {
         case .idle:
             theme.colors.actionNegativeEnabled

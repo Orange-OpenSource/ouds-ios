@@ -28,22 +28,22 @@ public protocol BarComponentTokens {
 
     // MARK: - Colors
 
-    var colorBgOpaque: MultipleColorSemanticTokens { get }
-    var colorBgTranslucent: MultipleColorSemanticTokens { get }
-    var colorContentSelectedEnabled: MultipleColorSemanticTokens { get }
-    var colorContentSelectedHover: MultipleColorSemanticTokens { get }
-    var colorContentSelectedPressed: MultipleColorSemanticTokens { get }
-    var colorContentSelectedFocus: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedHover: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedPressed: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedFocus: MultipleColorSemanticTokens { get }
-    var colorContentOnAccent: MultipleColorSemanticTokens { get }
-    var colorBorderBadge: MultipleColorSemanticTokens { get }
-    var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticTokens { get }
-    var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticTokens { get }
-    var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticTokens { get }
-    var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticTokens { get }
+    var colorBgOpaque: MultipleColorSemanticToken { get }
+    var colorBgTranslucent: MultipleColorSemanticToken { get }
+    var colorContentSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorContentSelectedHover: MultipleColorSemanticToken { get }
+    var colorContentSelectedPressed: MultipleColorSemanticToken { get }
+    var colorContentSelectedFocus: MultipleColorSemanticToken { get }
+    var colorContentUnselectedEnabled: MultipleColorSemanticToken { get }
+    var colorContentUnselectedHover: MultipleColorSemanticToken { get }
+    var colorContentUnselectedPressed: MultipleColorSemanticToken { get }
+    var colorContentUnselectedFocus: MultipleColorSemanticToken { get }
+    var colorContentOnAccent: MultipleColorSemanticToken { get }
+    var colorBorderBadge: MultipleColorSemanticToken { get }
+    var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticToken { get }
+    var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticToken { get }
+    var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Opacities
 

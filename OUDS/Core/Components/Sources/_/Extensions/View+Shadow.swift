@@ -20,12 +20,12 @@ import SwiftUI
 extension View {
 
     /// Wraps the *SwiftUI* `shadow(color:radius:x:y)` method so as to use as `radius` value
-    /// the computed `radius` value of the  `MultipleElevationCompositeRawTokens` to use.
+    /// the computed `radius` value of the  `MultipleElevationCompositeRawToken` to use.
     /// This token will be choosen from the color scheme in use.
     ///
     /// - Parameter elevation: The token to give for the shadow / elevation effect depending to the color scheme
     /// - Returns `View`: The current `View` with the shadow / elevation effect
-    public func oudsShadow(_ elevation: MultipleElevationCompositeRawTokens) -> some View {
+    public func oudsShadow(_ elevation: MultipleElevationCompositeRawToken) -> some View {
         modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
     }
 }
@@ -33,10 +33,10 @@ extension View {
 // MARK: - Color Scheme Based Elevation View Modifier
 
 /// Depending to the current color scheme, will load the expected `ElevationCompositeRawToken` from the given
-/// `MultipleElevationCompositeRawTokens` object and applies its values to draw a shadow effect.
+/// `MultipleElevationCompositeRawToken` object and applies its values to draw a shadow effect.
 private struct ColorSchemeBasedElevationViewModifier: ViewModifier {
 
-    let elevation: MultipleElevationCompositeRawTokens
+    let elevation: MultipleElevationCompositeRawToken
 
     private var colorSchemeBasedElevation: ElevationCompositeRawToken {
         elevation.elevation(for: colorScheme)

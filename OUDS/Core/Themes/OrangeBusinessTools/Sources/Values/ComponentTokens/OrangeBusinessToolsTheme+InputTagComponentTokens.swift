@@ -20,29 +20,29 @@ import OUDSTokensSemantic
 
 extension OrangeBusinessToolsThemeInputTagComponentTokensProvider: InputTagComponentTokens {
     /// Has for value token colors.actionSupportEnabled
-    @objc public final var colorBgEnabled: MultipleColorSemanticTokens { colors.actionSupportEnabled }
+    @objc public final var colorBgEnabled: MultipleColorSemanticToken { colors.actionSupportEnabled }
     /// Has for value token colors.actionSupportHover
-    @objc public final var colorBgHover: MultipleColorSemanticTokens { colors.actionSupportHover }
+    @objc public final var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
     /// Has for value token colors.actionSupportPressed
-    @objc public final var colorBgPressed: MultipleColorSemanticTokens { colors.actionSupportPressed }
+    @objc public final var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
     /// Has for value token colors.actionSupportFocus
-    @objc public final var colorBgFocus: MultipleColorSemanticTokens { colors.actionSupportFocus }
+    @objc public final var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
     /// Has for value token colors.actionEnabled
-    @objc public final var colorContentEnabled: MultipleColorSemanticTokens { colors.actionEnabled }
+    @objc public final var colorContentEnabled: MultipleColorSemanticToken { colors.actionEnabled }
     /// Has for value token colors.actionHover
-    @objc public final var colorContentHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorContentHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var colorContentPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorContentPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc public final var colorContentFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorContentFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token colors.borderDefault
-    @objc public final var colorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    @objc public final var colorBorderEnabled: MultipleColorSemanticToken { colors.borderDefault }
     /// Has for value token colors.actionHover
-    @objc public final var colorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc public final var colorBorderHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.actionPressed
-    @objc public final var colorBorderPressed: MultipleColorSemanticTokens { colors.actionPressed }
+    @objc public final var colorBorderPressed: MultipleColorSemanticToken { colors.actionPressed }
     /// Has for value token colors.actionFocus
-    @objc public final var colorBorderFocus: MultipleColorSemanticTokens { colors.actionFocus }
+    @objc public final var colorBorderFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token borders.widthDefault
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium

@@ -39,7 +39,7 @@ struct ButtonBackgroundModifier: ViewModifier {
 
     // MARK: Private helpers
 
-    private var appliedColor: MultipleColorSemanticTokens? {
+    private var appliedColor: MultipleColorSemanticToken? {
         switch state {
         case .enabled:
             enabledColor
@@ -54,7 +54,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens? {
+    private var enabledColor: MultipleColorSemanticToken? {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorBgDefaultEnabled : theme.button.colorBgDefaultEnabled
@@ -69,7 +69,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var hoverColor: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorBgDefaultHover : theme.button.colorBgDefaultHover
@@ -84,7 +84,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var pressedColor: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticToken {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorBgDefaultPressed : theme.button.colorBgDefaultPressed
@@ -99,7 +99,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var loadingColor: MultipleColorSemanticTokens? {
+    private var loadingColor: MultipleColorSemanticToken? {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorBgDefaultLoading : theme.button.colorBgDefaultLoading
@@ -114,7 +114,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var disabledColor: MultipleColorSemanticTokens? {
+    private var disabledColor: MultipleColorSemanticToken? {
         switch appearance {
         case .default:
             useMonochrome ? theme.button.monoColorBgDefaultDisabled : theme.button.colorBgDefaultDisabled

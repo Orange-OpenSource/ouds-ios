@@ -19,7 +19,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of ``ColorSemanticToken`` depending to *color scheme* (i.e. ligh mode or dark mode).
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a color token exists with its value depending to the color scheme, it must be packed in such ``MultipleColorSemanticTokens`
+/// If a color token exists with its value depending to the color scheme, it must be packed in such ``MultipleColorSemanticToken`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a color semantic token bgPrimary,
@@ -32,10 +32,10 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level color semantic token for bgPrimary
 ///         // inside ColorMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+ColorMultipleSemanticToken extension
-///         var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: bgPrimaryLight, dark: bgPrimaryDark) }
+///         var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }
 ///
 ///         // If the same color is used whatever the color scheme is
-///         var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(bgPrimaryLight) }
+///         var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(bgPrimaryLight) }
 ///
 ///         // The theme exposes both generated color semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
@@ -150,7 +150,7 @@ extension OUDSWCAG21Ratio {
         case AAA
     }
 
-    /// Checks the contrast ratio between two tokens of color (`MultipleColorSemanticTokens`) by comparing their *light*
+    /// Checks the contrast ratio between two tokens of color (`MultipleColorSemanticToken`) by comparing their *light*
     /// and *dark* values.
     /// **Checks are done if end only if the `OUDSWCAG21Ratios.oudsDebugWCAG21Colors` flag is set to true.**
     /// Otherwise nothing is done.

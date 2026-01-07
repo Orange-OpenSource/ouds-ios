@@ -22,20 +22,20 @@ import OUDSTokensSemantic
 final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
-    static let mockThemeSpaceSemanticToken = MultipleSpaceSemanticTokens(compact: 1, regular: 151)
+    static let mockThemeSpaceSemanticToken = MultipleSpaceSemanticToken(compact: 1, regular: 151)
 
     // MARK: Semantic token - Spacing - Layout fluid (multiple)
 
-    override var scaledNone: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaled3xsmall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaled2xsmall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaledXsmall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaledSmall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaledMedium: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaledLarge: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaledXlarge: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaled2xlarge: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
-    override var scaled3xlarge: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override var scaledNone: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaled3xsmall: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaled2xsmall: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaledXsmall: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaledSmall: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaledMedium: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaledLarge: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaledXlarge: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaled2xlarge: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var scaled3xlarge: MultipleSpaceSemanticToken { Self.mockThemeSpaceSemanticToken }
 
     // MARK: Semantic token - Spacing - Layout fluid (pure semantic)
 

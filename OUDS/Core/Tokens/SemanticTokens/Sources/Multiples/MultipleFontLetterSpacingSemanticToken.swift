@@ -16,9 +16,9 @@ import OUDSFoundations
 
 // swiftlint:disable line_length
 
-/// Kind of semantic tokens which will wrap a combination of ``MultipleFontLetterSpacingSemanticTokens`` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``MultipleFontLetterSpacingSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font letter spacing token exists with its value depending to the size class (i.e. comapct or regular mode), it must be packed in such `MultipleFontLetterSpacingSemanticTokens`
+/// If a font letter spacing token exists with its value depending to the size class (i.e. comapct or regular mode), it must be packed in such ``MultipleFontLetterSpacingSemanticToken``
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font letter spacing semantic token letterSpacingDisplayMedium,
@@ -32,12 +32,12 @@ import OUDSFoundations
 ///         // Then the develoment team declares an "higher" level font letter spacing semantic token for letterSpacingDisplayMedium
 ///         // inside FontMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+FontMultipleSemanticTokens extension
-///         var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens {
-///             MultipleFontLetterSpacingSemanticTokens(compact: letterSpacingDisplayMediumMobile, regular: letterSpacingDisplayMediumTablet)
+///         var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticToken {
+///             MultipleFontLetterSpacingSemanticToken(compact: letterSpacingDisplayMediumMobile, regular: letterSpacingDisplayMediumTablet)
 ///         }
 ///
 ///         // If the same value is used whatever the size class is
-///         var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(letterSpacingDisplayMediumMobile) }
+///         var letterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticToken { MultipleFontLetterSpacingSemanticToken(letterSpacingDisplayMediumMobile) }
 ///
 ///         // The theme exposes both generated font letter spacing semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.

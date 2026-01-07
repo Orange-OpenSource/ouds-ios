@@ -57,52 +57,52 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Color - Background
 
-    var colorBgDefaultDisabled: MultipleColorSemanticTokens { get }
-    var colorBgDefaultEnabled: MultipleColorSemanticTokens { get }
-    var colorBgDefaultFocus: MultipleColorSemanticTokens { get }
-    var colorBgDefaultHover: MultipleColorSemanticTokens { get }
-    var colorBgDefaultLoading: MultipleColorSemanticTokens { get }
-    var colorBgDefaultPressed: MultipleColorSemanticTokens { get }
-    var colorBgMinimalFocus: MultipleColorSemanticTokens { get }
-    var colorBgMinimalHover: MultipleColorSemanticTokens { get }
-    var colorBgMinimalPressed: MultipleColorSemanticTokens { get }
+    var colorBgDefaultDisabled: MultipleColorSemanticToken { get }
+    var colorBgDefaultEnabled: MultipleColorSemanticToken { get }
+    var colorBgDefaultFocus: MultipleColorSemanticToken { get }
+    var colorBgDefaultHover: MultipleColorSemanticToken { get }
+    var colorBgDefaultLoading: MultipleColorSemanticToken { get }
+    var colorBgDefaultPressed: MultipleColorSemanticToken { get }
+    var colorBgMinimalFocus: MultipleColorSemanticToken { get }
+    var colorBgMinimalHover: MultipleColorSemanticToken { get }
+    var colorBgMinimalPressed: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Brand
 
-    var colorBgBrandEnabled: MultipleColorSemanticTokens { get }
-    var colorBgBrandHover: MultipleColorSemanticTokens { get }
-    var colorBgBrandPressed: MultipleColorSemanticTokens { get }
-    var colorBgBrandLoading: MultipleColorSemanticTokens { get }
-    var colorBgBrandFocus: MultipleColorSemanticTokens { get }
-    var colorContentBrandEnabled: MultipleColorSemanticTokens { get }
-    var colorContentBrandHover: MultipleColorSemanticTokens { get }
-    var colorContentBrandPressed: MultipleColorSemanticTokens { get }
-    var colorContentBrandLoading: MultipleColorSemanticTokens { get }
-    var colorContentBrandFocus: MultipleColorSemanticTokens { get }
+    var colorBgBrandEnabled: MultipleColorSemanticToken { get }
+    var colorBgBrandHover: MultipleColorSemanticToken { get }
+    var colorBgBrandPressed: MultipleColorSemanticToken { get }
+    var colorBgBrandLoading: MultipleColorSemanticToken { get }
+    var colorBgBrandFocus: MultipleColorSemanticToken { get }
+    var colorContentBrandEnabled: MultipleColorSemanticToken { get }
+    var colorContentBrandHover: MultipleColorSemanticToken { get }
+    var colorContentBrandPressed: MultipleColorSemanticToken { get }
+    var colorContentBrandLoading: MultipleColorSemanticToken { get }
+    var colorContentBrandFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Border
 
-    var colorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
-    var colorBorderDefaultEnabled: MultipleColorSemanticTokens { get }
-    var colorBorderDefaultFocus: MultipleColorSemanticTokens { get }
-    var colorBorderDefaultHover: MultipleColorSemanticTokens { get }
-    var colorBorderDefaultLoading: MultipleColorSemanticTokens { get }
-    var colorBorderDefaultPressed: MultipleColorSemanticTokens { get }
+    var colorBorderDefaultDisabled: MultipleColorSemanticToken { get }
+    var colorBorderDefaultEnabled: MultipleColorSemanticToken { get }
+    var colorBorderDefaultFocus: MultipleColorSemanticToken { get }
+    var colorBorderDefaultHover: MultipleColorSemanticToken { get }
+    var colorBorderDefaultLoading: MultipleColorSemanticToken { get }
+    var colorBorderDefaultPressed: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Content
 
-    var colorContentDefaultDisabled: MultipleColorSemanticTokens { get }
-    var colorContentDefaultEnabled: MultipleColorSemanticTokens { get }
-    var colorContentDefaultFocus: MultipleColorSemanticTokens { get }
-    var colorContentDefaultHover: MultipleColorSemanticTokens { get }
-    var colorContentDefaultLoading: MultipleColorSemanticTokens { get }
-    var colorContentDefaultPressed: MultipleColorSemanticTokens { get }
-    var colorContentMinimalDisabled: MultipleColorSemanticTokens { get }
-    var colorContentMinimalEnabled: MultipleColorSemanticTokens { get }
-    var colorContentMinimalFocus: MultipleColorSemanticTokens { get }
-    var colorContentMinimalHover: MultipleColorSemanticTokens { get }
-    var colorContentMinimalLoading: MultipleColorSemanticTokens { get }
-    var colorContentMinimalPressed: MultipleColorSemanticTokens { get }
+    var colorContentDefaultDisabled: MultipleColorSemanticToken { get }
+    var colorContentDefaultEnabled: MultipleColorSemanticToken { get }
+    var colorContentDefaultFocus: MultipleColorSemanticToken { get }
+    var colorContentDefaultHover: MultipleColorSemanticToken { get }
+    var colorContentDefaultLoading: MultipleColorSemanticToken { get }
+    var colorContentDefaultPressed: MultipleColorSemanticToken { get }
+    var colorContentMinimalDisabled: MultipleColorSemanticToken { get }
+    var colorContentMinimalEnabled: MultipleColorSemanticToken { get }
+    var colorContentMinimalFocus: MultipleColorSemanticToken { get }
+    var colorContentMinimalHover: MultipleColorSemanticToken { get }
+    var colorContentMinimalLoading: MultipleColorSemanticToken { get }
+    var colorContentMinimalPressed: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

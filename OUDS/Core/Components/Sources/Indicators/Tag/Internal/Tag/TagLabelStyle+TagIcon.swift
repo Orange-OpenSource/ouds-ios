@@ -128,7 +128,7 @@ struct TagAsset: View {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         if isEnabled {
             switch appearance {
             case .emphasized:
@@ -141,7 +141,7 @@ struct TagAsset: View {
         }
     }
 
-    private var emphasizedColor: MultipleColorSemanticTokens {
+    private var emphasizedColor: MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.contentInverse
@@ -158,7 +158,7 @@ struct TagAsset: View {
         }
     }
 
-    private var mutedColor: MultipleColorSemanticTokens {
+    private var mutedColor: MultipleColorSemanticToken {
         switch status.category {
         case .neutral:
             theme.colors.contentDefault

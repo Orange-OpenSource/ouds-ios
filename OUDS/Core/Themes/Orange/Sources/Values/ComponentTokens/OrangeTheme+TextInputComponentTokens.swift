@@ -21,13 +21,13 @@ import OUDSTokensSemantic
 
 extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     /// Has for value token colors.borderDefault
-    @objc open var colorBorderEnabled: MultipleColorSemanticTokens { colors.borderDefault }
+    @objc open var colorBorderEnabled: MultipleColorSemanticToken { colors.borderDefault }
     /// Has for value token colors.actionHover
-    @objc open var colorBorderHover: MultipleColorSemanticTokens { colors.actionHover }
+    @objc open var colorBorderHover: MultipleColorSemanticToken { colors.actionHover }
     /// Has for value token colors.borderEmphasized
-    @objc open var colorBorderFocus: MultipleColorSemanticTokens { colors.borderEmphasized }
+    @objc open var colorBorderFocus: MultipleColorSemanticToken { colors.borderEmphasized }
     /// Has for value token colors.borderEmphasized
-    @objc open var colorBorderLoading: MultipleColorSemanticTokens { colors.borderEmphasized }
+    @objc open var colorBorderLoading: MultipleColorSemanticToken { colors.borderEmphasized }
     /// Has for value token borders.radiusDefault
     @objc open var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusSmall

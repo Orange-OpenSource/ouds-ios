@@ -186,7 +186,7 @@ private struct ChipSelectionIndicator: View {
 
     // MARK: Private helpers
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             theme.chip.colorContentSelectedTickEnabled

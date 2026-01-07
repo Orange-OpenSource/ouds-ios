@@ -40,9 +40,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let onStatusNegativeEmphasizedLight = ColorModeRawTokens.monochromeDark
         let onStatusNegativeEmphasizedDark = ColorModeRawTokens.monochromeLight
-        let onStatusNegativeEmphasized = MultipleColorModeSemanticTokens("Doll",
-                                                                         light: onStatusNegativeEmphasizedLight,
-                                                                         dark: onStatusNegativeEmphasizedDark)
+        let onStatusNegativeEmphasized = MultipleColorModeSemanticToken("Doll",
+                                                                        light: onStatusNegativeEmphasizedLight,
+                                                                        dark: onStatusNegativeEmphasizedDark)
 
         // When
         let colorSchemeToApplyWhenLight: ColorScheme = provider.useColorScheme(for: onStatusNegativeEmphasized, .light)
@@ -57,9 +57,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let onStatusInfoEmphasizedLight = ColorModeRawTokens.monochromeLight
         let onStatusInfoEmphasizedDark = ColorModeRawTokens.monochromeLight
-        let onStatusInfoEmphasized = MultipleColorModeSemanticTokens("Dagga",
-                                                                     light: onStatusInfoEmphasizedLight,
-                                                                     dark: onStatusInfoEmphasizedDark)
+        let onStatusInfoEmphasized = MultipleColorModeSemanticToken("Dagga",
+                                                                    light: onStatusInfoEmphasizedLight,
+                                                                    dark: onStatusInfoEmphasizedDark)
 
         // When
         let colorSchemeToApplyWhenLight: ColorScheme = provider.useColorScheme(for: onStatusInfoEmphasized, .light)
@@ -74,9 +74,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let onStatusInfoBazingaLight = ColorModeRawTokens.monochromeDark
         let onStatusInfoBazingaDark = ColorModeRawTokens.monochromeDark
-        let onStatusInfoBazinga = MultipleColorModeSemanticTokens("Buzz-Buzz",
-                                                                  light: onStatusInfoBazingaLight,
-                                                                  dark: onStatusInfoBazingaDark)
+        let onStatusInfoBazinga = MultipleColorModeSemanticToken("Buzz-Buzz",
+                                                                 light: onStatusInfoBazingaLight,
+                                                                 dark: onStatusInfoBazingaDark)
 
         // When
         let colorSchemeToApplyWhenLight: ColorScheme = provider.useColorScheme(for: onStatusInfoBazinga, .light)
@@ -91,9 +91,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let onStatusAccentMutedLight = ColorModeRawTokens.light
         let onStatusAccentMutedDark = ColorModeRawTokens.dark
-        let onStatusAccentMuted = MultipleColorModeSemanticTokens("Ziggety",
-                                                                  light: onStatusAccentMutedLight,
-                                                                  dark: onStatusAccentMutedDark)
+        let onStatusAccentMuted = MultipleColorModeSemanticToken("Ziggety",
+                                                                 light: onStatusAccentMutedLight,
+                                                                 dark: onStatusAccentMutedDark)
 
         // When
         let colorSchemeToApplyWhenLight: ColorScheme = provider.useColorScheme(for: onStatusAccentMuted, .light)
@@ -110,9 +110,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let onStatusAccentMutedLight = ColorModeRawTokens.light
         let onStatusAccentMutedDark = ColorModeRawTokens.dark
-        let onStatusAccentMuted = MultipleColorModeSemanticTokens("Zag",
-                                                                  light: onStatusAccentMutedLight,
-                                                                  dark: onStatusAccentMutedDark)
+        let onStatusAccentMuted = MultipleColorModeSemanticToken("Zag",
+                                                                 light: onStatusAccentMutedLight,
+                                                                 dark: onStatusAccentMutedDark)
 
         // When
         let isMonochrome: Bool = provider.isMonochrome(mode: onStatusAccentMuted)
@@ -125,9 +125,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.monochromeLight
         let modeSomeDark = ColorModeRawTokens.dark
-        let modeSome = MultipleColorModeSemanticTokens("Buzz",
-                                                       light: modeSomeLight,
-                                                       dark: modeSomeDark)
+        let modeSome = MultipleColorModeSemanticToken("Buzz",
+                                                      light: modeSomeLight,
+                                                      dark: modeSomeDark)
 
         // When
         let isMonochrome: Bool = provider.isMonochrome(mode: modeSome)
@@ -140,9 +140,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.light
         let modeSomeDark = ColorModeRawTokens.monochromeDark
-        let modeSome = MultipleColorModeSemanticTokens("Buzz",
-                                                       light: modeSomeLight,
-                                                       dark: modeSomeDark)
+        let modeSome = MultipleColorModeSemanticToken("Buzz",
+                                                      light: modeSomeLight,
+                                                      dark: modeSomeDark)
 
         // When
         let isMonochrome: Bool = provider.isMonochrome(mode: modeSome)
@@ -155,9 +155,9 @@ struct SoshThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.monochromeLight
         let modeSomeDark = ColorModeRawTokens.monochromeDark
-        let modeSome = MultipleColorModeSemanticTokens("Buzz",
-                                                       light: modeSomeLight,
-                                                       dark: modeSomeDark)
+        let modeSome = MultipleColorModeSemanticToken("Buzz",
+                                                      light: modeSomeLight,
+                                                      dark: modeSomeDark)
 
         // When
         let isMonochrome: Bool = provider.isMonochrome(mode: modeSome)

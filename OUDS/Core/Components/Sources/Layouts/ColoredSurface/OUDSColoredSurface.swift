@@ -38,7 +38,7 @@ import SwiftUI
 public struct OUDSColoredSurface<Content>: View where Content: View {
 
     /// A type alias to use for clarity reasons ; a surface color is in the end a token
-    public typealias SurfaceColor = MultipleColorModeSemanticTokens
+    public typealias SurfaceColor = MultipleColorModeSemanticToken
 
     // MARK: Stored Properties
 

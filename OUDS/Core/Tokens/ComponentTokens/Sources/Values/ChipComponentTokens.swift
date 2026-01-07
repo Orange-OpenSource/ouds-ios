@@ -41,38 +41,38 @@ public protocol ChipComponentTokens {
 
     // MARK: - Colors
 
-    var badgeColorBg: MultipleColorSemanticTokens { get }
-    var badgeColorContent: MultipleColorSemanticTokens { get }
-    var colorBgSelectedEnabled: MultipleColorSemanticTokens { get }
-    var colorBgSelectedHover: MultipleColorSemanticTokens { get }
-    var colorBgSelectedPressed: MultipleColorSemanticTokens { get }
-    var colorBgSelectedDisabled: MultipleColorSemanticTokens { get }
-    var colorBgSelectedFocus: MultipleColorSemanticTokens { get }
-    var colorBgUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var colorBgUnselectedHover: MultipleColorSemanticTokens { get }
-    var colorBgUnselectedPressed: MultipleColorSemanticTokens { get }
-    var colorBgUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var colorBgUnselectedFocus: MultipleColorSemanticTokens { get }
-    var colorContentSelectedTickEnabled: MultipleColorSemanticTokens { get }
-    var colorContentSelectedEnabled: MultipleColorSemanticTokens { get }
-    var colorContentSelectedPressed: MultipleColorSemanticTokens { get }
-    var colorContentSelectedHover: MultipleColorSemanticTokens { get }
-    var colorContentSelectedDisabled: MultipleColorSemanticTokens { get }
-    var colorContentSelectedFocus: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedHover: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedPressed: MultipleColorSemanticTokens { get }
-    var colorContentUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var colorBorderSelectedEnabled: MultipleColorSemanticTokens { get }
-    var colorBorderSelectedHover: MultipleColorSemanticTokens { get }
-    var colorBorderSelectedPressed: MultipleColorSemanticTokens { get }
-    var colorBorderSelectedDisabled: MultipleColorSemanticTokens { get }
-    var colorBorderSelectedFocus: MultipleColorSemanticTokens { get }
-    var colorBorderUnselectedEnabled: MultipleColorSemanticTokens { get }
-    var colorBorderUnselectedHover: MultipleColorSemanticTokens { get }
-    var colorBorderUnselectedPressed: MultipleColorSemanticTokens { get }
-    var colorBorderUnselectedDisabled: MultipleColorSemanticTokens { get }
-    var colorBorderUnselectedFocus: MultipleColorSemanticTokens { get }
+    var badgeColorBg: MultipleColorSemanticToken { get }
+    var badgeColorContent: MultipleColorSemanticToken { get }
+    var colorBgSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorBgSelectedHover: MultipleColorSemanticToken { get }
+    var colorBgSelectedPressed: MultipleColorSemanticToken { get }
+    var colorBgSelectedDisabled: MultipleColorSemanticToken { get }
+    var colorBgSelectedFocus: MultipleColorSemanticToken { get }
+    var colorBgUnselectedEnabled: MultipleColorSemanticToken { get }
+    var colorBgUnselectedHover: MultipleColorSemanticToken { get }
+    var colorBgUnselectedPressed: MultipleColorSemanticToken { get }
+    var colorBgUnselectedDisabled: MultipleColorSemanticToken { get }
+    var colorBgUnselectedFocus: MultipleColorSemanticToken { get }
+    var colorContentSelectedTickEnabled: MultipleColorSemanticToken { get }
+    var colorContentSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorContentSelectedPressed: MultipleColorSemanticToken { get }
+    var colorContentSelectedHover: MultipleColorSemanticToken { get }
+    var colorContentSelectedDisabled: MultipleColorSemanticToken { get }
+    var colorContentSelectedFocus: MultipleColorSemanticToken { get }
+    var colorContentUnselectedEnabled: MultipleColorSemanticToken { get }
+    var colorContentUnselectedHover: MultipleColorSemanticToken { get }
+    var colorContentUnselectedPressed: MultipleColorSemanticToken { get }
+    var colorContentUnselectedDisabled: MultipleColorSemanticToken { get }
+    var colorBorderSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorBorderSelectedHover: MultipleColorSemanticToken { get }
+    var colorBorderSelectedPressed: MultipleColorSemanticToken { get }
+    var colorBorderSelectedDisabled: MultipleColorSemanticToken { get }
+    var colorBorderSelectedFocus: MultipleColorSemanticToken { get }
+    var colorBorderUnselectedEnabled: MultipleColorSemanticToken { get }
+    var colorBorderUnselectedHover: MultipleColorSemanticToken { get }
+    var colorBorderUnselectedPressed: MultipleColorSemanticToken { get }
+    var colorBorderUnselectedDisabled: MultipleColorSemanticToken { get }
+    var colorBorderUnselectedFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Spaces
 
