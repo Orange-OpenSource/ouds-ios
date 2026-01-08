@@ -160,6 +160,11 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// Some tuning for the theme
     public let tuning: Tuning
 
+    // MARK: - Settings
+
+    /// Flag to rise if versions of components and tokens libraries have been displayed in logs or not
+    nonisolated(unsafe) private static var versionsLogsDisplayed = false
+
     // MARK: - Initializers
     // Keep sorted by alphabetical order semantic tokens, then component tokens, then params with default values
 
@@ -283,7 +288,11 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.fontFamily = fontFamily
         self.tuning = tuning
 
-        OUDSVersions.logTokensLibrairiesVersions()
+        if !Self.versionsLogsDisplayed {
+            OUDSVersions.logTokensLibrairiesVersions()
+            OUDSVersions.logComponentsVersions()
+            Self.versionsLogsDisplayed = true
+        }
     }
 
     // swiftlint:enable function_default_parameter_at_end

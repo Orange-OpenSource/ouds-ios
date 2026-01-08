@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Display in logs components versions
 - Python script to find dead / unused tokens (Orange-OpenSource/ouds-ios#1237)
 
 ### Changed
