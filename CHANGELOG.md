@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **BREAKING**: Rename some multiple token object (from plural to singular form)
+- **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
+- **BREAKING**: Rename some multiple token objects (from plural to singular form)
 - Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
 - Gem `fastlane` gem from v2.229.1 to v2.230.0
 

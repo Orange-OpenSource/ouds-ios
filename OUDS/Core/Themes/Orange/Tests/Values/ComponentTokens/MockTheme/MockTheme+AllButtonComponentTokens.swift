@@ -43,12 +43,12 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override var sizeMaxHeightIconOnly: SizeSemanticToken { Self.mockThemeButtonSize }
     override var sizeMinHeight: SizeSemanticToken { Self.mockThemeButtonSize }
     override var sizeMinWidth: SizeSemanticToken { Self.mockThemeButtonSize }
-    override var buttonBorderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
-    override var buttonBorderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
-    override var buttonBorderRadiusSocial: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
-    override var buttonBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
-    override var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
-    override var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
+    override var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override var borderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override var borderRadiusSocial: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
+    override var borderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
+    override var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
     override var monoColorBgDefaultFocus: MultipleColorSemanticToken { Self.mockThemeButtonColor }
     override var monoColorBgDefaultHover: MultipleColorSemanticToken { Self.mockThemeButtonColor }
     override var monoColorBgDefaultLoading: MultipleColorSemanticToken { Self.mockThemeButtonColor }

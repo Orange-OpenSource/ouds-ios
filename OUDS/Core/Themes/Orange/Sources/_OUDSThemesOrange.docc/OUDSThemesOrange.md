@@ -312,8 +312,8 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 
 class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
     override public var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
-    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
-    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
+    override public var borderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    override public var borderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
     override public var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
     override public var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
