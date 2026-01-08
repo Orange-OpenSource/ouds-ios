@@ -103,22 +103,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
 > Tip: In some cases you can use the components tokens if you want to implement your own components
 
-### Important notice
-
-You may see the source code can be more simple, or the source code does not follow the Swift guidelines, or plenty of warnings of *SwiftLint* are disabled.
-
-In fact, we rely to much on *Figma* and how the design system is implemented.
-There are thousands of tokens, and we do not know if they will be used, how and by whom. In addition, the logic behind these tokens, their nature and names, is very tight to the web domain because the design team behind is more used to web environment than mobile ones like Android and iOS. Some tokens like composite tokens are defined in *Figma* but *Figma* is not able to manage them, it is tinkering, and the outputed JSON cannot manage that too.
-In addition, *Figma* exposes the tokens in JSON, which is then parsed with our own fork and implementation of dimensionstyle dictionary_ tool which struggles to output the JSON to web, Kotlin, Flutter and Swift assets.
-
-That is the reason why:
-- some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers
-- some tokens do not have full names, e.g. "colorBackground" are named "bg"
-- we have thousands of tokens, as thousands of tokens are defined
-- we do not know if there is dead code because API are public
-
-Feel free to [send issues](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose) and [open a discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a) for further details or if you spotted something interesting.
-
 ## Raw tokens
 
 ### What they are

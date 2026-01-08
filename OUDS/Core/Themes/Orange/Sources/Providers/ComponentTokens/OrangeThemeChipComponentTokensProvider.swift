@@ -100,7 +100,7 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     /// Provider of spaces semantic tokens to use for chip spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _dimensions_ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
