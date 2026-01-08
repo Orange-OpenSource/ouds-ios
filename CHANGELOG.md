@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Various cleanings in the documentation
+- Display tokens librairies versions in themes Swift files
 - Update README with reference to AGENTS.md file
 - **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - **BREAKING**: Rename some multiple token objects (from plural to singular form)

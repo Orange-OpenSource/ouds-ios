@@ -28,8 +28,10 @@ ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/OrangeBusinessToo
 SOSH_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/OUDSThemesSosh.md"
 WIREFRAME_THEME_MARKDOWN_FILE="../OUDS/Core/Themes/Wireframe/Sources/_OUDSThemesWireframe.docc/OUDSThemesWireframe.md"
 
-CORE_VERSION_PATTERN="🧬 Core version: "
-THEME_VERSION_PATTERN="🧬 Theme version: "
+ORANGE_THEME_SWIFT_FILE="../OUDS/Core/Themes/Orange/Sources/OrangeTheme.swift"
+ORANGEBUSINESSTOOLS_THEME_SWIFT_FILE="../OUDS/Core/Themes/OrangeBusinessTools/Sources/OrangeBusinessToolsTheme.swift"
+SOSH_THEME_SWIFT_FILE="../OUDS/Core/Themes/Sosh/Sources/SoshTheme.swift"
+WIREFRAME_THEME_SWIFT_FILE="../OUDS/Core/Themes/Wireframe/Sources/WireframeTheme.swift"
 
 # Errors
 # ------
@@ -113,6 +115,8 @@ themeBrandWireframeVersion=$(extract_version $OUDS_VERSION_SWIFT_FILE themeWiref
 # Update files
 # ------------
 
+# README
+
 test_existence_of_file "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeCoreOrangeVersion "- Core Orange version: " "$OUDS_README_FILE"
@@ -123,29 +127,53 @@ udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "- Brand O
 udpate_value_at_pattern_in_file $themeBrandSoshVersion "- Brand Sosh version: " "$OUDS_README_FILE"
 udpate_value_at_pattern_in_file $themeBrandWireframeVersion "- Brand Wireframe version: " "$OUDS_README_FILE"
 
+# Markdown files
+
 test_existence_of_file "$RAW_TOKENS_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$RAW_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "🧬 Core version: " "$RAW_TOKENS_MARKDOWN_FILE"
 
 test_existence_of_file "$SEMANTIC_TOKENS_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$SEMANTIC_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "🧬 Core version: " "$SEMANTIC_TOKENS_MARKDOWN_FILE"
 
 test_existence_of_file "$COMPONENT_TOKENS_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$COMPONENT_TOKENS_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "🧬 Core version: " "$COMPONENT_TOKENS_MARKDOWN_FILE"
 
 test_existence_of_file "$CORE_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeCoreOudsVersion "$CORE_VERSION_PATTERN" "$CORE_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "🧬 Core version: " "$CORE_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$ORANGE_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeBrandOrangeVersion "$THEME_VERSION_PATTERN" "$ORANGE_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeBrandOrangeVersion "🧬 Theme version: " "$ORANGE_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "$THEME_VERSION_PATTERN" "$ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "🧬 Theme version: " "$ORANGE_BUSINESS_TOOLS_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$SOSH_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeBrandSoshVersion "$THEME_VERSION_PATTERN" "$SOSH_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeBrandSoshVersion "🧬 Theme version: " "$SOSH_THEME_MARKDOWN_FILE"
 
 test_existence_of_file "$WIREFRAME_THEME_MARKDOWN_FILE"
-udpate_value_at_pattern_in_file $themeBrandWireframeVersion "$THEME_VERSION_PATTERN" "$WIREFRAME_THEME_MARKDOWN_FILE"
+udpate_value_at_pattern_in_file $themeBrandWireframeVersion "🧬 Theme version: " "$WIREFRAME_THEME_MARKDOWN_FILE"
+
+# Swift files
+
+test_existence_of_file "$ORANGE_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$ORANGE_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOrangeVersion "- Core Orange version: " "$ORANGE_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeBrandOrangeVersion "- Brand Orange version: " "$ORANGE_THEME_SWIFT_FILE"
+
+test_existence_of_file "$ORANGEBUSINESSTOOLS_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$ORANGEBUSINESSTOOLS_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOrangeVersion "- Core Orange version: " "$ORANGEBUSINESSTOOLS_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeBrandOrangeBusinessToolsVersion "- Brand Orange Business Tools version: " "$ORANGEBUSINESSTOOLS_THEME_SWIFT_FILE"
+
+test_existence_of_file "$SOSH_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$SOSH_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreSoshVersion "- Core Sosh version: " "$SOSH_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeBrandSoshVersion "- Brand Sosh version: " "$SOSH_THEME_SWIFT_FILE"
+
+test_existence_of_file "$WIREFRAME_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreOudsVersion "- Core OUDS version: " "$WIREFRAME_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeCoreWireframeVersion "- Core Wireframe version: " "$WIREFRAME_THEME_SWIFT_FILE"
+udpate_value_at_pattern_in_file $themeBrandWireframeVersion "- Brand Wireframe version: " "$WIREFRAME_THEME_SWIFT_FILE"
 
 echo "👋 Bye!"
 exit $EXIT_OK

@@ -47,6 +47,12 @@ import SwiftUI
 ///
 /// This theme cannot be customized more.
 ///
+/// ## Tokens versions
+///
+/// - Core OUDS version: 1.9.0
+/// - Core Wireframe version: 1.3.0
+/// - Brand Wireframe version: 2.3.0
+///
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
