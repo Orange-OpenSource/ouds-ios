@@ -20,7 +20,6 @@ struct BadgeIcon: View {
 
     let customIcon: Image?
     let flipped: Bool
-    let size: OUDSBadge.IllustrationSize
     let status: OUDSBadge.Status
 
     @Environment(\.theme) private var theme

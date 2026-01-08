@@ -229,9 +229,9 @@ public struct OUDSBadge: View {
             case .empty:
                 EmptyView()
             case let .count(value, size):
-                BadgeCount(value: value, size: size, status: layout.status)
-            case let .icon(customIcon, flipIcon, size):
-                BadgeIcon(customIcon: customIcon, flipped: flipIcon, size: size, status: layout.status)
+                BadgeCount(value: value, size: size)
+            case let .icon(customIcon, flipIcon, _):
+                BadgeIcon(customIcon: customIcon, flipped: flipIcon, status: layout.status)
             }
         }
         .modifier(BadgeModifier(layout: layout, accessibilityLabel: accessibilityLabel))
