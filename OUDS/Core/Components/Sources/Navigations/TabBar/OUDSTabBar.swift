@@ -19,7 +19,7 @@ import SwiftUI
 
 /// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies OUDS tokens and styles on its content supposing to be
 /// views with *tab bar items*.
-/// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges.
+/// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges. It can vary for iPadOS.
 ///
 /// ## Appearances
 ///
@@ -61,13 +61,13 @@ import SwiftUI
 ///
 /// - You must use in your tab bar items images with **a size of 26 x 26**, otherwise rendering could be unaligned with Figma specifications
 /// - Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width based on the tab bar item content,
-/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS lower than 18
+/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
 ///
 /// ## Accessibility considerations
 ///
 /// - If your tabs embeded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
 /// - If your tabs embeded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
-/// by using accessibilty value
+/// by using accessibiltiy value
 ///
 /// ```swift
 ///     OUDSTabBar {
@@ -90,13 +90,14 @@ import SwiftUI
 /// For iOS lower than 26, a selected tab indicator can be displayed in the `OUDSTabBar` if the `count` parameter is defined (to the number of tabs in the component)
 /// and if the `selected` parameter is equal to a given tag associated to a tab item.
 /// Otherwise the indicator won't appear; these parameters are mandatory to compute the location of the indicator.
-/// This rule only applis if selected tab indicator must be displayed.
+/// This rule is only applied if selected tab indicator must be displayed.
 ///
 /// ## Technical considerations
 ///
 /// In order to improve the Developer eXperience the current `OUDSTabBar` implementation lets users define their own tab items.
 /// OUDS applies only appearances and styles on elements to prevent users to define raw data to assign to the component before being rendered like a *picker*.
 /// Thus users will need to add their own accessiiblity label if badges are used or also apply *template* rendering mode on images if needed.
+/// Thus it will be also possible to use Liquid Glass new API with animations and items stacking.
 ///
 /// ## Code samples
 ///
