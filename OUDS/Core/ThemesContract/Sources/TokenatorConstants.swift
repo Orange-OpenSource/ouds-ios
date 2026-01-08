@@ -18,83 +18,83 @@ public enum OUDSVersions {
 
     // MARK: - Themes versions
 
-    /// Version of the Core tokens library
+    /// Version of the Core tokens library (1.9.0)
     public static let themeCoreVersion = "1.9.0"
 
-    /// Version of the Orange core tokens library
+    /// Version of the Orange core tokens library (1.2.0)
     public static let themeOrangeCoreVersion = "1.2.0"
-    /// Version of the Orange brand tokens library
+    /// Version of the Orange brand tokens library (2.3.0)
     public static let themeOrangeBrandVersion = "2.3.0"
 
-    /// Version of the Sosh core tokens library
+    /// Version of the Sosh core tokens library (1.2.0)
     public static let themeSoshCoreVersion = "1.2.0"
-    /// Version of the Sosh brand tokens library
+    /// Version of the Sosh brand tokens library (2.3.0)
     public static let themeSoshBrandVersion = "2.3.0"
 
-    /// Version of the Orange Business Tools brand tokens library
+    /// Version of the Orange Business Tools brand tokens library (2.3.0)
     public static let themeOrangeBusinessToolsBrandVersion = "2.3.0"
 
-    /// Version of the Wireframe core tokens library
+    /// Version of the Wireframe core tokens library (1.3.0)
     public static let themeWireframeCoreVersion = "1.3.0"
-    /// Version of the Wireframe brand tokens library
+    /// Version of the Wireframe brand tokens library (2.3.0)
     public static let themeWireframeBrandVersion = "2.3.0"
 
     // MARK: - Components versions - Actions
 
-    /// Version of the Figma specifications for the component button
+    /// Version of the Figma specifications for the component button (3.2.0)
     public static let componentButtonVersion = "3.2.0"
 
     // MARK: - Components versions - Navigation
 
-    /// Version of the Figma specifications for the component link
+    /// Version of the Figma specifications for the component link (2.2.0)
     public static let componentLinkVersion = "2.2.0"
-    /// Version of the Figma specifications for the component expand link
+    /// Version of the Figma specifications for the component expand link (2.3.0)
     public static let componentExpandLinkVersion = "2.3.0"
-    /// Version of the Figma specifications for the navigation bar and tab bar components
+    /// Version of the Figma specifications for the navigation bar and tab bar components (1.0.0)
     public static let componentNavigationBarVersion = "1.0.0"
 
     // MARK: - Components versions - Control
 
-    /// Version of the Figma specifications for the component checkbox
+    /// Version of the Figma specifications for the component checkbox (2.4.0)
     public static let componentCheckboxVersion = "2.4.0"
-    /// Version of the Figma specifications for the component chip
+    /// Version of the Figma specifications for the component chip (1.3.0)
     public static let componentChipVersion = "1.3.0"
-    /// Version of the Figma specifications for the component radio button
+    /// Version of the Figma specifications for the component radio button (1.4.0)
     public static let componentRadioButtonVersion = "1.4.0"
-    /// Version of the Figma specifications for the component switch
+    /// Version of the Figma specifications for the component switch (1.5.0)
     public static let componentSwitchVersion = "1.5.0"
-    /// Version of the Figma specifications for the component text input
+    /// Version of the Figma specifications for the component text input (1.3.0)
     public static let componentTextInputVersion = "1.3.0"
-    /// Version of the Figma specifications for the component phone number input
+    /// Version of the Figma specifications for the component phone number input (1.2.0)
     public static let componentPhoneNumberInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component password input
+    /// Version of the Figma specifications for the component password input (1.2.0)
     public static let componentPasswordInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component pin code input
+    /// Version of the Figma specifications for the component pin code input (1.2.0)
     public static let componentPinCodeInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component quantity input
+    /// Version of the Figma specifications for the component quantity input (1.2.0)
     public static let componentQuantityInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component select input
+    /// Version of the Figma specifications for the component select input (1.2.0)
     public static let componentSelectInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component text area
+    /// Version of the Figma specifications for the component text area (1.1.0)
     public static let componentTextAreaVersion = "1.1.0"
 
     // MARK: - Components versions - Tag
 
-    /// Version of the Figma specifications for the component badge
+    /// Version of the Figma specifications for the component badge (1.2.0)
     public static let componentBadgeVersion = "1.2.0"
-    /// Version of the Figma specifications for the component skeleton
+    /// Version of the Figma specifications for the component skeleton (1.0.0)
     public static let componentSkeletonVersion = "1.0.0"
-    /// Version of the Figma specifications for the component tag
+    /// Version of the Figma specifications for the component tag (1.4.0)
     public static let componentTagVersion = "1.4.0"
 
     // MARK: - Components versions - Divider
 
-    /// Version of the Figma specifications for the component divider
+    /// Version of the Figma specifications for the component divider (1.0.0)
     public static let componentDividerVersion = "1.0.0"
 
     // MARK: - Components versions - Content display
 
-    /// Version of the Figma specifications for the component bullet list
+    /// Version of the Figma specifications for the component bullet list (1.0.0)
     public static let componentBulletListVersion = "1.0.0"
 
     // MARK: - Components versions - Visual assets
