@@ -5,7 +5,7 @@
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.1.1", destination: "https://developer.apple.com/download/")
 
     @Section(title: "Use of tokens") {
         

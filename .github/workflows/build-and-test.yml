@@ -56,9 +56,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - name: Set up Xcode 26.0.1
+      - name: Set up Xcode 26.1.1
         run: |
-          sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_26.1.1.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@f8d7259c7a66155a7c4a157a1a10ca601f186594 # v1.271.0, https://github.com/ruby/setup-ruby
@@ -81,9 +81,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - name: Set up Xcode 26.0.1
+      - name: Set up Xcode 26.1.1
         run: |
-          sudo xcode-select -s /Applications/Xcode_26.0.1.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_26.1.1.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@f8d7259c7a66155a7c4a157a1a10ca601f186594 # v1.271.0, https://github.com/ruby/setup-ruby

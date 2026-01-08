@@ -7,7 +7,7 @@
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
 
-    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.1.1", destination: "https://developer.apple.com/download/")
     
     @Section(title: "Import the Swift Package and the libraries") {
         
