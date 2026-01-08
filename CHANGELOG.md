@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Various cleanings in the documentation
+- Update README with reference to AGENTS.md file
 - **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - **BREAKING**: Rename some multiple token objects (from plural to singular form)
 - Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)

@@ -135,6 +135,10 @@ Import the `OUDSComponents` library and instanciate the component you need. All 
 
 The wiki lists also [the components and their availability](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
+### Use GenAI?
+
+If you use generative AI tool like copilots, feel free to use our [AGENTS.md](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/AGENTS.md) file describing the grammar, syntax and API of OUDS.
+
 ## Content
 
 > [!NOTE]
