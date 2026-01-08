@@ -96,17 +96,17 @@ extension OrangeBusinessToolsThemeButtonComponentTokensProvider: ButtonComponent
     /// Has for value token colors.actionFocus
     @objc public final var colorBorderDefaultFocus: MultipleColorSemanticToken { colors.actionFocus }
     /// Has for value token borders.radiusDefault
-    @objc public final var buttonBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusMedium
-    @objc public final var buttonBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusMedium }
+    @objc public final var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusMedium }
     /// Has for value token borders.radiusPill
-    @objc public final var buttonBorderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
+    @objc public final var borderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.widthDefault
-    @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium
-    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
+    @objc public final var borderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthNone
-    @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token spaces.insetMedium
     @objc public final var spaceInsetIconOnly: SpaceSemanticToken { spaces.insetMedium }
     /// Has for value token spaces.paddingBlockMedium

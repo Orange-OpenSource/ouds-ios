@@ -96,17 +96,17 @@ extension WireframeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     /// Has for value token colors.opacityTransparent
     @objc public final var colorBorderDefaultFocus: MultipleColorSemanticToken { colors.opacityTransparent }
     /// Has for value token borders.radiusDefault
-    @objc public final var buttonBorderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    @objc public final var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusDefault
-    @objc public final var buttonBorderRadiusRounded: BorderRadiusSemanticToken { borders.radiusDefault }
+    @objc public final var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusDefault }
     /// Has for value token borders.radiusPill
-    @objc public final var buttonBorderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
+    @objc public final var borderRadiusSocial: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.widthNone
-    @objc public final var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone
-    @objc public final var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthDefaultInteraction: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone
-    @objc public final var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
+    @objc public final var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token spaces.insetMedium
     @objc public final var spaceInsetIconOnly: SpaceSemanticToken { spaces.insetMedium }
     /// Has for value token spaces.paddingBlockMedium
