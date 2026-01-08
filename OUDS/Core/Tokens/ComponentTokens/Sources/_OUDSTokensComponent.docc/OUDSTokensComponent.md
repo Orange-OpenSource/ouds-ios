@@ -33,8 +33,8 @@ Example with ``ButtonComponentTokens``:
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
     var sizeMaxHeightIconOnly: SizeSemanticToken { get }
-    var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
-    var buttonBorderRadius: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
     var colorBgDefaultPressedMono: MultipleColorSemanticToken { get }
     var spacePaddingBlock: SpaceSemanticToken { get }
 }
@@ -51,8 +51,8 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     
     // And also semantic tokens
 
-    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
-    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
+    @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusMedium }
     @objc open var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
     @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }
@@ -77,18 +77,18 @@ struct SomeView: View {
             // Some action
         } label: {
             Text("Some label")
-                .cornerRadius(theme.button.buttonBorderRadius)
+                .cornerRadius(theme.button.borderRadius)
         }
         .padding(.leading, theme.button.spacePaddingInlineChevronStart)
         .padding(.trailing, theme.button.spacePaddingInlineChevronEnd)
         .background(theme.button.colorBgStrongEnabledMono)
         .overlay(
-            RoundedRectangle(cornerRadius: theme.button.buttonBorderRadius)
-                .stroke(Color.blue, lineWidth: theme.button.buttonBorderWidthDefault)
+            RoundedRectangle(cornerRadius: theme.button.borderRadius)
+                .stroke(Color.blue, lineWidth: theme.button.borderWidthDefault)
         )
     }
 /*
-    - The theme provides border semantic tokens "buttonBorderRadius" and "buttonBorderWidthDefault"
+    - The theme provides border semantic tokens "borderRadius" and "borderWidthDefault"
     - The theme provides a color semantic token "colorBgStrongEnabledMono"
     - The theme provides spaces semantic token "spacePaddingInlineChevronStart" and "spacePaddingInlineChevronEnd"
 */

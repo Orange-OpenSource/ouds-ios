@@ -23,8 +23,8 @@ Below is an example about how the component tokens are declared, defined and pro
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
     var sizeMaxHeightIconOnly: SizeSemanticToken { get }
-    var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
-    var buttonBorderRadius: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
     var colorBgDefaultPressedMono: MultipleColorSemanticToken { get }
     var spacePaddingBlock: SpaceSemanticToken { get }
 }
@@ -41,8 +41,8 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     
     // And also semantic tokens
 
-    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
-    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
+    @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusMd }
     @objc open var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
     @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 }

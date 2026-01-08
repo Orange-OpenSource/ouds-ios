@@ -48,12 +48,12 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Border
 
-    var buttonBorderRadiusDefault: BorderRadiusSemanticToken { get }
-    var buttonBorderRadiusRounded: BorderRadiusSemanticToken { get }
-    var buttonBorderRadiusSocial: BorderRadiusSemanticToken { get }
-    var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
-    var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
-    var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderRadiusRounded: BorderRadiusSemanticToken { get }
+    var borderRadiusSocial: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+    var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
 
     // MARK: - Color - Background
 
