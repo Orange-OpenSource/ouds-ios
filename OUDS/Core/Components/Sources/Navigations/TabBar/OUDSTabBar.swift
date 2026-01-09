@@ -17,9 +17,10 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies OUDS tokens and styles on its content supposing to be
-/// views with *tab bar items*.
-/// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges. It can vary for iPadOS.
+/// The Tab bar is a system navigation component with a position which can vary depending to the OS.
+/// The tab bar can be found at the bottom of the screen for iOS. It can vary for iPadOS.
+/// It allows users to switch between the sections of an app.
+/// Each tab can be represented by a label, optionally paired with an icon, and maintains persistent visibility across top-level destinations.
 ///
 /// ## Appearances
 ///
