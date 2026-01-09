@@ -16,7 +16,8 @@ import SwiftUI
 
 // MARK: - OUDS Button
 
-/// The ``OUDSButton`` proposes layout with text only, icon only or text with icon.
+/// Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action.
+/// Button appears in different layouts, styles and states to indicate hierarchy or emphasis.
 ///
 /// ## Appearances
 ///
