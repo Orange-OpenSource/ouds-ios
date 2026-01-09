@@ -13,9 +13,13 @@
 
 import SwiftUI
 
+/// Divider is a UI element that allows to structure the content by visually separating the content zones.
+/// Divider improves readability and content organization without introducing a stronger visual hierarchy like a heading or a container would.
 /// A vertical Divider is used to separate content laid out side by side (`HStack`).
 /// The divider can be colored using dedicated ``OUDSDividerColor`` colors.
 /// The thickness (width) is fixed by dedicated token from `OUDSTheme`.
+///
+/// ## Code samples
 ///
 /// ```swift
 /// HStack {
