@@ -16,8 +16,8 @@ import SwiftUI
 
 // MARK: - OUDS Checkbox Item
 
-/// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components with labels and icons.
-/// If you want to use a checkbox with only an indicator prefer instead ``OUDSCheckbox``.
+/// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
+/// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
 /// ## Layouts
 ///

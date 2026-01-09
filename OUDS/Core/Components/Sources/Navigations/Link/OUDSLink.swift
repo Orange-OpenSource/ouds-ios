@@ -13,6 +13,9 @@
 
 import SwiftUI
 
+/// Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource,
+/// or to an external resource.
+/// Link's primary function is navigation and it communicates its interactive nature visually and semantically.
 /// The ``OUDSLink`` proposes layout with text only or text with icon.
 /// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `default` size.
 ///
