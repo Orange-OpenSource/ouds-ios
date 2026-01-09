@@ -268,9 +268,17 @@ public struct OUDSTabBar<Content>: View where Content: View {
             }
             // Liquid Glass or iPadOS > 18
         } else {
-            TabView(selection: $selectedTab) {
-                content()
-            }.modifier(TabBarViewModifier())
+            if #available(iOS 26.0, *) {
+                TabView {
+                    content()
+                }
+                .modifier(TabBarViewModifier())
+            } else {
+                TabView(selection: $selectedTab) {
+                    content()
+                }
+                .modifier(TabBarViewModifier())
+            }
         }
         #else // visionOS, macOS
         TabView(selection: $selectedTab) {

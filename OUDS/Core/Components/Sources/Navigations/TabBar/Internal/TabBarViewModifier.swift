@@ -47,42 +47,52 @@ struct TabBarViewModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
+        #if os(iOS)
+        if #available(iOS 26.0, *) {
+            content
+        } else {
+            content
+                // Do not use task(), it's async, effects may be applied too late
+                .onAppear {
+                    setupTabBarAppearance(withColor: colorScheme)
+                }
+                // If change of orientation
+                .onChange(of: verticalSizeClass) { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                        setupTabBarAppearance(withColor: colorScheme)
+                    }
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                        setupTabBarAppearance(withColor: colorScheme)
+                    }
+                }
+                .onChange(of: colorScheme) { newColorScheme in
+                    setupTabBarAppearance(withColor: newColorScheme)
+                }
+                .onChange(of: theme) { newTheme in
+                    setupTabBarAppearance(andTheme: newTheme)
+                }
+        }
+        #elseif os(visionOS)
         content
             // Do not use task(), it's async, effects may be applied too late
             .onAppear {
                 setupTabBarAppearance(withColor: colorScheme)
             }
-        #if os(iOS)
-            // If change of orientation
-            .onChange(of: verticalSizeClass) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                    setupTabBarAppearance(withColor: colorScheme)
-                }
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                    setupTabBarAppearance(withColor: colorScheme)
-                }
-            }
-            .onChange(of: colorScheme) { newColorScheme in
-                setupTabBarAppearance(withColor: newColorScheme)
-            }
-            .onChange(of: theme) { newTheme in
-                setupTabBarAppearance(andTheme: newTheme)
-            }
-        #endif
-        // Color scheme changes can rise a bit later after onAppear()
-        // Thus we need to catch the most up-to-date value to apply
-        #if os(visionOS)
-        // Conflict between SwiftLint and SwiftFormat
-        // swiftlint:disable closure_end_indentation
+            // Color scheme changes can rise a bit later after onAppear()
+            // Thus we need to catch the most up-to-date value to apply
+            // Conflict between SwiftLint and SwiftFormat
+            // swiftlint:disable closure_end_indentation
             .onChange(of: colorScheme) { _, newColorScheme in
                 setupTabBarAppearance(withColor: newColorScheme)
-        }
-        .onChange(of: theme) { _, newTheme in
-            setupTabBarAppearance(andTheme: newTheme)
-        }
-        // swiftlint:enable closure_end_indentation
+            }
+            .onChange(of: theme) { _, newTheme in
+                setupTabBarAppearance(andTheme: newTheme)
+            }
+            // swiftlint:enable closure_end_indentation
+        #else
+        content
         #endif
     }
 
