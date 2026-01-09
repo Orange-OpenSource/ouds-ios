@@ -74,7 +74,7 @@
                 OUDS provides UIKit components 
                   
                 @Justification(reaction: "Try again!") {
-                    OUDS supports officialy only SwiftUI. UIKit is very experimental and not recommended.
+                    OUDS supports only SwiftUI.
                 }
             }
         }

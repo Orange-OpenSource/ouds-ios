@@ -14,10 +14,6 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Components/Sources/_OUDSComponents.docc/Resources/_/ic_folder_categories.png
 
-## OUDS / Core / ComponentsUIKit
-
-./OUDS/Core/ComponentsUIKit/Sources/_OUDSComponentsUIKit.docc/Resources/_/ic_under_construction_uikit.png
-
 ## OUDS / Core / OUDS
 
 ./OUDS/Core/Components/Sources/_OUDS.docc/Resources/_/ic_component_intro.png

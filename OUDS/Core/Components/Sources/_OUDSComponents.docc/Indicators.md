@@ -41,20 +41,6 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
             OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-            import OUDSComponentsUIKit
-            
-            // Info badge in medium size without information
-            OUDSUIKit.createBadge(status: .info, size: .medium)
-
-            // Negative badge in medium size with count information
-            OUOUDSUIKit.createBadge(count: 1, status: .negative, size: .medium)
-
-            // Neutral badge in medium size with an image
-            OUDSUIKit.createBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
-        ```
-    }
 }
 
 ### Tag
@@ -98,29 +84,6 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
             
         // Tag with loader with rounded shape in small size
         OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
-        ```
-    }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        // Text only with neutral status, for emphasized hierarchy with rounded shape in default size            
-        OUDSUIKit.createTag(label: "label",
-                            status: .neutral,
-                            appearance: .emphasized,
-                            shape: .rounded,
-                            size: .default,
-        // Or also
-        OUDSUIKit.createTag(label: "label")
-            
-        // ext with bullet and negative status, using default hierarchy (emphasized), shape (rounded) and size (default)
-            OUDSUIKit.createTag(label: "Label", status: .negative(leading: .bullet)
-
-        // Tag with label and icon with image
-        OUDSUIKit.createTag((label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
-
-        // Tag with label and loader
-        OUDSUIKit.createTag(loadingLabel: "Label", shape: .rounded, size: .small)
         ```
     }
 }

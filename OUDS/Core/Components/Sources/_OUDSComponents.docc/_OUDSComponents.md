@@ -189,34 +189,3 @@ private func registerFonts() {
     }
 }
 ```
-
-## UIKit backports (experimental)
-
-> Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
-
-It is possible, but not recommended at all, to use OUDS components wrapped for UIKit.
-Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
-
-First, you will need to import at least the dedicated Swift Package product `OUDSComponentsUIKit`.
-Other products can be needed, you can import theme on by one or use the umbrella product `OUDSSwiftUI`.
-
-```swift
-import OUDSComponentsUIKit
-```
-
-Then, send to the bridge the theme you want to use
-
-```swift
-OUDSUIKit.`init`(theme: theme) // e.g. OrangeTheme()
-```
-
-After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
-
-```swift
-OUDSUIKit.createButton(text: "Destructive button",
-                       appearance: .negative,
-                       style: .default,
-                       action: {})
-```
-
-> Tip: You can [open a new discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/returns-of-experiences-and-feedbacks) if you have ideas!

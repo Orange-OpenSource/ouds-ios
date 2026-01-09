@@ -42,20 +42,6 @@ A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a di
         OUDSButton(text: "Delete", appearance: .negative) {}
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        OUDSUIKit.createButton(icon: Image("ic_heart"), // Image here is from SwiftUI
-                               accessibilityLabel: "Like",
-                               appearance: .default,
-                               action: {})
-                                          
-        OUDSUIKit.createButton(text: "Delete",
-                               appearance: .negative,
-                               action: {})
-        ```
-    }
 }
 
 For accessibility reasons, if the user in the system settings toggles the option to reduce the animations, the loading indicator will be frozen to be more comfortable for the user.

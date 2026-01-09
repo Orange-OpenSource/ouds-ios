@@ -46,24 +46,6 @@ This checkbox can provide two values (selected and unselected) or three values (
         OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-
-        // A simple checkbox, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will be
-        // vocalized by Voice Over. 
-
-        // Where target is a reference to the hosting UIViewController
-        // Where action is a selector of a method to trigger when value of the checkbox has changed
-            
-        // The isOn parameter can have only two values: true (selected), false (unselected)
-        OUDSUIKit.createCheckbox(isOn: isOn, accessibilityLabel: "Select the element", target: self, action: action)
-        
-        // The selection parameter can have three values: selected, unselected and indeterminate
-        OUDSUIKit.createCheckboxIndeterminate(selection: selection, accessibilityLabel: "Select the element", target: self, action: action)
-        ```
-    }
 }
 
 #### Checkbox item
@@ -107,36 +89,6 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
                          isReversed: true,
                          isError: true,
                          hasDivider: true)
-        ```
-    }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        // Where target is a reference to the hosting UIViewController
-        // Where action is a selector of a method to trigger when value of the checkbox has changed
-        
-        // A leading checkbox with a label, with only two states
-        OUDSUIKit.createCheckboxItem(isOn: isOn, label: "Hello world", target: self, action: action)
-
-        // A leading checkbox with a label, an helper text, and with a three-values-based state with selection binding
-        OUDSUIKit.createCheckboxItemIndeterminate(selection: selection,
-                                                  label: "Dead Robot Zombie Cop",
-                                                  description: "from Outer Space II"
-                                                  target: self,
-                                                  action: action)
-
-        // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-        // with a reversed layout, and with two states
-        OUDSUIKit.createCheckboxItem(isOn: isOn,
-                                     label: "We live in a fabled world",
-                                     description: "Of dreaming boys and wide-eyed girls",
-                                     icon: Image(decorative: "ic_heart"),
-                                     isReversed: true,
-                                     isError: true,
-                                     hasDivider: true,
-                                     target: self,
-                                     action: action)
         ```
     }
 }
@@ -234,19 +186,6 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
         OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
         ```    
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-             
-        // Where target is a reference to the hosting UIViewController
-        // Where action is a selector of a method to trigger when value of the checkbox has changed
-             
-        // A simple radio, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will 
-        // be vocalized by Voice Over. 
-        OUDSUIKit.createRadio(isOn: isOn, accessibilityLabel: "Select the element", target: target, action: action)
-        ```
-    }
 }
 
 #### Radio item
@@ -285,27 +224,6 @@ The indicator can be leading or trailing.
                       isReversed: true,
                       isError: true,
                       hasDivider: true)
-        ```
-    }
-    @Tab("UIKit (experimental)") {
-        ```swift
-          import OUDSComponentsUIKit
-             
-          // Where target is a reference to the hosting UIViewController
-          // Where action is a selector of a method to trigger when value of the checkbox has changed
-             
-          // A leading radio with a label
-          OUDSUIKit.createRadioItem(isOn: isOn, label: "Lucy in the Sky with Diamonds")
-
-          // A trailing radio with a label, an additional label, a description, an icon, a divider and is about an rror with a reversed layout
-          OUDSUIKit.createRadioItem(isOn: isOn,
-                                    label: "Lucy in the Sky with Diamonds",
-                                    extraLabel: "The Beatles"
-                                    description: "1967",
-                                    icon: Image(decorative: "ic_heart"),
-                                    isReversed: true,
-                                    isError: true,
-                                    hasDivider: true)
         ```
     }
 }
@@ -393,21 +311,6 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
         OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-
-        // Where target is a reference to the hosting UIViewController
-        // Where action is a selector of a method to trigger when value of the checkbox has changed
-            
-        // A simple switch, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will be
-        // vocalized by Voice Over. 
-
-        // The isOn parameter can have only two values: true (selected), false (unselected)
-        OUDSUIKit.createSwitch(isOn: isOn, accessibilityLabel: "Select the element", target: target, action: action)
-        ```
-    }
 }
 
 #### Switch item
@@ -452,36 +355,6 @@ The indicator can be leading or trailing.
                         hasDivider: true)
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        // Where target is a reference to the hosting UIViewController
-        // Where action is a selector of a method to trigger when value of the checkbox has changed
-
-        // A leading switch with a label and exposing the state through isOn binding
-        OUDSUIKit.createSwitchItem("Hello world", isOn: isOn, target: target, action: action)
-
-        // A leading switch with a label, an helper text
-        OUDUIKit.createSwitchItem("Dead Robot Zombie Cop",
-                                  isOn: isOn,
-                                  helper: "from Outer Space II",
-                                  target: target, 
-                                  action: action)
-
-        // A trailing switch with a label, a description text, an icon, a divider and is about an error
-        // with an inverse layout
-        OUDSUIKit.createSwitchItem("We live in a fabled world",
-                                   isOn: isOn,
-                                   description: "Of dreaming boys and wide-eyed girls",
-                                   icon: Image(decorative: "ic_heart"),
-                                   isReversed: true,
-                                   isError: true,
-                                   hasDivider: true,
-                                   target: target, 
-                                   action: action)
-        ```
-    }
 }
 
 ### Chips
@@ -518,20 +391,6 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
         OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-
-        // Suggestion chip with icon only 
-        OUDSUIKit.createSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", action: { /* the action to process */ })
-
-        // Layout with text only
-        OUDSUIKit.createSuggestionChip(text: "Heart", action: { /* the action to process */ })
-
-        // Layout with text and icon
-        OUDSUIKit.createSuggestionChip(icon: Image("ic_heart"), text: "Heart", action: { /* the action to process */ })
-        ```
-    }
 }
 
 #### Filter
@@ -565,20 +424,6 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
         // Filter chip with text and icon layout an in selected state
         OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
         ```    
-    }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        // Filter chip with icon only as selected 
-        OUDSUIKit.createFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true, action: { /* the action to process */ })
-
-        // Filter chip with text only as not selected
-        OUDSUIKit.createFilterChip(text: "Heart", action: { /* the action to process */ })
-    
-        // Filter chip with text and icon layout an in selected state
-        OUDSUIKit.createFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true, action: { /* the action to process */ })
-        ```
     }
 }
 

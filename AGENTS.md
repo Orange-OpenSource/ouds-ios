@@ -47,10 +47,6 @@ Here are the modules of the Swift Package, i.e. set of features with external de
 
 Here the the components provided by the Swift Package like buttons, switchs, checkboxes, chips, tags, links, etc.
 
-#### Core / ComponentsUIKit
-
-Here are experimental backports or wraps of SwiftUI components for UIKit. Their use is not recommended yet.
-
 #### Core / Themes / Orange
 
 Here is the definition of the Orange theme for all Orange products.
