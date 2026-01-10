@@ -242,14 +242,16 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// Warning: rendering wil change depending to OS version!
     public var body: some View {
         #if os(iOS)
+        let tabView = TabView(selection: $selectedTab) {
+            content()
+        }
+        .modifier(TabBarViewModifier())
+
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
         // not for iPhone in landscape mode nor iPads.
         if hasLegacyLayout {
             ZStack(alignment: .bottom) {
-                TabView(selection: $selectedTab) {
-                    content()
-                }
-                .modifier(TabBarViewModifier())
+                tabView
 
                 TabBarTopDivider()
 
@@ -268,9 +270,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
             }
             // Liquid Glass or iPadOS > 18
         } else {
-            TabView(selection: $selectedTab) {
-                content()
-            }.modifier(TabBarViewModifier())
+            tabView
         }
         #else // visionOS, macOS
         TabView(selection: $selectedTab) {
