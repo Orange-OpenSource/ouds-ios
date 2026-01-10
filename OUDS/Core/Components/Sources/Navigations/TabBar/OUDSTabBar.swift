@@ -223,19 +223,6 @@ public struct OUDSTabBar<Content>: View where Content: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    /// Defines the tab bar component with given tab bar items.
-    ///
-    /// If you target iOS lower than 26 you should use instead `OUDSTabBar(selected:count:content)` to get the active tab indicator
-    ///
-    /// - Parameter content: The list of items to add in the tab bar
-    @available(iOS 26, *)
-    public init(@ViewBuilder content: @escaping () -> Content) {
-        selectedTab = 0
-        tabCount = 0
-        self.content = content
-        _isLandscape = State(initialValue: Self.isInLandscapeViewport())
-    }
-
     // MARK: Body
 
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
@@ -244,66 +231,40 @@ public struct OUDSTabBar<Content>: View where Content: View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
         // not for iPhone in landscape mode nor iPads.
-        if hasLegacyLayout {
-            ZStack(alignment: .bottom) {
-                TabView(selection: $selectedTab) {
-                    content()
-                }
-                .modifier(TabBarViewModifier())
-
-                TabBarTopDivider()
-
-                if shouldShowTabIndicator {
-                    SelectedTabIndicator(selected: $selectedTab, count: tabCount)
-                }
-            }
-            .onAppear {
-                isLandscape = Self.isInLandscapeViewport()
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                // Delay to ensure the orientation change is complete
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                    isLandscape = Self.isInLandscapeViewport()
-                }
-            }
-            // Liquid Glass or iPadOS > 18
-        } else {
+        // With Xcode 26.0 it was mandatory to manage these 2 cases.
+        // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
+        // because of the ZStack, its conditions and the multiple use of tab views.
+        // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
+        // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
+        // https://github.com/Orange-OpenSource/ouds-ios/issues/1249
+        ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 content()
-            }.modifier(TabBarViewModifier())
+            }
+            .modifier(TabBarViewModifier())
+
+            TabBarTopDivider()
+
+            SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+                .opacity(shouldShowTabIndicator ? 1 : 0)
+        }
+        .onAppear {
+            isLandscape = Self.isInLandscapeViewport()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            // Delay to ensure the orientation change is complete
+            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                isLandscape = Self.isInLandscapeViewport()
+            }
         }
         #else // visionOS, macOS
-        TabView(selection: $selectedTab) {
+        TabView {
             content()
         }
         #endif
     }
 
     // MARK: - Helpers
-
-    /// "Legacy layout" here means:
-    /// - iPhone with iOS lower than 26, i.e. not Liquid Glass
-    /// - iPad with iPadOS lower than 18, i.e. with same tab bar and navigations layouts as iOS. Since iOS 18 tab bar is not anymore in bottom.
-    private var hasLegacyLayout: Bool {
-        #if canImport(UIKit) && !os(watchOS)
-        // iOS < 26
-        if #unavailable(iOS 26.0) {
-            // iPhone
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                return true
-                // iPad with iPadOS < 18
-            } else if UIDevice.current.userInterfaceIdiom == .pad {
-                if #unavailable(iOS 18.0) {
-                    return true
-                }
-            }
-        }
-        return false
-        #else
-        // iOS 26+ / Liquid Glass
-        return false
-        #endif
-    }
 
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
