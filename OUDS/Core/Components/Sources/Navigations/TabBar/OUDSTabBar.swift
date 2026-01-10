@@ -205,9 +205,23 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
-    ///
-    /// Number if tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
+    /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
+    ///
+    /// ```swift
+    ///     OUDSTabBar {
+    ///         SomeView()
+    ///             .tabItem {
+    ///                 Label("Label 1", image: "some-image")
+    ///              }
+    ///              .tag(0)
+    ///         OtherViewView()
+    ///             .tabItem {
+    ///                 Label("Label 2", image: "some-image")
+    ///              }
+    ///              .tag(0)
+    ///     }
+    /// ```
     ///
     /// - Parameters:
     ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
@@ -223,10 +237,36 @@ public struct OUDSTabBar<Content>: View where Content: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
+    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// Defines the tab bar component with given tab bar items.
+    /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selected:count:content:)`
+    ///
+    /// ```swift
+    ///     OUDSTabBar {
+    ///         SomeView()
+    ///             .tabItem {
+    ///                 Label("Label 1", image: "some-image")
+    ///              }
+    ///         OtherViewView()
+    ///             .tabItem {
+    ///                 Label("Label 2", image: "some-image")
+    ///              }
+    ///     }
+    /// ```
+    ///
+    /// - Parameter content: The views to add in the tab bar
+    @available(iOS 26, *)
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        selectedTab = 0
+        tabCount = 0
+        self.content = content
+        _isLandscape = State(initialValue: false)
+    }
+
     // MARK: Body
 
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
-    /// Warning: rendering wil change depending to OS version!
+    /// Rendering wil change depending to OS version, with a top divider and a selected tab indicator for legacy layouts.
     public var body: some View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
@@ -244,6 +284,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
             .modifier(TabBarViewModifier())
 
             TabBarTopDivider()
+                .opacity(hasLegacyLayout ? 1 : 0)
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
@@ -273,6 +314,28 @@ public struct OUDSTabBar<Content>: View where Content: View {
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
         #else
+        return false
+        #endif
+    }
+
+    /// - Returns Bool: true if iOS lower than 26.0 for iPhone or iOS lower than 18.0 for iPad, false otherwise
+    private var hasLegacyLayout: Bool {
+        #if canImport(UIKit) && !os(watchOS)
+        // iOS < 26
+        if #unavailable(iOS 26.0) {
+            // iPhone
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                return true
+                // iPad with iPadOS < 18
+            } else if UIDevice.current.userInterfaceIdiom == .pad {
+                if #unavailable(iOS 18.0) {
+                    return true
+                }
+            }
+        }
+        return false
+        #else
+        // iOS 26+ / Liquid Glass
         return false
         #endif
     }

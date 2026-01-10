@@ -135,6 +135,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 To build the Swift Package:
 ```shell
+bundle install
 bundle exec fastlane build
 ```
 
@@ -142,6 +143,7 @@ bundle exec fastlane build
 
 To run the unit tests on the Swift Package:
 ```shell
+bundle install
 bundle exec fastlane test_unit
 ```
 
@@ -157,6 +159,7 @@ yes | ./generateWebDocumentation.sh --libversion=none --nozip
 
 To check for dead code:
 ```shell
+bundle install
 bundle exec fastlane check_dead_code
 ```
 
@@ -164,6 +167,7 @@ bundle exec fastlane check_dead_code
 
 To format the source code:
 ```shell
+bundle install
 bundle exec fastlane format
 ```
 
@@ -171,6 +175,7 @@ bundle exec fastlane format
 
 To run the linter:
 ```shell
+bundle install
 bundle exec fastlane lint
 ```
 
@@ -178,6 +183,7 @@ bundle exec fastlane lint
 
 To check for leaks of secrets:
 ```shell
+bundle install
 bundle exec fastlane check_leaks
 ```
 
@@ -185,6 +191,7 @@ bundle exec fastlane check_leaks
 
 To update the Software Bill of Materials:
 ```shell
+bundle install
 bundle exec fastlane update_sbom
 ```
 
@@ -699,7 +706,7 @@ OUDSInputTag("Label") {
 
 ##### Colored surface
 
-Colored backgrounds use surface colors to maximize the contrast with content. The colors of several OUDS components (for instance butoton or link) are automatically adjusted if they are placed on such colored surface.
+Colored backgrounds use surface colors to maximize the contrast with content. The colors of several OUDS components (for instance button or link) are automatically adjusted if they are placed on such colored surface.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscoloredsurface).
 
 Colored surface uses tokens of colors modes available with `theme.colorModes` and can be used like:
