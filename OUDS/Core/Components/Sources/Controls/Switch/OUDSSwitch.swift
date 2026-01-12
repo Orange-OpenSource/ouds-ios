@@ -74,6 +74,7 @@ public struct OUDSSwitch: View {
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // MARK: - Initializers
 
@@ -98,8 +99,12 @@ public struct OUDSSwitch: View {
 
     public var body: some View {
         InteractionButton(isReadOnly: isReadOnly) {
-            withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
+            if reduceMotion {
                 $isOn.wrappedValue.toggle()
+            } else {
+                withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
+                    $isOn.wrappedValue.toggle()
+                }
             }
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: $isOn)
