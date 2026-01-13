@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Ruby` version from v3.4.8 to v4.0.1 for `build-and-test` workflows
 - `SwiftLintPlugins` Swift package from v0.62.2 to v0.63.2
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - Gem `fastlane` gem from v2.230.0 to v2.231.1
