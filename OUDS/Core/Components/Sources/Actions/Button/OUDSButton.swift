@@ -56,6 +56,9 @@ import SwiftUI
 ///
 ///     // Text and icon with strong appearance
 ///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong) { /* the action to process */ }
+///
+///     // Text and icon with strong appearance and button taking full width
+///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong, isFullWidth: true) { /* the action to process */ }
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
@@ -127,6 +130,7 @@ public struct OUDSButton: View {
     private let type: `Type`
     private let appearance: Appearance
     private let style: Style
+    private let isFullWidth: Bool
     private let action: () -> Void
 
     @State private var isHover: Bool
@@ -175,11 +179,20 @@ public struct OUDSButton: View {
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, icon: Image, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(text: String,
+                icon: Image,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
         type = .textAndIcon(text: text, icon: icon, flipIcon: flipIcon)
         self.appearance = appearance
         self.style = style
+        self.isFullWidth = isFullWidth
         self.action = action
 
         isHover = false
@@ -193,11 +206,20 @@ public struct OUDSButton: View {
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, accessibilityLabel: String, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(icon: Image,
+                accessibilityLabel: String,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
         type = .icon(icon, flipIcon: flipIcon, accessibilityLabel)
         self.appearance = appearance
         self.style = style
+        self.isFullWidth = isFullWidth
         self.action = action
         isHover = false
     }
@@ -208,12 +230,19 @@ public struct OUDSButton: View {
     ///    - text: The text of the button to display
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, appearance: Appearance = .default, style: Style = .default, action: @escaping () -> Void) {
+    public init(text: String,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
         type = .text(text)
         self.appearance = appearance
         self.style = style
         self.action = action
+        self.isFullWidth = isFullWidth
         isHover = false
     }
 
@@ -237,7 +266,7 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
             }
         }
-        .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
+        .buttonStyle(OUDSButtonStyle(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)

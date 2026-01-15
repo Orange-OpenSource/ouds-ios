@@ -36,9 +36,10 @@ struct OUDSButtonStyle: ButtonStyle {
 
     // MARK: Stored Properties
 
-    private let isHover: Bool
     private let appearance: OUDSButton.Appearance
     private let style: OUDSButton.Style
+    private let isHover: Bool
+    private let isFullWidth: Bool
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -48,13 +49,15 @@ struct OUDSButtonStyle: ButtonStyle {
     /// and the `style` of the `OUDSButton`.
     ///
     /// - Parameters:
-    ///    - isHover: Flag is button is hovered (e.g. by mouse)
     ///    - appearance: The button appearance
     ///    - style: The button style
-    init(isHover: Bool, appearance: OUDSButton.Appearance, style: OUDSButton.Style) {
+    ///    - isHover: Flag if button is hovered (e.g. by mouse)
+    ///    - isFullWidth: Flag to rise to make the button take all screen width
+    init(appearance: OUDSButton.Appearance, style: OUDSButton.Style, isHover: Bool, isFullWidth: Bool) {
         self.appearance = appearance
         self.style = style
         self.isHover = isHover
+        self.isFullWidth = isFullWidth
     }
 
     // MARK: Body
@@ -62,10 +65,14 @@ struct OUDSButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         switch style {
         case .default:
-            configuration.label
+            configuration
+                .label
+                .frame(maxWidth: isFullWidth ? .infinity : nil)
+                .contentShape(Rectangle())
                 .modifier(ButtonViewModifier(appearance: appearance, state: internalState(isPressed: configuration.isPressed)))
         case .loading:
             configuration.label
+                .frame(maxWidth: isFullWidth ? .infinity : nil)
                 .modifier(ButtonViewModifier(appearance: appearance, state: .loading))
                 .modifier(ButtonLoadingContentModifier(appearance: appearance))
         }

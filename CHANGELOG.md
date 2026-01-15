@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Flag to let `button` takes the screen full width (Orange-OpenSource/ouds-ios#1252)
 - Stop animation of switch if defined in accessibility settings (Orange-OpenSource/ouds-ios#660)
 - Display in logs components versions
 - Python script to find dead / unused tokens (Orange-OpenSource/ouds-ios#1237)
