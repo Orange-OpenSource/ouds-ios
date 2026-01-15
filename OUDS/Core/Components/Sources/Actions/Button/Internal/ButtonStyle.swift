@@ -51,8 +51,8 @@ struct OUDSButtonStyle: ButtonStyle {
     /// - Parameters:
     ///    - appearance: The button appearance
     ///    - style: The button style
-    ///    - isHover: Flag is button is hovered (e.g. by mouse)
-    ///    - isFullWidth: Flag is button is hovered (e.g. by mouse)
+    ///    - isHover: Flag if button is hovered (e.g. by mouse)
+    ///    - isFullWidth: Flag to rise to make the button take all screen width
     init(appearance: OUDSButton.Appearance, style: OUDSButton.Style, isHover: Bool, isFullWidth: Bool) {
         self.appearance = appearance
         self.style = style
