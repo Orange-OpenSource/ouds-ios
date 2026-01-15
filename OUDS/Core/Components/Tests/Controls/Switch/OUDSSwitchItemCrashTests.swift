@@ -15,7 +15,7 @@ import OUDSComponents
 import SwiftUI
 import Testing
 
-/// Tests crash scenarios for `OUDSSwitchItem` using Swift Testing's `#expect(processExitsWith:)`.
+/// Tests crash scenarios for `OUDSSwitchItem` using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the component correctly enforces design constraints by crashing when
 /// forbidden parameter combinations are used.
 struct OUDSSwitchItemCrashTests {

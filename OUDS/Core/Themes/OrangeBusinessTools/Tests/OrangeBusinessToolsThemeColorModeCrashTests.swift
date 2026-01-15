@@ -16,7 +16,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import Testing
 
-/// Tests crash scenarios for `OrangeBusinessToolsTheme` color mode handling using Swift Testing's `#expect(processExitsWith:)`.
+/// Tests crash scenarios for `OrangeBusinessToolsTheme` color mode handling using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the theme correctly enforces constraints by crashing when
 /// undefined or unmanaged color mode tokens are used.
 struct OrangeBusinessToolsThemeColorModeCrashTests {

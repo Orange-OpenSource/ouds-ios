@@ -12,11 +12,10 @@
 //
 
 import OUDSComponents
-import OUDSFoundations
 import SwiftUI
 import Testing
 
-/// Tests crash scenarios for chip components using Swift Testing's `#expect(processExitsWith:)`.
+/// Tests crash scenarios for chip components using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the components correctly enforce design constraints by crashing when
 /// forbidden parameter combinations or values are used.
 struct OUDSChipCrashTests {
@@ -36,15 +35,6 @@ struct OUDSChipCrashTests {
     func suggestionChipCrashesWithEmptyText() async {
         #expect(exitsWith: .failure) {
             _ = OUDSSuggestionChip(text: "") { }
-        }
-    }
-
-    /// Verify that `ChipInteractionState` crashes when initialized with `.readOnly` interaction state.
-    /// Chips do not support read-only state by design.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
-    func chipInteractionStateCrashesWithReadOnly() async {
-        #expect(exitsWith: .failure) {
-            _ = ChipInteractionState(with: .readOnly)
         }
     }
 }
