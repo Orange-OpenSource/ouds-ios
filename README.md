@@ -39,7 +39,7 @@
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
 
 [![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/releases)
-[![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
+[![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
