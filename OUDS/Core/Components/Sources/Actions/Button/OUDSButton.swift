@@ -198,7 +198,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - fullWidth: Flag to let button take all the screen width, set to false by default.
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, accessibilityLabel: String, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, fullWidth: Bool = true, action: @escaping () -> Void) {
+    public init(icon: Image, accessibilityLabel: String, flipIcon: Bool = false, appearance: Appearance = .default, style: Style = .default, fullWidth: Bool = false, action: @escaping () -> Void) {
         type = .icon(icon, flipIcon: flipIcon, accessibilityLabel)
         self.appearance = appearance
         self.style = style
