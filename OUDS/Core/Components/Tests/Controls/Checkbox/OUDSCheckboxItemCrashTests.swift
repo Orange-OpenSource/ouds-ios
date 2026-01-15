@@ -25,7 +25,7 @@ struct OUDSCheckboxItemCrashTests {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
     func checkboxItemCrashesWhenReadOnlyAndError() async {
         #expect(exitsWith: .failure) {
-            var isOn = false
+            let isOn = false
             _ = OUDSCheckboxItem(isOn: .constant(isOn),
                                 label: "Test",
                                 isError: true,

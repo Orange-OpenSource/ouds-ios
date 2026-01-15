@@ -25,7 +25,7 @@ struct OUDSCheckboxItemIndeterminateCrashTests {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
     func checkboxItemIndeterminateCrashesWhenReadOnlyAndError() async {
         #expect(exitsWith: .failure) {
-            var selection = OUDSCheckboxIndicatorState.indeterminate
+            let selection = OUDSCheckboxIndicatorState.indeterminate
             _ = OUDSCheckboxItemIndeterminate(selection: .constant(selection),
                                              label: "Test",
                                              isError: true,

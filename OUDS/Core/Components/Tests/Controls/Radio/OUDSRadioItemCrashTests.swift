@@ -25,7 +25,7 @@ struct OUDSRadioItemCrashTests {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
     func radioItemCrashesWhenReadOnlyAndError() async {
         #expect(exitsWith: .failure) {
-            var isOn = false
+            let isOn = false
             _ = OUDSRadioItem(isOn: .constant(isOn),
                             label: "Test",
                             isError: true,

@@ -25,7 +25,7 @@ struct OUDSSwitchItemCrashTests {
     @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
     func switchItemCrashesWhenReadOnlyAndError() async {
         #expect(exitsWith: .failure) {
-            var isOn = false
+            let isOn = false
             _ = OUDSSwitchItem("Test",
                               isOn: .constant(isOn),
                               isError: true,
