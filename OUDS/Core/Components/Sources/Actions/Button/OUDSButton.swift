@@ -257,19 +257,16 @@ public struct OUDSButton: View {
         }
 
         Button(action: action) {
-            Group {
-                switch type {
-                case let .icon(icon, flipped, _):
-                    ButtonIcon(icon: icon, flipped: flipped)
-                case let .text(text):
-                    ButtonText(text: text)
-                case let .textAndIcon(text, icon, flipped):
-                    ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
-                }
+            switch type {
+            case let .icon(icon, flipped, _):
+                ButtonIcon(icon: icon, flipped: flipped)
+            case let .text(text):
+                ButtonText(text: text)
+            case let .textAndIcon(text, icon, flipped):
+                ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
             }
-            .frame(maxWidth: isFullWidth ? .infinity : nil, alignment: .center)
         }
-        .buttonStyle(OUDSButtonStyle(isHover: isHover, appearance: appearance, style: style))
+        .buttonStyle(OUDSButtonStyle(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)
