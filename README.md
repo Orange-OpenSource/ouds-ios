@@ -1,7 +1,9 @@
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
-  OUDS iOS provides SwiftUI components to Orange developers 
+  OUDS iOS provides SwiftUI components to Orange developers
+  <br>
+  Build Sharper. Ship faster. Perform better. 
   <br>
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
