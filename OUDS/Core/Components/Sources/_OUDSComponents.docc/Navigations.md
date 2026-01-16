@@ -111,3 +111,67 @@ OUDSTabBar(selected: 0, count: 3) {
         .tag(2)
 }
 ```
+
+### Toolbars
+
+Toolbars are navigation components displayed at the top or bottom of the screen.
+They rely on native SwiftUI toolbars and apply OUDS tokens for colors and typography.
+
+For iOS 26 and later, Liquid Glass is used and the system manages the background appearance.
+For iOS versions lower than 26, toolbars use a regular blur and the `bar.colorBgTranslucent` token as background color.
+
+@TabNavigator {
+    @Tab("Top toolbar (Liquid Glass)") {
+        ![A top toolbar with Liquid Glass in light mode](component_toolbarTop_LiquidGlass_light)
+        ![A top toolbar with Liquid Glass in dark mode](component_toolbarTop_LiquidGlass_dark)
+    }
+    @Tab("Top toolbar") {
+        ![A top toolbar without Liquid Glass in light mode](component_toolbarTop_light)
+        ![A top toolbar without Liquid Glass in dark mode](component_toolbarTop_dark)
+    }
+}
+
+@TabNavigator {
+    @Tab("Bottom toolbar (Liquid Glass)") {
+        ![A bottom toolbar with Liquid Glass in light mode](component_toolbarBottom_LiquidGlass_light)
+        ![A bottom toolbar with Liquid Glass in dark mode](component_toolbarBottom_LiquidGlass_dark)
+    }
+    @Tab("Bottom toolbar") {
+        ![A bottom toolbar without Liquid Glass in light mode](component_toolbarBottom_light)
+        ![A bottom toolbar without Liquid Glass in dark mode](component_toolbarBottom_dark)
+    }
+}
+
+```swift
+OUDSToolBarTop(title: "Title", subtitle: "Subtitle") {
+    ContentView()
+} leadingItems: {
+    OUDSToolBarNavigationItem(icon: .back, label: "Back") {
+        // Handle back
+    }
+} trailingItems: {
+    OUDSToolBarItem(placement: .trailing) {
+        Button(action: {}) {
+            Image(systemName: "ellipsis")
+        }
+    }
+}
+```
+
+```swift
+OUDSToolBarBottom {
+    ContentView()
+} leadingItems: {
+    OUDSToolBarItem(placement: .leading) {
+        Button(action: {}) {
+            Image(systemName: "square.and.arrow.up")
+        }
+    }
+} trailingItems: {
+    OUDSToolBarItem(placement: .trailing) {
+        Button(action: {}) {
+            Image(systemName: "trash")
+        }
+    }
+}
+```
