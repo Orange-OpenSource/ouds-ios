@@ -56,6 +56,8 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
 [![Xcode 26.2](https://img.shields.io/badge/Xcode-26.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes)
 
+[![Open Hub](https://img.shields.io/badge/open%20hub-5A2A82?style=for-the-badge)](https://openhub.net/p/ouds-ios)
+
 ## About OUDS
 
 OUDS means *Orange Unified Design System*.
