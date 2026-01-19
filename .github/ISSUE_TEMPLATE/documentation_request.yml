@@ -1,7 +1,7 @@
 name: Documentation Update
 description: Describe this issue found in the documentation
-title: "[Doc] "
-labels: ["📖 documentation", "🔍 triage"]
+title: "In documentation, ..."
+labels: ["🧰 library", "📖 documentation", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
 body:
   - type: markdown

@@ -1,7 +1,7 @@
-name: Module Update Request
-description: Please fill out the following details for your module update request.
-title: "[Module Update] "
-labels: ["🎇 module", "🔍 triage"]
+name: Component Request
+description: Please fill out the following details for your component creation / update request.
+title: "For / Add component ..."
+labels: ["🧰 library", "⚛️ component", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
 body:
   - type: textarea
@@ -15,20 +15,22 @@ body:
     id: motivation_context
     attributes:
       label: Motivation & Context
-      description: Why is this change required? What problem does it solve?
+      description: Why is this evolution required? What problem does it solve?
   - type: checkboxes
     attributes:
       label: Types of change
       description: Please fill the suitable items in the list
       options:
-        - label: Add new module
-        - label: Update existing module  
+        - label: Add new component
+        - label: Update existing component  
   - type: checkboxes
     attributes:
       label: Checklist for Core Team
       description: Some points to check before any merge
       options:
+        - label: Tokens have been updated
         - label: Documentations have been updated
-        - label: Tests have been updated if needed
-        - label: Demo app has been updated if needed
+        - label: Unit tests have been updated
+        - label: UI tests have been updated
+        - label: Design System Toolbox has been updated
         - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround

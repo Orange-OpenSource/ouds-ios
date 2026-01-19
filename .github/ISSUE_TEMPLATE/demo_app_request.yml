@@ -1,6 +1,6 @@
 name: Design System Toolbox App Update Request
 description: Please fill out the following details for your design system toolbox app update request.
-title: "[Design System Toolbox] "
+title: "For design toolbox, ..."
 labels: ["📱 demo app", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
 body:

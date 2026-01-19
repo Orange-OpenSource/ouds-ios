@@ -1,9 +1,17 @@
-name: Component Update Request
-description: Please fill out the following details for your component update request.
-title: "[Component Update] "
-labels: ["⚛️ component", "🔍 triage"]
+name: Token Update Request
+description: Please fill out the following details for your token update request.
+title: "In tokens, ..."
+labels: ["🧰 library", "🧬 token", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
 body:
+  - type: checkboxes
+    attributes:
+      label: Type of tokens
+      description: Please fill the checkboxes of the token type you want to update
+      options:
+        - label: Raw token (i.e. associated to _SwiftUI_ or _Swift_ value)
+        - label: Semantic token (i.e. pointing to a raw token)
+        - label: Component token (i.e. pointing to a semantic token, used for a component)
   - type: textarea
     id: description
     attributes:
@@ -21,8 +29,9 @@ body:
       label: Types of change
       description: Please fill the suitable items in the list
       options:
-        - label: Add new component
-        - label: Update existing component  
+        - label: Add new tokens
+        - label: Update existing tokens (i.e. change name or value)
+        - label: Remove existing token
   - type: checkboxes
     attributes:
       label: Checklist for Core Team
@@ -31,6 +40,4 @@ body:
         - label: Tokens have been updated
         - label: Documentations have been updated
         - label: Unit tests have been updated
-        - label: UI tests have been updated
-        - label: Design System Toolbox has been updated
         - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
