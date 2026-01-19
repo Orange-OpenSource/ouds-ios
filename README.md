@@ -34,6 +34,8 @@
 <a href="https://scorecard.dev/viewer/?uri=github.com/Orange-OpenSource/ouds-ios" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/Orange-OpenSource/ouds-ios/badge" alt="OpenSSF Scorecard"></a>
 &nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
+&nbsp;
+<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="Fossa status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="Fossa status"></a>
 </p>
 
 ## Status
