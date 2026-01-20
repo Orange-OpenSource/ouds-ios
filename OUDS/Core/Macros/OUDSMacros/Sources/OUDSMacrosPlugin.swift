@@ -16,7 +16,13 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-/// Compiler plugin that provides the OUDS macros
+/// Compiler plugin that provides the OUDS macros.
+///
+/// This plugin is the entry point for the Swift macro system. It registers all OUDS macros
+/// with the Swift compiler, making them available for use in source code.
+///
+/// The plugin is automatically invoked by the compiler when processing macro expansions
+/// in code that imports the OUDSThemesContract module.
 @main
 struct OUDSMacrosPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [

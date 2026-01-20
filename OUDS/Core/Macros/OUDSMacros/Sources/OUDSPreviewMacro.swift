@@ -16,9 +16,14 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-/// Macro implementation for #OUDSPreview
+/// Macro implementation for #OUDSPreview.
 ///
-/// This macro wraps the provided content in an OUDSThemeableView with the specified theme.
+/// This struct conforms to `ExpressionMacro` and provides the implementation for the
+/// `#OUDSPreview` freestanding macro. When the Swift compiler encounters the macro
+/// in source code, it invokes the `expansion(of:in:)` method to transform the macro
+/// call into the equivalent SwiftUI code.
+///
+/// The macro wraps the provided content in an OUDSThemeableView with the specified theme.
 ///
 /// Example usage:
 /// ```swift
@@ -63,9 +68,16 @@ public struct OUDSPreviewMacro: ExpressionMacro {
     }
 }
 
-/// Errors that can occur during macro expansion
+/// Errors that can occur during macro expansion.
+///
+/// These errors are thrown by `OUDSPreviewMacro` when the macro is used incorrectly
+/// or when required arguments are missing. The Swift compiler will display these
+/// error messages to the developer at the macro call site.
 enum MacroError: Error, CustomStringConvertible {
+    /// Thrown when the macro is called without a 'theme' argument or with an incorrectly labeled argument.
     case missingThemeArgument
+
+    /// Thrown when the macro is called without a trailing closure containing the preview content.
     case missingContentClosure
 
     var description: String {
