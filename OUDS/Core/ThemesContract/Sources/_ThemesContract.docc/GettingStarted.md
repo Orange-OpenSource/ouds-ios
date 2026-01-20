@@ -15,7 +15,7 @@ If you want to add the iOS library of *Orange Unified Design System*, you need t
 To do that, add a new _package dependency_ to your _Xcode_ project by refering to it by `github.com/Orange-OpenSource/ouds-ios`.
 You are free to choose wether or not you want a branch or a specific tag, pick the solution you want.
 
-You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *0.18.0*) and release candidates tags (e.g. *0.18.0-rc3*).
+You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags. You can find release tags (e.g. *1.0.0*) and release candidates tags (e.g. *1.0.0-rc3*).
 
 ### Import the librairies you need
 
@@ -101,3 +101,28 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
 }
 
 > Tip: Keep in mind only one theme can be used within one `OUDSThemeableView`.
+
+### Trick for Xcode Preview
+
+If you use Xcode `#Preview` blocks, you will have to be sure the theme is instanciated and injected through the `OUDSThemeableView`.
+Because it is not possible today to override the legit `#Preview` block, you can instead define a utility *View extension* to wrap your content
+inside the `OUDSThemeableView`:
+
+```swift
+extension View {
+    func withOuds() -> some View {
+        let myTheme = OrangeTheme() // Or any other theme you want to test
+        return OUDSThemeableView(theme: myTheme) {
+            self
+        }
+    }
+}
+```
+
+and then:
+```swift
+#Preview {
+    SampleView()
+        .withOuds() // Otherwise you may face errors
+}
+```
