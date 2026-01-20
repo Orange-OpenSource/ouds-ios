@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import SwiftUI
+
 // MARK: - OUDS Preview Macro
 
 /// A macro to simplify the use of OUDS components in Xcode previews.
