@@ -18,12 +18,13 @@ import SwiftSyntaxMacros
 
 /// Macro implementation for #OUDSPreview.
 ///
-/// This struct conforms to `ExpressionMacro` and provides the implementation for the
+/// This struct conforms to `DeclarationMacro` and provides the implementation for the
 /// `#OUDSPreview` freestanding macro. When the Swift compiler encounters the macro
 /// in source code, it invokes the `expansion(of:in:)` method to transform the macro
-/// call into the equivalent SwiftUI code.
+/// call into a complete preview declaration.
 ///
-/// The macro wraps the provided content in an OUDSThemeableView with the specified theme.
+/// The macro wraps the provided content in both a `#Preview` macro and an `OUDSThemeableView`
+/// with the specified theme, allowing users to create OUDS-themed previews with minimal syntax.
 ///
 /// Example usage:
 /// ```swift
@@ -34,15 +35,17 @@ import SwiftSyntaxMacros
 ///
 /// Expands to:
 /// ```swift
-/// OUDSThemeableView(theme: OrangeTheme()) {
-///     YourView()
+/// #Preview {
+///     OUDSThemeableView(theme: OrangeTheme()) {
+///         YourView()
+///     }
 /// }
 /// ```
-public struct OUDSPreviewMacro: ExpressionMacro {
+public struct OUDSPreviewMacro: DeclarationMacro {
     public static func expansion(
         of node: some FreestandingMacroExpansionSyntax,
         in context: some MacroExpansionContext
-    ) throws -> ExprSyntax {
+    ) throws -> [DeclSyntax] {
         // Get the arguments from the macro
         guard let firstArgument = node.arguments.first else {
             throw MacroError.missingThemeArgument
@@ -61,10 +64,14 @@ public struct OUDSPreviewMacro: ExpressionMacro {
             throw MacroError.missingContentClosure
         }
 
-        // Build the expanded expression without the label (OUDSThemeableView already expects 'theme:')
-        return """
-            OUDSThemeableView(theme: \(themeExpression)) \(trailingClosure)
+        // Build the expanded declaration that wraps content in #Preview and OUDSThemeableView
+        let declaration: DeclSyntax = """
+            #Preview {
+                OUDSThemeableView(theme: \(themeExpression)) \(trailingClosure)
+            }
             """
+
+        return [declaration]
     }
 }
 

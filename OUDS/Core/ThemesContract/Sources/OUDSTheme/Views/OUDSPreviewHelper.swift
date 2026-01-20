@@ -15,10 +15,11 @@ import SwiftUI
 
 // MARK: - OUDS Preview Macro
 
-/// A macro to simplify the use of OUDS components in Xcode previews.
+/// A macro to create Xcode previews with OUDS theme support.
 ///
-/// This macro wraps your preview content in an `OUDSThemeableView` with the specified theme,
-/// eliminating boilerplate and ensuring proper theme injection.
+/// This macro replaces the standard `#Preview` macro and automatically wraps your preview
+/// content in an `OUDSThemeableView` with the specified theme, eliminating boilerplate
+/// and ensuring proper theme injection.
 ///
 /// ## Usage
 ///
@@ -31,28 +32,24 @@ import SwiftUI
 /// }
 /// ```
 ///
-/// You can use the `#OUDSPreview` macro:
+/// You can use the `#OUDSPreview` macro directly:
 /// ```swift
-/// #Preview {
-///     #OUDSPreview(theme: OrangeTheme()) {
-///         YourView()
-///     }
+/// #OUDSPreview(theme: OrangeTheme()) {
+///     YourView()
 /// }
 /// ```
 ///
-/// The macro automatically expands to wrap your view in `OUDSThemeableView` with the theme.
+/// The macro automatically expands to create a complete preview declaration with theme support.
 ///
 /// - Parameters:
 ///   - theme: The OUDS theme to apply. Must be a concrete instance of `OUDSTheme`.
 ///   - content: A trailing closure containing the view content to preview.
 ///
-/// - Returns: A view wrapped with the OUDS theme environment.
-///
 /// - Since: 0.14.0
 /// - Note: This macro requires one of the OUDS theme modules to be imported
 ///         (e.g., `OUDSThemesOrange`, `OUDSThemesSosh`, etc.) to provide a concrete theme instance.
-@freestanding(expression)
+@freestanding(declaration)
 public macro OUDSPreview<Content>(
     theme: OUDSTheme,
     @ViewBuilder content: () -> Content
-) -> some View = #externalMacro(module: "OUDSMacros", type: "OUDSPreviewMacro")
+) = #externalMacro(module: "OUDSMacros", type: "OUDSPreviewMacro")
