@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(macOS)
 import OUDSComponents
 import SwiftUI
 import Testing
@@ -18,18 +19,21 @@ import Testing
 /// Tests crash scenarios for `OUDSCheckboxItemIndeterminate` using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the component correctly enforces design constraints by crashing when
 /// forbidden parameter combinations are used.
+///
+/// **Should be run on macOS to catch the failure crash, not possible on iOS yet**
 struct OUDSCheckboxItemIndeterminateCrashTests {
 
     /// Verify that `OUDSCheckboxItemIndeterminate` crashes when both `isReadOnly` and `isError` are set to `true`.
     /// This is forbidden by design as a component cannot be in both error and read-only states.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
+    @Test
     func checkboxItemIndeterminateCrashesWhenReadOnlyAndError() async {
-        #expect(exitsWith: .failure) {
+        await #expect(processExitsWith: .failure) {
             let selection = OUDSCheckboxIndicatorState.indeterminate
             _ = OUDSCheckboxItemIndeterminate(selection: .constant(selection),
-                                             label: "Test",
-                                             isError: true,
-                                             isReadOnly: true)
+                                              label: "Test",
+                                              isError: true,
+                                              isReadOnly: true)
         }
     }
 }
+#endif

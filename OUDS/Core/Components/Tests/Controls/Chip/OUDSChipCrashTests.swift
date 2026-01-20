@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(macOS)
 import OUDSComponents
 import SwiftUI
 import Testing
@@ -18,23 +19,26 @@ import Testing
 /// Tests crash scenarios for chip components using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the components correctly enforce design constraints by crashing when
 /// forbidden parameter combinations or values are used.
+///
+/// **Should be run on macOS to catch the failure crash, not possible on iOS yet**
 struct OUDSChipCrashTests {
 
     /// Verify that `OUDSFilterChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
+    @Test
     func filterChipCrashesWithEmptyText() async {
-        #expect(exitsWith: .failure) {
-            _ = OUDSFilterChip(text: "") { }
+        await #expect(processExitsWith: .failure) {
+            _ = OUDSFilterChip(text: "") {}
         }
     }
 
     /// Verify that `OUDSSuggestionChip` crashes when text parameter is empty.
     /// An empty text is forbidden by design.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
+    @Test
     func suggestionChipCrashesWithEmptyText() async {
-        #expect(exitsWith: .failure) {
-            _ = OUDSSuggestionChip(text: "") { }
+        await #expect(processExitsWith: .failure) {
+            _ = OUDSSuggestionChip(text: "") {}
         }
     }
 }
+#endif

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(macOS)
 import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -19,31 +20,34 @@ import Testing
 /// Tests crash scenarios for `OrangeTheme` color mode handling using Swift Testing's `#expect(exitsWith:)`.
 /// These tests verify that the theme correctly enforces constraints by crashing when
 /// undefined or unmanaged color mode tokens are used.
+///
+/// **Should be run on macOS to catch the failure crash, not possible on iOS yet**
 struct OrangeThemeColorModeCrashTests {
 
     /// Verify that `OrangeTheme` crashes when trying to use a color mode token with undefined value.
     /// Undefined values (⛔️) are forbidden and should trigger a fatal error.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
+    @Test
     func orangeThemeCrashesWithUndefinedColorModeValue() async {
-        #expect(exitsWith: .failure) {
+        await #expect(processExitsWith: .failure) {
             let provider = OrangeThemeColorModeSemanticTokensProvider()
             let undefinedToken = MultipleColorModeSemanticToken("undefinedTest",
-                                                               light: ColorModeRawTokens.undefined,
-                                                               dark: ColorModeRawTokens.dark)
+                                                                light: ColorModeRawTokens.undefined,
+                                                                dark: ColorModeRawTokens.dark)
             _ = provider.toColor(from: undefinedToken)
         }
     }
 
     /// Verify that `OrangeTheme` crashes when trying to use an unmanaged color mode token.
     /// All color mode tokens must be explicitly managed in the theme's `toColor(from:)` method.
-    @Test(.enabled(if: ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil))
+    @Test
     func orangeThemeCrashesWithUnmanagedColorModeToken() async {
-        #expect(exitsWith: .failure) {
+        await #expect(processExitsWith: .failure) {
             let provider = OrangeThemeColorModeSemanticTokensProvider()
             let unmanagedToken = MultipleColorModeSemanticToken("unmanagedTest",
-                                                               light: ColorModeRawTokens.light,
-                                                               dark: ColorModeRawTokens.dark)
+                                                                light: ColorModeRawTokens.light,
+                                                                dark: ColorModeRawTokens.dark)
             _ = provider.toColor(from: unmanagedToken)
         }
     }
 }
+#endif
