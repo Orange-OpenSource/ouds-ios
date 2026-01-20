@@ -105,6 +105,11 @@ let package = Package(
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
         // Formatter for Swift code
         .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.7"),
+
+        // MARK: Macro dependencies
+
+        // Swift Syntax for macro implementation
+        .package(url: "https://github.com/swiftlang/swift-syntax", from: "600.0.0"),
     ],
 
     // MARK: - Targets
@@ -219,7 +224,12 @@ let package = Package(
 
         .target(
             name: "OUDSThemesContract",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
+            dependencies: [
+                "OUDSTokensRaw",
+                "OUDSTokensSemantic",
+                "OUDSTokensComponent",
+                "OUDSMacros",
+            ],
             path: "OUDS/Core/ThemesContract/Sources"),
         .testTarget(
             name: "OUDSThemesContract-Tests",
@@ -275,6 +285,16 @@ let package = Package(
             name: "TestsUtils",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/TestsUtils"),
+
+        // MARK: Macro targets
+
+        .macro(
+            name: "OUDSMacros",
+            dependencies: [
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+            ],
+            path: "OUDS/Core/Macros/OUDSMacros/Sources"),
     ],
 
     // MARK: - Swift language modes

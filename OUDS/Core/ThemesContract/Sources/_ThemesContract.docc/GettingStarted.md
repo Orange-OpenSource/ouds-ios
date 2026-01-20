@@ -106,27 +106,19 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
 
 @Row {
         @Column {
-            When using Xcode `#Preview` macros, you can use helper functions to easily apply themes to your preview views.
-            Two convenient approaches are available:
-            1. Use the `oudsPreview()` function to wrap your content
-            2. Use the `.withOUDS()` modifier on your view
+            When using Xcode `#Preview` macros, you can use the `#OUDSPreview` macro to easily apply themes to your preview views.
+            The macro automatically wraps your content in `OUDSThemeableView` with the specified theme.
         }
         @Column {
             ```swift
-            // Using oudsPreview function
+            // Using #OUDSPreview macro
             #Preview {
-                oudsPreview(theme: OrangeTheme()) {
+                #OUDSPreview(theme: OrangeTheme()) {
                     YourView()
                 }
-            }
-            
-            // Using withOUDS modifier
-            #Preview {
-                YourView()
-                    .withOUDS(theme: OrangeTheme())
             }
             ```
         }
 }
 
-> Tip: These preview helpers automatically wrap your views in `OUDSThemeableView`, making it easy to test OUDS components in Xcode previews without manually creating the theme environment.
+> Tip: The `#OUDSPreview` macro is a freestanding expression macro that expands to wrap your views in `OUDSThemeableView`, making it easy to test OUDS components in Xcode previews without manually creating the theme environment.
