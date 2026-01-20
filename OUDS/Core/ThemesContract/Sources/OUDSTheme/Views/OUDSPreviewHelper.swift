@@ -40,22 +40,13 @@ import SwiftUI
 /// }
 /// ```
 ///
-/// Or using the default Orange theme:
-/// ```swift
-/// #Preview {
-///     oudsPreview {
-///         YourView()
-///     }
-/// }
-/// ```
-///
 /// - Parameters:
 ///   - theme: The OUDS theme to apply. Must be a concrete instance of `OUDSTheme`.
 ///   - content: A view builder that provides the content to preview.
 /// - Returns: A view wrapped with the OUDS theme.
 ///
 /// - Since: 0.14.0
-/// - Note: This function requires one of the OUDS theme modules to be imported 
+/// - Note: This function requires one of the OUDS theme modules to be imported
 ///         (e.g., `OUDSThemesOrange`, `OUDSThemesSosh`, etc.) to provide a concrete theme instance.
 public func oudsPreview<Content: View>(
     theme: OUDSTheme,
