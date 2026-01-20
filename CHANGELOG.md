@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Gem `fastlane` gem from v2.230.0 to v2.231.1
 - GitHub Actions `checkout` from v6.0.1 to v6.0.2 for all workflows
 - Swift package `SwifFormat` from v0.58.7 to v0.59.0
 - macOS 13 support
@@ -32,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
 - **BREAKING**: Rename some multiple token objects (from plural to singular form)
 - Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
-- Gem `fastlane` gem from v2.229.1 to v2.230.0
 
 ### Removed
 
