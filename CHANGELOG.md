@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Cover crash cases on test suites (Orange-OpenSource/ouds-ios#1255)
 - Update definitions of components using DSM definitions (Orange-OpenSource/ouds-ios#1238) 
 - Move from Xcode 26.1.1 to Xcode 26.2 (Orange-OpenSource/ouds-ios#1246)
 - Move from Xcode 26.0 to Xcode 26.1.1 (Orange-OpenSource/ouds-ios#1209)
