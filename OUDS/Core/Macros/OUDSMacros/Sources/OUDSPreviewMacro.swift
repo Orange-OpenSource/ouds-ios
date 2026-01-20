@@ -39,18 +39,26 @@ public struct OUDSPreviewMacro: ExpressionMacro {
         in context: some MacroExpansionContext
     ) throws -> ExprSyntax {
         // Get the arguments from the macro
-        guard let themeArgument = node.arguments.first else {
+        guard let firstArgument = node.arguments.first else {
             throw MacroError.missingThemeArgument
         }
+
+        // Verify the argument is labeled "theme"
+        guard let label = firstArgument.label?.text, label == "theme" else {
+            throw MacroError.missingThemeArgument
+        }
+
+        // Get the theme expression (the value of the theme argument)
+        let themeExpression = firstArgument.expression
 
         // Get the trailing closure (the content)
         guard let trailingClosure = node.trailingClosure else {
             throw MacroError.missingContentClosure
         }
 
-        // Build the expanded expression
+        // Build the expanded expression without the label (OUDSThemeableView already expects 'theme:')
         return """
-            OUDSThemeableView(\(themeArgument)) \(trailingClosure)
+            OUDSThemeableView(theme: \(themeExpression)) \(trailingClosure)
             """
     }
 }
