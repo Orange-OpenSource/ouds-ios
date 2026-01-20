@@ -38,7 +38,7 @@
 <a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="Fossa status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="Fossa status"></a>
 </p>
 
-## Status
+## ⚙️ Status
 
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
 
@@ -60,7 +60,7 @@
 
 [![Open Hub](https://img.shields.io/badge/open%20hub-5A2A82?style=for-the-badge)](https://openhub.net/p/ouds-ios)
 
-## About OUDS
+## ℹ️ About OUDS
 
 OUDS means *Orange Unified Design System*.
 
@@ -77,7 +77,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > [!NOTE]
 > Main targets are iOS / iPadOS, and we do our best to support macOS, visionOS, tvOS and watchOS!
 
-## Quick start
+## 🚀 Quick start
 
 You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embed and use OUDS iOS Swift Package for your app.
 
@@ -145,7 +145,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 
 If you use generative AI tool like copilots, feel free to use our [AGENTS.md](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/AGENTS.md) file describing the grammar, syntax and API of OUDS.
 
-## Content
+## 📦 Content
 
 > [!NOTE]
 > This repository contains the OUDS iOS library, as a Swift Package, that provides Orange iOS components for its unified design system.
@@ -165,7 +165,7 @@ If you use generative AI tool like copilots, feel free to use our [AGENTS.md](ht
 > You can verify their integrity with commands from GPG tool of GitHub CLI client.
 > Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
 
-## Tokens libraries versions
+## 🧬 Tokens libraries versions
 
 > [!TIP]
 > This Swift package embeds specific versions of themes / tokens librairies.
@@ -180,7 +180,7 @@ If you use generative AI tool like copilots, feel free to use our [AGENTS.md](ht
 - Brand Wireframe version: 2.3.0
 - Brand Orange Business Tools version: 2.3.0
 
-## Bugs, feature requests and discussions
+## 🪲 Bugs, feature requests and discussions
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
 
@@ -190,23 +190,23 @@ Keep in mind internal or sensitive discussions must be in internal tools, not pu
 
 If your discussions, requests or issues are about the design system toolbox application, [use instead its GitHub project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
-## Contributing
+## 🤝 Contributing
 
 Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/DEVELOP.md) file.
 
-## Copyright and license
-
-Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
-For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
-
-## Data and privacy
+## 🔒 Data and privacy
 
 The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
 As such:
 - this SDK does not handle any personnal data
 - this SDK does not require any device permission to work
 
-## Design Toolbox App
+## ⚖️ Copyright and license
+
+Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
+For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
+
+## 📱 Design Toolbox App
 
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 
