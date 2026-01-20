@@ -28,8 +28,7 @@ struct OUDSRadioItemCrashTests {
     @Test
     func radioItemCrashesWhenReadOnlyAndError() async {
         await #expect(processExitsWith: .failure) {
-            let isOn = false
-            _ = OUDSRadioItem(isOn: .constant(isOn),
+            _ = OUDSRadioItem(isOn: .constant(false),
                               label: "Test",
                               isError: true,
                               isReadOnly: true)

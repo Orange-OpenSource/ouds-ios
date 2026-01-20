@@ -28,9 +28,8 @@ struct OUDSSwitchItemCrashTests {
     @Test
     func switchItemCrashesWhenReadOnlyAndError() async {
         await #expect(processExitsWith: .failure) {
-            let isOn = false
             _ = OUDSSwitchItem("Test",
-                               isOn: .constant(isOn),
+                               isOn: .constant(false),
                                isError: true,
                                isReadOnly: true)
         }
