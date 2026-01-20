@@ -101,3 +101,32 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
 }
 
 > Tip: Keep in mind only one theme can be used within one `OUDSThemeableView`.
+
+### Use OUDS in Xcode Previews
+
+@Row {
+        @Column {
+            When using Xcode `#Preview` macros, you can use helper functions to easily apply themes to your preview views.
+            Two convenient approaches are available:
+            1. Use the `oudsPreview()` function to wrap your content
+            2. Use the `.withOUDS()` modifier on your view
+        }
+        @Column {
+            ```swift
+            // Using oudsPreview function
+            #Preview {
+                oudsPreview(theme: OrangeTheme()) {
+                    YourView()
+                }
+            }
+            
+            // Using withOUDS modifier
+            #Preview {
+                YourView()
+                    .withOUDS(theme: OrangeTheme())
+            }
+            ```
+        }
+}
+
+> Tip: These preview helpers automatically wrap your views in `OUDSThemeableView`, making it easy to test OUDS components in Xcode previews without manually creating the theme environment.
