@@ -294,13 +294,5 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     deinit {}
 }
 
-// MARK: - Extension of Bundle
-
-extension Bundle {
-
-    /// The Orange theme bundle, useful to find resources
-    public static let OrangeTheme = Bundle.module
-}
-
 // swiftlint:enable function_body_length
 // swiftlint:enable line_length
