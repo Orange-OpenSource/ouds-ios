@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if DEBUG
 import Foundation
 import OUDSFoundations
 import OUDSThemesContract
@@ -28,9 +27,10 @@ extension View {
     ///     }
     /// ```
     ///
-    /// - Note: Only available in DEBUG mode
+    /// - Note: Only works in DEBUG mode and in #Preview context
     @ViewBuilder
-    public func wireframePreview() -> some View {
+    public func wireframereview() -> some View {
+        #if DEBUG
         if ProcessInfo.doesRunOnXcodePreview {
             OUDSThemeableView(theme: WireframeTheme()) {
                 self
@@ -38,6 +38,8 @@ extension View {
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }
-#endif

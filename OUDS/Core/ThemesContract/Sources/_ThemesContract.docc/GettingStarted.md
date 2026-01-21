@@ -106,8 +106,7 @@ Wireframe                 | For mockups, prototypes and prooves of concepts wito
 
 If you use Xcode `#Preview` blocks, you will have to be sure the theme is instanciated and injected through the `OUDSThemeableView`.
 Because it is not possible today to override the legit `#Preview` block, you can instead use some of our utilities to wrap your content
-inside the `OUDSThemeableView`. These utilities come with the themes modules. Without them you may face errors about undefined theme.
-These utilities are only available in DEBUG mode.
+inside the `OUDSThemeableView` automatically. These utilities come with the themes modules. Without them you may face errors about undefined theme.
 
 ```swift
 // Apply Orange theme
