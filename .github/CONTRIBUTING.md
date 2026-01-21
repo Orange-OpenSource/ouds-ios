@@ -253,6 +253,13 @@ Add thousands of tokens and hundreds of tests.
 Assisted-by: GPT-4o-mini (Orange Dinootoo)
 ```
 
+If bot accounts reviewed your pull requests or add code in your commits, add this information, for example depending to your case:
+```text
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
+```
+
 ## Developer Certificate of Origin
 
 You may notice in the previous section the commits are signed-off.
