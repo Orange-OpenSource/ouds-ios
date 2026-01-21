@@ -202,11 +202,3 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 
 // swiftlint:enable function_body_length
 // swiftlint:enable line_length
-
-// MARK: - Extension of Bundle
-
-extension Bundle {
-
-    /// The OrangeBusinessTools theme bundle, useful to find resources
-    public static let OrangeBusinessToolsTheme = Bundle.OrangeTheme
-}

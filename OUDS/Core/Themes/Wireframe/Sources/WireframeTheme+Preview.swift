@@ -19,20 +19,20 @@ import SwiftUI
 
 extension View {
 
-    /// Wraps `self` `View` inside an `OUDSThemeableView` applying the ``OrangeTheme``
+    /// Wraps `self` `View` inside an `OUDSThemeableView` applying the ``WireframeTheme``
     /// so as to help tests with Xcode #Preview.
     ///
     /// ```swift
     ///     #Preview {
-    ///        SampleView().orangePreview()
+    ///        SampleView().wireframePreview()
     ///     }
     /// ```
     ///
     /// - Note: Only available in DEBUG mode
     @ViewBuilder
-    public func orangePreview() -> some View {
+    public func wireframePreview() -> some View {
         if ProcessInfo.doesRunOnXcodePreview {
-            OUDSThemeableView(theme: OrangeTheme()) {
+            OUDSThemeableView(theme: WireframeTheme()) {
                 self
             }
         } else {

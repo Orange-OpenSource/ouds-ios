@@ -147,11 +147,3 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 }
 
 // swiftlint:enable function_body_length
-
-// MARK: - Extension of Bundle
-
-extension Bundle {
-
-    /// The `Wireframe` theme bundle, useful to find resources
-    static let WireframeTheme = Bundle.module
-}
