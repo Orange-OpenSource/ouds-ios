@@ -22,67 +22,77 @@ body:
   - type: input
     id: os-version
     attributes:
-      label: OS Version
+      label: Device OS version
       description: 
       placeholder: iOS 15.1
     validations:
       required: true
   - type: input
-    id: app-version
+    id: app-ouds-lib-version
     attributes:
-      label: App version
-      placeholder: 0.5.0
+      label: OUDS iOS library version
+      placeholder: "1.0.0"
     validations:
       required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: Design System Toolbox app version
+      placeholder: 1.0.0
   - type: input
     id: app-build-number
     attributes:
-      label: App build number
-      placeholder: "13"
-    validations:
-      required: true
+      label: Design System Toolbox app build number
+      placeholder: "1766065729"         
   - type: input
-    id: app-ouds-lib-version
+    id: app-build-type
     attributes:
-      label: OUDS iOS library version embeded in the app
-      placeholder: "0.14.0"
+      label: Design System Toolbox app build type
+      placeholder: alpha, beta, prod, debug
     validations:
-      required: false      
+      required: false             
+  - type: input
+    id: app-orientation
+    attributes:
+      label: Design System Toolbox app orientation
+      placeholder: Portrait and / or landscape
+    validations:
+      required: false
+  - type: input
+    id: app-language
+    attributes:
+      label: Design System Toolbox app language
+      placeholder: English
+    validations:
+      required: false   
+  - type: input
+    id: device-language
+    attributes:
+      label: Device language
+      placeholder: English
+    validations:
+      required: false   
   - type: input
     id: app-token-lib-version
     attributes:
       label: Tokens libraries versions embeded in the app
       placeholder: "Orange 1.1.0, Core 1.2.0, Sosh 1.0.0, ..."
     validations:
-      required: false      
+      required: false 
   - type: input
-    id: app-build-type
+    id: xcode-version
     attributes:
-      label: App build type
-      placeholder: alpha, beta, prod, debug
-    validations:
-      required: true             
-  - type: input
-    id: app-orientation
-    attributes:
-      label: App orientation
-      placeholder: Portrait and / or landscape
+      label: Xcode version
+      placeholder: "Add 'xcodebuild -version' command outputs"
     validations:
       required: false
   - type: input
-    id: device-language
+    id: swift-version
     attributes:
-      label: Device language
-      placeholder: Arabic
+      label: Swift version
+      placeholder: "Add 'swift --version' command outputs"
     validations:
       required: false
-  - type: input
-    id: app-language
-    attributes:
-      label: App language
-      placeholder: English
-    validations:
-      required: false      
   - type: textarea
     id: what-happened
     attributes:
