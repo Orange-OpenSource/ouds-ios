@@ -19,7 +19,7 @@ import SwiftUI
 extension View {
 
     /// Wraps `self` `View` inside an `OUDSThemeableView` applying the ``WireframeTheme``.
-    /// This helper should be used in two case:
+    /// This helper should be used in two cases:
     /// - to debug a `View` in Xcode `#Preview` macro
     /// - to let end-users testing on their side in `#Preview` macro your `View` based on OUDS.
     ///
@@ -45,7 +45,7 @@ extension View {
     ///     }
     /// ```
     ///
-    /// Note this second case workls only if *YourView* does not refer directly to the `theme` (see [#1268](https://github.com/Orange-OpenSource/ouds-ios/issues/1268))
+    /// Note this second case works only if *YourView* does not refer directly to the `theme` (see [#1268](https://github.com/Orange-OpenSource/ouds-ios/issues/1268))
     @ViewBuilder
     public func wireframePreview() -> some View {
         #if DEBUG

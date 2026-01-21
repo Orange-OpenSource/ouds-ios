@@ -15,7 +15,7 @@ import Foundation
 
 extension ProcessInfo {
 
-    /// Flag saying if the current envionment is the Xcode Preview (true) or not (false)
+    /// Flag saying if the current environment is the Xcode Preview (true) or not (false)
     public static var doesRunOnXcodePreview: Bool {
         #if DEBUG
         processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
