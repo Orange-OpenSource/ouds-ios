@@ -62,7 +62,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSuggestionChip: View {
 
     // MARK: - Stored Properties

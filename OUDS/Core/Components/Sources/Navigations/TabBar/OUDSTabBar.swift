@@ -184,7 +184,7 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.0.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Properties

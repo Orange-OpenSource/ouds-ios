@@ -50,7 +50,7 @@
 
 ![iOS 15](https://img.shields.io/badge/iOS-15-FF1AB2?style=for-the-badge)
 ![iPadOS 15](https://img.shields.io/badge/iPadOS-15-FF1AB2?style=for-the-badge)
-![macOS 15](https://img.shields.io/badge/macOS-15-FF1AB2?style=for-the-badge)
+![macOS 13](https://img.shields.io/badge/macOS-13-FF1AB2?style=for-the-badge)
 ![visionOS 1](https://img.shields.io/badge/visionOS-1-FF1AB2?style=for-the-badge)
 ![watchOS 11](https://img.shields.io/badge/watchOS-11-FF1AB2?style=for-the-badge)
 ![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)

@@ -98,7 +98,7 @@ import SwiftUI
 /// ![A radio picker component in light and dark modes with Wirefraùe theme](component_radioPicker_Wireframe)
 ///
 /// - Since: 0.14.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties

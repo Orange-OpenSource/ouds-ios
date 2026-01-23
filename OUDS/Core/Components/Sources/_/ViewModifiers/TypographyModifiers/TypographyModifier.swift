@@ -136,11 +136,27 @@ struct TypographyModifier: ViewModifier {
                     .padding(.vertical, padding)
             }
         }
-        #if os(visionOS) || os(macOS) || os(watchOS)
-        .onChange(of: sizeCategory) { _, _ in }
-        #else
-        .onChange(of: sizeCategory) { _ in }
-        #endif
+        .modifier(OnChangeSizeCategoryModifier(sizeCategory: sizeCategory))
+    }
+
+    // MARK: - On Change Size Category Modifier
+
+    private struct OnChangeSizeCategoryModifier: ViewModifier {
+        let sizeCategory: ContentSizeCategory
+
+        func body(content: Content) -> some View {
+            #if os(visionOS) || os(watchOS)
+            content.onChange(of: sizeCategory) { _, _ in }
+            #elseif os(macOS)
+            if #available(macOS 14.0, *) {
+                content.onChange(of: sizeCategory) { _, _ in }
+            } else {
+                content.onChange(of: sizeCategory) { _ in }
+            }
+            #else
+            content.onChange(of: sizeCategory) { _ in }
+            #endif
+        }
     }
 }
 

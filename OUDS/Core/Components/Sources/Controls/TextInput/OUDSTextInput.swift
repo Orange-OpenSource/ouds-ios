@@ -186,7 +186,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties
