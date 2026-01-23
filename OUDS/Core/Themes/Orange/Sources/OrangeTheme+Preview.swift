@@ -33,7 +33,7 @@ extension View {
     /// ```swift
     ///     // In this case, you defined a `View` you provide to outside developers who use `#Preview` macro
     ///     // In your side:
-    ///     struct YourView(): View {
+    ///     struct YourView: View {
     ///         var body: some View {
     ///            yourContentView.orangePreview()
     ///         }
@@ -41,7 +41,7 @@ extension View {
     ///
     ///     // In their side:
     ///     #Preview {
-    ///         TheirView()
+    ///         TheirView() // Using your view
     ///     }
     /// ```
     ///

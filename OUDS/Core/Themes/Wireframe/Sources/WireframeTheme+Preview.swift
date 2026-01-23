@@ -41,7 +41,7 @@ extension View {
     ///
     ///     // In their side:
     ///     #Preview {
-    ///         TheirView()
+    ///         TheirView() // Using your view
     ///     }
     /// ```
     ///
