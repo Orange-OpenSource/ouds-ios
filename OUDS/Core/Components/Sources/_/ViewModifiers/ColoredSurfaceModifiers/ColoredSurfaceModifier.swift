@@ -15,7 +15,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// `ViewModifier` which helps to apply a predefined color mode on a view.
-/// This mode is based on `OUDSColoredSurface.SurfaceColor` and defines which tyê of color scheme
+/// This mode is based on `OUDSColoredSurface.SurfaceColor` and defines which type of color scheme
 /// and monochrome must be considered.
 public struct OUDSColoredSurfaceModifier: ViewModifier {
 
