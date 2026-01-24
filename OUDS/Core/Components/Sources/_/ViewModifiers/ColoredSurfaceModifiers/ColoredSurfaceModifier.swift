@@ -29,11 +29,10 @@ public struct OUDSColoredSurfaceModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .background(useColorToken.color(for: colorScheme))
+            .background(useColorToken.color(for: useColorScheme))
             .environment(\.oudsUseMonochrome, useMonochrome)
             .environment(\.oudsOnColoredSurface, true)
             .environment(\.oudsSurfaceColor, useColorToken)
-            .environment(\.colorScheme, useColorScheme)
     }
 
     // MARK: - Computed properties
