@@ -105,10 +105,15 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
     private static let extraCompactMaxWidth = 390.0
+    
+    /// Determine if the screen is extra compact at initialization time (not in a computed property)
+    #if os(iOS)
+    private let isExtraCompactScreen = UIScreen.main.bounds.width < UserInterfaceSizeClassModifier.extraCompactMaxWidth
+    #endif
 
     private var horizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
         #if os(iOS)
-        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+        if isExtraCompactScreen {
             .extraCompact
         } else {
             horizontalSizeClass == .compact ? .compact : .regular
@@ -120,7 +125,7 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
         #if os(iOS)
-        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+        if isExtraCompactScreen {
             .extraCompact
         } else {
             verticalSizeClass == .compact ? .compact : .regular
@@ -142,7 +147,8 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
 /// Private modifier used to define as environment variable the type of iPhone device
 private struct DeviceModifier: ViewModifier {
 
-    private func getDevice() -> iPhoneDevice {
+    /// Compute device type at initialization time to avoid accessing UIScreen/UIApplication during SwiftUI updates
+    private let device: iPhoneDevice = {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return iPhoneDevice.unknown }
 
@@ -150,11 +156,11 @@ private struct DeviceModifier: ViewModifier {
         let safeAreaBottom = window.safeAreaInsets.bottom
 
         return OUDSFoundations.iPhoneDevice(screenBounds.width, screenBounds.height, safeAreaBottom)
-    }
+    }()
 
     func body(content: Content) -> some View {
         content
-            .environment(\.iPhoneInUse, getDevice())
+            .environment(\.iPhoneInUse, device)
     }
 }
 #endif
