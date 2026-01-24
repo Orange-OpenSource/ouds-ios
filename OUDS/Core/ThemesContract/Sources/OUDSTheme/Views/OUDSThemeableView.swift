@@ -106,7 +106,7 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
     /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
     private static let extraCompactMaxWidth = 390.0
     
-    /// Determine if the screen is extra compact at initialization time (not in a computed property)
+    /// Computed at initialization to avoid AttributeGraph cycles from accessing UIScreen.main during SwiftUI updates in iOS 26.x
     #if os(iOS)
     private let isExtraCompactScreen = UIScreen.main.bounds.width < UserInterfaceSizeClassModifier.extraCompactMaxWidth
     #endif
@@ -147,7 +147,8 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
 /// Private modifier used to define as environment variable the type of iPhone device
 private struct DeviceModifier: ViewModifier {
 
-    /// Compute device type at initialization time to avoid accessing UIScreen/UIApplication during SwiftUI updates
+    /// Computed at initialization to avoid AttributeGraph cycles from accessing UIScreen/UIApplication during SwiftUI updates in iOS 26.x.
+    /// Falls back to unknown device if scenes are not yet available.
     private let device: iPhoneDevice = {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return iPhoneDevice.unknown }
