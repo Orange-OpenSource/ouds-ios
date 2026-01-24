@@ -298,6 +298,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
                 isLandscape = Self.isInLandscapeViewport()
             }
         }
+        .modifier(DeviceModifier())
         #else // visionOS, macOS
         TabView {
             content()
