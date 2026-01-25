@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift package `SwifFormat` from v0.58.7 to v0.59.0
 - macOS 13 support
 - Cover crash cases on test suites (Orange-OpenSource/ouds-ios#1255)
 - Update definitions of components using DSM definitions (Orange-OpenSource/ouds-ios#1238) 
