@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - Gem `fastlane` gem from v2.230.0 to v2.231.1
 - GitHub Actions `checkout` from v6.0.1 to v6.0.2 for all workflows
 - Swift package `SwifFormat` from v0.58.7 to v0.59.0
