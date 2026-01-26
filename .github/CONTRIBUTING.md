@@ -260,6 +260,9 @@ Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
 Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
 ```
 
+If the evolution is a fix for a bug reported by someone outside the project, use *Reported-by*.
+If the evolution was from a suggestion by someone outside the project, use *Suggested-by*.
+
 ## Developer Certificate of Origin
 
 You may notice in the previous section the commits are signed-off.

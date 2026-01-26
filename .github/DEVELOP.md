@@ -284,6 +284,8 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 Because feedbacks of our users are important, you can also mention people who suggested issues to thanks them (*Suggested-by*).
+If users reported a bug, use instead *Reported-by*.
+These two cases are more dedicated to people outside the project.
 
 For example, for issue n°123 and its pull request n°456, tested by Anton, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, acked by Maxime and suggested by Thomas:
 ```text
