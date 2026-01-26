@@ -270,13 +270,15 @@ public struct OUDSTabBar<Content>: View where Content: View {
     public var body: some View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
-        // not for iPhone in landscape mode nor iPads.
+        // not for iPhone in landscape mode nor iPads (design requirements).
         // With Xcode 26.0 it was mandatory to manage these 2 cases.
         // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
         // because of the ZStack, its conditions and the multiple use of tab views.
         // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
         // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
-        // https://github.com/Orange-OpenSource/ouds-ios/issues/1249
+        // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
+        // device-related environment values (such as `iPhoneInUse`) are available only
+        // within the TabBar view hierarchy (e.g. `SelectedTabIndicator`, `TabBarTopDivider`).
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 content()

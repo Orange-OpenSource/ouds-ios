@@ -25,9 +25,8 @@ struct DeviceModifier: ViewModifier {
     ///
     /// **WARNING:**:
     /// - Computed at initialization to avoid AttributeGraph cycles from accessing UIScreen/UIApplication during SwiftUI updates in iOS 26.x.
-    /// - Makes still troubles since Xcode 26.1 and Xcode 26.2 with AttributeGraph cycles
-    /// - See #1249, #1271
-    private let device: iPhoneDevice = {
+    /// - Can still male troubles since Xcode 26.1 and Xcode 26.2 with AttributeGraph cycles
+    private let device: iPhoneDevice = { // See #1249, #1271
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return iPhoneDevice.unknown }
 
