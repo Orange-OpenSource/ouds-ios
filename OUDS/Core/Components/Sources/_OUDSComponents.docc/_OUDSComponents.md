@@ -20,6 +20,7 @@ You can get more details about them in the categories below:
 - <doc:Navigations>
 - <doc:Indicators>
 - <doc:Controls>
+- <doc:ContentDisplay>
 - <doc:Layouts>
 
 ## Customize components

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_bullet_list_level2.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDSFoundations
+import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of ``FontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
@@ -90,5 +91,12 @@ public final class MultipleFontLineHeightSemanticToken: NSObject, Sendable, Comp
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
     public static func < (lhs: MultipleFontLineHeightSemanticToken, rhs: MultipleFontLineHeightSemanticToken) -> Bool {
         lhs.compact <= rhs.compact && lhs.regular <= rhs.regular
+    }
+
+    /// Returns the right _ according to the `userInterfaceSizeClass`.
+    /// - Parameter userInterfaceSizeClass: The vertical user interface size class
+    /// - Returns: The right line height semantic token (pointing to the _ raw token to use)
+    public func lineHeight(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontLineHeightSemanticToken {
+        userInterfaceSizeClass == .compact ? compact : regular
     }
 }
