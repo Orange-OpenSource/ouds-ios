@@ -16,8 +16,8 @@ import SwiftUI
 
 // MARK: - OUDS Switch Item
 
-/// The ``OUDSSwitchItem`` proposes layouts to add in your views some swith components.
-/// If you want to use a switch with only an indicator, prefer instead ``OUDSSwitch``.
+/// Switch item is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
+/// Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
 /// ## Layouts
 ///
@@ -139,7 +139,7 @@ import SwiftUI
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSwitchItem: View {
 
     // MARK: - Properties

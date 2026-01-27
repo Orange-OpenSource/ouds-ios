@@ -27,7 +27,7 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     static let mockThemeSwitchSize: DimensionRawToken = 118
     static let mockThemeSwitchBorderRadius: BorderRadiusRawToken = 444_719
     static let mockThemeSwitchSpace: DimensionRawToken = 218
-    static let mockThemeSwitchColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeSwitchColor = MultipleColorSemanticToken("#00FF00")
     static let mockThemeSwitchOpacity: OpacitySemanticToken = 0.07
 
     override init(sizes: AllSizeSemanticTokensProvider?,
@@ -68,12 +68,12 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
 
     // MARK: Colors
 
-    override var colorCursor: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override var colorTrackSelected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override var colorTrackSelectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override var colorTrackUnselected: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override var colorCheck: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
+    override var colorCursor: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
+    override var colorTrackSelected: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
+    override var colorTrackSelectedInteraction: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
+    override var colorTrackUnselected: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
+    override var colorTrackUnselectedInteraction: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
+    override var colorCheck: MultipleColorSemanticToken { Self.mockThemeSwitchColor }
 
     // MARK: Spaces
 

@@ -38,13 +38,13 @@ extension EnvironmentValues {
 
 private struct SurfaceColor: EnvironmentKey {
 
-    static let defaultValue = MultipleColorSemanticTokens("")
+    static let defaultValue = MultipleColorSemanticToken("")
 }
 
 extension EnvironmentValues {
 
     /// Updated by the ``OUDSColoredSurface``, the value tells the color token of the surface
-    public var oudsSurfaceColor: MultipleColorSemanticTokens {
+    public var oudsSurfaceColor: MultipleColorSemanticToken {
         get {
             self[SurfaceColor.self]
         }

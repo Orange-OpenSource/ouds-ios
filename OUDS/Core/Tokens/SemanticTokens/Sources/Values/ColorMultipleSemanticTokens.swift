@@ -18,10 +18,10 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **colors** but using ``MultipleColorSemanticTokens``.
+/// This is a group of semantic tokens for **colors** but using ``MultipleColorSemanticToken``.
 ///
-/// In fact the ``MultipleColorSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorSemanticTokens``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside  a `OUDSTheme`. These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens`` which must be updated manually.
+/// In fact the ``MultipleColorSemanticToken`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorSemanticToken``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside  a `OUDSTheme`. These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens`` which must be updated manually.
 ///
 /// In few words:
 ///
@@ -37,7 +37,7 @@
 ///
 ///         // The 'higher level' color semantic tokens wrapping them and exposed to users
 ///         // declared (in this ColorMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ColorMultipleSemanticTokens.swift)
-///         var bgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(: bgPrimaryLight, dark: bgPrimaryDark) }
+///         var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(: bgPrimaryLight, dark: bgPrimaryDark) }
 ///
 ///         // Thus users can in their components use bgPrimary as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
@@ -48,227 +48,227 @@ public protocol ColorMultipleSemanticTokens {
 
     // NOTE: repository* color semantic tokens are closed
     // used indirectly and it seems to not be that much useful and relevant
-    // to wrap them in MultipleColorSemanticTokens.
+    // to wrap them in MultipleColorSemanticToken.
 
     // MARK: - Color - Opacity
 
-    var opacityLowest: MultipleColorSemanticTokens { get }
+    var opacityLowest: MultipleColorSemanticToken { get }
 
-    var opacityLower: MultipleColorSemanticTokens { get }
+    var opacityLower: MultipleColorSemanticToken { get }
 
-    var opacityTransparent: MultipleColorSemanticTokens { get }
+    var opacityTransparent: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Action
 
-    var actionDisabled: MultipleColorSemanticTokens { get }
+    var actionDisabled: MultipleColorSemanticToken { get }
 
-    var actionEnabled: MultipleColorSemanticTokens { get }
+    var actionEnabled: MultipleColorSemanticToken { get }
 
-    var actionFocus: MultipleColorSemanticTokens { get }
+    var actionFocus: MultipleColorSemanticToken { get }
 
-    var actionHighlighted: MultipleColorSemanticTokens { get }
+    var actionHighlighted: MultipleColorSemanticToken { get }
 
-    var actionHover: MultipleColorSemanticTokens { get }
+    var actionHover: MultipleColorSemanticToken { get }
 
-    var actionLoading: MultipleColorSemanticTokens { get }
+    var actionLoading: MultipleColorSemanticToken { get }
 
-    var actionNegativeEnabled: MultipleColorSemanticTokens { get }
+    var actionNegativeEnabled: MultipleColorSemanticToken { get }
 
-    var actionNegativeFocus: MultipleColorSemanticTokens { get }
+    var actionNegativeFocus: MultipleColorSemanticToken { get }
 
-    var actionNegativeHover: MultipleColorSemanticTokens { get }
+    var actionNegativeHover: MultipleColorSemanticToken { get }
 
-    var actionNegativeLoading: MultipleColorSemanticTokens { get }
+    var actionNegativeLoading: MultipleColorSemanticToken { get }
 
-    var actionNegativePressed: MultipleColorSemanticTokens { get }
+    var actionNegativePressed: MultipleColorSemanticToken { get }
 
-    var actionPressed: MultipleColorSemanticTokens { get }
+    var actionPressed: MultipleColorSemanticToken { get }
 
-    var actionSelected: MultipleColorSemanticTokens { get }
+    var actionSelected: MultipleColorSemanticToken { get }
 
-    var actionSupportEnabled: MultipleColorSemanticTokens { get }
+    var actionSupportEnabled: MultipleColorSemanticToken { get }
 
-    var actionSupportDisabled: MultipleColorSemanticTokens { get }
+    var actionSupportDisabled: MultipleColorSemanticToken { get }
 
-    var actionSupportFocus: MultipleColorSemanticTokens { get }
+    var actionSupportFocus: MultipleColorSemanticToken { get }
 
-    var actionSupportHover: MultipleColorSemanticTokens { get }
+    var actionSupportHover: MultipleColorSemanticToken { get }
 
-    var actionSupportLoading: MultipleColorSemanticTokens { get }
+    var actionSupportLoading: MultipleColorSemanticToken { get }
 
-    var actionSupportPressed: MultipleColorSemanticTokens { get }
+    var actionSupportPressed: MultipleColorSemanticToken { get }
 
-    var actionVisited: MultipleColorSemanticTokens { get }
+    var actionVisited: MultipleColorSemanticToken { get }
 
-    var actionReadOnlyPrimary: MultipleColorSemanticTokens { get }
+    var actionReadOnlyPrimary: MultipleColorSemanticToken { get }
 
-    var actionReadOnlySecondary: MultipleColorSemanticTokens { get }
+    var actionReadOnlySecondary: MultipleColorSemanticToken { get }
 
-    var actionAccent: MultipleColorSemanticTokens { get }
+    var actionAccent: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Background
 
-    var bgPrimary: MultipleColorSemanticTokens { get }
+    var bgPrimary: MultipleColorSemanticToken { get }
 
-    var bgSecondary: MultipleColorSemanticTokens { get }
+    var bgSecondary: MultipleColorSemanticToken { get }
 
-    var bgTertiary: MultipleColorSemanticTokens { get }
+    var bgTertiary: MultipleColorSemanticToken { get }
 
-    var bgInverseHigh: MultipleColorSemanticTokens { get }
+    var bgInverseHigh: MultipleColorSemanticToken { get }
 
-    var bgInverseLow: MultipleColorSemanticTokens { get }
+    var bgInverseLow: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Border
 
-    var borderBrandPrimary: MultipleColorSemanticTokens { get }
+    var borderBrandPrimary: MultipleColorSemanticToken { get }
 
-    var borderBrandSecondary: MultipleColorSemanticTokens { get }
+    var borderBrandSecondary: MultipleColorSemanticToken { get }
 
-    var borderBrandTertiary: MultipleColorSemanticTokens { get }
+    var borderBrandTertiary: MultipleColorSemanticToken { get }
 
-    var borderDefault: MultipleColorSemanticTokens { get }
+    var borderDefault: MultipleColorSemanticToken { get }
 
-    var borderEmphasized: MultipleColorSemanticTokens { get }
+    var borderEmphasized: MultipleColorSemanticToken { get }
 
-    var borderFocus: MultipleColorSemanticTokens { get }
+    var borderFocus: MultipleColorSemanticToken { get }
 
-    var borderFocusInset: MultipleColorSemanticTokens { get }
+    var borderFocusInset: MultipleColorSemanticToken { get }
 
-    var borderMuted: MultipleColorSemanticTokens { get }
+    var borderMuted: MultipleColorSemanticToken { get }
 
-    var borderOnBrandPrimary: MultipleColorSemanticTokens { get }
+    var borderOnBrandPrimary: MultipleColorSemanticToken { get }
 
-    var borderOnBrandSecondary: MultipleColorSemanticTokens { get }
+    var borderOnBrandSecondary: MultipleColorSemanticToken { get }
 
-    var borderOnBrandTertiary: MultipleColorSemanticTokens { get }
+    var borderOnBrandTertiary: MultipleColorSemanticToken { get }
 
-    var borderMinimal: MultipleColorSemanticTokens { get }
+    var borderMinimal: MultipleColorSemanticToken { get }
 
-    var borderStatusPositive: MultipleColorSemanticTokens { get }
+    var borderStatusPositive: MultipleColorSemanticToken { get }
 
-    var borderStatusInfo: MultipleColorSemanticTokens { get }
+    var borderStatusInfo: MultipleColorSemanticToken { get }
 
-    var borderStatusWarning: MultipleColorSemanticTokens { get }
+    var borderStatusWarning: MultipleColorSemanticToken { get }
 
-    var borderStatusNegative: MultipleColorSemanticTokens { get }
+    var borderStatusNegative: MultipleColorSemanticToken { get }
 
-    var borderStatusAccent: MultipleColorSemanticTokens { get }
+    var borderStatusAccent: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Content
 
-    var contentBrandPrimary: MultipleColorSemanticTokens { get }
+    var contentBrandPrimary: MultipleColorSemanticToken { get }
 
-    var contentBrandSecondary: MultipleColorSemanticTokens { get }
+    var contentBrandSecondary: MultipleColorSemanticToken { get }
 
-    var contentBrandTertiary: MultipleColorSemanticTokens { get }
+    var contentBrandTertiary: MultipleColorSemanticToken { get }
 
-    var contentDefault: MultipleColorSemanticTokens { get }
+    var contentDefault: MultipleColorSemanticToken { get }
 
-    var contentDisabled: MultipleColorSemanticTokens { get }
+    var contentDisabled: MultipleColorSemanticToken { get }
 
-    var contentMuted: MultipleColorSemanticTokens { get }
+    var contentMuted: MultipleColorSemanticToken { get }
 
-    var contentOnActionSelected: MultipleColorSemanticTokens { get }
+    var contentOnActionSelected: MultipleColorSemanticToken { get }
 
-    var contentOnActionDisabled: MultipleColorSemanticTokens { get }
+    var contentOnActionDisabled: MultipleColorSemanticToken { get }
 
-    var contentOnActionEnabled: MultipleColorSemanticTokens { get }
+    var contentOnActionEnabled: MultipleColorSemanticToken { get }
 
-    var contentOnActionFocus: MultipleColorSemanticTokens { get }
+    var contentOnActionFocus: MultipleColorSemanticToken { get }
 
-    var contentOnActionHighlighted: MultipleColorSemanticTokens { get }
+    var contentOnActionHighlighted: MultipleColorSemanticToken { get }
 
-    var contentOnActionHover: MultipleColorSemanticTokens { get }
+    var contentOnActionHover: MultipleColorSemanticToken { get }
 
-    var contentOnActionLoading: MultipleColorSemanticTokens { get }
+    var contentOnActionLoading: MultipleColorSemanticToken { get }
 
-    var contentOnActionPressed: MultipleColorSemanticTokens { get }
+    var contentOnActionPressed: MultipleColorSemanticToken { get }
 
-    var contentOnBrandPrimary: MultipleColorSemanticTokens { get }
+    var contentOnBrandPrimary: MultipleColorSemanticToken { get }
 
-    var contentOnBrandSecondary: MultipleColorSemanticTokens { get }
+    var contentOnBrandSecondary: MultipleColorSemanticToken { get }
 
-    var contentOnBrandTertiary: MultipleColorSemanticTokens { get }
+    var contentOnBrandTertiary: MultipleColorSemanticToken { get }
 
-    var contentOnStatusPositiveMuted: MultipleColorSemanticTokens { get }
+    var contentOnStatusPositiveMuted: MultipleColorSemanticToken { get }
 
-    var contentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
+    var contentOnStatusPositiveEmphasized: MultipleColorSemanticToken { get }
 
-    var contentInverse: MultipleColorSemanticTokens { get }
+    var contentInverse: MultipleColorSemanticToken { get }
 
-    var contentOnStatusInfoMuted: MultipleColorSemanticTokens { get }
+    var contentOnStatusInfoMuted: MultipleColorSemanticToken { get }
 
-    var contentOnStatusInfoEmphasized: MultipleColorSemanticTokens { get }
+    var contentOnStatusInfoEmphasized: MultipleColorSemanticToken { get }
 
-    var contentOnStatusWarningMuted: MultipleColorSemanticTokens { get }
+    var contentOnStatusWarningMuted: MultipleColorSemanticToken { get }
 
-    var contentOnStatusWarningEmphasized: MultipleColorSemanticTokens { get }
+    var contentOnStatusWarningEmphasized: MultipleColorSemanticToken { get }
 
-    var contentOnStatusNegativeMuted: MultipleColorSemanticTokens { get }
+    var contentOnStatusNegativeMuted: MultipleColorSemanticToken { get }
 
-    var contentOnStatusNegativeEmphasized: MultipleColorSemanticTokens { get }
+    var contentOnStatusNegativeEmphasized: MultipleColorSemanticToken { get }
 
-    var contentOnStatusAccentMuted: MultipleColorSemanticTokens { get }
+    var contentOnStatusAccentMuted: MultipleColorSemanticToken { get }
 
-    var contentOnStatusAccentEmphasized: MultipleColorSemanticTokens { get }
+    var contentOnStatusAccentEmphasized: MultipleColorSemanticToken { get }
 
-    var contentStatusAccent: MultipleColorSemanticTokens { get }
+    var contentStatusAccent: MultipleColorSemanticToken { get }
 
-    var contentStatusInfo: MultipleColorSemanticTokens { get }
+    var contentStatusInfo: MultipleColorSemanticToken { get }
 
-    var contentStatusNegative: MultipleColorSemanticTokens { get }
+    var contentStatusNegative: MultipleColorSemanticToken { get }
 
-    var contentStatusPositive: MultipleColorSemanticTokens { get }
+    var contentStatusPositive: MultipleColorSemanticToken { get }
 
-    var contentStatusWarning: MultipleColorSemanticTokens { get }
+    var contentStatusWarning: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Overlay
 
-    var overlayDropdown: MultipleColorSemanticTokens { get }
+    var overlayDropdown: MultipleColorSemanticToken { get }
 
-    var overlayTooltip: MultipleColorSemanticTokens { get }
+    var overlayTooltip: MultipleColorSemanticToken { get }
 
-    var overlayDrag: MultipleColorSemanticTokens { get }
+    var overlayDrag: MultipleColorSemanticToken { get }
 
-    var overlayModal: MultipleColorSemanticTokens { get }
+    var overlayModal: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
-    var surfaceBrandPrimary: MultipleColorSemanticTokens { get }
+    var surfaceBrandPrimary: MultipleColorSemanticToken { get }
 
-    var surfaceBrandSecondary: MultipleColorSemanticTokens { get }
+    var surfaceBrandSecondary: MultipleColorSemanticToken { get }
 
-    var surfaceBrandTertiary: MultipleColorSemanticTokens { get }
+    var surfaceBrandTertiary: MultipleColorSemanticToken { get }
 
-    var surfaceStatusAccentEmphasized: MultipleColorSemanticTokens { get }
+    var surfaceStatusAccentEmphasized: MultipleColorSemanticToken { get }
 
-    var surfaceStatusAccentMuted: MultipleColorSemanticTokens { get }
+    var surfaceStatusAccentMuted: MultipleColorSemanticToken { get }
 
-    var surfaceStatusInfoEmphasized: MultipleColorSemanticTokens { get }
+    var surfaceStatusInfoEmphasized: MultipleColorSemanticToken { get }
 
-    var surfaceStatusInfoMuted: MultipleColorSemanticTokens { get }
+    var surfaceStatusInfoMuted: MultipleColorSemanticToken { get }
 
-    var surfaceStatusNegativeEmphasized: MultipleColorSemanticTokens { get }
+    var surfaceStatusNegativeEmphasized: MultipleColorSemanticToken { get }
 
-    var surfaceStatusNegativeMuted: MultipleColorSemanticTokens { get }
+    var surfaceStatusNegativeMuted: MultipleColorSemanticToken { get }
 
-    var surfaceInverseHigh: MultipleColorSemanticTokens { get }
+    var surfaceInverseHigh: MultipleColorSemanticToken { get }
 
-    var surfaceInverseLow: MultipleColorSemanticTokens { get }
+    var surfaceInverseLow: MultipleColorSemanticToken { get }
 
-    var surfacePrimary: MultipleColorSemanticTokens { get }
+    var surfacePrimary: MultipleColorSemanticToken { get }
 
-    var surfaceSecondary: MultipleColorSemanticTokens { get }
+    var surfaceSecondary: MultipleColorSemanticToken { get }
 
-    var surfaceTertiary: MultipleColorSemanticTokens { get }
+    var surfaceTertiary: MultipleColorSemanticToken { get }
 
-    var surfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
+    var surfaceStatusPositiveEmphasized: MultipleColorSemanticToken { get }
 
-    var surfaceStatusPositiveMuted: MultipleColorSemanticTokens { get }
+    var surfaceStatusPositiveMuted: MultipleColorSemanticToken { get }
 
-    var surfaceStatusWarningEmphasized: MultipleColorSemanticTokens { get }
+    var surfaceStatusWarningEmphasized: MultipleColorSemanticToken { get }
 
-    var surfaceStatusWarningMuted: MultipleColorSemanticTokens { get }
+    var surfaceStatusWarningMuted: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

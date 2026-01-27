@@ -30,6 +30,7 @@ struct SwitchIndicator: View {
     @State private var isDragging: Bool = false
 
     @Environment(\.theme) private var theme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // MARK: Body
 
@@ -39,7 +40,7 @@ struct SwitchIndicator: View {
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
-            .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
+            .animation(trackAnimation, value: cursorHorizontalAlignment)
         #if os(iOS)
             .modifier(VibrateModifier(isOn: $isOn))
         #endif
@@ -84,7 +85,15 @@ struct SwitchIndicator: View {
         isOn ? theme.switch.spacePaddingInlineSelected : theme.switch.spacePaddingInlineUnselected
     }
 
-    private var trackColor: MultipleColorSemanticTokens {
+    private var trackAnimation: Animation? {
+        if reduceMotion {
+            nil
+        } else {
+            .timingCurve(0.2, 0, 0, 1, duration: 0.150)
+        }
+    }
+
+    private var trackColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             isOn ? theme.switch.colorTrackSelected : theme.switch.colorTrackUnselected
@@ -117,6 +126,7 @@ private struct Cursor: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // MARK: Body
 
@@ -133,10 +143,18 @@ private struct Cursor: View {
         .oudsBackground(theme.switch.colorCursor)
         .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusCursor))
         .oudsShadow(theme.elevations.raised)
-        .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
+        .animation(cursorWidthAnimation, value: cursorWidth)
     }
 
     // MARK: Private helpers
+
+    private var cursorWidthAnimation: Animation? {
+        if reduceMotion {
+            nil
+        } else {
+            .timingCurve(0.2, 0, 0, 1, duration: 0.150)
+        }
+    }
 
     private var cursorWidth: Double {
         switch interactionState {

@@ -18,20 +18,20 @@ import SwiftUI
 
 // swiftlint:disable missing_docs
 
-/// This is a group of semantic tokens for **colors modes** but using ``MultipleColorModeSemanticTokens``.
+/// This is a group of semantic tokens for **colors modes** but using ``MultipleColorModeSemanticToken``.
 ///
-/// In fact the ``MultipleColorModeSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for color mode containing values for light and dark modes.
+/// In fact the ``MultipleColorModeSemanticToken`` class will help users (i.e. developers) to handle one semantic token for color mode containing values for light and dark modes.
 ///
 /// In few words:
 ///
 /// ```swift
 ///
 ///         // Tokenator defines seevral color mode semantic tokens
-///         var onBrandPrimaryLight: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
-///         var onBrandPrimaryDark: MultipleColorModeSemanticTokens { ColorModeRawTokens.monochromeLight }
+///         var onBrandPrimaryLight: MultipleColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
+///         var onBrandPrimaryDark: MultipleColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
 ///
 ///         // They are packed
-///         var onBrandPrimary: MultipleColorModeSemanticTokens { MultipleColorModeSemanticTokens(onBrandPrimary) }
+///         var onBrandPrimary: MultipleColorModeSemanticToken { MultipleColorModeSemanticToken(onBrandPrimary) }
 /// ```
 ///
 /// - Since: 0.13.0
@@ -41,38 +41,38 @@ public protocol ColorModeMultipleSemanticTokens {
 
     // MARK: - On Background
 
-    var onBgPrimary: MultipleColorModeSemanticTokens { get }
-    var onBgSecondary: MultipleColorModeSemanticTokens { get }
-    var onBgTertiary: MultipleColorModeSemanticTokens { get }
+    var onBgPrimary: MultipleColorModeSemanticToken { get }
+    var onBgSecondary: MultipleColorModeSemanticToken { get }
+    var onBgTertiary: MultipleColorModeSemanticToken { get }
 
     // MARK: - On Brand
 
-    var onBrandPrimary: MultipleColorModeSemanticTokens { get }
-    var onBrandSecondary: MultipleColorModeSemanticTokens { get }
-    var onBrandTertiary: MultipleColorModeSemanticTokens { get }
+    var onBrandPrimary: MultipleColorModeSemanticToken { get }
+    var onBrandSecondary: MultipleColorModeSemanticToken { get }
+    var onBrandTertiary: MultipleColorModeSemanticToken { get }
 
     // MARK: - On Status
 
-    var onStatusPositiveMuted: MultipleColorModeSemanticTokens { get }
-    var onStatusPositiveEmphasized: MultipleColorModeSemanticTokens { get }
-    var onStatusInfoMuted: MultipleColorModeSemanticTokens { get }
-    var onStatusInfoEmphasized: MultipleColorModeSemanticTokens { get }
-    var onStatusWarningMuted: MultipleColorModeSemanticTokens { get }
-    var onStatusWarningEmphasized: MultipleColorModeSemanticTokens { get }
-    var onStatusNegativeMuted: MultipleColorModeSemanticTokens { get }
-    var onStatusNegativeEmphasized: MultipleColorModeSemanticTokens { get }
-    var onStatusAccentMuted: MultipleColorModeSemanticTokens { get }
-    var onStatusAccentEmphasized: MultipleColorModeSemanticTokens { get }
+    var onStatusPositiveMuted: MultipleColorModeSemanticToken { get }
+    var onStatusPositiveEmphasized: MultipleColorModeSemanticToken { get }
+    var onStatusInfoMuted: MultipleColorModeSemanticToken { get }
+    var onStatusInfoEmphasized: MultipleColorModeSemanticToken { get }
+    var onStatusWarningMuted: MultipleColorModeSemanticToken { get }
+    var onStatusWarningEmphasized: MultipleColorModeSemanticToken { get }
+    var onStatusNegativeMuted: MultipleColorModeSemanticToken { get }
+    var onStatusNegativeEmphasized: MultipleColorModeSemanticToken { get }
+    var onStatusAccentMuted: MultipleColorModeSemanticToken { get }
+    var onStatusAccentEmphasized: MultipleColorModeSemanticToken { get }
 
     // MARK: - On Overlay Modal
 
-    var onOverlayModal: MultipleColorModeSemanticTokens { get }
-    var onOverlayDropdown: MultipleColorModeSemanticTokens { get }
-    var onOverlayTooltip: MultipleColorModeSemanticTokens { get }
+    var onOverlayModal: MultipleColorModeSemanticToken { get }
+    var onOverlayDropdown: MultipleColorModeSemanticToken { get }
+    var onOverlayTooltip: MultipleColorModeSemanticToken { get }
 
     // MARK: - Navigation
 
-    var navigationBar: MultipleColorModeSemanticTokens { get }
+    var navigationBar: MultipleColorModeSemanticToken { get }
 
     // MARK: - Additional rules
 
@@ -81,18 +81,18 @@ public protocol ColorModeMultipleSemanticTokens {
     ///    - mode: The color mode token to test
     ///    - current: The current color scheme
     /// - Returns: The color scheme to consider depending to the theme rules
-    func useColorScheme(for mode: MultipleColorModeSemanticTokens,
+    func useColorScheme(for mode: MultipleColorModeSemanticToken,
                         _ current: ColorScheme) -> ColorScheme
 
     /// Depending to the given `mode`, should return a flag saying if monochrome mode must be considered
     /// - Parameter mode: The color mode token to test
     /// - Returns: The flag for monochrome mode depending to the theme rules
-    func isMonochrome(mode: MultipleColorModeSemanticTokens) -> Bool
+    func isMonochrome(mode: MultipleColorModeSemanticToken) -> Bool
 
     /// Returns the colors semantic token depending to the given color mode
     /// - Parameter mode: The color mpde token to use
     /// - Returns: The colors to apply
-    func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens
+    func toColor(from mode: MultipleColorModeSemanticToken) -> MultipleColorSemanticToken
 }
 
 // swiftlint:enable missing_docs

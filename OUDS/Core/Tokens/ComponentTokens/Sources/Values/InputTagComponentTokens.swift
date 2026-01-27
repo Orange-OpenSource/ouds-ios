@@ -27,18 +27,18 @@ public protocol InputTagComponentTokens {
 
     // MARK: - Colors
 
-    var colorBgEnabled: MultipleColorSemanticTokens { get }
-    var colorBgHover: MultipleColorSemanticTokens { get }
-    var colorBgPressed: MultipleColorSemanticTokens { get }
-    var colorBgFocus: MultipleColorSemanticTokens { get }
-    var colorContentEnabled: MultipleColorSemanticTokens { get }
-    var colorContentHover: MultipleColorSemanticTokens { get }
-    var colorContentPressed: MultipleColorSemanticTokens { get }
-    var colorContentFocus: MultipleColorSemanticTokens { get }
-    var colorBorderEnabled: MultipleColorSemanticTokens { get }
-    var colorBorderHover: MultipleColorSemanticTokens { get }
-    var colorBorderPressed: MultipleColorSemanticTokens { get }
-    var colorBorderFocus: MultipleColorSemanticTokens { get }
+    var colorBgEnabled: MultipleColorSemanticToken { get }
+    var colorBgHover: MultipleColorSemanticToken { get }
+    var colorBgPressed: MultipleColorSemanticToken { get }
+    var colorBgFocus: MultipleColorSemanticToken { get }
+    var colorContentEnabled: MultipleColorSemanticToken { get }
+    var colorContentHover: MultipleColorSemanticToken { get }
+    var colorContentPressed: MultipleColorSemanticToken { get }
+    var colorContentFocus: MultipleColorSemanticToken { get }
+    var colorBorderEnabled: MultipleColorSemanticToken { get }
+    var colorBorderHover: MultipleColorSemanticToken { get }
+    var colorBorderPressed: MultipleColorSemanticToken { get }
+    var colorBorderFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Borders
 

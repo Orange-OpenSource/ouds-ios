@@ -21,20 +21,20 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest)
-    @objc open var colorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest)
+    @objc open var colorCursor: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedHighest) }
     /// Has for value token colors.contentDefault
-    @objc open var colorCheck: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc open var colorCheck: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.contentDefault
-    @objc open var colorCheckInteraction: MultipleColorSemanticTokens { colors.contentDefault }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryPositiveHigh, dark: colors.repositoryPositiveMedium)
-    @objc open var colorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryPositiveHigh, dark: colors.repositoryPositiveMedium) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryPositiveHigher, dark: colors.repositoryPositiveLow)
-    @objc open var colorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryPositiveHigher, dark: colors.repositoryPositiveLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh)
-    @objc open var colorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher)
-    @objc open var colorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher) }
+    @objc open var colorCheckInteraction: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryPositiveHigh, dark: colors.repositoryPositiveMedium)
+    @objc open var colorTrackSelected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryPositiveHigh, dark: colors.repositoryPositiveMedium) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryPositiveHigher, dark: colors.repositoryPositiveLow)
+    @objc open var colorTrackSelectedInteraction: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryPositiveHigher, dark: colors.repositoryPositiveLow) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh)
+    @objc open var colorTrackUnselected: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMediumHigh, dark: colors.repositoryOpacityWhiteHigh) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher)
+    @objc open var colorTrackUnselectedInteraction: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigh, dark: colors.repositoryOpacityWhiteHigher) }
     /// Has for value token borders.radiusPill
     @objc open var borderRadiusCursor: BorderRadiusSemanticToken { borders.radiusPill }
     /// Has for value token borders.radiusPill

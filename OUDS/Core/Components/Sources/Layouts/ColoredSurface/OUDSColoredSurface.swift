@@ -34,11 +34,11 @@ import SwiftUI
 /// ![A colored surface with text, button and link in light and dark modes with Orange theme](component_coloredSurface_Orange)
 ///
 /// - Since: 0.13.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSColoredSurface<Content>: View where Content: View {
 
     /// A type alias to use for clarity reasons ; a surface color is in the end a token
-    public typealias SurfaceColor = MultipleColorModeSemanticTokens
+    public typealias SurfaceColor = MultipleColorModeSemanticToken
 
     // MARK: Stored Properties
 

@@ -30,7 +30,7 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
     /// Provider of size semantic tokens to use for select input sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of _ semantic tokens to use for select input dimensions
+    /// Provider of _dimensions_  semantic tokens to use for select input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

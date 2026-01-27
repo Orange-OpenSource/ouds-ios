@@ -104,6 +104,12 @@ import SwiftUI
 ///     let orangeTheme = OrangeBusinessToolsTheme(fontFamily: "Helvetica Neue Arabic")
 /// ```
 ///
+/// ## Tokens versions
+///
+/// - Core OUDS version: 1.9.0
+/// - Core Orange version: 1.2.0
+/// - Brand Orange Business Tools version: 2.3.0
+///
 /// - Since: 0.17.0
 public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 
@@ -196,11 +202,3 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
 
 // swiftlint:enable function_body_length
 // swiftlint:enable line_length
-
-// MARK: - Extension of Bundle
-
-extension Bundle {
-
-    /// The OrangeBusinessTools theme bundle, useful to find resources
-    public static let OrangeBusinessToolsTheme = Bundle.OrangeTheme
-}

@@ -48,7 +48,7 @@ struct InputTagBorderModifier: ViewModifier {
         }
     }
 
-    private var color: MultipleColorSemanticTokens {
+    private var color: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             theme.inputTag.colorBorderEnabled

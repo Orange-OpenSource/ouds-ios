@@ -25,9 +25,9 @@ import OUDSTokensSemantic
 /// - Since: 0.20.0
 public protocol IconComponentTokens {
 
-    var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { get }
-    var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { get }
-    var colorContentDefault: MultipleColorSemanticTokens { get }
+    var colorContentStatusWarningExternalShape: MultipleColorSemanticToken { get }
+    var colorContentStatusWarningInternalShape: MultipleColorSemanticToken { get }
+    var colorContentDefault: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

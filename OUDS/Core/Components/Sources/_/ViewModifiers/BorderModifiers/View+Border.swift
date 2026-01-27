@@ -41,7 +41,7 @@ extension View {
         style: BorderStyleSemanticToken,
         width: BorderWidthSemanticToken,
         radius: BorderRadiusSemanticToken,
-        color: MultipleColorSemanticTokens) -> some View
+        color: MultipleColorSemanticToken) -> some View
     {
         modifier(BorderModifier(style, width, radius, color))
     }

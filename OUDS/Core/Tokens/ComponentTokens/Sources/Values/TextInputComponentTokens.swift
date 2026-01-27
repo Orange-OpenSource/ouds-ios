@@ -37,10 +37,10 @@ public protocol TextInputComponentTokens {
 
     // MARK: - Colors
 
-    var colorBorderEnabled: MultipleColorSemanticTokens { get }
-    var colorBorderHover: MultipleColorSemanticTokens { get }
-    var colorBorderFocus: MultipleColorSemanticTokens { get }
-    var colorBorderLoading: MultipleColorSemanticTokens { get }
+    var colorBorderEnabled: MultipleColorSemanticToken { get }
+    var colorBorderHover: MultipleColorSemanticToken { get }
+    var colorBorderFocus: MultipleColorSemanticToken { get }
+    var colorBorderLoading: MultipleColorSemanticToken { get }
 
     // MARK: - Borders
 

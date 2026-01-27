@@ -165,15 +165,4 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
         }
         ```
     }
-    @Tab("UIKit (experimental)") {
-        ```swift
-        import OUDSComponentsUIKit
-            
-        // Add a vertical divider between items
-        OUDSUIKit.createVerticalDivider(color: .brandPrimary)
-            
-        // Add an horizontal divider between items
-        OUDSUIKit.createHorizontalDivider(color: .brandPrimary)
-        ```
-    }
 }

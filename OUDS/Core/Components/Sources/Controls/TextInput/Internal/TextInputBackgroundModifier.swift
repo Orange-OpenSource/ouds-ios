@@ -37,11 +37,11 @@ struct TextInputBackgroundModifier: ViewModifier {
 
     // MARK: - Helpers
 
-    private var color: MultipleColorSemanticTokens? {
+    private var color: MultipleColorSemanticToken? {
         isOutlined ? outlinedColor : defaultColor
     }
 
-    private var defaultColor: MultipleColorSemanticTokens? {
+    private var defaultColor: MultipleColorSemanticToken? {
         switch status {
         case .enabled:
             switch interactionState {
@@ -63,7 +63,7 @@ struct TextInputBackgroundModifier: ViewModifier {
         }
     }
 
-    private var outlinedColor: MultipleColorSemanticTokens? {
+    private var outlinedColor: MultipleColorSemanticToken? {
         if status == .readOnly {
             theme.colors.actionSupportDisabled
         } else {

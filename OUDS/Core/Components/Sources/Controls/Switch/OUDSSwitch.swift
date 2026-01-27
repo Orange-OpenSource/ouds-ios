@@ -15,8 +15,8 @@ import OUDSFoundations
 import OUDSTokensComponent
 import SwiftUI
 
-/// The ``OUDSSwitch`` proposes layout to add in your views a lonely switch, without labels, texts nor icons switchs components
-/// If you want to use a switch with additional texts and icon, prefer instead ``OUDSSwitchItem``.
+/// Switch is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
+/// Switch that does not show icon or text, provides greater flexibility when creating other components that require a Switch to be displayed.
 ///
 /// ## Accessibility considerations
 ///
@@ -62,7 +62,7 @@ import SwiftUI
 ///
 /// - Version: 1.5.0 (Figma component design version)
 /// - Since: 0.14.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSwitch: View {
 
     // MARK: - Properties
@@ -74,6 +74,7 @@ public struct OUDSSwitch: View {
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // MARK: - Initializers
 
@@ -98,8 +99,12 @@ public struct OUDSSwitch: View {
 
     public var body: some View {
         InteractionButton(isReadOnly: isReadOnly) {
-            withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
+            if reduceMotion {
                 $isOn.wrappedValue.toggle()
+            } else {
+                withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
+                    $isOn.wrappedValue.toggle()
+                }
             }
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: $isOn)

@@ -82,7 +82,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Colors
 
-    private var labelColor: MultipleColorSemanticTokens {
+    private var labelColor: MultipleColorSemanticToken {
         if layoutData.isError {
             switch interactionState {
             case .enabled:
@@ -105,7 +105,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var helperColor: MultipleColorSemanticTokens {
+    private var helperColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.contentMuted
@@ -114,7 +114,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var extraLabelColor: MultipleColorSemanticTokens {
+    private var extraLabelColor: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
     }
 }

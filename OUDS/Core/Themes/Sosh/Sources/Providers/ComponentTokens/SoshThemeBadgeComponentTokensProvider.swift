@@ -28,7 +28,7 @@ final class SoshThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvid
     /// Provider of spaces semantic tokens to use for badge spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _dimensions_  semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

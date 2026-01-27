@@ -14,10 +14,9 @@
 import OUDSFoundations
 import SwiftUI
 
-/// An ``OUDSFilterChip`` is a compact UI element used in a design system to represent a filter option that can be selected or deselected by the user.
-/// *Filter chips* allow users to refine content or data by applying one or more filters in a visually accessible and interactive way.
-/// This version of the *filter chip* uses the *text only* layout which displays only text, offering a clean and minimalistic look.
-/// Other layouts are available for this component like: *text + icon* and *icon only*.
+/// Filter chip is a UI element that allows to select or deselect an option within a series, and is commonly used to capture filtering decisions.
+/// Filter chip allows to filter content by being selected or deselected.
+/// It can be toggled "On" or "Off" to refine displayed results, and selected Filter Chips remain visually distinct to indicate active filters.
 ///
 /// ## Code samples
 ///
@@ -56,7 +55,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSFilterChip: View {
 
     // MARK: - Stored Properties

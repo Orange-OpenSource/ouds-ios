@@ -23,7 +23,7 @@ final class MockThemeIconComponentTokenProvider: OrangeThemeIconComponentTokensP
 
     // MARK: - Mocks and setup
 
-    static let mockThemeIconColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeIconColor = MultipleColorSemanticToken("#00FF00")
 
     override init(colors: AllColorSemanticTokensProvider?) {
         super.init(colors: colors)
@@ -31,9 +31,9 @@ final class MockThemeIconComponentTokenProvider: OrangeThemeIconComponentTokensP
 
     // MARK: - Icon component tokens
 
-    override var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
-    override var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { Self.mockThemeIconColor }
-    override var colorContentDefault: MultipleColorSemanticTokens { Self.mockThemeIconColor }
+    override var colorContentStatusWarningExternalShape: MultipleColorSemanticToken { Self.mockThemeIconColor }
+    override var colorContentStatusWarningInternalShape: MultipleColorSemanticToken { Self.mockThemeIconColor }
+    override var colorContentDefault: MultipleColorSemanticToken { Self.mockThemeIconColor }
 }
 
 // swiftlint:enable required_deinit

@@ -61,7 +61,7 @@ struct InputContainer: View {
         }
     }
 
-    private var prefixSuffixColor: MultipleColorSemanticTokens {
+    private var prefixSuffixColor: MultipleColorSemanticToken {
         status == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 }

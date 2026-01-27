@@ -21,6 +21,8 @@
 - [Software Bill of Materials](#software-bill-of-materials)
 - [Update of dependencies](#update-of-dependencies)
 - [CI/CD](#cicd)
+- [Use of GenAI](#use-of-genai)
+- [Use of robots](#use-of-robots)
 
 ## Technical preconditions
 
@@ -114,10 +116,10 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.0.1**, we suggest you use this version or newer if you want (but not recommended).
+We use also for our GitLab CI runners **Xcode 26.2**, we suggest you use this version or newer if you want (but not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.0.1 and Swift 6.2 are used for this project. You must use this configuration.
+> Xcode 26.2 and Swift 6.2 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
 > If needed, contact us and open a discussino on GitHub Orange-OpenSource/ouds-ios
 
@@ -206,7 +208,7 @@ We try to cover several devices types and OS max version according to [iosref.co
 
 #### iPhone / iOS
 
-- iPhone 17 Pro (iOS 26.1)
+- iPhone 17 Pro (iOS 26.2)
 - iPhone 14 Pro (iOS 17.5)
 - iPhone Xs Max (iOS 18.6)
 - iPhone 8 Plus (iOS 16.4)
@@ -282,6 +284,8 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 Because feedbacks of our users are important, you can also mention people who suggested issues to thanks them (*Suggested-by*).
+If users reported a bug, use instead *Reported-by*.
+These two cases are more dedicated to people outside the project.
 
 For example, for issue n°123 and its pull request n°456, tested by Anton, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, acked by Maxime and suggested by Thomas:
 ```text
@@ -548,3 +552,61 @@ However of course you will have to define all the variables, secrets and have th
 You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
+
+## Use of GenAI
+
+The use of generative artifical intelligence (in short "GenAI") is not forbidden, but must be used with care.
+However, to keep records of this new usage, contributors and maintainers must add inside the commit body if they use GenAI, which model and how (when possible).
+Indeed GenAI can be used to generate source code and also review pull requests or process issues.
+In all cases, the field *Assisted-by* must be added with the Large Language Model ("LLM") name and product.
+
+For example, if the Orange tool named _Dinootoo_ has been used with GPT-4o-mini as LLM to generate some code:
+
+```text
+Assisted-by: GPT-4o-mini (Orange Dinootoo)
+```
+
+Or if the [Codex (OpenAI product)](https://chatgpt.com/codex) product has been used to make some pull request reviews or to work on issues, 
+using the GitHub Connector (see [here for LLM for Codex cloud details](https://openai.com/fr-FR/index/introducing-codex/)):
+
+```text
+Assisted-by: codex-1 (OpenAI Codex)
+```
+
+If otherwise you use the GitHub Copilot agent, which does not precise every time which LLM is used:
+
+```text
+Assisted-by: GitHub Copilot
+```
+
+Or if it is mentioned:
+```text
+Assisted-by: Claude 3.7 Sonnet (GitHub Copilot)
+```
+
+The main things to note are the LLM in use and the products behind with, if relevant, company name to have no doubt.
+
+> [!CAUTION]
+> Always review the source code
+> and avoid use of GenAI if possible.
+> GenAI has a real environmental footprint and is based on predatory and colonialist techniques (theft, exploitation, stifling of producers).
+
+> [!TIP]
+> If you use [OpenAI Codex](https://developers.openai.com/codex/quickstart), you can mention @codex to "review" of "fix the issue".
+> If you use [GitHub Copilot Coding Agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent), assign the issue or the PR, or tag @copilot
+
+## Use of robots
+
+Bots accounts can be used, e.g. to update dependencies with *Dependabot*, *Snyk* or *Renovate*, or also to provide new tokens with the [boosted-bot](https://github.com/boosted-bot).
+It could be interesting to keep traces of what they did, e.g. review pull requests or provide source code.
+The suitable field must be used and also the bot name and associated email.
+By doing so be add useful details about commits origin and content, and are aligned with for example some specific [GitHub view about contributors](https://github.com/Orange-OpenSource/ouds-ios/graphs/contributors).
+
+For example:
+```text
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Co-authored-by: StepSecurity Bot <bot@stepsecurity.io>
+Co-authored-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Reviewed-by: Copilot <198982749+Copilot@users.noreply.github.com>
+Signed-off-by: StepSecurity Bot <bot@stepsecurity.io>
+```

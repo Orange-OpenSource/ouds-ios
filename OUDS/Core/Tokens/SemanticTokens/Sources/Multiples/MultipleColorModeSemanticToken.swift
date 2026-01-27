@@ -28,14 +28,14 @@ import SwiftUI
 ///         // Use the "monochrome light" mode anytime
 ///         var onBrandPrimaryLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
 ///         var onBrandPrimaryDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var onBrandPrimary: MultipleColorModeSemanticTokens {
+///         var onBrandPrimary: MultipleColorModeSemanticToken {
 ///             MultipleColorModeSemanticToken("some unique name", onBrandPrimary)
 ///         }
 ///
 ///         // Use light mode in light soclor scheme, dark mode in dark color scheme
 ///         var onStatusNegativeMutedLight: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.light }
 ///         var onStatusNegativeMutedDark: BackgroundSurfaceColorSemanticToken { ColorModeRawTokens.dark }
-///         var onStatusNegativeMuted: MultipleColorModeSemanticTokens {
+///         var onStatusNegativeMuted: MultipleColorModeSemanticToken {
 ///             MultipleColorModeSemanticToken("some unique name",
 ///                                             light: onStatusNegativeMutedLight,
 ///                                             dark: onStatusNegativeMutedDark)
@@ -44,7 +44,7 @@ import SwiftUI
 ///         // Use if light color scheme the monochrome dark mode, and if dark color scheme the monochrome light mode
 ///         var onStatusNeutralEmphasizedLight: ColorModeSemanticToken { ColorModeRawTokens.monochromeDark }
 ///         var onStatusNeutralEmphasizedDark: ColorModeSemanticToken { ColorModeRawTokens.monochromeLight }
-///         var onStatusNeutralEmphasized: MultipleColorModeSemanticTokens {
+///         var onStatusNeutralEmphasized: MultipleColorModeSemanticToken {
 ///             MultipleColorModeSemanticToken("some unique name",
 ///                                             light: onStatusNeutralEmphasizedLight,
 ///                                             dark: onStatusNeutralEmphasizedDark)
@@ -52,7 +52,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 0.13.0
-public final class MultipleColorModeSemanticTokens: NSObject, Sendable {
+public final class MultipleColorModeSemanticToken: NSObject, Sendable {
 
     /// Because such tokens can have the same light and dark values, a name can be used to identity them
     public let name: String
@@ -87,10 +87,10 @@ public final class MultipleColorModeSemanticTokens: NSObject, Sendable {
     deinit {}
 
     /// Returns `true` if `self` and `object` has the same `name` and with `object`
-    /// as a `MultipleColorModeSemanticTokens`. Otherwise returns `false`.
+    /// as a `MultipleColorModeSemanticToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleColorModeSemanticTokens else { return false }
+        guard let other = object as? MultipleColorModeSemanticToken else { return false }
         return name == other.name
     }
 

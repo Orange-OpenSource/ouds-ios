@@ -16,7 +16,7 @@ This file provides guidance to AI coding agents when working with code in this r
 OUDS means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
 It provides a Swift Package (this repository) and a demo application called Design System Tooblox which embeds the Swift Package to expose its public API.
 The project is open source under MIT license and hosted on GitHub in Orange-OpenSource organization.
-The products support iOS 15, iPadOS 15, macOS 15, visionOS 1, watchOS 11 and tvOS 16.
+The products support iOS 15, iPadOS 15, macOS 13, visionOS 1, watchOS 11 and tvOS 16.
 The products are written in Swift with SwiftUI as UI framework and Swift 6 (format, grammar and concurrency).
 
 ## Vocabulary
@@ -46,10 +46,6 @@ Here are the modules of the Swift Package, i.e. set of features with external de
 #### Core / Components
 
 Here the the components provided by the Swift Package like buttons, switchs, checkboxes, chips, tags, links, etc.
-
-#### Core / ComponentsUIKit
-
-Here are experimental backports or wraps of SwiftUI components for UIKit. Their use is not recommended yet.
 
 #### Core / Themes / Orange
 
@@ -128,8 +124,8 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 ## Development requirements
 
-- Minimum Swift 6.2
-- Xcode 26 or later 
+- Minimum Swift 6.2 (e.g. 6.2.3)
+- Xcode 26.2 or later 
 - Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 15.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
@@ -139,6 +135,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 To build the Swift Package:
 ```shell
+bundle install
 bundle exec fastlane build
 ```
 
@@ -146,6 +143,7 @@ bundle exec fastlane build
 
 To run the unit tests on the Swift Package:
 ```shell
+bundle install
 bundle exec fastlane test_unit
 ```
 
@@ -161,6 +159,7 @@ yes | ./generateWebDocumentation.sh --libversion=none --nozip
 
 To check for dead code:
 ```shell
+bundle install
 bundle exec fastlane check_dead_code
 ```
 
@@ -168,6 +167,7 @@ bundle exec fastlane check_dead_code
 
 To format the source code:
 ```shell
+bundle install
 bundle exec fastlane format
 ```
 
@@ -175,6 +175,7 @@ bundle exec fastlane format
 
 To run the linter:
 ```shell
+bundle install
 bundle exec fastlane lint
 ```
 
@@ -182,6 +183,7 @@ bundle exec fastlane lint
 
 To check for leaks of secrets:
 ```shell
+bundle install
 bundle exec fastlane check_leaks
 ```
 
@@ -189,8 +191,20 @@ bundle exec fastlane check_leaks
 
 To update the Software Bill of Materials:
 ```shell
+bundle install
 bundle exec fastlane update_sbom
 ```
+
+## Review guidelines
+
+- Check if sources are formatted
+- Run linter, no error must appear
+- Run tests, they must all pass
+- Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
+- Build documentation, no error must appear
+- Check leaks, no leak must appear
+- Check if functions are too long or too complicated, complexity must be low
+- Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
 
 ## How to use OUDS framwork
 
@@ -361,7 +375,9 @@ Elevations effets or box shadows can be applied to view with a dedicated view mo
 
 ##### Button
 
-A button proposes layout with text only, icon only or text and icon. Four hierarchies are proposed for all layouts: default, strong, minimal and negative. Two style are available: default and loading
+A button proposes layout with text only, icon only or text and icon. Four hierarchies are proposed for all layouts: default, strong, minimal and negative. 
+Button has several styles: default and loading.
+Button has several appearances: default, strong, brand, minimal and negative.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton/).
 
 Button can be intantiated like:
@@ -627,6 +643,9 @@ OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("image_name"))
 
 A badge is a small UI element used to highlight status, notifications, or categorization within an interface. 
 It is often displayed as a label or indicator with a distinct background color and text. It is richer than the native iOS component.
+Badge has several status: neutral, accent, positive, info, warning and negative.
+Badge has several sizes: extraSmall, small, medium and large.
+
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbadge).
 
 Badge can be used like:
@@ -647,7 +666,11 @@ OUDSBadge(status: .neutral(icon: Image("image_name")), accessibilityLabel: "Labe
 ##### Tag
 
 An tag is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
-it is not an iOS native component.
+It is not an iOS native component.
+Tag has several status: positive, info, negative, warning, neutral and accent.
+Tag has several appearances: emphasized and muted.
+Tag has several shapes: square and rounded.
+Tag has several sizes: default and small.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstag).
 
 The tag can be used like:
@@ -683,7 +706,7 @@ OUDSInputTag("Label") {
 
 ##### Colored surface
 
-Colored backgrounds use surface colors to maximize the contrast with content. The colors of several OUDS components (for instance butoton or link) are automatically adjusted if they are placed on such colored surface.
+Colored backgrounds use surface colors to maximize the contrast with content. The colors of several OUDS components (for instance button or link) are automatically adjusted if they are placed on such colored surface.
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscoloredsurface).
 
 Colored surface uses tokens of colors modes available with `theme.colorModes` and can be used like:

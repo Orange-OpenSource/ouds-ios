@@ -11,9 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import SwiftUI
 
+/// Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource,
+/// or to an external resource.
+/// Link's primary function is navigation and it communicates its interactive nature visually and semantically.
 /// The ``OUDSLink`` proposes layout with text only or text with icon.
 /// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `default` size.
 ///
@@ -69,7 +71,7 @@ import SwiftUI
 ///
 /// - Version: 2.2.0 (Figma component design version)
 /// - Since: 0.11.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
 
     // MARK: Stored Properties

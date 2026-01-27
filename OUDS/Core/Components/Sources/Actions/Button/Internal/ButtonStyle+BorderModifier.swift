@@ -62,7 +62,7 @@ struct ButtonBorderModifier: ViewModifier {
     // MARK: Radius
 
     private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedButtons ? theme.button.buttonBorderRadiusRounded : theme.button.buttonBorderRadiusDefault
+        theme.tuning.hasRoundedButtons ? theme.button.borderRadiusRounded : theme.button.borderRadiusDefault
     }
 
     // MARK: Default appearance
@@ -70,19 +70,19 @@ struct ButtonBorderModifier: ViewModifier {
     private var defaultWidth: BorderWidthSemanticToken {
         switch state {
         case .enabled:
-            theme.button.buttonBorderWidthDefault
+            theme.button.borderWidthDefault
         case .hover:
-            theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.borderWidthDefaultInteraction
         case .pressed:
-            theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.borderWidthDefaultInteraction
         case .loading:
-            theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.borderWidthDefaultInteraction
         case .disabled:
-            theme.button.buttonBorderWidthDefault
+            theme.button.borderWidthDefault
         }
     }
 
-    private var defaultColor: MultipleColorSemanticTokens {
+    private var defaultColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             useMonochrome ? theme.button.monoColorBorderDefaultEnabled : theme.button.colorBorderDefaultEnabled
@@ -103,7 +103,7 @@ struct ButtonBorderModifier: ViewModifier {
 
     // MARK: Strong appearance
 
-    private var strongColor: MultipleColorSemanticTokens {
+    private var strongColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             theme.button.monoColorBorderDefaultEnabled

@@ -56,15 +56,15 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Private helpers
 
-    private var dividerColor: MultipleColorSemanticTokens {
+    private var dividerColor: MultipleColorSemanticToken {
         layoutData.isError ? errorColor : theme.colors.borderDefault
     }
 
-    private var borderColor: MultipleColorSemanticTokens? {
+    private var borderColor: MultipleColorSemanticToken? {
         layoutData.isError ? errorColor : successColor
     }
 
-    private var errorColor: MultipleColorSemanticTokens {
+    private var errorColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             theme.colors.actionNegativeEnabled
@@ -78,7 +78,7 @@ struct ControlItemBordersModifier: ViewModifier {
         }
     }
 
-    private var successColor: MultipleColorSemanticTokens? {
+    private var successColor: MultipleColorSemanticToken? {
         switch interactionState {
         case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {

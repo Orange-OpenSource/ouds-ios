@@ -14,8 +14,8 @@
 import OUDSFoundations
 import SwiftUI
 
-/// The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization
-/// within an interface. It is often displayed as a label or indicator with a distinct background color and text.
+/// Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only.
+/// Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size.
 ///
 /// ## Code samples
 ///
@@ -77,7 +77,7 @@ import SwiftUI
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.17.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadge: View {
 
     static let maxCount = 99
@@ -229,9 +229,9 @@ public struct OUDSBadge: View {
             case .empty:
                 EmptyView()
             case let .count(value, size):
-                BadgeCount(value: value, size: size, status: layout.status)
-            case let .icon(customIcon, flipIcon, size):
-                BadgeIcon(customIcon: customIcon, flipped: flipIcon, size: size, status: layout.status)
+                BadgeCount(value: value, size: size)
+            case let .icon(customIcon, flipIcon, _):
+                BadgeIcon(customIcon: customIcon, flipped: flipIcon, status: layout.status)
             }
         }
         .modifier(BadgeModifier(layout: layout, accessibilityLabel: accessibilityLabel))

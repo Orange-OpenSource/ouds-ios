@@ -1,5 +1,5 @@
 {
-  "originHash" : "57f85c5f3e27f7a8ecf729d15d08886e4a83c8eec9106a605556b12292d3bd1f",
+  "originHash" : "b2c4090f38495d2cd66f6b162957aad29a33db00f2919a225663895d1fe50544",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat",
       "state" : {
-        "revision" : "fb7ce2e469c18017c92523c93fd3b1b9757a4dd1",
-        "version" : "0.58.7"
+        "revision" : "c8b8d61f325d92d59e273a80a939cb60e489054e",
+        "version" : "0.59.0"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
       "state" : {
-        "revision" : "ecafb5b056cb7995324f0d310a61f30661d00cad",
-        "version" : "0.62.2"
+        "revision" : "8a4640d14777685ba8f14e832373160498fbab92",
+        "version" : "0.63.2"
       }
     }
   ],

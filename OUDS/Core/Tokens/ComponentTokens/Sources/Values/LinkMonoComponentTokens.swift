@@ -25,11 +25,11 @@ import OUDSTokensSemantic
 /// - Since: 0.16.0
 public protocol LinkMonoComponentTokens {
 
-    var monoColorContentEnabled: MultipleColorSemanticTokens { get }
-    var monoColorContentHover: MultipleColorSemanticTokens { get }
-    var monoColorContentPressed: MultipleColorSemanticTokens { get }
-    var monoColorContentDisabled: MultipleColorSemanticTokens { get }
-    var monoColorContentFocus: MultipleColorSemanticTokens { get }
+    var monoColorContentEnabled: MultipleColorSemanticToken { get }
+    var monoColorContentHover: MultipleColorSemanticToken { get }
+    var monoColorContentPressed: MultipleColorSemanticToken { get }
+    var monoColorContentDisabled: MultipleColorSemanticToken { get }
+    var monoColorContentFocus: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

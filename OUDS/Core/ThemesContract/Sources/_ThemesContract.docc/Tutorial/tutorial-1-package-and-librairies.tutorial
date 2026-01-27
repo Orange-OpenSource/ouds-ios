@@ -7,7 +7,7 @@
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
 
-    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.2", destination: "https://developer.apple.com/download/")
     
     @Section(title: "Import the Swift Package and the libraries") {
         
@@ -74,7 +74,7 @@
                 OUDS provides UIKit components 
                   
                 @Justification(reaction: "Try again!") {
-                    OUDS supports officialy only SwiftUI. UIKit is very experimental and not recommended.
+                    OUDS supports only SwiftUI.
                 }
             }
         }

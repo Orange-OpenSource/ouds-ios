@@ -1,7 +1,9 @@
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
-  OUDS iOS provides SwiftUI components to Orange developers 
+  OUDS iOS provides SwiftUI components to Orange developers
+  <br>
+  Build Sharper. Ship faster. Perform better. 
   <br>
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
@@ -32,29 +34,33 @@
 <a href="https://scorecard.dev/viewer/?uri=github.com/Orange-OpenSource/ouds-ios" title="OpenSSF Scorecard"><img src="https://api.scorecard.dev/projects/github.com/Orange-OpenSource/ouds-ios/badge" alt="OpenSSF Scorecard"></a>
 &nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
+&nbsp;
+<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="Fossa status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="Fossa status"></a>
 </p>
 
-## Status
+## ⚙️ Status
 
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
 
 [![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/releases)
-[![Still maintained](https://img.shields.io/maintenance/yes/2025?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
+[![Still maintained](https://img.shields.io/maintenance/yes/2026?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
 
 [![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
 ![iOS 15](https://img.shields.io/badge/iOS-15-FF1AB2?style=for-the-badge)
 ![iPadOS 15](https://img.shields.io/badge/iPadOS-15-FF1AB2?style=for-the-badge)
-![macOS 15](https://img.shields.io/badge/macOS-15-FF1AB2?style=for-the-badge)
+![macOS 13](https://img.shields.io/badge/macOS-13-FF1AB2?style=for-the-badge)
 ![visionOS 1](https://img.shields.io/badge/visionOS-1-FF1AB2?style=for-the-badge)
 ![watchOS 11](https://img.shields.io/badge/watchOS-11-FF1AB2?style=for-the-badge)
 ![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 26.0](https://img.shields.io/badge/Xcode-26.0-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
+[![Xcode 26.2](https://img.shields.io/badge/Xcode-26.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes)
 
-## About OUDS
+[![Open Hub](https://img.shields.io/badge/open%20hub-5A2A82?style=for-the-badge)](https://openhub.net/p/ouds-ios)
+
+## ℹ️ About OUDS
 
 OUDS means *Orange Unified Design System*.
 
@@ -71,7 +77,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 > [!NOTE]
 > Main targets are iOS / iPadOS, and we do our best to support macOS, visionOS, tvOS and watchOS!
 
-## Quick start
+## 🚀 Quick start
 
 You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embed and use OUDS iOS Swift Package for your app.
 
@@ -135,7 +141,11 @@ Import the `OUDSComponents` library and instanciate the component you need. All 
 
 The wiki lists also [the components and their availability](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
-## Content
+### Use GenAI?
+
+If you use generative AI tool like copilots, feel free to use our [AGENTS.md](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/AGENTS.md) file describing the grammar, syntax and API of OUDS.
+
+## 📦 Content
 
 > [!NOTE]
 > This repository contains the OUDS iOS library, as a Swift Package, that provides Orange iOS components for its unified design system.
@@ -155,7 +165,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 > You can verify their integrity with commands from GPG tool of GitHub CLI client.
 > Please [refer to the wiki to choose the options you need](https://github.com/Orange-OpenSource/ouds-ios/wiki/50-%E2%80%90-About-versions,-releases-and-builds#tags-commits-releases-and-artifacts-signature)
 
-## Tokens libraries versions
+## 🧬 Tokens libraries versions
 
 > [!TIP]
 > This Swift package embeds specific versions of themes / tokens librairies.
@@ -170,7 +180,7 @@ The wiki lists also [the components and their availability](https://github.com/O
 - Brand Wireframe version: 2.3.0
 - Brand Orange Business Tools version: 2.3.0
 
-## Bugs, feature requests and discussions
+## 🪲 Bugs, feature requests and discussions
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
 
@@ -180,23 +190,23 @@ Keep in mind internal or sensitive discussions must be in internal tools, not pu
 
 If your discussions, requests or issues are about the design system toolbox application, [use instead its GitHub project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
-## Contributing
+## 🤝 Contributing
 
 Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/DEVELOP.md) file.
 
-## Copyright and license
-
-Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
-For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
-
-## Data and privacy
+## 🔒 Data and privacy
 
 The Orange Unified Design System library is a Software Development Kit (SDK) that allows developpers to create Orange branded mobile applications.
 As such:
 - this SDK does not handle any personnal data
 - this SDK does not require any device permission to work
 
-## Design Toolbox App
+## ⚖️ Copyright and license
+
+Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
+For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
+
+## 📱 Design Toolbox App
 
 Flash the QrCode below or click on it to download the *Design System Toolbox* app.
 

@@ -21,15 +21,15 @@ import OUDSTokensSemantic
 
 extension OrangeBusinessToolsThemeControlItemComponentTokensProvider: ControlItemComponentTokens {
     /// Has for value token colors.actionSupportHover
-    @objc public final var colorBgHover: MultipleColorSemanticTokens { colors.actionSupportHover }
+    @objc public final var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
     /// Has for value token colors.actionSupportPressed
-    @objc public final var colorBgPressed: MultipleColorSemanticTokens { colors.actionSupportPressed }
+    @objc public final var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
     /// Has for value token colors.actionSupportLoading
-    @objc public final var colorBgLoading: MultipleColorSemanticTokens { colors.actionSupportLoading }
+    @objc public final var colorBgLoading: MultipleColorSemanticToken { colors.actionSupportLoading }
     /// Has for value token colors.actionSupportFocus
-    @objc public final var colorBgFocus: MultipleColorSemanticTokens { colors.actionSupportFocus }
+    @objc public final var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
     /// Has for value token colors.contentDefault
-    @objc public final var colorContentLoader: MultipleColorSemanticTokens { colors.contentDefault }
+    @objc public final var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token borders.radiusNone
     @objc public final var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
     /// Has for value token borders.radiusDefault

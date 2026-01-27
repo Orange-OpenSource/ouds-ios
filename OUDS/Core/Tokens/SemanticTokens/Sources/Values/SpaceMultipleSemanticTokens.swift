@@ -18,14 +18,14 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **spacings** but using ``MultipleSpaceSemanticTokens``.
+/// This is a group of semantic tokens for **spacings** but using ``MultipleSpaceSemanticToken``.
 ///
-/// In fact the ``MultipleSpaceSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for spacing containing values for compact (mobile) or regular (tablet) size classes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSpaceSemanticTokens``.
+/// In fact the ``MultipleSpaceSemanticToken`` class will help users (i.e. developers) to handle one semantic token for spacing containing values for compact (mobile) or regular (tablet) size classes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSpaceSemanticToken``.
 /// Thus the "real" color semantic tokens are declared in ``SpaceSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``SpaceMultipleSemanticTokens`` which must be updated manually.
 ///
-/// Each token declared in this protocol must have its version *Mobile* and *Tablet* declared in ``SpaceSemanticTokens`` protocol in order to define ``MultipleSpaceSemanticTokens`` for each pair of them.
+/// Each token declared in this protocol must have its version *Mobile* and *Tablet* declared in ``SpaceSemanticTokens`` protocol in order to define ``MultipleSpaceSemanticToken`` for each pair of them.
 ///
 /// In few words:
 /// ```swift
@@ -40,7 +40,7 @@
 ///
 ///         // The 'higher level' spacing semantic tokens wrapping them and exposed to users,
 ///         // declared (in SpaceMultipleSemanticTokens.swift) and defined (in OUDSTheme+SpaceMultipleSemanticTokens.swift) manualy
-///         var scaledNone: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: scaledNoneMobile, regular: scaledNoneTablet) }
+///         var scaledNone: MultipleSpaceSemanticToken { MultipleSpaceSemanticToken(compact: scaledNoneMobile, regular: scaledNoneTablet) }
 ///
 ///         // Thus users can in their components use scaledNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
@@ -51,16 +51,16 @@ public protocol SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled
 
-    var scaledNone: MultipleSpaceSemanticTokens { get }
-    var scaled3xsmall: MultipleSpaceSemanticTokens { get }
-    var scaled2xsmall: MultipleSpaceSemanticTokens { get }
-    var scaledXsmall: MultipleSpaceSemanticTokens { get }
-    var scaledSmall: MultipleSpaceSemanticTokens { get }
-    var scaledMedium: MultipleSpaceSemanticTokens { get }
-    var scaledLarge: MultipleSpaceSemanticTokens { get }
-    var scaledXlarge: MultipleSpaceSemanticTokens { get }
-    var scaled2xlarge: MultipleSpaceSemanticTokens { get }
-    var scaled3xlarge: MultipleSpaceSemanticTokens { get }
+    var scaledNone: MultipleSpaceSemanticToken { get }
+    var scaled3xsmall: MultipleSpaceSemanticToken { get }
+    var scaled2xsmall: MultipleSpaceSemanticToken { get }
+    var scaledXsmall: MultipleSpaceSemanticToken { get }
+    var scaledSmall: MultipleSpaceSemanticToken { get }
+    var scaledMedium: MultipleSpaceSemanticToken { get }
+    var scaledLarge: MultipleSpaceSemanticToken { get }
+    var scaledXlarge: MultipleSpaceSemanticToken { get }
+    var scaled2xlarge: MultipleSpaceSemanticToken { get }
+    var scaled3xlarge: MultipleSpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

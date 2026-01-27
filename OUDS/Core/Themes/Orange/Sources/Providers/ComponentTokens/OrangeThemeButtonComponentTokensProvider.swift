@@ -32,11 +32,11 @@ import OUDSThemesContract
 ///
 ///         override var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
 ///
-///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+///         override var borderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
 ///
-///         override var buttonBorderRadius: BorderRadiusSemanticToken { borders.radiusMd }
+///         override var borderRadius: BorderRadiusSemanticToken { borders.radiusMd }
 ///
-///         override var colorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.repositoryOpacityBlackHigher }
+///         override var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
 ///
 ///         override var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
 ///

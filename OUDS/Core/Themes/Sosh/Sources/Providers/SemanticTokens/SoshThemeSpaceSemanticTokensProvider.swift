@@ -22,7 +22,7 @@ import OUDSThemesContract
 /// - Since: 0.17.0
 final class SoshThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
 
-    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _dimensions_  semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

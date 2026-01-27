@@ -17,13 +17,13 @@ import Testing
 
 // swiftlint:disable type_name
 
-/// To ensure the `MultipleFontLetterSpacingSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-struct MultipleFontLetterSpacingSemanticTokensTests {
+/// To ensure the `MultipleFontLetterSpacingSemanticToken` is tested as a provider of semantic tokens for compact and regular size classes.
+struct MultipleFontLetterSpacingSemanticTokenTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
         let unique: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing250
-        let token = MultipleFontLetterSpacingSemanticTokens(unique)
+        let token = MultipleFontLetterSpacingSemanticToken(unique)
 
         #expect(token.compact == unique)
         #expect(token.regular == unique)
@@ -33,21 +33,21 @@ struct MultipleFontLetterSpacingSemanticTokensTests {
     @Test func initWithTwoValues() {
         let compact: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing300
         let regular: FontLetterSpacingSemanticToken = FontRawTokens.letterSpacing650
-        let token = MultipleFontLetterSpacingSemanticTokens(compact: compact, regular: regular)
+        let token = MultipleFontLetterSpacingSemanticToken(compact: compact, regular: regular)
 
         #expect(token.compact == compact)
         #expect(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleFontLetterSpacingSemanticTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleFontLetterSpacingSemanticToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     @Test func isEqual() {
-        let first = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
-        let second = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight250)
-        let third = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.lineHeight250)
-        let fourth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight850)
-        let fifth = MultipleFontLetterSpacingSemanticTokens(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
-        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
+        let first = MultipleFontLetterSpacingSemanticToken(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
+        let second = MultipleFontLetterSpacingSemanticToken(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight250)
+        let third = MultipleFontLetterSpacingSemanticToken(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.lineHeight250)
+        let fourth = MultipleFontLetterSpacingSemanticToken(compact: FontRawTokens.letterSpacing650, regular: FontRawTokens.lineHeight850)
+        let fifth = MultipleFontLetterSpacingSemanticToken(compact: FontRawTokens.letterSpacing300, regular: FontRawTokens.letterSpacing300)
+        let sixth = MultipleSizeSemanticToken(compact: 12, regular: 12)
 
         #expect(first.isEqual(first))
         #expect(!first.isEqual(second))

@@ -21,12 +21,12 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeIconComponentTokensProvider: IconComponentTokens {
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
-    @objc open var colorContentStatusWarningExternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
-    @objc open var colorContentStatusWarningInternalShape: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
-    /// Has for value token MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
-    @objc open var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow)
+    @objc open var colorContentStatusWarningExternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningMedium, dark: colors.repositoryWarningLow) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark)
+    @objc open var colorContentStatusWarningInternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningHigh, dark: colors.opacityTransparentDark) }
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
+    @objc open var colorContentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
 }
 
 // swiftlint:enable line_length

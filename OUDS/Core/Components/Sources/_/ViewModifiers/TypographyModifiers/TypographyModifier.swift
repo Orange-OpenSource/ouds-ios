@@ -22,7 +22,7 @@ import UIKit
 // swiftlint:disable line_length
 
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
-/// so as to define the viewport and use finaly the suitable `MultipleFontCompositeSemanticTokens`.
+/// so as to define the viewport and use finaly the suitable `MultipleFontCompositeSemanticToken`.
 /// In fact dimensionswift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
 /// In few words, contains the font elements to apply a defined typography depending to size classes and categories.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
@@ -32,7 +32,7 @@ struct TypographyModifier: ViewModifier {
     let family: FontFamilyRawToken?
 
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
-    let font: MultipleFontCompositeSemanticTokens
+    let font: MultipleFontCompositeSemanticToken
 
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -118,7 +118,7 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*)
-    /// depending to the current `MultipleFontCompositeSemanticTokens`.
+    /// depending to the current `MultipleFontCompositeSemanticToken`.
     func body(content: Content) -> some View {
         Group {
             // `kerning()` and `fontWeight, only available for iOS 16+
@@ -136,11 +136,27 @@ struct TypographyModifier: ViewModifier {
                     .padding(.vertical, padding)
             }
         }
-        #if os(visionOS) || os(macOS) || os(watchOS)
-        .onChange(of: sizeCategory) { _, _ in }
-        #else
-        .onChange(of: sizeCategory) { _ in }
-        #endif
+        .modifier(OnChangeSizeCategoryModifier(sizeCategory: sizeCategory))
+    }
+
+    // MARK: - On Change Size Category Modifier
+
+    private struct OnChangeSizeCategoryModifier: ViewModifier {
+        let sizeCategory: ContentSizeCategory
+
+        func body(content: Content) -> some View {
+            #if os(visionOS) || os(watchOS)
+            content.onChange(of: sizeCategory) { _, _ in }
+            #elseif os(macOS)
+            if #available(macOS 14.0, *) {
+                content.onChange(of: sizeCategory) { _, _ in }
+            } else {
+                content.onChange(of: sizeCategory) { _ in }
+            }
+            #else
+            content.onChange(of: sizeCategory) { _ in }
+            #endif
+        }
     }
 }
 

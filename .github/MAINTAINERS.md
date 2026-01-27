@@ -10,14 +10,14 @@ This document contains a list of maintainers in this repo. See [RESPONSIBILITIES
 
 <!-- Sort by alphabetic order, last name in upper case -->
 
-| Maintainer               | GitHub ID    | Emaill                                | Affiliation    |
-| ------------------------ | ---------------------------------------------------- | -------------- |
+| Maintainer               | GitHub ID    | Email                                 | Affiliation    |
+| ------------------------ | ------------ | ------------------------------------- | -------------- |
 | Pierre-Yves LAPERSONNE   | pylapp       | pierreyves.lapersonne@orange.com      | Orange SA      |
 | Ludovic PINEL            | ludovic35    | ludovic.pinel@orange.com              | Orange SA      |
 
 <!--
 ## Emeritus
 
-| Maintainer               | GitHub ID                                                 | Affiliation    |
-| ------------------------ | --------------------------------------------------------- | -------------- |
+| Maintainer               | GitHub ID    | Email                                 | Affiliation    |
+| ------------------------ | ------------ | ------------------------------------- | -------------- |
 -->

@@ -5,7 +5,7 @@
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @XcodeRequirement(title: "Xcode 26", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.2", destination: "https://developer.apple.com/download/")
 
     @Section(title: "Use of tokens") {
         
@@ -142,6 +142,29 @@
                 Do not hesitate to test new API and integrate other components!
                 
                 @Image(source: "tutorial-light-dark (result).png", alt: "Tutorial app in light and dark mode")
+            }
+        }
+    }
+
+    @Section(title: "Want to be an artist?") {
+            
+        @ContentAndMedia {
+            Be an artist is not forbidden, do not hesitate to change tokens
+        }
+            
+        @Steps {
+            @Step {
+                The Orange theme is designed to be overridable, thus you can change some tokens in order to apply your own style.
+                If you know which token to modify, and if you keep in mind some tokens are shared accross all components 
+                and your changes can bring side effects, feel free to customize these elements!
+                
+                To do that, you will need to apply your own tokens providers, for example by subclassing some of them.
+                Then, override the tokens you want (read the documentation to find where they are), and apply the providers at theme init.
+                Change for exemple tokens of borders and colors, and compare what are the changes and where.
+                    
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-10.swift", previousFile: "tutorial-5-9.swift") {
+                    @Image(source: "tutorial-5-10.png", alt: "Change tokens, break everything, here is the artist life!")
+                }
             }
         }
     }

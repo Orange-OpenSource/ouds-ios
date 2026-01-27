@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "8F2342A9-924F-4D1F-88B9-242BE1FCA0B9",
+      "id" : "4B63609D-392E-45F4-A8B0-4C91FDC0647C",
       "name" : "Test Scheme Action",
       "options" : {
 
@@ -12,13 +12,6 @@
     "performanceAntipatternCheckerEnabled" : true
   },
   "testTargets" : [
-    {
-      "target" : {
-        "containerPath" : "container:",
-        "identifier" : "OUDS-Tests",
-        "name" : "OUDS-Tests"
-      }
-    },
     {
       "target" : {
         "containerPath" : "container:",
@@ -36,6 +29,13 @@
     {
       "target" : {
         "containerPath" : "container:",
+        "identifier" : "OUDSThemesContract-Tests",
+        "name" : "OUDSThemesContract-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
         "identifier" : "OUDSThemesOrange-Tests",
         "name" : "OUDSThemesOrange-Tests"
       }
@@ -45,13 +45,6 @@
         "containerPath" : "container:",
         "identifier" : "OUDSThemesOrangeBusinessTools-Tests",
         "name" : "OUDSThemesOrangeBusinessTools-Tests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:",
-        "identifier" : "OUDSThemesOrangeInverse-Tests",
-        "name" : "OUDSThemesOrangeInverse-Tests"
       }
     },
     {

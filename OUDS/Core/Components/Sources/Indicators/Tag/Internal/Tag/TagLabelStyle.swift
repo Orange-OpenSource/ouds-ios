@@ -23,7 +23,7 @@ struct TagLabelStyle: LabelStyle {
     let type: OUDSTag.`Type`
 
     @Environment(\.theme) private var theme
-    @Environment(\.sizeCategory) private var sizeCategory: ContentSizeCategory
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Body
 
@@ -71,6 +71,6 @@ struct TagLabelStyle: LabelStyle {
         case .small:
             theme.tag.sizeAssetSmall
         }
-        return rawSize * (sizeCategory.isLargeTextUsed ? sizeCategory.percentageRate / 100 : 1)
+        return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
     }
 }

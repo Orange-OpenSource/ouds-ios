@@ -34,7 +34,7 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
     /// Provider of spaces semantic tokens to use for pin code input spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of _ semantic tokens to use for pin code input dimensions
+    /// Provider of _dimensions_  semantic tokens to use for pin code input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

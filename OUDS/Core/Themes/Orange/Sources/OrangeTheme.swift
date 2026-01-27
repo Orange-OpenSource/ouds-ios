@@ -129,6 +129,12 @@ import OUDSTokensSemantic
 ///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button, badge: badge)
 /// ```
 ///
+/// ## Tokens versions
+///
+/// - Core OUDS version: 1.9.0
+/// - Core Orange version: 1.2.0
+/// - Brand Orange version: 2.3.0
+///
 /// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
@@ -286,14 +292,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     }
 
     deinit {}
-}
-
-// MARK: - Extension of Bundle
-
-extension Bundle {
-
-    /// The Orange theme bundle, useful to find resources
-    public static let OrangeTheme = Bundle.module
 }
 
 // swiftlint:enable function_body_length

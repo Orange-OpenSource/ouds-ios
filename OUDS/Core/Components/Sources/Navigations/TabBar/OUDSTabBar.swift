@@ -17,9 +17,10 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The ``OUDSTabBar`` is a SwiftUI `TabView` which applies OUDS tokens and styles on its content supposing to be
-/// views with *tab bar items*.
-/// The tab bar is, for iOS, a bottom bar with tabs containing for example images, texts and badges.
+/// The Tab bar is a system navigation component with a position which can vary depending to the OS.
+/// The tab bar can be found at the bottom of the screen for iOS. It can vary for iPadOS.
+/// It allows users to switch between the sections of an app.
+/// Each tab can be represented by a label, optionally paired with an icon, and maintains persistent visibility across top-level destinations.
 ///
 /// ## Appearances
 ///
@@ -61,13 +62,13 @@ import SwiftUI
 ///
 /// - You must use in your tab bar items images with **a size of 26 x 26**, otherwise rendering could be unaligned with Figma specifications
 /// - Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width based on the tab bar item content,
-/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS lower than 18
+/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
 ///
 /// ## Accessibility considerations
 ///
 /// - If your tabs embeded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
 /// - If your tabs embeded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
-/// by using accessibilty value
+/// by using accessibiltiy value
 ///
 /// ```swift
 ///     OUDSTabBar {
@@ -90,13 +91,14 @@ import SwiftUI
 /// For iOS lower than 26, a selected tab indicator can be displayed in the `OUDSTabBar` if the `count` parameter is defined (to the number of tabs in the component)
 /// and if the `selected` parameter is equal to a given tag associated to a tab item.
 /// Otherwise the indicator won't appear; these parameters are mandatory to compute the location of the indicator.
-/// This rule only applis if selected tab indicator must be displayed.
+/// This rule is only applied if selected tab indicator must be displayed.
 ///
 /// ## Technical considerations
 ///
 /// In order to improve the Developer eXperience the current `OUDSTabBar` implementation lets users define their own tab items.
 /// OUDS applies only appearances and styles on elements to prevent users to define raw data to assign to the component before being rendered like a *picker*.
 /// Thus users will need to add their own accessiiblity label if badges are used or also apply *template* rendering mode on images if needed.
+/// Thus it will be also possible to use Liquid Glass new API with animations and items stacking.
 ///
 /// ## Code samples
 ///
@@ -182,7 +184,7 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.0.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Properties
@@ -203,9 +205,23 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
-    ///
-    /// Number if tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
+    /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
+    ///
+    /// ```swift
+    ///     OUDSTabBar {
+    ///         SomeView()
+    ///             .tabItem {
+    ///                 Label("Label 1", image: "some-image")
+    ///              }
+    ///              .tag(0)
+    ///         OtherViewView()
+    ///             .tabItem {
+    ///                 Label("Label 2", image: "some-image")
+    ///              }
+    ///              .tag(0)
+    ///     }
+    /// ```
     ///
     /// - Parameters:
     ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
@@ -221,57 +237,72 @@ public struct OUDSTabBar<Content>: View where Content: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
+    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
+    /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selected:count:content:)`
     ///
-    /// If you target iOS lower than 26 you should use instead `OUDSTabBar(selected:count:content)` to get the active tab indicator
+    /// ```swift
+    ///     OUDSTabBar {
+    ///         SomeView()
+    ///             .tabItem {
+    ///                 Label("Label 1", image: "some-image")
+    ///              }
+    ///         OtherViewView()
+    ///             .tabItem {
+    ///                 Label("Label 2", image: "some-image")
+    ///              }
+    ///     }
+    /// ```
     ///
-    /// - Parameter content: The list of items to add in the tab bar
+    /// - Parameter content: The views to add in the tab bar
     @available(iOS 26, *)
     public init(@ViewBuilder content: @escaping () -> Content) {
         selectedTab = 0
         tabCount = 0
         self.content = content
-        _isLandscape = State(initialValue: Self.isInLandscapeViewport())
+        _isLandscape = State(initialValue: false)
     }
 
     // MARK: Body
 
     /// Uses a native SwiftUI `TabView` populated with the given content where *tab item* elements are defined.
-    /// Warning: rendering wil change depending to OS version!
+    /// Rendering wil change depending to OS version, with a top divider and a selected tab indicator for legacy layouts.
     public var body: some View {
         #if os(iOS)
         // Without Liquid Glass, an indicator for the tab bar is mandatory for iPhones in portrait mode only,
-        // not for iPhone in landscape mode nor iPads.
-        if hasLegacyLayout {
-            ZStack(alignment: .bottom) {
-                TabView(selection: $selectedTab) {
-                    content()
-                }
-                .modifier(TabBarViewModifier())
-
-                TabBarTopDivider()
-
-                if shouldShowTabIndicator {
-                    SelectedTabIndicator(selected: $selectedTab, count: tabCount)
-                }
-            }
-            .onAppear {
-                isLandscape = Self.isInLandscapeViewport()
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                // Delay to ensure the orientation change is complete
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
-                    isLandscape = Self.isInLandscapeViewport()
-                }
-            }
-            // Liquid Glass or iPadOS > 18
-        } else {
+        // not for iPhone in landscape mode nor iPads (design requirements).
+        // With Xcode 26.0 it was mandatory to manage these 2 cases.
+        // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
+        // because of the ZStack, its conditions and the multiple use of tab views.
+        // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
+        // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
+        // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
+        // device-related environment values (such as `iPhoneInUse`) are available only
+        // within the TabBar view hierarchy (e.g. `SelectedTabIndicator`, `TabBarTopDivider`).
+        ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 content()
-            }.modifier(TabBarViewModifier())
+            }
+            .modifier(TabBarViewModifier())
+
+            TabBarTopDivider()
+                .opacity(hasLegacyLayout ? 1 : 0)
+
+            SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+                .opacity(shouldShowTabIndicator ? 1 : 0)
         }
+        .onAppear {
+            isLandscape = Self.isInLandscapeViewport()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            // Delay to ensure the orientation change is complete
+            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                isLandscape = Self.isInLandscapeViewport()
+            }
+        }
+        .modifier(DeviceModifier())
         #else // visionOS, macOS
-        TabView(selection: $selectedTab) {
+        TabView {
             content()
         }
         #endif
@@ -279,9 +310,18 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: - Helpers
 
-    /// "Legacy layout" here means:
-    /// - iPhone with iOS lower than 26, i.e. not Liquid Glass
-    /// - iPad with iPadOS lower than 18, i.e. with same tab bar and navigations layouts as iOS. Since iOS 18 tab bar is not anymore in bottom.
+    /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
+    private var shouldShowTabIndicator: Bool {
+        #if canImport(UIKit) && !os(watchOS)
+        guard #unavailable(iOS 26.0) else { return false }
+        guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
+        return !isLandscape
+        #else
+        return false
+        #endif
+    }
+
+    /// - Returns Bool: true if iOS lower than 26.0 for iPhone or iOS lower than 18.0 for iPad, false otherwise
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
         // iOS < 26
@@ -299,17 +339,6 @@ public struct OUDSTabBar<Content>: View where Content: View {
         return false
         #else
         // iOS 26+ / Liquid Glass
-        return false
-        #endif
-    }
-
-    /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
-    private var shouldShowTabIndicator: Bool {
-        #if canImport(UIKit) && !os(watchOS)
-        guard #unavailable(iOS 26.0) else { return false }
-        guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
-        return !isLandscape
-        #else
         return false
         #endif
     }

@@ -5,6 +5,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.0.0...1.1.0) - 2026-01-27
+
+### Added
+
+- Helpers to apply themes on Xcode Previews (Orange-OpenSource/ouds-ios#1268)
+- Flag to let `button` takes the screen full width (Orange-OpenSource/ouds-ios#1252)
+- Stop animation of switch if defined in accessibility settings (Orange-OpenSource/ouds-ios#660)
+- Display in logs components versions
+- Python script to find dead / unused tokens (Orange-OpenSource/ouds-ios#1237)
+
+### Changed
+
+- `ruby/setup-ruby` action from v1.271.0 to v1.286.0 for `build-and-test` workflow
+- `Ruby` version from v3.4.8 to v4.0.1 for `build-and-test` workflows
+- `SwiftLintPlugins` Swift package from v0.62.2 to v0.63.2
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- Gem `fastlane` gem from v2.230.0 to v2.231.1
+- GitHub Actions `checkout` from v6.0.1 to v6.0.2 for all workflows
+- Swift package `SwifFormat` from v0.58.7 to v0.59.0
+- macOS 13 support
+- Cover crash cases on test suites (Orange-OpenSource/ouds-ios#1255)
+- Update definitions of components using DSM definitions (Orange-OpenSource/ouds-ios#1238) 
+- Move from Xcode 26.1.1 to Xcode 26.2 (Orange-OpenSource/ouds-ios#1246)
+- Move from Xcode 26.0 to Xcode 26.1.1 (Orange-OpenSource/ouds-ios#1209)
+- Unused `status` and `size` properties of `badge` component (count and icon variants) removed (Orange-OpenSource/ouds-ios#1233)
+- Various cleanings in the documentation
+- Update constants file with versions values in comments for documentation
+- Display tokens librairies versions in themes Swift files
+- Update README with reference to AGENTS.md file
+- **BREAKING**: Rename component tokens `buttonBorder*` to `border*`
+- **BREAKING**: Rename some multiple token objects (from plural to singular form)
+- Use `DynamicTypeSize` instead of `ContentSizeCategory` (Orange-OpenSource/ouds-ios#1187)
+
+### Removed
+
+- **BREAKING**: Experimental UIKit backports with wrapped SwiftUI components
+
+### Fixed
+
+- No more color scheme update because of cycle in attribute graph (Orange-OpenSource/ouds-ios#1271)
+- Cycle in attribute graph with OUDS tab bar and Xcode 26.2 (Orange-OpenSource/ouds-ios#1247) (Orange-OpenSource/ouds-ios#1249)
+
 ## [1.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.22.0...1.0.0) - 2025-12-18
 
 ### Added

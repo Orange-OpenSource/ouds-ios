@@ -29,8 +29,8 @@ import OUDSThemesContract
 ///             DimensionRawTokens._400
 ///         }
 ///
-///         override var scaledSmall: MultipleSpaceSemanticTokens {
-///             MultipleSpaceSemanticTokens(compact: fixed5xl, regular: fixed5xl)
+///         override var scaledSmall: MultipleSpaceSemanticToken {
+///             MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
 ///         }
 /// }
 /// ```
@@ -55,7 +55,7 @@ import OUDSThemesContract
 /// - Since: 0.8.0
 open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
 
-    /// Provider of _ semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
+    /// Provider of _dimensions_  semantic tokens to use for spaces as the Swift package exposes "closed" tokens of Figma
     public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

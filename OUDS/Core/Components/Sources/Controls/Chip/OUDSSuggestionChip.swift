@@ -14,12 +14,11 @@
 import OUDSFoundations
 import SwiftUI
 
-/// Chips help people enter information, make selections, filter content, or trigger actions.
+/// Suggestion chip is a UI element that allows to present recommended or predictive options based on user's input or context,
+/// and is commonly used to capture filtering decisions.
+/// Suggestion chip is typically non-selected by default and can be tapped or clicked to apply the suggestion, streamlining input and enhancing usability.
 /// Chips can show multiple interactive elements together in the same area, such as a list of selectable movie times, or a serie of email contacts.
-/// A *suggestion chip* is a compact UI element used to present recommended or predictive options based on user input or context.
-/// This version of the *suggestion chip* uses the *text only* layout which displays only text, offering a clean and minimalistic look.
 /// Best suited for category-based filters that do not require additional visual elements.
-/// Other layouts are available for this component like: *text + icon* and *icon only*.
 ///
 /// ## Accessibility considerations
 ///
@@ -63,7 +62,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0
 /// - Since: 0.17.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSSuggestionChip: View {
 
     // MARK: - Stored Properties

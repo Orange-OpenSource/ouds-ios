@@ -18,10 +18,9 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The ``OUDSTextInput`` is a user interface component that allows users to enter, edit, or select
-/// single-line textual data. It's one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
-///
-/// It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons and helper messages.
+/// Text input is a UI element that allows to enter, edit, or select single-line textual data.
+/// Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
+/// It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback.
 ///
 /// ## Layout
 ///
@@ -187,7 +186,7 @@ import SwiftUI
 ///
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
-@available(iOS 15, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
 
     // MARK: - Properties

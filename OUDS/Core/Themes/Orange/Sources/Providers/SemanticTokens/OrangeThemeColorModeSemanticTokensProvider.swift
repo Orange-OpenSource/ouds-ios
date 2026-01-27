@@ -34,8 +34,8 @@ import OUDSThemesContract
 ///              ColorModeRawTokens.dark
 ///         }
 ///
-///         override var onStatusAccentEmphasized: MultipleColorModeSemanticTokens {
-///             MultipleColorModeSemanticTokens(light: ColorModeRawTokens.dark, dark: ColorModeRawTokens.light)
+///         override var onStatusAccentEmphasized: MultipleColorModeSemanticToken {
+///             MultipleColorModeSemanticToken(light: ColorModeRawTokens.dark, dark: ColorModeRawTokens.light)
 ///         }
 /// }
 /// ```

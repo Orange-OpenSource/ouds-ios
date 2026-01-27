@@ -34,7 +34,7 @@ struct ChipForegroundModifier: ViewModifier {
 
     // MARK: Private helpers
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticToken {
         switch state {
         case .enabled:
             selected ? theme.chip.colorContentSelectedEnabled : theme.chip.colorContentUnselectedEnabled

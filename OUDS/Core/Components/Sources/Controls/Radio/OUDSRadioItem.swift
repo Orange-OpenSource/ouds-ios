@@ -16,8 +16,8 @@ import SwiftUI
 
 // MARK: - OUDS Radio Item
 
-/// The ``OUDSRadioItem`` proposes layouts to add in your views some radios components.
-/// If you want to use a radio with only an indicator, prefer instead ``OUDSRadio``.
+/// Radio button item is a UI element that allows to select a single option from a set of mutually exclusive choices.
+/// Radio button item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
 /// ## Layouts
 ///
@@ -146,7 +146,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadioItem: View {
 
     // MARK: - Properties

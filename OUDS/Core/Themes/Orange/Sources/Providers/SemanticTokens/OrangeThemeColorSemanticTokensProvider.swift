@@ -24,12 +24,12 @@ import OUDSThemesContract
 ///
 ///         // Then override the color semantic tokens you want, using the color raw tokens available
 ///
-///         override var bgSecondary: MultipleColorSemanticTokens {
-///             MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+///         override var bgSecondary: MultipleColorSemanticToken {
+///             MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
 ///         }
 ///
-///         override var actionEnabled: MultipleColorSemanticTokens {
-///             MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
+///         override var actionEnabled: MultipleColorSemanticToken {
+///             MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
 ///         }
 /// }
 /// ```

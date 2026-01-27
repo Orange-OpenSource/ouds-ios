@@ -44,34 +44,34 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.sizeMinWidth == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusDefault() throws {
-        #expect(inheritedTheme.button.buttonBorderRadiusDefault != abstractTheme.button.buttonBorderRadiusDefault)
-        #expect(inheritedTheme.button.buttonBorderRadiusDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderRadiusDefault() throws {
+        #expect(inheritedTheme.button.borderRadiusDefault != abstractTheme.button.borderRadiusDefault)
+        #expect(inheritedTheme.button.borderRadiusDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusRounded() throws {
-        #expect(inheritedTheme.button.buttonBorderRadiusRounded != abstractTheme.button.buttonBorderRadiusRounded)
-        #expect(inheritedTheme.button.buttonBorderRadiusRounded == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderRadiusRounded() throws {
+        #expect(inheritedTheme.button.borderRadiusRounded != abstractTheme.button.borderRadiusRounded)
+        #expect(inheritedTheme.button.borderRadiusRounded == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderRadiusSocial() throws {
-        #expect(inheritedTheme.button.buttonBorderRadiusSocial != abstractTheme.button.buttonBorderRadiusSocial)
-        #expect(inheritedTheme.button.buttonBorderRadiusSocial == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderRadiusSocial() throws {
+        #expect(inheritedTheme.button.borderRadiusSocial != abstractTheme.button.borderRadiusSocial)
+        #expect(inheritedTheme.button.borderRadiusSocial == MockThemeButtonComponentTokenProvider.mockThemeButtonRadius)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefault() throws {
-        #expect(inheritedTheme.button.buttonBorderWidthDefault != abstractTheme.button.buttonBorderWidthDefault)
-        #expect(inheritedTheme.button.buttonBorderWidthDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderWidthDefault() throws {
+        #expect(inheritedTheme.button.borderWidthDefault != abstractTheme.button.borderWidthDefault)
+        #expect(inheritedTheme.button.borderWidthDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefaultInteraction() throws {
-        #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction != abstractTheme.button.buttonBorderWidthDefaultInteraction)
-        #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderWidthDefaultInteraction() throws {
+        #expect(inheritedTheme.button.borderWidthDefaultInteraction != abstractTheme.button.borderWidthDefaultInteraction)
+        #expect(inheritedTheme.button.borderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonBorderWidthDefaultInteractionMono() throws {
-        #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction != abstractTheme.button.buttonBorderWidthDefaultInteraction)
-        #expect(inheritedTheme.button.buttonBorderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenBorderWidthDefaultInteractionMono() throws {
+        #expect(inheritedTheme.button.borderWidthDefaultInteraction != abstractTheme.button.borderWidthDefaultInteraction)
+        #expect(inheritedTheme.button.borderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBgDefaultFocus() throws {

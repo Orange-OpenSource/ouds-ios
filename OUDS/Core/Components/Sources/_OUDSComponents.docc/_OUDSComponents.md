@@ -49,9 +49,9 @@ public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleFontCompositeSemanticTokens) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleFontCompositeSemanticToken) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
-The _theme_ contains lots of `MultipleFontCompositeSemanticTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
+The _theme_ contains lots of `MultipleFontCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
 Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the default system font will be used.
@@ -71,8 +71,8 @@ myView.labelStrongXLarge(theme)
 In details how it works:
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "displayMedium":
-@objc open var displayMedium: MultipleFontCompositeSemanticTokens { 
-    MultipleFontCompositeSemanticTokens(compact: bold750, regular: bold1050) 
+@objc open var displayMedium: MultipleFontCompositeSemanticToken { 
+MultipleFontCompositeSemanticToken(compact: bold750, regular: bold1050) 
 }
 
 // And here are the raw tokens definitions:
@@ -189,34 +189,3 @@ private func registerFonts() {
     }
 }
 ```
-
-## UIKit backports (experimental)
-
-> Caution: UIKit is not the highest priority, feel free to submit issues and pull requests to improve its support!
-
-It is possible, but not recommended at all, to use OUDS components wrapped for UIKit.
-Indeed UIKit implementations are not scoped yet, but some helpers exist which wraps SwiftUI implementations.
-
-First, you will need to import at least the dedicated Swift Package product `OUDSComponentsUIKit`.
-Other products can be needed, you can import theme on by one or use the umbrella product `OUDSSwiftUI`.
-
-```swift
-import OUDSComponentsUIKit
-```
-
-Then, send to the bridge the theme you want to use
-
-```swift
-OUDSUIKit.`init`(theme: theme) // e.g. OrangeTheme()
-```
-
-After that, call the helpers to get the components wrapped inside UIKit view controllers, for example:
-
-```swift
-OUDSUIKit.createButton(text: "Destructive button",
-                       appearance: .negative,
-                       style: .default,
-                       action: {})
-```
-
-> Tip: You can [open a new discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/returns-of-experiences-and-feedbacks) if you have ideas!

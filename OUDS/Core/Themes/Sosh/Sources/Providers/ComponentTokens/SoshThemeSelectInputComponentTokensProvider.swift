@@ -26,7 +26,7 @@ import OUDSThemesContract
 /// - Since: 0.17.0
 final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponentTokensProvider {
 
-    /// Provider of _ semantic tokens to use for pin code input dimensions
+    /// Provider of _dimensions_  semantic tokens to use for pin code input dimensions
     let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG

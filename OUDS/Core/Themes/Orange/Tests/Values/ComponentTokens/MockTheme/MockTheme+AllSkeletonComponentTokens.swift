@@ -23,7 +23,7 @@ final class MockThemeSkeletonComponentTokenProvider: OrangeThemeSkeletonComponen
 
     // MARK: - Mocks and setup
 
-    static let mockThemeSkeletonColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeSkeletonColor = MultipleColorSemanticToken("#00FF00")
 
     override init(colors: AllColorSemanticTokensProvider?) {
         super.init(colors: colors)
@@ -31,9 +31,9 @@ final class MockThemeSkeletonComponentTokenProvider: OrangeThemeSkeletonComponen
 
     // MARK: - Skeleton component tokens
 
-    override var colorBg: MultipleColorSemanticTokens { Self.mockThemeSkeletonColor }
-    override var colorGradientMiddle: MultipleColorSemanticTokens { Self.mockThemeSkeletonColor }
-    override var colorGradientStartEnd: MultipleColorSemanticTokens { Self.mockThemeSkeletonColor }
+    override var colorBg: MultipleColorSemanticToken { Self.mockThemeSkeletonColor }
+    override var colorGradientMiddle: MultipleColorSemanticToken { Self.mockThemeSkeletonColor }
+    override var colorGradientStartEnd: MultipleColorSemanticToken { Self.mockThemeSkeletonColor }
 }
 
 // swiftlint:enable required_deinit

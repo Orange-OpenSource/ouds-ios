@@ -17,8 +17,8 @@ import SwiftUI
 
 // MARK: - OUDS Radio
 
-/// The ``OUDSRadio`` proposes layout to add in your views a lonely radio, without labels, texts nor icons radios components
-/// If you want to use a radio with additional texts and icon, prefer instead ``OUDSRadioItem``.
+/// Radio button is a UI element that allows to select a single option from a set of mutually exclusive choices.
+/// Radio button that does not show icon or text, provides greater flexibility when creating other components that require a Radio button to be displayed.
 ///
 /// ## Particular cases
 ///
@@ -77,7 +77,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.12.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSRadio: View {
 
     // MARK: - Properties

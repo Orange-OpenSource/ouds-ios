@@ -17,8 +17,8 @@ import SwiftUI
 
 // MARK: - OUDS Checkbox Indeterminate
 
-/// The ``OUDSCheckboxIndeterminate`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons components.
-/// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
+/// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
+/// Checkbox that does not show icon or text, provides greater flexibility when creating other components that require a checkbox to be displayed.
 ///
 /// ## Indicator states
 ///
@@ -90,7 +90,7 @@ import SwiftUI
 ///
 /// - Version: 2.4.0 (Figma component design version)
 /// - Since: 0.12.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSCheckboxIndeterminate: View {
 
     // MARK: - Properties

@@ -24,41 +24,41 @@ import OUDSTokensSemantic
 /// Helps to expose color chart semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeBusinessToolsThemeColorChartSemanticTokensProvider: ColorChartMultipleSemanticTokens {
 
-    @objc public final var border: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderLight, dark: borderDark) }
+    @objc public final var border: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderLight, dark: borderDark) }
 
-    @objc public final var borderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: borderContrastLight, dark: borderContrastDark) }
+    @objc public final var borderContrast: MultipleColorSemanticToken { MultipleColorSemanticToken(light: borderContrastLight, dark: borderContrastDark) }
 
-    @objc public final var categoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier1Light, dark: categoricalTier1Dark) }
+    @objc public final var categoricalTier1: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier1Light, dark: categoricalTier1Dark) }
 
-    @objc public final var categoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier2Light, dark: categoricalTier2Dark) }
+    @objc public final var categoricalTier2: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier2Light, dark: categoricalTier2Dark) }
 
-    @objc public final var categoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier3Light, dark: categoricalTier3Dark) }
+    @objc public final var categoricalTier3: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier3Light, dark: categoricalTier3Dark) }
 
-    @objc public final var categoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier4Light, dark: categoricalTier4Dark) }
+    @objc public final var categoricalTier4: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier4Light, dark: categoricalTier4Dark) }
 
-    @objc public final var categoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier5Light, dark: categoricalTier5Dark) }
+    @objc public final var categoricalTier5: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier5Light, dark: categoricalTier5Dark) }
 
-    @objc public final var categoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier6Light, dark: categoricalTier6Dark) }
+    @objc public final var categoricalTier6: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier6Light, dark: categoricalTier6Dark) }
 
-    @objc public final var categoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier7Light, dark: categoricalTier7Dark) }
+    @objc public final var categoricalTier7: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier7Light, dark: categoricalTier7Dark) }
 
-    @objc public final var categoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier8Light, dark: categoricalTier8Dark) }
+    @objc public final var categoricalTier8: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier8Light, dark: categoricalTier8Dark) }
 
-    @objc public final var categoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier9Light, dark: categoricalTier9Dark) }
+    @objc public final var categoricalTier9: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier9Light, dark: categoricalTier9Dark) }
 
-    @objc public final var categoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: categoricalTier10Light, dark: categoricalTier10Dark) }
+    @objc public final var categoricalTier10: MultipleColorSemanticToken { MultipleColorSemanticToken(light: categoricalTier10Light, dark: categoricalTier10Dark) }
 
-    @objc public final var functionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalInfoLight, dark: functionalInfoDark) }
+    @objc public final var functionalInfo: MultipleColorSemanticToken { MultipleColorSemanticToken(light: functionalInfoLight, dark: functionalInfoDark) }
 
-    @objc public final var functionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalNegativeLight, dark: functionalNegativeDark) }
+    @objc public final var functionalNegative: MultipleColorSemanticToken { MultipleColorSemanticToken(light: functionalNegativeLight, dark: functionalNegativeDark) }
 
-    @objc public final var functionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalPositiveLight, dark: functionalPositiveDark) }
+    @objc public final var functionalPositive: MultipleColorSemanticToken { MultipleColorSemanticToken(light: functionalPositiveLight, dark: functionalPositiveDark) }
 
-    @objc public final var functionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: functionalWarningLight, dark: functionalWarningDark) }
+    @objc public final var functionalWarning: MultipleColorSemanticToken { MultipleColorSemanticToken(light: functionalWarningLight, dark: functionalWarningDark) }
 
-    @objc public final var gridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: gridlinesLight, dark: gridlinesDark) }
+    @objc public final var gridlines: MultipleColorSemanticToken { MultipleColorSemanticToken(light: gridlinesLight, dark: gridlinesDark) }
 
-    @objc public final var highlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: highlightLight, dark: highlightDark) }
+    @objc public final var highlight: MultipleColorSemanticToken { MultipleColorSemanticToken(light: highlightLight, dark: highlightDark) }
 
-    @objc public final var neutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: neutralLight, dark: neutralDark) }
+    @objc public final var neutral: MultipleColorSemanticToken { MultipleColorSemanticToken(light: neutralLight, dark: neutralDark) }
 }

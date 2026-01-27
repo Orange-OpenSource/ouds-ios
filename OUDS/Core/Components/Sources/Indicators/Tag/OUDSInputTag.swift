@@ -16,10 +16,9 @@ import SwiftUI
 
 // MARK: - OUDS Input Tag
 
-/// An `OUDSInputTag` is a component that allows users to enter multiple values, each represented as a tag. As users type and submit values (usually by
-/// pressing enter, comma, or tab), each value is transformed into a tag.
-///
-/// Input tags are often used for adding labels, categories, or participants. They typically support removing.
+/// Input tag is a UI element that allows to enter multiple values, each represented as a tag.
+/// As users type and submit values (usually by pressing enter, comma, or tab), each value is transformed into a tag.
+/// Input tag is often used for adding labels, categories, or participants.
 ///
 /// ## Code samples
 ///
@@ -65,7 +64,7 @@ import SwiftUI
 ///
 /// - Version: 1.4.0 (Figma component design version)
 /// - Since: 0.21.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSInputTag: View {
 
     let label: String

@@ -24,15 +24,15 @@ import OUDSTokensSemantic
 /// These values can be overriden inside `OrangeThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OrangeThemeElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
 
-    @objc open var colorDefault: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: colorDefaultLight, dark: colorDefaultDark) }
+    @objc open var colorDefault: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorDefaultLight, dark: colorDefaultDark) }
 
-    @objc open var colorRaised: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: colorRaisedLight, dark: colorRaisedDark) }
+    @objc open var colorRaised: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorRaisedLight, dark: colorRaisedDark) }
 
-    @objc open var colorDrag: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: colorDragLight, dark: colorDragDark) }
+    @objc open var colorDrag: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorDragLight, dark: colorDragDark) }
 
-    @objc open var colorEmphasized: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: colorEmphasizedLight, dark: colorEmphasizedDark) }
+    @objc open var colorEmphasized: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorEmphasizedLight, dark: colorEmphasizedDark) }
 
-    @objc open var colorSticky: ElevationMultipleColorSemanticToken { MultipleColorSemanticTokens(light: colorStickyLight, dark: colorStickyDark) }
+    @objc open var colorSticky: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorStickyLight, dark: colorStickyDark) }
 }
 
 // swiftlint:enable line_length

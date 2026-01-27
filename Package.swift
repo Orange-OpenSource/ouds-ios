@@ -23,7 +23,7 @@ let package = Package(
 
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v15), .visionOS(.v1), .watchOS(.v11), .tvOS(.v16)],
+    platforms: [.iOS(.v15) /* and also iPadOS v15 */, .macOS(.v13), .visionOS(.v1), .watchOS(.v11), .tvOS(.v16)],
 
     // MARK: - Products
 
@@ -80,9 +80,6 @@ let package = Package(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
         .library(
-            name: "OUDSComponentsUIKit",
-            targets: ["OUDSComponentsUIKit"]),
-        .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
         .library(
@@ -105,9 +102,9 @@ let package = Package(
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.5"),
         // Linter for Swift code
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.62.2"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.63.2"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.58.7"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.59.0"),
     ],
 
     // MARK: - Targets
@@ -243,11 +240,6 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
-
-        .target(
-            name: "OUDSComponentsUIKit",
-            dependencies: ["OUDSComponents"],
-            path: "OUDS/Core/ComponentsUIKit/Sources"),
 
         .target(
             name: "OUDSTokensComponent",

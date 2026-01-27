@@ -27,7 +27,7 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
 
     static let mockThemeControlItemSize: DimensionRawToken = 118
     static let mockThemeControlItemSpace: DimensionRawToken = 218
-    static let mockThemeControlItemColor = MultipleColorSemanticTokens("#00FF00")
+    static let mockThemeControlItemColor = MultipleColorSemanticToken("#00FF00")
     static let mockThemeControlItemBorderRadius: BorderRadiusRawToken = 444_719
 
     override init(sizes: AllSizeSemanticTokensProvider?,
@@ -47,11 +47,11 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     override var sizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var sizeErrorIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var sizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var colorBgHover: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var colorBgPressed: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var colorBgLoading: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var colorBgFocus: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
-    override var colorContentLoader: MultipleColorSemanticTokens { Self.mockThemeControlItemColor }
+    override var colorBgHover: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgPressed: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgLoading: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgFocus: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentLoader: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
     override var spaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeControlItemSpace }

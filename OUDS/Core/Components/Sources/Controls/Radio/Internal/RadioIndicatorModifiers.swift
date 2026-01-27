@@ -63,7 +63,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Colors
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             enabledColor
@@ -78,7 +78,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticToken {
         if isError {
             theme.colors.actionNegativeEnabled
         } else {
@@ -90,15 +90,15 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
         }
     }
 
-    private var hoverColor: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticToken {
         isError ? theme.colors.actionNegativeHover : theme.colors.actionHover
     }
 
-    private var pressedColor: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticToken {
         isError ? theme.colors.actionNegativePressed : theme.colors.actionPressed
     }
 
-    private var readOnlyColor: MultipleColorSemanticTokens {
+    private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
             OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a read only state.")
@@ -106,7 +106,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
         return theme.colors.actionReadOnlyPrimary
     }
 
-    private var disabledColor: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                 + " Only non-error situation are allowed to have a disabled state.")
@@ -193,7 +193,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Colors
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             enabledColor
@@ -208,7 +208,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         }
     }
 
-    private var enabledColor: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticToken {
         if isError {
             theme.colors.actionNegativeEnabled
         } else {
@@ -220,7 +220,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         }
     }
 
-    private var hoverColor: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticToken {
         if isError {
             theme.colors.actionNegativeHover
         } else {
@@ -228,7 +228,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         }
     }
 
-    private var pressedColor: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticToken {
         if isError {
             theme.colors.actionNegativePressed
         } else {
@@ -236,7 +236,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         }
     }
 
-    private var readOnlyColor: MultipleColorSemanticTokens {
+    private var readOnlyColor: MultipleColorSemanticToken {
         guard !isError else {
             OL.fatal("An OUDSRadio with a read only state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")
@@ -244,7 +244,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         return theme.colors.actionReadOnlySecondary
     }
 
-    private var disabledColor: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticToken {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
                 + " Only non-error situation are allowed to have a disabled state.")

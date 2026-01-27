@@ -26,8 +26,8 @@ public typealias ElevationBlurSemanticToken = ElevationRawToken
 public typealias ElevationColorSemanticToken = ColorSemanticToken
 
 /// Basically a multiple elevation color semantic token, used mainly for shadow colors, is a multiple color semantic token.
-public typealias ElevationMultipleColorSemanticToken = MultipleColorSemanticTokens
+public typealias ElevationMultipleColorSemanticToken = MultipleColorSemanticToken
 
 /// Basically an elevationcomposite  semantic token, used mainly for box shadow, is a pair of elevation composite raw tokens used depending to the color scheme.
-/// A ``MultipleElevationCompositeRawTokens`` contains `ElevationCompositeRawToken` objects for light and dark modes, which contains `ElevationRawToken` and `ColorRawToken` values.
-public typealias ElevationCompositeSemanticToken = MultipleElevationCompositeRawTokens
+/// A ``MultipleElevationCompositeRawToken`` contains `ElevationCompositeRawToken` objects for light and dark modes, which contains `ElevationRawToken` and `ColorRawToken` values.
+public typealias ElevationCompositeSemanticToken = MultipleElevationCompositeRawToken
