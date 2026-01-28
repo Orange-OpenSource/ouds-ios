@@ -30,30 +30,30 @@ import SwiftUI
 ///         }
 ///     }
 @resultBuilder
-public struct OUDSBulletListItemBuilder {
+public enum OUDSBulletListItemBuilder {
 
-    // Combines multiple `OUDSBulletList.Item` instances into a single array
+    /// Combines multiple `OUDSBulletList.Item` instances into a single array
     public static func buildBlock(_ components: OUDSBulletList.Item...) -> [OUDSBulletList.Item] {
         components
     }
 
-    // Combines multiple arrays of OUDSBulletListItem into a single array
-    // Accepts variadic array of arrays and flattens them into one array
+    /// Combines multiple arrays of OUDSBulletListItem into a single array
+    /// Accepts variadic array of arrays and flattens them into one array
     public static func buildBlock(_ components: [OUDSBulletList.Item]...) -> [OUDSBulletList.Item] {
         components.flatMap(\.self)
     }
 
-    // Handles the first branch of an if-else statement (true branch)
+    /// Handles the first branch of an if-else statement (true branch)
     public static func buildEither(first: [OUDSBulletList.Item]) -> [OUDSBulletList.Item] {
         first
     }
 
-    // Handles the second branch of an if-else statement (false branch)
+    /// Handles the second branch of an if-else statement (false branch)
     public static func buildEither(second: [OUDSBulletList.Item]) -> [OUDSBulletList.Item] {
         second
     }
 
-    // Finalizes the result, returning the complete list of items
+    /// Finalizes the result, returning the complete list of items
     public static func buildFinalResult(_ component: [OUDSBulletList.Item]) -> [OUDSBulletList.Item] {
         component
     }

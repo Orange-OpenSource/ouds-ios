@@ -98,9 +98,9 @@ struct UnorderedBullet: View {
     private var asset: Image {
         switch icon {
         case .bullet:
-            Image(bulletAssetName, bundle: theme.resourcesBundle)
+            Image(decorative: bulletAssetName, bundle: theme.resourcesBundle)
         case .tick:
-            Image("ic_bullet_list_tick", bundle: theme.resourcesBundle)
+            Image(decorative: "ic_bullet_list_tick", bundle: theme.resourcesBundle)
         case let .free(image, _):
             image
         }

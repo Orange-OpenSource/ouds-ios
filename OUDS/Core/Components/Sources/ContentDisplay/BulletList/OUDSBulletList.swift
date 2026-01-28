@@ -132,7 +132,9 @@ public struct OUDSBulletList: View {
         let text: String
         let subListType: OUDSBulletList.`Type`?
         let subListTextStyle: OUDSBulletList.TextStyle?
+        // swiftlint:disable discouraged_optional_boolean
         let subListHasBoldText: Bool?
+        // swiftlint:enable discouraged_optional_boolean
         let subItems: [Item]
 
         // MARK: - Initializer
@@ -161,33 +163,6 @@ public struct OUDSBulletList: View {
             self.subListHasBoldText = nil
             self.subItems = subItems()
         }
-
-        // MARK: - Initializer
-
-        /// Create the item with text and sub items.
-        /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
-        /// to chenge properties for those sub items, if needed.
-        ///
-        /// - Parameters:
-        ///     - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
-        ///     the type is inherited from the parent list.
-        ///     - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
-        ///     `nil`, the text style is inherited from the parent list.
-        ///     - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
-        ///     setting is inherited from the parent list.
-        ///     - subitems: The sub Items of the current item. **Remark** only three levels are allowed.
-//        public init(_ text: String,
-//                    subListType: OUDSBulletList.`Type`? = nil,
-//                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
-//                    subListHasBoldText: Bool? = nil,
-//                    subItems: [Item] = [])
-//        {
-//            self.text = text
-//            self.subListType = subListType
-//            self.subListTextStyle = subListTextStyle
-//            self.subListHasBoldText = subListHasBoldText
-//            self.subItems = subItems
-//        }
     }
 
     /// The type of icon in the unordered list
