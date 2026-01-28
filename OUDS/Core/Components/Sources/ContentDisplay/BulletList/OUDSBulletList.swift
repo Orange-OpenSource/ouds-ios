@@ -53,41 +53,63 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // 1. Unordered list with 3 items with bullet as default in body large text style
-///     OUDSBulletList(items [.init("Label 1"), .init("Label 2"), .init("Label 3")])
+///        // Unordered list with bullet
+///        OUDSBulletList {
+///            OUDSBulletList.Item("Label 1")
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 ///
-///     // 1.1. Item of Unordered list with bullet as tick and body medium text style
-///     OUDSBulletList(type: .unordered(icon: .tick),
+///        // 1.1. Item of Unordered list with bullet as tick, a text style
+///        // body medium and text bold
+///        OUDSBulletList(type: .unordered(icon: .tick),
 ///                    textStyle: .bodyMedium,
-///                    items [.init("Label 1"), .init("Label 2"), .init("Label 3")])
+///                    isBold: true)  {
+///            OUDSBulletList.Item("Label 1")
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 ///
-///     // 2. Bare list with 3 items
-///     OUDSBulletList(type: .bare, items [.init("Label 1"), .init("Label 2"), .init("Label 3")])
+///        // 2. Bare list with 3 items
+///        OUDSBulletList(type: .bare) {
+///            OUDSBulletList.Item("Label 1")
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 ///
-///     // 3. Ordered list with 3 items
-///     OUDSBulletList(type: .ordered, items [.init("Label 1"), .init("Label 2"), .init("Label 3")])
+///        // 3. Ordered list with 3 items
+///        OUDSBulletList(type: .ordered) {
+///            OUDSBulletList.Item("Label 1")
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 ///
-///     // 3.1. Ordered list with 2 items in first level, one item as sub item (second level),
-///     // and 2 items as sub item in (tgird level)
-///     OUDSBulletList(type: .ordered, items: [
-///                                         .init("Label 1", subItems: [
-///                                            .init("Label 1.1", subItems: [
-///                                                 .init("Label 1.1.1"),
-///                                                 .init("Label 1.1.2"),
-///                                             ])
-///                                         ]),
-///                                         .init("Label 2")
-///                                     ])
+///        // 3.1. Ordered list with 3 items in first level,
+///        // and one item as sub item (second level),
+///        // and 2 items as sub item in (third level)
+///        OUDSBulletList(type: .ordered) {
+///            OUDSBulletList.Item("Label 1") {
+///                OUDSBulletList.Item("Label 1.1") {
+///                    OUDSBulletList.Item("Label 1.1.1")
+///                    OUDSBulletList.Item("Label 1.1.2")
+///                }
+///            }
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 ///
-///     // 3.2. Ordered list with 2 items in first level, one item as sub item (second level) with type
-///     // Unordred with free icon
-///     OUDSBulletList(type: .ordered,
-///                    items: [
-///                       .init("Label 1",
-///                             subListType: .unordered(icon: .free(Image(decorative "ic_heart"))),
-///                             subItems: [ .init("Label 1.1") ]),
-///                       .init("Label 2")
-///                       ])
+///        // Same Bullet list but items in third level with free icon as bullet
+///        let freeIcon = Image(decorative: "ic_heart")
+///        OUDSBulletList(type: .ordered) {
+///            OUDSBulletList.Item("Label 1") {
+///                OUDSBulletList.Item("Label 1.1", subListType: .unordered(icon: .free(freeIcon))) {
+///                    OUDSBulletList.Item("Label 1.1.1")
+///                    OUDSBulletList.Item("Label 1.1.2")
+///                }
+///            }
+///            OUDSBulletList.Item("Label 2")
+///            OUDSBulletList.Item("Label 3")
+///        }
 /// ```
 ///
 /// ## Design documentation
@@ -144,13 +166,14 @@ public struct OUDSBulletList: View {
         /// to chenge properties for those sub items, if needed.
         ///
         /// - Parameters:
+        ///     - text: The text of the item
         ///     - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
         ///     - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///     - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
-        ///     - subitems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        ///     - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
         public init(_ text: String,
                     subListType: OUDSBulletList.`Type`? = nil,
                     subListTextStyle: OUDSBulletList.TextStyle? = nil,
