@@ -20,7 +20,7 @@ struct BulletListLabel: View {
     // MARK: - Properties
 
     let label: String
-    let textStyle: OudsBulletList.TextStyle
+    let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -47,7 +47,7 @@ struct BulletTextModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let textStyle: OudsBulletList.TextStyle
+    let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
 
     @Environment(\.theme) private var theme

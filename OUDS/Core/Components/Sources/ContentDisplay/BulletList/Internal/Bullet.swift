@@ -19,9 +19,9 @@ struct Bullet: View {
 
     // MARK: - Properties
 
-    let type: OudsBulletList.`Type`
-    let level: OudsBulletList.NestedLevel
-    let textStyle: OudsBulletList.TextStyle
+    let type: OUDSBulletList.`Type`
+    let level: OUDSBulletList.NestedLevel
+    let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
     let index: UInt8
 
@@ -75,10 +75,10 @@ struct UnorderedBullet: View {
 
     // MARK: - Properties
 
-    let icon: OudsBulletList.UnorderedIcon
+    let icon: OUDSBulletList.UnorderedIcon
     let isBranded: Bool
-    let level: OudsBulletList.NestedLevel
-    let textStyle: OudsBulletList.TextStyle
+    let level: OUDSBulletList.NestedLevel
+    let textStyle: OUDSBulletList.TextStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -135,8 +135,8 @@ struct OrderedBullet: View {
 
     // MARK: - Properties
 
-    let level: OudsBulletList.NestedLevel
-    let textStyle: OudsBulletList.TextStyle
+    let level: OUDSBulletList.NestedLevel
+    let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
     let index: UInt8
 

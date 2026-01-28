@@ -113,7 +113,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.1.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OudsBulletList: View {
+public struct OUDSBulletList: View {
 
     // MARK: - Properties
 
@@ -130,8 +130,8 @@ public struct OudsBulletList: View {
         // MARK: - Properties
 
         let text: String
-        let subListType: OudsBulletList.`Type`?
-        let subListTextStyle: OudsBulletList.TextStyle?
+        let subListType: OUDSBulletList.`Type`?
+        let subListTextStyle: OUDSBulletList.TextStyle?
         let subListHasBoldText: Bool?
         let subItems: [Item]
 
@@ -142,25 +142,52 @@ public struct OudsBulletList: View {
         /// to chenge properties for those sub items, if needed.
         ///
         /// - Parameters:
-        ///     - subListType: The specific `OudsBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///     - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///     - subListTextStyle: The specific `OudsBulletList.TextStyle` for the nested sub-list, if any. If
+        ///     - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///     `nil`, the text style is inherited from the parent list.
+        ///     - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
+        ///     setting is inherited from the parent list.
+        ///     - subitems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        public init(_ text: String,
+                    subListType: OUDSBulletList.`Type`? = nil,
+                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListHasBoldText: Bool? = nil,
+                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+        {
+            self.text = text
+            self.subListType = nil
+            self.subListTextStyle = nil
+            self.subListHasBoldText = nil
+            self.subItems = subItems()
+        }
+
+        // MARK: - Initializer
+
+        /// Create the item with text and sub items.
+        /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
+        /// to chenge properties for those sub items, if needed.
+        ///
+        /// - Parameters:
+        ///     - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///     the type is inherited from the parent list.
+        ///     - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///     - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
         ///     - subitems: The sub Items of the current item. **Remark** only three levels are allowed.
-        public init(_ text: String,
-                    subListType: OudsBulletList.`Type`? = nil,
-                    subListTextStyle: OudsBulletList.TextStyle? = nil,
-                    subListHasBoldText: Bool? = nil,
-                    subItems: [Item] = [])
-        {
-            self.text = text
-            self.subListType = subListType
-            self.subListTextStyle = subListTextStyle
-            self.subListHasBoldText = subListHasBoldText
-            self.subItems = subItems
-        }
+//        public init(_ text: String,
+//                    subListType: OUDSBulletList.`Type`? = nil,
+//                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+//                    subListHasBoldText: Bool? = nil,
+//                    subItems: [Item] = [])
+//        {
+//            self.text = text
+//            self.subListType = subListType
+//            self.subListTextStyle = subListTextStyle
+//            self.subListHasBoldText = subListHasBoldText
+//            self.subItems = subItems
+//        }
     }
 
     /// The type of icon in the unordered list
@@ -233,19 +260,19 @@ public struct OudsBulletList: View {
     ///
     /// - Parameters:
     ///     - type: The visual type of the list (e.g., ordered, unordered, bare).
-    ///     See `OudsBulletList.Type`, Defaullt `.unordered(icon: .bullet, isBranded: false)`
-    ///     - textStyle: The typography style for the list items. See `OudsBulletList.TextStyle`, Defaults `.bodyLarge`
+    ///     See `OUDSBulletList.Type`, Defaullt `.unordered(icon: .bullet, isBranded: false)`
+    ///     - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, Defaults `.bodyLarge`
     ///     - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
     ///     - items: Defines the list items
     public init(type: Self.`Type` = .unordered(icon: .bullet, isBranded: false),
                 textStyle: Self.TextStyle = .bodyLarge,
                 isBold: Bool = true,
-                items: [Item] = [])
+                @OUDSBulletListItemBuilder items: () -> [OUDSBulletList.Item])
     {
         self.type = type
         self.textStyle = textStyle
         self.isBold = isBold
-        self.items = items
+        self.items = items()
     }
 
     // MARK: - Properties
@@ -261,40 +288,5 @@ public struct OudsBulletList: View {
                                index: UInt8(index))
             }
         }
-    }
-}
-
-/// A custom parameter attribute that constructs OudsBulletListItem from closures.
-///
-/// You typically use ``OudsBulletListItemBuilder`` as a parameter attribute for
-/// sub items producing closure parameters, allowing those closures to provide
-/// multiple sub items.
-///
-/// Clients of this function can use multiple-statement closures to provide
-/// several sub items, as shown in the following example:
-///
-///     func listItem() {
-///         Item("First item")
-///         Item("Second item") {
-///             Item("First sub item")
-///             Item("Second sub item")
-///         }
-///     }
-///
-@resultBuilder
-public struct OudsBulletListItemBuilder {
-    /// Builds an empty view from a block containing no statements.
-    public static func buildBlock(_ items: [OudsBulletList.Item]...) -> [OudsBulletList.Item] {
-        items.flatMap(\.self)
-    }
-
-    /// Builds an expression within the builder.
-    public static func buildExpression(_ item: OudsBulletList.Item) -> [OudsBulletList.Item] {
-        [item]
-    }
-
-    /// Builds an empty view from a block containing no statements.
-    public static func buildArray(_ components: [[OudsBulletList.Item]]) -> [OudsBulletList.Item] {
-        components.flatMap(\.self)
     }
 }

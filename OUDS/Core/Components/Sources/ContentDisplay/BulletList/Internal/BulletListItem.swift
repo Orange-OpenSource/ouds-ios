@@ -19,11 +19,11 @@ struct BulletListItem: View {
 
     // MARK: - Properties
 
-    let item: OudsBulletList.Item
-    let type: OudsBulletList.`Type`
-    let textStyle: OudsBulletList.TextStyle
+    let item: OUDSBulletList.Item
+    let type: OUDSBulletList.`Type`
+    let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
-    let level: OudsBulletList.NestedLevel
+    let level: OUDSBulletList.NestedLevel
     let index: UInt8
 
     @Environment(\.theme) var theme
@@ -80,8 +80,8 @@ struct BulletListItem: View {
         }
     }
 
-    private var nextLevel: OudsBulletList.NestedLevel {
-        guard let nextLevel = OudsBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
+    private var nextLevel: OUDSBulletList.NestedLevel {
+        guard let nextLevel = OUDSBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
             fatalError("Maximum list depth (3 levels) reached. Children of '\(item.text)' will not be displayed.")
         }
 
