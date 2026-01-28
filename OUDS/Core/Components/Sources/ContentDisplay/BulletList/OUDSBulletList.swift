@@ -15,6 +15,8 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
+// swiftlint:disable discouraged_optional_boolean
+
 // MARK: - OUDS Bullet List
 
 /// Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet.
@@ -132,9 +134,7 @@ public struct OUDSBulletList: View {
         let text: String
         let subListType: OUDSBulletList.`Type`?
         let subListTextStyle: OUDSBulletList.TextStyle?
-        // swiftlint:disable discouraged_optional_boolean
         let subListHasBoldText: Bool?
-        // swiftlint:enable discouraged_optional_boolean
         let subItems: [Item]
 
         // MARK: - Initializer
@@ -254,7 +254,7 @@ public struct OUDSBulletList: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            ForEach(Array(items.enumerated()), id: \.element.text) { index, item in
+            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                 BulletListItem(item: item,
                                type: type,
                                textStyle: textStyle,
@@ -265,3 +265,5 @@ public struct OUDSBulletList: View {
         }
     }
 }
+
+// swiftlint:enable discouraged_optional_boolean

@@ -40,7 +40,7 @@ struct BulletListItem: View {
             .padding(.vertical, verticalPadding)
 
             let enumeratedSubItems = item.subItems.enumerated()
-            ForEach(Array(enumeratedSubItems), id: \.element.text) { index, subItem in
+            ForEach(Array(enumeratedSubItems), id: \.offset) { index, subItem in
                 BulletListItem(item: subItem,
                                type: item.subListType ?? type,
                                textStyle: item.subListTextStyle ?? textStyle,
