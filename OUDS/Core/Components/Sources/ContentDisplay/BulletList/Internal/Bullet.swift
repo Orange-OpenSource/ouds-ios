@@ -19,10 +19,11 @@ struct Bullet: View {
 
     // MARK: - Properties
 
-    let type: OUDSBulletList.`Type`
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let type: OudsBulletList.`Type`
+    let level: OudsBulletList.NestedLevel
+    let textStyle: OudsBulletList.TextStyle
     let isBold: Bool
+    let index: UInt8
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -35,8 +36,8 @@ struct Bullet: View {
             switch type {
             case let .unordered(icon, isBranded):
                 UnorderedBullet(icon: icon, isBranded: isBranded, level: level, textStyle: textStyle)
-            case let .ordered(index):
-                OrderedBullet(index: index, level: level, textStyle: textStyle, isBold: isBold)
+            case .ordered:
+                OrderedBullet(level: level, textStyle: textStyle, isBold: isBold, index: index)
             case .bare:
                 Rectangle().fill(.clear)
             }
@@ -74,10 +75,10 @@ struct UnorderedBullet: View {
 
     // MARK: - Properties
 
-    let icon: OUDSBulletList.UnorderedIcon
+    let icon: OudsBulletList.UnorderedIcon
     let isBranded: Bool
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let level: OudsBulletList.NestedLevel
+    let textStyle: OudsBulletList.TextStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -134,10 +135,10 @@ struct OrderedBullet: View {
 
     // MARK: - Properties
 
-    let index: UInt8
-    let level: OUDSBulletList.NestedLevel
-    let textStyle: OUDSBulletList.TextStyle
+    let level: OudsBulletList.NestedLevel
+    let textStyle: OudsBulletList.TextStyle
     let isBold: Bool
+    let index: UInt8
 
     @Environment(\.theme) private var theme
 
@@ -149,10 +150,10 @@ struct OrderedBullet: View {
             case .zero:
                 Text("\(index). ")
             case .one:
-                let character = Character(UnicodeScalar(UInt8(ascii: "A") + index - 1))
+                let character = Character(UnicodeScalar(UInt8(ascii: "A") + index))
                 Text(String(character) + ".")
             case .two:
-                let character = Character(UnicodeScalar(UInt8(ascii: "a") + index - 1))
+                let character = Character(UnicodeScalar(UInt8(ascii: "a") + index))
                 Text(String(character) + ".")
             }
         }
