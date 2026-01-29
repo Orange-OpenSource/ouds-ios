@@ -148,7 +148,7 @@ struct OrderedBullet: View {
         Group {
             switch level {
             case .zero:
-                Text("\(index + 1). ")
+                Text(String("\(index + 1). ")) // NOTE: Use String cas to prevent Xcode to generated useless Localizable
             case .one:
                 let character = Character(UnicodeScalar(UInt8(ascii: "A") + index))
                 Text(String(character) + ".")
