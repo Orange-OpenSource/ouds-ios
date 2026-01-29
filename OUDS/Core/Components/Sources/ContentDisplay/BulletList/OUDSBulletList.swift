@@ -132,7 +132,7 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.2.0
-@available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBulletList: View {
 
     // MARK: Properties
