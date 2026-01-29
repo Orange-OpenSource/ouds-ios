@@ -40,7 +40,7 @@ import SwiftUI
 ///
 /// List can be used with different font sizes:
 /// - **Body Large**: If the text accompanying the list component is the Body Large text. This variant is designed for more visual, engaging experiences.
-/// - **Body Medium**: I the text accompanying the list component is the Body Medium text. This variant is best suited for functional, task-oriented experiences.
+/// - **Body Medium**: If the text accompanying the list component is the Body Medium text. This variant is best suited for functional, task-oriented experiences.
 ///
 /// ## Cases forbidden by design
 ///
@@ -189,7 +189,7 @@ public struct OUDSBulletList: View {
 
     // swiftlint:enable discouraged_optional_boolean
 
-    // MARK: - Unoredered Icon
+    // MARK: - Unordered Icon
 
     /// The type of icon in the unordered list
     /// - Since: 1.2.0
@@ -203,8 +203,8 @@ public struct OUDSBulletList: View {
         /// A free icon as bullet
         ///
         ///  - Parameters:
-        ///     - image; The asset image as bullet
-        ///     - accessibilityLabel: An optinal label for accessibility description if asset is not decorative.
+        ///     - image: The asset image as bullet
+        ///     - accessibilityLabel: An optional label for accessibility description if asset is not decorative.
         case free(_ image: Image, accessibilityLabel: String? = nil)
     }
 
@@ -225,7 +225,7 @@ public struct OUDSBulletList: View {
         /// by increments of 1 for each successive ordered list item.
         case ordered
 
-        /// An unordered list without any bullets or alphanumeric sequence. It still have left-padding,
+        /// An unordered list without any bullets or alphanumeric sequence. It still has left-padding,
         /// so list items will appear indented. This is the default and is also known as undecorated “Unstyled” list.
         case bare
     }
@@ -235,12 +235,12 @@ public struct OUDSBulletList: View {
     /// The typography style for the list item
     /// - Since: 1.2.0
     public enum TextStyle {
-        /// I the text accompanying the list component is the body large text.
+        /// If the text accompanying the list component is the body large text.
         /// This variant is designed for more visual, engaging experiences.
         case bodyLarge
 
         /// If the text accompanying the list component is the body medium text.
-        /// This variant is best suited for functional, task oriented experiences.
+        /// This variant is best suited for functional, task-oriented experiences.
         case bodyMedium
     }
 
@@ -254,7 +254,7 @@ public struct OUDSBulletList: View {
         /// Level 1 (nested) list items provide hierarchy or subcategories.
         case one
 
-        /// Level 2 (nested) list items provide hierarchy or subcategories..
+        /// Level 2 (nested) list items provide hierarchy or subcategories.
         case two
     }
 

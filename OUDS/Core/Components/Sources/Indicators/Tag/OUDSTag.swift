@@ -278,7 +278,7 @@ public struct OUDSTag: View {
         /// - Parameters:
         ///    - leading: The leading element
         ///    - category: The category of the status
-        ///    - alternativeIcon: The optinal leading icon
+        ///    - alternativeIcon: The optional leading icon
         ///    - flipIcon: Flag to flip icon
         private init(leading: Leading, category: Self.Category, alternativeIcon: Image? = nil, flipIcon: Bool = false) {
             self.leading = leading
