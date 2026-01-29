@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_functional_settings_and_tools_hide.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
