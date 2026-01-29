@@ -180,9 +180,9 @@ public struct OUDSBulletList: View {
                     @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
         {
             self.text = text
-            self.subListType = nil
-            self.subListTextStyle = nil
-            self.subListHasBoldText = nil
+            self.subListType = subListType
+            self.subListTextStyle = subListTextStyle
+            self.subListHasBoldText = subListHasBoldText
             self.subItems = subItems()
         }
     }
