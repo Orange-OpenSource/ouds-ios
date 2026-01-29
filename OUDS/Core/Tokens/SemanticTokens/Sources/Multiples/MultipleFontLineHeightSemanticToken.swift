@@ -94,7 +94,7 @@ public final class MultipleFontLineHeightSemanticToken: NSObject, Sendable, Comp
     }
 
     /// Returns the right line height semantic token according to the `userInterfaceSizeClass`.
-    /// - Parameter userInterfaceSizeClass: The user interface size class, should be `.verticalSizeClass`
+    /// - Parameter userInterfaceSizeClass: The user interface size class, should be from `.verticalSizeClass`
     /// - Returns: The right line height semantic token
     public func lineHeight(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontLineHeightSemanticToken {
         userInterfaceSizeClass == .compact ? compact : regular
