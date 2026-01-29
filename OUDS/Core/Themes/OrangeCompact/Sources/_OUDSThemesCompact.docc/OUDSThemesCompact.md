@@ -163,6 +163,12 @@ You cannot derivate the *Orange Compact* theme.
 
 ![A button component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_button_OrangeCompact.png)
 
+### Content display
+
+#### Bullet list
+
+![A bullet list component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_bullet_list_OrangeBusinessTools.png)
+
 ### Controls
 
 #### Checkboxes
@@ -212,7 +218,7 @@ You cannot derivate the *Orange Compact* theme.
 }
 <!-- Maybe not relevant to display chip picker -->
 
-#### Text inputs
+#### Text input
 
 ![A text input component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_textInput_OrangeCompact.png)
 
