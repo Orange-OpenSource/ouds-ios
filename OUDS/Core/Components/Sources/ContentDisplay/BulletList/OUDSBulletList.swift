@@ -146,6 +146,7 @@ public struct OUDSBulletList: View {
 
     // MARK: - Item
 
+    // swiftlint:disable discouraged_optional_boolean
     /// The item of bullet list with text and optional sub items.
     public struct Item {
 
@@ -185,6 +186,8 @@ public struct OUDSBulletList: View {
             self.subItems = subItems()
         }
     }
+
+    // swiftlint:enable discouraged_optional_boolean
 
     // MARK: - Unoredered Icon
 
