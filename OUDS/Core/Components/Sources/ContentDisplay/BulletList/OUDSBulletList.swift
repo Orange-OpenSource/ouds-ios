@@ -28,7 +28,7 @@ import SwiftUI
 /// - **Ordered**: Collects related items with numeric order or sequence.
 /// - **Bare**: An unordered list without any bullets or alphanumeric sequence.
 ///
-/// Types can be mixed in list, but must be identical for the same ``OUDSBulletList.NestedLevel``.
+/// Types can be mixed in list, but must be identical for the same ``UDSBulletList.NestedLevel`.
 ///
 /// ## Levels
 ///
@@ -165,9 +165,9 @@ public struct OUDSBulletList: View {
         ///
         /// - Parameters:
         ///    - text: The text of the item
-        ///    - subListType: The specific ``OUDSBulletList.Type`` for the nested sub-list, if any. If `nil`,
+        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///    - subListTextStyle: The specific ``OUDSBulletList.TextStyle`` for the nested sub-list, if any. If
+        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
         ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
@@ -189,6 +189,7 @@ public struct OUDSBulletList: View {
     // MARK: - Unoredered Icon
 
     /// The type of icon in the unordered list
+    /// - Since: 1.2.0
     public enum UnorderedIcon {
         /// A bullet for unordered bullet list
         case bullet
@@ -207,6 +208,7 @@ public struct OUDSBulletList: View {
     // MARK: - Type
 
     /// The visual type of the list
+    /// - Since: 1.2.0
     public enum `Type` {
         /// Collects related items that don’t need to be in a specific order or sequence.
         /// List items are typically marked with bullets, but it is also possible to use a tick or any Solaris icon.
@@ -228,6 +230,7 @@ public struct OUDSBulletList: View {
     // MARK: - Text Style
 
     /// The typography style for the list item
+    /// - Since: 1.2.0
     public enum TextStyle {
         /// I the text accompanying the list component is the body large text.
         /// This variant is designed for more visual, engaging experiences.
@@ -258,8 +261,8 @@ public struct OUDSBulletList: View {
     ///
     /// - Parameters:
     ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).
-    ///     See ``OUDSBulletList.Type``, default `.unordered(icon: .bullet, isBranded: false)`
-    ///    - textStyle: The typography style for the list items. See ``OUDSBulletList.TextStyle``, defaults `.bodyLarge`
+    ///     See `OUDSBulletList.Type`, default `.unordered(icon: .bullet, isBranded: false)`
+    ///    - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, defaults `.bodyLarge`
     ///    - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
     ///    - items: Defines the list items
     public init(type: Self.`Type` = .unordered(icon: .bullet, isBranded: false),

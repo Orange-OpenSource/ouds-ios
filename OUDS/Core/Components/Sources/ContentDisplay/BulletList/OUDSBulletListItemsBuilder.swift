@@ -13,9 +13,9 @@
 
 import SwiftUI
 
-/// A custom parameter attribute that constructs ``OUDSBulletList.Item`` from closures.
+/// A custom parameter attribute that constructs `OUDSBulletList.Item` from closures.
 ///
-/// You typically use ``OUDSBulletListItemBuilder`` as a parameter attribute for
+/// You typically use `OUDSBulletListItemBuilder` as a parameter attribute for
 /// sub items producing closure parameters, allowing those closures to provide
 /// multiple sub items.
 ///
@@ -31,10 +31,12 @@ import SwiftUI
 ///         }
 ///     }
 /// ```
+///
+/// - Since: 1.2.0
 @resultBuilder
 public enum OUDSBulletListItemBuilder {
 
-    /// Combines multiple ``OUDSBulletList.Item`` instances into a single array
+    /// Combines multiple `OUDSBulletList.Item` instances into a single array
     public static func buildBlock(_ components: OUDSBulletList.Item...) -> [OUDSBulletList.Item] {
         components
     }

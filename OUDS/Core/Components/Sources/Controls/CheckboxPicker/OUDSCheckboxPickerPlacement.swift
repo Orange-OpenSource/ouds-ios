@@ -36,6 +36,7 @@ public enum OUDSCheckboxPickerPlacement {
     // MARK: - Display Type
 
     /// The type of display for the root label in case of *vertical rooted* picker placement.
+    /// - Since: 0.14.0
     public enum DisplayType {
 
         /// Display only the given root label
