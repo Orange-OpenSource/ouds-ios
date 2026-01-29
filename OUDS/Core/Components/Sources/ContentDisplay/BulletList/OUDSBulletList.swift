@@ -28,7 +28,7 @@ import SwiftUI
 /// - **Ordered**: Collects related items with numeric order or sequence.
 /// - **Bare**: An unordered list without any bullets or alphanumeric sequence.
 ///
-/// Types can be mixed in list, but must be identical for the same ``UDSBulletList.NestedLevel`.
+/// Types can be mixed in list, but must be identical for the same `OUDSBulletList.NestedLevel`.
 ///
 /// ## Levels
 ///
