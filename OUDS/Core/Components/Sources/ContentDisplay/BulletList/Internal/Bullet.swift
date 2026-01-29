@@ -146,8 +146,6 @@ private struct OrderedBullet: View {
     let isBold: Bool
     let index: UInt8
 
-    @Environment(\.theme) private var theme
-
     // MARK: Body
 
     var body: some View {
