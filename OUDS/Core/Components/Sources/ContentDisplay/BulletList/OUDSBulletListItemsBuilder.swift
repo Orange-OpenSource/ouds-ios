@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-/// A custom parameter attribute that constructs `OUDSBulletList.Item` from closures.
+/// A custom parameter attribute that constructs ``OUDSBulletList.Item`` from closures.
 ///
 /// You typically use ``OUDSBulletListItemBuilder`` as a parameter attribute for
 /// sub items producing closure parameters, allowing those closures to provide
@@ -22,6 +22,7 @@ import SwiftUI
 /// Clients of this function can use multiple-statement closures to provide
 /// several sub items, as shown in the following example:
 ///
+/// ```swift
 ///     func listItem() -> [OUDSBulletList.Item] {
 ///         OUDSBulletList.Item("First item")
 ///         OUDSBulletList.Item("Second item") {
@@ -29,10 +30,11 @@ import SwiftUI
 ///             OUDSBulletList.Item("Second sub item")
 ///         }
 ///     }
+/// ```
 @resultBuilder
 public enum OUDSBulletListItemBuilder {
 
-    /// Combines multiple `OUDSBulletList.Item` instances into a single array
+    /// Combines multiple ``OUDSBulletList.Item`` instances into a single array
     public static func buildBlock(_ components: OUDSBulletList.Item...) -> [OUDSBulletList.Item] {
         components
     }

@@ -15,9 +15,11 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Bullet
+
 struct Bullet: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let type: OUDSBulletList.`Type`
     let level: OUDSBulletList.NestedLevel
@@ -29,7 +31,7 @@ struct Bullet: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         VStack {
@@ -46,7 +48,7 @@ struct Bullet: View {
         .frame(maxHeight: maxHeight, alignment: .center)
     }
 
-    // MARK: - Private helpers
+    // MARK: Private helpers
 
     private var width: CGFloat {
         let token = switch textStyle {
@@ -71,9 +73,11 @@ struct Bullet: View {
     }
 }
 
-struct UnorderedBullet: View {
+// MARK: - Unordered Bullet
 
-    // MARK: - Properties
+private struct UnorderedBullet: View {
+
+    // MARK: Properties
 
     let icon: OUDSBulletList.UnorderedIcon
     let isBranded: Bool
@@ -83,7 +87,7 @@ struct UnorderedBullet: View {
     @Environment(\.theme) private var theme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         asset
@@ -93,7 +97,7 @@ struct UnorderedBullet: View {
             .frame(width: assetSize, height: assetSize, alignment: .center)
     }
 
-    // MARK: - Private helpers
+    // MARK: Private helpers
 
     private var asset: Image {
         switch icon {
@@ -131,9 +135,11 @@ struct UnorderedBullet: View {
     }
 }
 
-struct OrderedBullet: View {
+// MARK: - Ordered Bullet
 
-    // MARK: - Properties
+private struct OrderedBullet: View {
+
+    // MARK: Properties
 
     let level: OUDSBulletList.NestedLevel
     let textStyle: OUDSBulletList.TextStyle
@@ -142,7 +148,7 @@ struct OrderedBullet: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         Group {

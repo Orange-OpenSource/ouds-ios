@@ -79,9 +79,9 @@ public final class MultipleSizeSemanticToken: NSObject, Sendable {
         return compact == other.compact && regular == other.regular
     }
 
-    /// Returns the right _ according to the `userInterfaceSizeClass`.
+    /// Returns the right dimension according to the `userInterfaceSizeClass`.
     /// - Parameter userInterfaceSizeClass: The user interface size class (could be the horizontal or the vertical size class)
-    /// - Returns: The right size semantic token (pointing to the _ raw token to use)
+    /// - Returns: The right size semantic token (pointing to the dimension raw token to use)
     public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> SizeSemanticToken {
         userInterfaceSizeClass == .compact ? compact : regular
     }

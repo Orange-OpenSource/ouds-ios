@@ -26,7 +26,7 @@ struct BulletListItem: View {
     let level: OUDSBulletList.NestedLevel
     let index: UInt8
 
-    @Environment(\.theme) var theme
+    @Environment(\.theme) private var theme
 
     // MARK: - Body
 
@@ -82,7 +82,7 @@ struct BulletListItem: View {
 
     private var nextLevel: OUDSBulletList.NestedLevel {
         guard let nextLevel = OUDSBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
-            fatalError("Maximum list depth (3 levels) reached. Children of '\(item.text)' will not be displayed.")
+            OL.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
         }
 
         return nextLevel

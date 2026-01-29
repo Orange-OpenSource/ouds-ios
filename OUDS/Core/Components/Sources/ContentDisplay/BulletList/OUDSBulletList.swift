@@ -15,45 +15,41 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable discouraged_optional_boolean
-
 // MARK: - OUDS Bullet List
 
 /// Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet.
 /// Bullet list is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
 ///
-/// ## Type
+/// ## Types
 ///
-/// Three types are proposed
+/// Three types are proposed:
 ///
-/// **Unordered (by default)**: Collects related items that don’t need to be in a specific order or sequence.
+/// - **Unordered (by default)**: Collects related items that don’t need to be in a specific order or sequence.
+/// - **Ordered**: Collects related items with numeric order or sequence.
+/// - **Bare**: An unordered list without any bullets or alphanumeric sequence.
 ///
-/// **Ordered**: Collects related items with numeric order or sequence.
-///
-/// **Bare**: An unordered list without any bullets or alphanumeric sequence.
-///
-/// Types can be mixed in list, but must be the identical for the same `OUDSBulletList.NestedLevel`
+/// Types can be mixed in list, but must be identical for the same ``OUDSBulletList.NestedLevel``.
 ///
 /// ## Levels
 ///
 /// Lists can include nested items to indicate hierarchy or subcategories, with indentation distinguishing each level.
-/// Arrange ordered list items logically, such as ranking by importance, highest to lowest values, or in alphabetical/numeric order.
-/// Three levels are proposed.
+/// Arrange ordered list items logically, such as ranking by importance, highest to lowest values, or in alphabetical / numeric order.
+/// Three levels are maximum.
 ///
 /// ## Text Style
 ///
 /// List can be used with different font sizes:
+/// - **Body Large**: If the text accompanying the list component is the Body Large text. This variant is designed for more visual, engaging experiences.
+/// - **Body Medium**: I the text accompanying the list component is the Body Medium text. This variant is best suited for functional, task-oriented experiences.
 ///
-///  **Body Large**: Make sure to use this reference if the text accompanying the list component is the Body Large text.
-/// This variant is designed for more visual, engaging experiences.
+/// ## Cases forbidden by design
 ///
-///  **Body Medium**: Make sure to use this reference if the text accompanying the list component is the Body Medium text.
-///  This variant is best suited for functional, task-oriented experiences.
+/// **it is not allowed to have a depth of items greater than 3**
 ///
 /// ## Code samples
 ///
 /// ```swift
-///        // Unordered list with bullet
+///        // 1. Unordered list with bullets
 ///        OUDSBulletList {
 ///            OUDSBulletList.Item("Label 1")
 ///            OUDSBulletList.Item("Label 2")
@@ -135,11 +131,11 @@ import SwiftUI
 /// ![A bullet list component in light and dark modes with Wireframe theme](component_bullet_list_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.1.0
+/// - Since: 1.2.0
 @available(iOS 15, macOS 15, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBulletList: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let type: Self.`Type`
     let textStyle: Self.TextStyle
@@ -148,10 +144,12 @@ public struct OUDSBulletList: View {
 
     @Environment(\.theme) private var theme
 
+    // MARK: - Item
+
     /// The item of bullet list with text and optional sub items.
     public struct Item {
 
-        // MARK: - Properties
+        // MARK: Properties
 
         let text: String
         let subListType: OUDSBulletList.`Type`?
@@ -159,21 +157,21 @@ public struct OUDSBulletList: View {
         let subListHasBoldText: Bool?
         let subItems: [Item]
 
-        // MARK: - Initializer
+        // MARK: Initializer
 
         /// Create the item with text and sub items.
         /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
-        /// to chenge properties for those sub items, if needed.
+        /// to change properties for those sub items, if needed.
         ///
         /// - Parameters:
-        ///     - text: The text of the item
-        ///     - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///    - text: The text of the item
+        ///    - subListType: The specific ``OUDSBulletList.Type`` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
-        ///     - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///    - subListTextStyle: The specific ``OUDSBulletList.TextStyle`` for the nested sub-list, if any. If
         ///     `nil`, the text style is inherited from the parent list.
-        ///     - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
+        ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
         ///     setting is inherited from the parent list.
-        ///     - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
         public init(_ text: String,
                     subListType: OUDSBulletList.`Type`? = nil,
                     subListTextStyle: OUDSBulletList.TextStyle? = nil,
@@ -187,6 +185,8 @@ public struct OUDSBulletList: View {
             self.subItems = subItems()
         }
     }
+
+    // MARK: - Unoredered Icon
 
     /// The type of icon in the unordered list
     public enum UnorderedIcon {
@@ -204,6 +204,8 @@ public struct OUDSBulletList: View {
         case free(_ image: Image, accessibilityLabel: String? = nil)
     }
 
+    // MARK: - Type
+
     /// The visual type of the list
     public enum `Type` {
         /// Collects related items that don’t need to be in a specific order or sequence.
@@ -211,7 +213,7 @@ public struct OUDSBulletList: View {
         ///
         ///  - Parameters:
         ///     - icon: The type of icon the unordered item should be used, Bullet as default
-        ///     - isBranded: flag used to display icon tinted with brand color. false by default
+        ///     - isBranded: Flag used to display icon tinted with brand color. false by default
         case unordered(icon: UnorderedIcon = .bullet, isBranded: Bool = false)
 
         /// Collects related items with numeric order or sequence. Numbering starts at 1 with the first list item and increases
@@ -223,32 +225,30 @@ public struct OUDSBulletList: View {
         case bare
     }
 
+    // MARK: - Text Style
+
     /// The typography style for the list item
     public enum TextStyle {
-        /// Make sure to use this reference if the text accompanying the list component is the body large text.
+        /// I the text accompanying the list component is the body large text.
         /// This variant is designed for more visual, engaging experiences.
         case bodyLarge
 
-        /// Make sure to use this reference if the text accompanying the list component is the body medium text.
+        /// If the text accompanying the list component is the body medium text.
         /// This variant is best suited for functional, task oriented experiences.
         case bodyMedium
     }
 
-    /// The levet of the list item
+    // MARK: - Nested Level
+
+    /// The level of the list item
     enum NestedLevel: Int {
         /// Level 0 list items define the main structure.
-        /// - Unordered level 0 list items are marked with full squares.
-        /// - Ordered level 0 list items are marked with numbers.
         case zero
 
         /// Level 1 (nested) list items provide hierarchy or subcategories.
-        /// - Unordered level 1 list items are marked with outlined squares.
-        /// - Ordered level 1 list items are marked with uppercase letters.
         case one
 
-        /// Level 2 (nested) list items provide hierarchy or subcategories.
-        /// - Unordered level 2 list items are marked with dashes.
-        /// - Ordered level 2 list items are marked with lowercase letters.
+        /// Level 2 (nested) list items provide hierarchy or subcategories..
         case two
     }
 
@@ -257,11 +257,11 @@ public struct OUDSBulletList: View {
     /// Creates a bullet list with a bullet type, text style and bold.
     ///
     /// - Parameters:
-    ///     - type: The visual type of the list (e.g., ordered, unordered, bare).
-    ///     See `OUDSBulletList.Type`, Defaullt `.unordered(icon: .bullet, isBranded: false)`
-    ///     - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, Defaults `.bodyLarge`
-    ///     - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
-    ///     - items: Defines the list items
+    ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).
+    ///     See ``OUDSBulletList.Type``, default `.unordered(icon: .bullet, isBranded: false)`
+    ///    - textStyle: The typography style for the list items. See ``OUDSBulletList.TextStyle``, defaults `.bodyLarge`
+    ///    - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
+    ///    - items: Defines the list items
     public init(type: Self.`Type` = .unordered(icon: .bullet, isBranded: false),
                 textStyle: Self.TextStyle = .bodyLarge,
                 isBold: Bool = true,
@@ -288,5 +288,3 @@ public struct OUDSBulletList: View {
         }
     }
 }
-
-// swiftlint:enable discouraged_optional_boolean

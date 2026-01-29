@@ -30,66 +30,35 @@ Bullet list is a UI element that helps to view in related individual text items 
 
 Bullet list is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // 1. Unordered list with 3 items with bullet as default in body large text style
-        OUDSBulletList {
-            OUDSBulletList.Item("Label 1")
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-
-        // 1.1. Item of Unordered list with bullet as tick, a text style
-        // body medium and text bold
-        OUDSBulletList(type: .unordered(icon: .tick),
-                       textStyle: .bodyMedium,
-                       isBold: true)  {
-            OUDSBulletList.Item("Label 1")
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-
-        // 2. Bare list with 3 items
-        OUDSBulletList(type: .bare) {
-            OUDSBulletList.Item("Label 1")
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-
-        // 3. Ordered list with 3 items
-        OUDSBulletList(type: .ordered) {
-            OUDSBulletList.Item("Label 1")
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-
-        // 3.1. Ordered list with 3 items in first level,
-        // and one item as sub item (second level),
-        // and 2 items as sub item in (third level)
-        OUDSBulletList(type: .ordered) {
-            OUDSBulletList.Item("Label 1") {
-                OUDSBulletList.Item("Label 1.1") {
-                    OUDSBulletList.Item("Label 1.1.1")
-                    OUDSBulletList.Item("Label 1.1.2")
-                }
-            }
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-
-        // 3.2. Same Bullet list but items in third level with free icon as bullet
-        let freeIcon = Image(decorative: "ic_heart")
-        OUDSBulletList(type: .ordered) {
-            OUDSBulletList.Item("Label 1") {
-                OUDSBulletList.Item("Label 1.1", subListType: .unordered(icon: .free(freeIcon))) {
-                    OUDSBulletList.Item("Label 1.1.1")
-                    OUDSBulletList.Item("Label 1.1.2")
-                }
-            }
-            OUDSBulletList.Item("Label 2")
-            OUDSBulletList.Item("Label 3")
-        }
-        ```
-    }
+```swift
+// Bare list with 3 items
+OUDSBulletList(type: .bare) {
+    OUDSBulletList.Item("Label 1")
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
 }
+
+// Item of Unordered list with bullet as tick, a text style
+// body medium and text bold
+OUDSBulletList(type: .unordered(icon: .tick),
+              textStyle: .bodyMedium,
+              isBold: true)  {
+    OUDSBulletList.Item("Label 1")
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
+}
+
+// Ordered list with 3 items in first level,
+// and one item as sub item (second level),
+// and 2 items as sub item in (third level)
+OUDSBulletList(type: .ordered) {
+    OUDSBulletList.Item("Label 1") {
+        OUDSBulletList.Item("Label 1.1") {
+            OUDSBulletList.Item("Label 1.1.1")
+            OUDSBulletList.Item("Label 1.1.2")
+        }
+    }
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
+}
+```
