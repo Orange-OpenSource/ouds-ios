@@ -54,10 +54,11 @@ struct BulletListItem: View {
     // MARK: - Private helpers
 
     private var spacing: Double {
-        if textStyle == .bodyMedium, level == .zero {
-            theme.bulletList.spaceColumnGapBodyMedium
-        } else {
+        switch textStyle {
+        case .bodyLarge:
             theme.bulletList.spaceColumnGapBodyLarge
+        case .bodyMedium:
+            theme.bulletList.spaceColumnGapBodyMedium
         }
     }
 
@@ -73,10 +74,11 @@ struct BulletListItem: View {
     }
 
     private var verticalPadding: Double {
-        if textStyle == .bodyMedium, level == .zero {
-            theme.bulletList.spacePaddingBlockBodyMedium
-        } else {
+        switch textStyle {
+        case .bodyLarge:
             theme.bulletList.spacePaddingBlockBodyLarge
+        case .bodyMedium:
+            theme.bulletList.spacePaddingBlockBodyMedium
         }
     }
 
@@ -84,7 +86,6 @@ struct BulletListItem: View {
         guard let nextLevel = OUDSBulletList.NestedLevel(rawValue: level.rawValue + 1) else {
             OL.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
         }
-
         return nextLevel
     }
 }

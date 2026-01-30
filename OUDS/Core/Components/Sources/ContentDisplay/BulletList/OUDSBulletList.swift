@@ -217,9 +217,9 @@ public struct OUDSBulletList: View {
         /// List items are typically marked with bullets, but it is also possible to use a tick or any Solaris icon.
         ///
         ///  - Parameters:
-        ///     - icon: The type of icon the unordered item should be used, Bullet as default
+        ///     - icon: The type of icon the unordered item should be used, Bullet as default and branded
         ///     - isBranded: Flag used to display icon tinted with brand color. false by default
-        case unordered(icon: UnorderedIcon = .bullet, isBranded: Bool = false)
+        case unordered(icon: UnorderedIcon = .bullet, isBranded: Bool = true)
 
         /// Collects related items with numeric order or sequence. Numbering starts at 1 with the first list item and increases
         /// by increments of 1 for each successive ordered list item.

@@ -162,7 +162,7 @@ private struct OrderedBullet: View {
         Group {
             switch level {
             case .zero:
-                Text(String("\(index + 1). ")) // NOTE: Use String cast to prevent Xcode to generated useless Localizable
+                Text(String("\(index + 1).")) // NOTE: Use String cast to prevent Xcode to generated useless Localizable
             case .one:
                 let character = Character(UnicodeScalar(UInt8(ascii: "A") + index))
                 Text(String(character) + ".")
