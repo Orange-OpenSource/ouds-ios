@@ -32,7 +32,7 @@ struct BulletListItem: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            HStack(alignment: .center, spacing: spacing) {
+            HStack(alignment: .top, spacing: spacing) {
                 Bullet(type: type, level: level, textStyle: textStyle, isBold: isBold, index: index)
                 BulletListLabel(label: item.text, textStyle: textStyle, isBold: isBold)
             }

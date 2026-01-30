@@ -30,11 +30,12 @@ struct Bullet: View {
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Body
 
     var body: some View {
-        VStack {
+        HStack(alignment: .center) {
             switch type {
             case let .unordered(icon, isBranded):
                 UnorderedBullet(icon: icon, isBranded: isBranded, level: level, textStyle: textStyle)
@@ -58,7 +59,15 @@ struct Bullet: View {
             theme.sizes.iconWithBodyMediumSizeMedium
         }
 
-        return token.dimension(for: horizontalSizeClass ?? .regular)
+        let rawSize = token.dimension(for: horizontalSizeClass ?? .regular)
+
+        // Ordered type, means bullet is a text, so for dynamic font the
+        // width of the container must be adjusted.
+        if case .ordered = type {
+            return rawSize * dynamicTypeSize.percentageRate / 100
+        } else {
+            return rawSize
+        }
     }
 
     private var maxHeight: CGFloat {
@@ -69,7 +78,8 @@ struct Bullet: View {
             theme.fonts.lineHeightBodyMedium
         }
 
-        return token.lineHeight(for: verticalSizeClass ?? .regular)
+        let rawSize = token.lineHeight(for: verticalSizeClass ?? .regular)
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }
 
