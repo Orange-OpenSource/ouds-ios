@@ -155,14 +155,7 @@ Nevertheless a trick can be done to use the suitable *Helvetica Neue* font famil
 ```swift
 /// Returns the Helvetica Neue font family to use depending to the preferred language or locale
 func localizedHelveticaFont() -> String {
-    guard let preferredLanguage = Locale.preferredLanguages.first else {
-        return "Helvetica Neue"
-    }
-    if preferredLanguage.hasPrefix("ar") || Locale.current.languageCode == "ar" {
-        return "Helvetica Neue Arabic"
-    } else {
-        return "Helvetica Neue"
-    }
+    return (OUDSUtils.isArabicLanguageInUse() ? "Helvetica Neue Arabic" : "Helvetica Neue")
 }
 
 /// Instanciate your Orange theme using the font family.

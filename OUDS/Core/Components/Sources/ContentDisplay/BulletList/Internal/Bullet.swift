@@ -162,15 +162,31 @@ private struct OrderedBullet: View {
         Group {
             switch level {
             case .zero:
-                Text(String("\(index + 1).")) // NOTE: Use String cast to prevent Xcode to generated useless Localizable
+                Text(String("\(index + 1)."))
             case .one:
-                let character = Character(UnicodeScalar(UInt8(ascii: "A") + index))
-                Text(String(character) + ".")
+                Text(levelOneBullet(for: index))
             case .two:
-                let character = Character(UnicodeScalar(UInt8(ascii: "a") + index))
-                Text(String(character) + ".")
+                Text(levelTwoBullet(for: index))
             }
         }
         .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
+    }
+
+    // MARK: Helpers
+
+    private func levelOneBullet(for index: UInt8) -> String {
+        if OUDSUtils.isArabicLanguageInUse() {
+            "." + OUDSUtils.cyclicArabicLetter(at: index)
+        } else {
+            OUDSUtils.cyclicLatinLetter(at: index, isUppercase: true) + "."
+        }
+    }
+
+    private func levelTwoBullet(for index: UInt8) -> String {
+        if OUDSUtils.isArabicLanguageInUse() {
+            OUDSUtils.cyclicArabicLetter(at: index)
+        } else {
+            OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) + "."
+        }
     }
 }
