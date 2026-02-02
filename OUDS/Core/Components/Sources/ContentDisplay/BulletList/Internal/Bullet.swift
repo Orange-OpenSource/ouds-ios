@@ -85,7 +85,7 @@ struct Bullet: View {
 
 // MARK: - Unordered Bullet
 
-private struct UnorderedBullet: View {
+struct UnorderedBullet: View {
 
     // MARK: Properties
 
@@ -147,7 +147,7 @@ private struct UnorderedBullet: View {
 
 // MARK: - Ordered Bullet
 
-private struct OrderedBullet: View {
+struct OrderedBullet: View {
 
     // MARK: Properties
 
@@ -162,11 +162,11 @@ private struct OrderedBullet: View {
         Group {
             switch level {
             case .zero:
-                Text(String("\(index + 1)."))
+                Text(Self.levelZeroBullet(for: index))
             case .one:
-                Text(levelOneBullet(for: index))
+                Text(Self.levelOneBullet(for: index))
             case .two:
-                Text(levelTwoBullet(for: index))
+                Text(Self.levelTwoBullet(for: index))
             }
         }
         .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
@@ -174,7 +174,15 @@ private struct OrderedBullet: View {
 
     // MARK: Helpers
 
-    private func levelOneBullet(for index: UInt8) -> String {
+    static func levelZeroBullet(for index: UInt8) -> String {
+        if OUDSUtils.isArabicLanguageInUse() {
+            ".\(index + 1)"
+        } else {
+            "\(index + 1)."
+        }
+    }
+
+    static func levelOneBullet(for index: UInt8) -> String {
         if OUDSUtils.isArabicLanguageInUse() {
             "." + OUDSUtils.cyclicArabicLetter(at: index)
         } else {
@@ -182,7 +190,7 @@ private struct OrderedBullet: View {
         }
     }
 
-    private func levelTwoBullet(for index: UInt8) -> String {
+    static func levelTwoBullet(for index: UInt8) -> String {
         if OUDSUtils.isArabicLanguageInUse() {
             OUDSUtils.cyclicArabicLetter(at: index)
         } else {
