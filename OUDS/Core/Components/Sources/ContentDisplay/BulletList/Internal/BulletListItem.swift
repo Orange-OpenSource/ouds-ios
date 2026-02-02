@@ -19,14 +19,44 @@ struct BulletListItem: View {
 
     // MARK: - Properties
 
-    let item: OUDSBulletList.Item
-    let type: OUDSBulletList.`Type`
-    let textStyle: OUDSBulletList.TextStyle
-    let isBold: Bool
-    let level: OUDSBulletList.NestedLevel
-    let index: UInt8
+    private let item: OUDSBulletList.Item
+    private let type: OUDSBulletList.`Type`
+    private let textStyle: OUDSBulletList.TextStyle
+    private let isBold: Bool
+    private let level: OUDSBulletList.NestedLevel
+    private let index: UInt8
+    private let accessibilityLabelPrefix: String
 
     @Environment(\.theme) private var theme
+
+    // MARK: - Init
+
+    init(item: OUDSBulletList.Item,
+         type: OUDSBulletList.`Type`,
+         textStyle: OUDSBulletList.TextStyle,
+         isBold: Bool,
+         level: OUDSBulletList.NestedLevel,
+         index: UInt8,
+         accessibilityLabelPrefix: String? = nil)
+    {
+        self.item = item
+        self.type = type
+        self.textStyle = textStyle
+        self.isBold = isBold
+        self.level = level
+        self.index = index
+
+        // Maybe bullet list item for nested levels
+        if let accessibilityLabelPrefix {
+            self.accessibilityLabelPrefix = accessibilityLabelPrefix
+            // Maybe bullet list item for root level
+        } else if case .ordered = type {
+            self.accessibilityLabelPrefix = OrderedBullet.levelZeroBullet(for: index)
+            // No need of prefix for list not ordered
+        } else {
+            self.accessibilityLabelPrefix = ""
+        }
+    }
 
     // MARK: - Body
 
@@ -36,6 +66,8 @@ struct BulletListItem: View {
                 Bullet(type: type, level: level, textStyle: textStyle, isBold: isBold, index: index)
                 BulletListLabel(label: item.text, textStyle: textStyle, isBold: isBold)
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityLabel)
             .padding(.leading, leadingPadding)
             .padding(.vertical, verticalPadding)
 
@@ -46,7 +78,8 @@ struct BulletListItem: View {
                                textStyle: item.subListTextStyle ?? textStyle,
                                isBold: item.subListHasBoldText ?? isBold,
                                level: nextLevel,
-                               index: UInt8(index))
+                               index: UInt8(index),
+                               accessibilityLabelPrefix: Self.prefixAfter(accessibilityLabelPrefix, for: nextLevel, at: index))
             }
         }
     }
@@ -87,5 +120,23 @@ struct BulletListItem: View {
             OL.fatal("It is forbidden by design to have more than 3 levels depth. Children of '\(item.text)' are too much.")
         }
         return nextLevel
+    }
+
+    private var accessibilityLabel: String {
+        if case .ordered = type {
+            "\(accessibilityLabelPrefix), \(item.text)"
+        } else {
+            item.text
+        }
+    }
+
+    static func prefixAfter(_ accessibilityLabel: String, for level: OUDSBulletList.NestedLevel, at index: Int) -> String {
+        let index = UInt8(index)
+        let currentPrefix = switch level {
+        case .zero: OrderedBullet.levelZeroBullet(for: index)
+        case .one: OrderedBullet.levelOneBullet(for: index)
+        case .two: OrderedBullet.levelTwoBullet(for: index)
+        }
+        return "\(accessibilityLabel)\(currentPrefix)"
     }
 }
