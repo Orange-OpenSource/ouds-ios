@@ -25,23 +25,41 @@ struct InputText: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.textInputAsSecureField) private var textInputAsSecureField
 
     // MARK: - Body
 
     var body: some View {
-        TextField(text: text) {
-            Text(label)
-                .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-                .labelDefaultLarge(theme)
-                .oudsForegroundStyle(theme.colors.contentMuted)
+        Group {
+            if textInputAsSecureField {
+                SecureField(text: text, label: textFieldLabel)
+            } else {
+                TextField(text: text, label: textFieldLabel)
+            }
         }
-        .oudsForegroundColor(inputTextColor)
+        .modifier(SecureFieldModifier(isSecureTexteField: textInputAsSecureField))
         .multilineTextAlignment(.leading)
         .tint(cursorColor.color(for: colorScheme))
         .disabled(status == .disabled || status == .readOnly || status == .loading)
     }
 
     // MARK: - Helper
+
+    private func textFieldLabel() -> some View {
+        Text(label)
+            .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
+            .labelDefaultLarge(theme)
+            .oudsForegroundStyle(labelColor)
+    }
+
+    private var labelColor: MultipleColorSemanticToken {
+        switch status {
+        case .enabled, .error, .readOnly, .loading:
+            text.wrappedValue.isEmpty ? theme.colors.contentMuted : theme.colors.contentDefault
+        case .disabled:
+            theme.colors.actionDisabled
+        }
+    }
 
     private var cursorColor: MultipleColorSemanticToken {
         switch status {
@@ -51,9 +69,21 @@ struct InputText: View {
             theme.colors.contentDefault
         }
     }
+}
 
-    private var inputTextColor: MultipleColorSemanticToken {
-        status == .disabled ? theme.colors.actionDisabled : theme.colors.contentDefault
+struct SecureFieldModifier: ViewModifier {
+
+    let isSecureTexteField: Bool
+
+    func body(content: Content) -> some View {
+        if isSecureTexteField {
+            content
+                .textContentType(.password)
+                .autocorrectionDisabled(true)
+                .textInputAutocapitalization(.never)
+        } else {
+            content
+        }
     }
 }
 #endif

@@ -63,7 +63,6 @@ public enum OUDSVersions {
     public static let componentTextInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component phone number input (1.2.0)
     public static let componentPhoneNumberInputVersion = "1.2.0"
-    /// Version of the Figma specifications for the component password input (1.2.0)
     public static let componentPasswordInputVersion = "1.2.0"
     /// Version of the Figma specifications for the component pin code input (1.2.0)
     public static let componentPinCodeInputVersion = "1.2.0"

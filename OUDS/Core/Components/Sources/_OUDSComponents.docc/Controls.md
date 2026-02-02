@@ -550,3 +550,37 @@ let helperLink = OUDSTextInput.HelperLink(text: "Helper Link") {
 
 OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
 ```
+
+### Password input
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A password input component in light and dark modes with Orange theme](component_passwordInput_Orange)
+    }
+    @Tab("Orange Business Tools") {
+        ![A password input component in light and dark modes with Orange Business Tools theme](component_passwordInput_OrangeBusinessTools)
+    }
+    @Tab("Sosh") {
+        ![A password input component in light and dark modes with Sosh theme](component_passwordInput_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A password input component in light and dark modes with Wireframe theme](component_passwordInput_Wireframe)
+    }
+}
+
+The library provides a password input based on a ``OUDSTextInput`` to let user provides password in a secure text field.
+
+ ```swift
+     // The password to display and edit
+     @State var password: String = ""
+
+     // A basic password input with label
+     OUDSPasswordInput(label: "Password", password: $password)
+
+     // Add a leading icon and helper text to more context
+     OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+
+     //Password with prefix
+     OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+
+ ```

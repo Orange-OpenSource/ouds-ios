@@ -46,7 +46,9 @@ struct HelperErrorTextContainer: View {
             theme.colors.contentStatusNegative
         case .loading: // Should not appear
             theme.colors.contentMuted
-        case .readOnly, .disabled:
+        case .readOnly:
+            theme.colors.contentMuted
+        case .disabled:
             theme.colors.actionDisabled
         }
     }
