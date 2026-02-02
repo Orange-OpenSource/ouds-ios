@@ -25,8 +25,12 @@ public enum OUDSUtils {
         if let preferredLanguage = Locale.preferredLanguages.first, preferredLanguage.hasPrefix("ar") {
             return true
         }
-        if Locale.current.languageCode == "ar" {
-            return true
+        if #available(iOS 16.0, *) {
+            if let languageCode = Locale.current.language.languageCode, languageCode.identifier == "ar" {
+                return true
+            }
+        } else {
+            return Locale.current.languageCode == "ar"
         }
         return false
     }
@@ -37,7 +41,7 @@ public enum OUDSUtils {
     ///
     /// - Parameters:
     ///    - index: A rank, starting at 0
-    ///    - isUppserCase: True if letter must be upper cased, false otherwise
+    ///    - isUppercase: True if letter must be upper cased, false otherwise
     /// - Returns: A letter or group a letters (e.g. 1 to Z, AA to AZ, etc).
     public static func cyclicLatinLetter(at index: UInt8, isUppercase: Bool) -> String {
         let alphabetSize = 26
@@ -49,7 +53,7 @@ public enum OUDSUtils {
         repeat {
             let position = idx % alphabetSize
             let letter = Character(UnicodeScalar(baseChar + UInt8(position)))
-            result = String(letter) + result // Ajoute à gauche
+            result = String(letter) + result
             idx = idx / alphabetSize - 1
         } while idx >= 0
 

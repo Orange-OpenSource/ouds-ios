@@ -133,9 +133,12 @@ struct BulletListItem: View {
     static func prefixAfter(_ accessibilityLabel: String, for level: OUDSBulletList.NestedLevel, at index: Int) -> String {
         let index = UInt8(index)
         let currentPrefix = switch level {
-        case .zero: OrderedBullet.levelZeroBullet(for: index)
-        case .one: OrderedBullet.levelOneBullet(for: index)
-        case .two: OrderedBullet.levelTwoBullet(for: index)
+        case .zero:
+            OrderedBullet.levelZeroBullet(for: index)
+        case .one:
+            OrderedBullet.levelOneBullet(for: index)
+        case .two:
+            OrderedBullet.levelTwoBullet(for: index)
         }
         return "\(accessibilityLabel)\(currentPrefix)"
     }

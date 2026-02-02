@@ -14,6 +14,7 @@
 @testable import OUDSFoundations
 import Testing
 
+// swiftlint:disable convenience_type
 @Suite("OUDS Utils Alphabet Tests (for OrderedBullet Lists)")
 struct OUDSUtilsTests {
 
@@ -56,7 +57,7 @@ struct OUDSUtilsTests {
             (5, "f"),
             (10, "k"),
             (15, "p"),
-            (20, "u")
+            (20, "u"),
         ])
         func middleValues(index: UInt8, expected: String) {
             #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
@@ -68,7 +69,7 @@ struct OUDSUtilsTests {
             (35, "aj"),
             (40, "ao"),
             (45, "at"),
-            (50, "ay")
+            (50, "ay"),
         ])
         func doubleLetterProgression(index: UInt8, expected: String) {
             #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) == expected)
@@ -119,7 +120,7 @@ struct OUDSUtilsTests {
             (28, "AC"),
             (51, "AZ"),
             (52, "BA"),
-            (53, "BB")
+            (53, "BB"),
         ])
         func uppercaseProgression(index: UInt8, expected: String) {
             #expect(OUDSUtils.cyclicLatinLetter(at: index, isUppercase: true) == expected)
@@ -225,19 +226,25 @@ struct OUDSUtilsTests {
         @Test("Sequential indices should produce sequential letters (first 26)")
         func sequentialLetters() {
             let lowercase = (0 ..< 26).map { OUDSUtils.cyclicLatinLetter(at: $0, isUppercase: false) }
-            let expected = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-                            "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+            let expected = [
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+                "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+            ]
             #expect(lowercase == expected)
         }
 
         @Test("Arabic sequential letters (first 28)")
         func arabicSequentialLetters() {
             let arabic = (0 ..< 28).map { OUDSUtils.cyclicArabicLetter(at: $0) }
-            let expected = ["ا", "ب", "ت", "ث", "ج", "ح", "خ", "د",
-                            "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط",
-                            "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م",
-                            "ن", "ه", "و", "ي"]
+            let expected = [
+                "ا", "ب", "ت", "ث", "ج", "ح", "خ", "د",
+                "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط",
+                "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م",
+                "ن", "ه", "و", "ي",
+            ]
             #expect(arabic == expected)
         }
     }
 }
+
+// swiftlint:enable convenience_type
