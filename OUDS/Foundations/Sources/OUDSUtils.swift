@@ -57,7 +57,6 @@ public enum OUDSUtils {
             idx = idx / alphabetSize - 1
         } while idx >= 0
 
-        print(result)
         return result
     }
 
