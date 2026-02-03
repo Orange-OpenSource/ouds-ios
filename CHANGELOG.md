@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
 - Swift package `swift-docc-plugin` from v1.4.5 to v1.4.6
 - Update `fastlane` gem from v2.231.1 to v2.232.1
