@@ -15,17 +15,18 @@
 import OUDSThemesContract
 import SwiftUI
 
+// MARK: - OUDS Tool Bar Navigation Item
 /// Defines the built-in navigation icons available for the toolbars.
-///
 /// Each case maps to an image asset provided by the OUDS package resources.
 ///
-/// - Since: 1.1.0
-@available(iOS 16, macOS 15, visionOS 1, *)
+/// - Since: 1.2.0
 public enum OUDSToolBarNavigationItem: String {
     case back = "ic_navigation_back"
     case close = "ic_navigation_close"
     case menu = "ic_navigation_menu"
 }
+
+// MARK: - OUDS Tool Bar Item
 
 /// A strongly typed toolbar item container used inside ``OUDSToolBarTop`` and ``OUDSToolBarBottom``.
 ///
@@ -45,14 +46,13 @@ public enum OUDSToolBarNavigationItem: String {
 /// }
 /// ```
 ///
-/// - Since: 1.1.0
-@available(iOS 16, macOS 15, visionOS 1, *)
+/// - Since: 1.2.0
 public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Content
 
     private enum Content {
-        case custom(AnyView)
+        case action(icon: Image, accessibilityLabel: String, action: () -> Void)
         case navigation(icon: OUDSToolBarNavigationItem, label: String?, accessibilityLabel: String, action: () -> Void)
     }
 
@@ -66,14 +66,17 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Initializers
 
-    /// Creates a custom toolbar item.
+    /// Creates a navigation toolbar item with an icon only dedicated to navigations.
     ///
-    /// - Parameter content: The custom view to display inside the toolbar item.
-    public init(@ViewBuilder content: @escaping () -> some View) {
-        self.content = .custom(AnyView(content()))
+    /// - Parameters:
+    ///   - icon: The `Image` to add as button as action item
+    ///   - accessibilityLabel: The accessibility label describing the icon.
+    ///   - action: The action triggered when the item is tapped.
+    public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
+        content = .action(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
     }
 
-    /// Creates a navigation toolbar item with an icon only.
+    /// Creates a navigation toolbar item with an icon only dedicated to navigation.
     ///
     /// - Parameters:
     ///   - navigation: The navigation icon to use.
@@ -105,14 +108,14 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     public var body: some View {
         switch content {
-        case let .custom(view):
-            view
+        case let .action(icon, accessibilityLabel, action):
+            actionButton(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
         case let .navigation(icon, label, accessibilityLabel, action):
             navigationButton(icon: icon, label: label, accessibilityLabel: accessibilityLabel, action: action)
         }
     }
 
-    // MARK: - Helpers
+    // MARK: - Navigation buttons
 
     @ViewBuilder
     private func navigationButton(icon: OUDSToolBarNavigationItem,
@@ -148,17 +151,35 @@ public struct OUDSToolBarItem: View, Identifiable {
             .toFlip(icon == .back && layoutDirection == .rightToLeft)
     }
 
+    // MARK: - Action buttons
+
+    @ViewBuilder
+    private func actionButton(icon: Image,
+                              accessibilityLabel: String,
+                              action: @escaping () -> Void) -> some View
+    {
+        Button(action: action) {
+            icon
+                .renderingMode(.template)
+                .resizable()
+//                .frame(width: iconSize, height: iconSize)
+        }
+        .accessibilityLabel(LocalizedStringKey(accessibilityLabel))
+//        .buttonStyle(.plain)
+    }
+
+    // MARK: - Helpers
+
     private var iconSize: CGFloat {
         theme.sizes.iconDecorativeMedium
     }
 }
 
-// MARK: - Item builder
+// MARK: - OUDS Tool Bar Items Builder
 
 /// A result builder to group ``OUDSToolBarItem`` instances.
 ///
-/// - Since: 1.1.0
-@available(iOS 16, macOS 15, visionOS 1, *)
+/// - Since: 1.2.0
 @resultBuilder
 public enum OUDSToolBarItemsBuilder {
     public static func buildBlock(_ components: OUDSToolBarItem...) -> [OUDSToolBarItem] {
@@ -178,7 +199,7 @@ public enum OUDSToolBarItemsBuilder {
     }
 
     public static func buildArray(_ components: [[OUDSToolBarItem]]) -> [OUDSToolBarItem] {
-        components.flatMap { $0 }
+        components.flatMap(\.self)
     }
 }
 #endif

@@ -14,12 +14,13 @@
 #if !os(watchOS) && !os(tvOS)
 import OUDSThemesContract
 import SwiftUI
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 #endif
 
+// MARK: Tool Bar Top Appearance Modifier
+
 /// Applies the background appearance for the top toolbar when Liquid Glass is not available.
-@available(iOS 16, macOS 15, visionOS 1, *)
 struct ToolBarTopAppearanceModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -60,8 +61,9 @@ struct ToolBarTopAppearanceModifier: ViewModifier {
     #endif
 }
 
+// MARK: - Tool Bar Bottom Appearance Modifier
+
 /// Applies the background appearance for the bottom toolbar when Liquid Glass is not available.
-@available(iOS 16, macOS 15, visionOS 1, *)
 struct ToolBarBottomAppearanceModifier: ViewModifier {
 
     @Environment(\.theme) private var theme

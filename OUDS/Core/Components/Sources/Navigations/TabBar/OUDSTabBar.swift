@@ -216,7 +216,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     ///             .tabItem {
     ///                 Label("Label 2", image: "some-image")
     ///              }
-    ///              .tag(0)
+    ///              .tag(1)
     ///     }
     /// ```
     ///
