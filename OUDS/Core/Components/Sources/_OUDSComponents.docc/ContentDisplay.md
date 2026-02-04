@@ -11,7 +11,7 @@ Some components can be used for **content display**.
 
 ### Bullet List
 
-Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet.
+Bullet list is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
 
 @TabNavigator {
     @Tab("Orange") {

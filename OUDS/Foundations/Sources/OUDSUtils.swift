@@ -13,7 +13,7 @@
 
 import Foundation
 
-/// A set of utilities from OUDS lirbary shared with love ⸜(｡˃ ᵕ ˂)⸝♡♡♡
+/// A set of utilities from OUDS library shared with love ⸜(｡˃ ᵕ ˂)⸝♡♡♡
 ///
 /// - Since: 1.2.0
 public enum OUDSUtils {
@@ -42,7 +42,7 @@ public enum OUDSUtils {
     /// - Parameters:
     ///    - index: A rank, starting at 0
     ///    - isUppercase: True if letter must be upper cased, false otherwise
-    /// - Returns: A letter or group a letters (e.g. 1 to Z, AA to AZ, etc).
+    /// - Returns: A letter or group of letters (e.g. 1 to Z, AA to AZ, etc).
     public static func cyclicLatinLetter(at index: UInt8, isUppercase: Bool) -> String {
         let alphabetSize = 26
         let baseChar: UInt8 = isUppercase ? UInt8(ascii: "A") : UInt8(ascii: "a")

@@ -46,9 +46,9 @@ import SwiftUI
 ///
 /// **it is not allowed to have a depth of items greater than 3**
 ///
-/// ## Internationalisation consideratios
+/// ## Internationalisation considerations
 ///
-/// For latin-based speaking coutries, like France, Spain, United Kingdom or Belgium, the european "arabic" numbers are used for the first level of depth
+/// For latin-based speaking countries, like France, Spain, United Kingdom or Belgium, the european "arabic" numbers are used for the first level of depth
 /// of the ordered bullet list. For the second and third levels, the european alphabets are used with upper and lower case values.
 ///
 /// However for countries speaking arabic, these rules can't be applied. Indeed, there is no notion of upper and lower case characters in arabic alphabet.
