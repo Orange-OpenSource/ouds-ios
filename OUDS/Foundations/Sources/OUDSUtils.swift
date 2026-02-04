@@ -66,11 +66,35 @@ public enum OUDSUtils {
     /// - Returns: A letter or group of letters
     public static func cyclicArabicLetter(at index: UInt8) -> String {
         let arabicLetters: [String] = [
-            "ا", "ب", "ت", "ث", "ج", "ح", "خ", "أ",
-            "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط",
-            "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م",
-            "ن", "ه", "و", "ي",
-        ] // WARNING: The first symbol "ا" is not good but it seems Xcode does not manage the suitable letter
+            "أ",
+            "ب",
+            "ت",
+            "ث",
+            "ج",
+            "ح",
+            "خ",
+            "د",
+            "ذ",
+            "ر",
+            "ز",
+            "س",
+            "ش",
+            "ص",
+            "ض",
+            "ط",
+            "ظ",
+            "ع",
+            "غ",
+            "ف",
+            "ق",
+            "ك",
+            "ل",
+            "م",
+            "ن",
+            "ه",
+            "و",
+            "ي",
+        ]
 
         let alphabetSize = arabicLetters.count
         var idx = Int(index)

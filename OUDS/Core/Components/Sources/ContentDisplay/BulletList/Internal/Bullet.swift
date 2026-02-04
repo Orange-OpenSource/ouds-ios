@@ -192,7 +192,7 @@ struct OrderedBullet: View {
 
     static func levelTwoBullet(for index: UInt8) -> String {
         if OUDSUtils.isArabicLanguageInUse() {
-            OUDSUtils.cyclicArabicLetter(at: index) + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
+            "(" + OUDSUtils.cyclicArabicLetter(at: index) + ")" + "." // NOTE: . won't be leading but trailing, arabic alphabet in use
         } else {
             OUDSUtils.cyclicLatinLetter(at: index, isUppercase: false) + "."
         }
