@@ -15,16 +15,18 @@
 import OUDSThemesContract
 import SwiftUI
 
+// MARK: - Tool Bar Item Style
+
 /// Defines the styling configuration for toolbar items.
-@available(iOS 16, macOS 15, visionOS 1, *)
 enum ToolBarItemStyle {
     case topLeading
     case topTrailing
     case bottom
 }
 
+// MARK: - Tool Bar Item Style Modifier
+
 /// Applies OUDS styling to toolbar items depending on the platform and item placement.
-@available(iOS 16, macOS 15, visionOS 1, *)
 struct ToolBarItemStyleModifier: ViewModifier {
 
     let style: ToolBarItemStyle

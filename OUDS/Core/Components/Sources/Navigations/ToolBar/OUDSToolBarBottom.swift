@@ -35,32 +35,50 @@ import SwiftUI
 /// ## Code sample
 ///
 /// ```swift
-/// OUDSToolBarBottom {
-///     ContentView()
-/// } leadingItems: {
-///     OUDSToolBarItem {
-///         Image(systemName: "tray")
+///     OUDSToolBarBottom {
+///         ContentView()
+///     } leadingItems: {
+///         OUDSToolBarItem {
+///             Image(systemName: "tray")
+///         }
+///     } trailingItems: {
+///         OUDSToolBarItem {
+///             Image(systemName: "square.and.pencil")
+///         }
 ///     }
-/// } trailingItems: {
-///     OUDSToolBarItem {
-///         Image(systemName: "square.and.pencil")
-///     }
-/// }
 /// ```
 ///
-/// ## Themes rendering
+// ## Themes rendering
 ///
 /// ### Liquid Glass
 ///
 /// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
 /// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
 ///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_LiquidGlass_OrangeBusinessTools_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_LiquidGlass_OrangeBusinessTools_dark)
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
+///
 /// ### Without Liquid Glass
 ///
-/// ![A bottom toolbar component in light mode without Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_light)
-/// ![A bottom toolbar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_dark)
 ///
-/// - Since: 1.1.0
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_OrangeBusinessTools_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_OrangeBusinessTools_dark)
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_dark)
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
+///
+/// - Since: 1.2.0
 @available(iOS 16, macOS 15, visionOS 1, *)
 public struct OUDSToolBarBottom<Content>: View where Content: View {
 
@@ -120,7 +138,7 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
                 if !leadingItems.isEmpty {
                     itemsView(leadingItems)
                 }
-                if !leadingItems.isEmpty && !trailingItems.isEmpty {
+                if !leadingItems.isEmpty, !trailingItems.isEmpty {
                     Spacer(minLength: theme.spaces.fixedSmall)
                 }
                 if !trailingItems.isEmpty {
