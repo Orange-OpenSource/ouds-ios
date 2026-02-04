@@ -134,7 +134,7 @@ struct OUDSUtilsTests {
 
         @Test("First letter should be 'ا'")
         func testFirstLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 0) == "ا")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 0) == "أ")
         }
 
         @Test("Second letter should be 'ب'")
@@ -149,22 +149,22 @@ struct OUDSUtilsTests {
 
         @Test("First double letter should be 'اا'")
         func testFirstDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "اا")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "أأ")
         }
 
         @Test("Second double letter should be 'اب'")
         func testSecondDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 29) == "اب")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 29) == "أب")
         }
 
         @Test("Last double letter should be 'اي'")
         func testLastDoubleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 55) == "اي")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 55) == "أي")
         }
 
         @Test("First triple letter should be 'با'")
         func testFirstTripleLetter() {
-            #expect(OUDSUtils.cyclicArabicLetter(at: 56) == "با")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 56) == "بأ")
         }
 
         @Test("Second triple letter should be 'بب'")
@@ -193,7 +193,7 @@ struct OUDSUtilsTests {
         @Test("Arabic at boundary 28")
         func arabicBoundary() {
             #expect(OUDSUtils.cyclicArabicLetter(at: 27) == "ي")
-            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "اا")
+            #expect(OUDSUtils.cyclicArabicLetter(at: 28) == "أأ")
         }
 
         @Test("Maximum UInt8 value (255)")
@@ -236,11 +236,35 @@ struct OUDSUtilsTests {
         @Test("Arabic sequential letters (first 28)")
         func arabicSequentialLetters() {
             let arabic = (0 ..< 28).map { OUDSUtils.cyclicArabicLetter(at: $0) }
-            let expected = [
-                "ا", "ب", "ت", "ث", "ج", "ح", "خ", "د",
-                "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط",
-                "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م",
-                "ن", "ه", "و", "ي",
+            let expected: [String] = [
+                "أ",
+                "ب",
+                "ت",
+                "ث",
+                "ج",
+                "ح",
+                "خ",
+                "د",
+                "ذ",
+                "ر",
+                "ز",
+                "س",
+                "ش",
+                "ص",
+                "ض",
+                "ط",
+                "ظ",
+                "ع",
+                "غ",
+                "ف",
+                "ق",
+                "ك",
+                "ل",
+                "م",
+                "ن",
+                "ه",
+                "و",
+                "ي",
             ]
             #expect(arabic == expected)
         }
