@@ -1,0 +1,14 @@
+{
+  "theme": {
+    "color": {
+      "documentation-intro-fill": "#000",
+      "documentation-intro-figure": "#fff",
+      "documentation-intro-title": "#f15e00",
+      "documentation-intro-accent": "#f15e00",
+      "fill": {
+          "dark": "rgb(20,20,20)",
+          "light": "#fff"
+      }
+    }
+  }
+}
