@@ -48,9 +48,9 @@ import SwiftUI
 ///
 /// ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A suggestion chip component in light and dark modes with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
+/// ![A suggestion chip component in light and dark modes with Orange Compact theme](component_suggestionChip_OrangeCompact)
 ///
 /// ### Sosh
 ///

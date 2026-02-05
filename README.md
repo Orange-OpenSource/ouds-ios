@@ -178,7 +178,7 @@ If you use generative AI tool like copilots, feel free to use our [AGENTS.md](ht
 - Brand Sosh version: 2.3.0
 - Core Wireframe version: 1.3.0
 - Brand Wireframe version: 2.3.0
-- Brand Orange Business Tools version: 2.3.0
+- Brand Orange Compact version: 2.3.0
 
 ## 🪲 Bugs, feature requests and discussions
 

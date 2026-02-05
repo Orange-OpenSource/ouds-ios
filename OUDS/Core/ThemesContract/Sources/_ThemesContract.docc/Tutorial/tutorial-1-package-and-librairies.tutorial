@@ -35,7 +35,7 @@
                 *OUDSThemesOrange* provides the theme implementation for the Orange products, and contains also assets and all tokens for this theme.
                 *OUDSThemesSosh* provides the theme implementation for the Sosh products, and contains also assets and all tokens for this theme.
                 *OUDSThemesWireframe* provides the theme implementation for the Wireframe theme, which is a theme dedicated to mockups and prototypes.
-                *OUDSThemesOrangeBusinessTools* provides the theme implementation for the Orange products but with constraints of sizes and spaces.
+                *OUDSThemesOrangeCompact* provides the theme implementation for the Orange products but with constraints of sizes and spaces.
                 *OUDSComponents* contains the SwiftUI OUDS components defined with the Figma specifications, and also useful view modifers.
                 *OUDSTokensRaw*, *OUDSTokensSemantic* and *OUDSTokensComponents* are librairies defining and providing the tokens for low level (raw), 
                 middle level (semantic) or component levels (high level).

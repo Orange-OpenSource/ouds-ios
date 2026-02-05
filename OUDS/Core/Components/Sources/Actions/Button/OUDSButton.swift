@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ![A button component in light and dark modes with Orange theme](component_button_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A button component in light and dark modes with Orange Business Tools theme](component_button_OrangeBusinessTools)
+/// ![A button component in light and dark modes with Orange Compact theme](component_button_OrangeCompact)
 ///
 /// ### Sosh
 ///

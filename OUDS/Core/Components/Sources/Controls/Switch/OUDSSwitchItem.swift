@@ -125,9 +125,9 @@ import SwiftUI
 ///
 /// ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A switch item  component in light and dark modes with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
+/// ![A switch item  component in light and dark modes with Orange Compact theme](component_switchItem_OrangeCompact)
 ///
 /// ### Sosh
 ///

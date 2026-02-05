@@ -14,7 +14,7 @@ This framework exposes today following themes:
 Theme                                                                                                      | Description                          
 ---------------------------------------------------------------------------------------------------------- | ------------------------------------- 
 [Orange](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/)                     | The default one for Orange products and can be enriched / derivated  
-[Orange Business Tools](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangebusinesstools/)     | For some Orange products with heavy / rich UI and _ constraints           
+[Orange Compact](https://ios.unified-design-system.orange.com/documentation/oudsthemesorangecompact/)| For some Orange products with heavy / rich UI and dimensions constraints           
 [Sosh](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/)                         | For Sosh products
 [Wireframe](https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/)               | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 
@@ -55,7 +55,7 @@ OUDSThemeableView(theme: YourCustomTheme()) {
 
 ### Tunable themes or not
 
-Some themes like `OrangeTheme` and `OrangeBusinessTools` can be tuned so as to be more flexible and adapt to some countries
+Some themes like `OrangeTheme` and `OrangeCompact` can be tuned so as to be more flexible and adapt to some countries
 or affiliates constraints.
 However other themes like `SoshTheme` and `WireframeTheme` cannot be tuned.
 

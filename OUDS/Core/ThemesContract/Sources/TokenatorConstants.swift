@@ -31,8 +31,8 @@ public enum OUDSVersions {
     /// Version of the Sosh brand tokens library (2.3.0)
     public static let themeSoshBrandVersion = "2.3.0"
 
-    /// Version of the Orange Business Tools brand tokens library (2.3.0)
-    public static let themeOrangeBusinessToolsBrandVersion = "2.3.0"
+    /// Version of the Orange Compact brand tokens library (2.3.0)
+    public static let themeOrangeCompactBrandVersion = "2.3.0"
 
     /// Version of the Wireframe core tokens library (1.3.0)
     public static let themeWireframeCoreVersion = "1.3.0"

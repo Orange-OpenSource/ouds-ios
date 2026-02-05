@@ -49,7 +49,7 @@ final class WireframeThemeBarComponentTokensProvider: AllBarComponentTokensProvi
     ///
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens, if nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
-    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``OrangeTBusinessToolshemeBordersSemanticTokensProvider``)
+    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``WireframeThemeBordersSemanticTokensProvider``)
     ///    - colors: Provider for colors semantic tokens, if nil, a default one will be used (``WireframeThemeColorsSemanticTokensProvider``)
     ///    - opacities: Provider for opacities semantic tokens, if nil, a default one will be used (``WireframeThemeOpacitiesSemanticTokensProvider``)
     ///    - effects: Provider for effects semantic tokens, if nil, a default one will be used (``WireframeThemeEffectsSemanticTokensProvider``)

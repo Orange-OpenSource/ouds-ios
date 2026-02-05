@@ -43,9 +43,9 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_close.imageset/ic_tag_close.svg
 
-## OUDS / Core / Themes / Orange Business Tools
+## OUDS / Core / Themes / Orange Compact
 
-./OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/Resources/_/ic_theme_orangebusinesstools.png
+./OUDS/Core/Themes/OrangeCompact/Sources/_OUDSThemesOrangeCompact.docc/Resources/_/ic_theme_orangecompact.png
 
 ## OUDS / Core / Themes / Sosh
 

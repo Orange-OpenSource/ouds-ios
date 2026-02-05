@@ -15,8 +15,8 @@ Some components can be used for **layouts**.
     @Tab("Orange") {
         ![A colored surface with text, button and link in light and dark modes with Orange theme](component_coloredSurface_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A colored surface with text, button and link in light and dark modes with Orange Business Tools theme](component_coloredSurface_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A colored surface with text, button and link in light and dark modes with Orange Compact theme](component_coloredSurface_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A colored surface with text, button and link in light and dark modes with Sosh theme](component_coloredSurface_Sosh)
@@ -117,8 +117,8 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
     @Tab("Orange") {
         ![An horizontal divider in light and dark modes with Orange theme](component_horizontalDivider_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![An horizontal divider in light and dark modes with Orange Business Tools theme](component_horizontalDivider_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![An horizontal divider in light and dark modes with Orange Compact theme](component_horizontalDivider_OrangeCompact)
     }
     @Tab("Sosh") {
         ![An horizontal divider in light and dark modes with Sosh theme](component_horizontalDivider_Sosh)
@@ -134,8 +134,8 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
     @Tab("Orange") {
         ![An vertical divider in light and dark modes with Orange theme](component_verticalDivider_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![An vertical divider in light and dark modes with Orange Business Tools theme](component_verticalDivider_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![An vertical divider in light and dark modes with Orange Compact theme](component_verticalDivider_OrangeCompact)
     }
     @Tab("Sosh") {
         ![An vertical divider in light and dark modes with Sosh theme](component_verticalDivider_Sosh)

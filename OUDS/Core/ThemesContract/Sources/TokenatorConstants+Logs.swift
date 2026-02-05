@@ -21,7 +21,7 @@ extension OUDSVersions {
         versionsLog += "- Core OUDS: \(Self.themeCoreVersion)\n"
         versionsLog += "- Core Orange: \(Self.themeOrangeCoreVersion)\n"
         versionsLog += "- Brand Orange: \(Self.themeOrangeBrandVersion)\n"
-        versionsLog += "- Brand Orange Business Tools: \(Self.themeOrangeBusinessToolsBrandVersion)\n"
+        versionsLog += "- Brand Orange Compact: \(Self.themeOrangeCompactBrandVersion)\n"
         versionsLog += "- Core Sosh: \(Self.themeSoshCoreVersion)\n"
         versionsLog += "- Brand Sosh: \(Self.themeSoshBrandVersion)\n"
         versionsLog += "- Core Wireframe: \(Self.themeWireframeCoreVersion)\n"

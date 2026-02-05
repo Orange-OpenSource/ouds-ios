@@ -75,9 +75,9 @@ import SwiftUI
 ///
 /// ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A checkbox component in light and dark modes with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+/// ![A checkbox component in light and dark modes with Orange Compact theme](component_checkbox_OrangeCompact)
 ///
 /// ### Sosh
 ///

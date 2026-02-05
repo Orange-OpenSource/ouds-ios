@@ -63,9 +63,9 @@ import SwiftUI
 ///
 /// ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A radio button component in light and dark modes with Orange Business Tools theme](component_radio_OrangeBusinessTools)
+/// ![A radio button component in light and dark modes with Orange Compact theme](component_radio_OrangeCompact)
 ///
 /// ### Sosh
 ///

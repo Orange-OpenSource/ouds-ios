@@ -125,9 +125,9 @@ import SwiftUI
 ///
 /// ![A tag component in light and dark modes with Orange theme](component_tag_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A tag component in light and dark modes with Orange Business Tools theme](component_tag_OrangeBusinessTools)
+/// ![A tag component in light and dark modes with Orange Compact theme](component_tag_OrangeCompact)
 ///
 /// ### Sosh
 ///

@@ -15,8 +15,8 @@ Some components can be used for **indicators**.
     @Tab("Orange") {
         ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A badge component in light and dark modes with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A badge component in light and dark modes with Orange Compact theme](component_badge_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
@@ -49,8 +49,8 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
     @Tab("Orange") {
         ![A tag component in light and dark modes with Orange theme](component_tag_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A tag component in light and dark modes with Orange Business Tools theme](component_tag_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A tag component in light and dark modes with Orange Compact theme](component_tag_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A tag component in light and dark modes with Sosh theme](component_tag_Sosh)
@@ -94,8 +94,8 @@ An ``OUDSTag`` is a small element that shows short information like a label, key
     @Tab("Orange") {
         ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![An input tag component in light and dark modes with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![An input tag component in light and dark modes with Orange Compact theme](component_inputTag_OrangeCompact)
     }
     @Tab("Sosh") {
         ![An input tag component in light and dark modes with Sosh theme](component_inputTag_Sosh)
