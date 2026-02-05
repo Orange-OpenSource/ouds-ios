@@ -70,8 +70,11 @@ import SwiftUI
 ///     // Add a leading icon and helper text to more context
 ///     OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
 ///
-///     //Password with prefix
+///     // Password with prefix
 ///     OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+///
+///     // Make password visible
+///     OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: .constant(false))
 /// ```
 ///
 /// ## Design documentation
@@ -113,7 +116,7 @@ public struct OUDSPasswordInput: View {
     let isOutlined: Bool
     let constrainedMaxWidth: Bool
 
-    @State private var isPasswordVisible: Bool = false
+    @Binding private var isHiddenPassword: Bool
 
     @Environment(\.theme) private var theme
 
@@ -124,6 +127,8 @@ public struct OUDSPasswordInput: View {
     /// - Parameters:
     ///    - label: The label displayed above the password input.
     ///    - password: The pasword to display and edit.
+    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`. Be carefull it is recommanded
+    ///    to hide password by default and let user to display it with the button.
     ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input. A prefix is not common and is discouraged in a
     ///    Password Input component. In very specific cases, it can provide context or format requirements
@@ -140,6 +145,7 @@ public struct OUDSPasswordInput: View {
     ///    - status: The current status of the password input base on ` OUDSTextInput.Status `, by default to set *enabled*
     public init(label: String,
                 password: Binding<String>,
+                isHiddenPassword: Binding<Bool> = .constant(true),
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 lockIcon: Bool = false,
@@ -155,6 +161,7 @@ public struct OUDSPasswordInput: View {
         self.prefix = prefix
         self.lockIcon = lockIcon
         self.status = status
+        _isHiddenPassword = isHiddenPassword
         self.isOutlined = isOutlined
         self.constrainedMaxWidth = constrainedMaxWidth
     }
@@ -172,7 +179,7 @@ public struct OUDSPasswordInput: View {
                       isOutlined: isOutlined,
                       constrainedMaxWidth: constrainedMaxWidth,
                       status: status)
-            .environment(\.textInputAsSecureField, !isPasswordVisible)
+            .environment(\.textInputAsSecureField, isHiddenPassword)
     }
 
     private var leadingIcon: Image? {
@@ -181,15 +188,14 @@ public struct OUDSPasswordInput: View {
     }
 
     private var trailingAction: OUDSTextInput.TrailingAction {
-        let iconName = isPasswordVisible ? "ic_functional_settings_and_tools_hide" : "ic_communication_accessibility_vision"
-        let actionHint = isPasswordVisible ? "core_passwordInput_hidePassword_a11y" :
-            "core_passwordInput_showPassword_a11y"
+        let iconName = isHiddenPassword ? "ic_communication_accessibility_vision" : "ic_functional_settings_and_tools_hide"
+        let actionHint = isHiddenPassword ? "core_passwordInput_showPassword_a11y" : "core_passwordInput_hidePassword_a11y"
 
         return .init(icon: Image(decorative: iconName, bundle: theme.resourcesBundle),
                      actionHint: actionHint.localized(),
                      flipIcon: false)
         {
-            isPasswordVisible.toggle()
+            isHiddenPassword.toggle()
         }
     }
 }
