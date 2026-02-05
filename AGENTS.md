@@ -515,6 +515,40 @@ or only with an image:
 OUDSButton(icon: Image("image_name"), accessibilityLabel: "Some label") { /* the action to process */ }
 ```
 
+### Content Display
+
+#### Bullet list
+
+A bullet list is a list of elements which can be ordered or not. OUDS bullet lists can have up to 3 levels of depth.
+A bullet list can be unordered (default), ordered or bare (i.e. without leading chips not indices).
+
+Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbulletlist/).
+
+A bullet list by default is not ordered:
+```swift
+OUDSBulletList {
+    OUDSBulletList.Item("Label 1")
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
+}
+```
+
+A bullet lsit can have several levels of depth by nesting items
+```swift
+OUDSBulletList(type: .ordered) {
+    OUDSBulletList.Item("Label 1") {
+        OUDSBulletList.Item("Label 1.1") {
+            OUDSBulletList.Item("Label 1.1.1")
+            OUDSBulletList.Item("Label 1.1.2")
+        }
+    }
+    OUDSBulletList.Item("Label 2")
+        OUDSBulletList.Item("Label 3")
+    }
+```
+
+### Controls
+
 ##### Checkbox
 
 A checkbox can be alone or can have texts. It is not a native iOS component. It is a square button which can be selected or not.
