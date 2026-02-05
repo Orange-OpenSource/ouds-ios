@@ -48,7 +48,7 @@ final class SoshThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
+    // the implementation of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+SpaceSemanticTokens.swift
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+SpaceMultipleSemanticTokens.swift
     // This declaration of SoshThemeSpaceSemanticTokensProvider is here to allow to write documentation.

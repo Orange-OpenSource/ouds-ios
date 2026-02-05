@@ -61,7 +61,7 @@ final class OrangeBusinessToolsThemeBadgeComponentTokensProvider: AllBadgeCompon
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BadgeComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BadgeComponentTokens.swift
+    // the implementation of BadgeComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BadgeComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeBadgeComponentTokensProvider is here also to allow to write documentation.
 }
 

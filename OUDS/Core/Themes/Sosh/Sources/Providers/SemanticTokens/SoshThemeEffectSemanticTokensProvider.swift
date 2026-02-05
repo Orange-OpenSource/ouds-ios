@@ -42,7 +42,7 @@ final class SoshThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvid
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of DimensionSemanticTokens is not here
+    // the implementation of DimensionSemanticTokens is not here
     // but in Core/Themes/Sosh/Values/Semanticokens/SoshTheme+EffectSemanticTokens.swift
     // This declaration of SoshThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }

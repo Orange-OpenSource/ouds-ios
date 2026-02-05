@@ -157,6 +157,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - alert: All component tokens for alert
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
@@ -193,6 +194,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          dimensions: AllDimensionSemanticTokensProvider? = nil,
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
+                         alert: AllAlertComponentTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
                          bar: AllBarComponentTokensProvider? = nil,
                          bulletList: AllBulletListComponentTokensProvider? = nil,
@@ -232,6 +234,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions))
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
+        let alert = (alert ?? OrangeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
         let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
@@ -265,6 +268,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   alert: alert,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,

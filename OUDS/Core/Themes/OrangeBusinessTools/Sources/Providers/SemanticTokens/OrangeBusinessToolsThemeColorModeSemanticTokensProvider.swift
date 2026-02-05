@@ -49,7 +49,7 @@ final class OrangeBusinessToolsThemeColorModeSemanticTokensProvider: AllColorMod
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
+    // the implementation of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorModeMultipleSemanticTokens.swift
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorModeSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeColorModeSemanticTokensProvider is here to allow to write documentation.

@@ -42,6 +42,6 @@ final class WireframeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of GridSemanticTokens is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+GridSemanticTokens.swift
+    // the implementation of GridSemanticTokens is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+GridSemanticTokens.swift
     // This declaration of WireframeThemeGridSemanticTokensProvider is here to allow to write documentation.
 }

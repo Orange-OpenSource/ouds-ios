@@ -53,7 +53,7 @@ final class OrangeBusinessToolsThemeBulletListComponentTokensProvider: AllBullet
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BulletListComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BulletListComponentTokens.swift
+    // the implementation of BulletListComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BulletListComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeBulletListComponentTokensProvider is here also to allow to write documentation.
 }
 

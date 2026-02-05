@@ -52,7 +52,8 @@ final class OrangeBusinessToolsThemeSkeletonComponentTokensProvider: AllSkeleton
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SkeletonComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SkeletonComponentTokens.swift
+    // the implementation of SkeletonComponentTokens is not here but in
+    // Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SkeletonComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeSkeletonComponentTokensProvider is here also to allow to write documentation.
 }
 

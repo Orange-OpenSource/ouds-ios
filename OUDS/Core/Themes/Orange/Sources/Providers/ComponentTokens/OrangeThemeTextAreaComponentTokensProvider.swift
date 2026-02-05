@@ -113,7 +113,7 @@ open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextAreaComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TextAreaComponentTokens.swift
+    // the implementation of TextAreaComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TextAreaComponentTokens.swift
     // This declaration of OrangeThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }
 

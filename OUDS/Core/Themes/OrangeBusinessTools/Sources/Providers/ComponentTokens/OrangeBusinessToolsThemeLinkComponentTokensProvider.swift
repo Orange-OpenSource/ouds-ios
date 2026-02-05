@@ -67,7 +67,7 @@ final class OrangeBusinessToolsThemeLinkComponentTokensProvider: AllLinkComponen
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of LinkComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+LinkComponentTokens.swift
+    // the implementation of LinkComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+LinkComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeLinkComponentTokensProvider is here also to allow to write documentation.
 }
 

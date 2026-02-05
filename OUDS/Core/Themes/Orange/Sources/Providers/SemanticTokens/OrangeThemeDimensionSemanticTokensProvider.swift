@@ -63,7 +63,7 @@ open class OrangeThemeDimensionSemanticTokensProvider: AllDimensionSemanticToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of DimensionSemanticTokens is not here
+    // the implementation of DimensionSemanticTokens is not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+DimensionSemanticTokens.swift
     // This declaration of OrangeThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }

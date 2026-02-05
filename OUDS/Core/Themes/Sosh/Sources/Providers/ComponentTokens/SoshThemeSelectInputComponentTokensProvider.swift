@@ -53,7 +53,7 @@ final class SoshThemeSelectInputComponentTokensProvider: AllSelectInputComponent
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SelectInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SelectInputComponentTokens.swift
+    // the implementation of SelectInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SelectInputComponentTokens.swift
     // This declaration of SoshThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
 

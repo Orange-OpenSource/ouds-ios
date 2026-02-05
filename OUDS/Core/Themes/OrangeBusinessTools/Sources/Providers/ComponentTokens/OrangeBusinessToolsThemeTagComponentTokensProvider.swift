@@ -74,7 +74,7 @@ final class OrangeBusinessToolsThemeTagComponentTokensProvider: AllTagComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TagComponentTokens.swift
+    // the implementation of TagComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TagComponentTokens.swift
     // This declaration of OrangeBusinessToolswThemeTagComponentTokensProvider is here also to allow to write documentation.
 }
 

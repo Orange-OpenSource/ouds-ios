@@ -61,7 +61,7 @@ final class OrangeBusinessToolsThemeSelectInputComponentTokensProvider: AllSelec
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SelectInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SelectInputComponentTokens.swift
+    // the implementation of SelectInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SelectInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
 

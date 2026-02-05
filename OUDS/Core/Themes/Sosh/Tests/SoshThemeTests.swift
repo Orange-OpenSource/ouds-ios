@@ -86,6 +86,10 @@ struct SoshThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
+    @Test func defaultAlertComponentTokensProvider() throws {
+        #expect(theme.alert is SoshThemeAlertComponentTokensProvider)
+    }
+
     @Test func defaultBadgeComponentTokensProvider() throws {
         #expect(theme.badge is SoshThemeBadgeComponentTokensProvider)
     }

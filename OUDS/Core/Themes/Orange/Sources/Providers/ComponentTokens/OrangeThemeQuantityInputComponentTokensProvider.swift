@@ -115,7 +115,7 @@ open class OrangeThemeQuantityInputComponentTokensProvider: AllQuantityInputComp
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+QuantityInputComponentTokens.swift
+    // the implementation of QuantityInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+QuantityInputComponentTokens.swift
     // This declaration of OrangeThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

@@ -44,7 +44,7 @@ final class OrangeBusinessToolsThemeColorSemanticTokensProvider: AllColorSemanti
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
+    // the implementation of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorMultipleSemanticTokens.swift
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeColorSemanticTokensProvider is here to allow to write documentation.

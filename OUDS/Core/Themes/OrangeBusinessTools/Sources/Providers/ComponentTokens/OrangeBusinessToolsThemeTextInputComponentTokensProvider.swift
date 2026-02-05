@@ -80,7 +80,7 @@ final class OrangeBusinessToolsThemeTextInputComponentTokensProvider: AllTextInp
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TextInputComponentTokens.swift
+    // the implementation of TextInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TextInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeTextInputComponentTokensProvider is here also to allow to write documentation.
 }
 

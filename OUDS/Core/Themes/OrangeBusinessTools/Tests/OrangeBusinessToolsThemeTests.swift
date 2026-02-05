@@ -86,6 +86,10 @@ struct OrangeBusinessToolsThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
+    @Test func defaultAlertComponentTokensProvider() throws {
+        #expect(theme.alert is OrangeBusinessToolsThemeAlertComponentTokensProvider)
+    }
+
     @Test func defaultBadgeComponentTokensProvider() throws {
         #expect(theme.badge is OrangeBusinessToolsThemeBadgeComponentTokensProvider)
     }

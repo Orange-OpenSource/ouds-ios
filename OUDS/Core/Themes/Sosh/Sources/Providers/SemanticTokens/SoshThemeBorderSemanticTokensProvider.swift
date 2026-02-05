@@ -42,6 +42,6 @@ final class SoshThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvid
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+BorderSemanticTokens.swift
+    // the implementation of BorderSemanticTokens is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+BorderSemanticTokens.swift
     // This declaration of SoshThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }

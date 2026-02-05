@@ -59,7 +59,7 @@ final class WireframeThemeInputTagComponentTokensProvider: AllInputTagComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of InputTagComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+InputTagComponentTokens.swift
+    // the implementation of InputTagComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+InputTagComponentTokens.swift
     // This declaration of WireframeThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }
 

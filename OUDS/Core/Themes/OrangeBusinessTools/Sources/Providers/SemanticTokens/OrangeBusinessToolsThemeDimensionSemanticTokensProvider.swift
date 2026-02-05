@@ -48,7 +48,7 @@ final class OrangeBusinessToolsThemeDimensionSemanticTokensProvider: AllDimensio
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of DimensionSemanticTokens is not here
+    // the implementation of DimensionSemanticTokens is not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+DimensionSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }

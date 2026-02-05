@@ -48,7 +48,7 @@ final class SoshThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
+    // the implementation of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+SizeSemanticTokens.swift
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+SizeMultipleSemanticTokens.swift
     // This declaration of SoshThemeSizeSemanticTokensProvider is here to allow to write documentation.

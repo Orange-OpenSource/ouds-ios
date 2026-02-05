@@ -102,7 +102,7 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SkeletonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift
+    // the implementation of SkeletonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift
     // This declaration of OrangeThemeSkeletonComponentTokensProvider is here also to allow to write documentation.
 }
 

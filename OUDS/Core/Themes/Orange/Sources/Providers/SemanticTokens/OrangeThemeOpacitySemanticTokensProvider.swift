@@ -71,6 +71,6 @@ open class OrangeThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift
+    // the implementation of OpacitySemanticTokensProvider is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift
     // This declaration of OrangeThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }

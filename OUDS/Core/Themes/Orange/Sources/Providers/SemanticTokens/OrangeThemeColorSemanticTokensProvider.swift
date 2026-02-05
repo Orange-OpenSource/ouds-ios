@@ -75,7 +75,7 @@ open class OrangeThemeColorSemanticTokensProvider: AllColorSemanticTokensProvide
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
+    // the implementation of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ColorMultipleSemanticTokens.swift
     // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ColorSemanticTokens.swift
     // This declaration of OrangeThemeColorSemanticTokensProvider is here to allow to write documentation.

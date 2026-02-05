@@ -44,7 +44,7 @@ final class OrangeBusinessToolsThemeBorderSemanticTokensProvider: AllBorderSeman
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+BorderSemanticTokens.swift
+    // the implementation of BorderSemanticTokens is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+BorderSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }
 

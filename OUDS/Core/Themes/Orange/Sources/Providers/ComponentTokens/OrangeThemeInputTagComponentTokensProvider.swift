@@ -115,7 +115,7 @@ open class OrangeThemeInputTagComponentTokensProvider: AllInputTagComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of InputTagComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+InputTagComponentTokens.swift
+    // the implementation of InputTagComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+InputTagComponentTokens.swift
     // This declaration of OrangeThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }
 

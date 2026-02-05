@@ -139,6 +139,6 @@ open class OrangeThemeBarComponentTokensProvider: AllBarComponentTokensProvider 
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BarComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BarComponentTokens.swift
+    // the implementation of BarComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BarComponentTokens.swift
     // This declaration of OrangeThemeBarComponentTokensProvider is here also to allow to write documentation.
 }

@@ -63,7 +63,8 @@ final class OrangeBusinessToolsThemeCheckboxComponentTokensProvider: AllCheckbox
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of CheckboxComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+CheckboxComponentTokens.swift
+    // the implementation of CheckboxComponentTokens is not here but in
+    // Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+CheckboxComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
 

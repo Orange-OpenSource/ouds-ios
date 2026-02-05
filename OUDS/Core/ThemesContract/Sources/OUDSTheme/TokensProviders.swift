@@ -66,9 +66,12 @@ public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTok
 
 // MARK: - Component tokens providers
 
-// Keep things alphabetically sorted
+// NOTE: Keep things alphabetically sorted
 
-/// Something which provides all component tokens of abrs
+/// Something which provides all component tokens of alert
+public protocol AllAlertComponentTokensProvider: TokensProvider, AlertComponentTokens {}
+
+/// Something which provides all component tokens of bars
 public protocol AllBarComponentTokensProvider: TokensProvider, BarComponentTokens {}
 
 /// Something which provides all component tokens of badge

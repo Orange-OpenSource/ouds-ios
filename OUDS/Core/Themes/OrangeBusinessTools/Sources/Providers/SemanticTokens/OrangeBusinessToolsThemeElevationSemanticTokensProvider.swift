@@ -44,7 +44,7 @@ final class OrangeBusinessToolsThemeElevationSemanticTokensProvider: AllElevatio
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
+    // the implementation of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ElevationSemanticTokens.swift,
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of OrangeBusinessToolsThemeElevationSemanticTokensProvider is here to allow to write documentation.

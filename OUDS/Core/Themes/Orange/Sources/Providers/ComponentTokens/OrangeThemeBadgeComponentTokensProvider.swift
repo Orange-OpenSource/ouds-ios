@@ -111,6 +111,6 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BadgeComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift
+    // the implementation of BadgeComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift
     // This declaration of OrangeThemeBadgeComponentTokensProvider is here also to allow to write documentation.
 }

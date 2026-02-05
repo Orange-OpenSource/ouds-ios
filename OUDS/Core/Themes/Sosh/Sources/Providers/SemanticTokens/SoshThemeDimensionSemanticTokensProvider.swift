@@ -46,7 +46,7 @@ final class SoshThemeDimensionSemanticTokensProvider: AllDimensionSemanticTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of DimensionSemanticTokens is not here
+    // the implementation of DimensionSemanticTokens is not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+DimensionSemanticTokens.swift
     // This declaration of SoshThemeDimensionSemanticTokensProvider is here to allow to write documentation.
 }

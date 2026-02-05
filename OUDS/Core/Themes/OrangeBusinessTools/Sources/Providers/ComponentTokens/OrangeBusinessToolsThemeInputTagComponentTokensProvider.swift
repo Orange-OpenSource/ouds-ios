@@ -59,7 +59,8 @@ final class OrangeBusinessToolsThemeInputTagComponentTokensProvider: AllInputTag
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of InputTagComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+InputTagComponentTokens.swift
+    // the implementation of InputTagComponentTokens is not here but in
+    // Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+InputTagComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }
 

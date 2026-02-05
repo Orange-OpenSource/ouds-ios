@@ -147,6 +147,6 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SwitchComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift
+    // the implementation of SwitchComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift
     // This declaration of OrangeThemeSwitchComponentTokensProvider is here also to allow to write documentation.
 }

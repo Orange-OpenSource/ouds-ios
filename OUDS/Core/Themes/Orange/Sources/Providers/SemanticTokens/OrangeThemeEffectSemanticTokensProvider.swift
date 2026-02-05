@@ -57,7 +57,7 @@ open class OrangeThemeEffectSemanticTokensProvider: AllEffectSemanticTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of EffectSemanticTokens is not here
+    // the implementation of EffectSemanticTokens is not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+EffectSemanticTokens.swift
     // This declaration of OrangeThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }

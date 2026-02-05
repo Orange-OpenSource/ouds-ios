@@ -59,6 +59,6 @@ final class SoshThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvid
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BadgeComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+BadgeComponentTokens.swift
+    // the implementation of BadgeComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+BadgeComponentTokens.swift
     // This declaration of SoshThemeBadgeComponentTokensProvider is here also to allow to write documentation.
 }

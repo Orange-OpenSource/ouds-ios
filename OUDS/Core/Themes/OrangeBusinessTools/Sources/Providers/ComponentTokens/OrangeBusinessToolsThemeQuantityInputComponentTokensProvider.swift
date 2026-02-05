@@ -59,7 +59,7 @@ final class OrangeBusinessToolsThemeQuantityInputComponentTokensProvider: AllQua
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+QuantityInputComponentTokens.swift
+    // the implementation of QuantityInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+QuantityInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

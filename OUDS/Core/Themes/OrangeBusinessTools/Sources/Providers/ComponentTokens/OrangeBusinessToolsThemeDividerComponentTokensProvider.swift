@@ -52,7 +52,7 @@ final class OrangeBusinessToolsThemeDividerComponentTokensProvider: AllDividerCo
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ChipComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+ChipComponentTokens.swift
+    // the implementation of ChipComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+ChipComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeChipComponentTokensProvider is here also to allow to write documentation.
 }
 

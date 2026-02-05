@@ -42,7 +42,7 @@ final class WireframeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens are not here
+    // the implementation of FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontSemanticTokens.swift,
     // in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontCompositeSemanticTokens.swift,
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+FontMultipleSemanticTokens.swift,

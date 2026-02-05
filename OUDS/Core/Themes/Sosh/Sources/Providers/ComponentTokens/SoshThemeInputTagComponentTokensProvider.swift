@@ -57,6 +57,6 @@ final class SoshThemeInputTagComponentTokensProvider: AllInputTagComponentTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of InputTagComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+InputTagComponentTokens.swift
+    // the implementation of InputTagComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+InputTagComponentTokens.swift
     // This declaration of SoshThemeInputTagComponentTokensProvider is here also to allow to write documentation.
 }

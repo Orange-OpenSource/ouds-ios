@@ -52,7 +52,7 @@ final class WireframeThemeDividerComponentTokensProvider: AllDividerComponentTok
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ChipComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+ChipComponentTokens.swift
+    // the implementation of ChipComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+ChipComponentTokens.swift
     // This declaration of WireframeThemeChipComponentTokensProvider is here also to allow to write documentation.
 }
 
