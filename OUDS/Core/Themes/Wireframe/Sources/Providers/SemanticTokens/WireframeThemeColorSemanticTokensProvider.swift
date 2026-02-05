@@ -44,7 +44,7 @@ final class WireframeThemeColorSemanticTokensProvider: AllColorSemanticTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
+    // the implementation of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorMultipleSemanticTokens.swift
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorSemanticTokens.swift
     // This declaration of WireframeThemeColorSemanticTokensProvider is here to allow to write documentation.

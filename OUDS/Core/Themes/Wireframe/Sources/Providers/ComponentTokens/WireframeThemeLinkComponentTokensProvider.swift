@@ -67,7 +67,7 @@ final class WireframeThemeLinkComponentTokensProvider: AllLinkComponentTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of LinkComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+LinkComponentTokens.swift
+    // the implementation of LinkComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+LinkComponentTokens.swift
     // This declaration of WireframeThemeLinkComponentTokensProvider is here also to allow to write documentation.
 }
 

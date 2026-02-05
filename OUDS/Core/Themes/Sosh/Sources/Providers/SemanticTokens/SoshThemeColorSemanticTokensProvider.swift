@@ -42,7 +42,7 @@ final class SoshThemeColorSemanticTokensProvider: AllColorSemanticTokensProvider
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
+    // the implementation of ColorSemanticTokens and ColorMultipleSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ColorMultipleSemanticTokens.swift
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ColorSemanticTokens.swift
     // This declaration of SoshThemeColorSemanticTokensProvider is here to allow to write documentation.

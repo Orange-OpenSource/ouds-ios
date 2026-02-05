@@ -67,12 +67,15 @@ import OUDSThemesContract
 /// ```swift
 ///     // Uses by default here:
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
-///     let alertomponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
+///     // - OrangeThemeSpaceSemanticTokensProvider for sizes
+///     // - OrangeThemeBorderSemanticTokensProvider for sizes
+///     let alertComponentTokensProvider = OrangeThemeAlertComponentTokensProvider()
 ///
-///     // Or use your own dimension and space semantic tokens provider
-///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(
-///                     spaces: CustomSpaceSemanticTokensProvider(),
-///                     dimensions: CustomDimensionSemanticTokensProvider())
+///     // Or use your own semantic tokens providers
+///     let alertComponentTokensProvider = OrangeThemeAlertComponentTokensProvider(
+///                     sizes: CustomSizeSemanticTokensProvider(),
+///                     borders: CustomBorderSemanticTokensProvider(),
+///                     spaces: CustomSpaceSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 1.2.0
@@ -81,10 +84,10 @@ open class OrangeThemeAlertComponentTokensProvider: AllAlertComponentTokensProvi
     /// Provider of sizes semantic tokens to use for alert sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of borders semantic tokens to use for spaces borders
+    /// Provider of borders semantic tokens to use for alert borders
     public let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for spaces spaces
+    /// Provider of spaces semantic tokens to use for alert spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
@@ -118,6 +121,6 @@ open class OrangeThemeAlertComponentTokensProvider: AllAlertComponentTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of AlertComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+AlertComponentTokens.swift
+    // the implementation of AlertComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+AlertComponentTokens.swift
     // This declaration of OrangeThemeAlertComponentTokensProvider is here also to allow to write documentation.
 }

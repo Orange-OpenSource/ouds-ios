@@ -52,7 +52,7 @@ final class WireframeThemeSelectInputComponentTokensProvider: AllSelectInputComp
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SelectComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+SelectInputComponentTokens.swift
+    // the implementation of SelectComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+SelectInputComponentTokens.swift
     // This declaration of WireframeThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
 

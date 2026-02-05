@@ -48,7 +48,7 @@ final class WireframeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
+    // the implementation of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+SizeSemanticTokens.swift
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+SizeMultipleSemanticTokens.swift
     // This declaration of WireframeThemeSizeSemanticTokensProvider is here to allow to write documentation.

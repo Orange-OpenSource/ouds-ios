@@ -135,6 +135,6 @@ open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ButtonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift
+    // the implementation of ButtonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift
     // This declaration of OrangeThemeButtonComponentTokensProvider is here also to allow to write documentation.
 }

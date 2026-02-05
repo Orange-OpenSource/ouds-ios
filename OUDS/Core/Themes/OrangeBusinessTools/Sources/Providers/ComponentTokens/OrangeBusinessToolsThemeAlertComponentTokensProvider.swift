@@ -30,10 +30,10 @@ final class OrangeBusinessToolsThemeAlertComponentTokensProvider: AllAlertCompon
     /// Provider of sizes semantic tokens to use for alert sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of borders semantic tokens to use for spaces borders
+    /// Provider of borders semantic tokens to use for alert borders
     let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for spaces spaces
+    /// Provider of spaces semantic tokens to use for alert spaces
     let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
@@ -67,7 +67,7 @@ final class OrangeBusinessToolsThemeAlertComponentTokensProvider: AllAlertCompon
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of AlertComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeBusinessToolsTheme+AlertComponentTokens.swift
+    // the implementation of AlertComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+AlertComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeAlertComponentTokensProvider is here also to allow to write documentation.
 }
 

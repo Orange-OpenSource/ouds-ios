@@ -132,6 +132,6 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TagComponentTokens.swift
+    // the implementation of TagComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TagComponentTokens.swift
     // This declaration of OrangeThemeTagComponentTokensProvider is here also to allow to write documentation.
 }

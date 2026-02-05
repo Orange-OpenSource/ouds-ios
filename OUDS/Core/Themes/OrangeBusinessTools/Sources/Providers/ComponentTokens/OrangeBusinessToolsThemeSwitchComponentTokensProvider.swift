@@ -87,7 +87,7 @@ final class OrangeBusinessToolsThemeSwitchComponentTokensProvider: AllSwitchComp
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SwitchComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SwitchComponentTokens.swift
+    // the implementation of SwitchComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+SwitchComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeSwitchComponentTokensProvider is here also to allow to write documentation.
 }
 

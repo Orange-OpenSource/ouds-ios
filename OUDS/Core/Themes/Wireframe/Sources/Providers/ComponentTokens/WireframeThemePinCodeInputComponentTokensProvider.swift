@@ -61,7 +61,7 @@ final class WireframeThemePinCodeInputComponentTokensProvider: AllPinCodeInputCo
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of PinCodeInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+PinCodeInputComponentTokens.swift
+    // the implementation of PinCodeInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+PinCodeInputComponentTokens.swift
     // This declaration of WireframeThemePinCodeInputComponentTokensProvider is here also to allow to write documentation.
 }
 

@@ -81,7 +81,7 @@ final class OrangeBusinessToolsThemeBarComponentTokensProvider: AllBarComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BarComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BarComponentTokens.swift
+    // the implementation of BarComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+BarComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeBarComponentTokensProvider is here also to allow to write documentation.
 }
 

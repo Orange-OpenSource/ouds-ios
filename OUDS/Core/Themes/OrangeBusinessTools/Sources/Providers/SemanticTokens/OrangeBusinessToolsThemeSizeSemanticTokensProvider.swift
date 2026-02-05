@@ -50,7 +50,7 @@ final class OrangeBusinessToolsThemeSizeSemanticTokensProvider: AllSizeSemanticT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
+    // the implementation of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+SizeSemanticTokens.swift
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+SizeMultipleSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeSizeSemanticTokensProvider is here to allow to write documentation.

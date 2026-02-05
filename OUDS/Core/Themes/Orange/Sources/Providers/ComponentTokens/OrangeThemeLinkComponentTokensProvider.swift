@@ -123,6 +123,6 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of LinkComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift
+    // the implementation of LinkComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift
     // This declaration of OrangeThemeLinkComponentTokensProvider is here also to allow to write documentation.
 }

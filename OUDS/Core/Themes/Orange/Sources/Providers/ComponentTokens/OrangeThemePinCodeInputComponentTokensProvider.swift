@@ -115,7 +115,7 @@ open class OrangeThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompon
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of PinCodeInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+PinCodeInputComponentTokens.swift
+    // the implementation of PinCodeInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+PinCodeInputComponentTokens.swift
     // This declaration of OrangeThemePinCodeInputComponentTokensProvider is here also to allow to write documentation.
 }
 

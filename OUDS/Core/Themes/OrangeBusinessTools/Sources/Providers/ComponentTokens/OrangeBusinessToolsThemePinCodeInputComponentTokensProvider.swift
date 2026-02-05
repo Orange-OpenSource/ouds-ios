@@ -68,7 +68,7 @@ final class OrangeBusinessToolsThemePinCodeInputComponentTokensProvider: AllPinC
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of PinCodeInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+PinCodeInputComponentTokens.swift
+    // the implementation of PinCodeInputComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+PinCodeInputComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemePinCodeInputComponentTokensProvider is here also to allow to write documentation.
 }
 

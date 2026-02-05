@@ -73,7 +73,7 @@ final class WireframeThemeControlItemComponentTokensProvider: AllControlItemComp
     }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ControlItemComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+ControlItemComponentTokens.swift
+    // the implementation of ControlItemComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+ControlItemComponentTokens.swift
     // This declaration of WireframeThemeControlItemComponentTokensProvider is here also to allow to write documentation.
 }
 

@@ -71,6 +71,6 @@ final class SoshThemeButtonComponentTokensProvider: AllButtonComponentTokensProv
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ButtonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ButtonComponentTokens.swift
+    // the implementation of ButtonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ButtonComponentTokens.swift
     // This declaration of SoshThemeButtonComponentTokensProvider is here also to allow to write documentation.
 }

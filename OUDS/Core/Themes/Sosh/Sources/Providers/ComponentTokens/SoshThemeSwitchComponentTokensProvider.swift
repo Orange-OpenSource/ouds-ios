@@ -84,6 +84,6 @@ final class SoshThemeSwitchComponentTokensProvider: AllSwitchComponentTokensProv
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SwitchComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SwitchComponentTokens.swift
+    // the implementation of SwitchComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SwitchComponentTokens.swift
     // This declaration of SoshThemeSwitchComponentTokensProvider is here also to allow to write documentation.
 }

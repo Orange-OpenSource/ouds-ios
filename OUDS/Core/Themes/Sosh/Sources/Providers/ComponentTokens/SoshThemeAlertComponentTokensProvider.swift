@@ -28,10 +28,10 @@ final class SoshThemeAlertComponentTokensProvider: AllAlertComponentTokensProvid
     /// Provider of sizes semantic tokens to use for alert sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of borders semantic tokens to use for spaces borders
+    /// Provider of borders semantic tokens to use for alert borders
     let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for spaces spaces
+    /// Provider of spaces semantic tokens to use for alert spaces
     let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG
@@ -65,6 +65,6 @@ final class SoshThemeAlertComponentTokensProvider: AllAlertComponentTokensProvid
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of AlertComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/SoshTheme+AlertComponentTokens.swift
+    // the implementation of AlertComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+AlertComponentTokens.swift
     // This declaration of SoshThemeAlertComponentTokensProvider is here also to allow to write documentation.
 }

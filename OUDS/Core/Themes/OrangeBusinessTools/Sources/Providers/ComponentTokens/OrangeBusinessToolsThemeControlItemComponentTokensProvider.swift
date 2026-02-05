@@ -74,7 +74,7 @@ final class OrangeBusinessToolsThemeControlItemComponentTokensProvider: AllContr
     }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ControlItemComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+ControlItemComponentTokens.swift
+    // the implementation of ControlItemComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+ControlItemComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeControlItemComponentTokensProvider is here also to allow to write documentation.
 }
 

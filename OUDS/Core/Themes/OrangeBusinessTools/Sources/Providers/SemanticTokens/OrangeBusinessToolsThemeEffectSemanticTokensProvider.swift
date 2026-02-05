@@ -44,7 +44,7 @@ final class OrangeBusinessToolsThemeEffectSemanticTokensProvider: AllEffectSeman
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of EffectSemanticTokens is not here
+    // the implementation of EffectSemanticTokens is not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+EffectSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeEffectSemanticTokensProvider is here to allow to write documentation.
 }

@@ -48,7 +48,7 @@ public final class OrangeBusinessToolsThemeColorChartSemanticTokensProvider: All
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorChartSemanticTokens and ColorChartMultipleSemanticTokens are not here
+    // the implementation of ColorChartSemanticTokens and ColorChartMultipleSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorChartSemanticTokens
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+ColorChartMultipleSemanticTokens
     // This declaration of OrangeBusinessToolsThemeColorChartSemanticTokensProvider is here to allow to write documentation.

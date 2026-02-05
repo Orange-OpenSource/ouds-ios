@@ -42,6 +42,6 @@ final class SoshThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensProv
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+OpacitySemanticTokens.swift
+    // the implementation of OpacitySemanticTokensProvider is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+OpacitySemanticTokens.swift
     // This declaration of SoshThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }

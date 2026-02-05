@@ -64,7 +64,7 @@ final class OrangeBusinessToolsThemeRadioButtonComponentTokensProvider: AllRadio
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of RadioButtonComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+RadioButtonComponentTokens.swift
+    // the implementation of RadioButtonComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+RadioButtonComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeRadioButtonComponentTokensProvider is here also to allow to write documentation.
 }
 

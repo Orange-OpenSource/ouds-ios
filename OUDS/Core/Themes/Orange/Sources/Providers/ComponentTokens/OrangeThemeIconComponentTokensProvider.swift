@@ -101,6 +101,6 @@ open class OrangeThemeIconComponentTokensProvider: AllIconComponentTokensProvide
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of IconComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+IconComponentTokens.swift
+    // the implementation of IconComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+IconComponentTokens.swift
     // This declaration of OrangeThemeIconComponentTokensProvider is here also to allow to write documentation.
 }

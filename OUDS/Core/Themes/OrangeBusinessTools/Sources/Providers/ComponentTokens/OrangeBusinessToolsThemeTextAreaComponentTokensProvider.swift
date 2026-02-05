@@ -59,7 +59,8 @@ final class OrangeBusinessToolsThemeTextAreaComponentTokensProvider: AllTextArea
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextAreaComponentTokens is not here but in Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TextAreaComponentTokens.swift
+    // the implementation of TextAreaComponentTokens is not here but in
+    // Core/Themes/OrangeBusinessTools/Values/ComponentTokens/OrangeBusinessToolsTheme+TextAreaComponentTokens.swift
     // This declaration of OrangeBusinessToolsThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }
 

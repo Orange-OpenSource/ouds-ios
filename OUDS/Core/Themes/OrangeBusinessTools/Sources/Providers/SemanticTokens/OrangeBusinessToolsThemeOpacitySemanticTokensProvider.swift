@@ -45,7 +45,7 @@ final class OrangeBusinessToolsThemeOpacitySemanticTokensProvider: AllOpacitySem
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+OpacitySemanticTokens.swift
+    // the implementation of OpacitySemanticTokensProvider is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+OpacitySemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }
 

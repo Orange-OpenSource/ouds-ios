@@ -49,7 +49,7 @@ final class WireframeThemeColorModeSemanticTokensProvider: AllColorModeSemanticT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
+    // the implementation of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorModeMultipleSemanticTokens.swift
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ColorModeSemanticTokens.swift
     // This declaration of WireframeThemeColorModeSemanticTokensProvider is here to allow to write documentation.

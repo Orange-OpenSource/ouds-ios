@@ -50,7 +50,7 @@ final class OrangeBusinessToolsThemeSpaceSemanticTokensProvider: AllSpaceSemanti
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
+    // the implementation of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
     // but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+SpaceSemanticTokens.swift
     // and in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+SpaceMultipleSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeSpaceSemanticTokensProvider is here to allow to write documentation.

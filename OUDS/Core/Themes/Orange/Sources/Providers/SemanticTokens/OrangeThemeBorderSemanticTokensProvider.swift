@@ -77,6 +77,6 @@ open class OrangeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvi
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift
+    // the implementation of BorderSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift
     // This declaration of OrangeThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }

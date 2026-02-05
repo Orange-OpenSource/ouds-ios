@@ -35,7 +35,7 @@ import OUDSTokensSemantic
 open class OUDSTheme: @unchecked Sendable, Equatable {
 
     // MARK: - Semantic tokens
-    // Keep things alhabetically ordered
+    // Keep things alphabetically ordered
 
     /// All border semantic tokens exposed in one object
     public let borders: AllBorderSemanticTokensProvider
@@ -86,7 +86,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     public let spaces: AllSpaceSemanticTokensProvider
 
     // MARK: - Component tokens
-    // Keep things alhabetically ordered
+    // Keep things alphabetically ordered
 
     /// All components tokens related to alert component like `OUDSAlert`
     public let alert: AllAlertComponentTokensProvider

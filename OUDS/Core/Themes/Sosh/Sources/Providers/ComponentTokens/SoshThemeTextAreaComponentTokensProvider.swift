@@ -57,6 +57,6 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextAreaComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TextAreaComponentTokens.swift
+    // the implementation of TextAreaComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TextAreaComponentTokens.swift
     // This declaration of SoshThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }

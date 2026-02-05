@@ -87,7 +87,7 @@ final class WireframeThemeSwitchComponentTokensProvider: AllSwitchComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SwitchComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+SwitchComponentTokens.swift
+    // the implementation of SwitchComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+SwitchComponentTokens.swift
     // This declaration of WireframeThemeSwitchComponentTokensProvider is here also to allow to write documentation.
 }
 

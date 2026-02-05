@@ -91,7 +91,7 @@ struct ThemeOverrideOfAlertComponentTokensTests {
         #expect(inheritedTheme.alert.sizeMinHeight == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }
 
-    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeightBottomActionPlacemen() throws {
+    @Test func inheritedThemeCanOverrideAlertComponentTokenSizeMinHeightBottomActionPlacement() throws {
         #expect(inheritedTheme.alert.sizeMinHeightBottomActionPlacement != abstractTheme.alert.sizeMinHeightBottomActionPlacement)
         #expect(inheritedTheme.alert.sizeMinHeightBottomActionPlacement == MockThemeAlertComponentTokenProvider.mockThemeAlertSize)
     }

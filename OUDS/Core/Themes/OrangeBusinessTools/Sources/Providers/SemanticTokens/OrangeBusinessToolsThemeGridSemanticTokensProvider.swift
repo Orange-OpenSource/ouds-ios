@@ -44,7 +44,7 @@ final class OrangeBusinessToolsThemeGridSemanticTokensProvider: AllGridSemanticT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of GridSemanticTokens is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+GridSemanticTokens.swift
+    // the implementation of GridSemanticTokens is not here but in Core/Themes/OrangeBusinessTools/Values/SemanticTokens/OrangeBusinessToolsTheme+GridSemanticTokens.swift
     // This declaration of OrangeBusinessToolsThemeGridSemanticTokensProvider is here to allow to write documentation.
 }
 

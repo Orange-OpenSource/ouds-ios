@@ -63,7 +63,7 @@ final class WireframeThemeRadioButtonComponentTokensProvider: AllRadioButtonComp
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of RadioButtonComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+RadioButtonComponentTokens.swift
+    // the implementation of RadioButtonComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+RadioButtonComponentTokens.swift
     // This declaration of WireframeThemeRadioButtonComponentTokensProvider is here also to allow to write documentation.
 }
 

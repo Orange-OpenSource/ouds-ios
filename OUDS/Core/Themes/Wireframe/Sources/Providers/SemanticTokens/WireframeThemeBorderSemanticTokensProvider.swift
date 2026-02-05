@@ -44,7 +44,7 @@ final class WireframeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensP
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+BorderSemanticTokens.swift
+    // the implementation of BorderSemanticTokens is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+BorderSemanticTokens.swift
     // This declaration of WireframeThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }
 

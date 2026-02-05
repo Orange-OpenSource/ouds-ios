@@ -44,7 +44,7 @@ final class WireframeThemeElevationSemanticTokensProvider: AllElevationSemanticT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
+    // the implementation of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ElevationSemanticTokens.swift,
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of WireframeThemeElevationSemanticTokensProvider is here to allow to write documentation.
