@@ -79,6 +79,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let sizes = SoshThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = SoshThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
+        let alert = SoshThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = SoshThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
@@ -111,6 +112,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   alert: alert,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,

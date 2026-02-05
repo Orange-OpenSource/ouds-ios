@@ -88,6 +88,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     // MARK: - Component tokens
     // Keep things alhabetically ordered
 
+    /// All components tokens related to alert component like `OUDSAlert`
+    public let alert: AllAlertComponentTokensProvider
+
     /// All components tokens related to bar components
     public let bar: AllBarComponentTokensProvider
 
@@ -184,6 +187,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - alert: All component tokens for alert
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
     ///    - bulletList: All component tokens for bullet list
@@ -220,6 +224,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 dimensions: AllDimensionSemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
+                alert: AllAlertComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
                 bar: AllBarComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
@@ -261,6 +266,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.spaces = spaces
 
         // Save component tokens providers
+        self.alert = alert
         self.badge = badge
         self.bar = bar
         self.button = button

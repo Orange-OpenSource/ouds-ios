@@ -137,6 +137,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let sizes = OrangeBusinessToolsThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = OrangeBusinessToolsThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
+        let alert = OrangeBusinessToolsThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
         let badge = OrangeBusinessToolsThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = OrangeBusinessToolsThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
         let button = OrangeBusinessToolsThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
@@ -147,7 +148,6 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
         let divider = OrangeBusinessToolsThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeBusinessToolsThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeBusinessToolsThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
-
         let pinCodeInput = OrangeBusinessToolsThemePinCodeInputComponentTokensProvider(sizes: sizes, spaces: spaces, dimensions: dimensions)
         let quantityInput = OrangeBusinessToolsThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = OrangeBusinessToolsThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -171,6 +171,7 @@ public final class OrangeBusinessToolsTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   alert: alert,
                    badge: badge,
                    bar: bar,
                    bulletList: bulletList,
