@@ -9,7 +9,7 @@
 ### Overview
 
 The *Orange Business Tools* theme has been renamed by the design team to *Orange Compact*
-Thus the theme name is more accurate and does not have ambiguity anymore with Orange Businesss company.
+Thus the theme name is more accurate and does not have ambiguity anymore with Orange Business company.
 
 ### Before You Begin
 
@@ -25,7 +25,7 @@ Thus the theme name is more accurate and does not have ambiguity anymore with Or
 
 **Before (v1.x)**:
 ```swift
-import OUDSThemeOrangeCompact
+import OUDSThemeOrangeBusinessTools
 ```
 
 **After (v1.2.0)**:
@@ -44,7 +44,7 @@ import OUDSThemeOrangeCompact
 
 **Before (v1.x)**:
 ```swift
-OrangeCompactTheme()
+OrangeBusinessToolsTheme()
 ```
 
 **After (v1.2.0)**:
@@ -62,7 +62,7 @@ OrangeCompactTheme()
 **Impact**: High
 
 **Required Action**:
-- Wherever you use the name "OrangeCompact" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
+- Wherever you use the name "OrangeBusinessTools" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
 
 **Reason for Change**: Use more accurate name for the theme
 
