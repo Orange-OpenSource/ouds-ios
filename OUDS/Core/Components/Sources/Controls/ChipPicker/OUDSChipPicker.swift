@@ -80,9 +80,9 @@ import SwiftUI
 ///
 /// ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A chip picker component in light and dark modes with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+/// ![A chip picker component in light and dark modes with Orange Compact theme](component_chipPicker_OrangeCompact)
 ///
 /// ### Sosh
 ///

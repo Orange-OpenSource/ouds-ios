@@ -39,7 +39,7 @@ let package = Package(
             name: "OUDSSwiftUI",
             targets: ["OUDSSwiftUI"]),
 
-        // Embeds all librairies but only Orange and Orange Business Tools themes
+        // Embeds all librairies but only Orange and Orange Compact themes
         .library(
             name: "OUDSSwiftUIOrange",
             targets: ["OUDSSwiftUIOrange"]),
@@ -62,8 +62,8 @@ let package = Package(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
         .library(
-            name: "OUDSThemesOrangeBusinessTools",
-            targets: ["OUDSThemesOrangeBusinessTools"]),
+            name: "OUDSThemesOrangeCompact",
+            targets: ["OUDSThemesOrangeCompact"]),
         .library(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
@@ -119,7 +119,7 @@ let package = Package(
             name: "OUDSSwiftUI",
             dependencies: [
                 "OUDSThemesOrange",
-                "OUDSThemesOrangeBusinessTools",
+                "OUDSThemesOrangeCompact",
                 "OUDSThemesSosh",
                 "OUDSThemesWireframe",
                 "OUDSThemesContract",
@@ -136,7 +136,7 @@ let package = Package(
             name: "OUDSSwiftUIOrange",
             dependencies: [
                 "OUDSThemesOrange",
-                "OUDSThemesOrangeBusinessTools",
+                "OUDSThemesOrangeCompact",
                 "OUDSThemesContract",
                 "OUDSModules",
                 "OUDSComponents",
@@ -189,13 +189,13 @@ let package = Package(
             path: "OUDS/Core/Themes/Orange/Tests"),
 
         .target(
-            name: "OUDSThemesOrangeBusinessTools",
+            name: "OUDSThemesOrangeCompact",
             dependencies: ["OUDSThemesContract", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/OrangeBusinessTools/Sources"),
+            path: "OUDS/Core/Themes/OrangeCompact/Sources"),
         .testTarget(
-            name: "OUDSThemesOrangeBusinessTools-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesOrangeBusinessTools"],
-            path: "OUDS/Core/Themes/OrangeBusinessTools/Tests"),
+            name: "OUDSThemesOrangeCompact-Tests",
+            dependencies: ["TestsUtils", "OUDSThemesOrangeCompact"],
+            path: "OUDS/Core/Themes/OrangeCompact/Tests"),
 
         .target(
             name: "OUDSThemesSosh",

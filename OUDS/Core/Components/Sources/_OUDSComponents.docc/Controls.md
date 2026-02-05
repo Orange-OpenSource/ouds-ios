@@ -17,8 +17,8 @@ Some components can be used for **controls** and **inputs**.
     @Tab("Orange") {
         ![A checkbox component in light and dark modes with Orange theme](component_checkbox_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A checkbox component in light and dark modes with Orange Business Tools theme](component_checkbox_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A checkbox component in light and dark modes with Orange Compact theme](component_checkbox_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A checkbox component in light and dark modes with Sosh theme](component_checkbox_Sosh)
@@ -54,8 +54,8 @@ This checkbox can provide two values (selected and unselected) or three values (
     @Tab("Orange") {
         ![A checkbox item component in light and dark modes with Orange theme](component_checkboxItem_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A checkbox item component in light and dark modes with Orange Business Tools theme](component_checkboxItem_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A checkbox item component in light and dark modes with Orange Compact theme](component_checkboxItem_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A checkbox item component in light and dark modes with Sosh theme](component_checkboxItem_Sosh)
@@ -99,8 +99,8 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("Orange") {
         ![A checkbox picker component in light and dark modes with Orange theme](component_checkboxPicker_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A checkbox picker component in light and dark modes with Orange Business Tools theme](component_checkboxPicker_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A checkbox picker component in light and dark modes with Orange Compact theme](component_checkboxPicker_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A checkbox picker component in light and dark modes with Sosh theme](component_checkboxPicker_Sosh)
@@ -163,8 +163,8 @@ OUDSCheckboxPicker(selections: $selections,
     @Tab("Orange") {
         ![A radio button component in light and dark modes with Orange theme](component_radio_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A radio button component in light and dark modes with Orange Business Tools theme](component_radio_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A radio button component in light and dark modes with Orange Compact theme](component_radio_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A radio button component in light and dark modes with Sosh theme](component_radio_Sosh)
@@ -194,8 +194,8 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
     @Tab("Orange") {
         ![A radio item component in light and dark modes with Orange theme](component_radioItem_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A radio item component in light and dark modes with Orange Business Tools theme](component_radioItem_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A radio item component in light and dark modes with Orange Compact theme](component_radioItem_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A radio item component in light and dark modes with Sosh theme](component_radioItem_Sosh)
@@ -234,8 +234,8 @@ The indicator can be leading or trailing.
     @Tab("Orange") {
         ![A radio picker component in light and dark modes with Orange theme](component_radioPicker_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A radio picker component in light and dark modes with Orange Business Tools theme](component_radioPicker_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A radio picker component in light and dark modes with Orange Compact theme](component_radioPicker_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A radio picker component in light and dark modes with Sosh theme](component_radioPicker_Sosh)
@@ -286,8 +286,8 @@ OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
     @Tab("Orange") {
         ![A switch component in light and dark modes with Orange theme](component_switch_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A switch component in light and dark modes with Orange Business Tools theme](component_switch_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A switch component in light and dark modes with Orange Compact theme](component_switch_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A switch component in light and dark modes with Sosh theme](component_switch_Sosh)
@@ -319,8 +319,8 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
     @Tab("Orange") {
         ![A switch item component in light and dark modes with Orange theme](component_switchItem_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A switch item component in light and dark modes with Orange Business Tools theme](component_switchItem_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A switch item component in light and dark modes with Orange Compact theme](component_switchItem_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A switch item component in light and dark modes with Sosh theme](component_switchItem_Sosh)
@@ -365,8 +365,8 @@ The indicator can be leading or trailing.
     @Tab("Orange") {
         ![A suggestion chip component in light and dark modes with Orange theme](component_suggestionChip_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A suggestion chip component in light and dark modes with Orange Business Tools theme](component_suggestionChip_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A suggestion chip component in light and dark modes with Orange Compact theme](component_suggestionChip_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A suggestion chip component in light and dark modes with Sosh theme](component_suggestionChip_Sosh)
@@ -399,8 +399,8 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
     @Tab("Orange") {
         ![A fiter chip component in light and dark modes with Orange theme](component_filterChip_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A fiter chip component in light and dark modes with Orange Business Tools theme](component_filterChip_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A fiter chip component in light and dark modes with Orange Compact theme](component_filterChip_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A fiter chip component in light and dark modes with Sosh theme](component_filterChip_Sosh)
@@ -434,8 +434,8 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
     @Tab("Orange") {
         ![A chip picker component in light and dark modes with Orange theme](component_chipPicker_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A chip picker component in light and dark modes with Orange Business Tools theme](component_chipPicker_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A chip picker component in light and dark modes with Orange Compact theme](component_chipPicker_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A chip picker component in light and dark modes with Sosh theme](component_chipPicker_Sosh)
@@ -503,8 +503,8 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     @Tab("Orange") {
         ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A text input component in light and dark modes with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A text input component in light and dark modes with Orange Compact theme](component_textInput_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A text input component in light and dark modes with Sosh theme](component_textInput_Sosh)

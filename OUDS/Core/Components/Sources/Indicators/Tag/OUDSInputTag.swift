@@ -50,9 +50,9 @@ import SwiftUI
 ///
 /// ![An input tag component in light and dark modes with Orange theme](component_inputTag_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![An input tag component in light and dark modes with Orange Business Tools theme](component_inputTag_OrangeBusinessTools)
+/// ![An input tag component in light and dark modes with Orange Compact theme](component_inputTag_OrangeCompact)
 ///
 /// ### Sosh
 ///

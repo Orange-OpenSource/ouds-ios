@@ -49,7 +49,7 @@ final class SoshThemeBarComponentTokensProvider: AllBarComponentTokensProvider {
     ///
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens, if nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``OrangeTBusinessToolshemeBordersSemanticTokensProvider``)
+    ///    - borders: Provider for borders semantic tokens, if nil, a default one will be used (``SoshThemeBordersSemanticTokensProvider``)
     ///    - colors: Provider for colors semantic tokens, if nil, a default one will be used (``SoshThemeColorsSemanticTokensProvider``)
     ///    - opacities: Provider for opacities semantic tokens, if nil, a default one will be used (``SoshThemeOpacitiesSemanticTokensProvider``)
     ///    - effects: Provider for effects semantic tokens, if nil, a default one will be used (``SoshThemeEffectsSemanticTokensProvider``)

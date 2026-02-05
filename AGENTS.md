@@ -51,7 +51,7 @@ Here the the components provided by the Swift Package like buttons, switchs, che
 
 Here is the definition of the Orange theme for all Orange products.
 
-#### Core / Themes / Orange Business Tools
+#### Core / Themes / Orange Compact
 
 Here is the definition of the Orange theme for all Orange products but with constraints of spaces and sizes.
 
@@ -374,7 +374,7 @@ Create a theme for Orange product:
     let theme = OrangeTheme()
 ```
 
-The user can use instead `SoshTheme`, `WireframeTheme` or `OrangeBusinessTools` theme.
+The user can use instead `SoshTheme`, `WireframeTheme` or `OrangeCompact` theme.
 
 ### 12.4 Inject a theme in an app
 

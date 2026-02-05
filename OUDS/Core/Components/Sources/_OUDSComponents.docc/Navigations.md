@@ -15,8 +15,8 @@ Some components can be used for **navigation**.
     @Tab("Orange") {
         ![A link component in light and dark modes with Orange theme](component_link_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A link component in light and dark modes with Orange Business Tools theme](component_link_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A link component in light and dark modes with Orange Compact theme](component_link_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A link component in light and dark modes with Sosh theme](component_link_Sosh)
@@ -52,9 +52,9 @@ The link can be displayed in `small` or `default` size.
         ![A tab bar component with Liquid Glass in light mode with Orange theme](component_tabBar_LiquidGlass_Orange_light)
         ![A tab bar component with Liquid Glass in dark mode with Orange theme](component_tabBar_LiquidGlass_Orange_dark)
     }
-    @Tab("Orange Business Tools (Liquid Glass)") {
-        ![A tab bar component with Liquid Glass in light mode with Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_light)
-        ![A tab bar component with Liquid Glass in dark mode with Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_dark)
+    @Tab("Orange Compact (Liquid Glass)") {
+        ![A tab bar component with Liquid Glass in light mode with Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_light)
+        ![A tab bar component with Liquid Glass in dark mode with Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_dark)
     }
     @Tab("Sosh (Liquid Glass)") {
         ![A tab bar component with Liquid Glass in light mode with Sosh theme](component_tabBar_LiquidGlass_Sosh_light)
@@ -71,9 +71,9 @@ The link can be displayed in `small` or `default` size.
         ![A tab bar component without Liquid Glass in light mode with Orange theme](component_tabBar_Orange_light)
         ![A tab bar component without Liquid Glass in dark mode with Orange theme](component_tabBar_Orange_dark)
     }
-    @Tab("Orange Business Tools") {
-        ![A tab bar component without Liquid Glass in light mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools_light)
-        ![A tab bar component without Liquid Glass in dark mode with Orange Business Tools theme](component_tabBar_OrangeBusinessTools_dark)
+    @Tab("Orange Compact") {
+        ![A tab bar component without Liquid Glass in light mode with Orange Compact theme](component_tabBar_OrangeCompact_light)
+        ![A tab bar component without Liquid Glass in dark mode with Orange Compact theme](component_tabBar_OrangeCompact_dark)
     }
     @Tab("Sosh") {
         ![A tab bar component without Liquid Glass in light mode with Sosh theme](component_tabBar_Sosh_light)

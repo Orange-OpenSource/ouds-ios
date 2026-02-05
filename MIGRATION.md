@@ -1,7 +1,70 @@
 # Migration Guide
 
+- [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.1.0 → v1.2.0
+
+### Overview
+
+The *Orange Business Tools* theme has been renamed by the design team to *Orange Compact*
+Thus the theme name is more accurate and does not have ambiguity anymore with Orange Businesss company.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.x
+
+### Breaking Changes
+
+#### 1. Rename of Swift package product
+
+**Impact**: High
+
+**Before (v1.x)**:
+```swift
+import OUDSThemeOrangeCompact
+```
+
+**After (v1.2.0)**:
+```swift
+import OUDSThemeOrangeCompact
+```
+
+**Required Action**:
+- If you use individual imports, rename the name of the Swift Package product from `OUDSThemeOrangeCompact` to `OUDSThemeOrangeCompact`
+
+**Reason for Change**: Use more accurate name for the theme
+
+#### 2. Rename of the theme
+
+**Impact**: High
+
+**Before (v1.x)**:
+```swift
+OrangeCompactTheme()
+```
+
+**After (v1.2.0)**:
+```swift
+OrangeCompactTheme()
+```
+
+**Required Action**:
+- If you instanciated `OrangeCompactTheme` object, use instead `OrangeCompactTheme` name
+
+**Reason for Change**: Use more accurate name for the theme
+
+#### 3. Change any use of "OrangeCompact"
+
+**Impact**: High
+
+**Required Action**:
+- Wherever you use the name "OrangeCompact" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
+
+**Reason for Change**: Use more accurate name for the theme
 
 ## v1.0.0 → v1.1.0
 
@@ -23,7 +86,7 @@ Component tokens of button for borders have been shortened.
 **Impact**: High
 
 **Before (v1.0.0)**:
-```Swift
+```swift
 // Old namings of objects
 MultipleElevationCompositeRawTokens
 MultipleColorSemanticTokens
@@ -36,7 +99,7 @@ MultipleSpaceSemanticTokens
 ```
 
 **After (v1.1.0)**:
-```Swift
+```swift
 // Use new namings without final 's'
 MultipleElevationCompositeRawToken
 MultipleColorSemanticToken
@@ -65,7 +128,7 @@ MultipleSpaceSemanticToken
 **Impact**: High
     
 **Before (v1.0.0)**:
-```Swift
+```swift
 // Old namings of objects
 buttonBorderRadiusDefault
 buttonBorderRadiusRounded
@@ -76,7 +139,7 @@ buttonBorderWidthDefaultInteractionMono
 ```
 
 **After (v1.1.0)**:
-```Swift
+```swift
 // Use new namings without 'button' prefix
 borderRadiusDefault
 borderRadiusRounded

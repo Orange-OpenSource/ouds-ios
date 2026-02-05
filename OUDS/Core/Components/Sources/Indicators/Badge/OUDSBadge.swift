@@ -63,9 +63,9 @@ import SwiftUI
 ///
 /// ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A badge component in light and dark modes with Orange Business Tools theme](component_badge_OrangeBusinessTools)
+/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_OrangeCompact)
 ///
 /// ### Sosh
 ///
