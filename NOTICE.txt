@@ -34,8 +34,11 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0_rtl.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level1_rtl.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level2.imageset/ic_bullet_list_level2.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level2_rtl.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_tick.imageset/ic_bullet_list_tick.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg

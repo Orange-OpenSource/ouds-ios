@@ -45,13 +45,13 @@ struct Bullet: View {
                 Rectangle().fill(.clear)
             }
         }
-        .frame(width: width, alignment: .trailing)
+        .frame(minWidth: minWidth, alignment: .trailing)
         .frame(maxHeight: maxHeight, alignment: .center)
     }
 
     // MARK: Private helpers
 
-    private var width: CGFloat {
+    private var minWidth: CGFloat {
         let token = switch textStyle {
         case .bodyLarge:
             theme.sizes.iconWithBodyLargeSizeMedium

@@ -3,10 +3,18 @@
     {
       "filename" : "ic_bullet_list_level0.svg",
       "idiom" : "universal"
+    },
+    {
+      "filename" : "ic_bullet_list_level0_rtl.svg",
+      "idiom" : "universal",
+      "locale" : "ar"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
   }
 }
