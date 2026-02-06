@@ -24,7 +24,7 @@ struct ToolBarTitleView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: theme.spaces.fixed3xsmall) {
+        VStack(spacing: 2) {
             Text(LocalizedStringKey(title))
                 .headingSmall(theme)
             if let subtitle {

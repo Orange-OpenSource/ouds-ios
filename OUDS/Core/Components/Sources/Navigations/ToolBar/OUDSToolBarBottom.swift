@@ -152,7 +152,7 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
     private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
         HStack(spacing: theme.spaces.fixedSmall) {
             ForEach(items) { item in
-                item.modifier(ToolBarItemStyleModifier(style: .bottom))
+                item.modifier(ToolBarItemActionStyleModifier(style: .bottom))
             }
         }
     }

@@ -49,6 +49,14 @@ extension View {
     public func oudsAccentColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedAccentColor(color: color))
     }
+
+    /// Applies a **tint color** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    public func oudsTintColor(_ color: MultipleColorSemanticToken) -> some View {
+        modifier(ColorSchemeBasedTintColor(color: color))
+    }
 }
 
 // MARK: - Color Scheme Based Foreground Style
@@ -108,5 +116,20 @@ private struct ColorSchemeBasedAccentColor: ViewModifier {
 
     func body(content: Content) -> some View {
         content.accentColor(color.color(for: colorScheme))
+    }
+}
+
+// MARK: - Color Scheme Based Tint Color
+
+/// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
+/// `MultipleColorSemanticToken` object and applies it as **tint color** on the calling view.
+private struct ColorSchemeBasedTintColor: ViewModifier {
+
+    let color: MultipleColorSemanticToken
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content.tint(color.color(for: colorScheme))
     }
 }
