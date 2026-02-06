@@ -16,14 +16,14 @@ import OUDSThemesContract
 import SwiftUI
 
 // MARK: - OUDS Tool Bar Navigation Item
+
 /// Defines the built-in navigation icons available for the toolbars.
 /// Each case maps to an image asset provided by the OUDS package resources.
 ///
 /// - Since: 1.2.0
-public enum OUDSToolBarNavigationItem: String {
-    case back = "ic_navigation_back"
-    case close = "ic_navigation_close"
-    case menu = "ic_navigation_menu"
+public enum OUDSToolBarNavigationItem: String { // TODO: #1174 - Use themed icons
+    case back = "ic_link_previous"
+    case close = "ic_close"
 }
 
 // MARK: - OUDS Tool Bar Item
@@ -51,22 +51,22 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Content
 
-    private enum Content {
+    enum Content {
         case action(icon: Image, accessibilityLabel: String, action: () -> Void)
         case navigation(icon: OUDSToolBarNavigationItem, label: String?, accessibilityLabel: String, action: () -> Void)
     }
 
     // MARK: - Stored properties
 
-    public let id = UUID()
-    private let content: Content
+    public let id = UUID() // FIXME: #1174 - To remove?
+    let content: Content
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: - Initializers
 
-    /// Creates a navigation toolbar item with an icon only dedicated to navigations.
+    /// Creates a navigation toolbar item with an icon only dedicated to action.
     ///
     /// - Parameters:
     ///   - icon: The `Image` to add as button as action item
@@ -94,7 +94,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     ///   - accessibilityLabel: The accessibility label describing the item.
     ///   - action: The action triggered when the item is tapped.
     public init(navigation: OUDSToolBarNavigationItem,
-                label: String,
+                label: String, // #TODO: #1174 - With label only for iOS < 26 ?
                 accessibilityLabel: String? = nil,
                 action: @escaping () -> Void)
     {
@@ -123,23 +123,31 @@ public struct OUDSToolBarItem: View, Identifiable {
                                   accessibilityLabel: String,
                                   action: @escaping () -> Void) -> some View
     {
-        if let label {
+        if icon == .back, let label {
             Button(action: action) {
-                Label {
-                    Text(LocalizedStringKey(label))
-                        .labelDefaultLarge(theme)
-                } icon: {
-                    navigationIcon(icon)
+                if #unavailable(iOS 26) {
+                    Label {
+                        Text(label)
+                    } icon: {
+                        navigationIcon(icon)
+                    }
+                    .labelStyle(.titleAndIcon)
+                    // With iOS 26 / Liquid Glass label is not always displayed
+                    // and if not displayed the icon is leading shifted
+                } else {
+                    Label {
+                        Text(label)
+                    } icon: {
+                        navigationIcon(icon)
+                    }
                 }
             }
-            .accessibilityLabel(LocalizedStringKey(accessibilityLabel))
-            .buttonStyle(.plain)
-        } else {
+            .accessibilityLabel(accessibilityLabel)
+        } else { // Close button or back without without label
             Button(action: action) {
                 navigationIcon(icon)
             }
-            .accessibilityLabel(LocalizedStringKey(accessibilityLabel))
-            .buttonStyle(.plain)
+            .accessibilityLabel(accessibilityLabel)
         }
     }
 
@@ -147,7 +155,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         Image(decorative: icon.rawValue, bundle: theme.resourcesBundle)
             .renderingMode(.template)
             .resizable()
-            .frame(width: iconSize, height: iconSize)
+            .frame(width: 28, height: 28)
             .toFlip(icon == .back && layoutDirection == .rightToLeft)
     }
 
@@ -162,17 +170,12 @@ public struct OUDSToolBarItem: View, Identifiable {
             icon
                 .renderingMode(.template)
                 .resizable()
-//                .frame(width: iconSize, height: iconSize)
+                .frame(width: 26, height: 26)
         }
-        .accessibilityLabel(LocalizedStringKey(accessibilityLabel))
-//        .buttonStyle(.plain)
+        .accessibilityLabel(accessibilityLabel)
     }
 
     // MARK: - Helpers
-
-    private var iconSize: CGFloat {
-        theme.sizes.iconDecorativeMedium
-    }
 }
 
 // MARK: - OUDS Tool Bar Items Builder

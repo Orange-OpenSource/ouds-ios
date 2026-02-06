@@ -18,7 +18,7 @@ import SwiftUI
 
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
-/// It typically displays the page title, and may include navigation actions such as “Back,” as well as supplementary actions like search or menus.
+/// It typically displays the page title, and may include navigation actions such as “Back” or "Cancel" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
 /// ``OUDSToolBarTop`` wraps any content view and applies a SwiftUI toolbar configuration.
@@ -32,7 +32,7 @@ import SwiftUI
 ///
 /// ## Platform considerations
 ///
-/// - The component is available on iOS, macOS and visionOS 1
+/// - The component is available on iOS, macOS and visionOS
 /// - The component is not available for watchOS
 /// - The component is not available for tvOS
 ///
@@ -90,6 +90,7 @@ import SwiftUI
 /// - Since: 1.2.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSToolBarTop<Content>: View where Content: View { // TODO: #1174 - Use short link for documentation
+    // TODO: #1174 - Make screenshots for doc
 
     // MARK: - Stored properties
 
@@ -180,7 +181,12 @@ public struct OUDSToolBarTop<Content>: View where Content: View { // TODO: #1174
     private func itemsView(_ items: [OUDSToolBarItem], style: ToolBarItemStyle) -> some View {
         if !items.isEmpty {
             ForEach(items) { item in
-                item.modifier(ToolBarItemStyleModifier(style: style))
+                switch item.content {
+                case .action:
+                    item.modifier(ToolBarItemActionStyleModifier(style: style))
+                case let .navigation(icon, _, _, _):
+                    item.modifier(ToolBarItemNavigationStyleModifier(icon: icon, style: style))
+                }
             }
         }
     }
