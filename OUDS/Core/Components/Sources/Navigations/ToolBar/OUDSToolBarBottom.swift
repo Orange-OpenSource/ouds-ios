@@ -111,7 +111,6 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
 
     public var body: some View {
         content()
-            .modifier(ToolBarBottomAppearanceModifier())
             .toolbar {
                 ToolbarItem(placement: bottomPlacement) {
                     bottomBarContent

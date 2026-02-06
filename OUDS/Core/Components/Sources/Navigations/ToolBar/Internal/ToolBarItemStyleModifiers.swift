@@ -13,7 +13,6 @@
 
 #if !os(watchOS) && !os(tvOS)
 import OUDSThemesContract
-import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Tool Bar Item Style
@@ -27,7 +26,9 @@ enum ToolBarItemStyle {
 
 // MARK: - Tool Bar Item Action Style Modifier
 
-/// Applies OUDS styling to toolbar items depending on the platform and item placement, for action buttons.
+/// Applies styling to toolbar items depending, for action buttons, depending to OS versions:
+/// - For iOS 26 / Liquid Glass, action button in toolbar top have colored background
+/// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
 struct ToolBarItemActionStyleModifier: ViewModifier {
 
     let style: ToolBarItemStyle
@@ -35,83 +36,40 @@ struct ToolBarItemActionStyleModifier: ViewModifier {
     @Environment(\.theme) private var theme
 
     func body(content: Content) -> some View {
-        let baseContent = content
-            .oudsForegroundColor(theme.bar.colorContentOnAccent)
-            .oudsTintColor(theme.colors.actionAccent)
-            .buttonStyle(.borderedProminent)
-
-        baseContent
-//        if shouldApplyBackground {
-//            baseContent
-//                .oudsBackground(theme.colors.actionAccent)
-//                .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusMedium, style: .continuous))
-//        } else {
-//            baseContent
-//        }
-    }
-
-    private var shouldApplyBackground: Bool {
-        #if os(iOS)
-        if #available(iOS 26.0, *) {
-            switch style {
-            case .topTrailing, .bottom:
-                return true
-            case .topLeading:
-                return false
-            }
+        if #available(iOS 26, *) {
+            content
+                .oudsForegroundColor(theme.bar.colorContentOnAccent)
+                .oudsTintColor(theme.colors.actionAccent)
+                .buttonStyle(.borderedProminent)
+        } else {
+            content
+                .oudsForegroundColor(theme.colors.actionAccent)
         }
-        return false
-        #else
-        return false
-        #endif
     }
 }
 
 // MARK: - Tool Bar Item Navigation Style Modifier
 
-/// Applies OUDS styling to toolbar items depending on the platform and item placement, for navigation buttons.
+/// Applies styling to toolbar items depending, for navigation buttons, depending to OS versions:
+/// - For iOS 26 / Liquid Glass, navigation button in toolbar top do not have labels
+/// - For iOS lower than 26 / not Liquid Glass, navigation button in toolbar top can have labels or not
 struct ToolBarItemNavigationStyleModifier: ViewModifier {
 
     let icon: OUDSToolBarNavigationItem
     let style: ToolBarItemStyle
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        if icon == .back {
+        if #available(iOS 26, *) {
             content
                 .oudsForegroundColor(theme.colors.contentDefault)
+                .oudsTintColor(theme.colors.actionAccent)
+                .buttonStyle(.plain)
         } else {
             content
-                // .oudsTintColor(MultipleColorSemanticToken(light: "#78788029", dark: "#78788052"))
-                .buttonStyle(.plain)
-            // NOTE: It seems we cannot change the colors with iOS 26 / Liquid Glass, so plain style is more readable...
+                .oudsForegroundColor(theme.colors.actionAccent)
         }
-
-//        if shouldApplyBackground {
-//            baseContent
-//                .oudsBackground(theme.colors.actionAccent)
-//                .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusMedium, style: .continuous))
-//        } else {
-//            baseContent
-//        }
-    }
-
-    private var shouldApplyBackground: Bool {
-        #if os(iOS)
-        if #available(iOS 26.0, *) {
-            switch style {
-            case .topTrailing, .bottom:
-                return true
-            case .topLeading:
-                return false
-            }
-        }
-        return false
-        #else
-        return false
-        #endif
     }
 }
 #endif

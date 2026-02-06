@@ -136,7 +136,6 @@ public struct OUDSToolBarTop<Content>: View where Content: View { // TODO: #1174
     public var body: some View {
         NavigationView {
             content()
-                .modifier(ToolBarTopAppearanceModifier())
                 .toolbar {
                     ToolbarItemGroup(placement: leadingPlacement) {
                         itemsView(leadingItems, style: .topLeading)
