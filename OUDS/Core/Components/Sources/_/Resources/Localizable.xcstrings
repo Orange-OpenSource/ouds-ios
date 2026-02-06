@@ -473,7 +473,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hide password"
+            "value" : "إخفاء كلمة المرور"
           }
         },
         "en" : {
@@ -497,7 +497,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Show password"
+            "value" : "يعرض\n كلمة المرور"
           }
         },
         "en" : {
