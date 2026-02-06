@@ -87,9 +87,9 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark modes with Orange theme](component_passwordInput_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A text input component in light and dark modes with Orange Business Tools theme](component_passwordInput_OrangeBusinessTools)
+/// ![A text input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
 ///
 /// ### Sosh
 ///

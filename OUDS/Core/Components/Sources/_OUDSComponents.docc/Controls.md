@@ -558,7 +558,7 @@ OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLin
         ![A password input component in light and dark modes with Orange theme](component_passwordInput_Orange)
     }
     @Tab("Orange Business Tools") {
-        ![A password input component in light and dark modes with Orange Business Tools theme](component_passwordInput_OrangeBusinessTools)
+        ![A password input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A password input component in light and dark modes with Sosh theme](component_passwordInput_Sosh)
