@@ -17,8 +17,8 @@ Bullet list is a UI element that helps to display related individual text items 
     @Tab("Orange") {
         ![A bullet list in light and dark modes with Orange theme](component_bullet_list_Orange)
     }
-    @Tab("Orange Business Tools") {
-        ![A bullet list in light and dark modes with Orange Business Tools theme](component_bullet_list_OrangeBusinessTools)
+    @Tab("Orange Compact") {
+        ![A bullet list in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
     }
     @Tab("Sosh") {
         ![A bullet list in light and dark modes with Sosh theme](component_bullet_list_Sosh)

@@ -130,7 +130,7 @@ import SwiftUI
 ///
 /// ### Orange Business Tools
 ///
-/// ![A bullet list component in light and dark modes with Orange Business Tools theme](component_bullet_list_OrangeBusinessTools)
+/// ![A bullet list component in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
 ///
 /// ### Sosh
 ///

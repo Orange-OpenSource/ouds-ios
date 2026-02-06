@@ -167,7 +167,7 @@ You cannot derivate the *Orange Compact* theme.
 
 #### Bullet list
 
-![A bullet list component in light and dark modes with Orange Business Tools theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_bullet_list_OrangeBusinessTools.png)
+![A bullet list component in light and dark modes with Orange Compact theme](https://ios.unified-design-system.orange.com/images/OUDSComponents/component_bullet_list_OrangeCompact.png)
 
 ### Controls
 
