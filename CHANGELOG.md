@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Swift package `swift-docc-plugin` from v1.4.5 to v1.4.6
 - Update `fastlane` gem from v2.231.1 to v2.232.1
 - **BREAKING**: Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
 
