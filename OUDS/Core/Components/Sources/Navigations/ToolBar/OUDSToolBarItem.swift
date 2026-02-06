@@ -124,25 +124,20 @@ public struct OUDSToolBarItem: View, Identifiable {
                                   action: @escaping () -> Void) -> some View
     {
         if icon == .back, let label {
-            Button(action: action) {
-                if #unavailable(iOS 26) {
-                    Label {
-                        Text(label)
-                    } icon: {
+            if #available(iOS 26, *) {
+                Button(action: action) {
+                    navigationIcon(icon)
+                }
+                .accessibilityLabel(accessibilityLabel)
+            } else {
+                Button(action: action) {
+                    HStack(spacing: 2) {
                         navigationIcon(icon)
-                    }
-                    .labelStyle(.titleAndIcon)
-                    // With iOS 26 / Liquid Glass label is not always displayed
-                    // and if not displayed the icon is leading shifted
-                } else {
-                    Label {
                         Text(label)
-                    } icon: {
-                        navigationIcon(icon)
                     }
                 }
+                .accessibilityLabel(accessibilityLabel)
             }
-            .accessibilityLabel(accessibilityLabel)
         } else { // Close button or back without without label
             Button(action: action) {
                 navigationIcon(icon)
