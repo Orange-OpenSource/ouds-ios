@@ -27,6 +27,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/Resources/_/ic_theme_orange.png
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
 
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
+
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
@@ -57,6 +61,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ## OUDS / Core / Themes / Sosh
 
 ./OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/Resources/_/ic_theme_sosh.png
+
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
 
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
@@ -89,6 +97,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Wireframe/Sources/_OUDSThemesWireframe.docc/Resources/_/ic_theme_wireframe.png
 
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
+
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
 
 ./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
