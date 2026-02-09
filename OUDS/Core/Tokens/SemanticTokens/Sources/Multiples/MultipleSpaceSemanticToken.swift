@@ -69,7 +69,7 @@ public final class MultipleSpaceSemanticToken: NSObject, Sendable {
         return compact == other.compact && regular == other.regular
     }
 
-    /// Returns the right _ according to the `userInterfaceSizeClass`.
+    /// Returns the right dimension according to the `userInterfaceSizeClass`.
     /// - Parameter userInterfaceSizeClass: The user interface size class (could be the horizontal or the vertical size class)
     /// - Returns: The right `DimensionRawToken`
     public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> DimensionRawToken {

@@ -241,7 +241,7 @@ Everything is available on [our guidelines](https://a11y-guidelines.orange.com/f
 
 - Minimum Swift 6.2 (e.g. 6.2.3)
 - Xcode 26.2 or later 
-- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 15.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
+- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 13.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
 ## 10. Building commands
@@ -514,6 +514,40 @@ or only with an image:
 ```swift
 OUDSButton(icon: Image("image_name"), accessibilityLabel: "Some label") { /* the action to process */ }
 ```
+
+### Content Display
+
+#### Bullet list
+
+A bullet list is a list of elements which can be ordered or not. OUDS bullet lists can have up to 3 levels of depth.
+A bullet list can be unordered (default), ordered or bare (i.e. without leading chips not indices).
+
+Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbulletlist/).
+
+A bullet list by default is not ordered:
+```swift
+OUDSBulletList {
+    OUDSBulletList.Item("Label 1")
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
+}
+```
+
+A bullet lsit can have several levels of depth by nesting items
+```swift
+OUDSBulletList(type: .ordered) {
+    OUDSBulletList.Item("Label 1") {
+        OUDSBulletList.Item("Label 1.1") {
+            OUDSBulletList.Item("Label 1.1.1")
+            OUDSBulletList.Item("Label 1.1.2")
+        }
+    }
+    OUDSBulletList.Item("Label 2")
+        OUDSBulletList.Item("Label 3")
+    }
+```
+
+### Controls
 
 ##### Checkbox
 

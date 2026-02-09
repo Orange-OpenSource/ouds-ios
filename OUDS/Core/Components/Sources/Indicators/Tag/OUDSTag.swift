@@ -170,6 +170,7 @@ public struct OUDSTag: View {
 
     /// The status of an `OUDSTag` determines the leading element, the background
     /// and the content colors of the tag according to the category.
+    /// - Since: 0.18.0
     public struct Status {
 
         let leading: Self.Leading
@@ -178,6 +179,7 @@ public struct OUDSTag: View {
         let flipIcon: Bool
 
         /// The leading element of the tag
+        /// - Since: 0.18.0
         public enum Leading {
             /// Means no element
             case none
@@ -191,6 +193,7 @@ public struct OUDSTag: View {
         }
 
         /// The category of the status.
+        /// - Since: 0.18.0
         public enum Category {
             /// Default or inactive state. Used for standard labels, categories, or when no specific status needs to be communicated.
             case neutral
@@ -275,7 +278,7 @@ public struct OUDSTag: View {
         /// - Parameters:
         ///    - leading: The leading element
         ///    - category: The category of the status
-        ///    - alternativeIcon: The optinal leading icon
+        ///    - alternativeIcon: The optional leading icon
         ///    - flipIcon: Flag to flip icon
         private init(leading: Leading, category: Self.Category, alternativeIcon: Image? = nil, flipIcon: Bool = false) {
             self.leading = leading
@@ -286,6 +289,7 @@ public struct OUDSTag: View {
     }
 
     /// Represents the appearance of an `OUDSTag`
+    /// - Since: 0.18.0
     public enum Appearance {
 
         /// A tag with a solid, high-contrast background.
@@ -300,6 +304,7 @@ public struct OUDSTag: View {
     }
 
     /// Defines the shape of an `OUDSTag`
+    /// - Since: 0.18.0
     public enum Shape {
         /// A tag with sharp, square corners.
         /// Squared tags provide a more formal, structured, or technical feel. They are often used in business contexts to label promotions, offers, or important notices.
@@ -311,6 +316,7 @@ public struct OUDSTag: View {
     }
 
     /// Defines the size of an `OUDSTag`
+    /// - Since: 0.18.0
     public enum Size {
         /// The standard tag size, suitable for most use cases and offering good readability.
         case `default`

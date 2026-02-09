@@ -217,6 +217,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     /// The action can be any action.
     ///
     /// For iOS 17+ it is possible to define a sensory feeback for the button.
+    /// - Since: 0.20.0
     public struct TrailingAction {
 
         let icon: Image
@@ -245,6 +246,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Style
 
     /// The prefered style of the text input
+    /// - Since: 0.20.0
     public enum Style {
         /// An input with a subtle background fill and a visible bottom border,
         /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
@@ -257,6 +259,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Status
 
     /// Define all available status for the text input
+    /// - Since: 0.20.0
     public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
@@ -292,6 +295,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Helper link
 
     /// Used to describe the helper link above the helper text.
+    /// - Since: 0.20.0
     public struct Helperlink {
         let text: String
         let action: () -> Void

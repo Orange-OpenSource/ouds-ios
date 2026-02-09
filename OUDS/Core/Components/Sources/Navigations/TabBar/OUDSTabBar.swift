@@ -12,9 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The Tab bar is a system navigation component with a position which can vary depending to the OS.
