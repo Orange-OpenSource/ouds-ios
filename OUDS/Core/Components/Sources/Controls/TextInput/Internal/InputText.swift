@@ -31,14 +31,18 @@ struct InputText: View {
 
     var body: some View {
         Group {
+            // Warning: For secureTextField, the native font is prefered
+            // to get the right size of dots.
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
             } else {
                 TextField(text: text, label: textFieldLabel)
+                    .labelDefaultLarge(theme)
             }
         }
         .modifier(SecureFieldModifier(isSecureTexteField: textInputAsSecureField))
         .multilineTextAlignment(.leading)
+        .oudsForegroundColor(inputTextColor)
         .tint(cursorColor.color(for: colorScheme))
         .disabled(status == .disabled || status == .readOnly || status == .loading)
     }
@@ -67,6 +71,15 @@ struct InputText: View {
             theme.colors.actionNegativePressed
         default:
             theme.colors.contentDefault
+        }
+    }
+
+    private var inputTextColor: MultipleColorSemanticToken {
+        switch status {
+        case .enabled, .error, .loading, .readOnly:
+            theme.colors.contentDefault
+        case .disabled:
+            theme.colors.actionDisabled
         }
     }
 }

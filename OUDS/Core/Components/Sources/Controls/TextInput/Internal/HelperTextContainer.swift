@@ -31,6 +31,7 @@ struct HelperErrorTextContainer: View {
             Text(text)
                 .labelDefaultMedium(theme)
                 .oudsForegroundColor(color)
+                .multilineTextAlignment(.leading)
                 .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
                 .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         }
