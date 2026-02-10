@@ -15,6 +15,6 @@ import SwiftUI
 
 extension EnvironmentValues {
 
-    // A flag to know if `OUDSTextInput` is used as a SecureField by `OUDSPasswodInput`
+    /// A flag to know if ``OUDSTextInput`` is used as a secure field by ``OUDSPasswordInput``
     @Entry var textInputAsSecureField: Bool = false
 }

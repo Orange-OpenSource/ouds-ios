@@ -580,7 +580,6 @@ The library provides a password input based on a ``OUDSTextInput`` to let user p
      // Add a leading icon and helper text to more context
      OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
 
-     //Password with prefix
+     // Password with prefix
      OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
-
  ```

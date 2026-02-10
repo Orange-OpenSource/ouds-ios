@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] `password input` component (Orange-OpenSource/ouds-ios#997)
+- password input` component (Orange-OpenSource/ouds-ios#997)
 - `alert` component tokens
 - Bullet List component (Orange-OpenSource/ouds-ios#513)
 

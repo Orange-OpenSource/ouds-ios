@@ -40,7 +40,7 @@ struct InputText: View {
                     .labelDefaultLarge(theme)
             }
         }
-        .modifier(SecureFieldModifier(isSecureTexteField: textInputAsSecureField))
+        .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))
         .multilineTextAlignment(.leading)
         .oudsForegroundColor(inputTextColor)
         .tint(cursorColor.color(for: colorScheme))
@@ -48,13 +48,6 @@ struct InputText: View {
     }
 
     // MARK: - Helper
-
-    private func textFieldLabel() -> some View {
-        Text(label)
-            .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-            .labelDefaultLarge(theme)
-            .oudsForegroundStyle(labelColor)
-    }
 
     private var labelColor: MultipleColorSemanticToken {
         switch status {
@@ -82,14 +75,23 @@ struct InputText: View {
             theme.colors.actionDisabled
         }
     }
+
+    private func textFieldLabel() -> some View {
+        Text(label)
+            .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
+            .labelDefaultLarge(theme)
+            .oudsForegroundStyle(labelColor)
+    }
 }
 
-struct SecureFieldModifier: ViewModifier {
+// MARK: - Secure Text Field Modifier
 
-    let isSecureTexteField: Bool
+private struct SecureTextFieldModifier: ViewModifier {
+
+    let isSecureTextField: Bool
 
     func body(content: Content) -> some View {
-        if isSecureTexteField {
+        if isSecureTextField {
             content
                 .textContentType(.password)
                 .autocorrectionDisabled(true)

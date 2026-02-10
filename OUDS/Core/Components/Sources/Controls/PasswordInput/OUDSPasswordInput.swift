@@ -182,8 +182,10 @@ public struct OUDSPasswordInput: View {
             .environment(\.textInputAsSecureField, isHiddenPassword)
     }
 
+    // MARK: - Helpers
+
     private var leadingIcon: Image? {
-        // TODO: Doit on ajouter un acessibility label ?
+        // TODO: #997 - Should we add an accessibility label?
         lockIcon ? Image(decorative: "ic_communication_security_and_safety_lock", bundle: theme.resourcesBundle) : nil
     }
 
