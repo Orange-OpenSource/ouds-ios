@@ -497,7 +497,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يعرض\n كلمة المرور"
+            "value" : "يعرض كلمة المرور"
           }
         },
         "en" : {
@@ -509,7 +509,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Afficher le mot de passe<"
+            "value" : "Afficher le mot de passe"
           }
         }
       }

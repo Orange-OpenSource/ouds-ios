@@ -40,7 +40,7 @@ import SwiftUI
 ///
 ///  ```swift
 ///     // An outlined text input
-///     OUDSPassword(label: "Your password", password: $password, isOutlined: true)
+///     OUDSPasswordInput(label: "Your password", password: $password, isOutlined: true)
 /// ```
 ///
 /// ### Rounded layout
@@ -122,7 +122,7 @@ public struct OUDSPasswordInput: View {
 
     // MARK: - Initializers
 
-    /// Creates a text input.
+    /// Creates a password input.
     ///
     /// - Parameters:
     ///    - label: The label displayed above the password input.
@@ -135,8 +135,8 @@ public struct OUDSPasswordInput: View {
     ///    (e.g., “DEV-” for test accounts, "admin-" as a pattern to define an admin password)
     ///    -  lockIcon: When `true`, a lock icon is displayed at the start of the password input to visually reinforce
     ///    the security context. Defaults to `false`.
-    ///    - helperText: An optional helper text displayed below the password input. It conveys additional, by default is *nil*
-    ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
+    ///    - helperText: An optional helper text displayed below the password input. It conveys additional, information about the input field,
+    ///    such as how it will be used, by default is *nil*. If `status` is set to `OUDSTextInput.Status.Error`, this `helperText` is ignored.
     ///    - isOutlined: Controls the style of the pasword input. When `true`, it displays a minimalist
     ///      password input with a transparent background and a visible stroke outlining the field, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
