@@ -95,7 +95,9 @@ private struct SecureTextFieldModifier: ViewModifier {
             content
                 .textContentType(.password)
                 .autocorrectionDisabled(true)
+            #if !os(macOS)
                 .textInputAutocapitalization(.never)
+            #endif
         } else {
             content
         }
