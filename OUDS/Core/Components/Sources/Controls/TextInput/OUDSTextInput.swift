@@ -63,7 +63,7 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded button behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
+/// To activate the rounded corner behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
 /// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
@@ -241,19 +241,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             self.flipIcon = flipIcon
             self.action = action
         }
-    }
-
-    // MARK: - Style
-
-    /// The prefered style of the text input
-    /// - Since: 0.20.0
-    public enum Style {
-        /// An input with a subtle background fill and a visible bottom border,
-        /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
-        case `default`
-
-        /// A minimalist input with a transparent background and a visible stroke outlining the field.
-        case alternative
     }
 
     // MARK: - Status

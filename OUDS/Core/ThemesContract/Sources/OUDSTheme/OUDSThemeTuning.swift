@@ -41,7 +41,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedTextInputs: Always rounded corners on text input components
+    ///    - hasRoundedTextInputs: If text inputs must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false)
     {
