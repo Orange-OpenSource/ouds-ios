@@ -17,7 +17,7 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+    let myTheme = OrangeTheme(fontFamily: "Menlo", tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessage: true))
 
     var body: some Scene {
         WindowGroup {

@@ -74,12 +74,14 @@ Some tuning object exists.
 
 ```swift
     // Define your theme tuning
-    let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true)
+    let tuning = Tuning(hasRoundedButtons: true, 
+                        hasRoundedTextInputs: true,
+                        hasRoundedAlertMessage: true)
 
     // Apply it to your theme
     let theme = OrangeTheme(tuning: tuning)
     // Or in one line
-    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessage: true))
 
     // Or apply predefined tunings
     let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
@@ -101,6 +103,7 @@ Tunable elements               | Default values
 ------------------------------ | ------------------------------------- 
 rounded corners buttons        | ❌ false  
 rounded corners text inputs    | ❌ false  
+rounded corners alert messages | ❌ false
 
 ### "Orange Business" tuning
 
@@ -116,6 +119,7 @@ Tunable elements               | Default values
 ------------------------------ | ------------------------------------- 
 rounded corners buttons        | ❌ false  
 rounded corners text inputs    | ✅ true 
+rounded corners alert messages | ❌ false
 
 ### "Max it" tuning
 
@@ -131,6 +135,7 @@ Tunable elements               | Default values
 ------------------------------ | ------------------------------------- 
 rounded corners buttons        | ✅ true  
 rounded corners text inputs    | ✅ true  
+rounded corners alert messages | ✅ true
 
 ## Typography
 

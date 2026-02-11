@@ -22,15 +22,32 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
+///         // A basic positive alert mesage with text and badge
+///         OUDSAlertMessage(label: "Label")
 ///
+///         // A more complexe alert messsage for warning status with a descuption and a close action
+///         // to dismiss the message.
+///         OUDSAlertMessage(label: "Warning", status: .warning(), description: "Some details about the warning") {
+///               // Do some staff here to dismiss the alert message when clicked
+///         }
+///
+///         // Show or hide the leading icon associated to the status
+///         OUDSAlertMessage(label: "Warning", status: .warning(showIcon: false), description: "Some details about the warning") {
+///               // Do some staff here to dismiss the alert message when clicked
+///         }
+///
+///         // Add a custom icon for accent and neutral status
+///         OUDSAlertMessage(label: "Label", status: .accent(icon: Image("ic_heart"))
+///         OUDSAlertMessage(label: "Label", status: .neutral(icon: Image("ic_heart"))
+///
+///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
+///         @Environment(\.openURL) private var openUrl
+///         let link = OUDSAlertMessage.Link(text: "Action", position: .bottom) {
+///            openUrl.callAsFunction(url)
+///         }
+///
+///         OUDSAlertMessage(label: "Label", link: link)
 /// ```
-///
-/// ## Accessibility considerations
-///
-/// ### Sizes
-///
-/// ### Vocalizations
-///
 ///
 /// ## Design documentation
 ///
@@ -78,15 +95,19 @@ public struct OUDSAlertMessage: View {
         /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where
         /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
         ///
-        /// - Parameter icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
-        case neutral(icon: Image, flipIcon: Bool = false)
+        /// - Parameters:
+        ///    - icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
+        ///    - flipped: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+        case neutral(icon: Image, flipped: Bool = false)
 
         /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
         /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
         /// product updates, or customer engagement moments.
         ///
-        /// - Parameter icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
-        case accent(icon: Image, flipIcon: Bool = false)
+        /// - Parameters:
+        ///    - icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
+        ///    - flipped: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+        case accent(icon: Image, flipped: Bool = false)
 
         /// Positive status indicates that a task or process has been completed successfully. These alerts reassure users and confirm that no further action is needed.
         /// This status displays a dedicated default icon.
@@ -149,7 +170,7 @@ public struct OUDSAlertMessage: View {
             }
             self.text = text
             self.action = action
-            self.position = .bottom
+            self.position = position
         }
     }
 
@@ -165,11 +186,11 @@ public struct OUDSAlertMessage: View {
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
-    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message remains visible until
-    ///  the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and includes a close button,
-    ///  allowing the user to dismiss it when he has acknowledged the message.
-    ///  Some alerts must remain visible to ensure user is aware of important information; others can be closed to reduce visual clutter.
-    public init(label: String, status: Status, description: String? = nil, link: Self.Link? = nil, onClose: (() -> Void)? = nil) {
+    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
+    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
+    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
+    ///   user is aware of important information; others can be closed to reduce visual clutter.
+    public init(label: String, status: Status = .positive(), description: String? = nil, link: Self.Link? = nil, onClose: (() -> Void)? = nil) {
         text = label
         self.status = status
         self.description = description
@@ -180,70 +201,14 @@ public struct OUDSAlertMessage: View {
     // MARK: Body
 
     public var body: some View {
-        // TODO: theme.alertMessage.spaceColumnGap
-        HStack(alignment: .top, spacing: theme.spaces.columnGapMedium) {
-            leasingIcon
-
-            VStack {
-                Text(text)
-                    .labelModerateLarge(theme)
-                    .oudsForegroundColor(theme.colors.contentDefault)
-
-                if let description {
-                    Text(description)
-                        .labelDefaultMedium(theme)
-                        .oudsForegroundColor(theme.colors.contentMuted)
-                }
-
-                if let link {
-                    OUDSLink(text: link.text, size: .default, action: link.action)
-                }
-            }
-
-            if let onClose {
-                OUDSButton(icon: Image("ic_button_expurge", bundle: theme.resourcesBundle),
-                           accessibilityLabel: "core_alertMessage_close_a11y".localized(),
-                           appearance: .minimal, action: onClose)
-            }
+        HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
+            AletMessageLeadingIcon(status: status)
+            AlertMessageContent(text: text, description: description, link: link, status: status)
+            AletMessageAction(link: link, onClose: onClose, status: status)
         }
-        .padding(.horizontal, theme.spaces.paddingInlineLarge) // TODO: theme.alertMessage.spacePaddingInline
-        .oudsBackground(backgroundColor)
-    }
-
-    private var backgroundColor: MultipleColorSemanticToken {
-        switch status {
-        case .neutral:
-            theme.colors.surfaceSecondary
-        case .accent:
-            theme.colors.surfaceStatusAccentMuted
-        case .positive:
-            theme.colors.surfaceStatusPositiveMuted
-        case .warning:
-            theme.colors.surfaceStatusWarningMuted
-        case .negative:
-            theme.colors.surfaceStatusNegativeMuted
-        case .info:
-            theme.colors.surfaceStatusInfoMuted
-        }
-    }
-
-    @ViewBuilder
-    private var leasingIcon: some View {
-        switch status {
-        case let .accent(icon, flipIcon):
-            icon.toFlip(flipIcon)
-        case let .neutral(icon, flipIcon):
-            icon.toFlip(flipIcon)
-        case let .negative(showIcon) where showIcon == true:
-            Image("ic_alert_important_fill", bundle: theme.resourcesBundle)
-        case let .positive(showIcon) where showIcon == true:
-            Image("ic_alert_tick_confirmation_fill", bundle: theme.resourcesBundle)
-        case let .info(showIcon) where showIcon == true:
-            Image("ic_alert_info_fill", bundle: theme.resourcesBundle)
-        case let .warning(showIcon) where showIcon == true:
-            Image("ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
-        default:
-            EmptyView()
-        }
+        .padding(.leading, theme.alert.spacePaddingInline)
+        .padding(.trailing, onClose == nil ? theme.alert.spacePaddingInline : 0)
+        .modifier(AletMessageBackgroundModifier(status: status))
+        .modifier(AletMessageBorderModifier(status: status))
     }
 }
