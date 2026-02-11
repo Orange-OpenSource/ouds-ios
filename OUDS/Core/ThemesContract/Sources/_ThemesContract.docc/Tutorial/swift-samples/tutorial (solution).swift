@@ -19,10 +19,12 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
+    let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessage: true)
+
     let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
                               colors: MyOwnProviderOfColorTokens(),
                               fontFamily: "Menlo",
-                              tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+                              tuning: themeTuning)
 
     var body: some Scene {
         WindowGroup {
@@ -165,12 +167,12 @@ struct ContentView: View {
 
 class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
 
-    // Some tokens have light and dark values used according to color scheme
+    /// Some tokens have light and dark values used according to color scheme
     override var actionEnabledLight: ColorSemanticToken {
         ColorRawTokens.functionalAmethyst600
     }
 
-    // This token can contain up to two values (light and dark), or only one for both
+    /// This token can contain up to two values (light and dark), or only one for both
     override var bgTertiary: MultipleColorSemanticToken {
         MultipleColorSemanticToken(ColorRawTokens.sun160)
     }
