@@ -59,9 +59,9 @@ import SwiftUI
 ///
 /// ![An alert message component in light and dark modes with Orange theme](component_alertMessage_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![An alert message component in light and dark modes with Orange Business Tools theme](component_alertMessage_OrangeBusinessTools)
+/// ![An alert message component in light and dark modes with Orange Compact theme](component_alertMessage_OrangeCompact)
 ///
 /// ### Sosh
 ///
