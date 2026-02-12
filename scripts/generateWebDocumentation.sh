@@ -78,6 +78,10 @@ _() {
     fi
 }
 
+clean_directory() {
+    if [ -d "$$1" ]; then rm -rf "$1"; fi
+}
+
 clean_repo() {
     _ "🧹 Cleaning Git repository"
     git reset --hard
@@ -263,16 +267,16 @@ if [[ $use_git -eq 1 ]]; then
     # Supposing all assets are in the branch in root level (/)
     # Do not remove .ico and .sg files ; keep the ones already existing in the branch
     # Do not remove theme-settings.json
-    rm -rf "css"
-    rm -rf "data"
-    rm -rf "documentation"
-    rm -rf "images"
-    rm -rf "img"
-    rm -rf "index"
-    rm -rf "js"
-    rm -rf "*.jpg"
-    rm -rf "*.html"
-    rm -rf "CNAME"
+    clean_directory "css"
+    clean_directory "data"
+    clean_directory "documentation"
+    clean_directory "images"
+    clean_directory "img"
+    clean_directory "index"
+    clean_directory "js"
+    clean_directory "*.jpg"
+    clean_directory ".html"
+    clean_directory "CNAME"
     
     # Copy all files from temporary folder to branch
     cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
