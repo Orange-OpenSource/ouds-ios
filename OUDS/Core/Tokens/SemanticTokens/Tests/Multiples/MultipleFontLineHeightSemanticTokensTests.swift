@@ -54,4 +54,14 @@ struct MultipleFontLineHeightSemanticTokenTests {
         #expect(first.isEqual(fifth))
         #expect(!first.isEqual(sixth))
     }
+
+    /// Tests the returned value depending to the user interface size class
+    @Test func lineHeightForUserInterfaceSizeClass() {
+        let compactValue = FontRawTokens.lineHeight250
+        let regularValue = FontRawTokens.lineHeight2050
+        let token = MultipleFontLineHeightSemanticToken(compact: compactValue, regular: regularValue)
+
+        #expect(token.lineHeight(for: .compact) == compactValue)
+        #expect(token.lineHeight(for: .regular) == regularValue)
+    }
 }

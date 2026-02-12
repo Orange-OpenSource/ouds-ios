@@ -42,7 +42,7 @@ final class SoshThemeElevationSemanticTokensProvider: AllElevationSemanticTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
+    // the implementation of ElevationSemanticTokens and ElevationCompositeSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ElevationSemanticTokens.swift,
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ElevationCompositeSemanticTokens.swift.
     // This declaration of SoshThemeElevationSemanticTokensProvider is here to allow to write documentation.

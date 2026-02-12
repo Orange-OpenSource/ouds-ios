@@ -59,7 +59,7 @@ final class WireframeThemeTextAreaComponentTokensProvider: AllTextAreaComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextAreaComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+TextAreaComponentTokens.swift
+    // the implementation of TextAreaComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+TextAreaComponentTokens.swift
     // This declaration of WireframeThemeTextAreaComponentTokensProvider is here also to allow to write documentation.
 }
 

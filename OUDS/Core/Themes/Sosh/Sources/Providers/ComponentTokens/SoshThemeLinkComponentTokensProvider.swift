@@ -65,6 +65,6 @@ final class SoshThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of LinkComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+LinkComponentTokens.swift
+    // the implementation of LinkComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+LinkComponentTokens.swift
     // This declaration of SoshThemeLinkComponentTokensProvider is here also to allow to write documentation.
 }

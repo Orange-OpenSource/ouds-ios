@@ -57,6 +57,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: OrangeThemeDimensionSemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
+                   alert: MockThemeAlertComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
                    bar: MockThemeBarComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects),
                    bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),

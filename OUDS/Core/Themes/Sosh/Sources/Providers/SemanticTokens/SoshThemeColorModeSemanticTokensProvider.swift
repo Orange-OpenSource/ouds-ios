@@ -47,7 +47,7 @@ final class SoshThemeColorModeSemanticTokensProvider: AllColorModeSemanticTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
+    // the implementation of ColorModeSemanticTokens and ColorModeMultipleSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ColorModeMultipleSemanticTokens.swift
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+ColorModeSemanticTokens.swift
     // This declaration of SoshThemeColorModeSemanticTokensProvider is here to allow to write documentation.

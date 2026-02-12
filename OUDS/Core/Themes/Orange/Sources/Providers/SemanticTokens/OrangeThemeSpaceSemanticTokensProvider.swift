@@ -81,7 +81,7 @@ open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvide
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
+    // the implementation of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SpaceSemanticTokens.swift
     // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SpaceMultipleSemanticTokens.swift
     // This declaration of OrangeThemeSpaceSemanticTokensProvider is here to allow to write documentation.

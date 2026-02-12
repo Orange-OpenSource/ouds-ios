@@ -12,9 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSThemesContract
-import OUDSTokensRaw
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The Tab bar is a system navigation component with a position which can vary depending to the OS.
@@ -145,10 +142,10 @@ import SwiftUI
 /// ![A tab bar component in light mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_light)
 /// ![A tab bar component in dark mode with Liquid Glass effect and Orange theme](component_tabBar_LiquidGlass_Orange_dark)
 ///
-/// #### Orange Business Tools
+/// #### Orange Compact
 ///
-/// ![A  tab bar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_light)
-/// ![A  tab bar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_tabBar_LiquidGlass_OrangeBusinessTools_dark)
+/// ![A  tab bar component in light mode with Liquid Glass effect and Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_light)
+/// ![A  tab bar component in dark mode with Liquid Glass effect and Orange Compact theme](component_tabBar_LiquidGlass_OrangeCompact_dark)
 ///
 /// #### Sosh
 ///
@@ -167,10 +164,10 @@ import SwiftUI
 /// ![A tab bar component in light mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_light)
 /// ![A tab bar component in dark mode without Liquid Glass effect and Orange theme](component_tabBar_Orange_dark)
 ///
-/// #### Orange Business Tools
+/// #### Orange Compact
 ///
-/// ![A  tab bar component in light mode without Liquid Glass effect and Orange Business Tools theme](component_tabBar_OrangeBusinessTools_light)
-/// ![A  tab bar component in dark mode without Liquid Glass effect and Orange Business Tools theme](component_tabBar_OrangeBusinessTools_dark)
+/// ![A  tab bar component in light mode without Liquid Glass effect and Orange Compact theme](component_tabBar_OrangeCompact_light)
+/// ![A  tab bar component in dark mode without Liquid Glass effect and Orange Compact theme](component_tabBar_OrangeCompact_dark)
 ///
 /// #### Sosh
 ///

@@ -58,7 +58,7 @@ final class SoshThemeQuantityInputComponentTokensProvider: AllQuantityInputCompo
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of QuantityInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+QuantityInputComponentTokens.swift
+    // the implementation of QuantityInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+QuantityInputComponentTokens.swift
     // This declaration of SoshThemeQuantityInputComponentTokensProvider is here also to allow to write documentation.
 }
 

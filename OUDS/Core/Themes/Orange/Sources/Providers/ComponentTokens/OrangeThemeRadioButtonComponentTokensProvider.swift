@@ -116,7 +116,7 @@ open class OrangeThemeRadioButtonComponentTokensProvider: AllRadioButtonComponen
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of RadioButtonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+RadioButtonComponentTokens.swift
+    // the implementation of RadioButtonComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+RadioButtonComponentTokens.swift
     // This declaration of OrangeThemeRadioButtonComponentTokensProvider is here also to allow to write documentation.
 }
 

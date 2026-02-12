@@ -102,7 +102,7 @@ open class OrangeThemeSelectInputComponentTokensProvider: AllSelectInputComponen
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SelectComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SelectInputComponentTokens.swift
+    // the implementation of SelectComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+SelectInputComponentTokens.swift
     // This declaration of OrangeThemeSelectInputComponentTokensProvider is here also to allow to write documentation.
 }
 

@@ -50,6 +50,6 @@ final class SoshThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokens
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SkeletonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SkeletonComponentTokens.swift
+    // the implementation of SkeletonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+SkeletonComponentTokens.swift
     // This declaration of SoshThemeSkeletonComponentTokensProvider is here also to allow to write documentation.
 }

@@ -42,7 +42,7 @@ final class SoshThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens are not here
+    // the implementation of FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens are not here
     // but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+FontSemanticTokens.swift,
     // in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+FontCompositeSemanticTokens.swift,
     // and in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+FontMultipleSemanticTokens.swift,

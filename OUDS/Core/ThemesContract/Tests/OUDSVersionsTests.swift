@@ -39,10 +39,10 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.themeOrangeBrandVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    // MARK: - Tests - Themes versions - Orange Business Tools
+    // MARK: - Tests - Themes versions - Orange Compact
 
-    @Test func themeOrangeBusinessToolsBrandVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.themeOrangeBusinessToolsBrandVersion, regexp: Self.oudsVersionsFormat)
+    @Test func themeOrangeCompactBrandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.themeOrangeCompactBrandVersion, regexp: Self.oudsVersionsFormat)
     }
 
     // MARK: - Tests - Themes versions - Sosh
@@ -141,7 +141,7 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentTagVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    // MARK: - Tests - Component versions - Divider
+    // MARK: - Tests - Component versions - Layout
 
     @Test func componentDividerVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentDividerVersion, regexp: Self.oudsVersionsFormat)
@@ -151,5 +151,15 @@ struct OUDSVersionsTests {
 
     @Test func componentBulletListVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentBulletListVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    // MARK: - Tests - Component versions - Dialog
+
+    @Test func componentAlertMessageVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentAlertMessageVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentInlineAlertVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentInlineAlertVersion, regexp: Self.oudsVersionsFormat)
     }
 }

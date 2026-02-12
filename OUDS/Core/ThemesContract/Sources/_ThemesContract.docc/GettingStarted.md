@@ -28,7 +28,7 @@ import OUDSThemesContract // If you want to define your theme, use themes or OUD
 import OUDSModules // To use modules
 import OUDSComponents // To use components
 import OUDSThemesOrange // To use the default Orange theme
-import OUDSThemesOrangeBusinessTools // To use the Orange Business Tools theme
+import OUDSThemesOrangeCompact // To use the Orange Compact theme
 import OUDSThemesSosh // To use the Sosh theme
 import OUDSThemesWireframe // To use the Wireframe theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
@@ -48,7 +48,7 @@ Import the _Swift Package_ product which suits your needs:
 Umbrella                  | Description                          
 ------------------------- | ------------------------------------- 
 OUDSSwiftUI               | All librairies listed above and all themes  
-OUDSSwiftUIOrange         | All librairies listed above but with only Orange and Orange Business Tools themes
+OUDSSwiftUIOrange         | All librairies listed above but with only Orange and Orange Compact themes
 OUDSSwiftUIWireframe      | All librairies listed above but with only Wireframe theme
 OUDSSwiftUIOrangeSosh     | All librairies listed above but with only Orange and Sosh themes
 
@@ -59,7 +59,7 @@ The *Orange Unified Design System* framework provides today four themes:
 Theme                     | Description                          
 ------------------------- | ------------------------------------- 
 Orange                    | The default one for Orange products and can be enriched / derivated  
-Orange Business Tools     | For some Orange products with heavy / rich UI and dimensions constraints           
+Orange Compact            | For some Orange products with heavy / rich UI and dimensions constraints           
 Sosh                      | For Sosh products
 Wireframe                 | For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles
 
@@ -115,10 +115,10 @@ inside the `OUDSThemeableView` automatically. These utilities come with the them
         .orangePreview()
 }
 
-// Apply Orange Business Tools theme
+// Apply Orange Compact theme
 #Preview {
     SampleView()
-        .orangeBusinessToolsPreview()
+        .orangeCompactPreview()
 }
 
 // Apply Sosh theme

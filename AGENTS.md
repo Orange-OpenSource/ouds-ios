@@ -11,7 +11,7 @@ min-deployment: iOS 15.0
 
 This file provides guidance to AI coding agents when working with code in this repository or with OUDS iOS products.
 
-## Project Overview
+## 1. Project Overview
 
 OUDS means Orange Unified Design System and is the new cohesive and unified design system for Orange Group.
 It provides a Swift Package (this repository) and a demo application called Design System Tooblox which embeds the Swift Package to expose its public API.
@@ -19,7 +19,7 @@ The project is open source under MIT license and hosted on GitHub in Orange-Open
 The products support iOS 15, iPadOS 15, macOS 13, visionOS 1, watchOS 11 and tvOS 16.
 The products are written in Swift with SwiftUI as UI framework and Swift 6 (format, grammar and concurrency).
 
-## Vocabulary
+## 2. Vocabulary
 
 - *tokenator*: an internal tool which uses Figma specifications exported as JSON to convert them and send through pull requests the Swift code for tokens
 - *token*: variable containing a value in most of cases defined by *tokenator*
@@ -31,15 +31,15 @@ The products are written in Swift with SwiftUI as UI framework and Swift 6 (form
 - *token provider*: an object in a theme gathering tokens (semantics and components)
 - *component*: mainly a SwiftUI view with specific features and layouts like buttons, switch, link etc.
 
-## Code formating
+## 3. Code formating
 
 The source code is formatted for Swift 6.2. Configuration of formater is in `.swiftformat` and linter in `.swiftlint`.
 
-## Architecture details
+## 4. Architecture details
 
 The Swift Package contains several products or targets exposing API in separated dependencies.
 
-### Modules
+### 4.1 Modules
 
 Here are the modules of the Swift Package, i.e. set of features with external dependencies.
 
@@ -51,7 +51,7 @@ Here the the components provided by the Swift Package like buttons, switchs, che
 
 Here is the definition of the Orange theme for all Orange products.
 
-#### Core / Themes / Orange Business Tools
+#### Core / Themes / Orange Compact
 
 Here is the definition of the Orange theme for all Orange products but with constraints of spaces and sizes.
 
@@ -83,7 +83,7 @@ Here are the definitions of the tokens pointing to raw values like strings, floa
 
 Here are some shared logics and objects with plenty of extensions and utilities used everywhere.
 
-## Architecture guidelines
+### 4.2 Architecture guidelines
 
 - SwiftUI is the default UI paradigm - embrace its declarative nature
 - Avoid legacy UIKit patterns and unnecessary abstractions
@@ -94,7 +94,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - Use extensions to organize large files
 - Follow Swift naming conventions consistently
 
-## Build verification process
+## 5. Build verification process ⚠️ CRITICAL
 
 **IMPORTANT**: When editing code, you MUST:
 1. Format the sources
@@ -103,9 +103,9 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 4. Run the tests
 5. Run the linter and fix any warnings and errors
 
-## Best practices
+## 6. Best practices
 
-### DO
+### 6.1 DO
 
 - Write documentation in Swift DocC format for public API
 - Use Swift's type system for safety
@@ -115,23 +115,138 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - If a third party dependency is added or updated, update the Software Bill of Material
 - Apply Clean Code, DRY, SOLID and TDD principes
 
-### DON'T
+### 6.2 DON'T
 
 - Add abstraction layers without clear benefit
 - Use Combine for simple async operations
 - Overcomplicate simple features
 - Use UIKit except for some specific API related to accessibility if needed
 
-## Development requirements
+## 7. Ecodesign basics 🟡 RECOMMENDED
+
+### 7.1 Animations
+
+- Use native / system animations if animations must be used
+
+### 7.2 Bad patterns
+
+- Prefer pull to refresh instead of inifinite scroll
+- Avoid autocompletion if iot makes network requests
+
+### 7.3 Cache
+
+- For heavy objects or costly objects to compute (data from networks, date formatters, etc.), use cache like `NSCache`
+- For HTTP requests, use also HTTP cache
+
+### 7.4 CPU
+
+- Distribute tasks across different threads to free the CPU up as soon as possible
+- Don't use the CPU unnecessarily
+- Use app lifecycle to stop background tasks
+
+### 7.5 Downlaods
+
+- Avoid automatic download
+- Prefer download on Wifi networks
+
+### 7.6 Energy
+
+- Never ignore low energy mode
+- If this mode is enabled, disable animations, instensive tasks, display of images and videos, cellular connections, HD / 4K (and above) features, use low colors instead of high (overall on Android with AMOLED screens)
+- Avoid forcing the brightness to maximum
+
+### 7.7 Fonts
+
+- Prefer system fonts if possible, but in OUDS context use still the view modifiers and provided typography
+- use WOFF2 otherwise
+
+### 7.8 Network connections
+
+- Prefer wired and Wi-Fi connections to cellular connections
+- If using a cellular connection, group requests as much as possible to avoid the device constantly being connected to the cell tower
+- Use data caching and Gzip compression
+- Avoid periodic polling to prevent rapid battery drain
+- Avoid maintaining connections; services like Apple Push Notifications and Firebase Cloud Messaging can help
+
+### 7.9 Notifications
+
+- Reduce as much as possible use of notifications
+
+### 7.10 OS support
+
+- Support iOS 15
+
+### 7.11 Resources
+
+- Use SGV images, otherwise use SF Symbols
+- Prefer MP3 for sounds
+- Prefer lazy loading of resources
+- Prefer low resolutions for videos
+
+### 7.12 Screens
+
+- Manage at least small screen like the iPhone SE 2026 one (i.e. 4 inch)
+
+### 7.13 UI
+
+- With dark mode implementation, use true dark colors (e.g. #00000000)
+
+### 7.14 Web views
+
+- Avoid use of web views
+
+## 8. Accessibility basics 🔴 MANDATORY
+
+Everything is available on [our guidelines](https://a11y-guidelines.orange.com/fr/mobile/ios/developpement)
+
+### 8.1 Colors and texts
+
+- For dark mode, reduce contrasts to avoid halo effects
+- Prefer WCAG AAA 7:1 ratio for normal text (ratio between text and backgrounds)
+- Prefer WCAG AAA 4.5:1 ratio for larhe text (ratio between text and backgrounds)
+- Otherwise apply WCAG AA 4.5:1 for normal text and 3:1 on large text (more than 24 px or 19 px if bold)
+
+### 8.2 Components
+
+- Do not forge to define accessibility hint, label, value and if needed trait
+
+### 8.3 Dates and figures
+
+- For texts or figures, define the suitable accessibility value with formatter (like `DateFormatter`) to fully vocalize content for the user with its locale
+
+### 8.4 Dipslay
+
+- Do not force app in portrait mode
+- APp must be usable in landscape mode
+
+### 8.5 Haptics
+
+- Use haptics / vibrations when data are loaded, error occured elements have been tapped / activated, etc
+
+### 8.6 Medias
+
+- Avoid autoplay of videos
+- Define accessibilty labels for images if they are not decorative, otherwise hide them from Voice Over
+
+### 8.7 User settings
+
+- If accessibilty settings reduce animations, reduce animations
+- If accessibilty settings reduce haptics, reduce haptics
+
+### 8.8 Texts
+
+- Texts must not have frozen size, they must adapt following the dynamic type
+
+## 9. Development requirements
 
 - Minimum Swift 6.2 (e.g. 6.2.3)
 - Xcode 26.2 or later 
-- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 15.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
+- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 13.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
-## Building commands
+## 10. Building commands
 
-### Building Swift Package
+### 10.1 Building Swift Package
 
 To build the Swift Package:
 ```shell
@@ -139,7 +254,7 @@ bundle install
 bundle exec fastlane build
 ```
 
-### Run tests
+### 10.2 Run tests
 
 To run the unit tests on the Swift Package:
 ```shell
@@ -147,7 +262,7 @@ bundle install
 bundle exec fastlane test_unit
 ```
 
-### Build documentation
+### 10.3 Build documentation
 
 To build the documentation:
 ```shell
@@ -155,7 +270,7 @@ cd scripts
 yes | ./generateWebDocumentation.sh --libversion=none --nozip
 ```
 
-### Check dead code
+### 10.4 Check dead code
 
 To check for dead code:
 ```shell
@@ -163,7 +278,7 @@ bundle install
 bundle exec fastlane check_dead_code
 ```
 
-### Format the sources
+### 10.5 Format the sources
 
 To format the source code:
 ```shell
@@ -171,7 +286,7 @@ bundle install
 bundle exec fastlane format
 ```
 
-### Run linter
+### 10.6 Run linter
 
 To run the linter:
 ```shell
@@ -179,7 +294,7 @@ bundle install
 bundle exec fastlane lint
 ```
 
-### Check leaks
+### 10.7 Check leaks
 
 To check for leaks of secrets:
 ```shell
@@ -187,7 +302,7 @@ bundle install
 bundle exec fastlane check_leaks
 ```
 
-### SBOM update
+### 10.8 SBOM update
 
 To update the Software Bill of Materials:
 ```shell
@@ -195,20 +310,20 @@ bundle install
 bundle exec fastlane update_sbom
 ```
 
-## Review guidelines
+## 11. Review guidelines
 
-- Check if sources are formatted
-- Run linter, no error must appear
-- Run tests, they must all pass
-- Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
-- Build documentation, no error must appear
-- Check leaks, no leak must appear
-- Check if functions are too long or too complicated, complexity must be low
-- Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
+- [ ] Check if sources are formatted
+- [ ] Run linter, no error must appear
+- [ ] Run tests, they must all pass
+- [ ] Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
+- [ ] Build documentation, no error must appear
+- [ ] Check leaks, no leak must appear
+- [ ] Check if functions are too long or too complicated, complexity must be low
+- [ ] Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
 
-## How to use OUDS framwork
+## 12. How to use OUDS framwork
 
-### Basic setup
+### 12.1 Basic setup
 
 ```swift
 import SwiftUI
@@ -242,7 +357,7 @@ struct ContentView: View {
 }
 ```
 
-### Import OUDS product
+### 12.2 Import OUDS product
 
 Import OUDS umbrella product gathering all other librairies:
 ```swift
@@ -252,16 +367,16 @@ import OUDSSwiftUI
 The user can import other librairies as explained in [the online documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
 These imports are mandatory.
 
-### Instanciate a theme object
+### 12.3 Instanciate a theme object
 
 Create a theme for Orange product:
 ```swift
     let theme = OrangeTheme()
 ```
 
-The user can use instead `SoshTheme`, `WireframeTheme` or `OrangeBusinessTools` theme.
+The user can use instead `SoshTheme`, `WireframeTheme` or `OrangeCompact` theme.
 
-### Inject a theme in an app
+### 12.4 Inject a theme in an app
 
 Use an `OUDSThemeableView` to inject the theme. This is the root view defining several environment objects.
 The theme must be injected inside it to be available everywhere.
@@ -272,14 +387,14 @@ OUDSThemeableView(theme: theme) {
 }
 ```
 
-### Get the theme object
+### 12.5 Get the theme object
 
 Get the theme object as environment object:
 ```swift
 @Environment(\.theme) private var theme
 ```
 
-### Use tokens from theme to apply syle
+### 12.6 Use tokens from theme to apply syle
 
 Use colors (semantic tokens) defined in a theme:
 ```swift
@@ -336,7 +451,7 @@ Use effects (semantic tokens) defined in a theme:
 theme.effects
 ```
 
-### Use helpers and view modifiers
+### 12.7 Use helpers and view modifiers
 
 #### Apply typography
 
@@ -369,7 +484,7 @@ Elevations effets or box shadows can be applied to view with a dedicated view mo
 .oudsShadow(theme.elevations.emphasized)
 ```
 
-### Use components
+### 12.8 Use components
 
 #### Actions
 
@@ -399,6 +514,40 @@ or only with an image:
 ```swift
 OUDSButton(icon: Image("image_name"), accessibilityLabel: "Some label") { /* the action to process */ }
 ```
+
+### Content Display
+
+#### Bullet list
+
+A bullet list is a list of elements which can be ordered or not. OUDS bullet lists can have up to 3 levels of depth.
+A bullet list can be unordered (default), ordered or bare (i.e. without leading chips not indices).
+
+Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbulletlist/).
+
+A bullet list by default is not ordered:
+```swift
+OUDSBulletList {
+    OUDSBulletList.Item("Label 1")
+    OUDSBulletList.Item("Label 2")
+    OUDSBulletList.Item("Label 3")
+}
+```
+
+A bullet lsit can have several levels of depth by nesting items
+```swift
+OUDSBulletList(type: .ordered) {
+    OUDSBulletList.Item("Label 1") {
+        OUDSBulletList.Item("Label 1.1") {
+            OUDSBulletList.Item("Label 1.1.1")
+            OUDSBulletList.Item("Label 1.1.2")
+        }
+    }
+    OUDSBulletList.Item("Label 2")
+        OUDSBulletList.Item("Label 3")
+    }
+```
+
+### Controls
 
 ##### Checkbox
 

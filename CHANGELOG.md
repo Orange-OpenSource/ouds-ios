@@ -1,9 +1,25 @@
-
 # OUDS iOS library changelog
 
 All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...develop)
+
+### Added
+
+- `password input` component (Orange-OpenSource/ouds-ios#997)
+- `bullet list` component (Orange-OpenSource/ouds-ios#513)
+- `alert` component tokens
+
+### Changed
+
+- `SwiftFormat` Swift package plugin from v0.59.0 to v0.59.1
+- `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
+- `github/codeql-action/upload-sarif` action for `scorecard` workflow
+- Swift package `swift-docc-plugin` from v1.4.5 to v1.4.6
+- Update `fastlane` gem from v2.231.1 to v2.232.1
+- **BREAKING**: Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
 
 ## [1.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.0.0...1.1.0) - 2026-01-27
 

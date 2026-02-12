@@ -31,8 +31,8 @@ public enum OUDSVersions {
     /// Version of the Sosh brand tokens library (2.3.0)
     public static let themeSoshBrandVersion = "2.3.0"
 
-    /// Version of the Orange Business Tools brand tokens library (2.3.0)
-    public static let themeOrangeBusinessToolsBrandVersion = "2.3.0"
+    /// Version of the Orange Compact brand tokens library (2.3.0)
+    public static let themeOrangeCompactBrandVersion = "2.3.0"
 
     /// Version of the Wireframe core tokens library (1.3.0)
     public static let themeWireframeCoreVersion = "1.3.0"
@@ -44,14 +44,10 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component button (3.2.0)
     public static let componentButtonVersion = "3.2.0"
 
-    // MARK: - Components versions - Navigation
+    // MARK: - Components versions - Content display
 
-    /// Version of the Figma specifications for the component link (2.2.0)
-    public static let componentLinkVersion = "2.2.0"
-    /// Version of the Figma specifications for the component expand link (2.3.0)
-    public static let componentExpandLinkVersion = "2.3.0"
-    /// Version of the Figma specifications for the navigation bar and tab bar components (1.0.0)
-    public static let componentNavigationBarVersion = "1.0.0"
+    /// Version of the Figma specifications for the component bullet list (1.0.0)
+    public static let componentBulletListVersion = "1.0.0"
 
     // MARK: - Components versions - Control
 
@@ -78,6 +74,27 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component text area (1.1.0)
     public static let componentTextAreaVersion = "1.1.0"
 
+    // MARK: - Components versions - Dialog
+
+    /// Version of the Figma specifications for the component alert (alert message)  (1.0.0)
+    public static let componentAlertMessageVersion = "1.0.0"
+    /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
+    public static let componentInlineAlertVersion = "1.0.0"
+
+    // MARK: - Components versions - Layout
+
+    /// Version of the Figma specifications for the component divider (1.0.0)
+    public static let componentDividerVersion = "1.0.0"
+
+    // MARK: - Components versions - Navigation
+
+    /// Version of the Figma specifications for the component link (2.2.0)
+    public static let componentLinkVersion = "2.2.0"
+    /// Version of the Figma specifications for the component expand link (2.3.0)
+    public static let componentExpandLinkVersion = "2.3.0"
+    /// Version of the Figma specifications for the navigation bar and tab bar components (1.0.0)
+    public static let componentNavigationBarVersion = "1.0.0"
+
     // MARK: - Components versions - Tag
 
     /// Version of the Figma specifications for the component badge (1.2.0)
@@ -86,16 +103,6 @@ public enum OUDSVersions {
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag (1.4.0)
     public static let componentTagVersion = "1.4.0"
-
-    // MARK: - Components versions - Divider
-
-    /// Version of the Figma specifications for the component divider (1.0.0)
-    public static let componentDividerVersion = "1.0.0"
-
-    // MARK: - Components versions - Content display
-
-    /// Version of the Figma specifications for the component bullet list (1.0.0)
-    public static let componentBulletListVersion = "1.0.0"
 
     // MARK: - Components versions - Visual assets
 

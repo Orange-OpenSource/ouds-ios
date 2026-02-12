@@ -21,7 +21,7 @@ extension OUDSVersions {
         versionsLog += "- Core OUDS: \(Self.themeCoreVersion)\n"
         versionsLog += "- Core Orange: \(Self.themeOrangeCoreVersion)\n"
         versionsLog += "- Brand Orange: \(Self.themeOrangeBrandVersion)\n"
-        versionsLog += "- Brand Orange Business Tools: \(Self.themeOrangeBusinessToolsBrandVersion)\n"
+        versionsLog += "- Brand Orange Compact: \(Self.themeOrangeCompactBrandVersion)\n"
         versionsLog += "- Core Sosh: \(Self.themeSoshCoreVersion)\n"
         versionsLog += "- Brand Sosh: \(Self.themeSoshBrandVersion)\n"
         versionsLog += "- Core Wireframe: \(Self.themeWireframeCoreVersion)\n"
@@ -34,6 +34,7 @@ extension OUDSVersions {
     static func logComponentsVersions() {
         // NOTE: Keep components sorted
         var versionsLog = "OUDS iOS Components Versions:\n"
+        versionsLog += "- Alert message: \(Self.componentAlertMessageVersion)\n"
         versionsLog += "- Badge: \(Self.componentBadgeVersion)\n"
         versionsLog += "- Bullet List: \(Self.componentBulletListVersion)\n"
         versionsLog += "- Button: \(Self.componentButtonVersion)\n"
@@ -41,6 +42,7 @@ extension OUDSVersions {
         versionsLog += "- Chip: \(Self.componentChipVersion)\n"
         versionsLog += "- Divider: \(Self.componentDividerVersion)\n"
         versionsLog += "- Expand Link: \(Self.componentExpandLinkVersion)\n"
+        versionsLog += "- Inline alert: \(Self.componentInlineAlertVersion)\n"
         versionsLog += "- Link: \(Self.componentLinkVersion)\n"
         versionsLog += "- Navigation bar: \(Self.componentNavigationBarVersion)\n"
         versionsLog += "- Password Input: \(Self.componentPasswordInputVersion)\n"

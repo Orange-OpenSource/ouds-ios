@@ -42,6 +42,6 @@ final class SoshThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of GridSemanticTokens is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+GridSemanticTokens.swift
+    // the implementation of GridSemanticTokens is not here but in Core/Themes/Sosh/Values/SemanticTokens/SoshTheme+GridSemanticTokens.swift
     // This declaration of SoshThemeGridSemanticTokensProvider is here to allow to write documentation.
 }

@@ -31,6 +31,7 @@ struct HelperErrorTextContainer: View {
             Text(text)
                 .labelDefaultMedium(theme)
                 .oudsForegroundColor(color)
+                .multilineTextAlignment(.leading)
                 .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
                 .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         }
@@ -46,7 +47,9 @@ struct HelperErrorTextContainer: View {
             theme.colors.contentStatusNegative
         case .loading: // Should not appear
             theme.colors.contentMuted
-        case .readOnly, .disabled:
+        case .readOnly:
+            theme.colors.contentMuted
+        case .disabled:
             theme.colors.actionDisabled
         }
     }

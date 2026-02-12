@@ -63,7 +63,7 @@ import SwiftUI
 /// For standard or business-oriented journeys, keep the default corners.
 /// This evolution addresses the need for flexibility in adapting the design to some brand contexts.
 ///
-/// To activate the rounded button behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
+/// To activate the rounded corner behavior, set to true the `hasRoundedTextInputs` values of the `Tuning` object
 /// in your theme configuration (if the theme exposes this property at init).
 /// Some themes do not have this flexibility like `SoshTheme` and `WireframeTheme`.
 ///
@@ -172,9 +172,9 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark modes with Orange theme](component_textInput_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A text input component in light and dark modes with Orange Business Tools theme](component_textInput_OrangeBusinessTools)
+/// ![A text input component in light and dark modes with Orange Compact theme](component_textInput_OrangeCompact)
 ///
 /// ### Sosh
 ///
@@ -217,6 +217,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     /// The action can be any action.
     ///
     /// For iOS 17+ it is possible to define a sensory feeback for the button.
+    /// - Since: 0.20.0
     public struct TrailingAction {
 
         let icon: Image
@@ -242,21 +243,10 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         }
     }
 
-    // MARK: - Style
-
-    /// The prefered style of the text input
-    public enum Style {
-        /// An input with a subtle background fill and a visible bottom border,
-        /// creating a softer and more contained look. Best suited for dense layouts or to enhance visibility.
-        case `default`
-
-        /// A minimalist input with a transparent background and a visible stroke outlining the field.
-        case alternative
-    }
-
     // MARK: - Status
 
     /// Define all available status for the text input
+    /// - Since: 0.20.0
     public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
@@ -292,6 +282,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     // MARK: - Helper link
 
     /// Used to describe the helper link above the helper text.
+    /// - Since: 0.20.0
     public struct Helperlink {
         let text: String
         let action: () -> Void

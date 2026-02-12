@@ -132,7 +132,7 @@ open class OrangeThemeControlItemComponentTokensProvider: AllControlItemComponen
     }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ControlItemComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift
+    // the implementation of ControlItemComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift
     // This declaration of OrangeThemeControlItemComponentTokensProvider is here also to allow to write documentation.
 }
 

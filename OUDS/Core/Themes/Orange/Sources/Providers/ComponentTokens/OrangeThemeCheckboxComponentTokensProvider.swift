@@ -116,7 +116,7 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of CheckboxComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift
+    // the implementation of CheckboxComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift
     // This declaration of OrangeThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
 

@@ -57,9 +57,9 @@ import SwiftUI
 ///
 /// ![A link component in light and dark modes with Orange theme](component_link_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A link component in light and dark modes with Orange Business Tools theme](component_link_OrangeBusinessTools)
+/// ![A link component in light and dark modes with Orange Compact theme](component_link_OrangeCompact)
 ///
 /// ### Sosh
 ///
@@ -85,11 +85,13 @@ public struct OUDSLink: View {
     @Environment(\.layoutDirection) private var layoutDirection
 
     /// Represents the size of an `OUDSLink`.
+    /// - Since: 0.11.0
     public enum Size {
         case small, `default`
     }
 
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
+    /// - Since: 0.11.0
     public enum Indicator {
         case back, next
     }

@@ -108,9 +108,9 @@ import SwiftUI
 ///
 /// ![A button component in light and dark modes with Orange theme](component_button_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
-/// ![A button component in light and dark modes with Orange Business Tools theme](component_button_OrangeBusinessTools)
+/// ![A button component in light and dark modes with Orange Compact theme](component_button_OrangeCompact)
 ///
 /// ### Sosh
 ///
@@ -143,6 +143,7 @@ public struct OUDSButton: View {
     }
 
     /// Represents the appearance of an OUDS button, i.e. a kind of type
+    /// - Since: 0.10.0
     public enum Appearance {
         /// Default button is used for action
         case `default`
@@ -161,6 +162,7 @@ public struct OUDSButton: View {
     }
 
     /// Defines the style of the button, e.g. loading or not
+    /// - Since: 0.10.0
     public enum Style {
         /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`

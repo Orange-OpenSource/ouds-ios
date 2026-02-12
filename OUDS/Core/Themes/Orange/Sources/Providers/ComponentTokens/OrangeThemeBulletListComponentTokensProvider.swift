@@ -102,7 +102,7 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BulletListComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift
+    // the implementation of BulletListComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift
     // This declaration of OrangeThemeBulletListComponentTokensProvider is here also to allow to write documentation.
 }
 

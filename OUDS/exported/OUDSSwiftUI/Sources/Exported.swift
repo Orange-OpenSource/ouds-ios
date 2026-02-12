@@ -31,7 +31,7 @@
 @_exported import OUDSModules
 @_exported import OUDSThemesContract
 @_exported import OUDSThemesOrange
-@_exported import OUDSThemesOrangeBusinessTools
+@_exported import OUDSThemesOrangeCompact
 @_exported import OUDSThemesSosh
 @_exported import OUDSThemesWireframe
 @_exported import OUDSTokensComponent

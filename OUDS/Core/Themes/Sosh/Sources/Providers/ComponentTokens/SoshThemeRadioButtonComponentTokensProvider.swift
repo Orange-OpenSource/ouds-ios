@@ -63,7 +63,7 @@ final class SoshThemeRadioButtonComponentTokensProvider: AllRadioButtonComponent
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of RadioButtonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+RadioButtonComponentTokens.swift
+    // the implementation of RadioButtonComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+RadioButtonComponentTokens.swift
     // This declaration of SoshThemeRadioButtonComponentTokensProvider is here also to allow to write documentation.
 }
 

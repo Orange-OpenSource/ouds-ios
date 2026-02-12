@@ -81,7 +81,7 @@ open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider 
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
+    // the implementation of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
     // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SizeSemanticTokens.swift
     // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SizeMultipleSemanticTokens.swift
     // This declaration of OrangeThemeSizeSemanticTokensProvider is here to allow to write documentation.

@@ -27,12 +27,23 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/_OUDSThemesOrange.docc/Resources/_/ic_theme_orange.png
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
 
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
+
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0_rtl.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level1_rtl.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level2.imageset/ic_bullet_list_level2.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level2_rtl.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_tick.imageset/ic_bullet_list_tick.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Link/ic_link_next.imageset/ic_link_next.svg
@@ -43,13 +54,17 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_bullet.imageset/ic_tag_bullet.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Tag/ic_tag_close.imageset/ic_tag_close.svg
 
-## OUDS / Core / Themes / Orange Business Tools
+## OUDS / Core / Themes / Orange Compact
 
-./OUDS/Core/Themes/OrangeBusinessTools/Sources/_OUDSThemesOrangeBusinessTools.docc/Resources/_/ic_theme_orangebusinesstools.png
+./OUDS/Core/Themes/OrangeCompact/Sources/_OUDSThemesOrangeCompact.docc/Resources/_/ic_theme_orangecompact.png
 
 ## OUDS / Core / Themes / Sosh
 
 ./OUDS/Core/Themes/Sosh/Sources/_OUDSThemesSosh.docc/Resources/_/ic_theme_sosh.png
+
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
 
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
@@ -57,6 +72,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level2.imageset/ic_bullet_list_level2.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_tick.imageset/ic_bullet_list_tick.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Chip/ic_chip_tick.imageset/ic_chip_tick.svg
@@ -79,12 +98,20 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/_/ic_heart.imageset/ic_heart.svg
 
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_communication_accessibility_vision.imageset/ic_communication_accessibility_vision.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
+
 ./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
 ./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level2.imageset/ic_bullet_list_level2.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_tick.imageset/ic_bullet_list_tick.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_selected.imageset/ic_checkbox_selected.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Checkbox/ic_checkbox_undeterminate.imageset/ic_checkbox_undeterminate.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Chip/ic_chip_tick.imageset/ic_chip_tick.svg

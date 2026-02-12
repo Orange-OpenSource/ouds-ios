@@ -77,6 +77,6 @@ final class SoshThemeChipComponentTokensProvider: AllChipComponentTokensProvider
     }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ChipComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ChipComponentTokens.swift
+    // the implementation of ChipComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+ChipComponentTokens.swift
     // This declaration of SoshThemeChipComponentTokensProvider is here also to allow to write documentation.
 }

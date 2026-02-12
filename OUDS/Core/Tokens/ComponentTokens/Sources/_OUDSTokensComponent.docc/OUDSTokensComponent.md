@@ -138,6 +138,7 @@ textInput                      | For text field input components like `OUDSTextI
 
 ### Group
 
+- ``AlertComponentTokens``
 - ``BarComponentTokens``
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``

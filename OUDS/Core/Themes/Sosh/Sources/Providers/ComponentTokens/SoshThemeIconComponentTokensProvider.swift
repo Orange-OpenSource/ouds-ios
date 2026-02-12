@@ -51,6 +51,6 @@ final class SoshThemeIconComponentTokensProvider: AllIconComponentTokensProvider
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of IconComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+IconComponentTokens.swift
+    // the implementation of IconComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+IconComponentTokens.swift
     // This declaration of SoshThemeIconComponentTokensProvider is here also to allow to write documentation.
 }

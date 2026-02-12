@@ -53,7 +53,7 @@ final class WireframeThemeIconComponentTokensProvider: AllIconComponentTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of IconComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+IconComponentTokens.swift
+    // the implementation of IconComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+IconComponentTokens.swift
     // This declaration of WireframeThemeIconComponentTokensProvider is here also to allow to write documentation.
 }
 

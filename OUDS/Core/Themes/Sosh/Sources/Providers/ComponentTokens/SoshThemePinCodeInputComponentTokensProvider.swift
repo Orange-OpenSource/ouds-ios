@@ -61,7 +61,7 @@ final class SoshThemePinCodeInputComponentTokensProvider: AllPinCodeInputCompone
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of PinCodeInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+PinCodeInputComponentTokens.swift
+    // the implementation of PinCodeInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+PinCodeInputComponentTokens.swift
     // This declaration of SoshThemePinCodeInputComponentTokensProvider is here also to allow to write documentation.
 }
 

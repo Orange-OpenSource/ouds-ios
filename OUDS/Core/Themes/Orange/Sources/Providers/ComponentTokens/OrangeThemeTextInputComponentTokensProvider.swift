@@ -144,7 +144,7 @@ open class OrangeThemeTextInputComponentTokensProvider: AllTextInputComponentTok
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TextInputComponentTokens.swift
+    // the implementation of TextInputComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+TextInputComponentTokens.swift
     // This declaration of OrangeThemeTextInputComponentTokensProvider is here also to allow to write documentation.
 }
 

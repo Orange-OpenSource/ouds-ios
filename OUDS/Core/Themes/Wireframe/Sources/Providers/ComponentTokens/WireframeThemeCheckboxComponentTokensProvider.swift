@@ -63,7 +63,7 @@ final class WireframeThemeCheckboxComponentTokensProvider: AllCheckboxComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of CheckboxComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+CheckboxComponentTokens.swift
+    // the implementation of CheckboxComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+CheckboxComponentTokens.swift
     // This declaration of WireframeThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
 

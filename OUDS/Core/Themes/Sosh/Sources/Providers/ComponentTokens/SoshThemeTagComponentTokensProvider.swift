@@ -71,6 +71,6 @@ final class SoshThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TagComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TagComponentTokens.swift
+    // the implementation of TagComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TagComponentTokens.swift
     // This declaration of SoshThemeTagComponentTokensProvider is here also to allow to write documentation.
 }

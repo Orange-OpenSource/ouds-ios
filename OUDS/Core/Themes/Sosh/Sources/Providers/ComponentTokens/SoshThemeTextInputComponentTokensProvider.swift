@@ -80,7 +80,7 @@ final class SoshThemeTextInputComponentTokensProvider: AllTextInputComponentToke
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TextInputComponentTokens.swift
+    // the implementation of TextInputComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+TextInputComponentTokens.swift
     // This declaration of SoshThemeTextInputComponentTokensProvider is here also to allow to write documentation.
 }
 

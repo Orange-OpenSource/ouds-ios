@@ -139,6 +139,6 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     }
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ChipComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift
+    // the implementation of ChipComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift
     // This declaration of OrangeThemeChipComponentTokensProvider is here also to allow to write documentation.
 }

@@ -79,7 +79,7 @@ final class WireframeThemeTextInputComponentTokensProvider: AllTextInputComponen
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of TextInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+TextInputComponentTokens.swift
+    // the implementation of TextInputComponentTokens is not here but in Core/Themes/Wireframe/Values/ComponentTokens/WireframeTheme+TextInputComponentTokens.swift
     // This declaration of WireframeThemeTextInputComponentTokensProvider is here also to allow to write documentation.
 }
 

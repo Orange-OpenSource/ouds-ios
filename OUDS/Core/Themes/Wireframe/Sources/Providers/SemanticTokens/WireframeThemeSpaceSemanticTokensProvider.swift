@@ -50,7 +50,7 @@ final class WireframeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensPro
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
+    // the implementation of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
     // but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+SpaceSemanticTokens.swift
     // and in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+SpaceMultipleSemanticTokens.swift
     // This declaration of WireframeThemeSpaceSemanticTokensProvider is here to allow to write documentation.

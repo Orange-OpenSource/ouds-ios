@@ -79,6 +79,6 @@ open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider 
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of GridSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift
+    // the implementation of GridSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift
     // This declaration of OrangeThemeGridSemanticTokensProvider is here to allow to write documentation.
 }

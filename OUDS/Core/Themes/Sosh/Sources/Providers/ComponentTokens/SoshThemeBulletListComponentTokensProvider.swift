@@ -52,7 +52,7 @@ final class SoshThemeBulletListComponentTokensProvider: AllBulletListComponentTo
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BulletListComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+BulletListComponentTokens.swift
+    // the implementation of BulletListComponentTokens is not here but in Core/Themes/Sosh/Values/ComponentTokens/SoshTheme+BulletListComponentTokens.swift
     // This declaration of SoshThemeBulletListComponentTokensProvider is here also to allow to write documentation.
 }
 

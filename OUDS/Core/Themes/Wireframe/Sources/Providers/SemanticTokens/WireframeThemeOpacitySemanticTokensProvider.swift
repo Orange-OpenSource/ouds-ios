@@ -44,7 +44,7 @@ final class WireframeThemeOpacitySemanticTokensProvider: AllOpacitySemanticToken
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+OpacitySemanticTokens.swift
+    // the implementation of OpacitySemanticTokensProvider is not here but in Core/Themes/Wireframe/Values/SemanticTokens/WireframeTheme+OpacitySemanticTokens.swift
     // This declaration of WireframeThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }
 
