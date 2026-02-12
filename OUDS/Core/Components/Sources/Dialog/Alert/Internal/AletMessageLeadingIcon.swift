@@ -25,7 +25,7 @@ struct AletMessageLeadingIcon: View {
 
     var body: some View {
         if let icon {
-            ScaledIcon(icon: icon.renderingMode(.template).resizable(),
+            ScaledIcon(icon: icon.renderingMode(.template),
                        size: theme.alert.sizeIcon)
                 .oudsForegroundColor(color)
                 .toFlip(flipIcon)

@@ -80,8 +80,9 @@ public struct OUDSAlertMessage: View {
 
     private let text: String
     private let status: Self.Status
-    private let link: Self.Link?
     private let description: String?
+    private let bulletList: [String]?
+    private let link: Self.Link?
     private let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
@@ -185,17 +186,25 @@ public struct OUDSAlertMessage: View {
     ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses see `OUDSAlertMessage.Status`
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
     ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
     ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
     ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
-    public init(label: String, status: Status = .positive(), description: String? = nil, link: Self.Link? = nil, onClose: (() -> Void)? = nil) {
+    public init(label: String,
+                status: Status = .positive(),
+                description: String? = nil,
+                bulletList: [String]? = nil,
+                link: Self.Link? = nil,
+                onClose: (() -> Void)? = nil)
+    {
         text = label
         self.status = status
         self.description = description
         self.link = link
         self.onClose = onClose
+        self.bulletList = bulletList
     }
 
     // MARK: Body
@@ -203,7 +212,7 @@ public struct OUDSAlertMessage: View {
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AletMessageLeadingIcon(status: status)
-            AlertMessageContent(text: text, description: description, link: link, status: status)
+            AlertMessageContent(text: text, description: description, bulletList: bulletList, link: link, status: status)
             AletMessageAction(link: link, onClose: onClose, status: status)
         }
         .padding(.leading, theme.alert.spacePaddingInline)

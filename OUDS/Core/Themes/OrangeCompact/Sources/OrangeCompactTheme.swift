@@ -60,12 +60,12 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Define your theme tuning
-///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessage: false)
+///     let tuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false)
 ///
 ///     // Apply it to your theme
 ///     let theme = OrangeCompactTheme(tuning: tuning)
 ///     // Or in one line
-///     let theme = OrangeCompactTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessage: false))
+///     let theme = OrangeCompactTheme(tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: false))
 ///
 ///     // Or apply predefined tunings
 ///     let orangeFranceTheme = OrangeCompactTheme(tuning: Tuning.OrangeFrance)
