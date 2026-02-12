@@ -159,7 +159,7 @@ extension Tuning {
     /// - rounded corners for alert messages
     public static let Wirefrmae = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
-                                         hasRoundedAlertMessage: true)
+                                         hasRoundedAlertMessages: true)
 }
 
 // swiftlint:enable function_body_length

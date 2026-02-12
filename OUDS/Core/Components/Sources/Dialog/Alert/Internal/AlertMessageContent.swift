@@ -20,6 +20,7 @@ struct AlertMessageContent: View {
 
     let text: String
     let description: String?
+    let bulletList: [String]?
     let link: OUDSAlertMessage.Link?
     let status: OUDSAlertMessage.Status
 
@@ -41,7 +42,11 @@ struct AlertMessageContent: View {
                         .oudsForegroundColor(theme.colors.contentMuted)
                 }
 
-                // TODO: Bullet
+                if let bulletList {
+                    ForEach(bulletList, id: \.self) { text in
+                        AletMessageBulletListItem(text: text)
+                    }
+                }
             }
 
             // Action

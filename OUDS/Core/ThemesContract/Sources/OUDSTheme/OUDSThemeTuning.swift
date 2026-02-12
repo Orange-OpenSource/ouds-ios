@@ -38,21 +38,21 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     public let hasRoundedTextInputs: Bool
 
     /// If components like alert message (e.g. `OUDSAlertMessage)` must have always rounded corners or not
-    public let hasRoundedAlertMessage: Bool
+    public let hasRoundedAlertMessages: Bool
 
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text inputs must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedAlertMessage: If allert messages must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedAlertMessages: If allert messages must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
-                hasRoundedAlertMessage: Bool = false)
+                hasRoundedAlertMessages: Bool = false)
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs
-        self.hasRoundedAlertMessage = hasRoundedAlertMessage
+        self.hasRoundedAlertMessages = hasRoundedAlertMessages
     }
 }
 
@@ -85,7 +85,7 @@ extension Tuning {
     /// - square corners for buttons (i.e. not rounded)
     /// - rounded corners for text inputs
     /// - rounded corners for alert messages
-    public static let OrangeBusiness = Tuning(hasRoundedTextInputs: true, hasRoundedAlertMessage: true)
+    public static let OrangeBusiness = Tuning(hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
 
     /// The theme tuning for *Max It *contains:
     /// - rounded corners for buttons
@@ -93,5 +93,5 @@ extension Tuning {
     /// - rounded corners for alert messages
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
-                                     hasRoundedAlertMessage: true)
+                                     hasRoundedAlertMessages: true)
 }
