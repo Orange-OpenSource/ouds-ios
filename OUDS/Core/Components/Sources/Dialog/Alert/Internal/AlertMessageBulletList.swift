@@ -31,8 +31,7 @@ struct AletMessageBulletListItem: View {
         VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {
             HStack(alignment: .top, spacing: theme.bulletList.spacePaddingBlockBodyMedium) {
                 HStack(alignment: .center) {
-                    ScaledIcon(icon: Image(decorative: "ic_bullet_list_level0", bundle: theme.resourcesBundle).renderingMode(.template),
-                               size: theme.sizes.iconWithLabelMediumSizeMedium)
+                    ScaledIcon(icon: icon, size: theme.sizes.iconWithLabelMediumSizeMedium)
                         .oudsForegroundColor(theme.colors.contentMuted)
                 }
                 .frame(maxHeight: maxHeight, alignment: .trailing)
@@ -43,6 +42,11 @@ struct AletMessageBulletListItem: View {
                     .frame(maxWidth: theme.sizes.maxWidthTypeLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
             }
         }
+    }
+
+    private var icon: Image {
+        Image(decorative: "ic_bullet_list_level0", bundle: theme.resourcesBundle)
+            .renderingMode(.template)
     }
 
     private var maxHeight: CGFloat {

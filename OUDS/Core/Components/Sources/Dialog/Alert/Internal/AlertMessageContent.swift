@@ -40,6 +40,7 @@ struct AlertMessageContent: View {
                     Text(description)
                         .labelDefaultMedium(theme)
                         .oudsForegroundColor(theme.colors.contentMuted)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
                 if let bulletList {
@@ -55,5 +56,6 @@ struct AlertMessageContent: View {
             }
         }
         .padding(.vertical, theme.alert.spacePaddingBlock)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
