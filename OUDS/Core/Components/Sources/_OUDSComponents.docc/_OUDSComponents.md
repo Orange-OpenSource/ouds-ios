@@ -16,6 +16,7 @@ Components are grouped in several categories, the same as the ones defined in th
 *Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* group is dedicated to things like dividers.
 You can get more details about them in the categories below:
 
+- <doc:Alerts>
 - <doc:Actions>
 - <doc:Navigations>
 - <doc:Indicators>
