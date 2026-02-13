@@ -42,7 +42,7 @@ struct Bullet: View {
             case .ordered:
                 OrderedBullet(level: level, textStyle: textStyle, isBold: isBold, index: index)
             case .bare:
-                Rectangle().fill(.clear)
+                Rectangle().fill(.clear).frame(width: minWidth)
             }
         }
         .frame(minWidth: minWidth, alignment: .trailing)
@@ -59,15 +59,9 @@ struct Bullet: View {
             theme.sizes.iconWithBodyMediumSizeMedium
         }
 
+        // To follow the dynamic font, the width of the container must be adjusted.
         let rawSize = token.dimension(for: horizontalSizeClass ?? .regular)
-
-        // Ordered type, means bullet is a text, so for dynamic font the
-        // width of the container must be adjusted.
-        if case .ordered = type {
-            return rawSize * dynamicTypeSize.percentageRate / 100
-        } else {
-            return rawSize
-        }
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     private var maxHeight: CGFloat {
@@ -78,6 +72,7 @@ struct Bullet: View {
             theme.fonts.lineHeightBodyMedium
         }
 
+        // To follow the dynamic font, the height of the container must be adjusted.
         let rawSize = token.lineHeight(for: verticalSizeClass ?? .regular)
         return rawSize * dynamicTypeSize.percentageRate / 100
     }
@@ -100,11 +95,8 @@ struct UnorderedBullet: View {
     // MARK: Body
 
     var body: some View {
-        asset
-            .resizable()
-            .renderingMode(.template)
+        ScaledIcon(icon: asset.renderingMode(.template), size: assetSize)
             .oudsForegroundColor(color)
-            .frame(width: assetSize, height: assetSize, alignment: .center)
     }
 
     // MARK: Private helpers
