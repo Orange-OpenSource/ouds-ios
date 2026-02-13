@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageAction: View {
+struct AlertMessageAction: View {
 
     // MARK: - Properties
 

@@ -44,7 +44,7 @@ struct AlertMessageContent: View {
                 }
 
                 ForEach(bulletList, id: \.self) { text in
-                    AletMessageBulletListItem(text: text)
+                    AlertMessageBulletListItem(text: text)
                 }
             }
 

@@ -1,11 +1,4 @@
 //
-//  AletMessageBackgroundModifier.swift.tmp.swift
-//  OUDS
-//
-//  Created by Ludovie Pinel Le Roux on 10/02/2026.
-//
-
-//
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
@@ -21,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageBackgroundModifier: ViewModifier {
+struct AlertMessageBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
@@ -32,25 +25,34 @@ struct AletMessageBackgroundModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsBackground(color)
+        content
+            .oudsBorder(style: theme.borders.styleDefault,
+                        width: theme.alert.borderWidth,
+                        radius: radius,
+                        color: color)
+            .clipShape(RoundedRectangle(cornerRadius: radius))
     }
 
     // MARK: - Helpers
 
+    private var radius: BorderRadiusSemanticToken {
+        theme.tuning.hasRoundedTextInputs ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
+    }
+
     private var color: MultipleColorSemanticToken {
         switch status {
         case .neutral:
-            theme.colors.surfaceSecondary
+            theme.colors.borderDefault
         case .accent:
-            theme.colors.surfaceStatusAccentMuted
+            theme.colors.borderStatusAccent
         case .positive:
-            theme.colors.surfaceStatusPositiveMuted
-        case .warning:
-            theme.colors.surfaceStatusWarningMuted
-        case .negative:
-            theme.colors.surfaceStatusNegativeMuted
+            theme.colors.borderStatusPositive
         case .info:
-            theme.colors.surfaceStatusInfoMuted
+            theme.colors.borderStatusInfo
+        case .warning:
+            theme.colors.borderStatusWarning
+        case .negative:
+            theme.colors.borderStatusNegative
         }
     }
 }

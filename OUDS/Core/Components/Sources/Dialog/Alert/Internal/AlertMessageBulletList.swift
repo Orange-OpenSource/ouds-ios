@@ -14,9 +14,9 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageBulletListItem: View {
+struct AlertMessageBulletListItem: View {
 
-    // - MARK: Properties
+    // MARK: - Properties
 
     let text: String
 
@@ -25,7 +25,7 @@ struct AletMessageBulletListItem: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // - MARK: Body
+    // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {

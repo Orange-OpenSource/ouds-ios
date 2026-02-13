@@ -25,10 +25,10 @@ import SwiftUI
 ///         // A basic positive alert mesage with text and badge
 ///         OUDSAlertMessage(label: "Label")
 ///
-///         // A more complexe alert messsage for warning status with a descuption and a close action
+///         // A more complex alert messsage for warning status with a description and a close action
 ///         // to dismiss the message.
 ///         OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
-///               // Do some staff here to dismiss the alert message when clicked
+///               // Do some stuff here to dismiss the alert message when clicked
 ///         }
 ///
 ///         // Add a custom icon for accent and neutral status
@@ -40,7 +40,6 @@ import SwiftUI
 ///         let link = OUDSAlertMessage.Link(text: "Action", position: .bottom) {
 ///            openUrl.callAsFunction(url)
 ///         }
-///
 ///         OUDSAlertMessage(label: "Label", link: link)
 /// ```
 ///
@@ -67,7 +66,7 @@ import SwiftUI
 /// ![An alert message component in light and dark modes with Wireframe theme](component_alertMessage_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSAlertMessage: View {
 
@@ -91,16 +90,14 @@ public struct OUDSAlertMessage: View {
         /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where
         /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
         ///
-        /// - Parameters:
-        ///    - icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
+        /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
         case neutral(icon: OUDSIcon? = nil)
 
         /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
         /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
         /// product updates, or customer engagement moments.
         ///
-        /// - Parameters:
-        ///    - icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
+        /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
         case accent(icon: OUDSIcon? = nil)
 
         /// Positive status indicates that a task or process has been completed successfully. These alerts reassure users and confirm that no further action is needed.
@@ -125,6 +122,7 @@ public struct OUDSAlertMessage: View {
 
     // MARK: - Link
 
+    // swiftlint:disable nesting
     /// Used to describe the link display in the `OUDSAlertMessage`
     public struct Link {
 
@@ -148,11 +146,11 @@ public struct OUDSAlertMessage: View {
         ///
         /// - Parameters:
         ///   - text: The text (could be the url)
-        ///   - posiiton: `OUDSAlertMessage.Link.Position` of the link within the alert message.
-        ///   - action: The action when clicked
+        ///   - position: `OUDSAlertMessage.Link.Position` of the link within the alert message.
+        ///   - action: The action to process when clicked
         public init(text: String, position: Position = .bottom, action: @escaping () -> Void) {
             if text.isEmpty {
-                OL.warning("The link text for the OUDSalertMessage is empty, avoid using it in that case.")
+                OL.warning("The link text for the OUDSAlertMessage is empty, avoid using it in that case.")
             }
             self.text = text
             self.action = action
@@ -160,11 +158,13 @@ public struct OUDSAlertMessage: View {
         }
     }
 
-    // MARK: Initializers
+    // swiftlint:enable nesting
+
+    // MARK: - Initializers
 
     /// Creates a alert message.
     ///
-    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
@@ -192,17 +192,17 @@ public struct OUDSAlertMessage: View {
         self.bulletList = bulletList
     }
 
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
-            AletMessageLeadingIcon(status: status)
+            AlertMessageLeadingIcon(status: status)
             AlertMessageContent(text: text, description: description, bulletList: bulletList, link: link, status: status)
-            AletMessageAction(link: link, onClose: onClose, status: status)
+            AlertMessageAction(link: link, onClose: onClose, status: status)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
         .padding(.trailing, onClose == nil ? theme.alert.spacePaddingInline : 0)
-        .modifier(AletMessageBackgroundModifier(status: status))
-        .modifier(AletMessageBorderModifier(status: status))
+        .modifier(AlertMessageBackgroundModifier(status: status))
+        .modifier(AlertMessageBorderModifier(status: status))
     }
 }
