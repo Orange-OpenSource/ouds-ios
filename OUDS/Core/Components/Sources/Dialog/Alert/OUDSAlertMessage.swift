@@ -27,18 +27,13 @@ import SwiftUI
 ///
 ///         // A more complexe alert messsage for warning status with a descuption and a close action
 ///         // to dismiss the message.
-///         OUDSAlertMessage(label: "Warning", status: .warning(), description: "Some details about the warning") {
-///               // Do some staff here to dismiss the alert message when clicked
-///         }
-///
-///         // Show or hide the leading icon associated to the status
-///         OUDSAlertMessage(label: "Warning", status: .warning(showIcon: false), description: "Some details about the warning") {
+///         OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
 ///               // Do some staff here to dismiss the alert message when clicked
 ///         }
 ///
 ///         // Add a custom icon for accent and neutral status
-///         OUDSAlertMessage(label: "Label", status: .accent(icon: Image("ic_heart"))
-///         OUDSAlertMessage(label: "Label", status: .neutral(icon: Image("ic_heart"))
+///         OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))
+///         OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl
@@ -97,45 +92,35 @@ public struct OUDSAlertMessage: View {
         /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
         ///
         /// - Parameters:
-        ///    - icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
-        ///    - flipped: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-        case neutral(icon: Image, flipped: Bool = false)
+        ///    - icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
+        case neutral(icon: OUDSIcon? = nil)
 
         /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
         /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
         /// product updates, or customer engagement moments.
         ///
         /// - Parameters:
-        ///    - icon: Optional icon to be displayed in the alert message. Pass `nil` if no icon is needed.
-        ///    - flipped: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-        case accent(icon: Image, flipped: Bool = false)
+        ///    - icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
+        case accent(icon: OUDSIcon? = nil)
 
         /// Positive status indicates that a task or process has been completed successfully. These alerts reassure users and confirm that no further action is needed.
         /// This status displays a dedicated default icon.
-        ///
-        /// - Parameter showIcon: Controls whether the icon should be displayed or not. `true` displays the default positive icon.
-        case positive(showIcon: Bool = true)
+        case positive
 
         /// Info status is used to share neutral system information or service updates that do not require immediate action. Ideal for background processes or status
         /// messages where users simply need to stay informed.
         /// This status displays a dedicated default icon.
-        ///
-        /// - Parameter showIcon: Controls whether the icon should be displayed or not. `true` displays the default info icon.
-        case info(showIcon: Bool = true)
+        case info
 
         /// Used to draw attention to potential issues or upcoming changes that might affect the user’s service or experience. Warnings encourage awareness but
         /// typically do not block actions.
         /// This status displays a dedicated default icon.
-        ///
-        /// - Parameter showIcon: Controls whether the icon should be displayed or not. `true` displays the default warning icon.
-        case warning(showIcon: Bool = true)
+        case warning
 
         /// Negative status communicates a critical issue or error that prevents the user from proceeding until it is resolved. These alerts remain visible until
         /// the problem is fixed or dismissed by the user.
         /// This status displays a dedicated default icon.
-        ///
-        /// - Parameter showIcon: Controls whether the icon should be displayed or not. `true` displays the default negative icon.
-        case negative(showIcon: Bool = true)
+        case negative
     }
 
     // MARK: - Link
@@ -193,7 +178,7 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: Status = .positive(),
+                status: Status = .positive,
                 description: String? = nil,
                 bulletList: [String]? = nil,
                 link: Self.Link? = nil,
