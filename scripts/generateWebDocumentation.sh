@@ -13,7 +13,7 @@
 #
 
 # Controls on script
-set -euo pipefail
+set -euxo pipefail
 
 # Configuration
 # -------------
@@ -79,7 +79,7 @@ _() {
 }
 
 clean_directory() {
-    if [ -d "$$1" ]; then rm -rf "$1"; fi
+    if [ -d "$1" ]; then rm -rf "$1"; fi
 }
 
 clean_repo() {
@@ -279,26 +279,31 @@ if [[ $use_git -eq 1 ]]; then
     clean_directory "CNAME"
     
     # Copy all files from temporary folder to branch
-    cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
+    # Use rsync instead of cp to avoid memory issues with large number of files (~54k)
+    # rsync is more efficient for bulk copies and handles failures gracefully
+    _ "🔨 Copying documentation files (using rsync for efficiency)"
+    rsync -a --delete-after "$DOCUMENTATION_HTML_LOCATION"/ "$DOCS_DIRECTORY"/
 
     # It seems there is an issue with references of images
     # Need to copy them also in root images folder at least for landing page
     # See https://github.com/swiftlang/swift-docc/issues/1284
-    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_unified_ds.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_design_token_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_theme_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_module_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_component_intro.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeCompact/ic_theme_orangecompact.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
-    cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"
+    # Use -f flag to continue if source file doesn't exist
+    _ "🔨 Copying module-specific images to root images folder"
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_unified_ds.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_unified_ds.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_design_token_intro.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_design_token_intro.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_theme_intro.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_theme_intro.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_module_intro.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_module_intro.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_component_intro.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesContract/ic_component_intro.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" ] && cp "$DOCS_DIRECTORY/images/OUDSComponents/ic_folder_categories.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" ] && cp "$DOCS_DIRECTORY/images/OUDSFoundations/ic_layers.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" ] && cp "$DOCS_DIRECTORY/images/OUDSModules/ic_modular.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesOrange/ic_theme_orange.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesOrangeCompact/ic_theme_orangecompact.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesOrangeCompact/ic_theme_orangecompact.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesSosh/ic_theme_sosh.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" ] && cp "$DOCS_DIRECTORY/images/OUDSThemesWireframe/ic_theme_wireframe.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" ] && cp "$DOCS_DIRECTORY/images/OUDSTokensComponent/ic_design_token_figma_component.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" ] && cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images" || true
+    [ -f "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" ] && cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images" || true
     
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY/css"
