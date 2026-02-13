@@ -119,7 +119,7 @@ Tunable elements               | Default values
 ------------------------------ | ------------------------------------- 
 rounded corners buttons        | ❌ false  
 rounded corners text inputs    | ✅ true 
-rounded corners alert messages | ❌ false
+rounded corners alert messages | ✅ true 
 
 ### "Max it" tuning
 

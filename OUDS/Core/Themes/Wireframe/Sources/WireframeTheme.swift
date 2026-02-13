@@ -132,7 +132,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    resourcesBundle: Bundle.WireframeTheme,
                    name: "Wireframe",
                    fontFamily: WireframeBrandFontRawTokens.familyDefault,
-                   tuning: Tuning.Wirefrmae)
+                   tuning: Tuning.Wireframe)
 
         registerFonts()
     }
@@ -154,10 +154,10 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 extension Tuning {
 
     /// The theme tuning for *Wireframe *contains:
-    /// - rounded corners for buttons
-    /// - rounded corners for text inputs
+    /// - square corners for buttons
+    /// - square corners for text inputs
     /// - rounded corners for alert messages
-    public static let Wirefrmae = Tuning(hasRoundedButtons: false,
+    public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
                                          hasRoundedAlertMessages: true)
 }

@@ -30,7 +30,9 @@ struct WireframeThemeTests {
 
     @Test func defaultTuningOfWireframeTheme() throws {
         let tuning = theme.tuning
-        #expect(tuning == Tuning.default)
+        #expect(tuning.hasRoundedButtons == false)
+        #expect(tuning.hasRoundedTextInputs == false)
+        #expect(tuning.hasRoundedAlertMessages == true)
     }
 
     // MARK: - Tests - Semantic tokens providers

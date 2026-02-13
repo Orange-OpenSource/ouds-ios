@@ -29,25 +29,25 @@ struct OUDSThemeTuningTests {
 
     // MARK: - Orange France
 
-    @Test("The Orange France tuning must not have rounded corners")
+    @Test
     func orangeFranceThemeTuning() {
         #expect(Tuning.OrangeFrance.hasRoundedButtons == false)
         #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
         #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
     }
 
-    @Test("The Orange France tuning is the same as the default tuning")
+    @Test
     func orangeFranceThemeTuningIsSameAsDefault() {
         #expect(Tuning.OrangeFrance == Tuning.default)
     }
 
     // MARK: - Orange Business
 
-    @Test("The Orange Business tuning just has rounded text inputs")
+    @Test
     func orangeBusinessThemeTuning() {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
-        #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == true)
     }
 
     // MARK: - Max It

@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `alert message` comonent (Orange-OpenSource/ouds-ios#1159)
+- `alert message` component (Orange-OpenSource/ouds-ios#1159)
 - `password input` component (Orange-OpenSource/ouds-ios#997)
 - `bullet list` component (Orange-OpenSource/ouds-ios#513)
 

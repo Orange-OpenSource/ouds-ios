@@ -32,20 +32,17 @@ Alert message is a UI element that displays system feedback, status changes or r
 
 Alert Message does not disappear automatically and remains visible until dismissed or resolved by the user.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // A basic positive alert mesage with text and badge
-        OUDSAlertMessage(label: "Label")
+```swift
+    // A basic positive alert message with text and badge
+    OUDSAlertMessage(label: "Label")
 
-        // A more complexe alert messsage for warning status with a descuption and a close action
-        // to dismiss the message.
-        OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
-            // Do some staff here to dismiss the alert message when clicked
-        }
-        
-        // Add a custom icon for accent and neutral status
-        OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))
-        OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))
+    // A more complex alert message for warning status with a description and a close action
+    // to dismiss the message.
+    OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
+        // Do some tasks here to dismiss the alert message when clicked
     }
-}
+        
+    // Add a custom icon for accent and neutral status
+    OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
+    OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+```

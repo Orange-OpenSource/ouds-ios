@@ -1,11 +1,4 @@
 //
-//  AletMessageBorderModifier.swift.tmp.swift
-//  OUDS
-//
-//  Created by Ludovie Pinel Le Roux on 10/02/2026.
-//
-
-//
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
@@ -21,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageBorderModifier: ViewModifier {
+struct AlertMessageBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
@@ -43,7 +36,7 @@ struct AletMessageBorderModifier: ViewModifier {
     // MARK: - Helpers
 
     private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedTextInputs ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
+        theme.tuning.hasRoundedAlertMessages ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
     }
 
     private var color: MultipleColorSemanticToken {

@@ -34,10 +34,10 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like button (`OUDSButton`) must have always rounded corners or not
     public let hasRoundedButtons: Bool
 
-    /// If text input components (e.g. `OUDSTextInput)` must have always rounded corners or not
+    /// If text input components (e.g. `OUDSTextInput`) must have always rounded corners or not
     public let hasRoundedTextInputs: Bool
 
-    /// If components like alert message (e.g. `OUDSAlertMessage)` must have always rounded corners or not
+    /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
     /// Defines the tuning for a theme
@@ -45,7 +45,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text inputs must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedAlertMessages: If allert messages must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedAlertMessages: If alert messages must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
                 hasRoundedAlertMessages: Bool = false)

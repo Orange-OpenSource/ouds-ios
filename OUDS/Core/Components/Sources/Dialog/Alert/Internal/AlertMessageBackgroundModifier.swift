@@ -1,11 +1,4 @@
 //
-//  AletMessageBackgroundModifier.swift.tmp.swift
-//  OUDS
-//
-//  Created by Ludovie Pinel Le Roux on 10/02/2026.
-//
-
-//
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
@@ -21,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageBackgroundModifier: ViewModifier {
+struct AlertMessageBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 

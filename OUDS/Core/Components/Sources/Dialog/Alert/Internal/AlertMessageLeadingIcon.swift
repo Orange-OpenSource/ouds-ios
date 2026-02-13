@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AletMessageLeadingIcon: View {
+struct AlertMessageLeadingIcon: View {
 
     // MARK: - Properties
 
