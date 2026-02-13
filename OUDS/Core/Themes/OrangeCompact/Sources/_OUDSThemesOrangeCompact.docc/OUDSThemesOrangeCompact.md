@@ -98,7 +98,7 @@ Tunable elements               | Default values
 ------------------------------ | ------------------------------------- 
 rounded corners buttons        | ❌ false  
 rounded corners text inputs    | ✅ true
-rounded corners text inputs    | ❌ false
+rounded corners alert messages | ❌ false
 
 ## Typography
 
