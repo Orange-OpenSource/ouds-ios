@@ -20,7 +20,7 @@ struct AlertMessageContent: View {
 
     let text: String
     let description: String?
-    let bulletList: [String]?
+    let bulletList: [String]
     let link: OUDSAlertMessage.Link?
     let status: OUDSAlertMessage.Status
 
@@ -43,10 +43,8 @@ struct AlertMessageContent: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
-                if let bulletList {
-                    ForEach(bulletList, id: \.self) { text in
-                        AletMessageBulletListItem(text: text)
-                    }
+                ForEach(bulletList, id: \.self) { text in
+                    AletMessageBulletListItem(text: text)
                 }
             }
 
