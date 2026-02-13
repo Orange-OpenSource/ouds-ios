@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- With the bullet list component, the size of the bullet for unordered and bare must be updated (Orange-OpenSource/ouds-ios#1300)
 - `SwiftFormat` Swift package plugin from v0.59.0 to v0.59.1
 - `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
