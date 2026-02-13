@@ -64,7 +64,7 @@ struct AletMessageLeadingIcon: View {
 }
 
 extension OUDSAlertMessage.Status {
-    fileprivate var hasIcon: Bool {
+    var hasIcon: Bool {
         switch self {
         case let .neutral(icon), let .accent(icon):
             icon != nil

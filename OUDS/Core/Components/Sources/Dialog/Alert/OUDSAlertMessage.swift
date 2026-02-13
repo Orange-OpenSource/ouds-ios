@@ -76,7 +76,7 @@ public struct OUDSAlertMessage: View {
     private let text: String
     private let status: Self.Status
     private let description: String?
-    private let bulletList: [String]?
+    private let bulletList: [String]
     private let link: Self.Link?
     private let onClose: (() -> Void)?
 
@@ -180,7 +180,7 @@ public struct OUDSAlertMessage: View {
     public init(label: String,
                 status: Status = .positive,
                 description: String? = nil,
-                bulletList: [String]? = nil,
+                bulletList: [String] = [],
                 link: Self.Link? = nil,
                 onClose: (() -> Void)? = nil)
     {

@@ -89,7 +89,7 @@ public struct OUDSIcon: View {
 
 extension View {
     @ViewBuilder
-    fileprivate func update(with color: MultipleColorSemanticToken? = nil) -> some View {
+    func update(with color: MultipleColorSemanticToken? = nil) -> some View {
         if let color {
             oudsForegroundColor(color)
         } else {

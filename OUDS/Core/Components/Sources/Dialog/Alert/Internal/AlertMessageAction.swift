@@ -33,9 +33,10 @@ struct AletMessageAction: View {
             }
 
             if let onClose {
-                OUDSButton(icon: Image("ic_button_expurge", bundle: theme.resourcesBundle),
+                OUDSButton(icon: Image(decorative: "ic_button_expurge", bundle: theme.resourcesBundle),
                            accessibilityLabel: "core_alertMessage_close_a11y".localized(),
-                           appearance: .minimal, action: onClose)
+                           appearance: .minimal,
+                           action: onClose)
             }
         }
     }
