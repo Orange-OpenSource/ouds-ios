@@ -17,10 +17,11 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
+    let themeTunong = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
     let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
                               colors: MyOwnProviderOfColorTokens(),
                               fontFamily: "Menlo",
-                              tuning: Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true))
+                              tuning: themeTunong)
 
     var body: some Scene {
         WindowGroup {
@@ -31,25 +32,25 @@ struct OUDSTutorialSandboxApp: App {
     }
 }
 
-// Change the provider of semantic tokens of colors for the Orange theme
-// Keep in mind colors are used everywhere in plenty of components
-// so your changes can impact other elements
+/// Change the provider of semantic tokens of colors for the Orange theme
+/// Keep in mind colors are used everywhere in plenty of components
+/// so your changes can impact other elements
 class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
 
-    // Some tokens have light and dark values used according to color scheme
+    /// Some tokens have light and dark values used according to color scheme
     override var actionEnabledLight: ColorSemanticToken {
         ColorRawTokens.functionalAmethyst600
     }
 
-    // This token can contain up to two values (light and dark), or only one for both
+    /// This token can contain up to two values (light and dark), or only one for both
     override var bgTertiary: MultipleColorSemanticToken {
         MultipleColorSemanticToken(ColorRawTokens.sun160)
     }
 }
 
-// Change the provider of semantic tokens of border for the Orange theme
-// Keep in mind borders are used everywhere in plenty of components
-// so your changes can impact other elements
+/// Change the provider of semantic tokens of border for the Orange theme
+/// Keep in mind borders are used everywhere in plenty of components
+/// so your changes can impact other elements
 class MyOwnProviderOfBorderTokens: OrangeThemeBorderSemanticTokensProvider {
 
     override var widthThin: BorderWidthSemanticToken {

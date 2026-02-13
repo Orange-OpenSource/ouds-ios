@@ -21,37 +21,41 @@ struct OUDSThemeTuningTests {
     // MARK: - Defaults
 
     @Test("The default theme tuning must not have rounded corners")
-    func defaultThemeTuningRoundedCorners() throws {
+    func defaultThemeTuningRoundedCorners() {
         #expect(Tuning.default.hasRoundedButtons == false)
         #expect(Tuning.default.hasRoundedTextInputs == false)
+        #expect(Tuning.default.hasRoundedAlertMessages == false)
     }
 
     // MARK: - Orange France
 
     @Test("The Orange France tuning must not have rounded corners")
-    func orangeFranceThemeTuning() throws {
+    func orangeFranceThemeTuning() {
         #expect(Tuning.OrangeFrance.hasRoundedButtons == false)
         #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
+        #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
     }
 
     @Test("The Orange France tuning is the same as the default tuning")
-    func orangeFranceThemeTuningIsSameAsDefault() throws {
+    func orangeFranceThemeTuningIsSameAsDefault() {
         #expect(Tuning.OrangeFrance == Tuning.default)
     }
 
     // MARK: - Orange Business
 
     @Test("The Orange Business tuning just has rounded text inputs")
-    func orangeBusinessThemeTuning() throws {
+    func orangeBusinessThemeTuning() {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
+        #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
     }
 
     // MARK: - Max It
 
     @Test("The Max it tuning just has everything rounded")
-    func maxItThemeTuning() throws {
+    func maxItThemeTuning() {
         #expect(Tuning.MaxIt.hasRoundedButtons == true)
         #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
+        #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
     }
 }

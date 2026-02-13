@@ -4,6 +4,30 @@
     "" : {
       "shouldTranslate" : false
     },
+    "core_alertMessage_close_a11y" : {
+      "comment" : "Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close alert message"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close alert message"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer le message d'alerte"
+          }
+        }
+      }
+    },
     "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",

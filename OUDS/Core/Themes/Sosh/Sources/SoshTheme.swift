@@ -135,7 +135,8 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
                    name: "Sosh",
-                   fontFamily: SoshBrandFontRawTokens.familyDefault)
+                   fontFamily: SoshBrandFontRawTokens.familyDefault,
+                   tuning: Tuning.Sosh)
 
         registerFonts()
     }
@@ -150,6 +151,19 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
             SoshTheme.fontsAlreadyRegistered = true
         }
     }
+}
+
+// MARK: - Predefine tunings
+
+extension Tuning {
+
+    /// The theme tuning for *Sosh *contains:
+    /// - rounded corners for buttons
+    /// - rounded corners for text inputs
+    /// - rounded corners for alert messages
+    public static let Sosh = Tuning(hasRoundedButtons: false,
+                                    hasRoundedTextInputs: false,
+                                    hasRoundedAlertMessages: true)
 }
 
 // swiftlint:enable function_body_length

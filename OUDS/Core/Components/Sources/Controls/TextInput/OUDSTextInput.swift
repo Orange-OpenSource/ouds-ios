@@ -109,7 +109,7 @@ import SwiftUI
 /// If not all fields are mandatory (several fields present): display the message “All fields marked with an \* are mandatory” at the top of your formular.
 /// Use an asterisk (\*) at the end of each mandatory field label, and ensures this is well vocalized.
 ///
-/// UI rendering of the asterisk must be done with *fbold font weight* and *negative content color* (red-.
+/// UI rendering of the asterisk must be done with *bold font weight* and *negative content color* (red-.
 ///
 /// Use the mention “(optional)” at the end of each optional field label. Note that this rule is not systematic, it remains an option, to be used if needed.
 ///
