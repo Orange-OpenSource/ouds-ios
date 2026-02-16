@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Library] Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
+- Update the loader size on `button` component (Orange-OpenSource/ouds-ios#1296)
+- Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
 
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...1.2.0) - 2026-02-12
 
@@ -27,9 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update `fastlane` gem from v2.231.1 to v2.232.1
 - **BREAKING**: Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
 
-### Fixed
-
-- Update the loader size on `button` component (Orange-OpenSource/ouds-ios#1296)
 
 ## [1.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.0.0...1.1.0) - 2026-01-27
 
