@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...develop)
+
+### Changed
+
+- [DesignToolbox] With the bullet list component, the size of the bullet for unordered and bare must be updated (Orange-OpenSource/ouds-ios#1300)
+
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...1.2.0) - 2026-02-12
 
 ### Added
@@ -14,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- With the bullet list component, the size of the bullet for unordered and bare must be updated (Orange-OpenSource/ouds-ios#1300)
 - `SwiftFormat` Swift package plugin from v0.59.0 to v0.59.1
 - `ruby/setup-ruby` action from v1.286.0 to v1.288.0 for `build-and-test` workflow
 - `github/codeql-action/upload-sarif` action for `scorecard` workflow
