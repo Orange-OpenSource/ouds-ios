@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Update the loader size on `button` component (Orange-OpenSource/ouds-ios#1296)
-- Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
+- Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)
+- Size of the bullet for unordered and bare `bullet list` component (Orange-OpenSource/ouds-ios#1300)
 
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...1.2.0) - 2026-02-12
 

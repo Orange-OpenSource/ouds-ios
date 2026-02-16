@@ -16,6 +16,8 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Button Loading Content Modifier
+
 /// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
@@ -41,7 +43,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
             }
     }
 
-    // MARK: Private helper
+    // MARK: Private helpers
 
     private var colorToken: MultipleColorSemanticToken {
         switch appearance {
@@ -65,7 +67,10 @@ struct ButtonLoadingContentModifier: ViewModifier {
     }
 }
 
-struct LoaderSizeModifier: ViewModifier {
+// MARK: - Loader Size Modifier
+
+private struct LoaderSizeModifier: ViewModifier {
+
     @ScaledMetric var size: CGFloat
 
     func body(content: Content) -> some View {
