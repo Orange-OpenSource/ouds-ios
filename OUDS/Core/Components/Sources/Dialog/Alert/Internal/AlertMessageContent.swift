@@ -43,7 +43,7 @@ struct AlertMessageContent: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
-                ForEach(bulletList, id: \.self) { text in
+                ForEach(Array(bulletList.enumerated()), id: \.offset) { _, text in
                     AlertMessageBulletListItem(text: text)
                 }
             }
