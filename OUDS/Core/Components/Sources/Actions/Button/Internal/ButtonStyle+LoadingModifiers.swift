@@ -22,14 +22,14 @@ import SwiftUI
 /// If the device has the high contrast mode enabled, changes the loader color.
 struct ButtonLoadingContentModifier: ViewModifier {
 
+    // MARK: Stored Properties
+
+    let appearance: OUDSButton.Appearance
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
-
-    // MARK: Stored Properties
-
-    let appearance: OUDSButton.Appearance
 
     // MARK: Body
 
@@ -37,7 +37,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.button.spacePaddingBlock)
+                    .modifier(LoaderSizeModifier(size: size))
             }
     }
 
@@ -58,5 +58,17 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .negative:
             theme.colors.contentOnStatusNegativeEmphasized
         }
+    }
+
+    private var size: CGFloat {
+        theme.button.sizeLoader
+    }
+}
+
+struct LoaderSizeModifier: ViewModifier {
+    @ScaledMetric var size: CGFloat
+
+    func body(content: Content) -> some View {
+        content.frame(width: size, height: size, alignment: .center)
     }
 }
