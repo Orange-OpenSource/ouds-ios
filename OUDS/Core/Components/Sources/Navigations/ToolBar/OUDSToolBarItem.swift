@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
@@ -52,7 +53,8 @@ public struct OUDSToolBarItem: View, Identifiable {
     // MARK: - Content
 
     enum Content {
-        case action(icon: Image, accessibilityLabel: String, action: () -> Void)
+        case actionWithoutIcon(label: String, action: () -> Void)
+        case actionWithIcon(icon: Image, accessibilityLabel: String, action: () -> Void)
         case navigation(icon: OUDSToolBarNavigationItem, label: String?, accessibilityLabel: String, action: () -> Void)
     }
 
@@ -66,17 +68,29 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Initializers
 
-    /// Creates a navigation toolbar item with an icon only dedicated to action.
+    /// Creates a toolbar item with an only a text
+    ///
+    /// - Parameters:
+    ///   - label: The text to display in the item, must not be empty
+    ///   - action: The action triggered when the item is tapped.
+    public init(label: String, action: @escaping () -> Void) {
+        if label.isEmpty {
+            OL.fatal("The label for a toolbar item without icon must not be empty")
+        }
+        content = .actionWithoutIcon(label: label, action: action)
+    }
+
+    /// Creates a toolbar item with an icon only dedicated to action.
     ///
     /// - Parameters:
     ///   - icon: The `Image` to add as button as action item
     ///   - accessibilityLabel: The accessibility label describing the icon.
     ///   - action: The action triggered when the item is tapped.
     public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
-        content = .action(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
+        content = .actionWithIcon(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
     }
 
-    /// Creates a navigation toolbar item with an icon only dedicated to navigation.
+    /// Creates a toolbar item with an icon only dedicated to navigation.
     ///
     /// - Parameters:
     ///   - navigation: The navigation icon to use.
@@ -86,7 +100,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .navigation(icon: navigation, label: nil, accessibilityLabel: accessibilityLabel, action: action)
     }
 
-    /// Creates a navigation toolbar item with icon dedicated to navigation and label.
+    /// Creates a toolbar item with icon dedicated to navigation and label.
     ///
     /// - Parameters:
     ///   - navigation: The navigation icon to use.
@@ -108,7 +122,9 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     public var body: some View {
         switch content {
-        case let .action(icon, accessibilityLabel, action):
+        case let .actionWithoutIcon(label, action):
+            actionButton(label: label, action: action)
+        case let .actionWithIcon(icon, accessibilityLabel, action):
             actionButton(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
         case let .navigation(icon, label, accessibilityLabel, action):
             navigationButton(icon: icon, label: label, accessibilityLabel: accessibilityLabel, action: action)
@@ -159,6 +175,15 @@ public struct OUDSToolBarItem: View, Identifiable {
     // MARK: - Action buttons
 
     @ViewBuilder
+    private func actionButton(label: String,
+                              action: @escaping () -> Void) -> some View
+    {
+        Button(action: action) {
+            Text(label)
+        }
+    }
+
+    @ViewBuilder
     private func actionButton(icon: Image,
                               accessibilityLabel: String,
                               action: @escaping () -> Void) -> some View
@@ -172,8 +197,6 @@ public struct OUDSToolBarItem: View, Identifiable {
         .accessibilityLabel(accessibilityLabel)
         // NOTE: Cannot define size of 44x44 for button because with Liquid Glass height is consstrained and button will be flattened
     }
-
-    // MARK: - Helpers
 }
 
 // MARK: - OUDS Tool Bar Items Builder

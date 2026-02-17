@@ -25,23 +25,17 @@ enum ToolBarItemStyle {
     case bottom
 }
 
-// MARK: - Tool Bar Item Action Style Modifier
+// MARK: - Tool Bar Item Action Style Modifier (Bottom)
 
-/// Applies styling to toolbar items depending, for action buttons, depending to OS versions:
-/// - For iOS 26 / Liquid Glass, action button in toolbar top have colored background
-/// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
-struct ToolBarItemActionStyleModifier: ViewModifier {
-
-    let style: ToolBarItemStyle
+/// Applies styling to toolbar bottom items
+struct ToolBarBottomItemActionStyleModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
     func body(content: Content) -> some View {
         if #available(iOS 26, *) {
             content
-                .oudsForegroundColor(theme.bar.colorContentOnAccent)
-                .oudsTintColor(theme.colors.actionAccent)
-                .buttonStyle(.borderedProminent)
+                .oudsForegroundColor(theme.colors.contentDefault)
         } else {
             content
                 .oudsForegroundColor(theme.colors.actionAccent)
@@ -49,12 +43,41 @@ struct ToolBarItemActionStyleModifier: ViewModifier {
     }
 }
 
-// MARK: - Tool Bar Item Navigation Style Modifier
+// MARK: - Tool Bar Item Action Style Modifier (Top)
 
-/// Applies styling to toolbar items depending depending to OS versions and icons types.
+/// Applies styling to toolbar top items depending, for action buttons, depending to OS versions:
+/// - For iOS 26 / Liquid Glass, action button in toolbar top have colored background
+/// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
+struct ToolBarTopItemActionStyleModifier: ViewModifier {
+
+    let textOnly: Bool
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        if #available(iOS 26, *) {
+            if textOnly {
+                content
+                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .buttonStyle(.bordered)
+            } else {
+                content
+                    .oudsForegroundColor(theme.bar.colorContentOnAccent)
+                    .oudsTintColor(theme.colors.actionAccent)
+                    .buttonStyle(.borderedProminent)
+            }
+        } else {
+            content
+                .oudsForegroundColor(theme.colors.actionAccent)
+        }
+    }
+}
+
+// MARK: - Tool Bar Item Navigation Style Modifier (Top)
+
+/// Applies styling to toolbar top items depending depending to OS versions and icons types.
 /// The tokens of colors are applied as best as the API allow; some button styles are alsso appleid for force the rendering.
 /// However things cannot be customized that much for Liquid Glass.
-struct ToolBarItemNavigationStyleModifier: ViewModifier {
+struct ToolBarTopItemNavigationStyleModifier: ViewModifier {
 
     let icon: OUDSToolBarNavigationItem
     let style: ToolBarItemStyle

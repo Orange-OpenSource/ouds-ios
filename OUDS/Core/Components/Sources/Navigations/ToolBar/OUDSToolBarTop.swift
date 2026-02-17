@@ -179,10 +179,12 @@ public struct OUDSToolBarTop<Content>: View where Content: View {
         if !items.isEmpty {
             ForEach(items) { item in
                 switch item.content {
-                case .action:
-                    item.modifier(ToolBarItemActionStyleModifier(style: style))
+                case .actionWithoutIcon:
+                    item.modifier(ToolBarTopItemActionStyleModifier(textOnly: true))
+                case .actionWithIcon:
+                    item.modifier(ToolBarTopItemActionStyleModifier(textOnly: false))
                 case let .navigation(icon, _, _, _):
-                    item.modifier(ToolBarItemNavigationStyleModifier(icon: icon, style: style))
+                    item.modifier(ToolBarTopItemNavigationStyleModifier(icon: icon, style: style))
                 }
             }
         }

@@ -79,20 +79,21 @@ import SwiftUI
 /// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
 ///
 /// - Since: 1.3.0
-@available(iOS 16, macOS 15, visionOS 1, *)
+@available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSToolBarBottom<Content>: View where Content: View {
 
     // MARK: - Stored properties
 
-    private let leadingItems: [OUDSToolBarItem]
-    private let trailingItems: [OUDSToolBarItem]
+    private let leadingItems: [OUDSToolBarItem]?
+    private let trailingItems: [OUDSToolBarItem]?
+    private let groupedItems: [OUDSToolBarItem]?
     private let content: () -> Content
 
     @Environment(\.theme) private var theme
 
     // MARK: - Initializer
 
-    /// Creates a bottom toolbar with leading and trailing items.
+    /// Creates a bottom toolbar with leading and trailing items, and a space between them.
     ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side.
@@ -102,20 +103,46 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
                 @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] },
                 @ViewBuilder content: @escaping () -> Content)
     {
+        groupedItems = nil
         self.leadingItems = leadingItems()
         self.trailingItems = trailingItems()
+        self.content = content
+    }
+
+    /// Creates a bottom toolbar with groupe ditems, centered to the screen
+    ///
+    /// - Parameters:
+    ///   - groupedItems: All the items to place in the center of the s creen
+    ///   - content: The content view wrapped by the toolbar.
+    public init(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] },
+                @ViewBuilder content: @escaping () -> Content) // TODO: #1174  - It seems grouped items are only for iOS 26+
+    {
+        self.groupedItems = groupedItems()
+        leadingItems = nil
+        trailingItems = nil
         self.content = content
     }
 
     // MARK: - Body
 
     public var body: some View {
-        content()
-            .toolbar {
-                ToolbarItem(placement: bottomPlacement) {
-                    bottomBarContent
+        if let groupedItems {
+            content()
+                .toolbar {
+                    ToolbarItemGroup(placement: bottomPlacement) {
+                        itemsView(groupedItems)
+                    }
                 }
-            }
+        } else {
+            content()
+                .toolbar {
+                    ToolbarItemGroup(placement: bottomPlacement) {
+                        itemsView(leadingItems)
+                        Spacer()
+                        itemsView(trailingItems)
+                    }
+                }
+        }
     }
 
     // MARK: - Helpers
@@ -131,27 +158,10 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
     }
 
     @ViewBuilder
-    private var bottomBarContent: some View {
-        if !leadingItems.isEmpty || !trailingItems.isEmpty {
-            HStack(spacing: theme.spaces.fixedSmall) {
-                if !leadingItems.isEmpty {
-                    itemsView(leadingItems)
-                }
-                if !leadingItems.isEmpty, !trailingItems.isEmpty {
-                    Spacer(minLength: theme.spaces.fixedSmall)
-                }
-                if !trailingItems.isEmpty {
-                    itemsView(trailingItems)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
-        HStack(spacing: theme.spaces.fixedSmall) {
+    private func itemsView(_ items: [OUDSToolBarItem]?) -> some View {
+        if let items, !items.isEmpty {
             ForEach(items) { item in
-                item.modifier(ToolBarItemActionStyleModifier(style: .bottom))
+                item.modifier(ToolBarBottomItemActionStyleModifier())
             }
         }
     }
