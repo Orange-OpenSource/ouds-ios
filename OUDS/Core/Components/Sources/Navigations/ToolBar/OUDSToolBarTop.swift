@@ -25,10 +25,7 @@ import SwiftUI
 ///
 /// ## Appearances
 ///
-/// - **Liquid Glass (iOS 26+)**: the system renders the Liquid Glass background automatically.
-/// OUDS applies semantic colors on the title and items, and highlights trailing items with an accent background.
-///
-/// - **Before iOS 26**: the toolbar background uses a regular blur and the bar translucent color token.
+/// TODO: #1174 - Add details about appearances depending to versions
 ///
 /// ## Platform considerations
 ///
@@ -54,6 +51,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
+/// TODO: #1174 - Use shortlink for documentation
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/6782de-ios-bars/b/317890)
 ///
 /// ## Themes rendering
@@ -87,9 +85,9 @@ import SwiftUI
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSToolBarTop<Content>: View where Content: View { // TODO: #1174 - Use short link for documentation
+public struct OUDSToolBarTop<Content>: View where Content: View {
     // TODO: #1174 - Make screenshots for doc
 
     // MARK: - Stored properties
@@ -108,9 +106,9 @@ public struct OUDSToolBarTop<Content>: View where Content: View { // TODO: #1174
     ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
-    ///   - subtitle: Optional subtitle displayed below the title.
-    ///   - leadingItems: The items displayed on the leading side.
-    ///   - trailingItems: The items displayed on the trailing side.
+    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
+    ///   - leadingItems: The items displayed on the leading side, empty by default.
+    ///   - trailingItems: The items displayed on the trailing side, empty by default.
     ///   - content: The content view wrapped by the toolbar.
     public init(title: String,
                 subtitle: String? = nil,

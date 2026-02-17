@@ -78,7 +78,7 @@ import SwiftUI
 /// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_light)
 /// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
 ///
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 @available(iOS 16, macOS 15, visionOS 1, *)
 public struct OUDSToolBarBottom<Content>: View where Content: View {
 

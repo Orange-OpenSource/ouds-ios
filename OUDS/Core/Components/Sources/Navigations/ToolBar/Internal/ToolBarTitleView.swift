@@ -13,6 +13,7 @@
 
 #if !os(watchOS) && !os(tvOS)
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 
 /// `View` dedicated to the display of title and subtitle in the toolbar components
@@ -24,15 +25,16 @@ struct ToolBarTitleView: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: 2) {
+        VStack(spacing: 2) { // TODO: #1174 - Hard-coded value for spacing?
             Text(LocalizedStringKey(title))
-                .headingSmall(theme)
+                .headingSmall(theme) // TODO: #1174 - Check typography to apply
+                .oudsForegroundColor(MultipleColorSemanticToken(light: "#333333", dark: "#FFFFFF")) // TODO: #1174 - Check color to apply
             if let subtitle {
                 Text(LocalizedStringKey(subtitle))
-                    .labelDefaultMedium(theme)
+                    .labelDefaultMedium(theme) // TODO: #1174 - Check typography to apply
+                    .oudsForegroundColor(MultipleColorSemanticToken("#999999")) // TODO: #1174 - Check color to apply
             }
         }
-        .oudsForegroundColor(theme.colors.contentDefault)
         .multilineTextAlignment(.center)
     }
 }

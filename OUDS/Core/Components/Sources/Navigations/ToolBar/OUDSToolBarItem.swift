@@ -20,7 +20,7 @@ import SwiftUI
 /// Defines the built-in navigation icons available for the toolbars.
 /// Each case maps to an image asset provided by the OUDS package resources.
 ///
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 public enum OUDSToolBarNavigationItem: String { // TODO: #1174 - Use themed icons
     case back = "ic_link_previous"
     case close = "ic_close"
@@ -86,11 +86,11 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .navigation(icon: navigation, label: nil, accessibilityLabel: accessibilityLabel, action: action)
     }
 
-    /// Creates a navigation toolbar item with icon and label.
+    /// Creates a navigation toolbar item with icon dedicated to navigation and label.
     ///
     /// - Parameters:
     ///   - navigation: The navigation icon to use.
-    ///   - label: The text displayed next to the icon.
+    ///   - label: The text displayed next to the icon, if iOS lower than 26
     ///   - accessibilityLabel: The accessibility label describing the item.
     ///   - action: The action triggered when the item is tapped.
     public init(navigation: OUDSToolBarNavigationItem,
@@ -124,6 +124,8 @@ public struct OUDSToolBarItem: View, Identifiable {
                                   action: @escaping () -> Void) -> some View
     {
         if icon == .back, let label {
+            // It seems there is not enough spaces with iOS 26 / Liquid Glass to display both icon and text,
+            // major part of text is hidden
             if #available(iOS 26, *) {
                 Button(action: action) {
                     navigationIcon(icon)
@@ -138,7 +140,7 @@ public struct OUDSToolBarItem: View, Identifiable {
                 }
                 .accessibilityLabel(accessibilityLabel)
             }
-        } else { // Close button or back without without label
+        } else { // Close button or back button without label
             Button(action: action) {
                 navigationIcon(icon)
             }
@@ -150,7 +152,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         Image(decorative: icon.rawValue, bundle: theme.resourcesBundle)
             .renderingMode(.template)
             .resizable()
-            .frame(width: 28, height: 28)
+            .frame(width: 28, height: 28) // TODO: #1174 - Hard-coded value for dimensions?
             .toFlip(icon == .back && layoutDirection == .rightToLeft)
     }
 
@@ -165,9 +167,10 @@ public struct OUDSToolBarItem: View, Identifiable {
             icon
                 .renderingMode(.template)
                 .resizable()
-                .frame(width: 26, height: 26)
+                .frame(width: 26, height: 26) // TODO: #1174 - Hard-coded value for dimensions?
         }
         .accessibilityLabel(accessibilityLabel)
+        // NOTE: Cannot define size of 44x44 for button because with Liquid Glass height is consstrained and button will be flattened
     }
 
     // MARK: - Helpers
@@ -177,7 +180,7 @@ public struct OUDSToolBarItem: View, Identifiable {
 
 /// A result builder to group ``OUDSToolBarItem`` instances.
 ///
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 @resultBuilder
 public enum OUDSToolBarItemsBuilder {
     public static func buildBlock(_ components: OUDSToolBarItem...) -> [OUDSToolBarItem] {
