@@ -20,7 +20,7 @@ struct AlertMessageAction: View {
 
     let link: OUDSAlertMessage.Link?
     let onClose: (() -> Void)?
-    let status: OUDSAlertMessage.Status
+    let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
 

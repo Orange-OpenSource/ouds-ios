@@ -46,3 +46,37 @@ Alert Message does not disappear automatically and remains visible until dismiss
     OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
     OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
 ```
+
+### Inline Alert
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An inline alert component in light and dark modes with Orange theme](component_inlineAlert_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![An inline alert component in light and dark modes with Orange Compact theme](component_inlineAlert_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![An inline alert component in light and dark modes with Sosh theme](component_inlineAlert_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An inline alert component in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
+    }
+}
+
+Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
+persistent and non actionable communication. Inline alert includes functional icon and semantic colour, and does not include a close button and/or action link. 
+Inline alert does not disappear and remains visible.
+
+
+```swift
+    // An inline alert with a label and the default neutral status
+    OUDSInlineAlert(label: "Label")
+
+    // An inline alert
+    OUDSAlertMessage(label: "Warning", status: .warning)
+
+    // Add a custom icon for accent and neutral status
+    OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
+    OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+```

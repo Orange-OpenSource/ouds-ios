@@ -55,7 +55,7 @@ public struct OUDSIcon: View {
     ///     - flipped: If asset must be flipped
     ///     - accessibilityLabel: label to be vocalized to describe the icon
     @MainActor
-    init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
+    public init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
         self.assetName = assetName
         asset = nil
         self.flipped = flipped

@@ -22,7 +22,7 @@ struct AlertMessageContent: View {
     let description: String?
     let bulletList: [String]
     let link: OUDSAlertMessage.Link?
-    let status: OUDSAlertMessage.Status
+    let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
 

@@ -14,36 +14,45 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AlertMessageBackgroundModifier: ViewModifier {
+struct AlertMessageBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let status: OUDSAlertMessage.Status
+    let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsBackground(color)
+        content
+            .oudsBorder(style: theme.borders.styleDefault,
+                        width: theme.alert.borderWidth,
+                        radius: radius,
+                        color: color)
+            .clipShape(RoundedRectangle(cornerRadius: radius))
     }
 
     // MARK: - Helpers
 
+    private var radius: BorderRadiusSemanticToken {
+        theme.tuning.hasRoundedAlertMessages ? theme.alert.borderRadiusRounded : theme.alert.borderRadiusDefault
+    }
+
     private var color: MultipleColorSemanticToken {
         switch status {
         case .neutral:
-            theme.colors.surfaceSecondary
+            theme.colors.borderDefault
         case .accent:
-            theme.colors.surfaceStatusAccentMuted
+            theme.colors.borderStatusAccent
         case .positive:
-            theme.colors.surfaceStatusPositiveMuted
-        case .warning:
-            theme.colors.surfaceStatusWarningMuted
-        case .negative:
-            theme.colors.surfaceStatusNegativeMuted
+            theme.colors.borderStatusPositive
         case .info:
-            theme.colors.surfaceStatusInfoMuted
+            theme.colors.borderStatusInfo
+        case .warning:
+            theme.colors.borderStatusWarning
+        case .negative:
+            theme.colors.borderStatusNegative
         }
     }
 }
