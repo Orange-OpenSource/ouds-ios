@@ -47,7 +47,7 @@ public enum OUDSToolBarNavigationItem: String { // TODO: #1174 - Use themed icon
 /// }
 /// ```
 ///
-/// - Since: 1.2.0
+/// - Since: 1.3.0
 public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Content
@@ -56,6 +56,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         case actionWithoutIcon(label: String, action: () -> Void)
         case actionWithIcon(icon: Image, accessibilityLabel: String, action: () -> Void)
         case navigation(icon: OUDSToolBarNavigationItem, label: String?, accessibilityLabel: String, action: () -> Void)
+        case customView(AnyView)
     }
 
     // MARK: - Stored properties
@@ -118,6 +119,24 @@ public struct OUDSToolBarItem: View, Identifiable {
                               action: action)
     }
 
+    /// Creates a toolbar item with a custom view.
+    ///
+    /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
+    ///
+    /// ```swift
+    /// OUDSToolBarItem {
+    ///     Menu("Options") {
+    ///         Button("Option 1") { }
+    ///         Button("Option 2") { }
+    ///     }
+    /// }
+    /// ```
+    ///
+    /// - Parameter content: A view builder that returns the custom view to display.
+    public init(@ViewBuilder content: () -> some View) {
+        self.content = .customView(AnyView(content()))
+    }
+
     // MARK: - Body
 
     public var body: some View {
@@ -128,6 +147,8 @@ public struct OUDSToolBarItem: View, Identifiable {
             actionButton(icon: icon, accessibilityLabel: accessibilityLabel, action: action)
         case let .navigation(icon, label, accessibilityLabel, action):
             navigationButton(icon: icon, label: label, accessibilityLabel: accessibilityLabel, action: action)
+        case let .customView(view):
+            view
         }
     }
 

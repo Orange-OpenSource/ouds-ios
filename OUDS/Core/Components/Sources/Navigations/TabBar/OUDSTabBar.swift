@@ -189,8 +189,8 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
     private let tabCount: Int
 
-    /// State to keep the selected tab reference and refresh the view
-    @State private var selectedTab: Int
+    /// Binding to keep the selected tab reference and refresh the view
+    @Binding private var selectedTab: Int
 
     /// Contains the tab bar items
     @ViewBuilder private let content: () -> Content
@@ -206,7 +206,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
     ///
     /// ```swift
-    ///     OUDSTabBar {
+    ///     OUDSTabBar(selected: 0, count: 2) {
     ///         SomeView()
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
@@ -224,17 +224,47 @@ public struct OUDSTabBar<Content>: View where Content: View {
     ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
     ///    - count: The current number of tabs hosted in the tab bar, must be positive non null integer
     ///    - content: The list of items to add in the tab bar
+    @available(*, deprecated, message: "Use instead `OUDSTabBar(selected:count:content)` with a Binding instead of a raw Int")
     public init(selected: Int,
                 count: Int,
                 @ViewBuilder content: @escaping () -> Content)
     {
-        selectedTab = selected
+        self.init(selected: .constant(selected), count: count, content: content)
+    }
+
+    /// Defines the tab bar component with given tab bar items.
+    /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
+    /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
+    ///
+    /// ```swift
+    ///     OUDSTabBar(selected: 0, count: 2) {
+    ///         SomeView()
+    ///             .tabItem {
+    ///                 Label("Label 1", image: "some-image")
+    ///              }
+    ///              .tag(0)
+    ///         OtherViewView()
+    ///             .tabItem {
+    ///                 Label("Label 2", image: "some-image")
+    ///              }
+    ///              .tag(1)
+    ///     }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
+    ///    - count: The current number of tabs hosted in the tab bar, must be positive non null integer
+    ///    - content: The list of items to add in the tab bar
+    public init(selected: Binding<Int>,
+                count: Int,
+                @ViewBuilder content: @escaping () -> Content)
+    {
+        _selectedTab = selected
         tabCount = count
         self.content = content
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selected:count:content:)`
     ///
@@ -254,7 +284,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// - Parameter content: The views to add in the tab bar
     @available(iOS 26, *)
     public init(@ViewBuilder content: @escaping () -> Content) {
-        selectedTab = 0
+        _selectedTab = .constant(0)
         tabCount = 0
         self.content = content
         _isLandscape = State(initialValue: false)

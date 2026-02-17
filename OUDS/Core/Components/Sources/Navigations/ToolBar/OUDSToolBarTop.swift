@@ -185,6 +185,8 @@ public struct OUDSToolBarTop<Content>: View where Content: View {
                     item.modifier(ToolBarTopItemActionStyleModifier(textOnly: false))
                 case let .navigation(icon, _, _, _):
                     item.modifier(ToolBarTopItemNavigationStyleModifier(icon: icon, style: style))
+                case let .customView(view):
+                    view
                 }
             }
         }
