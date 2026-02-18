@@ -16,19 +16,20 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Tool Bar Item Style
+// MARK: - Toolbar Item Style
 
 /// Defines the styling configuration for toolbar items.
-enum ToolBarItemStyle {
+enum ToolbarItemStyle {
     case topLeading
     case topTrailing
     case bottom
 }
 
-// MARK: - Tool Bar Item Action Style Modifier (Bottom)
+// MARK: - Toolbar Item Action Style Modifier (Bottom)
 
-/// Applies styling to toolbar bottom items
-struct ToolBarBottomItemActionStyleModifier: ViewModifier {
+/// Applies styling to toolbar bottom items.
+/// Only the foreground color of the items changesd depending to the OS version.
+struct ToolbarBottomItemActionStyleModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
@@ -43,12 +44,14 @@ struct ToolBarBottomItemActionStyleModifier: ViewModifier {
     }
 }
 
-// MARK: - Tool Bar Item Action Style Modifier (Top)
+// MARK: - Toolbar Item Action Style Modifier (Top)
 
-/// Applies styling to toolbar top items depending, for action buttons, depending to OS versions:
-/// - For iOS 26 / Liquid Glass, action button in toolbar top have colored background
+/// Applies styling to toolbar top items depending depending to OS versions:
+/// - For iOS 26+ / Liquid Glass, action button in toolbar top have colored background
 /// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
-struct ToolBarTopItemActionStyleModifier: ViewModifier {
+/// The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
+/// However things cannot be customized that much for Liquid Glass.
+struct ToolbarTopItemActionStyleModifier: ViewModifier {
 
     let textOnly: Bool
     @Environment(\.theme) private var theme
@@ -72,15 +75,14 @@ struct ToolBarTopItemActionStyleModifier: ViewModifier {
     }
 }
 
-// MARK: - Tool Bar Item Navigation Style Modifier (Top)
+// MARK: - Toolbar Item Navigation Style Modifier (Top)
 
-/// Applies styling to toolbar top items depending depending to OS versions and icons types.
-/// The tokens of colors are applied as best as the API allow; some button styles are alsso appleid for force the rendering.
+/// Applies styling to toolbar top items depending depending to OS version.
+/// The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
 /// However things cannot be customized that much for Liquid Glass.
-struct ToolBarTopItemNavigationStyleModifier: ViewModifier {
+struct ToolbarTopItemNavigationStyleModifier: ViewModifier {
 
-    let icon: OUDSToolBarNavigationItem
-    let style: ToolBarItemStyle
+    let icon: OUDSToolbarNavigationItem
 
     @Environment(\.theme) private var theme
 

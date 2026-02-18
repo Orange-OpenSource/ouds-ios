@@ -143,26 +143,26 @@ Top toolbars provide a title and optional subtitle, while bottom toolbars focus 
 }
 
 ```swift
-OUDSToolBarTop(title: "Inbox", subtitle: "2 new messages") {
+OUDSToolbarTop(title: "Inbox", subtitle: "2 new messages") {
     ContentView()
 } leadingItems: {
-    OUDSToolBarItem(navigation: .back, accessibilityLabel: "Back") {
+    OUDSToolbarItem(navigation: .back, accessibilityLabel: "Back") {
         // Handle back
     }
 } trailingItems: {
-    OUDSToolBarItem {
+    OUDSToolbarItem {
         Image(systemName: "bell")
     }
 }
 
-OUDSToolBarBottom {
+OUDSToolbarBottom {
     ContentView()
 } leadingItems: {
-    OUDSToolBarItem {
+    OUDSToolbarItem {
         Image(systemName: "tray")
     }
 } trailingItems: {
-    OUDSToolBarItem {
+    OUDSToolbarItem {
         Image(systemName: "square.and.pencil")
     }
 }

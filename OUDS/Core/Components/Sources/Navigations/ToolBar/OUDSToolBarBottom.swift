@@ -15,34 +15,32 @@
 import OUDSThemesContract
 import SwiftUI
 
-/// The bottom toolbar is a navigation bar component used to display leading and trailing actions
+/// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
-/// ``OUDSToolBarBottom`` wraps any content view and applies a SwiftUI toolbar configuration.
+/// ``OUDSToolbarBottom`` wraps any content view and applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
-/// - **Liquid Glass (iOS 26+)**: the system renders the Liquid Glass background automatically. OUDS applies
-///   semantic colors on the items and highlights them with an accent background.
-/// - **Before iOS 26**: the toolbar background uses a regular blur and the bar translucent color token.
+/// TODO: #1174 - Update this section
 ///
 /// ## Platform considerations
 ///
-/// - Available on iOS 16, macOS 15, visionOS 1
+/// - Available on iOS 15, macOS 15, visionOS 1
 /// - Not available on watchOS and tvOS
 /// - On macOS, toolbar items are displayed in the standard toolbar area
 ///
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSToolBarBottom {
+///     OUDSToolbarBottom {
 ///         ContentView()
 ///     } leadingItems: {
-///         OUDSToolBarItem {
+///         OUDSToolbarItem {
 ///             Image(systemName: "tray")
 ///         }
 ///     } trailingItems: {
-///         OUDSToolBarItem {
+///         OUDSToolbarItem {
 ///             Image(systemName: "square.and.pencil")
 ///         }
 ///     }
@@ -52,41 +50,41 @@ import SwiftUI
 ///
 /// ### Liquid Glass
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolbarBottom_LiquidGlass_Orange_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolbarBottom_LiquidGlass_Orange_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_LiquidGlass_OrangeBusinessTools_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_LiquidGlass_OrangeBusinessTools_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolbarBottom_LiquidGlass_OrangeCompact_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolbarBottom_LiquidGlass_OrangeCompact_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolbarBottom_LiquidGlass_Sosh_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolbarBottom_LiquidGlass_Sosh_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolbarBottom_LiquidGlass_Wireframe_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarBottom_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolbarBottom_Orange_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolbarBottom_Orange_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_OrangeBusinessTools_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarBottom_OrangeBusinessTools_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolbarBottom_OrangeCompact_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolbarBottom_OrangeCompact_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolbarBottom_Sosh_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolbarBottom_Sosh_dark)
 ///
-/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_light)
-/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolbarBottom_Wireframe_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarBottom_Wireframe_dark)
 ///
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSToolBarBottom<Content>: View where Content: View {
+public struct OUDSToolbarBottom<Content>: View where Content: View {
 
     // MARK: - Stored properties
 
-    private let leadingItems: [OUDSToolBarItem]?
-    private let trailingItems: [OUDSToolBarItem]?
-    private let groupedItems: [OUDSToolBarItem]?
+    private let leadingItems: [OUDSToolbarItem]?
+    private let trailingItems: [OUDSToolbarItem]?
+    private let groupedItems: [OUDSToolbarItem]?
     private let content: () -> Content
 
     @Environment(\.theme) private var theme
@@ -99,8 +97,8 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
     ///   - leadingItems: The items displayed on the leading side.
     ///   - trailingItems: The items displayed on the trailing side.
     ///   - content: The content view wrapped by the toolbar.
-    public init(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
-                @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] },
+    public init(@OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
+                @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] },
                 @ViewBuilder content: @escaping () -> Content)
     {
         groupedItems = nil
@@ -109,13 +107,15 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
         self.content = content
     }
 
-    /// Creates a bottom toolbar with groupe ditems, centered to the screen
+    /// Creates a bottom toolbar with grouped items, centered to the screen.
+    ///
+    /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///
     /// - Parameters:
     ///   - groupedItems: All the items to place in the center of the s creen
     ///   - content: The content view wrapped by the toolbar.
-    public init(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] },
-                @ViewBuilder content: @escaping () -> Content) // TODO: #1174  - It seems grouped items are only for iOS 26+
+    public init(@OUDSToolbarItemsBuilder groupedItems: () -> [OUDSToolbarItem] = { [] },
+                @ViewBuilder content: @escaping () -> Content)
     {
         self.groupedItems = groupedItems()
         leadingItems = nil
@@ -158,10 +158,10 @@ public struct OUDSToolBarBottom<Content>: View where Content: View {
     }
 
     @ViewBuilder
-    private func itemsView(_ items: [OUDSToolBarItem]?) -> some View {
+    private func itemsView(_ items: [OUDSToolbarItem]?) -> some View {
         if let items, !items.isEmpty {
             ForEach(items) { item in
-                item.modifier(ToolBarBottomItemActionStyleModifier())
+                item.modifier(ToolbarBottomItemActionStyleModifier())
             }
         }
     }

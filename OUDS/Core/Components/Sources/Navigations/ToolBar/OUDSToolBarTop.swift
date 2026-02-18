@@ -21,7 +21,7 @@ import SwiftUI
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Cancel" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
-/// ``OUDSToolBarTop`` wraps any content view and applies a SwiftUI toolbar configuration.
+/// ``OUDSToolbarTop`` wraps any content view and applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
@@ -36,17 +36,17 @@ import SwiftUI
 /// ## Code sample
 ///
 /// ```swift
-/// OUDSToolBarTop(title: "Inbox", subtitle: "2 new messages") {
-///     ContentView()
-/// } leadingItems: {
-///     OUDSToolBarItem(navigation: .back, accessibilityLabel: "Back") {
-///         // Handle back
+///     OUDSToolbarTop(title: "Inbox", subtitle: "2 new messages") {
+///         ContentView()
+///     } leadingItems: {
+///         OUDSToolbarItem(navigation: .close, accessibilityLabel: "Close") {
+///             // Handle close
+///         }
+///     } trailingItems: {
+///         OUDSToolbarItem {
+///             Image(systemName: "bell")
+///         }
 ///     }
-/// } trailingItems: {
-///     OUDSToolBarItem {
-///         Image(systemName: "bell")
-///     }
-/// }
 /// ```
 ///
 /// ## Design documentation
@@ -58,44 +58,44 @@ import SwiftUI
 ///
 /// ### Liquid Glass
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolbarTop_LiquidGlass_Orange_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolbarTop_LiquidGlass_Orange_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarTop_LiquidGlass_OrangeBusinessTools_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarTop_LiquidGlass_OrangeBusinessTools_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolbarTop_LiquidGlass_OrangeCompact_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolbarTop_LiquidGlass_OrangeCompact_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolbarTop_LiquidGlass_Sosh_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolbarTop_LiquidGlass_Sosh_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolbarTop_LiquidGlass_Wireframe_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarTop_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_Orange_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_Orange_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolbarTop_Orange_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolbarTop_Orange_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarTop_OrangeBusinessTools_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Business Tools theme](component_toolBarTop_OrangeBusinessTools_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolbarTop_OrangeCompact_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolbarTop_OrangeCompact_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolbarTop_LiquidGlass_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolbarTop_LiquidGlass_dark)
 ///
-/// ![A top toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_light)
-/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolbarTop_LiquidGlass_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarTop_LiquidGlass_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.3.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSToolBarTop<Content>: View where Content: View {
+public struct OUDSToolbarTop<Content>: View where Content: View {
     // TODO: #1174 - Make screenshots for doc
 
     // MARK: - Stored properties
 
     private let title: String
     private let subtitle: String?
-    private let leadingItems: [OUDSToolBarItem]
-    private let trailingItems: [OUDSToolBarItem]
+    private let leadingItems: [OUDSToolbarItem]
+    private let trailingItems: [OUDSToolbarItem]
     private let content: () -> Content
 
     @Environment(\.theme) private var theme
@@ -112,15 +112,15 @@ public struct OUDSToolBarTop<Content>: View where Content: View {
     ///   - content: The content view wrapped by the toolbar.
     public init(title: String,
                 subtitle: String? = nil,
-                @OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
-                @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] },
+                @OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
+                @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] },
                 @ViewBuilder content: @escaping () -> Content)
     {
         if title.isEmpty {
-            OL.warning("The title of OUDSToolBarTop is empty, prefer a non-empty title")
+            OL.warning("The title of OUDSToolbarTop is empty, prefer a non-empty title")
         }
         if let subtitle, subtitle.isEmpty {
-            OL.warning("The subtitle of OUDSToolBarTop is empty, prefer nil instead")
+            OL.warning("The subtitle of OUDSToolbarTop is empty, prefer nil instead")
         }
         self.title = title
         self.subtitle = subtitle?.isEmpty == true ? nil : subtitle
@@ -132,20 +132,18 @@ public struct OUDSToolBarTop<Content>: View where Content: View {
     // MARK: - Body
 
     public var body: some View {
-        NavigationView {
-            content()
-                .toolbar {
-                    ToolbarItemGroup(placement: leadingPlacement) {
-                        itemsView(leadingItems, style: .topLeading)
-                    }
-                    ToolbarItem(placement: principalPlacement) {
-                        ToolBarTitleView(title: title, subtitle: subtitle)
-                    }
-                    ToolbarItemGroup(placement: trailingPlacement) {
-                        itemsView(trailingItems, style: .topTrailing)
-                    }
+        content()
+            .toolbar {
+                ToolbarItemGroup(placement: leadingPlacement) {
+                    itemsView(leadingItems, style: .topLeading)
                 }
-        }
+                ToolbarItem(placement: principalPlacement) {
+                    ToolbarTitleView(title: title, subtitle: subtitle)
+                }
+                ToolbarItemGroup(placement: trailingPlacement) {
+                    itemsView(trailingItems, style: .topTrailing)
+                }
+            }
     }
 
     // MARK: - Helpers
@@ -175,16 +173,16 @@ public struct OUDSToolBarTop<Content>: View where Content: View {
     }
 
     @ViewBuilder
-    private func itemsView(_ items: [OUDSToolBarItem], style: ToolBarItemStyle) -> some View {
+    private func itemsView(_ items: [OUDSToolbarItem], style: ToolbarItemStyle) -> some View {
         if !items.isEmpty {
             ForEach(items) { item in
                 switch item.content {
                 case .actionWithoutIcon:
-                    item.modifier(ToolBarTopItemActionStyleModifier(textOnly: true))
+                    item.modifier(ToolbarTopItemActionStyleModifier(textOnly: true))
                 case .actionWithIcon:
-                    item.modifier(ToolBarTopItemActionStyleModifier(textOnly: false))
+                    item.modifier(ToolbarTopItemActionStyleModifier(textOnly: false))
                 case let .navigation(icon, _, _, _):
-                    item.modifier(ToolBarTopItemNavigationStyleModifier(icon: icon, style: style))
+                    item.modifier(ToolbarTopItemNavigationStyleModifier(icon: icon))
                 case let .customView(view):
                     view
                 }

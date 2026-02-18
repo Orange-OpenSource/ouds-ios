@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// `View` dedicated to the display of title and subtitle in the toolbar components
-struct ToolBarTitleView: View {
+struct ToolbarTitleView: View {
 
     let title: String
     let subtitle: String?
