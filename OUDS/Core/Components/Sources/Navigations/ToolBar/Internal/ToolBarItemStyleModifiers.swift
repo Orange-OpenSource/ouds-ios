@@ -33,6 +33,7 @@ struct ToolbarBottomItemActionStyleModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
+    // TODO: #1174 - For iOS 18 and lower, apply the blur effects etc
     func body(content: Content) -> some View {
         if #available(iOS 26, *) {
             content

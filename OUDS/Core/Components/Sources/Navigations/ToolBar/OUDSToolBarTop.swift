@@ -25,7 +25,30 @@ import SwiftUI
 ///
 /// ## Appearances
 ///
+/// With Liquid Glass / iOS 26+ the OS will change the rendering of the toolbar items depending to the context:
+/// - The OS can group the items of same types in one group with kind of rectangle (e.g. views with menus)
+/// - But for buttons items they will remain isolated
+/// - The placement of the title can be leading or centered depending to the length of the text
+/// - The text can be truncated if there is not enough remaining space
+/// - The OS can apply another style for the back button
+///
+/// Without Liquid Glass / iOS 18-, the OS won't change that much the style of the toolbar items:
+/// - Items won't be visually grouped
+///
 /// TODO: #1174 - Add details about appearances depending to versions
+///
+/// ## Technical constraints
+///
+/// To be sure for iOS 18 and lower the back buttton and text have the good color, in your main view apply the following accent color:
+///
+/// ```swift
+///     struct AppMainView: View {
+///         var body: some View {
+///             ContentView()
+///                 .oudsAccentColor(theme.colors.contentBrandPrimary)
+///         }
+///     }
+/// ```
 ///
 /// ## Platform considerations
 ///
@@ -144,6 +167,7 @@ public struct OUDSToolbarTop<Content>: View where Content: View {
                     itemsView(trailingItems, style: .topTrailing)
                 }
             }
+        // TODO: #1174 - Define accent color, at least for iOS 18-, to apply theme.colors.contentBrandPrimary token
     }
 
     // MARK: - Helpers

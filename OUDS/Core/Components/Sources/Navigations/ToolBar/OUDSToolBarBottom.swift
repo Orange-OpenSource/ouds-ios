@@ -30,19 +30,29 @@ import SwiftUI
 /// - Not available on watchOS and tvOS
 /// - On macOS, toolbar items are displayed in the standard toolbar area
 ///
+/// ## Guidelines
+///
+/// - Test the use of the ``OUDSToolbarBottom`` for both iOS with Liquid Glass and not Liquid Glass
+/// - If you use both an  ``OUDSTabBar`` with the ``OUDSToolbarBottom``, the toolbar will be above the tabbar for iOS lower than 26
+/// - If you use both an  ``OUDSTabBar`` with the ``OUDSToolbarBottom``, the toolbar will be **behind** the tabbar for iOS 26+, so not usable
+/// - Avoid use of both ``OUDSToolbarBottom`` and ``OUDSTabBar`` in the same page
+///
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSToolbarBottom {
-///         ContentView()
-///     } leadingItems: {
-///         OUDSToolbarItem {
-///             Image(systemName: "tray")
-///         }
-///     } trailingItems: {
-///         OUDSToolbarItem {
-///             Image(systemName: "square.and.pencil")
-///         }
+///     OUDSToolbarBottom(
+///         leadingItems: {
+///             OUDSToolbarItem {
+///                 Image(systemName: "tray")
+///             }
+///         },
+///         trailingItems: {
+///             OUDSToolbarItem {
+///                 Image(systemName: "square.and.pencil")
+///             }
+///         })
+///     {
+///         content
 ///     }
 /// ```
 ///
