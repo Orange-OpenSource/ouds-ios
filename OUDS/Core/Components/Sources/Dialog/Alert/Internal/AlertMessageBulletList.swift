@@ -28,25 +28,29 @@ struct AlertMessageBulletListItem: View {
     // MARK: - Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {
-            HStack(alignment: .top, spacing: theme.bulletList.spacePaddingBlockBodyMedium) {
-                HStack(alignment: .center) {
-                    ScaledIcon(icon: icon, size: theme.sizes.iconWithLabelMediumSizeMedium)
-                        .oudsForegroundColor(theme.colors.contentMuted)
-                }
-                .frame(maxHeight: maxHeight, alignment: .trailing)
-
-                Text(text)
-                    .labelDefaultMedium(theme)
-                    .oudsForegroundColor(theme.colors.contentMuted)
-                    .frame(maxWidth: theme.sizes.maxWidthTypeLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+        HStack(alignment: .top, spacing: theme.bulletList.spaceColumnGapBodyMedium) {
+            HStack(alignment: .center) {
+                OUDSIcon(assetName: "ic_bullet_list_level0", color: theme.colors.contentMuted)
+                    .frame(width: iconSize, height: iconSize)
             }
+            .frame(width: width, alignment: .trailing)
+            .frame(maxHeight: maxHeight, alignment: .center)
+
+            Text(text)
+                .labelDefaultMedium(theme)
+                .oudsForegroundColor(theme.colors.contentMuted)
+                .frame(maxWidth: theme.sizes.maxWidthTypeLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
         }
     }
 
-    private var icon: Image {
-        Image(decorative: "ic_bullet_list_level0", bundle: theme.resourcesBundle)
-            .renderingMode(.template)
+    private var iconSize: CGFloat {
+        let rawSize = theme.sizes.iconWithLabelMediumSizeSmall
+        return rawSize * dynamicTypeSize.percentageRate / 100
+    }
+
+    private var width: CGFloat {
+        let rawSize = theme.sizes.iconWithLabelMediumSizeMedium
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     private var maxHeight: CGFloat {

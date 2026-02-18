@@ -43,8 +43,10 @@ struct AlertMessageContent: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
-                ForEach(Array(bulletList.enumerated()), id: \.offset) { _, text in
-                    AlertMessageBulletListItem(text: text)
+                VStack(alignment: .leading, spacing: theme.alert.spaceRowGapBullet) {
+                    ForEach(Array(bulletList.enumerated()), id: \.offset) { _, text in
+                        AlertMessageBulletListItem(text: text)
+                    }
                 }
             }
 
