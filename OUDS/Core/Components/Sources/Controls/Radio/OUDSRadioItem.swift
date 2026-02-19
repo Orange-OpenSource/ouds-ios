@@ -69,24 +69,24 @@ import SwiftUI
 ///
 ///     // A leading radio with a label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
+///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection)
 ///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", isReadOnly: true)
+///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
 ///
 ///     // A leading radio with a label, and an additional label but without text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles")
+///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles")
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", extraLabel: "The Beatles", description: "1967")
+///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles", description: "1967")
 ///
 ///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
 ///     // The reversed layout will be used here.
-///     OUDSRadioItem(isOn: $selection,
-///                   label: "Rescue from this world!",
+///     OUDSRadioItem(label: "Rescue from this world!",
+///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
@@ -94,29 +94,29 @@ import SwiftUI
 ///                   hasDivider: true)
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSRadioItem(isOn: $selection,
-///                   label: "Rescue from this world!",
+///     OUDSRadioItem(label: "Rescue from this world!",
+///                   isOn: $selection,
 ///                   isError: true,
 ///                   errorText: "Something wrong",
 ///                   hasDivider: true)
 ///
 ///     // A leading radio with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, label: "Rescue from this world!")
+///     OUDSRadioItem(label: "Rescue from this world!", isOn: $selection)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related radio as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadioItem(isOn: $selection, label: "Kaboom!", isError: true).disabled(true) // fatal error
-///     OUDSRadioItem(isOn: $selection, label: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSRadioItem(label: "Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
+///     OUDSRadioItem(label: "Kaboom!", isOn: $selection, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSRadioItem(isOn: $selection,
-///                   labelText: "Cocorico !",
+///     OUDSRadioItem(labelText: "Cocorico !",
+///                   isOn: $selection,
 ///                   icon: Image(systemName: "figure.handball"),
 ///                   flipIcon: layoutDirection == .rightToLeft,
 ///                   isInversed: layoutDirection == .rightToLeft)
@@ -196,8 +196,76 @@ public struct OUDSRadioItem: View {
     ///
     /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
+    @available(*, deprecated, message: "Use instead OUDSRadioItem(label:isOn)")
     public init(isOn: Binding<Bool>,
                 label: String,
+                extraLabel: String? = nil,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isOutlined: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(label: label,
+                  isOn: isOn,
+                  extraLabel: extraLabel,
+                  description: description,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isOutlined: isOutlined,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    /// Creates a radio with label and optional helper text as description, icon, divider.
+    /// Supposed to be integrated inside a ``OUDSRadioPicker``.
+    ///
+    /// ```swift
+    ///     OUDSRadioItem(label: "Virgin Holy Lava",
+    ///                   isOn: $selection,
+    ///                   extraLabel: "Very spicy",
+    ///                   description: "No alcohol, only tasty flavors",
+    ///                   icon: Image(systemName: "flame")
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the radio, must not be empty
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
+    ///   - description: An description, like an helper text, should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
+    ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   The `errorText`can be different if switch is selected or not.
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
+    ///   - action: An additional action to trigger when the radio button has been pressed
+    ///
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    ///
+    /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
+    public init(label: String,
+                isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
                 icon: Image? = nil,

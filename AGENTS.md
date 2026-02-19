@@ -615,15 +615,15 @@ OUDSRadio(isOn: $selection, accessibilityLabel: "Some label to vocalized")
 or with texts and image:
 ```swift
 @Published var isOn: Bool = true
-OUDSRadioItem(isOn: $isOn,
-              label: "Some text",
+OUDSRadioItem(label: "Some text",
+              isOn: $isOn,
               icon: Image(decorative: "image_name"))
 ```
 
 or only with one text:
 ```swift
 @Published var isOn: Bool = true
-OUDSRadioItem(isOn: $isOn, label: "Some text")
+OUDSRadioItem(label: "Some text", isOn: $isOn)
 ```
 
 Radio buttons can be wrapped inside a radio picker.

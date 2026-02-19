@@ -212,12 +212,12 @@ The indicator can be leading or trailing.
     @Tab("SwiftUI") {
         ```swift        
         // A leading radio with a label
-        OUDSRadioItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
+        OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $isOn)
 
         // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
         // error with a reversed layout
-        OUDSRadioItem(isOn: $isOn,
-                      label: "Lucy in the Sky with Diamonds",
+        OUDSRadioItem(label: "Lucy in the Sky with Diamonds",
+                      isOn: $isOn,
                       extraLabel: "The Beatles"
                       description: "1967",
                       icon: Image(decorative: "ic_heart"),
