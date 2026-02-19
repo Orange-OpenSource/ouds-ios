@@ -786,6 +786,35 @@ or have also a leading icon:
 OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("image_name"))
 ```
 
+#### Dialogs
+
+##### Alert Messages
+
+Alert message is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication. It does not disappear automatically and remains visible until dismissed or resolved by the user.
+Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsalertmessage).
+Alert message can have 1 status between 6: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`. `neutral` and `accent` status can have custom icon.
+ 
+Alert message bvy default are positive:
+```swift
+OUDSAlertMessage(label: "Label")
+```
+
+They can have also a description and a close action:
+```
+OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details about the warning") {
+    // Do some tasks here to dismiss the alert message when clicked
+}
+```
+
+Alerts can have custom icons, bullet lists and detaim link:
+```swift
+OUDSAlertMessage(label: "Label",
+                status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+                bulletList: ["Bullet 1", "Bullet 2", "Bullet 3"],
+                link: .init(text: "Link", position: .bottom) {},
+                onClose: {})
+```
+
 #### Indicators
 
 ##### Badge
