@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...develop)
 
+### Added
+
+- `alert message` component (Orange-OpenSource/ouds-ios#1159)
+
 ### Fixed
 
 - [Library] Size of the bullet for unordered and bare bullet list component (Orange-OpenSource/ouds-ios#1300)
@@ -14,7 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `alert message` component (Orange-OpenSource/ouds-ios#1159)
 - `password input` component (Orange-OpenSource/ouds-ios#997)
 - `bullet list` component (Orange-OpenSource/ouds-ios#513)
 
