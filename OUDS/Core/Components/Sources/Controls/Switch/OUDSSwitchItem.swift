@@ -72,7 +72,7 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
 ///
-///     // A trailing switch with a label, an additonal label, a description text and an icon.
+///     // A trailing switch with a label, an additional label, a description text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
@@ -158,7 +158,7 @@ public struct OUDSSwitchItem: View {
     /// - Parameters:
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
-    ///   - description: An additonal helper text, a description, should not be empty
+    ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`

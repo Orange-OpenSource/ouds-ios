@@ -175,9 +175,9 @@ public struct OUDSCheckboxItem: View {
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - label: The main label text of the checkbox, must not be empty
-    ///   - description: An additonal helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional icon,  default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
+    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -205,6 +205,7 @@ public struct OUDSCheckboxItem: View {
         self.init(label,
                   isOn: isOn,
                   description: description,
+                  icon: icon,
                   flipIcon: flipIcon,
                   isReversed: isReversed,
                   isError: isError,
@@ -232,9 +233,9 @@ public struct OUDSCheckboxItem: View {
     /// - Parameters:
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
-    ///   - description: An additonal helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional icon,  default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true` to reverse the image (i.e. flip vertically)
+    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
