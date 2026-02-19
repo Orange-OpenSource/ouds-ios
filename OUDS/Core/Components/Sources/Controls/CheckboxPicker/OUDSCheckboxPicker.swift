@@ -192,8 +192,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - text: The text to display in the root view
     ///    - type: The type of display for the root label
     private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
-        OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState,
-                                      label: rootLabel(for: text, of: type),
+        OUDSCheckboxItemIndeterminate(label: rootLabel(for: text, of: type),
+                                      selection: $coordinator.selectionRootState,
                                       isReversed: isReversed,
                                       isError: isError,
                                       isReadOnly: isReadOnly,

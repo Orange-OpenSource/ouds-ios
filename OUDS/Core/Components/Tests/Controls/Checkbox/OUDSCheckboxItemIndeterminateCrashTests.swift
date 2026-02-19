@@ -29,8 +29,8 @@ struct OUDSCheckboxItemIndeterminateCrashTests {
     func checkboxItemIndeterminateCrashesWhenReadOnlyAndError() async {
         await #expect(processExitsWith: .failure) {
             let selection = OUDSCheckboxIndicatorState.indeterminate
-            _ = OUDSCheckboxItemIndeterminate(selection: .constant(selection),
-                                              label: "Test",
+            _ = OUDSCheckboxItemIndeterminate(label: "Test",
+                                              selection: .constant(selection),
                                               isError: true,
                                               isReadOnly: true)
         }

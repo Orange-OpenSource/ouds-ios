@@ -76,8 +76,8 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
         OUDSCheckboxItem(label: "Hello world", isOn: $isOn)
 
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
-        OUDSCheckboxItemIndeterminate(selection: $selection, 
-                                      label: "Dead Robot Zombie Cop",
+        OUDSCheckboxItemIndeterminate(label: "Dead Robot Zombie Cop",
+                                      selection: $selection,
                                       description: "from Outer Space II")
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
