@@ -197,8 +197,8 @@ public struct OUDSAlertMessage: View {
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
             AlertMessageLeadingIcon(status: status)
-            AlertMessageContent(text: text, description: description, bulletList: bulletList, link: link, status: status)
-            AlertMessageAction(link: link, onClose: onClose, status: status)
+            AlertMessageContent(text: text, description: description, bulletList: bulletList, link: link)
+            AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
         .padding(.trailing, onClose == nil ? theme.alert.spacePaddingInline : 0)
