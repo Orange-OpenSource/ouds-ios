@@ -73,16 +73,16 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("SwiftUI") {
         ```swift
         // A leading checkbox with a label, with only two states
-        OUDSCheckboxItem(label: "Hello world", isOn: $isOn)
+        OUDSCheckboxItem("Hello world", isOn: $isOn)
 
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
-        OUDSCheckboxItemIndeterminate(label: "Dead Robot Zombie Cop",
+        OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
                                       selection: $selection,
                                       description: "from Outer Space II")
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
         // with a reversed layout, and exposing only two states through isOn binding
-        OUDSCheckboxItem(label: "We live in a fabled world",
+        OUDSCheckboxItem("We live in a fabled world",
                          isOn: $isOn,
                          description: "Of dreaming boys and wide-eyed girls",
                          icon: Image(decorative: "ic_heart"),
@@ -212,11 +212,11 @@ The indicator can be leading or trailing.
     @Tab("SwiftUI") {
         ```swift        
         // A leading radio with a label
-        OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $isOn)
+        OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 
         // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
         // error with a reversed layout
-        OUDSRadioItem(label: "Lucy in the Sky with Diamonds",
+        OUDSRadioItem("Lucy in the Sky with Diamonds",
                       isOn: $isOn,
                       extraLabel: "The Beatles"
                       description: "1967",

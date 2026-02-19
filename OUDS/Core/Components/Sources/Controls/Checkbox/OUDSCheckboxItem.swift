@@ -68,26 +68,26 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(label: "Hello world", isOn: $isOn)
+///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(label: "Hello world", isOn: $isOn, isReadOnly: true)
+///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading checkbox with a label and a description as helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(label: "Bazinga!", isOn: $isOn, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItem("Bazinga!", isOn: $isOn, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, a description and an icon.
 ///     // The reversed layout will be used here.
-///     OUDSCheckboxItem(label: "We live in a fabled world",
+///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
 ///                      isReversed: true,
 ///                      icon: Image(decorative: "ic_heart"))
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSCheckboxItem(label: "We live in a fabled world",
+///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      isError: true,
 ///                      errorText: "Something wrong",
@@ -95,20 +95,20 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(label: "Hello world", isOn: $isOn)
+///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxItem(label: "Hello world", isOn: $isOn, isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItem(label: "Hello world", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItem("Hello world", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSCheckboxItem(label: "Cocorico !",
+///     OUDSCheckboxItem("Cocorico !",
 ///                      isOn: $selection,
 ///                      icon: Image(systemName: "figure.handball"),
 ///                      flipIcon: layoutDirection == .rightToLeft,
@@ -188,7 +188,7 @@ public struct OUDSCheckboxItem: View {
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use instead OUDSCheckboxItem(label:isOn)")
+    @available(*, deprecated, message: "Use instead OUDSCheckboxItem(:isOn:)")
     public init(isOn: Binding<Bool>,
                 label: String,
                 description: String? = nil,
@@ -202,7 +202,7 @@ public struct OUDSCheckboxItem: View {
                 constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
-        self.init(label: label,
+        self.init(label,
                   isOn: isOn,
                   description: description,
                   flipIcon: flipIcon,
@@ -218,7 +218,7 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem(label: "Virgin Holy Lava",
+    ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
     ///                      icon: Image(systemName: "flame")
@@ -245,7 +245,7 @@ public struct OUDSCheckboxItem: View {
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    public init(label: String,
+    public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
                 icon: Image? = nil,

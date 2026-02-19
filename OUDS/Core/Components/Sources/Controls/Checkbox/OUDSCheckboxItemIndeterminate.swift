@@ -68,26 +68,26 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItemIndeterminate(label: "Hello world", selection: $selection)
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection)
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckboxItemIndeterminate(label: "Hello world", selection: $selection, isReadOnly: true)
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadOnly: true)
 ///
 ///     // A leading checkbox with a label and a description as helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItemIndeterminate(label: "Bazinga!", selection: $selection, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItemIndeterminate("Bazinga!", selection: $selection, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The reversed layout will be used here.
-///     OUDSCheckboxItemIndeterminate(label: "We live in a fabled world",
+///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
 ///                                   isReversed: true,
 ///                                   icon: Image(decorative: "ic_heart"))
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSCheckboxItemIndeterminate(label: "We live in a fabled world",
+///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   isError: true,
 ///                                   errorText: "Something wrong",
@@ -95,26 +95,26 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItemIndeterminate(label: "Hello world", selection: $selection)
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection)
 ///         .disabled(true)
 ///
 ///     // A leading checkbox with a label and and icon but with the icon flipped vertically
-///     OUDSCheckboxItemIndeterminate(label: "Cocorico !",
+///     OUDSCheckboxItemIndeterminate("Cocorico !",
 ///                                   selection: $selection,
 ///                                   icon: Image(systemName: "figure.handball"),
 ///                                   flipIcon: true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxItemIndeterminate(label: "Hello world", selection: $selection, isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItemIndeterminate(label: "Hello world", selection: $selection, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isError: true).disabled(true) // fatal error
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSCheckboxItemIndeterminate(label: "Cocorico !",
+///     OUDSCheckboxItemIndeterminate("Cocorico !",
 ///                                   isOn: $selection,
 ///                                   icon: Image(systemName: "figure.handball"),
 ///                                   flipIcon: layoutDirection == .rightToLeft,
@@ -186,7 +186,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
-    @available(*, deprecated, message: "Use instead OUDSCheckboxItemIndeterminate(label:selection)")
+    @available(*, deprecated, message: "Use instead OUDSCheckboxItemIndeterminate(:selection:)")
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 label: String,
                 description: String? = nil,
@@ -200,7 +200,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
-        self.init(label: label,
+        self.init(label,
                   selection: selection,
                   description: description,
                   icon: icon,
@@ -237,7 +237,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
-    public init(label: String,
+    public init(_ label: String,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
                 icon: Image? = nil,

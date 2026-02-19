@@ -28,7 +28,7 @@ struct OUDSCheckboxItemCrashTests {
     @Test
     func checkboxItemCrashesWhenReadOnlyAndError() async {
         await #expect(processExitsWith: .failure) {
-            _ = OUDSCheckboxItem(label: "Test",
+            _ = OUDSCheckboxItem("Test",
                                  isOn: .constant(false),
                                  isError: true,
                                  isReadOnly: true)

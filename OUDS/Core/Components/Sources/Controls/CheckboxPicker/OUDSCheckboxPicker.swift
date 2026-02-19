@@ -192,7 +192,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - text: The text to display in the root view
     ///    - type: The type of display for the root label
     private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
-        OUDSCheckboxItemIndeterminate(label: rootLabel(for: text, of: type),
+        OUDSCheckboxItemIndeterminate(rootLabel(for: text, of: type),
                                       selection: $coordinator.selectionRootState,
                                       isReversed: isReversed,
                                       isError: isError,
@@ -233,7 +233,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - noDivider: If true, do not add divider to the item
     /// - Returns: The view
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSCheckboxItem(label: checkbox.label,
+        OUDSCheckboxItem(checkbox.label,
                          isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
                          icon: checkbox.icon,

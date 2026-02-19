@@ -69,23 +69,23 @@ import SwiftUI
 ///
 ///     // A leading radio with a label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection)
+///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection)
 ///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
+///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
 ///
 ///     // A leading radio with a label, and an additional label but without text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles")
+///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles")
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(label: "Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles", description: "1967")
+///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, extraLabel: "The Beatles", description: "1967")
 ///
 ///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
 ///     // The reversed layout will be used here.
-///     OUDSRadioItem(label: "Rescue from this world!",
+///     OUDSRadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   description: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
@@ -94,7 +94,7 @@ import SwiftUI
 ///                   hasDivider: true)
 ///
 ///     // If on error, add an error message can help user to understand error context
-///     OUDSRadioItem(label: "Rescue from this world!",
+///     OUDSRadioItem("Rescue from this world!",
 ///                   isOn: $selection,
 ///                   isError: true,
 ///                   errorText: "Something wrong",
@@ -102,20 +102,20 @@ import SwiftUI
 ///
 ///     // A leading radio with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(label: "Rescue from this world!", isOn: $selection)
+///     OUDSRadioItem("Rescue from this world!", isOn: $selection)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related radio as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadioItem(label: "Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
-///     OUDSRadioItem(label: "Kaboom!", isOn: $selection, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSRadioItem("Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
+///     OUDSRadioItem("Kaboom!", isOn: $selection, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
 /// ```swift
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
-///     OUDSRadioItem(labelText: "Cocorico !",
+///     OUDSRadioItem("Cocorico !",
 ///                   isOn: $selection,
 ///                   icon: Image(systemName: "figure.handball"),
 ///                   flipIcon: layoutDirection == .rightToLeft,
@@ -196,7 +196,7 @@ public struct OUDSRadioItem: View {
     ///
     /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
-    @available(*, deprecated, message: "Use instead OUDSRadioItem(label:isOn)")
+    @available(*, deprecated, message: "Use instead OUDSRadioItem(:isOn:)")
     public init(isOn: Binding<Bool>,
                 label: String,
                 extraLabel: String? = nil,
@@ -212,7 +212,7 @@ public struct OUDSRadioItem: View {
                 constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
-        self.init(label: label,
+        self.init(label,
                   isOn: isOn,
                   extraLabel: extraLabel,
                   description: description,
@@ -232,7 +232,7 @@ public struct OUDSRadioItem: View {
     /// Supposed to be integrated inside a ``OUDSRadioPicker``.
     ///
     /// ```swift
-    ///     OUDSRadioItem(label: "Virgin Holy Lava",
+    ///     OUDSRadioItem("Virgin Holy Lava",
     ///                   isOn: $selection,
     ///                   extraLabel: "Very spicy",
     ///                   description: "No alcohol, only tasty flavors",
@@ -264,7 +264,7 @@ public struct OUDSRadioItem: View {
     ///
     /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
-    public init(label: String,
+    public init(_ label: String,
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
