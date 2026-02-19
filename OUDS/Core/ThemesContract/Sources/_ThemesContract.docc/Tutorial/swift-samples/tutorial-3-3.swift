@@ -25,7 +25,7 @@ struct ContentView: View {
                             radios: genderRadioValues(),
                             placement: .horizontal(false))
 
-            OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
+            OUDSCheckboxItem(label: "I accept the terms of use", isOn: $termsAccepted)
         }
     }
 

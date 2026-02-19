@@ -69,7 +69,7 @@ struct ContentView: View {
 
                         OUDSHorizontalDivider(color: .brandPrimary)
 
-                        OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
+                        OUDSCheckboxItem(label: "I accept the terms of use", isOn: $termsAccepted)
                     }
                     .padding(.horizontal, theme.spaces.fixedSmall)
                 }

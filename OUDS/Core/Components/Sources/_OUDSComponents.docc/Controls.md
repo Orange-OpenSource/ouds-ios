@@ -73,7 +73,7 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
     @Tab("SwiftUI") {
         ```swift
         // A leading checkbox with a label, with only two states
-        OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
+        OUDSCheckboxItem(label: "Hello world", isOn: $isOn)
 
         // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
         OUDSCheckboxItemIndeterminate(selection: $selection, 
@@ -82,8 +82,8 @@ It can be be used for two-states (``OUDSCheckboxItem``) or three-states manageme
 
         // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
         // with a reversed layout, and exposing only two states through isOn binding
-        OUDSCheckboxItem(isOn: $isOn,
-                         label: "We live in a fabled world",
+        OUDSCheckboxItem(label: "We live in a fabled world",
+                         isOn: $isOn,
                          description: "Of dreaming boys and wide-eyed girls",
                          icon: Image(decorative: "ic_heart"),
                          isReversed: true,

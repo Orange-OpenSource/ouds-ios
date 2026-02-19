@@ -52,7 +52,7 @@ struct ContentView: View {
 
             OUDSHorizontalDivider(color: .brandPrimary)
 
-            OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
+            OUDSCheckboxItem(label: "I accept the terms of use", isOn: $termsAccepted)
 
             OUDSColoredSurface(color: theme.colorModes.onStatusInfoEmphasized) {
                 VStack(alignment: .center, spacing: theme.spaces.fixedXsmall) {

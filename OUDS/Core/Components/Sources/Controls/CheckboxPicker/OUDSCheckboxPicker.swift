@@ -233,8 +233,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - noDivider: If true, do not add divider to the item
     /// - Returns: The view
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSCheckboxItem(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
-                         label: checkbox.label,
+        OUDSCheckboxItem(label: checkbox.label,
+                         isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
                          icon: checkbox.icon,
                          isReversed: isReversed ? true : checkbox.isReversed,
