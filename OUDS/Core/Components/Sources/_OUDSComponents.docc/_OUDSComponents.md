@@ -17,11 +17,13 @@ Components are grouped in several categories, the same as the ones defined in th
 You can get more details about them in the categories below:
 
 - <doc:Actions>
-- <doc:Navigations>
-- <doc:Indicators>
-- <doc:Controls>
 - <doc:ContentDisplay>
+- <doc:Controls>
+- <doc:Dialogs>
+- <doc:Indicators>
 - <doc:Layouts>
+- <doc:Navigations>
+
 
 ## Customize components
 
