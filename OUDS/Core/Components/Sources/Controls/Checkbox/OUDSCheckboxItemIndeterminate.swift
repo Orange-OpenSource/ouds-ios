@@ -168,12 +168,12 @@ public struct OUDSCheckboxItemIndeterminate: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - selection: A binding to a property that determines wether the indicator is ticked, unticker or preticked.
+    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked (indeterminate / partially ticked).
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - description: A description, an additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   The `errorText`can be different if switch is selected or not.
@@ -220,11 +220,11 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     /// - Parameters:
     ///   - label: The main label text of the checkbox, must not be empty
-    ///   - selection: A binding to a property that determines wether the indicator is ticked, unticker or preticked.
+    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked (indeterminate / partially ticked).
     ///   - description: A description, an additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   The `errorText`can be different if switch is selected or not.

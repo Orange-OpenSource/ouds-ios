@@ -161,8 +161,8 @@ public struct OUDSSwitchItem: View {
     ///   - description: An additonal helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`

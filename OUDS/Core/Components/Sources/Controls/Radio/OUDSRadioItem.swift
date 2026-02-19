@@ -177,12 +177,12 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the radio, must not be empty
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: An description, like an helper text, should not be empty, default set to `nil`
+    ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
@@ -245,12 +245,12 @@ public struct OUDSRadioItem: View {
     ///   - label: The main label text of the radio, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: An description, like an helper text, should not be empty, default set to `nil`
+    ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   The `errorText`can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
