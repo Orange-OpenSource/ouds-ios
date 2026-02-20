@@ -74,7 +74,7 @@ Inline alert does not disappear and remains visible.
     OUDSInlineAlert(label: "Label")
 
     // An inline alert
-    OUDSAlertMessage(label: "Warning", status: .warning)
+    OUDSInlineAlert(label: "Warning", status: .warning)
 
     // Add a custom icon for accent and neutral status
     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))

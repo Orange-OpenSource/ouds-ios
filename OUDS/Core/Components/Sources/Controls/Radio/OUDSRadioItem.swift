@@ -108,7 +108,7 @@ import SwiftUI
 ///     // Never disable a read only or an error-related radio as it will crash
 ///     // This is forbidden by design!
 ///     OUDSRadioItem("Kaboom!", isOn: $selection, isError: true).disabled(true) // fatal error
-///     OUDSRadioItem("Kaboom!", isOn: $selection, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSRadioItem("Kaboom!", isOn: $selection, isReadOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):

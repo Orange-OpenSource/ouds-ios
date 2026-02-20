@@ -794,7 +794,7 @@ Alert message is a UI element that displays system feedback, status changes or r
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsalertmessage).
 Alert message can have 1 status between 6: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`. `neutral` and `accent` status can have custom icon.
  
-Alert message by default are positive:
+Alert message are positive by default:
 ```swift
 OUDSAlertMessage(label: "Label")
 ```
@@ -829,7 +829,7 @@ OUDSInlineAlert(label: "Label")
 
 The status can be changed (within `neutral`, `accent`, `positive`, `info`, `warning`, `negative`. `neutral` and `accent`)
 ```swift
-OUDSAlertMessage(label: "Warning", status: .warning)
+OUDSInlineAlert(label: "Warning", status: .warning)
 ```
 
 Custom icon can be used for accent and neutral status:

@@ -18,8 +18,8 @@ import SwiftUI
 // MARK: - OUDS Icon
 
 /// Use to provide an asset to ouds in order to be added in some components.
-/// The icon can be fliped for RTL concideration and an associated `acessibilityLabel`must be provided
-/// if the icon is not decrorative.
+/// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
+/// if the icon is not decorative.
 ///
 /// - Since: 1.3.0
 public struct OUDSIcon: View {
@@ -34,7 +34,7 @@ public struct OUDSIcon: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Initialiazers
+    // MARK: Initializers
 
     /// Create the icon with asset.
     ///
@@ -58,7 +58,7 @@ public struct OUDSIcon: View {
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
     ///    - color: The color to apply to the icon, default set to `nil`
-    public init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
+    init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
         self.assetName = assetName
         asset = nil
         self.flipped = flipped

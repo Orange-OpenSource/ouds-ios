@@ -26,7 +26,7 @@ import SwiftUI
 ///     OUDSInlineAlert(label: "Label")
 ///
 ///     // An inline alert
-///     OUDSAlertMessage(label: "Warning", status: .warning)
+///     OUDSInlineAlert(label: "Warning", status: .warning)
 ///
 ///     // Add a custom icon for accent and neutral status
 ///     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
@@ -41,19 +41,19 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![An alert message component in light and dark modes with Orange theme](component_inlineAlert_Orange)
+/// ![An inline alert component in light and dark modes with Orange theme](component_inlineAlert_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![An alert message component in light and dark modes with Orange Compact theme](component_inlineAlert_OrangeCompact)
+/// ![An inline alert component in light and dark modes with Orange Compact theme](component_inlineAlert_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![An alert message component in light and dark modes with Sosh theme](component_inlineAlert_Sosh)
+/// ![An inline alert component in light and dark modes with Sosh theme](component_inlineAlert_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![An alert message component in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
+/// ![An inline alertcomponent in light and dark modes with Wireframe theme](component_inlineAlert_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.3.0
@@ -75,8 +75,8 @@ public struct OUDSInlineAlert: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral*.
-    public init(label: String, status: OUDSAlertStatus = .neutral(icon: OUDSIcon(assetName: "ic_heart"))) {
+    ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral* without icon.
+    public init(label: String, status: OUDSAlertStatus = .neutral()) {
         text = label
         self.status = status
     }
