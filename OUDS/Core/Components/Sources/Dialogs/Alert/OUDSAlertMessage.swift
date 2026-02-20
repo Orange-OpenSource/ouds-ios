@@ -129,7 +129,7 @@ public struct OUDSAlertMessage: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses see `OUDSAlertStatus`
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.

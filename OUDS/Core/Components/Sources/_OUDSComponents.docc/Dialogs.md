@@ -65,9 +65,9 @@ Alert message does not disappear automatically and remains visible until dismiss
 }
 
 Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
-persistent and non actionable communication. Inline alert includes functional icon and semantic colour, and does not include a close button and/or action link. 
+persistent and non actionable communication. 
+Inline alert includes functional icon and semantic colour, and does not include a close button and/or action link. 
 Inline alert does not disappear and remains visible.
-
 
 ```swift
     // An inline alert with a label and the default neutral status

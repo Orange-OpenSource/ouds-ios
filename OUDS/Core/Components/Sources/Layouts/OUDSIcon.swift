@@ -15,12 +15,16 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - OUDS Icon
+
 /// Use to provide an asset to ouds in order to be added in some components.
 /// The icon can be fliped for RTL concideration and an associated `acessibilityLabel`must be provided
 /// if the icon is not decrorative.
+///
+/// - Since: 1.3.0
 public struct OUDSIcon: View {
 
-    // - MARK: Properties
+    // MARK: Properties
 
     private let asset: Image?
     private let assetName: String?
@@ -30,15 +34,14 @@ public struct OUDSIcon: View {
 
     @Environment(\.theme) private var theme
 
-    // - MARK: Initialiazers
+    // MARK: Initialiazers
 
     /// Create the icon with asset.
     ///
     /// - Parameters:
-    ///     - asset: The asset
-    ///     - flipped: If asset must be flipped
-    ///     - accessibilityLabel: label to be vocalized to describe the icon
-    @MainActor
+    ///    - asset: The asset
+    ///    - flipped: If asset must be flipped, default set to `false`
+    ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
     public init(asset: Image, flipped: Bool = false, accessibilityLabel: String? = nil) {
         self.asset = asset
         assetName = nil
@@ -51,10 +54,10 @@ public struct OUDSIcon: View {
     /// Internal usage to load asset from theme.
     ///
     /// - Parameters:
-    ///     - assetName: The name of the asset
-    ///     - flipped: If asset must be flipped
-    ///     - accessibilityLabel: label to be vocalized to describe the icon
-    @MainActor
+    ///    - assetName: The name of the asset to load as icon
+    ///    - flipped: If asset must be flipped, default set to `false`
+    ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
+    ///    - color: The color to apply to the icon, default set to `nil`
     public init(assetName: String, flipped: Bool = false, accessibilityLabel: String? = nil, color: MultipleColorSemanticToken? = nil) {
         self.assetName = assetName
         asset = nil
@@ -63,7 +66,7 @@ public struct OUDSIcon: View {
         self.color = color
     }
 
-    // - MARK: Body
+    // MARK: Body
 
     public var body: some View {
         image?
@@ -74,6 +77,8 @@ public struct OUDSIcon: View {
             .accessibility(label: Text(accessibilityLabel ?? ""))
     }
 
+    // MARK: Helpers
+
     private var image: Image? {
         if let assetName {
             return Image(decorative: assetName, bundle: theme.resourcesBundle)
@@ -82,12 +87,15 @@ public struct OUDSIcon: View {
         return asset
     }
 
-    func update(with color: MultipleColorSemanticToken) -> some View {
+    private func update(with color: MultipleColorSemanticToken) -> some View {
         oudsForegroundColor(color)
     }
 }
 
+// MARK: - Extension of View
+
 extension View {
+
     @ViewBuilder
     func update(with color: MultipleColorSemanticToken? = nil) -> some View {
         if let color {
