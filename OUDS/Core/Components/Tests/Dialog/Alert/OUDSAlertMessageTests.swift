@@ -26,7 +26,7 @@ struct OUDSAlertMessageTests {
 
     @Test
     func `alert message component neutral status does not have icon by default`() {
-        let neutralStatus = OUDSAlertMessage.Status.neutral()
+        let neutralStatus = OUDSAlertStatus.neutral()
         if case let .neutral(icon) = neutralStatus {
             #expect(icon == nil, "Icon must be nill for neutral status")
         } else {
@@ -36,7 +36,7 @@ struct OUDSAlertMessageTests {
 
     @Test
     func `alert message component accent status does not have icon by default`() {
-        let accentStatus = OUDSAlertMessage.Status.accent()
+        let accentStatus = OUDSAlertStatus.accent()
         if case let .accent(icon) = accentStatus {
             #expect(icon == nil, "Icon must be nill for accent status")
         } else {
