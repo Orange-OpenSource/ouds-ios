@@ -71,7 +71,7 @@ public final class MultipleColorSemanticToken: NSObject, Sendable {
     public let dark: ColorSemanticToken
 
     /// Initializes a new color multiple semantic token with the same value for light and dark modes
-    /// - Parameter value: The `ColorSemanticToken` to apply wether the device is in *light* and *dark* mode
+    /// - Parameter value: The `ColorSemanticToken` to apply whether the device is in *light* and *dark* mode
     public init(_ value: ColorSemanticToken) {
         light = value
         dark = value

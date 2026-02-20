@@ -110,7 +110,7 @@ public struct OUDSCheckboxIndeterminate: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
+    ///    - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`

@@ -75,7 +75,7 @@ public final class MultipleElevationCompositeRawToken: NSObject, Sendable {
     public let dark: ElevationCompositeRawToken
 
     /// Initializes a new elevation composite raw token with the same value for light and dark modes
-    /// - Parameter value: The `ElevationCompositeRawToken` to apply wether the device is in *light* and *dark* mode
+    /// - Parameter value: The `ElevationCompositeRawToken` to apply whether the device is in *light* and *dark* mode
     public init(_ value: ElevationCompositeRawToken) {
         light = value
         dark = value

@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `inline alert` component (Orange-OpenSource/ouds-ios#1307)
 - `alert message` component (Orange-OpenSource/ouds-ios#1159)
 
+### Changed
+
+- Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
+
 ### Fixed
 
 - Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)

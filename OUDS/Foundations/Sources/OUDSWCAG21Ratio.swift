@@ -27,7 +27,7 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 /// The WCAG specifications, for AA level, defines a contrast ratio of 4.5:1 for textual elements (i.e. texts), and 3:1 for non-textual elements (i.e. link's chevron).
 /// However it is higly recommended for mobile devices to reach AAA level because of the screen sizes and luminosity issues, i.e. 7:1 for textual
 /// and 4.5:1 for non-textual elements.
-/// This utility helps to define wether a set of contrast ratio matches AA and AAA or not.
+/// This utility helps to define whether a set of contrast ratio matches AA and AAA or not.
 /// See for example [the following guidelines](https://system.design.orange.com/0c1af118d/p/2531b9-accessibility-compliance)
 ///
 /// - Since: 0.15.0

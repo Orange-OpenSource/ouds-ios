@@ -48,7 +48,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 /// `ViewModifier` to apply on a `View` so as to request the focus after a given time.
 struct RequestAccessibleFocusModifier: ViewModifier {
 
-    /// Flag to listen saying wether or not the `View` got the focus
+    /// Flag to listen saying whether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: Bool
     // NOTE: "never used" false positive with periphery (https://github.com/peripheryapp/periphery/issues/979)
 
@@ -90,7 +90,7 @@ public enum AccessibilityFocusable: Hashable {
 /// `ViewModifier` to apply on a `View` to request the focus on that `View` after a given time
 struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
 
-    /// Flag to listen saying wether or not the `View` got the focus
+    /// Flag to listen saying whether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: AccessibilityFocusable?
     // NOTE: "never used" false positive with periphery (https://github.com/peripheryapp/periphery/issues/979)
 
