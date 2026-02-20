@@ -22,15 +22,15 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///         // A inline alert with a label and the default neutral status
-///         OUDSInlineAlert(label: "Label")
+///     // A inline alert with a label and the default neutral status
+///     OUDSInlineAlert(label: "Label")
 ///
-///         // An inline alert
-///         OUDSAlertMessage(label: "Warning", status: .warning)
+///     // An inline alert
+///     OUDSAlertMessage(label: "Warning", status: .warning)
 ///
-///         // Add a custom icon for accent and neutral status
-///         OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
-///         OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+///     // Add a custom icon for accent and neutral status
+///     OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
+///     OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
 /// ```
 ///
 /// ## Design documentation
@@ -67,7 +67,7 @@ public struct OUDSInlineAlert: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: - Initializers
+    // MARK: - Initializer
 
     /// Creates a inline alert.
     ///
@@ -75,7 +75,7 @@ public struct OUDSInlineAlert: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the inline alert. Its text and its icon color are based on this status. There are two types of statuses see `OUDSAlertStatus`
+    ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral*.
     public init(label: String, status: OUDSAlertStatus = .neutral(icon: OUDSIcon(assetName: "ic_heart"))) {
         text = label
         self.status = status

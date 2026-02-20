@@ -16,13 +16,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The status of the alerts.
-/// `OUDSAlertMessage` background color and its icon color are based on this status.
-/// `OUDSinlineAlert` icon and text color are based on this status.
+/// ``OUDSAlertMessage`` background color and its icon color are based on this status.
+/// ``OUDSInlineAlert`` icon and text color are based on this status.
 ///
 /// There are two types of statuses:
-///  - Non-functional statuses  used for informational or decorative alert messages. They
-///  provide context or highlight content without implying a specific state, system event, or user action. These alerts are not tied to UX patterns such as
-///  success, error, or warning, and may use contextual or brand-related icons to enhance recognition or storytelling.
+///  - Non-functional statuses used for informational or decorative alert messages.
+///  They provide context or highlight content without implying a specific state, system event, or user action.
+///  These alerts are not tied to UX patterns such as success, error, or warning, and may use contextual or brand-related icons to enhance recognition or storytelling.
 ///  - Functional statuses communicate specific system statuses, results, or user feedback:
 ///  Each variant conveys a clear semantic meaning and must always be paired with its dedicated functional icon to ensure clarity and accessibility.
 ///  Use functional alerts to inform user about state changes, confirmations, or issues that are directly connected to system logic or user actions.

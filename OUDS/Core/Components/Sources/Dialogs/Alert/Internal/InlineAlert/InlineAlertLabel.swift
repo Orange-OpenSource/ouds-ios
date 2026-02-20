@@ -31,7 +31,8 @@ struct InlineAlertLabel: View {
             .frame(maxWidth: theme.sizes.maxWidthTypeLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
     }
 
-    // MARK: - Private Helper
+    // MARK: - Private helper
+
     private var contentColor: MultipleColorSemanticToken {
         switch status {
         case .neutral, .accent:

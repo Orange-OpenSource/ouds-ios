@@ -14,15 +14,17 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Alert Leading Icon
 struct AlertLeadingIcon: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let status: OUDSAlertStatus
+
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: - Initilizer
+    // MARK: Initilizer
 
     init?(status: OUDSAlertStatus) {
         if status.hasIcon {
@@ -32,7 +34,7 @@ struct AlertLeadingIcon: View {
         }
     }
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         HStack {
@@ -61,6 +63,8 @@ struct AlertLeadingIcon: View {
         theme.alert.sizeIcon * dynamicTypeSize.percentageRate / 100
     }
 }
+
+// MARK: - Extension of OUDS Alert Status
 
 extension OUDSAlertStatus {
     var hasIcon: Bool {
