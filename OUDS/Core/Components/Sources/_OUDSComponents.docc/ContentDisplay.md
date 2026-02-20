@@ -11,7 +11,7 @@ Some components can be used for **content display**.
 
 ### Bullet List
 
-Bullet list is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
+The ``OUDSBulletList`` is a UI element that helps to display related individual text items grouped together; items usually start with a number or a bullet.
 
 @TabNavigator {
     @Tab("Orange") {
@@ -28,7 +28,7 @@ Bullet list is a UI element that helps to display related individual text items 
     }
 }
 
-Bullet list is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
+``OUDSBulletList`` is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
 
 ```swift
 // Bare list with 3 items

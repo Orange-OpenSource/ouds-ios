@@ -28,9 +28,9 @@ Dialogs components are UI elements that display information, system feedback or 
     }
 }
 
-Alert message is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication. Alert message includes functional icon and semantic colour, and may include as well a close button and/or action link.
+``OUDSAlertMessage`` is a UI element that displays system feedback, status changes or required action; throughout detailed, prominent, persistent and actionable communication. Alert message includes functional icon and semantic colour, and may include as well a close button and/or action link.
 
-Alert message does not disappear automatically and remains visible until dismissed or resolved by the user.
+``OUDSAlertMessage`` does not disappear automatically and remains visible until dismissed or resolved by the user.
 
 ```swift
     // A basic positive alert message with text and badge
@@ -64,9 +64,9 @@ Alert message does not disappear automatically and remains visible until dismiss
     }
 }
 
-Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
+``OUDSInlineAlert`` is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
 persistent and non actionable communication. 
-Inline alert includes functional icon and semantic colour, and does not include a close button and/or action link. 
+``OUDSInlineAlert`` includes functional icon and semantic colour, and does not include a close button and/or action link. 
 Inline alert does not disappear and remains visible.
 
 ```swift
