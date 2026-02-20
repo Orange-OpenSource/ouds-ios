@@ -794,7 +794,7 @@ Alert message is a UI element that displays system feedback, status changes or r
 Its documentation is [available online](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsalertmessage).
 Alert message can have 1 status between 6: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`. `neutral` and `accent` status can have custom icon.
  
-Alert message bvy default are positive:
+Alert message are positive by default:
 ```swift
 OUDSAlertMessage(label: "Label")
 ```
@@ -806,13 +806,36 @@ OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details 
 }
 ```
 
-Alerts can have custom icons, bullet lists and detaim link:
+Alerts can have custom icons, bullet lists and detail link:
 ```swift
 OUDSAlertMessage(label: "Label",
                 status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
                 bulletList: ["Bullet 1", "Bullet 2", "Bullet 3"],
                 link: .init(text: "Link", position: .bottom) {},
                 onClose: {})
+```
+
+#### Inline Alert
+
+Inline alert is a lightweight UI element, placed in the content flow, that displays information, system feedback, status changes throughout short, prominent, 
+persistent and non actionable communication. 
+Inline alert includes functional icon and semantic colour, and does not include a close button and/or action link. 
+Inline alert does not disappear and remains visible.
+
+It can have only a label (by default at neutral status):
+```swift
+OUDSInlineAlert(label: "Label")
+```
+
+The status can be changed (within `neutral`, `accent`, `positive`, `info`, `warning`, `negative`. `neutral` and `accent`)
+```swift
+OUDSInlineAlert(label: "Warning", status: .warning)
+```
+
+Custom icon can be used for accent and neutral status:
+```
+OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
 ```
 
 #### Indicators

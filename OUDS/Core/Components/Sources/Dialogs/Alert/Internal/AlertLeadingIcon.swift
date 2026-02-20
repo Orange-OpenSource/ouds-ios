@@ -14,17 +14,19 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct AlertMessageLeadingIcon: View {
+// MARK: - Alert Leading Icon
+struct AlertLeadingIcon: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
-    private let status: OUDSAlertMessage.Status
+    private let status: OUDSAlertStatus
+
     @Environment(\.theme) private var theme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
-    // MARK: - Initilizer
+    // MARK: Initilizer
 
-    init?(status: OUDSAlertMessage.Status) {
+    init?(status: OUDSAlertStatus) {
         if status.hasIcon {
             self.status = status
         } else {
@@ -32,7 +34,7 @@ struct AlertMessageLeadingIcon: View {
         }
     }
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         HStack {
@@ -55,7 +57,6 @@ struct AlertMessageLeadingIcon: View {
             }
         }
         .frame(width: size, height: size)
-        .padding(.top, theme.alert.spacePaddingBlock)
     }
 
     private var size: CGFloat {
@@ -63,7 +64,9 @@ struct AlertMessageLeadingIcon: View {
     }
 }
 
-extension OUDSAlertMessage.Status {
+// MARK: - Extension of OUDS Alert Status
+
+extension OUDSAlertStatus {
     var hasIcon: Bool {
         switch self {
         case let .neutral(icon), let .accent(icon):

@@ -107,7 +107,7 @@ import SwiftUI
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
@@ -115,10 +115,10 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSCheckboxItemIndeterminate("Cocorico !",
-///                                   isOn: $selection,
+///                                   selection: $selection,
 ///                                   icon: Image(systemName: "figure.handball"),
 ///                                   flipIcon: layoutDirection == .rightToLeft,
-///                                   isInversed: layoutDirection == .rightToLeft)
+///                                   isReversed: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Suggestions

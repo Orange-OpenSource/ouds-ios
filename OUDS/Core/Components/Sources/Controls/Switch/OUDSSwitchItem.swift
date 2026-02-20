@@ -105,7 +105,7 @@ import SwiftUI
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
 ///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):

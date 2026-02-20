@@ -73,52 +73,13 @@ public struct OUDSAlertMessage: View {
     // MARK: Stored properties
 
     private let text: String
-    private let status: Self.Status
+    private let status: OUDSAlertStatus
     private let description: String?
     private let bulletList: [String]
     private let link: Self.Link?
     private let onClose: (() -> Void)?
 
     @Environment(\.theme) private var theme
-
-    // MARK: - Configurations
-
-    /// The status depends on the context of the information it represents.
-    public enum Status {
-
-        /// Neutral status can be used as a generic informative alert without semantic meaning or colour association.
-        /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where
-        /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
-        ///
-        /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
-        case neutral(icon: OUDSIcon? = nil)
-
-        /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
-        /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
-        /// product updates, or customer engagement moments.
-        ///
-        /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert message. Pass `nil` if no icon is needed.
-        case accent(icon: OUDSIcon? = nil)
-
-        /// Positive status indicates that a task or process has been completed successfully. These alerts reassure users and confirm that no further action is needed.
-        /// This status displays a dedicated default icon.
-        case positive
-
-        /// Info status is used to share neutral system information or service updates that do not require immediate action. Ideal for background processes or status
-        /// messages where users simply need to stay informed.
-        /// This status displays a dedicated default icon.
-        case info
-
-        /// Used to draw attention to potential issues or upcoming changes that might affect the user’s service or experience. Warnings encourage awareness but
-        /// typically do not block actions.
-        /// This status displays a dedicated default icon.
-        case warning
-
-        /// Negative status communicates a critical issue or error that prevents the user from proceeding until it is resolved. These alerts remain visible until
-        /// the problem is fixed or dismissed by the user.
-        /// This status displays a dedicated default icon.
-        case negative
-    }
 
     // MARK: - Link
 
@@ -168,7 +129,7 @@ public struct OUDSAlertMessage: View {
     ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
-    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses see `OUDSAlertMessage.Status`
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
     ///   - description: An optional supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
     ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
     ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
@@ -178,13 +139,16 @@ public struct OUDSAlertMessage: View {
     ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
     ///   user is aware of important information; others can be closed to reduce visual clutter.
     public init(label: String,
-                status: Status = .positive,
+                status: OUDSAlertStatus = .positive,
                 description: String? = nil,
                 bulletList: [String] = [],
                 link: Self.Link? = nil,
                 onClose: (() -> Void)? = nil)
     {
         text = label
+        if text.isEmpty {
+            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+        }
         self.status = status
         self.description = description
         self.link = link
@@ -196,13 +160,19 @@ public struct OUDSAlertMessage: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: theme.alert.spaceColumnGap) {
-            AlertMessageLeadingIcon(status: status)
+            AlertLeadingIcon(status: status)
+                .padding(.top, theme.alert.spacePaddingBlock)
             AlertMessageContent(text: text, description: description, bulletList: bulletList, link: link)
             AlertMessageAction(link: link, onClose: onClose)
         }
         .padding(.leading, theme.alert.spacePaddingInline)
         .padding(.trailing, onClose == nil ? theme.alert.spacePaddingInline : 0)
+        .frame(minWidth: theme.alert.sizeMinWidth, minHeight: minHeight, alignment: .leading)
         .modifier(AlertMessageBackgroundModifier(status: status))
         .modifier(AlertMessageBorderModifier(status: status))
+    }
+
+    private var minHeight: SizeSemanticToken {
+        link?.position == .bottom ? theme.alert.sizeMinHeightBottomActionPlacement : theme.alert.sizeMinHeight
     }
 }
