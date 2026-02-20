@@ -22,7 +22,7 @@ import Testing
 /// Struct to test `OUDSWCAG21Ratio`.
 /// Use cases picked from issue [#647](https://github.com/Orange-OpenSource/ouds-ios/issues/647)
 /// based on Orange Theme v0.14.0 and tokens lib v0.11.0
-/// The aim is to be sure the utils are able to computed the suitable ratios and define wether or not WCAG 2.1 are respected.
+/// The aim is to be sure the utils are able to computed the suitable ratios and define whether or not WCAG 2.1 are respected.
 struct OUDSWCAG21RatioTests {
 
     // See https://github.com/Orange-OpenSource/ouds-ios/issues/667

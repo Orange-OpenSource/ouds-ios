@@ -31,7 +31,7 @@ struct ContentView: View {
 
             OUDSHorizontalDivider(color: .brandPrimary)
 
-            OUDSCheckboxItem(isOn: $termsAccepted, label: "I accept the terms of use")
+            OUDSCheckboxItem("I accept the terms of use", isOn: $termsAccepted)
 
             OUDSSwitchItem("Switch to dark mode", isOn: $switchToDarkMode)
 

@@ -564,8 +564,8 @@ OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Some label to vocalize")
 or with texts and image:
 ```swift
 @Published var isOn: Bool = true
-OUDSCheckboxItem(isOn: $isOn,
-                 label: "An important text",
+OUDSCheckboxItem("An important text",
+                 isOn: $isOn,
                  description: "A secondary text",
                  icon: Image(decorative: "image_name"))
 ```
@@ -573,7 +573,7 @@ OUDSCheckboxItem(isOn: $isOn,
 or only with one text:
 ```swift
 @Published var isOn: Bool = true
-OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
+OUDSCheckboxItem("Hello world", isOn: $isOn)
 ```
 
 Checkboxes can be wrapped inside a checkbox picker.
@@ -615,15 +615,15 @@ OUDSRadio(isOn: $selection, accessibilityLabel: "Some label to vocalized")
 or with texts and image:
 ```swift
 @Published var isOn: Bool = true
-OUDSRadioItem(isOn: $isOn,
-              label: "Some text",
+OUDSRadioItem("Some text",
+              isOn: $isOn,
               icon: Image(decorative: "image_name"))
 ```
 
 or only with one text:
 ```swift
 @Published var isOn: Bool = true
-OUDSRadioItem(isOn: $isOn, label: "Some text")
+OUDSRadioItem("Some text", isOn: $isOn)
 ```
 
 Radio buttons can be wrapped inside a radio picker.

@@ -43,7 +43,7 @@ struct TypographyModifier: ViewModifier {
     /// Environment variable to observe Dynamic Type changes in accessibility settings
     @Environment(\.sizeCategory) private var sizeCategory
 
-    /// Says wether or not the layout is in *compact mode*
+    /// Says whether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
         horizontalSizeClass == .compact || verticalSizeClass == .compact
     }
