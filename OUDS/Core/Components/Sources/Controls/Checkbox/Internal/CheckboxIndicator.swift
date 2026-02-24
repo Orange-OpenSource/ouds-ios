@@ -56,6 +56,7 @@ struct CheckboxIndicator: View {
     private func tickImage(name: String) -> some View {
         Image(decorative: name, bundle: theme.resourcesBundle)
             .resizable()
+            .renderingMode(.template)
             .scaledToFit()
             .accessibilityHidden(true)
             .oudsForegroundColor(appliedColor)
