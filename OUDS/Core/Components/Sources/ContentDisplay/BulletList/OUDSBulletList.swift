@@ -68,7 +68,7 @@ import SwiftUI
 ///
 ///        // 1.1. Item of Unordered list with bullet as tick, a text style
 ///        // body medium and text bold
-///        OUDSBulletList(type: .unordered(icon: .tick),
+///        OUDSBulletList(type: .unordered(asset: .tick),
 ///                    textStyle: .bodyMedium,
 ///                    isBold: true)  {
 ///            OUDSBulletList.Item("Label 1")
@@ -105,10 +105,10 @@ import SwiftUI
 ///        }
 ///
 ///        // Same Bullet list but items in third level with free icon as bullet
-///        let freeIcon = Image(decorative: "ic_heart")
+///        let icon = Image(decorative: "ic_heart")
 ///        OUDSBulletList(type: .ordered) {
 ///            OUDSBulletList.Item("Label 1") {
-///                OUDSBulletList.Item("Label 1.1", subListType: .unordered(icon: .free(freeIcon))) {
+///                OUDSBulletList.Item("Label 1.1", subListType: .unordered(asset: .icon(icon))) {
 ///                    OUDSBulletList.Item("Label 1.1.1")
 ///                    OUDSBulletList.Item("Label 1.1.2")
 ///                }
@@ -201,9 +201,9 @@ public struct OUDSBulletList: View {
 
     // MARK: - Unordered Icon
 
-    /// The type of icon in the unordered list
+    /// The type of asset in the unordered list
     /// - Since: 1.2.0
-    public enum UnorderedIcon {
+    public enum UnorderedAsset {
         /// A bullet for unordered bullet list
         case bullet
 
@@ -215,7 +215,15 @@ public struct OUDSBulletList: View {
         ///  - Parameters:
         ///     - image: The asset image as bullet
         ///     - accessibilityLabel: An optional label for accessibility description if asset is not decorative.
+        @available(*, deprecated, message: "Use instead .icon(:accessibilityLabel:)")
         case free(_ image: Image, accessibilityLabel: String? = nil)
+
+        /// A free icon as bullet
+        ///
+        ///  - Parameters:
+        ///     - image: The asset image as bullet
+        ///     - accessibilityLabel: An optional label for accessibility description if asset is not decorative.
+        case icon(_ image: Image, accessibilityLabel: String? = nil)
     }
 
     // MARK: - Type
@@ -227,9 +235,9 @@ public struct OUDSBulletList: View {
         /// List items are typically marked with bullets, but it is also possible to use a tick or any Solaris icon.
         ///
         ///  - Parameters:
-        ///     - icon: The type of icon the unordered item should be used, Bullet as default and branded
+        ///     - asset: The type of icon the unordered item should be used, Bullet as default and branded
         ///     - isBranded: Flag used to display icon tinted with brand color. false by default
-        case unordered(icon: UnorderedIcon = .bullet, isBranded: Bool = true)
+        case unordered(asset: UnorderedAsset = .bullet, isBranded: Bool = true)
 
         /// Collects related items with numeric order or sequence. Numbering starts at 1 with the first list item and increases
         /// by increments of 1 for each successive ordered list item.
@@ -274,11 +282,11 @@ public struct OUDSBulletList: View {
     ///
     /// - Parameters:
     ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).
-    ///     See `OUDSBulletList.Type`, default `.unordered(icon: .bullet, isBranded: false)`
+    ///     See `OUDSBulletList.Type`, default `.unordered(asset: .bullet, isBranded: false)`
     ///    - textStyle: The typography style for the list items. See `OUDSBulletList.TextStyle`, defaults `.bodyLarge`
     ///    - isBold: Whether the list item text should be bold. This can be overridden for sub-lists. Defaults to `true`
     ///    - items: Defines the list items
-    public init(type: Self.`Type` = .unordered(icon: .bullet, isBranded: false),
+    public init(type: Self.`Type` = .unordered(asset: .bullet, isBranded: false),
                 textStyle: Self.TextStyle = .bodyLarge,
                 isBold: Bool = true,
                 @OUDSBulletListItemBuilder items: () -> [OUDSBulletList.Item])
