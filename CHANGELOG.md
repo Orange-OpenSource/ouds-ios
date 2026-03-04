@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `actions/dependency-review-action` action from v4.8.2 to v4.9.0 for `dependency-review` workflow
 - `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
 - Selected tab animation for `tab bar component` (iOS 18 and older) (Orange-OpenSource/ouds-ios#1351)
 - `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
