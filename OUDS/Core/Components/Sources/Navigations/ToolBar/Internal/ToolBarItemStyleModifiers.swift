@@ -54,24 +54,28 @@ struct ToolbarBottomItemActionStyleModifier: ViewModifier {
 /// However things cannot be customized that much for Liquid Glass.
 struct ToolbarTopItemActionStyleModifier: ViewModifier {
 
-    let textOnly: Bool
+    let type: OUDSToolbarItem.ActionType
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     func body(content: Content) -> some View {
         if #available(iOS 26, *) {
-            if textOnly {
+            switch type {
+            case let .label(_, action):
                 content
                     .oudsForegroundColor(theme.colors.contentDefault)
-                    .buttonStyle(.bordered)
-            } else {
+                    //                    .buttonStyle(.bordered)
+                    .disabled(action == nil)
+            case let .icon(_, _, action):
                 content
                     .oudsForegroundColor(theme.bar.colorContentOnAccent)
-                    .oudsTintColor(theme.colors.actionAccent)
+                    .oudsTintColor(isEnabled ? theme.colors.actionAccent : theme.colors.contentDisabled)
                     .buttonStyle(.borderedProminent)
+                    .disabled(action == nil)
             }
         } else {
             content
-                .oudsForegroundColor(theme.colors.actionAccent)
+                .oudsForegroundColor(isEnabled ? theme.colors.actionAccent : theme.colors.contentDisabled)
         }
     }
 }
@@ -83,7 +87,7 @@ struct ToolbarTopItemActionStyleModifier: ViewModifier {
 /// However things cannot be customized that much for Liquid Glass.
 struct ToolbarTopItemNavigationStyleModifier: ViewModifier {
 
-    let icon: OUDSToolbarNavigationItem
+    let type: OUDSToolbarItem.NavigationType
 
     @Environment(\.theme) private var theme
 
@@ -101,7 +105,7 @@ struct ToolbarTopItemNavigationStyleModifier: ViewModifier {
 
     private var foregroundColor: MultipleColorSemanticToken {
         if #available(iOS 26, *) {
-            switch icon {
+            switch type {
             case .back:
                 theme.colors.contentDefault
             case .close:
@@ -110,7 +114,7 @@ struct ToolbarTopItemNavigationStyleModifier: ViewModifier {
                 MultipleColorSemanticToken("#999999") // TODO: #1174 - Not a token? Hard-coded value?
             }
         } else {
-            switch icon {
+            switch type {
             case .back:
                 theme.colors.actionAccent
             case .close:
@@ -120,7 +124,7 @@ struct ToolbarTopItemNavigationStyleModifier: ViewModifier {
     }
 
     private var tintColor: MultipleColorSemanticToken {
-        switch icon {
+        switch type {
         case .back:
             theme.colors.actionAccent
         case .close:

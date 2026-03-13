@@ -21,11 +21,16 @@ struct ToolbarTitleView: View {
 
     let title: String
     let subtitle: String?
+    let addGrabber: Bool
 
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(spacing: 2) { // TODO: #1174 - Hard-coded value for spacing?
+        VStack(spacing: theme.spaces.fixedNone) {
+            if addGrabber {
+                GrabberView()
+            }
+
             Text(LocalizedStringKey(title))
                 .headingSmall(theme) // TODO: #1174 - Check typography to apply
                 .oudsForegroundColor(MultipleColorSemanticToken(light: "#333333", dark: "#FFFFFF")) // TODO: #1174 - Check color to apply
@@ -38,4 +43,24 @@ struct ToolbarTitleView: View {
         .multilineTextAlignment(.center)
     }
 }
+
+struct GrabberView: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        // Hard coded values because base on figma apple kit
+        // (no need tokens because same for all brands)
+        RoundedRectangle(cornerRadius: 2)
+            .fill(color)
+            .frame(width: 36, height: 5)
+            .padding(.top, 5)
+            .padding(.bottom, 6)
+    }
+
+    private var color: Color {
+        Color(hexadecimalCode: colorScheme == .light ? "CCCCCC" : "333333") ?? .black
+    }
+}
+
 #endif
