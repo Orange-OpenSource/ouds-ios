@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `fastlane` gem from v2.232.1 to v2.232.2
 - `ruby/setup-ruby` action from v1.288.0 to v1.296.0 for `build-and-test` workflow
 - `Ruby` version from v4.0.1 to v4.0.2 for `build-and-test` workflows
 - `actions/upload-artifact` action from v6.0.0 to v7.0.0 for `scorecard` workflow
