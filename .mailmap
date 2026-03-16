@@ -1,0 +1,28 @@
+# Git mailmap file
+# Keep it updated and alphabetically sorted
+# Allows to pack commits with several Git user.name and user.email configurations to the same person
+# Use "git shortlog -sne" for logs
+
+# Bots and AI agents
+
+GitHub Copilot [bot] <198982749+Copilot@users.noreply.github.com> Copilot <198982749+Copilot@users.noreply.github.com>
+GitHub Copilot [bot] <198982749+Copilot@users.noreply.github.com> copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
+OUDS Boosted [bot] <130566815+boosted-bot@users.noreply.github.com> Boosted Bot [bot] <130566815+boosted-bot@users.noreply.github.com>
+OUDS Boosted [bot] <130566815+boosted-bot@users.noreply.github.com> boosted-bot <boosted-bot@users.noreply.github.com>
+OUDS Boosted [bot] <130566815+boosted-bot@users.noreply.github.com> OUDS Bot [bot] <130566815+boosted-bot@users.noreply.github.com>
+Renovate [bot] <29139614+renovate[bot]@users.noreply.github.com> renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
+StepSecurity [bot] <bot@stepsecurity.io> StepSecurity Bot <bot@stepsecurity.io>
+
+# Humans
+
+chetan-kmr-0607 <118420797+chetan-kmr-0607@users.noreply.github.com>
+Diksha DHANAJI DABHOLE <dikshadabhole78@gmail.com> Diksha Dhanaji Dabhole <dikshadabhole78@gmail.com>
+Julien DÉRAMOND <julien.deramond@orange.com> Julien Déramond <julien.deramond@orange.com>
+Julien DÉRAMOND <julien.deramond@orange.com> Julien Déramond <juderamond@gmail.com>
+Pierre-Yves LAPERSONNE <pierreyves.lapersonne@orange.com> Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Pierre-Yves LAPERSONNE <pierreyves.lapersonne@orange.com> Pierre-Yves Lapersonne <dev@pylapersonne.info>
+Maxime LARDENOIS <maxime.lardenois@orange.com> Maxime Lardenois <maxime.lardenois@orange.com>
+Ludovic PINEL <ludovic.pinel@orange.com> Ludovic Pinel <ludovic.pinel@orange.com>
+Ludovic PINEL <ludovic.pinel@orange.com> LudovicPinel <ludovic.pinel@orange.com>
+Tayeb SEDRAIA <tayeb.sedraia@orange.com> Tayeb Sedraia <tayeb.sedraia@orange.com>
+Benoit SUZANNE <benoit.suzanne@orange.com> Benoit Suzanne <benoit.suzanne@orange.com>
