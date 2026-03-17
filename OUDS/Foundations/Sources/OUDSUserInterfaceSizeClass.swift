@@ -19,19 +19,9 @@ import UIKit
 
 // MARK: - Environment values
 
-private struct HorizontalSizeClassEnvironmentKey: EnvironmentKey {
-
-    static let defaultValue = OUDSUserInterfaceSizeClass.regular
-}
-
-private struct VerticalSizeClassEnvironmentKey: EnvironmentKey {
-
-    static let defaultValue = OUDSUserInterfaceSizeClass.regular
-}
-
 extension EnvironmentValues {
 
-    /// The `OUDSUserInterfaceSizeClass` instance exposed as en environment values across the library for the horizontal viewport.
+    /// The `oudsHorizontalSizeClass` instance exposed as en environment values across the library for the horizontal viewport.
     ///
     /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
     /// The value tells you about the amount of horizontal space available to the view that reads it.
@@ -39,31 +29,7 @@ extension EnvironmentValues {
     ///
     ///     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
     ///
-    public var oudsHorizontalSizeClass: OUDSUserInterfaceSizeClass {
-        get {
-            self[HorizontalSizeClassEnvironmentKey.self]
-        }
-        set {
-            self[HorizontalSizeClassEnvironmentKey.self] = newValue
-        }
-    }
-
-    /// The `OUDSUserInterfaceSizeClass` instance exposed as en environment values across the library for the vertical viewport.
-    ///
-    /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
-    /// The value tells you about the amount of vertical space available to the view that reads it.
-    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the `Environment` property wrapper:
-    ///
-    ///     @Environment(\.oudsVerticalSizeClass) private var verticalSizeClass
-    ///
-    public var oudsVerticalSizeClass: OUDSUserInterfaceSizeClass {
-        get {
-            self[VerticalSizeClassEnvironmentKey.self]
-        }
-        set {
-            self[VerticalSizeClassEnvironmentKey.self] = newValue
-        }
-    }
+    @Entry public var oudsHorizontalSizeClass: OUDSUserInterfaceSizeClass = .regular
 }
 
 /// Enumerates the size classes defined by the design system.
@@ -76,7 +42,6 @@ extension EnvironmentValues {
 /// To use it:
 /// ```swift
 ///     @Environment(\.oudsHorizontalSizeClass) var horizontalSizeClass
-///     @Environment(\.oudsVerticalSizeClass) var verticalSizeClass
 /// ```
 ///
 /// - Since: 0.8.0

@@ -26,7 +26,6 @@ extension OUDSTheme {
     ///
     ///         @Environment(\.theme) var theme
     ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
-    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
     ///
     ///         func someFunc() -> GridRawToken {
     ///             theme.gridMinWidth(for: sizeClass)
@@ -56,7 +55,6 @@ extension OUDSTheme {
     ///
     ///         @Environment(\.theme) var theme
     ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
-    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
     ///
     ///         func someFunc() -> GridRawToken {
     ///             theme.gridMaxWidth(for: sizeClass)
@@ -86,7 +84,6 @@ extension OUDSTheme {
     ///
     ///         @Environment(\.theme) var theme
     ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
-    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
     ///
     ///         func someFunc() -> GridRawToken {
     ///             theme.gridMargin(for: sizeClass)
@@ -116,7 +113,6 @@ extension OUDSTheme {
     ///
     ///         @Environment(\.theme) var theme
     ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
-    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
     ///
     ///         func someFunc() -> GridRawToken {
     ///             theme.gridColumnGap(for: sizeClass)
