@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Rename in `bullet list` component API "unordered icon" to "unordered asset" (Orange-OpenSource/ouds-ios#1326)
 - AGENTS.md file to focus only on users (Orange-OpenSource/ouds-ios#1341)
 - Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
 

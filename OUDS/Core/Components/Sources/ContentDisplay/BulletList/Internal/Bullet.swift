@@ -37,8 +37,8 @@ struct Bullet: View {
     var body: some View {
         HStack(alignment: .center) {
             switch type {
-            case let .unordered(icon, isBranded):
-                UnorderedBullet(icon: icon, isBranded: isBranded, level: level, textStyle: textStyle)
+            case let .unordered(asset, isBranded):
+                UnorderedBullet(asset: asset, isBranded: isBranded, level: level, textStyle: textStyle)
             case .ordered:
                 OrderedBullet(level: level, textStyle: textStyle, isBold: isBold, index: index)
             case .bare:
@@ -84,7 +84,7 @@ struct UnorderedBullet: View {
 
     // MARK: Properties
 
-    let icon: OUDSBulletList.UnorderedIcon
+    let asset: OUDSBulletList.UnorderedAsset
     let isBranded: Bool
     let level: OUDSBulletList.NestedLevel
     let textStyle: OUDSBulletList.TextStyle
@@ -95,19 +95,21 @@ struct UnorderedBullet: View {
     // MARK: Body
 
     var body: some View {
-        ScaledIcon(icon: asset.renderingMode(.template), size: assetSize)
+        ScaledIcon(icon: image.renderingMode(.template), size: assetSize)
             .oudsForegroundColor(color)
     }
 
     // MARK: Private helpers
 
-    private var asset: Image {
-        switch icon {
+    private var image: Image {
+        switch asset {
         case .bullet:
             Image(decorative: bulletAssetName, bundle: theme.resourcesBundle)
         case .tick:
             Image(decorative: "ic_bullet_list_tick", bundle: theme.resourcesBundle)
         case let .free(image, _):
+            image
+        case let .icon(image, _):
             image
         }
     }
