@@ -8,12 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)
 - Helper to apply grid margin on views (Orange-OpenSource/ouds-ios#1317)
 - `inline alert` component (Orange-OpenSource/ouds-ios#1307)
 - `alert message` component (Orange-OpenSource/ouds-ios#1159)
 
 ### Changed
 
+- AGENTS.md file to focus only on users (Orange-OpenSource/ouds-ios#1341)
 - Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
 
 ### Fixed

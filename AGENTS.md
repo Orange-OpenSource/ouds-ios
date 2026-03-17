@@ -31,299 +31,12 @@ The products are written in Swift with SwiftUI as UI framework and Swift 6 (form
 - *token provider*: an object in a theme gathering tokens (semantics and components)
 - *component*: mainly a SwiftUI view with specific features and layouts like buttons, switch, link etc.
 
-## 3. Code formating
 
-The source code is formatted for Swift 6.2. Configuration of formater is in `.swiftformat` and linter in `.swiftlint`.
+> **Note for contributors and maintainers**: Code formatting, architecture details, build process, best practices, ecodesign, accessibility, development requirements, build commands and review guidelines are documented in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
 
-## 4. Architecture details
+## 3. How to use OUDS framwork
 
-The Swift Package contains several products or targets exposing API in separated dependencies.
-
-### 4.1 Modules
-
-Here are the modules of the Swift Package, i.e. set of features with external dependencies.
-
-#### Core / Components
-
-Here the the components provided by the Swift Package like buttons, switchs, checkboxes, chips, tags, links, etc.
-
-#### Core / Themes / Orange
-
-Here is the definition of the Orange theme for all Orange products.
-
-#### Core / Themes / Orange Compact
-
-Here is the definition of the Orange theme for all Orange products but with constraints of spaces and sizes.
-
-#### Core / Themes / Sosh
-
-Here is the definition of the Sosh theme for all Sosh products.
-
-#### Core / Themes / Wireframe
-
-Here is the definition of the Wireframe theme for prototyping and mockups.
-
-#### Core / ThemesContract
-
-Here is the definition of the theme contract, the tokens provider and abstract entities.
-
-#### Core / Tokens / ComponentTokens
-
-Here are the definitions of the tokens used for components styling and look and feel.
-
-#### Core / Tokens / SemanticTokens
-
-Here are the definitions of the tokens used by component tokens, pointing to raw tokens.
-
-#### Core / Tokens / RawTokens
-
-Here are the definitions of the tokens pointing to raw values like strings, floats and ints, used by semantic tokens.
-
-#### Foundations
-
-Here are some shared logics and objects with plenty of extensions and utilities used everywhere.
-
-### 4.2 Architecture guidelines
-
-- SwiftUI is the default UI paradigm - embrace its declarative nature
-- Avoid legacy UIKit patterns and unnecessary abstractions
-- Focus on simplicity, clarity, and native data flow
-- Let SwiftUI handle the complexity - don't fight the framework
-- Organize by components, keeps things isolated
-- Keep related code together in the same file when appropriate
-- Use extensions to organize large files
-- Follow Swift naming conventions consistently
-
-## 5. Build verification process ⚠️ CRITICAL
-
-**IMPORTANT**: When editing code, you MUST:
-1. Format the sources
-2. Build the project after making changes
-3. Fix any compilation errors before proceeding
-4. Run the tests
-5. Run the linter and fix any warnings and errors
-
-## 6. Best practices
-
-### 6.1 DO
-
-- Write documentation in Swift DocC format for public API
-- Use Swift's type system for safety
-- Use public modifier only when needed, prefer internal or private
-- **IMPORTANT**: The project supports iOS 26 SDK while maintaining iOS 15 as the minimum deployment target. Use `#available` checks when adopting iOS 15+ APIs.
-- **IMPORTANT**: The project runs for iOS / iPadOS, macOS, visionOS, tvOS and watchOS. Use `#if os` checks to compile only code avaialble for specific API / OS
-- If a third party dependency is added or updated, update the Software Bill of Material
-- Apply Clean Code, DRY, SOLID and TDD principes
-
-### 6.2 DON'T
-
-- Add abstraction layers without clear benefit
-- Use Combine for simple async operations
-- Overcomplicate simple features
-- Use UIKit except for some specific API related to accessibility if needed
-
-## 7. Ecodesign basics 🟡 RECOMMENDED
-
-### 7.1 Animations
-
-- Use native / system animations if animations must be used
-
-### 7.2 Bad patterns
-
-- Prefer pull to refresh instead of inifinite scroll
-- Avoid autocompletion if iot makes network requests
-
-### 7.3 Cache
-
-- For heavy objects or costly objects to compute (data from networks, date formatters, etc.), use cache like `NSCache`
-- For HTTP requests, use also HTTP cache
-
-### 7.4 CPU
-
-- Distribute tasks across different threads to free the CPU up as soon as possible
-- Don't use the CPU unnecessarily
-- Use app lifecycle to stop background tasks
-
-### 7.5 Downlaods
-
-- Avoid automatic download
-- Prefer download on Wifi networks
-
-### 7.6 Energy
-
-- Never ignore low energy mode
-- If this mode is enabled, disable animations, instensive tasks, display of images and videos, cellular connections, HD / 4K (and above) features, use low colors instead of high (overall on Android with AMOLED screens)
-- Avoid forcing the brightness to maximum
-
-### 7.7 Fonts
-
-- Prefer system fonts if possible, but in OUDS context use still the view modifiers and provided typography
-- use WOFF2 otherwise
-
-### 7.8 Network connections
-
-- Prefer wired and Wi-Fi connections to cellular connections
-- If using a cellular connection, group requests as much as possible to avoid the device constantly being connected to the cell tower
-- Use data caching and Gzip compression
-- Avoid periodic polling to prevent rapid battery drain
-- Avoid maintaining connections; services like Apple Push Notifications and Firebase Cloud Messaging can help
-
-### 7.9 Notifications
-
-- Reduce as much as possible use of notifications
-
-### 7.10 OS support
-
-- Support iOS 15
-
-### 7.11 Resources
-
-- Use SGV images, otherwise use SF Symbols
-- Prefer MP3 for sounds
-- Prefer lazy loading of resources
-- Prefer low resolutions for videos
-
-### 7.12 Screens
-
-- Manage at least small screen like the iPhone SE 2026 one (i.e. 4 inch)
-
-### 7.13 UI
-
-- With dark mode implementation, use true dark colors (e.g. #00000000)
-
-### 7.14 Web views
-
-- Avoid use of web views
-
-## 8. Accessibility basics 🔴 MANDATORY
-
-Everything is available on [our guidelines](https://a11y-guidelines.orange.com/fr/mobile/ios/developpement)
-
-### 8.1 Colors and texts
-
-- For dark mode, reduce contrasts to avoid halo effects
-- Prefer WCAG AAA 7:1 ratio for normal text (ratio between text and backgrounds)
-- Prefer WCAG AAA 4.5:1 ratio for larhe text (ratio between text and backgrounds)
-- Otherwise apply WCAG AA 4.5:1 for normal text and 3:1 on large text (more than 24 px or 19 px if bold)
-
-### 8.2 Components
-
-- Do not forge to define accessibility hint, label, value and if needed trait
-
-### 8.3 Dates and figures
-
-- For texts or figures, define the suitable accessibility value with formatter (like `DateFormatter`) to fully vocalize content for the user with its locale
-
-### 8.4 Dipslay
-
-- Do not force app in portrait mode
-- APp must be usable in landscape mode
-
-### 8.5 Haptics
-
-- Use haptics / vibrations when data are loaded, error occured elements have been tapped / activated, etc
-
-### 8.6 Medias
-
-- Avoid autoplay of videos
-- Define accessibilty labels for images if they are not decorative, otherwise hide them from Voice Over
-
-### 8.7 User settings
-
-- If accessibilty settings reduce animations, reduce animations
-- If accessibilty settings reduce haptics, reduce haptics
-
-### 8.8 Texts
-
-- Texts must not have frozen size, they must adapt following the dynamic type
-
-## 9. Development requirements
-
-- Minimum Swift 6.2 (e.g. 6.2.3)
-- Xcode 26.2 or later 
-- Minimum deployment: iOS 15.0, iPad0S 15.0, macOS 13.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
-- Apple Developer account for device testing
-
-## 10. Building commands
-
-### 10.1 Building Swift Package
-
-To build the Swift Package:
-```shell
-bundle install
-bundle exec fastlane build
-```
-
-### 10.2 Run tests
-
-To run the unit tests on the Swift Package:
-```shell
-bundle install
-bundle exec fastlane test_unit
-```
-
-### 10.3 Build documentation
-
-To build the documentation:
-```shell
-cd scripts
-yes | ./generateWebDocumentation.sh --libversion=none --nozip
-```
-
-### 10.4 Check dead code
-
-To check for dead code:
-```shell
-bundle install
-bundle exec fastlane check_dead_code
-```
-
-### 10.5 Format the sources
-
-To format the source code:
-```shell
-bundle install
-bundle exec fastlane format
-```
-
-### 10.6 Run linter
-
-To run the linter:
-```shell
-bundle install
-bundle exec fastlane lint
-```
-
-### 10.7 Check leaks
-
-To check for leaks of secrets:
-```shell
-bundle install
-bundle exec fastlane check_leaks
-```
-
-### 10.8 SBOM update
-
-To update the Software Bill of Materials:
-```shell
-bundle install
-bundle exec fastlane update_sbom
-```
-
-## 11. Review guidelines
-
-- [ ] Check if sources are formatted
-- [ ] Run linter, no error must appear
-- [ ] Run tests, they must all pass
-- [ ] Check if there is dead coden and leave a comment saying the elements which seem toi be dead / not used
-- [ ] Build documentation, no error must appear
-- [ ] Check leaks, no leak must appear
-- [ ] Check if functions are too long or too complicated, complexity must be low
-- [ ] Check if the commit has been designed-off (i.e. DCO appplied) by all commits authors
-
-## 12. How to use OUDS framwork
-
-### 12.1 Basic setup
+### 3.1 Basic setup
 
 ```swift
 import SwiftUI
@@ -357,7 +70,7 @@ struct ContentView: View {
 }
 ```
 
-### 12.2 Import OUDS product
+### 3.2 Import OUDS product
 
 Import OUDS umbrella product gathering all other librairies:
 ```swift
@@ -367,7 +80,7 @@ import OUDSSwiftUI
 The user can import other librairies as explained in [the online documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
 These imports are mandatory.
 
-### 12.3 Instanciate a theme object
+### 3.3 Instanciate a theme object
 
 Create a theme for Orange product:
 ```swift
@@ -376,7 +89,7 @@ Create a theme for Orange product:
 
 The user can use instead `SoshTheme`, `WireframeTheme` or `OrangeCompact` theme.
 
-### 12.4 Inject a theme in an app
+### 3.4 Inject a theme in an app
 
 Use an `OUDSThemeableView` to inject the theme. This is the root view defining several environment objects.
 The theme must be injected inside it to be available everywhere.
@@ -387,14 +100,14 @@ OUDSThemeableView(theme: theme) {
 }
 ```
 
-### 12.5 Get the theme object
+### 3.5 Get the theme object
 
 Get the theme object as environment object:
 ```swift
 @Environment(\.theme) private var theme
 ```
 
-### 12.6 Use tokens from theme to apply syle
+### 3.6 Use tokens from theme to apply syle
 
 Use colors (semantic tokens) defined in a theme:
 ```swift
@@ -451,7 +164,7 @@ Use effects (semantic tokens) defined in a theme:
 theme.effects
 ```
 
-### 12.7 Use helpers and view modifiers
+### 3.7 Use helpers and view modifiers
 
 #### Apply typography
 
@@ -484,7 +197,7 @@ Elevations effets or box shadows can be applied to view with a dedicated view mo
 .oudsShadow(theme.elevations.emphasized)
 ```
 
-### 12.8 Use components
+### 3.8 Use components
 
 #### Actions
 
@@ -809,7 +522,7 @@ OUDSAlertMessage(label: "Warning", status: .warning, description: "Some details 
 Alerts can have custom icons, bullet lists and detail link:
 ```swift
 OUDSAlertMessage(label: "Label",
-                status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+                status: .neutral(icon: OUDSIcon(asset: Image("ic_heart")))
                 bulletList: ["Bullet 1", "Bullet 2", "Bullet 3"],
                 link: .init(text: "Link", position: .bottom) {},
                 onClose: {})
