@@ -8,9 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- View helpers to use scaled spaces tokens to add padding and for HStack/VStack (Orange-OpenSource/ouds-ios#1324)
 - GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)
 - Helper to apply grid margin on views (Orange-OpenSource/ouds-ios#1317)
-- View helpers to use scaled spaces tokens to add padding and to creete HStack/VStack (Orange-OpenSource/ouds-ios#1324)
 - `inline alert` component (Orange-OpenSource/ouds-ios#1307)
 - `alert message` component (Orange-OpenSource/ouds-ios#1159)
 

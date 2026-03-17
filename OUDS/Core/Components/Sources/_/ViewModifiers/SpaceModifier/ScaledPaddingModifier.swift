@@ -14,10 +14,13 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Horizontal Modifier
+
 struct HorizontalModifier: ViewModifier {
 
     let edge: Edge.Set
     let space: MultipleSpaceSemanticToken
+
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     func body(content: Content) -> some View {
@@ -40,10 +43,13 @@ struct HorizontalModifier: ViewModifier {
     }
 }
 
+// MARK: - Vertical Modifier
+
 struct VerticalModifier: ViewModifier {
 
     let edge: Edge.Set
     let space: MultipleSpaceSemanticToken
+
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     func body(content: Content) -> some View {
