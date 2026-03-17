@@ -40,7 +40,7 @@ OUDSBulletList(type: .bare) {
 
 // Item of Unordered list with bullet as tick, a text style
 // body medium and text bold
-OUDSBulletList(type: .unordered(icon: .tick),
+OUDSBulletList(type: .unordered(asset: .tick),
               textStyle: .bodyMedium,
               isBold: true)  {
     OUDSBulletList.Item("Label 1")

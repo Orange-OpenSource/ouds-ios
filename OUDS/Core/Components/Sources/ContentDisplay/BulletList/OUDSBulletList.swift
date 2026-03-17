@@ -69,8 +69,8 @@ import SwiftUI
 ///        // 1.1. Item of Unordered list with bullet as tick, a text style
 ///        // body medium and text bold
 ///        OUDSBulletList(type: .unordered(asset: .tick),
-///                    textStyle: .bodyMedium,
-///                    isBold: true)  {
+///                       textStyle: .bodyMedium,
+///                       isBold: true)  {
 ///            OUDSBulletList.Item("Label 1")
 ///            OUDSBulletList.Item("Label 2")
 ///            OUDSBulletList.Item("Label 3")
@@ -200,6 +200,10 @@ public struct OUDSBulletList: View {
     // swiftlint:enable discouraged_optional_boolean
 
     // MARK: - Unordered Icon
+
+    /// Old name of `OUDSBulletList.UnorderedAsset`
+    @available(*, deprecated, message: "Use instead OUDSBulletList.UnorderedAsset")
+    public typealias UnorderedIcon = UnorderedAsset
 
     /// The type of asset in the unordered list
     /// - Since: 1.2.0

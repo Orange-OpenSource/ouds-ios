@@ -16,7 +16,7 @@ Thus existence of `oudsVerticalSizeClass`, used nowhere, is a non-sense; this pr
 
 #### Prerequisites
 
-- Use version 1.x
+- Use version 1.2 or older
 
 ### Breaking Changes
 
@@ -38,6 +38,30 @@ Thus existence of `oudsVerticalSizeClass`, used nowhere, is a non-sense; this pr
 - Remove us of `oudsVerticalSizeClass` environment object
 
 **Reason for Change**: Not used, not relevant, must not be considered even if design side
+
+#### 2. Rename of OUDSBulletList.UnorderedIcon` to `OUDSBulletList.UnorderedAsset`
+
+**Impact**: Low
+
+**Before (v1.x)**:
+```swift
+var someIconForBulletList: OUDSBulletList.UnorderedIcon {
+    .free(someImage)
+}
+```
+
+**After (v1.3.0)**:
+```swift
+var someIconForBulletList: OUDSBulletList.UnorderedAsset {
+    .icon(someImage)
+}
+```
+
+**Required Action**:
+- Rename any use of `OUDSBulletList.UnorderedIcon` to `OUDSBulletList.UnorderedAsset`
+- Case `.free` must be replaced by `.icon`
+
+**Reason for Change**: "asset" word has a better meaning than "icon", and is aligned with Android OUDS library API
 
 ## v1.1.0 → v1.2.0
 
