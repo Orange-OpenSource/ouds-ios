@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Helper to apply grid margin on views (Orange-OpenSource/ouds-ios#1317)
 - `inline alert` component (Orange-OpenSource/ouds-ios#1307)
 - `alert message` component (Orange-OpenSource/ouds-ios#1159)
 

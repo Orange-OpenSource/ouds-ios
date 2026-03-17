@@ -19,29 +19,16 @@ import SwiftUI
 import UIKit
 #endif
 
-// MARK: - Environment values
-
-private struct ThemeEnvironmentKey: EnvironmentKey {
-
-    /// ``OUDSTheme`` is kind of abstract, no instance can be done because of providers to define at theme levels
-    static let defaultValue: OUDSTheme? = nil
-}
+// MARK: - Environment Values
 
 extension EnvironmentValues {
 
     /// The `OUDSTheme` instance exposed as en environment values across the library.
     /// Because at the level of the package we don't have any existing theme, this instance is optional
-    public var _theme: OUDSTheme? {
-        get {
-            self[ThemeEnvironmentKey.self]
-        }
-        set {
-            self[ThemeEnvironmentKey.self] = newValue
-        }
-    }
+    @Entry public var _theme: OUDSTheme?
 
     // swiftlint:disable force_unwrapping
-    /// The `OUDSTheme` applied to the application
+    /// The `OUDSTheme` applied to the application, must be defined otherwise **crash will occur**.
     public var theme: OUDSTheme {
         _theme!
     }
@@ -69,7 +56,7 @@ extension EnvironmentValues {
 /// ```
 ///
 /// - Since: 0.8.0
-public struct OUDSThemeableView<Content>: View where Content: View {
+public struct OUDSThemeableView<Content: View>: View {
 
     private let theme: OUDSTheme
     private let content: () -> Content
@@ -98,7 +85,6 @@ public struct OUDSThemeableView<Content>: View where Content: View {
 private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
     private static let extraCompactMaxWidth = 390.0
@@ -115,22 +101,9 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
         #endif
     }
 
-    private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
-        #if os(iOS)
-        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
-            .extraCompact
-        } else {
-            verticalSizeClass == .compact ? .compact : .regular
-        }
-        #else
-        verticalSizeClass == .compact ? .compact : .regular
-        #endif
-    }
-
     func body(content: Content) -> some View {
         content
             .environment(\.oudsHorizontalSizeClass, horizontalUserInterfaceSizeClass)
-            .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
     }
 }
 #endif

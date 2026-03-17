@@ -1,8 +1,43 @@
 # Migration Guide
 
+- [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.2.0 → v1.3.0
+
+### Overview
+
+The design team confirms that any logic related to grids, gutters and spacings are related to the horizontal size class.
+Thus existence of `oudsVerticalSizeClass`, used nowhere, is a non-sense; this property has been removed.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.x
+
+### Breaking Changes
+
+#### 1. Removal of `oudsVerticalSizeClass`
+
+**Impact**: Low
+
+**Before (v1.x)**:
+```swift
+@Environment(\.oudsVerticalSizeClass) var sizeClass // Or any other name for property
+```
+
+**After (v1.3.0)**:
+```swift
+// Property removed
+```
+
+**Required Action**:
+- Remove us of `oudsVerticalSizeClass` environment object
+
+**Reason for Change**: Not used, not relevant, must not be considered even if design side
 
 ## v1.1.0 → v1.2.0
 
