@@ -14,21 +14,17 @@
 import OUDSThemesContract
 import SwiftUI
 
-// MARK: - View extensions for grid
-
 extension View {
 
     /// Adds a margin amount to specific edges of this view.
+    /// Indicate the edges to margin by naming either a single value from `Edge/Set`,
+    /// or by specifying an `OptionSet`.
     ///
-    /// ```
-    ///   // Indicate the edges to magin by naming either a single value from ``Edge/Set``, or by
-    ///   // specifying an <doc://com.apple.documentation/documentation/Swift/OptionSet>
-    ///
+    /// ```swift
     ///   MyView().oudsGridMargin(.horizontal)
-    ///  ```
+    /// ```
     ///
-    /// - Parameter edges: The set of edges to add margin for this view. The default is `Edge/Set/all`.
-    ///
+    /// - Parameter edges: The set of edges to add margin for this view (default is  `.all`).
     /// - Returns: A view that's margin are added by the specified amount on the specified edges.
     public func oudsGridMargin(_ edges: Edge.Set = .all) -> some View {
         modifier(GridMarginModifier(edges: edges))

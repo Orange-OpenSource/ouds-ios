@@ -19,14 +19,16 @@ import SwiftUI
 import UIKit
 #endif
 
+// MARK: - Environment Values
+
 extension EnvironmentValues {
 
-    // The `OUDSTheme` instance exposed as en environment values across the library.
-    // Because at the level of the package we don't have any existing theme, this instance is optional
+    /// The `OUDSTheme` instance exposed as en environment values across the library.
+    /// Because at the level of the package we don't have any existing theme, this instance is optional
     @Entry public var _theme: OUDSTheme?
 
     // swiftlint:disable force_unwrapping
-    /// The `OUDSTheme` applied to the application
+    /// The `OUDSTheme` applied to the application, must be defined otherwise **crash will occur**.
     public var theme: OUDSTheme {
         _theme!
     }

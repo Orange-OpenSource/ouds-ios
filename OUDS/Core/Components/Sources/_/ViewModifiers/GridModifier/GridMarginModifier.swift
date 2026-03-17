@@ -14,11 +14,7 @@
 import OUDSThemesContract
 import SwiftUI
 
-/// Adds a margin amount to specific edges of this view.
-///
-/// The equal margin is applied horizontally and verticaly based only on the horizontal size class.
-/// It is based on the margin token from the theme in environement.
-///
+/// `ViewModifier` to use to define pading to given `edges` using the OUDS current horizontal size class
 struct GridMarginModifier: ViewModifier {
 
     let edges: Edge.Set
