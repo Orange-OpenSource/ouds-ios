@@ -1,0 +1,55 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
+name: "Update Renovate pull requests"
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  label_and_assign:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    if: >-
+      github.event.pull_request.user.login == 'renovate[bot]' &&
+      startsWith(github.event.pull_request.title, 'chore(deps)')
+
+    steps:
+      - name: Add labels and assignee
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.RENOVATE_LABELER_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: ['🛠️ technical', 'dependencies'],
+            });
+
+            await github.rest.issues.addAssignees({
+              owner,
+              repo,
+              issue_number,
+              assignees: ['pylapp'],
+            });
