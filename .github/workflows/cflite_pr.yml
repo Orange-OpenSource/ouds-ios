@@ -1,0 +1,56 @@
+name: ClusterFuzzLite PR fuzzing
+
+# Run on every pull request to catch new crashes introduced by the change.
+on:
+  pull_request:
+    paths:
+      - '**'
+
+permissions: read-all
+
+jobs:
+  PR:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitizer:
+          - address
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ matrix.sanitizer }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Print Swift / Xcode versions
+        run: |
+          swift --version
+          xcodebuild -version
+
+      # Build the fuzzer natively on macOS before handing off to ClusterFuzzLite.
+      # infra/build.sh produces the instrumented binary in $OUT without Docker.
+      - name: Build fuzzer (native macOS)
+        env:
+          SANITIZER: ${{ matrix.sanitizer }}
+          OUT: ${{ github.workspace }}/out
+        run: |
+          chmod +x infra/build.sh
+          bash infra/build.sh
+
+      - name: Run fuzzers (${{ matrix.sanitizer }})
+        id: run
+        uses: google/clusterfuzzlite/actions/run_fuzzers@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          language: swift
+          sanitizer: ${{ matrix.sanitizer }}
+          mode: code-change
+          fuzz-seconds: 600
+          output-sarif: true
+          # Storage repo is optional but recommended for sharing corpus across runs:
+          # storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/OWNER/STORAGE-REPO-NAME.git
+          # storage-repo-branch: main
+          # storage-repo-branch-coverage: gh-pages

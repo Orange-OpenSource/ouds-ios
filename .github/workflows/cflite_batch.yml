@@ -1,0 +1,52 @@
+name: ClusterFuzzLite batch fuzzing
+
+# Scheduled batch fuzzing — runs longer sessions on a cron schedule to
+# continuously expand the corpus and surface hard-to-find bugs.
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+permissions: read-all
+
+jobs:
+  BatchFuzzing:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitizer:
+          - address
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Print Swift / Xcode versions
+        run: |
+          swift --version
+          xcodebuild -version
+
+      # Build the fuzzer natively on macOS before handing off to ClusterFuzzLite.
+      # infra/build.sh produces the instrumented binary in $OUT without Docker.
+      - name: Build fuzzer (native macOS)
+        env:
+          SANITIZER: ${{ matrix.sanitizer }}
+          OUT: ${{ github.workspace }}/out
+        run: |
+          chmod +x infra/build.sh
+          bash infra/build.sh
+
+      - name: Run fuzzers (${{ matrix.sanitizer }})
+        id: run
+        uses: google/clusterfuzzlite/actions/run_fuzzers@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          language: swift
+          sanitizer: ${{ matrix.sanitizer }}
+          mode: batch
+          fuzz-seconds: 3600
+          output-sarif: true
+          # Storage repo is optional but recommended for sharing corpus across runs:
+          # storage-repo: https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/OWNER/STORAGE-REPO-NAME.git
+          # storage-repo-branch: main
+          # storage-repo-branch-coverage: gh-pages

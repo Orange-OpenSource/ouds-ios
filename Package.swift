@@ -275,6 +275,16 @@ let package = Package(
             name: "TestsUtils",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/TestsUtils"),
+
+        // MARK: Fuzz targets (libFuzzer / ClusterFuzzLite)
+
+        // Executable fuzz target exercising deterministic logic from OUDSFoundations.
+        // Build normally with `swift build --target OUDSSwiftUIFuzzer`.
+        // For fuzzing, see infra/build.sh and docs/fuzzing.md.
+        .executableTarget(
+            name: "OUDSSwiftUIFuzzer",
+            dependencies: ["OUDSFoundations"],
+            path: "Sources/Fuzzers/OUDSSwiftUIFuzzer"),
     ],
 
     // MARK: - Swift language modes
