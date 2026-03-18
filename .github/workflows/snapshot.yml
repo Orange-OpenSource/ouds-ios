@@ -25,8 +25,9 @@ on:
     - cron: '0 18 * * *'  # 20h Paris
   workflow_dispatch:
 
+# Default to least privilege at workflow level
 permissions:
-  contents: write
+  contents: read
 
 # Cancel-in-progress to avoid to have more and more runs for the same thing in the branch or pull request
 concurrency:
@@ -37,14 +38,30 @@ jobs:
   snapshot:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+
+    # Escalate only for this job, because we need to push a tag
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: develop
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - run: |
+
+      - name: Move SNAPSHOT tag to latest develop commit
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Safety: ensure we are really on develop
+          current_branch="$(git rev-parse --abbrev-ref HEAD)"
+          if [[ "${current_branch}" != "develop" ]]; then
+            echo "Expected to be on 'develop' but got '${current_branch}'. Aborting."
+            exit 1
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git tag -f SNAPSHOT
-          git push origin SNAPSHOT --force
+          git push origin refs/tags/SNAPSHOT --force
