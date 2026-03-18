@@ -57,7 +57,7 @@
             }
             
             @Step {
-                Now, it's time to apply colors on texts. Colors are defined with *tokens*, i.e. small atomic elements defined in the design Figma kit. The *theme* object contains tokens and provides them thanks to *providers*.
+                Now, it's time to apply colors on texts. [Colors are defined with *tokens*](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens), i.e. small atomic elements defined in the design Figma kit. The *theme* object contains tokens and provides them thanks to *providers*.
         
                 For all texts, change the *foreground color*: apply *contentBrandPrimary* for the *title*, *contentDefault* for the subtitle and also the *description*.
                 
@@ -67,9 +67,9 @@
             }
             
             @Step {
-                Now, it's time to add the button. OUDS provides plenty of components with properties related to notions defined in Figma kit and DSM. For example a button can have *appearance*.
+                Now, it's time to add the [button](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton). OUDS provides plenty of components with properties related to notions defined in Figma kit and DSM. For example a button can have *appearance*.
         
-                Add a button with a *strong appearance*, using the previously defined label, and no action.
+                Add a button with a [*strong appearance*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton#Appearances), using the previously defined label, and no action.
                 
                 @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-6.swift") {
                     @Image(source: "tutorial-onboarding-2-6.png", alt: "A view with image, texts and a strong button")
@@ -77,7 +77,9 @@
             }
             
             @Step {
-                You agree things are stucked and spacings are missing. Spacing values are defined also in tokens. Some of these tokens have unique value like `theme.spaces.fixedMedium`, but some others have several values depending to the *size class* of the view like `theme.spaces.scaled2xsmall`. In addition, OUDS provides view modifiers to define *grid margins* on a view depending to a *size class*.
+                You agree things are stucked and spacings are missing. [Spacing values are defined also in tokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/spacesemantictokens). 
+                Some of these tokens have unique value like `theme.spaces.fixedMedium`, but [some others have several values](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/spacemultiplesemantictokens) depending to the *size class* of the view like `theme.spaces.scaled2xsmall`. 
+                In addition, OUDS provides view modifiers to define *grid margins* on a view depending to a *size class*.
         
                 Try to apply some spacings: *fixedNone* in the `VStack`, *fixedMedium* as a `Spacer` minimum length below the button, *top grid margin* for the *title*, *grid margin* for all the `View`, *scaled2xsmall* as *vertical padding* for the *subtitle* and *scaledLarge* as minimum length for a `Spacer` above the *button*.
                 

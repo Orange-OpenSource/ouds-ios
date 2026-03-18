@@ -11,14 +11,14 @@
         
         @ContentAndMedia {
             Components are gathered by group or families. You can find all of theme in the [online documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
-            For exmeple, in *control* family you will find *checkboxes*, *radio buttons*, *switch items* and some *inputs* fields.
+            For exemple, in *control* family you will find *checkboxes*, *radio buttons*, *switch items* and some *inputs* fields.
             *Layouts* provides *dividers*, *buttons* are in *actions* group, *bullet lists* in *display* family.
         }
         
         @Steps {
             @Step {
                 Define a basic `Control` `View` with in its *body* a `VStack` with *theme.spaces.fixedNone* spacing.
-                Add inside the components you want, for exemple *checkbox item*, *radio item*, *switch item*, *text input* and *password input*.
+                Add inside the components you want, for exemple [*checkbox item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscheckboxitem), [*radio item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsradioitem/), [*switch item*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsswitchitem), [*text input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstextinput) and [*password input*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudspasswordinput).
                 Do not forget the Xcode preview.
 
                 @Code(name: "Control.swift", file: "tutorial-onboarding-3-1.swift") {
@@ -29,7 +29,7 @@
             @Step {
                 OUDS provides also components as *indicators* like *badges* and *tags*.
                 Define an `Indicator` `View`, with a `VStack` applying *theme.spaces.scaledMedium* spacing token for a *vertical size class*, and containing an `HStack` with a *theme.spaces.fixedSmall* spacing.
-                Add inside badges: do not hesitate to change their *status* and *size*.
+                Add inside [badges](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbadge/): do not hesitate to change their *status* and *size*.
                 Make your tests with the Xcode preview.
                 
                 @Code(name: "Indicator.swift", file: "tutorial-onboarding-3-2.swift") {
@@ -39,7 +39,7 @@
             
             @Step {
                 There are also *navigation* components in OUDS like *links* and *tab bars*.
-                Define a `Navigation` `View` with in its body a `VStack` with *theme.spaces.fixedNone* spacing and three links: a *next"* link, a *back* link and an *informational* link opening a URL.
+                Define a `Navigation` `View` with in its body a `VStack` with *theme.spaces.fixedNone* spacing and three [links](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudslink): a *next* link, a *back* link and an *informational* link opening a URL.
                 
                 Use a `VStack` containing `Image` and `Text` `View` objects.
                 
@@ -65,7 +65,7 @@
             }
             
             @Step {
-                Then define a `CategorySelector` `View`: it must display a *filter chip* for all *ComponentGroup* cases and keep a *selected component group* as *Binding*. Use the *theme.spaces.fixedSmall* token for horizontal spacing between the chips.
+                Then define a `CategorySelector` `View`: it must display a [*filter chip*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsfilterchip/) for all *ComponentGroup* cases and keep a *selected component group* as *Binding*. Use the *theme.spaces.fixedSmall* token for horizontal spacing between the chips.
                 
                  @Code(name: "CategorySelector.swift", file: "tutorial-onboarding-3-5.swift") 
             }
@@ -87,11 +87,8 @@
             
         @Steps {
             @Step {
-                If you want to apply a theme everywhere in your app, or on specific view, one special `View` is for you: the `OUDSThemeableView`. This object will get a theme you instanciated and apply it as environment value. It will also instanciates some environment objects the components may need.
+                If you want to apply a theme everywhere in your app, or on specific view, one special `View` is for you: the [`OUDSThemeableView`](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/oudsthemeableview). This object will get a theme you instanciated and apply it as environment value. It will also instanciates some environment objects the components may need.
                 Define a `ContentView` `View`, add in its *body* the `OUDSThemeableView` with an instance of `OrangeTheme`, and add inside your previously defined `HomeScreen` `View`.
-                
-                *navigation* components like a *tab bar*. The *tab bar* is quite particular: its rendering will change depending if Liquid Glass is applied (i.e. iOS 26+) or not (i.e. until iOS 18).
-                Add a *tab bar*, with 3 items inside it: the `HomeScreen` `View` and two fake views.
                     
                 @Code(name: "ContentView.swift", file: "tutorial-onboarding-3-7.swift") {
                     @Image(source: "tutorial-onboarding-3-7.png", alt: "A view with images and texts")
@@ -100,12 +97,12 @@
 
             @Step {
                 OUDS provides *navigation* components like a *tab bar*. The *tab bar* is quite particular: its rendering will change depending if Liquid Glass is applied (i.e. iOS 26+) or not (i.e. until iOS 18).
-                Add a *tab bar*, with 3 items inside it: the `HomeScreen` `View` and two fake views.
+                Add a [*tab bar*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstabbar/), with 3 items inside it: the `HomeScreen` `View` and two fake views.
                 
                 You can see how it looks like with other themes like `SoshTheme`, `WireframeTheme` or `OrangeCompactTheme`.
                     
                 @Code(name: "ContentView.swift", file: "tutorial-onboarding-3-8.swift") {
-                    @Image(source: "tutorial-onboarding-3-8.png", alt: "A view with a tab bar in the bottom")
+                    @Image(source: "tutorial-onboarding-3-8-LiquidGlass.png", alt: "A view with a tab bar in the bottom")
                 }  
             }
         }
