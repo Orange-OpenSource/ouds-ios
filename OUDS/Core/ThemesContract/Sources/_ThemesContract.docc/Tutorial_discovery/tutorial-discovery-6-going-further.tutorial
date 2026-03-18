@@ -20,7 +20,7 @@
                 
                 You can get it at [ios.unified-design-system.orange.com](https://ios.unified-design-system.orange.com/)
                 
-                @Image(source: "tutorial-6-1.png", alt: "Apple-fashioned technical user documentation")
+                @Image(source: "tutorial-discovery-6-1.png", alt: "Apple-fashioned technical user documentation")
             }
             
             @Step {
@@ -29,7 +29,7 @@
                 
                 Go to the website and learn things at [unified-design-system.orange.com](https://unified-design-system.orange.com/)
                 
-                @Image(source: "tutorial-6-2.png", alt: "OUDS official web site")
+                @Image(source: "tutorial-discovery-6-2.png", alt: "OUDS official web site")
             }
             
             @Step {
@@ -37,7 +37,7 @@
                 
                 Have a look [on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) to discover how OUDS works.
                 
-                @Image(source: "tutorial-6-3.png", alt: "The wiki with plenty of details about processes, releases, API and technical choices")
+                @Image(source: "tutorial-discovery-6-3.png", alt: "The wiki with plenty of details about processes, releases, API and technical choices")
             }
             
             @Step {
@@ -45,7 +45,7 @@
                 
                 To get the source code of this showcase app, go to its dedicated GitHub repository at [Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox)
                 
-                @Image(source: "tutorial-6-4.png", alt: "The repository of the design system toolbox app")
+                @Image(source: "tutorial-discovery-6-4.png", alt: "The repository of the design system toolbox app")
             }
             
             @Step {
@@ -53,7 +53,7 @@
                 
                 Do not hesitate to [create issues if you spot bugs or want improvements](https://github.com/Orange-OpenSource/ouds-ios/issues) or [open or participate to discussions](https://github.com/Orange-OpenSource/ouds-ios/discussions)!
                 
-                @Image(source: "tutorial-6-5.png", alt: "We love write things and discuss, come say hi and chat about anything!")
+                @Image(source: "tutorial-discovery-6-5.png", alt: "We love write things and discuss, come say hi and chat about anything!")
             }
         }
     }

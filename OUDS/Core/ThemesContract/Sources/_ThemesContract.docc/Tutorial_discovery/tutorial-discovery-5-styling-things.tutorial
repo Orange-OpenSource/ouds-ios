@@ -20,8 +20,8 @@
             @Step {
                 Get the new source code for this chapter.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-5-1.swift") {
-                    @Image(source: "tutorial-5-1.png", alt: "Cleaned source code for tutorial")
+                @Code(name: "Tutorial.swift", file: "tutorial-discovery-5-1.swift") {
+                    @Image(source: "tutorial-discovery-5-1.png", alt: "Cleaned source code for tutorial")
                 } 
             }
             
@@ -38,8 +38,8 @@
                 
                 Try to apply spacings and sizes in the app.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-2.swift", previousFile: "tutorial-5-1.swift") {
-                    @Image(source: "tutorial-5-2.png", alt: "Things are better with spacings and sizes")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-2.swift", previousFile: "tutorial-discovery-5-1.swift") {
+                    @Image(source: "tutorial-discovery-5-2.png", alt: "Things are better with spacings and sizes")
                 }
             }
             
@@ -49,8 +49,8 @@
                 
                 Try to apply a raw token of color to a text field.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-3.swift") {
-                    @Image(source: "tutorial-5-3.png", alt: "Raw tokens can be used, even if not recommended")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-3.swift") {
+                    @Image(source: "tutorial-discovery-5-3.png", alt: "Raw tokens can be used, even if not recommended")
                 }
             }
         }
@@ -69,8 +69,8 @@
                 
                 Try to change these colors in the title of the view and the formular.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-4.swift", previousFile: "tutorial-5-3.swift") {
-                    @Image(source: "tutorial-5-4.png", alt: "Using OUDS view modifiers prevents developers to manage light and dark color scheme")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-4.swift", previousFile: "tutorial-discovery-5-3.swift") {
+                    @Image(source: "tutorial-discovery-5-4.png", alt: "Using OUDS view modifiers prevents developers to manage light and dark color scheme")
                 }
             }
             
@@ -79,8 +79,8 @@
                 
                 Try to apply an elevation to the formular.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-5.swift") {
-                    @Image(source: "tutorial-5-5.png", alt: "Elevations can be lovely effects on cards or square-shaped items")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-5.swift") {
+                    @Image(source: "tutorial-discovery-5-5.png", alt: "Elevations can be lovely effects on cards or square-shaped items")
                 }
             }
             
@@ -89,8 +89,8 @@
                 
                 Let's add a border effect to the formular.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-6.swift") {
-                    @Image(source: "tutorial-5-6.png", alt: "Borders are useful to make things more visible")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-6.swift") {
+                    @Image(source: "tutorial-discovery-5-6.png", alt: "Borders are useful to make things more visible")
                 }
             }
             
@@ -99,8 +99,8 @@
                 
                 Choose some view modifiers of typography and apply them.
                 
-                @Code(name: "ContentView.swift", file: "tutorial-5-7.swift") {
-                    @Image(source: "tutorial-5-7.png", alt: "Typography makes things more profesional")
+                @Code(name: "ContentView.swift", file: "tutorial-discovery-5-7.swift") {
+                    @Image(source: "tutorial-discovery-5-7.png", alt: "Typography makes things more profesional")
                 }
             }
             
@@ -109,8 +109,8 @@
                 
                 These elements must be defined during the theme initialization, let's try it!
                 
-                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-8.swift", previousFile: "tutorial-5-1.swift") {
-                    @Image(source: "tutorial-5-8.png", alt: "Rounded corners are often appreciated")
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-discovery-5-8.swift", previousFile: "tutorial-discovery-5-1.swift") {
+                    @Image(source: "tutorial-discovery-5-8.png", alt: "Rounded corners are often appreciated")
                 }
             }
             
@@ -122,8 +122,8 @@
                 
                 Let's use *Menlo* for the app, which is available in iOS.
                 
-                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-9.swift") {
-                    @Image(source: "tutorial-5-9.png", alt: "Fonts can be fun!")
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-discovery-5-9.swift") {
+                    @Image(source: "tutorial-discovery-5-9.png", alt: "Fonts can be fun!")
                 }
             }
         }
@@ -141,7 +141,7 @@
                 
                 Do not hesitate to test new API and integrate other components!
                 
-                @Image(source: "tutorial-light-dark (result).png", alt: "Tutorial app in light and dark mode")
+                @Image(source: "tutorial-discovery-light-dark (result).png", alt: "Tutorial app in light and dark mode")
             }
         }
     }
@@ -162,8 +162,8 @@
                 Then, override the tokens you want (read the documentation to find where they are), and apply the providers at theme init.
                 Change for exemple tokens of borders and colors, and compare what are the changes and where.
                     
-                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-5-10.swift", previousFile: "tutorial-5-9.swift") {
-                    @Image(source: "tutorial-5-10.png", alt: "Change tokens, break everything, here is the artist life!")
+                @Code(name: "OUDSTutorialSandboxApp.swift", file: "tutorial-discovery-5-10.swift", previousFile: "tutorial-discovery-5-9.swift") {
+                    @Image(source: "tutorial-discovery-5-10.png", alt: "Change tokens, break everything, here is the artist life!")
                 }
             }
         }

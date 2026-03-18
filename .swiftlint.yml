@@ -28,7 +28,8 @@ included:
 # ========
 
 excluded:
-- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_discovery
+- OUDS/Core/ThemesContract/Sources/_ThemesContract.docc/Tutorial_onboarding
 
 # ==============
 # Disabled rules

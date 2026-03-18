@@ -1,0 +1,177 @@
+@Tutorial(time: 60) {
+    @Intro(title: "Components showcase") {
+        Now you are ready to use more components than a simple button!
+        
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.2", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Discover main components") {
+        
+        @ContentAndMedia {
+            Components are gathered by group or families. You can find all of theme in the [online documentation](https://ios.unified-design-system.orange.com/documentation/oudscomponents).
+            For exmeple, in *control* family you will find *checkboxes*, *radio buttons*, *switch items* and some *inputs* fields.
+            *Layouts* provides *dividers*, *buttons* are in *actions* group, *bullet lists* in *display* family.
+        }
+        
+        @Steps {
+            @Step {
+                Define a basic `Control` `View` with in its *body* a `VStack` with *theme.spaces.fixedNone* spacing.
+                Add inside the components you want, for exemple *checkbox item*, *radio item*, *switch item*, *text input* and *password input*.
+                Do not forget the Xcode preview.
+
+                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-1.swift") {
+                    @Image(source: "tutorial-onboarding-3-1.png", alt: "A simple view with some component inside")
+                } 
+            }
+         
+            @Step {
+                OUDS provides also components as *indicators* like *badges* and *tags*.
+                Define an `Indicator` `View`, with a `VStack` applying *theme.spaces.scaledMedium* spacing token for a *vertical size class*, and containing an `HStack` with a *theme.spaces.fixedSmall* spacing.
+                Add inside badges: do not hesitate to change their *status* and *size*.
+                Make your tests with the Xcode preview.
+                
+                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-2.swift") {
+                    @Image(source: "tutorial-onboarding-3-2.png", alt: "Colored badges displayed in white blank view")
+                } 
+            }
+            
+            @Step {
+                There are also *navigation* components in OUDS like *links* and *tab bars*.
+                Define a `Navigation` `View` with in its body a `VStack` with *theme.spaces.fixedNone* spacing and three links: a *next"* link, a *back* link and an *informational* link opening a URL.
+                
+                Use a `VStack` containing `Image` and `Text` `View` objects.
+                
+                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-3.swift") {
+                    @Image(source: "tutorial-onboarding-3-3.png", alt: "Three links with chevrons or underlined text")
+                } 
+            }
+        }
+    }
+        
+    @Section(title: "Merge components in a richer view") {
+            
+        @ContentAndMedia {
+            Some components can be used to define richer views. Let's try to merge all the ones we have and provide a more interesting thing.
+            The aim here is display a big title, a pack of filter chips, and according to the selected chip one of the view we defined earlier.
+        }
+        
+        @Steps {
+            @Step {
+                First, define the components groups we need as an enumeration. We will provide views for *control* components, *indicator* components and *navigation* components. The *enum* to define must conform to *CaseIterable* and *CustomStringConvertible*
+                
+                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-4.swift") 
+            }
+            
+            @Step {
+                Then define a `CategorySelector` `View`: it must display a *filter chip* for all *ComponentGroup* cases and keep a *selected component group* as *Binding*. Use the *theme.spaces.fixedSmall* token for horizontal spacing between the chips.
+                
+                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-5.swift") 
+            }
+            
+            @Step {
+                In the end, define the main view, the `ComponentShowcase` `View`. In the top of it, display a welcoming text with *heading large* typography and *contentDefault* foreground color. Just bellow add the `CategorySelector` and pack them in a `VStack` using a *scaledMedium* spacing for *verticla size class*. Apply *bgSecondary* background color to this `VStack`.
+                Then add the views for components inside a `ZStack` and use the *selected component group* to apply opacity on the suitable view.
+                
+                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-6.swift") 
+            }
+        }
+    }
+
+    @Section(title: "Navigations and themeable view, a step further") {
+                
+        @ContentAndMedia {
+            Now you master the components and the tokens, you can use *navigation* components and a specific view to inject your theme everywhere. Time to complete your first app!
+        }
+            
+        @Steps {
+            @Step {
+                If you want to apply a theme everywhere in your app, or on specific view, one special `View` is for you: the `OUDSThemeableView`. This object will get a theme you instanciated and apply it as environment value. It will also instanciates some environment objects the components may need.
+                Define a `ContentView` `View`, add in its *body* the `OUDSThemeableView` with an instance of `OrangeTheme`, and add inside your previously defined `HomeScreen` `View`.
+                
+                *navigation* components like a *tab bar*. The *tab bar* is quite particular: its rendering will change depending if Liquid Glass is applied (i.e. iOS 26+) or not (i.e. until iOS 18).
+                Add a *tab bar*, with 3 items inside it: the `HomeScreen` `View` and two fake views.
+                    
+                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-7.swift") {
+                    @Image(source: "tutorial-onboarding-3-7.png", alt: "A view with images and texts")
+                }  
+            }
+
+            @Step {
+                OUDS provides *navigation* components like a *tab bar*. The *tab bar* is quite particular: its rendering will change depending if Liquid Glass is applied (i.e. iOS 26+) or not (i.e. until iOS 18).
+                Add a *tab bar*, with 3 items inside it: the `HomeScreen` `View` and two fake views.
+                
+                You can see how it looks like with other themes like `SoshTheme`, `WireframeTheme` or `OrangeCompactTheme`.
+                    
+                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-8.swift") {
+                    @Image(source: "tutorial-onboarding-3-8.png", alt: "A view with a tab bar in the bottom")
+                }  
+            }
+        }
+    }
+            
+                
+    @Assessments {
+        @MultipleChoice {
+            Which thing defines the theme to use everywhere?
+
+            @Choice(isCorrect: true) {
+                The `OUDSThemeableView`
+
+                @Justification(reaction: "That's right!") {
+                    Yes! One view to rule them all!
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Any other view
+
+                @Justification(reaction: "Try again!") {
+                    Nope! You must ust the dedicated OUDS view to inject in subviews the theme 
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            Can you mix SwiftUI and OUDS components?
+
+            @Choice(isCorrect: true) {
+                Yes, of course!
+
+                @Justification(reaction: "Yes!") {
+                    Of course you can mix views from SwiftUI and OUDS
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                No, not possible
+
+                @Justification(reaction: "Try again!") {
+                    Feel free to mix components! If you have some bugs, submit us issues on GitHub ❤️ 
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            Components have all the same rendering whatever is the OS version
+
+            @Choice(isCorrect: false) {
+                Yes, because OUDS is cohesive
+
+                @Justification(reaction: "Try again!") {
+                    OUDS iOS Swift Package provide some components with rendering depending to the OS (e.g. tab bars)
+                }
+            }
+
+            @Choice(isCorrect: true) {
+                No, Liquid Glass can be applied
+
+                @Justification(reaction: "Correct!") {
+                    Liquid Glass is applied on navigation elements like tab bar 
+                }
+            }
+        }
+    }
+}
+
