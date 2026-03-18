@@ -1,4 +1,4 @@
-@Tutorial(time: 15) {
+@Tutorial(time: 15, projectFiles: "OUDS-Discovery-Tutorial") {
     @Intro(title: "Instanciate and inject a theme") {
         The theme is exposed as one object which will be injected inside your SwiftUI view.
         The theme provides all tokens which defines in the end the rendering of everything.

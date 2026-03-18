@@ -1,4 +1,4 @@
-@Tutorial(time: 30) {
+@Tutorial(time: 30, projectFiles: "OUDS-Discovery-Tutorial") {
     @Intro(title: "Styling things") {
         Even if components increase the identity of your apps, it is not enough. Typography, fonts and tokens are here to improve that.
         

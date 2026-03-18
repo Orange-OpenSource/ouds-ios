@@ -1,4 +1,4 @@
-@Tutorial(time: 30) {
+@Tutorial(time: 30, projectFiles: "OUDS-Discovery-Tutorial") {
     @Intro(title: "Use your first OUDS components") {
         OUDS provides components ready to be used, specified in Figma assets and preventing users to handle tokens.
         They are rendered thanks to the theme in use.

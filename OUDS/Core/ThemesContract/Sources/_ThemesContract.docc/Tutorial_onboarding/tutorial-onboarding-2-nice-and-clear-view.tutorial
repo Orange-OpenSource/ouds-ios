@@ -1,4 +1,4 @@
-@Tutorial(time: 45) {
+@Tutorial(time: 45, projectFiles: "OUDS-Onboarding-Tutorial.zip") {
     @Intro(title: "Define information cards") {
         Let's suppose we want to define a view for corporate apps with headings, texts, buttons and images.
         How can we do that?
@@ -19,7 +19,7 @@
                 Define a basic `InfoCard` `View`, it must have an asset name to load as image, a title, a subtitle, a description and a label for the button.
                 Add also the Xcode `#Preview` macro to display the view, here of course it will be empty.
 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-1.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-1.swift") {
                     @Image(source: "tutorial-onboarding-2-1.png", alt: "An empty view previewed in Xcode")
                 } 
             }
@@ -30,7 +30,7 @@
                 
                 Supposing we will work with Orange theme here, apply the `orangePreview()` view modifier.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-2.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-2.swift") {
                     @Image(source: "tutorial-onboarding-2-1.png", alt: "An empty view previewed in Xcode")
                 } 
             }
@@ -40,7 +40,7 @@
                 
                 Use a `VStack` containing `Image` and `Text` `View` objects.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-3.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-3.swift") {
                     @Image(source: "tutorial-onboarding-2-3.png", alt: "A view with image and texts without styles")
                 } 
             }
@@ -51,7 +51,7 @@
                 
                 For the *title* with want a *medium heading*, an *XL heading* for the *subtitle* and a *large default body* for the *description*. You will need to get the *theme* object throw the dedicated environment variable to give it to the view modifiers.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-4.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-4.swift") {
                     @Image(source: "tutorial-onboarding-2-4.png", alt: "A view with image and texts with typography styles")
                 } 
             }
@@ -61,7 +61,7 @@
         
                 For all texts, change the *foreground color*: apply *contentBrandPrimary* for the *title*, *contentDefault* for the subtitle and also the *description*.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-5.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-5.swift") {
                     @Image(source: "tutorial-onboarding-2-5.png", alt: "A view with image and texts with typography styles and colors")
                 } 
             }
@@ -71,7 +71,7 @@
         
                 Add a button with a *strong appearance*, using the previously defined label, and no action.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-6.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-6.swift") {
                     @Image(source: "tutorial-onboarding-2-6.png", alt: "A view with image, texts and a strong button")
                 } 
             }
@@ -81,7 +81,7 @@
         
                 Try to apply some spacings: *fixedNone* in the `VStack`, *fixedMedium* as a `Spacer` minimum length below the button, *top grid margin* for the *title*, *grid margin* for all the `View`, *scaled2xsmall* as *vertical padding* for the *subtitle* and *scaledLarge* as minimum length for a `Spacer` above the *button*.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-7.swift") {
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-7.swift") {
                     @Image(source: "tutorial-onboarding-2-7.png", alt: "A view with image, texts, button and spacings")
                 } 
             }
@@ -91,7 +91,7 @@
         
                 Define an `HomeView` with two `InfoCard` `View` objects. For the second view, for to *dark color scheme* and apply `theme.colors.bgInverseLow` background color.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-2-8.swift") {
+                @Code(name: "HomeView.swift", file: "tutorial-onboarding-2-8.swift") {
                     @Image(source: "tutorial-onboarding-2-8.png", alt: "Cards with ligh and dark color schemes")
                 } 
             }

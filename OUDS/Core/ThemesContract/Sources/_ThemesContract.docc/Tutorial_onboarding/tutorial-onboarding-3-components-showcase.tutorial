@@ -1,4 +1,4 @@
-@Tutorial(time: 60) {
+@Tutorial(time: 60, projectFiles: "OUDS-Onboarding-Tutorial.zip") {
     @Intro(title: "Components showcase") {
         Now you are ready to use more components than a simple button!
         
@@ -21,7 +21,7 @@
                 Add inside the components you want, for exemple *checkbox item*, *radio item*, *switch item*, *text input* and *password input*.
                 Do not forget the Xcode preview.
 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-1.swift") {
+                @Code(name: "Control.swift", file: "tutorial-onboarding-3-1.swift") {
                     @Image(source: "tutorial-onboarding-3-1.png", alt: "A simple view with some component inside")
                 } 
             }
@@ -32,7 +32,7 @@
                 Add inside badges: do not hesitate to change their *status* and *size*.
                 Make your tests with the Xcode preview.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-2.swift") {
+                @Code(name: "Indicator.swift", file: "tutorial-onboarding-3-2.swift") {
                     @Image(source: "tutorial-onboarding-3-2.png", alt: "Colored badges displayed in white blank view")
                 } 
             }
@@ -43,7 +43,7 @@
                 
                 Use a `VStack` containing `Image` and `Text` `View` objects.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-3.swift") {
+                @Code(name: "Navigation.swift", file: "tutorial-onboarding-3-3.swift") {
                     @Image(source: "tutorial-onboarding-3-3.png", alt: "Three links with chevrons or underlined text")
                 } 
             }
@@ -61,20 +61,20 @@
             @Step {
                 First, define the components groups we need as an enumeration. We will provide views for *control* components, *indicator* components and *navigation* components. The *enum* to define must conform to *CaseIterable* and *CustomStringConvertible*
                 
-                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-4.swift") 
+                 @Code(name: "ComponentGroup.swift", file: "tutorial-onboarding-3-4.swift") 
             }
             
             @Step {
                 Then define a `CategorySelector` `View`: it must display a *filter chip* for all *ComponentGroup* cases and keep a *selected component group* as *Binding*. Use the *theme.spaces.fixedSmall* token for horizontal spacing between the chips.
                 
-                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-5.swift") 
+                 @Code(name: "CategorySelector.swift", file: "tutorial-onboarding-3-5.swift") 
             }
             
             @Step {
                 In the end, define the main view, the `ComponentShowcase` `View`. In the top of it, display a welcoming text with *heading large* typography and *contentDefault* foreground color. Just bellow add the `CategorySelector` and pack them in a `VStack` using a *scaledMedium* spacing for *verticla size class*. Apply *bgSecondary* background color to this `VStack`.
                 Then add the views for components inside a `ZStack` and use the *selected component group* to apply opacity on the suitable view.
                 
-                 @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-6.swift") 
+                 @Code(name: "ComponentShowcase.swift", file: "tutorial-onboarding-3-6.swift") 
             }
         }
     }
@@ -93,7 +93,7 @@
                 *navigation* components like a *tab bar*. The *tab bar* is quite particular: its rendering will change depending if Liquid Glass is applied (i.e. iOS 26+) or not (i.e. until iOS 18).
                 Add a *tab bar*, with 3 items inside it: the `HomeScreen` `View` and two fake views.
                     
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-7.swift") {
+                @Code(name: "ContentView.swift", file: "tutorial-onboarding-3-7.swift") {
                     @Image(source: "tutorial-onboarding-3-7.png", alt: "A view with images and texts")
                 }  
             }
@@ -104,7 +104,7 @@
                 
                 You can see how it looks like with other themes like `SoshTheme`, `WireframeTheme` or `OrangeCompactTheme`.
                     
-                @Code(name: "Tutorial.swift", file: "tutorial-onboarding-3-8.swift") {
+                @Code(name: "ContentView.swift", file: "tutorial-onboarding-3-8.swift") {
                     @Image(source: "tutorial-onboarding-3-8.png", alt: "A view with a tab bar in the bottom")
                 }  
             }

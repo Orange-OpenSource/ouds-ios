@@ -1,4 +1,4 @@
-@Tutorial(time: 10) {
+@Tutorial(time: 10, projectFiles: "OUDS-Discovery-Tutorial") {
     @Intro(title: "Going further with more resources") {
         Since you have learnt how OUDS works with theme, themeable view, components, tuning and vieww modifiers, it is time now to discover some online resources.
         
