@@ -1,4 +1,4 @@
-@Tutorial(time: 30, projectFiles: "OUDS-Discovery-Tutorial") {
+@Tutorial(time: 30, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Add more OUDS components") {
         Components can be similar to iOS native components, or can also be original and strongly related to Orange Unified Design System needs.
         

@@ -71,7 +71,7 @@
             }
             
             @Step {
-                In the end, define the main view, the `ComponentShowcase` `View`. In the top of it, display a welcoming text with *heading large* typography and *contentDefault* foreground color. Just bellow add the `CategorySelector` and pack them in a `VStack` using a *scaledMedium* spacing for *verticla size class*. Apply *bgSecondary* background color to this `VStack`.
+                In the end, define the main view, the `ComponentShowcase` `View`. In the top of it, display a welcoming text with *heading large* typography and *contentDefault* foreground color. Just below add the `CategorySelector` and pack them in a `VStack` using a *scaledMedium* spacing for *vertical size class*. Apply *bgSecondary* background color to this `VStack`.
                 Then add the views for components inside a `ZStack` and use the *selected component group* to apply opacity on the suitable view.
                 
                  @Code(name: "ComponentShowcase.swift", file: "tutorial-onboarding-3-6.swift") 

@@ -1,4 +1,4 @@
-@Tutorial(time: 10, projectFiles: "OUDS-Discovery-Tutorial") {
+@Tutorial(time: 10, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Swift Package integration") {
         OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several librairies for your needs.
         These librairies help to split products and make users able to select only what they need.

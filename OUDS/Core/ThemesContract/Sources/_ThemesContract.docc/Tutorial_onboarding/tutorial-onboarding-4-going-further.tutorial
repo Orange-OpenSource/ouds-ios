@@ -1,6 +1,6 @@
 @Tutorial(time: 10) {
     @Intro(title: "Going further with more resources") {
-        Since you have learnt how OUDS works with theme, themeable view, components, tuning and vieww modifiers, it is time now to discover some online resources.
+        Since you have learned how OUDS works with theme, themeable view, components, tuning and view modifiers, it is time now to discover some online resources.
         
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }

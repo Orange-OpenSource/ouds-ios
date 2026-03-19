@@ -54,7 +54,7 @@ struct InfoCard: View {
 
             Spacer(minLength: theme.spaces.fixedMedium)
         }
-        .padding(.all, theme.gridMargin(for: oudsHorizontalSizeClass))
+        .oudsGridMargin(.horizontal)
     }
 }
 

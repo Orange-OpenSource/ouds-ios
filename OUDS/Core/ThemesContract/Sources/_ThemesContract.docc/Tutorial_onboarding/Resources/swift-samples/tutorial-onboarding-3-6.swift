@@ -60,11 +60,11 @@ struct ComponentShowcase: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .headingLarge(theme)
                     .oudsForegroundColor(theme.colors.contentDefault)
-                    .padding(.horizontal, gridMarin)
+                    .padding(.horizontal, gridMargin)
 
                 CategorySelector(selectedComponentGroup: $selectedComponentGroup)
             }
-            .padding(.vertical, gridMarin)
+            .padding(.vertical, gridMargin)
             .oudsBackground(theme.colors.bgSecondary)
 
             // Use opacity to reserve space vertically, otherwise height change when changing group
@@ -77,11 +77,11 @@ struct ComponentShowcase: View {
                 Indicator().opacity(indicatorOpacity)
                 Navigation().opacity(navigationOpacity)
             }
-            .padding(.all, gridMarin)
+            .padding(.all, gridMargin)
         }
     }
 
-    private var gridMarin: Double {
+    private var gridMargin: Double {
         theme.gridMargin(for: oudsHorizontalSizeClass)
     }
 }

@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSSwiftUI
 import SwiftUI
 
 struct InfoCard: View {
@@ -22,7 +21,9 @@ struct InfoCard: View {
     let description: String
     let buttonLabel: String
 
-    var body: some View {}
+    var body: some View {
+        EmptyView()
+    }
 }
 
 #Preview {
@@ -32,5 +33,4 @@ struct InfoCard: View {
         subtitle: "A complete offer for Institutions",
         description: "Our experience as a partner in the digital transformation of companies and institutions guarantees the high efficiency of the services provided.",
         buttonLabel: "Transmission")
-        .orangePreview()
 }
