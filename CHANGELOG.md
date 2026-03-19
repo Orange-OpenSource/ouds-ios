@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Tutorial for onboardings and meetups (Orange-OpenSource/ouds-ios#1336)
 - View helpers to use scaled spaces tokens to add padding and for HStack/VStack (Orange-OpenSource/ouds-ios#1324)
 - GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)
 - Helper to apply grid margin on views (Orange-OpenSource/ouds-ios#1317)

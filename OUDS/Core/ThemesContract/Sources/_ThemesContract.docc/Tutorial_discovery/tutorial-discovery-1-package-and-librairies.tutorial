@@ -1,8 +1,8 @@
-@Tutorial(time: 10) {
+@Tutorial(time: 10, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Swift Package integration") {
         OUDS iOS is exposed through an open source Swift Package hosted on GitHub, and provides several librairies for your needs.
         These librairies help to split products and make users able to select only what they need.
-        SwiftUI is the only official supported framework.
+        SwiftUI is the only official supported framework for Apple platforms.
         
         @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
     }
@@ -23,8 +23,9 @@
                 You can then choose the **dependency rule** you want.
                 To know which version you need, you can have a look on the [available API list](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API)
                 and also the [GitHub releases](https://github.com/Orange-OpenSource/ouds-ios/releases).
+                Let's say you will use some beta version today, e.g. the version1.3.0-beta.2
                 
-                @Image(source: "tutorial-1-ouds-swift-package", alt: "Description by Xcode of the OUDS Swift Package woth its README preview")
+                @Image(source: "tutorial-discovery-1-ouds-swift-package", alt: "Description by Xcode of the OUDS Swift Package with its README preview")
             }
             
             @Step {
@@ -44,7 +45,7 @@
                                 
                 Add for example only the umbrella product merging all products mentioned above: *OUDSSwiftUI*
                 
-                @Image(source: "tutorial-1-ouds-libraries.png", alt: "Embed librairies inside target")
+                @Image(source: "tutorial-discovery-1-ouds-libraries.png", alt: "Embed librairies inside target")
             }
         }
     }
@@ -92,10 +93,10 @@
             }
 
             @Choice(isCorrect: false) {
-                None, only the Swift package dependency matter 
+                None, only the Swift package dependency matter. 
                   
                 @Justification(reaction: "Try again!") {
-                    You need to chose the products the Swift package provides
+                    You need to chose the products the Swift package provides.
                 }
             }
         }        

@@ -1,0 +1,43 @@
+@Tutorials(name: "Orange Unified Design System") {
+    @Intro(title: "Swift Package Onboarding Tutorial") {
+        Discovering a new framework can be exciting and scary. 
+        With this tutorial, you will learn how to embed OUDS Swift Package and define views tailored for your brand.
+        It has beend esigned for local events and meetups.
+        Let's play!
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+    }
+    
+    @Chapter(name: "Import of the Swift Package and choose its librairies") {
+        In this chapter you will learn how to import the OUDS iOS Swift Package and which librairies it provides
+        you should choose for your needs.
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-onboarding-1-package-and-librairies")
+    }
+    
+    @Chapter(name: "Define information cards") {
+        Since you prepared you Xcode project and integrated OUDS Swift Package, you can now define a nice and clear view with headings, images and button.
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-onboarding-2-nice-and-clear-view")
+    }
+    
+    @Chapter(name: "Components showcases") {
+        Since you discovered tokens, colors, spacings, and view modifiers, now it's time to integrate and play with some components!
+        
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-onboarding-3-components-showcase")
+    }
+    
+    @Chapter(name: "Go further with more ressources") {
+        You can have questions and issues, and there are resources online. Let's see that together.
+
+        @Image(source: "ic_unified_ds", alt: "Logo of OUDS")
+        
+        @TutorialReference(tutorial: "doc:tutorial-onboarding-4-going-further")
+    }
+}

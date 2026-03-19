@@ -1,4 +1,4 @@
-@Tutorial(time: 30) {
+@Tutorial(time: 30, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Add more OUDS components") {
         Components can be similar to iOS native components, or can also be original and strongly related to Orange Unified Design System needs.
         
@@ -20,8 +20,8 @@
                 
                 Add three tags thanks to `OUDSTag` object.
                 
-                @Code(name: "Content.swift", file: "tutorial-4-1.swift", previousFile: "tutorial-3-7.swift") {
-                    @Image(source: "tutorial-4-1.png", alt: "Tags in top of formular")
+                @Code(name: "Content.swift", file: "tutorial-discovery-4-1.swift", previousFile: "tutorial-discovery-3-7.swift") {
+                    @Image(source: "tutorial-discovery-4-1.png", alt: "Tags in top of formular")
                 }
             }
             
@@ -33,8 +33,8 @@
                 Add a group of chips for some topics the user must select. The picker is populated by an array of data, and the one we use as a `Binding` of array.
                 The user can select all of the items.
                 
-                @Code(name: "Content.swift", file: "tutorial-4-2.swift") {
-                    @Image(source: "tutorial-4-2.png", alt: "Chips are now integrated inside a picker")
+                @Code(name: "Content.swift", file: "tutorial-discovery-4-2.swift") {
+                    @Image(source: "tutorial-discovery-4-2.png", alt: "Chips are now integrated inside a picker")
                 }
             }
         
@@ -45,8 +45,8 @@
                 Add two text inputs: one to get the user name with a delete action, and one for an email address.
                 Their values are exposed through `Binding` of `String`.
 
-                @Code(name: "Content.swift", file: "tutorial-4-3.swift") {
-                    @Image(source: "tutorial-4-3.png", alt: "Texts inputs are very rich and available in lot of apps and formulars")
+                @Code(name: "Content.swift", file: "tutorial-discovery-4-3.swift") {
+                    @Image(source: "tutorial-discovery-4-3.png", alt: "Texts inputs are very rich and available in lot of apps and formulars")
                 }
             }
             
@@ -58,8 +58,8 @@
                 
                 Add a `OUDSColoredSurface` gathering the link, the button and the switch item. You will need to get the theme object for your first time so as to choose the color of the surface! The import of *OUDSTokensSemantic* is also necessary. Once your code is updated, compare the difference for the switch, the link and the button. Their style has changed!
                 
-                @Code(name: "Content.swift", file: "tutorial-4-4.swift") {
-                    @Image(source: "tutorial-4-4.png", alt: "The colored surfce changes the styles of some components")
+                @Code(name: "Content.swift", file: "tutorial-discovery-4-4.swift") {
+                    @Image(source: "tutorial-discovery-4-4.png", alt: "The colored surfce changes the styles of some components")
                 }
             }
         }

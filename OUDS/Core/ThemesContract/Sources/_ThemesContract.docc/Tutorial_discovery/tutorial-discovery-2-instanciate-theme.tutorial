@@ -1,4 +1,4 @@
-@Tutorial(time: 15) {
+@Tutorial(time: 15, projectFiles: "OUDS-Discovery-Tutorial.zip") {
     @Intro(title: "Instanciate and inject a theme") {
         The theme is exposed as one object which will be injected inside your SwiftUI view.
         The theme provides all tokens which defines in the end the rendering of everything.
@@ -22,8 +22,8 @@
             @Step {
                 Define a basic `App` object using *SwiftUI*. Add inside a simple text
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-2-1.swift") {
-                    @Image(source: "tutorial-2-1.png", alt: "A text displaying the \"Hello OUDS!\" message")
+                @Code(name: "Tutorial.swift", file: "tutorial-discovery-2-1.swift") {
+                    @Image(source: "tutorial-discovery-2-1.png", alt: "A text displaying the \"Hello OUDS!\" message")
                 } 
             }
          
@@ -34,8 +34,8 @@
                 
                 Project must compile then. This is until today (API 0.20.0) the only way to instanciated and inject a theme.
                 
-                @Code(name: "Tutorial.swift", file: "tutorial-2-2.swift") {
-                    @Image(source: "tutorial-2-2.png", alt: "A text displaying the \"Hello OUDS!\" message")
+                @Code(name: "Tutorial.swift", file: "tutorial-discovery-2-2.swift") {
+                    @Image(source: "tutorial-discovery-2-2.png", alt: "A text displaying the \"Hello OUDS!\" message")
                 } 
             }
         }

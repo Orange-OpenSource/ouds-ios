@@ -19,12 +19,12 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
+    static let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
 
     let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
                               colors: MyOwnProviderOfColorTokens(),
                               fontFamily: "Menlo",
-                              tuning: themeTuning)
+                              tuning: Self.themeTuning)
 
     var body: some Scene {
         WindowGroup {
@@ -165,7 +165,7 @@ struct ContentView: View {
 // MARK: - Custom tokens providers
 // WARNING: Can have side effects, use with care!
 
-class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
+nonisolated class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
 
     /// Some tokens have light and dark values used according to color scheme
     override var actionEnabledLight: ColorSemanticToken {
@@ -178,7 +178,7 @@ class MyOwnProviderOfColorTokens: OrangeThemeColorSemanticTokensProvider {
     }
 }
 
-class MyOwnProviderOfBorderTokens: OrangeThemeBorderSemanticTokensProvider {
+nonisolated class MyOwnProviderOfBorderTokens: OrangeThemeBorderSemanticTokensProvider {
 
     override var widthThin: BorderWidthSemanticToken {
         BorderRawTokens.width75
