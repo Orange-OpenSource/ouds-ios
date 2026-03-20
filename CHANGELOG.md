@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
 - Selected tab animation for `tab bar component` (iOS 18 and older) (Orange-OpenSource/ouds-ios#1351)
 - `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
 - Rename in `bullet list` component API "unordered icon" to "unordered asset" (Orange-OpenSource/ouds-ios#1326)
