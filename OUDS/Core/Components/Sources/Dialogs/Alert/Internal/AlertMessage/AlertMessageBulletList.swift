@@ -31,7 +31,7 @@ struct AlertMessageBulletListItem: View {
     var body: some View {
         HStack(alignment: .top, spacing: theme.bulletList.spaceColumnGapBodyMedium) {
             HStack(alignment: .center) {
-                OUDSIcon(assetName: "ic_bullet_list_level0", color: theme.colors.contentMuted)
+                OUDSIcon(assetName: "ic_bullet_list_level0", color: foregroundColor)
                     .frame(width: iconSize, height: iconSize)
             }
             .frame(width: width, alignment: .trailing)
