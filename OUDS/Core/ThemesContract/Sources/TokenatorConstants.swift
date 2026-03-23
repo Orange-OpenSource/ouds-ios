@@ -76,8 +76,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Dialog
 
-    /// Version of the Figma specifications for the component alert (alert message)  (1.0.0)
-    public static let componentAlertMessageVersion = "1.0.0"
+    /// Version of the Figma specifications for the component alert (alert message)  (1.1.0)
+    public static let componentAlertMessageVersion = "1.1.0" // WARNING: Manually updated as tokenator not updated yet
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
 
