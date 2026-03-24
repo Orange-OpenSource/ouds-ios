@@ -63,7 +63,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-switch)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-pin-code-input)
 ///
 /// ## Themes rendering
 ///
@@ -93,7 +93,7 @@ public struct OUDSPinCodeInput: View {
     @Binding private var value: String
     private let length: Length
     private let helperText: String?
-    private let error: InputError?
+    private let isError: Bool
     private let isOutlined: Bool
 
     @Environment(\.theme) private var theme
@@ -113,17 +113,6 @@ public struct OUDSPinCodeInput: View {
         case eight = 8
     }
 
-    // MARK: - Error
-
-    /// The error state for the *pin code input* component
-    /// - Since: 1.4.0
-    public enum InputError {
-        /// Component in error state because empty. Displays the given `String` as error message.
-        case empty(String)
-        /// Component in error state because unexpected value. Displays the given `String` as error message.
-        case unexpected(String)
-    }
-
     // MARK: - Initializers
 
     /// Defines a PIN code imput component with several boxes to fill the code
@@ -132,18 +121,18 @@ public struct OUDSPinCodeInput: View {
     ///   - length: The number of required symbols for the input, default set to *six*
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
-    ///   - error: The state of the component depending to its value (default set to *nil*)
+    ///   - isError: If the component is in an error context (default set to *false*)
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
                 helperText: String? = nil,
-                error: OUDSPinCodeInput.InputError? = nil,
+                isError: Bool = false,
                 isOutlined: Bool = false)
     {
         _value = value
         self.length = length
         self.helperText = helperText
-        self.error = error
+        self.isError = isError
         self.isOutlined = isOutlined
     }
 
@@ -151,10 +140,10 @@ public struct OUDSPinCodeInput: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            PinCodeInputContainer(value: _value, length: length, error: error, isOutlined: isOutlined)
+            PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
 
-            if helperText != nil || error != nil {
-                PinCodeHelperErrorTextContainer(helperText: helperText, error: error)
+            if helperText != nil || !isError {
+                PinCodeHelperErrorTextContainer(helperText: helperText, isError: isError)
                     .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
             }
         }

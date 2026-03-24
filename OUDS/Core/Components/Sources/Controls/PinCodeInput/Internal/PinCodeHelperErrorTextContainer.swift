@@ -16,7 +16,7 @@ import SwiftUI
 struct PinCodeHelperErrorTextContainer: View {
 
     let helperText: String?
-    let error: OUDSPinCodeInput.InputError?
+    let isError: Bool
 
     var body: some View {}
 }
