@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(macOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -88,6 +89,8 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
             self.index = index
         }
 
+        deinit {}
+
         /// Called when the text field's text is about to change
         /// - Parameters:
         ///   - textField: The text field
@@ -133,6 +136,8 @@ final class BackspaceTextField: UITextField {
     /// The index of this field in the PIN code (used for debugging)
     var fieldIndex: Int = -1
 
+    deinit {}
+
     /// Called when the user presses the backspace/delete key
     ///
     /// We call our custom callback before calling super to ensure our logic
@@ -155,3 +160,4 @@ final class BackspaceTextField: UITextField {
         CGSize(width: 0, height: 0)
     }
 }
+#endif

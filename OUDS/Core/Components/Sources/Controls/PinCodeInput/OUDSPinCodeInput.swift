@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(macOS)
 import SwiftUI
 
 // MARK: - OUDS PIN Code Input
@@ -85,7 +86,7 @@ import SwiftUI
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 1.4.0
-@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+@available(iOS 15, visionOS 1, tvOS 16, *)
 public struct OUDSPinCodeInput: View {
 
     // MARK: - Properties
@@ -153,3 +154,4 @@ public struct OUDSPinCodeInput: View {
                alignment: .leading)
     }
 }
+#endif

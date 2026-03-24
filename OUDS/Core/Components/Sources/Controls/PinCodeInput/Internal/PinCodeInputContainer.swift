@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(macOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -44,10 +45,12 @@ struct PinCodeInputContainer: View {
     // for that field within 100ms to avoid processing the same backspace twice.
     // \(”˚☐˚)/ ⊹₊⟡⋆
 
+    // swiftlint:disable implicit_optional_initialization
     /// Tracks which field index was last cleared by a backspace operation
     @State private var lastBackspaceIndex: Int? = nil
     /// Tracks when the last backspace operation occurred (used for debouncing)
     @State private var lastBackspaceTime: Date = .distantPast
+    // swiftlint:enable implicit_optional_initialization
 
     // MARK: Initializer
 
@@ -67,6 +70,7 @@ struct PinCodeInputContainer: View {
 
     // MARK: Body
 
+    // swiftlint:disable accessibility_trait_for_button
     var body: some View {
         HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
             ForEach(0 ..< length.rawValue, id: \.self) { index in
@@ -106,6 +110,8 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    // swiftlint:enable accessibility_trait_for_button
+
     // MARK: Helpers
 
     private var backgroundColor: Color {
@@ -134,6 +140,24 @@ struct PinCodeInputContainer: View {
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             .accessibilityLabel("Digit \(index + 1)") // TODO: #998 - Change it
+        #if os(visionOS)
+            .onChange(of: digits[index]) { _, newValue in
+                // IMPORTANT: Skip onChange if this is triggered by a recent backspace operation
+                // This prevents double processing when:
+                // 1. handleBackspace clears a digit (triggers onChange)
+                // 2. Focus changes to previous field (triggers onChange again)
+                // We use a 100ms window to detect if this onChange is from the same backspace
+
+                let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
+
+                // If this field was just cleared by backspace within the last 100ms, skip processing
+                if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
+                    return
+                }
+
+                handleDigitChange(at: index, newValue: newValue)
+            }
+        #else
             .onChange(of: digits[index]) { newValue in
                 // IMPORTANT: Skip onChange if this is triggered by a recent backspace operation
                 // This prevents double processing when:
@@ -150,6 +174,7 @@ struct PinCodeInputContainer: View {
 
                 handleDigitChange(at: index, newValue: newValue)
             }
+        #endif
     }
 
     /// To handle the written data:
@@ -247,3 +272,4 @@ struct PinCodeInputContainer: View {
         }
     }
 }
+#endif
