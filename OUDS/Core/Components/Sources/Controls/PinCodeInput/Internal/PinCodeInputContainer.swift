@@ -15,6 +15,16 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Characters
+
+/// The symbol to use to hide the written digit
+let kPinCodeInputObfuscationCharacter = "●"
+
+/// The symbol to use as placeholder for digit to fill
+let kPinCodeInputPlaceholderCharacter = "-"
+
+// MARK: - Pin Code Input Container
+
 struct PinCodeInputContainer: View {
 
     // MARK: - Properties
@@ -33,6 +43,8 @@ struct PinCodeInputContainer: View {
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme
 
@@ -136,9 +148,36 @@ struct PinCodeInputContainer: View {
 
     // MARK: - Digits fields
 
+    /// Returns the string to display for a digit field:
+    /// - `kPinCodeInputPlaceholderCharacter` for placeholder on not focused input
+    /// - `kPinCodeInputObfuscationCharacter` for filled input
+    /// - empty string for input focused without text yet
+    ///
+    /// - Parameter index: The index of the field
+    /// - Returns: The character to display in the field
+    private func displayText(for index: Int) -> String {
+        if digits[index].isEmpty {
+            if focusedIndex == index {
+                ""
+            } else {
+                kPinCodeInputPlaceholderCharacter
+            }
+        } else {
+            kPinCodeInputObfuscationCharacter
+        }
+    }
+
     private func digitField(at index: Int) -> some View {
-        BackspaceDetectingTextField(
+        // Compute at this level the typography to use to be sure environement values for size class
+        // are retrieved in the suitable thread at the best moment
+        let uiFont = TypographyModifier.makeUIFont(
+            family: nil,
+            from: theme.fonts.bodyDefaultMedium,
+            isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
+        return BackspaceDetectingTextField(
             text: $digits[index],
+            displayText: .constant(displayText(for: index)),
+            font: uiFont,
             index: index,
             onBackspace: {
                 handleBackspace(at: index)

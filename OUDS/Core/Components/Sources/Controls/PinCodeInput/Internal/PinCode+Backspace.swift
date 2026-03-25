@@ -31,6 +31,8 @@ import SwiftUI
 struct BackspaceDetectingTextField: UIViewRepresentable {
 
     @Binding var text: String
+    @Binding var displayText: String
+    let font: UIFont
     let index: Int
     let onBackspace: () -> Void
 
@@ -47,6 +49,8 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         // Store the callback in the text field so it can call it when backspace is pressed
         textField.onBackspace = onBackspace
         textField.fieldIndex = index
+
+        textField.font = font
 
         // Set low priorities to allow the frame modifier to control the size
         textField.setContentHuggingPriority(.defaultLow, for: .vertical)
@@ -67,8 +71,8 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         uiView.onBackspace = onBackspace
 
         // Only update the text if it's different to avoid unnecessary updates
-        if uiView.text != text {
-            uiView.text = text
+        if uiView.text != displayText {
+            uiView.text = displayText
         }
     }
 
@@ -108,17 +112,19 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
                 return true
             }
 
-            // For character additions, update the binding
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else {
-                return false
+            // Filter to only allow numeric characters and take only the first one
+            let filtered = String(string.filter(\.isNumber).prefix(1))
+
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                if !filtered.isEmpty {
+                    // Update the binding with the real digit
+                    text = filtered
+                }
             }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
 
-            // Update the binding for additions (this will trigger onChange in SwiftUI)
-            text = updatedText
-
-            return true
+            // false: prevent direct display of text ; it will be updated with updateUIView using displayText
+            return false
         }
     }
 }
@@ -158,6 +164,25 @@ final class BackspaceTextField: UITextField {
     /// Instead, we let the SwiftUI frame modifier control the size.
     override var intrinsicContentSize: CGSize {
         CGSize(width: 0, height: 0)
+    }
+
+    /// To put the cursor in the field after any symbol
+    override func becomeFirstResponder() -> Bool {
+        let result = super.becomeFirstResponder()
+
+        if result {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+
+                // Positionner le curseur à la fin du texte
+                if let text, !text.isEmpty {
+                    let endPosition = endOfDocument
+                    selectedTextRange = textRange(from: endPosition, to: endPosition)
+                }
+            }
+        }
+
+        return result
     }
 }
 #endif
