@@ -21,7 +21,7 @@ import SwiftUI
 
 // MARK: - Constants
 
-let kTabBarAnimationDuration: CGFloat = 0.3
+let kTabBarAnimationDuration: CGFloat = 0.2
 let kAsyncDelay: CGFloat = 0.1
 
 // MARK: - Selected Tab Indicator
