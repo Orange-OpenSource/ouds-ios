@@ -34,6 +34,9 @@ struct SelectedTabIndicator: View {
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
+    /// Horizontal scale factor used to animate the indicator expanding from its center.
+    /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
+    @State private var indicatorScaleX: CGFloat = 0
 
     @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
@@ -49,10 +52,19 @@ struct SelectedTabIndicator: View {
             RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
                 .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
                 .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                .scaleEffect(x: indicatorScaleX, y: 1, anchor: .center)
                 .position(
                     x: xOffset + indicatorWidth / 2,
                     y: indicatorPosition)
-                .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
+                .onChange(of: selected) { _ in
+                    // Instantly collapse the indicator to zero width (no animation, so no slide
+                    // from the old tab to the new one), then animate the line expanding outward
+                    // from the center of the new tab.
+                    indicatorScaleX = 0
+                    withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                        indicatorScaleX = 1
+                    }
+                }
                 .onChange(of: geometry.size) { _ in
                     updateTabBarHeight()
                 }
@@ -60,6 +72,9 @@ struct SelectedTabIndicator: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
                 updateTabBarHeight()
+                withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                    indicatorScaleX = 1
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
