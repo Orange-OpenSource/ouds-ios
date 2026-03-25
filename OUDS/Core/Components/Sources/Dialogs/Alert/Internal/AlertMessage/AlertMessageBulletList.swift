@@ -19,6 +19,7 @@ struct AlertMessageBulletListItem: View {
     // MARK: - Properties
 
     let text: String
+    let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -30,7 +31,7 @@ struct AlertMessageBulletListItem: View {
     var body: some View {
         HStack(alignment: .top, spacing: theme.bulletList.spaceColumnGapBodyMedium) {
             HStack(alignment: .center) {
-                OUDSIcon(assetName: "ic_bullet_list_level0", color: theme.colors.contentMuted)
+                OUDSIcon(assetName: "ic_bullet_list_level0", color: foregroundColor)
                     .frame(width: iconSize, height: iconSize)
             }
             .frame(width: width, alignment: .trailing)
@@ -38,10 +39,12 @@ struct AlertMessageBulletListItem: View {
 
             Text(text)
                 .labelDefaultMedium(theme)
-                .oudsForegroundColor(theme.colors.contentMuted)
+                .oudsForegroundColor(foregroundColor)
                 .frame(maxWidth: theme.sizes.maxWidthTypeLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
         }
     }
+
+    // MARK: - Helpers
 
     private var iconSize: CGFloat {
         let rawSize = theme.sizes.iconWithLabelMediumSizeSmall
@@ -56,5 +59,22 @@ struct AlertMessageBulletListItem: View {
     private var maxHeight: CGFloat {
         let rawSize = theme.fonts.lineHeightBodyMedium.lineHeight(for: verticalSizeClass ?? .regular)
         return rawSize * dynamicTypeSize.percentageRate / 100
+    }
+
+    private var foregroundColor: MultipleColorSemanticToken {
+        switch status {
+        case .neutral:
+            theme.colors.contentDefault
+        case .accent:
+            theme.colors.contentOnStatusAccentMuted
+        case .positive:
+            theme.colors.contentOnStatusPositiveMuted
+        case .negative:
+            theme.colors.contentOnStatusNegativeMuted
+        case .warning:
+            theme.colors.contentOnStatusWarningMuted
+        case .info:
+            theme.colors.contentOnStatusInfoMuted
+        }
     }
 }
