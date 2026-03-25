@@ -38,6 +38,11 @@ struct SelectedTabIndicator: View {
     /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
     @State private var indicatorScaleX: CGFloat = 0
 
+    /// To disable animation if device in low power mode
+    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    /// To disable animation if user asked for it in device settings
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -49,25 +54,38 @@ struct SelectedTabIndicator: View {
             let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
             let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
 
-            RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
-                .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
-                .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
-                .scaleEffect(x: indicatorScaleX, y: 1, anchor: .center)
-                .position(
-                    x: xOffset + indicatorWidth / 2,
-                    y: indicatorPosition)
-                .onChange(of: selected) { _ in
-                    // Instantly collapse the indicator to zero width (no animation, so no slide
-                    // from the old tab to the new one), then animate the line expanding outward
-                    // from the center of the new tab.
-                    indicatorScaleX = 0
-                    withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
-                        indicatorScaleX = 1
+            if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
+                // No animation: display a full-tab-width indicator, instantly repositioned on selection change.
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
+                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                    .position(
+                        x: tabWidth * CGFloat(selected) + tabWidth / 2,
+                        y: indicatorPosition)
+                    .onChange(of: geometry.size) { _ in
+                        updateTabBarHeight()
                     }
-                }
-                .onChange(of: geometry.size) { _ in
-                    updateTabBarHeight()
-                }
+            } else {
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
+                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                    .scaleEffect(x: indicatorScaleX, y: 1, anchor: .center)
+                    .position(
+                        x: xOffset + indicatorWidth / 2,
+                        y: indicatorPosition)
+                    .onChange(of: selected) { _ in
+                        // Instantly collapse the indicator to zero width (no animation, so no slide
+                        // from the old tab to the new one), then animate the line expanding outward
+                        // from the center of the new tab.
+                        indicatorScaleX = 0
+                        withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                            indicatorScaleX = 1
+                        }
+                    }
+                    .onChange(of: geometry.size) { _ in
+                        updateTabBarHeight()
+                    }
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
