@@ -189,8 +189,15 @@ public struct OUDSTabBar<Content>: View where Content: View {
     /// The current number of tabs in the `OUDSTabBar` to compute the selected tab indicator for iOS without Liquid Glass
     private let tabCount: Int
 
-    /// State to keep the selected tab reference and refresh the view
+    /// The officially selected tab, bound to `TabView(selection:)`.
+    /// Updated only after the indicator animation completes so that the native "selected" visual
+    /// (bold text, selected icon color) appears in sync with the end of the animation.
     @State private var selectedTab: Int
+
+    /// Tracks the tab the user just tapped, updated immediately.
+    /// Drives the `SelectedTabIndicator` so the animation starts at once,
+    /// before `selectedTab` (and therefore the UIKit bold/colour state) catches up.
+    @State private var pendingTab: Int
 
     /// Contains the tab bar items
     @ViewBuilder private let content: () -> Content
@@ -229,6 +236,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
                 @ViewBuilder content: @escaping () -> Content)
     {
         selectedTab = selected
+        pendingTab = selected
         tabCount = count
         self.content = content
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
@@ -255,6 +263,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     @available(iOS 26, *)
     public init(@ViewBuilder content: @escaping () -> Content) {
         selectedTab = 0
+        pendingTab = 0
         tabCount = 0
         self.content = content
         _isLandscape = State(initialValue: false)
@@ -277,7 +286,26 @@ public struct OUDSTabBar<Content>: View where Content: View {
         // device-related environment values (such as `iPhoneInUse`) are available only
         // within the TabBar view hierarchy (e.g. `SelectedTabIndicator`, `TabBarTopDivider`).
         ZStack(alignment: .bottom) {
-            TabView(selection: $selectedTab) {
+            TabView(selection: Binding(
+                get: { selectedTab },
+                set: { newValue in
+                    pendingTab = newValue
+                    if shouldShowTabIndicator {
+                        // When the legacy indicator is visible, delay the native UIKit "selected"
+                        // visual state (bold text / selected icon colour) so it only switches
+                        // after the expand-from-center animation has finished.
+                        // Using `pendingTab` (not a captured copy of `newValue`) is intentional:
+                        // if the user taps again before this closure fires, `pendingTab` will
+                        // already hold the latest tap value, so all stale closures converge
+                        // idempotently on the correct final tab.
+                        DispatchQueue.main.asyncAfter(deadline: .now() + kTabBarAnimationDuration) {
+                            selectedTab = pendingTab
+                        }
+                    } else {
+                        selectedTab = newValue
+                    }
+                }
+            )) {
                 content()
             }
             .modifier(TabBarViewModifier())
@@ -285,7 +313,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
             TabBarTopDivider()
                 .opacity(hasLegacyLayout ? 1 : 0)
 
-            SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+            SelectedTabIndicator(selected: $pendingTab, count: tabCount)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
         }
         .onAppear {
