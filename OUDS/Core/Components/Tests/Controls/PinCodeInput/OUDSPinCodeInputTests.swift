@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(watchOS) && !os(macOS)
 import OUDSComponents
 import Testing
 
@@ -18,9 +19,10 @@ import Testing
 struct OUDSPinCodeInputTests {
 
     /// Test the raw values for the length of the component
-    @Test func pinCodeInputLengthValues() {
+    func pinCodeInputLengthValues() {
         #expect(OUDSPinCodeInput.Length.four.rawValue == 4)
         #expect(OUDSPinCodeInput.Length.six.rawValue == 6)
         #expect(OUDSPinCodeInput.Length.eight.rawValue == 8)
     }
 }
+#endif

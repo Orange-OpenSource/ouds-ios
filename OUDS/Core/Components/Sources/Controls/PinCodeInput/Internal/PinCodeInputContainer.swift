@@ -15,11 +15,9 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - PIN Code Input Container
-
 struct PinCodeInputContainer: View {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     /// The `Binding` exposing the final result when everything is written
     @Binding private var value: String
@@ -38,7 +36,7 @@ struct PinCodeInputContainer: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme
 
-    // MARK: Black magic
+    // MARK: - Black magic
 
     // These properties prevent double backspace processing by tracking which field was cleared and when.
     // When a backspace occurs, we mark the field index and timestamp, then skip onChange events
@@ -52,7 +50,7 @@ struct PinCodeInputContainer: View {
     @State private var lastBackspaceTime: Date = .distantPast
     // swiftlint:enable implicit_optional_initialization
 
-    // MARK: Initializer
+    // MARK: - Initializer
 
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
@@ -68,7 +66,7 @@ struct PinCodeInputContainer: View {
         _digits = State(initialValue: empty)
     }
 
-    // MARK: Body
+    // MARK: - Body
 
     // swiftlint:disable accessibility_trait_for_button
     var body: some View {
@@ -83,15 +81,9 @@ struct PinCodeInputContainer: View {
                     .background(
                         RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault)
                             .fill(backgroundColor))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault)
-                            .oudsBorder(
-                                style: theme.borders.styleDefault,
-                                width: theme.textInput.borderWidthDefault,
-                                radius: theme.textInput.borderRadiusDefault,
-                                color: borderColor))
                     .contentShape(Rectangle())
-                    .foregroundColor(backgroundColor)
+                    .foregroundColor(foregroundColor)
+                    .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
                     .onTapGesture {
                         // Focus on the first empty field or the last one
                         if let firstEmpty = digits.firstIndex(where: { $0.isEmpty }) {
@@ -112,21 +104,37 @@ struct PinCodeInputContainer: View {
 
     // swiftlint:enable accessibility_trait_for_button
 
-    // MARK: Helpers
+    // MARK: - Colors
+
+    private var foregroundColor: Color {
+        if isOutlined {
+            .red
+        } else if isError {
+            theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
+        } else { // Not oulined, no error
+            theme.colors.actionSupportEnabled.color(for: colorScheme)
+        }
+    }
 
     private var backgroundColor: Color {
         if isOutlined {
             .clear
         } else if isError {
             theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
-        } else {
+        } else { // Not oulined, no error
             theme.colors.actionSupportEnabled.color(for: colorScheme)
         }
     }
 
     private var borderColor: MultipleColorSemanticToken {
-        isError ? theme.colors.actionNegativeEnabled : theme.colors.actionSupportEnabled
+        if isError {
+            theme.colors.actionNegativeEnabled
+        } else { // Same color of border for both outlined and not outlined layouts
+            theme.textInput.colorBorderEnabled
+        }
     }
+
+    // MARK: - Digits fields
 
     private func digitField(at index: Int) -> some View {
         BackspaceDetectingTextField(
@@ -136,6 +144,7 @@ struct PinCodeInputContainer: View {
                 handleBackspace(at: index)
             })
             .oudsForegroundColor(theme.colors.contentDefault)
+            .oudsAccentColor(theme.colors.contentDefault)
             .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
