@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Selected tab animation for `tab bar component` (iOS 18 and older) (Orange-OpenSource/ouds-ios#1351)
 - `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
 - Rename in `bullet list` component API "unordered icon" to "unordered asset" (Orange-OpenSource/ouds-ios#1326)
 - AGENTS.md file to focus only on users (Orange-OpenSource/ouds-ios#1341)

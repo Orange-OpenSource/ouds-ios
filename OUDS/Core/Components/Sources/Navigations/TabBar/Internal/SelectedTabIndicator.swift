@@ -21,7 +21,7 @@ import SwiftUI
 
 // MARK: - Constants
 
-let kTabBarAnimationDuration: CGFloat = 0.3
+let kTabBarAnimationDuration: CGFloat = 0.2
 let kAsyncDelay: CGFloat = 0.1
 
 // MARK: - Selected Tab Indicator
@@ -34,6 +34,14 @@ struct SelectedTabIndicator: View {
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
+    /// Horizontal scale factor used to animate the indicator expanding from its center.
+    /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
+    @State private var indicatorScaleX: CGFloat = 0
+
+    /// To disable animation if device in low power mode
+    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
+    /// To disable animation if user asked for it in device settings
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
@@ -46,20 +54,45 @@ struct SelectedTabIndicator: View {
             let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
             let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
 
-            RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
-                .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
-                .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
-                .position(
-                    x: xOffset + indicatorWidth / 2,
-                    y: indicatorPosition)
-                .animation(.easeInOut(duration: kTabBarAnimationDuration), value: selected)
-                .onChange(of: geometry.size) { _ in
-                    updateTabBarHeight()
-                }
+            if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
+                // No animation: display a full-tab-width indicator, instantly repositioned on selection change.
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
+                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                    .position(
+                        x: tabWidth * CGFloat(selected) + tabWidth / 2,
+                        y: indicatorPosition)
+                    .onChange(of: geometry.size) { _ in
+                        updateTabBarHeight()
+                    }
+            } else {
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
+                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                    .scaleEffect(x: indicatorScaleX, y: 1, anchor: .center)
+                    .position(
+                        x: xOffset + indicatorWidth / 2,
+                        y: indicatorPosition)
+                    .onChange(of: selected) { _ in
+                        // Instantly collapse the indicator to zero width (no animation, so no slide
+                        // from the old tab to the new one), then animate the line expanding outward
+                        // from the center of the new tab.
+                        indicatorScaleX = 0
+                        withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                            indicatorScaleX = 1
+                        }
+                    }
+                    .onChange(of: geometry.size) { _ in
+                        updateTabBarHeight()
+                    }
+            }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
                 updateTabBarHeight()
+                withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                    indicatorScaleX = 1
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
