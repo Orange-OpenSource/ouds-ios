@@ -51,7 +51,9 @@ EXIT_BAD_PARAMETER=3
 EXIT_CANNOT_PROCESS=4
 
 on_error_signal() {
-    _ "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
+    local exit_code=$?
+    local line_number=${BASH_LINENO[0]}
+    _ "❌  An error occurred with command '$BASH_COMMAND' at line $line_number (exit code: $exit_code). Exits. ($EXIT_ERROR_SIG)" true
     if [[ $use_git -eq 1 ]]; then
         clean_repo
     fi
@@ -244,22 +246,39 @@ echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= htt
 if [[ $use_git -eq 1 ]]; then
     _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
+    # Git memory boost
+    git config pack.windowMemory "100m"
+    git config pack.packSizeLimit "100m"
+    git config pack.threads "1"
+    git config core.packedGitLimit "128m"
+    git config core.packedGitWindowSize "128m"
+    git config http.postBuffer 524288000
+
     clean_repo
 
     # git config commit.gpgsign false
 
     _ "🔨 Checkout service pages branch, align with remote"
 
+    # Clean before all to free memory
+    git gc --auto
+
     # Check if the local branch exists.
     if git show-ref --verify --quiet refs/heads/"$SERVICE_PAGES_BRANCH"; then
         _ "🔨 Checking out local branch '$SERVICE_PAGES_BRANCH'"
-        git checkout "$SERVICE_PAGES_BRANCH"
-        git reset --hard origin/$SERVICE_PAGES_BRANCH # Ensure to be aligned with remote version.
+        
+        # Delete current pages branch and create new one (memory cleanup)
+        git branch -D "$SERVICE_PAGES_BRANCH" 2>/dev/null || true
+        git fetch origin "$SERVICE_PAGES_BRANCH"
+        git checkout -b "$SERVICE_PAGES_BRANCH" "origin/$SERVICE_PAGES_BRANCH"
     else
         _ "🔨 Local branch '$SERVICE_PAGES_BRANCH' does not exist. Checking out from remote."
-        git fetch origin
-        git checkout -b "$SERVICE_PAGES_BRANCH" origin/"$SERVICE_PAGES_BRANCH"
+        git fetch origin "$SERVICE_PAGES_BRANCH"
+        git checkout -b "$SERVICE_PAGES_BRANCH" "origin/$SERVICE_PAGES_BRANCH"
     fi
+
+    _ "✅ Branch '$SERVICE_PAGES_BRANCH' checked out successfully"
+
 
     _ "🔨 Applying changes"
 
@@ -267,19 +286,47 @@ if [[ $use_git -eq 1 ]]; then
     # Supposing all assets are in the branch in root level (/)
     # Do not remove .ico and .sg files ; keep the ones already existing in the branch
     # Do not remove theme-settings.json
-    clean_directory "css"
-    clean_directory "data"
-    clean_directory "documentation"
-    clean_directory "images"
-    clean_directory "img"
-    clean_directory "index"
-    clean_directory "js"
-    clean_directory "*.jpg"
-    clean_directory ".html"
-    clean_directory "CNAME"
-    
-    # Copy all files from temporary folder to branch
-    cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
+    _ "🔨 Cleaning old documentation files"
+
+    # One-line deletion comman
+    find "$DOCS_DIRECTORY" -mindepth 1 \
+        \( -type d -name "css" -o \
+        -type d -name "data" -o \
+        -type d -name "documentation" -o \
+        -type d -name "images" -o \
+        -type d -name "img" -o \
+        -type d -name "index" -o \
+        -type d -name "js" \) \
+        -exec rm -rf {} + 2>/dev/null || true
+
+    # Specific deletions
+    find "$DOCS_DIRECTORY" -maxdepth 1 \
+        \( -name "*.jpg" -o -name "*.html" -o -name "CNAME" \) \
+        -type f -delete 2>/dev/null || true
+
+    _ "✅ Cleanup completed"
+
+    # Copy all files from temporary folder to branch (with progress)
+    _ "🔨 Copying documentation files (this may take several minutes)..."
+
+    # If available use rsync command
+    # Otherwise fallback to cp command
+    if command -v rsync &> /dev/null; then    
+        rsync -a --info=progress2 "$DOCUMENTATION_HTML_LOCATION/" "$DOCS_DIRECTORY/" || {
+            _ "rsync failed, falling back to cp" true
+            cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY"
+        }
+    else
+        if ! cp -r "$DOCUMENTATION_HTML_LOCATION"/* "$DOCS_DIRECTORY" 2>&1; then
+            _ "Copy failed (exit code: $?)" true
+            _ "   Source: $DOCUMENTATION_HTML_LOCATION" true
+            _ "   Destination: $DOCS_DIRECTORY" true
+            exit $EXIT_CANNOT_PROCESS
+        fi
+    fi
+
+    _ "✅ Files copied successfully"
+
 
     # It seems there is an issue with references of images
     # Need to copy them also in root images folder at least for landing page
@@ -300,18 +347,28 @@ if [[ $use_git -eq 1 ]]; then
     cp "$DOCS_DIRECTORY/images/OUDSTokensRaw/ic_design_token_figma_raw.png" "$DOCS_DIRECTORY/images"
     cp "$DOCS_DIRECTORY/images/OUDSTokensSemantic/ic_design_token_figma_semantic.png" "$DOCS_DIRECTORY/images"
     
-    _ "🔨 Adding things (~ $files_count files)"
-    git add "$DOCS_DIRECTORY/css"
-    git add "$DOCS_DIRECTORY/data"
-    git add "$DOCS_DIRECTORY/documentation"
-    git add "$DOCS_DIRECTORY/images"
-    git add "$DOCS_DIRECTORY/img"
-    git add "$DOCS_DIRECTORY/index"
-    git add "$DOCS_DIRECTORY/js"
-    git add "$DOCS_DIRECTORY/*.jpg"
-    git add "$DOCS_DIRECTORY/*.json"
-    git add "$DOCS_DIRECTORY/*.html"
-    git add "$DOCS_DIRECTORY/CNAME"
+    _ "🔨 Staging changes (~ $files_count files, this may take time)..."
+
+    # One-line add command to minimize number of commands
+    git add "$DOCS_DIRECTORY/css" \
+            "$DOCS_DIRECTORY/data" \
+            "$DOCS_DIRECTORY/documentation" \
+            "$DOCS_DIRECTORY/images" \
+            "$DOCS_DIRECTORY/img" \
+            "$DOCS_DIRECTORY/index" \
+            "$DOCS_DIRECTORY/js" \
+            "$DOCS_DIRECTORY"/*.jpg \
+            "$DOCS_DIRECTORY"/*.json \
+            "$DOCS_DIRECTORY"/*.html \
+            "$DOCS_DIRECTORY/CNAME" 2>/dev/null || true
+
+    # Check if changes
+    if git diff --cached --quiet; then
+        _ "⚠️  No changes to commit"
+    else
+        changes_count=$(git diff --cached --numstat | wc -l)
+        _ "✅ Staged $changes_count changes"
+    fi
     
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
