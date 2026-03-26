@@ -37,12 +37,12 @@ struct Bullet: View {
     var body: some View {
         HStack(alignment: .center) {
             switch type {
-            case let .unordered(icon, isBranded):
-                UnorderedBullet(icon: icon, isBranded: isBranded, level: level, textStyle: textStyle)
+            case let .unordered(asset, isBranded):
+                UnorderedBullet(asset: asset, isBranded: isBranded, level: level, textStyle: textStyle)
             case .ordered:
                 OrderedBullet(level: level, textStyle: textStyle, isBold: isBold, index: index)
             case .bare:
-                Rectangle().fill(.clear)
+                Rectangle().fill(.clear).frame(width: minWidth)
             }
         }
         .frame(minWidth: minWidth, alignment: .trailing)
@@ -59,15 +59,9 @@ struct Bullet: View {
             theme.sizes.iconWithBodyMediumSizeMedium
         }
 
+        // To follow the dynamic font, the width of the container must be adjusted.
         let rawSize = token.dimension(for: horizontalSizeClass ?? .regular)
-
-        // Ordered type, means bullet is a text, so for dynamic font the
-        // width of the container must be adjusted.
-        if case .ordered = type {
-            return rawSize * dynamicTypeSize.percentageRate / 100
-        } else {
-            return rawSize
-        }
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     private var maxHeight: CGFloat {
@@ -78,6 +72,7 @@ struct Bullet: View {
             theme.fonts.lineHeightBodyMedium
         }
 
+        // To follow the dynamic font, the height of the container must be adjusted.
         let rawSize = token.lineHeight(for: verticalSizeClass ?? .regular)
         return rawSize * dynamicTypeSize.percentageRate / 100
     }
@@ -89,7 +84,7 @@ struct UnorderedBullet: View {
 
     // MARK: Properties
 
-    let icon: OUDSBulletList.UnorderedIcon
+    let asset: OUDSBulletList.UnorderedAsset
     let isBranded: Bool
     let level: OUDSBulletList.NestedLevel
     let textStyle: OUDSBulletList.TextStyle
@@ -100,22 +95,21 @@ struct UnorderedBullet: View {
     // MARK: Body
 
     var body: some View {
-        asset
-            .resizable()
-            .renderingMode(.template)
+        ScaledIcon(icon: image.renderingMode(.template), size: assetSize)
             .oudsForegroundColor(color)
-            .frame(width: assetSize, height: assetSize, alignment: .center)
     }
 
     // MARK: Private helpers
 
-    private var asset: Image {
-        switch icon {
+    private var image: Image {
+        switch asset {
         case .bullet:
             Image(decorative: bulletAssetName, bundle: theme.resourcesBundle)
         case .tick:
             Image(decorative: "ic_bullet_list_tick", bundle: theme.resourcesBundle)
         case let .free(image, _):
+            image
+        case let .icon(image, _):
             image
         }
     }

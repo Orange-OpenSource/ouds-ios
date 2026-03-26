@@ -198,8 +198,8 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     }
 
     private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSRadioItem(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
-                      label: radio.label,
+        OUDSRadioItem(radio.label,
+                      isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       extraLabel: radio.extraLabel,
                       description: radio.description,
                       icon: radio.icon,

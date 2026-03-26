@@ -94,7 +94,7 @@ import SwiftUI
 ///
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
+public struct OUDSChipPicker<Tag: Hashable>: View {
 
     /// The title of the picker
     let title: String?
@@ -132,7 +132,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag?>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -150,7 +150,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selection: Binding<Tag>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
@@ -168,7 +168,7 @@ public struct OUDSChipPicker<Tag>: View where Tag: Hashable {
     ///    - title: The title of the picker, can be nil
     ///    - selections: Current selected values
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
-    ///    - itemsSpacing: The custom spacing to apply between utems, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: String? = nil, selections: Binding<[Tag]>, chips: [OUDSChipPickerData<Tag>], itemsSpacing: SpaceSemanticToken? = nil) {
         if let title, title.isEmpty {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")

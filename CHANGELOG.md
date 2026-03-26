@@ -4,13 +4,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
+
+### Added
+
+- Tutorial for onboardings and meetups (Orange-OpenSource/ouds-ios#1336)
+- View helpers to use scaled spaces tokens to add padding and for HStack/VStack (Orange-OpenSource/ouds-ios#1324)
+- GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)
+- Helper to apply grid margin on views (Orange-OpenSource/ouds-ios#1317)
+- `inline alert` component (Orange-OpenSource/ouds-ios#1307)
+- `alert message` component (Orange-OpenSource/ouds-ios#1159)
+
+### Changed
+
+- `SwiftFormat` Swift package plugin from v0.59.1 to v0.60.1
+- `fastlane` gem from v2.232.1 to v2.232.2
+- `ruby/setup-ruby` action from v1.288.0 to v1.296.0 for `build-and-test` workflow
+- `Ruby` version from v4.0.1 to v4.0.2 for `build-and-test` workflows
+- `actions/upload-artifact` action from v6.0.0 to v7.0.0 for `scorecard` workflow
+- `actions/dependency-review-action` action from v4.8.2 to v4.9.0 for `dependency-review` workflow
+- `github/codeql-action/upload-sarif` action to v4.34.1 for `scorecard` workflow
+- Selected tab animation for `tab bar component` (iOS 18 and older) (Orange-OpenSource/ouds-ios#1351)
+- `alert message` component with new label colors (Orange-OpenSource/ouds-ios#1342)
+- Rename in `bullet list` component API "unordered icon" to "unordered asset" (Orange-OpenSource/ouds-ios#1326)
+- AGENTS.md file to focus only on users (Orange-OpenSource/ouds-ios#1341)
+- Signatures of control-item-based components (Orange-OpenSource/ouds-ios#1314)
+
+### Fixed
+
+- Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)
+- Size of the bullet for unordered and bare `bullet list` component (Orange-OpenSource/ouds-ios#1300)
+
+### Security
+
+- `json` transitive gem from 2.18.1 to 2.19.2 (CVE-2026-33210)
+- `faraday` transitive gem from 1.8.0 to 1.10.5 (CVE-2026-25765)
+
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...1.2.0) - 2026-02-12
 
 ### Added
 
 - `password input` component (Orange-OpenSource/ouds-ios#997)
 - `bullet list` component (Orange-OpenSource/ouds-ios#513)
-- `alert` component tokens
 
 ### Changed
 
@@ -20,6 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Swift package `swift-docc-plugin` from v1.4.5 to v1.4.6
 - Update `fastlane` gem from v2.231.1 to v2.232.1
 - **BREAKING**: Rename of *Orange Business Tools*  theme to *Orange Compact* (Orange-OpenSource/ouds-ios#1292)
+
 
 ## [1.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.0.0...1.1.0) - 2026-01-27
 

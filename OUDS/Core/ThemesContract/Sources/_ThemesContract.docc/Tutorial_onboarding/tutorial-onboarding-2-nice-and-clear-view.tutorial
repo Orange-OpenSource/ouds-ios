@@ -1,0 +1,145 @@
+@Tutorial(time: 45, projectFiles: "OUDS-Onboarding-Tutorial.zip") {
+    @Intro(title: "Define information cards") {
+        Let's suppose we want to define a view for corporate apps with headings, texts, buttons and images.
+        How can we do that?
+        
+        @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
+    }
+
+    @XcodeRequirement(title: "Xcode 26.2", destination: "https://developer.apple.com/download/")
+
+    @Section(title: "Define the view basics") {
+        
+        @ContentAndMedia {
+            Before designing awesome SwiftUI view with OUDS, we need to write before the properties of such view.
+        }
+        
+        @Steps {
+            @Step {
+                Define a basic `InfoCard` `View`, it must have an asset name to load as image, a title, a subtitle, a description and a label for the button.
+                Add also the Xcode `#Preview` macro to display the view, here of course it will be empty.
+
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-1.swift") {
+                    @Image(source: "tutorial-onboarding-2-1.png", alt: "An empty view previewed in Xcode")
+                } 
+            }
+         
+            @Step {
+                OUDS library provides view modifiers to be used in Xcode previews macros.
+                It allows to apply the theme you want in the view
+                
+                Supposing we will work with Orange theme here, apply the `orangePreview()` view modifier.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-2.swift") {
+                    @Image(source: "tutorial-onboarding-2-1.png", alt: "An empty view previewed in Xcode")
+                } 
+            }
+            
+            @Step {
+                Now, use the properties you defined in the Xcode preview, and display them in your `InfoCard` `View`.
+                
+                Use a `VStack` containing `Image` and `Text` `View` objects.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-3.swift") {
+                    @Image(source: "tutorial-onboarding-2-3.png", alt: "A view with image and texts without styles")
+                } 
+            }
+            
+            @Step {
+                You may want to apply typography on texts. These effects will show most important content and bring meanings.
+                You can have a look on the [available typography view modifiers](https://ios.unified-design-system.orange.com/documentation/oudscomponents/swiftuicore/view), which can be applied on `View` object.
+                
+                For the *title* with want a *medium heading*, an *XL heading* for the *subtitle* and a *large default body* for the *description*. You will need to get the *theme* object throw the dedicated environment variable to give it to the view modifiers.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-4.swift") {
+                    @Image(source: "tutorial-onboarding-2-4.png", alt: "A view with image and texts with typography styles")
+                } 
+            }
+            
+            @Step {
+                Now, it's time to apply colors on texts. [Colors are defined with *tokens*](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens), i.e. small atomic elements defined in the design Figma kit. The *theme* object contains tokens and provides them thanks to *providers*.
+        
+                For all texts, change the *foreground color*: apply *contentBrandPrimary* for the *title*, *contentDefault* for the subtitle and also the *description*.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-5.swift") {
+                    @Image(source: "tutorial-onboarding-2-5.png", alt: "A view with image and texts with typography styles and colors")
+                } 
+            }
+            
+            @Step {
+                Now, it's time to add the [button](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton). OUDS provides plenty of components with properties related to notions defined in Figma kit and DSM. For example a button can have *appearance*.
+        
+                Add a button with a [*strong appearance*](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbutton#Appearances), using the previously defined label, and no action.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-6.swift") {
+                    @Image(source: "tutorial-onboarding-2-6.png", alt: "A view with image, texts and a strong button")
+                } 
+            }
+            
+            @Step {
+                You agree things are stucked and spacings are missing. [Spacing values are defined also in tokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/spacesemantictokens). 
+                Some of these tokens have unique value like `theme.spaces.fixedMedium`, but [some others have several values](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/spacemultiplesemantictokens) depending to the *size class* of the view like `theme.spaces.scaled2xsmall`. 
+                In addition, OUDS provides view modifiers to define *grid margins* on a view depending to a *size class*.
+        
+                Try to apply some spacings: *fixedNone* in the `VStack`, *fixedMedium* as a `Spacer` minimum length below the button, *top grid margin* for the *title*, *grid margin* for all the `View`, *scaled2xsmall* as *vertical padding* for the *subtitle* and *scaledLarge* as minimum length for a `Spacer` above the *button*.
+                
+                @Code(name: "InfoCard.swift", file: "tutorial-onboarding-2-7.swift") {
+                    @Image(source: "tutorial-onboarding-2-7.png", alt: "A view with image, texts, button and spacings")
+                } 
+            }
+            
+            @Step {
+                It is possible to force the *color scheme* of your view with *SwiftUI* and apply a *color token* as background which will vary depending to this scheme.
+        
+                Define an `HomeView` with two `InfoCard` `View` objects. For the second view, for to *dark color scheme* and apply `theme.colors.bgInverseLow` background color.
+                
+                @Code(name: "HomeView.swift", file: "tutorial-onboarding-2-8.swift") {
+                    @Image(source: "tutorial-onboarding-2-8.png", alt: "Cards with ligh and dark color schemes")
+                } 
+            }
+        }
+    }
+        
+    @Assessments {
+        @MultipleChoice {
+            Where can I find tokens?
+
+            @Choice(isCorrect: true) {
+                Inside tokens providers exposed by the theme
+
+                @Justification(reaction: "That's right!") {
+                    Yes! Get the theme through environment variable and use its providers
+                }
+            }
+
+            @Choice(isCorrect: false) {
+                Nowhere, I must define my own
+
+                @Justification(reaction: "Try again!") {
+                    Nope! All tokens are defined and provided through OUDS library 
+                }
+            }
+        }
+        
+        @MultipleChoice {
+            How can I get the theme to apply?
+
+            @Choice(isCorrect: false) {
+                I must instanciate it every time I need
+
+                @Justification(reaction: "False!") {
+                    The theme is provided through an environment object, instanciated thanks to a preview view modifier or specific view.
+                }
+            }
+
+            @Choice(isCorrect: true) {
+                Using an environment value
+
+                @Justification(reaction: "Congrats!") {
+                    Theme is exposed as environment object, available within views for example. 
+                }
+            }
+        }
+    }
+}
+

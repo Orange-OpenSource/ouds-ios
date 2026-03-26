@@ -110,7 +110,7 @@ public struct OUDSCheckbox: View {
     /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (not selected)
+    ///    - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (not selected)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`

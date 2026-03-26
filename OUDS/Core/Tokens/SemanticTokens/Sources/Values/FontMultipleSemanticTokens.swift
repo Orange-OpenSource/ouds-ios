@@ -22,7 +22,7 @@
 /// ``MultipleFontLineHeightSemanticToken`` for *line heights* and ``MultipleFontSizeSemanticToken`` for *font sizes*.
 ///
 /// In fact these ``MultipleFontLetterSpacingSemanticToken``, ``MultipleFontLineHeightSemanticToken`` and  ``MultipleFontSizeSemanticToken`` classes will help users
-/// (i.e. developers) to handle one semantic token for font things depending to size class (wether it could be compact / mobile or regular / tablet).
+/// (i.e. developers) to handle one semantic token for font things depending to size class (whether it could be compact / mobile or regular / tablet).
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
 /// such ``MultipleFontLetterSpacingSemanticToken``, ``MultipleFontLineHeightSemanticToken`` and ``MultipleFontSizeSemanticToken`` tokens.
 /// Thus the "real" letter spacing, line height and font size tokens are declared in ``FontSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).

@@ -114,7 +114,7 @@ You must consider the tokens provider you need (to inherit from for overriding, 
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 - and same logic for component tokens
 
-Find bellow some example
+Find below some example
 
 ```swift
 // Token provider for spaces

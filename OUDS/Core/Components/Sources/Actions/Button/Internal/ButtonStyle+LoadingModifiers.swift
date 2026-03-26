@@ -16,20 +16,22 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Button Loading Content Modifier
+
 /// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
 /// If the device has the high contrast mode enabled, changes the loader color.
 struct ButtonLoadingContentModifier: ViewModifier {
 
+    // MARK: Stored Properties
+
+    let appearance: OUDSButton.Appearance
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
-
-    // MARK: Stored Properties
-
-    let appearance: OUDSButton.Appearance
 
     // MARK: Body
 
@@ -37,11 +39,11 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoaderIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.button.spacePaddingBlock)
+                    .modifier(LoaderSizeModifier(size: size))
             }
     }
 
-    // MARK: Private helper
+    // MARK: Private helpers
 
     private var colorToken: MultipleColorSemanticToken {
         switch appearance {
@@ -58,5 +60,20 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .negative:
             theme.colors.contentOnStatusNegativeEmphasized
         }
+    }
+
+    private var size: CGFloat {
+        theme.button.sizeLoader
+    }
+}
+
+// MARK: - Loader Size Modifier
+
+private struct LoaderSizeModifier: ViewModifier {
+
+    @ScaledMetric var size: CGFloat
+
+    func body(content: Content) -> some View {
+        content.frame(width: size, height: size, alignment: .center)
     }
 }
