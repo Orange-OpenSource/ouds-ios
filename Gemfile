@@ -30,7 +30,7 @@ gem 'json', '2.19.2'
 
 # Grype run result on 2026-03-26
 # faraday  1.8.0      1.10.5    gem   GHSA-33mh-2634-fwr2  Medium    < 0.1% (4th)  < 0.1
-gem 'faraday', '1.10.5'
+gem 'faraday', '2.14.1'
 
 # Really needed gems
 # ------------------
