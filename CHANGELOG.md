@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...develop)
+## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 
 ### Added
 
@@ -34,6 +34,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Size of loader for `button` component (Orange-OpenSource/ouds-ios#1296)
 - Size of the bullet for unordered and bare `bullet list` component (Orange-OpenSource/ouds-ios#1300)
+
+### Security
+
+- `json` transitive gem from 2.18.1 to 2.19.2 (CVE-2026-33210)
+- `faraday` transitive gem from 1.8.0 to 1.10.5 (CVE-2026-25765)
 
 ## [1.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.1.0...1.2.0) - 2026-02-12
 

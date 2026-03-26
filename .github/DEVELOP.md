@@ -81,7 +81,7 @@ brew install git-cliff
 # For Syft (at least 1.26.1)
 brew install syft
 
-# For Grype (at least 0.96.0)
+# For Grype (at least 0.110.0)
 brew tap anchore/grype
 brew install grype
 ```
