@@ -19,6 +19,9 @@ public typealias OL = OUDSLogger
 
 /// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.
 ///
+/// By default, debug and log level messages are suppressed even in DEBUG builds.
+/// Set `OUDSLogger.verbose = true` to enable them.
+///
 /// - Since: 0.8.0
 public struct OUDSLogger {
 
@@ -28,18 +31,28 @@ public struct OUDSLogger {
     private static let bullet: String = "🍊"
     private static let prefix: String = "\(bullet) [OUDS]"
 
-    /// If compile mode is set as DEBUG, logs the message with a "debug" prefix
+    /// When `true`, debug and log level messages are written to the console.
+    /// Defaults to `false` so that OUDS internal logs do not pollute host-app output.
+    /// Can be toggled at any time by library consumers.
+    ///
+    /// - Since: 1.4.0
+    public static var verbose: Bool = false
+
+    /// If compile mode is set as DEBUG and ``verbose`` is `true`, logs the message with a "debug" prefix
     /// and the `debug` method of the `os.Logger`
     /// - Parameter message: The message to log after the decoration
     public static func debug(_ message: String) {
+        guard verbose else { return }
         #if DEBUG
         logger.debug("\(prefix):debug: 🪲 \(message)")
         #endif
     }
 
     /// Logs the message with a "log" prefix and the `log` method of the `os.Logger`
+    /// if ``verbose`` is `true`
     /// - Parameter message: The message to log after the prefix
     public static func log(_ message: String) {
+        guard verbose else { return }
         #if DEBUG
         logger.log("\(prefix): 🗒️ \(message)")
         #endif
