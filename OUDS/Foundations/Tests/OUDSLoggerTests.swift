@@ -14,7 +14,6 @@
 @testable import OUDSFoundations
 import Testing
 
-// swiftlint:disable convenience_type
 @Suite("OUDSLogger Tests")
 struct OUDSLoggerTests {
 
@@ -27,12 +26,10 @@ struct OUDSLoggerTests {
 
     @Test("verbose flag can be toggled by consumers")
     func verboseFlagCanBeChanged() {
-        defer { OUDSLogger.verbose = false } // always restore, even on failure
+        defer { OUDSLogger.verbose = false } // Always restore, even on failure
         OUDSLogger.verbose = true
         #expect(OUDSLogger.verbose == true)
         OUDSLogger.verbose = false
         #expect(OUDSLogger.verbose == false)
     }
 }
-
-// swiftlint:enable convenience_type

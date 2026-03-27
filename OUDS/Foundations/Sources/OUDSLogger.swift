@@ -34,9 +34,7 @@ public struct OUDSLogger {
     /// When `true`, debug and log level messages are written to the console.
     /// Defaults to `false` so that OUDS internal logs do not pollute host-app output.
     /// Can be toggled at any time by library consumers.
-    ///
-    /// - Since: 1.4.0
-    public static var verbose: Bool = false
+    nonisolated(unsafe) public static var verbose: Bool = false
 
     /// If compile mode is set as DEBUG and ``verbose`` is `true`, logs the message with a "debug" prefix
     /// and the `debug` method of the `os.Logger`
