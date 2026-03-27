@@ -180,6 +180,8 @@ the dedicated OUDS view modifier `oudsForegroundColor(color)`.
 
 The logic is the same for `backgroundColor` which must be replaced by `oudsBackground(color)`.
 
+The tint color can also be defined using the OUDS view modifier `oudsTintColor(color)`. This must be used instead of the native SwiftUI `tint()` modifier.
+
 #### Add border
 
 Border can be defined using the OUDS view modifier `oudsBorder(style:width:radius:color)` with tokens in parameters like:

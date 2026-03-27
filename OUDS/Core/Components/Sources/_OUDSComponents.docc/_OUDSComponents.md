@@ -105,7 +105,7 @@ var body: some View {
 
 ### Apply specific colors
 
-Colors can be applied on view for background and foreground colors, foreground style or also accent color.
+Colors can be applied on view for background and foreground colors, foreground style, accent color or tint color.
 Some helpers are available in the OUDS API to avoid to use the `color(for:)` method.
 
 ```swift
@@ -125,6 +125,9 @@ someView.oudsBackground(theme.colors.bgPrimary)
 
 // Apply an accent color
 someView.oudsAccentColor(theme.colors.bgPrimary)
+
+// Apply a tint color
+someView.oudsTintColor(theme.colors.bgPrimary)
 ```
 
 ## Flip images according to layouts
