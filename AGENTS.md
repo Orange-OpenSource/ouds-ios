@@ -172,15 +172,28 @@ OUDS framework provides SwiftUI view modifiers to apply typography on texts (usi
 For example, if a user wants to apply typography `theme.fonts.bodyDefaultMedium` he must not use the `font()` method from SwiftUI but instead
 the dedicated OUDS view modifier with the same name as the typography, i.e. `bodyDefaultMedium(theme)`.
 
-#### Background and foreground color
+#### Apply colors
 
-OUDS framework provides a SwiftUI view modifier to apply foreground color (using a token).
-For example if a user want to apply in foreground the color `theme.colors.contentDefault`, he must not use the `foregroundColor()` method from SwiftUI but instead
-the dedicated OUDS view modifier `oudsForegroundColor(color)`.
+OUDS framework provides SwiftUI view modifiers to apply colors (using tokens).
+For example, given the token of color `theme.colors.contentDefault`=
 
-The logic is the same for `backgroundColor` which must be replaced by `oudsBackground(color)`.
+```swift
+// Change foreground color
+view.oudsForegroundColor(theme.colors.contentDefault) // DO
+view.foregroundColor(theme.colors.contentDefault) // DON'T
 
-The tint color can also be defined using the OUDS view modifier `oudsTintColor(color)`. This must be used instead of the native SwiftUI `tint()` modifier.
+// Change tint color
+view.oudsTintColor(theme.colors.contentDefault) // DO
+view.tintColor(theme.colors.contentDefault) // DON'T
+
+// Change accent color
+view.oudsAccentColor(theme.colors.contentDefault) // DO
+view.accentColor(theme.colors.contentDefault) // DON'T
+
+// Change background color
+view.oudsBackground(theme.colors.contentDefault) // DO
+view.background(theme.colors.contentDefault) // DON'T
+```
 
 #### Add border
 
