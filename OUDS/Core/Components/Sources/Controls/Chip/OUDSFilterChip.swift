@@ -82,6 +82,37 @@ public struct OUDSFilterChip: View {
         self.selected = selected
     }
 
+    /// Creates a filter chip with a localized text and icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(icon: Image("ic_heart"), LocalizedStringKey("like_filter"), bundle: Bundle.module, selected: true) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                _ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        if resolvedText.isEmpty {
+            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
+        }
+        layout = .textAndIcon(text: resolvedText, icon: icon, iconPosition: .trailing)
+        self.action = action
+        self.selected = selected
+    }
+
     /// Create a chip with an icon only.
     ///
     /// - Parameters:
@@ -109,6 +140,35 @@ public struct OUDSFilterChip: View {
             OL.fatal("The OUDSFilterChip must not have an empty text!")
         }
         layout = .text(text)
+        self.action = action
+        self.selected = selected
+    }
+
+    /// Creates a filter chip with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module, selected: false) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        if resolvedText.isEmpty {
+            OL.fatal("The OUDSFilterChip must not have an empty text!")
+        }
+        layout = .text(resolvedText)
         self.action = action
         self.selected = selected
     }

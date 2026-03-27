@@ -195,6 +195,40 @@ public struct OUDSBulletList: View {
             self.subListHasBoldText = subListHasBoldText
             self.subItems = subItems()
         }
+
+        /// Creates a bullet list item with a localized text, looking up the key in the given bundle.
+        ///
+        /// ```swift
+        ///     OUDSBulletList.Item(LocalizedStringKey("item_label"), bundle: Bundle.module)
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+        ///    - tableName: The name of the `.strings` file, or `nil` for the default
+        ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+        ///    - comment: An optional comment for translators, does not affect the resolved value
+        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///     the type is inherited from the parent list.
+        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///     `nil`, the text style is inherited from the parent list.
+        ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
+        ///     setting is inherited from the parent list.
+        ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        public init(_ key: LocalizedStringKey,
+                    tableName: String? = nil,
+                    bundle: Bundle = .main,
+                    comment: StaticString? = nil,
+                    subListType: OUDSBulletList.`Type`? = nil,
+                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListHasBoldText: Bool? = nil,
+                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+        {
+            text = key.resolved(tableName: tableName, bundle: bundle)
+            self.subListType = subListType
+            self.subListTextStyle = subListTextStyle
+            self.subListHasBoldText = subListHasBoldText
+            self.subItems = subItems()
+        }
     }
 
     // swiftlint:enable discouraged_optional_boolean

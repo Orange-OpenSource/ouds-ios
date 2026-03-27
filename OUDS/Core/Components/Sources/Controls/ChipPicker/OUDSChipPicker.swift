@@ -143,6 +143,38 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .singleOrNone(selection)
     }
 
+    /// Defines the single selection picker view with a localized title, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - selection: The current selected value
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: LocalizedStringKey?,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                selection: Binding<Tag?>,
+                chips: [OUDSChipPickerData<Tag>],
+                itemsSpacing: SpaceSemanticToken? = nil)
+    {
+        let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
+        if let resolvedTitle, resolvedTitle.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = resolvedTitle
+        self.chips = chips
+        customItemsSpacing = itemsSpacing
+        selectionType = .singleOrNone(selection)
+    }
+
     /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     /// The user will be able to choose only one option in this picker.
     ///
@@ -161,6 +193,38 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         selectionType = .single(selection)
     }
 
+    /// Defines the single selection picker view with a localized title, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selection: $selection, chips: data)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - selection: The current selected value
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: LocalizedStringKey?,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                selection: Binding<Tag>,
+                chips: [OUDSChipPickerData<Tag>],
+                itemsSpacing: SpaceSemanticToken? = nil)
+    {
+        let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
+        if let resolvedTitle, resolvedTitle.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = resolvedTitle
+        self.chips = chips
+        customItemsSpacing = itemsSpacing
+        selectionType = .single(selection)
+    }
+
     /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
     /// The user will be able to choose zero or one or seevral options in this picker.
     ///
@@ -174,6 +238,38 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
             OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
         }
         self.title = title?.localized()
+        self.chips = chips
+        customItemsSpacing = itemsSpacing
+        selectionType = .multiple(selections)
+    }
+
+    /// Defines the multiple selection picker view with a localized title, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSChipPicker(title: LocalizedStringKey("picker_title"), bundle: Bundle.module, selections: $selections, chips: data)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - selections: Current selected values
+    ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
+    ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
+    public init(title: LocalizedStringKey?,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                selections: Binding<[Tag]>,
+                chips: [OUDSChipPickerData<Tag>],
+                itemsSpacing: SpaceSemanticToken? = nil)
+    {
+        let resolvedTitle = title.map { $0.resolved(tableName: tableName, bundle: bundle) }
+        if let resolvedTitle, resolvedTitle.isEmpty {
+            OL.warning("The title of the OUDSChipPicker is empty, prefer nil instead")
+        }
+        self.title = resolvedTitle
         self.chips = chips
         customItemsSpacing = itemsSpacing
         selectionType = .multiple(selections)

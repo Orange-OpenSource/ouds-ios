@@ -196,7 +196,43 @@ public struct OUDSButton: View {
         self.style = style
         self.isFullWidth = isFullWidth
         self.action = action
+        isHover = false
+    }
 
+    /// Creates a button with a localized text and icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, icon: Image("ic_checkmark"), appearance: .strong) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - icon: An image which shoud contains an icon
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                icon: Image,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        type = .textAndIcon(text: resolvedText, icon: icon, flipIcon: flipIcon)
+        self.appearance = appearance
+        self.style = style
+        self.isFullWidth = isFullWidth
+        self.action = action
         isHover = false
     }
 
@@ -241,6 +277,39 @@ public struct OUDSButton: View {
                 action: @escaping () -> Void)
     {
         type = .text(text)
+        self.appearance = appearance
+        self.style = style
+        self.action = action
+        self.isFullWidth = isFullWidth
+        isHover = false
+    }
+
+    /// Creates a button with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSButton(LocalizedStringKey("delete_button"), bundle: Bundle.module, appearance: .negative) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        type = .text(resolvedText)
         self.appearance = appearance
         self.style = style
         self.action = action

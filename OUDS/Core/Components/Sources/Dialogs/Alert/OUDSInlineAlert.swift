@@ -84,6 +84,27 @@ public struct OUDSInlineAlert: View {
         self.status = status
     }
 
+    /// Creates an inline alert with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSInlineAlert(LocalizedStringKey("info_message"), bundle: Bundle.module, status: .info)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - comment: An optional comment for translators, does not affect the resolved value
+    ///   - status: The status of the inline alert, default set to *neutral* without icon
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                status: OUDSAlertStatus = .neutral())
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle), status: status)
+    }
+
     // MARK: - Body
 
     public var body: some View {

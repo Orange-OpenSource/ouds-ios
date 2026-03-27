@@ -355,6 +355,36 @@ public struct OUDSTag: View {
         type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
     }
 
+    /// Creates a tag with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTag(LocalizedStringKey("status_tag"), bundle: Bundle.module, status: .positive(leading: .none))
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - status: The status of the tag, default set to *neutral*
+    ///    - appearance: The importance of the tag, default set to *emphasized*
+    ///    - shape: The shape of the tag, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*
+    ///    - hasLoader: If an optional loader is displayed, default set to *false*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                status: Status = .neutral(),
+                appearance: Appearance = .emphasized,
+                shape: Shape = .rounded,
+                size: Size = .default,
+                hasLoader: Bool = false)
+    {
+        let resolvedLabel = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size, hasLoader: hasLoader)
+    }
+
     /// Creates a tag in the loading state.
     ///
     /// The use the `View/disabled(_:)` method has no effect on this state.
@@ -372,6 +402,30 @@ public struct OUDSTag: View {
         self.size = size
         type = .loader(label: loadingLabel)
         // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
+    }
+
+    /// Creates a tag in the loading state with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTag(loadingKey: LocalizedStringKey("loading_tag"), bundle: Bundle.module)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - shape: The shape of the tag, i.e. the corners style
+    ///    - size: The size of the tag
+    public init(loadingKey: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                shape: Shape = .rounded,
+                size: Size = .default)
+    {
+        let resolvedLabel = loadingKey.resolved(tableName: tableName, bundle: bundle)
+        self.init(loadingLabel: resolvedLabel, shape: shape, size: size)
     }
 
     // MARK: Body

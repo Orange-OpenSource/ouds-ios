@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update illustrations in documentation for `alert message` component (Orange-OpenSource/ouds-ios#1359)
+- `LocalizedStringKey` and `Bundle` initializers for `OUDSButton`, `OUDSLink`, `OUDSSuggestionChip`, `OUDSFilterChip`, `OUDSChipPicker`, `OUDSBulletList.Item`, `OUDSCheckboxItem`, `OUDSSwitchItem`, `OUDSRadioItem`, `OUDSTag`, `OUDSTextInput`, `OUDSPasswordInput`, `OUDSAlertMessage` and `OUDSInlineAlert` components (Orange-OpenSource/ouds-ios#1364)
 
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 

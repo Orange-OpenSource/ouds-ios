@@ -89,6 +89,34 @@ public struct OUDSSuggestionChip: View {
         self.action = action
     }
 
+    /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(icon: Image("ic_heart"), LocalizedStringKey("like_chip"), bundle: Bundle.module) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                _ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        if resolvedText.isEmpty {
+            OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
+        }
+        layout = .textAndIcon(text: resolvedText, icon: icon, iconPosition: .leading)
+        self.action = action
+    }
+
     /// Creates a chip with an icon only.
     ///
     /// - Parameters:
@@ -113,6 +141,32 @@ public struct OUDSSuggestionChip: View {
             OL.fatal("The OUDSSuggestionChip must not have an empty text!")
         }
         layout = .text(text)
+        self.action = action
+    }
+
+    /// Creates a chip with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - comment: An optional comment for translators, does not affect the resolved value
+    ///    - action: The action to perform when the user triggers the chip
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                comment: StaticString? = nil,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        if resolvedText.isEmpty {
+            OL.fatal("The OUDSSuggestionChip must not have an empty text!")
+        }
+        layout = .text(resolvedText)
         self.action = action
     }
 
