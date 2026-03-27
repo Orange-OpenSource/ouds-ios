@@ -26,7 +26,7 @@ struct AlertMessageBorderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsBorder(style: theme.borders.styleDefault,
+            .border(style: theme.borders.styleDefault,
                         width: theme.alert.borderWidth,
                         radius: radius,
                         color: color)

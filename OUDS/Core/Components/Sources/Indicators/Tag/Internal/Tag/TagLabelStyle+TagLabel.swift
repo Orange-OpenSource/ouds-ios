@@ -38,7 +38,7 @@ struct TagLabel: View {
                     .labelStrongSmall(theme)
             }
         }
-        .oudsForegroundColor(color)
+        .foregroundColor(color)
     }
 
     // MARK: Helpers

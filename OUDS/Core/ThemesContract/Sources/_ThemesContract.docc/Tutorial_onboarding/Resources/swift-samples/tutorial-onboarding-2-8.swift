@@ -36,7 +36,7 @@ struct HomeScreen: View {
                     description: "The Orange Polska Group is in the TOP 3 of ICT service leaders in Poland according to the 2000 Computerworld report. See how we can .- -Work together.",
                     buttonLabel: "Contact us")
                     .environment(\.colorScheme, .dark)
-                    .oudsBackground(theme.colors.bgInverseLow)
+                    .background(theme.colors.bgInverseLow)
             }
         }
     }

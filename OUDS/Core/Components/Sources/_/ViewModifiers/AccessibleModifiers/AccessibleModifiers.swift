@@ -75,7 +75,7 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 ///     var body: some View {
 ///         SomeView()
 ///         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-///         .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+///         .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
 ///     }
 /// ```
 ///

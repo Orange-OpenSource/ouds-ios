@@ -47,7 +47,7 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     OUDSColoredSurface(color: theme.colorModes.onStatusPositiveEmphasized) {
         VStack {
             Text("Status Positive Emphasized")
-            .oudsForegroundColor(theme.colors.contentDefault)
+            .foregroundColor(theme.colors.contentDefault)
 
             OUDSButton(text: "Button") {}
         }
@@ -57,11 +57,11 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
 
     VStack {
         Text("Status Positive Emphasized")
-        .oudsForegroundColor(theme.colors.contentDefault)
+        .foregroundColor(theme.colors.contentDefault)
 
         OUDSButton(text: "Button") {}
     }
-    .oudsColoredSurface(theme.colorModes.onStatusPositiveEmphasized)
+    .coloredSurface(theme.colorModes.onStatusPositiveEmphasized)
 ```
 
 #### Debuging contrast ratios

@@ -175,42 +175,40 @@ the dedicated OUDS view modifier with the same name as the typography, i.e. `bod
 #### Apply colors
 
 OUDS framework provides SwiftUI view modifiers to apply colors (using tokens).
-For example, given the token of color `theme.colors.contentDefault`=
 
+For example if a user want to apply in foreground the color `theme.colors.contentDefault`, use
+the dedicated OUDS overload of `foregroundColor(_:)` passing a `MultipleColorSemanticToken`:
 ```swift
-// Change foreground color
-view.oudsForegroundColor(theme.colors.contentDefault) // DO
-view.foregroundColor(theme.colors.contentDefault) // DON'T
+.foregroundColor(theme.colors.contentDefault)
+```
 
-// Change tint color
-view.oudsTintColor(theme.colors.contentDefault) // DO
-view.tintColor(theme.colors.contentDefault) // DON'T
+The logic is the same for background color which must use the dedicated OUDS overload of `background(_:)`:
+```swift
+.background(theme.colors.bgPrimary)
+```
 
-// Change accent color
-view.oudsAccentColor(theme.colors.contentDefault) // DO
-view.accentColor(theme.colors.contentDefault) // DON'T
-
-// Change background color
-view.oudsBackground(theme.colors.contentDefault) // DO
-view.background(theme.colors.contentDefault) // DON'T
+The logic is the same for tint color which must use the dedicated OUDS overload of `tint(_:)`:
+```swift
+.tint(theme.colors.contentDefault)
 ```
 
 #### Add border
 
-Border can be defined using the OUDS view modifier `oudsBorder(style:width:radius:color)` with tokens in parameters like:
+Border can be defined using the OUDS overload of `border(style:width:radius:color:)` with tokens in parameters like:
 ```swift
-.oudsBorder(style: theme.borders.styleDefault,
-            width: theme.borders.widthThin,
-            radius: theme.borders.radiusMedium,
-            color: theme.colors.actionEnabled)
+.border(style: theme.borders.styleDefault,
+        width: theme.borders.widthThin,
+        radius: theme.borders.radiusMedium,
+        color: theme.colors.actionEnabled)
 ```
 
 #### Add shadow / elevation effect
 
-Elevations effets or box shadows can be applied to view with a dedicated view modifier `oudsShadow(elevation)` with an elevation token like:
+Elevations effets or box shadows can be applied to view with the dedicated OUDS overload of `shadow(_:)` with an elevation token like:
 ```swift
-.oudsShadow(theme.elevations.emphasized)
+.shadow(theme.elevations.emphasized)
 ```
+
 
 ### 3.8 Use components
 

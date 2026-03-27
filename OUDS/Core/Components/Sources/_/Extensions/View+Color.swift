@@ -22,7 +22,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
-    public func oudsForegroundStyle(_ color: MultipleColorSemanticToken) -> some View {
+    public func foregroundStyle(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedForegroundStyle(color: color))
     }
 
@@ -30,7 +30,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
-    public func oudsForegroundColor(_ color: MultipleColorSemanticToken) -> some View {
+    public func foregroundColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedForegroundColor(color: color))
     }
 
@@ -38,7 +38,7 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
-    public func oudsBackground(_ color: MultipleColorSemanticToken) -> some View {
+    public func background(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedBackgroundColor(color: color))
     }
 
@@ -46,14 +46,60 @@ extension View {
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
-    public func oudsAccentColor(_ color: MultipleColorSemanticToken) -> some View {
+    public func accentColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedAccentColor(color: color))
+    }
+
+    /// Applies a **tint** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "tint(_:)", message: "Use tint(_:) instead")
+    public func tint(_ color: MultipleColorSemanticToken) -> some View {
+        modifier(ColorSchemeBasedTintColor(color: color))
+    }
+
+    /// Applies a **foreground style** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "foregroundStyle(_:)", message: "Use foregroundStyle(_:) instead")
+    public func oudsForegroundStyle(_ color: MultipleColorSemanticToken) -> some View {
+        foregroundStyle(color)
+    }
+
+    /// Applies a **foreground color** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "foregroundColor(_:)", message: "Use foregroundColor(_:) instead")
+    public func oudsForegroundColor(_ color: MultipleColorSemanticToken) -> some View {
+        foregroundColor(color)
+    }
+
+    /// Applies a **background** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "background(_:)", message: "Use background(_:) instead")
+    public func oudsBackground(_ color: MultipleColorSemanticToken) -> some View {
+        background(color)
+    }
+
+    /// Applies an **accent color** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "accentColor(_:)", message: "Use accentColor(_:) instead")
+    public func oudsAccentColor(_ color: MultipleColorSemanticToken) -> some View {
+        accentColor(color)
     }
 
     /// Applies a **tint color** on the current view by using the given tokens of colors.
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
+    @available(*, deprecated, renamed: "tint(_:)", message: "Use tint(_:) instead")
     public func oudsTintColor(_ color: MultipleColorSemanticToken) -> some View {
         modifier(ColorSchemeBasedTintColor(color: color))
     }

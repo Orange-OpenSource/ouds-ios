@@ -33,13 +33,13 @@ struct AlertMessageContent: View {
             VStack(alignment: .leading, spacing: theme.alert.spaceRowGap) {
                 Text(text)
                     .labelModerateLarge(theme)
-                    .oudsForegroundColor(foregroundColor)
+                    .foregroundColor(foregroundColor)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 if let description, !description.isEmpty {
                     Text(description)
                         .labelDefaultMedium(theme)
-                        .oudsForegroundColor(foregroundColor)
+                        .foregroundColor(foregroundColor)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 

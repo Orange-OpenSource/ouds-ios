@@ -27,7 +27,7 @@ struct InputTagBackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if let color {
-            content.oudsBackground(color)
+            content.background(color)
         } else {
             content
         }

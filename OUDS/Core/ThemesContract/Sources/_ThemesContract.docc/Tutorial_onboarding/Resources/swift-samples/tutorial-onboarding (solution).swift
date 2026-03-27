@@ -38,17 +38,17 @@ struct InfoCard: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .headingMedium(theme)
-                .oudsForegroundColor(theme.colors.contentBrandPrimary)
+                .foregroundColor(theme.colors.contentBrandPrimary)
                 .padding(.top, theme.gridMargin(for: oudsHorizontalSizeClass))
 
             Text(subtitle)
                 .headingXLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.scaled2xsmall.dimension(for: horizontalSizeClass ?? .regular))
 
             Text(description)
                 .bodyDefaultLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Spacer(minLength: theme.spaces.scaledLarge.dimension(for: verticalSizeClass ?? .regular))
 
@@ -56,7 +56,7 @@ struct InfoCard: View {
 
             Spacer(minLength: theme.spaces.fixedMedium)
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 }
 
@@ -87,13 +87,13 @@ struct ComponentShowcase: View {
                 Text("Explore some OUDS components")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .headingLarge(theme)
-                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .foregroundColor(theme.colors.contentDefault)
                     .padding(.horizontal, gridMargin)
 
                 CategorySelector(selectedComponentGroup: $selectedComponentGroup)
             }
             .padding(.vertical, gridMargin)
-            .oudsBackground(theme.colors.bgSecondary)
+            .background(theme.colors.bgSecondary)
 
             // Use opacity to reserve space vertically, otherwise height change when changing group
             ZStack {
@@ -227,12 +227,12 @@ struct HomeScreen: View {
                     description: "The Orange Polska Group is in the TOP 3 of ICT service leaders in Poland according to the 2000 Computerworld report. See how we can .- -Work together.",
                     buttonLabel: "Contact us")
                     .environment(\.colorScheme, .dark)
-                    .oudsBackground(theme.colors.bgInverseLow)
+                    .background(theme.colors.bgInverseLow)
             }
 
             ComponentShowcase()
         }
-        .oudsBackground(theme.colors.bgPrimary)
+        .background(theme.colors.bgPrimary)
     }
 }
 

@@ -268,7 +268,7 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
             }
         }
-        .buttonStyle(OUDSButtonStyle(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
+        .buttonStyle(StyleForButton(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)
