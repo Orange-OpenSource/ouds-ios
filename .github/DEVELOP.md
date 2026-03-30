@@ -149,13 +149,13 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 ### Illustrations
 
 The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
-They are made manulay with iPhone 17 Pro, in english, portrait, light mode without icreased size text.
+They are made manually with iPhone 17 Pro, in english, portrait, light mode without increased size text.
 Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
 To update the illustrations, you have to:
 - have such iPhone (e.g. simulator or real device)
 - configure it with the theme you want
-- make screenshots and crop them ten
+- make screenshots and crop them then
 
 Repeat this process for the other themes if needed.
 
