@@ -209,7 +209,6 @@ Elevations effets or box shadows can be applied to view with the dedicated OUDS 
 .shadow(theme.elevations.emphasized)
 ```
 
-
 ### 3.8 Use components
 
 #### Actions
