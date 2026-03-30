@@ -116,17 +116,17 @@ source ~/.zshrc
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 26.2**, we suggest you use this version or newer if you want (but not recommended).
+We use also for our GitLab CI runners **Xcode 26.3**, we suggest you use this version or newer if you want (but not recommended).
 
 > [!IMPORTANT]
-> Xcode 26.2 and Swift 6.2 are used for this project. You must use this configuration.
+> Xcode 26.3 and Swift 6.2 are used for this project. You must use this configuration.
 > No retrocompatibility is planned.
 > If needed, contact us and open a discussino on GitHub Orange-OpenSource/ouds-ios
 
 ## Build OUDS Package
 
 To build the OUDS package:
-1. Open the folder containing the *Package.swift. file in Xcode
+1. Open the folder containing the *Package.swift* file in Xcode
 2. Select the "OUDS-Package" scheme
 3. Build
 
@@ -148,20 +148,14 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 ### Illustrations
 
-The illustrations in use for the documentation is versioned in the Swift Package library.
-However it is the [design system toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) which updates it using UI tests.
+The illustrations in use for the documentation are versioned in the [Swift Package project](https://github.com/Orange-OpenSource/ouds-ios).
+They are made manually with iPhone 17 Pro, in english, portrait, light mode without increased size text.
+Because 4 themes are available with dedicated fonts and tokens, it was not possible to implement and maintain a test suite with one codebase for all cases.
 
 To update the illustrations, you have to:
-- select the device from Xcode (i.e. *iPhone 12 Pro*) (see details in `AppTestCase+Dimensions.swift` file)
-- keep the device in portrait mode
-- check the color scheme in use you need (light or dark mode)
-- run the debug app: this is the app wich will be compiled and used for tests and screenshots
-- select the theme you want from the app; your choice will be kept in user defaults
-- then run the UI tests (*DesignToolboxUITests* scheme), all *DocumentationScreenshots* test cases
-
-Xcode will then run the tests and put the illustrations, here cropped screenshots of the app in selected device, in attachments of tests.
-
-Then copy/paste these files in the location you want for the Swift Package library. having a local reference of it in your Xcode is more comfortable.
+- have such iPhone (e.g. simulator or real device)
+- configure it with the theme you want
+- make screenshots and crop them then
 
 Repeat this process for the other themes if needed.
 
