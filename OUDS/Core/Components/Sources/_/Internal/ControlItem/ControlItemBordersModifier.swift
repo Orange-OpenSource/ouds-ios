@@ -46,7 +46,7 @@ struct ControlItemBordersModifier: ViewModifier {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
-                    Divider().horizontalDivider(force: dividerColor)
+                    Divider().horizontal(force: dividerColor)
                 }
             } else {
                 content

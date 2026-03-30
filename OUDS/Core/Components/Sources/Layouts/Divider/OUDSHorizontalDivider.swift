@@ -72,7 +72,7 @@ public struct OUDSHorizontalDivider: View {
     // MARK: - Body
 
     public var body: some View {
-        Divider().horizontalDivider(dividerColor: color)
+        Divider().horizontal(color: .default)
     }
 }
 
@@ -84,19 +84,18 @@ extension Divider {
     /// VStack {
     ///     Text("Hello wolrd!")
     ///
-    ///     Divider()
-    ///        .horizontalDivider(dividerColor: .brandPrimary)
+    ///     Divider().horizontal(color: .brandPrimary)
     ///
     ///     Text("Happy to see you")
     /// }
     /// ```
     ///
-    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.default` by default
+    /// - Parameter color: the color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
     @MainActor
-    public func horizontalDivider(dividerColor: OUDSDividerColor = .default) -> some View {
-        modifier(DividerModifier(orientation: .horizontal, dividerColor: dividerColor))
+    public func horizontal(color: OUDSDividerColor = .default) -> some View {
+        modifier(DividerModifier(orientation: .horizontal, dividerColor: color))
     }
 
     /// Set the color to the horizontal divider and adjust the thickness (height)
@@ -116,9 +115,9 @@ extension Divider {
     /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
-    @available(*, deprecated, renamed: "horizontalDivider(dividerColor:)", message: "Use horizontalDivider(dividerColor:) instead")
+    @available(*, deprecated, renamed: "horizontal(color:)", message: "Use horizontal(color:) instead")
     @MainActor
     public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .default) -> some View {
-        horizontalDivider(dividerColor: dividerColor)
+        horizontal(color: dividerColor)
     }
 }

@@ -74,7 +74,7 @@ public struct OUDSVerticalDivider: View {
     // MARK: - Body
 
     public var body: some View {
-        Divider().verticalDivider(color: color)
+        Divider().vertical(color: color)
     }
 }
 
@@ -85,7 +85,8 @@ extension Divider {
     /// ```swift
     /// HStack {
     ///     Text("Hello wolrd!")
-    ///        .verticalDivider(color: .brandPrimary)
+    ///
+    ///     Divider().vertical(color: .brandPrimary)
     ///
     ///     Text("Happy to see you")
     /// }
@@ -95,7 +96,7 @@ extension Divider {
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
-    public func verticalDivider(color: OUDSDividerColor) -> some View {
+    public func vertical(color: OUDSDividerColor) -> some View {
         modifier(DividerModifier(orientation: .vertical, dividerColor: color))
     }
 
@@ -105,7 +106,8 @@ extension Divider {
     /// ```swift
     /// HStack {
     ///     Text("Hello wolrd!")
-    ///        .oudsVerticalDivider(color: .brandPrimary)
+    ///
+    ///     Divider().oudsVerticalDivider(color: .brandPrimary)
     ///
     ///     Text("Happy to see you")
     /// }
@@ -114,9 +116,9 @@ extension Divider {
     /// - Parameter color: the color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
-    @available(*, deprecated, renamed: "verticalDivider(color:)", message: "Use verticalDivider(color:) instead")
+    @available(*, deprecated, renamed: "vertical(color:)", message: "Use vertical(color:) instead")
     @MainActor
     public func oudsVerticalDivider(color: OUDSDividerColor) -> some View {
-        verticalDivider(color: color)
+        vertical(color: color)
     }
 }
