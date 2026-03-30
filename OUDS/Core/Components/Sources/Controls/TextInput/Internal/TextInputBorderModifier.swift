@@ -35,17 +35,17 @@ struct TextInputBorderModifier: ViewModifier {
             } else {
                 content
                     .border(style: theme.borders.styleDefault,
-                                width: size,
-                                radius: cornerRadius,
-                                color: outlinedColor)
+                            width: size,
+                            radius: cornerRadius,
+                            color: outlinedColor)
             }
         } else {
             if status == .readOnly {
                 content
                     .border(style: theme.borders.styleDefault,
-                                width: theme.textInput.borderWidthDefault,
-                                radius: cornerRadius,
-                                color: theme.colors.borderMuted)
+                            width: theme.textInput.borderWidthDefault,
+                            radius: cornerRadius,
+                            color: theme.colors.borderMuted)
             } else {
                 ZStack(alignment: .bottomLeading) {
                     content

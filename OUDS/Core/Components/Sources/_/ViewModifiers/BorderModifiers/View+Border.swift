@@ -53,7 +53,7 @@ extension View {
     ///
     ///    var body: some View {
     ///        SomeView()
-    ///        .oudsBorder(
+    ///        .border(
     ///             style: theme.borders.styleDefault,
     ///             width: theme.borders.widthThin,
     ///             radius: theme.borders.radiusNone,

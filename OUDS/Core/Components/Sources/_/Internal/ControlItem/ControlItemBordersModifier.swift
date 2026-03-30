@@ -38,9 +38,9 @@ struct ControlItemBordersModifier: ViewModifier {
         if layoutData.isOutlined, let borderColor {
             content
                 .border(style: theme.borders.styleDefault,
-                            width: theme.borders.widthDefault,
-                            radius: radius,
-                            color: borderColor)
+                        width: theme.borders.widthDefault,
+                        radius: radius,
+                        color: borderColor)
         } else {
             if layoutData.hasDivider {
                 // Divider must be inside

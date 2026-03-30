@@ -200,9 +200,9 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
         content
             .clipShape(RoundedRectangle(cornerRadius: appliedBorderRadius))
             .border(style: theme.borders.styleDefault,
-                        width: appliedBorderWidth,
-                        radius: appliedBorderRadius,
-                        color: appliedColor)
+                    width: appliedBorderWidth,
+                    radius: appliedBorderRadius,
+                    color: appliedColor)
     }
 
     // MARK: - Colors

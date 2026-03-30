@@ -11,8 +11,7 @@
 ### Overview
 
 Some public `View` extension methods prefixed with `ouds` have been renamed to remove the prefix, aligning with the naming style of typography helpers.
-The old methods are deprecated and will be removed in a future version.
-The internal `OUDSButtonStyle` struct has been renamed to `StyleForButton`.
+The old methods are deprecated and will be removed in a future major version.
 
 ### Before You Begin
 
@@ -22,33 +21,34 @@ The internal `OUDSButtonStyle` struct has been renamed to `StyleForButton`.
 
 ### Deprecated API
 
-#### 1. Renamed `View` extension methods (deprecated, not removed)
+#### Renamed `View` extension methods (deprecated, not removed)
 
 The following `View` extension methods have been deprecated in favor of unprefixed versions.
 The old methods still compile with a deprecation warning.
 
 **Impact**: Low
 
-| Deprecated | Replacement |
-|---|---|
-| `.oudsForegroundStyle(_:)` | `.foregroundStyle(_:)` |
-| `.oudsForegroundColor(_:)` | `.foregroundColor(_:)` |
-| `.oudsBackground(_:)` | `.background(_:)` |
-| `.oudsAccentColor(_:)` | `.accentColor(_:)` |
-| `.oudsShadow(_:)` | `.shadow(_:)` |
-| `.oudsBorder(style:width:radius:color:)` | `.border(style:width:radius:color:)` |
-| `.oudsColoredSurface(_:)` | `.coloredSurface(_:)` |
-| `.oudsGridMargin(_:)` | `.gridMargin(_:)` |
-| `.oudsRequestAccessibleFocus(_:)` | `.requestAccessibleFocus(_:)` |
-| `.oudsRequestAccessibleFocus(_:for:)` | `.requestAccessibleFocus(_:for:)` |
-| `.oudsHorizontalDivider(dividerColor:)` | `.horizontalDivider(dividerColor:)` |
-| `.oudsVerticalDivider(color:)` | `.verticalDivider(color:)` |
+| Deprecated                                   | Replacement                          |
+|----------------------------------------------|--------------------------------------|
+| `.oudsForegroundStyle(_:)`                   | `.foregroundStyle(_:)`               |
+| `.oudsForegroundColor(_:)`                   | `.foregroundColor(_:)`               |
+| `.oudsBackground(_:)`                        | `.background(_:)`                    |
+| `.oudsAccentColor(_:)`                       | `.accentColor(_:)`                   |
+| `.oudsShadow(_:)`                            | `.shadow(_:)`                        |
+| `.oudsBorder(style:width:radius:color:)`     | `.border(style:width:radius:color:)` |
+| `.oudsColoredSurface(_:)`                    | `.coloredSurface(_:)`                |
+| `.oudsGridMargin(_:)`                        | `.gridMargin(_:)`                    |
+| `.oudsRequestAccessibleFocus(_:)`            | `.requestAccessibleFocus(_:)`        |
+| `.oudsRequestAccessibleFocus(_:for:)`        | `.requestAccessibleFocus(_:for:)`    |
+| `.oudsHorizontalDivider(dividerColor:)`      | `.horizontalDivider(dividerColor:)`  |
+| `.oudsVerticalDivider(color:)`               | `.verticalDivider(color:)`           |
 
 **Before (v1.3.x)**:
 ```swift
 Text("Hello")
     .oudsForegroundColor(theme.colors.contentDefault)
     .oudsBackground(theme.colors.bgPrimary)
+    // Etc.
 
 SomeView()
     .oudsBorder(style: theme.borders.styleDefault,
@@ -56,6 +56,7 @@ SomeView()
                 radius: theme.borders.radiusMedium,
                 color: theme.colors.borderDefault)
     .oudsShadow(theme.elevations.emphasized)
+    // Etc.
 ```
 
 **After (v1.4.0)**:
@@ -77,9 +78,10 @@ SomeView()
 
 **Reason for Change**: User feedback indicated the `ouds` prefix on methods was redundant and verbose given that parameter types are strongly typed OUDS tokens which prevent any ambiguity with native SwiftUI overloads.
 
-#### 2. Rename of internal `OUDSButtonStyle` to `StyleForButton`
+### Compatibility
 
-**Impact**: None (internal type, not exposed in the public API)
+- **Backward Compatibility**: No
+- **v1.4.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0
 
@@ -138,6 +140,11 @@ var someIconForBulletList: OUDSBulletList.UnorderedAsset {
 - Case `.free` must be replaced by `.icon`
 
 **Reason for Change**: "asset" word has a better meaning than "icon", and is aligned with Android OUDS library API
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.2.0 Support**:  Until release of next minor version
 
 ## v1.1.0 → v1.2.0
 
@@ -200,6 +207,11 @@ OrangeCompactTheme()
 - Wherever you use the name "OrangeBusinessTools" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
 
 **Reason for Change**: Use more accurate name for the theme
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.1.0 Support**:  Until release of next minor version
 
 ## v1.0.0 → v1.1.0
 

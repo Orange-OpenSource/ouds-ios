@@ -23,22 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Rename internal `OUDSButtonStyle` to `StyleForButton` (Orange-OpenSource/ouds-ios#1352)
-
-### Deprecated
-
-- `View.oudsForegroundStyle(_:)` replaced by `View.foregroundStyle(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsForegroundColor(_:)` replaced by `View.foregroundColor(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsBackground(_:)` replaced by `View.background(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsAccentColor(_:)` replaced by `View.accentColor(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsShadow(_:)` replaced by `View.shadow(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsBorder(style:width:radius:color:)` replaced by `View.border(style:width:radius:color:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsColoredSurface(_:)` replaced by `View.coloredSurface(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsGridMargin(_:)` replaced by `View.gridMargin(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsRequestAccessibleFocus(_:)` replaced by `View.requestAccessibleFocus(_:)` (Orange-OpenSource/ouds-ios#1352)
-- `View.oudsRequestAccessibleFocus(_:for:)` replaced by `View.requestAccessibleFocus(_:for:)` (Orange-OpenSource/ouds-ios#1352)
-- `Divider.oudsHorizontalDivider(dividerColor:)` replaced by `Divider.horizontalDivider(dividerColor:)` (Orange-OpenSource/ouds-ios#1352)
-- `Divider.oudsVerticalDivider(color:)` replaced by `Divider.verticalDivider(color:)` (Orange-OpenSource/ouds-ios#1352)
+- View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1352)
 
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 

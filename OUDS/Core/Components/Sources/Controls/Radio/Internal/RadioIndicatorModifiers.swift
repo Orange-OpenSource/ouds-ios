@@ -186,9 +186,9 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .border(style: theme.borders.styleDefault,
-                        width: appliedBorderWidth,
-                        radius: appliedBorderRadius,
-                        color: appliedColor)
+                    width: appliedBorderWidth,
+                    radius: appliedBorderRadius,
+                    color: appliedColor)
     }
 
     // MARK: - Colors

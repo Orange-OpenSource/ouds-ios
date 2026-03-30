@@ -27,9 +27,9 @@ struct AlertMessageBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .border(style: theme.borders.styleDefault,
-                        width: theme.alert.borderWidth,
-                        radius: radius,
-                        color: color)
+                    width: theme.alert.borderWidth,
+                    radius: radius,
+                    color: color)
             .clipShape(RoundedRectangle(cornerRadius: radius))
     }
 
