@@ -60,6 +60,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
@@ -220,6 +223,7 @@ public struct OUDSSwitchItem: View {
             orientation: isReversed ? .reversed : .default)
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a switch with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -232,7 +236,6 @@ public struct OUDSSwitchItem: View {
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - comment: An optional comment for translators, does not affect the resolved value
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
@@ -246,7 +249,6 @@ public struct OUDSSwitchItem: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 isOn: Binding<Bool>,
                 description: String? = nil,
                 icon: Image? = nil,
@@ -270,6 +272,8 @@ public struct OUDSSwitchItem: View {
                   hasDivider: hasDivider,
                   constrainedMaxWidth: constrainedMaxWidth)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

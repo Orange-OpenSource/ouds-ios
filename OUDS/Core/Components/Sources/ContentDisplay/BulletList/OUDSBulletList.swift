@@ -206,7 +206,6 @@ public struct OUDSBulletList: View {
         ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
         ///    - tableName: The name of the `.strings` file, or `nil` for the default
         ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-        ///    - comment: An optional comment for translators, does not affect the resolved value
         ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
         ///     the type is inherited from the parent list.
         ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
@@ -217,7 +216,6 @@ public struct OUDSBulletList: View {
         public init(_ key: LocalizedStringKey,
                     tableName: String? = nil,
                     bundle: Bundle = .main,
-                    comment: StaticString? = nil,
                     subListType: OUDSBulletList.`Type`? = nil,
                     subListTextStyle: OUDSBulletList.TextStyle? = nil,
                     subListHasBoldText: Bool? = nil,

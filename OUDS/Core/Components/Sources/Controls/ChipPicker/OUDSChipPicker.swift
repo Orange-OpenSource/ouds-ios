@@ -153,14 +153,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 selection: Binding<Tag?>,
                 chips: [OUDSChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)
@@ -203,14 +201,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - selection: The current selected value
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 selection: Binding<Tag>,
                 chips: [OUDSChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)
@@ -253,14 +249,12 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     ///    - title: A `LocalizedStringKey` for the picker title, or `nil` if no title
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - selections: Current selected values
     ///    - chips: The raw data to wrap in ``OUDSFilterChip`` for display
     ///    - itemsSpacing: The custom spacing to apply between items, default set to *nl*. If *nil* token *theme.spaces.fixedNone* will be used.
     public init(title: LocalizedStringKey?,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 selections: Binding<[Tag]>,
                 chips: [OUDSChipPickerData<Tag>],
                 itemsSpacing: SpaceSemanticToken? = nil)

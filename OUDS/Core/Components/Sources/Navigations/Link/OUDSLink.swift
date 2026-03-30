@@ -27,6 +27,9 @@ import SwiftUI
 ///     // Text only in small size
 ///     OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 ///
+///     // From a localizable and a bundle
+///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
+///
 ///     // Text and icon in default size
 ///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
 /// ```
@@ -132,14 +135,12 @@ public struct OUDSLink: View {
     ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - comment: An optional comment for translators, does not affect the resolved value
     ///   - icon: Icon displayed in the link
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 icon: Image? = nil,
                 size: Size = .default,
                 action: @escaping () -> Void)
@@ -170,6 +171,7 @@ public struct OUDSLink: View {
         self.action = action
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -180,14 +182,12 @@ public struct OUDSLink: View {
     ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - comment: An optional comment for translators, does not affect the resolved value
     ///   - indicator: Indicator displayed in the link
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 indicator: Indicator,
                 size: Size = .default,
                 action: @escaping () -> Void)
@@ -197,6 +197,8 @@ public struct OUDSLink: View {
         self.size = size
         self.action = action
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

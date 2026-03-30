@@ -34,6 +34,9 @@ import SwiftUI
 ///     // Text only
 ///     OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
 ///
+///     // Text from a localizable and a bundle
+///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) { }
+///
 ///     // Text and icon
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
 /// ```
@@ -100,13 +103,11 @@ public struct OUDSSuggestionChip: View {
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
@@ -154,12 +155,10 @@ public struct OUDSSuggestionChip: View {
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - action: The action to perform when the user triggers the chip
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)

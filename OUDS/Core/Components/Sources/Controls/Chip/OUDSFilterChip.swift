@@ -27,6 +27,9 @@ import SwiftUI
 ///     // Text only as not selected (default unselected)
 ///     OUDSFilterChip(text: "Label") { /* the action to process */ }
 ///
+///     // Text from a localizable and a bundle
+///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) { }
+///
 ///     // Text and icon as selected
 ///     OUDSFilterChip(icon: Image("ic_heart"), text: "Label", selected: true) { /* the action to process */ }
 /// ```
@@ -93,14 +96,12 @@ public struct OUDSFilterChip: View {
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - selected: Flag to know if chip is selected, by default is unselected
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 selected: Bool = false,
                 action: @escaping () -> Void)
     {
@@ -147,20 +148,18 @@ public struct OUDSFilterChip: View {
     /// Creates a filter chip with a localized text only, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module, selected: false) { }
+    ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) { }
     /// ```
     ///
     /// - Parameters:
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - selected: Flag to know if chip is selected, by default is unselected
     ///    - action: The action to perform when the user triggers the chip
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 selected: Bool = false,
                 action: @escaping () -> Void)
     {

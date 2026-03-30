@@ -98,6 +98,8 @@ import SwiftUI
 ///     OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
 ///     // Or also
 ///     OUDSTag(label: "Label")
+///     // Or from a localizale and a bundle
+///     OUDSTag(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///     // Tag with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(leading: .bullet)
@@ -365,7 +367,6 @@ public struct OUDSTag: View {
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - status: The status of the tag, default set to *neutral*
     ///    - appearance: The importance of the tag, default set to *emphasized*
     ///    - shape: The shape of the tag, default set to *rounded*
@@ -374,7 +375,6 @@ public struct OUDSTag: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 status: Status = .neutral(),
                 appearance: Appearance = .emphasized,
                 shape: Shape = .rounded,
@@ -414,13 +414,11 @@ public struct OUDSTag: View {
     ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - shape: The shape of the tag, i.e. the corners style
     ///    - size: The size of the tag
     public init(loadingKey: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 shape: Shape = .rounded,
                 size: Size = .default)
     {

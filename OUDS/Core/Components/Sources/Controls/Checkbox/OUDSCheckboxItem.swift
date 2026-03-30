@@ -70,6 +70,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
@@ -294,6 +297,7 @@ public struct OUDSCheckboxItem: View {
         self.action = action
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -306,7 +310,6 @@ public struct OUDSCheckboxItem: View {
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - comment: An optional comment for translators, does not affect the resolved value
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
@@ -321,7 +324,6 @@ public struct OUDSCheckboxItem: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 isOn: Binding<Bool>,
                 description: String? = nil,
                 icon: Image? = nil,
@@ -347,6 +349,8 @@ public struct OUDSCheckboxItem: View {
                   constrainedMaxWidth: constrainedMaxWidth,
                   action: action)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

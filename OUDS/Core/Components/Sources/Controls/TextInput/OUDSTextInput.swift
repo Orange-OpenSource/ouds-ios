@@ -55,6 +55,9 @@ import SwiftUI
 ///  ```swift
 ///     // An outlined text input
 ///     OUDSTextInput(label: "Label", text: $text, isOutlined: true)
+///
+///     // With a localizable and a bundle
+///     OUDSTextInput(LocalizedStringKey("label_wording"), bundle: Bundle.module, text: $text)
 /// ```
 ///
 /// ### Rounded layout
@@ -357,6 +360,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.constrainedMaxWidth = constrainedMaxWidth
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -367,7 +371,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
@@ -383,7 +386,6 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 text: Binding<String>,
                 placeholder: String? = nil,
                 prefix: String? = nil,
@@ -411,6 +413,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                   constrainedMaxWidth: constrainedMaxWidth,
                   status: status)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

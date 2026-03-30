@@ -41,6 +41,9 @@ import SwiftUI
 ///  ```swift
 ///     // An outlined text input
 ///     OUDSPasswordInput(label: "Your password", password: $password, isOutlined: true)
+///
+///     // With a localizable from a bundle
+///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
 /// ```
 ///
 /// ### Rounded layout
@@ -166,6 +169,7 @@ public struct OUDSPasswordInput: View {
         self.constrainedMaxWidth = constrainedMaxWidth
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a password input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -176,7 +180,6 @@ public struct OUDSPasswordInput: View {
     ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - password: The pasword to display and edit
     ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`
     ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
@@ -189,7 +192,6 @@ public struct OUDSPasswordInput: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 password: Binding<String>,
                 isHiddenPassword: Binding<Bool> = .constant(true),
                 placeholder: String? = nil,
@@ -211,6 +213,8 @@ public struct OUDSPasswordInput: View {
                   constrainedMaxWidth: constrainedMaxWidth,
                   status: status)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

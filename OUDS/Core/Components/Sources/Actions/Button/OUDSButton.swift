@@ -59,6 +59,9 @@ import SwiftUI
 ///
 ///     // Text and icon with strong appearance and button taking full width
 ///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong, isFullWidth: true) { /* the action to process */ }
+///
+///     // Localizable from bundle can also be used
+///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
@@ -199,17 +202,19 @@ public struct OUDSButton: View {
         isHover = false
     }
 
-    /// Creates a button with a localized text and icon, looking up the key in the given bundle.
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a button with a localized text and icon, looking up the key in the given bundle..
+    /// A raw string can also be given to be displayed.
     ///
     /// ```swift
+    ///     // Use localizable
     ///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, icon: Image("ic_checkmark"), appearance: .strong) { }
     /// ```
     ///
     /// - Parameters:
-    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle, or a raw `String` to display
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - icon: An image which shoud contains an icon
     ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - appearance: The button appearance, default set to `.default`
@@ -219,7 +224,6 @@ public struct OUDSButton: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 icon: Image,
                 flipIcon: Bool = false,
                 appearance: Appearance = .default,
@@ -235,6 +239,8 @@ public struct OUDSButton: View {
         self.action = action
         isHover = false
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     /// Creates a button with an icon only.
     ///
@@ -294,7 +300,6 @@ public struct OUDSButton: View {
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - comment: An optional comment for translators, does not affect the resolved value
     ///    - appearance: The button appearance, default set to `.default`
     ///    - style: The button style, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
@@ -302,7 +307,6 @@ public struct OUDSButton: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 appearance: Appearance = .default,
                 style: Style = .default,
                 isFullWidth: Bool = false,

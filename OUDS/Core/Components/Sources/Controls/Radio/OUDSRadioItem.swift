@@ -71,6 +71,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
+///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
@@ -318,6 +321,7 @@ public struct OUDSRadioItem: View {
         self.action = action
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a radio with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -330,7 +334,6 @@ public struct OUDSRadioItem: View {
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - comment: An optional comment for translators, does not affect the resolved value
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like an helper text, should not be empty, default set to `nil`
@@ -347,7 +350,6 @@ public struct OUDSRadioItem: View {
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                comment: StaticString? = nil,
                 isOn: Binding<Bool>,
                 extraLabel: String? = nil,
                 description: String? = nil,
@@ -377,6 +379,8 @@ public struct OUDSRadioItem: View {
                   constrainedMaxWidth: constrainedMaxWidth,
                   action: action)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 
