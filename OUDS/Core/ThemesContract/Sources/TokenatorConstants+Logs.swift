@@ -57,6 +57,6 @@ extension OUDSVersions {
         versionsLog += "- Text Area: \(Self.componentTextAreaVersion)\n"
         versionsLog += "- Text Input: \(Self.componentTextInputVersion)\n"
 
-        OL.info(versionsLog)
+        OL.log(versionsLog)
     }
 }
