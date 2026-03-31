@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1346)
 - Move from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
 
+### Fixed
+
+- Accessibility-hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios##1277)
+
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 
 ### Added
