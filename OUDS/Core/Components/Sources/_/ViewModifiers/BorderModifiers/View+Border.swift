@@ -46,6 +46,23 @@ extension View {
         modifier(BorderModifier(style, width, radius, color))
     }
 
+    /// Modifies the current `View` to apply a default border using the tokens from the current theme.
+    ///
+    /// This is a convenience method that uses `theme.borders.styleDefault`, `theme.borders.widthDefault`,
+    /// `theme.borders.radiusDefault` and `theme.colors.borderDefault` automatically.
+    ///
+    /// ```swift
+    ///    var body: some View {
+    ///        SomeView()
+    ///            .borderDefault()
+    ///     }
+    /// ```
+    ///
+    /// - Returns some View: The current `View` but with a default border.
+    public func borderDefault() -> some View {
+        modifier(BorderDefaultModifier())
+    }
+
     /// Modifies the current `View` to apply a border.
     ///
     /// ```swift
