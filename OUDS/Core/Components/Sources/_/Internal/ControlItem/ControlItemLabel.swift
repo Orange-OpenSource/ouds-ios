@@ -60,21 +60,21 @@ struct ControlItemLabel: View {
             Text(layoutData.label)
                 .labelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
-                .oudsForegroundStyle(labelColor)
+                .foregroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             if let extraLabel = layoutData.extraLabel, !extraLabel.isEmpty {
                 Text(extraLabel)
                     .labelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(extraLabelColor)
+                    .foregroundStyle(extraLabelColor)
             }
 
             if let description = layoutData.description, !description.isEmpty {
                 Text(description)
                     .labelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(helperColor)
+                    .foregroundStyle(helperColor)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

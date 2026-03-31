@@ -52,7 +52,7 @@ struct LabelContainer: View {
         Text(label)
             .lineLimit(numberOfLines)
             .minimumScaleFactor(1.0)
-            .oudsForegroundColor(color)
+            .foregroundColor(color)
             .frame(maxWidth: .infinity, alignment: .leading)
             .accessibilityHidden(true)
     }

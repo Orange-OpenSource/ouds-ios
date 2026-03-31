@@ -20,7 +20,16 @@ extension View {
     /// Will use a surface color, i.e. a kind of configuration to apply considering monochrome mode and color scheme.
     ///
     /// - Parameter surfaceColor: The surface color applied as background on the current view
-    public func oudsColoredSurface(_ surfaceColor: OUDSColoredSurface.SurfaceColor) -> some View {
+    public func coloredSurface(_ surfaceColor: OUDSColoredSurface.SurfaceColor) -> some View {
         modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: surfaceColor))
+    }
+
+    /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
+    /// Will use a surface color, i.e. a kind of configuration to apply considering monochrome mode and color scheme.
+    ///
+    /// - Parameter surfaceColor: The surface color applied as background on the current view
+    @available(*, deprecated, renamed: "coloredSurface(_:)", message: "Use coloredSurface(_:) instead")
+    public func oudsColoredSurface(_ surfaceColor: OUDSColoredSurface.SurfaceColor) -> some View {
+        coloredSurface(surfaceColor)
     }
 }

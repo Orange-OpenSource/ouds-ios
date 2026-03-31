@@ -57,7 +57,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsForegroundColor(appliedColor)
+            .foregroundColor(appliedColor)
     }
 
     // MARK: - Colors
@@ -199,10 +199,10 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .clipShape(RoundedRectangle(cornerRadius: appliedBorderRadius))
-            .oudsBorder(style: theme.borders.styleDefault,
-                        width: appliedBorderWidth,
-                        radius: appliedBorderRadius,
-                        color: appliedColor)
+            .border(style: theme.borders.styleDefault,
+                    width: appliedBorderWidth,
+                    radius: appliedBorderRadius,
+                    color: appliedColor)
     }
 
     // MARK: - Colors

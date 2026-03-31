@@ -59,13 +59,13 @@ struct ComponentShowcase: View {
                 Text("Explore some OUDS components")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .headingLarge(theme)
-                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .foregroundColor(theme.colors.contentDefault)
                     .padding(.horizontal, gridMargin)
 
                 CategorySelector(selectedComponentGroup: $selectedComponentGroup)
             }
             .padding(.vertical, gridMargin)
-            .oudsBackground(theme.colors.bgSecondary)
+            .background(theme.colors.bgSecondary)
 
             // Use opacity to reserve space vertically, otherwise height change when changing group
             ZStack {

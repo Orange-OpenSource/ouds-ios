@@ -30,10 +30,10 @@ struct CheckboxBackgroundColorModifier: ViewModifier {
         case .enabled, .disabled, .readOnly:
             content
         case .hover:
-            content.oudsBackground(theme.controlItem.colorBgHover)
+            content.background(theme.controlItem.colorBgHover)
                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         case .pressed:
-            content.oudsBackground(theme.controlItem.colorBgPressed)
+            content.background(theme.controlItem.colorBgPressed)
                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         }
     }

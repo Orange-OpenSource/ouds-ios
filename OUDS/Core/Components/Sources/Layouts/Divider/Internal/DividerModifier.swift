@@ -95,7 +95,7 @@ extension Divider {
     ///
     /// - Parameter color: The color to force for the divider
     @MainActor
-    func verticalDivider(force color: MultipleColorSemanticToken) -> some View {
+    func vertical(force color: MultipleColorSemanticToken) -> some View {
         modifier(DividerModifier(orientation: .vertical, forceColor: color))
     }
 
@@ -103,7 +103,7 @@ extension Divider {
     ///
     /// - Parameter color: The color to force for the divider
     @MainActor
-    func horizontalDivider(force color: MultipleColorSemanticToken) -> some View {
+    func horizontal(force color: MultipleColorSemanticToken) -> some View {
         modifier(DividerModifier(orientation: .horizontal, forceColor: color))
     }
 }

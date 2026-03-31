@@ -33,15 +33,15 @@ struct InfoCard: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .headingMedium(theme)
-                .oudsForegroundColor(theme.colors.contentBrandPrimary)
+                .foregroundColor(theme.colors.contentBrandPrimary)
 
             Text(subtitle)
                 .headingXLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Text(description)
                 .bodyDefaultLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
         }
     }
 }

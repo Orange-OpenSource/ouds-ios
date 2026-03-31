@@ -58,7 +58,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsForegroundColor(appliedColor)
+            .foregroundColor(appliedColor)
     }
 
     // MARK: - Colors
@@ -185,10 +185,10 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsBorder(style: theme.borders.styleDefault,
-                        width: appliedBorderWidth,
-                        radius: appliedBorderRadius,
-                        color: appliedColor)
+            .border(style: theme.borders.styleDefault,
+                    width: appliedBorderWidth,
+                    radius: appliedBorderRadius,
+                    color: appliedColor)
     }
 
     // MARK: - Colors

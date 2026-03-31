@@ -78,18 +78,18 @@ struct TagAsset: View {
                     Image(decorative: "ic_alert_warning_external_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.icon.colorContentStatusWarningExternalShape)
+                        .foregroundColor(theme.icon.colorContentStatusWarningExternalShape)
                     Image(decorative: "ic_alert_warning_internal_shape", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
                         .resizable()
-                        .oudsForegroundColor(theme.icon.colorContentStatusWarningInternalShape)
+                        .foregroundColor(theme.icon.colorContentStatusWarningInternalShape)
                 }
             } else {
                 iconFromAsset?
                     .renderingMode(.template)
                     .resizable()
                     .toFlip(status.flipIcon)
-                    .oudsForegroundColor(color)
+                    .foregroundColor(color)
             }
         }
         .padding(.all, padding)

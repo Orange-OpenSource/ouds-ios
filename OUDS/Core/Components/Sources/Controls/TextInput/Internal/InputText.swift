@@ -42,7 +42,7 @@ struct InputText: View {
         }
         .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))
         .multilineTextAlignment(.leading)
-        .oudsForegroundColor(inputTextColor)
+        .foregroundColor(inputTextColor)
         .tint(cursorColor.color(for: colorScheme))
         .disabled(status == .disabled || status == .readOnly || status == .loading)
     }
@@ -80,7 +80,7 @@ struct InputText: View {
         Text(label)
             .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
             .labelDefaultLarge(theme)
-            .oudsForegroundStyle(labelColor)
+            .foregroundStyle(labelColor)
     }
 }
 

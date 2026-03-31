@@ -38,7 +38,7 @@ struct InputContainer: View {
             {
                 Text(prefix)
                     .labelDefaultLarge(theme)
-                    .oudsForegroundColor(prefixSuffixColor)
+                    .foregroundColor(prefixSuffixColor)
                     .accessibilityHidden(true)
             }
 
@@ -55,7 +55,7 @@ struct InputContainer: View {
             {
                 Text(suffix)
                     .labelDefaultLarge(theme)
-                    .oudsForegroundColor(prefixSuffixColor)
+                    .foregroundColor(prefixSuffixColor)
                     .accessibilityHidden(true)
             }
         }

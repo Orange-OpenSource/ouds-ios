@@ -36,17 +36,17 @@ struct InfoCard: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .headingMedium(theme)
-                .oudsForegroundColor(theme.colors.contentBrandPrimary)
+                .foregroundColor(theme.colors.contentBrandPrimary)
                 .padding(.top, theme.gridMargin(for: oudsHorizontalSizeClass))
 
             Text(subtitle)
                 .headingXLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.scaled2xsmall.dimension(for: horizontalSizeClass ?? .regular))
 
             Text(description)
                 .bodyDefaultLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Spacer(minLength: theme.spaces.scaledLarge.dimension(for: verticalSizeClass ?? .regular))
 
@@ -54,7 +54,7 @@ struct InfoCard: View {
 
             Spacer(minLength: theme.spaces.fixedMedium)
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 }
 

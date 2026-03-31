@@ -1,9 +1,87 @@
 # Migration Guide
 
+- [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.3.0 → v1.4.0
+
+### Overview
+
+Some public `View` extension methods prefixed with `ouds` have been renamed to remove the prefix, aligning with the naming style of typography helpers.
+The old methods are deprecated and will be removed in a future major version.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.3 or older
+
+### Deprecated API
+
+#### Renamed `View` extension methods (deprecated, not removed)
+
+The following `View` extension methods have been deprecated in favor of unprefixed versions.
+The old methods still compile with a deprecation warning.
+
+**Impact**: Low
+
+| Deprecated                                   | Replacement                          |
+|----------------------------------------------|--------------------------------------|
+| `.oudsForegroundStyle(_:)`                   | `.foregroundStyle(_:)`               |
+| `.oudsForegroundColor(_:)`                   | `.foregroundColor(_:)`               |
+| `.oudsBackground(_:)`                        | `.background(_:)`                    |
+| `.oudsAccentColor(_:)`                       | `.accentColor(_:)`                   |
+| `.oudsShadow(_:)`                            | `.shadow(_:)`                        |
+| `.oudsBorder(style:width:radius:color:)`     | `.border(style:width:radius:color:)` |
+| `.oudsColoredSurface(_:)`                    | `.coloredSurface(_:)`                |
+| `.oudsGridMargin(_:)`                        | `.gridMargin(_:)`                    |
+| `.oudsRequestAccessibleFocus(_:)`            | `.requestAccessibleFocus(_:)`        |
+| `.oudsRequestAccessibleFocus(_:for:)`        | `.requestAccessibleFocus(_:for:)`    |
+| `.oudsHorizontalDivider(dividerColor:)`      | `.horizontal(color:)`                |
+| `.oudsVerticalDivider(color:)`               | `.vertical(color:)`                  |
+
+**Before (v1.3.x)**:
+```swift
+Text("Hello")
+    .oudsForegroundColor(theme.colors.contentDefault)
+    .oudsBackground(theme.colors.bgPrimary)
+    // Etc.
+
+SomeView()
+    .oudsBorder(style: theme.borders.styleDefault,
+                width: theme.borders.widthThin,
+                radius: theme.borders.radiusMedium,
+                color: theme.colors.borderDefault)
+    .oudsShadow(theme.elevations.emphasized)
+    // Etc.
+```
+
+**After (v1.4.0)**:
+```swift
+Text("Hello")
+    .foregroundColor(theme.colors.contentDefault)
+    .background(theme.colors.bgPrimary)
+
+SomeView()
+    .border(style: theme.borders.styleDefault,
+            width: theme.borders.widthThin,
+            radius: theme.borders.radiusMedium,
+            color: theme.colors.borderDefault)
+    .shadow(theme.elevations.emphasized)
+```
+
+**Required Action**:
+- Replace deprecated `ouds`-prefixed calls with their unprefixed counterparts
+
+**Reason for Change**: User feedback indicated the `ouds` prefix on methods was redundant and verbose given that parameter types are strongly typed OUDS tokens which prevent any ambiguity with native SwiftUI overloads.
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.4.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0
 
@@ -62,6 +140,11 @@ var someIconForBulletList: OUDSBulletList.UnorderedAsset {
 - Case `.free` must be replaced by `.icon`
 
 **Reason for Change**: "asset" word has a better meaning than "icon", and is aligned with Android OUDS library API
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.2.0 Support**:  Until release of next minor version
 
 ## v1.1.0 → v1.2.0
 
@@ -124,6 +207,11 @@ OrangeCompactTheme()
 - Wherever you use the name "OrangeBusinessTools" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
 
 **Reason for Change**: Use more accurate name for the theme
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.1.0 Support**:  Until release of next minor version
 
 ## v1.0.0 → v1.1.0
 

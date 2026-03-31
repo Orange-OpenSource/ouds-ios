@@ -27,7 +27,7 @@ struct InlineAlertLabel: View {
     var body: some View {
         Text(text)
             .labelModerateLarge(theme)
-            .oudsForegroundColor(contentColor)
+            .foregroundColor(contentColor)
             .frame(maxWidth: theme.sizes.maxWidthTypeLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
     }
 

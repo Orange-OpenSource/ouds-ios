@@ -27,7 +27,7 @@ struct TagBackgroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.oudsBackground(background)
+        content.background(background)
     }
 
     // MARK: Helpers

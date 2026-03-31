@@ -96,7 +96,7 @@ struct UnorderedBullet: View {
 
     var body: some View {
         ScaledIcon(icon: image.renderingMode(.template), size: assetSize)
-            .oudsForegroundColor(color)
+            .foregroundColor(color)
     }
 
     // MARK: Private helpers

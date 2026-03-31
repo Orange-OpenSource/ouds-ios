@@ -34,7 +34,7 @@ Because the design tool in use is _Figma_ which defines such shadow with a _blur
 
 ```swift
 // For example, apply the elevation effect "drag" from your theme:
-myView.oudsShadow(theme.elevations.drag)
+myView.shadow(theme.elevations.drag)
 ```
 
 In details how it works:
@@ -87,7 +87,7 @@ These view modifiers are available for any `View` object, [you can get the curat
 
 ### Apply a specific border (border tokens)
 
-This module exposes the helper `oudsBorder(style:width:radius:color)` so as to apply border semantic tokens on a view in order to define a border effect.
+This module exposes the helper `border(style:width:radius:color:)` so as to apply border semantic tokens on a view in order to define a border effect.
 The helper is available through `View`, and tokens through the provider of the theme.
 
 ```swift
@@ -95,8 +95,8 @@ The helper is available through `View`, and tokens through the provider of the t
 
 var body: some View {
     SomeView()
-        .oudsBorder(
-            style: theme.borders.styleDefault,
+        .border(
+             style: theme.borders.styleDefault,
              width: theme.borders.widthThin,
              radius: theme.borders.radiusNone,
              color: theme.colors.borderDefault)
@@ -115,19 +115,19 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:)` met
 @Environment(\.theme) private var theme
 
 // Apply a foreground style
-someView.oudsForegroundStyle(theme.colors.bgPrimary)
+someView.foregroundStyle(theme.colors.bgPrimary)
 
 // Apply a foreground color
-someView.oudsForegroundColor(theme.colors.bgPrimary)
+someView.foregroundColor(theme.colors.bgPrimary)
 
 // Apply a background
-someView.oudsBackground(theme.colors.bgPrimary)
+someView.background(theme.colors.bgPrimary)
 
 // Apply an accent color
-someView.oudsAccentColor(theme.colors.bgPrimary)
+someView.accentColor(theme.colors.bgPrimary)
 
 // Apply a tint color
-someView.oudsTintColor(theme.colors.bgPrimary)
+someView.tint(theme.colors.bgPrimary)
 ```
 
 ## Flip images according to layouts

@@ -89,7 +89,7 @@ public struct OUDSIcon: View {
 
     // NOTE: Seen as unused by Periphery 3.4.0  (warning: Unused function 'update(with:)')
     private func update(with color: MultipleColorSemanticToken) -> some View {
-        oudsForegroundColor(color)
+        foregroundColor(color)
     }
 }
 
@@ -100,7 +100,7 @@ extension View {
     @ViewBuilder
     func update(with color: MultipleColorSemanticToken? = nil) -> some View {
         if let color {
-            oudsForegroundColor(color)
+            foregroundColor(color)
         } else {
             self
         }

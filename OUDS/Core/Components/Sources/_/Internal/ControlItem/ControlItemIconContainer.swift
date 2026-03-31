@@ -49,7 +49,7 @@ struct ControlItemIconContainer: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)
-                .oudsForegroundColor(errorIconColor)
+                .foregroundColor(errorIconColor)
                 .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
                 .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
@@ -58,7 +58,7 @@ struct ControlItemIconContainer: View {
                     .resizable()
                     .renderingMode(.template)
                     .accessibilityHidden(true)
-                    .oudsForegroundStyle(color)
+                    .foregroundStyle(color)
                     .frame(width: theme.controlItem.sizeIcon, height: theme.controlItem.sizeIcon)
                     .toFlip(layoutData.flipIcon)
             }

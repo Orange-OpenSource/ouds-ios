@@ -50,9 +50,9 @@ import SwiftUI
 ///     var body: some View {
 ///         // Apply the token of color for the view without managing yourself the color scheme
 ///         SomeView()
-///             .oudsBackground(theme.colors.surfaceBrandPrimary)
+///             .background(theme.colors.surfaceBrandPrimary)
 ///
-///         // Or also oudsForegroundtyle(), oudsForegroundColor(), oudsAccentColor(), ...
+///         // Or also foregroundStyle(), foregroundColor(), accentColor(), ...
 ///     }
 /// ```
 ///
