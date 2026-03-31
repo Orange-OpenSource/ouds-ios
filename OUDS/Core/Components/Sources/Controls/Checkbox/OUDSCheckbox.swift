@@ -111,6 +111,28 @@ public struct OUDSCheckbox: View {
     ///
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (not selected)
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
+    public init(isOn: Binding<Bool>,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isError: Bool = false,
+                isReadOnly: Bool = false)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(isOn: isOn, accessibilityLabel: resolvedText, isError: isError, isReadOnly: isReadOnly)
+    }
+
+    /// Creates a checkbox with only an indicator.
+    ///
+    /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
+    ///
+    /// - Parameters:
+    ///    - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (not selected)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`

@@ -24,6 +24,8 @@ import SwiftUI
 /// ```swift
 ///         // A basic positive alert message with text and badge
 ///         OUDSAlertMessage(label: "Label")
+///         // From a localizable in a bundle
+///         OUDSAlertMessage(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///         // A more complex alert message for warning status with a description and a close action
 ///         // to dismiss the message.
@@ -154,6 +156,38 @@ public struct OUDSAlertMessage: View {
         self.link = link
         self.onClose = onClose
         self.bulletList = bulletList
+    }
+
+    /// Creates an alert message with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - status: The status of the alert message, default set to *positive*
+    ///   - description: An optional supplementary text, default set to *nil*
+    ///   - bulletList: An optional list of bullet points, default set to empty array
+    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
+    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: OUDSAlertStatus = .positive,
+                description: String? = nil,
+                bulletList: [String] = [],
+                link: Self.Link? = nil,
+                onClose: (() -> Void)? = nil)
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  status: status,
+                  description: description,
+                  bulletList: bulletList,
+                  link: link,
+                  onClose: onClose)
     }
 
     // MARK: - Body

@@ -55,6 +55,9 @@ import SwiftUI
 ///  ```swift
 ///     // An outlined text input
 ///     OUDSTextInput(label: "Label", text: $text, isOutlined: true)
+///
+///     // With a localizable and a bundle
+///     OUDSTextInput(LocalizedStringKey("label_wording"), bundle: Bundle.module, text: $text)
 /// ```
 ///
 /// ### Rounded layout
@@ -356,6 +359,62 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         self.isOutlined = isOutlined
         self.constrainedMaxWidth = constrainedMaxWidth
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a text input with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - text: The text to display and edit
+    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input, by default is *nil*
+    ///    - suffix: Text placed after the user's input, by default is *nil*
+    ///    - leadingIcon: An optional leading icon, by default is *nil*
+    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
+    ///    - trailingAction: An optional trailing action, by default is *nil*
+    ///    - helperText: An optional helper text, by default is *nil*
+    ///    - helperLink: An optional helper link, by default is *nil*
+    ///    - isOutlined: Controls the style of the text input, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
+    ///    - status: The current status of the text input, default set to *enabled*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                text: Binding<String>,
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                suffix: String? = nil,
+                leadingIcon: Image? = nil,
+                flipLeadingIcon: Bool = false,
+                trailingAction: Self.TrailingAction? = nil,
+                helperText: String? = nil,
+                helperLink: Self.Helperlink? = nil,
+                isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                status: Self.Status = .enabled)
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  text: text,
+                  placeholder: placeholder,
+                  prefix: prefix,
+                  suffix: suffix,
+                  leadingIcon: leadingIcon,
+                  flipLeadingIcon: flipLeadingIcon,
+                  trailingAction: trailingAction,
+                  helperText: helperText,
+                  helperLink: helperLink,
+                  isOutlined: isOutlined,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  status: status)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

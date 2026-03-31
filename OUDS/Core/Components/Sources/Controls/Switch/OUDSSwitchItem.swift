@@ -60,6 +60,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
@@ -219,6 +222,58 @@ public struct OUDSSwitchItem: View {
             constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a switch with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - description: An additional helper text, a description, should not be empty
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isReversed: Bool = true,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

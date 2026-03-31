@@ -34,6 +34,9 @@ import SwiftUI
 ///     // Text only
 ///     OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
 ///
+///     // Text from a localizable and a bundle
+///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) { }
+///
 ///     // Text and icon
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
 /// ```
@@ -72,6 +75,28 @@ public struct OUDSSuggestionChip: View {
 
     // MARK: - Initializers
 
+    /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(icon: Image("ic_heart"), LocalizedStringKey("like_chip"), bundle: Bundle.module) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                _ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, text: resolvedText, action: action)
+    }
+
     /// Creates a chip with text and icon.
     ///
     /// No accessibility hint is defined for this component.
@@ -93,6 +118,24 @@ public struct OUDSSuggestionChip: View {
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, action: action)
+    }
+
+    /// Creates a chip with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
@@ -101,6 +144,26 @@ public struct OUDSSuggestionChip: View {
         }
         layout = .icon(icon, accessibilityLabel)
         self.action = action
+    }
+
+    /// Creates a chip with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - action: The action to perform when the user triggers the chip
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(text: resolvedText, action: action)
     }
 
     /// Creates a chip with a text only.

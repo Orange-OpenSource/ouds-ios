@@ -27,6 +27,9 @@ import SwiftUI
 ///     // Text only as not selected (default unselected)
 ///     OUDSFilterChip(text: "Label") { /* the action to process */ }
 ///
+///     // Text from a localizable and a bundle
+///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) { }
+///
 ///     // Text and icon as selected
 ///     OUDSFilterChip(icon: Image("ic_heart"), text: "Label", selected: true) { /* the action to process */ }
 /// ```
@@ -66,6 +69,30 @@ public struct OUDSFilterChip: View {
 
     // MARK: - Initializers
 
+    /// Creates a filter chip with a localized text and icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(icon: Image("ic_heart"), LocalizedStringKey("like_filter"), bundle: Bundle.module, selected: true) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                _ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, text: resolvedText, selected: selected, action: action)
+    }
+
     /// Creates a filter chip with text and icon.
     ///
     /// - Parameters:
@@ -86,6 +113,26 @@ public struct OUDSFilterChip: View {
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, selected: selected, action: action)
+    }
+
+    /// Create a chip with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
     ///    - selected: Flag to know if chip is selected, by default is unselected
     ///    - action: The action to perform when the user triggers the chip
@@ -96,6 +143,28 @@ public struct OUDSFilterChip: View {
         layout = .icon(icon, accessibilityLabel)
         self.action = action
         self.selected = selected
+    }
+
+    /// Creates a filter chip with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(text: resolvedText, selected: selected, action: action)
     }
 
     /// Create a chip with a text only.

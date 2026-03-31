@@ -70,6 +70,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
@@ -293,6 +296,61 @@ public struct OUDSCheckboxItem: View {
             orientation: isReversed ? .reversed : .default)
         self.action = action
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a checkbox with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
+    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

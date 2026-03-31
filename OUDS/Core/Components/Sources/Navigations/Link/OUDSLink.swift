@@ -27,6 +27,9 @@ import SwiftUI
 ///     // Text only in small size
 ///     OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 ///
+///     // From a localizable and a bundle
+///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
+///
 ///     // Text and icon in default size
 ///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
 /// ```
@@ -122,6 +125,36 @@ public struct OUDSLink: View {
         self.action = action
     }
 
+    /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - icon: Icon displayed in the link
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                icon: Image? = nil,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        if let icon {
+            layout = .textAndIcon(icon)
+        } else {
+            layout = .textOnly
+        }
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        self.action = action
+    }
+
     /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// - Parameters:
@@ -137,6 +170,35 @@ public struct OUDSLink: View {
         self.size = size
         self.action = action
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .back) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - indicator: Indicator displayed in the link
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                indicator: Indicator,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        layout = .indicator(indicator)
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        self.action = action
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

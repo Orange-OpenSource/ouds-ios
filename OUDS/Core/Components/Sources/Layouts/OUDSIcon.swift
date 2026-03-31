@@ -36,6 +36,27 @@ public struct OUDSIcon: View {
 
     // MARK: Initializers
 
+    // swiftlint:disable function_default_parameter_at_end
+    /// Create the icon with asset.
+    ///
+    /// - Parameters:
+    ///    - asset: The asset
+    ///    - flipped: If asset must be flipped, default set to `false`
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    public init(asset: Image,
+                flipped: Bool = false,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
+
     /// Create the icon with asset.
     ///
     /// - Parameters:
