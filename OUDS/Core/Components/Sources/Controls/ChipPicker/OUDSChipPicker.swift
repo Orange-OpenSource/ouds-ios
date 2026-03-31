@@ -16,9 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A picker allowing to expose several *filter chips* and proposing two kinds of selection:
-/// - **single**: used to select only one option within the others
-/// - **multiple**: used to select several options within the others
+/// A picker allowing to expose several *filter chips* and proposing single or multiple selections.
 ///
 /// Each chip contains a "tag", i.e. a supposed to be unique value.
 /// The picker will expose choosen values through this "tag".

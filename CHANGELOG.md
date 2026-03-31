@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Improve documentation (Orange-OpenSource/ouds-ios#1286)
 - Update illustrations in documentation for `alert message` component (Orange-OpenSource/ouds-ios#1359)
 - View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1346)
 - Move from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
