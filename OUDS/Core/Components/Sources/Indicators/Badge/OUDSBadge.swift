@@ -172,6 +172,26 @@ public struct OUDSBadge: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// - Parameters:
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
+    ///    - size: The size of this badge, *medium* by default
+    public init(accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: Status = .neutral,
+                size: StandardSize = .medium)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(accessibilityLabel: resolvedText, status: status, size: size)
+    }
+
+    /// Creates a basic badge.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// - Parameters:
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
@@ -197,6 +217,32 @@ public struct OUDSBadge: View {
                   accessibilityLabel: accessibilityLabel)
     }
 
+    /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
+    /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
+    /// Negative values are not allowed by design.
+    /// The background color of the badge and the number color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// - Parameters:
+    ///    - count:The number displayed in the badge.
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - status: The status of this badge, default set to *neutral*
+    ///    - size: The size of this badge, default set to *medium*
+    public init(count: UInt8,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: Status = .neutral,
+                size: IllustrationSize = .medium)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(layout: .init(type: .count(value: count, size: size), status: status),
+                  accessibilityLabel: resolvedText)
+    }
+
     /// Creates a badge which displays an icon to visually reinforce meaning.
     /// It is used for status indicators (e.g., "New", "Pending", "Success").
     /// The background color of the badge and the icon color are based on the given `status`.
@@ -213,8 +259,31 @@ public struct OUDSBadge: View {
                 size: IllustrationSize = .medium)
     {
         let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
-
         self.init(layout: layout, accessibilityLabel: accessibilityLabel)
+    }
+
+    /// Creates a badge which displays an icon to visually reinforce meaning.
+    /// It is used for status indicators (e.g., "New", "Pending", "Success").
+    /// The background color of the badge and the icon color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// - Parameters:
+    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
+    ///    and **neutral** status whrere a decorative icon is required)
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - size: The size of this badge, default set to *medium*
+    public init(status: StatusWithIcon,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                size: IllustrationSize = .medium)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
+        self.init(layout: layout, accessibilityLabel: resolvedText)
     }
 
     private init(layout: BadgeLayout, accessibilityLabel: String) {

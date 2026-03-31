@@ -69,22 +69,6 @@ public struct OUDSFilterChip: View {
 
     // MARK: - Initializers
 
-    /// Creates a filter chip with text and icon.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which shoud contains an icon
-    ///    - text: The text to display in the chip, should not be empty
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, text: String, selected: Bool = false, action: @escaping () -> Void) {
-        if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
-        }
-        layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing)
-        self.action = action
-        self.selected = selected
-    }
-
     /// Creates a filter chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -106,12 +90,43 @@ public struct OUDSFilterChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        if resolvedText.isEmpty {
+        self.init(icon: icon, text: resolvedText, selected: selected, action: action)
+    }
+
+    /// Creates a filter chip with text and icon.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - text: The text to display in the chip, should not be empty
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image, text: String, selected: Bool = false, action: @escaping () -> Void) {
+        if text.isEmpty {
             OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
         }
-        layout = .textAndIcon(text: resolvedText, icon: icon, iconPosition: .trailing)
+        layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing)
         self.action = action
         self.selected = selected
+    }
+
+    /// Create a chip with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                selected: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, selected: selected, action: action)
     }
 
     /// Create a chip with an icon only.
@@ -126,21 +141,6 @@ public struct OUDSFilterChip: View {
             OL.warning("The OUDSFilterChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(icon, accessibilityLabel)
-        self.action = action
-        self.selected = selected
-    }
-
-    /// Create a chip with a text only.
-    ///
-    /// - Parameters:
-    ///    - text: The text of the button to display, must not be empty
-    ///    - selected: Flag to know if chip is selected, by default is unselected
-    ///    - action: The action to perform when the user triggers the chip
-    public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
-        if text.isEmpty {
-            OL.fatal("The OUDSFilterChip must not have an empty text!")
-        }
-        layout = .text(text)
         self.action = action
         self.selected = selected
     }
@@ -164,10 +164,20 @@ public struct OUDSFilterChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        if resolvedText.isEmpty {
+        self.init(text: resolvedText, selected: selected, action: action)
+    }
+
+    /// Create a chip with a text only.
+    ///
+    /// - Parameters:
+    ///    - text: The text of the button to display, must not be empty
+    ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - action: The action to perform when the user triggers the chip
+    public init(text: String, selected: Bool = false, action: @escaping () -> Void) {
+        if text.isEmpty {
             OL.fatal("The OUDSFilterChip must not have an empty text!")
         }
-        layout = .text(resolvedText)
+        layout = .text(text)
         self.action = action
         self.selected = selected
     }

@@ -176,32 +176,6 @@ public struct OUDSButton: View {
 
     // MARK: Initializers
 
-    /// Creates a button with text and icon.
-    ///
-    /// - Parameters:
-    ///    - text: The text to display in the button
-    ///    - icon: An image which shoud contains an icon
-    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///    - appearance: The button appearance, default set to `.default`
-    ///    - style: The button style, default set to `.default`
-    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
-    ///    - action: The action to perform when the user triggers the button
-    public init(text: String,
-                icon: Image,
-                flipIcon: Bool = false,
-                appearance: Appearance = .default,
-                style: Style = .default,
-                isFullWidth: Bool = false,
-                action: @escaping () -> Void)
-    {
-        type = .textAndIcon(text: text, icon: icon, flipIcon: flipIcon)
-        self.appearance = appearance
-        self.style = style
-        self.isFullWidth = isFullWidth
-        self.action = action
-        isHover = false
-    }
-
     // swiftlint:disable function_default_parameter_at_end
     /// Creates a button with a localized text and icon, looking up the key in the given bundle..
     /// A raw string can also be given to be displayed.
@@ -232,7 +206,30 @@ public struct OUDSButton: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        type = .textAndIcon(text: resolvedText, icon: icon, flipIcon: flipIcon)
+        self.init(text: resolvedText, icon: icon, flipIcon: flipIcon, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
+
+    /// Creates a button with text and icon.
+    ///
+    /// - Parameters:
+    ///    - text: The text to display in the button
+    ///    - icon: An image which shoud contains an icon
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(text: String,
+                icon: Image,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        type = .textAndIcon(text: text, icon: icon, flipIcon: flipIcon)
         self.appearance = appearance
         self.style = style
         self.isFullWidth = isFullWidth
@@ -240,7 +237,31 @@ public struct OUDSButton: View {
         isHover = false
     }
 
-    // swiftlint:enable function_default_parameter_at_end
+    /// Creates a button with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* describing the button action, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, flipIcon: flipIcon, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
 
     /// Creates a button with an icon only.
     ///
@@ -268,28 +289,6 @@ public struct OUDSButton: View {
         isHover = false
     }
 
-    /// Create a button with a text only.
-    ///
-    /// - Parameters:
-    ///    - text: The text of the button to display
-    ///    - appearance: The button appearance, default set to `.default`
-    ///    - style: The button style, default set to `.default`
-    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
-    ///    - action: The action to perform when the user triggers the button
-    public init(text: String,
-                appearance: Appearance = .default,
-                style: Style = .default,
-                isFullWidth: Bool = false,
-                action: @escaping () -> Void)
-    {
-        type = .text(text)
-        self.appearance = appearance
-        self.style = style
-        self.action = action
-        self.isFullWidth = isFullWidth
-        isHover = false
-    }
-
     /// Creates a button with a localized text only, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -313,7 +312,24 @@ public struct OUDSButton: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        type = .text(resolvedText)
+        self.init(text: resolvedText, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
+    /// Create a button with a text only.
+    ///
+    /// - Parameters:
+    ///    - text: The text of the button to display
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(text: String,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        type = .text(text)
         self.appearance = appearance
         self.style = style
         self.action = action

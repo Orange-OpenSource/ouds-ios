@@ -75,23 +75,6 @@ public struct OUDSSuggestionChip: View {
 
     // MARK: - Initializers
 
-    /// Creates a chip with text and icon.
-    ///
-    /// No accessibility hint is defined for this component.
-    /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
-    ///
-    /// - Parameters:
-    ///    - icon: An image which shoud contains an icon
-    ///    - text: The text to display in the chip, should not be empty
-    ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, text: String, action: @escaping () -> Void) {
-        if text.isEmpty {
-            OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
-        }
-        layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading)
-        self.action = action
-    }
-
     /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -111,11 +94,42 @@ public struct OUDSSuggestionChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        if resolvedText.isEmpty {
+        self.init(icon: icon, text: resolvedText, action: action)
+    }
+
+    /// Creates a chip with text and icon.
+    ///
+    /// No accessibility hint is defined for this component.
+    /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - text: The text to display in the chip, should not be empty
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image, text: String, action: @escaping () -> Void) {
+        if text.isEmpty {
             OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
         }
-        layout = .textAndIcon(text: resolvedText, icon: icon, iconPosition: .leading)
+        layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading)
         self.action = action
+    }
+
+    /// Creates a chip with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - action: The action to perform when the user triggers the chip
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, action: action)
     }
 
     /// Creates a chip with an icon only.
@@ -129,19 +143,6 @@ public struct OUDSSuggestionChip: View {
             OL.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
         layout = .icon(icon, accessibilityLabel)
-        self.action = action
-    }
-
-    /// Creates a chip with a text only.
-    ///
-    /// - Parameters:
-    ///    - text: The text of the button to display,  must not be empty
-    ///    - action: The action to perform when the user triggers the chip
-    public init(text: String, action: @escaping () -> Void) {
-        if text.isEmpty {
-            OL.fatal("The OUDSSuggestionChip must not have an empty text!")
-        }
-        layout = .text(text)
         self.action = action
     }
 
@@ -162,10 +163,19 @@ public struct OUDSSuggestionChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        if resolvedText.isEmpty {
+        self.init(text: resolvedText, action: action)
+    }
+
+    /// Creates a chip with a text only.
+    ///
+    /// - Parameters:
+    ///    - text: The text of the button to display,  must not be empty
+    ///    - action: The action to perform when the user triggers the chip
+    public init(text: String, action: @escaping () -> Void) {
+        if text.isEmpty {
             OL.fatal("The OUDSSuggestionChip must not have an empty text!")
         }
-        layout = .text(resolvedText)
+        layout = .text(text)
         self.action = action
     }
 
