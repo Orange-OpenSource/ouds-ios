@@ -206,7 +206,7 @@ public struct OUDSButton: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(text: resolvedText, icon: icon, flipIcon: flipIcon, style: style, isFullWidth: isFullWidth, action: action)
+        self.init(text: resolvedText, icon: icon, flipIcon: flipIcon, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
     }
 
     // swiftlint:enable function_default_parameter_at_end
