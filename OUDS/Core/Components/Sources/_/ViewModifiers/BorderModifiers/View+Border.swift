@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -46,6 +47,23 @@ extension View {
         modifier(BorderModifier(style, width, radius, color))
     }
 
+    /// Modifies the current `View` to apply a default border using the tokens from the current theme.
+    ///
+    /// This is a convenience method that uses `theme.borders.styleDefault`, `theme.borders.widthDefault`,
+    /// `theme.borders.radiusDefault` and `theme.colors.borderDefault` automatically.
+    ///
+    /// ```swift
+    ///    var body: some View {
+    ///        SomeView()
+    ///            .borderDefault()
+    ///     }
+    /// ```
+    ///
+    /// - Returns some View: The current `View` but with a default border.
+    public func borderDefault() -> some View {
+        modifier(BorderDefaultModifier())
+    }
+
     /// Modifies the current `View` to apply a border.
     ///
     /// ```swift
@@ -75,5 +93,23 @@ extension View {
         color: MultipleColorSemanticToken) -> some View
     {
         border(style: style, width: width, radius: radius, color: color)
+    }
+}
+
+// MARK: - Border Default Modifier
+
+/// A `ViewModifier` which applies a default border to a `View` using the default semantic tokens from the current theme.
+/// Uses `theme.borders.styleDefault`, `theme.borders.widthDefault`, `theme.borders.radiusDefault`
+/// and `theme.colors.borderDefault`.
+private struct BorderDefaultModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        content.border(
+            style: theme.borders.styleDefault,
+            width: theme.borders.widthDefault,
+            radius: theme.borders.radiusDefault,
+            color: theme.colors.borderDefault)
     }
 }
