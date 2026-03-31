@@ -72,21 +72,22 @@ public struct OUDSHorizontalDivider: View {
     // MARK: - Body
 
     public var body: some View {
-        Divider().horizontal(color: .default)
+        Divider().horizontal(color: color)
     }
 }
 
 extension Divider {
+
     /// Set the color to the horizontal divider and adjust the thickness (height)
     /// automatically according to token value.
     ///
     /// ```swift
     /// VStack {
-    ///     Text("Hello wolrd!")
+    ///     Text("Bazinga!")
     ///
     ///     Divider().horizontal(color: .brandPrimary)
     ///
-    ///     Text("Happy to see you")
+    ///     Text("Yowza!")
     /// }
     /// ```
     ///
@@ -103,12 +104,12 @@ extension Divider {
     ///
     /// ```swift
     /// VStack {
-    ///     Text("Hello wolrd!")
+    ///     Text("Bazinga!")
     ///
     ///     Divider()
     ///        .oudsHorizontalDivider(dividerColor: .brandPrimary)
     ///
-    ///     Text("Happy to see you")
+    ///     Text("Yowza!")
     /// }
     /// ```
     ///

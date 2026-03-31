@@ -40,8 +40,8 @@ The old methods still compile with a deprecation warning.
 | `.oudsGridMargin(_:)`                        | `.gridMargin(_:)`                    |
 | `.oudsRequestAccessibleFocus(_:)`            | `.requestAccessibleFocus(_:)`        |
 | `.oudsRequestAccessibleFocus(_:for:)`        | `.requestAccessibleFocus(_:for:)`    |
-| `.oudsHorizontalDivider(dividerColor:)`      | `.horizontalDivider(dividerColor:)`  |
-| `.oudsVerticalDivider(color:)`               | `.verticalDivider(color:)`           |
+| `.oudsHorizontalDivider(dividerColor:)`      | `.horizontal(color:)`                |
+| `.oudsVerticalDivider(color:)`               | `.vertical(color:)`                  |
 
 **Before (v1.3.x)**:
 ```swift

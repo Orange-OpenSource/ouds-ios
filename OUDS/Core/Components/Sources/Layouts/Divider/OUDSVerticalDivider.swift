@@ -79,16 +79,17 @@ public struct OUDSVerticalDivider: View {
 }
 
 extension Divider {
+
     /// Set the color to the vertical divider and adjust the thickness (width)
     /// automatically according to token value.
     ///
     /// ```swift
     /// HStack {
-    ///     Text("Hello wolrd!")
+    ///     Text("Bazinga!")
     ///
     ///     Divider().vertical(color: .brandPrimary)
     ///
-    ///     Text("Happy to see you")
+    ///     Text("Yowza!")
     /// }
     /// ```
     ///
@@ -105,11 +106,11 @@ extension Divider {
     ///
     /// ```swift
     /// HStack {
-    ///     Text("Hello wolrd!")
+    ///     Text("Bazinga!")
     ///
     ///     Divider().oudsVerticalDivider(color: .brandPrimary)
     ///
-    ///     Text("Happy to see you")
+    ///     Text("Yowza!")
     /// }
     /// ```
     ///
