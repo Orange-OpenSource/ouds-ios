@@ -35,17 +35,6 @@ import SwiftUI
 /// An helper text can be used to support text to convey additional information about the input field, such as how it will be used.
 /// It should ideally only take up a single line, though may wrap to multiple lines if required, and be either persistently visible or visible only on focus.
 ///
-/// ## Technical condiderations
-///
-/// For some cases, on phones screens or with 8 boxes in iPhone, you may need to use a `ScrollView` to embed the component and let user move it.
-/// ```swift
-/// ScrollView(.horizontal) {
-///     OUDSPinCodeInput($value,
-///                      length: .eight,
-///                      helperText: "Enter your secret code sent to your phone"".helperText")
-/// }
-/// ```
-///
 /// ## Error status
 ///
 /// The Error status indicates that the user input does not meet validation rules or expected formatting.
@@ -63,7 +52,26 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// TODO: #998 - Add section
+/// The ``OUDSPinCodeInput`` component supports autofill feature of values like OTP code.
+/// For example if the user receives a message with inside a code the system can extract, the keyboard can suggest to the user to fill it.
+/// If the digits fits the component, it will be filled.
+/// If the digits are longer, they will be truncated.
+/// If the digits are shorter, they will be filled, letting other fields empty.
+///
+/// The copy/paste feature is also available and has the same behavior.
+///
+/// ## Technical condiderations
+///
+/// For some cases, on phones screens or with 8 boxes in iPhone, you may need to use a `ScrollView` to embed the component and let user move it.
+/// ```swift
+/// ScrollView(.horizontal) {
+///     OUDSPinCodeInput($value,
+///                      length: .eight,
+///                      helperText: "Enter your secret code sent to your phone"".helperText")
+/// }
+/// ```
+///
+/// **Note also the exposed *value* `Binding` will be updated when all digits are written.**
 ///
 /// ## Accessibility considerations
 ///
@@ -71,7 +79,19 @@ import SwiftUI
 ///
 /// ## Code samples
 ///
-/// TODO: #998 - Add section
+/// ```swift
+///     // The value with the code
+///     @State private var pinCode: String = ""
+///
+///     // By default, the PIN code input displays only 6 boxes
+///     OUDSPinCodeInput($pinCode)
+///
+///     // It can have also up 4 or 8 boxes, with an helper text
+///     OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+///
+///     // The component can be used in error contexts
+///     OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+/// ```
 ///
 /// ## Design documentation
 ///
