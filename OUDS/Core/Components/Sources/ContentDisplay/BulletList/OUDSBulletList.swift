@@ -128,7 +128,7 @@ import SwiftUI
 ///
 /// ![A bullet list component in light and dark modes with Orange theme](component_bullet_list_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
 /// ![A bullet list component in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
 ///

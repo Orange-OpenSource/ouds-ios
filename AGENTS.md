@@ -473,6 +473,42 @@ var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 OUDSChipPicker(title: "Some text", selection: $selection, chips: someDataToPopulate)
 ```
 
+##### Password input
+
+Password input component is based on OUDS text input component and let user provides apssword in a secure text field.
+
+ ```swift
+// The password to display and edit
+@State var password: String = ""
+
+// A basic password input with label
+OUDSPasswordInput(label: "Password", password: $password)
+
+// Add a leading icon and helper text to more context
+OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+
+// Password with prefix
+OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+```
+
+##### Pin Code Input
+
+Pin code input component let users define a PIN code or OTP code, picked from clipboard or suggested by keyboard, or not.
+
+```swift
+// The value with the code
+@State private var pinCode: String = ""
+
+// By default, the PIN code input displays only 6 boxes
+OUDSPinCodeInput($pinCode)
+
+// It can have also up 4 or 8 boxes, with an helper text
+OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+    
+/ The component can be used in error contexts
+OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+```
+ 
 ##### Text input
 
 Text input is a component with a text field, labels, helpers and optional buttons to let user write text data and be helped if needed. 

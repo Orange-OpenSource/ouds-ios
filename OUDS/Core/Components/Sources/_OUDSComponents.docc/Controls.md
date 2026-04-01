@@ -503,7 +503,7 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     @Tab("Orange") {
         ![A password input component in light and dark modes with Orange theme](component_passwordInput_Orange)
     }
-    @Tab("Orange Business Tools") {
+    @Tab("Orange Compact") {
         ![A password input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
     }
     @Tab("Sosh") {
@@ -529,6 +529,39 @@ The library provides a password input based on a ``OUDSTextInput`` to let user p
      // Password with prefix
      OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
  ```
+
+### Pin Code Input
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A Pin Code input component in light and dark modes with Orange theme](component_pinCodeInput_Wireframe)
+    }
+}
+
+The library provides a Pin Code input to let user provides PIN code or OTP code with only digits.
+
+```swift
+// The value with the code
+@State private var pinCode: String = ""
+
+// By default, the PIN code input displays only 6 boxes
+OUDSPinCodeInput($pinCode)
+
+// It can have also up 4 or 8 boxes, with an helper text
+OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+    
+/ The component can be used in error contexts
+OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+```
 
 ### Text input
 

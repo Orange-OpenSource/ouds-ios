@@ -165,10 +165,11 @@ public struct OUDSPinCodeInput: View {
     /// Defines a PIN code imput component with several boxes to fill the code
     ///
     /// - Parameters:
-    ///   - length: The number of required symbols for the input, default set to *six*
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
+    ///   - length: The number of required symbols for the input, default set to *six*
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
+    ///   - status: Default set to *.enabled*, defines if there is an error context or not
     ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
@@ -184,6 +185,37 @@ public struct OUDSPinCodeInput: View {
         self.status = status
         self.autofocus = autofocus
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Defines a PIN code imput component with several boxes to fill the code
+    ///
+    /// - Parameters:
+    ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
+    ///   - length: The number of required symbols for the input, default set to *six*
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
+    ///   - status: Default set to *.enabled*, defines if there is an error context or not
+    ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
+    public init(_ value: Binding<String>,
+                length: OUDSPinCodeInput.Length = .six,
+                helperText key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOutlined: Bool = false,
+                status: Self.Status = .enabled,
+                autofocus: Bool = false)
+    {
+        _value = value
+        self.length = length
+        helperText = key.resolved(tableName: tableName, bundle: bundle)
+        self.isOutlined = isOutlined
+        self.status = status
+        self.autofocus = autofocus
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 
