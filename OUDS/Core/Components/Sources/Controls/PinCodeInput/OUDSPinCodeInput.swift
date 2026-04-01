@@ -114,6 +114,19 @@ public struct OUDSPinCodeInput: View {
         case eight = 8
     }
 
+    // MARK: - Status
+
+    /// Define all available status for the PIN code input
+    /// - Since: 1.4.0
+    public enum Status: Equatable {
+        /// The `enabled` status (default)
+        case enabled
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides a clear accessible error `message` positioned below the input.
+        case error(message: String)
+    }
+
     // MARK: - Initializers
 
     /// Defines a PIN code imput component with several boxes to fill the code
@@ -128,7 +141,8 @@ public struct OUDSPinCodeInput: View {
                 length: OUDSPinCodeInput.Length = .six,
                 helperText: String? = nil,
                 isError: Bool = false,
-                isOutlined: Bool = false)
+                isOutlined: Bool = false,
+                status: Self.Status = .enabled)
     {
         _value = value
         self.length = length
@@ -139,18 +153,33 @@ public struct OUDSPinCodeInput: View {
 
     // MARK: Body
 
+    /*
+     public var body: some View {
+         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+             PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
+
+             if (helperText?.isEmpty ?? false) || !isError {
+                 PinCodeHelperErrorTextContainer(text: helperText!, isError: isError)
+             }
+         }
+         .frame(minWidth: theme.pinCodeInput.sizeMinWidth,
+                maxWidth: theme.pinCodeInput.sizeMaxWidth,
+                minHeight: theme.textInput.sizeMinHeight,
+                alignment: .leading)
+     }
+     */
+
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-            PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
+            VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
+                PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
 
-            if helperText != nil || !isError {
-                PinCodeHelperErrorTextContainer(helperText: helperText, isError: isError)
-                    .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+                if (helperText?.isEmpty ?? false) || !isError {
+                    PinCodeHelperErrorTextContainer(text: helperText!, isError: isError)
+                }
             }
         }
-        .frame(minWidth: theme.pinCodeInput.sizeMinWidth,
-               maxWidth: theme.pinCodeInput.sizeMaxWidth,
-               minHeight: theme.textInput.sizeMinHeight,
+        .frame(minHeight: theme.textInput.sizeMinHeight,
                alignment: .leading)
     }
 }

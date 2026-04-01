@@ -89,7 +89,7 @@ struct PinCodeInputContainer: View {
                         minWidth: theme.pinCodeInput.sizeMinWidth,
                         maxWidth: theme.pinCodeInput.sizeMaxWidth,
                         minHeight: theme.textInput.sizeMinHeight,
-                        maxHeight: theme.textInput.sizeMinHeight)
+                        maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but nor in specs of #998, otherwise no limits
                     .background(
                         RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault)
                             .fill(backgroundColor(focused: focusedIndex == index)))

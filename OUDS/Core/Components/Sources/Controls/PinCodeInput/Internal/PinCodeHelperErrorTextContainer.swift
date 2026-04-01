@@ -11,12 +11,31 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSTokensSemantic
 import SwiftUI
 
 struct PinCodeHelperErrorTextContainer: View {
 
-    let helperText: String?
+    let text: String
     let isError: Bool
 
-    var body: some View {}
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        if !text.isEmpty {
+            Text(text)
+                .labelDefaultMedium(theme)
+                .oudsForegroundColor(color)
+                .multilineTextAlignment(.leading)
+                .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
+        }
+    }
+
+    private var color: MultipleColorSemanticToken {
+        if isError {
+            theme.colors.contentStatusNegative
+        } else {
+            theme.colors.contentMuted
+        }
+    }
 }
