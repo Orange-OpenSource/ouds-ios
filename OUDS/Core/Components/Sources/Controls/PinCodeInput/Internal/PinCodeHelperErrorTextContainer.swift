@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if !os(macOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -49,3 +50,4 @@ struct PinCodeHelperErrorTextContainer: View {
         }
     }
 }
+#endif

@@ -143,6 +143,7 @@ struct TypographyModifier: ViewModifier {
 
     // MARK: - UIKit util
 
+    #if !os(macOS)
     /// Génère une UIFont à partir des tokens sans dépendre de @Environment
     /// - Parameters:
     ///   - family: La famille de police personnalisée (optionnelle)
@@ -173,6 +174,7 @@ struct TypographyModifier: ViewModifier {
 
         return UIFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
     }
+    #endif
 
     // MARK: - On Change Size Category Modifier
 
