@@ -206,6 +206,9 @@ struct PinCodeInputContainer: View {
             index: index,
             onBackspace: {
                 handleBackspace(at: index)
+            },
+            onTextInserted: { inserted in // ← nouveau
+                handleTextInserted(inserted, at: index)
             })
             .oudsForegroundColor(theme.colors.contentDefault)
             .oudsAccentColor(theme.colors.contentDefault)
@@ -232,40 +235,59 @@ struct PinCodeInputContainer: View {
     }
 
     /// To handle the written data:
-    /// 1. Filters the input to only allow single digits (0-9)
-    /// 2. Moves focus to the next field when a digit is entered
-    /// 3. Updates the final value binding when all fields are filled
+    /// 1. Filters the input to only allow digits (0-9)
+    /// 2. If more than one digit is received (e.g. autofill), distributes them across fields
+    /// 3. Moves focus to the next field when a single digit is entered
+    /// 4. Updates the final value binding when all fields are filled
     ///
     /// - Parameters:
     ///    - index: The index of the field
     ///    - newValue: The new value written in the field
-    private func handleDigitChange(at index: Int, newValue: String) {
-        // Filter to only allow numeric characters and take only the first one
-        let filtered = String(newValue.filter(\.isNumber).prefix(1))
+    private func handleDigitChange(at index: Int, newValue: String) { //  \("˚☐˚)/ ⊹₊⟡⋆
+        let filtered = newValue.filter(\.isNumber)
 
-        // If filtering changed the value, update and return
-        if filtered != newValue {
-            digits[index] = filtered
+        // Autofill / paste case: more than one digit received
+        if filtered.count > 1 {
+            let available = length.rawValue - index
+            let toDistribute = filtered.prefix(available)
+
+            for (offset, char) in toDistribute.enumerated() {
+                digits[index + offset] = String(char)
+            }
+
+            let joined = digits.joined()
+            if joined.count == length.rawValue, !digits.contains("") {
+                value = joined
+                focusedIndex = nil
+            } else {
+                value = ""
+                // Focus the field right after the last filled one, if any
+                let nextIndex = index + toDistribute.count
+                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            }
             return
         }
 
-        // If a valid single digit was entered
-        if filtered.count == 1 {
-            digits[index] = filtered
+        // Normal typing: single digit
+        let single = String(filtered.prefix(1))
+
+        // If filtering changed the value, update and return (triggers onChange again)
+        if single != newValue {
+            digits[index] = single
+            return
+        }
+
+        if single.count == 1 {
+            digits[index] = single
 
             let joined = digits.joined()
-            // If all digits fields
-            if joined.count == length.rawValue {
-                // All fields filled, update the final value binding
+            if joined.count == length.rawValue, !digits.contains("") {
                 value = joined
-                // Remove focus from all fields
                 focusedIndex = nil
-                // Move to next field if not on the last one
             } else if index < length.rawValue - 1 {
                 focusedIndex = index + 1
-                value = "" // Clear the final value until all fields are filled
+                value = ""
             } else {
-                // Incomplete PIN code
                 value = ""
             }
         }
@@ -302,6 +324,37 @@ struct PinCodeInputContainer: View {
                 value = ""
                 focusedIndex = index
             }
+        }
+    }
+
+    /// Gère toute insertion de texte : un seul chiffre (frappe normale)
+    /// ou plusieurs chiffres (autofill, suggestion clavier, coller).
+    ///
+    /// - Parameters:
+    ///   - text: La chaîne de chiffres insérée (déjà filtrée, uniquement des chiffres)
+    ///   - index: L'index du champ qui a reçu l'insertion
+    private func handleTextInserted(_ text: String, at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
+        print("✅ handleTextInserted: '\(text)' at index \(index)")
+        let available = length.rawValue - index
+        let toDistribute = text.prefix(available)
+        print("✅ distributing '\(toDistribute)' across \(toDistribute.count) fields from index \(index)")
+
+        for (offset, char) in toDistribute.enumerated() {
+            print("✅ digits[\(index + offset)] = '\(char)'")
+            digits[index + offset] = String(char)
+        }
+
+        let joined = digits.joined()
+        let allFilled = joined.count == length.rawValue && !digits.contains("")
+        print("✅ joined: '\(joined)' | allFilled: \(allFilled)")
+
+        if allFilled {
+            value = joined
+            focusedIndex = nil
+        } else {
+            value = ""
+            let nextIndex = index + toDistribute.count
+            focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
         }
     }
 }

@@ -15,14 +15,14 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// \(”˚☐˚)/ ⊹₊⟡⋆
+// \("˚☐˚)/ ⊹₊⟡⋆
 
 // MARK: - Backspace Detecting Text Field
 
-/// A SwiftUI wrapper around UITextField that can detect backspace key presses.
+/// A SwiftUI wrapper around `UITextField` that can detect backspace key presses.
 ///
-/// SwiftUI's native TextField doesn't provide a way to detect when the backspace key is pressed,
-/// so we use UIViewRepresentable to wrap a UITextField which can override deleteBackward().
+/// SwiftUI's native `TextField` doesn't provide a way to detect when the backspace key is pressed,
+/// so `UIViewRepresentable` is used to wrap a `UITextField` which can override `deleteBackward()`.
 ///
 /// Architecture:
 /// - BackspaceDetectingTextField (UIViewRepresentable): SwiftUI ↔ UIKit bridge
@@ -35,24 +35,24 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
     let font: UIFont
     let index: Int
     let onBackspace: () -> Void
+    let onTextInserted: (String) -> Void
 
-    /// Creates the UITextField instance
+    /// Creates the UITextField instance.
     ///
-    /// - Parameter context: The context containing the coordinator
-    /// - Returns: A configured BackspaceTextField instance
+    /// - Parameter context: The context containing the coordinator.
+    /// - Returns: A configured BackspaceTextField instance.
     func makeUIView(context: Context) -> BackspaceTextField {
         let textField = BackspaceTextField()
+
         textField.delegate = context.coordinator
         textField.keyboardType = .numberPad
         textField.textAlignment = .center
-
-        // Store the callback in the text field so it can call it when backspace is pressed
+        textField.onTextInserted = onTextInserted
         textField.onBackspace = onBackspace
         textField.fieldIndex = index
-
         textField.font = font
 
-        // Set low priorities to allow the frame modifier to control the size
+        // Set low priorities to allow the SwiftUI frame modifier to control the size
         textField.setContentHuggingPriority(.defaultLow, for: .vertical)
         textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
         textField.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -61,30 +61,34 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         return textField
     }
 
-    /// Updates the UITextField when the SwiftUI state changes
+    /// Updates the `UITextField` when the SwiftUI state changes.
     ///
     /// - Parameters:
-    ///   - uiView: The UITextField to update
-    ///   - context: The context containing the coordinator
+    ///   - uiView: The UITextField to update.
+    ///   - context: The context containing the coordinator.
     func updateUIView(_ uiView: BackspaceTextField, context: Context) {
-        // Update the text field's callback (in case the closure captured values changed)
+        // Always refresh callbacks in case the closures captured new values after a SwiftUI re-render
         uiView.onBackspace = onBackspace
+        uiView.onTextInserted = onTextInserted
 
-        // Only update the text if it's different to avoid unnecessary updates
+        // Only update the displayed text if it actually changed, to avoid unnecessary UIKit updates
         if uiView.text != displayText {
             uiView.text = displayText
         }
     }
 
-    /// Creates the coordinator that acts as the UITextFieldDelegate
+    /// Creates the coordinator that acts as the `UITextFieldDelegate`.
     ///
-    /// - Returns: A new Coordinator instance
+    /// - Returns: A new `Coordinator` instance.
     func makeCoordinator() -> Coordinator {
         Coordinator(text: $text, index: index)
     }
 
-    /// Coordinator that implements UITextFieldDelegate to handle text field events
+    // MARK: - Coordinator
+
+    /// Coordinator that implements `UITextFieldDelegate` to handle text field events.
     final class Coordinator: NSObject, UITextFieldDelegate {
+
         @Binding var text: String
         let index: Int
 
@@ -95,35 +99,38 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
 
         deinit {}
 
-        /// Called when the text field's text is about to change
+        /// Called when the text field's text is about to change.
+        ///
+        /// Instead of handling the text directly, digits are accumulated in the text field
+        /// and dispatched after a short delay. This allows autofill to be detected:
+        /// iOS sends digits one by one in rapid succession via this delegate method,
+        /// and the accumulator groups them into a single callback.
+        ///
         /// - Parameters:
-        ///   - textField: The text field
-        ///   - range: The range of characters to be replaced
-        ///   - string: The replacement string (empty for backspace)
-        /// - Returns: true to allow the change, false to reject it
-        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            // Detect backspace/deletion (empty string replacement)
+        ///   - textField: The text field whose text is changing.
+        ///   - range: The range of characters to be replaced.
+        ///   - string: The replacement string (empty string means backspace).
+        /// - Returns: Always returns false to prevent direct text display; display is controlled via `displayText` through `updateUIView`.
+        func textField(_ textField: UITextField,
+                       shouldChangeCharactersIn range: NSRange,
+                       replacementString string: String) -> Bool
+        {
+
+            guard let field = textField as? BackspaceTextField else { return false }
+
+            // Backspace: let the system handle deletion, deleteBackward() will fire the callback
             if string.isEmpty {
-                // IMPORTANT: DO NOT update the text binding here!
-                // This prevents double onChange calls:
-                // 1. If we set text = "" here, it triggers onChange
-                // 2. Then handleBackspace also sets digits[index] = "", triggering onChange again
-                // Instead, we let handleBackspace be the single source of truth for backspace operations
                 return true
             }
 
-            // Filter to only allow numeric characters and take only the first one
-            let filtered = String(string.filter(\.isNumber).prefix(1))
+            // Filter non-numeric characters and accumulate the digit(s)
+            // The accumulator waits for a short silence before dispatching,
+            // which groups autofill digits sent in rapid succession into a single call
+            let digits = string.filter(\.isNumber)
+            guard !digits.isEmpty else { return false }
+            field.accumulate(digit: digits)
 
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                if !filtered.isEmpty {
-                    // Update the binding with the real digit
-                    text = filtered
-                }
-            }
-
-            // false: prevent direct display of text ; it will be updated with updateUIView using displayText
+            // Prevent direct display: text rendering is handled by updateUIView via displayText
             return false
         }
     }
@@ -131,57 +138,107 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
 
 // MARK: - Backspace Text Field
 
-/// Custom UITextField that can detect when the backspace key is pressed
+/// Custom `UITextField` that detects backspace key presses and accumulates digits for autofill support.
 ///
-/// UITextField provides a deleteBackward() method that is called when the user presses
-/// the backspace/delete key. We override this to trigger our custom callback.
+/// `UITextField` provides a `deleteBackward()` method called when the user presses the backspace key.
+/// We override it to trigger our custom callback.
+///
+/// Autofill handling:
+/// iOS sends autofill digits one by one via `shouldChangeCharactersIn` in rapid succession
+/// rather than as a single string. The accumulator collects these digits and dispatches them
+/// together after a short silence (50ms), allowing the parent to handle them as a complete code.
+@MainActor
 final class BackspaceTextField: UITextField {
 
-    /// Callback to execute when backspace is pressed
+    /// Callback triggered when the backspace key is pressed.
     var onBackspace: (() -> Void)?
-    /// The index of this field in the PIN code (used for debugging)
+
+    /// The index of this field in the PIN code sequence.
     var fieldIndex: Int = -1
 
-    deinit {}
+    /// Callback triggered when one or more digits have been inserted (manual typing or autofill).
+    var onTextInserted: ((String) -> Void)?
 
-    /// Called when the user presses the backspace/delete key
+    /// Buffer that accumulates digits arriving in rapid succession (e.g. during autofill).
+    private var accumulatedDigits: String = ""
+
+    /// Pending work item that fires after a short silence to dispatch accumulated digits.
+    /// Marked as `nonisolated(unsafe)` to allow access from the nonisolated `deinit`.
+    nonisolated(unsafe) private var accumulationWork: DispatchWorkItem?
+
+    /// Accumulates a digit and schedules a dispatch after 50ms of silence.
     ///
-    /// We call our custom callback before calling super to ensure our logic
-    /// runs before the system's default backspace handling.
-    override func deleteBackward() {
-        // Call the callback when backspace is pressed
-        // The callback (handleBackspace) will handle state updates on the main thread
-        onBackspace?()
+    /// Each call resets the timer, so rapid successive calls (autofill) result in a single dispatch,
+    /// while slow calls (manual typing) each dispatch individually.
+    ///
+    /// - Parameter digit: The digit string to accumulate.
+    func accumulate(digit: String) {
+        accumulatedDigits += digit
 
-        // Call super to allow the system to handle the deletion
-        // This ensures the UITextField's internal state is updated correctly
+        // Cancel any previously scheduled dispatch
+        accumulationWork?.cancel()
+
+        let work = DispatchWorkItem { [weak self] in
+            guard let self else { return }
+            let toSend = accumulatedDigits
+            accumulatedDigits = ""
+            onTextInserted?(toSend)
+        }
+
+        accumulationWork = work
+
+        // Wait 50ms after the last digit before dispatching
+        // This threshold is short enough to feel instant, but long enough to group autofill digits
+        // \("˚☐˚)/ ⊹₊⟡⋆
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: work)
+    }
+
+    deinit {
+        // Cancel any pending dispatch on deinit
+        // Captured in a local constant to avoid accessing a non-Sendable property from nonisolated deinit
+        let work = accumulationWork
+        DispatchQueue.main.async {
+            work?.cancel()
+        }
+    }
+
+    /// Intercepts text insertions from the system.
+    ///
+    /// In this implementation, text input is handled via `shouldChangeCharactersIn` and the
+    /// accumulator rather than `insertText`, so this override is intentionally left empty.
+    override func insertText(_ text: String) {
+        // Intentionally empty: digit input is handled via shouldChangeCharactersIn + accumulate(digit:)
+    }
+
+    /// Called when the user presses the backspace/delete key.
+    ///
+    /// Clears any accumulated digits to avoid stale state, then triggers the backspace callback
+    /// before letting the system handle the deletion.
+    override func deleteBackward() {
+        // Discard any buffered digits that haven't been dispatched yet
+        accumulationWork?.cancel()
+        accumulatedDigits = ""
+
+        // Notify the parent before the system processes the deletion
+        onBackspace?()
         super.deleteBackward()
     }
 
-    /// Override `intrinsicContentSize` to return zero
-    ///
-    /// This is a trick to prevent the UITextField` from applying its own size constraints.
-    /// Instead, we let the SwiftUI frame modifier control the size.
+    /// Returns zero size to let the SwiftUI frame modifier fully control the layout.
     override var intrinsicContentSize: CGSize {
         CGSize(width: 0, height: 0)
     }
 
-    /// To put the cursor in the field after any symbol
+    /// Positions the cursor at the end of the text when the field becomes focused.
     override func becomeFirstResponder() -> Bool {
         let result = super.becomeFirstResponder()
-
         if result {
             DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-
-                // Positionner le curseur à la fin du texte
-                if let text, !text.isEmpty {
-                    let endPosition = endOfDocument
-                    selectedTextRange = textRange(from: endPosition, to: endPosition)
-                }
+                guard let self, let text, !text.isEmpty else { return }
+                let end = endOfDocument
+                selectedTextRange = textRange(from: end, to: end)
             }
         }
-
         return result
     }
 }
