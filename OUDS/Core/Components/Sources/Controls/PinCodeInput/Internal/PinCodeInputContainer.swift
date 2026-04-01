@@ -92,7 +92,7 @@ struct PinCodeInputContainer: View {
                         maxHeight: theme.textInput.sizeMinHeight)
                     .background(
                         RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault)
-                            .fill(backgroundColor))
+                            .fill(backgroundColor(focused: focusedIndex == index)))
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
                     .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
@@ -128,21 +128,23 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    private var backgroundColor: Color {
-        if isOutlined {
-            .clear
-        } else if isError {
-            theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
-        } else { // Not oulined, no error
-            theme.colors.actionSupportEnabled.color(for: colorScheme)
-        }
-    }
-
     private var borderColor: MultipleColorSemanticToken {
         if isError {
             theme.colors.actionNegativeEnabled
         } else { // Same color of border for both outlined and not outlined layouts
             theme.textInput.colorBorderEnabled
+        }
+    }
+
+    private func backgroundColor(focused: Bool) -> Color {
+        if isOutlined {
+            .clear
+        } else if isError {
+            theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
+        } else if focused {
+            theme.colors.actionSupportPressed.color(for: colorScheme)
+        } else { // Not oulined, no error
+            theme.colors.actionSupportEnabled.color(for: colorScheme)
         }
     }
 
@@ -172,7 +174,7 @@ struct PinCodeInputContainer: View {
         // are retrieved in the suitable thread at the best moment
         let uiFont = TypographyModifier.makeUIFont(
             family: nil,
-            from: theme.fonts.bodyDefaultMedium,
+            from: theme.fonts.labelDefaultLarge,
             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
         return BackspaceDetectingTextField(
             text: $digits[index],
