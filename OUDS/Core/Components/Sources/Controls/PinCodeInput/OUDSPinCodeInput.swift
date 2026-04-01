@@ -35,6 +35,17 @@ import SwiftUI
 /// An helper text can be used to support text to convey additional information about the input field, such as how it will be used.
 /// It should ideally only take up a single line, though may wrap to multiple lines if required, and be either persistently visible or visible only on focus.
 ///
+/// ## Technical condiderations
+///
+/// For some cases, on phones screens or with 8 boxes in iPhone, you may need to use a `ScrollView` to embed the component and let user move it.
+/// ```swift
+/// ScrollView(.horizontal) {
+///     OUDSPinCodeInput($value,
+///                      length: .eight,
+///                      helperText: "Enter your secret code sent to your phone"".helperText")
+/// }
+/// ```
+///
 /// ## Error status
 ///
 /// The Error status indicates that the user input does not meet validation rules or expected formatting.
@@ -125,6 +136,7 @@ public struct OUDSPinCodeInput: View {
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
         /// It provides a clear accessible error `message` positioned below the input.
+        /// This message must not be empty.
         case error(message: String)
     }
 

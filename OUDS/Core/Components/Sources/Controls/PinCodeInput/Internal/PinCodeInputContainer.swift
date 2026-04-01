@@ -101,7 +101,6 @@ struct PinCodeInputContainer: View {
 
     // MARK: - Body
 
-    // swiftlint:disable accessibility_trait_for_button
     var body: some View {
         HStack(spacing: theme.pinCodeInput.spaceColumnGapDigitInput) {
             ForEach(0 ..< length.rawValue, id: \.self) { index in
@@ -117,14 +116,6 @@ struct PinCodeInputContainer: View {
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
                     .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
-                    .onTapGesture {
-                        // Focus on the first empty field or the last one
-                        if let firstEmpty = digits.firstIndex(where: { $0.isEmpty }) {
-                            focusedIndex = firstEmpty
-                        } else {
-                            focusedIndex = length.rawValue - 1
-                        }
-                    }
             }
         }
         .onAppear {
@@ -143,8 +134,6 @@ struct PinCodeInputContainer: View {
             }
         }
     }
-
-    // swiftlint:enable accessibility_trait_for_button
 
     // MARK: - Colors
 
@@ -260,22 +249,20 @@ struct PinCodeInputContainer: View {
         if filtered.count == 1 {
             digits[index] = filtered
 
-            // Move to next field if not on the last one
-            if index < length.rawValue - 1 {
+            let joined = digits.joined()
+            // If all digits fields
+            if joined.count == length.rawValue {
+                // All fields filled, update the final value binding
+                value = joined
+                // Remove focus from all fields
+                focusedIndex = nil
+                // Move to next field if not on the last one
+            } else if index < length.rawValue - 1 {
                 focusedIndex = index + 1
                 value = "" // Clear the final value until all fields are filled
             } else {
-                // Last field filled, check if we have a complete PIN code
-                let joined = digits.joined()
-                if joined.count == length.rawValue {
-                    // All fields filled, update the final value binding
-                    value = joined
-                    // Remove focus from all fields
-                    focusedIndex = nil
-                } else {
-                    // Incomplete PIN code
-                    value = ""
-                }
+                // Incomplete PIN code
+                value = ""
             }
         }
     }
