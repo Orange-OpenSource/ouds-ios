@@ -116,6 +116,7 @@ struct PinCodeInputContainer: View {
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
                     .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
+                    .accessibilityValue(accessibilityValue(for: index))
             }
         }
         .onAppear {
@@ -168,6 +169,15 @@ struct PinCodeInputContainer: View {
             theme.colors.actionSupportPressed.color(for: colorScheme)
         } else { // Not outlined, no error
             theme.colors.actionSupportEnabled.color(for: colorScheme)
+        }
+    }
+
+    private func accessibilityValue(for index: Int) -> String {
+        let value = digits[index]
+        if value.isEmpty {
+            return "core_pinCodeInput_empty_a11y".localized()
+        } else {
+            return value
         }
     }
 
@@ -334,19 +344,15 @@ struct PinCodeInputContainer: View {
     ///   - text: La chaîne de chiffres insérée (déjà filtrée, uniquement des chiffres)
     ///   - index: L'index du champ qui a reçu l'insertion
     private func handleTextInserted(_ text: String, at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
-        print("✅ handleTextInserted: '\(text)' at index \(index)")
         let available = length.rawValue - index
         let toDistribute = text.prefix(available)
-        print("✅ distributing '\(toDistribute)' across \(toDistribute.count) fields from index \(index)")
 
         for (offset, char) in toDistribute.enumerated() {
-            print("✅ digits[\(index + offset)] = '\(char)'")
             digits[index + offset] = String(char)
         }
 
         let joined = digits.joined()
         let allFilled = joined.count == length.rawValue && !digits.contains("")
-        print("✅ joined: '\(joined)' | allFilled: \(allFilled)")
 
         if allFilled {
             value = joined
