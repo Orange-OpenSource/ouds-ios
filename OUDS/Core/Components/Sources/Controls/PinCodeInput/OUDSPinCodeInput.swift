@@ -96,6 +96,7 @@ public struct OUDSPinCodeInput: View {
     private let helperText: String?
     private let isError: Bool
     private let isOutlined: Bool
+    private let status: Self.Status
 
     @Environment(\.theme) private var theme
 
@@ -149,34 +150,17 @@ public struct OUDSPinCodeInput: View {
         self.helperText = helperText
         self.isError = isError
         self.isOutlined = isOutlined
+        self.status = status
     }
 
     // MARK: Body
-
-    /*
-     public var body: some View {
-         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-             PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
-
-             if (helperText?.isEmpty ?? false) || !isError {
-                 PinCodeHelperErrorTextContainer(text: helperText!, isError: isError)
-             }
-         }
-         .frame(minWidth: theme.pinCodeInput.sizeMinWidth,
-                maxWidth: theme.pinCodeInput.sizeMaxWidth,
-                minHeight: theme.textInput.sizeMinHeight,
-                alignment: .leading)
-     }
-     */
 
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
                 PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
 
-                if (helperText?.isEmpty ?? false) || !isError {
-                    PinCodeHelperErrorTextContainer(text: helperText!, isError: isError)
-                }
+                PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
             }
         }
         .frame(minHeight: theme.textInput.sizeMinHeight,

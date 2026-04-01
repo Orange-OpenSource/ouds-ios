@@ -16,8 +16,8 @@ import SwiftUI
 
 struct PinCodeHelperErrorTextContainer: View {
 
-    let text: String
-    let isError: Bool
+    let helperText: String?
+    let status: OUDSPinCodeInput.Status
 
     @Environment(\.theme) private var theme
 
@@ -32,10 +32,20 @@ struct PinCodeHelperErrorTextContainer: View {
     }
 
     private var color: MultipleColorSemanticToken {
-        if isError {
+        switch status {
+        case .error:
             theme.colors.contentStatusNegative
-        } else {
+        case .enabled:
             theme.colors.contentMuted
+        }
+    }
+
+    private var text: String {
+        switch status {
+        case let .error(message):
+            message
+        case .enabled:
+            helperText ?? ""
         }
     }
 }
