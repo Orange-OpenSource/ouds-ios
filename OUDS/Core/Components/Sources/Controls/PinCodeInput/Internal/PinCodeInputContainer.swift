@@ -106,12 +106,6 @@ struct PinCodeInputContainer: View {
                     }
             }
         }
-        .onAppear {
-            // When appeared, focus on the first field
-            DispatchQueue.main.async {
-                focusedIndex = 0
-            }
-        }
     }
 
     // swiftlint:enable accessibility_trait_for_button
@@ -189,7 +183,6 @@ struct PinCodeInputContainer: View {
             .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
-            .accessibilityLabel("Digit \(index + 1)") // TODO: #998 - Change it
         #if os(visionOS)
             .onChange(of: digits[index]) { _, newValue in
                 // IMPORTANT: Skip onChange if this is triggered by a recent backspace operation

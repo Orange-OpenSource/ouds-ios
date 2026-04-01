@@ -94,7 +94,6 @@ public struct OUDSPinCodeInput: View {
     @Binding private var value: String
     private let length: Length
     private let helperText: String?
-    private let isError: Bool
     private let isOutlined: Bool
     private let status: Self.Status
 
@@ -136,19 +135,16 @@ public struct OUDSPinCodeInput: View {
     ///   - length: The number of required symbols for the input, default set to *six*
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
-    ///   - isError: If the component is in an error context (default set to *false*)
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
                 helperText: String? = nil,
-                isError: Bool = false,
                 isOutlined: Bool = false,
                 status: Self.Status = .enabled)
     {
         _value = value
         self.length = length
         self.helperText = helperText
-        self.isError = isError
         self.isOutlined = isOutlined
         self.status = status
     }
@@ -158,7 +154,7 @@ public struct OUDSPinCodeInput: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                PinCodeInputContainer(_value, length: length, isError: isError, isOutlined: isOutlined)
+                PinCodeInputContainer(_value, length: length, isError: status != .enabled, isOutlined: isOutlined)
 
                 PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
             }
