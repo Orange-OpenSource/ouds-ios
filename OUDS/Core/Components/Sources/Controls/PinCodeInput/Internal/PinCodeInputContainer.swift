@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(macOS)
+#if !os(watchOS) && !os(macOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
@@ -210,8 +210,8 @@ struct PinCodeInputContainer: View {
             onTextInserted: { inserted in // ← nouveau
                 handleTextInserted(inserted, at: index)
             })
-            .oudsForegroundColor(theme.colors.contentDefault)
-            .oudsAccentColor(theme.colors.contentDefault)
+            .foregroundColor(theme.colors.contentDefault)
+            .accentColor(theme.colors.contentDefault)
             .focused($focusedIndex, equals: index)
             .padding(.vertical, theme.textInput.spacePaddingBlockDefault)
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)

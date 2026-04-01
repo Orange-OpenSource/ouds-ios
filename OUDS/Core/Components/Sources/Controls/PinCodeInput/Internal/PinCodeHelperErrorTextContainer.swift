@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(macOS)
+#if !os(macOS) && !os(watchOS) && !os(tvOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -26,7 +26,7 @@ struct PinCodeHelperErrorTextContainer: View {
         if !text.isEmpty {
             Text(text)
                 .labelDefaultMedium(theme)
-                .oudsForegroundColor(color)
+                .foregroundColor(color)
                 .multilineTextAlignment(.leading)
                 .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
         }

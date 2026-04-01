@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(macOS)
+#if !os(watchOS) && !os(macOS) && !os(tvOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -30,15 +30,15 @@ struct PinCodeInputBorderModifier: ViewModifier {
                 .overlay(
                     Rectangle()
                         .frame(height: borderWidth)
-                        .oudsForegroundColor(borderColor),
+                        .foregroundColor(borderColor),
                     alignment: .bottom)
                 .cornerRadius(borderRadius)
         } else {
             content
-                .oudsBorder(style: theme.borders.styleDefault,
-                            width: borderWidth,
-                            radius: borderRadius,
-                            color: borderColor)
+                .border(style: theme.borders.styleDefault,
+                        width: borderWidth,
+                        radius: borderRadius,
+                        color: borderColor)
         }
     }
 
