@@ -24,6 +24,7 @@ struct OUDSThemeTuningTests {
     func defaultThemeTuningRoundedCorners() {
         #expect(Tuning.default.hasRoundedButtons == false)
         #expect(Tuning.default.hasRoundedTextInputs == false)
+        #expect(Tuning.default.hasRoundedPinCodeInputs == false)
         #expect(Tuning.default.hasRoundedAlertMessages == false)
     }
 
@@ -33,6 +34,7 @@ struct OUDSThemeTuningTests {
     func orangeFranceThemeTuning() {
         #expect(Tuning.OrangeFrance.hasRoundedButtons == false)
         #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
+        #expect(Tuning.default.hasRoundedPinCodeInputs == false)
         #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
     }
 
@@ -47,6 +49,7 @@ struct OUDSThemeTuningTests {
     func orangeBusinessThemeTuning() {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedPinCodeInputs == true)
         #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == true)
     }
 
@@ -56,6 +59,7 @@ struct OUDSThemeTuningTests {
     func maxItThemeTuning() {
         #expect(Tuning.MaxIt.hasRoundedButtons == true)
         #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
+        #expect(Tuning.MaxIt.hasRoundedPinCodeInputs == true)
         #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
     }
 }

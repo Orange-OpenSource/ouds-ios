@@ -111,7 +111,7 @@ struct PinCodeInputContainer: View {
                         minHeight: theme.textInput.sizeMinHeight,
                         maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but nor in specs of #998, otherwise no limits
                     .background(
-                        RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault)
+                        RoundedRectangle(cornerRadius: borderRadius)
                             .fill(backgroundColor(focused: focusedIndex == index)))
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
@@ -153,6 +153,10 @@ struct PinCodeInputContainer: View {
         } else { // Same color of border for both outlined and not outlined layouts
             theme.textInput.colorBorderEnabled
         }
+    }
+
+    private var borderRadius: BorderRadiusSemanticToken {
+        theme.tuning.hasRoundedPinCodeInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private func backgroundColor(focused: Bool) -> Color {

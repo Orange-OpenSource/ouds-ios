@@ -32,11 +32,12 @@ struct PinCodeInputBorderModifier: ViewModifier {
                         .frame(height: borderWidth)
                         .oudsForegroundColor(borderColor),
                     alignment: .bottom)
+                .cornerRadius(borderRadius)
         } else {
             content
                 .oudsBorder(style: theme.borders.styleDefault,
                             width: borderWidth,
-                            radius: theme.textInput.borderRadiusDefault,
+                            radius: borderRadius,
                             color: borderColor)
         }
     }
@@ -55,6 +56,10 @@ struct PinCodeInputBorderModifier: ViewModifier {
 
     private var borderWidth: BorderWidthSemanticToken {
         isFocused ? theme.textInput.borderWidthFocus : theme.textInput.borderWidthDefault
+    }
+
+    private var borderRadius: BorderRadiusSemanticToken {
+        theme.tuning.hasRoundedPinCodeInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 }
 #endif
