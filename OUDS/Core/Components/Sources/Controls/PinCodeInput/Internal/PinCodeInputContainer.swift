@@ -12,6 +12,7 @@
 //
 
 #if !os(watchOS) && !os(macOS)
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -37,6 +38,8 @@ struct PinCodeInputContainer: View {
     private let isError: Bool
     /// If the outline layout must be applied on the container
     private let isOutlined: Bool
+    /// If true, automatically focuses the first available field on appear
+    private let autofocus: Bool
 
     /// To manage the focus between all fields
     @FocusState private var focusedIndex: Int?
@@ -53,7 +56,7 @@ struct PinCodeInputContainer: View {
     // These properties prevent double backspace processing by tracking which field was cleared and when.
     // When a backspace occurs, we mark the field index and timestamp, then skip onChange events
     // for that field within 100ms to avoid processing the same backspace twice.
-    // \(”˚☐˚)/ ⊹₊⟡⋆
+    // \("˚☐˚)/ ⊹₊⟡⋆
 
     // swiftlint:disable implicit_optional_initialization
     /// Tracks which field index was last cleared by a backspace operation
@@ -67,15 +70,33 @@ struct PinCodeInputContainer: View {
     init(_ value: Binding<String>,
          length: OUDSPinCodeInput.Length,
          isError: Bool,
-         isOutlined: Bool)
+         isOutlined: Bool,
+         autofocus: Bool)
     {
         _value = value
         self.length = length
         self.isError = isError
         self.isOutlined = isOutlined
+        self.autofocus = autofocus
 
-        let empty = Array(repeating: "", count: length.rawValue)
-        _digits = State(initialValue: empty)
+        // Warning if value is longer than the expected length
+        let rawValue = value.wrappedValue
+        if rawValue.count > length.rawValue {
+            OL.warning("The given value '\(rawValue)' for OUDSPinCodeInput has \(rawValue.count) digits but length is \(length.rawValue). Extra digits will be ignored.")
+        }
+
+        // Pre-fill digits from value, filtered to digits only and clamped to length
+        let filled = rawValue
+            .filter(\.isNumber)
+            .prefix(length.rawValue)
+            .map(String.init)
+
+        // Pad with empty strings if value is shorter than length
+        var initial = Array(repeating: "", count: length.rawValue)
+        for (i, digit) in filled.enumerated() {
+            initial[i] = digit
+        }
+        _digits = State(initialValue: initial)
     }
 
     // MARK: - Body
@@ -106,6 +127,21 @@ struct PinCodeInputContainer: View {
                     }
             }
         }
+        .onAppear {
+            // Focus on the first empty field if:
+            // - autofocus is enabled (empty value case)
+            // - considering also if value was pre-filled (we always focus the first empty field in that case)
+            guard autofocus else { return }
+            DispatchQueue.main.async {
+                if let firstEmpty = digits.firstIndex(where: { $0.isEmpty }) {
+                    // Focus on the first empty field
+                    focusedIndex = firstEmpty
+                } else {
+                    // All fields are filled, focus on the last one
+                    focusedIndex = length.rawValue - 1
+                }
+            }
+        }
     }
 
     // swiftlint:enable accessibility_trait_for_button
@@ -117,7 +153,7 @@ struct PinCodeInputContainer: View {
             .red
         } else if isError {
             theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
-        } else { // Not oulined, no error
+        } else { // Not outlined, no error
             theme.colors.actionSupportEnabled.color(for: colorScheme)
         }
     }
@@ -137,7 +173,7 @@ struct PinCodeInputContainer: View {
             theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
         } else if focused {
             theme.colors.actionSupportPressed.color(for: colorScheme)
-        } else { // Not oulined, no error
+        } else { // Not outlined, no error
             theme.colors.actionSupportEnabled.color(for: colorScheme)
         }
     }
@@ -164,7 +200,7 @@ struct PinCodeInputContainer: View {
     }
 
     private func digitField(at index: Int) -> some View {
-        // Compute at this level the typography to use to be sure environement values for size class
+        // Compute at this level the typography to use to be sure environment values for size class
         // are retrieved in the suitable thread at the best moment
         let uiFont = TypographyModifier.makeUIFont(
             family: nil,
@@ -185,36 +221,18 @@ struct PinCodeInputContainer: View {
             .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         #if os(visionOS)
             .onChange(of: digits[index]) { _, newValue in
-                // IMPORTANT: Skip onChange if this is triggered by a recent backspace operation
-                // This prevents double processing when:
-                // 1. handleBackspace clears a digit (triggers onChange)
-                // 2. Focus changes to previous field (triggers onChange again)
-                // We use a 100ms window to detect if this onChange is from the same backspace
-
                 let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-
-                // If this field was just cleared by backspace within the last 100ms, skip processing
                 if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
                     return
                 }
-
                 handleDigitChange(at: index, newValue: newValue)
             }
         #else
             .onChange(of: digits[index]) { newValue in
-                // IMPORTANT: Skip onChange if this is triggered by a recent backspace operation
-                // This prevents double processing when:
-                // 1. handleBackspace clears a digit (triggers onChange)
-                // 2. Focus changes to previous field (triggers onChange again)
-                // We use a 100ms window to detect if this onChange is from the same backspace
-
                 let timeSinceLastBackspace = Date().timeIntervalSince(lastBackspaceTime)
-
-                // If this field was just cleared by backspace within the last 100ms, skip processing
                 if lastBackspaceIndex == index, timeSinceLastBackspace < 0.1 {
                     return
                 }
-
                 handleDigitChange(at: index, newValue: newValue)
             }
         #endif
@@ -273,43 +291,24 @@ struct PinCodeInputContainer: View {
     /// UIKit's deleteBackward() which happens during the view update cycle.
     ///
     /// - Parameter index: The index of the field
-    private func handleBackspace(at index: Int) { //  \(”˚☐˚)/ ⊹₊⟡⋆
-        // Capture the state before any deletion to avoid race conditions
+    private func handleBackspace(at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
         let wasEmpty = digits[index].isEmpty
 
-        // Use DispatchQueue.main.async to defer state modifications and avoid warning
         DispatchQueue.main.async {
-            // Mark this backspace operation with current timestamp
-            // This is used in onChange to skip processing for 100ms
             lastBackspaceTime = Date()
 
             if wasEmpty {
-                // Current field is empty, move to previous field and clear it
                 if index > 0 {
                     let previousIndex = index - 1
-
-                    // Mark the previous field as being cleared by backspace
-                    // This tells onChange to skip processing for this field
                     lastBackspaceIndex = previousIndex
-
-                    // Clear the previous field
                     digits[previousIndex] = ""
                     value = ""
-
-                    // Move focus to the previous field
                     focusedIndex = previousIndex
                 }
             } else {
-                // Current field has content, clear it and stay on this field
-
-                // Mark the current field as being cleared by backspace
                 lastBackspaceIndex = index
-
-                // Clear the current field
                 digits[index] = ""
                 value = ""
-
-                // Keep focus on current field
                 focusedIndex = index
             }
         }

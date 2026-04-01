@@ -96,6 +96,7 @@ public struct OUDSPinCodeInput: View {
     private let helperText: String?
     private let isOutlined: Bool
     private let status: Self.Status
+    private let autofocus: Bool
 
     @Environment(\.theme) private var theme
 
@@ -136,17 +137,20 @@ public struct OUDSPinCodeInput: View {
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - helperText: A text to display below the PIN code input container, default set to *nil*
     ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
+    ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
     public init(_ value: Binding<String>,
                 length: OUDSPinCodeInput.Length = .six,
                 helperText: String? = nil,
                 isOutlined: Bool = false,
-                status: Self.Status = .enabled)
+                status: Self.Status = .enabled,
+                autofocus: Bool = false)
     {
         _value = value
         self.length = length
         self.helperText = helperText
         self.isOutlined = isOutlined
         self.status = status
+        self.autofocus = autofocus
     }
 
     // MARK: Body
@@ -154,7 +158,7 @@ public struct OUDSPinCodeInput: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
-                PinCodeInputContainer(_value, length: length, isError: status != .enabled, isOutlined: isOutlined)
+                PinCodeInputContainer(_value, length: length, isError: status != .enabled, isOutlined: isOutlined, autofocus: autofocus)
 
                 PinCodeHelperErrorTextContainer(helperText: helperText, status: status)
             }
