@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// `ViewModifier` to draw borders on text fields in `OUDSPinCodeInput`` component
+/// `ViewModifier` to draw borders on text fields in ``OUDSPinCodeInput`` component
 struct PinCodeInputBorderModifier: ViewModifier {
 
     let isOutlined: Bool

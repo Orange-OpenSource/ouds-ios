@@ -144,18 +144,17 @@ struct TypographyModifier: ViewModifier {
     // MARK: - UIKit util
 
     #if !os(macOS)
-    /// Génère une UIFont à partir des tokens sans dépendre de @Environment
+    /// Generates a `UIFont` object based on tokens without needing any environement object lile `theme`.
+    ///
     /// - Parameters:
-    ///   - family: La famille de police personnalisée (optionnelle)
-    ///   - fontToken: Le token de police à utiliser
-    ///   - isCompact: Si true, utilise le mode compact, sinon le mode regular
-    ///   - sizeCategory: La catégorie de taille pour Dynamic Type
-    /// - Returns: La UIFont configurée
+    ///   - family: Token of font family to apply
+    ///   - fontToken: The token of font to apply
+    ///   - isCompact: If *true*, use compact mode, otherwise use regular
+    /// - Returns: The `UIFont`
     static func makeUIFont(
         family: FontFamilyRawToken?,
         from fontToken: MultipleFontCompositeSemanticToken,
-        isCompact: Bool,
-        sizeCategory: ContentSizeCategory = .medium) -> UIFont
+        isCompact: Bool) -> UIFont
     {
         let adaptiveFontToken = isCompact ? fontToken.compact : fontToken.regular
 

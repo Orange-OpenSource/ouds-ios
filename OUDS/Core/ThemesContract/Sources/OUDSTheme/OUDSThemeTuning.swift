@@ -100,7 +100,7 @@ extension Tuning {
     /// The theme tuning for *Max It *contains:
     /// - rounded corners for buttons
     /// - rounded corners for text inputs
-    /// - rounded corners for text inputs
+    /// - rounded corners for pin code inputs
     /// - rounded corners for alert messages
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,

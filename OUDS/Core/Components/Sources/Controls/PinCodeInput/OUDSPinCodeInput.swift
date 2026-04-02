@@ -17,7 +17,7 @@ import SwiftUI
 // MARK: - OUDS PIN Code Input
 
 /// PIN code input is a UI element that allows to capture short, fixed-length numeric codes, typically for authentication or confirmation purposes,
-/// such as a four, six or height-digit personal identification number (PIN).
+/// such as a four, six or eight-digit personal identification number (PIN).
 /// PIN code input is presented as a series of individual input fields or boxes, each representing a single digit, to enhance readability and encourage accurate input,
 /// while supporting smooth keyboard navigation and secured input masking if needed.
 ///
@@ -32,13 +32,13 @@ import SwiftUI
 ///
 /// The component provides 3 layouts for the input: 4 boxes, 6 boxes or 8 boxes.
 ///
-/// An helper text can be used to support text to convey additional information about the input field, such as how it will be used.
+/// A helper text can be used to support text to convey additional information about the input field, such as how it will be used.
 /// It should ideally only take up a single line, though may wrap to multiple lines if required, and be either persistently visible or visible only on focus.
 ///
 /// ## Error status
 ///
 /// The Error status indicates that the user input does not meet validation rules or expected formatting.
-/// It provides immediate visual feedback, typically through a red border, error icon, and a clear, accessible error message positioned below the input (mandatory.
+/// It provides immediate visual feedback, typically through a red border, error icon, and a clear, accessible error message positioned below the input (mandatory).
 /// This state helps users quickly identify and correct mistakes by explaining what went wrong and, when possible, how to fix it.
 /// The input remains editable, encouraging users to revise their input without starting over.
 /// The error state must be triggered by an explicit validation (submission, API response), and not in real time with each keystroke.
@@ -60,14 +60,14 @@ import SwiftUI
 ///
 /// The copy/paste feature is also available and has the same behavior.
 ///
-/// ## Technical condiderations
+/// ## Technical considerations
 ///
 /// For some cases, on phones screens or with 8 boxes in iPhone, you may need to use a `ScrollView` to embed the component and let user move it.
 /// ```swift
 /// ScrollView(.horizontal) {
 ///     OUDSPinCodeInput($value,
 ///                      length: .eight,
-///                      helperText: "Enter your secret code sent to your phone"".helperText")
+///                      helperText: "Enter your secret code sent to your phone")
 /// }
 /// ```
 ///
@@ -75,7 +75,16 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// TODO: #998 - Add section
+/// The content of the fields is vocalized by Voice Over; the placeholders (defined in `kPinCodeInputObfuscationCharacter` and `kPinCodeInputPlaceholderCharacter`)
+/// are not vocalized to let users know what they wrote.
+///
+/// The component gets only numeric values, not letters or symbols, only numbers.
+///
+/// When using the error status, provide a clear, concise error message explaining what went wrong and, when possible, how to fix it
+/// (for example: *“The code you entered is invalid. Try again.”*).
+///
+/// Use helper text to communicate additional guidance (for example: *“Check the 6‑digit code sent by SMS”*), and keep this text short so it remains easy to vocalize
+/// and understand.
 ///
 /// ## Code samples
 ///
@@ -130,8 +139,6 @@ public struct OUDSPinCodeInput: View {
     private let autofocus: Bool
 
     @Environment(\.theme) private var theme
-
-    // TODO: #998 - Manage status like read only, loading, etc
 
     // MARK: - Length
 

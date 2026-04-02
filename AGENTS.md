@@ -475,7 +475,7 @@ OUDSChipPicker(title: "Some text", selection: $selection, chips: someDataToPopul
 
 ##### Password input
 
-Password input component is based on OUDS text input component and let user provides apssword in a secure text field.
+Password input component is based on OUDS text input component and let user provides password in a secure text field.
 
  ```swift
 // The password to display and edit
@@ -505,7 +505,7 @@ OUDSPinCodeInput($pinCode)
 // It can have also up 4 or 8 boxes, with an helper text
 OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
     
-/ The component can be used in error contexts
+// The component can be used in error contexts
 OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 ```
  

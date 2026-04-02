@@ -34,7 +34,7 @@ struct OUDSThemeTuningTests {
     func orangeFranceThemeTuning() {
         #expect(Tuning.OrangeFrance.hasRoundedButtons == false)
         #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
-        #expect(Tuning.default.hasRoundedPinCodeInputs == false)
+        #expect(Tuning.OrangeFrance.hasRoundedPinCodeInputs == false)
         #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
     }
 

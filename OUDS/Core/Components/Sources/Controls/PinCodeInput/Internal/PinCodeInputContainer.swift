@@ -109,7 +109,7 @@ struct PinCodeInputContainer: View {
                         minWidth: theme.pinCodeInput.sizeMinWidth,
                         maxWidth: theme.pinCodeInput.sizeMaxWidth,
                         minHeight: theme.textInput.sizeMinHeight,
-                        maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but nor in specs of #998, otherwise no limits
+                        maxHeight: theme.textInput.sizeMinHeight) // FIXME: Mandatory but not in specs of #998, otherwise no limits
                     .background(
                         RoundedRectangle(cornerRadius: borderRadius)
                             .fill(backgroundColor(focused: focusedIndex == index)))
@@ -139,9 +139,7 @@ struct PinCodeInputContainer: View {
     // MARK: - Colors
 
     private var foregroundColor: Color {
-        if isOutlined {
-            .red
-        } else if isError {
+        if isError {
             theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
         } else { // Not outlined, no error
             theme.colors.actionSupportEnabled.color(for: colorScheme)
@@ -337,12 +335,11 @@ struct PinCodeInputContainer: View {
         }
     }
 
-    /// Gère toute insertion de texte : un seul chiffre (frappe normale)
-    /// ou plusieurs chiffres (autofill, suggestion clavier, coller).
+    /// Manages any text insertion: one figit (normal typing) or several (autofill, keyboard suggestions, copy/paste).
     ///
     /// - Parameters:
-    ///   - text: La chaîne de chiffres insérée (déjà filtrée, uniquement des chiffres)
-    ///   - index: L'index du champ qui a reçu l'insertion
+    ///   - text: The chain of digits inserted (filtered, only figures)
+    ///   - index: Index of the field which got the insertion
     private func handleTextInserted(_ text: String, at index: Int) { //  \("˚☐˚)/ ⊹₊⟡⋆
         let available = length.rawValue - index
         let toDistribute = text.prefix(available)

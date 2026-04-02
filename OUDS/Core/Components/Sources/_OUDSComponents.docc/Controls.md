@@ -559,7 +559,7 @@ OUDSPinCodeInput($pinCode)
 // It can have also up 4 or 8 boxes, with an helper text
 OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
     
-/ The component can be used in error contexts
+// The component can be used in error contexts
 OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 ```
 
