@@ -117,7 +117,7 @@ import SwiftUI
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 1.4.0
-@available(iOS 15, visionOS 1, tvOS 16, *)
+@available(iOS 15, visionOS 1, *)
 public struct OUDSPinCodeInput: View {
 
     // MARK: - Properties
