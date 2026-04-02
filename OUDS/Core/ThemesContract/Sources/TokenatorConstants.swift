@@ -48,7 +48,7 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component bullet list (1.0.0)
     public static let componentBulletListVersion = "1.0.0"
-  
+
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
@@ -76,8 +76,8 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Dialog
 
-    /// Version of the Figma specifications for the component alert (alert message)  (1.0.0)
-    public static let componentAlertMessageVersion = "1.0.0"
+    /// Version of the Figma specifications for the component alert (alert message)  (1.1.0)
+    public static let componentAlertMessageVersion = "1.1.0" // WARNING: Manually updated as tokenator not updated yet
     /// Version of the Figma specifications for the component alert (inline alert) (1.0.0)
     public static let componentInlineAlertVersion = "1.0.0"
 
@@ -85,7 +85,7 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component divider (1.0.0)
     public static let componentDividerVersion = "1.0.0"
-  
+
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link (2.2.0)
