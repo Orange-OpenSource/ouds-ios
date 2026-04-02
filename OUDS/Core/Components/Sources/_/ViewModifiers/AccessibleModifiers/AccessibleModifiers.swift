@@ -80,7 +80,8 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 /// ```
 ///
 /// - Since: 0.8.0
-public enum AccessibilityFocusable: Hashable {
+// @frozen: ensures this two-case focus enum is stable so the compiler can optimize switch statements over it.
+@frozen public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)
 }

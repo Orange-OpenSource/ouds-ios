@@ -19,7 +19,8 @@ import SwiftUI
 public typealias PSFNMK = PostScriptFontNamesMapKey
 
 /// Key of the map containing PostScript name to use for a font depending to its family name and weight.
-public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
+// @frozen: two stable stored properties (familyName, fontWeight); enables struct layout optimizations.
+@frozen public struct PostScriptFontNamesMapKey: Hashable, CustomStringConvertible {
 
     /// The font family name as defined in raw tokens
     public let familyName: String

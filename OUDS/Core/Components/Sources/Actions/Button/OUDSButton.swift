@@ -147,7 +147,8 @@ public struct OUDSButton: View {
 
     /// Represents the appearance of an OUDS button, i.e. a kind of type
     /// - Since: 0.10.0
-    public enum Appearance {
+    // @frozen: fixed set of five button appearances; no new cases will be added without an API break.
+    @frozen public enum Appearance {
         /// Default button is used for action
         case `default`
 
@@ -166,7 +167,8 @@ public struct OUDSButton: View {
 
     /// Defines the style of the button, e.g. loading or not
     /// - Since: 0.10.0
-    public enum Style {
+    // @frozen: two stable button styles; exhaustive switches can be optimized by the compiler.
+    @frozen public enum Style {
         /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`
 

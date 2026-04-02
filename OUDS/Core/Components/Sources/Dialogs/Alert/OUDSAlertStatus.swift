@@ -25,7 +25,8 @@ import SwiftUI
 ///  Each variant conveys a clear semantic meaning and must always be paired with its dedicated functional icon to ensure clarity and accessibility.
 ///  Use functional alerts to inform user about state changes, confirmations, or issues that are directly connected to system logic or user actions.
 ///  These messages carry functional meaning and help guide user response or acknowledgment.
-public enum OUDSAlertStatus {
+// @frozen: guarantees the set of alert statuses is stable; enables exhaustive switch and binary-size optimizations.
+@frozen public enum OUDSAlertStatus {
 
     /// Neutral status can be used as a generic informative alert without semantic meaning or colour association.
     /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where

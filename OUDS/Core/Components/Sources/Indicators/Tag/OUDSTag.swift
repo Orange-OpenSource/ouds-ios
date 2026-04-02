@@ -182,7 +182,8 @@ public struct OUDSTag: View {
 
         /// The leading element of the tag
         /// - Since: 0.18.0
-        public enum Leading {
+        // @frozen: three stable leading element options; no new cases expected.
+        @frozen public enum Leading {
             /// Means no element
             case none
 
@@ -196,7 +197,8 @@ public struct OUDSTag: View {
 
         /// The category of the status.
         /// - Since: 0.18.0
-        public enum Category {
+        // @frozen: six stable semantic tag categories aligned with the design system specification.
+        @frozen public enum Category {
             /// Default or inactive state. Used for standard labels, categories, or when no specific status needs to be communicated.
             case neutral
 
@@ -292,7 +294,8 @@ public struct OUDSTag: View {
 
     /// Represents the appearance of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Appearance {
+    // @frozen: two stable tag appearances; exhaustive switch optimization is possible.
+    @frozen public enum Appearance {
 
         /// A tag with a solid, high-contrast background.
         /// Used to draw strong attention to important labels or categories. Emphasized tags stand out
@@ -307,7 +310,8 @@ public struct OUDSTag: View {
 
     /// Defines the shape of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Shape {
+    // @frozen: two stable shapes; exhaustive switch optimization is possible.
+    @frozen public enum Shape {
         /// A tag with sharp, square corners.
         /// Squared tags provide a more formal, structured, or technical feel. They are often used in business contexts to label promotions, offers, or important notices.
         case square
@@ -319,7 +323,8 @@ public struct OUDSTag: View {
 
     /// Defines the size of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Size {
+    // @frozen: two stable tag sizes aligned with the design system specification.
+    @frozen public enum Size {
         /// The standard tag size, suitable for most use cases and offering good readability.
         case `default`
 

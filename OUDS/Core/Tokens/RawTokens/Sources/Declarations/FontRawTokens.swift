@@ -27,7 +27,8 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than dimensionstruct_.
 ///
 /// - Since: 0.8.0
-public enum FontRawTokens {
+// @frozen: namespace enum with only static properties; signals that no cases will ever be added.
+@frozen public enum FontRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the tokenator, the values have been added in the Values folder

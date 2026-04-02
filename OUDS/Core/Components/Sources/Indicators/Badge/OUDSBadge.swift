@@ -91,7 +91,8 @@ public struct OUDSBadge: View {
 
     /// The status depends on the context of the information it represents.
     /// - Since: 0.17.0
-    public enum Status {
+    // @frozen: six stable semantic badge statuses aligned with the design system specification.
+    @frozen public enum Status {
 
         /// Used for general labels without specific emphasis
         case neutral
@@ -115,7 +116,8 @@ public struct OUDSBadge: View {
 
     /// The status depends on the context of the information it represents.
     /// - Since: 0.17.0
-    public enum StatusWithIcon {
+    // @frozen: six stable badge statuses with icon; no new cases expected from the design system.
+    @frozen public enum StatusWithIcon {
 
         /// Used for general labels without specific emphasis
         case neutral(icon: Image, flipped: Bool = false)
@@ -139,7 +141,8 @@ public struct OUDSBadge: View {
 
     /// All available sizes of a badge as *standard* type
     /// - Since: 0.17.0
-    public enum StandardSize {
+    // @frozen: four stable standard badge sizes; exhaustive switch optimization is possible.
+    @frozen public enum StandardSize {
 
         /// A compact badge for minimal space usage, ideal for small UI elements like icons or tooltips.
         case extraSmall
@@ -156,7 +159,8 @@ public struct OUDSBadge: View {
 
     /// All available sizes of a badge with *count* or *icon*
     /// - Since: 0.17.0
-    public enum IllustrationSize {
+    // @frozen: two stable illustration badge sizes aligned with the design system specification.
+    @frozen public enum IllustrationSize {
 
         /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
         case medium

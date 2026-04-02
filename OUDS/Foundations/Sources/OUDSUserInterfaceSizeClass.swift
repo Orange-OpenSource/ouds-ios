@@ -45,7 +45,8 @@ extension EnvironmentValues {
 /// ```
 ///
 /// - Since: 0.8.0
-public enum OUDSUserInterfaceSizeClass: String, Sendable {
+// @frozen: three fixed size classes matching the design system spec; no new cases expected.
+@frozen public enum OUDSUserInterfaceSizeClass: String, Sendable {
     case extraCompact = "Extra Compact"
     case compact = "Compact"
     case regular = "Regular"

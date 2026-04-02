@@ -17,7 +17,8 @@ import Foundation
 /// Enumerates the types of layouts a ``OUDSCheckboxPicker`` can have
 ///
 /// - Since: 0.14.0
-public enum OUDSCheckboxPickerPlacement {
+// @frozen: guarantees no new placement cases will be added, enabling exhaustive switch optimizations.
+@frozen public enum OUDSCheckboxPickerPlacement {
 
     /// A `RootLabel` is in the end a String
     public typealias RootLabel = String
@@ -37,7 +38,8 @@ public enum OUDSCheckboxPickerPlacement {
 
     /// The type of display for the root label in case of *vertical rooted* picker placement.
     /// - Since: 0.14.0
-    public enum DisplayType {
+    // @frozen: guarantees no new display type cases will be added, enabling exhaustive switch optimizations.
+    @frozen public enum DisplayType {
 
         /// Display only the given root label
         case textOnly

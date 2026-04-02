@@ -33,8 +33,9 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 1.2.0
+// @frozen: result-builder namespace enum; no new cases expected, only static build methods.
 @resultBuilder
-public enum OUDSBulletListItemBuilder {
+@frozen public enum OUDSBulletListItemBuilder {
 
     /// Combines multiple `OUDSBulletList.Item` instances into a single array
     public static func buildBlock(_ components: OUDSBulletList.Item...) -> [OUDSBulletList.Item] {
