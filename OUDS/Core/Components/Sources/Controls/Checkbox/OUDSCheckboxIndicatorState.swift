@@ -14,8 +14,6 @@
 /// A checkbox indicator has three available states: `selected`, `unselected` and `indeterminate`
 ///
 /// - Since: 0.12.0
-// @frozen: tells the compiler this enum will never gain new cases, enabling exhaustive switch
-// optimizations and binary-size improvements for library consumers.
 @frozen public enum OUDSCheckboxIndicatorState {
     /// The checkbox indicator is filled, a tick is inside, the user selected it
     case selected

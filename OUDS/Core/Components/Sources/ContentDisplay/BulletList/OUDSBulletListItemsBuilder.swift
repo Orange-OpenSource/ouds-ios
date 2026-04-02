@@ -33,7 +33,6 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 1.2.0
-// @frozen: result-builder namespace enum; no new cases expected, only static build methods.
 @resultBuilder
 @frozen public enum OUDSBulletListItemBuilder {
 

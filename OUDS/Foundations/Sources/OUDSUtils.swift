@@ -16,7 +16,6 @@ import Foundation
 /// A set of utilities from OUDS library shared with love ⸜(｡˃ ᵕ ˂)⸝♡♡♡
 ///
 /// - Since: 1.2.0
-// @frozen: namespace enum with only static methods; signals that no cases will ever be added.
 @frozen public enum OUDSUtils {
 
     // MARK: - Language detection

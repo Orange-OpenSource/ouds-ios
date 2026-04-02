@@ -20,7 +20,6 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than dimensionstruct_.
 ///
 /// - Since: 0.22.0
-// @frozen: namespace enum with only static properties; signals that no cases will ever be added.
 @frozen public enum EffectRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆

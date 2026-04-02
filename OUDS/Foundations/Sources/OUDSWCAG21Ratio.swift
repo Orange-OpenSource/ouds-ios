@@ -31,7 +31,6 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 /// See for example [the following guidelines](https://system.design.orange.com/0c1af118d/p/2531b9-accessibility-compliance)
 ///
 /// - Since: 0.15.0
-// @frozen: single stable stored property (ratio); enables struct layout optimizations and ABI stability.
 @frozen public struct OUDSWCAG21Ratio {
 
     // MARK: - Stored properties
@@ -42,19 +41,16 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
     // MARK: - Computed properties
 
     /// If the computed contrast ratio between two given colors meets the 3:1 requirement
-    // @inlinable: trivial single-comparison body; lets the compiler inline this property at call sites.
     @inlinable public var meets3to1: Bool {
         ratio >= 3.0
     }
 
     /// If the computed contrast ratio between two given colors meets the 4.5:1 requirement
-    // @inlinable: trivial single-comparison body; lets the compiler inline this property at call sites.
     @inlinable public var meets4_5to1: Bool {
         ratio >= 4.5
     }
 
     /// If the computed contrast ratio between two given colors meets the 7:1 requirement
-    // @inlinable: trivial single-comparison body; lets the compiler inline this property at call sites.
     @inlinable public var meets7to1: Bool {
         ratio >= 7.0
     }
@@ -62,7 +58,6 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
     /// WCAG 2.1 requirement for AA level needs to have textual component matching 4.5:1 contrast ratio
     /// and non textual component matching 3:1 contrast ratio.
     /// This is recommended for web projects.
-    // @inlinable: simple tuple construction; lets the compiler inline this property at call sites.
     @inlinable public var requirementsAA: WCAG21Requirements {
         (textual: meets4_5to1, nonTextual: meets3to1)
     }
@@ -70,7 +65,6 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
     /// WCAG 2.1 requirement for AAA level needs to have textual component matching 7:1 contrast ratio
     /// and non textual component matching 4.5:1 contrast ratio.
     /// This is recommended for mobiles devices projects (because of screen sizes and luminosity issues).
-    // @inlinable: simple tuple construction; lets the compiler inline this property at call sites.
     @inlinable public var requirementsAAA: WCAG21Requirements {
         (textual: meets7to1, nonTextual: meets4_5to1)
     }
@@ -79,7 +73,6 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 
     /// Defines a WCAG 2.1 ratio with the given contrast ratio value
     /// - Parameter ratio: The contrast ratio to use
-    // @inlinable: trivial single-assignment init; eliminates function-call overhead for callers.
     @inlinable public init(ratio: Double) {
         self.ratio = ratio
     }

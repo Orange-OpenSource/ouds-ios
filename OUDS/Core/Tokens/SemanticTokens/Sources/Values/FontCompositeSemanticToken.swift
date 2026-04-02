@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreFoundation
 import OUDSTokensRaw
 
 /// An operator to make for example comparisons between ``FontCompositeSemanticToken``
@@ -22,8 +23,6 @@ infix operator <|
 /// All these elements are *raw tokens*, and together define a *composite raw token* for *font* thing.
 ///
 /// - Since: 0.22.0
-// @frozen: four stable stored properties (size, lineHeight, weight, letterSpacing); enables struct layout
-// optimizations and ensures library consumers can pattern-match without @unknown default.
 @frozen public struct FontCompositeSemanticToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary
@@ -45,11 +44,10 @@ infix operator <|
     ///    - lineHeight: the line height for the texts
     ///    - weight: the weight for the texts
     ///    - letterSpacing: the letter spacing for the texts
-    // @inlinable: trivial four-assignment init body; enables call-site inlining for performance.
     @inlinable public init(size: FontSizeRawToken,
-                lineHeight: FontLineHeightRawToken,
-                weight: FontWeightRawToken,
-                letterSpacing: FontLetterSpacingRawToken)
+                           lineHeight: FontLineHeightRawToken,
+                           weight: FontWeightRawToken,
+                           letterSpacing: FontLetterSpacingRawToken)
     {
         self.size = size
         self.lineHeight = lineHeight
@@ -68,7 +66,6 @@ infix operator <|
     ///    - lhs: The font composite token we expect to be smaller than `rhs`
     ///    - rhs: The font composite token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    // @inlinable: pure three-comparison body; lets the compiler inline this operator at call sites.
     @inlinable public static func <| (lhs: FontCompositeSemanticToken, rhs: FontCompositeSemanticToken) -> Bool {
         lhs.size < rhs.size
             && lhs.lineHeight <= rhs.lineHeight
