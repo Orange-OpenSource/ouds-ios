@@ -16,91 +16,91 @@
 
 extension DimensionRawTokens {
     /// Has for value 0
-    public static let _0: DimensionRawToken = base * 0 // 0px
+    public static let _0: DimensionRawToken = base * 0 // 0 points
     /// Has for value 4
-    public static let _50: DimensionRawToken = base * 1 // 4px
+    public static let _50: DimensionRawToken = base * 1 // 4 points
     /// Has for value 8
-    public static let _100: DimensionRawToken = base * 2 // 8px
+    public static let _100: DimensionRawToken = base * 2 // 8 points
     /// Has for value 12
-    public static let _150: DimensionRawToken = base * 3 // 12px
+    public static let _150: DimensionRawToken = base * 3 // 12 points
     /// Has for value 16
-    public static let _200: DimensionRawToken = base * 4 // 16px
+    public static let _200: DimensionRawToken = base * 4 // 16 points
     /// Has for value 20
-    public static let _250: DimensionRawToken = base * 5 // 20px
+    public static let _250: DimensionRawToken = base * 5 // 20 points
     /// Has for value 24
-    public static let _300: DimensionRawToken = base * 6 // 24px
+    public static let _300: DimensionRawToken = base * 6 // 24 points
     /// Has for value 28
-    public static let _350: DimensionRawToken = base * 7 // 28px
+    public static let _350: DimensionRawToken = base * 7 // 28 points
     /// Has for value 32
-    public static let _400: DimensionRawToken = base * 8 // 32px
+    public static let _400: DimensionRawToken = base * 8 // 32 points
     /// Has for value 36
-    public static let _450: DimensionRawToken = base * 9 // 36px
+    public static let _450: DimensionRawToken = base * 9 // 36 points
     /// Has for value 40
-    public static let _500: DimensionRawToken = base * 10 // 40px
+    public static let _500: DimensionRawToken = base * 10 // 40 points
     /// Has for value 44
-    public static let _550: DimensionRawToken = base * 11 // 44px
+    public static let _550: DimensionRawToken = base * 11 // 44 points
     /// Has for value 48
-    public static let _600: DimensionRawToken = base * 12 // 48px
+    public static let _600: DimensionRawToken = base * 12 // 48 points
     /// Has for value 52
-    public static let _650: DimensionRawToken = base * 13 // 52px
+    public static let _650: DimensionRawToken = base * 13 // 52 points
     /// Has for value 56
-    public static let _700: DimensionRawToken = base * 14 // 56px
+    public static let _700: DimensionRawToken = base * 14 // 56 points
     /// Has for value 60
-    public static let _750: DimensionRawToken = base * 15 // 60px
+    public static let _750: DimensionRawToken = base * 15 // 60 points
     /// Has for value 64
-    public static let _800: DimensionRawToken = base * 16 // 64px
+    public static let _800: DimensionRawToken = base * 16 // 64 points
     /// Has for value 68
-    public static let _850: DimensionRawToken = base * 17 // 68px
+    public static let _850: DimensionRawToken = base * 17 // 68 points
     /// Has for value 72
-    public static let _900: DimensionRawToken = base * 18 // 72px
+    public static let _900: DimensionRawToken = base * 18 // 72 points
     /// Has for value 76
-    public static let _950: DimensionRawToken = base * 19 // 76px
+    public static let _950: DimensionRawToken = base * 19 // 76 points
     /// Has for value 80
-    public static let _1000: DimensionRawToken = base * 20 // 80px
+    public static let _1000: DimensionRawToken = base * 20 // 80 points
     /// Has for value 84
-    public static let _1050: DimensionRawToken = base * 21 // 84px
+    public static let _1050: DimensionRawToken = base * 21 // 84 points
     /// Has for value 88
-    public static let _1100: DimensionRawToken = base * 22 // 88px
+    public static let _1100: DimensionRawToken = base * 22 // 88 points
     /// Has for value 96
-    public static let _1200: DimensionRawToken = base * 24 // 96px
+    public static let _1200: DimensionRawToken = base * 24 // 96 points
     /// Has for value 100
-    public static let _1250: DimensionRawToken = base * 25 // 100px
+    public static let _1250: DimensionRawToken = base * 25 // 100 points
     /// Has for value 112
-    public static let _1400: DimensionRawToken = base * 28 // 112px
+    public static let _1400: DimensionRawToken = base * 28 // 112 points
     /// Has for value 128
-    public static let _1600: DimensionRawToken = base * 32 // 128px
+    public static let _1600: DimensionRawToken = base * 32 // 128 points
     /// Has for value 144
-    public static let _1800: DimensionRawToken = base * 36 // 144px
+    public static let _1800: DimensionRawToken = base * 36 // 144 points
     /// Has for value 160
-    public static let _2000: DimensionRawToken = base * 40 // 160px
+    public static let _2000: DimensionRawToken = base * 40 // 160 points
     /// Has for value 200
-    public static let _2225: DimensionRawToken = base * 50 // 200px
+    public static let _2225: DimensionRawToken = base * 50 // 200 points
     /// Has for value 240
-    public static let _2500: DimensionRawToken = base * 60 // 240px
+    public static let _2500: DimensionRawToken = base * 60 // 240 points
     /// Has for value 320
-    public static let _3000: DimensionRawToken = base * 80 // 320px
+    public static let _3000: DimensionRawToken = base * 80 // 320 points
     /// Has for value 480
-    public static let _4000: DimensionRawToken = base * 120 // 480px
+    public static let _4000: DimensionRawToken = base * 120 // 480 points
     /// Has for value 560
-    public static let _5000: DimensionRawToken = base * 140 // 560px
+    public static let _5000: DimensionRawToken = base * 140 // 560 points
     /// Has for value 640
-    public static let _6000: DimensionRawToken = base * 160 // 640px
+    public static let _6000: DimensionRawToken = base * 160 // 640 points
     /// Has for value 720
-    public static let _7000: DimensionRawToken = base * 180 // 720px
+    public static let _7000: DimensionRawToken = base * 180 // 720 points
     /// Has for value 880
-    public static let _9000: DimensionRawToken = base * 220 // 880px
+    public static let _9000: DimensionRawToken = base * 220 // 880 points
     /// Has for value 1040
-    public static let _11000: DimensionRawToken = base * 260 // 1040px
+    public static let _11000: DimensionRawToken = base * 260 // 1040 points
     /// Has for value 4
     public static let base: Double = 4
     /// Has for value 1
-    public static let outOfSystem25: DimensionRawToken = base * 0.25 // 1px
+    public static let outOfSystem25: DimensionRawToken = base * 0.25 // 1 points
     /// Has for value 2
-    public static let outOfSystem50: DimensionRawToken = base * 0.5 // 2px
+    public static let outOfSystem50: DimensionRawToken = base * 0.5 // 2 points
     /// Has for value 3
-    public static let outOfSystem75: DimensionRawToken = base * 0.75 // 3px
+    public static let outOfSystem75: DimensionRawToken = base * 0.75 // 3 points
     /// Has for value 6
-    public static let outOfSystem150: DimensionRawToken = base * 1.5 // 6px
+    public static let outOfSystem150: DimensionRawToken = base * 1.5 // 6 points
     /// Has for value 10
-    public static let outOfSystem250: DimensionRawToken = base * 2.5 // 10px
+    public static let outOfSystem250: DimensionRawToken = base * 2.5 // 10 points
 }
