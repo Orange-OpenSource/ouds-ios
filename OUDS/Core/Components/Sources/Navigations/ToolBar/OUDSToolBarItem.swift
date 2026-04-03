@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS)
+#if !os(watchOS)
 import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensSemantic
@@ -19,18 +19,18 @@ import SwiftUI
 
 // MARK: - OUDS Toolbar Item
 
-/// A strongly typed toolbar item container used inside ``OUDSToolbarTop`` and ``OUDSToolbarBottom``.
+/// A strongly typed toolbar item container used inside ``oudsToolbarTop`` and ``oudsToolbarBottom``.
 ///
 /// Use ``OUDSToolbarItem`` to provide custom toolbar views or predefined navigation items.
 ///
 /// ```swift
 ///     // A toolbar item with only the close icon
-///     OUDSToolbarItem(navigation: .close, accessibilityLabel: "Close") {
+///     OUDSToolbarItem(navigation: .close) {
 ///         // Handle navigation
 ///     }
 ///
 ///     // A toolbar item with the back icon and and a text, for iOS < 26
-///     OUDSToolbarItem(navigation: .back, label: "Back") {
+///     OUDSToolbarItem(navigation: .back(label: "Back")) {
 ///         // Handle navigation with a text label
 ///     }
 ///
@@ -40,38 +40,72 @@ import SwiftUI
 ///     }
 /// ```
 ///
-/// - Since: 1.3.0
+/// - Since: 1.4.0
 public struct OUDSToolbarItem: View, Identifiable {
 
     // MARK: - Content
 
     enum Content {
-        case action(type: ActionType)
-        case navigation(type: NavigationType, label: String?, accessibilityLabel: String, action: () -> Void)
+        case action(type: ActionType, style: ActionStyle)
+        case navigation(type: NavigationType)
         case customView(AnyView)
+    }
+
+    /// Defines the styling configuration for toolbar items for ios > 26
+    public enum ActionStyle {
+        case `default`
+        case proiminent
+        case tinted
     }
 
     // MARK: - OUDS Toolbar Action Item
 
     /// Defines the built-in action type available for the toolbars.
-    /// Each case maps to an image asset provided by the OUDS package resources.
+    /// Those items can be usend at `.topLeading` and `.topTrailing` position of a ``OUDSTopBarTop``
     ///
-    /// - Since: 1.3.0
+    /// - Since: 1.4.0
     public enum ActionType {
-        case label(String, action: (() -> Void)?)
-        case icon(asset: Image, accessibilityLabel: String, action: (() -> Void)?)
+        /// Create an action wth label only that could be emphasized. For ios > 26, label is always emphasized.
+        ///
+        ///  - Paramters:
+        ///     - string: The text displayed in the Label
+        ///     - accessibilityHint: Communicates to the user what happens after performing the action
+        ///     - emphasized: Flag to know if text is emphasized. Default set to true. Ignored on ios > 26
+        ///     - action: The action to do when clicked. If nil the button is disabled.
+        case label(_ string: String, emphasized: Bool = false, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
+
+        /// Create an action wth icon only.
+        ///
+        ///  - Parameters:
+        ///     - asset: The asset displayed in the icon
+        ///     - accessibilityLabel: The accessibility label discribes the action
+        ///     - accessibilityHint: Communicates to the user what happens after performing the action
+        ///     - action: The action to do when clicked. If nil the button is disabled.
+        case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
     }
 
     // MARK: - OUDS Toolbar Navigation Item
 
-    /// Defines the built-in navigation type available for the toolbars.
+    /// Defines the built-in navigation type available for the toolbars. Those items must be used only on topLeading position of `.toolbar`
     /// Each case maps to an image asset provided by the OUDS package resources.
     ///
-    /// - Since: 1.3.0
+    /// - Since: 1.4.0
     public enum NavigationType {
-        case back
+        /// The back button that can be added manualy if need. According to our design system, in could be the case for a sheet.
+        /// In a navigation, by default the system one is displayed (without text). If prefered, this one can be added but the system one must be hidden
+        /// using `View.navigationBarBackButtonHidden()`
+        /// **Warning: if OS is iOS 26+ / Liquid Glass, the label will not appear**
+        ///
+        ///  - Parameters:
+        ///     - label; The optional string label displayed near to the back indicator
+        ///     - accessibilityLabel: The accessinility label to describe the back action that could be overtied if needed.
+        ///     - action: The action to do when clicked. If nill the button is disabled. By default the dismiss is done after `action` is colled.
+        case back(label: String? = nil, accessibilityLabel: String = "core_common_back", action: (() -> Void)? = nil)
+
+        /// The close button can be used to close sheets.
         case close
 
+        /// The name of the icon associated to the button.
         var iconName: String {
             switch self {
             case .back:
@@ -87,60 +121,52 @@ public struct OUDSToolbarItem: View, Identifiable {
     public let id = UUID() // FIXME: #1174 - To remove?
     let content: Content
 
-    @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
-
     // MARK: - Initializers
 
-    /// Creates a toolbar item with only a text
+//    /// Creates an action toolbar item with only a text
+//    ///
+//    /// - Parameters:
+//    ///   - label: The text to display in the item, must not be empty
+//    ///   - action: The action triggered when the item is tapped
+//    public init(label: String, action: (() -> Void)? = nil) {
+//        if label.isEmpty {
+//            OL.fatal("The label for a toolbar item without icon must not be empty")
+//        }
+//        content = .action(type: .label(label, action: action), style: .default)
+//    }
+//
+//    /// Creates an action toolbar item with an icon only dedicated to action.
+//    ///
+//    /// - Parameters:
+//    ///   - icon: The `Image` to add as button as action item
+//    ///   - accessibilityLabel: The accessibility label describing the icon
+//    ///   - action: The action triggered when the item is tapped
+//    public init(icon: Image, accessibilityLabel: String, action: (() -> Void)? = nil) {
+//        content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
+//    }
+
+    /// Creates a toolbar item with action type.
     ///
-    /// - Parameters:
-    ///   - label: The text to display in the item, must not be empty
-    ///   - action: The action triggered when the item is tapped
-    public init(label: String, action: (() -> Void)? = nil) {
-        if label.isEmpty {
-            OL.fatal("The label for a toolbar item without icon must not be empty")
-        }
-        content = .action(type: .label(label, action: action))
+    /// - Parameter type: The action type describing the layout and assoicated action.
+    public init(action type: Self.ActionType) {
+        content = .action(type: type, style: .default)
     }
 
-    /// Creates a toolbar item with an icon only dedicated to action.
+    /// Creates a toolbar item with action type.
     ///
-    /// - Parameters:
-    ///   - icon: The `Image` to add as button as action item
-    ///   - accessibilityLabel: The accessibility label describing the icon
-    ///   - action: The action triggered when the item is tapped
-    public init(icon: Image, accessibilityLabel: String, action: (() -> Void)? = nil) {
-        content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action))
+    /// - Parameters
+    ///     - type: The action type describing the layout and assoicated action.
+    ///     - style: The action style to apply on layout
+    @available(iOS 26, *)
+    public init(action type: Self.ActionType, style: ActionStyle) {
+        content = .action(type: type, style: style)
     }
 
-    /// Creates a toolbar item with an icon only dedicated to navigation.
+    /// Creates a toolbar item with icon dedicated to navigation.
     ///
-    /// - Parameters:
-    ///   - navigation: The navigation icon to use.
-    ///   - accessibilityLabel: The accessibility label describing the icon.
-    ///   - action: The action triggered when the item is tapped.
-    public init(navigation type: Self.NavigationType, accessibilityLabel: String, action: @escaping () -> Void) {
-        content = .navigation(type: type, label: nil, accessibilityLabel: accessibilityLabel, action: action)
-    }
-
-    /// Creates a toolbar item with icon dedicated to navigation and label.
-    /// **Warning: if OS is iOS 26+ / Liquid Glass, the label will not appear**
-    ///
-    /// - Parameters:
-    ///   - navigation: The navigation icon to use
-    ///   - label: The text displayed next to the icon, if iOS lower than 26
-    ///   - accessibilityLabel: The accessibility label describing the item
-    ///   - action: The action triggered when the item is tapped
-    public init(navigation type: Self.NavigationType,
-                label: String,
-                accessibilityLabel: String? = nil,
-                action: @escaping () -> Void)
-    {
-        content = .navigation(type: type,
-                              label: label,
-                              accessibilityLabel: accessibilityLabel ?? label,
-                              action: action)
+    /// - Parameter type: The navigation type describing asset and associated action.
+    public init(navigation type: Self.NavigationType) {
+        content = .navigation(type: type)
     }
 
     /// Creates a toolbar item with a custom view.
@@ -165,10 +191,10 @@ public struct OUDSToolbarItem: View, Identifiable {
 
     public var body: some View {
         switch content {
-        case let .action(type):
-            ActionBoutons(type: type)
-        case let .navigation(type, label, accessibilityLabel, action):
-            NavigationButton(type: type, label: label, accessibilityLabel: accessibilityLabel, action: action)
+        case let .action(type, style):
+            ActionBoutons(type: type, style: style)
+        case let .navigation(type):
+            NavigationButton(type: type)
         case let .customView(view):
             view
         }
@@ -179,7 +205,7 @@ public struct OUDSToolbarItem: View, Identifiable {
 
 /// A result builder to group ``OUDSToolbarItem`` instances.
 ///
-/// - Since: 1.3.0
+/// - Since: 1.4.0
 @resultBuilder
 public enum OUDSToolbarItemsBuilder {
     public static func buildBlock(_ components: OUDSToolbarItem...) -> [OUDSToolbarItem] {
@@ -214,81 +240,101 @@ public enum OUDSToolbarItemsBuilder {
 
 struct ActionBoutons: View {
 
+    // MARK: - Properties
+
     let type: OUDSToolbarItem.ActionType
+    let style: OUDSToolbarItem.ActionStyle
+    @State private var isHover: Bool = false
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     var body: some View {
-
         switch type {
-        case let .label(label, action):
+        case let .label(label, emphasized, accessibilityHint, action):
             Button {
                 action?()
             } label: {
-                Text(label)
+                if #available(iOS 26.0, *) {
+                    Text(label).modifier(FontLabelModifier(style: .medium))
+                } else {
+                    Text(label).modifier(FontLabelModifier(style: emphasized ? .medium : .regular))
+                }
             }
             .disabled(action == nil)
-        case let .icon(asset, _, action):
+            .accessibilityHint(Text(accessibilityHint ?? ""))
+
+        case let .icon(asset, _, accessibilityHint, action):
             Button {
                 action?()
             } label: {
                 asset
                     .renderingMode(.template)
                     .resizable()
-                    .frame(width: 26, height: 26) // TODO: #1174 - Hard-coded value for dimensions?
+                    .frame(width: 26, height: 26)
                 // NOTE: Cannot define size of 44x44 for button because with Liquid Glass height is constrained and button will be flattened
             }
+            .disabled(action == nil)
+            .accessibilityHint(Text(accessibilityHint ?? ""))
         }
     }
 }
 
 struct NavigationButton: View {
+
+    // MARK: - Properties
+
     let type: OUDSToolbarItem.NavigationType
-    let label: String?
-    let accessibilityLabel: String
-    let action: () -> Void
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.presentationMode) private var presentationMode
 
+    // MARK: - Body
+
     var body: some View {
         switch type {
-        case .back:
+        case let .back(label, accessibilityLabel, action):
             if #available(iOS 26, *) {
-                Button(action: action) {
+                Button {
+                    action?()
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
                     navigationIcon
+                        .frame(width: 28, height: 28)
                 }
                 .accessibilityLabel(accessibilityLabel)
+                .frame(width: 44, height: 44, alignment: .center)
             } else {
-                Button(action: action) {
-                    HStack(spacing: 2) { // TODO: #1174 - Hard-coded spacing value? Not token?
+                Button {
+                    action?()
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    HStack(spacing: 0) {
                         navigationIcon
+                            .frame(width: 24, height: 24)
 
                         if let label {
-                            Text(label)
+                            Text(label).modifier(FontLabelModifier(style: .regular))
                         }
                     }
                 }
                 .accessibilityLabel(accessibilityLabel)
             }
         case .close:
-            Button(action: action) {
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
                 HStack {
                     navigationIcon
+                        .oudsForegroundColor(MultipleColorSemanticToken("#999999"))
+                        .frame(width: 24, height: 24)
                 }
-                .frame(width: 44, height: 44, alignment: .center)
-                .oudsBackground(MultipleColorSemanticToken("78788029")) // TODO: Dark mode ?
+                .frame(width: 34, height: 34, alignment: .center)
+                .oudsBackground(MultipleColorSemanticToken("78788029"))
                 .clipShape(Circle())
             }
-            .accessibilityLabel(accessibilityLabel)
-            .padding(.top, paddingTop)
-        }
-    }
-
-    private var paddingTop: CGFloat {
-        if #available(iOS 26, *) {
-            0
-        } else {
-            36
+            .accessibilityLabel("core_common_close_a11y".localized())
         }
     }
 
@@ -296,8 +342,61 @@ struct NavigationButton: View {
         Image(decorative: type.iconName, bundle: theme.resourcesBundle)
             .renderingMode(.template)
             .resizable()
-            .frame(width: 28, height: 28)
-            .toFlip(type == .back && layoutDirection == .rightToLeft)
+            .toFlip(flipIcon)
+    }
+
+    private var flipIcon: Bool {
+        switch type {
+        case .back:
+            layoutDirection == .rightToLeft
+        case .close:
+            false
+        }
+    }
+}
+
+#if os(macOS)
+private typealias NativeFont = NSFont
+#else
+private typealias NativeFont = UIFont
+#endif
+
+struct FontLabelModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    enum Style {
+        case medium
+        case regular
+    }
+
+    let style: Style
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content.font(font)
+    }
+
+    private var font: Font? {
+        guard let fontFamily = theme.fontFamily else {
+            return nil
+        }
+
+        let fontWeight: Font.Weight = switch style {
+        case .medium:
+            .medium
+        case .regular:
+            .regular
+        }
+
+        let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, fontWeight)]
+        guard let uiFont = NativeFont(name: titleFontName, size: 17) else {
+            return nil
+        }
+
+        return Font(uiFont)
     }
 }
 #endif

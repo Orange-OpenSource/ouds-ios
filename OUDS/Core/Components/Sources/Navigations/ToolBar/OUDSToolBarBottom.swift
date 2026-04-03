@@ -18,7 +18,7 @@ import SwiftUI
 /// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
-/// ``OUDSToolbarBottom`` wraps any content view and applies a SwiftUI toolbar configuration.
+/// ``oudsToolbarBottom`` View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
@@ -32,31 +32,27 @@ import SwiftUI
 ///
 /// ## Guidelines
 ///
-/// - Test the use of the ``OUDSToolbarBottom`` for both iOS with Liquid Glass and not Liquid Glass
-/// - If you use both an  ``OUDSTabBar`` with the ``OUDSToolbarBottom``, the toolbar will be above the tabbar for iOS lower than 26
-/// - If you use both an  ``OUDSTabBar`` with the ``OUDSToolbarBottom``, the toolbar will be **behind** the tabbar for iOS 26+, so not usable
-/// - Avoid use of both ``OUDSToolbarBottom`` and ``OUDSTabBar`` in the same page
+/// - Test the use of the ``oudsToolbarBottom`` for both iOS with Liquid Glass and not Liquid Glass
+/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolbarBottom``, the toolbar will be above the tabbar for iOS lower than 26
+/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolbarBottom``, the toolbar will be **behind** the tabbar for iOS 26+, so not usable
+/// - Avoid use of both ``oudsToolbarBottom`` and ``OUDSTabBar`` in the same page
 ///
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSToolbarBottom(
-///         leadingItems: {
+///       YourView()
+///         .oudsToolbarBottom {
 ///             OUDSToolbarItem {
 ///                 Image(systemName: "tray")
 ///             }
-///         },
-///         trailingItems: {
+///         }, trailingItems: {
 ///             OUDSToolbarItem {
 ///                 Image(systemName: "square.and.pencil")
 ///             }
-///         })
-///     {
-///         content
-///     }
+///         }
 /// ```
 ///
-// ## Themes rendering
+/// ## Themes rendering
 ///
 /// ### Liquid Glass
 ///
@@ -87,15 +83,40 @@ import SwiftUI
 /// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarBottom_Wireframe_dark)
 ///
 /// - Since: 1.3.0
+extension View {
+
+    /// Creates a bottom toolbar with leading and trailing items.
+    ///
+    /// - Parameters:
+    ///   - leadingItems: The items displayed on the leading side.
+    ///   - trailingItems: The items displayed on the trailing side.
+    @available(iOS 15, macOS 13, visionOS 1, *)
+    public func oudsToolBarBottom(@OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
+                                  @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] }) -> some View
+    {
+        modifier(OUDSToolbarBottomModifier(leadingItems: leadingItems,
+                                           trailingItems: trailingItems))
+    }
+
+    /// Creates a bottom toolbar with grouped items, centered to the screen.
+    ///
+    /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
+    ///
+    /// - Parameter groupedItems: All the items to place in the center of the s creen
+    @available(iOS 15, macOS 13, visionOS 1, *)
+    public func oudsToolBarBottom(@OUDSToolbarItemsBuilder groupedItems: () -> [OUDSToolbarItem] = { [] }) -> some View {
+        modifier(OUDSToolbarBottomModifier(groupedItems: groupedItems))
+    }
+}
+
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSToolbarBottom<Content>: View where Content: View {
+struct OUDSToolbarBottomModifier: ViewModifier {
 
     // MARK: - Stored properties
 
     private let leadingItems: [OUDSToolbarItem]?
     private let trailingItems: [OUDSToolbarItem]?
     private let groupedItems: [OUDSToolbarItem]?
-    private let content: () -> Content
 
     @Environment(\.theme) private var theme
 
@@ -107,14 +128,18 @@ public struct OUDSToolbarBottom<Content>: View where Content: View {
     ///   - leadingItems: The items displayed on the leading side.
     ///   - trailingItems: The items displayed on the trailing side.
     ///   - content: The content view wrapped by the toolbar.
-    public init(@OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
-                @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] },
-                @ViewBuilder content: @escaping () -> Content)
+    init(@OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
+         @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] })
     {
         groupedItems = nil
         self.leadingItems = leadingItems()
         self.trailingItems = trailingItems()
-        self.content = content
+    }
+
+    init(@OUDSToolbarItemsBuilder groupedItems: () -> [OUDSToolbarItem] = { [] }) {
+        self.groupedItems = groupedItems()
+        leadingItems = nil
+        trailingItems = nil
     }
 
     /// Creates a bottom toolbar with grouped items, centered to the screen.
@@ -124,27 +149,16 @@ public struct OUDSToolbarBottom<Content>: View where Content: View {
     /// - Parameters:
     ///   - groupedItems: All the items to place in the center of the s creen
     ///   - content: The content view wrapped by the toolbar.
-    public init(@OUDSToolbarItemsBuilder groupedItems: () -> [OUDSToolbarItem] = { [] },
-                @ViewBuilder content: @escaping () -> Content)
-    {
-        self.groupedItems = groupedItems()
-        leadingItems = nil
-        trailingItems = nil
-        self.content = content
-    }
-
-    // MARK: - Body
-
-    public var body: some View {
+    func body(content: Content) -> some View {
         if let groupedItems {
-            content()
+            content
                 .toolbar {
                     ToolbarItemGroup(placement: bottomPlacement) {
                         itemsView(groupedItems)
                     }
                 }
         } else {
-            content()
+            content
                 .toolbar {
                     ToolbarItemGroup(placement: bottomPlacement) {
                         itemsView(leadingItems)
@@ -176,4 +190,5 @@ public struct OUDSToolbarBottom<Content>: View where Content: View {
         }
     }
 }
+
 #endif

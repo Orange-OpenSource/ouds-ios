@@ -11,17 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS)
+#if !os(watchOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
-/// It typically displays the page title, and may include navigation actions such as “Back” or "Cancel" as well as supplementary actions.
+/// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
-/// ``OUDSToolbarTop`` wraps any content view and applies a SwiftUI toolbar configuration.
+/// ``oudsToolbarTop`` View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
@@ -35,7 +35,7 @@ import SwiftUI
 /// Without Liquid Glass / iOS 18-, the OS won't change that much the style of the toolbar items:
 /// - Items won't be visually grouped
 ///
-/// TODO: #1174 - Add details about appearances depending to versions
+/// Globaly the appearence if the ** navigatrion bar** elements are changed by the `oudsNavigationBarAppearance` helper of `View` that must be applyed on the root view of the Navigation stack.
 ///
 /// ## Technical constraints
 ///
@@ -45,7 +45,7 @@ import SwiftUI
 ///     struct AppMainView: View {
 ///         var body: some View {
 ///             ContentView()
-///                 .oudsAccentColor(theme.colors.contentBrandPrimary)
+///                 .accentColor(theme.colors.contentDefault)
 ///         }
 ///     }
 /// ```
@@ -59,17 +59,16 @@ import SwiftUI
 /// ## Code sample
 ///
 /// ```swift
-///     OUDSToolbarTop(title: "Inbox", subtitle: "2 new messages") {
-///         ContentView()
-///     } leadingItems: {
-///         OUDSToolbarItem(navigation: .close, accessibilityLabel: "Close") {
-///             // Handle close
-///         }
-///     } trailingItems: {
-///         OUDSToolbarItem {
-///             Image(systemName: "bell")
-///         }
-///     }
+///     ContentView()
+///        .oudsToolbarTop(title: "Inbox", subtitle: "2 new messages") {
+///            OUDSToolbarItem(navigation: .close) {
+///                // Handle close
+///            }
+///        } trailingItems: {
+///            OUDSToolbarItem {
+///                Image(systemName: "bell")
+///            }
+///        }
 /// ```
 ///
 /// ## Design documentation
@@ -108,225 +107,30 @@ import SwiftUI
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolbarTop_LiquidGlass_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.3.0
+/// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSToolbarTop<Content: View>: View {
-    // TODO: #1174 - Make screenshots for doc
-
-    // MARK: - Stored properties
-
-    private let title: String
-    private let subtitle: String?
-    private let leadingItems: [OUDSToolbarItem]
-    private let trailingItems: [OUDSToolbarItem]
-    private let content: () -> Content
-
-    @Environment(\.theme) private var theme
-
-    // MARK: - Initializer
-
-    /// Creates a top toolbar with a title, optional subtitle, and leading/trailing items.
+extension View {
+    /// Creates a top toolbar with a title, optional subtitle (ios >= 26), and leading/trailing items.
     ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
+    ///   - hasLargeTitle: If title must be displayed in large mode, false by default. If large mode, the subtitle is not display
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, empty by default.
     ///   - trailingItems: The items displayed on the trailing side, empty by default.
-    ///   - content: The content view wrapped by the toolbar.
-    public init(title: String,
-                subtitle: String? = nil,
-                @OUDSToolbarItemsBuilder leadingItems: () -> [OUDSToolbarItem] = { [] },
-                @OUDSToolbarItemsBuilder trailingItems: () -> [OUDSToolbarItem] = { [] },
-                @ViewBuilder content: @escaping () -> Content)
-    {
-        if title.isEmpty {
-            OL.warning("The title of OUDSToolbarTop is empty, prefer a non-empty title")
-        }
-        if let subtitle, subtitle.isEmpty {
-            OL.warning("The subtitle of OUDSToolbarTop is empty, prefer nil instead")
-        }
-        self.title = title
-        self.subtitle = subtitle?.isEmpty == true ? nil : subtitle
-        self.leadingItems = leadingItems()
-        self.trailingItems = trailingItems()
-        self.content = content
-    }
-
-    // MARK: - Body
-
-    public var body: some View {
-        content()
-            .toolbar {
-                ToolbarItemGroup(placement: leadingPlacement) {
-                    itemsView(leadingItems)
-                }
-                ToolbarItem(placement: principalPlacement) {
-                    ToolbarTitleView(title: title, subtitle: subtitle, addGrabber: addGrabber)
-                }
-                ToolbarItemGroup(placement: trailingPlacement) {
-                    itemsView(trailingItems)
-                }
-            }
-        // TODO: #1174 - Define accent color, at least for iOS 18-, to apply theme.colors.contentBrandPrimary token
-    }
-
-    private var addGrabber: Bool {
-        leadingItems.contains { item in
-            switch item.content {
-            case let .navigation(type, _, _, _) where type == .close:
-                true
-            default:
-                false
-            }
-        }
-    }
-
-    @ViewBuilder
-    private func itemsView(_ items: [OUDSToolbarItem]) -> some View {
-        if !items.isEmpty {
-            ForEach(items) { item in
-                switch item.content {
-                case let .action(type):
-                    item.modifier(ToolbarTopItemActionStyleModifier(type: type))
-                case let .navigation(type, _, _, _):
-                    item.modifier(ToolbarTopItemNavigationStyleModifier(type: type))
-                case let .customView(view):
-                    view
-                }
-            }
-        }
-    }
-
-    // MARK: - Helpers
-
-    private var leadingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
-        return .topBarLeading
-        #elseif os(macOS)
-        return .navigation
-        #else
-        return .automatic
-        #endif
-    }
-
-    private var trailingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
-        return .topBarTrailing
-        #elseif os(macOS)
-        return .primaryAction
-        #else
-        return .automatic
-        #endif
-    }
-
-    private var principalPlacement: ToolbarItemPlacement {
-        .principal
-    }
-}
-#endif
-
-struct OUDSToolBarTopModifier: ViewModifier {
-    let title: String
-    let largeTitle: Bool
-    let subtitle: String?
-    let leadingItems: [OUDSToolbarItem]
-    let trailingItems: [OUDSToolbarItem]
-
-    init(title: String,
-         largeTitle: Bool,
-         subtitle: String? = nil,
-         @OUDSToolbarItemsBuilder
-         leadingItems: @escaping () -> [OUDSToolbarItem],
-         @OUDSToolbarItemsBuilder
-         trailingItems: @escaping () -> [OUDSToolbarItem])
-    {
-        self.title = title
-        self.largeTitle = largeTitle
-        self.subtitle = subtitle
-        self.leadingItems = leadingItems()
-        self.trailingItems = trailingItems()
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .navigationBarTitleDisplayMode(largeTitle ? .large : .inline)
-            .toolbar {
-                ToolbarItemGroup(placement: leadingPlacement) {
-                    itemsView(leadingItems)
-                }
-                ToolbarItem(placement: principalPlacement) {
-                    ToolbarTitleView(title: title, subtitle: subtitle, addGrabber: addGrabber)
-                }
-                ToolbarItemGroup(placement: trailingPlacement) {
-                    itemsView(trailingItems)
-                }
-            }
-    }
-
-    private var addGrabber: Bool {
-        leadingItems.contains { item in
-            switch item.content {
-            case let .navigation(type, _, _, _) where type == .close:
-                true
-            default:
-                false
-            }
-        }
-    }
-
-    private func itemsView(_ items: [OUDSToolbarItem]) -> some View {
-        ForEach(items) { item in
-            switch item.content {
-            case let .action(type):
-                item.modifier(ToolbarTopItemActionStyleModifier(type: type))
-            case let .navigation(type, _, _, _):
-                item.modifier(ToolbarTopItemNavigationStyleModifier(type: type))
-            case let .customView(view):
-                view
-            }
-        }
-    }
-
-    // MARK: - Helpers
-
-    private var leadingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
-        return .topBarLeading
-        #elseif os(macOS)
-        return .navigation
-        #else
-        return .automatic
-        #endif
-    }
-
-    private var trailingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
-        return .topBarTrailing
-        #elseif os(macOS)
-        return .primaryAction
-        #else
-        return .automatic
-        #endif
-    }
-
-    private var principalPlacement: ToolbarItemPlacement {
-        .principal
-    }
-}
-
-extension View {
     public func oudsToolBarTop(_ title: String,
-                               largeTitle: Bool = false,
+                               hasLargeTitle: Bool = false,
                                subtitle: String? = nil,
                                @OUDSToolbarItemsBuilder
                                leadingItems: @escaping () -> [OUDSToolbarItem] = { [] },
                                @OUDSToolbarItemsBuilder
                                trailingItems: @escaping () -> [OUDSToolbarItem] = { [] }) -> some View
     {
-        modifier(OUDSToolBarTopModifier(title: title,
-                                        largeTitle: largeTitle,
-                                        subtitle: subtitle,
-                                        leadingItems: leadingItems,
-                                        trailingItems: trailingItems))
+        modifier(ToolBarTopModifier(title: title,
+                                    hasLargeTitle: hasLargeTitle,
+                                    subtitle: subtitle,
+                                    leadingItems: leadingItems,
+                                    trailingItems: trailingItems))
     }
 }
+#endif
