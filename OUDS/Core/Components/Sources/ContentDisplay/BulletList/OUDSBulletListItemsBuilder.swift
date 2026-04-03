@@ -34,7 +34,7 @@ import SwiftUI
 ///
 /// - Since: 1.2.0
 @resultBuilder
-public enum OUDSBulletListItemBuilder {
+@frozen public enum OUDSBulletListItemBuilder {
 
     /// Combines multiple `OUDSBulletList.Item` instances into a single array
     public static func buildBlock(_ components: OUDSBulletList.Item...) -> [OUDSBulletList.Item] {

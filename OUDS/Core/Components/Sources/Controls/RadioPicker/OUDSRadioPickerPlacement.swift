@@ -15,7 +15,7 @@
 /// Enumerates the types of layouts a ``OUDSRadioPicker`` can have
 ///
 /// - Since: 0.14.0
-public enum OUDSRadioPickerPlacement {
+@frozen public enum OUDSRadioPickerPlacement {
 
     /// All radio buttons are in one row, with a flag saying if a scroll indicator can be displayed or not
     case horizontal(Bool)

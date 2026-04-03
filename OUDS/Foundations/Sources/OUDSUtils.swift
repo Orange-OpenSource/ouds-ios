@@ -16,7 +16,7 @@ import Foundation
 /// A set of utilities from OUDS library shared with love ⸜(｡˃ ᵕ ˂)⸝♡♡♡
 ///
 /// - Since: 1.2.0
-public enum OUDSUtils {
+@frozen public enum OUDSUtils {
 
     // MARK: - Language detection
 

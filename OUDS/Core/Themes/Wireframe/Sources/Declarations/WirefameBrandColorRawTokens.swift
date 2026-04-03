@@ -16,7 +16,7 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than dimensionstruct_.
 ///
 /// - Since: 0.17.0
-public enum WireframeBrandColorRawTokens {
+@frozen public enum WireframeBrandColorRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the tokenator, the values have been added in the Values folder

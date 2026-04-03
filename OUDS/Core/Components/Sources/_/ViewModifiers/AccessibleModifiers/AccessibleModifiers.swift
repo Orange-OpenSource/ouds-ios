@@ -80,7 +80,7 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 /// ```
 ///
 /// - Since: 0.8.0
-public enum AccessibilityFocusable: Hashable {
+@frozen public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)
 }

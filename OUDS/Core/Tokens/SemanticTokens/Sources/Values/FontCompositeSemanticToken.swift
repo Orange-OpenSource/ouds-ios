@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import CoreFoundation
 import OUDSTokensRaw
 
 /// An operator to make for example comparisons between ``FontCompositeSemanticToken``
@@ -22,7 +23,7 @@ infix operator <|
 /// All these elements are *raw tokens*, and together define a *composite raw token* for *font* thing.
 ///
 /// - Since: 0.22.0
-public struct FontCompositeSemanticToken: Equatable, Sendable {
+@frozen public struct FontCompositeSemanticToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary
 
@@ -43,10 +44,10 @@ public struct FontCompositeSemanticToken: Equatable, Sendable {
     ///    - lineHeight: the line height for the texts
     ///    - weight: the weight for the texts
     ///    - letterSpacing: the letter spacing for the texts
-    public init(size: FontSizeRawToken,
-                lineHeight: FontLineHeightRawToken,
-                weight: FontWeightRawToken,
-                letterSpacing: FontLetterSpacingRawToken)
+    @inlinable public init(size: FontSizeRawToken,
+                           lineHeight: FontLineHeightRawToken,
+                           weight: FontWeightRawToken,
+                           letterSpacing: FontLetterSpacingRawToken)
     {
         self.size = size
         self.lineHeight = lineHeight
@@ -65,7 +66,7 @@ public struct FontCompositeSemanticToken: Equatable, Sendable {
     ///    - lhs: The font composite token we expect to be smaller than `rhs`
     ///    - rhs: The font composite token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    public static func <| (lhs: FontCompositeSemanticToken, rhs: FontCompositeSemanticToken) -> Bool {
+    @inlinable public static func <| (lhs: FontCompositeSemanticToken, rhs: FontCompositeSemanticToken) -> Bool {
         lhs.size < rhs.size
             && lhs.lineHeight <= rhs.lineHeight
             && lhs.weight <= rhs.weight

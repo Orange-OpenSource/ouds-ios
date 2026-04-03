@@ -90,13 +90,13 @@ public struct OUDSLink: View {
 
     /// Represents the size of an `OUDSLink`.
     /// - Since: 0.11.0
-    public enum Size {
+    @frozen public enum Size {
         case small, `default`
     }
 
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
     /// - Since: 0.11.0
-    public enum Indicator {
+    @frozen public enum Indicator {
         case back, next
     }
 
