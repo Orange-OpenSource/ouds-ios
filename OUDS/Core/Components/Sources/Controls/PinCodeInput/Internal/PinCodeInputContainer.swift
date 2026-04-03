@@ -138,11 +138,11 @@ struct PinCodeInputContainer: View {
 
     // MARK: - Colors
 
-    private var foregroundColor: Color {
+    private var foregroundColor: MultipleColorSemanticToken {
         if isError {
-            theme.colors.surfaceStatusNegativeMuted.color(for: colorScheme)
+            theme.colors.surfaceStatusNegativeMuted
         } else { // Not outlined, no error
-            theme.colors.actionSupportEnabled.color(for: colorScheme)
+            theme.colors.actionSupportEnabled
         }
     }
 
