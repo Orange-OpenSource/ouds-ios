@@ -34,6 +34,14 @@ struct OrangeCompactThemeTextAreaComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is OrangeCompactThemeBorderSemanticTokensProvider)
+    }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is OrangeCompactThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

@@ -24,10 +24,32 @@ import OUDSTokensSemantic
 ///
 /// - Since: 0.17.0
 public protocol TextAreaComponentTokens {
+
+    // MARK: - Colors
+
+    var colorBorderEnabled: MultipleColorSemanticToken { get }
+    var colorBorderHover: MultipleColorSemanticToken { get }
+    var colorBorderFocus: MultipleColorSemanticToken { get }
+
+    // MARK: - Borders
+
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthFocus: BorderWidthSemanticToken { get }
+
+    // MARK: - Spaces
+
+    var spacePaddingInlineDefault: SpaceSemanticToken { get }
     var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    var spaceRowGapLabelInput: SpaceSemanticToken { get }
+
+    // MARK: - Sizes
+
     var sizeMinHeightInput: SizeSemanticToken { get }
     var sizeMaxHeightInput: SizeSemanticToken { get }
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
     var sizeMaxWidth: SizeSemanticToken { get }
 }
 

@@ -18,7 +18,8 @@ import OUDSThemesContract
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
 /// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizesSemanticTokensProvider`),
-/// and spaces (from `AllSpacesSemanticTokensProvider`).
+/// spaces (from `AllSpacesSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
+/// and colors (from `AllColorSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
@@ -29,6 +30,12 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
     /// Provider of space semantic tokens to use for text area spaces
     let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of borders semantic tokens to use for text area borders
+    let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for text area colors
+    let colors: AllColorSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -36,13 +43,19 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
+        self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeTextAreaComponentTokensProvider")

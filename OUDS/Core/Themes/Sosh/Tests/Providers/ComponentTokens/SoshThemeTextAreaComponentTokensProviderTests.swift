@@ -34,6 +34,14 @@ struct SoshThemeTextAreaComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is SoshThemeBorderSemanticTokensProvider)
+    }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is SoshThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

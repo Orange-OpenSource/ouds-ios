@@ -34,6 +34,14 @@ struct WireframeThemeTextAreaComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is WireframeThemeBorderSemanticTokensProvider)
+    }
+
+    @Test func defaultColorSemanticTokensProvider() throws {
+        #expect(provider.colors is WireframeThemeColorSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

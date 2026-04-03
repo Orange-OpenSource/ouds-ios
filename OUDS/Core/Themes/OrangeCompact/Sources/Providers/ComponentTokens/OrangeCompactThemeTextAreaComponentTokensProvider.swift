@@ -20,7 +20,8 @@ import OUDSThemesContract
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
 /// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizesSemanticTokensProvider`),
-/// and spaces (from `AllSpacesSemanticTokensProvider`).
+/// spaces (from `AllSpacesSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
+/// and colors (from `AllColorSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class OrangeCompactThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
@@ -31,6 +32,12 @@ final class OrangeCompactThemeTextAreaComponentTokensProvider: AllTextAreaCompon
     /// Provider of space semantic tokens to use for text area spaces
     let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of borders semantic tokens to use for text area borders
+    let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for text area colors
+    let colors: AllColorSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -38,13 +45,19 @@ final class OrangeCompactThemeTextAreaComponentTokensProvider: AllTextAreaCompon
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`
     /// - Parameters:
     ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeCompactThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``OrangeCompactThemeSpaceSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeCompactThemeSpaceSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeCompactThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeCompactThemeColorSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         borders: AllBorderSemanticTokensProvider? = nil,
+         colors: AllColorSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeCompactThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? OrangeCompactThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeCompactThemeSpaceSemanticTokensProvider())
+        self.borders = (borders ?? OrangeCompactThemeBorderSemanticTokensProvider())
+        self.colors = (colors ?? OrangeCompactThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeCompactThemeTextAreaComponentTokensProvider")
