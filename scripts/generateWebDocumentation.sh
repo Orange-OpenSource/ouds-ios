@@ -236,7 +236,14 @@ fi
 # Landing page of generated documentation is broken, real content is in /documentation
 # Override this page and force by code redirection
 # See Orange-OpenSource/ouds-ios#636
-echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/oudsthemescontract"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/oudsthemescontract</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/oudsthemescontract"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/oudsthemescontract</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html"
+
+# Step 4b - Add llms.txt for AI tool discoverability
+# ---------------------------------------------------
+
+_ "👉 Copying llms.txt"
+cp "../llms.txt" "$DOCUMENTATION_HTML_LOCATION/llms.txt"
+_ "👍 Copied!"
 
 # Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
@@ -360,7 +367,8 @@ if [[ $use_git -eq 1 ]]; then
             "$DOCS_DIRECTORY"/*.jpg \
             "$DOCS_DIRECTORY"/*.json \
             "$DOCS_DIRECTORY"/*.html \
-            "$DOCS_DIRECTORY/CNAME" 2>/dev/null || true
+            "$DOCS_DIRECTORY/CNAME" \
+            "$DOCS_DIRECTORY/llms.txt" 2>/dev/null || true
 
     # Check if changes
     if git diff --cached --quiet; then
