@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-// MARK: - Toolbar top Modifier (Bottom)
+// MARK: - ToolBar top Modifier (Bottom)
 
 @available(iOS 15, macOS 13, *)
 struct ToolBarTopModifier: ViewModifier {
@@ -26,29 +26,29 @@ struct ToolBarTopModifier: ViewModifier {
     let title: String
     let hasLargeTitle: Bool
     let subtitle: String?
-    @OUDSToolbarItemsBuilder
-    let leadingItems: [OUDSToolbarItem]
-    @OUDSToolbarItemsBuilder
-    let trailingItems: [OUDSToolbarItem]
+    @OUDSToolBarItemsBuilder
+    let leadingItems: [OUDSToolBarItem]
+    @OUDSToolBarItemsBuilder
+    let trailingItems: [OUDSToolBarItem]
 
     // MARK: - Initializer
 
-    /// Creates a top toolbar with a title, optional subtitle (ios 26 only), and leading/trailing items.
+    /// Creates a top toolBar with a title, optional subtitle (ios 26 only), and leading/trailing items.
     ///
     /// - Parameters:
-    ///   - title: The toolbar title. Prefer a non-empty string.
+    ///   - title: The toolBar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If title must be displayed in large mode, false by default. If large mode, the subtitle is not display
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, empty by default.
     ///   - trailingItems: The items displayed on the trailing side, empty by default.
-    ///   - content: The content view wrapped by the toolbar.
+    ///   - content: The content view wrapped by the toolBar.
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
-         @OUDSToolbarItemsBuilder
-         leadingItems: @escaping () -> [OUDSToolbarItem],
-         @OUDSToolbarItemsBuilder
-         trailingItems: @escaping () -> [OUDSToolbarItem])
+         @OUDSToolBarItemsBuilder
+         leadingItems: @escaping () -> [OUDSToolBarItem],
+         @OUDSToolBarItemsBuilder
+         trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
             OL.warning("The title of OUDSToolBarTopModifier is empty, prefer a non-empty title")
@@ -82,13 +82,15 @@ struct ToolBarTopModifier: ViewModifier {
         }
     }
 
-    private func itemsView(_ items: [OUDSToolbarItem]) -> some View {
+    @Environment(\.theme) var theme
+
+    private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
         ForEach(items) { item in
             switch item.content {
             case let .action(_, style):
-                item.buttonStyle(ToolbarTopItemActionStyle(style: style))
+                item.modifier(ToolBarTopItemActionModifier(style: style))
             case let .navigation(type):
-                item.buttonStyle(ToolbarTopItemNavigationStyle(type: type))
+                item.buttonStyle(ToolBarTopItemNavigationStyle(type: type))
             case let .customView(view):
                 view
             }

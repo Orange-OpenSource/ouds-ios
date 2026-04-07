@@ -16,14 +16,14 @@ import SwiftUI
 import Testing
 
 @available(iOS 16, macOS 15, visionOS 1, *)
-struct OUDSToolbarItemBuilderTests {
+struct OUDSToolBarItemBuilderTests {
 
     @Test func builderCollectsItems() {
         let items = makeItems {
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 Image(systemName: "bell")
             }
-            OUDSToolbarItem {
+            OUDSToolBarItem {
                 Image(systemName: "tray")
             }
         }
@@ -32,12 +32,12 @@ struct OUDSToolbarItemBuilderTests {
     }
 
     @Test func navigationItemRawValues() {
-        #expect(OUDSToolbarNavigationItem.back.rawValue == "ic_navigation_back")
-        #expect(OUDSToolbarNavigationItem.close.rawValue == "ic_navigation_close")
-        #expect(OUDSToolbarNavigationItem.menu.rawValue == "ic_navigation_menu")
+        #expect(OUDSToolBarNavigationItem.back.rawValue == "ic_navigation_back")
+        #expect(OUDSToolBarNavigationItem.close.rawValue == "ic_navigation_close")
+        #expect(OUDSToolBarNavigationItem.menu.rawValue == "ic_navigation_menu")
     }
 
-    private func makeItems(@OUDSToolbarItemsBuilder _ items: () -> [OUDSToolbarItem]) -> [OUDSToolbarItem] {
+    private func makeItems(@OUDSToolBarItemsBuilder _ items: () -> [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         items()
     }
 }

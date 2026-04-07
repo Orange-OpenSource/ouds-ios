@@ -29,7 +29,9 @@ public struct OUDSNavigationStack<Content: View>: View {
 
     /// Create a Navigation stack and apply the right appearance according to the current theme.
     ///
-    /// - Parameter hideBackButtonLabel: flag to say if the label in back button should be hidden. `true` by default
+    /// - Parameters
+    ///     - hideBackButtonLabel: flag to say if the label in back button should be hidden. `true` by default
+    ///     - content:  The stack view's content.
     public init(hideBackButtonLabel: Bool = true,
                 @ViewBuilder content: @escaping () -> Content)
     {

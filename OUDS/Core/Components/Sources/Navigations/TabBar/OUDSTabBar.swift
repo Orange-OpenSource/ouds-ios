@@ -182,7 +182,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.0.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTabBar<Content>: View where Content: View {
+public struct OUDSTabBar<Content: View>: View {
 
     // MARK: Properties
 
@@ -200,7 +200,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Initializers
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
@@ -301,7 +301,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
         // With Xcode 26.0 it was mandatory to manage these 2 cases.
         // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
         // because of the ZStack, its conditions and the multiple use of tab views.
-        // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
+        // Such cycle broke view hierachy, UI tests and had side effects with toolBar buttons.
         // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
         // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
         // device-related environment values (such as `iPhoneInUse`) are available only

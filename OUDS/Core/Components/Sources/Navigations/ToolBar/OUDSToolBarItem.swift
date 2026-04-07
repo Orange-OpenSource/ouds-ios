@@ -17,31 +17,33 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Toolbar Item
+// MARK: - OUDS ToolBar Item
 
-/// A strongly typed toolbar item container used inside ``oudsToolbarTop`` and ``oudsToolbarBottom``.
+/// A strongly typed toolBar item container used inside:
+/// - ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
+/// - ``oudsToolBarBottom(leadingItems:trailingItems:)``.
 ///
-/// Use ``OUDSToolbarItem`` to provide custom toolbar views or predefined navigation items.
+/// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
 ///
 /// ```swift
-///     // A toolbar item with only the close icon
-///     OUDSToolbarItem(navigation: .close) {
+///     // A toolBar item with only the close icon
+///     OUDSToolBarItem(navigation: .close) {
 ///         // Handle navigation
 ///     }
 ///
-///     // A toolbar item with the back icon and and a text, for iOS < 26
-///     OUDSToolbarItem(navigation: .back(label: "Back")) {
+///     // A toolBar item with the back icon and and a text, for iOS < 26
+///     OUDSToolBarItem(navigation: .back(label: "Back")) {
 ///         // Handle navigation with a text label
 ///     }
 ///
-///     // A toolbar item with some View inside
-///     OUDSToolbarItem {
+///     // A toolBar item with some View inside
+///     OUDSToolBarItem {
 ///         // Menu, ...
 ///     }
 /// ```
 ///
 /// - Since: 1.4.0
-public struct OUDSToolbarItem: View, Identifiable {
+public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Content
 
@@ -51,17 +53,17 @@ public struct OUDSToolbarItem: View, Identifiable {
         case customView(AnyView)
     }
 
-    /// Defines the styling configuration for toolbar items for ios > 26
+    /// Defines the styling configuration for toolBar items for ios > 26
     public enum ActionStyle {
         case `default`
         case proiminent
         case tinted
     }
 
-    // MARK: - OUDS Toolbar Action Item
+    // MARK: - OUDS ToolBar Action Item
 
-    /// Defines the built-in action type available for the toolbars.
-    /// Those items can be usend at `.topLeading` and `.topTrailing` position of a ``OUDSTopBarTop``
+    /// Defines the built-in action type available for the toolBars.
+    /// Those items can be usend at `.topLeading` and `.topTrailing` position of a ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
     ///
     /// - Since: 1.4.0
     public enum ActionType {
@@ -84,9 +86,9 @@ public struct OUDSToolbarItem: View, Identifiable {
         case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
     }
 
-    // MARK: - OUDS Toolbar Navigation Item
+    // MARK: - OUDS ToolBar Navigation Item
 
-    /// Defines the built-in navigation type available for the toolbars. Those items must be used only on topLeading position of `.toolbar`
+    /// Defines the built-in navigation type available for the toolBars. Those items must be used only on topLeading position of `.toolBar`
     /// Each case maps to an image asset provided by the OUDS package resources.
     ///
     /// - Since: 1.4.0
@@ -123,36 +125,36 @@ public struct OUDSToolbarItem: View, Identifiable {
 
     // MARK: - Initializers
 
-//    /// Creates an action toolbar item with only a text
-//    ///
-//    /// - Parameters:
-//    ///   - label: The text to display in the item, must not be empty
-//    ///   - action: The action triggered when the item is tapped
-//    public init(label: String, action: (() -> Void)? = nil) {
-//        if label.isEmpty {
-//            OL.fatal("The label for a toolbar item without icon must not be empty")
-//        }
-//        content = .action(type: .label(label, action: action), style: .default)
-//    }
-//
-//    /// Creates an action toolbar item with an icon only dedicated to action.
-//    ///
-//    /// - Parameters:
-//    ///   - icon: The `Image` to add as button as action item
-//    ///   - accessibilityLabel: The accessibility label describing the icon
-//    ///   - action: The action triggered when the item is tapped
-//    public init(icon: Image, accessibilityLabel: String, action: (() -> Void)? = nil) {
-//        content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
-//    }
+    /// Creates an action toolBar item with only a text
+    ///
+    /// - Parameters:
+    ///   - label: The text to display in the item, must not be empty
+    ///   - action: The action triggered when the item is tapped
+    public init(label: String, action: (() -> Void)? = nil) {
+        if label.isEmpty {
+            OL.fatal("The label for a toolBar item without icon must not be empty")
+        }
+        content = .action(type: .label(label, action: action), style: .default)
+    }
 
-    /// Creates a toolbar item with action type.
+    /// Creates an action toolBar item with an icon only dedicated to action.
+    ///
+    /// - Parameters:
+    ///   - icon: The `Image` to add as button as action item
+    ///   - accessibilityLabel: The accessibility label describing the icon
+    ///   - action: The action triggered when the item is tapped
+    public init(icon: Image, accessibilityLabel: String, action: (() -> Void)? = nil) {
+        content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
+    }
+
+    /// Creates a toolBar item with action type.
     ///
     /// - Parameter type: The action type describing the layout and assoicated action.
     public init(action type: Self.ActionType) {
         content = .action(type: type, style: .default)
     }
 
-    /// Creates a toolbar item with action type.
+    /// Creates a toolBar item with action type.
     ///
     /// - Parameters
     ///     - type: The action type describing the layout and assoicated action.
@@ -162,19 +164,19 @@ public struct OUDSToolbarItem: View, Identifiable {
         content = .action(type: type, style: style)
     }
 
-    /// Creates a toolbar item with icon dedicated to navigation.
+    /// Creates a toolBar item with icon dedicated to navigation.
     ///
     /// - Parameter type: The navigation type describing asset and associated action.
     public init(navigation type: Self.NavigationType) {
         content = .navigation(type: type)
     }
 
-    /// Creates a toolbar item with a custom view.
+    /// Creates a toolBar item with a custom view.
     ///
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///
     /// ```swift
-    /// OUDSToolbarItem {
+    /// OUDSToolBarItem {
     ///     Menu("Options") {
     ///         Button("Option 1") { }
     ///         Button("Option 2") { }
@@ -203,37 +205,37 @@ public struct OUDSToolbarItem: View, Identifiable {
 
 // MARK: - OUDS Tool Bar Items Builder
 
-/// A result builder to group ``OUDSToolbarItem`` instances.
+/// A result builder to group ``OUDSToolBarItem`` instances.
 ///
 /// - Since: 1.4.0
 @resultBuilder
-public enum OUDSToolbarItemsBuilder {
-    public static func buildBlock(_ components: OUDSToolbarItem...) -> [OUDSToolbarItem] {
+public enum OUDSToolBarItemsBuilder {
+    public static func buildBlock(_ components: OUDSToolBarItem...) -> [OUDSToolBarItem] {
         components
     }
 
-    public static func buildBlock(_ components: [OUDSToolbarItem]...) -> [OUDSToolbarItem] {
+    public static func buildBlock(_ components: [OUDSToolBarItem]...) -> [OUDSToolBarItem] {
         components.flatMap(\.self)
     }
 
-    public static func buildOptional(_ component: [OUDSToolbarItem]?) -> [OUDSToolbarItem] {
+    public static func buildOptional(_ component: [OUDSToolBarItem]?) -> [OUDSToolBarItem] {
         component ?? []
     }
 
     /// Finalizes the result, returning the complete list of items
-    public static func buildFinalResult(_ component: [OUDSToolbarItem]) -> [OUDSToolbarItem] {
+    public static func buildFinalResult(_ component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         component
     }
 
-    public static func buildEither(first component: [OUDSToolbarItem]) -> [OUDSToolbarItem] {
+    public static func buildEither(first component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         component
     }
 
-    public static func buildEither(second component: [OUDSToolbarItem]) -> [OUDSToolbarItem] {
+    public static func buildEither(second component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         component
     }
 
-    public static func buildArray(_ components: [[OUDSToolbarItem]]) -> [OUDSToolbarItem] {
+    public static func buildArray(_ components: [[OUDSToolBarItem]]) -> [OUDSToolBarItem] {
         components.flatMap(\.self)
     }
 }
@@ -242,9 +244,8 @@ struct ActionBoutons: View {
 
     // MARK: - Properties
 
-    let type: OUDSToolbarItem.ActionType
-    let style: OUDSToolbarItem.ActionStyle
-    @State private var isHover: Bool = false
+    let type: OUDSToolBarItem.ActionType
+    let style: OUDSToolBarItem.ActionStyle
     @Environment(\.theme) private var theme
 
     // MARK: - Body
@@ -284,7 +285,7 @@ struct NavigationButton: View {
 
     // MARK: - Properties
 
-    let type: OUDSToolbarItem.NavigationType
+    let type: OUDSToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection

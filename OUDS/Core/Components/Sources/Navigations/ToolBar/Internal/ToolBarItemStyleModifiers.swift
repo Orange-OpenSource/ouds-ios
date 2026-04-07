@@ -16,11 +16,11 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Toolbar Item Action Style Modifier (Bottom)
+// MARK: - ToolBar Item Action Style Modifier (Bottom)
 
-/// Applies styling to toolbar bottom items.
+/// Applies styling to toolBar bottom items.
 /// Only the foreground color of the items changesd depending to the OS version.
-struct ToolbarBottomItemActionStyleModifier: ViewModifier {
+struct ToolBarBottomItemActionStyleModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
@@ -30,17 +30,31 @@ struct ToolbarBottomItemActionStyleModifier: ViewModifier {
     }
 }
 
-// MARK: - Toolbar Item Action Style Modifier (Top)
+// MARK: - ToolBar Item Action Style Modifier (Top)
 
-// Applies styling to toolbar top items depending depending to OS versions:
-// - For iOS 26+ / Liquid Glass, action button in toolbar top have colored background
-// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
+// Applies styling to toolBar top items depending depending to OS versions:
+// - For iOS 26+ / Liquid Glass, action button in toolBar top have colored background
+// - For iOS lower than 26 / not Liquid Glass, action button in toolBar top do not have colored background but foreground color instead
 // The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
 // However things cannot be customized that much for Liquid Glass.
 
-struct ToolbarTopItemActionStyle: ButtonStyle {
+struct ToolBarTopItemActionModifier: ViewModifier {
+    let style: OUDSToolBarItem.ActionStyle
 
-    let style: OUDSToolbarItem.ActionStyle
+    func body(content: Content) -> some View {
+        if style == .proiminent {
+            content
+                .buttonStyle(.borderedProminent)
+        } else {
+            content
+                .buttonStyle(ToolBarTopItemActionStyle(style: style))
+        }
+    }
+}
+
+struct ToolBarTopItemActionStyle: ButtonStyle {
+
+    let style: OUDSToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -55,12 +69,10 @@ struct ToolbarTopItemActionStyle: ButtonStyle {
                     configuration.label.oudsForegroundColor(theme.button.colorContentMinimalEnabled)
                 case .proiminent:
                     configuration.label
-                        .oudsForegroundColor(theme.bar.colorContentOnAccent)
-                        #if os(iOS) || os(tvOS)
-                        .buttonStyle(.glassProminent)
-                        #endif
+                        .oudsTintColor(theme.colors.actionSelected)
+                        .oudsForegroundColor(theme.colors.contentOnActionSelected)
                 case .tinted:
-                    configuration.label.oudsTintColor(theme.colors.actionAccent)
+                    configuration.label.oudsForegroundColor(theme.colors.actionSelected)
                 }
             } else {
                 if configuration.isPressed {
@@ -73,14 +85,14 @@ struct ToolbarTopItemActionStyle: ButtonStyle {
     }
 }
 
-// MARK: - Toolbar Item Navigation Style Modifier (Top)
+// MARK: - ToolBar Item Navigation Style Modifier (Top)
 
-/// Applies styling to toolbar top items depending depending to OS version.
+/// Applies styling to toolBar top items depending depending to OS version.
 /// The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
 /// However things cannot be customized that much for Liquid Glass.
-struct ToolbarTopItemNavigationStyle: ButtonStyle {
+struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
-    let type: OUDSToolbarItem.NavigationType
+    let type: OUDSToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled

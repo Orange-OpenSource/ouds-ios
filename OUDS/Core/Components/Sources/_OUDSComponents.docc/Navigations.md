@@ -108,62 +108,61 @@ OUDSTabBar(selected: 0, count: 3) {
 }
 ```
 
-### Toolbars
+### ToolBars
 
-The toolbar components provide top and bottom navigation bars. They rely on SwiftUI toolbars and expose OUDS styles.
-Top toolbars provide a title and optional subtitle, while bottom toolbars focus on actions.
+The toolBar components provide top and bottom navigation bars. They rely on SwiftUI toolBars and expose OUDS styles.
+Top toolBars provide a title and optional subtitle, while bottom toolBars focus on actions.
 
 #### Liquid Glass (iOS 26+)
 
 - Items are rendered with the Liquid Glass appearance provided by the system.
-- Trailing items (top toolbar) and all bottom toolbar items use the accent background token.
+- Trailing items (top toolBar) and all bottom toolBar items use the accent background token.
 - Title, subtitle, and items use the `contentDefault` color token.
 
 #### Without Liquid Glass (iOS < 26)
 
-- Toolbars use a regular blur effect and the bar translucent background token.
+- ToolBars use a regular blur effect and the bar translucent background token.
 - Items keep the `contentDefault` foreground color without background styling.
 
 @TabNavigator {
     @Tab("Orange (Liquid Glass)") {
-        ![A top toolbar component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-        ![A top toolbar component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
-        ![A bottom toolbar component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
-        ![A bottom toolbar component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
+        ![A top toolBar component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
+        ![A top toolBar component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+        ![A bottom toolBar component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
+        ![A bottom toolBar component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
     }
 }
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A top toolbar component without Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
-        ![A top toolbar component without Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
-        ![A bottom toolbar component without Liquid Glass in light mode with Orange theme](component_toolBarBottom_Orange_light)
-        ![A bottom toolbar component without Liquid Glass in dark mode with Orange theme](component_toolBarBottom_Orange_dark)
+        ![A top toolBar component without Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
+        ![A top toolBar component without Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
+        ![A bottom toolBar component without Liquid Glass in light mode with Orange theme](component_toolBarBottom_Orange_light)
+        ![A bottom toolBar component without Liquid Glass in dark mode with Orange theme](component_toolBarBottom_Orange_dark)
     }
 }
 
 ```swift
-OUDSToolbarTop(title: "Inbox", subtitle: "2 new messages") {
-    ContentView()
-} leadingItems: {
-    OUDSToolbarItem(navigation: .back, accessibilityLabel: "Back") {
-        // Handle back
+SomerView()
+    .oudsToolBarTop("Top app bar") {
+        OUDSToolBarItem(navigation: .back, accessibilityLabel: "Back") {
+            // Handle back
+        }
+    } trailingItems: {
+        OUDSToolBarItem(action: .icon(asset: Image("ic_theme"), accessibilityLabel: "Theme selection") {
+            // change theme action
+        }
+        OUDSToolBarItem(action: .icon(asset: Image("ic_theme_light"), accessibilityLabel: Color scheme selection) {
+            // change color scheme action
+        }
     }
-} trailingItems: {
-    OUDSToolbarItem {
-        Image(systemName: "bell")
-    }
-}
 
-OUDSToolbarBottom {
-    ContentView()
-} leadingItems: {
-    OUDSToolbarItem {
-        Image(systemName: "tray")
+SomerView()
+    .oudsToolBarBottom {
+        OUDSToolBarItem(icon: Image("ic_theme"), accessibilityLabel: "Theme selection") {
+        }
+    } trailingItems: {
+        OUDSToolBarItem(icon: Image("ic_theme_light"), accessibilityLabel: Color scheme selection) {
+        }
     }
-} trailingItems: {
-    OUDSToolbarItem {
-        Image(systemName: "square.and.pencil")
-    }
-}
 ```
