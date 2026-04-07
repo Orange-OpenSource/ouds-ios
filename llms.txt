@@ -1,0 +1,30 @@
+# OUDS iOS
+
+> OUDS (Orange Unified Design System) is an open source Swift Package (MIT) providing
+> design tokens, themes and SwiftUI components for Orange Group products.
+> Targets iOS 15+, iPadOS 15+, macOS 13+, visionOS 1+, watchOS 11+, tvOS 16+.
+> Language: Swift 6. UI framework: SwiftUI.
+
+The package is consumed via `import OUDSSwiftUI` (umbrella import).
+A theme (`OrangeTheme`, `SoshTheme`, `WireframeTheme`, `OrangeCompact`) is injected at the
+app root using `OUDSThemeableView` and retrieved anywhere via `@Environment(\.theme)`.
+Design values are accessed through typed token namespaces on the theme object
+(e.g. `theme.colors`, `theme.spaces`, `theme.fonts`, `theme.elevations`).
+OUDS provides SwiftUI view modifier overloads for typography, colors, borders and shadows
+that must be used instead of their native SwiftUI equivalents.
+
+GitHub repository: https://github.com/Orange-OpenSource/ouds-ios
+
+## Docs
+
+- [Getting started](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted): How to add the package, pick a theme and write your first view
+- [Themes](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/themes): Available themes and how to customise or extend them
+- [Tokens](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/tokens): Token hierarchy — raw, semantic and component tokens
+- [Components](https://ios.unified-design-system.orange.com/documentation/oudscomponents/): All available SwiftUI components with API reference
+- [Foundations](https://ios.unified-design-system.orange.com/documentation/oudsfoundations/): Shared utilities, extensions and accessibility helpers
+
+## Optional
+
+- [Changelog](https://github.com/Orange-OpenSource/ouds-ios/blob/main/CHANGELOG.md): Per-version list of changes
+- [Migration guide](https://github.com/Orange-OpenSource/ouds-ios/blob/main/MIGRATION.md): Breaking changes and upgrade steps between versions
+- [Contributing](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/CONTRIBUTING.md): How to contribute to the project
