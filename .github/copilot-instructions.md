@@ -65,8 +65,8 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 - Keep related code together in the same file when appropriate
 - Use extensions to organize large files
 - Follow Swift naming conventions consistently
-- Public enum must be marked `@frozen``
-- Class must be marked `final``
+- Public enum must be marked `@frozen`
+- Class must be marked `final`
 - Small functions when possible must be marked `@inlinable`
 
 ## 3. Build verification process ⚠️ CRITICAL
