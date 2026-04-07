@@ -14,7 +14,7 @@
 @testable import OUDSComponents
 import Testing
 
-struct BulletListItemTests {
+struct OUDSBulletListItemTests {
 
     // MARK: - Latin alphabet, without prior label
 

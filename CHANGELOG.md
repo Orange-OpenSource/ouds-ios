@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `PIN code input` component (Orange-OpenSource/ouds-ios#998)
 - `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
 - `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
 - `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
@@ -28,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 
 ### Added
-
+ 
 - Tutorial for onboardings and meetups (Orange-OpenSource/ouds-ios#1336)
 - View helpers to use scaled spaces tokens to add padding and for HStack/VStack (Orange-OpenSource/ouds-ios#1324)
 - GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)
