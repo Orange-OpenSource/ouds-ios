@@ -113,7 +113,7 @@ public struct OUDSToolBarItem: View, Identifiable {
             case .back:
                 "ic_link_previous"
             case .close:
-                "ic_tag_close" // TODO: Use expurge
+                "ic_button_expurge"
             }
         }
     }
