@@ -127,6 +127,24 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-text-area)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
+///
 /// - Version: 1.1.0 (Figma component design version)
 /// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
