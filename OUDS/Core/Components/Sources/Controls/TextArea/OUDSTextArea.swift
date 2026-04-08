@@ -114,9 +114,6 @@ import SwiftUI
 ///
 ///     // With error status
 ///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
-///
-///     // Constrained to max width
-///     OUDSTextArea(label: "Comments", text: $text, constrainedMaxWidth: true)
 /// ```
 ///
 /// ## Design documentation
@@ -183,7 +180,7 @@ public struct OUDSTextArea: View {
 
     /// Describes the content of the helper text displayed below the text area.
     ///
-    /// Use `.plain(_:)` for arbitrary helper copy, or `.charactersRemaining(_:)` to display
+    /// Use `.plain(_:)` for arbitrary helper text, or `.charactersRemaining(_:)` to display
     /// a library-managed sentence where the character count is rendered in **bold**.
     ///
     /// ```swift
@@ -195,7 +192,7 @@ public struct OUDSTextArea: View {
     /// ```
     ///
     /// - Since: 1.4.0
-    public enum HelperText {
+    @frozen public enum HelperText {
         /// A plain helper string defined by the caller.
         case plain(String)
         /// Shows a predefined library sentence with the given remaining character count in **bold**.

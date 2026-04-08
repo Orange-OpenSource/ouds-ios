@@ -147,22 +147,18 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
 #### How to use
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift        
-        // Add a vertical divider between items
-        HStack {
-            Text("Hello world!")
-            OUDSVerticalDivider(color: .brandPrimary)
-            Text("Happy to see you")
-        }
-
-        // Add an horizontal divider between items
-        VStack {
-            Text("Hello world!")
-            OUDSHorizontalDivider(color: .brandPrimary)
-            Text("Happy to see you")
-        }
-        ```
-    }
+```swift        
+// Add a vertical divider between items
+HStack {
+    Text("Hello world!")
+    OUDSVerticalDivider(color: .brandPrimary)
+    Text("Happy to see you")
 }
+
+// Add an horizontal divider between items
+VStack {
+    Text("Hello world!")
+    OUDSHorizontalDivider(color: .brandPrimary)
+    Text("Happy to see you")
+}
+```
