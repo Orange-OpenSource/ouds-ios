@@ -13,6 +13,9 @@
 
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct TextAreaContainer: View {
 
@@ -21,17 +24,15 @@ struct TextAreaContainer: View {
     let label: String
     let text: Binding<String>
     let placeholder: String?
+    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let isOverLimit: Bool
+    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let excessCount: Int
     let status: OUDSTextArea.Status
     let accessibilityHint: String?
 
     @State private var hover: Bool = false
     @FocusState private var focused: Bool
-
-    /// Height of one line of body text measured here — not inside `TextAreaInputText` —
-    /// so that updating this value never causes `TextEditor` to be remounted.
-    @State private var lineHeight: CGFloat = 20 // \("˚☐˚)/ ⊹₊⟡⋆
 
     @Environment(\.theme) private var theme
 
@@ -64,8 +65,7 @@ struct TextAreaContainer: View {
 
                     TextAreaInputText(label: placeholder ?? label,
                                       text: text,
-                                      status: status,
-                                      lineHeight: lineHeight)
+                                      status: status)
                         .focused($focused)
                 }
                 .allowsHitTesting(status != .readOnly && status != .disabled)
@@ -93,22 +93,6 @@ struct TextAreaContainer: View {
         .modifier(TextAreaBorderModifier(status: status,
                                          interactionState: interactionState,
                                          isOverLimit: isOverLimit))
-        // Hidden single-line reference text to measure the current line height.
-        // Lives here — not inside TextAreaInputText — so updating lineHeight never
-        // causes TextEditor to be remounted (which would inject extra newlines).
-        // \("˚☐˚)/ ⊹₊⟡⋆
-        .background(
-            Text("A")
-                .labelDefaultLarge(theme)
-                .lineLimit(1)
-                .fixedSize()
-                .hidden()
-                .background(
-                    GeometryReader { geo in
-                        Color.clear.preference(key: LineHeightPreferenceKey.self,
-                                               value: geo.size.height)
-                    })
-                .onPreferenceChange(LineHeightPreferenceKey.self) { lineHeight = $0 })
         #if !os(watchOS) && !os(tvOS)
             .onHover { hover = $0 }
         #endif
@@ -163,17 +147,6 @@ struct TextAreaContainer: View {
         }
 
         return "\(valueDescription). \(stateDescription)"
-    }
-}
-
-// MARK: - Preference key
-
-private struct LineHeightPreferenceKey: PreferenceKey {
-
-    static let defaultValue: CGFloat = 20
-
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
     }
 }
 #endif

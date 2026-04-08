@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `Text area` component (Orange-OpenSource/ouds-ios#543)
 - `PIN code input` component (Orange-OpenSource/ouds-ios#998)
 - Agentic AI dedicated files (Orange-OpenSource/ouds-ios#1399)
 - `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
