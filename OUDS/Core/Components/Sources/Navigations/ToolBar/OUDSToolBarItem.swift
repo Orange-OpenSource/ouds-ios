@@ -210,14 +210,17 @@ public struct OUDSToolBarItem: View, Identifiable {
 /// - Since: 1.4.0
 @resultBuilder
 public enum OUDSToolBarItemsBuilder {
+    /// Combines multiple `OUDSToolBarItem` instances into a single array
     public static func buildBlock(_ components: OUDSToolBarItem...) -> [OUDSToolBarItem] {
         components
     }
 
+    /// Combines multiple `OUDSToolBarItem` instances into a single array
     public static func buildBlock(_ components: [OUDSToolBarItem]...) -> [OUDSToolBarItem] {
         components.flatMap(\.self)
     }
 
+    /// Finalizes the result, returning an empty list of items
     public static func buildOptional(_ component: [OUDSToolBarItem]?) -> [OUDSToolBarItem] {
         component ?? []
     }
@@ -227,14 +230,17 @@ public enum OUDSToolBarItemsBuilder {
         component
     }
 
+    /// Handles the first branch of an if-else statement (true branch)
     public static func buildEither(first component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         component
     }
 
+    /// Handles the second branch of an if-else statement (false branch)
     public static func buildEither(second component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {
         component
     }
 
+    /// Finalizes the result, returning an array of items from array of array of items
     public static func buildArray(_ components: [[OUDSToolBarItem]]) -> [OUDSToolBarItem] {
         components.flatMap(\.self)
     }

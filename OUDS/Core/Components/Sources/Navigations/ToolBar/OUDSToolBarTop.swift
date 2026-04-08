@@ -35,7 +35,8 @@ import SwiftUI
 /// Without Liquid Glass / iOS 18-, the OS won't change that much the style of the toolBar items:
 /// - Items won't be visually grouped
 ///
-/// Globaly the appearence if the ** navigatrion bar** elements are changed by the `oudsNavigationBarAppearance` helper of `View` that must be applyed on the root view of the Navigation stack.
+/// Globaly the appearence if the ** navigatrion bar** elements are changed by the `oudsNavigationBarAppearance`
+/// helper of `View` that must be applyed on the root view of the Navigation stack.
 ///
 /// ## Technical constraints
 ///

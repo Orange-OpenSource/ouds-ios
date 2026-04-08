@@ -110,7 +110,7 @@ OUDSTabBar(selected: 0, count: 3) {
 
 ### ToolBars
 
-The toolBar components provide top and bottom navigation bars. They rely on SwiftUI toolBars and expose OUDS styles.
+The toolBar components provide top and bottom navigation bars. They relay on SwiftUI toolBars and expose OUDS styles.
 Top toolBars provide a title and optional subtitle, while bottom toolBars focus on actions.
 
 #### Liquid Glass (iOS 26+)

@@ -21,9 +21,9 @@ struct ToolBarBottomModifier: ViewModifier {
 
     // MARK: - Stored properties
 
-    private let leadingItems: [OUDSToolBarItem]?
-    private let trailingItems: [OUDSToolBarItem]?
-    private let groupedItems: [OUDSToolBarItem]?
+    private let leadingItems: [OUDSToolBarItem]
+    private let trailingItems: [OUDSToolBarItem]
+    private let groupedItems: [OUDSToolBarItem]
 
     @Environment(\.theme) private var theme
 
@@ -37,7 +37,7 @@ struct ToolBarBottomModifier: ViewModifier {
     init(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
          @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] })
     {
-        groupedItems = nil
+        groupedItems = []
         self.leadingItems = leadingItems()
         self.trailingItems = trailingItems()
     }
@@ -50,14 +50,14 @@ struct ToolBarBottomModifier: ViewModifier {
     ///   - groupedItems: All the items to place in the center of the s creen
     init(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] }) {
         self.groupedItems = groupedItems()
-        leadingItems = nil
-        trailingItems = nil
+        leadingItems = []
+        trailingItems = []
     }
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        if let groupedItems {
+        if !groupedItems.isEmpty {
             content
                 .toolbar {
                     ToolbarItemGroup(placement: bottomPlacement) {
@@ -90,12 +90,9 @@ struct ToolBarBottomModifier: ViewModifier {
         #endif
     }
 
-    @ViewBuilder
-    private func itemsView(_ items: [OUDSToolBarItem]?) -> some View {
-        if let items, !items.isEmpty {
-            ForEach(items) { item in
-                item
-            }
+    private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
+        ForEach(items) { item in
+            item
         }
     }
 }

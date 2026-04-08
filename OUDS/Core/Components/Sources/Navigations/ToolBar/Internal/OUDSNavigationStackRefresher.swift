@@ -62,7 +62,11 @@ struct OUDSNavigationStackRefresher: ViewModifier {
         }
     }
 
-    private func refreshNavigationBars(in view: UIView, for newTheme: OUDSTheme, with newColorScheme: ColorScheme) {
+    // swiftlint:disable function_body_length
+    private func refreshNavigationBars(in view: UIView,
+                                       for newTheme: OUDSTheme,
+                                       with newColorScheme: ColorScheme)
+    {
         let appearance = UINavigationBarAppearance()
 
         // Foreground color (ie.titles)
@@ -161,5 +165,6 @@ struct OUDSNavigationStackRefresher: ViewModifier {
             refreshNavigationBars(in: subview, for: newTheme, with: newColorScheme)
         }
     }
+    // swiftlint:enable function_body_length
 }
 #endif
