@@ -220,10 +220,13 @@ public enum OUDSToolBarItemsBuilder {
         components.flatMap(\.self)
     }
 
+    // swiftlint:disable discouraged_optional_collection
     /// Finalizes the result, returning an empty list of items
     public static func buildOptional(_ component: [OUDSToolBarItem]?) -> [OUDSToolBarItem] {
         component ?? []
     }
+
+    // swiftlint:enable discouraged_optional_collection
 
     /// Finalizes the result, returning the complete list of items
     public static func buildFinalResult(_ component: [OUDSToolBarItem]) -> [OUDSToolBarItem] {

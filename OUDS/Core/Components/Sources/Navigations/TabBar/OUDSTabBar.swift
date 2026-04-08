@@ -234,6 +234,7 @@ public struct OUDSTabBar<Content: View & View>: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selected:count:content:)`
     ///
