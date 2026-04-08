@@ -29,6 +29,7 @@ struct TextAreaContainer: View {
     /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let excessCount: Int
     let status: OUDSTextArea.Status
+    let isOutlined: Bool
     let accessibilityHint: String?
 
     @State private var hover: Bool = false
@@ -89,10 +90,12 @@ struct TextAreaContainer: View {
         .padding(.trailing, trailingPadding)
         .modifier(TextAreaBackgroundModifier(status: status,
                                              interactionState: interactionState,
-                                             isOverLimit: isOverLimit))
+                                             isOverLimit: isOverLimit,
+                                             isOutlined: isOutlined))
         .modifier(TextAreaBorderModifier(status: status,
                                          interactionState: interactionState,
-                                         isOverLimit: isOverLimit))
+                                         isOverLimit: isOverLimit,
+                                         isOutlined: isOutlined))
         #if !os(watchOS) && !os(tvOS)
             .onHover { hover = $0 }
         #endif

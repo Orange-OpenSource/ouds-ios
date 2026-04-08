@@ -22,6 +22,7 @@ struct TextAreaBorderModifier: ViewModifier {
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
     let isOverLimit: Bool
+    let isOutlined: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -29,20 +30,34 @@ struct TextAreaBorderModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        if status == .readOnly {
-            content
-                .border(style: theme.borders.styleDefault,
-                        width: theme.textInput.borderWidthDefault,
-                        radius: borderRadius,
-                        color: theme.colors.borderMuted)
-        } else {
-            ZStack(alignment: .bottomLeading) {
+        if isOutlined {
+            // Outlined mode: full-perimeter border; no border at all for readOnly.
+            if status == .readOnly {
                 content
-                Divider()
-                    .frame(height: borderWidth)
-                    .overlay(borderColor.color(for: colorScheme))
+            } else {
+                content
+                    .border(style: theme.borders.styleDefault,
+                            width: borderWidth,
+                            radius: borderRadius,
+                            color: borderColor)
             }
-            .clipShape(RoundedRectangle(cornerRadius: borderRadius))
+        } else {
+            // Default mode: full border for readOnly, bottom divider for all other states.
+            if status == .readOnly {
+                content
+                    .border(style: theme.borders.styleDefault,
+                            width: theme.textInput.borderWidthDefault,
+                            radius: borderRadius,
+                            color: theme.colors.borderMuted)
+            } else {
+                ZStack(alignment: .bottomLeading) {
+                    content
+                    Divider()
+                        .frame(height: borderWidth)
+                        .overlay(borderColor.color(for: colorScheme))
+                }
+                .clipShape(RoundedRectangle(cornerRadius: borderRadius))
+            }
         }
     }
 

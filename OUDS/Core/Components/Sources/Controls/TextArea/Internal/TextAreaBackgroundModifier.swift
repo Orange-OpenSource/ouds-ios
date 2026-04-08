@@ -22,6 +22,7 @@ struct TextAreaBackgroundModifier: ViewModifier {
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
     let isOverLimit: Bool
+    let isOutlined: Bool
 
     @Environment(\.theme) private var theme
 
@@ -38,9 +39,19 @@ struct TextAreaBackgroundModifier: ViewModifier {
     // MARK: - Helpers
 
     private var color: MultipleColorSemanticToken? {
-        // Over-limit mirrors the error background regardless of the caller-supplied status.
+        // Over-limit mirrors the error background regardless of outlined mode or status.
         if isOverLimit { return theme.colors.surfaceStatusNegativeMuted }
-        return switch status {
+        return isOutlined ? outlinedColor : defaultColor
+    }
+
+    /// Outlined mode: transparent background for all interactive states; `actionSupportDisabled`
+    /// for `.readOnly` to visually distinguish it from an empty field.
+    private var outlinedColor: MultipleColorSemanticToken? {
+        status == .readOnly ? theme.colors.actionSupportDisabled : MultipleColorSemanticToken?.none
+    }
+
+    private var defaultColor: MultipleColorSemanticToken? {
+        switch status {
         case .enabled:
             switch interactionState {
             case .idle:

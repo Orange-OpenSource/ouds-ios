@@ -86,6 +86,19 @@ import SwiftUI
 /// If there is only one field in the formular, or if the mandatory nature is obvious,
 /// no mention is necessary since the fields are essential to the formular's functionality.
 ///
+/// ## Outlined style
+///
+/// By **default**, the text area uses a subtle background fill and a bottom border only, creating a softer and more contained look.
+///
+/// When **outlined**, the text area uses a transparent background and a visible stroke on all four sides.
+/// This style may be appropriate for contexts where inputs need to feel lightweight and unobtrusive,
+/// for example inside a card, a dialog, or a filtering panel.
+///
+/// ```swift
+///     // An outlined text area
+///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
+/// ```
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -121,6 +134,9 @@ import SwiftUI
 ///
 ///     // With error status
 ///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
+///
+///     // Outlined style
+///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
 /// ```
 ///
 /// ## Design documentation
@@ -165,6 +181,7 @@ public struct OUDSTextArea: View {
     let helperText: HelperText?
     let helperLink: Helperlink?
     let status: Self.Status
+    let isOutlined: Bool
     let constrainedMaxWidth: Bool
 
     @Environment(\.theme) private var theme
@@ -282,6 +299,8 @@ public struct OUDSTextArea: View {
     ///      arbitrary copy or `.charactersMaxCount(_:)` to show a bold character count. By default
     ///      is *nil*. Ignored when `status` is `.error`.
     ///    - helperLink: An optional helper link displayed below the helper text, by default is *nil*
+    ///    - isOutlined: When `true`, the text area uses a transparent background and a full-perimeter
+    ///      border. When `false` (default), a subtle background fill and a bottom border only are used.
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
@@ -291,6 +310,7 @@ public struct OUDSTextArea: View {
                 placeholder: String? = nil,
                 helperText: Self.HelperText? = nil,
                 helperLink: Self.Helperlink? = nil,
+                isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
     {
@@ -299,6 +319,7 @@ public struct OUDSTextArea: View {
         self.placeholder = placeholder
         self.helperText = helperText
         self.helperLink = helperLink
+        self.isOutlined = isOutlined
         self.status = status
         self.constrainedMaxWidth = constrainedMaxWidth
     }
@@ -318,6 +339,7 @@ public struct OUDSTextArea: View {
     ///    - placeholder: The text displayed when the text area is empty, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
+    ///    - isOutlined: When `true`, the text area uses a full-perimeter border, defaults to `false`
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text area, default set to *enabled*
     public init(_ key: LocalizedStringKey,
@@ -327,6 +349,7 @@ public struct OUDSTextArea: View {
                 placeholder: String? = nil,
                 helperText: Self.HelperText? = nil,
                 helperLink: Self.Helperlink? = nil,
+                isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
     {
@@ -335,6 +358,7 @@ public struct OUDSTextArea: View {
                   placeholder: placeholder,
                   helperText: helperText,
                   helperLink: helperLink,
+                  isOutlined: isOutlined,
                   constrainedMaxWidth: constrainedMaxWidth,
                   status: status)
     }
@@ -373,6 +397,7 @@ public struct OUDSTextArea: View {
                                   isOverLimit: isOverLimit,
                                   excessCount: excessCount,
                                   status: status,
+                                  isOutlined: isOutlined,
                                   accessibilityHint: helperText?.accessibilityDescription(remainingCount: remainingCount))
 
                 TextAreaHelperTextContainer(helperText: helperText,
