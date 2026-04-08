@@ -48,11 +48,15 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 extension View {
     @ViewBuilder
     func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
+        #if os(iOS) || os(macOS)
         if #available(iOS 26.0, *), let subtitle {
             navigationSubtitle(Text(LocalizedStringKey(subtitle)))
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }
 
