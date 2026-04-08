@@ -471,7 +471,7 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     @Tab("Orange") {
         ![A password input component in light and dark modes with Orange theme](component_passwordInput_Orange)
     }
-    @Tab("Orange Business Tools") {
+    @Tab("Orange Compact") {
         ![A password input component in light and dark modes with Orange Compact theme](component_passwordInput_OrangeCompact)
     }
     @Tab("Sosh") {
@@ -550,7 +550,7 @@ OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code y
 
 The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
 The field grows from a minimum of ``OUDSTextArea/minLines`` visible lines up to ``OUDSTextArea/maxLines`` lines, after which the content scrolls.
-It supports labels, placeholders, helper text, a helper link and four statuses: enabled, error, read-only and disabled.
+It supports labels, placeholders, helper text, a helper link and five statuses: enabled, loading, error, read-only and disabled.
 
 ```swift
 // The text to display and edit

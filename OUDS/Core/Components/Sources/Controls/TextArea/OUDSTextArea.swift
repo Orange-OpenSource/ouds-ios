@@ -370,7 +370,7 @@ public struct OUDSTextArea: View {
     /// `true` when `helperText` is `.charactersMaxCount` and the current text exceeds the limit.
     private var isOverLimit: Bool {
         guard case let .charactersMaxCount(limit) = helperText else { return false }
-        return text.wrappedValue.count > limit
+        return text.wrappedValue.count > Int(limit)
     }
 
     /// The number of characters beyond the limit, or 0 when within bounds.
