@@ -37,12 +37,12 @@ struct ToolBarActionItemModifier: ViewModifier {
     func body(content: Content) -> some View {
         if style == .proiminent {
             content
-                .oudsTintColor(theme.colors.actionSelected)
+                .tint(theme.colors.actionSelected)
                 .buttonStyle(.borderedProminent)
                 .buttonStyle(ToolBarActionItemStyle(style: style))
         } else {
             content
-                .oudsTintColor(theme.colors.actionSelected)
+                .tint(theme.colors.actionSelected)
                 .buttonStyle(ToolBarActionItemStyle(style: style))
         }
     }
@@ -62,23 +62,23 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         if !isEnabled {
-            configuration.label.oudsForegroundColor(theme.button.colorContentMinimalDisabled)
+            configuration.label.foregroundColor(theme.button.colorContentMinimalDisabled)
         } else {
             if #available(iOS 26, *) {
                 switch style {
                 case .default:
-                    configuration.label.oudsForegroundColor(theme.button.colorContentMinimalEnabled)
+                    configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
                 case .proiminent:
                     configuration.label
-                        .oudsForegroundColor(theme.colors.contentOnActionSelected)
+                        .foregroundColor(theme.colors.contentOnActionSelected)
                 case .tinted:
-                    configuration.label.oudsForegroundColor(theme.colors.actionSelected)
+                    configuration.label.foregroundColor(theme.colors.actionSelected)
                 }
             } else {
                 if configuration.isPressed {
-                    configuration.label.oudsForegroundColor(theme.button.colorContentMinimalPressed)
+                    configuration.label.foregroundColor(theme.button.colorContentMinimalPressed)
                 } else {
-                    configuration.label.oudsForegroundColor(theme.button.colorContentMinimalEnabled)
+                    configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
                 }
             }
         }
@@ -104,11 +104,11 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         if #available(iOS 26, *) {
             configuration.label
-                .oudsForegroundColor(foregroundColor)
+                .foregroundColor(foregroundColor)
                 .buttonStyle(.plain)
         } else {
             configuration.label
-                .oudsForegroundColor(foregroundColor)
+                .foregroundColor(foregroundColor)
         }
     }
 

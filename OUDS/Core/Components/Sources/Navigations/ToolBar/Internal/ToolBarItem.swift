@@ -108,11 +108,11 @@ struct NavigationButton: View {
                 } label: {
                     HStack {
                         navigationIcon
-                            .oudsForegroundColor(MultipleColorSemanticToken("#999999"))
+                            .foregroundColor(MultipleColorSemanticToken("#999999"))
                             .frame(width: 24, height: 24)
                     }
                     .frame(width: 34, height: 34, alignment: .center)
-                    .oudsBackground(MultipleColorSemanticToken("78788029"))
+                    .background(MultipleColorSemanticToken("78788029"))
                     .clipShape(Circle())
                 }
                 .accessibilityLabel("core_common_close_a11y".localized())
