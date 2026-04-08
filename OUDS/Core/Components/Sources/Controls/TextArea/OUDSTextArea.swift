@@ -60,7 +60,7 @@ import SwiftUI
 /// such as how it will be used. It should ideally only take up a single line, though may wrap
 /// to multiple lines if required, and be either persistently visible or visible only on focus.
 ///
-/// - **Helper text (characters max count)**: Uses an internal message displaying the recount of remaining characters depending to the given value
+/// - **Helper text (characters max count)**: Uses an internal message displaying the count of remaining characters depending to the given value.
 ///
 /// - **Helper link**: If the helper text is not sufficient, it's possible to offer the user
 /// an additional help link (the link can be external or open a modal).

@@ -21,9 +21,7 @@ struct TextAreaContainer: View {
     let label: String
     let text: Binding<String>
     let placeholder: String?
-    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let isOverLimit: Bool
-    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let excessCount: Int
     let status: OUDSTextArea.Status
     let accessibilityHint: String?
@@ -33,7 +31,7 @@ struct TextAreaContainer: View {
 
     /// Height of one line of body text measured here — not inside `TextAreaInputText` —
     /// so that updating this value never causes `TextEditor` to be remounted.
-    @State private var lineHeight: CGFloat = 20
+    @State private var lineHeight: CGFloat = 20 // \("˚☐˚)/ ⊹₊⟡⋆
 
     @Environment(\.theme) private var theme
 
@@ -70,7 +68,9 @@ struct TextAreaContainer: View {
                                       lineHeight: lineHeight)
                         .focused($focused)
                 }
+                .allowsHitTesting(status != .readOnly && status != .disabled)
                 .onTapGesture {
+                    guard status != .readOnly, status != .disabled else { return }
                     focused = true
                 }
             }
@@ -96,6 +96,7 @@ struct TextAreaContainer: View {
         // Hidden single-line reference text to measure the current line height.
         // Lives here — not inside TextAreaInputText — so updating lineHeight never
         // causes TextEditor to be remounted (which would inject extra newlines).
+        // \("˚☐˚)/ ⊹₊⟡⋆
         .background(
             Text("A")
                 .labelDefaultLarge(theme)
