@@ -250,7 +250,7 @@ public struct OUDSTextArea: View {
         /// The **maximum number of characters** allowed in the text area.
         /// The component automatically computes and displays the number of characters remaining
         /// (rendered **bold**) and switches to an error-style sentence if the limit is exceeded.
-        case charactersMaxCount(Int)
+        case charactersMaxCount(UInt16)
 
         /// A plain string representation suitable for VoiceOver, without any rich-text formatting.
         /// For `.charactersMaxCount` the remaining count must be supplied externally because the
@@ -376,14 +376,14 @@ public struct OUDSTextArea: View {
     /// The number of characters beyond the limit, or 0 when within bounds.
     private var excessCount: Int {
         guard case let .charactersMaxCount(limit) = helperText else { return 0 }
-        return max(0, text.wrappedValue.count - limit)
+        return max(0, text.wrappedValue.count - Int(limit))
     }
 
     /// How many characters the user can still type before hitting the limit.
     /// Returns 0 when at or beyond the limit.
     private var remainingCount: Int {
         guard case let .charactersMaxCount(maxLength) = helperText else { return 0 }
-        return max(0, maxLength - text.wrappedValue.count)
+        return max(0, Int(maxLength) - text.wrappedValue.count)
     }
 
     // MARK: Body
