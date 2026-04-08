@@ -32,10 +32,10 @@ struct TextAreaContainer: View {
     // MARK: - Body
 
     // swiftlint:disable accessibility_trait_for_button
-    // Not a button and a11y trait for text editor defined elsewhere
+    // Not a button; a11y trait for text editor defined elsewhere
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.textArea.spaceRowGapLabelInput) {
-            // Floating label at the top position (above the text editor)
+        VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
+            // Floating label at top position (above the text editor)
             if labelPosition == .top {
                 TextAreaLabelContainer(label: label,
                                        status: status,
@@ -43,7 +43,7 @@ struct TextAreaContainer: View {
                                        position: .top)
             }
 
-            // The text editor area with overlaid middle-position label (placeholder style)
+            // Text editor with overlaid middle-position label (placeholder style)
             ZStack(alignment: .topLeading) {
                 if labelPosition == .middle {
                     TextAreaLabelContainer(label: label,
@@ -55,9 +55,6 @@ struct TextAreaContainer: View {
                 TextAreaInputText(label: placeholder ?? label,
                                   text: text,
                                   status: status)
-                    .frame(minHeight: theme.textArea.sizeMinHeightInput,
-                           maxHeight: theme.textArea.sizeMaxHeightInput,
-                           alignment: .topLeading)
                     .focused($focused)
             }
             .onTapGesture {
@@ -65,7 +62,7 @@ struct TextAreaContainer: View {
             }
         }
         .padding(.vertical, theme.textArea.spacePaddingBlock)
-        .padding(.horizontal, theme.textArea.spacePaddingInlineDefault)
+        .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
         .accessibilityLabel(accessibilityLabel)
         .accessibilityValue(accessibilityValue)
         .accessibilityHint(accessibilityHint ?? "")
@@ -91,12 +88,10 @@ struct TextAreaContainer: View {
         TextAreaInteractionState(focused: focused, hover: hover)
     }
 
-    /// Forge a string to vocalize the component label based on label and placeholder
     private var accessibilityLabel: String {
         label.isEmpty ? placeholder ?? "" : label
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component input value and disabled/error state
     private var accessibilityValue: String {
         let emptyDescription = "core_textInput_empty_a11y".localized()
         let valueDescription = text.wrappedValue.isEmpty ? emptyDescription : text.wrappedValue

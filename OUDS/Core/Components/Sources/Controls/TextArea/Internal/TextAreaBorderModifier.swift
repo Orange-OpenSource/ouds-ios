@@ -31,8 +31,8 @@ struct TextAreaBorderModifier: ViewModifier {
         if status == .readOnly {
             content
                 .border(style: theme.borders.styleDefault,
-                        width: theme.textArea.borderWidthDefault,
-                        radius: theme.textArea.borderRadiusDefault,
+                        width: theme.textInput.borderWidthDefault,
+                        radius: theme.textInput.borderRadiusDefault,
                         color: theme.colors.borderMuted)
         } else {
             ZStack(alignment: .bottomLeading) {
@@ -41,7 +41,7 @@ struct TextAreaBorderModifier: ViewModifier {
                     .frame(height: borderWidth)
                     .overlay(borderColor.color(for: colorScheme))
             }
-            .clipShape(RoundedRectangle(cornerRadius: theme.textArea.borderRadiusDefault))
+            .clipShape(RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault))
         }
     }
 
@@ -49,12 +49,10 @@ struct TextAreaBorderModifier: ViewModifier {
 
     private var borderWidth: BorderWidthSemanticToken {
         switch interactionState {
-        case .idle:
-            theme.textArea.borderWidthDefault
+        case .idle, .hover:
+            theme.textInput.borderWidthDefault
         case .focused:
-            theme.textArea.borderWidthFocus
-        case .hover:
-            theme.textArea.borderWidthDefault
+            theme.textInput.borderWidthFocus
         }
     }
 
@@ -63,11 +61,11 @@ struct TextAreaBorderModifier: ViewModifier {
         case .enabled:
             switch interactionState {
             case .idle:
-                theme.textArea.colorBorderEnabled
+                theme.textInput.colorBorderEnabled
             case .focused:
-                theme.textArea.colorBorderFocus
+                theme.textInput.colorBorderFocus
             case .hover:
-                theme.textArea.colorBorderHover
+                theme.textInput.colorBorderHover
             }
         case .error:
             switch interactionState {

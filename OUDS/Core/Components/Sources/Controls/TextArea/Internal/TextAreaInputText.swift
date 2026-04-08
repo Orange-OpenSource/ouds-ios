@@ -23,6 +23,9 @@ struct TextAreaInputText: View {
     let text: Binding<String>
     let status: OUDSTextArea.Status
 
+    /// Height of a single line of body text, measured from a hidden reference view.
+    @State private var lineHeight: CGFloat = 20
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -30,7 +33,21 @@ struct TextAreaInputText: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Placeholder overlay when text is empty
+            // Hidden single-line text used to measure the current line height,
+            // so min/max heights stay correct across Dynamic Type sizes.
+            Text("A")
+                .labelDefaultLarge(theme)
+                .lineLimit(1)
+                .fixedSize()
+                .hidden()
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(key: LineHeightPreferenceKey.self,
+                                               value: geo.size.height)
+                    })
+                .onPreferenceChange(LineHeightPreferenceKey.self) { lineHeight = $0 }
+
+            // Placeholder overlay shown when the text binding is empty.
             if text.wrappedValue.isEmpty {
                 Text(label)
                     .labelDefaultLarge(theme)
@@ -39,15 +56,17 @@ struct TextAreaInputText: View {
                     .accessibilityHidden(true)
             }
 
-            // Native TextEditor — the default internal padding from TextEditor is removed
-            // so the parent container controls the layout precisely.
-            // SwiftUI's TextEditor adds a default ~8pt internal edge padding on all sides.
+            // Native TextEditor.
+            // - Internal ~8 pt padding is negated so the parent container controls spacing.
+            // - min height = 3 lines, max height = 10 lines; beyond 10 lines the editor scrolls.
             rawTextEditor
                 .labelDefaultLarge(theme)
                 .foregroundColor(inputTextColor)
                 .tint(cursorColor.color(for: colorScheme))
                 .background(Color.clear)
                 .padding(-8)
+                .frame(minHeight: lineHeight * CGFloat(OUDSTextArea.minLines),
+                       maxHeight: lineHeight * CGFloat(OUDSTextArea.maxLines))
         }
     }
 
@@ -62,8 +81,6 @@ struct TextAreaInputText: View {
             editor
         }
     }
-
-    // MARK: - Helper
 
     private var placeholderColor: MultipleColorSemanticToken {
         switch status {
@@ -90,6 +107,17 @@ struct TextAreaInputText: View {
         case .disabled:
             theme.colors.actionDisabled
         }
+    }
+}
+
+// MARK: - Preference key
+
+private struct LineHeightPreferenceKey: PreferenceKey {
+
+    static let defaultValue: CGFloat = 20
+
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }
 #endif

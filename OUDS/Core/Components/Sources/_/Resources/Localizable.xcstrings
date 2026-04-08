@@ -682,6 +682,30 @@
         }
       }
     },
+    "core_textArea_charactersRemaining" : {
+      "comment" : "Component - TextArea - Helper text showing remaining characters count. %lld is the integer count.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld حرفًا متبقيًا"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld characters remaining"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld caractères restants"
+          }
+        }
+      }
+    },
     "core_textInput_empty_a11y" : {
       "comment" : "Component - TextInput",
       "extractionState" : "manual",

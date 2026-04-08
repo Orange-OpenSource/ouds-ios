@@ -16,15 +16,14 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
+/// A class which wraps all **component tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTextAreaComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTextAreaComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
-/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// spaces (from `AllSpaceSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
-/// and colors (from `AllColorSemanticTokensProvider`).
+/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for text area component tokens
@@ -70,16 +69,12 @@ import OUDSThemesContract
 ///     // Uses by default here:
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
-///     // - OrangeThemeBorderSemanticTokensProvider for borders
-///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     let textAreaComponentTokensProvider = OrangeThemeTextAreaComponentTokensProvider()
 ///
-///     // Or use your own size, border, color and space semantic tokens providers (or only some)
+///     // Or use your own size and space semantic tokens providers (or only some)
 ///     let textAreaComponentTokensProvider = OrangeThemeTextAreaComponentTokensProvider(
 ///                                             sizes: CustomSizeSemanticTokensProvider(),
-///                                             spaces: CustomSpaceSemanticTokensProvider(),
-///                                             borders: CustomBorderSemanticTokensProvider(),
-///                                             colors: CustomColorSemanticTokensProvider())
+///                                             spaces: CustomSpaceSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.17.0
@@ -91,12 +86,6 @@ open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentToken
     /// Provider of spaces semantic tokens to use for text area spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of borders semantic tokens to use for text area borders
-    public let borders: AllBorderSemanticTokensProvider
-
-    /// Provider of color semantic tokens to use for text area colors
-    public let colors: AllColorSemanticTokensProvider
-
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -105,18 +94,12 @@ open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentToken
     /// - Parameters:
     ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil,
-                colors: AllColorSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
-        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
-        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeTextAreaComponentTokensProvider")

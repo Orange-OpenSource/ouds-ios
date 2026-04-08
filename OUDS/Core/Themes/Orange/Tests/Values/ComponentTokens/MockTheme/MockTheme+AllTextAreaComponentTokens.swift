@@ -24,44 +24,23 @@ final class MockThemeTextAreaComponentTokenProvider: OrangeThemeTextAreaComponen
     // MARK: - Mocks and setup
 
     static let mockThemeTextAreaSize: SizeSemanticToken = 123
-    static let mockThemeTextAreaSpace: SpaceSemanticToken = 456
-    static let mockThemeTextAreaBorderWidth: BorderWidthSemanticToken = 7
-    static let mockThemeTextAreaBorderRadius: BorderRadiusSemanticToken = 8
-    static let mockThemeTextAreaColor: MultipleColorSemanticToken = .init("#123456")
+    static let mockThemeTextAreaSpace: SizeSemanticToken = 456
 
     override init(sizes: AllSizeSemanticTokensProvider?,
-                  spaces: AllSpaceSemanticTokensProvider?,
-                  borders: AllBorderSemanticTokensProvider?,
-                  colors: AllColorSemanticTokensProvider?)
+                  spaces: AllSpaceSemanticTokensProvider?)
     {
-        super.init(sizes: sizes, spaces: spaces, borders: borders, colors: colors)
+        super.init(sizes: sizes, spaces: spaces)
     }
-
-    // MARK: - Colors
-
-    override var colorBorderEnabled: MultipleColorSemanticToken { Self.mockThemeTextAreaColor }
-    override var colorBorderHover: MultipleColorSemanticToken { Self.mockThemeTextAreaColor }
-    override var colorBorderFocus: MultipleColorSemanticToken { Self.mockThemeTextAreaColor }
-
-    // MARK: - Borders
-
-    override var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeTextAreaBorderRadius }
-    override var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeTextAreaBorderWidth }
-    override var borderWidthFocus: BorderWidthSemanticToken { Self.mockThemeTextAreaBorderWidth }
 
     // MARK: - Spaces
 
-    override var spacePaddingInlineDefault: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
-    override var spacePaddingBlockTopHelperText: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
-    override var spaceRowGapLabelInput: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
 
     // MARK: - Sizes
 
     override var sizeMinHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
     override var sizeMaxHeightInput: SizeSemanticToken { Self.mockThemeTextAreaSize }
     override var sizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeTextAreaSize }
-    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
     override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeTextAreaSize }
 }
 

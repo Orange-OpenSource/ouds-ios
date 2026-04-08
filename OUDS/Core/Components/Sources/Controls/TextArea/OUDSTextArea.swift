@@ -18,8 +18,8 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Text area is a UI element that allows to enter, edit, or select multiline textual data.
-/// Text area is one of the fundamental form elements used to capture longer user input such as comments, descriptions, or messages.
+/// Text area is a UI element that allows to type, edit, or select longer blocks of textual data, such as comments, messages or descriptions;
+/// by expanding vertically and offering more space to input text.
 /// It provides a visual and interactive affordance for multiline text entry while supporting labels, placeholders, descriptions, and validation feedback.
 ///
 /// ## Layout
@@ -32,7 +32,7 @@ import SwiftUI
 /// and if the label is still accessible to screen readers.
 /// Hiding a label is a design choice that must balance visual simplicity and clarity of intent, without compromising inclusiveness or form guidance.
 ///
-/// - **placeholder**: if the text of the text area is empty a placeholder provides a hint or guidance inside the field to suggest expected input.
+/// - **placeholder**: If the text of the text area is empty a placeholder provides a hint or guidance inside the field to suggest expected input.
 ///
 /// ## Status
 ///
@@ -92,11 +92,16 @@ import SwiftUI
 ///     // Empty text with placeholder
 ///     OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
 ///
-///     // With helper text
+///     // With a plain helper text
 ///     OUDSTextArea(label: "Comments",
 ///                  text: $text,
 ///                  placeholder: "Describe your issue in detail",
-///                  helperText: "You have 180 characters remaining.")
+///                  helperText: .plain("Maximum 500 characters."))
+///
+///     // With a remaining characters count (number rendered bold)
+///     OUDSTextArea(label: "Comments",
+///                  text: $text,
+///                  helperText: .charactersRemaining(180))
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -118,17 +123,24 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-text-area)
 ///
-/// - Version: 1.0.0 (Figma component design version)
-/// - Since: 0.20.0
+/// - Version: 1.1.0 (Figma component design version)
+/// - Since: 1.4.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink in doc above
+public struct OUDSTextArea: View {
+
+    // MARK: - Constants
+
+    /// Minimum number of visible text lines before the text area starts to grow.
+    public static let minLines = 3
+    /// Maximum number of visible text lines; beyond this the content becomes scrollable.
+    public static let maxLines = 10
 
     // MARK: - Properties
 
     let label: String
     let text: Binding<String>
     let placeholder: String?
-    let helperText: String?
+    let helperText: HelperText?
     let helperLink: Helperlink?
     let status: Self.Status
     let constrainedMaxWidth: Bool
@@ -138,8 +150,8 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
     // MARK: - Status
 
     /// Define all available status for the text area
-    /// - Since: 0.20.0
-    public enum Status: Equatable {
+    /// - Since: 1.4.0
+    @frozen public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
 
@@ -167,15 +179,49 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
         }
     }
 
+    // MARK: - Helper text
+
+    /// Describes the content of the helper text displayed below the text area.
+    ///
+    /// Use `.plain(_:)` for arbitrary helper copy, or `.charactersRemaining(_:)` to display
+    /// a library-managed sentence where the character count is rendered in **bold**.
+    ///
+    /// ```swift
+    ///     // Plain helper text
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .plain("Maximum 500 characters."))
+    ///
+    ///     // Remaining characters — number is bold in the UI
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .charactersRemaining(180))
+    /// ```
+    ///
+    /// - Since: 1.4.0
+    public enum HelperText {
+        /// A plain helper string defined by the caller.
+        case plain(String)
+        /// Shows a predefined library sentence with the given remaining character count in **bold**.
+        /// The count must be positive and non-zero.
+        case charactersRemaining(Int)
+
+        /// A plain string representation suitable for VoiceOver, without any rich-text formatting.
+        var accessibilityDescription: String {
+            switch self {
+            case let .plain(string):
+                string
+            case let .charactersRemaining(count):
+                String(format: "core_textArea_charactersRemaining".localized(), count)
+            }
+        }
+    }
+
     // MARK: - Helper link
 
     /// Used to describe the helper link below the text area.
-    /// - Since: 0.20.0
+    /// - Since: 1.4.0
     public struct Helperlink {
         let text: String
         let action: () -> Void
 
-        /// Creates an helper link with text and associated action.
+        /// Creates a helper link with text and associated action.
         ///
         /// - Parameters:
         ///   - text: The helper text (could be the url)
@@ -197,10 +243,10 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
     ///    - label: The label displayed above the text area. It describes the purpose of the input
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text area is empty, by default is *nil*
-    ///    - helperText: An optional helper text displayed below the text area. It conveys additional,
-    ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to `OUDSTextArea.Status.error`,
-    ///      this `helperText` is ignored.
-    ///    - helperLink: An optional helper link displayed below or in place of the helper text., by default is *nil*
+    ///    - helperText: An optional helper text displayed below the text area. Use `.plain(_:)` for
+    ///      arbitrary copy or `.charactersRemaining(_:)` to show a bold character count. By default
+    ///      is *nil*. Ignored when `status` is `.error`.
+    ///    - helperLink: An optional helper link displayed below the helper text, by default is *nil*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
@@ -208,7 +254,7 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
     public init(label: String,
                 text: Binding<String>,
                 placeholder: String? = nil,
-                helperText: String? = nil,
+                helperText: Self.HelperText? = nil,
                 helperLink: Self.Helperlink? = nil,
                 constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
@@ -244,7 +290,7 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
                 bundle: Bundle = .main,
                 text: Binding<String>,
                 placeholder: String? = nil,
-                helperText: String? = nil,
+                helperText: Self.HelperText? = nil,
                 helperLink: Self.Helperlink? = nil,
                 constrainedMaxWidth: Bool = false,
                 status: Self.Status = .enabled)
@@ -269,7 +315,7 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
                                   text: text,
                                   placeholder: placeholder,
                                   status: status,
-                                  accessibilityHint: helperText)
+                                  accessibilityHint: helperText?.accessibilityDescription)
 
                 TextAreaHelperTextContainer(helperText: helperText, status: status)
                     .accessibilityHidden(true)
@@ -278,10 +324,10 @@ public struct OUDSTextArea: View { // TODO: #406 - Add documentation hyperlink i
 
             if let helperLink, !helperLink.text.isEmpty {
                 OUDSLink(text: helperLink.text, size: .small, action: helperLink.action)
-                    .padding(.horizontal, theme.textArea.spacePaddingInlineDefault)
+                    .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)
             }
         }
-        .frame(minWidth: theme.textArea.sizeMinWidth,
+        .frame(minWidth: theme.textInput.sizeMinWidth,
                maxWidth: constrainedMaxWidth ? theme.textArea.sizeMaxWidth : .infinity,
                minHeight: theme.textArea.sizeMinHeightInput,
                alignment: .leading)

@@ -16,7 +16,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under tests as the default semantic token providers with the expected types.
+/// Check if the component tokens provider under tests has the default semantic token providers with the expected types.
 struct WireframeThemeTextAreaComponentTokensProviderTests {
 
     private var provider: WireframeThemeTextAreaComponentTokensProvider
@@ -33,14 +33,6 @@ struct WireframeThemeTextAreaComponentTokensProviderTests {
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
-    }
-
-    @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(provider.borders is WireframeThemeBorderSemanticTokensProvider)
-    }
-
-    @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is WireframeThemeColorSemanticTokensProvider)
     }
 }
 

@@ -16,12 +16,11 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
+/// A class which wraps all **component tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
-/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizesSemanticTokensProvider`),
-/// spaces (from `AllSpacesSemanticTokensProvider`), borders (from `AllBorderSemanticTokensProvider`)
-/// and colors (from `AllColorSemanticTokensProvider`).
+/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class WireframeThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
@@ -32,32 +31,20 @@ final class WireframeThemeTextAreaComponentTokensProvider: AllTextAreaComponentT
     /// Provider of space semantic tokens to use for text area spaces
     let spaces: AllSpaceSemanticTokensProvider
 
-    /// Provider of borders semantic tokens to use for text area borders
-    let borders: AllBorderSemanticTokensProvider
-
-    /// Provider of color semantic tokens to use for text area colors
-    let colors: AllColorSemanticTokensProvider
-
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
 
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`
     /// - Parameters:
-    ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
+    ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
-    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``WireframeThemeBorderSemanticTokensProvider``)
-    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil,
-         borders: AllBorderSemanticTokensProvider? = nil,
-         colors: AllColorSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil)
     {
         OL.debug("Init of WireframeThemeTextAreaComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
-        self.borders = (borders ?? WireframeThemeBorderSemanticTokensProvider())
-        self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeTextAreaComponentTokensProvider")
