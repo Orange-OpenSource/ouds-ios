@@ -264,9 +264,6 @@ OUDSTextArea(label: "Label", text: $text, helperLink: helperLink)
 
 // Error status — error message replaces the helper text
 OUDSTextArea(label: "Label", text: $text, status: .error(message: "Required."))
-
-// Constrained to the design-system maximum width
-OUDSTextArea(label: "Label", text: $text, constrainedMaxWidth: true)
 ```
 
 > Min visible lines: `OUDSTextArea.minLines` (3). Max lines before scrolling: `OUDSTextArea.maxLines` (10).
