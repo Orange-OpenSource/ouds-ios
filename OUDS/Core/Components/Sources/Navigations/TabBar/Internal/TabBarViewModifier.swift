@@ -55,12 +55,12 @@ struct TabBarViewModifier: ViewModifier {
         #if os(iOS)
             // If change of orientation
             .onChange(of: verticalSizeClass) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                     setupTabBarAppearance(withColor: colorScheme)
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                     setupTabBarAppearance(withColor: colorScheme)
                 }
             }

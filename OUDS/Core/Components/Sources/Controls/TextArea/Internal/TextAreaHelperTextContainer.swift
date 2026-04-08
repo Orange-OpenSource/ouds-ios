@@ -21,14 +21,15 @@ struct TextAreaHelperTextContainer: View {
 
     let helperText: OUDSTextArea.HelperText?
     let status: OUDSTextArea.Status
+    let isOverLimit: Bool
+    let excessCount: Int
+    let remainingCount: Int
 
     @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     var body: some View {
-        // On error status the error message always takes priority over the helper text.
-        // On other statuses, render the helper text if provided.
         if let renderedText {
             renderedText
                 .labelDefaultMedium(theme)
@@ -41,56 +42,58 @@ struct TextAreaHelperTextContainer: View {
 
     // MARK: - Helpers
 
-    /// Returns the `Text` view to display, or `nil` when there is nothing to show.
-    ///
-    /// - `.error` status: plain `Text` with the error message.
-    /// - `.plain`: plain `Text` with the caller-supplied string.
-    /// - `.charactersRemaining`: `Text` built from an `AttributedString` where the integer
-    ///   count is **bold** and the surrounding localised copy stays regular weight.
+    /// Returns the Text view to display, or nil when there is nothing to show.
     private var renderedText: Text? {
         switch status {
         case let .error(message):
-            Text(message)
+            return Text(message)
 
-        case .enabled, .readOnly, .disabled:
+        case .enabled, .readOnly, .loading, .disabled:
+            if isOverLimit, case .charactersMaxCount = helperText {
+                return Text(tooManyCharactersText(excess: excessCount))
+            }
             switch helperText {
             case let .plain(string):
-                Text(string)
-            case let .charactersRemaining(count):
-                Text(attributedRemainingText(count: count))
+                return Text(string)
+            case .charactersMaxCount:
+                return Text(remainingCharactersText(count: remainingCount))
             case .none:
-                nil
+                return nil
             }
         }
     }
 
     private var color: MultipleColorSemanticToken {
+        // Over-limit forces error colour regardless of status.
+        if isOverLimit { return theme.colors.contentStatusNegative }
         switch status {
-        case .enabled, .readOnly:
-            theme.colors.contentMuted
+        case .enabled, .readOnly, .loading:
+            return theme.colors.contentMuted
         case .error:
-            theme.colors.contentStatusNegative
+            return theme.colors.contentStatusNegative
         case .disabled:
-            theme.colors.actionDisabled
+            return theme.colors.actionDisabled
         }
     }
 
-    // MARK: - Attributed string builder
+    // MARK: - Attributed string builders
 
-    /// Builds an `AttributedString` for the remaining-characters sentence where the integer
-    /// count is rendered with a **bold** font weight and the surrounding text stays regular.
-    private func attributedRemainingText(count: Int) -> AttributedString {
+    /// "X characters remaining" - count is bold (weight 700), rest is regular.
+    /// Uses inlinePresentationIntent = .stronglyEmphasized so the parent
+    /// .labelDefaultMedium font family and size are preserved.
+    private func remainingCharactersText(count: Int) -> AttributedString {
         let countString = "\(count)"
         let fullString = String(format: "core_textArea_charactersRemaining".localized(), count)
-
         var attributed = AttributedString(fullString)
-
-        // Apply bold only to the numeric portion.
         if let range = attributed.range(of: countString) {
-            attributed[range].font = .body.bold()
+            attributed[range].inlinePresentationIntent = .stronglyEmphasized
         }
-
         return attributed
+    }
+
+    /// "You have X characters too many." - excess count is bold, rest is regular.
+    private func tooManyCharactersText(excess: Int) -> String {
+        String(format: "core_textArea_charactersTooMany".localized(), excess)
     }
 }
 #endif

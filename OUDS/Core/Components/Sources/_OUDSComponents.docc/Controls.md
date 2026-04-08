@@ -531,6 +531,62 @@ OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digi
 OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
 ```
 
+### Text area
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
+    }
+}
+
+The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
+The field grows from a minimum of ``OUDSTextArea/minLines`` visible lines up to ``OUDSTextArea/maxLines`` lines, after which the content scrolls.
+It supports labels, placeholders, helper text, a helper link and four statuses: enabled, error, read-only and disabled.
+
+```swift
+// The text to display and edit
+@State var text: String = ""
+
+// Basic usage — label and text only
+OUDSTextArea(label: "Comments", text: $text)
+
+// With a placeholder shown when the field is empty
+OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
+
+// With a plain helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .plain("Maximum 500 characters."))
+
+// With a maximum character count — remaining count rendered bold, error style when exceeded
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .charactersMaxCount(500))
+
+// With a helper link
+@Environment(\.openURL) private var openUrl
+
+let helperLink = OUDSTextArea.Helperlink(text: "Learn more") {
+    openUrl.callAsFunction(url)
+}
+
+OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
+
+// With error status — error message replaces the helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             status: .error(message: "This field cannot be empty."))
+```
+
 ### Text input
 
 @TabNavigator {
@@ -583,63 +639,4 @@ let helperLink = OUDSTextInput.HelperLink(text: "Helper Link") {
 }
 
 OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
-```
-
-### Text area
-
-@TabNavigator {
-    @Tab("Orange") {
-        ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
-    }
-    @Tab("Orange Compact") {
-        ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
-    }
-    @Tab("Sosh") {
-        ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
-    }
-    @Tab("Wireframe") {
-        ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
-    }
-}
-
-The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
-The field grows from a minimum of ``OUDSTextArea/minLines`` visible lines up to ``OUDSTextArea/maxLines`` lines, after which the content scrolls.
-It supports labels, placeholders, helper text, a helper link and four statuses: enabled, error, read-only and disabled.
-
-```swift
-// The text to display and edit
-@State var text: String = ""
-
-// Basic usage — label and text only
-OUDSTextArea(label: "Comments", text: $text)
-
-// With a placeholder shown when the field is empty
-OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
-
-// With a plain helper text
-OUDSTextArea(label: "Comments",
-             text: $text,
-             helperText: .plain("Maximum 500 characters."))
-
-// With a remaining characters count — the number is rendered bold
-OUDSTextArea(label: "Comments",
-             text: $text,
-             helperText: .charactersRemaining(180))
-
-// With a helper link
-@Environment(\.openURL) private var openUrl
-
-let helperLink = OUDSTextArea.Helperlink(text: "Learn more") {
-    openUrl.callAsFunction(url)
-}
-
-OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
-
-// With error status — error message replaces the helper text
-OUDSTextArea(label: "Comments",
-             text: $text,
-             status: .error(message: "This field cannot be empty."))
-
-// Constrained to the design-system maximum width
-OUDSTextArea(label: "Comments", text: $text, constrainedMaxWidth: true)
 ```

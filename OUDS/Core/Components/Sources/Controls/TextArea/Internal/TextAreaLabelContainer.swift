@@ -22,6 +22,7 @@ struct TextAreaLabelContainer: View {
     let label: String
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
+    let isOverLimit: Bool
     let position: Position
 
     @Environment(\.theme) private var theme
@@ -67,8 +68,19 @@ struct TextAreaLabelContainer: View {
     }
 
     private var color: MultipleColorSemanticToken {
-        switch status {
-        case .enabled, .readOnly:
+        // Over-limit mirrors the error label colour regardless of the caller-supplied status.
+        if isOverLimit {
+            return switch interactionState {
+            case .idle:
+                theme.colors.actionNegativeEnabled
+            case .focused:
+                theme.colors.actionNegativeFocus
+            case .hover:
+                theme.colors.actionNegativeHover
+            }
+        }
+        return switch status {
+        case .enabled, .readOnly, .loading:
             theme.colors.contentMuted
         case .error:
             switch interactionState {

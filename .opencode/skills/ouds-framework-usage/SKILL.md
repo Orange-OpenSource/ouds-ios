@@ -256,7 +256,7 @@ OUDSTextArea(label: "Label", text: $text, placeholder: "Describe…")
 OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
 
 // Remaining characters — count is rendered bold in the UI
-OUDSTextArea(label: "Label", text: $text, helperText: .charactersRemaining(180))
+OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
 
 // Helper link
 let helperLink = OUDSTextArea.Helperlink(text: "Learn more") { openUrl(url) }

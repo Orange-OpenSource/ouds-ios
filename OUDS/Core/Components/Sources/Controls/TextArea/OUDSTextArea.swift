@@ -42,8 +42,12 @@ import SwiftUI
 /// It allows users to click, focus, and type freely without restrictions.
 ///
 /// - **error**: The `error` status indicates that the user input does not meet validation rules or
-/// expected formatting. It provides immediate visual feedback, typically through a red border
-/// and a clear, accessible error message positioned below the text area. The error message replaces the helper text.
+/// expected formatting. It provides immediate visual feedback, typically through a red border,
+/// an error icon, and a clear, accessible error message positioned below the text area. The error message replaces the helper text.
+///
+/// - **loading**: The `loading` state indicates that the system is processing or retrieving data
+/// related to the text entered. A progress indicator appears to inform the user that an action is in progress.
+/// The field remains editable while loading.
 ///
 /// - **readOnly**: The `readOnly` status lets the text visible but not editable.
 ///
@@ -52,9 +56,11 @@ import SwiftUI
 ///
 /// ## Helpers
 ///
-/// - **Helper text**: A supporting text conveys additional information about the text area,
+/// - **Helper text (plain)**: A supporting text conveys additional information about the text area,
 /// such as how it will be used. It should ideally only take up a single line, though may wrap
 /// to multiple lines if required, and be either persistently visible or visible only on focus.
+///
+/// - **Helper text (characters max count)**: Uses an internal message displaying the recount of remaining characters depending to the given value
 ///
 /// - **Helper link**: If the helper text is not sufficient, it's possible to offer the user
 /// an additional help link (the link can be external or open a modal).
@@ -98,10 +104,11 @@ import SwiftUI
 ///                  placeholder: "Describe your issue in detail",
 ///                  helperText: .plain("Maximum 500 characters."))
 ///
-///     // With a remaining characters count (number rendered bold)
+///     // With a maximum character count — the component shows "X characters remaining" (bold)
+///     // and switches to an error style when exceeded.
 ///     OUDSTextArea(label: "Comments",
 ///                  text: $text,
-///                  helperText: .charactersRemaining(180))
+///                  helperText: .charactersMaxCount(500))
 ///
 ///     // With helper link
 ///     @Environment(\.openURL) private var openUrl
@@ -153,9 +160,14 @@ public struct OUDSTextArea: View {
         case enabled
 
         /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
-        /// It provides immediate visual feedback, typically through a red border and a clear,
+        /// It provides immediate visual feedback, typically through a red border, an error icon, and a clear,
         /// accessible error `message` positioned below the text area.
         case error(message: String)
+
+        /// The `loading` state indicates that the system is processing or retrieving data related to the
+        /// text entered. A progress indicator appears to inform the user that an action is in progress.
+        /// The field remains editable while loading.
+        case loading
 
         /// The `readOnly` status lets the text visible but not editable
         case readOnly
@@ -166,7 +178,7 @@ public struct OUDSTextArea: View {
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case (.enabled, .enabled), (.readOnly, .readOnly), (.disabled, .disabled):
+            case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
             case let (.error(lhsMessage), .error(rhsMessage)):
                 lhsMessage == rhsMessage
@@ -180,32 +192,40 @@ public struct OUDSTextArea: View {
 
     /// Describes the content of the helper text displayed below the text area.
     ///
-    /// Use `.plain(_:)` for arbitrary helper text, or `.charactersRemaining(_:)` to display
-    /// a library-managed sentence where the character count is rendered in **bold**.
+    /// Use `.plain(_:)` for arbitrary helper text, or `.charactersMaxCount(_:)` to let the
+    /// component manage a character-count display automatically.
+    /// Pass the **maximum allowed length** — the component computes how many characters remain
+    /// and displays them in **bold**. When the user exceeds the limit the component switches
+    /// to an error-style sentence showing how many characters are over the limit.
     ///
     /// ```swift
     ///     // Plain helper text
     ///     OUDSTextArea(label: "Bio", text: $text, helperText: .plain("Maximum 500 characters."))
     ///
-    ///     // Remaining characters — number is bold in the UI
-    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .charactersRemaining(180))
+    ///     // Character limit: component shows "X characters remaining" (bold count),
+    ///     // and switches to "You have X characters too many." when exceeded.
+    ///     OUDSTextArea(label: "Bio", text: $text, helperText: .charactersMaxCount(500))
     /// ```
     ///
     /// - Since: 1.4.0
     @frozen public enum HelperText {
         /// A plain helper string defined by the caller.
         case plain(String)
-        /// Shows a predefined library sentence with the given remaining character count in **bold**.
-        /// The count must be positive and non-zero.
-        case charactersRemaining(Int)
+
+        /// The **maximum number of characters** allowed in the text area.
+        /// The component automatically computes and displays the number of characters remaining
+        /// (rendered **bold**) and switches to an error-style sentence if the limit is exceeded.
+        case charactersMaxCount(Int)
 
         /// A plain string representation suitable for VoiceOver, without any rich-text formatting.
-        var accessibilityDescription: String {
+        /// For `.charactersMaxCount` the remaining count must be supplied externally because the
+        /// enum has no access to the current text binding.
+        func accessibilityDescription(remainingCount: Int) -> String {
             switch self {
             case let .plain(string):
                 string
-            case let .charactersRemaining(count):
-                String(format: "core_textArea_charactersRemaining".localized(), count)
+            case .charactersMaxCount:
+                String(format: "core_textArea_charactersRemaining".localized(), remainingCount)
             }
         }
     }
@@ -221,7 +241,7 @@ public struct OUDSTextArea: View {
         /// Creates a helper link with text and associated action.
         ///
         /// - Parameters:
-        ///   - text: The helper text (could be the url)
+        ///   - text: The helper text (could be the URL)
         ///   - action: The action when clicked
         public init(text: String, action: @escaping () -> Void) {
             if text.isEmpty {
@@ -241,7 +261,7 @@ public struct OUDSTextArea: View {
     ///    - text: The text to display and edit
     ///    - placeholder: The text displayed when the text area is empty, by default is *nil*
     ///    - helperText: An optional helper text displayed below the text area. Use `.plain(_:)` for
-    ///      arbitrary copy or `.charactersRemaining(_:)` to show a bold character count. By default
+    ///      arbitrary copy or `.charactersMaxCount(_:)` to show a bold character count. By default
     ///      is *nil*. Ignored when `status` is `.error`.
     ///    - helperLink: An optional helper link displayed below the helper text, by default is *nil*
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
@@ -303,6 +323,27 @@ public struct OUDSTextArea: View {
 
     // swiftlint:enable function_default_parameter_at_end
 
+    // MARK: - Over-limit helpers
+
+    /// `true` when `helperText` is `.charactersMaxCount` and the current text exceeds the limit.
+    private var isOverLimit: Bool {
+        guard case let .charactersMaxCount(limit) = helperText else { return false }
+        return text.wrappedValue.count > limit
+    }
+
+    /// The number of characters beyond the limit, or 0 when within bounds.
+    private var excessCount: Int {
+        guard case let .charactersMaxCount(limit) = helperText else { return 0 }
+        return max(0, text.wrappedValue.count - limit)
+    }
+
+    /// How many characters the user can still type before hitting the limit.
+    /// Returns 0 when at or beyond the limit.
+    private var remainingCount: Int {
+        guard case let .charactersMaxCount(maxLength) = helperText else { return 0 }
+        return max(0, maxLength - text.wrappedValue.count)
+    }
+
     // MARK: Body
 
     public var body: some View {
@@ -311,10 +352,16 @@ public struct OUDSTextArea: View {
                 TextAreaContainer(label: label,
                                   text: text,
                                   placeholder: placeholder,
+                                  isOverLimit: isOverLimit,
+                                  excessCount: excessCount,
                                   status: status,
-                                  accessibilityHint: helperText?.accessibilityDescription)
+                                  accessibilityHint: helperText?.accessibilityDescription(remainingCount: remainingCount))
 
-                TextAreaHelperTextContainer(helperText: helperText, status: status)
+                TextAreaHelperTextContainer(helperText: helperText,
+                                            status: status,
+                                            isOverLimit: isOverLimit,
+                                            excessCount: excessCount,
+                                            remainingCount: remainingCount)
                     .accessibilityHidden(true)
             }
             .accessibilityElement(children: .contain)

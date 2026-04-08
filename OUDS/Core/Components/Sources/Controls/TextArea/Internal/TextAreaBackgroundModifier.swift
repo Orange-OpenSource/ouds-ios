@@ -21,6 +21,7 @@ struct TextAreaBackgroundModifier: ViewModifier {
 
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
+    let isOverLimit: Bool
 
     @Environment(\.theme) private var theme
 
@@ -37,7 +38,9 @@ struct TextAreaBackgroundModifier: ViewModifier {
     // MARK: - Helpers
 
     private var color: MultipleColorSemanticToken? {
-        switch status {
+        // Over-limit mirrors the error background regardless of the caller-supplied status.
+        if isOverLimit { return theme.colors.surfaceStatusNegativeMuted }
+        return switch status {
         case .enabled:
             switch interactionState {
             case .idle:
@@ -49,8 +52,17 @@ struct TextAreaBackgroundModifier: ViewModifier {
             }
         case .error:
             theme.colors.surfaceStatusNegativeMuted
+        case .loading:
+            switch interactionState {
+            case .idle:
+                theme.colors.actionSupportEnabled
+            case .focused:
+                theme.colors.actionSupportPressed
+            case .hover:
+                theme.colors.actionSupportHover
+            }
         case .readOnly:
-            nil
+            MultipleColorSemanticToken?.none
         case .disabled:
             theme.colors.actionSupportDisabled
         }

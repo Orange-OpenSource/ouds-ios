@@ -27,8 +27,8 @@ struct OUDSPinCodeInputTests {
 
     /// Test the string values used for obfuscation and placeholders
     @Test func pinCodeInputPredefinedSymbols() {
-        #expect(kPinCodeInputObfuscationCharacter == "●")
-        #expect(kPinCodeInputPlaceholderCharacter == "-")
+        #expect(OUDSPinCodeInput.obfuscationCharacter == "●")
+        #expect(OUDSPinCodeInput.placeholderCharacter == "-")
     }
 }
 #endif

@@ -21,6 +21,7 @@ struct TextAreaBorderModifier: ViewModifier {
 
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
+    let isOverLimit: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -32,7 +33,7 @@ struct TextAreaBorderModifier: ViewModifier {
             content
                 .border(style: theme.borders.styleDefault,
                         width: theme.textInput.borderWidthDefault,
-                        radius: theme.textInput.borderRadiusDefault,
+                        radius: borderRadius,
                         color: theme.colors.borderMuted)
         } else {
             ZStack(alignment: .bottomLeading) {
@@ -41,11 +42,15 @@ struct TextAreaBorderModifier: ViewModifier {
                     .frame(height: borderWidth)
                     .overlay(borderColor.color(for: colorScheme))
             }
-            .clipShape(RoundedRectangle(cornerRadius: theme.textInput.borderRadiusDefault))
+            .clipShape(RoundedRectangle(cornerRadius: borderRadius))
         }
     }
 
     // MARK: - Helpers
+
+    private var borderRadius: BorderRadiusSemanticToken {
+        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
+    }
 
     private var borderWidth: BorderWidthSemanticToken {
         switch interactionState {
@@ -57,7 +62,18 @@ struct TextAreaBorderModifier: ViewModifier {
     }
 
     private var borderColor: MultipleColorSemanticToken {
-        switch status {
+        // Over-limit mirrors the error border colour regardless of the caller-supplied status.
+        if isOverLimit {
+            return switch interactionState {
+            case .idle:
+                theme.colors.actionNegativeEnabled
+            case .focused:
+                theme.colors.actionNegativePressed
+            case .hover:
+                theme.colors.actionNegativeHover
+            }
+        }
+        return switch status {
         case .enabled:
             switch interactionState {
             case .idle:
@@ -75,6 +91,15 @@ struct TextAreaBorderModifier: ViewModifier {
                 theme.colors.actionNegativePressed
             case .hover:
                 theme.colors.actionNegativeHover
+            }
+        case .loading:
+            switch interactionState {
+            case .idle:
+                theme.textInput.colorBorderEnabled
+            case .focused:
+                theme.textInput.colorBorderFocus
+            case .hover:
+                theme.textInput.colorBorderHover
             }
         case .readOnly:
             theme.colors.borderMuted
