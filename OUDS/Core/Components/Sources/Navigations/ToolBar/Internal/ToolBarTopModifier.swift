@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-// MARK: - ToolBar top Modifier (Bottom)
+// MARK: - ToolBar top Modifier
 
 @available(iOS 15, macOS 13, *)
 struct ToolBarTopModifier: ViewModifier {
@@ -68,7 +68,7 @@ struct ToolBarTopModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .oudsNavigationTitle(title)
+            .oudsNavigationTitle(title, subtitle: subtitle)
         #if os(iOS) || os(visionOS)
         .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
         #endif
@@ -82,22 +82,13 @@ struct ToolBarTopModifier: ViewModifier {
         }
     }
 
-    @Environment(\.theme) var theme
+    // MARK: - Helpers
 
     private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
         ForEach(items) { item in
-            switch item.content {
-            case let .action(_, style):
-                item.modifier(ToolBarTopItemActionModifier(style: style))
-            case let .navigation(type):
-                item.buttonStyle(ToolBarTopItemNavigationStyle(type: type))
-            case let .customView(view):
-                view
-            }
+            item
         }
     }
-
-    // MARK: - Helpers
 
     private var leadingPlacement: ToolbarItemPlacement {
         #if os(iOS) || os(visionOS) || os(tvOS)

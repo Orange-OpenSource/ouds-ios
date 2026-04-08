@@ -12,52 +12,53 @@
 //
 
 #if !os(watchOS)
+import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - ToolBar Item Action Style Modifier (Bottom)
+// MARK: - ToolBar Item Action Style Modifier (Top/Bottom)
 
-/// Applies styling to toolBar bottom items.
-/// Only the foreground color of the items changesd depending to the OS version.
-struct ToolBarBottomItemActionStyleModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-
-    // TODO: #1174 - For iOS 18 and lower, apply the blur effects etc
-    func body(content: Content) -> some View {
-        content.oudsForegroundColor(theme.colors.contentDefault)
-    }
-}
-
-// MARK: - ToolBar Item Action Style Modifier (Top)
-
-// Applies styling to toolBar top items depending depending to OS versions:
+// Applies styling to tool bar (top/bottom) action items depending depending to OS versions:
 // - For iOS 26+ / Liquid Glass, action button in toolBar top have colored background
 // - For iOS lower than 26 / not Liquid Glass, action button in toolBar top do not have colored background but foreground color instead
 // The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
 // However things cannot be customized that much for Liquid Glass.
 
-struct ToolBarTopItemActionModifier: ViewModifier {
+struct ToolBarActionItemModifier: ViewModifier {
+
+    // MARK: - Properties
+
     let style: OUDSToolBarItem.ActionStyle
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         if style == .proiminent {
             content
+                .oudsTintColor(theme.colors.actionSelected)
                 .buttonStyle(.borderedProminent)
+                .buttonStyle(ToolBarActionItemStyle(style: style))
         } else {
             content
-                .buttonStyle(ToolBarTopItemActionStyle(style: style))
+                .oudsTintColor(theme.colors.actionSelected)
+                .buttonStyle(ToolBarActionItemStyle(style: style))
         }
     }
 }
 
-struct ToolBarTopItemActionStyle: ButtonStyle {
+/// Used to apply color for the pressed and disabled states
+struct ToolBarActionItemStyle: ButtonStyle {
+
+    // MARK: - Properties
 
     let style: OUDSToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
         if !isEnabled {
@@ -69,7 +70,6 @@ struct ToolBarTopItemActionStyle: ButtonStyle {
                     configuration.label.oudsForegroundColor(theme.button.colorContentMinimalEnabled)
                 case .proiminent:
                     configuration.label
-                        .oudsTintColor(theme.colors.actionSelected)
                         .oudsForegroundColor(theme.colors.contentOnActionSelected)
                 case .tinted:
                     configuration.label.oudsForegroundColor(theme.colors.actionSelected)
@@ -92,10 +92,14 @@ struct ToolBarTopItemActionStyle: ButtonStyle {
 /// However things cannot be customized that much for Liquid Glass.
 struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
+    // MARK: - Properties
+
     let type: OUDSToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+
+    // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
         if #available(iOS 26, *) {
@@ -108,6 +112,8 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
         }
     }
 
+    // MARK: - Private helper
+
     private var foregroundColor: MultipleColorSemanticToken {
         switch type {
         case .back:
@@ -115,6 +121,51 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
         case .close:
             MultipleColorSemanticToken("#999999")
         }
+    }
+}
+
+#if os(macOS)
+private typealias NativeFont = NSFont
+#else
+private typealias NativeFont = UIFont
+#endif
+
+struct FontLabelModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    enum Style {
+        case medium
+        case regular
+    }
+
+    let style: Style
+    @Environment(\.theme) private var theme
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content.font(font)
+    }
+
+    private var font: Font? {
+        guard let fontFamily = theme.fontFamily else {
+            return nil
+        }
+
+        let fontWeight: Font.Weight = switch style {
+        case .medium:
+            .medium
+        case .regular:
+            .regular
+        }
+
+        let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, fontWeight)]
+        guard let uiFont = NativeFont(name: titleFontName, size: 17) else {
+            return nil
+        }
+
+        return Font(uiFont)
     }
 }
 #endif

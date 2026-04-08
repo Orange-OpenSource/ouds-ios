@@ -24,6 +24,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
+    let subtilte: String?
 
     #if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
@@ -33,6 +34,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationTitle(LocalizedStringKey(title))
+            .oudsNavigationSubtitle(subtilte)
             .onAppear {
                 #if canImport(UIKit) && !os(watchOS)
                 DispatchQueue.main.asyncAfter(deadline: deadline) {
@@ -40,6 +42,17 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
                 }
                 #endif
             }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
+        if #available(iOS 26.0, *), let subtitle {
+            navigationSubtitle(Text(LocalizedStringKey(subtitle)))
+        } else {
+            self
+        }
     }
 }
 
