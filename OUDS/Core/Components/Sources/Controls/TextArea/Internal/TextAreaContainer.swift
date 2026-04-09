@@ -24,9 +24,7 @@ struct TextAreaContainer: View {
     let label: String
     let text: Binding<String>
     let placeholder: String?
-    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let isOverLimit: Bool
-    /// Pre-computed by `OUDSTextArea` from the normalised text count — single source of truth.
     let excessCount: Int
     let status: OUDSTextArea.Status
     let isOutlined: Bool
@@ -51,7 +49,7 @@ struct TextAreaContainer: View {
                                        interactionState: interactionState,
                                        isOverLimit: isOverLimit)
 
-                TextAreaInputText(label: placeholder ?? label,
+                TextAreaInputText(label: placeholder ?? "",
                                   text: text,
                                   status: status)
                     .focused($focused)
@@ -61,6 +59,7 @@ struct TextAreaContainer: View {
                         focused = true
                     }
             }
+            .frame(minHeight: theme.textArea.sizeMinHeightInput)
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
             .accessibilityHint(accessibilityHint ?? "")
