@@ -12,6 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSFoundations
+import OUDSTokensRaw
 import SwiftUI
 #if canImport(UIKit)
 import UIKit
@@ -34,6 +36,10 @@ struct TextAreaContainer: View {
     @FocusState private var focused: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    /// Observed so the view re-renders when the user changes Dynamic Type size.
+    @Environment(\.sizeCategory) private var sizeCategory
 
     // MARK: - Body
 
@@ -64,11 +70,14 @@ struct TextAreaContainer: View {
             .accessibilityValue(accessibilityValue)
             .accessibilityHint(accessibilityHint ?? "")
 
-            // Trailing indicator: error icon or loading spinner
+            // Trailing indicator: error icon or loading spinner.
+            // The top offset aligns the icon with the first line of the TextEditor:
+            // it skips past the label (labelDefaultSmall line height) and the gap between
+            // label and editor (spaceRowGapLabelInput).
             TextAreaTrailingContainer(status: status,
                                       interactionState: interactionState,
                                       isOverLimit: isOverLimit)
-                .padding(.top, theme.textArea.spacePaddingBlock)
+                .padding(.top, labelLineHeight + theme.textInput.spaceRowGapLabelInput)
         }
         .padding(.vertical, theme.textArea.spacePaddingBlock)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
@@ -89,18 +98,48 @@ struct TextAreaContainer: View {
 
     // MARK: - Helpers
 
+    /// The rendered line height of `labelDefaultSmall` for the current Dynamic Type size and size class.
+    /// Used to offset the trailing icon so it aligns with the first line of the TextEditor,
+    /// skipping past the label above it.
+    private var labelLineHeight: CGFloat {
+        let isCompact = horizontalSizeClass == .compact || verticalSizeClass == .compact
+        let token = isCompact
+            ? theme.fonts.labelDefaultSmall.compact
+            : theme.fonts.labelDefaultSmall.regular
+        #if os(macOS)
+        let family = theme.fontFamily
+        let size = token.size
+        let font: NSFont = {
+            if let family,
+               let f = NSFont(name: kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))], size: size)
+            {
+                return f
+            }
+            return NSFont.systemFont(ofSize: size, weight: Font.Weight(weight: token.weight).nativeFontWeight)
+        }()
+        return NSLayoutManager().defaultLineHeight(for: font)
+        #else
+        let scaledSize = UIFontMetrics.default.scaledValue(for: token.size)
+        let font: UIFont = {
+            if let family = theme.fontFamily,
+               let f = UIFont(name: kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))], size: scaledSize)
+            {
+                return f
+            }
+            return UIFont.systemFont(ofSize: scaledSize, weight: Font.Weight(weight: token.weight).nativeFontWeight)
+        }()
+        return font.lineHeight
+        #endif
+    }
+
     private var interactionState: TextAreaInteractionState {
         TextAreaInteractionState(focused: focused, hover: hover)
     }
 
-    /// Trailing padding is reduced when the trailing container is visible (error / loading / over limit).
+    /// Always use the reduced trailing padding so the HStack width never changes between statuses.
+    /// The trailing container always reserves the same fixed-width slot (visible or invisible).
     private var trailingPadding: CGFloat {
-        switch status {
-        case .error, .loading:
-            theme.textInput.spacePaddingInlineTrailingAction
-        default:
-            isOverLimit ? theme.textInput.spacePaddingInlineTrailingAction : theme.textInput.spacePaddingInlineDefault
-        }
+        theme.textInput.spacePaddingInlineTrailingAction
     }
 
     private var accessibilityLabel: String {

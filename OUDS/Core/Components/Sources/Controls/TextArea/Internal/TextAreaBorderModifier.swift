@@ -42,26 +42,38 @@ struct TextAreaBorderModifier: ViewModifier {
                             color: borderColor)
             }
         } else {
-            // Default mode: full border for readOnly, bottom divider for all other states.
-            if status == .readOnly {
-                content
-                    .border(style: theme.borders.styleDefault,
-                            width: theme.textInput.borderWidthDefault,
-                            radius: borderRadius,
-                            color: theme.colors.borderMuted)
-            } else {
-                ZStack(alignment: .bottomLeading) {
-                    content
-                    Divider()
-                        .frame(height: borderWidth)
-                        .overlay(borderColor.color(for: colorScheme))
-                }
+            // Default mode — same structure for all statuses to prevent layout changes
+            // when switching status. clipShape clips content, then an overlay draws
+            // the border on top without affecting the content's intrinsic size.
+            // - Non-readOnly: bottom-only divider line.
+            // - readOnly: full-perimeter stroke drawn over (not inside) the clip shape.
+            content
                 .clipShape(RoundedRectangle(cornerRadius: borderRadius))
-            }
+                .overlay(borderOverlay)
         }
     }
 
     // MARK: - Helpers
+
+    /// Overlay view applied on top of the clipped content.
+    /// Always the same type regardless of status so SwiftUI never changes the view hierarchy,
+    /// preventing height jumps when switching between statuses.
+    @ViewBuilder
+    private var borderOverlay: some View {
+        if status == .readOnly {
+            // Full-perimeter stroke for readOnly — uses .stroke (not .strokeBorder) so the line
+            // draws centred on the clip boundary and does not inset the content area.
+            RoundedRectangle(cornerRadius: borderRadius)
+                .stroke(theme.colors.borderMuted.color(for: colorScheme),
+                        lineWidth: theme.textInput.borderWidthDefault)
+        } else {
+            // Bottom-only divider for all other statuses.
+            Rectangle()
+                .frame(height: borderWidth)
+                .foregroundColor(borderColor.color(for: colorScheme))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        }
+    }
 
     private var borderRadius: BorderRadiusSemanticToken {
         theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault

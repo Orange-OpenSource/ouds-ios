@@ -15,10 +15,14 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Renders the top-trailing indicator for `OUDSTextArea`:
+/// Renders the top-trailing indicator for `OUDSTextArea`.
+///
+/// Always reserves the same fixed-size slot regardless of status so the `HStack` width
+/// never changes when switching between statuses — preventing height reflow.
+///
 /// - `.error` or `isOverLimit` → red alert icon (`ic_alert_important_fill`)
 /// - `.loading` → loading spinner via `OUDSButton(style: .loading)`, accessibility hidden
-/// - all other statuses → nothing
+/// - all other statuses → invisible placeholder of the same size
 struct TextAreaTrailingContainer: View {
 
     // MARK: - Properties
@@ -33,17 +37,26 @@ struct TextAreaTrailingContainer: View {
     // MARK: - Body
 
     var body: some View {
-        if case .error = status {
-            errorIcon
-        } else if isOverLimit {
-            errorIcon
-        } else if case .loading = status {
-            OUDSButton(icon: Image(decorative: "ic_heart"), // FIXME: #543 - Change this image
-                       accessibilityLabel: "",
-                       appearance: .minimal,
-                       style: .loading,
-                       action: {})
-                .accessibilityHidden(true)
+        // The slot size is always button.sizeIconOnly + 2 × button.spaceInsetIconOnly (horizontal).
+        // Content is swapped via opacity so the size is never zero — preventing layout shifts.
+        ZStack {
+            // Invisible placeholder — always present to hold the slot size.
+            Color.clear
+                .frame(width: theme.button.sizeIconOnly + 2 * theme.button.spaceInsetIconOnly,
+                       height: theme.button.sizeIconOnly)
+
+            if case .error = status {
+                errorIcon
+            } else if isOverLimit {
+                errorIcon
+            } else if case .loading = status {
+                OUDSButton(icon: Image(decorative: "ic_heart"), // FIXME: #543 - Change this image
+                           accessibilityLabel: "",
+                           appearance: .minimal,
+                           style: .loading,
+                           action: {})
+                    .accessibilityHidden(true)
+            }
         }
     }
 
@@ -58,7 +71,7 @@ struct TextAreaTrailingContainer: View {
             .frame(width: theme.button.sizeIconOnly,
                    height: theme.button.sizeIconOnly,
                    alignment: .center)
-            .padding(.all, theme.button.spaceInsetIconOnly)
+            .padding(.horizontal, theme.button.spaceInsetIconOnly)
     }
 
     private var errorIconColor: MultipleColorSemanticToken {

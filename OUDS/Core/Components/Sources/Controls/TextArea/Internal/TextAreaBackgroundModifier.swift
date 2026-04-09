@@ -25,15 +25,14 @@ struct TextAreaBackgroundModifier: ViewModifier {
     let isOutlined: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        if let color {
-            content.background(color)
-        } else {
-            content
-        }
+        // Always apply .background to keep a stable view structure across all status changes.
+        // Color.clear is used when no background is intended so the layout footprint is identical.
+        content.background(color?.color(for: colorScheme) ?? Color.clear)
     }
 
     // MARK: - Helpers
