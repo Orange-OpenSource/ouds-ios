@@ -65,18 +65,19 @@ struct TextAreaInputText: View {
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: lineHeight * CGFloat(OUDSTextArea.minLines))
         }
-        .frame(maxHeight: lineHeight * CGFloat(OUDSTextArea.maxLines))
+        .frame(maxHeight: lineHeight * (CGFloat(OUDSTextArea.maxLines) + 1)) // Start scrolls for the (maxLine + 1)th line
     }
 
     // MARK: - Private helpers
 
-    /// The scaled line height of `labelDefaultLarge` for computing min/max frame heights.
+    /// The actual line height UITextView uses to render each line of text.
+    /// Uses UIFont.lineHeight directly — the exact value the native text engine uses —
+    /// so that minHeight/maxHeight frame constraints match the real rendered line count.
     private var lineHeight: CGFloat {
-        let token = adaptiveFontToken
         #if os(macOS)
-        return token.lineHeight
+        adaptativeFont.boundingRectForFont.height
         #else
-        return UIFontMetrics.default.scaledValue(for: token.lineHeight)
+        adaptativeFont.lineHeight
         #endif
     }
 
