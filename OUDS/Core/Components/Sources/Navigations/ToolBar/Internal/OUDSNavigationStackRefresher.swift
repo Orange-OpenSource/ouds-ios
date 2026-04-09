@@ -152,8 +152,10 @@ struct OUDSNavigationStackRefresher: ViewModifier {
 
         // MARK: Background and tint color
 
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
+        if #unavailable(iOS 26.0) {
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
+        }
 
         UINavigationBar.appearance().tintColor = newTheme.button.colorContentMinimalEnabled.color(for: newColorScheme).uiColor
 
