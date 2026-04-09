@@ -65,7 +65,7 @@ struct TextAreaInputText: View {
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: lineHeight * computedMinLines)
         }
-        .frame(maxHeight: lineHeight * computedMaxLines) // Start scrolls for the (maxLine + 1)th line
+        .frame(maxHeight: lineHeight * computedMaxLines)
     }
 
     // MARK: - Private helpers

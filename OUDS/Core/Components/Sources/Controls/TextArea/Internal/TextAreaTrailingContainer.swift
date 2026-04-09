@@ -57,7 +57,7 @@ struct TextAreaTrailingContainer: View {
                            action: {})
                     .accessibilityHidden(true)
             }
-        }
+        }.frame(maxHeight: theme.textArea.sizeMaxHeightAssetsContainer)
     }
 
     // MARK: - Helpers
