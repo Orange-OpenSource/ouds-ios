@@ -63,12 +63,26 @@ struct TextAreaInputText: View {
                 .tint(cursorColor.color(for: colorScheme))
                 .background(Color.clear)
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
-                .frame(minHeight: lineHeight * CGFloat(OUDSTextArea.minLines))
+                .frame(minHeight: lineHeight * computedMinLines)
         }
-        .frame(maxHeight: lineHeight * (CGFloat(OUDSTextArea.maxLines) + 1)) // Start scrolls for the (maxLine + 1)th line
+        .frame(maxHeight: lineHeight * computedMaxLines) // Start scrolls for the (maxLine + 1)th line
     }
 
     // MARK: - Private helpers
+
+    /// Defines the minimum number of lines for the text area
+    private var computedMinLines: CGFloat {
+        let tokenMinHeight = theme.textArea.sizeMinHeightInput
+        let tokenLineHeight = adaptiveFontToken.lineHeight
+        return tokenMinHeight / tokenLineHeight
+    }
+
+    /// Defines the maximum number of lines for the text area (before scroll)
+    private var computedMaxLines: CGFloat {
+        let tokenMaxHeight = theme.textArea.sizeMaxHeightInput
+        let tokenLineHeight = adaptiveFontToken.lineHeight
+        return (tokenMaxHeight / tokenLineHeight) + 1
+    }
 
     /// The actual line height UITextView uses to render each line of text.
     /// Uses UIFont.lineHeight directly — the exact value the native text engine uses —
