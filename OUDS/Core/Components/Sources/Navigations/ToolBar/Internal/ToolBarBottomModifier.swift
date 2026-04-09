@@ -11,12 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-@available(iOS 15, macOS 13, visionOS 1, *)
 struct ToolBarBottomModifier: ViewModifier {
 
     // MARK: - Stored properties

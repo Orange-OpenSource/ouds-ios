@@ -11,12 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if os(iOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-@available(iOS 15, macOS 13, visionOS 1, *)
 struct OUDSNavigationStackRefresher: ViewModifier {
 
     // MARK: Properties
@@ -34,6 +33,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
+        #if !os(visionOS)
         content
             .onChange(of: theme) { newTheme in
                 refreshAllNavigationBars(for: newTheme, with: colorScheme)
@@ -44,6 +44,18 @@ struct OUDSNavigationStackRefresher: ViewModifier {
             .onChange(of: colorScheme) { newColorScheme in
                 refreshAllNavigationBars(for: theme, with: newColorScheme)
             }
+        #else
+        content
+            .onChange(of: theme) { _, newTheme in
+                refreshAllNavigationBars(for: newTheme, with: colorScheme)
+            }
+            .onAppear {
+                refreshAllNavigationBars(for: theme, with: colorScheme)
+            }
+            .onChange(of: colorScheme) { _, newColorScheme in
+                refreshAllNavigationBars(for: theme, with: newColorScheme)
+            }
+        #endif
     }
 
     // MARK: Private helpers
@@ -93,6 +105,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
             appearance.largeTitleTextAttributes = [.foregroundColor: foregroundColor, .font: largeTitleFont]
         }
 
+        #if !os(visionOS)
         if #available(iOS 26.0, *) {
             if let subTitleFont {
                 appearance.subtitleTextAttributes = [.font: subTitleFont]
@@ -101,6 +114,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
                 appearance.largeSubtitleTextAttributes = [.font: largeSubtitleFont]
             }
         }
+        #endif
 
         // MARK: Back indicator
 

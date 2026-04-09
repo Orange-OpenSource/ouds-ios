@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import OUDSTokensSemantic
@@ -93,6 +93,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     ///
     /// - Since: 1.4.0
     public enum NavigationType {
+
         /// The back button that can be added manualy if need. According to our design system, in could be the case for a sheet.
         /// In a navigation, by default the system one is displayed (without text). If prefered, this one can be added but the system one must be hidden
         /// using `View.navigationBarBackButtonHidden()`
@@ -104,7 +105,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///     - action: The action to do when clicked. If nill the button is disabled. By default the dismiss is done after `action` is colled.
         case back(label: String? = nil, accessibilityLabel: String = "core_common_back", action: (() -> Void)? = nil)
 
-        /// The close button can be used to close sheets.
+        /// The close button can be used to close sheets, the close feature is automatically managed.
         case close
 
         /// The name of the icon associated to the button.

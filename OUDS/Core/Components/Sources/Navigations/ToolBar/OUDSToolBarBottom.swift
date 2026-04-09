@@ -11,30 +11,30 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import OUDSThemesContract
 import SwiftUI
 
-/// The bottom toolBar is a kind of navigation bar component used to display leading and trailing actions
+/// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
-/// ``oudsToolBarBottom`` View helper applies a SwiftUI toolBar configuration.
+/// ``oudsToolBarBottom`` View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Platform considerations
 ///
-/// - Available on iOS 15, macOS 15, visionOS 1
-/// - Not available on watchOS and tvOS
-/// - On macOS, toolBar items are displayed in the standard toolBar area
+/// - Available on iOS, iPadOS, and visionOS
+/// - Not available on watchOS, macOS and tvOS
 ///
 /// ## Guidelines
 ///
 /// - Test the use of the ``oudsToolBarBottom`` for both iOS with Liquid Glass and not Liquid Glass
-/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolBar will be above the tabbar for iOS lower than 26
-/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolBar will be **behind** the tabbar for iOS 26+, so not usable
+/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
+/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
 /// - Avoid use of both ``oudsToolBarBottom`` and ``OUDSTabBar`` in the same page
 ///
-/// ## Code sample
+/// ## Code samples
 ///
+/// Define leading and trailing items for the bottom toolbar
 /// ```swift
 ///       YourView()
 ///         .oudsToolBarBottom {
@@ -81,14 +81,14 @@ import SwiftUI
 /// - Since: 1.4.0
 extension View {
 
-    /// Creates a bottom toolBar with leading and trailing items.
+    /// Creates a bottom toolbar with leading and trailing items.
+    ///
+    /// There must be only one *bottom toolbar*.
     ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side.
     ///   - trailingItems: The items displayed on the trailing side.
-    ///
-    /// - Since: 1.4.0
-    @available(iOS 15, macOS 13, visionOS 1, *)
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarBottom(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
                                   @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] }) -> some View
     {
@@ -96,14 +96,14 @@ extension View {
                                        trailingItems: trailingItems))
     }
 
-    /// Creates a bottom toolBar with grouped items, centered to the screen.
+    /// Creates a bottom toolbar with grouped items, centered to the screen.
     ///
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///
-    /// - Parameter groupedItems: All the items to place in the center of the s creen
+    /// There must be only one *bottom toolbar*.
     ///
-    /// - Since: 1.4.0
-    @available(iOS 15, macOS 13, visionOS 1, *)
+    /// - Parameter groupedItems: All the items to place in the center of the s creen
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] }) -> some View {
         modifier(ToolBarBottomModifier(groupedItems: groupedItems))
     }

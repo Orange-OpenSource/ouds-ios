@@ -11,14 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
 // MARK: - ToolBar top Modifier
 
-@available(iOS 15, macOS 13, *)
 struct ToolBarTopModifier: ViewModifier {
 
     // MARK: - Stored properties
@@ -45,10 +44,9 @@ struct ToolBarTopModifier: ViewModifier {
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
-         @OUDSToolBarItemsBuilder
-         leadingItems: @escaping () -> [OUDSToolBarItem],
-         @OUDSToolBarItemsBuilder
-         trailingItems: @escaping () -> [OUDSToolBarItem])
+         @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
+
+         @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
             OL.warning("The title of OUDSToolBarTopModifier is empty, prefer a non-empty title")
@@ -70,16 +68,16 @@ struct ToolBarTopModifier: ViewModifier {
         content
             .oudsNavigationTitle(title, subtitle: subtitle)
         #if os(iOS) || os(visionOS)
-        .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
+            .navigationBarTitleDisplayMode(hasLargeTitle ? .large : .inline)
         #endif
-        .toolbar {
-            ToolbarItemGroup(placement: leadingPlacement) {
-                itemsView(leadingItems)
+            .toolbar {
+                ToolbarItemGroup(placement: leadingPlacement) {
+                    itemsView(leadingItems)
+                }
+                ToolbarItemGroup(placement: trailingPlacement) {
+                    itemsView(trailingItems)
+                }
             }
-            ToolbarItemGroup(placement: trailingPlacement) {
-                itemsView(trailingItems)
-            }
-        }
     }
 
     // MARK: - Helpers

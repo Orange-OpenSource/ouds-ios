@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
@@ -21,22 +21,21 @@ import SwiftUI
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
-/// ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``  View helper applies a SwiftUI toolBar configuration.
+/// ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``  View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
-/// With Liquid Glass / iOS 26+ the OS will change the rendering of the toolBar items depending to the context:
+/// With Liquid Glass / iOS 26+ the OS will change the rendering of the toolbar items depending to the context:
 /// - The OS can group the items of same types in one group with kind of rectangle (e.g. views with menus)
 /// - But for buttons items they will remain isolated
 /// - The placement of the title can be leading or centered depending to the length of the text
 /// - The text can be truncated if there is not enough remaining space
 /// - The OS can apply another style for the back button
 ///
-/// Without Liquid Glass / iOS 18-, the OS won't change that much the style of the toolBar items:
-/// - Items won't be visually grouped
+/// Without Liquid Glass / iOS 18 and lower, the OS won't change that much the style of the toolbar items, Items won't be visually grouped
 ///
-/// Globaly the appearence if the ** navigatrion bar** elements are changed by the `oudsNavigationBarAppearance`
-/// helper of `View` that must be applyed on the root view of the Navigation stack.
+/// Globaly the appearence of the ** navigation bar** elements are changed by the `oudsNavigationBarAppearance`
+/// helper of `View` that must be applyed on the root view of the `NavigationStack`.
 ///
 /// ## Technical constraints
 ///
@@ -53,15 +52,16 @@ import SwiftUI
 ///
 /// ## Platform considerations
 ///
-/// - The component is available on iOS, macOS and visionOS
+/// - The component is available on iOS, iPadOS, and visionOS
 /// - The component is not available for watchOS
 /// - The component is not available for tvOS
+/// - The component is not available for macOS
 ///
 /// ## Code sample
 ///
 /// ```swift
 ///     ContentView()
-///        .oudsToolBarTop(title: "Inbox", subtitle: "2 new messages") {
+///        .oudsToolBarTop("Inbox", subtitle: "2 new messages") {
 ///            OUDSToolBarItem(navigation: .close) {
 ///                // Handle close
 ///            }
@@ -74,58 +74,61 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// TODO: #1174 - Use shortlink for documentation
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/6782de-ios-bars/b/317890)
 ///
 /// ## Themes rendering
 ///
 /// ### Liquid Glass
 ///
-/// ![A top toolBar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-/// ![A top toolBar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
 ///
-/// ![A top toolBar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
-/// ![A top toolBar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
 ///
-/// ![A top toolBar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
-/// ![A top toolBar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+/// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
 ///
 /// ![A top toolBar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
-/// ![A top toolBar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
+/// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
 ///
-/// ![A top toolBar component in light mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_light)
-/// ![A top toolBar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_dark)
+/// ![A top toolbar component in light mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_light)
+/// ![A top toolbar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_dark)
 ///
-/// ![A top toolBar component in light mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_light)
-/// ![A top toolBar component in dark mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
+/// ![A top toolbar component in light mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_light)
+/// ![A top toolbar component in dark mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
 ///
-/// ![A top toolBar component in light mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_light)
-/// ![A top toolBar component in dark mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_dark)
+/// ![A top toolbar component in light mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_light)
+/// ![A top toolbar component in dark mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_dark)
 ///
-/// ![A top toolBar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_light)
-/// ![A top toolBar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_dark)
+/// ![A top toolbar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_light)
+/// ![A top toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_dark)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.4.0
-@available(iOS 15, macOS 13, visionOS 1, *)
 extension View {
-    /// Creates a top toolBar with a title, optional subtitle (ios >= 26), and leading/trailing items.
+
+    /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading and trailing items.
+    ///
+    /// The view which contains this *top toolbar* must be placed inside a `NavigationView` or `NavigationStack`,
+    /// otherwise th top toolabr won't appear..
+    ///
+    /// There must be only one *top toolbar*.
     ///
     /// - Parameters:
-    ///   - title: The toolBar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If title must be displayed in large mode, false by default. If large mode, the subtitle is not display
-    ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
-    ///   - leadingItems: The items displayed on the leading side, empty by default.
-    ///   - trailingItems: The items displayed on the trailing side, empty by default.
+    ///   - title: The toolbar title. Prefer a non-empty string.
+    ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarTop(_ title: String,
                                hasLargeTitle: Bool = false,
                                subtitle: String? = nil,
-                               @OUDSToolBarItemsBuilder
-                               leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
-                               @OUDSToolBarItemsBuilder
-                               trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
+                               @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                               @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
     {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,

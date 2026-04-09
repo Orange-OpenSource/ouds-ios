@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if os(iOS)
+#if !os(watchOS) && !os(tvOS) && !os(macOS)
 import SwiftUI
 
 /// Use a navigation stack to present a stack of views over a root view.
