@@ -12,6 +12,8 @@
 //
 
 #if !os(watchOS) && !os(tvOS)
+import OUDSFoundations
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 #if canImport(UIKit)
@@ -30,12 +32,15 @@ struct TextAreaInputText: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    /// Observed so the view re-renders when the user changes Dynamic Type size.
+    @Environment(\.sizeCategory) private var sizeCategory
 
     // MARK: - Body
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            // Placeholder overlay shown when the text binding is empty.
+            // Placeholder shown when empty — uses the full TypographyModifier so the text
+            // size and visual weight match what the user will type.
             if text.wrappedValue.isEmpty {
                 Text(label)
                     .labelDefaultLarge(theme)
@@ -45,16 +50,19 @@ struct TextAreaInputText: View {
             }
 
             // Native TextEditor.
-            // - Internal ~8 pt padding is negated so the parent container controls spacing.
-            // - minHeight = 3 lines; maxHeight applied on the ZStack so TextEditor's internal
-            //   scroll activates naturally once the content exceeds 10 lines.
-            // - lineHeight is computed from UIFontMetrics + the theme token — no GeometryReader needed.
+            // - Uses .font(Font(adaptativeFont)) directly instead of .labelModerateLarge(theme)
+            //   so that TypographyModifier's .padding(.vertical, lineSpacing/2) is NOT added —
+            //   keeping the text cursor at the same vertical origin as the label and helper text.
+            // - .padding(.vertical, -8) cancels UITextView's 8pt top/bottom internal inset only;
+            //   horizontal is left at 0 (UITextView already has no horizontal inset) so the text
+            //   leading edge aligns with the label above and helper text below.
+            // - minHeight = 3 lines; maxHeight on the ZStack activates TextEditor's internal scroll.
             rawTextEditor
-                .labelDefaultLarge(theme)
+                .font(Font(adaptativeFont))
                 .foregroundColor(inputTextColor)
                 .tint(cursorColor.color(for: colorScheme))
                 .background(Color.clear)
-                .padding(-8)
+                .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: lineHeight * CGFloat(OUDSTextArea.minLines))
         }
         .frame(maxHeight: lineHeight * CGFloat(OUDSTextArea.maxLines))
@@ -62,20 +70,48 @@ struct TextAreaInputText: View {
 
     // MARK: - Private helpers
 
-    /// The scaled line height of `labelDefaultLarge` for the current Dynamic Type size and size class.
-    /// Uses `UIFontMetrics` (same as `TypographyModifier`) so the value is always in sync with the
-    /// actual rendered text — no `GeometryReader` or async measurement needed.
+    /// The scaled line height of `labelDefaultLarge` for computing min/max frame heights.
     private var lineHeight: CGFloat {
-        let isCompact = horizontalSizeClass == .compact || verticalSizeClass == .compact
-        let token = isCompact
-            ? theme.fonts.labelDefaultLarge.compact
-            : theme.fonts.labelDefaultLarge.regular
+        let token = adaptiveFontToken
         #if os(macOS)
         return token.lineHeight
         #else
         return UIFontMetrics.default.scaledValue(for: token.lineHeight)
         #endif
     }
+
+    /// The font token for the current size class — mirrors `TypographyModifier.adaptiveFontToken`.
+    private var adaptiveFontToken: FontCompositeSemanticToken {
+        let isCompact = horizontalSizeClass == .compact || verticalSizeClass == .compact
+        return isCompact
+            ? theme.fonts.labelModerateLarge.compact
+            : theme.fonts.labelModerateLarge.regular
+    }
+
+    /// A native font from the token — mirrors `TypographyModifier.adaptativeFont`.
+    /// Applied to the TextEditor directly so no extra vertical padding is introduced.
+    private var adaptativeFont: NativeFont {
+        let token = adaptiveFontToken
+        #if os(macOS)
+        let scaledSize = token.size
+        #else
+        let scaledSize = UIFontMetrics.default.scaledValue(for: token.size)
+        #endif
+        if let family = theme.fontFamily {
+            let postScriptName = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))]
+            if let customFont = NativeFont(name: postScriptName, size: scaledSize) {
+                return customFont
+            }
+        }
+        return NativeFont.systemFont(ofSize: scaledSize,
+                                     weight: Font.Weight(weight: token.weight).nativeFontWeight)
+    }
+
+    #if os(macOS)
+    private typealias NativeFont = NSFont
+    #else
+    private typealias NativeFont = UIFont
+    #endif
 
     @ViewBuilder
     private var rawTextEditor: some View {
