@@ -23,52 +23,26 @@ struct TextAreaLabelContainer: View {
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
     let isOverLimit: Bool
-    let position: Position
 
     @Environment(\.theme) private var theme
-
-    // MARK: Positions
-
-    enum Position {
-        case top
-        case middle
-    }
 
     // MARK: Body
 
     var body: some View {
         if !label.isEmpty {
-            switch position {
-            case .top:
-                content.labelDefaultSmall(theme)
-            case .middle:
-                content.labelDefaultLarge(theme)
-            }
+            Text(label)
+                .labelDefaultSmall(theme)
+                .lineLimit(1)
+                .minimumScaleFactor(1.0)
+                .foregroundColor(color)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityHidden(true)
         }
     }
 
-    // MARK: Helper
-
-    private var content: some View {
-        Text(label)
-            .lineLimit(numberOfLines)
-            .minimumScaleFactor(1.0)
-            .foregroundColor(color)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .accessibilityHidden(true)
-    }
-
-    private var numberOfLines: Int {
-        switch position {
-        case .top:
-            1
-        case .middle:
-            2
-        }
-    }
+    // MARK: Helpers
 
     private var color: MultipleColorSemanticToken {
-        // Over-limit mirrors the error label colour regardless of the caller-supplied status.
         if isOverLimit {
             return switch interactionState {
             case .idle:

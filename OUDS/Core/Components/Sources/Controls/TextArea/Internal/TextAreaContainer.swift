@@ -45,35 +45,21 @@ struct TextAreaContainer: View {
         HStack(alignment: .top, spacing: theme.spaces.fixedNone) {
             // Main content: label + text editor
             VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
-                // Floating label at top position (above the text editor)
-                if labelPosition == .top {
-                    TextAreaLabelContainer(label: label,
-                                           status: status,
-                                           interactionState: interactionState,
-                                           isOverLimit: isOverLimit,
-                                           position: .top)
-                }
+                // Label is always at the top in small typography — same pattern as OUDSTextInput.
+                TextAreaLabelContainer(label: label,
+                                       status: status,
+                                       interactionState: interactionState,
+                                       isOverLimit: isOverLimit)
 
-                // Text editor with overlaid middle-position label (placeholder style)
-                ZStack(alignment: .topLeading) {
-                    if labelPosition == .middle {
-                        TextAreaLabelContainer(label: label,
-                                               status: status,
-                                               interactionState: interactionState,
-                                               isOverLimit: isOverLimit,
-                                               position: .middle)
+                TextAreaInputText(label: placeholder ?? label,
+                                  text: text,
+                                  status: status)
+                    .focused($focused)
+                    .allowsHitTesting(status != .readOnly && status != .disabled)
+                    .onTapGesture {
+                        guard status != .readOnly, status != .disabled else { return }
+                        focused = true
                     }
-
-                    TextAreaInputText(label: placeholder ?? label,
-                                      text: text,
-                                      status: status)
-                        .focused($focused)
-                }
-                .allowsHitTesting(status != .readOnly && status != .disabled)
-                .onTapGesture {
-                    guard status != .readOnly, status != .disabled else { return }
-                    focused = true
-                }
             }
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
@@ -103,14 +89,6 @@ struct TextAreaContainer: View {
     }
 
     // MARK: - Helpers
-
-    private var labelPosition: TextAreaLabelContainer.Position {
-        if !text.wrappedValue.isEmpty || placeholder?.isEmpty == false || focused {
-            .top
-        } else {
-            .middle
-        }
-    }
 
     private var interactionState: TextAreaInteractionState {
         TextAreaInteractionState(focused: focused, hover: hover)
