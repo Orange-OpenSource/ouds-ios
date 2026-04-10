@@ -24,7 +24,7 @@ struct TextAreaInputText: View {
 
     // MARK: - Properties
 
-    let label: String
+    let placeholder: String
     let text: Binding<String>
     let status: OUDSTextArea.Status
 
@@ -42,7 +42,7 @@ struct TextAreaInputText: View {
             // Placeholder shown when empty — uses the full TypographyModifier so the text
             // size and visual weight match what the user will type.
             if text.wrappedValue.isEmpty {
-                Text(label)
+                Text(placeholder)
                     .labelDefaultLarge(theme)
                     .foregroundStyle(placeholderColor)
                     .allowsHitTesting(false)
@@ -64,8 +64,8 @@ struct TextAreaInputText: View {
                 .background(Color.clear)
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: lineHeight * computedMinLines)
+                .frame(maxHeight: lineHeight * computedMaxLines)
         }
-        .frame(maxHeight: lineHeight * computedMaxLines)
     }
 
     // MARK: - Private helpers
@@ -81,7 +81,7 @@ struct TextAreaInputText: View {
     private var computedMaxLines: CGFloat {
         let tokenMaxHeight = theme.textArea.sizeMaxHeightInput
         let tokenLineHeight = adaptiveFontToken.lineHeight
-        return (tokenMaxHeight / tokenLineHeight) + 1
+        return tokenMaxHeight / tokenLineHeight
     }
 
     /// The actual line height UITextView uses to render each line of text.

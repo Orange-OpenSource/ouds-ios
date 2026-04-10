@@ -36,10 +36,6 @@ struct TextAreaContainer: View {
     @FocusState private var focused: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    /// Observed so the view re-renders when the user changes Dynamic Type size.
-    @Environment(\.sizeCategory) private var sizeCategory
 
     // MARK: - Body
 
@@ -47,38 +43,37 @@ struct TextAreaContainer: View {
     // Not a button; a11y trait for text editor defined elsewhere
     var body: some View {
         HStack(alignment: .top, spacing: theme.textInput.spaceColumnGapDefault) {
-            // Main content: label + text editor
-            VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
-                // Label is always at the top in small typography — same pattern as OUDSTextInput.
-                TextAreaLabelContainer(label: label,
-                                       isSmallLabel: isSmallLabel,
-                                       status: status,
-                                       interactionState: interactionState,
-                                       isOverLimit: isOverLimit)
+            HStack(alignment: .top, spacing: theme.textInput.spaceColumnGapDefault) {
+                // Main content: label + text editor
+                VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
+                    // Label is always at the top in small typography — same pattern as OUDSTextInput.
+                    TextAreaLabelContainer(label: label,
+                                           isSmallLabel: isSmallLabel,
+                                           status: status,
+                                           interactionState: interactionState,
+                                           isOverLimit: isOverLimit)
 
-                TextAreaInputText(label: placeholder ?? "",
-                                  text: text,
-                                  status: status)
-                    .focused($focused)
-                    .allowsHitTesting(status != .readOnly && status != .disabled)
-                    .onTapGesture {
-                        guard status != .readOnly, status != .disabled else { return }
-                        focused = true
-                    }
+                    TextAreaInputText(placeholder: placeholder ?? "",
+                                      text: text,
+                                      status: status)
+                        .focused($focused)
+                        .allowsHitTesting(status != .readOnly && status != .disabled)
+                        .onTapGesture {
+                            guard status != .readOnly, status != .disabled else { return }
+                            focused = true
+                        }
+                }
+                .frame(minHeight: theme.textArea.sizeMinHeightInput)
+                .accessibilityLabel(accessibilityLabel)
+                .accessibilityValue(accessibilityValue)
+                .accessibilityHint(accessibilityHint ?? "")
+
+                // Trailing indicator: error icon or loading spinner.
+                // The top of the container is aligned with the top of the main content
+                TextAreaTrailingContainer(status: status,
+                                          interactionState: interactionState,
+                                          isOverLimit: isOverLimit)
             }
-            .frame(minHeight: theme.textArea.sizeMinHeightInput)
-            .accessibilityLabel(accessibilityLabel)
-            .accessibilityValue(accessibilityValue)
-            .accessibilityHint(accessibilityHint ?? "")
-
-            // Trailing indicator: error icon or loading spinner.
-            // The top offset aligns the icon with the first line of the TextEditor:
-            // it skips past the label (labelDefaultSmall line height) and the gap between
-            // label and editor (spaceRowGapLabelInput).
-            TextAreaTrailingContainer(status: status,
-                                      interactionState: interactionState,
-                                      isOverLimit: isOverLimit)
-                .padding(.top, labelLineHeight + theme.textInput.spaceRowGapLabelInput)
         }
         .padding(.vertical, theme.textArea.spacePaddingBlock)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
@@ -98,40 +93,6 @@ struct TextAreaContainer: View {
     }
 
     // MARK: - Helpers
-
-    /// The rendered line height of `labelDefaultSmall` for the current Dynamic Type size and size class.
-    /// Used to offset the trailing icon so it aligns with the first line of the TextEditor,
-    /// skipping past the label above it.
-    private var labelLineHeight: CGFloat {
-        let isCompact = horizontalSizeClass == .compact || verticalSizeClass == .compact
-        let token = isCompact
-            ? theme.fonts.labelDefaultSmall.compact
-            : theme.fonts.labelDefaultSmall.regular
-        #if os(macOS)
-        let family = theme.fontFamily
-        let size = token.size
-        let font: NSFont = {
-            if let family,
-               let f = NSFont(name: kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))], size: size)
-            {
-                return f
-            }
-            return NSFont.systemFont(ofSize: size, weight: Font.Weight(weight: token.weight).nativeFontWeight)
-        }()
-        return NSLayoutManager().defaultLineHeight(for: font)
-        #else
-        let scaledSize = UIFontMetrics.default.scaledValue(for: token.size)
-        let font: UIFont = {
-            if let family = theme.fontFamily,
-               let f = UIFont(name: kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))], size: scaledSize)
-            {
-                return f
-            }
-            return UIFont.systemFont(ofSize: scaledSize, weight: Font.Weight(weight: token.weight).nativeFontWeight)
-        }()
-        return font.lineHeight
-        #endif
-    }
 
     private var interactionState: TextAreaInteractionState {
         TextAreaInteractionState(focused: focused, hover: hover)
