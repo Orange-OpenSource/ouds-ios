@@ -20,6 +20,7 @@ struct TextAreaLabelContainer: View {
     // MARK: Properties
 
     let label: String
+    let isSmallLabel: Bool
     let status: OUDSTextArea.Status
     let interactionState: TextAreaInteractionState
     let isOverLimit: Bool
@@ -30,13 +31,20 @@ struct TextAreaLabelContainer: View {
 
     var body: some View {
         if !label.isEmpty {
-            Text(label)
-                .labelDefaultSmall(theme)
-                .lineLimit(1)
-                .minimumScaleFactor(1.0)
-                .foregroundColor(color)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .accessibilityHidden(true)
+            Group {
+                if isSmallLabel {
+                    Text(label)
+                        .labelDefaultSmall(theme)
+                } else {
+                    Text(label)
+                        .labelDefaultLarge(theme)
+                }
+            }
+            .lineLimit(1)
+            .minimumScaleFactor(1.0)
+            .foregroundColor(color)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityHidden(true)
         }
     }
 

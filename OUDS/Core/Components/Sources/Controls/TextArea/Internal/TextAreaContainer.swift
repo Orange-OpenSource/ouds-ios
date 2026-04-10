@@ -51,6 +51,7 @@ struct TextAreaContainer: View {
             VStack(alignment: .leading, spacing: theme.textInput.spaceRowGapLabelInput) {
                 // Label is always at the top in small typography — same pattern as OUDSTextInput.
                 TextAreaLabelContainer(label: label,
+                                       isSmallLabel: isSmallLabel,
                                        status: status,
                                        interactionState: interactionState,
                                        isOverLimit: isOverLimit)
@@ -91,7 +92,7 @@ struct TextAreaContainer: View {
                                          isOverLimit: isOverLimit,
                                          isOutlined: isOutlined))
         #if !os(watchOS) && !os(tvOS)
-            .onHover { hover = $0 }
+        .onHover { hover = $0 }
         #endif
         // swiftlint:enable accessibility_trait_for_button
     }
@@ -134,6 +135,10 @@ struct TextAreaContainer: View {
 
     private var interactionState: TextAreaInteractionState {
         TextAreaInteractionState(focused: focused, hover: hover)
+    }
+
+    private var isSmallLabel: Bool {
+        !text.wrappedValue.isEmpty || placeholder?.isEmpty == false || interactionState == .focused
     }
 
     /// Always use the reduced trailing padding so the HStack width never changes between statuses.
