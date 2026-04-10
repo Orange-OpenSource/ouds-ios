@@ -60,6 +60,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -67,7 +68,13 @@ struct ToolBarActionItemStyle: ButtonStyle {
         if !isEnabled {
             configuration.label.foregroundColor(theme.button.colorContentMinimalDisabled)
         } else {
-            if #available(iOS 26, *) {
+            if isLiquidGlassDisabled {
+                if configuration.isPressed {
+                    configuration.label.foregroundColor(theme.button.colorContentMinimalPressed)
+                } else {
+                    configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
+                }
+            } else {
                 switch style {
                 case .default:
                     configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
@@ -76,12 +83,6 @@ struct ToolBarActionItemStyle: ButtonStyle {
                         .foregroundColor(theme.colors.contentOnActionSelected)
                 case .tinted:
                     configuration.label.foregroundColor(theme.colors.actionSelected)
-                }
-            } else {
-                if configuration.isPressed {
-                    configuration.label.foregroundColor(theme.button.colorContentMinimalPressed)
-                } else {
-                    configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
                 }
             }
         }
@@ -101,17 +102,18 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        if #available(iOS 26, *) {
+        if isLiquidGlassDisabled {
             configuration.label
                 .foregroundColor(foregroundColor)
-                .buttonStyle(.plain)
         } else {
             configuration.label
                 .foregroundColor(foregroundColor)
+                .buttonStyle(.plain)
         }
     }
 

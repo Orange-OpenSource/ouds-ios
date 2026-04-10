@@ -23,8 +23,9 @@ struct NavigationStackRefresher: ViewModifier {
 
     private let hideBackButtonLabel: Bool
 
-    @Environment(\.theme) private var theme: OUDSTheme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.theme) private var theme: OUDSTheme
 
     // MARK: - Initializer
 
@@ -153,7 +154,7 @@ struct NavigationStackRefresher: ViewModifier {
 
         // Background and tint colors
 
-        if #unavailable(iOS 26.0) {
+        if isLiquidGlassDisabled {
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = newTheme.bar.colorBgTranslucent.color(for: newColorScheme).uiColor
         }

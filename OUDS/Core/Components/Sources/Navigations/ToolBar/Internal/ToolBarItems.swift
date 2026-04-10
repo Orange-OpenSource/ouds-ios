@@ -27,6 +27,7 @@ struct ToolBarItemActionButton: View {
     let style: OUDSToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -38,10 +39,10 @@ struct ToolBarItemActionButton: View {
             } label: {
                 // fixedSize(). to let items use suitable size to display text withut beeing truncated all the times
                 // padding of 4 to make the text "breath" and not be to stucked to items borders
-                if #available(iOS 26.0, *) {
-                    Text(label).modifier(FontLabelModifier(style: .medium)).fixedSize().padding(4)
-                } else {
+                if isLiquidGlassDisabled {
                     Text(label).modifier(FontLabelModifier(style: emphasized ? .medium : .regular)).fixedSize().padding(4)
+                } else {
+                    Text(label).modifier(FontLabelModifier(style: .medium)).fixedSize().padding(4)
                 }
             }
             .disabled(action == nil)
@@ -77,6 +78,7 @@ struct ToolBarItemNavigationButton: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body
 
@@ -84,17 +86,7 @@ struct ToolBarItemNavigationButton: View {
         Group {
             switch type {
             case let .back(label, accessibilityLabel, action):
-                if #available(iOS 26, *) {
-                    Button {
-                        action?()
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        navigationIcon
-                            .frame(width: 28, height: 28)
-                    }
-                    .accessibilityLabel(accessibilityLabel)
-                    .frame(width: 44, height: 44, alignment: .center)
-                } else {
+                if isLiquidGlassDisabled {
                     Button {
                         action?()
                         presentationMode.wrappedValue.dismiss()
@@ -109,6 +101,16 @@ struct ToolBarItemNavigationButton: View {
                         }
                     }
                     .accessibilityLabel(accessibilityLabel)
+                } else {
+                    Button {
+                        action?()
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        navigationIcon
+                            .frame(width: 28, height: 28)
+                    }
+                    .accessibilityLabel(accessibilityLabel)
+                    .frame(width: 44, height: 44, alignment: .center)
                 }
             case .close:
                 Button {

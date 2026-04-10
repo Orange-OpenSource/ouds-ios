@@ -69,6 +69,7 @@ public struct OUDSThemeableView<Content: View>: View {
     public var body: some View {
         #if canImport(UIKit)
         content()
+            .environment(\.isLiquidGlassDisabled, isLiquidGlassDisabled)
             .environment(\._theme, theme)
             .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
@@ -78,6 +79,20 @@ public struct OUDSThemeableView<Content: View>: View {
             .environmentObject(OUDSLowPowerModeObserver())
         #endif
     }
+
+    var isLiquidGlassDisabled: Bool {
+        if #available(iOS 26.0, *) {
+            (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
+        } else {
+            true
+        }
+    }
+}
+
+extension EnvironmentValues {
+
+    /// A flag to know if liquidGlass is disabled
+    @Entry public var isLiquidGlassDisabled: Bool = false
 }
 
 #if canImport(UIKit)

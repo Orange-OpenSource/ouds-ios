@@ -39,7 +39,7 @@ struct TabBarViewModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
     // MARK: Init
 
     init() {}
@@ -111,8 +111,8 @@ struct TabBarViewModifier: ViewModifier {
 
         // MARK: Tab bar background
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
-        tabBarAppearance.configureWithTransparentBackground()
-        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular)
+        tabBarAppearance.configureWithOpaqueBackground()
+//        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular)
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
@@ -137,7 +137,7 @@ struct TabBarViewModifier: ViewModifier {
          It could mean in dark mode the text is not readable at all.
          Thus apply the unselector color only for cases where everything works, i.e. not Liquid Glass
          */
-        if #unavailable(iOS 26.0) { // No Liquid Glass
+        if isLiquidGlassDisabled { // No Liquid Glass
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
@@ -151,15 +151,15 @@ struct TabBarViewModifier: ViewModifier {
         }
 
         // MARK: Tab bar selected item
-        if #available(iOS 26.0, *) { // Liquid Glass
-            let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
+        if isLiquidGlassDisabled {
+            let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
             tabBarItemAppearance.selected.titleTextAttributes = [
                 .foregroundColor: selectedUIColor,
                 .font: selectedFont,
             ]
-        } else { // No Liquid Glass
-            let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
+        } else {
+            let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
             tabBarItemAppearance.selected.titleTextAttributes = [
                 .foregroundColor: selectedUIColor,
