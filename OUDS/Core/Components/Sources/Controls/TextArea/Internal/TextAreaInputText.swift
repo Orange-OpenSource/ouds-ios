@@ -32,8 +32,6 @@ struct TextAreaInputText: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    /// Observed so the view re-renders when the user changes Dynamic Type size.
-    @Environment(\.sizeCategory) private var sizeCategory
 
     // MARK: - Body
 
@@ -50,21 +48,18 @@ struct TextAreaInputText: View {
             }
 
             // Native TextEditor.
-            // - Uses .font(Font(adaptativeFont)) directly instead of .labelModerateLarge(theme)
-            //   so that TypographyModifier's .padding(.vertical, lineSpacing/2) is NOT added —
-            //   keeping the text cursor at the same vertical origin as the label and helper text.
             // - .padding(.vertical, -8) cancels UITextView's 8pt top/bottom internal inset only;
             //   horizontal is left at 0 (UITextView already has no horizontal inset) so the text
             //   leading edge aligns with the label above and helper text below.
             // - minHeight = 3 lines; maxHeight on the ZStack activates TextEditor's internal scroll.
             rawTextEditor
-                .font(Font(adaptativeFont))
+                .labelDefaultLarge(theme)
                 .foregroundColor(inputTextColor)
                 .tint(cursorColor.color(for: colorScheme))
                 .background(Color.clear)
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
-                .frame(minHeight: lineHeight * computedMinLines)
-                .frame(maxHeight: lineHeight * computedMaxLines)
+                .frame(minHeight: scaledLineHeight * computedMinLines)
+                .frame(maxHeight: scaledLineHeight * computedMaxLines)
         }
     }
 
@@ -84,49 +79,18 @@ struct TextAreaInputText: View {
         return tokenMaxHeight / tokenLineHeight
     }
 
-    /// The actual line height UITextView uses to render each line of text.
-    /// Uses UIFont.lineHeight directly — the exact value the native text engine uses —
-    /// so that minHeight/maxHeight frame constraints match the real rendered line count.
-    private var lineHeight: CGFloat {
-        #if os(macOS)
-        adaptativeFont.boundingRectForFont.height
-        #else
-        adaptativeFont.lineHeight
-        #endif
+    /// Scaled the line height
+    private var scaledLineHeight: CGFloat {
+        UIFontMetrics.default.scaledValue(for: adaptiveFontToken.lineHeight)
     }
 
     /// The font token for the current size class — mirrors `TypographyModifier.adaptiveFontToken`.
     private var adaptiveFontToken: FontCompositeSemanticToken {
         let isCompact = horizontalSizeClass == .compact || verticalSizeClass == .compact
         return isCompact
-            ? theme.fonts.labelModerateLarge.compact
-            : theme.fonts.labelModerateLarge.regular
+            ? theme.fonts.labelDefaultLarge.compact
+            : theme.fonts.labelDefaultLarge.regular
     }
-
-    /// A native font from the token — mirrors `TypographyModifier.adaptativeFont`.
-    /// Applied to the TextEditor directly so no extra vertical padding is introduced.
-    private var adaptativeFont: NativeFont {
-        let token = adaptiveFontToken
-        #if os(macOS)
-        let scaledSize = token.size
-        #else
-        let scaledSize = UIFontMetrics.default.scaledValue(for: token.size)
-        #endif
-        if let family = theme.fontFamily {
-            let postScriptName = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: token.weight))]
-            if let customFont = NativeFont(name: postScriptName, size: scaledSize) {
-                return customFont
-            }
-        }
-        return NativeFont.systemFont(ofSize: scaledSize,
-                                     weight: Font.Weight(weight: token.weight).nativeFontWeight)
-    }
-
-    #if os(macOS)
-    private typealias NativeFont = NSFont
-    #else
-    private typealias NativeFont = UIFont
-    #endif
 
     @ViewBuilder
     private var rawTextEditor: some View {

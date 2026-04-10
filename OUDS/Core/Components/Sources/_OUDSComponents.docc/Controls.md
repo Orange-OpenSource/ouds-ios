@@ -549,7 +549,7 @@ OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code y
 }
 
 The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
-The field grows from a minimum of ``OUDSTextArea/minLines`` visible lines up to ``OUDSTextArea/maxLines`` lines, after which the content scrolls.
+The field grows from a minimum of visible lines up to maximum lines based on tokens associated to the theme, after which the content scrolls.
 It supports labels, placeholders, helper text, a helper link and five statuses: enabled, loading, error, read-only and disabled.
 
 ```swift

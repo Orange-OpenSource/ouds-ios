@@ -166,13 +166,6 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSTextArea: View {
 
-    // MARK: - Constants
-
-    /// Minimum number of visible text lines before the text area starts to grow.
-    public static let minLines = 3
-    /// Maximum number of visible text lines; beyond this the content becomes scrollable.
-    public static let maxLines = 10
-
     // MARK: - Properties
 
     let label: String
