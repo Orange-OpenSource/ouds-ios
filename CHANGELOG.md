@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `SwiftFormat` Swift package plugin from v0.60.1 to v0.61.0
 - `github/codeql-action/upload-sarif` action to v4.35.2 for `scorecard` workflow
 - `faraday` transitive gem from 1.10.5 to 2.14.1
 - `json` RubyGem from v2.19.2 to v2.19.3
