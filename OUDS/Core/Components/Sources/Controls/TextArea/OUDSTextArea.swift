@@ -38,7 +38,7 @@ import SwiftUI
 ///
 /// Five status are proposed for all layouts:
 ///
-/// - **default (by default)**: Default neutral appearance, whether empty or filled.
+/// - **enabled (by default)**: Default neutral appearance, whether empty or filled.
 /// It allows users to click, focus, and type freely without restrictions.
 ///
 /// - **error**: The `error` status indicates that the user input does not meet validation rules or
@@ -61,6 +61,7 @@ import SwiftUI
 /// to multiple lines if required, and be either persistently visible or visible only on focus.
 ///
 /// - **Helper text (characters max count)**: Uses an internal message displaying the count of remaining characters depending to the given value.
+/// This is a specific iOS library feature with 1.4.0
 ///
 /// - **Helper link**: If the helper text is not sufficient, it's possible to offer the user
 /// an additional help link (the link can be external or open a modal).
@@ -362,21 +363,33 @@ public struct OUDSTextArea: View {
 
     /// `true` when `helperText` is `.charactersMaxCount` and the current text exceeds the limit.
     private var isOverLimit: Bool {
+        Self.textDoesExceedLimit(text.wrappedValue, helperText: helperText)
+    }
+
+    @inlinable static func textDoesExceedLimit(_ text: String, helperText: HelperText?) -> Bool {
         guard case let .charactersMaxCount(limit) = helperText else { return false }
-        return text.wrappedValue.count > Int(limit)
+        return text.count > Int(limit)
     }
 
     /// The number of characters beyond the limit, or 0 when within bounds.
     private var excessCount: Int {
+        Self.textExceedingCount(text.wrappedValue, helperText: helperText)
+    }
+
+    @inlinable static func textExceedingCount(_ text: String, helperText: HelperText?) -> Int {
         guard case let .charactersMaxCount(limit) = helperText else { return 0 }
-        return max(0, text.wrappedValue.count - Int(limit))
+        return max(0, text.count - Int(limit))
     }
 
     /// How many characters the user can still type before hitting the limit.
     /// Returns 0 when at or beyond the limit.
     private var remainingCount: Int {
+        Self.textRemainingCount(text.wrappedValue, helperText: helperText)
+    }
+
+    @inlinable static func textRemainingCount(_ text: String, helperText: HelperText?) -> Int {
         guard case let .charactersMaxCount(maxLength) = helperText else { return 0 }
-        return max(0, Int(maxLength) - text.wrappedValue.count)
+        return max(0, Int(maxLength) - text.count)
     }
 
     // MARK: Body
