@@ -16,6 +16,8 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
+// MARK: - OUDS ToolBar Top View Modifier
+
 /// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
@@ -104,8 +106,63 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.4.0
-extension View { // FIXME: #1174 - Check if documentation is well generated, otherwise use View
+public struct OUDSToolBarTop: ViewModifier {
+    // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
     // TODO: #1174 - Update screenshots
+
+    // MARK: Properties
+
+    /// The toolbar title
+    private let title: String
+    /// If the title must be displayed in large mode or not
+    private let hasLargeTitle: Bool
+    /// An optional subtitle displayed below the title if iOS 26+
+    private let subtitle: String?
+    /// The items to display in leading position
+    @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
+    /// The items to display in trailing position
+    @OUDSToolBarItemsBuilder private let trailingItems: () -> [OUDSToolBarItem]
+
+    // MARK: Initializer
+
+    /// `ViewModifier` to define an OUDS top toolbar.
+    ///
+    ///  You should prefer ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`` on view placed
+    ///  inside `NavigationView` or`NavigationStack`.
+    ///
+    /// - Parameters:
+    ///   - title: The toolbar title. Prefer a non-empty string.
+    ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed
+    ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
+    ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
+    public init(title: String,
+                hasLargeTitle: Bool = false,
+                subtitle: String? = nil,
+                leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
+    {
+        self.title = title
+        self.hasLargeTitle = hasLargeTitle
+        self.subtitle = subtitle
+        self.leadingItems = leadingItems
+        self.trailingItems = trailingItems
+    }
+
+    // MARK: - Body
+
+    public func body(content: Content) -> some View {
+        content.oudsToolBarTop(title,
+                               hasLargeTitle: hasLargeTitle,
+                               subtitle: subtitle,
+                               leadingItems: leadingItems,
+                               trailingItems: trailingItems)
+    }
+}
+
+// MARK: - Extension of View
+
+extension View {
 
     /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading and trailing items.
     ///

@@ -108,6 +108,10 @@ OUDSTabBar(selected: 0, count: 3) {
 }
 ```
 
+<!--
+FIXME: #1174 - Update the sections
+-->
+
 ### ToolBars
 
 The toolBar components provide top and bottom navigation bars. They relay on SwiftUI toolBars and expose OUDS styles.

@@ -15,6 +15,8 @@
 import OUDSThemesContract
 import SwiftUI
 
+// MARK: - OUDS Toolbar Bottom View Modifier
+
 /// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
@@ -83,8 +85,68 @@ import SwiftUI
 /// ![A bottom toolBar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
 ///
 /// - Since: 1.4.0
-extension View {
+public struct OUDSToolBarBottom: ViewModifier {
+    // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
     // TODO: #1174 - Update screenshots
+
+    // MARK: Properties
+
+    /// The items to display in leading position
+    @OUDSToolBarItemsBuilder private let leadingItems: () -> [OUDSToolBarItem]
+    /// The items to display in trailing position
+    @OUDSToolBarItemsBuilder private let trailingItems: () -> [OUDSToolBarItem]
+    /// The items to display in one group
+    @OUDSToolBarItemsBuilder private let groupedItems: () -> [OUDSToolBarItem]
+    /// Internal flag to know witch API to use to place items
+    private let useGroupedItems: Bool
+
+    // MARK: Initializer
+
+    /// `ViewModifier` to define an OUDS bottom toolbar.
+    ///
+    ///  You should prefer ``oudsToolBarBottom(leadingItems:trailingItems:)``.
+    ///
+    /// - Parameters:
+    ///   - leadingItems: The items displayed on the leading side, *empty* by default.
+    ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
+    public init(leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
+                trailingItems: @escaping () -> [OUDSToolBarItem] = { [] })
+    {
+        self.leadingItems = leadingItems
+        self.trailingItems = trailingItems
+        groupedItems = { [] }
+        useGroupedItems = false
+    }
+
+    /// `ViewModifier` to define an OUDS bottom toolbar.
+    ///
+    ///  You should prefer ``oudsToolBarBottom(groupedItems:)``.
+    ///
+    /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
+    ///
+    /// - Parameter groupedItems: All the items to place in the center of the screen
+    public init(groupedItems: @escaping () -> [OUDSToolBarItem] = { [] }) {
+        leadingItems = { [] }
+        trailingItems = { [] }
+        self.groupedItems = groupedItems
+        useGroupedItems = true
+    }
+
+    // MARK: - Body
+
+    public func body(content: Content) -> some View {
+        if useGroupedItems {
+            content.oudsToolBarBottom(groupedItems: groupedItems)
+        } else {
+            content.oudsToolBarBottom(leadingItems: leadingItems,
+                                      trailingItems: trailingItems)
+        }
+    }
+}
+
+// MARK: - Extension of View
+
+extension View {
 
     /// Creates a bottom toolbar with leading and trailing items.
     ///
