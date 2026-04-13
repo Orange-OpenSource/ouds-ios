@@ -87,7 +87,7 @@ struct TextAreaContainer: View {
                                          isOverLimit: isOverLimit,
                                          isOutlined: isOutlined))
         #if !os(watchOS) && !os(tvOS)
-        .onHover { hover = $0 }
+            .onHover { hover = $0 }
         #endif
         // swiftlint:enable accessibility_trait_for_button
     }
