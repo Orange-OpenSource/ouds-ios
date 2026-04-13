@@ -18,7 +18,7 @@ import SwiftUI
 
 struct ToolBarBottomModifier: ViewModifier {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     private let leadingItems: [OUDSToolBarItem]
     private let trailingItems: [OUDSToolBarItem]
@@ -28,7 +28,7 @@ struct ToolBarBottomModifier: ViewModifier {
 
     // MARK: - Initializer
 
-    /// Creates a bottom toolBar with leading and trailing items, and a space between them.
+    /// Creates a bottom toolbar with leading and trailing items, and a space between them.
     ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side.
@@ -41,7 +41,7 @@ struct ToolBarBottomModifier: ViewModifier {
         self.trailingItems = trailingItems()
     }
 
-    /// Creates a bottom toolBar with grouped items, centered to the screen.
+    /// Creates a bottom toolbar with grouped items, centered to the screen.
     ///
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///
@@ -82,8 +82,6 @@ struct ToolBarBottomModifier: ViewModifier {
     private var bottomPlacement: ToolbarItemPlacement {
         #if os(iOS) || os(visionOS)
         return .bottomBar
-        #elseif os(macOS)
-        return .automatic
         #else
         return .automatic
         #endif

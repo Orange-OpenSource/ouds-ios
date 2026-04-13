@@ -20,18 +20,18 @@ import SwiftUI
 /// - Since: 1.4.0
 public struct OUDSNavigationStack<Content: View>: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     private let hideBackButtonLabel: Bool
     @ViewBuilder private let content: Content
 
     // MARK: - Initializer
 
-    /// Create a Navigation stack and apply the right appearance according to the current theme.
+    /// Creates a navigation stack and apply the right appearance according to the current theme.
     ///
-    /// - Parameters
-    ///     - hideBackButtonLabel: flag to say if the label in back button should be hidden. `true` by default
-    ///     - content:  The stack view's content.
+    /// - Parameters:
+    ///    - hideBackButtonLabel: Flag to say if the label in back button should be hidden. `true` by default
+    ///    - content: The stack view's content.
     public init(hideBackButtonLabel: Bool = true,
                 @ViewBuilder content: @escaping () -> Content)
     {
@@ -56,15 +56,14 @@ public struct OUDSNavigationStack<Content: View>: View {
 }
 
 extension View {
-    /// Can be used to apply the right elements on NavigationBar according to the current theme
+
+    /// Can be used to apply the right elements on navigation bar according to the current theme
     /// (tiltes fonts, colors, and back indicator).
-    /// If needed, it is possible to remove the label of the back button (associated to previous chevron). Be default it is removed.
+    /// If needed, it is possible to remove the label of the back button (associated to previous chevron).
     ///
-    /// - Parameter hideBackButtonLabel: flag to say if the label in back button should be hidden. `true` by default
-    ///
-    /// - Since: 1.4.0
+    /// - Parameter hideBackButtonLabel: Flag to say if the label in back button should be hidden. `false` by default
     public func oudsNavigationBarAppearance(hideBackButtonLabel: Bool = false) -> some View {
-        modifier(OUDSNavigationStackRefresher(hideBackButtonLabel: hideBackButtonLabel))
+        modifier(NavigationStackRefresher(hideBackButtonLabel: hideBackButtonLabel))
     }
 }
 #endif

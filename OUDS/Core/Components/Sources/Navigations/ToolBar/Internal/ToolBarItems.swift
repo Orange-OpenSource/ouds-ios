@@ -17,15 +17,18 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ActionBoutons: View {
+// MARK: - Toolbar Item Action Button
 
-    // MARK: - Properties
+struct ToolBarItemActionButton: View {
+
+    // MARK: Properties
 
     let type: OUDSToolBarItem.ActionType
     let style: OUDSToolBarItem.ActionStyle
+
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         switch type {
@@ -60,9 +63,11 @@ struct ActionBoutons: View {
     }
 }
 
-struct NavigationButton: View {
+// MARK: - Toolbar Item Navigation Button
 
-    // MARK: - Properties
+struct ToolBarItemNavigationButton: View {
+
+    // MARK: Properties
 
     let type: OUDSToolBarItem.NavigationType
 
@@ -108,11 +113,11 @@ struct NavigationButton: View {
                 } label: {
                     HStack {
                         navigationIcon
-                            .foregroundColor(MultipleColorSemanticToken("#999999"))
+                            .foregroundColor(MultipleColorSemanticToken("#999999")) // TODO: #1174 - Hard-coded value instead of token, is it mandatory?
                             .frame(width: 24, height: 24)
                     }
                     .frame(width: 34, height: 34, alignment: .center)
-                    .background(MultipleColorSemanticToken("78788029"))
+                    .background(MultipleColorSemanticToken("#78788029")) // TODO: #1174 - Hard-coded value instead of token, is it mandatory?
                     .clipShape(Circle())
                 }
                 .accessibilityLabel("core_common_close_a11y".localized())
@@ -135,6 +140,57 @@ struct NavigationButton: View {
         case .close:
             false
         }
+    }
+}
+
+// MARK: - Font Label Modifier
+
+struct FontLabelModifier: ViewModifier {
+
+    // Try to be able to build the codebase on macOS (CLI), without Xcode, to run deadcode check etc
+    // even if macOS not supported
+    #if os(macOS)
+    private typealias NativeFont = NSFont
+    #else
+    private typealias NativeFont = UIFont
+    #endif
+
+    // MARK: Properties
+
+    let style: Style
+    @Environment(\.theme) private var theme
+
+    enum Style {
+        case medium
+        case regular
+    }
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        content.font(font)
+    }
+
+    // MARK: - Helper
+
+    private var font: Font? {
+        guard let fontFamily = theme.fontFamily else {
+            return nil
+        }
+
+        let fontWeight: Font.Weight = switch style {
+        case .medium:
+            .medium
+        case .regular:
+            .regular
+        }
+
+        let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, fontWeight)]
+        guard let uiFont = NativeFont(name: titleFontName, size: 17) else {
+            return nil
+        }
+
+        return Font(uiFont)
     }
 }
 #endif

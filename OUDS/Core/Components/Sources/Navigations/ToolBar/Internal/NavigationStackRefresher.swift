@@ -16,21 +16,23 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-struct OUDSNavigationStackRefresher: ViewModifier {
+// swiftlint:disable cyclomatic_complexity
+struct NavigationStackRefresher: ViewModifier {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     private let hideBackButtonLabel: Bool
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.theme) private var theme: OUDSTheme
 
-    // MARK: Initializer
+    @Environment(\.theme) private var theme: OUDSTheme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: - Initializer
 
     init(hideBackButtonLabel: Bool = true) {
         self.hideBackButtonLabel = hideBackButtonLabel
     }
 
-    // MARK: Body
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         #if !os(visionOS)
@@ -58,16 +60,16 @@ struct OUDSNavigationStackRefresher: ViewModifier {
         #endif
     }
 
-    // MARK: Private helpers
+    // MARK: - Helpers
 
     private func refreshAllNavigationBars(for newTheme: OUDSTheme, with newColorScheme: ColorScheme) {
         DispatchQueue.main.async {
-            // Forcer la mise à jour de toutes les navigation bars visibles
+            // For the update of all visible navigation bars
             for scene in UIApplication.shared.connectedScenes {
                 guard let windowScene = scene as? UIWindowScene else { continue }
 
                 for window in windowScene.windows {
-                    // Parcourir la hiérarchie de vues pour trouver les UINavigationBar
+                    // Go accross the views hierarhcy to find the UINavigationBar
                     refreshNavigationBars(in: window, for: newTheme, with: newColorScheme)
                 }
             }
@@ -84,8 +86,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
         // Foreground color (ie.titles)
         let foregroundColor = newTheme.colors.contentDefault.color(for: newColorScheme).uiColor
 
-        // MARK: Titles fonts
-
+        // Titles fonts
         var titleFont: UIFont?, largeTitleFont: UIFont?, subTitleFont: UIFont?, largeSubtitleFont: UIFont?
         if let fontFamily = newTheme.fontFamily {
             let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.regular)]
@@ -116,7 +117,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
         }
         #endif
 
-        // MARK: Back indicator
+        // Back indicator
 
         let backImage = UIImage(named: "ic_link_previous", in: newTheme.resourcesBundle, with: .none)
         appearance.setBackIndicatorImage(backImage, transitionMaskImage: backImage)
@@ -130,27 +131,27 @@ struct OUDSNavigationStackRefresher: ViewModifier {
             backButtonAppearance.focused.titleTextAttributes = titleTextAttributes
             backButtonAppearance.highlighted.titleTextAttributes = titleTextAttributes
 
+            // Nos designers ont du talent
+            // (╯°Д°)╯︵/(.□ . \)
             backButtonAppearance.normal.titlePositionAdjustment = .init(horizontal: -1_000, vertical: 0)
             backButtonAppearance.disabled.titlePositionAdjustment = .init(horizontal: -1_000, vertical: 0)
             backButtonAppearance.focused.titlePositionAdjustment = .init(horizontal: -1_000, vertical: 0)
             backButtonAppearance.highlighted.titlePositionAdjustment = .init(horizontal: -1_000, vertical: 0)
-        } else {
-            if let titleFont {
-                let enabledColor = newTheme.button.colorContentMinimalEnabled.color(for: newColorScheme).uiColor
-                let disabledColor = newTheme.button.colorContentMinimalDisabled.color(for: newColorScheme).uiColor
-                let focusedColor = newTheme.button.colorContentMinimalFocus.color(for: newColorScheme).uiColor
-                let pressedColor = newTheme.button.colorContentMinimalPressed.color(for: newColorScheme).uiColor
+        } else if let titleFont {
+            let enabledColor = newTheme.button.colorContentMinimalEnabled.color(for: newColorScheme).uiColor
+            let disabledColor = newTheme.button.colorContentMinimalDisabled.color(for: newColorScheme).uiColor
+            let focusedColor = newTheme.button.colorContentMinimalFocus.color(for: newColorScheme).uiColor
+            let pressedColor = newTheme.button.colorContentMinimalPressed.color(for: newColorScheme).uiColor
 
-                backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: enabledColor, .font: titleFont]
-                backButtonAppearance.disabled.titleTextAttributes = [.foregroundColor: disabledColor, .font: titleFont]
-                backButtonAppearance.focused.titleTextAttributes = [.foregroundColor: focusedColor, .font: titleFont]
-                backButtonAppearance.highlighted.titleTextAttributes = [.foregroundColor: pressedColor, .font: titleFont]
-            }
+            backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: enabledColor, .font: titleFont]
+            backButtonAppearance.disabled.titleTextAttributes = [.foregroundColor: disabledColor, .font: titleFont]
+            backButtonAppearance.focused.titleTextAttributes = [.foregroundColor: focusedColor, .font: titleFont]
+            backButtonAppearance.highlighted.titleTextAttributes = [.foregroundColor: pressedColor, .font: titleFont]
         }
 
         appearance.backButtonAppearance = backButtonAppearance
 
-        // MARK: Background and tint color
+        // Background and tint colors
 
         if #unavailable(iOS 26.0) {
             appearance.configureWithOpaqueBackground()
@@ -164,7 +165,7 @@ struct OUDSNavigationStackRefresher: ViewModifier {
 
         // If it's a navbar, refresh its appearance
         if let navBar = view as? UINavigationBar {
-            // Forcer la mise à jour de l'apparence
+            // For update of appearance
             navBar.standardAppearance = UINavigationBar.appearance().standardAppearance
             navBar.compactAppearance = UINavigationBar.appearance().compactAppearance
             navBar.scrollEdgeAppearance = UINavigationBar.appearance().scrollEdgeAppearance
@@ -183,4 +184,5 @@ struct OUDSNavigationStackRefresher: ViewModifier {
     }
     // swiftlint:enable function_body_length
 }
+// swiftlint:enable cyclomatic_complexity
 #endif

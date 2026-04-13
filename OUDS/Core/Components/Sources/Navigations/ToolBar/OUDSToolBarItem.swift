@@ -19,24 +19,20 @@ import SwiftUI
 
 // MARK: - OUDS ToolBar Item
 
-/// A strongly typed toolBar item container used inside:
+/// A strongly typed toolbar item container used inside:
 /// - ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
-/// - ``oudsToolBarBottom(leadingItems:trailingItems:)``.
+/// - ``oudsToolBarBottom(leadingItems:trailingItems:)``
 ///
 /// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
 ///
 /// ```swift
-///     // A toolBar item with only the close icon
-///     OUDSToolBarItem(navigation: .close) {
-///         // Handle navigation
-///     }
+///     // A toolbar item with only the close icon
+///     OUDSToolBarItem(navigation: .close)
 ///
-///     // A toolBar item with the back icon and and a text, for iOS < 26
-///     OUDSToolBarItem(navigation: .back(label: "Back")) {
-///         // Handle navigation with a text label
-///     }
+///     // A toolbar item with the back icon and and a text, for iOS < 26
+///     OUDSToolBarItem(navigation: .back(label: "Back"))
 ///
-///     // A toolBar item with some View inside
+///     // A toolbar item with some View inside
 ///     OUDSToolBarItem {
 ///         // Menu, ...
 ///     }
@@ -45,7 +41,7 @@ import SwiftUI
 /// - Since: 1.4.0
 public struct OUDSToolBarItem: View, Identifiable {
 
-    // MARK: - Content
+    // MARK: - Item content
 
     enum Content {
         case action(type: ActionType, style: ActionStyle)
@@ -53,56 +49,58 @@ public struct OUDSToolBarItem: View, Identifiable {
         case customView(AnyView)
     }
 
-    /// Defines the styling configuration for toolBar items for ios > 26
-    public enum ActionStyle {
+    // MARK: - Item definition
+
+    /// Defines the styling configuration for tooolbar items for iOS > 26
+    ///
+    /// - Since: 1.4.0
+    @frozen public enum ActionStyle {
         case `default`
         case proiminent
         case tinted
     }
 
-    // MARK: - OUDS ToolBar Action Item
-
-    /// Defines the built-in action type available for the toolBars.
-    /// Those items can be usend at `.topLeading` and `.topTrailing` position of a ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
+    /// Defines the built-in action type available for the toolbars.
+    /// Those items can be used at `.topLeading` and `.topTrailing` positions of a ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
     ///
     /// - Since: 1.4.0
-    public enum ActionType {
-        /// Create an action wth label only that could be emphasized. For ios > 26, label is always emphasized.
+    @frozen public enum ActionType {
+        /// Create an action wth label only that could be emphasized.
+        /// **For iOS > 26, label is always emphasized.**
         ///
-        ///  - Paramters:
-        ///     - string: The text displayed in the Label
-        ///     - accessibilityHint: Communicates to the user what happens after performing the action
-        ///     - emphasized: Flag to know if text is emphasized. Default set to true. Ignored on ios > 26
-        ///     - action: The action to do when clicked. If nil the button is disabled.
+        /// - Parameters:
+        ///    - string: The text displayed in the label
+        ///    - emphasized: Flag to know if text is emphasized. Default set to *true*. **Ignored on iOS > 26**
+        ///    - accessibilityHint: Communicates to the user what happens after performing the action, default set to *nil*
+        ///    - action: The action to do when clicked. If *nil* (default) the button is disabled.
         case label(_ string: String, emphasized: Bool = false, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
 
-        /// Create an action wth icon only.
+        /// Create an action with icon only.
         ///
         ///  - Parameters:
         ///     - asset: The asset displayed in the icon
         ///     - accessibilityLabel: The accessibility label discribes the action
-        ///     - accessibilityHint: Communicates to the user what happens after performing the action
-        ///     - action: The action to do when clicked. If nil the button is disabled.
+        ///     - accessibilityHint: Communicates to the user what happens after performing the action, default set to *nil*
+        ///     - action: The action to do when clicked. If *nil* (default) the button is disabled
         case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
     }
 
-    // MARK: - OUDS ToolBar Navigation Item
-
-    /// Defines the built-in navigation type available for the toolBars. Those items must be used only on topLeading position of `.toolBar`
+    /// Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of `.toolBar`
     /// Each case maps to an image asset provided by the OUDS package resources.
     ///
     /// - Since: 1.4.0
-    public enum NavigationType {
+    @frozen public enum NavigationType {
 
         /// The back button that can be added manualy if need. According to our design system, in could be the case for a sheet.
-        /// In a navigation, by default the system one is displayed (without text). If prefered, this one can be added but the system one must be hidden
+        /// In a navigation, by default the system's one is displayed (without text). If prefered, this one can be added but the system one must be hidden
         /// using `View.navigationBarBackButtonHidden()`
+        ///
         /// **Warning: if OS is iOS 26+ / Liquid Glass, the label will not appear**
         ///
         ///  - Parameters:
         ///     - label; The optional string label displayed near to the back indicator
-        ///     - accessibilityLabel: The accessinility label to describe the back action that could be overtied if needed.
-        ///     - action: The action to do when clicked. If nill the button is disabled. By default the dismiss is done after `action` is colled.
+        ///     - accessibilityLabel: The accessibility label to describe the back action that could be overtied if needed,d efault set to *core_common_back*
+        ///     - action: The action to do when clicked. If *nil* (default) the button is disabled. By default the dismiss is done after `action` is called..
         case back(label: String? = nil, accessibilityLabel: String = "core_common_back", action: (() -> Void)? = nil)
 
         /// The close button can be used to close sheets, the close feature is automatically managed.
@@ -121,12 +119,12 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Stored properties
 
+    private let content: Content
     public let id = UUID() // FIXME: #1174 - To remove?
-    let content: Content
 
     // MARK: - Initializers
 
-    /// Creates an action toolBar item with only a text
+    /// Creates an action toolbar item with only a text
     ///
     /// - Parameters:
     ///   - label: The text to display in the item, must not be empty
@@ -138,7 +136,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: .label(label, action: action), style: .default)
     }
 
-    /// Creates an action toolBar item with an icon only dedicated to action.
+    /// Creates an action toolbar item with an icon only dedicated to action.
     ///
     /// - Parameters:
     ///   - icon: The `Image` to add as button as action item
@@ -148,31 +146,31 @@ public struct OUDSToolBarItem: View, Identifiable {
         content = .action(type: .icon(asset: icon, accessibilityLabel: accessibilityLabel, action: action), style: .default)
     }
 
-    /// Creates a toolBar item with action type.
+    /// Creates a toobar item with action type.
     ///
     /// - Parameter type: The action type describing the layout and assoicated action.
     public init(action type: Self.ActionType) {
         content = .action(type: type, style: .default)
     }
 
-    /// Creates a toolBar item with action type.
+    /// Creates a toobar item with action type and a style
     ///
-    /// - Parameters
-    ///     - type: The action type describing the layout and assoicated action.
-    ///     - style: The action style to apply on layout
+    /// - Parameters:
+    ///    - type: The action type describing the layout and assoicated action.
+    ///    - style: The action style to apply on layout
     @available(iOS 26, *)
     public init(action type: Self.ActionType, style: ActionStyle) {
         content = .action(type: type, style: style)
     }
 
-    /// Creates a toolBar item with icon dedicated to navigation.
+    /// Creates a toobar item with icon dedicated to navigation.
     ///
     /// - Parameter type: The navigation type describing asset and associated action.
     public init(navigation type: Self.NavigationType) {
         content = .navigation(type: type)
     }
 
-    /// Creates a toolBar item with a custom view.
+    /// Creates a toobar item with a custom view.
     ///
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///
@@ -195,9 +193,9 @@ public struct OUDSToolBarItem: View, Identifiable {
     public var body: some View {
         switch content {
         case let .action(type, style):
-            ActionBoutons(type: type, style: style)
+            ToolBarItemActionButton(type: type, style: style)
         case let .navigation(type):
-            NavigationButton(type: type)
+            ToolBarItemNavigationButton(type: type)
         case let .customView(view):
             view
         }

@@ -19,20 +19,21 @@ import SwiftUI
 
 // MARK: - ToolBar Item Action Style Modifier (Top/Bottom)
 
-// Applies styling to tool bar (top/bottom) action items depending depending to OS versions:
-// - For iOS 26+ / Liquid Glass, action button in toolBar top have colored background
-// - For iOS lower than 26 / not Liquid Glass, action button in toolBar top do not have colored background but foreground color instead
-// The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
-// However things cannot be customized that much for Liquid Glass.
-
+/// Applies styling to toolbar (top/bottom) action items depending depending to OS versions:
+/// - For iOS 26+ / Liquid Glass, action button in toolbar top have colored background
+/// - For iOS lower than 26 / not Liquid Glass, action button in toolbar top do not have colored background but foreground color instead
+///
+/// The tokens of colors are applied as best as the API allows; some button styles are also applied to force the rendering.
+/// However things cannot be customized that much for Liquid Glass.
 struct ToolBarActionItemModifier: ViewModifier {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let style: OUDSToolBarItem.ActionStyle
+
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     func body(content: Content) -> some View {
         if style == .proiminent {
@@ -48,17 +49,19 @@ struct ToolBarActionItemModifier: ViewModifier {
     }
 }
 
+// MARK: - ToolBar Action Item Style
+
 /// Used to apply color for the pressed and disabled states
 struct ToolBarActionItemStyle: ButtonStyle {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let style: OUDSToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Body
+    // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
         if !isEnabled {
@@ -87,19 +90,19 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
 // MARK: - ToolBar Item Navigation Style Modifier (Top)
 
-/// Applies styling to toolBar top items depending depending to OS version.
-/// The tokens of colors are applied as best as the API allow; some button styles are alsso applied to force the rendering.
+/// Applies styling to toolbar top items depending depending to OS version.
+/// The tokens of colors are applied as best as the API allows; some button styles are also applied to force the rendering.
 /// However things cannot be customized that much for Liquid Glass.
 struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let type: OUDSToolBarItem.NavigationType
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Body
+    // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
         if #available(iOS 26, *) {
@@ -112,7 +115,7 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
         }
     }
 
-    // MARK: - Private helper
+    // MARK: Helper
 
     private var foregroundColor: MultipleColorSemanticToken {
         switch type {
@@ -121,51 +124,6 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
         case .close:
             MultipleColorSemanticToken("#999999")
         }
-    }
-}
-
-#if os(macOS)
-private typealias NativeFont = NSFont
-#else
-private typealias NativeFont = UIFont
-#endif
-
-struct FontLabelModifier: ViewModifier {
-
-    // MARK: - Properties
-
-    enum Style {
-        case medium
-        case regular
-    }
-
-    let style: Style
-    @Environment(\.theme) private var theme
-
-    // MARK: - Body
-
-    func body(content: Content) -> some View {
-        content.font(font)
-    }
-
-    private var font: Font? {
-        guard let fontFamily = theme.fontFamily else {
-            return nil
-        }
-
-        let fontWeight: Font.Weight = switch style {
-        case .medium:
-            .medium
-        case .regular:
-            .regular
-        }
-
-        let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, fontWeight)]
-        guard let uiFont = NativeFont(name: titleFontName, size: 17) else {
-            return nil
-        }
-
-        return Font(uiFont)
     }
 }
 #endif

@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-// MARK: - ToolBar top Modifier
+// MARK: - ToolBar Top Modifier
 
 struct ToolBarTopModifier: ViewModifier {
 
@@ -25,27 +25,24 @@ struct ToolBarTopModifier: ViewModifier {
     let title: String
     let hasLargeTitle: Bool
     let subtitle: String?
-    @OUDSToolBarItemsBuilder
-    let leadingItems: [OUDSToolBarItem]
-    @OUDSToolBarItemsBuilder
-    let trailingItems: [OUDSToolBarItem]
+    @OUDSToolBarItemsBuilder let leadingItems: [OUDSToolBarItem]
+    @OUDSToolBarItemsBuilder let trailingItems: [OUDSToolBarItem]
 
     // MARK: - Initializer
 
-    /// Creates a top toolBar with a title, optional subtitle (ios 26 only), and leading/trailing items.
+    /// Creates a top toobar with a title, optional subtitle (iOS 26+ only), and leading / trailing items.
     ///
     /// - Parameters:
-    ///   - title: The toolBar title. Prefer a non-empty string.
-    ///   - hasLargeTitle: If title must be displayed in large mode, false by default. If large mode, the subtitle is not display
+    ///   - title: The toobar title. Prefer a non-empty string.
+    ///   - hasLargeTitle: If title must be displayed in large mode. If large mode, the subtitle is not displayed.
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
-    ///   - leadingItems: The items displayed on the leading side, empty by default.
-    ///   - trailingItems: The items displayed on the trailing side, empty by default.
+    ///   - leadingItems: The items displayed on the leading side
+    ///   - trailingItems: The items displayed on the trailing side
     ///   - content: The content view wrapped by the toolBar.
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,
          @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem],
-
          @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem])
     {
         if title.isEmpty {
@@ -89,20 +86,16 @@ struct ToolBarTopModifier: ViewModifier {
     }
 
     private var leadingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
+        #if os(iOS) || os(visionOS)
         return .topBarLeading
-        #elseif os(macOS)
-        return .navigation
         #else
         return .automatic
         #endif
     }
 
     private var trailingPlacement: ToolbarItemPlacement {
-        #if os(iOS) || os(visionOS) || os(tvOS)
+        #if os(iOS) || os(visionOS)
         return .topBarTrailing
-        #elseif os(macOS)
-        return .primaryAction
         #else
         return .automatic
         #endif

@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
 
-/// The top tool bar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
+/// The top toolbar (aka *navigation bar* on iOS and iPadOS 18 and lower) sits at the top of the screen and provides contextual information
 /// and controls related to the current view.
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
 /// It can contains leading and trailing actions.
@@ -32,10 +32,10 @@ import SwiftUI
 /// - The text can be truncated if there is not enough remaining space
 /// - The OS can apply another style for the back button
 ///
-/// Without Liquid Glass / iOS 18 and lower, the OS won't change that much the style of the toolbar items, Items won't be visually grouped
+/// Without Liquid Glass / iOS 18 and lower, the OS won't change that much the style of the toolbar items, Items won't be visually grouped.
 ///
-/// Globaly the appearence of the ** navigation bar** elements are changed by the `oudsNavigationBarAppearance`
-/// helper of `View` that must be applyed on the root view of the `NavigationStack`.
+/// Globaly the appearence of the * navigation bar* elements is changed by the `oudsNavigationBarAppearance`
+/// helper of `View` that must be applyed on the root view of the `NavigationStack` for example.
 ///
 /// ## Technical constraints
 ///
@@ -53,18 +53,14 @@ import SwiftUI
 /// ## Platform considerations
 ///
 /// - The component is available on iOS, iPadOS, and visionOS
-/// - The component is not available for watchOS
-/// - The component is not available for tvOS
-/// - The component is not available for macOS
+/// - The component is not available for watchOS, tvOS and macOS
 ///
 /// ## Code sample
 ///
 /// ```swift
 ///     ContentView()
 ///        .oudsToolBarTop("Inbox", subtitle: "2 new messages") {
-///            OUDSToolBarItem(navigation: .close) {
-///                // Handle close
-///            }
+///            OUDSToolBarItem(navigation: .close)
 ///        } trailingItems: {
 ///            OUDSToolBarItem {
 ///                Image(systemName: "bell")
@@ -74,7 +70,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/6782de-ios-bars/b/317890)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-ios-tool-bar-top)
 ///
 /// ## Themes rendering
 ///
@@ -108,12 +104,13 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.4.0
-extension View {
+extension View { // FIXME: #1174 - Check if documentation is well generated, otherwise use View
+    // TODO: #1174 - Update screenshots
 
     /// Creates a top toolbar with a title, optional subtitle (for iOS 26+), leading and trailing items.
     ///
     /// The view which contains this *top toolbar* must be placed inside a `NavigationView` or `NavigationStack`,
-    /// otherwise th top toolabr won't appear..
+    /// otherwise th top toolbar won't appear..
     ///
     /// There must be only one *top toolbar*.
     ///
@@ -123,7 +120,6 @@ extension View {
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
-    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarTop(_ title: String,
                                hasLargeTitle: Bool = false,
                                subtitle: String? = nil,
