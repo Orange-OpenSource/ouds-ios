@@ -23,7 +23,7 @@ import SwiftUI
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
-/// ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``  View helper applies a SwiftUI toolbar configuration.
+/// `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`  View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Appearances
 ///
@@ -127,7 +127,7 @@ public struct OUDSToolBarTop: ViewModifier {
 
     /// `ViewModifier` to define an OUDS top toolbar.
     ///
-    ///  You should prefer ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`` on view placed
+    ///  You should prefer `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
     ///  inside `NavigationView` or`NavigationStack`.
     ///
     /// - Parameters:

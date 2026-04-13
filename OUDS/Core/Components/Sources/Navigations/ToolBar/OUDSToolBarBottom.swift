@@ -20,7 +20,7 @@ import SwiftUI
 /// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
-/// ``oudsToolBarBottom`` View helper applies a SwiftUI toolbar configuration.
+/// `oudsToolBarBottom` View helper applies a SwiftUI toolbar configuration.
 ///
 /// ## Platform considerations
 ///
@@ -29,10 +29,10 @@ import SwiftUI
 ///
 /// ## Guidelines
 ///
-/// - Test the use of the ``oudsToolBarBottom`` for both iOS with Liquid Glass and not Liquid Glass
-/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
-/// - If you use both an  ``OUDSTabBar`` with the ``oudsToolBarBottom``, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
-/// - Avoid use of both ``oudsToolBarBottom`` and ``OUDSTabBar`` in the same page
+/// - Test the use of the `oudsToolBarBottom` for both iOS with Liquid Glass and not Liquid Glass
+/// - If you use both an  ``OUDSTabBar`` with the `oudsToolBarBottom`, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
+/// - If you use both an  ``OUDSTabBar`` with the `oudsToolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
+/// - Avoid use of both `oudsToolBarBottom` and ``OUDSTabBar`` in the same page
 ///
 /// ## Code samples
 ///
@@ -104,7 +104,7 @@ public struct OUDSToolBarBottom: ViewModifier {
 
     /// `ViewModifier` to define an OUDS bottom toolbar.
     ///
-    ///  You should prefer ``oudsToolBarBottom(leadingItems:trailingItems:)``.
+    ///  You should prefer `oudsToolBarBottom(leadingItems:trailingItems:)`.
     ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
@@ -120,7 +120,7 @@ public struct OUDSToolBarBottom: ViewModifier {
 
     /// `ViewModifier` to define an OUDS bottom toolbar.
     ///
-    ///  You should prefer ``oudsToolBarBottom(groupedItems:)``.
+    ///  You should prefer `oudsToolBarBottom(groupedItems:)`.
     ///
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///

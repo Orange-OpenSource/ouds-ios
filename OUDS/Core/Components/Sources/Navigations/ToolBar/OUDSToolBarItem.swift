@@ -20,8 +20,8 @@ import SwiftUI
 // MARK: - OUDS ToolBar Item
 
 /// A strongly typed toolbar item container used inside:
-/// - ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
-/// - ``oudsToolBarBottom(leadingItems:trailingItems:)``
+/// - `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
+/// - `oudsToolBarBottom(leadingItems:trailingItems:)`
 ///
 /// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
 ///
@@ -61,7 +61,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     }
 
     /// Defines the built-in action type available for the toolbars.
-    /// Those items can be used at `.topLeading` and `.topTrailing` positions of a ``oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)``
+    /// Those items can be used at `.topLeading` and `.topTrailing` positions of a `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
     ///
     /// - Since: 1.4.0
     @frozen public enum ActionType {
