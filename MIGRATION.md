@@ -117,6 +117,8 @@ Thus existence of `oudsVerticalSizeClass`, used nowhere, is a non-sense; this pr
 
 **Reason for Change**: Not used, not relevant, must not be considered even if design side
 
+**Note**: This property comes back with v1.4.0 as some users still used it
+
 #### 2. Rename of OUDSBulletList.UnorderedIcon` to `OUDSBulletList.UnorderedAsset`
 
 **Impact**: Low

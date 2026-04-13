@@ -85,6 +85,7 @@ public struct OUDSThemeableView<Content: View>: View {
 private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
     private static let extraCompactMaxWidth = 390.0
@@ -101,9 +102,22 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
         #endif
     }
 
+    private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        #if os(iOS)
+        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+            .extraCompact
+        } else {
+            verticalSizeClass == .compact ? .compact : .regular
+        }
+        #else
+        verticalSizeClass == .compact ? .compact : .regular
+        #endif
+    }
+
     func body(content: Content) -> some View {
         content
             .environment(\.oudsHorizontalSizeClass, horizontalUserInterfaceSizeClass)
+            .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
     }
 }
 #endif
