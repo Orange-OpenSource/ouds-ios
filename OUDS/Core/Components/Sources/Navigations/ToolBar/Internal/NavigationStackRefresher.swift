@@ -89,7 +89,7 @@ struct NavigationStackRefresher: ViewModifier {
         // Titles fonts
         var titleFont: UIFont?, largeTitleFont: UIFont?, subTitleFont: UIFont?, largeSubtitleFont: UIFont?
         if let fontFamily = newTheme.fontFamily {
-            let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.regular)]
+            let titleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.bold)]
             titleFont = UIFont(name: titleFontName, size: 17)
 
             let largeTitleFontName = kApplePostScriptFontNames[orKey: PSFNMK(fontFamily, Font.Weight.bold)]
