@@ -36,10 +36,12 @@ struct ToolBarItemActionButton: View {
             Button {
                 action?()
             } label: {
+                // fixedSize(). to let items use suitable size to display text withut beeing truncated all the times
+                // padding of 4 to make the text "breath" and not be to stucked to items borders
                 if #available(iOS 26.0, *) {
-                    Text(label).modifier(FontLabelModifier(style: .medium))
+                    Text(label).modifier(FontLabelModifier(style: .medium)).fixedSize().padding(4)
                 } else {
-                    Text(label).modifier(FontLabelModifier(style: emphasized ? .medium : .regular))
+                    Text(label).modifier(FontLabelModifier(style: emphasized ? .medium : .regular)).fixedSize().padding(4)
                 }
             }
             .disabled(action == nil)
@@ -102,7 +104,7 @@ struct ToolBarItemNavigationButton: View {
                                 .frame(width: 24, height: 24)
 
                             if let label {
-                                Text(label).modifier(FontLabelModifier(style: .regular))
+                                Text(label).modifier(FontLabelModifier(style: .regular)).fixedSize()
                             }
                         }
                     }
