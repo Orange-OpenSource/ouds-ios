@@ -46,7 +46,7 @@ struct ToolBarItemActionButton: View {
             .modifier(ToolBarActionItemModifier(style: style))
             .accessibilityHint(Text(accessibilityHint ?? ""))
 
-        case let .icon(asset, _, accessibilityHint, action):
+        case let .icon(asset, accessibilityLabel, accessibilityHint, action):
             Button {
                 action?()
             } label: {
@@ -58,6 +58,7 @@ struct ToolBarItemActionButton: View {
             }
             .disabled(action == nil)
             .modifier(ToolBarActionItemModifier(style: style))
+            .accessibilityLabel(Text(accessibilityLabel))
             .accessibilityHint(Text(accessibilityHint ?? ""))
         }
     }
