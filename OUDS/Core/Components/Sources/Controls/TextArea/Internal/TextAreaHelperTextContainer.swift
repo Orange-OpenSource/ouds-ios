@@ -15,7 +15,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct TextAreaHelperTextContainer: View {
+struct TextAreaHelperErrorTextContainer: View {
 
     // MARK: - Properties
 

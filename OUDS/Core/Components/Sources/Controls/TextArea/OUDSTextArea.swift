@@ -406,11 +406,11 @@ public struct OUDSTextArea: View {
                                   isOutlined: isOutlined,
                                   accessibilityHint: helperText?.accessibilityDescription(remainingCount: remainingCount))
 
-                TextAreaHelperTextContainer(helperText: helperText,
-                                            status: status,
-                                            isOverLimit: isOverLimit,
-                                            excessCount: excessCount,
-                                            remainingCount: remainingCount)
+                TextAreaHelperErrorTextContainer(helperText: helperText,
+                                                 status: status,
+                                                 isOverLimit: isOverLimit,
+                                                 excessCount: excessCount,
+                                                 remainingCount: remainingCount)
                     .accessibilityHidden(true)
             }
             .accessibilityElement(children: .contain)
