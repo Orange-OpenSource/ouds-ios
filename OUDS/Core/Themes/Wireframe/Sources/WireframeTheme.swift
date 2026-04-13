@@ -155,12 +155,10 @@ extension Tuning {
 
     /// The theme tuning for *Wireframe *contains:
     /// - square corners for buttons
-    /// - square corners for text inputs
-    /// - square corners for PIN code inputs
+    /// - square corners for text-based inputs
     /// - rounded corners for alert messages
     public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
-                                         hasRoundedPinCodeInputs: false,
                                          hasRoundedAlertMessages: true)
 }
 

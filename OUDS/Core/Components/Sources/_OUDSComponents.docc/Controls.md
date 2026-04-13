@@ -32,21 +32,17 @@ The library proposes layout to add in your views some checkboxes components, eve
 You can use a simple checkbox without any labels and images using ``OUDSCheckbox``.
 This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with ``OUDSCheckboxIndeterminate``.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-        // A simple checkbox, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will be
-        // vocalized by Voice Over. 
+```swift
+// A simple checkbox, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will be
+// vocalized by Voice Over.
 
-        // The isOn parameter can have only two values: true (selected), false (unselected)
-        OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
+// The isOn parameter can have only two values: true (selected), false (unselected)
+OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
 
-        // The selection parameter can have only three values: selected, unselected and indeterminate
-        OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
-        ```
-    }
-}
+// The selection parameter can have only three values: selected, unselected and indeterminate
+OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
+```
 
 #### Checkbox item
 
@@ -69,29 +65,25 @@ The library proposes also a checkbox which has in its layout some labels and ico
 The indicator can be leading or trailing.
 It can be be used for two-states (``OUDSCheckboxItem``) or three-states management (``OUDSCheckboxItemIndeterminate``).
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // A leading checkbox with a label, with only two states
-        OUDSCheckboxItem("Hello world", isOn: $isOn)
+```swift
+// A leading checkbox with a label, with only two states
+OUDSCheckboxItem("Hello world", isOn: $isOn)
 
-        // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
-        OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
-                                      selection: $selection,
-                                      description: "from Outer Space II")
+// A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
+OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
+                              selection: $selection,
+                              description: "from Outer Space II")
 
-        // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-        // with a reversed layout, and exposing only two states through isOn binding
-        OUDSCheckboxItem("We live in a fabled world",
-                         isOn: $isOn,
-                         description: "Of dreaming boys and wide-eyed girls",
-                         icon: Image(decorative: "ic_heart"),
-                         isReversed: true,
-                         isError: true,
-                         hasDivider: true)
-        ```
-    }
-}
+// A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+// with a reversed layout, and exposing only two states through isOn binding
+OUDSCheckboxItem("We live in a fabled world",
+                 isOn: $isOn,
+                 description: "Of dreaming boys and wide-eyed girls",
+                 icon: Image(decorative: "ic_heart"),
+                 isReversed: true,
+                 isError: true,
+                 hasDivider: true)
+```
 
 #### Checkbox picker
 
@@ -177,16 +169,12 @@ OUDSCheckboxPicker(selections: $selections,
 The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one.
 You can use a simple radio without any labels and images thanks to ``OUDSRadio``.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-        // A simple radio, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will 
-        // be vocalized by Voice Over. 
-        OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
-        ```    
-    }
-}
+```swift
+// A simple radio, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will
+// be vocalized by Voice Over.
+OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
+```
 
 #### Radio item
 
@@ -208,25 +196,21 @@ You can use a simple radio without any labels and images thanks to ``OUDSRadio``
 The library proposes also a radio which has in its layout some labels and icons (``OUDSRadioItem``).
 The indicator can be leading or trailing.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift        
-        // A leading radio with a label
-        OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
+```swift
+// A leading radio with a label
+OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 
-        // A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
-        // error with a reversed layout
-        OUDSRadioItem("Lucy in the Sky with Diamonds",
-                      isOn: $isOn,
-                      extraLabel: "The Beatles"
-                      description: "1967",
-                      icon: Image(decorative: "ic_heart"),
-                      isReversed: true,
-                      isError: true,
-                      hasDivider: true)
-        ```
-    }
-}
+// A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
+// error with a reversed layout
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              extraLabel: "The Beatles"
+              description: "1967",
+              icon: Image(decorative: "ic_heart"),
+              isReversed: true,
+              isError: true,
+              hasDivider: true)
+```
 
 #### Radio picker
 
@@ -300,18 +284,14 @@ OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
 The library proposes a new layout for the switch component. The native one is not used.
 You can use a simple switch without any labels and images thanks to the ``OUDSSwitch``.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-        // A simple switch, with only an indicator
-        // The component must be instanciated with a string parameter used as accessibility label that will be
-        // vocalized by Voice Over. 
+```swift
+// A simple switch, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will be
+// vocalized by Voice Over.
 
-        // The isOn parameter can have only two values: true (selected), false (unselected)
-        OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
-        ```
-    }
-}
+// The isOn parameter can have only two values: true (selected), false (unselected)
+OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
+```
 
 #### Switch item
 
@@ -333,29 +313,25 @@ You can use a simple switch without any labels and images thanks to the ``OUDSSw
 The library proposes also a switch which has in its layout some labels and icons (``OUDSSwitchItem``).
 The indicator can be leading or trailing.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // A leading switch with a label and exposing the state through isOn binding
-        OUDSSwitchItem("Hello world", isOn: $isOn)
+```swift
+// A leading switch with a label and exposing the state through isOn binding
+OUDSSwitchItem("Hello world", isOn: $isOn)
 
-        // A leading switch with a label and a description
-        OUDSSwitchItem("Dead Robot Zombie Cop",
-                       isOn: $isOn,
-                       description: "from Outer Space II")
+// A leading switch with a label and a description
+OUDSSwitchItem("Dead Robot Zombie Cop",
+               isOn: $isOn,
+               description: "from Outer Space II")
 
-        // A trailing switch with a label, a description, an icon, a divider and is about an error
-        // with an inverse layout
-        OUDSSwitchItem("We live in a fabled world",
-                        isOn: $isOn,
-                        description: "Of dreaming boys and wide-eyed girls",
-                        icon: Image(decorative: "ic_heart"),
-                        isReversed: true,
-                        isError: true,
-                        hasDivider: true)
-        ```
-    }
-}
+// A trailing switch with a label, a description, an icon, a divider and is about an error
+// with an inverse layout
+OUDSSwitchItem("We live in a fabled world",
+                isOn: $isOn,
+                description: "Of dreaming boys and wide-eyed girls",
+                icon: Image(decorative: "ic_heart"),
+                isReversed: true,
+                isError: true,
+                hasDivider: true)
+```
 
 ### Chips
 
@@ -378,20 +354,16 @@ The indicator can be leading or trailing.
 
 The library proposes suggestion (``OUDSSuggestionChip``) chip component to make some predicitve or recommended selection.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // Suggestion chip with icon only 
-        OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+```swift
+// Suggestion chip with icon only
+OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
 
-        // Layout with text only
-        OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+// Layout with text only
+OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
 
-        // Layout with text and icon
-        OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
-        ```
-    }
-}
+// Layout with text and icon
+OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+```
 
 #### Filter
 
@@ -412,20 +384,16 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 The library proposes filter chip component (``OUDSFilterChip``) to make some filtering with selected or unselected options.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-        // Filter chip with icon only as selected 
-        OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
-            
-        // Filter chip with text only as not selected
-        OUDSFilterChip(text: "Heart") { /* the action to process */ }
-            
-        // Filter chip with text and icon layout an in selected state
-        OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
-        ```    
-    }
-}
+```swift
+// Filter chip with icon only as selected
+OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+
+// Filter chip with text only as not selected
+OUDSFilterChip(text: "Heart") { /* the action to process */ }
+
+// Filter chip with text and icon layout an in selected state
+OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+```
 
 
 #### Chip picker
@@ -516,19 +484,19 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
 
 The library provides a password input based on a ``OUDSTextInput`` to let user provides password in a secure text field.
 
- ```swift
-     // The password to display and edit
-     @State var password: String = ""
+```swift
+// The password to display and edit
+@State var password: String = ""
 
-     // A basic password input with label
-     OUDSPasswordInput(label: "Password", password: $password)
+// A basic password input with label
+OUDSPasswordInput(label: "Password", password: $password)
 
-     // Add a leading icon and helper text to more context
-     OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+// Add a leading icon and helper text to more context
+OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
 
-     // Password with prefix
-     OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
- ```
+// Password with prefix
+OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+```
 
 ### Pin Code Input
 
@@ -558,9 +526,65 @@ OUDSPinCodeInput($pinCode)
 
 // It can have also up 4 or 8 boxes, with an helper text
 OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
-    
+
 // The component can be used in error contexts
 OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+```
+
+### Text area
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A text area component in light and dark modes with Orange theme](component_textArea_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A text area component in light and dark modes with Orange Compact theme](component_textArea_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A text area component in light and dark modes with Sosh theme](component_textArea_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A text area component in light and dark modes with Wireframe theme](component_textArea_Wireframe)
+    }
+}
+
+The library provides ``OUDSTextArea`` for multiline text entry in forms such as comments, descriptions or messages.
+The field grows from a minimum of visible lines up to maximum lines based on tokens associated to the theme, after which the content scrolls.
+It supports labels, placeholders, helper text, a helper link and five statuses: enabled, loading, error, read-only and disabled.
+
+```swift
+// The text to display and edit
+@State var text: String = ""
+
+// Basic usage — label and text only
+OUDSTextArea(label: "Comments", text: $text)
+
+// With a placeholder shown when the field is empty
+OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
+
+// With a plain helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .plain("Maximum 500 characters."))
+
+// With a maximum character count — remaining count rendered bold, error style when exceeded
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .charactersMaxCount(500))
+
+// With a helper link
+@Environment(\.openURL) private var openUrl
+
+let helperLink = OUDSTextArea.Helperlink(text: "Learn more") {
+    openUrl.callAsFunction(url)
+}
+
+OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
+
+// With error status — error message replaces the helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             status: .error(message: "This field cannot be empty."))
 ```
 
 ### Text input

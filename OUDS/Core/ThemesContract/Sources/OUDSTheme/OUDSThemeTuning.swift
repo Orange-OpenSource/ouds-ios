@@ -15,7 +15,7 @@ import Foundation
 
 // MARK: - Type aliases
 
-/// Type alais to keep things simple and short
+/// Type alias to keep things simple and short
 public typealias Tuning = OUDSThemeTuning
 
 // MARK: - OUDS Theme Tuning
@@ -34,11 +34,9 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like button (`OUDSButton`) must have always rounded corners or not
     public let hasRoundedButtons: Bool
 
-    /// If text input components (e.g. `OUDSTextInput`) must have always rounded corners or not
+    /// If text input components (e.g. `OUDSTextInput`, `OUDSPinCodeInput`, `OUDSPasswordInput` and `OUDSTextArea`)
+    /// must have always rounded corners or not
     public let hasRoundedTextInputs: Bool
-
-    /// If PIN code input components (e.g. `OUDSPinCodeInput`) must have always rounded corners or not
-    public let hasRoundedPinCodeInputs: Bool
 
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
@@ -47,17 +45,14 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedTextInputs: If text inputs must have rounded corners or not (default set to *false*)
-    ///    - hasRoundedPinCodeInputs: If PIN code inputs must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedTextInputs: If text-based inputs components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedAlertMessages: If alert messages must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
-                hasRoundedPinCodeInputs: Bool = false,
                 hasRoundedAlertMessages: Bool = false)
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs
-        self.hasRoundedPinCodeInputs = hasRoundedPinCodeInputs
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
     }
 }
@@ -89,21 +84,17 @@ extension Tuning {
 
     /// The theme tuning for *Orange Business* contains:
     /// - square corners for buttons (i.e. not rounded)
-    /// - rounded corners for text inputs
-    /// - rounded corners for PIN code inputs
+    /// - rounded corners for text / PIN code / password / text area inputs
     /// - rounded corners for alert messages
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
-                                              hasRoundedPinCodeInputs: true,
                                               hasRoundedAlertMessages: true)
 
     /// The theme tuning for *Max It *contains:
     /// - rounded corners for buttons
-    /// - rounded corners for text inputs
-    /// - rounded corners for pin code inputs
+    /// - rounded corners for text / PIN code / password / text area inputs
     /// - rounded corners for alert messages
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
-                                     hasRoundedPinCodeInputs: true,
                                      hasRoundedAlertMessages: true)
 }

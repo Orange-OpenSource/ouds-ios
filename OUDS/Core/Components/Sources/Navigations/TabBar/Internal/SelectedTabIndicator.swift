@@ -19,15 +19,19 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Constants
-
-let kTabBarAnimationDuration: CGFloat = 0.2
-let kAsyncDelay: CGFloat = 0.1
-
 // MARK: - Selected Tab Indicator
 
 /// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. no Liquid Glass)
 struct SelectedTabIndicator: View {
+
+    // MARK: - Constants
+
+    /// Duration in seconds of the indicator expand/collapse animation.
+    static let animationDuration: CGFloat = 0.2
+    /// Delay in seconds before updating the tab bar geometry after layout changes.
+    static let asyncDelay: CGFloat = 0.1
+
+    // MARK: - Properties
 
     @Binding var selected: Int
     var count: Int
@@ -78,7 +82,7 @@ struct SelectedTabIndicator: View {
                         // from the old tab to the new one), then animate the line expanding outward
                         // from the center of the new tab.
                         indicatorScaleX = 0
-                        withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                        withAnimation(.easeInOut(duration: Self.animationDuration)) {
                             indicatorScaleX = 1
                         }
                     }
@@ -88,15 +92,15 @@ struct SelectedTabIndicator: View {
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.asyncDelay) {
                 updateTabBarHeight()
-                withAnimation(.easeInOut(duration: kTabBarAnimationDuration)) {
+                withAnimation(.easeInOut(duration: Self.animationDuration)) {
                     indicatorScaleX = 1
                 }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Self.asyncDelay) {
                 updateTabBarHeight()
             }
         }

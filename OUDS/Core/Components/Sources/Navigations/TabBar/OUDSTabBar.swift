@@ -293,7 +293,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             // Delay to ensure the orientation change is complete
-            DispatchQueue.main.asyncAfter(deadline: .now() + kAsyncDelay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                 isLandscape = Self.isInLandscapeViewport()
             }
         }

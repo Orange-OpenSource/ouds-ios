@@ -16,7 +16,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under tests as the default semantic token providers with the expected types.
+/// Check if the component tokens provider under tests has the default semantic token providers with the expected types.
 struct OrangeCompactThemeTextAreaComponentTokensProviderTests {
 
     private var provider: OrangeCompactThemeTextAreaComponentTokensProvider

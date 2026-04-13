@@ -75,7 +75,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// The content of the fields is vocalized by Voice Over; the placeholders (defined in `kPinCodeInputObfuscationCharacter` and `kPinCodeInputPlaceholderCharacter`)
+/// The content of the fields is vocalized by Voice Over; the placeholders (defined in ``OUDSPinCodeInput/obfuscationCharacter`` and ``OUDSPinCodeInput/placeholderCharacter``)
 /// are not vocalized to let users know what they wrote.
 ///
 /// The component gets only numeric values, not letters or symbols, only numbers.
@@ -128,6 +128,14 @@ import SwiftUI
 /// - Since: 1.4.0
 @available(iOS 15, visionOS 1, *)
 public struct OUDSPinCodeInput: View {
+
+    // MARK: - Constants
+
+    /// The symbol used to hide a written digit.
+    public static let obfuscationCharacter = "●"
+
+    /// The symbol used as a placeholder for a digit not yet filled.
+    public static let placeholderCharacter = "-"
 
     // MARK: - Properties
 

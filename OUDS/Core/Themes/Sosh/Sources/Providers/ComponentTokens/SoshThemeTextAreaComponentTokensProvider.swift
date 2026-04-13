@@ -14,11 +14,11 @@
 import OUDSFoundations
 import OUDSThemesContract
 
-/// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
+/// A class which wraps all **component tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
-/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizesSemanticTokensProvider`),
-/// and spaces (from `AllSpacesSemanticTokensProvider`).
+/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
@@ -35,8 +35,8 @@ final class SoshThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokens
 
     /// Defines a provider of component tokens dedicated to `OUDSTextArea`
     /// - Parameters:
-    ///    - sizes: Provider for borders semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
-    ///    - spaces: Provider for _ semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - sizes: Provider for sizes semantic tokens. If nil, a default one will be used (``SoshThemeSizeSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          spaces: AllSpaceSemanticTokensProvider? = nil)
     {

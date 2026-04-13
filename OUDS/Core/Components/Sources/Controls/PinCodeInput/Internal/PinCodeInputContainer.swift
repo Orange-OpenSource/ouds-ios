@@ -16,14 +16,6 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Characters
-
-/// The symbol to use to hide the written digit
-let kPinCodeInputObfuscationCharacter = "●"
-
-/// The symbol to use as placeholder for digit to fill
-let kPinCodeInputPlaceholderCharacter = "-"
-
 // MARK: - Pin Code Input Container
 
 struct PinCodeInputContainer: View {
@@ -155,7 +147,7 @@ struct PinCodeInputContainer: View {
     }
 
     private var borderRadius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedPinCodeInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
+        theme.tuning.hasRoundedTextInputs ? theme.textInput.borderRadiusRounded : theme.textInput.borderRadiusDefault
     }
 
     private func backgroundColor(focused: Bool) -> Color {
@@ -182,8 +174,8 @@ struct PinCodeInputContainer: View {
     // MARK: - Digits fields
 
     /// Returns the string to display for a digit field:
-    /// - `kPinCodeInputPlaceholderCharacter` for placeholder on not focused input
-    /// - `kPinCodeInputObfuscationCharacter` for filled input
+    /// - ``OUDSPinCodeInput/placeholderCharacter`` for placeholder on not focused input
+    /// - ``OUDSPinCodeInput/obfuscationCharacter`` for filled input
     /// - empty string for input focused without text yet
     ///
     /// - Parameter index: The index of the field
@@ -193,10 +185,10 @@ struct PinCodeInputContainer: View {
             if focusedIndex == index {
                 ""
             } else {
-                kPinCodeInputPlaceholderCharacter
+                OUDSPinCodeInput.placeholderCharacter
             }
         } else {
-            kPinCodeInputObfuscationCharacter
+            OUDSPinCodeInput.obfuscationCharacter
         }
     }
 

@@ -242,6 +242,34 @@ OUDSTextInput(label: "Label", text: $text, status: .error(message: "Error"))
 
 ---
 
+### Controls — Text Area
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstextarea
+
+```swift
+// Basic
+OUDSTextArea(label: "Label", text: $text)
+
+// With placeholder
+OUDSTextArea(label: "Label", text: $text, placeholder: "Describe…")
+
+// Plain helper text
+OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
+
+// Remaining characters — count is rendered bold in the UI
+OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
+
+// Helper link
+let helperLink = OUDSTextArea.Helperlink(text: "Learn more") { openUrl(url) }
+OUDSTextArea(label: "Label", text: $text, helperLink: helperLink)
+
+// Error status — error message replaces the helper text
+OUDSTextArea(label: "Label", text: $text, status: .error(message: "Required."))
+```
+
+> Min visible lines: `OUDSTextArea.minLines` (3). Max lines before scrolling: `OUDSTextArea.maxLines` (10).
+
+---
+
 ### Dialogs — Alert Message
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsalertmessage
 

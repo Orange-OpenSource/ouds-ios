@@ -32,7 +32,6 @@ struct SoshThemeTests {
         let tuning = theme.tuning
         #expect(tuning.hasRoundedButtons == false)
         #expect(tuning.hasRoundedTextInputs == false)
-        #expect(tuning.hasRoundedPinCodeInputs == false)
         #expect(tuning.hasRoundedAlertMessages == true)
     }
 

@@ -16,13 +16,14 @@ import OUDSThemesContract
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of text area** objects like `OUDSTextArea`.
+/// A class which wraps all **component tokens of text area** objects like `OUDSTextArea`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTextAreaComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTextAreaComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TextAreaComponentTokens` so as to expose the component tokens for *text area* through any `OUDSTheme`.
-/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`).
+/// *Text area* components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`)
+/// and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for text area component tokens
@@ -70,7 +71,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let textAreaComponentTokensProvider = OrangeThemeTextAreaComponentTokensProvider()
 ///
-///     // Or use your own space and size semantic tokens providers (or only some)
+///     // Or use your own size and space semantic tokens providers (or only some)
 ///     let textAreaComponentTokensProvider = OrangeThemeTextAreaComponentTokensProvider(
 ///                                             sizes: CustomSizeSemanticTokensProvider(),
 ///                                             spaces: CustomSpaceSemanticTokensProvider())
@@ -79,10 +80,10 @@ import OUDSThemesContract
 /// - Since: 0.17.0
 open class OrangeThemeTextAreaComponentTokensProvider: AllTextAreaComponentTokensProvider {
 
-    /// Provider of sizez semantic tokens to use for text area borders
+    /// Provider of sizes semantic tokens to use for text area sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for text area colors
+    /// Provider of spaces semantic tokens to use for text area spaces
     public let spaces: AllSpaceSemanticTokensProvider
 
     #if DEBUG

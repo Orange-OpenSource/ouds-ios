@@ -28,20 +28,16 @@ Some components can be used for **indicators**.
 
 The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-            // Info badge in medium size without information
-            OUDSBadge(status: .info, size: .medium)
+```swift            
+// Info badge in medium size without information
+OUDSBadge(status: .info, size: .medium)
 
-            // Negative badge in medium size with count information
-            OUDSBadge(count: 1, status: .negative, size: .medium)
+// Negative badge in medium size with count information
+OUDSBadge(count: 1, status: .negative, size: .medium)
 
-            // Neutral badge in medium size with an image
-            OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
-        ```
-    }
-}
+// Neutral badge in medium size with an image
+OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+```
 
 ### Tag
 
@@ -62,31 +58,27 @@ The ``OUDSBadge`` is a small UI element used to highlight status, notifications,
 
 An ``OUDSTag`` is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift            
-        // Text only with neutral status, for emphasized appearance with rounded shape in default size
-        OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
-        // Or also
-        OUDSTag(label: "Label")
+```swift            
+// Text only with neutral status, for emphasized appearance with rounded shape in default size
+OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
+// Or also
+OUDSTag(label: "Label")
             
-        // Tag with negative status with bullet
-        OUDSTag(label: "Label", status: .negative(leading: .bullet)
+// Tag with negative status with bullet
+OUDSTag(label: "Label", status: .negative(leading: .bullet)
             
-        // Tag with neutral status with a custom decorative icon
-        OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
-        // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
-        // you can flip the icon
-        OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+// Tag with neutral status with a custom decorative icon
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+// If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
+// you can flip the icon
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
             
-        // Text with neutral status with bullet
-        OUDSTag(label: "Label", status: .neutral(bullet: true))
+// Text with neutral status with bullet
+OUDSTag(label: "Label", status: .neutral(bullet: true))
             
-        // Tag with loader with rounded shape in small size
-        OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
-        ```
-    }
-}
+// Tag with loader with rounded shape in small size
+OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+```
 
 ### Input Tag
 
