@@ -50,7 +50,7 @@ struct TextAreaTrailingContainer: View {
             } else if isOverLimit {
                 errorIcon
             } else if case .loading = status {
-                OUDSButton(icon: Image(decorative: "ic_heart"), // FIXME: #543 - Change this image
+                OUDSButton(icon: Image(decorative: "ic_heart"), // Image won't never be displayed
                            accessibilityLabel: "",
                            appearance: .minimal,
                            style: .loading,
