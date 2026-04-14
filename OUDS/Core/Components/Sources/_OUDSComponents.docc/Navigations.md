@@ -85,8 +85,11 @@ The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects 
 The ``OUDSTabBar`` lets users define their own hierarchy of views associated to tab items.
 
 ```swift        
-// Use the OUDS tab bar to wrap tab bar items and associated views
-OUDSTabBar(selected: 0, count: 3) {
+// Use the OUDS tab bar to wrap tab bar items and associated views.
+// Declare a @State to hold the selected tab index, then pass it as a binding.
+@State private var selectedTab = 0
+
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
         
     // Add the views with the SwiftUI tab item and labels
     // No need to define colors, everything is done inside OUDSTabBar

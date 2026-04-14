@@ -370,14 +370,18 @@ OUDSLink(text: "Text", icon: Image("ic"), size: .default) {}
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstabbar
 
 ```swift
-// iOS 15–25: pass selected tab index and total count
-OUDSTabBar(selected: 0, count: 3) {
+// iOS 15–25: declare a @State for the selected tab, then pass it as a Binding.
+// The binding is updated when the user taps a tab, and changing it programmatically
+// switches the displayed tab.
+@State private var selectedTab = 0
+
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
     SomeView().tabItem { Label("Tab 1", image: "ic_1") }.tag(0)
     OtherView().tabItem { Label("Tab 2", image: "ic_2") }.tag(1)
     LastView().tabItem { Label("Tab 3", image: "ic_3") }.tag(2)
 }
 
-// iOS 26+: no need for selected/count
+// iOS 26+: no need for selectedTab/count
 OUDSTabBar {
     SomeView().tabItem { Label("Tab 1", image: "ic_1") }
     OtherView().tabItem { Label("Tab 2", image: "ic_2") }
@@ -386,6 +390,7 @@ OUDSTabBar {
 ```
 
 > Tab bar images must be 26×26 pt. Colors are managed automatically by `OUDSTabBar`.
+> `OUDSTabBar(selected:count:content:)` (plain `Int`) is deprecated — use `OUDSTabBar(selectedTab:count:content:)` (`Binding<Int>`) instead.
 
 ---
 

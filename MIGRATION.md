@@ -12,6 +12,7 @@
 
 Some public `View` extension methods prefixed with `ouds` have been renamed to remove the prefix, aligning with the naming style of typography helpers.
 The old methods are deprecated and will be removed in a future major version.
+The tab bar component has a new initialiser with a binding for selected tab making the older one deprecated.
 
 ### Before You Begin
 
@@ -77,6 +78,45 @@ SomeView()
 - Replace deprecated `ouds`-prefixed calls with their unprefixed counterparts
 
 **Reason for Change**: User feedback indicated the `ouds` prefix on methods was redundant and verbose given that parameter types are strongly typed OUDS tokens which prevent any ambiguity with native SwiftUI overloads.
+
+#### Deprecated `OUDSTabBar` initializer
+
+The `OUDSTabBar(selected:count:content:)` initializer that accepted a plain `Int` for the initially selected tab is now deprecated.
+A new `OUDSTabBar(selectedTab:count:content:)` initializer replaces it, accepting a `Binding<Int>` that is updated whenever the user taps a tab — keeping the parent view in sync with the tab bar selection without any extra code.
+
+**Impact**: Low
+
+**Before (v1.3.x)**:
+```swift
+// The initial tab is fixed at 0; user interactions are not propagated back.
+OUDSTabBar(selected: 0, count: 3) {
+    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
+    OtherView().tabItem { Label("Search", image: "ic_search") }.tag(1)
+    LastView().tabItem { Label("Profile", image: "ic_profile") }.tag(2)
+}
+```
+
+**After (v1.4.0)**:
+```swift
+// Declare a @State to hold the selected tab index.
+@State private var selectedTab = 0
+
+// Pass it as a Binding: the tab bar updates selectedTab when the user taps a tab,
+// and programmatically changing selectedTab switches the displayed tab.
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
+    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
+    OtherView().tabItem { Label("Search", image: "ic_search") }.tag(1)
+    LastView().tabItem { Label("Profile", image: "ic_profile") }.tag(2)
+}
+```
+
+**Required Action**:
+- Replace `OUDSTabBar(selected:count:content:)` calls with `OUDSTabBar(selectedTab:count:content:)`
+- Declare a `@State private var selectedTab: Int` (or use an existing state/binding) and pass it as `$selectedTab`
+- Remove any manual workaround you may have used to track or drive tab selection from outside the component
+
+**Reason for Change**: The original initializer only accepted a one-time initial value (`Int`) with no way to observe or control the selected tab from outside the component.
+The new initializer uses a `Binding<Int>` so the selected tab is always in sync with the parent view: user taps update the binding, and external state changes switch the visible tab.
 
 ### Compatibility
 
