@@ -20,7 +20,11 @@ import SwiftUI
 /// The bottom toolbar is a kind of navigation bar component used to display leading and trailing actions
 /// at the bottom of the screen when supported.
 ///
+<<<<<<< HEAD
 /// `toolBarBottom` View helper applies a SwiftUI toolbar configuration.
+=======
+/// `oudsToolBarBottom` View helper applies a SwiftUI toolbar configuration.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///
 /// ## Platform considerations
 ///
@@ -29,17 +33,28 @@ import SwiftUI
 ///
 /// ## Guidelines
 ///
+<<<<<<< HEAD
 /// - Test the use of the `toolBarBottom` for both iOS with Liquid Glass and not Liquid Glass
 /// - If you use both an  ``OUDSTabBar`` with the `toolBarBottom`, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
 /// - If you use both an  ``OUDSTabBar`` with the `toolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
 /// - Avoid use of both `toolBarBottom` and ``OUDSTabBar`` in the same page
+=======
+/// - Test the use of the `oudsToolBarBottom` for both iOS with Liquid Glass and not Liquid Glass
+/// - If you use both an  ``OUDSTabBar`` with the `oudsToolBarBottom`, the toolbar will be above the tabbar for iOS lower than 26, **not recommended**
+/// - If you use both an  ``OUDSTabBar`` with the `oudsToolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
+/// - Avoid use of both `oudsToolBarBottom` and ``OUDSTabBar`` in the same page
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///
 /// ## Code samples
 ///
 /// Define leading and trailing items for the bottom toolbar
 /// ```swift
 ///     SomeView()
+<<<<<<< HEAD
 ///         .toolBarBottom(leadingItems: {
+=======
+///         .oudsToolBarBottom(leadingItems: {
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///                 OUDSToolBarItem(label: "Some label") { /* Action to process */ }
 ///             }, trailingItems: {
 ///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
@@ -116,7 +131,11 @@ public struct OUDSToolBarBottom: ViewModifier {
 
     /// `ViewModifier` to define an OUDS bottom toolbar.
     ///
+<<<<<<< HEAD
     ///  You should prefer `toolBarBottom(leadingItems:trailingItems:)`.
+=======
+    ///  You should prefer `oudsToolBarBottom(leadingItems:trailingItems:)`.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
@@ -132,7 +151,11 @@ public struct OUDSToolBarBottom: ViewModifier {
 
     /// `ViewModifier` to define an OUDS bottom toolbar.
     ///
+<<<<<<< HEAD
     ///  You should prefer `toolBarBottom(groupedItems:)`.
+=======
+    ///  You should prefer `oudsToolBarBottom(groupedItems:)`.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///
@@ -148,10 +171,17 @@ public struct OUDSToolBarBottom: ViewModifier {
 
     public func body(content: Content) -> some View {
         if useGroupedItems {
+<<<<<<< HEAD
             content.toolBarBottom(groupedItems: groupedItems)
         } else {
             content.toolBarBottom(leadingItems: leadingItems,
                                   trailingItems: trailingItems)
+=======
+            content.oudsToolBarBottom(groupedItems: groupedItems)
+        } else {
+            content.oudsToolBarBottom(leadingItems: leadingItems,
+                                      trailingItems: trailingItems)
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
         }
     }
 }
@@ -168,8 +198,13 @@ extension View {
     ///   - leadingItems: The items displayed on the leading side, default *empty*
     ///   - trailingItems: The items displayed on the trailing side, default *empty*
     @available(iOS 15, visionOS 1, *)
+<<<<<<< HEAD
     public func toolBarBottom(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
                               @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] }) -> some View
+=======
+    public func oudsToolBarBottom(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
+                                  @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] }) -> some View
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     {
         modifier(ToolBarBottomModifier(leadingItems: leadingItems,
                                        trailingItems: trailingItems))
@@ -183,7 +218,11 @@ extension View {
     ///
     /// - Parameter groupedItems: All the items to place in the center of the screen
     @available(iOS 15, visionOS 1, *)
+<<<<<<< HEAD
     public func toolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem]) -> some View {
+=======
+    public func oudsToolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem]) -> some View {
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
         modifier(ToolBarBottomModifier(groupedItems: groupedItems))
     }
 }

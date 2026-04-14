@@ -206,8 +206,13 @@ public struct OUDSTabBar<Content: View>: View {
 
     // MARK: Initializers
 
+<<<<<<< HEAD
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items and a two-way binding to the selected tab index.
+=======
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// Defines the tab bar component with given tab bar items.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`.
     ///
@@ -215,9 +220,13 @@ public struct OUDSTabBar<Content: View>: View {
     /// view to observe or drive tab selection programmatically.
     ///
     /// ```swift
+<<<<<<< HEAD
     ///     @State private var selectedTab = 0
     ///
     ///     OUDSTabBar(selectedTab: $selectedTab, count: 2) {
+=======
+    ///     OUDSTabBar(selected: 0, count: 2) {
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///         SomeView()
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
@@ -228,6 +237,7 @@ public struct OUDSTabBar<Content: View>: View {
     ///                 Label("Label 2", image: "some-image")
     ///              }
     ///              .tag(1)
+<<<<<<< HEAD
     ///     }
     /// ```
     ///
@@ -273,6 +283,8 @@ public struct OUDSTabBar<Content: View>: View {
     ///                 Label("Label 2", image: "some-image")
     ///              }
     ///              .tag(1)
+=======
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///     }
     /// ```
     ///
@@ -295,7 +307,7 @@ public struct OUDSTabBar<Content: View>: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selectedTab:count:content:)`
     ///
@@ -332,7 +344,7 @@ public struct OUDSTabBar<Content: View>: View {
         // With Xcode 26.0 it was mandatory to manage these 2 cases.
         // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
         // because of the ZStack, its conditions and the multiple use of tab views.
-        // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
+        // Such cycle broke view hierachy, UI tests and had side effects with toolBar buttons.
         // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
         // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
         // device-related environment values (such as `iPhoneInUse`) are available only

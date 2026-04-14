@@ -390,16 +390,27 @@ OUDSTabBar {
 ```
 
 > Tab bar images must be 26×26 pt. Colors are managed automatically by `OUDSTabBar`.
+<<<<<<< HEAD
 > `OUDSTabBar(selected:count:content:)` (plain `Int`) is deprecated — use `OUDSTabBar(selectedTab:count:content:)` (`Binding<Int>`) instead.
+=======
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 
 ---
 
 ### Navigations — Toolbar Top
+<<<<<<< HEAD
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/toolBartop
 
 > **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
 
 Use the `.toolBarTop(…)` view modifier (preferred) or the `toolBarTop` `ViewModifier` directly.
+=======
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstoolbartop
+
+> **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
+
+Use the `.oudsToolBarTop(…)` view modifier (preferred) or the `OUDSToolBarTop` `ViewModifier` directly.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 
 **Requirements:**
 - Must be placed inside a `NavigationStack` (or `NavigationView` on iOS 15/16).
@@ -412,18 +423,31 @@ Use the `.toolBarTop(…)` view modifier (preferred) or the `toolBarTop` `ViewMo
 // Minimal — title only
 NavigationStack {
     ContentView()
+<<<<<<< HEAD
         .toolBarTop("My Title")
+=======
+        .oudsToolBarTop("My Title")
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 }
 
 // With leading / trailing items
 NavigationStack {
     ContentView()
+<<<<<<< HEAD
         .toolBarTop("My Title",
             leadingItems: {
                 toolBarItem(navigation: .back())
             },
             trailingItems: {
                 toolBarItem(icon: Image("ic_settings"),
+=======
+        .oudsToolBarTop("My Title",
+            leadingItems: {
+                OUDSToolBarItem(navigation: .back())
+            },
+            trailingItems: {
+                OUDSToolBarItem(icon: Image("ic_settings"),
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
                                 accessibilityLabel: "Settings") { }
             })
 }
@@ -431,7 +455,11 @@ NavigationStack {
 // Large title with subtitle (subtitle visible on iOS 26+ only)
 NavigationStack {
     ContentView()
+<<<<<<< HEAD
         .toolBarTop("My Title", hasLargeTitle: true, subtitle: "Sub")
+=======
+        .oudsToolBarTop("My Title", hasLargeTitle: true, subtitle: "Sub")
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 }
 
 // iOS ≤ 18: apply on root view to color the system back-button chevron
@@ -441,11 +469,19 @@ NavigationStack {
 ---
 
 ### Navigations — Toolbar Bottom
+<<<<<<< HEAD
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/toolBarbottom
 
 > **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
 
 Use the `.toolBarBottom(…)` view modifier (preferred) or the `toolBarBottom` `ViewModifier` directly.
+=======
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstoolbarbottom
+
+> **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
+
+Use the `.oudsToolBarBottom(…)` view modifier (preferred) or the `OUDSToolBarBottom` `ViewModifier` directly.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 
 **Requirements:**
 - Only one bottom toolbar per screen.
@@ -455,17 +491,27 @@ Use the `.toolBarBottom(…)` view modifier (preferred) or the `toolBarBottom` `
 ```swift
 // Leading + trailing split
 ContentView()
+<<<<<<< HEAD
     .toolBarBottom(
         leadingItems: {
             toolBarItem(label: "Edit") { }
         },
         trailingItems: {
             toolBarItem(icon: Image("ic_share"),
+=======
+    .oudsToolBarBottom(
+        leadingItems: {
+            OUDSToolBarItem(label: "Edit") { }
+        },
+        trailingItems: {
+            OUDSToolBarItem(icon: Image("ic_share"),
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
                             accessibilityLabel: "Share") { }
         })
 
 // Grouped / centered — iOS 26+ (Liquid Glass) only
 ContentView()
+<<<<<<< HEAD
     .toolBarBottom(
         groupedItems: {
             toolBarItem(label: "Save") { }
@@ -474,15 +520,33 @@ ContentView()
         })
 
 // ⚠️ Never combine toolBarBottom with OUDSTabBar on the same screen.
+=======
+    .oudsToolBarBottom(
+        groupedItems: {
+            OUDSToolBarItem(label: "Save") { }
+            OUDSToolBarItem(icon: Image("ic_delete"),
+                            accessibilityLabel: "Delete") { }
+        })
+
+// ⚠️ Never combine OUDSToolBarBottom with OUDSTabBar on the same screen.
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ```
 
 ---
 
+<<<<<<< HEAD
 ### Navigations — Toolbar Item (`toolBarItem`)
 
 `toolBarItem` is the building block for both `toolBarTop` and `toolBarBottom`. Items are composed with the `@toolBarItemsBuilder` result builder, which supports conditionals and loops.
 
 **Action styles** (`toolBarItem.ActionStyle`) — iOS 26+ only:
+=======
+### Navigations — Toolbar Item (`OUDSToolBarItem`)
+
+`OUDSToolBarItem` is the building block for both `OUDSToolBarTop` and `OUDSToolBarBottom`. Items are composed with the `@OUDSToolBarItemsBuilder` result builder, which supports conditionals and loops.
+
+**Action styles** (`OUDSToolBarItem.ActionStyle`) — iOS 26+ only:
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 
 | Case | Visual effect |
 |------|---------------|
@@ -492,6 +556,7 @@ ContentView()
 
 ```swift
 // Action — text label
+<<<<<<< HEAD
 toolBarItem(label: "Edit") { }
 
 // Action — icon
@@ -500,11 +565,22 @@ toolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") { }
 // Action — explicit style (iOS 26+ only)
 if #available(iOS 26, *) {
     toolBarItem(
+=======
+OUDSToolBarItem(label: "Edit") { }
+
+// Action — icon
+OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") { }
+
+// Action — explicit style (iOS 26+ only)
+if #available(iOS 26, *) {
+    OUDSToolBarItem(
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
         action: .label("Save", emphasized: false, accessibilityHint: nil) { },
         style: .proiminent)
 }
 
 // Navigation — back (custom dismiss handler)
+<<<<<<< HEAD
 toolBarItem(navigation: .back(label: "Back") { })
 
 // Navigation — back (default system dismiss)
@@ -515,6 +591,18 @@ toolBarItem(navigation: .close)
 
 // Custom view (e.g. a Menu)
 toolBarItem {
+=======
+OUDSToolBarItem(navigation: .back(label: "Back") { })
+
+// Navigation — back (default system dismiss)
+OUDSToolBarItem(navigation: .back { })
+
+// Navigation — close (built-in dismiss; uses ic_button_expurge icon)
+OUDSToolBarItem(navigation: .close)
+
+// Custom view (e.g. a Menu)
+OUDSToolBarItem {
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     Menu("More") {
         Button("Option 1") { }
         Button("Option 2") { }
@@ -522,12 +610,21 @@ toolBarItem {
 }
 
 // Conditional item using result-builder syntax
+<<<<<<< HEAD
 .toolBarTop("Title",
     trailingItems: {
         if isEditing {
             toolBarItem(label: "Done") { isEditing = false }
         } else {
             toolBarItem(label: "Edit") { isEditing = true }
+=======
+.oudsToolBarTop("Title",
+    trailingItems: {
+        if isEditing {
+            OUDSToolBarItem(label: "Done") { isEditing = false }
+        } else {
+            OUDSToolBarItem(label: "Edit") { isEditing = true }
+>>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
         }
     })
 ```
