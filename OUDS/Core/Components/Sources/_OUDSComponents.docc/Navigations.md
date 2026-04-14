@@ -108,65 +108,113 @@ OUDSTabBar(selected: 0, count: 3) {
 }
 ```
 
-<!--
-FIXME: #1174 - Update the sections
--->
 
-### ToolBars
+### Toolbars
 
-The toolBar components provide top and bottom navigation bars. They relay on SwiftUI toolBars and expose OUDS styles.
-Top toolBars provide a title and optional subtitle, while bottom toolBars focus on actions.
+The toolbars components provide top and bottom navigation bars. They rely on SwiftUI toolbars and expose OUDS styles.
+Top toolbars provide a title and optional subtitle, while bottom toolbars focus on actions.
 
-#### Liquid Glass (iOS 26+)
+There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and older).
 
-- Items are rendered with the Liquid Glass appearance provided by the system.
-- Trailing items (top toolBar) and all bottom toolBar items use the accent background token.
-- Title, subtitle, and items use the `contentDefault` color token.
-
-#### Without Liquid Glass (iOS < 26)
-
-- ToolBars use a regular blur effect and the bar translucent background token.
-- Items keep the `contentDefault` foreground color without background styling.
+#### Top toolbar
 
 @TabNavigator {
     @Tab("Orange (Liquid Glass)") {
-        ![A top toolBar component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
-        ![A top toolBar component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
-        ![A bottom toolBar component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
-        ![A bottom toolBar component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
+        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+    }
+    @Tab("Orange Compact (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
+    }
+    @Tab("Sosh (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+    }
+    @Tab("Wireframe (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
     }
 }
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A top toolBar component without Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
-        ![A top toolBar component without Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
-        ![A bottom toolBar component without Liquid Glass in light mode with Orange theme](component_toolBarBottom_Orange_light)
-        ![A bottom toolBar component without Liquid Glass in dark mode with Orange theme](component_toolBarBottom_Orange_dark)
+        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
+    }
+    @Tab("Orange Compact") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_OrangeCompact_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
+    }
+    @Tab("Sosh") {
+        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_Sosh_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_Sosh_dark)
+    }
+    @Tab("Wireframe") {
+        ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_Wireframe_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_Wireframe_dark)
     }
 }
 
 ```swift
-SomerView()
-    .oudsToolBarTop("Top app bar") {
-        OUDSToolBarItem(navigation: .back, accessibilityLabel: "Back") {
-            // Handle back
-        }
-    } trailingItems: {
-        OUDSToolBarItem(action: .icon(asset: Image("ic_theme"), accessibilityLabel: "Theme selection") {
-            // change theme action
-        }
-        OUDSToolBarItem(action: .icon(asset: Image("ic_theme_light"), accessibilityLabel: Color scheme selection) {
-            // change color scheme action
-        }
-    }
+// The views must be inside a NavigationView or NavigationStack
+SomeView()
+    .oudsToolBarTop("Title",
+                    leadingItems: {
+                        OUDSToolBarItem(navigation: .back())
+                    },
+                    trailingItems: {
+                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                    }
+    )
+```
 
-SomerView()
-    .oudsToolBarBottom {
-        OUDSToolBarItem(icon: Image("ic_theme"), accessibilityLabel: "Theme selection") {
-        }
-    } trailingItems: {
-        OUDSToolBarItem(icon: Image("ic_theme_light"), accessibilityLabel: Color scheme selection) {
-        }
+#### Bottom toolbar
+
+@TabNavigator {
+    @Tab("Orange (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
     }
+    @Tab("Orange Compact (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
+    }
+    @Tab("Sosh (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+    }
+    @Tab("Wireframe (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
+    }
+}
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
+    }
+    @Tab("Orange Compact") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_OrangeCompact_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
+    }
+    @Tab("Sosh") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_Sosh_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_Sosh_dark)
+    }
+    @Tab("Wireframe") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_Wireframe_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_Wireframe_dark)
+    }
+}
+
+```swift
+SomeView()
+    .oudsToolBarBottom(leadingItems: {
+        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+    }, trailingItems: {
+        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+    })
 ```

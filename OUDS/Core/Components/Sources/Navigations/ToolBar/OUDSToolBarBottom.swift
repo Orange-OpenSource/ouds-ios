@@ -58,36 +58,51 @@ import SwiftUI
 ///
 /// ### Liquid Glass
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
+/// #### Orange
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
+/// #### Orange Compact
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_dark)
+///
+/// #### Sosh
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
+///
+/// #### Wireframe
+///
+/// ![A bottom toolbar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
+/// ![A bottom toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_dark)
+/// #### Orange
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_OrangeCompact_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarBottom_OrangeCompact_dark)
+/// ![A bottom toolbar component in light mode without Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_light)
+/// ![A bottom toolbar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarBottom_Orange_dark)
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_dark)
+/// #### Orange Compact
 ///
-/// ![A bottom toolBar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_light)
-/// ![A bottom toolBar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
+/// ![A bottom toolbar component in light mode without Liquid Glass effect and Orange Compact theme](component_toolBarBottom_OrangeCompact_light)
+/// ![A bottom toolbar component in dark mode without Liquid Glass effect and Orange Compact theme](component_toolBarBottom_OrangeCompact_dark)
+///
+/// #### Sosh
+///
+/// ![A bottom toolbar component in light mode without Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_light)
+/// ![A bottom toolbar component in dark mode without Liquid Glass effect and Sosh theme](component_toolBarBottom_Sosh_dark)
+///
+/// #### Wireframe
+///
+/// ![A bottom toolbar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_light)
+/// ![A bottom toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
 ///
 /// - Since: 1.4.0
 public struct OUDSToolBarBottom: ViewModifier {
     // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
-    // TODO: #1174 - Update screenshots
 
     // MARK: Properties
 

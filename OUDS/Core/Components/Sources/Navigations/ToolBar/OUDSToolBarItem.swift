@@ -120,7 +120,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     // MARK: - Stored properties
 
     private let content: Content
-    public let id = UUID() // FIXME: #1174 - To remove?
+    public let id = UUID()
 
     // MARK: - Initializers
 

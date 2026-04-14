@@ -78,28 +78,44 @@ import SwiftUI
 ///
 /// ### Liquid Glass
 ///
+/// #### Orange
+///
 /// ![A top toolbar component in light mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+///
+/// #### Orange Compact
 ///
 /// ![A top toolbar component in light mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
 ///
+/// #### Sosh
+///
 /// ![A top toolbar component in light mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+///
+/// #### Wireframe
 ///
 /// ![A top toolBar component in light mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
 /// ![A top toolbar component in dark mode with Liquid Glass effect and Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
 ///
 /// ### Without Liquid Glass
 ///
+/// #### Orange
+///
 /// ![A top toolbar component in light mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_light)
 /// ![A top toolbar component in dark mode without Liquid Glass effect and Orange theme](component_toolBarTop_Orange_dark)
+///
+/// #### Orange Compact
 ///
 /// ![A top toolbar component in light mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_light)
 /// ![A top toolbar component in dark mode without Liquid Glass effect and Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
 ///
+/// #### Sosh
+///
 /// ![A top toolbar component in light mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_light)
 /// ![A top toolbar component in dark mode without Liquid Glass effect and Sosh theme](component_toolBarTop_Sosh_dark)
+///
+/// #### Wireframe
 ///
 /// ![A top toolbar component in light mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_light)
 /// ![A top toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarTop_Wireframe_dark)
@@ -108,7 +124,6 @@ import SwiftUI
 /// - Since: 1.4.0
 public struct OUDSToolBarTop: ViewModifier {
     // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
-    // TODO: #1174 - Update screenshots
 
     // MARK: Properties
 
