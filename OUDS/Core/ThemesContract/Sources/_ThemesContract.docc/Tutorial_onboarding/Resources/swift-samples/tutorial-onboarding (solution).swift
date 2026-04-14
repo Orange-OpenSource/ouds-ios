@@ -248,12 +248,18 @@ struct ContentView: View {
 
     private let theme = OrangeTheme()
 
+    // Tracks the currently selected tab; updated automatically when the user taps a tab item.
+    // Can also be set programmatically to switch tabs from outside the component.
+    @State private var selectedTab = 0
+
     var body: some View {
         OUDSThemeableView(theme: theme) {
-            // Initializer for iOS 18- compatibility
-            // Images are available in project assets
-            // Tags allow to make the binding and display the selected tab indicator for iOS 18-
-            OUDSTabBar(selected: 0, count: 3) {
+            // Initializer for iOS 18- compatibility.
+            // Images are available in project assets.
+            // Tags identify each tab and must match the values used by the selectedTab binding.
+            // The binding keeps the parent in sync: user taps update selectedTab, and
+            // changing selectedTab programmatically switches the displayed tab.
+            OUDSTabBar(selectedTab: $selectedTab, count: 3) {
                 HomeScreen().tabItem {
                     Label("Home", image: "Home")
                 }
