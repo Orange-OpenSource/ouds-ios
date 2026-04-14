@@ -308,6 +308,10 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     /// Creates a text input.
     ///
+    /// ```swift
+    ///     OUDSTextInput(label: "Email", text: $text)
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed above the text input. It describes the purpose of the input
     ///    - text: The text to display and edit

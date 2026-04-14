@@ -95,6 +95,10 @@ public struct OUDSFilterChip: View {
 
     /// Creates a filter chip with text and icon.
     ///
+    /// ```swift
+    ///     OUDSFilterChip(icon: Image("ic_heart"), text: "Label", selected: true) { }
+    /// ```
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the chip, should not be empty
@@ -110,6 +114,10 @@ public struct OUDSFilterChip: View {
     }
 
     /// Create a chip with an icon only.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_filter"), bundle: Bundle.module) { }
+    /// ```
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -130,6 +138,10 @@ public struct OUDSFilterChip: View {
     }
 
     /// Create a chip with an icon only.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { }
+    /// ```
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -168,6 +180,10 @@ public struct OUDSFilterChip: View {
     }
 
     /// Create a chip with a text only.
+    ///
+    /// ```swift
+    ///     OUDSFilterChip(text: "Label") { }
+    /// ```
     ///
     /// - Parameters:
     ///    - text: The text of the button to display, must not be empty

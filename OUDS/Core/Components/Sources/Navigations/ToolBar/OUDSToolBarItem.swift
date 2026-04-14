@@ -20,13 +20,8 @@ import SwiftUI
 // MARK: - OUDS ToolBar Item
 
 /// A strongly typed toolbar item container used inside:
-<<<<<<< HEAD
 /// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
 /// - `toolBarBottom(leadingItems:trailingItems:)`
-=======
-/// - `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
-/// - `oudsToolBarBottom(leadingItems:trailingItems:)`
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///
 /// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
 ///
@@ -67,11 +62,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     }
 
     /// Defines the built-in action type available for the toolbars.
-<<<<<<< HEAD
     /// Those items can be used at `.topLeading` and `.topTrailing` positions of a `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
-=======
-    /// Those items can be used at `.topLeading` and `.topTrailing` positions of a `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///
     /// - Since: 1.4.0
     @frozen public enum ActionType {
@@ -136,6 +127,10 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     /// Creates an action toolbar item with only a text
     ///
+    /// ```swift
+    ///     OUDSToolBarItem(label: "Done") { /* Action */ }
+    /// ```
+    ///
     /// - Parameters:
     ///   - label: The text to display in the item, must not be empty
     ///   - action: The action triggered when the item is tapped
@@ -148,6 +143,10 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     /// Creates an action toolbar item with an icon only dedicated to action.
     ///
+    /// ```swift
+    ///     OUDSToolBarItem(icon: Image(systemName: "plus"), accessibilityLabel: "Add") { /* Action */ }
+    /// ```
+    ///
     /// - Parameters:
     ///   - icon: The `Image` to add as button as action item
     ///   - accessibilityLabel: The accessibility label describing the icon
@@ -158,12 +157,20 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     /// Creates a toobar item with action type.
     ///
+    /// ```swift
+    ///     OUDSToolBarItem(action: .label("Edit") { /* Action */ })
+    /// ```
+    ///
     /// - Parameter type: The action type describing the layout and assoicated action.
     public init(action type: Self.ActionType) {
         content = .action(type: type, style: .default)
     }
 
     /// Creates a toobar item with action type and a style
+    ///
+    /// ```swift
+    ///     OUDSToolBarItem(action: .label("Edit") { }, style: .tinted)
+    /// ```
     ///
     /// - Parameters:
     ///    - type: The action type describing the layout and assoicated action.
@@ -174,6 +181,10 @@ public struct OUDSToolBarItem: View, Identifiable {
     }
 
     /// Creates a toobar item with icon dedicated to navigation.
+    ///
+    /// ```swift
+    ///     OUDSToolBarItem(navigation: .back { /* Action */ })
+    /// ```
     ///
     /// - Parameter type: The navigation type describing asset and associated action.
     public init(navigation type: Self.NavigationType) {

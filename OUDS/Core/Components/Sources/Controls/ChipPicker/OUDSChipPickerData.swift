@@ -50,6 +50,10 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
 
     /// Defines the data to use to define the chip (``OUDSFilterChip``)
     ///
+    /// ```swift
+    ///     OUDSChipPickerData(tag: "option1", layout: .text(text: "Option 1"))
+    /// ```
+    ///
     /// - Parameters:
     ///    - tag: A value to discriminate one chip to another
     ///    - layout: The layout of the ``OUDSFilterChip``

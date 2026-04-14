@@ -51,6 +51,11 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     let accessibilityIdentifier: String?
 
     /// Defines the data to use to define the radio buttons (``OUDSCheckboxItem``)
+    ///
+    /// ```swift
+    ///     OUDSCheckboxPickerData(tag: "option1", label: "Option 1")
+    /// ```
+    ///
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``

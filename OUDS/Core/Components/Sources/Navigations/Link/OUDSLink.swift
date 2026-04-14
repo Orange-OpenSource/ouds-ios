@@ -110,6 +110,10 @@ public struct OUDSLink: View {
 
     /// Create a link with text and icon.
     ///
+    /// ```swift
+    ///     OUDSLink(text: "Learn more", icon: Image(systemName: "arrow.right")) { }
+    /// ```
+    ///
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - icon: Icon displayed in the link
@@ -157,6 +161,10 @@ public struct OUDSLink: View {
     }
 
     /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
+    ///
+    /// ```swift
+    ///     OUDSLink(text: "Back", indicator: .back) { }
+    /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link

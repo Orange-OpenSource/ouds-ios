@@ -162,18 +162,14 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 ```swift
 // The views must be inside a NavigationView or NavigationStack
 SomeView()
-<<<<<<< HEAD
     .toolBarTop("Title",
-=======
-    .oudsToolBarTop("Title",
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
-                    leadingItems: {
-                        OUDSToolBarItem(navigation: .back())
-                    },
-                    trailingItems: {
-                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
-                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
-                    }
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back())
+                },
+                trailingItems: {
+                    OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                    OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                }
     )
 ```
 
@@ -219,11 +215,7 @@ SomeView()
 
 ```swift
 SomeView()
-<<<<<<< HEAD
     .toolBarBottom(leadingItems: {
-=======
-    .oudsToolBarBottom(leadingItems: {
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
         OUDSToolBarItem(label: "Some label") { /* Action to process */ }
     }, trailingItems: {
         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }

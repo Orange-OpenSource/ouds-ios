@@ -102,6 +102,10 @@ public struct OUDSSuggestionChip: View {
     /// No accessibility hint is defined for this component.
     /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
     ///
+    /// ```swift
+    ///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { }
+    /// ```
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the chip, should not be empty
@@ -115,6 +119,10 @@ public struct OUDSSuggestionChip: View {
     }
 
     /// Creates a chip with an icon only.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_chip"), bundle: Bundle.module) { }
+    /// ```
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -133,6 +141,10 @@ public struct OUDSSuggestionChip: View {
     }
 
     /// Creates a chip with an icon only.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { }
+    /// ```
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -167,6 +179,10 @@ public struct OUDSSuggestionChip: View {
     }
 
     /// Creates a chip with a text only.
+    ///
+    /// ```swift
+    ///     OUDSSuggestionChip(text: "Heart") { }
+    /// ```
     ///
     /// - Parameters:
     ///    - text: The text of the button to display,  must not be empty

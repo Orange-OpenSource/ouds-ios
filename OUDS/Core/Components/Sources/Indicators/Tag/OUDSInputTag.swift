@@ -76,6 +76,10 @@ public struct OUDSInputTag: View {
     ///
     /// **Remark: To disable the tag, use the `View/disabled(disabled:)` view modifier
     ///
+    /// ```swift
+    ///     OUDSInputTag(label: "Swift") { /* Remove action */ }
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed in the input tag
     ///    - action: Called when the input tag is clicked, supposed for remove / delete action

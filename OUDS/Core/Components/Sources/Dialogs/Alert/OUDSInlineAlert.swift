@@ -75,6 +75,10 @@ public struct OUDSInlineAlert: View {
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
+    /// ```swift
+    ///     OUDSInlineAlert(label: "Your session will expire soon.", status: .warning)
+    /// ```
+    ///
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral* without icon.

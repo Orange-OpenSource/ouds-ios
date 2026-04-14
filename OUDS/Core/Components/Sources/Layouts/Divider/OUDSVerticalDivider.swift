@@ -64,6 +64,10 @@ public struct OUDSVerticalDivider: View {
 
     /// Create a vertical colored divider.
     ///
+    /// ```swift
+    ///     OUDSVerticalDivider(color: .brandPrimary)
+    /// ```
+    ///
     /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**

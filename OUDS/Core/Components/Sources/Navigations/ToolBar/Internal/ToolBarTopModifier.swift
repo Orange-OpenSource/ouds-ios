@@ -38,11 +38,7 @@ struct ToolBarTopModifier: ViewModifier {
     ///   - subtitle: Optional subtitle displayed below the title, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side
     ///   - trailingItems: The items displayed on the trailing side
-<<<<<<< HEAD
     ///   - content: The content view wrapped by the toolbar.
-=======
-    ///   - content: The content view wrapped by the toolBar.
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     init(title: String,
          hasLargeTitle: Bool,
          subtitle: String? = nil,

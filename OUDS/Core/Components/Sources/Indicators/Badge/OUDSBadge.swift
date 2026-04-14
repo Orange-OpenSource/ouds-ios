@@ -171,6 +171,10 @@ public struct OUDSBadge: View {
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
+    /// ```swift
+    ///     OUDSBadge(accessibilityLabel: LocalizedStringKey("new_badge"), bundle: Bundle.module, status: .info)
+    /// ```
+    ///
     /// - Parameters:
     ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
@@ -191,6 +195,10 @@ public struct OUDSBadge: View {
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
+    /// ```swift
+    ///     OUDSBadge(accessibilityLabel: "New", status: .info)
+    /// ```
+    ///
     /// - Parameters:
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
@@ -206,6 +214,10 @@ public struct OUDSBadge: View {
     /// The background color of the badge and the number color are based on the given `status`.
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative)
+    /// ```
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
@@ -223,6 +235,10 @@ public struct OUDSBadge: View {
     /// The background color of the badge and the number color are based on the given `status`.
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(count: 9, accessibilityLabel: LocalizedStringKey("new_messages"), bundle: Bundle.module, status: .negative)
+    /// ```
     ///
     /// - Parameters:
     ///    - count:The number displayed in the badge.
@@ -249,6 +265,10 @@ public struct OUDSBadge: View {
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
+    /// ```swift
+    ///     OUDSBadge(status: .info, accessibilityLabel: "Information", size: .medium)
+    /// ```
+    ///
     /// - Parameters:
     ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
     ///    and **neutral** status whrere a decorative icon is required)
@@ -267,6 +287,10 @@ public struct OUDSBadge: View {
     /// The background color of the badge and the icon color are based on the given `status`.
     ///
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(status: .info, accessibilityLabel: LocalizedStringKey("info_badge"), bundle: Bundle.module)
+    /// ```
     ///
     /// - Parameters:
     ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**

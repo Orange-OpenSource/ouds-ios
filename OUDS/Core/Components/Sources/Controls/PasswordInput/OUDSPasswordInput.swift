@@ -127,6 +127,10 @@ public struct OUDSPasswordInput: View {
 
     /// Creates a password input.
     ///
+    /// ```swift
+    ///     OUDSPasswordInput(label: "Password", password: $password)
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed above the password input.
     ///    - password: The pasword to display and edit.

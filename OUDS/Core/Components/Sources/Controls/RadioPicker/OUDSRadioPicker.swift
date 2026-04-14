@@ -135,6 +135,14 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     // MARK: - Init
 
     /// Defines the picker view which displays using ``OUDSRadioItem`` view the ``OUDSRadioPickerData``
+    ///
+    /// ```swift
+    ///     OUDSRadioPicker(selection: $selection, radios: [
+    ///         OUDSRadioPickerData(tag: "a", label: "Option A"),
+    ///         OUDSRadioPickerData(tag: "b", label: "Option B"),
+    ///     ])
+    /// ```
+    ///
     /// - Parameters:
     ///    - selection: The current selected value
     ///    - radios: The raw data to wrap in ``OUDSRadioItem`` for display

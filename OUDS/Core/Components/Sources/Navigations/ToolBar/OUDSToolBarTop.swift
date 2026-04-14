@@ -23,11 +23,7 @@ import SwiftUI
 /// It typically displays the page title, and may include navigation actions such as “Back” or "Close" as well as supplementary actions.
 /// It can contains leading and trailing actions.
 ///
-<<<<<<< HEAD
 /// `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`  View helper applies a SwiftUI toolbar configuration.
-=======
-/// `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`  View helper applies a SwiftUI toolbar configuration.
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///
 /// ## Appearances
 ///
@@ -65,11 +61,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     ContentView()
-<<<<<<< HEAD
 ///         .toolBarTop("Title",
-=======
-///         .oudsToolBarTop("Title",
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
 ///             leadingItems: {
 ///                 OUDSToolBarItem(navigation: .back())
 ///             },
@@ -153,12 +145,16 @@ public struct OUDSToolBarTop: ViewModifier {
 
     /// `ViewModifier` to define an OUDS top toolbar.
     ///
-<<<<<<< HEAD
     ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
-=======
-    ///  You should prefer `oudsToolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     ///  inside `NavigationView` or`NavigationStack`.
+    ///
+    /// ```swift
+    ///     OUDSToolBarTop(title: "Home") {
+    ///         OUDSToolBarItem(navigation: .back { })
+    ///     } trailingItems: {
+    ///         OUDSToolBarItem(label: "Done") { }
+    ///     }
+    /// ```
     ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
@@ -182,19 +178,11 @@ public struct OUDSToolBarTop: ViewModifier {
     // MARK: - Body
 
     public func body(content: Content) -> some View {
-<<<<<<< HEAD
         content.toolBarTop(title,
                            hasLargeTitle: hasLargeTitle,
                            subtitle: subtitle,
                            leadingItems: leadingItems,
                            trailingItems: trailingItems)
-=======
-        content.oudsToolBarTop(title,
-                               hasLargeTitle: hasLargeTitle,
-                               subtitle: subtitle,
-                               leadingItems: leadingItems,
-                               trailingItems: trailingItems)
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     }
 }
 
@@ -216,19 +204,11 @@ extension View {
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
     @available(iOS 15, visionOS 1, *)
-<<<<<<< HEAD
     public func toolBarTop(_ title: String,
                            hasLargeTitle: Bool = false,
                            subtitle: String? = nil,
                            @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
                            @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
-=======
-    public func oudsToolBarTop(_ title: String,
-                               hasLargeTitle: Bool = false,
-                               subtitle: String? = nil,
-                               @OUDSToolBarItemsBuilder leadingItems: @escaping () -> [OUDSToolBarItem] = { [] },
-                               @OUDSToolBarItemsBuilder trailingItems: @escaping () -> [OUDSToolBarItem] = { [] }) -> some View
->>>>>>> ee74252c8 (feat: add `toolbar top` and `toolbar bottom` components for iOS, iPadOS and visionOS (#1174) (#1322))
     {
         modifier(ToolBarTopModifier(title: title,
                                     hasLargeTitle: hasLargeTitle,

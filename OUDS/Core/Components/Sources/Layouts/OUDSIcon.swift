@@ -39,6 +39,10 @@ public struct OUDSIcon: View {
     // swiftlint:disable function_default_parameter_at_end
     /// Create the icon with asset.
     ///
+    /// ```swift
+    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+    /// ```
+    ///
     /// - Parameters:
     ///    - asset: The asset
     ///    - flipped: If asset must be flipped, default set to `false`
@@ -58,6 +62,10 @@ public struct OUDSIcon: View {
     // swiftlint:enable function_default_parameter_at_end
 
     /// Create the icon with asset.
+    ///
+    /// ```swift
+    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like")
+    /// ```
     ///
     /// - Parameters:
     ///    - asset: The asset

@@ -213,6 +213,10 @@ public struct OUDSButton: View {
 
     /// Creates a button with text and icon.
     ///
+    /// ```swift
+    ///     OUDSButton(text: "Validate", icon: Image(systemName: "checkmark"), appearance: .strong) { }
+    /// ```
+    ///
     /// - Parameters:
     ///    - text: The text to display in the button
     ///    - icon: An image which shoud contains an icon
@@ -265,6 +269,10 @@ public struct OUDSButton: View {
 
     /// Creates a button with an icon only.
     ///
+    /// ```swift
+    ///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { }
+    /// ```
+    ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
@@ -316,6 +324,10 @@ public struct OUDSButton: View {
     }
 
     /// Create a button with a text only.
+    ///
+    /// ```swift
+    ///     OUDSButton(text: "Delete", appearance: .negative) { }
+    /// ```
     ///
     /// - Parameters:
     ///    - text: The text of the button to display

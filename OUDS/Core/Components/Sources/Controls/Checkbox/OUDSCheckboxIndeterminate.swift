@@ -107,6 +107,10 @@ public struct OUDSCheckboxIndeterminate: View {
 
     /// Creates a checkbox with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSCheckboxIndeterminate(selection: $state, accessibilityLabel: LocalizedStringKey("select_all"), bundle: Bundle.module)
+    /// ```
+    ///
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
@@ -128,6 +132,10 @@ public struct OUDSCheckboxIndeterminate: View {
     }
 
     /// Creates a checkbox with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxIndeterminate(selection: $state, accessibilityLabel: "Select all")
+    /// ```
     ///
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
