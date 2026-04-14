@@ -137,7 +137,7 @@ public struct OUDSToolBarBottom: ViewModifier {
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
     ///
     /// - Parameter groupedItems: All the items to place in the center of the screen
-    public init(groupedItems: @escaping () -> [OUDSToolBarItem] = { [] }) {
+    public init(groupedItems: @escaping () -> [OUDSToolBarItem]) {
         leadingItems = { [] }
         trailingItems = { [] }
         self.groupedItems = groupedItems
@@ -165,8 +165,8 @@ extension View {
     /// There must be only one *bottom toolbar*.
     ///
     /// - Parameters:
-    ///   - leadingItems: The items displayed on the leading side.
-    ///   - trailingItems: The items displayed on the trailing side.
+    ///   - leadingItems: The items displayed on the leading side, default *empty*
+    ///   - trailingItems: The items displayed on the trailing side, default *empty*
     @available(iOS 15, visionOS 1, *)
     public func oudsToolBarBottom(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
                                   @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] }) -> some View
@@ -181,9 +181,9 @@ extension View {
     ///
     /// There must be only one *bottom toolbar*.
     ///
-    /// - Parameter groupedItems: All the items to place in the center of the s creen
+    /// - Parameter groupedItems: All the items to place in the center of the screen
     @available(iOS 15, visionOS 1, *)
-    public func oudsToolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] }) -> some View {
+    public func oudsToolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem]) -> some View {
         modifier(ToolBarBottomModifier(groupedItems: groupedItems))
     }
 }

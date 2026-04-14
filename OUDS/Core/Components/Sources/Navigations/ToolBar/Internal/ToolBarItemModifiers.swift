@@ -36,7 +36,7 @@ struct ToolBarActionItemModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        if style == .proiminent {
+        if style == .prominent {
             content
                 .tint(theme.colors.actionSelected)
                 .buttonStyle(.borderedProminent)
@@ -71,7 +71,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
                 switch style {
                 case .default:
                     configuration.label.foregroundColor(theme.button.colorContentMinimalEnabled)
-                case .proiminent:
+                case .prominent:
                     configuration.label
                         .foregroundColor(theme.colors.contentOnActionSelected)
                 case .tinted:

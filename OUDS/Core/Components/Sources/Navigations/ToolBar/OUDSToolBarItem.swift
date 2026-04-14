@@ -57,7 +57,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// - Since: 1.4.0
     @frozen public enum ActionStyle {
         case `default`
-        case proiminent
+        case prominent
         case tinted
     }
 
@@ -71,7 +71,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///
         /// - Parameters:
         ///    - string: The text displayed in the label
-        ///    - emphasized: Flag to know if text is emphasized. Default set to *true*. **Ignored on iOS > 26**
+        ///    - emphasized: Flag to know if text is emphasized. Default set to *false*. **Ignored on iOS > 26**
         ///    - accessibilityHint: Communicates to the user what happens after performing the action, default set to *nil*
         ///    - action: The action to do when clicked. If *nil* (default) the button is disabled.
         case label(_ string: String, emphasized: Bool = false, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
@@ -102,7 +102,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///     - label; The optional string label displayed near to the back indicator
         ///     - accessibilityLabel: The accessibility label to describe the back action that could be overtied if needed,d efault set to *core_common_back*
         ///     - action: The action to do when clicked. If *nil* (default) the button is disabled. By default the dismiss is done after `action` is called..
-        case back(label: String? = nil, accessibilityLabel: String = "core_common_back", action: (() -> Void)? = nil)
+        case back(label: String? = nil, accessibilityLabel: String = "core_common_back".localized(), action: (() -> Void)? = nil)
 
         /// The close button can be used to close sheets, the close feature is automatically managed.
         case close

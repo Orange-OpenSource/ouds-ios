@@ -36,16 +36,16 @@ extension View {
     ///
     /// - Parameters
     ///     - title: The navigation title
-    ///     - subtitle: An optional subtilte for iOS > 26 only
+    ///     - subtitle: An optional subtitle for iOS > 26 only
     ///
     /// - Returns View: The view with a new modifier
     public func oudsNavigationTitle(_ title: String, subtitle: String? = nil) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
-                                                   subtilte: subtitle,
+                                                   subtitle: subtitle,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
         #else
-        modifier(AccessibleNavigationTitleModifier(title: title, subtilte: subtitle))
+        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle))
         #endif
     }
 
