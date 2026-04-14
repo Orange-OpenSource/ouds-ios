@@ -118,6 +118,14 @@ public struct OUDSToolBarBottom: ViewModifier {
     ///
     ///  You should prefer `toolBarBottom(leadingItems:trailingItems:)`.
     ///
+    /// ```swift
+    ///     OUDSToolBarBottom {
+    ///         OUDSToolBarItem(label: "Edit") { }
+    ///     } trailingItems: {
+    ///         OUDSToolBarItem(label: "Done") { }
+    ///     }
+    /// ```
+    ///
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
@@ -135,6 +143,13 @@ public struct OUDSToolBarBottom: ViewModifier {
     ///  You should prefer `toolBarBottom(groupedItems:)`.
     ///
     /// **Warning: Works only with iOS 26+ / Liquid Glass, otherwise items will be splitted by the system**
+    ///
+    /// ```swift
+    ///     OUDSToolBarBottom {
+    ///         OUDSToolBarItem(label: "Share") { }
+    ///         OUDSToolBarItem(label: "Save") { }
+    ///     }
+    /// ```
     ///
     /// - Parameter groupedItems: All the items to place in the center of the screen
     public init(groupedItems: @escaping () -> [OUDSToolBarItem]) {

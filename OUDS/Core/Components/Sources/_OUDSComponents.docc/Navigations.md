@@ -163,13 +163,13 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 // The views must be inside a NavigationView or NavigationStack
 SomeView()
     .toolBarTop("Title",
-                    leadingItems: {
-                        OUDSToolBarItem(navigation: .back())
-                    },
-                    trailingItems: {
-                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
-                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
-                    }
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back())
+                },
+                trailingItems: {
+                    OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                    OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                }
     )
 ```
 

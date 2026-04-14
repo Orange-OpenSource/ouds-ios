@@ -49,6 +49,12 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
 
     /// Create a view with background color applied on the `content` view.
     ///
+    /// ```swift
+    ///     OUDSColoredSurface(color: theme.colorModes.onBgPrimary) {
+    ///         Text("Hello")
+    ///     }
+    /// ```
+    ///
     /// - Parameters:
     ///    - color: The color applied as background on the content view
     ///    - content: The content view builder

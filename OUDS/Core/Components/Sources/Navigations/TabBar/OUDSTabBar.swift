@@ -295,7 +295,7 @@ public struct OUDSTabBar<Content: View>: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selectedTab:count:content:)`
     ///
@@ -332,7 +332,7 @@ public struct OUDSTabBar<Content: View>: View {
         // With Xcode 26.0 it was mandatory to manage these 2 cases.
         // But with Xcode 26.1 and 26.2, the old implementation was broken and add cycle in attributes graph
         // because of the ZStack, its conditions and the multiple use of tab views.
-        // Such cycle broke view hierachy, UI tests and had side effects with toolbar buttons.
+        // Such cycle broke view hierachy, UI tests and had side effects with toolBar buttons.
         // Now it seems for iOS 26+ this code is not used and the tab bar is still well computed.
         // `DeviceModifier` is intentionally applied at the `OUDSTabBar` level so that
         // device-related environment values (such as `iPhoneInUse`) are available only

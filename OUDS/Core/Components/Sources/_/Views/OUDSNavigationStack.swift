@@ -29,6 +29,12 @@ public struct OUDSNavigationStack<Content: View>: View {
 
     /// Creates a navigation stack and apply the right appearance according to the current theme.
     ///
+    /// ```swift
+    ///     OUDSNavigationStack {
+    ///         HomeView()
+    ///     }
+    /// ```
+    ///
     /// - Parameters:
     ///    - hideBackButtonLabel: Flag to say if the label in back button should be hidden. `true` by default
     ///    - content: The stack view's content.

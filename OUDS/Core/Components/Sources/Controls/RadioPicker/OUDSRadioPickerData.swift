@@ -57,6 +57,11 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     let accessibilityIdentifier: String?
 
     /// Defines the data to use to define the radio buttons (``OUDSRadioItem``)
+    ///
+    /// ```swift
+    ///     OUDSRadioPickerData(tag: "option1", label: "Option 1")
+    /// ```
+    ///
     /// - Parameters:
     ///    - tag: a value to discriminate one radio to another
     ///    - label: the mandatory text to add to ``OUDSRadioItem``

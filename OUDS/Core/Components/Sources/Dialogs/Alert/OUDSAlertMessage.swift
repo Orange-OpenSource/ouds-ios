@@ -129,6 +129,10 @@ public struct OUDSAlertMessage: View {
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
+    /// ```swift
+    ///     OUDSAlertMessage(label: "Success! Your form was submitted.", status: .positive)
+    /// ```
+    ///
     /// - Parameters:
     ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)

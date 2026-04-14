@@ -80,6 +80,10 @@ public struct OUDSSwitch: View {
 
     /// Creates a switch with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: LocalizedStringKey("wifi_toggle"), bundle: Bundle.module)
+    /// ```
+    ///
     /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
@@ -99,6 +103,10 @@ public struct OUDSSwitch: View {
     }
 
     /// Creates a switch with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: "Wi-Fi")
+    /// ```
     ///
     /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
     ///

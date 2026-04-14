@@ -107,6 +107,10 @@ public struct OUDSCheckbox: View {
 
     /// Creates a checkbox with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: LocalizedStringKey("agree_terms"), bundle: Bundle.module)
+    /// ```
+    ///
     /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
@@ -128,6 +132,10 @@ public struct OUDSCheckbox: View {
     }
 
     /// Creates a checkbox with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Agree to terms")
+    /// ```
     ///
     /// **The design system does not allow to have both an error or read only situation and a disabled state for the component.**
     ///

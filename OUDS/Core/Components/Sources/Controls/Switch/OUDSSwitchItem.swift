@@ -156,6 +156,10 @@ public struct OUDSSwitchItem: View {
 
     /// Creates a switch with label and optional desvription text, icon, divider.
     ///
+    /// ```swift
+    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn)
+    /// ```
+    ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:

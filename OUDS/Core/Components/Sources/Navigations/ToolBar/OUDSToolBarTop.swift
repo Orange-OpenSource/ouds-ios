@@ -148,6 +148,14 @@ public struct OUDSToolBarTop: ViewModifier {
     ///  You should prefer `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)` on view placed
     ///  inside `NavigationView` or`NavigationStack`.
     ///
+    /// ```swift
+    ///     OUDSToolBarTop(title: "Home") {
+    ///         OUDSToolBarItem(navigation: .back { })
+    ///     } trailingItems: {
+    ///         OUDSToolBarItem(label: "Done") { }
+    ///     }
+    /// ```
+    ///
     /// - Parameters:
     ///   - title: The toolbar title. Prefer a non-empty string.
     ///   - hasLargeTitle: If *title* must be displayed in large mode or not, *false* by default. If large mode, the *subtitle* is not displayed

@@ -64,6 +64,10 @@ public struct OUDSHorizontalDivider: View {
 
     /// Create a horizontal colored divider.
     ///
+    /// ```swift
+    ///     OUDSHorizontalDivider(color: .brandPrimary)
+    /// ```
+    ///
     /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
     public init(color: OUDSDividerColor = .default) {
         self.color = color

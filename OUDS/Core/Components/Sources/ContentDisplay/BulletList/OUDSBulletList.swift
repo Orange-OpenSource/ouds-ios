@@ -174,6 +174,13 @@ public struct OUDSBulletList: View {
         /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
         /// to change properties for those sub items, if needed.
         ///
+        /// ```swift
+        ///     OUDSBulletList.Item("First point")
+        ///     OUDSBulletList.Item("Parent") {
+        ///         OUDSBulletList.Item("Child")
+        ///     }
+        /// ```
+        ///
         /// - Parameters:
         ///    - text: The text of the item
         ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
@@ -315,6 +322,13 @@ public struct OUDSBulletList: View {
     // MARK: - Initializer
 
     /// Creates a bullet list with a bullet type, text style and bold.
+    ///
+    /// ```swift
+    ///     OUDSBulletList {
+    ///         OUDSBulletList.Item("First point")
+    ///         OUDSBulletList.Item("Second point")
+    ///     }
+    /// ```
     ///
     /// - Parameters:
     ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).

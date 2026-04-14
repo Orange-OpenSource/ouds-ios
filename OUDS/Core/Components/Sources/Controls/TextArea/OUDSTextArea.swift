@@ -285,6 +285,10 @@ public struct OUDSTextArea: View {
 
     /// Creates a text area.
     ///
+    /// ```swift
+    ///     OUDSTextArea(label: "Comments", text: $text)
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed above the text area. It describes the purpose of the input
     ///    - text: The text to display and edit

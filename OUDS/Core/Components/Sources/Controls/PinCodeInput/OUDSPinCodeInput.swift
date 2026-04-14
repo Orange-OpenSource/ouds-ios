@@ -179,6 +179,10 @@ public struct OUDSPinCodeInput: View {
 
     /// Defines a PIN code imput component with several boxes to fill the code
     ///
+    /// ```swift
+    ///     OUDSPinCodeInput($pinCode)
+    /// ```
+    ///
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
     ///   - length: The number of required symbols for the input, default set to *six*
@@ -203,6 +207,10 @@ public struct OUDSPinCodeInput: View {
 
     // swiftlint:disable function_default_parameter_at_end
     /// Defines a PIN code imput component with several boxes to fill the code
+    ///
+    /// ```swift
+    ///     OUDSPinCodeInput($pinCode, helperText: LocalizedStringKey("pin_helper"), bundle: Bundle.module)
+    /// ```
     ///
     /// - Parameters:
     ///   - value: A *binding* exposing the value written by the user when the last symbol has been put

@@ -334,6 +334,10 @@ public struct OUDSTag: View {
     /// Use the `View/disabled(_:)` method to have tag in disabled state. This helper has no effect when loader is added.
     /// When loader is added, `status` and `appearance` are ignored.
     ///
+    /// ```swift
+    ///     OUDSTag(label: "Label")
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
     ///    - status: The status of the tag. Its background color and its content color are based on
@@ -388,6 +392,10 @@ public struct OUDSTag: View {
     /// Creates a tag in the loading state.
     ///
     /// The use the `View/disabled(_:)` method has no effect on this state.
+    ///
+    /// ```swift
+    ///     OUDSTag(loadingLabel: "Processing")
+    /// ```
     ///
     /// - Parameters:
     ///    - loadingLabel: The label displayed in the tag

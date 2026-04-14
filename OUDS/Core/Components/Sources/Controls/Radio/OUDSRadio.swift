@@ -94,6 +94,10 @@ public struct OUDSRadio: View {
 
     /// Creates a radio with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: LocalizedStringKey("agree_terms"), bundle: Bundle.module)
+    /// ```
+    ///
     /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:
@@ -115,6 +119,10 @@ public struct OUDSRadio: View {
     }
 
     /// Creates a radio with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: "Agree to terms")
+    /// ```
     ///
     /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
     ///

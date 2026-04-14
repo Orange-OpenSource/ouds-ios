@@ -133,6 +133,14 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     // MARK: - Init
 
     /// Defines the picker view which displays using ``OUDSCheckboxItem`` view the ``OUDSCheckboxPickerData``
+    ///
+    /// ```swift
+    ///     OUDSCheckboxPicker(selections: $selections, checkboxes: [
+    ///         OUDSCheckboxPickerData(tag: "a", label: "Option A"),
+    ///         OUDSCheckboxPickerData(tag: "b", label: "Option B"),
+    ///     ])
+    /// ```
+    ///
     /// - Parameters:
     ///    - selections: The current selected values
     ///    - checkboxes: The raw data to wrap in ``OUDSCheckboxItem`` for display

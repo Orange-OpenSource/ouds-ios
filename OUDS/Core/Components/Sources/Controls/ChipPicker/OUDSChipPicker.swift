@@ -126,6 +126,10 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
     /// The user will be able to choose zero or one option in this picker.
     ///
+    /// ```swift
+    ///     OUDSChipPicker(title: "Category", selection: $selection, chips: data)
+    /// ```
+    ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
@@ -174,6 +178,10 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
     /// Defines the single selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``
     /// The user will be able to choose only one option in this picker.
     ///
+    /// ```swift
+    ///     OUDSChipPicker(title: "Category", selection: $selection, chips: data)
+    /// ```
+    ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
     ///    - selection: The current selected value
@@ -221,6 +229,10 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
 
     /// Defines the multiple selection picker view which displays using ``OUDSFilterChip`` view the ``OUDSChipPickerData``.
     /// The user will be able to choose zero or one or seevral options in this picker.
+    ///
+    /// ```swift
+    ///     OUDSChipPicker(title: "Tags", selections: $selections, chips: data)
+    /// ```
     ///
     /// - Parameters:
     ///    - title: The title of the picker, can be nil
