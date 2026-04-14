@@ -12,7 +12,7 @@
 
 Some public `View` extension methods prefixed with `ouds` have been renamed to remove the prefix, aligning with the naming style of typography helpers.
 The old methods are deprecated and will be removed in a future major version.
-The tab bar component has a new initialiser with a binding for selected tab making the older one deprecated.
+The tab bar component has a new initializer with a binding for the selected tab, deprecating the older one.
 
 ### Before You Begin
 
@@ -120,7 +120,7 @@ The new initializer uses a `Binding<Int>` so the selected tab is always in sync 
 
 ### Compatibility
 
-- **Backward Compatibility**: No
+- **Backward Compatibility**: Yes
 - **v1.4.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0

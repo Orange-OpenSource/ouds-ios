@@ -63,8 +63,8 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// - If your tabs embeded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
-/// - If your tabs embeded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
+/// - If your tabs embedded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
+/// - If your tabs embedded in the `OUDSTabBar` display a badge (empty or with text), vocalize it in your tab to let users know what it is (unread messages, new things, etc)
 /// by using accessibiltiy value
 ///
 /// ```swift
@@ -123,6 +123,7 @@ import SwiftUI
 ///                     Image(decorative: "image_2")
 ///                         .renderingMode(.template) // Mandatory to apply color on selected item
 ///                 }
+///              }
 ///             .tag(1) // Must be used for the selectedTab binding
 ///         LastView()
 ///             .tabItem {
@@ -222,7 +223,7 @@ public struct OUDSTabBar<Content: View>: View {
     ///                 Label("Label 1", image: "some-image")
     ///              }
     ///              .tag(0)
-    ///         OtherViewView()
+    ///         OtherView()
     ///             .tabItem {
     ///                 Label("Label 2", image: "some-image")
     ///              }
@@ -231,18 +232,19 @@ public struct OUDSTabBar<Content: View>: View {
     /// ```
     ///
     /// - Parameters:
-    ///    - selectedTab: A binding to the 0-based index of the currently selected tab, associated to a *tag* on a *tab bar item*. Updated when the user selects a tab.
+    ///    - selectedTab: A binding to the 0-based index of the currently selected tab, associated to a *tag* on a *tab bar item*.
+    ///    Updated when the user selects a tab. Must be positive and lower than `count`.
     ///    - count: The current number of tabs hosted in the tab bar, must be a positive non-null integer
     ///    - content: The list of items to add in the tab bar
     public init(selectedTab: Binding<Int>,
-                count: Int,
+                count: UInt8,
                 @ViewBuilder content: @escaping () -> Content)
     {
         if selectedTab.wrappedValue < 0 || selectedTab.wrappedValue >= count {
             OL.warning("The selected tab binding for the OUDSTabBar does not match the count of tabs")
         }
         _selectedTab = selectedTab
-        tabCount = count
+        tabCount = Int(count)
         self.content = content
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
@@ -266,7 +268,7 @@ public struct OUDSTabBar<Content: View>: View {
     ///                 Label("Label 1", image: "some-image")
     ///              }
     ///              .tag(0)
-    ///         OtherViewView()
+    ///         OtherView()
     ///             .tabItem {
     ///                 Label("Label 2", image: "some-image")
     ///              }
@@ -303,7 +305,7 @@ public struct OUDSTabBar<Content: View>: View {
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
     ///              }
-    ///         OtherViewView()
+    ///         OtherView()
     ///             .tabItem {
     ///                 Label("Label 2", image: "some-image")
     ///              }
