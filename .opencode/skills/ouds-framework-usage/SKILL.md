@@ -386,3 +386,143 @@ OUDSTabBar {
 ```
 
 > Tab bar images must be 26×26 pt. Colors are managed automatically by `OUDSTabBar`.
+
+---
+
+### Navigations — Toolbar Top
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/toolBartop
+
+> **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
+
+Use the `.toolBarTop(…)` view modifier (preferred) or the `toolBarTop` `ViewModifier` directly.
+
+**Requirements:**
+- Must be placed inside a `NavigationStack` (or `NavigationView` on iOS 15/16).
+- Call `.oudsNavigationBarAppearance()` **once** on the root `NavigationStack` to apply OUDS styling to the system navigation bar.
+- On iOS ≤ 18, add `.accentColor(theme.colors.contentDefault)` on the root view to color the system back-button chevron correctly.
+- Only one top toolbar per screen.
+- `subtitle` is only rendered on iOS 26+; it is ignored when `hasLargeTitle` is `true`.
+
+```swift
+// Minimal — title only
+NavigationStack {
+    ContentView()
+        .toolBarTop("My Title")
+}
+
+// With leading / trailing items
+NavigationStack {
+    ContentView()
+        .toolBarTop("My Title",
+            leadingItems: {
+                toolBarItem(navigation: .back())
+            },
+            trailingItems: {
+                toolBarItem(icon: Image("ic_settings"),
+                                accessibilityLabel: "Settings") { }
+            })
+}
+
+// Large title with subtitle (subtitle visible on iOS 26+ only)
+NavigationStack {
+    ContentView()
+        .toolBarTop("My Title", hasLargeTitle: true, subtitle: "Sub")
+}
+
+// iOS ≤ 18: apply on root view to color the system back-button chevron
+.accentColor(theme.colors.contentDefault)
+```
+
+---
+
+### Navigations — Toolbar Bottom
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/toolBarbottom
+
+> **Availability:** iOS 15+, visionOS 1+. Not available on watchOS, tvOS, or macOS.
+
+Use the `.toolBarBottom(…)` view modifier (preferred) or the `toolBarBottom` `ViewModifier` directly.
+
+**Requirements:**
+- Only one bottom toolbar per screen.
+- **Never combine with `OUDSTabBar`** on the same screen — they conflict on both iOS 18 and iOS 26+.
+- The `groupedItems` layout is only meaningful on iOS 26+ (Liquid Glass); on earlier OS versions the system splits the items into leading/trailing positions.
+
+```swift
+// Leading + trailing split
+ContentView()
+    .toolBarBottom(
+        leadingItems: {
+            toolBarItem(label: "Edit") { }
+        },
+        trailingItems: {
+            toolBarItem(icon: Image("ic_share"),
+                            accessibilityLabel: "Share") { }
+        })
+
+// Grouped / centered — iOS 26+ (Liquid Glass) only
+ContentView()
+    .toolBarBottom(
+        groupedItems: {
+            toolBarItem(label: "Save") { }
+            toolBarItem(icon: Image("ic_delete"),
+                            accessibilityLabel: "Delete") { }
+        })
+
+// ⚠️ Never combine toolBarBottom with OUDSTabBar on the same screen.
+```
+
+---
+
+### Navigations — Toolbar Item (`toolBarItem`)
+
+`toolBarItem` is the building block for both `toolBarTop` and `toolBarBottom`. Items are composed with the `@toolBarItemsBuilder` result builder, which supports conditionals and loops.
+
+**Action styles** (`toolBarItem.ActionStyle`) — iOS 26+ only:
+
+| Case | Visual effect |
+|------|---------------|
+| `.default` | Standard appearance |
+| `.prominent` | Filled/emphasized appearance |
+| `.tinted` | Tinted appearance |
+
+```swift
+// Action — text label
+toolBarItem(label: "Edit") { }
+
+// Action — icon
+toolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") { }
+
+// Action — explicit style (iOS 26+ only)
+if #available(iOS 26, *) {
+    toolBarItem(
+        action: .label("Save", emphasized: false, accessibilityHint: nil) { },
+        style: .proiminent)
+}
+
+// Navigation — back (custom dismiss handler)
+toolBarItem(navigation: .back(label: "Back") { })
+
+// Navigation — back (default system dismiss)
+toolBarItem(navigation: .back { })
+
+// Navigation — close (built-in dismiss; uses ic_button_expurge icon)
+toolBarItem(navigation: .close)
+
+// Custom view (e.g. a Menu)
+toolBarItem {
+    Menu("More") {
+        Button("Option 1") { }
+        Button("Option 2") { }
+    }
+}
+
+// Conditional item using result-builder syntax
+.toolBarTop("Title",
+    trailingItems: {
+        if isEditing {
+            toolBarItem(label: "Done") { isEditing = false }
+        } else {
+            toolBarItem(label: "Edit") { isEditing = true }
+        }
+    })
+```

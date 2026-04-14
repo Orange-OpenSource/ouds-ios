@@ -182,7 +182,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.0.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTabBar<Content>: View where Content: View {
+public struct OUDSTabBar<Content: View>: View {
 
     // MARK: Properties
 
@@ -200,13 +200,13 @@ public struct OUDSTabBar<Content>: View where Content: View {
 
     // MARK: Initializers
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
     /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`
     ///
     /// ```swift
-    ///     OUDSTabBar {
+    ///     OUDSTabBar(selected: 0, count: 2) {
     ///         SomeView()
     ///             .tabItem {
     ///                 Label("Label 1", image: "some-image")
@@ -216,7 +216,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
     ///             .tabItem {
     ///                 Label("Label 2", image: "some-image")
     ///              }
-    ///              .tag(0)
+    ///              .tag(1)
     ///     }
     /// ```
     ///
@@ -234,7 +234,7 @@ public struct OUDSTabBar<Content>: View where Content: View {
         _isLandscape = State(initialValue: Self.isInLandscapeViewport())
     }
 
-    // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
+    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selected:count:content:)`
     ///

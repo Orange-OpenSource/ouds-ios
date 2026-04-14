@@ -17,9 +17,9 @@ import SwiftUI
 
 /// Contains some delays to apply to view modifiers' deadlines for vocalizations or accessibility notifications
 private enum AccessibilityDelay: Double {
-    // Must be lower than accesibleFocusRequestDelay to start before
+    /// Must be lower than accesibleFocusRequestDelay to start before
     case accessibleTitleNotificationDelay = 0.0
-    // Must be greater than accessibleTitleNotificationDelay to start after
+    /// Must be greater than accessibleTitleNotificationDelay to start after
     case accessibleFocusRequestDelay = 1.0
 }
 
@@ -34,14 +34,18 @@ extension View {
     ///      SomeView().oudsNavigationTitle("your title key")
     /// ```
     ///
-    /// - Parameter title: The navigation title
+    /// - Parameters
+    ///     - title: The navigation title
+    ///     - subtitle: An optional subtitle for iOS > 26 only
+    ///
     /// - Returns View: The view with a new modifier
-    public func oudsNavigationTitle(_ title: String) -> some View {
+    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
+                                                   subtitle: subtitle,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
         #else
-        modifier(AccessibleNavigationTitleModifier(title: title))
+        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle))
         #endif
     }
 
