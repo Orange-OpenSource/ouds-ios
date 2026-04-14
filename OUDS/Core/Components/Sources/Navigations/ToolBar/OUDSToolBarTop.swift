@@ -61,13 +61,15 @@ import SwiftUI
 ///
 /// ```swift
 ///     ContentView()
-///        .oudsToolBarTop("Inbox", subtitle: "2 new messages") {
-///            OUDSToolBarItem(navigation: .close)
-///        } trailingItems: {
-///            OUDSToolBarItem {
-///                Image(systemName: "bell")
-///            }
-///        }
+///         .oudsToolBarTop("Title",
+///             leadingItems: {
+///                 OUDSToolBarItem(navigation: .back())
+///             },
+///             trailingItems: {
+///                 OUDSToolBarItem(label: "Label") { /* Action to process */ }
+///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+///             }
+///         )
 /// ```
 ///
 /// ## Design documentation
@@ -122,6 +124,7 @@ import SwiftUI
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 1.4.0
+@available(iOS 15, visionOS 1, *)
 public struct OUDSToolBarTop: ViewModifier {
     // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
 
@@ -192,6 +195,7 @@ extension View {
     ///   - subtitle: Optional *subtitle* displayed below the *title* if iOS 26+, *nil* by default.
     ///   - leadingItems: The items displayed on the leading side, *empty* by default.
     ///   - trailingItems: The items displayed on the trailing side, *empty* by default.
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarTop(_ title: String,
                                hasLargeTitle: Bool = false,
                                subtitle: String? = nil,

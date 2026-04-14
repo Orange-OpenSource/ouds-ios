@@ -38,16 +38,12 @@ import SwiftUI
 ///
 /// Define leading and trailing items for the bottom toolbar
 /// ```swift
-///       YourView()
-///         .oudsToolBarBottom {
-///             OUDSToolBarItem {
-///                 Image(systemName: "tray")
-///             }
-///         }, trailingItems: {
-///             OUDSToolBarItem {
-///                 Image(systemName: "square.and.pencil")
-///             }
-///         }
+///     SomeView()
+///         .oudsToolBarBottom(leadingItems: {
+///                 OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+///             }, trailingItems: {
+///                 OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+///         })
 /// ```
 ///
 /// ## Design documentation
@@ -101,6 +97,7 @@ import SwiftUI
 /// ![A bottom toolbar component in dark mode without Liquid Glass effect and Wireframe theme](component_toolBarBottom_Wireframe_dark)
 ///
 /// - Since: 1.4.0
+@available(iOS 15, visionOS 1, *)
 public struct OUDSToolBarBottom: ViewModifier {
     // NOTE: As Swift DocC cannot build rich documention for methods, this struct does not the job
 
@@ -170,6 +167,7 @@ extension View {
     /// - Parameters:
     ///   - leadingItems: The items displayed on the leading side.
     ///   - trailingItems: The items displayed on the trailing side.
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarBottom(@OUDSToolBarItemsBuilder leadingItems: () -> [OUDSToolBarItem] = { [] },
                                   @OUDSToolBarItemsBuilder trailingItems: () -> [OUDSToolBarItem] = { [] }) -> some View
     {
@@ -184,6 +182,7 @@ extension View {
     /// There must be only one *bottom toolbar*.
     ///
     /// - Parameter groupedItems: All the items to place in the center of the s creen
+    @available(iOS 15, visionOS 1, *)
     public func oudsToolBarBottom(@OUDSToolBarItemsBuilder groupedItems: () -> [OUDSToolBarItem] = { [] }) -> some View {
         modifier(ToolBarBottomModifier(groupedItems: groupedItems))
     }

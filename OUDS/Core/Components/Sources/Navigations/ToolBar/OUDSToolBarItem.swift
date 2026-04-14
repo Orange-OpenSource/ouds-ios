@@ -39,6 +39,7 @@ import SwiftUI
 /// ```
 ///
 /// - Since: 1.4.0
+@available(iOS 15, visionOS 1, *)
 public struct OUDSToolBarItem: View, Identifiable {
 
     // MARK: - Item content
