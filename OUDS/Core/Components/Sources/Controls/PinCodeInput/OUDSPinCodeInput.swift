@@ -80,9 +80,10 @@ import SwiftUI
 ///
 /// The component gets only numeric values, not letters or symbols, only numbers.
 ///
-/// If Voice Over is enabled, the autofocus is not used, otherwise focus will be moved to the next field.
+/// Depending on the component configuration, autofocus can still be used when the component appears, and focus is moved to the next field as digits are entered.
+/// For example if Voice Over is enavled, the autoficus is disabled.
 ///
-/// Component and its digits fields are vocalized with iternal wording.
+/// The component and its digit fields are vocalized with internal wording.
 ///
 /// When using the error status, provide a clear, concise error message explaining what went wrong and, when possible, how to fix it
 /// (for example: *“The code you entered is invalid. Try again.”*).
