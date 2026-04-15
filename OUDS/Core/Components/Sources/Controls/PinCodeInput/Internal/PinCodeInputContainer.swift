@@ -38,10 +38,10 @@ struct PinCodeInputContainer: View {
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: - Black magic
 
@@ -108,9 +108,15 @@ struct PinCodeInputContainer: View {
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
                     .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
-                    .accessibilityValue(accessibilityValue(for: index))
+                // NOTE: no SwiftUI .accessibilityLabel here — it is silently ignored on UIViewRepresentable.
+                // The label and value are set directly on the UITextField inside BackspaceDetectingTextField.
             }
         }
+        // .contain keeps each digit field individually reachable by VoiceOver swipe gestures inside the group.
+        // VoiceOver first announces the group label (groupAccessibilityLabel), then the user can swipe
+        // into the container to reach and vocalize each individual digit field.
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(groupAccessibilityLabel)
         .onAppear {
             // Focus on the first empty field if:
             // - autofocus is enabled (empty value case)
@@ -171,6 +177,24 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    /// Returns the accessibility label for a digit field at the given index.
+    /// e.g. "Digit 1", "Chiffre 2", "الرقم 3" (localized).
+    /// This is forwarded directly to the UITextField — SwiftUI accessibility modifiers
+    /// are silently ignored on UIViewRepresentable.
+    ///
+    /// - Parameter index: The 0-based index of the digit field
+    /// - Returns: The localized positional label
+    private func accessibilityLabel(for index: Int) -> String {
+        "core_pinCodeInput_digitLabel_a11y" <- (index + 1)
+    }
+
+    /// Returns the accessibility label for the group container of all digit fields.
+    /// e.g. "Enter the 6-digit code" (localized, driven by the component's `length`).
+    /// - Returns: String
+    private var groupAccessibilityLabel: String {
+        "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
+    }
+
     // MARK: - Digits fields
 
     /// Returns the string to display for a digit field:
@@ -204,6 +228,8 @@ struct PinCodeInputContainer: View {
             displayText: .constant(displayText(for: index)),
             font: uiFont,
             index: index,
+            a11yLabel: accessibilityLabel(for: index),
+            a11yValue: accessibilityValue(for: index),
             onBackspace: {
                 handleBackspace(at: index)
             },

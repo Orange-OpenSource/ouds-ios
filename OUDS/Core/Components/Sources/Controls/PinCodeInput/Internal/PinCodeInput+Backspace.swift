@@ -32,8 +32,11 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
 
     @Binding var text: String
     @Binding var displayText: String
+
     let font: UIFont
     let index: Int
+    let a11yLabel: String
+    let a11yValue: String
     let onBackspace: () -> Void
     let onTextInserted: (String) -> Void
 
@@ -51,6 +54,12 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         textField.onBackspace = onBackspace
         textField.fieldIndex = index
         textField.font = font
+
+        // VoiceOver reads UIKit accessibility properties directly on the hosted UIView.
+        // SwiftUI's .accessibilityLabel / .accessibilityValue modifiers have no effect on
+        // UIViewRepresentable, so the values must be set here on the UITextField itself.
+        textField.accessibilityLabel = a11yLabel
+        textField.accessibilityValue = a11yValue
 
         // Set low priorities to allow the SwiftUI frame modifier to control the size
         textField.setContentHuggingPriority(.defaultLow, for: .vertical)
@@ -75,6 +84,11 @@ struct BackspaceDetectingTextField: UIViewRepresentable {
         if uiView.text != displayText {
             uiView.text = displayText
         }
+
+        // Keep accessibility properties in sync on every SwiftUI re-render (e.g. when the digit
+        // changes and the value string switches between "Empty" and the actual digit)
+        uiView.accessibilityLabel = a11yLabel
+        uiView.accessibilityValue = a11yValue
     }
 
     /// Creates the coordinator that acts as the `UITextFieldDelegate`.
