@@ -39,7 +39,7 @@ struct TabBarViewModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Init
 
@@ -114,7 +114,8 @@ struct TabBarViewModifier: ViewModifier {
         // MARK: Tab bar background
 
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
-        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.configureWithTransparentBackground()
+        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular)
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
@@ -180,6 +181,8 @@ struct TabBarViewModifier: ViewModifier {
             .foregroundColor: focusedUIColor,
             .font: selectedFont,
         ]
+
+        // MARK: - Tab bar appearance
 
         tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
         tabBarAppearance.inlineLayoutAppearance = tabBarItemAppearance

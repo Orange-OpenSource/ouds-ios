@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support of disabled `Liquid Glass` for `tab bar` and `toolbar` components (Orange-OpenSource/ouds-ios#1408)
 - `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
 - `text area` component (Orange-OpenSource/ouds-ios#543)
 - support liquid glass disabled on ios 26 (Orange-OpenSource/ouds-ios#1408)

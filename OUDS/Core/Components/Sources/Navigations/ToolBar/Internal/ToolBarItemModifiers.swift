@@ -60,7 +60,7 @@ struct ToolBarActionItemStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -102,7 +102,7 @@ struct ToolBarTopItemNavigationStyle: ButtonStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 

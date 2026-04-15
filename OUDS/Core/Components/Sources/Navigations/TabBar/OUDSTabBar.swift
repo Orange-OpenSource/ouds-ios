@@ -204,7 +204,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Track orientation changes to trigger view refresh
     @State private var isLandscape: Bool
 
-    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
 
