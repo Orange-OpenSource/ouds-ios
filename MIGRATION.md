@@ -1,9 +1,127 @@
 # Migration Guide
 
+- [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.3.0 → v1.4.0
+
+### Overview
+
+Some public `View` extension methods prefixed with `ouds` have been renamed to remove the prefix, aligning with the naming style of typography helpers.
+The old methods are deprecated and will be removed in a future major version.
+The tab bar component has a new initializer with a binding for the selected tab, deprecating the older one.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.3 or older
+
+### Deprecated API
+
+#### Renamed `View` extension methods (deprecated, not removed)
+
+The following `View` extension methods have been deprecated in favor of unprefixed versions.
+The old methods still compile with a deprecation warning.
+
+**Impact**: Low
+
+| Deprecated                                   | Replacement                          |
+|----------------------------------------------|--------------------------------------|
+| `.oudsForegroundStyle(_:)`                   | `.foregroundStyle(_:)`               |
+| `.oudsForegroundColor(_:)`                   | `.foregroundColor(_:)`               |
+| `.oudsBackground(_:)`                        | `.background(_:)`                    |
+| `.oudsAccentColor(_:)`                       | `.accentColor(_:)`                   |
+| `.oudsShadow(_:)`                            | `.shadow(_:)`                        |
+| `.oudsBorder(style:width:radius:color:)`     | `.border(style:width:radius:color:)` |
+| `.oudsColoredSurface(_:)`                    | `.coloredSurface(_:)`                |
+| `.oudsGridMargin(_:)`                        | `.gridMargin(_:)`                    |
+| `.oudsRequestAccessibleFocus(_:)`            | `.requestAccessibleFocus(_:)`        |
+| `.oudsRequestAccessibleFocus(_:for:)`        | `.requestAccessibleFocus(_:for:)`    |
+| `.oudsHorizontalDivider(dividerColor:)`      | `.horizontal(color:)`                |
+| `.oudsVerticalDivider(color:)`               | `.vertical(color:)`                  |
+
+**Before (v1.3.x)**:
+```swift
+Text("Hello")
+    .oudsForegroundColor(theme.colors.contentDefault)
+    .oudsBackground(theme.colors.bgPrimary)
+    // Etc.
+
+SomeView()
+    .oudsBorder(style: theme.borders.styleDefault,
+                width: theme.borders.widthThin,
+                radius: theme.borders.radiusMedium,
+                color: theme.colors.borderDefault)
+    .oudsShadow(theme.elevations.emphasized)
+    // Etc.
+```
+
+**After (v1.4.0)**:
+```swift
+Text("Hello")
+    .foregroundColor(theme.colors.contentDefault)
+    .background(theme.colors.bgPrimary)
+
+SomeView()
+    .border(style: theme.borders.styleDefault,
+            width: theme.borders.widthThin,
+            radius: theme.borders.radiusMedium,
+            color: theme.colors.borderDefault)
+    .shadow(theme.elevations.emphasized)
+```
+
+**Required Action**:
+- Replace deprecated `ouds`-prefixed calls with their unprefixed counterparts
+
+**Reason for Change**: User feedback indicated the `ouds` prefix on methods was redundant and verbose given that parameter types are strongly typed OUDS tokens which prevent any ambiguity with native SwiftUI overloads.
+
+#### Deprecated `OUDSTabBar` initializer
+
+The `OUDSTabBar(selected:count:content:)` initializer that accepted a plain `Int` for the initially selected tab is now deprecated.
+A new `OUDSTabBar(selectedTab:count:content:)` initializer replaces it, accepting a `Binding<Int>` that is updated whenever the user taps a tab — keeping the parent view in sync with the tab bar selection without any extra code.
+
+**Impact**: Low
+
+**Before (v1.3.x)**:
+```swift
+// The initial tab is fixed at 0; user interactions are not propagated back.
+OUDSTabBar(selected: 0, count: 3) {
+    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
+    OtherView().tabItem { Label("Search", image: "ic_search") }.tag(1)
+    LastView().tabItem { Label("Profile", image: "ic_profile") }.tag(2)
+}
+```
+
+**After (v1.4.0)**:
+```swift
+// Declare a @State to hold the selected tab index.
+@State private var selectedTab = 0
+
+// Pass it as a Binding: the tab bar updates selectedTab when the user taps a tab,
+// and programmatically changing selectedTab switches the displayed tab.
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
+    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
+    OtherView().tabItem { Label("Search", image: "ic_search") }.tag(1)
+    LastView().tabItem { Label("Profile", image: "ic_profile") }.tag(2)
+}
+```
+
+**Required Action**:
+- Replace `OUDSTabBar(selected:count:content:)` calls with `OUDSTabBar(selectedTab:count:content:)`
+- Declare a `@State private var selectedTab: Int` (or use an existing state/binding) and pass it as `$selectedTab`
+- Remove any manual workaround you may have used to track or drive tab selection from outside the component
+
+**Reason for Change**: The original initializer only accepted a one-time initial value (`Int`) with no way to observe or control the selected tab from outside the component.
+The new initializer uses a `Binding<Int>` so the selected tab is always in sync with the parent view: user taps update the binding, and external state changes switch the visible tab.
+
+### Compatibility
+
+- **Backward Compatibility**: Yes
+- **v1.4.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0
 
@@ -39,6 +157,8 @@ Thus existence of `oudsVerticalSizeClass`, used nowhere, is a non-sense; this pr
 
 **Reason for Change**: Not used, not relevant, must not be considered even if design side
 
+**Note**: This property comes back with v1.4.0 as some users still used it
+
 #### 2. Rename of OUDSBulletList.UnorderedIcon` to `OUDSBulletList.UnorderedAsset`
 
 **Impact**: Low
@@ -62,6 +182,11 @@ var someIconForBulletList: OUDSBulletList.UnorderedAsset {
 - Case `.free` must be replaced by `.icon`
 
 **Reason for Change**: "asset" word has a better meaning than "icon", and is aligned with Android OUDS library API
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.2.0 Support**:  Until release of next minor version
 
 ## v1.1.0 → v1.2.0
 
@@ -124,6 +249,11 @@ OrangeCompactTheme()
 - Wherever you use the name "OrangeBusinessTools" (whatever the case or the style), in documentation, tests or source code, replace instead by "OrangeCompact"
 
 **Reason for Change**: Use more accurate name for the theme
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.1.0 Support**:  Until release of next minor version
 
 ## v1.0.0 → v1.1.0
 

@@ -30,7 +30,7 @@ struct HelperErrorTextContainer: View {
         if !text.isEmpty {
             Text(text)
                 .labelDefaultMedium(theme)
-                .oudsForegroundColor(color)
+                .foregroundColor(color)
                 .multilineTextAlignment(.leading)
                 .padding(.top, theme.textInput.spacePaddingBlockTopHelperText)
                 .padding(.horizontal, theme.textInput.spacePaddingInlineDefault)

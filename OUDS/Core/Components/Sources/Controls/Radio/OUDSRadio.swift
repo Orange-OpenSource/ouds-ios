@@ -94,6 +94,36 @@ public struct OUDSRadio: View {
 
     /// Creates a radio with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: LocalizedStringKey("agree_terms"), bundle: Bundle.module)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
+    ///
+    /// - Parameters:
+    ///    - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    ///    - isReadOnly: True iif the component should be in read only mode, default set to `false`
+    public init(isOn: Binding<Bool>,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isError: Bool = false,
+                isReadOnly: Bool = false)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(isOn: isOn, accessibilityLabel: resolvedText, isError: isError, isReadOnly: isReadOnly)
+    }
+
+    /// Creates a radio with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSRadio(isOn: $isOn, accessibilityLabel: "Agree to terms")
+    /// ```
+    ///
     /// **The design system does not allow to have both an error or a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:

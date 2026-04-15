@@ -165,6 +165,10 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
+    /// ```swift
+    ///     OUDSCheckboxItemIndeterminate(selection: $state, label: "Select all")
+    /// ```
+    ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
@@ -215,6 +219,10 @@ public struct OUDSCheckboxItemIndeterminate: View {
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItemIndeterminate("Select all", selection: $state)
+    /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///

@@ -16,6 +16,7 @@ import SwiftUI
 /// Link is a UI element that allows to navigate from one location to another, either within the same page or across different pages in the same resource,
 /// or to an external resource.
 /// Link's primary function is navigation and it communicates its interactive nature visually and semantically.
+///
 /// The ``OUDSLink`` proposes layout with text only or text with icon.
 /// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `default` size.
 ///
@@ -26,6 +27,9 @@ import SwiftUI
 /// ```swift
 ///     // Text only in small size
 ///     OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+///
+///     // From a localizable and a bundle
+///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
 ///
 ///     // Text and icon in default size
 ///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
@@ -86,13 +90,13 @@ public struct OUDSLink: View {
 
     /// Represents the size of an `OUDSLink`.
     /// - Since: 0.11.0
-    public enum Size {
+    @frozen public enum Size {
         case small, `default`
     }
 
     /// Represents the arrow / chevron / indicator of an `OUDSLink`.
     /// - Since: 0.11.0
-    public enum Indicator {
+    @frozen public enum Indicator {
         case back, next
     }
 
@@ -105,6 +109,10 @@ public struct OUDSLink: View {
     // MARK: Initializers
 
     /// Create a link with text and icon.
+    ///
+    /// ```swift
+    ///     OUDSLink(text: "Learn more", icon: Image(systemName: "arrow.right")) { }
+    /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
@@ -122,7 +130,41 @@ public struct OUDSLink: View {
         self.action = action
     }
 
+    /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - icon: Icon displayed in the link
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                icon: Image? = nil,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        if let icon {
+            layout = .textAndIcon(icon)
+        } else {
+            layout = .textOnly
+        }
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        self.action = action
+    }
+
     /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
+    ///
+    /// ```swift
+    ///     OUDSLink(text: "Back", indicator: .back) { }
+    /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
@@ -137,6 +179,35 @@ public struct OUDSLink: View {
         self.size = size
         self.action = action
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSLink(LocalizedStringKey("back_link"), bundle: Bundle.module, indicator: .back) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - indicator: Indicator displayed in the link
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                indicator: Indicator,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        layout = .indicator(indicator)
+        text = key.resolved(tableName: tableName, bundle: bundle)
+        self.size = size
+        self.action = action
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

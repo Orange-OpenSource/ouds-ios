@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 /// List of colors available for dividers (i.e. `OUDSHorizontalDivider` or `OUDSVerticalDivider`)
 ///
 /// - Since: 0.14.0
-public enum OUDSDividerColor {
+@frozen public enum OUDSDividerColor {
     case `default`
     case muted
     case emphasized

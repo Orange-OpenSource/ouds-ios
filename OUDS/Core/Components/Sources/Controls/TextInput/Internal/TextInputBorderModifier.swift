@@ -34,18 +34,18 @@ struct TextInputBorderModifier: ViewModifier {
                 content
             } else {
                 content
-                    .oudsBorder(style: theme.borders.styleDefault,
-                                width: size,
-                                radius: cornerRadius,
-                                color: outlinedColor)
+                    .border(style: theme.borders.styleDefault,
+                            width: size,
+                            radius: cornerRadius,
+                            color: outlinedColor)
             }
         } else {
             if status == .readOnly {
                 content
-                    .oudsBorder(style: theme.borders.styleDefault,
-                                width: theme.textInput.borderWidthDefault,
-                                radius: cornerRadius,
-                                color: theme.colors.borderMuted)
+                    .border(style: theme.borders.styleDefault,
+                            width: theme.textInput.borderWidthDefault,
+                            radius: cornerRadius,
+                            color: theme.colors.borderMuted)
             } else {
                 ZStack(alignment: .bottomLeading) {
                     content

@@ -98,6 +98,8 @@ import SwiftUI
 ///     OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
 ///     // Or also
 ///     OUDSTag(label: "Label")
+///     // Or from a localizale and a bundle
+///     OUDSTag(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///     // Tag with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(leading: .bullet)
@@ -180,7 +182,7 @@ public struct OUDSTag: View {
 
         /// The leading element of the tag
         /// - Since: 0.18.0
-        public enum Leading {
+        @frozen public enum Leading {
             /// Means no element
             case none
 
@@ -194,7 +196,7 @@ public struct OUDSTag: View {
 
         /// The category of the status.
         /// - Since: 0.18.0
-        public enum Category {
+        @frozen public enum Category {
             /// Default or inactive state. Used for standard labels, categories, or when no specific status needs to be communicated.
             case neutral
 
@@ -290,7 +292,7 @@ public struct OUDSTag: View {
 
     /// Represents the appearance of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Appearance {
+    @frozen public enum Appearance {
 
         /// A tag with a solid, high-contrast background.
         /// Used to draw strong attention to important labels or categories. Emphasized tags stand out
@@ -305,7 +307,7 @@ public struct OUDSTag: View {
 
     /// Defines the shape of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Shape {
+    @frozen public enum Shape {
         /// A tag with sharp, square corners.
         /// Squared tags provide a more formal, structured, or technical feel. They are often used in business contexts to label promotions, offers, or important notices.
         case square
@@ -317,7 +319,7 @@ public struct OUDSTag: View {
 
     /// Defines the size of an `OUDSTag`
     /// - Since: 0.18.0
-    public enum Size {
+    @frozen public enum Size {
         /// The standard tag size, suitable for most use cases and offering good readability.
         case `default`
 
@@ -331,6 +333,10 @@ public struct OUDSTag: View {
     ///
     /// Use the `View/disabled(_:)` method to have tag in disabled state. This helper has no effect when loader is added.
     /// When loader is added, `status` and `appearance` are ignored.
+    ///
+    /// ```swift
+    ///     OUDSTag(label: "Label")
+    /// ```
     ///
     /// - Parameters:
     ///    - label: The label displayed in the tag
@@ -355,9 +361,41 @@ public struct OUDSTag: View {
         type = hasLoader ? .loader(label: label) : .status(label: label, status: status)
     }
 
+    /// Creates a tag with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTag(LocalizedStringKey("status_tag"), bundle: Bundle.module, status: .positive(leading: .none))
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - status: The status of the tag, default set to *neutral*
+    ///    - appearance: The importance of the tag, default set to *emphasized*
+    ///    - shape: The shape of the tag, default set to *rounded*
+    ///    - size: The size of the tag, default set to *default*
+    ///    - hasLoader: If an optional loader is displayed, default set to *false*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: Status = .neutral(),
+                appearance: Appearance = .emphasized,
+                shape: Shape = .rounded,
+                size: Size = .default,
+                hasLoader: Bool = false)
+    {
+        let resolvedLabel = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(label: resolvedLabel, status: status, appearance: appearance, shape: shape, size: size, hasLoader: hasLoader)
+    }
+
     /// Creates a tag in the loading state.
     ///
     /// The use the `View/disabled(_:)` method has no effect on this state.
+    ///
+    /// ```swift
+    ///     OUDSTag(loadingLabel: "Processing")
+    /// ```
     ///
     /// - Parameters:
     ///    - loadingLabel: The label displayed in the tag
@@ -372,6 +410,28 @@ public struct OUDSTag: View {
         self.size = size
         type = .loader(label: loadingLabel)
         // "loadingLabel" instead of "label" to avoid doubts for users with init(label:status:appearance=shape:size:hasLoader) with default values
+    }
+
+    /// Creates a tag in the loading state with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTag(loadingKey: LocalizedStringKey("loading_tag"), bundle: Bundle.module)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - loadingKey: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - shape: The shape of the tag, i.e. the corners style
+    ///    - size: The size of the tag
+    public init(loadingKey: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                shape: Shape = .rounded,
+                size: Size = .default)
+    {
+        let resolvedLabel = loadingKey.resolved(tableName: tableName, bundle: bundle)
+        self.init(loadingLabel: resolvedLabel, shape: shape, size: size)
     }
 
     // MARK: Body

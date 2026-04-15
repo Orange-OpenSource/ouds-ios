@@ -14,8 +14,7 @@
 import Foundation
 import OUDSFoundations
 import SwiftUI
-#if canImport(UIKit)
-// Conditional import and use of UIKit for documentation generation (see #628 #626)
+#if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
 #endif
 
@@ -32,7 +31,15 @@ extension EnvironmentValues {
     public var theme: OUDSTheme {
         _theme!
     }
+
     // swiftlint:enable force_unwrapping
+
+    /// A flag indicating whether Liquid Glass is disabled.
+    /// The environment entry default is *false*.
+    /// When using `OUDSThemeableView` (the recommended integration path), this value may be overridden to *true*
+    /// on iOS versions earlier than 26 or when the app enables *UIDesignRequiresCompatibility* in the
+    /// *main Bundle* `Info.plist`.
+    @Entry public var isLiquidGlassDisabled: Bool = false
 }
 
 // MARK: - Themeable View
@@ -61,6 +68,14 @@ public struct OUDSThemeableView<Content: View>: View {
     private let theme: OUDSTheme
     private let content: () -> Content
 
+    private static var isLiquidGlassDisabled: Bool {
+        if #available(iOS 26.0, *) {
+            (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
+        } else {
+            true
+        }
+    }
+
     public init(theme: OUDSTheme, @ViewBuilder content: @escaping () -> Content) {
         self.theme = theme
         self.content = content
@@ -69,6 +84,7 @@ public struct OUDSThemeableView<Content: View>: View {
     public var body: some View {
         #if canImport(UIKit)
         content()
+            .environment(\.isLiquidGlassDisabled, Self.isLiquidGlassDisabled)
             .environment(\._theme, theme)
             .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
@@ -85,6 +101,7 @@ public struct OUDSThemeableView<Content: View>: View {
 private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
     private static let extraCompactMaxWidth = 390.0
@@ -101,9 +118,22 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
         #endif
     }
 
+    private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        #if os(iOS)
+        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+            .extraCompact
+        } else {
+            verticalSizeClass == .compact ? .compact : .regular
+        }
+        #else
+        verticalSizeClass == .compact ? .compact : .regular
+        #endif
+    }
+
     func body(content: Content) -> some View {
         content
             .environment(\.oudsHorizontalSizeClass, horizontalUserInterfaceSizeClass)
+            .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
     }
 }
 #endif

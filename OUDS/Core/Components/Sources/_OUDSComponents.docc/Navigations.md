@@ -30,20 +30,16 @@ The ``OUDSLink`` proposes layout with text only or text with icon.
 It also proposes layout to navigate forward or backward.
 The link can be displayed in `small` or `default` size.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift        
-        // Text only in small size
-        OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+```swift        
+// Text only in small size
+OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 
-        // Text and icon in default size
-        OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+// Text and icon in default size
+OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
 
-        // Navigate to previous page with link in a default size
-        OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
-        ```
-    }
-}
+// Navigate to previous page with link in a default size
+OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+```
 
 ### Tab bars
 
@@ -89,8 +85,11 @@ The ``OUDSTabBar`` provides a native SwiftUI `TabView` with use of OUDS effects 
 The ``OUDSTabBar`` lets users define their own hierarchy of views associated to tab items.
 
 ```swift        
-// Use the OUDS tab bar to wrap tab bar items and associated views
-OUDSTabBar(selected: 0, count: 3) {
+// Use the OUDS tab bar to wrap tab bar items and associated views.
+// Declare a @State to hold the selected tab index, then pass it as a binding.
+@State private var selectedTab = 0
+
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
         
     // Add the views with the SwiftUI tab item and labels
     // No need to define colors, everything is done inside OUDSTabBar
@@ -110,4 +109,151 @@ OUDSTabBar(selected: 0, count: 3) {
         }
         .tag(2)
 }
+```
+
+
+### Toolbars
+
+The toolbars components provide top and bottom navigation bars. They rely on SwiftUI toolbars and expose OUDS styles.
+Top toolbars provide a title and optional subtitle, while bottom toolbars focus on actions.
+
+There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and older).
+
+#### Top toolbar
+
+@TabNavigator {
+    @Tab("Orange (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_LiquidGlass_Orange_dark)
+    }
+    @Tab("Orange Compact (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_LiquidGlass_OrangeCompact_dark)
+    }
+    @Tab("Sosh (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_LiquidGlass_Sosh_dark)
+    }
+    @Tab("Wireframe (Liquid Glass)") {
+        ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_LiquidGlass_Wireframe_dark)
+    }
+}
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange theme](component_toolBarTop_Orange_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange theme](component_toolBarTop_Orange_dark)
+    }
+    @Tab("Orange Compact") {
+        ![A toolbar top component with Liquid Glass in light mode with Orange Compact theme](component_toolBarTop_OrangeCompact_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarTop_OrangeCompact_dark)
+    }
+    @Tab("Sosh") {
+        ![A toolbar top component with Liquid Glass in light mode with Sosh theme](component_toolBarTop_Sosh_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Sosh theme](component_toolBarTop_Sosh_dark)
+    }
+    @Tab("Wireframe") {
+        ![A toolbar top component with Liquid Glass in light mode with Wireframe theme](component_toolBarTop_Wireframe_light)
+        ![A toolbar top component with Liquid Glass in dark mode with Wireframe theme](component_toolBarTop_Wireframe_dark)
+    }
+}
+
+```swift
+// Apply once on the root NavigationStack to style the system navigation bar
+NavigationStack {
+    SomeView()
+        .toolBarTop("Title",
+                    leadingItems: {
+                        // Back button — system dismiss is automatic, no closure needed
+                        OUDSToolBarItem(navigation: .back())
+                    },
+                    trailingItems: {
+                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                    })
+}
+.oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
+
+// Close button — .close takes NO closure, dismiss is handled automatically
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .close)
+                })
+
+// Back button with a visible label (label text is ignored on iOS 26+ / Liquid Glass)
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
+                })
+
+// Back button with custom action executed before automatic dismiss
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+                })
+
+// On iOS ≤ 18, add on the root view to color the system back-button chevron correctly
+.accentColor(theme.colors.contentDefault)
+```
+
+#### Bottom toolbar
+
+@TabNavigator {
+    @Tab("Orange (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_LiquidGlass_Orange_dark)
+    }
+    @Tab("Orange Compact (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarBottom_LiquidGlass_OrangeCompact_dark)
+    }
+    @Tab("Sosh (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarBottom_LiquidGlass_Sosh_dark)
+    }
+    @Tab("Wireframe (Liquid Glass)") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarBottom_LiquidGlass_Wireframe_dark)
+    }
+}
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange theme](component_toolBarBottom_Orange_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange theme](component_toolBarBottom_Orange_dark)
+    }
+    @Tab("Orange Compact") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Orange Compact theme](component_toolBarBottom_OrangeCompact_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Orange Compact theme](component_toolBarBottom_OrangeCompact_dark)
+    }
+    @Tab("Sosh") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Sosh theme](component_toolBarBottom_Sosh_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Sosh theme](component_toolBarBottom_Sosh_dark)
+    }
+    @Tab("Wireframe") {
+        ![A toolbar bottom component with Liquid Glass in light mode with Wireframe theme](component_toolBarBottom_Wireframe_light)
+        ![A toolbar bottom component with Liquid Glass in dark mode with Wireframe theme](component_toolBarBottom_Wireframe_dark)
+    }
+}
+
+```swift
+// Leading + trailing split — works on all supported OS versions
+SomeView()
+    .toolBarBottom(leadingItems: {
+        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+    }, trailingItems: {
+        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+    })
+
+// Grouped / centered — meaningful on iOS 26+ (Liquid Glass) only
+// On earlier OS versions the system splits the items into leading/trailing positions.
+SomeView()
+    .toolBarBottom(groupedItems: {
+        OUDSToolBarItem(label: "Save") { /* Action to process */ }
+        OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
+    })
 ```

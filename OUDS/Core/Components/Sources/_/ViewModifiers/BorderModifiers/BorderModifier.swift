@@ -75,7 +75,7 @@ struct BorderModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
                 .strokeBorder(color.color(for: colorScheme), lineWidth: width)
-                .oudsForegroundColor(color))
+                .foregroundColor(color))
     }
 
     private func dashed(_ content: Content) -> some View {
@@ -83,7 +83,7 @@ struct BorderModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
                 .strokeBorder(style: StrokeStyle(lineWidth: width, dash: [2, 2]))
-                .oudsForegroundColor(color))
+                .foregroundColor(color))
     }
 
     private func dotted(_ content: Content) -> some View {
@@ -91,6 +91,6 @@ struct BorderModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
                 .strokeBorder(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
-                .oudsForegroundColor(color))
+                .foregroundColor(color))
     }
 }

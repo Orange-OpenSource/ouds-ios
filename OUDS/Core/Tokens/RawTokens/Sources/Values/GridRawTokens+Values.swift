@@ -28,39 +28,39 @@ extension GridRawTokens {
     /// Has for value 1_336
     public static let maxWidthRegular: GridRawToken = 1_336
     /// Has for value 16
-    public static let margin100: GridRawToken = DimensionRawTokens.base * 4 // 16px
+    public static let margin100: GridRawToken = DimensionRawTokens.base * 4 // 16 points
     /// Has for value 24
-    public static let margin300: GridRawToken = DimensionRawTokens.base * 6 // 24px
+    public static let margin300: GridRawToken = DimensionRawTokens.base * 6 // 24 points
     /// Has for value 28
-    public static let margin400: GridRawToken = DimensionRawTokens.base * 7 // 28px
+    public static let margin400: GridRawToken = DimensionRawTokens.base * 7 // 28 points
     /// Has for value 32
-    public static let margin500: GridRawToken = DimensionRawTokens.base * 8 // 32px
+    public static let margin500: GridRawToken = DimensionRawTokens.base * 8 // 32 points
     /// Has for value 36
-    public static let margin600: GridRawToken = DimensionRawTokens.base * 9 // 36px
+    public static let margin600: GridRawToken = DimensionRawTokens.base * 9 // 36 points
     /// Has for value 40
-    public static let margin700: GridRawToken = DimensionRawTokens.base * 10 // 40px
+    public static let margin700: GridRawToken = DimensionRawTokens.base * 10 // 40 points
     /// Has for value 52
-    public static let margin1000: GridRawToken = DimensionRawTokens.base * 13 // 52px
+    public static let margin1000: GridRawToken = DimensionRawTokens.base * 13 // 52 points
     /// Has for value 56
-    public static let margin1100: GridRawToken = DimensionRawTokens.base * 14 // 56px
+    public static let margin1100: GridRawToken = DimensionRawTokens.base * 14 // 56 points
     /// Has for value 80
-    public static let margin1700: GridRawToken = DimensionRawTokens.base * 20 // 80px
+    public static let margin1700: GridRawToken = DimensionRawTokens.base * 20 // 80 points
     /// Has for value 112
-    public static let margin2500: GridRawToken = DimensionRawTokens.base * 28 // 112px
+    public static let margin2500: GridRawToken = DimensionRawTokens.base * 28 // 112 points
     /// Has for value 1
-    public static let columnGap10: GridRawToken = DimensionRawTokens.base * 0.25 // 1px
+    public static let columnGap10: GridRawToken = DimensionRawTokens.base * 0.25 // 1 points
     /// Has for value 8
-    public static let columnGap100: GridRawToken = DimensionRawTokens.base * 2 // 8px
+    public static let columnGap100: GridRawToken = DimensionRawTokens.base * 2 // 8 points
     /// Has for value 16
-    public static let columnGap200: GridRawToken = DimensionRawTokens.base * 4 // 16px
+    public static let columnGap200: GridRawToken = DimensionRawTokens.base * 4 // 16 points
     /// Has for value 20
-    public static let columnGap300: GridRawToken = DimensionRawTokens.base * 5 // 20px
+    public static let columnGap300: GridRawToken = DimensionRawTokens.base * 5 // 20 points
     /// Has for value 24
-    public static let columnGap400: GridRawToken = DimensionRawTokens.base * 6 // 24px
+    public static let columnGap400: GridRawToken = DimensionRawTokens.base * 6 // 24 points
     /// Has for value 32
-    public static let columnGap600: GridRawToken = DimensionRawTokens.base * 8 // 32px
+    public static let columnGap600: GridRawToken = DimensionRawTokens.base * 8 // 32 points
     /// Has for value 40
-    public static let columnGap800: GridRawToken = DimensionRawTokens.base * 10 // 40px
+    public static let columnGap800: GridRawToken = DimensionRawTokens.base * 10 // 40 points
     /// Has for value 1
     public static let columnCount100: GridRawToken = 1
     /// Has for value 2

@@ -37,16 +37,16 @@ struct ControlItemBordersModifier: ViewModifier {
     func body(content: Content) -> some View {
         if layoutData.isOutlined, let borderColor {
             content
-                .oudsBorder(style: theme.borders.styleDefault,
-                            width: theme.borders.widthDefault,
-                            radius: radius,
-                            color: borderColor)
+                .border(style: theme.borders.styleDefault,
+                        width: theme.borders.widthDefault,
+                        radius: radius,
+                        color: borderColor)
         } else {
             if layoutData.hasDivider {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
-                    Divider().horizontalDivider(force: dividerColor)
+                    Divider().horizontal(force: dividerColor)
                 }
             } else {
                 content

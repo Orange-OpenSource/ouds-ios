@@ -34,7 +34,7 @@ Because the design tool in use is _Figma_ which defines such shadow with a _blur
 
 ```swift
 // For example, apply the elevation effect "drag" from your theme:
-myView.oudsShadow(theme.elevations.drag)
+myView.shadow(theme.elevations.drag)
 ```
 
 In details how it works:
@@ -52,7 +52,7 @@ public static let bottom_3_500 = ElevationCompositeRawToken(x: x0, y: y300, blur
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. whether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleFontCompositeSemanticToken) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. whether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositesemantictoken) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
@@ -87,7 +87,7 @@ These view modifiers are available for any `View` object, [you can get the curat
 
 ### Apply a specific border (border tokens)
 
-This module exposes the helper `oudsBorder(style:width:radius:color)` so as to apply border semantic tokens on a view in order to define a border effect.
+This module exposes the helper `border(style:width:radius:color:)` so as to apply border semantic tokens on a view in order to define a border effect.
 The helper is available through `View`, and tokens through the provider of the theme.
 
 ```swift
@@ -95,8 +95,8 @@ The helper is available through `View`, and tokens through the provider of the t
 
 var body: some View {
     SomeView()
-        .oudsBorder(
-            style: theme.borders.styleDefault,
+        .border(
+             style: theme.borders.styleDefault,
              width: theme.borders.widthThin,
              radius: theme.borders.radiusNone,
              color: theme.colors.borderDefault)
@@ -105,7 +105,7 @@ var body: some View {
 
 ### Apply specific colors
 
-Colors can be applied on view for background and foreground colors, foreground style or also accent color.
+Colors can be applied on view for background and foreground colors, foreground style, accent color or tint color.
 Some helpers are available in the OUDS API to avoid to use the `color(for:)` method.
 
 ```swift
@@ -115,16 +115,19 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:)` met
 @Environment(\.theme) private var theme
 
 // Apply a foreground style
-someView.oudsForegroundStyle(theme.colors.bgPrimary)
+someView.foregroundStyle(theme.colors.bgPrimary)
 
 // Apply a foreground color
-someView.oudsForegroundColor(theme.colors.bgPrimary)
+someView.foregroundColor(theme.colors.bgPrimary)
 
 // Apply a background
-someView.oudsBackground(theme.colors.bgPrimary)
+someView.background(theme.colors.bgPrimary)
 
 // Apply an accent color
-someView.oudsAccentColor(theme.colors.bgPrimary)
+someView.accentColor(theme.colors.bgPrimary)
+
+// Apply a tint color
+someView.tint(theme.colors.bgPrimary)
 ```
 
 ## Flip images according to layouts

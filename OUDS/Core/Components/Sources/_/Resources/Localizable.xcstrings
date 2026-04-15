@@ -4,8 +4,116 @@
     "" : {
       "shouldTranslate" : false
     },
+    "core_bulletList_a11y_level" : {
+      "comment" : "Component - Bullet List - VoiceOver: nesting level of an item (e.g. \"level 1\")",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المستوى %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "level %lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "niveau %lld"
+          }
+        }
+      }
+    },
+    "core_bulletList_a11y_subItemsCount" : {
+      "comment" : "Component - Bullet List - VoiceOver: number of sub-items of an item (e.g. \"3 sub-items\")",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld عناصر فرعية"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld عنصرًا فرعيًا"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "عنصر فرعي واحد"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld عناصر فرعية"
+                }
+              },
+              "two" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "عنصران فرعيان"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لا توجد عناصر فرعية"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sub-item"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sub-items"
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sous-élément"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld sous-éléments"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "core_alertMessage_close_a11y" : {
-      "comment" : "Alert Message",
+      "comment" : "Component - Alert Message",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -28,8 +136,56 @@
         }
       }
     },
+    "core_alertMessage_negative_a11y" : {
+      "comment" : "Component - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
+    },
+    "core_alertMessage_warning_a11y" : {
+      "comment" : "Component - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحذير"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertissement"
+          }
+        }
+      }
+    },
     "core_checkbox_checked_a11y" : {
-      "comment" : "Checkbox",
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -53,7 +209,7 @@
       }
     },
     "core_checkbox_hint_a11y" : {
-      "comment" : "Checkbox",
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -77,7 +233,7 @@
       }
     },
     "core_checkbox_indeterminate_a11y" : {
-      "comment" : "Checkbox",
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -101,7 +257,7 @@
       }
     },
     "core_checkbox_trait_a11y" : {
-      "comment" : "Checkbox",
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -125,7 +281,7 @@
       }
     },
     "core_checkbox_unchecked_a11y" : {
-      "comment" : "Checkbox",
+      "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -149,7 +305,7 @@
       }
     },
     "core_checkboxPicker_description_a11y" : {
-      "comment" : "Checkbox Picker",
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -227,7 +383,7 @@
       }
     },
     "core_checkboxPicker_indeterminate_hint_a11y" : {
-      "comment" : "Checkbox Picker",
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -251,7 +407,7 @@
       }
     },
     "core_checkboxPicker_selected_hint_a11y" : {
-      "comment" : "Checkbox Picker",
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -275,7 +431,7 @@
       }
     },
     "core_checkboxPicker_unselected_hint_a11y" : {
-      "comment" : "Checkbox Picker",
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -294,6 +450,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taper deux fois pour cocher toutes les cases à cocher"
+          }
+        }
+      }
+    },
+    "core_common_close_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يغلق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
           }
         }
       }
@@ -431,7 +611,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Double-top to unselect"
+            "value" : "Double-tap to unselect"
           }
         },
         "fr" : {
@@ -490,8 +670,68 @@
         }
       }
     },
+    "core_PasswordInput_chipsCount_a11y" : {
+      "comment" : "Component - Password Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld رمز"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld الرموز  "
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld chip"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld chips"
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld puce"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld puces"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "core_passwordInput_hidePassword_a11y" : {
-      "comment" : "Component - Password",
+      "comment" : "Component - Password Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -515,7 +755,7 @@
       }
     },
     "core_passwordInput_showPassword_a11y" : {
-      "comment" : "Component - Password",
+      "comment" : "Component - Password Input",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -538,8 +778,56 @@
         }
       }
     },
+    "core_pinCodeInput_empty_a11y" : {
+      "comment" : "Component - Pin Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فارغ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vide"
+          }
+        }
+      }
+    },
+    "core_pinCodeInput_groupLabel_a11y" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل رمزًا مكونًا من %lld رقمًا"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the code with %lld digits"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez le code à %lld chiffres"
+          }
+        }
+      }
+    },
     "core_radio_hint_selected_a11y" : {
-      "comment" : "Radio",
+      "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -563,7 +851,7 @@
       }
     },
     "core_radio_hint_unselected_a11y" : {
-      "comment" : "Radio",
+      "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -587,7 +875,7 @@
       }
     },
     "core_radio_trait_a11y" : {
-      "comment" : "Radio",
+      "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -611,7 +899,7 @@
       }
     },
     "core_switch_hint_a11y" : {
-      "comment" : "Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -635,7 +923,7 @@
       }
     },
     "core_switch_trait_a11y" : {
-      "comment" : "Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -654,6 +942,174 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Switch"
+          }
+        }
+      }
+    },
+    "core_textArea_charactersRemaining" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا متبقيًا"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا متبقيًا"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لم يتبق لديك سوى حرف واحد"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا متبقيًا"
+                }
+              },
+              "two" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لم يتبق لديك سوى حرفين"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لم يتبق لديك أي أحرف"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You have %lld character remaining."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You have %lld characters remaining."
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Il vous reste %lld caractère."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Il vous reste %lld caractères."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "core_textArea_charactersTooMany" : {
+      "comment" : "Component - Text Area",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              },
+              "two" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لديك %lld حرفًا زائدًا."
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You have %lld character too many."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You have %lld characters too many."
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Vous avez %lld caractère en trop."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Vous avez %lld caractères en trop."
+                }
+              }
+            }
           }
         }
       }

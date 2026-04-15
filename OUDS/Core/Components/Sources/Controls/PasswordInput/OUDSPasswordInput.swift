@@ -41,6 +41,9 @@ import SwiftUI
 ///  ```swift
 ///     // An outlined text input
 ///     OUDSPasswordInput(label: "Your password", password: $password, isOutlined: true)
+///
+///     // With a localizable from a bundle
+///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
 /// ```
 ///
 /// ### Rounded layout
@@ -124,6 +127,10 @@ public struct OUDSPasswordInput: View {
 
     /// Creates a password input.
     ///
+    /// ```swift
+    ///     OUDSPasswordInput(label: "Password", password: $password)
+    /// ```
+    ///
     /// - Parameters:
     ///    - label: The label displayed above the password input.
     ///    - password: The pasword to display and edit.
@@ -165,6 +172,53 @@ public struct OUDSPasswordInput: View {
         self.isOutlined = isOutlined
         self.constrainedMaxWidth = constrainedMaxWidth
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a password input with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSPasswordInput(LocalizedStringKey("password_label"), bundle: Bundle.module, password: $password)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - password: The pasword to display and edit
+    ///    - isHiddenPassword: Flag to hide or show the password, By default set to `true`
+    ///    - placeholder: The text displayed when the password input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input, by default is *nil*
+    ///    - lockIcon: When `true`, a lock icon is displayed, defaults to `false`
+    ///    - helperText: An optional helper text, by default is *nil*
+    ///    - isOutlined: Controls the style of the pasword input, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
+    ///    - status: The current status of the password input, default set to *enabled*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                password: Binding<String>,
+                isHiddenPassword: Binding<Bool> = .constant(true),
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                lockIcon: Bool = false,
+                helperText: String? = nil,
+                isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                status: OUDSTextInput.Status = .enabled)
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  password: password,
+                  isHiddenPassword: isHiddenPassword,
+                  placeholder: placeholder,
+                  prefix: prefix,
+                  lockIcon: lockIcon,
+                  helperText: helperText,
+                  isOutlined: isOutlined,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  status: status)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

@@ -47,7 +47,7 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     OUDSColoredSurface(color: theme.colorModes.onStatusPositiveEmphasized) {
         VStack {
             Text("Status Positive Emphasized")
-            .oudsForegroundColor(theme.colors.contentDefault)
+            .foregroundColor(theme.colors.contentDefault)
 
             OUDSButton(text: "Button") {}
         }
@@ -57,11 +57,11 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
 
     VStack {
         Text("Status Positive Emphasized")
-        .oudsForegroundColor(theme.colors.contentDefault)
+        .foregroundColor(theme.colors.contentDefault)
 
         OUDSButton(text: "Button") {}
     }
-    .oudsColoredSurface(theme.colorModes.onStatusPositiveEmphasized)
+    .coloredSurface(theme.colorModes.onStatusPositiveEmphasized)
 ```
 
 #### Debuging contrast ratios
@@ -147,22 +147,18 @@ A divider can be colored using color enumerated in the `OUDSDividerColor`.
 
 #### How to use
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift        
-        // Add a vertical divider between items
-        HStack {
-            Text("Hello world!")
-            OUDSVerticalDivider(color: .brandPrimary)
-            Text("Happy to see you")
-        }
-
-        // Add an horizontal divider between items
-        VStack {
-            Text("Hello world!")
-            OUDSHorizontalDivider(color: .brandPrimary)
-            Text("Happy to see you")
-        }
-        ```
-    }
+```swift        
+// Add a vertical divider between items
+HStack {
+    Text("Hello world!")
+    OUDSVerticalDivider(color: .brandPrimary)
+    Text("Happy to see you")
 }
+
+// Add an horizontal divider between items
+VStack {
+    Text("Hello world!")
+    OUDSHorizontalDivider(color: .brandPrimary)
+    Text("Happy to see you")
+}
+```

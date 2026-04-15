@@ -29,7 +29,7 @@ struct ChipForegroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.oudsForegroundColor(appliedColor)
+        content.foregroundColor(appliedColor)
     }
 
     // MARK: Private helpers

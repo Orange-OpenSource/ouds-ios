@@ -128,7 +128,7 @@ import SwiftUI
 ///
 /// ![A bullet list component in light and dark modes with Orange theme](component_bullet_list_Orange)
 ///
-/// ### Orange Business Tools
+/// ### Orange Compact
 ///
 /// ![A bullet list component in light and dark modes with Orange Compact theme](component_bullet_list_OrangeCompact)
 ///
@@ -174,6 +174,13 @@ public struct OUDSBulletList: View {
         /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
         /// to change properties for those sub items, if needed.
         ///
+        /// ```swift
+        ///     OUDSBulletList.Item("First point")
+        ///     OUDSBulletList.Item("Parent") {
+        ///         OUDSBulletList.Item("Child")
+        ///     }
+        /// ```
+        ///
         /// - Parameters:
         ///    - text: The text of the item
         ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
@@ -190,6 +197,38 @@ public struct OUDSBulletList: View {
                     @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
         {
             self.text = text
+            self.subListType = subListType
+            self.subListTextStyle = subListTextStyle
+            self.subListHasBoldText = subListHasBoldText
+            self.subItems = subItems()
+        }
+
+        /// Creates a bullet list item with a localized text, looking up the key in the given bundle.
+        ///
+        /// ```swift
+        ///     OUDSBulletList.Item(LocalizedStringKey("item_label"), bundle: Bundle.module)
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+        ///    - tableName: The name of the `.strings` file, or `nil` for the default
+        ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///     the type is inherited from the parent list.
+        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///     `nil`, the text style is inherited from the parent list.
+        ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
+        ///     setting is inherited from the parent list.
+        ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        public init(_ key: LocalizedStringKey,
+                    tableName: String? = nil,
+                    bundle: Bundle = .main,
+                    subListType: OUDSBulletList.`Type`? = nil,
+                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListHasBoldText: Bool? = nil,
+                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+        {
+            text = key.resolved(tableName: tableName, bundle: bundle)
             self.subListType = subListType
             self.subListTextStyle = subListTextStyle
             self.subListHasBoldText = subListHasBoldText
@@ -283,6 +322,13 @@ public struct OUDSBulletList: View {
     // MARK: - Initializer
 
     /// Creates a bullet list with a bullet type, text style and bold.
+    ///
+    /// ```swift
+    ///     OUDSBulletList {
+    ///         OUDSBulletList.Item("First point")
+    ///         OUDSBulletList.Item("Second point")
+    ///     }
+    /// ```
     ///
     /// - Parameters:
     ///    - type: The visual type of the list (e.g., `ordered`, `unordered` or `bare`).

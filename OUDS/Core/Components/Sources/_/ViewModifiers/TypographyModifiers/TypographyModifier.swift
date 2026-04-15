@@ -117,6 +117,8 @@ struct TypographyModifier: ViewModifier {
         lineSpacing / 2
     }
 
+    // MARK: - View Modifier
+
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*)
     /// depending to the current `MultipleFontCompositeSemanticToken`.
     func body(content: Content) -> some View {
@@ -138,6 +140,40 @@ struct TypographyModifier: ViewModifier {
         }
         .modifier(OnChangeSizeCategoryModifier(sizeCategory: sizeCategory))
     }
+
+    // MARK: - UIKit util
+
+    #if !os(macOS)
+    /// Generates a `UIFont` object based on tokens without needing any environement object lile `theme`.
+    ///
+    /// - Parameters:
+    ///   - family: Token of font family to apply
+    ///   - fontToken: The token of font to apply
+    ///   - isCompact: If *true*, use compact mode, otherwise use regular
+    /// - Returns: The `UIFont`
+    static func makeUIFont(
+        family: FontFamilyRawToken?,
+        from fontToken: MultipleFontCompositeSemanticToken,
+        isCompact: Bool) -> UIFont
+    {
+        let adaptiveFontToken = isCompact ? fontToken.compact : fontToken.regular
+
+        #if os(macOS)
+        let scaledFontSize = adaptiveFontToken.size
+        #else
+        let scaledFontSize = UIFontMetrics.default.scaledValue(for: adaptiveFontToken.size)
+        #endif
+
+        if let family {
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
+            if let customFont = UIFont(name: composedFontFamily, size: scaledFontSize) {
+                return customFont
+            }
+        }
+
+        return UIFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
+    }
+    #endif
 
     // MARK: - On Change Size Category Modifier
 

@@ -17,10 +17,11 @@ import SwiftUI
 struct ContentView: View {
 
     private let theme = OrangeTheme()
+    @State private var selectedTab = 0
 
     var body: some View {
         OUDSThemeableView(theme: theme) {
-            OUDSTabBar(selected: 0, count: 3) {
+            OUDSTabBar(selectedTab: $selectedTab, count: 3) {
                 HomeScreen().tabItem {
                     Label("Home", image: "Home")
                 }

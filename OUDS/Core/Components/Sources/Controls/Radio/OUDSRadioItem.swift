@@ -71,6 +71,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection)
 ///
+///     // Localizable from bundle can also be used
+///     OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
+///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
 ///     OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $selection, isReadOnly: true)
@@ -317,6 +320,67 @@ public struct OUDSRadioItem: View {
             orientation: isReversed ? .reversed : .default)
         self.action = action
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a radio with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
+    ///   - description: A description, like an helper text, should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
+    ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - action: An additional action to trigger when the radio button has been pressed
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                extraLabel: String? = nil,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isOutlined: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  extraLabel: extraLabel,
+                  description: description,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isOutlined: isOutlined,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
 

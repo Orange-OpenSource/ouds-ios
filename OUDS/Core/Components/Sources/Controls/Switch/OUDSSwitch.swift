@@ -80,6 +80,34 @@ public struct OUDSSwitch: View {
 
     /// Creates a switch with only an indicator.
     ///
+    /// ```swift
+    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: LocalizedStringKey("wifi_toggle"), bundle: Bundle.module)
+    /// ```
+    ///
+    /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
+    ///
+    /// - Parameters:
+    ///    - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - isReadOnly: True if the look and feel of the component must reflect a read only state, default set to `false`
+    public init(isOn: Binding<Bool>,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isReadOnly: Bool = false)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(isOn: isOn, accessibilityLabel: resolvedText, isReadOnly: isReadOnly)
+    }
+
+    /// Creates a switch with only an indicator.
+    ///
+    /// ```swift
+    ///     OUDSSwitch(isOn: $isOn, accessibilityLabel: "Wi-Fi")
+    /// ```
+    ///
     /// **The design system does not allow to have both a read only situation and a disabled state for the component.**
     ///
     /// - Parameters:

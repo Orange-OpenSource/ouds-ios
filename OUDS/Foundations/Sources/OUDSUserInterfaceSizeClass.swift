@@ -27,9 +27,21 @@ extension EnvironmentValues {
     /// The value tells you about the amount of horizontal space available to the view that reads it.
     /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the `Environment` property wrapper:
     ///
+    /// ```swift
     ///     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
-    ///
+    /// ```
     @Entry public var oudsHorizontalSizeClass: OUDSUserInterfaceSizeClass = .regular
+
+    /// The `oudsVerticalSizeClass` instance exposed as en environment values across the library for the vertical viewport.
+    ///
+    /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
+    /// The value tells you about the amount of vertical space available to the view that reads it.
+    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the `Environment` property wrapper:
+    ///
+    /// ```swift
+    ///     @Environment(\.oudsVerticalSizeClass) private var verticalSizeClass
+    /// ```
+    @Entry public var oudsVerticalSizeClass: OUDSUserInterfaceSizeClass = .regular
 }
 
 /// Enumerates the size classes defined by the design system.
@@ -42,10 +54,11 @@ extension EnvironmentValues {
 /// To use it:
 /// ```swift
 ///     @Environment(\.oudsHorizontalSizeClass) var horizontalSizeClass
+///     @Environment(\.oudsVerticalSizeClass) var verticalSizeClass
 /// ```
 ///
 /// - Since: 0.8.0
-public enum OUDSUserInterfaceSizeClass: String, Sendable {
+@frozen public enum OUDSUserInterfaceSizeClass: String, Sendable {
     case extraCompact = "Extra Compact"
     case compact = "Compact"
     case regular = "Regular"

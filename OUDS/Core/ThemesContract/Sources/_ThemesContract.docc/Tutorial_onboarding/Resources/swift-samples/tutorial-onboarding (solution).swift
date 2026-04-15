@@ -38,17 +38,17 @@ struct InfoCard: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .headingMedium(theme)
-                .oudsForegroundColor(theme.colors.contentBrandPrimary)
+                .foregroundColor(theme.colors.contentBrandPrimary)
                 .padding(.top, theme.gridMargin(for: oudsHorizontalSizeClass))
 
             Text(subtitle)
                 .headingXLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
                 .padding(.vertical, theme.spaces.scaled2xsmall.dimension(for: horizontalSizeClass ?? .regular))
 
             Text(description)
                 .bodyDefaultLarge(theme)
-                .oudsForegroundColor(theme.colors.contentDefault)
+                .foregroundColor(theme.colors.contentDefault)
 
             Spacer(minLength: theme.spaces.scaledLarge.dimension(for: verticalSizeClass ?? .regular))
 
@@ -56,7 +56,7 @@ struct InfoCard: View {
 
             Spacer(minLength: theme.spaces.fixedMedium)
         }
-        .oudsGridMargin(.horizontal)
+        .gridMargin(.horizontal)
     }
 }
 
@@ -87,13 +87,13 @@ struct ComponentShowcase: View {
                 Text("Explore some OUDS components")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .headingLarge(theme)
-                    .oudsForegroundColor(theme.colors.contentDefault)
+                    .foregroundColor(theme.colors.contentDefault)
                     .padding(.horizontal, gridMargin)
 
                 CategorySelector(selectedComponentGroup: $selectedComponentGroup)
             }
             .padding(.vertical, gridMargin)
-            .oudsBackground(theme.colors.bgSecondary)
+            .background(theme.colors.bgSecondary)
 
             // Use opacity to reserve space vertically, otherwise height change when changing group
             ZStack {
@@ -227,12 +227,12 @@ struct HomeScreen: View {
                     description: "The Orange Polska Group is in the TOP 3 of ICT service leaders in Poland according to the 2000 Computerworld report. See how we can .- -Work together.",
                     buttonLabel: "Contact us")
                     .environment(\.colorScheme, .dark)
-                    .oudsBackground(theme.colors.bgInverseLow)
+                    .background(theme.colors.bgInverseLow)
             }
 
             ComponentShowcase()
         }
-        .oudsBackground(theme.colors.bgPrimary)
+        .background(theme.colors.bgPrimary)
     }
 }
 
@@ -248,12 +248,18 @@ struct ContentView: View {
 
     private let theme = OrangeTheme()
 
+    // Tracks the currently selected tab; updated automatically when the user taps a tab item.
+    // Can also be set programmatically to switch tabs from outside the component.
+    @State private var selectedTab = 0
+
     var body: some View {
         OUDSThemeableView(theme: theme) {
-            // Initializer for iOS 18- compatibility
-            // Images are available in project assets
-            // Tags allow to make the binding and display the selected tab indicator for iOS 18-
-            OUDSTabBar(selected: 0, count: 3) {
+            // Initializer for iOS 18- compatibility.
+            // Images are available in project assets.
+            // Tags identify each tab and must match the values used by the selectedTab binding.
+            // The binding keeps the parent in sync: user taps update selectedTab, and
+            // changing selectedTab programmatically switches the displayed tab.
+            OUDSTabBar(selectedTab: $selectedTab, count: 3) {
                 HomeScreen().tabItem {
                     Label("Home", image: "Home")
                 }

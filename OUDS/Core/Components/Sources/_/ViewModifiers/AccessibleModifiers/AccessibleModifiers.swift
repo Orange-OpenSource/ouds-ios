@@ -24,6 +24,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
+    let subtitle: String?
 
     #if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
@@ -33,6 +34,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationTitle(LocalizedStringKey(title))
+            .oudsNavigationSubtitle(subtitle)
             .onAppear {
                 #if canImport(UIKit) && !os(watchOS)
                 DispatchQueue.main.asyncAfter(deadline: deadline) {
@@ -40,6 +42,21 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
                 }
                 #endif
             }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func oudsNavigationSubtitle(_ subtitle: String? = nil) -> some View {
+        #if os(iOS) || os(macOS)
+        if #available(iOS 26.0, *), let subtitle {
+            navigationSubtitle(Text(LocalizedStringKey(subtitle)))
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
     }
 }
 
@@ -75,12 +92,12 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 ///     var body: some View {
 ///         SomeView()
 ///         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
-///         .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+///         .requestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
 ///     }
 /// ```
 ///
 /// - Since: 0.8.0
-public enum AccessibilityFocusable: Hashable {
+@frozen public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)
 }

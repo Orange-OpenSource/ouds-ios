@@ -31,7 +31,7 @@ struct ButtonBackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if let appliedColor {
-            content.oudsBackground(appliedColor)
+            content.background(appliedColor)
         } else {
             content
         }

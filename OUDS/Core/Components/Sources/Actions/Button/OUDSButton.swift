@@ -59,6 +59,9 @@ import SwiftUI
 ///
 ///     // Text and icon with strong appearance and button taking full width
 ///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong, isFullWidth: true) { /* the action to process */ }
+///
+///     // Localizable from bundle can also be used
+///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
 /// ```
 ///
 /// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
@@ -144,7 +147,7 @@ public struct OUDSButton: View {
 
     /// Represents the appearance of an OUDS button, i.e. a kind of type
     /// - Since: 0.10.0
-    public enum Appearance {
+    @frozen public enum Appearance {
         /// Default button is used for action
         case `default`
 
@@ -163,7 +166,7 @@ public struct OUDSButton: View {
 
     /// Defines the style of the button, e.g. loading or not
     /// - Since: 0.10.0
-    public enum Style {
+    @frozen public enum Style {
         /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`
 
@@ -173,7 +176,46 @@ public struct OUDSButton: View {
 
     // MARK: Initializers
 
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates a button with a localized text and icon, looking up the key in the given bundle..
+    /// A raw string can also be given to be displayed.
+    ///
+    /// ```swift
+    ///     // Use localizable
+    ///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, icon: Image("ic_checkmark"), appearance: .strong) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle, or a raw `String` to display
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - icon: An image which shoud contains an icon
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                icon: Image,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(text: resolvedText, icon: icon, flipIcon: flipIcon, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
+
     /// Creates a button with text and icon.
+    ///
+    /// ```swift
+    ///     OUDSButton(text: "Validate", icon: Image(systemName: "checkmark"), appearance: .strong) { }
+    /// ```
     ///
     /// - Parameters:
     ///    - text: The text to display in the button
@@ -196,11 +238,40 @@ public struct OUDSButton: View {
         self.style = style
         self.isFullWidth = isFullWidth
         self.action = action
-
         isHover = false
     }
 
     /// Creates a button with an icon only.
+    ///
+    /// - Parameters:
+    ///    - icon: An image which shoud contains an icon
+    ///    - key: The text to vocalize with *Voice Over* describing the button action, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(icon: Image,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                flipIcon: Bool = false,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(icon: icon, accessibilityLabel: resolvedText, flipIcon: flipIcon, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
+    /// Creates a button with an icon only.
+    ///
+    /// ```swift
+    ///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { }
+    /// ```
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -226,7 +297,37 @@ public struct OUDSButton: View {
         isHover = false
     }
 
+    /// Creates a button with a localized text only, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSButton(LocalizedStringKey("delete_button"), bundle: Bundle.module, appearance: .negative) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(text: resolvedText, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
     /// Create a button with a text only.
+    ///
+    /// ```swift
+    ///     OUDSButton(text: "Delete", appearance: .negative) { }
+    /// ```
     ///
     /// - Parameters:
     ///    - text: The text of the button to display
@@ -268,7 +369,7 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped)
             }
         }
-        .buttonStyle(OUDSButtonStyle(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
+        .buttonStyle(StyleForButton(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
         .disabled(style == .loading)
         .accessibilityLabel(accessibilityLabel)
         #if !os(watchOS) && !os(tvOS)

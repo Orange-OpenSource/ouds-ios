@@ -22,7 +22,7 @@ import SwiftUI
 ///  (i.e. publicly accessible from everywhere). More optimized than dimensionstruct_.
 ///
 /// - Since: 0.13.0
-public enum ColorModeRawTokens {
+@frozen public enum ColorModeRawTokens {
 
     /// Depending to the given value, defines the color scheme to consider
     /// - Parameter mode: A color mode to test

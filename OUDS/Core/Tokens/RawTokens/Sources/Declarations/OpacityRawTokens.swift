@@ -20,7 +20,7 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than dimensionstruct_.
 ///
 /// - Since: 0.8.0
-public enum OpacityRawTokens {
+@frozen public enum OpacityRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the tokenator, the values have been added in the Values folder

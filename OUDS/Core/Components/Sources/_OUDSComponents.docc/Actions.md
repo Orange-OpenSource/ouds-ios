@@ -32,17 +32,13 @@ Two style are available: *default* and *loading*.
 If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 A button with `OUDSButton.Appearance.Negative` appearance is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 
-@TabNavigator {
-    @Tab("SwiftUI") {
-        ```swift
-        // Icon only with default appearance
-        OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+```swift
+    // Icon only with default appearance
+    OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 
-        // Text only with negative appearance
-        OUDSButton(text: "Delete", appearance: .negative) {}
-        ```
-    }
-}
+    // Text only with negative appearance
+    OUDSButton(text: "Delete", appearance: .negative) {}
+```
 
 For accessibility reasons, if the user in the system settings toggles the option to reduce the animations, the loading indicator will be frozen to be more comfortable for the user.
 

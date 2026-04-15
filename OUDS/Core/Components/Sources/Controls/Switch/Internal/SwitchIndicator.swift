@@ -38,7 +38,7 @@ struct SwitchIndicator: View {
         Cursor(interactionState: interactionStateComputed, isOn: isOn)
             .padding(.horizontal, padding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
-            .oudsBackground(trackColor)
+            .background(trackColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusTrack))
             .animation(trackAnimation, value: cursorHorizontalAlignment)
         #if os(iOS)
@@ -140,9 +140,9 @@ private struct Cursor: View {
                 .opacity(theme.switch.opacityCheck)
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-        .oudsBackground(theme.switch.colorCursor)
+        .background(theme.switch.colorCursor)
         .clipShape(RoundedRectangle(cornerRadius: theme.switch.borderRadiusCursor))
-        .oudsShadow(theme.elevations.raised)
+        .shadow(theme.elevations.raised)
         .animation(cursorWidthAnimation, value: cursorWidth)
     }
 

@@ -26,7 +26,7 @@ struct InputTagForegroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.oudsForegroundColor(color)
+        content.foregroundColor(color)
     }
 
     // MARK: Private helpers

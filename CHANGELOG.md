@@ -4,10 +4,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
+ ## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.3.0...1.4.0) - 2026-04-15
 
 ### Added
 
+- Support of disabled `Liquid Glass` for `tab bar` and `toolbar` components (Orange-OpenSource/ouds-ios#1408)
+- `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
+- `text area` component (Orange-OpenSource/ouds-ios#543)
+- `PIN code input` component (Orange-OpenSource/ouds-ios#998)
+- Agentic AI dedicated files (Orange-OpenSource/ouds-ios#1399)
+- `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)
+- `LocalizedStringKey` and `Bundle` initializers for components using `String` for texts and accessibility labels (Orange-OpenSource/ouds-ios#1366)
+- `oudsTintColor` view modifier helper to apply tint color from a `MultipleColorSemanticToken` (Orange-OpenSource/ouds-ios#1370)
+- `verbose` flag on `OUDSLogger` to suppress debug and log messages by default (Orange-OpenSource/ouds-ios#1365)
+
+### Changed
+
+- `SwiftFormat` Swift package plugin from v0.60.1 to v0.61.0
+- `github/codeql-action/upload-sarif` action to v4.35.2 for `scorecard` workflow
+- `faraday` transitive gem from 1.10.5 to 2.14.1
+- `json` RubyGem from v2.19.2 to v2.19.3
+- `ruby/setup-ruby` action from v1.296.0 to v1.301.0 for `build-and-test` workflow
+- `tab bar` component initialization (Orange-OpenSource/ouds-ios#1373)
+- Optimization of public API (frozen structs and enums, inlinable properties) (Orange-OpenSource/ouds-ios#1382)
+- Improve documentation (Orange-OpenSource/ouds-ios#1286)
+- Update illustrations in documentation for `alert message` component (Orange-OpenSource/ouds-ios#1359)
+- View modifiers and methods prefixed by `ouds` are replaced by same names without such `ouds` (Orange-OpenSource/ouds-ios#1346)
+- Move from Xcode 26.2 to Xcode 26.3 (Orange-OpenSource/ouds-ios#1375)
+
+### Fixed
+
+- Vocalization and management of focus for `PIN code input` component (Orange-OpenSource/ouds-ios#1409)
+- Vocalization for content of `password input` component (Orange-OpenSource/ouds-ios#1406)
+- Accessibility label for `alert` components for `warning` and `negative` statuses (Orange-OpenSource/ouds-ios#1407)
+- Accessibility hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios#1277)
+
+## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
+
+### Added
+ 
 - Tutorial for onboardings and meetups (Orange-OpenSource/ouds-ios#1336)
 - View helpers to use scaled spaces tokens to add padding and for HStack/VStack (Orange-OpenSource/ouds-ios#1324)
 - GitHub Copilot instructions file for maintainers and contributors (Orange-OpenSource/ouds-ios#1314)

@@ -25,7 +25,7 @@ struct AlertMessageBackgroundModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsBackground(color)
+        content.background(color)
     }
 
     // MARK: - Helpers

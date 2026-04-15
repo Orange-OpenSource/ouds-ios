@@ -30,7 +30,7 @@ struct LinkColorContentModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsForegroundStyle(appliedColor())
+        content.foregroundStyle(appliedColor())
     }
 
     // MARK: - Helpers

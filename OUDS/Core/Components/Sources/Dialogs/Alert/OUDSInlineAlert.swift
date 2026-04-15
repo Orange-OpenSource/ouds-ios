@@ -24,6 +24,8 @@ import SwiftUI
 /// ```swift
 ///     // A inline alert with a label and the default neutral status
 ///     OUDSInlineAlert(label: "Label")
+///     // From a localizable in a bundle
+///     OUDSInlineAlert(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
 ///     // An inline alert
 ///     OUDSInlineAlert(label: "Warning", status: .warning)
@@ -73,6 +75,10 @@ public struct OUDSInlineAlert: View {
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
+    /// ```swift
+    ///     OUDSInlineAlert(label: "Your session will expire soon.", status: .warning)
+    /// ```
+    ///
     /// - Parameters:
     ///   - label: Label displayed in the inline alert. Main message that should be short, clear, and readable at a glance.
     ///   - status: The status of the inline alert. Its text and its icon color are based on this status. Default set to *neutral* without icon.
@@ -82,6 +88,25 @@ public struct OUDSInlineAlert: View {
             OL.warning("The label for the OUDSInlineAlert must not be empty!")
         }
         self.status = status
+    }
+
+    /// Creates an inline alert with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSInlineAlert(LocalizedStringKey("info_message"), bundle: Bundle.module, status: .info)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - status: The status of the inline alert, default set to *neutral* without icon
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: OUDSAlertStatus = .neutral())
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle), status: status)
     }
 
     // MARK: - Body

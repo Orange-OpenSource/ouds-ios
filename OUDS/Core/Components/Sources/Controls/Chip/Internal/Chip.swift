@@ -180,7 +180,7 @@ private struct ChipSelectionIndicator: View {
             ScaledIcon(icon: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle).renderingMode(.template),
                        size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
-                .oudsForegroundColor(appliedColor)
+                .foregroundColor(appliedColor)
         }
     }
 

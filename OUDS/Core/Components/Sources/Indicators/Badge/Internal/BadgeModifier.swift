@@ -30,8 +30,8 @@ struct BadgeModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(minWidth: frameSize, maxWidth: maxWidth, minHeight: frameSize, maxHeight: maxHeight, alignment: .center)
-            .oudsForegroundColor(foregroundColor)
-            .oudsBackground(backgroundColor)
+            .foregroundColor(foregroundColor)
+            .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
             .accessibilityHidden(accessibilityLabel.isEmpty)
             .accessibilityLabel(accessibilityLabel)

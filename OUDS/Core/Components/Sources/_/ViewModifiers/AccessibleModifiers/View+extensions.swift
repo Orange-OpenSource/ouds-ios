@@ -17,9 +17,9 @@ import SwiftUI
 
 /// Contains some delays to apply to view modifiers' deadlines for vocalizations or accessibility notifications
 private enum AccessibilityDelay: Double {
-    // Must be lower than accesibleFocusRequestDelay to start before
+    /// Must be lower than accesibleFocusRequestDelay to start before
     case accessibleTitleNotificationDelay = 0.0
-    // Must be greater than accessibleTitleNotificationDelay to start after
+    /// Must be greater than accessibleTitleNotificationDelay to start after
     case accessibleFocusRequestDelay = 1.0
 }
 
@@ -34,15 +34,62 @@ extension View {
     ///      SomeView().oudsNavigationTitle("your title key")
     /// ```
     ///
-    /// - Parameter title: The navigation title
+    /// - Parameters
+    ///     - title: The navigation title
+    ///     - subtitle: An optional subtitle for iOS > 26 only
+    ///
     /// - Returns View: The view with a new modifier
-    public func oudsNavigationTitle(_ title: String) -> some View {
+    public func oudsNavigationTitle(_ title: String, subtitle: String? = nil) -> some View {
         #if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
+                                                   subtitle: subtitle,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
         #else
-        modifier(AccessibleNavigationTitleModifier(title: title))
+        modifier(AccessibleNavigationTitleModifier(title: title, subtitle: subtitle))
         #endif
+    }
+
+    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed
+    ///
+    /// ```swift
+    ///     YourView: View {
+    ///         @AccessibilityFocusState var requestFocus: Bool
+    ///
+    ///         var body: some View {
+    ///             SomeView()
+    ///                 .requestAccessibleFocus(_requestFocus)
+    ///         }
+    ///     }
+    /// ```
+    ///
+    /// - Parameter requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
+    /// - Returns View: The view with a new modifier
+    public func requestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
+        modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
+                                                deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
+    }
+
+    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given element
+    ///
+    /// ```swift
+    ///     YourView: View {
+    ///         @AccessibilityFocusState var requestFocus: Bool
+    ///
+    ///         var body: some View {
+    ///             SomeView()
+    ///                 .requestAccessibleFocus(_requestFocus, for: .some(id: element.id))
+    ///         }
+    ///     }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
+    ///    - target: The item which will get the focus
+    /// - Returns View: The view with a new modifier
+    public func requestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
+        modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
+                                                          target: target,
+                                                          deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed
@@ -60,9 +107,9 @@ extension View {
     ///
     /// - Parameter requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     /// - Returns View: The view with a new modifier
+    @available(*, deprecated, renamed: "requestAccessibleFocus(_:)", message: "Use requestAccessibleFocus(_:) instead")
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
-        modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
-                                                deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
+        requestAccessibleFocus(requestFocus)
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given element
@@ -82,9 +129,8 @@ extension View {
     ///    - requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     ///    - target: The item which will get the focus
     /// - Returns View: The view with a new modifier
+    @available(*, deprecated, renamed: "requestAccessibleFocus(_:for:)", message: "Use requestAccessibleFocus(_:for:) instead")
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
-        modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
-                                                          target: target,
-                                                          deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
+        requestAccessibleFocus(requestFocus, for: target)
     }
 }

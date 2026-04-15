@@ -6,12 +6,13 @@
         @Image(source: "ic_theme_intro", alt: "OUDS themes logo")
     }
 
-    @XcodeRequirement(title: "Xcode 26.2", destination: "https://developer.apple.com/download/")
+    @XcodeRequirement(title: "Xcode 26.3", destination: "https://developer.apple.com/download/")
 
     @Section(title: "Define the view basics") {
         
         @ContentAndMedia {
             Before designing awesome SwiftUI view with OUDS, we need to write before the properties of such view.
+            You should have an access to [the Figma specifications](https://www.figma.com/design/zJl6GhY2gMSMAibBJXoNPy/Reveal-and-Onboarding?node-id=2259-4970&m=dev).
         }
         
         @Steps {

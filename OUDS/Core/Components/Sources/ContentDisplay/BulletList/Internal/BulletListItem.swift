@@ -123,11 +123,66 @@ struct BulletListItem: View {
     }
 
     private var accessibilityLabel: String {
-        if case .ordered = type {
-            "\(accessibilityLabelPrefix), \(item.text)"
+        let orderedPrefix: String? = if case .ordered = type {
+            accessibilityLabelPrefix
         } else {
-            item.text
+            nil
         }
+        return Self.buildAccessibilityLabel(
+            orderedPrefix: orderedPrefix,
+            text: item.text,
+            level: level,
+            subItemsCount: item.subItems.count)
+    }
+
+    /// Builds the VoiceOver accessibility label for a bullet list item.
+    ///
+    /// The label is composed of up to four parts joined by `", "`:
+    /// 1. The ordered prefix (e.g. `"1."`, `"1.A."`) — only for ordered lists.
+    /// 2. The item text.
+    /// 3. The nesting level (e.g. `"level 1"`) — only for **unordered and bare** lists when nesting
+    ///    is involved (i.e. `level > .zero` or the item has sub-items). Ordered lists already encode
+    ///    the depth through their hierarchical prefix (`"1."`, `"1.A."`, `"1.A.a."`), so announcing
+    ///    the level again would be redundant.
+    /// 4. The count of sub-items (e.g. `"3 sub-items"`) — for all list types when `subItemsCount > 0`.
+    ///
+    /// - Parameters:
+    ///   - orderedPrefix: The hierarchical ordered bullet prefix, or `nil` for unordered / bare lists.
+    ///   - text: The visible text of the item.
+    ///   - level: The nesting depth of the item.
+    ///   - subItemsCount: The number of direct children of the item.
+    /// - Returns: A localised accessibility label string.
+    static func buildAccessibilityLabel(orderedPrefix: String?,
+                                        text: String,
+                                        level: OUDSBulletList.NestedLevel,
+                                        subItemsCount: Int) -> String
+    {
+        var components: [String] = []
+
+        // Ordered prefix (e.g. "1.", "1.A.", "1.A.a.")
+        if let orderedPrefix {
+            components.append(orderedPrefix)
+        }
+
+        // Item text
+        components.append(text)
+
+        // Nesting level: only for unordered / bare lists.
+        // Ordered lists already convey depth through their hierarchical prefix.
+        let isNested = level != .zero || subItemsCount > 0
+        if isNested, orderedPrefix == nil {
+            let levelNumber = level.rawValue + 1
+            let levelString = String(format: String(localized: "core_bulletList_a11y_level", bundle: .module), levelNumber)
+            components.append(levelString)
+        }
+
+        // Sub-items count: always announced when children are present, regardless of list type.
+        if subItemsCount > 0 {
+            let subItemsString = String(format: String(localized: "core_bulletList_a11y_subItemsCount", bundle: .module), subItemsCount)
+            components.append(subItemsString)
+        }
+
+        return components.joined(separator: ", ")
     }
 
     static func prefixAfter(_ accessibilityLabel: String, for level: OUDSBulletList.NestedLevel, at index: Int) -> String {

@@ -32,7 +32,7 @@ import SwiftUI
 /// - **normal**: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
 /// - **loading**: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
-struct OUDSButtonStyle: ButtonStyle {
+struct StyleForButton: ButtonStyle {
 
     // MARK: Stored Properties
 
@@ -45,7 +45,7 @@ struct OUDSButtonStyle: ButtonStyle {
 
     // MARK: Initializer
 
-    /// Initialize the `OUDSButtonStyle` for the `appearance`
+    /// Initialize the `StyleForButton` for the `appearance`
     /// and the `style` of the `OUDSButton`.
     ///
     /// - Parameters:
