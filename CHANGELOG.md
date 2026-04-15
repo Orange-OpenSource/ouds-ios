@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `github/codeql-action/upload-sarif` action to v4.35.2 for `scorecard` workflow
 - `faraday` transitive gem from 1.10.5 to 2.14.1
 - `json` RubyGem from v2.19.2 to v2.19.3
 - `ruby/setup-ruby` action from v1.296.0 to v1.301.0 for `build-and-test` workflow
