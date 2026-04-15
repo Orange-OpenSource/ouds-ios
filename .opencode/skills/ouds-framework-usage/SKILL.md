@@ -50,7 +50,19 @@ struct ContentView: View {
 import OUDSSwiftUI // Recommended umbrella import
 ```
 
-Other granular imports are documented at https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted
+> **WARNING — for better developer experience do not import fine-grained internal modules in application code.**
+> The following module names are internal implementation details and should not appear in `import` statements generated for end-user apps:
+> `OUDSComponents`, `OUDSModules`, `OUDSThemesOrange`, `OUDSThemesOrangeCompact`, `OUDSThemesSosh`, `OUDSThemesWireframe`, `OUDSThemesContract`, `OUDSTokensComponent`, `OUDSTokensSemantic`, `OUDSTokensRaw`, `OUDSFoundations`.
+> Always use one of the umbrella products below instead.
+
+| Umbrella product | Included themes | When to use |
+|---|---|---|
+| `OUDSSwiftUI` | All themes | Default choice — gives access to everything |
+| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange-branded apps only |
+| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand Orange/Sosh apps |
+| `OUDSSwiftUIWireframe` | Wireframe | Prototyping / design review only |
+
+If users need fine-grainde imports, share the full import reference: https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted#Import-the-librairies-you-need
 
 ---
 
@@ -158,15 +170,68 @@ OUDSBulletList(type: .ordered) {
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscheckbox/
 
 ```swift
-OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Label")
-OUDSCheckboxItem("Label", isOn: $isOn)
-OUDSCheckboxItem("Label", isOn: $isOn, description: "Hint", icon: Image(decorative: "ic"))
+// Indicator only (no label) — accessibility label is mandatory
+OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Accept terms")
 
+// Three-state indicator only
+OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select all")
+
+// Basic item — leading indicator (default layout)
+OUDSCheckboxItem("Accept terms", isOn: $isOn)
+
+// With description helper text
+OUDSCheckboxItem("Accept terms", isOn: $isOn, description: "Read the full document first")
+
+// With description and icon
+OUDSCheckboxItem("Accept terms", isOn: $isOn,
+                 description: "Read the full document first",
+                 icon: Image(decorative: "ic_document"))
+
+// Reversed layout — trailing indicator, leading icon
+// isReversed moves the checkbox indicator to the trailing edge
+OUDSCheckboxItem("Accept terms", isOn: $isOn,
+                 icon: Image(decorative: "ic_document"),
+                 isReversed: true)
+
+// Error state with error message and divider
+// isError changes look & feel; errorText replaces description when isError is true
+OUDSCheckboxItem("Accept terms", isOn: $isOn,
+                 isError: true,
+                 errorText: "You must accept the terms to continue",
+                 hasDivider: true)
+
+// Read-only — user cannot interact but component is not disabled
+OUDSCheckboxItem("Accept terms", isOn: $isOn, isReadOnly: true)
+
+// Disabled — apply SwiftUI .disabled() modifier; do NOT combine with isError or isReadOnly
+OUDSCheckboxItem("Accept terms", isOn: $isOn)
+    .disabled(true)
+```
+
+> **Forbidden combinations** — these will cause a fatal error at runtime:
+> - `isError: true` + `isReadOnly: true`
+> - `isError: true` + `.disabled(true)`
+> - `isReadOnly: true` + `.disabled(true)`
+
+> **Parameter order matters.** The preferred initializer signature is:
+> `OUDSCheckboxItem(_ label:, isOn:, description:, icon:, flipIcon:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
+> Always pass `isOn:` as the second argument (after the label), and `isReversed:` **after** `icon:`.
+
+```swift
 // Picker
 let data: [OUDSCheckboxPickerData<String>] = [
     .init(tag: "a", label: "Option A"),
+    .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
 ]
 OUDSCheckboxPicker(selections: $selections, checkboxes: data)
+
+// Picker with root indeterminate checkbox and item count in label
+OUDSCheckboxPicker(selections: $selections, checkboxes: data,
+                   placement: .verticalRooted("All options", .textAndCount))
+
+// Horizontal picker with reversed items
+OUDSCheckboxPicker(selections: $selections, checkboxes: data,
+                   isReversed: true, placement: .horizontal(true))
 ```
 Picker docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudscheckboxpicker
 
@@ -504,13 +569,20 @@ if #available(iOS 26, *) {
         style: .prominent)
 }
 
-// Navigation — back (custom dismiss handler)
-OUDSToolBarItem(navigation: .back(label: "Back") { })
+// Navigation — back, system dismiss (no action closure needed)
+// The system pops the navigation stack automatically.
+OUDSToolBarItem(navigation: .back())
 
-// Navigation — back (default system dismiss)
-OUDSToolBarItem(navigation: .back { })
+// Navigation — back with visible label text (label is ignored on iOS 26+ / Liquid Glass)
+OUDSToolBarItem(navigation: .back(label: "Cancel"))
 
-// Navigation — close (built-in dismiss; uses ic_button_expurge icon)
+// Navigation — back with custom action then system dismiss
+// Use this when you need to do extra work (e.g. save a draft) before popping.
+OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+
+// Navigation — close
+// IMPORTANT: .close takes NO closure. Dismiss is handled automatically by the component.
+// Do NOT write: OUDSToolBarItem(navigation: .close) { }  — this does not exist.
 OUDSToolBarItem(navigation: .close)
 
 // Custom view (e.g. a Menu)
@@ -531,3 +603,7 @@ OUDSToolBarItem {
         }
     })
 ```
+
+> **`.close` has no closure.** It takes no action parameter — the dismiss is built in.
+> **`.back()` with no closure** also dismisses automatically. Only add a closure when you need to run extra logic before dismissal.
+> **On iOS 26+ (Liquid Glass)**, the `label:` text in `.back(label:)` is silently ignored by the system.

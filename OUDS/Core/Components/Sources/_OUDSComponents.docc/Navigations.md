@@ -160,17 +160,44 @@ There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and
 }
 
 ```swift
-// The views must be inside a NavigationView or NavigationStack
+// Apply once on the root NavigationStack to style the system navigation bar
+NavigationStack {
+    SomeView()
+        .toolBarTop("Title",
+                    leadingItems: {
+                        // Back button — system dismiss is automatic, no closure needed
+                        OUDSToolBarItem(navigation: .back())
+                    },
+                    trailingItems: {
+                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                    })
+}
+.oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
+
+// Close button — .close takes NO closure, dismiss is handled automatically
 SomeView()
     .toolBarTop("Title",
                 leadingItems: {
-                    OUDSToolBarItem(navigation: .back())
-                },
-                trailingItems: {
-                    OUDSToolBarItem(label: "Label") { /* Action to process */ }
-                    OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
-                }
-    )
+                    OUDSToolBarItem(navigation: .close)
+                })
+
+// Back button with a visible label (label text is ignored on iOS 26+ / Liquid Glass)
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
+                })
+
+// Back button with custom action executed before automatic dismiss
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+                })
+
+// On iOS ≤ 18, add on the root view to color the system back-button chevron correctly
+.accentColor(theme.colors.contentDefault)
 ```
 
 #### Bottom toolbar
@@ -214,10 +241,19 @@ SomeView()
 }
 
 ```swift
+// Leading + trailing split — works on all supported OS versions
 SomeView()
     .toolBarBottom(leadingItems: {
         OUDSToolBarItem(label: "Some label") { /* Action to process */ }
     }, trailingItems: {
         OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+    })
+
+// Grouped / centered — meaningful on iOS 26+ (Liquid Glass) only
+// On earlier OS versions the system splits the items into leading/trailing positions.
+SomeView()
+    .toolBarBottom(groupedItems: {
+        OUDSToolBarItem(label: "Save") { /* Action to process */ }
+        OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
     })
 ```

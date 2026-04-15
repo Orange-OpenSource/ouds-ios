@@ -12,6 +12,7 @@
         
         @ContentAndMedia {
             Before designing awesome SwiftUI view with OUDS, we need to write before the properties of such view.
+            You should have an access to [the Figma specifications](https://www.figma.com/design/zJl6GhY2gMSMAibBJXoNPy/Reveal-and-Onboarding?node-id=2259-4970&m=dev).
         }
         
         @Steps {
