@@ -27,7 +27,7 @@ struct ToolBarItemActionButton: View {
     let style: OUDSToolBarItem.ActionStyle
 
     @Environment(\.theme) private var theme
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
 
@@ -78,7 +78,7 @@ struct ToolBarItemNavigationButton: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.presentationMode) private var presentationMode
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Body
 

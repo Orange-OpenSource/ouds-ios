@@ -23,9 +23,9 @@ struct NavigationStackRefresher: ViewModifier {
 
     private let hideBackButtonLabel: Bool
 
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme: OUDSTheme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: - Initializer
 

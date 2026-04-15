@@ -22,7 +22,7 @@ import SwiftUI
 /// ## Rendering
 ///
 /// iOS 26 brings Liquid Glass, the new Apple look and feel which will prevent developers to define specific styles for some critical components like bars.
-/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and old versions:
+/// Because today the OUDS tab bar relies on native component and is not designed from scratch, some elements will look different between iOS 26 and older versions:
 /// - background color of tab bar can be changed for iOS lower than 26
 /// - background color of tab bar does not change since iOS 26
 /// - normal / unselected tab item color can be changed for both image and text only for iOS lower than 26
@@ -39,7 +39,8 @@ struct TabBarViewModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
+
     // MARK: Init
 
     init() {}
@@ -104,18 +105,20 @@ struct TabBarViewModifier: ViewModifier {
         let tabBarItemAppearance = UITabBarItemAppearance()
 
         // MARK: Tab bar item badge
+
         let badgeUIColor = themeToApply.colors.surfaceStatusNegativeEmphasized.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.normal.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.selected.badgeBackgroundColor = badgeUIColor
         tabBarItemAppearance.focused.badgeBackgroundColor = badgeUIColor
 
         // MARK: Tab bar background
+
         // NOTE: Background color and background effect not working with Liquid Glass / iOS 26+
         tabBarAppearance.configureWithOpaqueBackground()
-//        tabBarAppearance.backgroundEffect = UIBlurEffect(style: .regular)
         tabBarAppearance.backgroundColor = themeToApply.bar.colorBgTranslucent.color(for: colorSchemeToApply).uiColor
 
         // MARK: Fonts
+
         // Font size is needed, 10 is recommendation for iPhone, 13 is for iPad
         let fontSize: CGFloat = (UIDevice.current.userInterfaceIdiom == .pad ? 13 : 10)
         var normalFont: UIFont, selectedFont: UIFont
@@ -130,6 +133,7 @@ struct TabBarViewModifier: ViewModifier {
         }
 
         // MARK: Tab bar unselected item
+
         /*
          With iOS 26+, if a color is applied to a tab bar item in unselected state,
          only the text is changed and not the image (test with iOS 26.0 and 26.1, Xcode 26.0).
@@ -137,20 +141,21 @@ struct TabBarViewModifier: ViewModifier {
          It could mean in dark mode the text is not readable at all.
          Thus apply the unselector color only for cases where everything works, i.e. not Liquid Glass
          */
-        if isLiquidGlassDisabled { // No Liquid Glass
+        if isLiquidGlassDisabled { // No Liquid Glass (i.e. iOS 26 with disabled option, and iOS < 26)
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .foregroundColor: unselectedUIColor,
                 .font: normalFont,
             ]
-        } else { // Liquid Glass
+        } else { // Liquid Glass (i.e. iOS 26+)
             tabBarItemAppearance.normal.titleTextAttributes = [
                 .font: normalFont,
             ]
         }
 
         // MARK: Tab bar selected item
+
         if isLiquidGlassDisabled {
             let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
@@ -168,6 +173,7 @@ struct TabBarViewModifier: ViewModifier {
         }
 
         // MARK: Tab bar focused item
+
         let focusedUIColor = themeToApply.bar.colorContentSelectedFocus.color(for: colorSchemeToApply).uiColor
         tabBarItemAppearance.focused.iconColor = focusedUIColor
         tabBarItemAppearance.focused.titleTextAttributes = [

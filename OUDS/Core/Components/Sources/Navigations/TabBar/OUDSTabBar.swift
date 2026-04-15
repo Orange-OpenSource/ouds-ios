@@ -204,7 +204,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Track orientation changes to trigger view refresh
     @State private var isLandscape: Bool
 
-    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+    @Environment(\.oudsIsLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
 
@@ -345,11 +345,11 @@ public struct OUDSTabBar<Content: View>: View {
             }
             .modifier(TabBarViewModifier())
 
-            TabBarTopDivider()
-                .opacity(hasLegacyLayout ? 1 : 0)
-
             SelectedTabIndicator(selected: $selectedTab, count: tabCount)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
+
+            TabBarTopDivider()
+                .opacity(hasLegacyLayout ? 1 : 0)
         }
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
@@ -396,7 +396,6 @@ public struct OUDSTabBar<Content: View>: View {
                 }
             }
         }
-
         return false
         #else
         // iOS 26+ / Liquid Glass

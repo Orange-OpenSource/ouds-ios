@@ -14,8 +14,7 @@
 import Foundation
 import OUDSFoundations
 import SwiftUI
-#if canImport(UIKit)
-// Conditional import and use of UIKit for documentation generation (see #628 #626)
+#if canImport(UIKit) // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import UIKit
 #endif
 
@@ -32,7 +31,12 @@ extension EnvironmentValues {
     public var theme: OUDSTheme {
         _theme!
     }
+
     // swiftlint:enable force_unwrapping
+
+    /// A flag to know if Liquid Glass is disabled, i.e. if iOS lower than 26 or if app disabled it in its PLIST
+    /// By default, false.
+    @Entry public var oudsIsLiquidGlassDisabled: Bool = false
 }
 
 // MARK: - Themeable View
@@ -61,6 +65,14 @@ public struct OUDSThemeableView<Content: View>: View {
     private let theme: OUDSTheme
     private let content: () -> Content
 
+    private var isLiquidGlassDisabled: Bool {
+        if #available(iOS 26.0, *) {
+            (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
+        } else {
+            true
+        }
+    }
+
     public init(theme: OUDSTheme, @ViewBuilder content: @escaping () -> Content) {
         self.theme = theme
         self.content = content
@@ -69,7 +81,7 @@ public struct OUDSThemeableView<Content: View>: View {
     public var body: some View {
         #if canImport(UIKit)
         content()
-            .environment(\.isLiquidGlassDisabled, isLiquidGlassDisabled)
+            .environment(\.oudsIsLiquidGlassDisabled, isLiquidGlassDisabled)
             .environment(\._theme, theme)
             .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
@@ -79,20 +91,6 @@ public struct OUDSThemeableView<Content: View>: View {
             .environmentObject(OUDSLowPowerModeObserver())
         #endif
     }
-
-    var isLiquidGlassDisabled: Bool {
-        if #available(iOS 26.0, *) {
-            (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
-        } else {
-            true
-        }
-    }
-}
-
-extension EnvironmentValues {
-
-    /// A flag to know if liquidGlass is disabled
-    @Entry public var isLiquidGlassDisabled: Bool = false
 }
 
 #if canImport(UIKit)
