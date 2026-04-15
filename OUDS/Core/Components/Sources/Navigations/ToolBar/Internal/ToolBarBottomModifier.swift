@@ -68,9 +68,7 @@ struct ToolBarBottomModifier: ViewModifier {
                 .toolbar {
                     ToolbarItemGroup(placement: bottomPlacement) {
                         itemsView(leadingItems)
-
                         Spacer()
-
                         itemsView(trailingItems)
                     }
                 }

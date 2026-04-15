@@ -204,6 +204,8 @@ public struct OUDSTabBar<Content: View>: View {
     /// Track orientation changes to trigger view refresh
     @State private var isLandscape: Bool
 
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+
     // MARK: Initializers
 
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
@@ -343,11 +345,11 @@ public struct OUDSTabBar<Content: View>: View {
             }
             .modifier(TabBarViewModifier())
 
-            TabBarTopDivider()
-                .opacity(hasLegacyLayout ? 1 : 0)
-
             SelectedTabIndicator(selected: $selectedTab, count: tabCount)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
+
+            TabBarTopDivider()
+                .opacity(hasLegacyLayout ? 1 : 0)
         }
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
@@ -371,7 +373,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
-        guard #unavailable(iOS 26.0) else { return false }
+        guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
         #else
@@ -383,7 +385,7 @@ public struct OUDSTabBar<Content: View>: View {
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
         // iOS < 26
-        if #unavailable(iOS 26.0) {
+        if isLiquidGlassDisabled {
             // iPhone
             if UIDevice.current.userInterfaceIdiom == .phone {
                 return true
