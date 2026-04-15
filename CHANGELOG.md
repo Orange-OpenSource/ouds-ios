@@ -11,8 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support of disabled `Liquid Glass` for `tab bar` and `toolbar` components (Orange-OpenSource/ouds-ios#1408)
 - `toolbar top` and `toolbar bottom` components (Orange-OpenSource/ouds-ios#1174)
 - `text area` component (Orange-OpenSource/ouds-ios#543)
-- support liquid glass disabled on ios 26 (Orange-OpenSource/ouds-ios#1408)
-- `topAppBar` and `toolbarBottom` components (Orange-OpenSource/ouds-ios#1174)
 - `PIN code input` component (Orange-OpenSource/ouds-ios#998)
 - Agentic AI dedicated files (Orange-OpenSource/ouds-ios#1399)
 - `borderDefault()` view modifier helper to apply a default border using default tokens from the current theme (Orange-OpenSource/ouds-ios#1379)

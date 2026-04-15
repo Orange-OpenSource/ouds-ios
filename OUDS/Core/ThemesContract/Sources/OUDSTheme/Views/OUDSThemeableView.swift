@@ -34,9 +34,11 @@ extension EnvironmentValues {
 
     // swiftlint:enable force_unwrapping
 
-    /// A flag to know if Liquid Glass is disabled, i.e. if iOS lower than 26 or if app disabled it in its PLIST
-    /// with  *UIDesignRequiresCompatibility* key in *main Bundle*.
-    /// By default, *false*.
+    /// A flag indicating whether Liquid Glass is disabled.
+    /// The environment entry default is *false*.
+    /// When using `OUDSThemeableView` (the recommended integration path), this value may be overridden to *true*
+    /// on iOS versions earlier than 26 or when the app enables *UIDesignRequiresCompatibility* in the
+    /// *main Bundle* `Info.plist`.
     @Entry public var isLiquidGlassDisabled: Bool = false
 }
 
@@ -66,7 +68,7 @@ public struct OUDSThemeableView<Content: View>: View {
     private let theme: OUDSTheme
     private let content: () -> Content
 
-    private var isLiquidGlassDisabled: Bool {
+    private static var isLiquidGlassDisabled: Bool {
         if #available(iOS 26.0, *) {
             (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
         } else {
@@ -82,7 +84,7 @@ public struct OUDSThemeableView<Content: View>: View {
     public var body: some View {
         #if canImport(UIKit)
         content()
-            .environment(\.isLiquidGlassDisabled, isLiquidGlassDisabled)
+            .environment(\.isLiquidGlassDisabled, Self.isLiquidGlassDisabled)
             .environment(\._theme, theme)
             .environmentObject(OUDSLowPowerModeObserver())
             .modifier(UserInterfaceSizeClassModifier())
