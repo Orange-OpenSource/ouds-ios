@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.296.0 to v1.301.0 for `build-and-test` workflow
 - `tab bar` component initialization (Orange-OpenSource/ouds-ios#1373)
 - Optimization of public API (frozen structs and enums, inlinable properties) (Orange-OpenSource/ouds-ios#1382)
 - Improve documentation (Orange-OpenSource/ouds-ios#1286)
