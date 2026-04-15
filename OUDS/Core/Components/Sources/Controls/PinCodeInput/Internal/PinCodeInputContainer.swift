@@ -38,10 +38,10 @@ struct PinCodeInputContainer: View {
     /// The digits written one by one by the user before being exposed through `value`
     @State private var digits: [String]
 
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: - Black magic
 
@@ -108,9 +108,15 @@ struct PinCodeInputContainer: View {
                     .contentShape(Rectangle())
                     .foregroundColor(foregroundColor)
                     .modifier(PinCodeInputBorderModifier(isOutlined: isOutlined, isError: isError, isFocused: focusedIndex == index))
-                    .accessibilityValue(accessibilityValue(for: index))
+                // NOTE: no SwiftUI .accessibilityLabel here — it is silently ignored on UIViewRepresentable.
+                // The label and value are set directly on the UITextField inside BackspaceDetectingTextField.
             }
         }
+        // .contain keeps each digit field individually reachable by VoiceOver swipe gestures inside the group.
+        // VoiceOver first announces the group label (groupAccessibilityLabel), then the user can swipe
+        // into the container to reach and vocalize each individual digit field.
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(groupAccessibilityLabel)
         .onAppear {
             // Focus on the first empty field if:
             // - autofocus is enabled (empty value case)
@@ -162,6 +168,18 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    /// Returns `true` when VoiceOver (or any assistive technology that relies on explicit focus
+    /// control) is currently running.
+    /// When `true`, automatic focus advancement to the next field is suppressed so that the user
+    /// can navigate fields at their own pace via VoiceOver swipe gestures.
+    private var isVoiceOverRunning: Bool {
+        #if canImport(UIKit)
+        UIAccessibility.isVoiceOverRunning
+        #else
+        false
+        #endif
+    }
+
     private func accessibilityValue(for index: Int) -> String {
         let value = digits[index]
         if value.isEmpty {
@@ -169,6 +187,24 @@ struct PinCodeInputContainer: View {
         } else {
             return value
         }
+    }
+
+    /// Returns the accessibility label for a digit field at the given index.
+    /// e.g. "Digit 1", "Chiffre 2", "الرقم 3" (localized).
+    /// This is forwarded directly to the UITextField — SwiftUI accessibility modifiers
+    /// are silently ignored on UIViewRepresentable.
+    ///
+    /// - Parameter index: The 0-based index of the digit field
+    /// - Returns: The localized positional label
+    private func accessibilityLabel(for index: Int) -> String {
+        "core_pinCodeInput_digitLabel_a11y" <- (index + 1)
+    }
+
+    /// Returns the accessibility label for the group container of all digit fields.
+    /// e.g. "Enter the 6-digit code" (localized, driven by the component's `length`).
+    /// - Returns: String
+    private var groupAccessibilityLabel: String {
+        "core_pinCodeInput_groupLabel_a11y" <- length.rawValue
     }
 
     // MARK: - Digits fields
@@ -204,6 +240,8 @@ struct PinCodeInputContainer: View {
             displayText: .constant(displayText(for: index)),
             font: uiFont,
             index: index,
+            a11yLabel: accessibilityLabel(for: index),
+            a11yValue: accessibilityValue(for: index),
             onBackspace: {
                 handleBackspace(at: index)
             },
@@ -261,9 +299,13 @@ struct PinCodeInputContainer: View {
                 focusedIndex = nil
             } else {
                 value = ""
-                // Focus the field right after the last filled one, if any
-                let nextIndex = index + toDistribute.count
-                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+                // Move focus to the next empty field only when VoiceOver is not running.
+                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+                // would interrupt their navigation.
+                if !isVoiceOverRunning {
+                    let nextIndex = index + toDistribute.count
+                    focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+                }
             }
             return
         }
@@ -285,7 +327,12 @@ struct PinCodeInputContainer: View {
                 value = joined
                 focusedIndex = nil
             } else if index < length.rawValue - 1 {
-                focusedIndex = index + 1
+                // Move focus to the next field only when VoiceOver is not running.
+                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+                // would interrupt their navigation.
+                if !isVoiceOverRunning {
+                    focusedIndex = index + 1
+                }
                 value = ""
             } else {
                 value = ""
@@ -348,8 +395,13 @@ struct PinCodeInputContainer: View {
             focusedIndex = nil
         } else {
             value = ""
-            let nextIndex = index + toDistribute.count
-            focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            // Move focus to the next empty field only when VoiceOver is not running.
+            // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+            // would interrupt their navigation.
+            if !isVoiceOverRunning {
+                let nextIndex = index + toDistribute.count
+                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            }
         }
     }
 }

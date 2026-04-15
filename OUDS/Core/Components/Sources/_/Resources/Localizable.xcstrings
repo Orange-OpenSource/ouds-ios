@@ -694,6 +694,30 @@
         }
       }
     },
+    "core_pinCodeInput_groupLabel_a11y" : {
+      "comment" : "Component - PIN Code Input",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل رمزًا مكونًا من %lld رقمًا"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the code with %lld digits"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez le code à %lld chiffres"
+          }
+        }
+      }
+    },
     "core_radio_hint_selected_a11y" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
