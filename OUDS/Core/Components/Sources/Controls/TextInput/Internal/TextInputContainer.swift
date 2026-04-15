@@ -129,12 +129,22 @@ struct TextInputContainer: View {
         label.isEmpty ? placeholder ?? "" : label
     }
 
+    @Environment(\.textInputAsSecureField) private var isHiddenPassword: Bool
+
     /// Forges a string to vocalize with *Voice Over* describing the component input value and error, loading, disabled state
     private var accessibilityValue: String {
 
         let emptyDescription = "core_textInput_empty_a11y".localized()
-        let inputValue = "\(prefix ?? "") \(text.wrappedValue) \(suffix ?? "")"
-        let valueDescription = text.wrappedValue.isEmpty ? emptyDescription : inputValue
+        let textValue = text.wrappedValue
+        let inputValue = "\(prefix ?? "") \(textValue) \(suffix ?? "")"
+
+        let valueDescription = if isHiddenPassword, !textValue.isEmpty {
+            "core_PasswordInput_chipsCount_a11y" <- textValue.count
+        } else if textValue.isEmpty {
+            emptyDescription
+        } else {
+            inputValue
+        }
 
         let stateDescription = switch status {
         case .disabled, .readOnly:
