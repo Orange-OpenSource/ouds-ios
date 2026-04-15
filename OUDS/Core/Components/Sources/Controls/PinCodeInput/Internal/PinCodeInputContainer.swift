@@ -168,6 +168,18 @@ struct PinCodeInputContainer: View {
         }
     }
 
+    /// Returns `true` when VoiceOver (or any assistive technology that relies on explicit focus
+    /// control) is currently running.
+    /// When `true`, automatic focus advancement to the next field is suppressed so that the user
+    /// can navigate fields at their own pace via VoiceOver swipe gestures.
+    private var isVoiceOverRunning: Bool {
+        #if canImport(UIKit)
+        UIAccessibility.isVoiceOverRunning
+        #else
+        false
+        #endif
+    }
+
     private func accessibilityValue(for index: Int) -> String {
         let value = digits[index]
         if value.isEmpty {
@@ -287,9 +299,13 @@ struct PinCodeInputContainer: View {
                 focusedIndex = nil
             } else {
                 value = ""
-                // Focus the field right after the last filled one, if any
-                let nextIndex = index + toDistribute.count
-                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+                // Move focus to the next empty field only when VoiceOver is not running.
+                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+                // would interrupt their navigation.
+                if !isVoiceOverRunning {
+                    let nextIndex = index + toDistribute.count
+                    focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+                }
             }
             return
         }
@@ -311,7 +327,12 @@ struct PinCodeInputContainer: View {
                 value = joined
                 focusedIndex = nil
             } else if index < length.rawValue - 1 {
-                focusedIndex = index + 1
+                // Move focus to the next field only when VoiceOver is not running.
+                // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+                // would interrupt their navigation.
+                if !isVoiceOverRunning {
+                    focusedIndex = index + 1
+                }
                 value = ""
             } else {
                 value = ""
@@ -374,8 +395,13 @@ struct PinCodeInputContainer: View {
             focusedIndex = nil
         } else {
             value = ""
-            let nextIndex = index + toDistribute.count
-            focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            // Move focus to the next empty field only when VoiceOver is not running.
+            // VoiceOver users navigate fields via swipe gestures; auto-advancing focus
+            // would interrupt their navigation.
+            if !isVoiceOverRunning {
+                let nextIndex = index + toDistribute.count
+                focusedIndex = nextIndex < length.rawValue ? nextIndex : length.rawValue - 1
+            }
         }
     }
 }
