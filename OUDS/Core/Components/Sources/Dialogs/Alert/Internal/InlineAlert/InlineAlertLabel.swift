@@ -29,6 +29,7 @@ struct InlineAlertLabel: View {
             .labelModerateLarge(theme)
             .foregroundColor(contentColor)
             .frame(maxWidth: theme.sizes.maxWidthTypeLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+            .accessibilityLabel(accessibilityLabel)
     }
 
     // MARK: - Private helper
@@ -46,5 +47,17 @@ struct InlineAlertLabel: View {
         case .negative:
             theme.colors.contentStatusNegative
         }
+    }
+
+    private var accessibilityLabel: String {
+        let labelPrefix = switch status {
+        case .warning:
+            "core_alertMessage_warning_a11y".localized() + ","
+        case .negative:
+            "core_alertMessage_negative_a11y".localized() + ","
+        default:
+            ""
+        }
+        return "\(labelPrefix) \(text)"
     }
 }
