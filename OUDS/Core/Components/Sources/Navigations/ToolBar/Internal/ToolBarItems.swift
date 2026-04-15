@@ -26,7 +26,6 @@ struct ToolBarItemActionButton: View {
     let type: OUDSToolBarItem.ActionType
     let style: OUDSToolBarItem.ActionStyle
 
-    @Environment(\.theme) private var theme
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Body
