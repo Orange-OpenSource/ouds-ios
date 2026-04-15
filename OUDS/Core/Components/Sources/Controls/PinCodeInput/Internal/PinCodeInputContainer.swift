@@ -11,13 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(macOS) && !os(tvOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Pin Code Input Container
 
+// swiftlint:disable type_body_length
 struct PinCodeInputContainer: View {
 
     // MARK: - Properties
@@ -229,6 +230,7 @@ struct PinCodeInputContainer: View {
     }
 
     private func digitField(at index: Int) -> some View {
+        #if !os(macOS)
         // Compute at this level the typography to use to be sure environment values for size class
         // are retrieved in the suitable thread at the best moment
         let uiFont = TypographyModifier.makeUIFont(
@@ -269,6 +271,10 @@ struct PinCodeInputContainer: View {
                 }
                 handleDigitChange(at: index, newValue: newValue)
             }
+        #endif
+        #else
+        // NOTE: Source code must be compilable on macOS to build the doc...
+        EmptyView()
         #endif
     }
 
@@ -405,4 +411,5 @@ struct PinCodeInputContainer: View {
         }
     }
 }
+// swiftlint:enable type_body_length
 #endif

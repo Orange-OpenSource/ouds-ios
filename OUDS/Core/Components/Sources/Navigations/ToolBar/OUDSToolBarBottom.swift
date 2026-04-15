@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS) && !os(macOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSThemesContract
 import SwiftUI
 

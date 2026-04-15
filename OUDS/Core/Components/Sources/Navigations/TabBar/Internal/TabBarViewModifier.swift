@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(macOS) && !os(watchOS) && !os(tvOS)
+#if !os(watchOS) && !os(tvOS)
 
 import OUDSFoundations
 import OUDSThemesContract
@@ -47,6 +47,11 @@ struct TabBarViewModifier: ViewModifier {
 
     // MARK: Body
 
+    #if os(macOS)
+    func body(content: Content) -> some View {
+        content
+    }
+    #else
     func body(content: Content) -> some View {
         content
             // Do not use task(), it's async, effects may be applied too late
@@ -86,7 +91,9 @@ struct TabBarViewModifier: ViewModifier {
         // swiftlint:enable closure_end_indentation
         #endif
     }
+    #endif
 
+    #if !os(macOS)
     // swiftlint:disable function_body_length
     /// Defines the selected and unselected states, and background colors for the tab bar.
     /// Can use forced values for color scheme and theme in some edge cases (app refresh).
@@ -227,6 +234,7 @@ struct TabBarViewModifier: ViewModifier {
             updateTabBars(in: presented, with: appearance)
         }
     }
+    #endif
 }
 
 #endif

@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS) && !os(macOS)
+#if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
 /// Use a navigation stack to present a stack of views over a root view.
@@ -51,8 +51,12 @@ public struct OUDSNavigationStack<Content: View>: View {
         if #available(iOS 16.0, *) {
             NavigationStack { updatedContent }
         } else {
+            #if os(macOS)
+            NavigationView { updatedContent }
+            #else
             NavigationView { updatedContent }
                 .navigationViewStyle(.stack)
+            #endif
         }
     }
 

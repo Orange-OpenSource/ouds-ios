@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS) && !os(macOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
@@ -36,7 +36,9 @@ struct NavigationStackRefresher: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        #if !os(visionOS)
+        #if os(macOS)
+        content
+        #elseif !os(visionOS)
         content
             .onChange(of: theme) { newTheme in
                 refreshAllNavigationBars(for: newTheme, with: colorScheme)
@@ -61,6 +63,7 @@ struct NavigationStackRefresher: ViewModifier {
         #endif
     }
 
+    #if !os(macOS)
     // MARK: - Helpers
 
     private func refreshAllNavigationBars(for newTheme: OUDSTheme, with newColorScheme: ColorScheme) {
@@ -184,6 +187,7 @@ struct NavigationStackRefresher: ViewModifier {
         }
     }
     // swiftlint:enable function_body_length
+    #endif
 }
 // swiftlint:enable cyclomatic_complexity
 #endif
