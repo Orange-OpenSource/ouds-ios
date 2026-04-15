@@ -28,8 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Accessiblity label for `alert` components for `warning` and `negative` statuses (Orange-OpenSource/ouds-ios#1407)
-- Accessibility-hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios#1277)
+- Accessibility label for `alert` components for `warning` and `negative` statuses (Orange-OpenSource/ouds-ios#1407)
+- Accessibility hint for double-tap to unselect action for `filter chip` component (Orange-OpenSource/ouds-ios#1277)
 
 ## [1.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.2.0...1.3.0) - 2026-03-26
 

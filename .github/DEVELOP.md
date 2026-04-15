@@ -278,30 +278,27 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 Because feedbacks of our users are important, you can also mention people who suggested issues to thanks them (*Suggested-by*).
-If users reported a bug, use instead *Reported-by*.
-These two cases are more dedicated to people outside the project.
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Jérôme, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, acked by Maxime and suggested by Thomas:
+For example, for issue n°123 and its pull request n°456, for a bug reported by Pierre-Yves, tested by Anton, Jérôme and Benoit, reviewed by Ludovic, authored by and Pierre-Yves, acked by Maxime and suggested by Thomas:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
+Reported-by: Pierre-Yves Ayoul <pierreyves.ayoul@orange.com>
 Suggested-by: Thomas Martin <thomas2.martin@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Jérôme Régnier <jerome.regnier@orange.com>
-Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Acked-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
-Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
-Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
 > [!TIP]
 > Keep things clear and sorted. If people worked on your commits, mention them if relevant.
+> The lower is the people, the older is its contribution
 
 #### Integration of tokenator updates
 
