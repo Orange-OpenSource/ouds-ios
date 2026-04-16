@@ -125,7 +125,7 @@ struct YourApp: App {
 ```
 
 Feel free to read the [online documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
-You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/ouds/themes).
+You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/themes).
 
 ### Get the theme
 
