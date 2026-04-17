@@ -32,8 +32,10 @@ body:
     attributes:
       label: Is Liquid Glass disabled
       options:
-        - label: Liquid Glass is disabled
-          required: true
+        - label: Yes, Liquid Glass is disabled
+        - label: No, Liquid Glass is enabled
+    validations:
+      required: true
   - type: input
     id: app-ouds-lib-version
     attributes:
