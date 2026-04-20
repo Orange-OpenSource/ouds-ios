@@ -41,6 +41,7 @@ struct SelectedTabIndicator: View {
     /// Horizontal scale factor used to animate the indicator expanding from its center.
     /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
     @State private var indicatorScaleX: CGFloat = 0
+    @State private var isTabBarHidden: Bool = false
 
     /// To disable animation if device in low power mode
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -51,6 +52,8 @@ struct SelectedTabIndicator: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: - Body
+
     var body: some View {
         GeometryReader { geometry in
             let tabWidth = geometry.size.width / CGFloat(count)
@@ -58,7 +61,9 @@ struct SelectedTabIndicator: View {
             let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
             let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
 
-            if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
+            // Do not render the indicator when the native tab bar is hidden
+            // (e.g. when the user applies `.toolbar(.hidden, for: .tabBar)`).
+            if !isTabBarHidden, reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
                 // No animation: display a full-tab-width indicator, instantly repositioned on selection change.
                 RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
                     .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
@@ -69,7 +74,7 @@ struct SelectedTabIndicator: View {
                     .onChange(of: geometry.size) { _ in
                         updateTabBarHeight()
                     }
-            } else {
+            } else if !isTabBarHidden {
                 RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
                     .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
                     .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
@@ -104,11 +109,16 @@ struct SelectedTabIndicator: View {
                 updateTabBarHeight()
             }
         }
+        // React to `.toolbar(.hidden, for: .tabBar)` being applied or removed at any time.
+        .onReceive(NotificationCenter.default.publisher(for: TabBarVisibilityObserver.visibilityDidChange)) { _ in
+            updateTabBarHeight()
+        }
     }
 
     // MARK: Tab bar heights
 
-    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension
+    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension.
+    /// Also updates `isTabBarHidden` to reflect whether `.toolbar(.hidden, for: .tabBar)` has been applied.
     private func updateTabBarHeight() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
@@ -116,9 +126,11 @@ struct SelectedTabIndicator: View {
         safeAreaBottom = window.safeAreaInsets.bottom
 
         if let detectedTabBar = findTabBar() {
+            isTabBarHidden = detectedTabBar.isHidden
             tabBarHeight = detectedTabBar.frame.height
         } else {
             // If not possible to compute tab bar height, get recommended / precomputed value as fallback
+            isTabBarHidden = false
             let heights = iPhoneInUse.tabBarHeights
             tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
         }
