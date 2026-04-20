@@ -19,8 +19,6 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Selected Tab Indicator
-
 /// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. no Liquid Glass)
 struct SelectedTabIndicator: View {
 

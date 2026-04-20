@@ -59,17 +59,17 @@ struct TabBarTopDivider: View {
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
-                updateTabBarHeight()
+                updateTabBarStatus()
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
-                updateTabBarHeight()
+                updateTabBarStatus()
             }
         }
         // React to `.toolbar(.hidden, for: .tabBar)` being applied or removed at any time.
         .onReceive(NotificationCenter.default.publisher(for: TabBarVisibilityObserver.visibilityDidChange)) { _ in
-            updateTabBarHeight()
+            updateTabBarStatus()
         }
     }
 
@@ -77,7 +77,7 @@ struct TabBarTopDivider: View {
 
     /// Get the tab bar height depending to the state of the device and updates the same area stored dimension.
     /// Also updates `isTabBarHidden` to reflect whether `.toolbar(.hidden, for: .tabBar)` has been applied.
-    private func updateTabBarHeight() {
+    private func updateTabBarStatus() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
 
@@ -85,12 +85,10 @@ struct TabBarTopDivider: View {
 
         if let detectedTabBar = findTabBar() {
             // UITabBar found: read actual height and visibility.
-            print("🟥 findTabBar OK — isHidden=\(detectedTabBar.isHidden) frame.height=\(detectedTabBar.frame.height)")
             isTabBarHidden = detectedTabBar.isHidden
             tabBarHeight = detectedTabBar.frame.height
         } else {
             // UITabBar not yet in the hierarchy (timing issue on first appear).
-            print("🟥 findTabBar FAILED — using fallback")
             // Use hardcoded fallback so `tabBarHeight > 0` unlocks the render guard,
             // but do NOT touch `isTabBarHidden` — KVO via TabBarVisibilityObserver is
             // the sole source of truth for visibility; we just don't know it yet here.
@@ -100,11 +98,8 @@ struct TabBarTopDivider: View {
             // the UIKit hierarchy has settled.
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                 if let retryTabBar = findTabBar() {
-                    print("🟥 retry OK — isHidden=\(retryTabBar.isHidden) frame.height=\(retryTabBar.frame.height)")
                     isTabBarHidden = retryTabBar.isHidden
                     tabBarHeight = retryTabBar.frame.height
-                } else {
-                    print("🟥 retry FAILED too")
                 }
             }
         }
