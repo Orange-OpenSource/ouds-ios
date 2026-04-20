@@ -32,22 +32,16 @@ struct TabBarTopDivider: View {
 
     var body: some View {
         GeometryReader { geometry in
-            // The condition is placed OUTSIDE the Rectangle but INSIDE the GeometryReader
-            // so that the geometry proxy is always available. The guard is re-evaluated
-            // on every state change because GeometryReader itself re-renders when @State changes.
-            // `tabBarHeight > 0` prevents a misplaced render on the first layout pass
-            // (before `updateTabBarHeight()` has run). The GeometryReader size does not change
-            // between passes so we need the state-driven condition here rather than relying
-            // on geometry changes to trigger re-evaluation.
+            // Keep the GeometryReader always present so its proxy stays available for
+            // measuring and positioning the divider on every update.
             //
-            // NOTE: the condition must live outside the GeometryReader closure at the `body`
-            // level so SwiftUI identity-diffs it on every @State update. If placed inside the
-            // GeometryReader, SwiftUI may skip re-running the closure when geometry.size is
-            // unchanged even though @State values have changed.
+            // The visibility guard intentionally stays inside the GeometryReader and is
+            // applied with `.opacity` on the Rectangle rather than conditionally removing
+            // the view. This lets the position calculation continue to use the current
+            // geometry and state values on each pass.
             //
-            // We keep the GeometryReader always present (so its size is always measured) and
-            // use `.opacity` to hide/show the Rectangle — this guarantees the closure is
-            // re-evaluated and the position calculation always uses fresh state values.
+            // `tabBarHeight > 0` prevents a misplaced render during the first layout pass,
+            // before `updateTabBarHeight()` has populated the measured tab bar height.
             let dividerPosition = geometry.size.height - tabBarHeight + safeAreaBottom
             Rectangle()
                 .fill(theme.colors.borderMinimal.color(for: colorScheme))

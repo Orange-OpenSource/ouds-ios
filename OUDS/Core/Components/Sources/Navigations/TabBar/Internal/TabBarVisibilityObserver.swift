@@ -49,9 +49,9 @@ final class TabBarVisibilityObserver: NSObject, @unchecked Sendable {
                                change: [NSKeyValueChangeKey: Any]?,
                                context: UnsafeMutableRawPointer?)
     {
-        guard keyPath == "hidden" else { return }
+        guard keyPath == "hidden", let observedTabBar = object as? UITabBar else { return }
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: TabBarVisibilityObserver.visibilityDidChange, object: nil)
+            NotificationCenter.default.post(name: TabBarVisibilityObserver.visibilityDidChange, object: observedTabBar)
         }
     }
     // swiftlint:enable block_based_kvo
