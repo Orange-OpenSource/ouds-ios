@@ -16,74 +16,56 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The trailing part of the  component, i.e. all the views without the indicator, i.e. texts, icons and dividers.
-/// Can be considered as a rich label for the associated indicator (checkbox, radio, switch).
-struct ControlItemLabel: View {
+/// The texts can be considered as a rich label for the associated indicator (checkbox, radio, switch).
+struct ControlItemTextContainer: View {
 
     // MARK: - Stored properties
 
     let interactionState: InteractionState
-    let layoutData: LayoutData
+    let layoutData: ControlItemData
 
     @Environment(\.theme) private var theme
-
-    // MARK: Layout Data
-
-    /// Gathers any details and content to add in the ``ControlItemLabel``
-    struct LayoutData {
-        let label: String
-        let extraLabel: String?
-        let description: String?
-        let icon: Image?
-        let flipIcon: Bool
-        let isOutlined: Bool
-        let isError: Bool
-        let errorText: TextualContent?
-        let isReadOnly: Bool
-        let hasDivider: Bool
-        let constrainedMaxWidth: Bool
-        let orientation: ControlItem.Orientation
-    }
 
     // MARK: - Body
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.controlItem.spaceColumnGap) {
-            texts()
-        }
-    }
+            VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
+                if let overline = layoutData.texts.overline, !overline.isEmpty {
+                    Text(overline)
+                        .labelModerateSmall(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(descriptionOverlineColor)
+                }
 
-    // MARK: - Layout Items
-
-    private func texts() -> some View {
-        VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
-            Text(layoutData.label)
-                .labelDefaultLarge(theme)
-                .multilineTextAlignment(.leading)
-                .foregroundStyle(labelColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-            if let extraLabel = layoutData.extraLabel, !extraLabel.isEmpty {
-                Text(extraLabel)
-                    .labelStrongMedium(theme)
+                Text(layoutData.texts.label)
+                    .labelDefaultLarge(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(extraLabelColor)
-            }
+                    .foregroundStyle(labelColor)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let description = layoutData.description, !description.isEmpty {
-                Text(description)
-                    .labelDefaultMedium(theme)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(helperColor)
+                if let extraLabel = layoutData.texts.extraLabel, !extraLabel.isEmpty {
+                    Text(extraLabel)
+                        .labelStrongMedium(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(extraLabelColor)
+                }
+
+                if let description = layoutData.texts.description, !description.isEmpty {
+                    Text(description)
+                        .labelDefaultMedium(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(descriptionOverlineColor)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Colors
 
     private var labelColor: MultipleColorSemanticToken {
-        if layoutData.isError {
+        if layoutData.style.isError {
             switch interactionState {
             case .enabled:
                 theme.colors.actionNegativeEnabled
@@ -105,7 +87,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var helperColor: MultipleColorSemanticToken {
+    private var descriptionOverlineColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.contentMuted

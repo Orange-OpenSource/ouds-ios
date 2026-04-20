@@ -24,16 +24,18 @@ struct ControlItemIconContainer: View {
     // MARK: - Stored properties
 
     let interactionState: InteractionState
-    let layoutData: ControlItemLabel.LayoutData
+    let icon: Image?
+    let flipIcon: Bool
+    let isError: Bool
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        if layoutData.isError || layoutData.icon != nil {
+        if isError || icon != nil {
             HStack(alignment: .center, spacing: 0) {
-                icon
+                cumputedIcon
             }
             .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
@@ -42,8 +44,8 @@ struct ControlItemIconContainer: View {
     // MARK: - Colors
 
     @ViewBuilder
-    private var icon: some View {
-        if layoutData.isError {
+    private var cumputedIcon: some View {
+        if isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
                 .resizable()
@@ -53,14 +55,14 @@ struct ControlItemIconContainer: View {
                 .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
                 .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
-            if let icon = layoutData.icon {
+            if let icon {
                 icon
                     .resizable()
                     .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
-                    .toFlip(layoutData.flipIcon)
+                    .toFlip(flipIcon)
             }
         }
     }

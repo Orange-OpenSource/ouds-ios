@@ -16,25 +16,15 @@ import SwiftUI
 /// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
 /// This internal component displays the indicator and defines the layout as a SwiftUI button through the internal `InteractionButton`.
-struct ControlItem: View {
+struct ControlItem<Leading: View, Trailing: View>: View {
 
     // MARK: Stored Properties
 
-    private let indicatorType: IndicatorType
-    private let layoutData: ControlItemLabel.LayoutData
+    private let layoutData: ControlItemData
+    private let isSelected: Bool
+    private let leading: () -> Leading
+    private let trailing: () -> Trailing
     private let action: (() -> Void)?
-
-    // MARK: Enums
-
-    /// Used to define the indicator to be displayed
-    enum IndicatorType {
-        /// Indicator is a switch (i.e `SwiftUI.Toggle`)
-        case `switch`(Binding<Bool>)
-        /// Indicator is a radio button
-        case radioButton(Binding<Bool>)
-        /// Indicator is a checkbox
-        case checkBox(Binding<OUDSCheckboxIndicatorState>)
-    }
 
     /// Used to define the orientation of the Layout
     enum Orientation {
@@ -54,32 +44,30 @@ struct ControlItem: View {
     ///    - action: An optional action to trigger when the component has been pressed
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
-    init(indicatorType: IndicatorType, layoutData: ControlItemLabel.LayoutData, action: (() -> Void)? = nil) {
-        self.indicatorType = indicatorType
+    init(layoutData: ControlItemData,
+         isSelected: Bool = false,
+         @ViewBuilder leading: @escaping () -> Leading,
+         @ViewBuilder trailing: @escaping () -> Trailing,
+         action: (() -> Void)? = nil)
+    {
         self.layoutData = layoutData
+        self.isSelected = isSelected
+        self.leading = leading
+        self.trailing = trailing
         self.action = action
     }
 
     // MARK: Body
 
     var body: some View {
-        InteractionButton(isReadOnly: layoutData.isReadOnly) {
-            #if os(iOS)
-            VibrationsManager.success()
-            #endif
-            switch indicatorType {
-            case let .switch(binding):
-                withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
-                    binding.wrappedValue.toggle()
-                }
-            case let .radioButton(binding):
-                binding.wrappedValue.toggle()
-            case let .checkBox(binding):
-                binding.wrappedValue.toggle()
-            }
+        InteractionButton(isReadOnly: layoutData.style.isReadOnly) {
             action?()
         } content: { interactionState in
-            ControlItemContent(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
+            ControlItemContent(layoutData: layoutData,
+                               isSelected: isSelected,
+                               interactionState: interactionState,
+                               leading: leading,
+                               trailing: trailing)
         }
     }
 }
