@@ -204,6 +204,12 @@ public struct OUDSTabBar<Content: View>: View {
     /// Track orientation changes to trigger view refresh
     @State private var isLandscape: Bool
 
+    #if os(iOS)
+    /// KVO observer that watches the native `UITabBar.isHidden` property and broadcasts
+    /// `TabBarVisibilityObserver.visibilityDidChange` so overlay views can react.
+    @State private var tabBarVisibilityObserver: TabBarVisibilityObserver?
+    #endif
+
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
@@ -355,6 +361,20 @@ public struct OUDSTabBar<Content: View>: View {
         }
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
+            // Attach KVO observer on the live UITabBar so the overlay views
+            // (SelectedTabIndicator, TabBarTopDivider) are notified whenever
+            // `.toolbar(.hidden, for: .tabBar)` is applied or removed.
+            // The UIKit hierarchy may not be fully settled on the first onAppear,
+            // so retry after a short delay if findTabBar() returns nil.
+            if let tabBar = findTabBar() {
+                tabBarVisibilityObserver = TabBarVisibilityObserver(tabBar: tabBar)
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
+                    if let tabBar = findTabBar() {
+                        tabBarVisibilityObserver = TabBarVisibilityObserver(tabBar: tabBar)
+                    }
+                }
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             // Delay to ensure the orientation change is complete
