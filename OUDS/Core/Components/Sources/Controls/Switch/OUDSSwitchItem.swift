@@ -146,7 +146,9 @@ public struct OUDSSwitchItem: View {
     // MARK: - Properties
 
     @Binding private var isOn: Bool
-    private let layoutData: ControlItemLabel.LayoutData
+    private let layoutData: ControlItemData
+    private let icon: Image?
+    private let flipIcon: Bool
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -218,18 +220,20 @@ public struct OUDSSwitchItem: View {
             nil
         }
 
-        layoutData = .init(
-            label: label.localized(),
-            extraLabel: nil,
-            description: description?.localized(),
-            icon: image,
-            isOutlined: false,
-            isError: isError,
-            errorText: errorTextContent,
-            isReadOnly: isReadOnly,
-            hasDivider: hasDivider,
-            constrainedMaxWidth: constrainedMaxWidth,
-            orientation: isReversed ? .reversed : .default)
+        let texts = ControlItemData.Texts(label: label.localized(),
+                                          overline: nil,
+                                          extraLabel: nil,
+                                          description: description?.localized())
+        let style = ControlItemData.Style(isOutlined: false,
+                                          isError: isError,
+                                          errorText: errorTextContent,
+                                          isReadOnly: isReadOnly,
+                                          hasDivider: hasDivider,
+                                          constrainedMaxWidth: constrainedMaxWidth,
+                                          isReversed: isReversed)
+        layoutData = .init(texts: texts, style: style)
+        self.icon = image?.image
+        self.flipIcon = image?.flipped ?? false
     }
 
     // MARK: - Initializers — String label + errorText: AttributedString
@@ -292,18 +296,21 @@ public struct OUDSSwitchItem: View {
 
         _isOn = isOn
 
-        layoutData = .init(
-            label: label.localized(),
-            extraLabel: nil,
-            description: description?.localized(),
-            icon: image,
-            isOutlined: false,
-            isError: isError,
-            errorText: .attributed(errorText),
-            isReadOnly: isReadOnly,
-            hasDivider: hasDivider,
-            constrainedMaxWidth: constrainedMaxWidth,
-            orientation: isReversed ? .reversed : .default)
+        let texts = ControlItemData.Texts(label: label.localized(),
+                                          overline: nil,
+                                          extraLabel: nil,
+                                          description: description?.localized())
+        let style = ControlItemData.Style(isOutlined: false,
+                                          isError: isError,
+                                          errorText: .attributed(errorText),
+                                          isReadOnly: isReadOnly,
+                                          hasDivider: hasDivider,
+                                          constrainedMaxWidth: constrainedMaxWidth,
+                                          isReversed: isReversed)
+        layoutData = .init(texts: texts, style: style)
+
+        self.icon = image?.image
+        self.flipIcon = image?.flipped ?? false
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -424,7 +431,10 @@ public struct OUDSSwitchItem: View {
     // MARK: - Body
 
     public var body: some View {
-        ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
+        ControlItemIndicator(type: .switch($isOn),
+                             layoutData: layoutData,
+                             icon: icon,
+                             flipIcon: flipIcon)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
@@ -435,27 +445,27 @@ public struct OUDSSwitchItem: View {
 
     /// Forge a string to vocalize the component label based on label, extraLabel and description
     private var accessibilityLabel: String {
-        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
-        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
-        return "\(layoutData.label)\(extraLabel)\(description)"
+        let extraLabel = layoutData.texts.extraLabel?.isEmpty != false ? "" : ", \(layoutData.texts.extraLabel ?? "")"
+        let description = layoutData.texts.description?.isEmpty != false ? "" : ", \(layoutData.texts.description ?? "")"
+        return "\(layoutData.texts.label)\(extraLabel)\(description)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component trait, value and state
     private var accessibilityValue: String {
         let traitDescription = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
         let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
-        let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let stateDescription = !isEnabled || layoutData.style.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.errorText?.rawValue ?? ""
-        let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
+        let errorText = layoutData.style.errorText?.rawValue ?? ""
+        let errorDescription = layoutData.style.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
     private var accessibilityHint: String {
-        if !isEnabled || layoutData.isReadOnly {
+        if !isEnabled || layoutData.style.isReadOnly {
             ""
         } else {
             "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()

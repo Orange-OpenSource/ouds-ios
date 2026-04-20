@@ -24,16 +24,18 @@ struct ControlItemIconContainer: View {
     // MARK: - Stored properties
 
     let interactionState: OUDSButtonInteractionState
-    let layoutData: ControlItemLabel.LayoutData
+    let icon: Image?
+    let flipIcon: Bool
+    let isError: Bool
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        if layoutData.isError || layoutData.icon != nil {
+        if isError || icon != nil {
             HStack(alignment: .center, spacing: 0) {
-                icon
+                cumputedIcon
             }
             .frame(minHeight: theme.listItem.sizeAssetSmall, maxHeight: theme.listItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
@@ -42,8 +44,8 @@ struct ControlItemIconContainer: View {
     // MARK: - Colors
 
     @ViewBuilder
-    private var icon: some View {
-        if layoutData.isError {
+    private var cumputedIcon: some View {
+        if isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
                 .resizable()
@@ -53,14 +55,14 @@ struct ControlItemIconContainer: View {
                 .frame(width: theme.listItem.sizeErrorIcon, height: theme.listItem.sizeErrorIcon)
                 .padding(.horizontal, theme.listItem.spacePaddingInlineErrorIcon)
         } else {
-            if let asset = layoutData.icon?.asset {
-                asset
+            if let icon {
+                icon
                     .resizable()
-                    .renderingMode(layoutData.icon?.renderingMode ?? .template)
+                    .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.listItem.sizeAssetSmall, height: theme.listItem.sizeAssetSmall)
-                    .toFlip(layoutData.icon?.flipped ?? false)
+                    .toFlip(flipIcon)
             }
         }
     }
