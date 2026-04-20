@@ -27,6 +27,15 @@ body:
       placeholder: iOS 15.1
     validations:
       required: true
+  - type: checkboxes
+    id: liquid-glass-disabled
+    attributes:
+      label: Is Liquid Glass disabled
+      options:
+        - label: Yes, Liquid Glass is disabled
+        - label: No, Liquid Glass is enabled
+    validations:
+      required: true
   - type: input
     id: app-ouds-lib-version
     attributes:
