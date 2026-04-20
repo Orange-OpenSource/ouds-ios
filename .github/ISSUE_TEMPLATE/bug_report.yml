@@ -1,5 +1,5 @@
 name: Report a bug
-description: Tell us about a bug or issue you may have identified in OUDS iOS.
+description: Tell us about a bug or issue you may have identified in OUDS iOS (in english if possible)
 title: "When / For / In / On ... "
 labels: ["🐞 bug", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
@@ -32,62 +32,17 @@ body:
     attributes:
       label: Is Liquid Glass disabled
       options:
-        - label: Yes, Liquid Glass is disabled
-        - label: No, Liquid Glass is enabled
+        - label: Yes, Liquid Glass is disabled (or OS version is older than 26)
+        - label: No, Liquid Glass is enabled (or OS version is 26 or newer)
     validations:
       required: true
   - type: input
     id: app-ouds-lib-version
     attributes:
       label: OUDS iOS library version
-      placeholder: "1.0.0"
+      placeholder: "1.4.0"
     validations:
-      required: true
-  - type: input
-    id: app-version
-    attributes:
-      label: Design System Toolbox app version
-      placeholder: 1.0.0
-  - type: input
-    id: app-build-number
-    attributes:
-      label: Design System Toolbox app build number
-      placeholder: "1766065729"         
-  - type: input
-    id: app-build-type
-    attributes:
-      label: Design System Toolbox app build type
-      placeholder: alpha, beta, prod, debug
-    validations:
-      required: false             
-  - type: input
-    id: app-orientation
-    attributes:
-      label: Design System Toolbox app orientation
-      placeholder: Portrait and / or landscape
-    validations:
-      required: false
-  - type: input
-    id: app-language
-    attributes:
-      label: Design System Toolbox app language
-      placeholder: English
-    validations:
-      required: false   
-  - type: input
-    id: device-language
-    attributes:
-      label: Device language
-      placeholder: English
-    validations:
-      required: false   
-  - type: input
-    id: app-token-lib-version
-    attributes:
-      label: Tokens libraries versions embeded in the app
-      placeholder: "Orange 1.1.0, Core 1.2.0, Sosh 1.0.0, ..."
-    validations:
-      required: false 
+      required: true      
   - type: input
     id: xcode-version
     attributes:
@@ -102,6 +57,51 @@ body:
       placeholder: "Add 'swift --version' command outputs"
     validations:
       required: false
+  - type: input
+    id: app-orientation
+    attributes:
+      label: App orientation
+      placeholder: Portrait and / or landscape
+    validations:
+      required: false
+  - type: input
+    id: app-language
+    attributes:
+      label: App language
+      placeholder: English
+    validations:
+      required: false   
+  - type: input
+    id: device-language
+    attributes:
+      label: Device language
+      placeholder: English
+    validations:
+      required: false               
+  - type: input
+    id: app-token-lib-version
+    attributes:
+      label: Tokens libraries versions embeded in the app (check your logs)
+      placeholder: "Orange 1.1.0, Core 1.2.0, Sosh 1.0.0, ..."
+    validations:
+      required: false       
+  - type: input
+    id: design-toolbox-app-version
+    attributes:
+      label: Design System Toolbox app version (if used)
+      placeholder: 1.0.0
+  - type: input
+    id: design-toolbox-app-build-number
+    attributes:
+      label: Design System Toolbox app build number (if used)
+      placeholder: "1766065729"         
+  - type: input
+    id: design-toolbox-app-build-type
+    attributes:
+      label: Design System Toolbox app build type (if used)
+      placeholder: alpha, beta, prod, debug
+    validations:
+      required: false             
   - type: textarea
     id: what-happened
     attributes:
