@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...develop)
 
+### Fixed
+
+- Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
+
 ## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.3.0...1.4.0) - 2026-04-15
 
 ### Added

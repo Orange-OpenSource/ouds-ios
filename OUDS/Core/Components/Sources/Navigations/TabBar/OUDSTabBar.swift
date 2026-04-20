@@ -347,9 +347,11 @@ public struct OUDSTabBar<Content: View>: View {
 
             SelectedTabIndicator(selected: $selectedTab, count: tabCount)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
+                .ignoresSafeArea(.keyboard, edges: .bottom)
 
             TabBarTopDivider()
                 .opacity(hasLegacyLayout ? 1 : 0)
+                .ignoresSafeArea(.keyboard, edges: .bottom)
         }
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
