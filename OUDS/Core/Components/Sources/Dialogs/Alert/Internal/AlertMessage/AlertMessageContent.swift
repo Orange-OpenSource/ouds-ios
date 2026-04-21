@@ -21,7 +21,7 @@ struct AlertMessageContent: View {
     let text: String
     let status: OUDSAlertStatus
     let description: TextualContent?
-    let bulletList: [String]
+    let bulletList: [TextualContent]
     let link: OUDSAlertMessage.Link?
 
     @Environment(\.theme) private var theme
@@ -63,19 +63,6 @@ struct AlertMessageContent: View {
     }
 
     // MARK: - Helpers
-
-    /// Helps to create a `Text` View with the suitable infered type, otherwise compiler gets nut
-    /// - Parameter description: The text to display in a particular context
-    private func textView(for description: TextualContent) -> Text {
-        switch description {
-        case let .attributed(attributedString):
-            Text(attributedString)
-        case let .localized(key, table, bundle):
-            Text(key.resolved(tableName: table, bundle: bundle))
-        case let .raw(text):
-            Text(text)
-        }
-    }
 
     private var foregroundColor: MultipleColorSemanticToken {
         switch status {

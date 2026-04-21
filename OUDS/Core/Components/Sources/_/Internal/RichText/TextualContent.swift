@@ -24,17 +24,12 @@ enum TextualContent {
     /// The text is an `AtttributtedString`, a rich text
     case attributed(AttributedString)
 
-    /// The text is a localized string which can be found at a `LocalizedStringKey` for a given table name as `String?` in a `Bundle`
-    case localized(LocalizedStringKey, String? = nil, Bundle = .main)
-
     var isEmpty: Bool {
         switch self {
         case let .raw(text):
             text.isEmpty
         case let .attributed(text):
             text.characters.isEmpty
-        case let .localized(key, tableName, bundle):
-            key.resolved(tableName: tableName, bundle: bundle).isEmpty
         }
     }
 }
