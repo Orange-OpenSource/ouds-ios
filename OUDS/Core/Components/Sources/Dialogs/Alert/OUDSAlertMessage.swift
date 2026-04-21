@@ -22,10 +22,14 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///         // A basic positive alert message with text and badge
-///         OUDSAlertMessage(label: "Label")
+///         // A basic positive alert message with text and description
+///         OUDSAlertMessage(label: "Label", description: "You should read this text")
 ///         // From a localizable in a bundle
 ///         OUDSAlertMessage(LocalizedStringKey("label_wording"), bundle: Bundle.module)
+///
+///         // With a rich text for the description (e.g. markdown here, do not forge to manage the errors)
+///         let richDescription = AttributedString(markdown: "You **must read this text**")
+///         OUDSAlertMessage(label: "Label", description: richDescription)
 ///
 ///         // A more complex alert message for warning status with a description and a close action
 ///         // to dismiss the message.
@@ -44,6 +48,14 @@ import SwiftUI
 ///         }
 ///         OUDSAlertMessage(label: "Label", link: link)
 /// ```
+///
+/// ## Rich text
+///
+/// Strong text can be used sparingly within alert messages to highlight key information.
+/// Rich text should use equivalent of Label / Medium / Strong token if possible, no other text styles or custom font weights should be used.
+/// Underlined text must not be used for emphasis, as it is commonly associated with links.
+/// If a hyperlink is needed within the content, the typographic reference Label / Medium / Underline should be used.
+/// Italic should be used with care, some brands do not allow it like Orange brand.
 ///
 /// ## Design documentation
 ///
@@ -74,9 +86,9 @@ public struct OUDSAlertMessage: View {
 
     // MARK: Stored properties
 
-    private let text: String
+    private let text: String // TODO: #1405 - Move to TextualContent mayve?
     private let status: OUDSAlertStatus
-    private let description: String?
+    private let description: TextualContent?
     private let bulletList: [String]
     private let link: Self.Link?
     private let onClose: (() -> Void)?
@@ -125,7 +137,7 @@ public struct OUDSAlertMessage: View {
 
     // MARK: - Initializers
 
-    /// Creates a alert message.
+    /// Creates an alert message.
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///
@@ -156,11 +168,55 @@ public struct OUDSAlertMessage: View {
             OL.warning("The label for the OUDSAlertMessage must not be empty!")
         }
         self.status = status
-        self.description = description
+        self.description = if let description {
+            .raw(description)
+        } else {
+            nil
+        }
         self.link = link
         self.onClose = onClose
         self.bulletList = bulletList
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates an alert message with a rich text for the `description`.
+    ///
+    /// Use the `View/disabled(_:)` method to have component in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSAlertMessage(label: "Success! Your form was submitted.", status: .positive)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - label: Label displayed in the alert message. Main message that should be short, clear, and readable at a glance.
+    ///   - status: The status of the alert message. Its background color and its icon color are based on this status. There are two types of statuses (see ``OUDSAlertStatus``)
+    ///   - description: A supplementary text in an alert message. Use only when additional detail or guidance is needed beyond the label. It should remain
+    ///   short, clear and scannable, helping the user to understand what happened and what he can do next.
+    ///   - bulletList: An optional list of bullet points to be displayed in the alert message following the label or the optional `description`.
+    ///   - link: An optional link to be displayed in the alert message. It can be used to trigger an action.
+    ///   - onClose: An optional callback invoked when the close button is clicked. If `nil`, the close button is not displayed and the alert message
+    ///   remains visible until the context changes (e.g., the issue is resolved, the screen is refreshed). Otherwise, the alert message is dismissable and
+    ///   includes a close button, allowing the user to dismiss it when he has acknowledged the message.  Some alerts must remain visible to ensure
+    ///   user is aware of important information; others can be closed to reduce visual clutter.
+    public init(label: String,
+                status: OUDSAlertStatus = .positive,
+                description: AttributedString,
+                bulletList: [String] = [],
+                link: Self.Link? = nil,
+                onClose: (() -> Void)? = nil)
+    {
+        text = label
+        if text.isEmpty {
+            OL.warning("The label for the OUDSAlertMessage must not be empty!")
+        }
+        self.status = status
+        self.description = .attributed(description)
+        self.link = link
+        self.onClose = onClose
+        self.bulletList = bulletList
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     /// Creates an alert message with a localized label, looking up the key in the given bundle.
     ///
@@ -193,6 +249,41 @@ public struct OUDSAlertMessage: View {
                   link: link,
                   onClose: onClose)
     }
+
+    // swiftlint:disable function_default_parameter_at_end
+    /// Creates an alert message with a localized label, looking up the key in the given bundle, and a rich text description.
+    ///
+    /// ```swift
+    ///     OUDSAlertMessage(LocalizedStringKey("error_message"), bundle: Bundle.module, status: .negative)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - status: The status of the alert message, default set to *positive*
+    ///   - description: A supplementary text for the description as rich text
+    ///   - bulletList: An optional list of bullet points, default set to empty array
+    ///   - link: An optional link to be displayed in the alert message, default set to *nil*
+    ///   - onClose: An optional callback invoked when the close button is clicked, default set to *nil*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: OUDSAlertStatus = .positive,
+                description: AttributedString,
+                bulletList: [String] = [],
+                link: Self.Link? = nil,
+                onClose: (() -> Void)? = nil)
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  status: status,
+                  description: description,
+                  bulletList: bulletList,
+                  link: link,
+                  onClose: onClose)
+    }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
