@@ -130,7 +130,7 @@ struct BulletListItem: View {
         }
         return Self.buildAccessibilityLabel(
             orderedPrefix: orderedPrefix,
-            text: item.text,
+            text: item.text.rawValue,
             level: level,
             subItemsCount: item.subItems.count)
     }

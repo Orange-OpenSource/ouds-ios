@@ -51,13 +51,17 @@ import SwiftUI
 ///
 /// ## Rich text
 ///
-/// Only the alert message description and bullit list can use rich text.
+/// Only the alert message description and bullet list can use rich text.
 ///
 /// Strong text can be used sparingly within alert messages to highlight key information.
-/// Rich text should use equivalent of Label / Medium / Strong token if possible, no other text styles or custom font weights should be used.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
-/// If a hyperlink is needed within the content, the typographic reference Label / Medium / Underline should be used.
+/// If a hyperlink is needed within the content, the underlined style should be used.
 /// Italic should be used with care, some brands do not allow it like Orange brand.
+/// No other text styles should be used.
+///
+/// ## Accessibility considerations
+///
+/// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Vocalization.
 ///
 /// ## Design documentation
 ///

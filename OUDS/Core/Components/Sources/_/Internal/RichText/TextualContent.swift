@@ -24,6 +24,17 @@ enum TextualContent {
     /// The text is an `AtttributtedString`, a rich text
     case attributed(AttributedString)
 
+    /// Returns the text value of the element.
+    /// Voice Over will be able to vocalized it, at least for `String` and `AttributedString(markdown:)` cases.
+    var rawValue: String {
+        switch self {
+        case let .raw(text):
+            text
+        case let .attributed(text):
+            String(text.characters)
+        }
+    }
+
     var isEmpty: Bool {
         switch self {
         case let .raw(text):
