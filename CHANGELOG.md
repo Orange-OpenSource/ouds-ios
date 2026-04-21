@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
 - Rich text for `alert message` component (Orange-OpenSource/ouds-ios#1405)
 - Rich text for `alert message`, `bullet list` components (Orange-OpenSource/ouds-ios#1405)
+- Rich text for `alert message`, `bullet list`, `switch item` components (Orange-OpenSource/ouds-ios#1405)
 
 ### Fixed
 

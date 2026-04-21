@@ -55,7 +55,7 @@ struct ControlItemContent: View {
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 
             if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
-                Text(errorText)
+                textView(for: errorText)
                     .labelDefaultMedium(theme)
                     .foregroundColor(theme.colors.contentStatusNegative)
                     .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)

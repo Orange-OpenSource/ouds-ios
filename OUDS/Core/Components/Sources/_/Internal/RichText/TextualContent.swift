@@ -13,6 +13,10 @@
 
 import SwiftUI
 
+// TODO: #1405 - Add unit tests
+
+// MARK: - Textual Content
+
 /// Some components can have textual contents like descriptions.
 /// These things can be defined with raw `String` or rich text like `AttributedString`, or localized string.
 /// Helps to have in one property several cases instead of several properties.
@@ -40,7 +44,16 @@ enum TextualContent {
         case let .raw(text):
             text.isEmpty
         case let .attributed(text):
-            text.characters.isEmpty
+            text.isEmpty
         }
+    }
+}
+
+// MARK: - Attributed String
+
+extension AttributedString {
+
+    var isEmpty: Bool {
+        characters.isEmpty
     }
 }

@@ -38,7 +38,7 @@ struct ControlItemLabel: View {
         let flipIcon: Bool
         let isOutlined: Bool
         let isError: Bool
-        let errorText: String?
+        let errorText: TextualContent?
         let isReadOnly: Bool
         let hasDivider: Bool
         let constrainedMaxWidth: Bool

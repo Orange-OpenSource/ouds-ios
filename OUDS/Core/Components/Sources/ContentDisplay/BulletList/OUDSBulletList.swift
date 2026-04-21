@@ -128,7 +128,7 @@ import SwiftUI
 ///
 /// ## Accessibility considerations
 ///
-/// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Vocalization.
+/// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
 /// ## Design documentation
 ///
