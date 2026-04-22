@@ -30,11 +30,19 @@ struct CheckboxBackgroundColorModifier: ViewModifier {
         case .enabled, .disabled, .readOnly:
             content
         case .hover:
-            content.background(theme.controlItem.colorBgHover)
-                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
+            // TODO: #1437 - Which token use instead of colorBgHover?
+            /* /
+             content.background(theme.controlItem.colorBgHover)
+                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
+              */
+            content
         case .pressed:
-            content.background(theme.controlItem.colorBgPressed)
-                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
+            // TODO: #1437 - Which token use instead of colorBgPressed?
+            /*
+             content.background(theme.controlItem.colorBgPressed)
+                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
+              */
+            content
         }
     }
 }

@@ -204,6 +204,8 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var overlayModalSheet: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalSheetLight, dark: overlayModalSheetDark) }
 
+    @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
+
     // MARK: - Color - Surface
 
     @objc public final var surfaceBrandPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: surfaceBrandPrimaryLight, dark: surfaceBrandPrimaryDark) }
