@@ -24,5 +24,5 @@ extension WireframeThemePinCodeInputComponentTokensProvider: PinCodeInputCompone
     /// Has for value token dimensions._large
     @objc public final var sizeMinWidth: SizeSemanticToken { dimensions._large }
     /// Has for value token dimensions._3xlarge
-    @objc public final var size📄_maxWidth: SizeSemanticToken { dimensions._3xlarge }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { dimensions._3xlarge }
 }

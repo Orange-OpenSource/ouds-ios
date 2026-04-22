@@ -31,5 +31,5 @@ extension OrangeCompactThemeTextAreaComponentTokensProvider: TextAreaComponentTo
     /// Has for value token DimensionRawTokens._950
     @objc public final var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._950 }
     /// Has for value token DimensionRawTokens._6000
-    @objc public final var size📄_maxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
 }
