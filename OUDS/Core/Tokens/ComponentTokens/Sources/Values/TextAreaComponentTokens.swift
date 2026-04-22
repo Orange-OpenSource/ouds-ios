@@ -25,6 +25,7 @@ import OUDSTokensSemantic
 /// - Since: 0.17.0
 public protocol TextAreaComponentTokens {
     var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockTopEmpty: SpaceSemanticToken { get }
     var sizeMinHeightInput: SizeSemanticToken { get }
     var sizeMaxHeightInput: SizeSemanticToken { get }
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
