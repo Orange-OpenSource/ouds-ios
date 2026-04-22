@@ -8,7 +8,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update of tokens librairies (v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `grid` semantic tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `effect` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `tag` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `checkbox` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+
+- `grid` semantic tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `effect` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `tag` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `checkbox` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+
+- `grid` semantic tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `effect` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `tag` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `checkbox` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+
+- `grid` semantic tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `icons` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `effect` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `tag` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `control item` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `checkbox` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `bar` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- `badge` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 

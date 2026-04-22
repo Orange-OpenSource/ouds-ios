@@ -42,12 +42,12 @@ extension OrangeCompactThemeControlItemComponentTokensProvider: ControlItemCompo
     @objc public final var colorContentCurrentFocus: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.bgPrimary
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
-    /// Has for value token fonts.FontRawTokens.size350
-    @objc public final var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { fonts.FontRawTokens.size350 }
-    /// Has for value token fonts.FontRawTokens.lineHeight550
-    @objc public final var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { fonts.FontRawTokens.lineHeight550 }
-    /// Has for value token fonts.FontRawTokens.letterSpacing350
-    @objc public final var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { fonts.FontRawTokens.letterSpacing350 }
+    /// Has for value token FontRawTokens.size350
+    @objc public final var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size350 }
+    /// Has for value token FontRawTokens.lineHeight550
+    @objc public final var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight550 }
+    /// Has for value token FontRawTokens.letterSpacing350
+    @objc public final var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing350 }
     /// Has for value token opacities.opaque
     @objc public final var controlItemOpacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
     /// Has for value token opacities.opaque
@@ -101,7 +101,7 @@ extension OrangeCompactThemeControlItemComponentTokensProvider: ControlItemCompo
     /// Has for value token DimensionRawTokens._1800
     @objc public final var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._1800 }
     /// Has for value token DimensionRawTokens._4000
-    @objc public final var size📄_maxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
     @objc public final var sizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token sizes.iconWithLabelLargeSizeMedium
