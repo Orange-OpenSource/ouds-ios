@@ -81,8 +81,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var actionReadOnlySecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
 
-    @objc open var actionAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionAccentLight, dark: actionAccentDark) }
-
     // MARK: - Color - Background
 
     @objc open var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }
@@ -206,8 +204,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var overlayTooltip: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayTooltipLight, dark: overlayTooltipDark) }
 
     @objc open var overlayDrag: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDragLight, dark: overlayDragDark) }
-
-    @objc open var overlayModal: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalLight, dark: overlayModalDark) }
 
     // MARK: - Color - Surface
 

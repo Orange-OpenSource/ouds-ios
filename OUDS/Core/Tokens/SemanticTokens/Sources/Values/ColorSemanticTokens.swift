@@ -107,9 +107,6 @@ public protocol ColorSemanticTokens {
     var actionReadOnlySecondaryLight: ColorSemanticToken { get }
     var actionReadOnlySecondaryDark: ColorSemanticToken { get }
 
-    var actionAccentLight: ColorSemanticToken { get }
-    var actionAccentDark: ColorSemanticToken { get }
-
     // MARK: - Color - Always
 
     var alwaysBlack: ColorSemanticToken { get }
@@ -287,6 +284,18 @@ public protocol ColorSemanticTokens {
 
     var contentInverseLight: ColorSemanticToken { get }
     var contentInverseDark: ColorSemanticToken { get }
+
+    var contentStatusInversePositiveLight: ColorSemanticToken { get }
+    var contentStatusInversePositiveDark: ColorSemanticToken { get }
+
+    var contentStatusInverseInfoLight: ColorSemanticToken { get }
+    var contentStatusInverseInfoDark: ColorSemanticToken { get }
+
+    var contentStatusInverseWarningLight: ColorSemanticToken { get }
+    var contentStatusInverseWarningDark: ColorSemanticToken { get }
+
+    var contentStatusInverseNegativeLight: ColorSemanticToken { get }
+    var contentStatusInverseNegativeDark: ColorSemanticToken { get }
 
     // MARK: - Color - Overlay
 
@@ -468,7 +477,8 @@ public protocol ColorSemanticTokens {
     var repositoryPrimaryLowest: ColorSemanticToken { get }
 
     var repositorySecondaryHighest: ColorSemanticToken { get }
-    var repositorySecondaryHigher: ColorSemanticToken { get }
+    var repositorySecondaryHigherHigh: ColorSemanticToken { get }
+    var repositorySecondaryHigherLow: ColorSemanticToken { get }
     var repositorySecondaryHigh: ColorSemanticToken { get }
     var repositorySecondaryMedium: ColorSemanticToken { get }
     var repositorySecondaryLow: ColorSemanticToken { get }

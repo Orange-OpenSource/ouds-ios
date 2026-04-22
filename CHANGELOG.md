@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `effect` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 - `tag` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
+- **BREAKING**: `color` semantic tokens (Orange-OpenSource/ouds-ios#1437)
 - `grid` semantic tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 - `icons` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
