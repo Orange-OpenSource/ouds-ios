@@ -33,9 +33,9 @@ struct ThemeOverrideOfElevationMultipleSemanticTokensTests {
         inheritedTheme = MockTheme()
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDefault() throws {
-        #expect(inheritedTheme.elevations.colorDefault != abstractTheme.elevations.colorDefault)
-        #expect(inheritedTheme.elevations.colorDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorElevated() throws {
+        #expect(inheritedTheme.elevations.colorElevated != abstractTheme.elevations.colorElevated)
+        #expect(inheritedTheme.elevations.colorElevated == MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorRaised() throws {
