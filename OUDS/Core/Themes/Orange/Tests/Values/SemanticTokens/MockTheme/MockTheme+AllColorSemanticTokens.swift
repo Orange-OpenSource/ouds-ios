@@ -190,6 +190,15 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var contentStatusPositiveDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var contentStatusWarningDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
+    override public var contentStatusInversePositiveLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInversePositiveDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseInfoLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseInfoDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseWarningLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseWarningDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseNegativeLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var contentStatusInverseNegativeDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+
     override public var overlayDropdownLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var overlayTooltipLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var overlayDragLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }

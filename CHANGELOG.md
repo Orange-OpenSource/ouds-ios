@@ -15,45 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: `OUDSTabBar(selected:count)` init
 ### Changed
 
-- **BREAKING**: `size` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `elevation` semantic tokens for `Wireframe` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `color` semantic tokens for `Wireframe` theme (Orange-OpenSource/ouds-ios#1437)
-- `grid` semantic tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `checkbox` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `effect` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `tag` component tokens for `Wireframe` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-
-- **BREAKING**: `size` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `elevation` semantic tokens for `Sosh` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `color` semantic tokens for `Sosh` theme (Orange-OpenSource/ouds-ios#1437)
-- `grid` semantic tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `checkbox` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `effect` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `tag` component tokens for `Sosh` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-
-- **BREAKING**: `size` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `elevation` semantic tokens for `Orange Compact` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `color` semantic tokens for `Orange Compact` theme (Orange-OpenSource/ouds-ios#1437)
-- `grid` semantic tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `checkbox` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `effect` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `tag` component tokens for `Orange Compact` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-
-- **BREAKING**: `size` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `elevation` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- **BREAKING**: `color` semantic tokens for `Orange` theme (Orange-OpenSource/ouds-ios#1437)
-- `grid` semantic tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `icons` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-
-- `badge` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `bar` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `checkbox` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `control item` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `radio` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `effect` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `tag` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `text area` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-- `text input` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+- **BREAKING**: Update of raw, semantic and component tokens declarations and definitions (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 
