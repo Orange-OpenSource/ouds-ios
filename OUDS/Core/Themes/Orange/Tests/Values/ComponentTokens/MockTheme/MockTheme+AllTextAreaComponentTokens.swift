@@ -35,6 +35,7 @@ final class MockThemeTextAreaComponentTokenProvider: OrangeThemeTextAreaComponen
     // MARK: - Spaces
 
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
+    override var spacePaddingBlockTopEmpty: SpaceSemanticToken { Self.mockThemeTextAreaSpace }
 
     // MARK: - Sizes
 
