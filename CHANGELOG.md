@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `effect` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 - `tag` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 - `text area` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
-
+- `text input` component tokens for `Orange` theme (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 
