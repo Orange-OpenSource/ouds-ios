@@ -40,7 +40,7 @@ struct AlertMessageBulletListItem: View {
             Text(text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(foregroundColor)
-                .frame(maxWidth: theme.sizes.maxWidthTypeLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+                .frame(maxWidth: theme.sizes.maxWidthLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
         }
     }
 

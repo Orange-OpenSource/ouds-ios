@@ -39,9 +39,9 @@ struct BulletListLabel: View {
     private var maxWidth: MultipleSizeSemanticToken {
         switch textStyle {
         case .bodyLarge:
-            theme.sizes.maxWidthTypeBodyLarge
+            theme.sizes.maxWidthBodyLarge
         case .bodyMedium:
-            theme.sizes.maxWidthTypeBodyMedium
+            theme.sizes.maxWidthBodyMedium
         }
     }
 }
