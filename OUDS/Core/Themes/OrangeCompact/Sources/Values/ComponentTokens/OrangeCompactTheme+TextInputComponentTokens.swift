@@ -55,9 +55,9 @@ extension OrangeCompactThemeTextInputComponentTokensProvider: TextInputComponent
     /// Has for value token spaces.columnGapXsmall
     @objc public final var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { spaces.columnGapXsmall }
     /// Has for value token spaces.columnGap2xsmall
-    @objc public final var spaceColumnGap📄_labelAsterisk: SpaceSemanticToken { spaces.columnGap2xsmall }
+    @objc public final var spaceColumnGapLabelAsterisk: SpaceSemanticToken { spaces.columnGap2xsmall }
     /// Has for value token DimensionRawTokens.outOfSystem75
-    @objc public final var spaceColumnGap📄_labelSmallAsterisk: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
+    @objc public final var spaceColumnGapLabelSmallAsterisk: SpaceSemanticToken { DimensionRawTokens.outOfSystem75 }
     /// Has for value token spaces.rowGapNone
     @objc public final var spaceRowGapLabelInput: SpaceSemanticToken { spaces.rowGapNone }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
@@ -73,5 +73,5 @@ extension OrangeCompactThemeTextInputComponentTokensProvider: TextInputComponent
     /// Has for value token DimensionRawTokens._2500
     @objc public final var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._4000
-    @objc public final var size📄_maxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }
