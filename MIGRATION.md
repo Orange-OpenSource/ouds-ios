@@ -108,11 +108,13 @@ For bar component tokens
 
 ### Removed tokens
 
-Some component tokens (control item, checkbox, radio) and semantic tokens (color) have been removed.
+Some component tokens (control item, checkbox, radio), semantic tokens (color) and raw tokens (effect, colors) have been removed.
 
 **Impact**: High
 
 **Required Action**:
+- Remove effect raw token `blur160`
+- Remove color raw token `opacityGrayLight80800`
 - Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
 - Remove radio component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
 - Remove checkbox component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
