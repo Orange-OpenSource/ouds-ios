@@ -19,19 +19,40 @@ import SwiftUI
 
 // MARK: - OUDS ToolBar Item
 
-/// A strongly typed toolbar item container used inside:
-/// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
-/// - `toolBarBottom(leadingItems:trailingItems:)`
-///
-/// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
-///
-/// ```swift
-///     // A toolbar item with only the close icon
-///     OUDSToolBarItem(navigation: .close)
-///
-///     // A toolbar item with the back icon and and a text, for iOS < 26
-///     OUDSToolBarItem(navigation: .back(label: "Back"))
-///
+// A strongly typed toolbar item container used inside:
+// - `toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)`
+// - `toolBarBottom(leadingItems:trailingItems:)`
+//
+// Use ``OUDSToolBarItem`` to provide custom toolbar views or predefined navigation items.
+//
+// ```swift
+//     // A toolbar item with only the close icon
+//     OUDSToolBarItem(navigation: .close)
+//
+//     // A toolbar item with the back icon and and a text, for iOS < 26
+//     OUDSToolBarItem(navigation: .back(label: "Back"))
+//
+//     // A toolbar item with the labal
+//     OUDSToolBarItem(action: "Label") {
+//        // do something
+//     }
+//
+//     // A toolbar item with the labal
+//     OUDSToolBarItem(action: .label("Label")) {
+//        // do something
+//     }
+//
+//     // A toolbar item with the icon
+//     OUDSToolBarItem(action:
+//     .icon(asset: Image("ic_heart"), accessibilityLabel: "New messages available")) {
+//        // do something
+//     }
+//
+//     // A toolbar item with the icon with badge count
+//     OUDSToolBarItem(action: .icon(asset: Image("ic_heart"), accessibilityLabel: "9 new messages", badge: .number(count: 9))) {
+//        // do something
+//     }
+
 ///     // A toolbar item with some View inside
 ///     OUDSToolBarItem {
 ///         // Menu, ...
@@ -82,8 +103,21 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///     - asset: The asset displayed in the icon
         ///     - accessibilityLabel: The accessibility label discribes the action
         ///     - accessibilityHint: Communicates to the user what happens after performing the action, default set to *nil*
+        ///     - badge: The optional badge type, by default *nil* means no badge.
         ///     - action: The action to do when clicked. If *nil* (default) the button is disabled
-        case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
+        case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, badgeType: BadgeType? = nil, action: (() -> Void)? = nil)
+    }
+
+    /// Defines the badge type can be added on `ActionType.icon` for item of toolbars.
+    ///
+    /// - Since: 1.5.0
+    public enum BadgeType {
+        /// The basic badge without any information
+        case standard
+
+        /// Tha badge with a count
+        /// - Parameters count:The number displayed in the badge.
+        case number(count: UInt8)
     }
 
     /// Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of `.toolBar`

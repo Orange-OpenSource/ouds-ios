@@ -48,20 +48,37 @@ struct ToolBarItemActionButton: View {
             .modifier(ToolBarActionItemModifier(style: style))
             .accessibilityHint(Text(accessibilityHint ?? ""))
 
-        case let .icon(asset, accessibilityLabel, accessibilityHint, action):
-            Button {
-                action?()
-            } label: {
-                asset
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 26, height: 26)
-                // NOTE: Cannot define size of 44x44 for button because with Liquid Glass height is constrained and button will be flattened
+        case let .icon(asset, accessibilityLabel, accessibilityHint, badgeType, action):
+            ZStack(alignment: .topTrailing) {
+                Button {
+                    action?()
+                } label: {
+                    asset
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 26, height: 26)
+                    // NOTE: Cannot define size of 44x44 for button because with Liquid Glass height is constrained and button will be flattened
+                }
+                .disabled(action == nil)
+                .modifier(ToolBarActionItemModifier(style: style))
+                .accessibilityLabel(Text(accessibilityLabel))
+                .accessibilityHint(Text(accessibilityHint ?? ""))
+
+                if let badgeType {
+                    badge(from: badgeType)
+                }
             }
-            .disabled(action == nil)
-            .modifier(ToolBarActionItemModifier(style: style))
-            .accessibilityLabel(Text(accessibilityLabel))
-            .accessibilityHint(Text(accessibilityHint ?? ""))
+        }
+    }
+
+    @ViewBuilder
+    func badge(from type: OUDSToolBarItem.BadgeType) -> some View {
+        switch type {
+        case .standard:
+            OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)
+        case let .number(count):
+            OUDSBadge(count: count, accessibilityLabel: "", status: .negative, size: .medium)
+                .offset(x: 3, y: -3)
         }
     }
 }
