@@ -84,23 +84,23 @@ public protocol SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    var maxWidthTypeDisplayLarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeDisplayMedium: MultipleSizeSemanticToken { get }
-    var maxWidthTypeDisplaySmall: MultipleSizeSemanticToken { get }
+    var maxWidthDisplayLarge: MultipleSizeSemanticToken { get }
+    var maxWidthDisplayMedium: MultipleSizeSemanticToken { get }
+    var maxWidthDisplaySmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeHeadingXlarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeHeadingLarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeHeadingMedium: MultipleSizeSemanticToken { get }
-    var maxWidthTypeHeadingSmall: MultipleSizeSemanticToken { get }
+    var maxWidthHeadingXlarge: MultipleSizeSemanticToken { get }
+    var maxWidthHeadingLarge: MultipleSizeSemanticToken { get }
+    var maxWidthHeadingMedium: MultipleSizeSemanticToken { get }
+    var maxWidthHeadingSmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeBodyLarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeBodyMedium: MultipleSizeSemanticToken { get }
-    var maxWidthTypeBodySmall: MultipleSizeSemanticToken { get }
+    var maxWidthBodyLarge: MultipleSizeSemanticToken { get }
+    var maxWidthBodyMedium: MultipleSizeSemanticToken { get }
+    var maxWidthBodySmall: MultipleSizeSemanticToken { get }
 
-    var maxWidthTypeLabelXlarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeLabelLarge: MultipleSizeSemanticToken { get }
-    var maxWidthTypeLabelMedium: MultipleSizeSemanticToken { get }
-    var maxWidthTypeLabelSmall: MultipleSizeSemanticToken { get }
+    var maxWidthLabelXlarge: MultipleSizeSemanticToken { get }
+    var maxWidthLabelLarge: MultipleSizeSemanticToken { get }
+    var maxWidthLabelMedium: MultipleSizeSemanticToken { get }
+    var maxWidthLabelSmall: MultipleSizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -46,6 +46,39 @@ For elevation semantic tokens:
 | `colorDefaultDark`                         | `colorElevatedDark`                  |
 
 
+For size semantic tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `maxWidthTypeDisplayLargeMobile`           | `maxWidthDisplayLargeMobile`         |
+| `maxWidthTypeDisplayLargeTablet`           | `maxWidthDisplayLargeTablet`         |
+| `maxWidthTypeDisplayMediumMobile`          | `maxWidthDisplayMediumMobile`        |
+| `maxWidthTypeDisplayMediumTablet`          | `maxWidthDisplayMediumTablet`        |
+| `maxWidthTypeDisplaySmallMobile`           | `maxWidthDisplaySmallMobile`         |
+| `maxWidthTypeDisplaySmallTablet`           | `maxWidthDisplaySmallTablet`         |
+| `maxWidthTypeHeadingXlargeMobile`          | `maxWidthHeadingXlargeMobile`        |
+| `maxWidthTypeHeadingXlargeTablet`          | `maxWidthHeadingXlargeTablet`        |
+| `maxWidthTypeHeadingLargeMobile`           | `maxWidthHeadingLargeMobile`         |
+| `maxWidthTypeHeadingLargeTablet`           | `maxWidthHeadingLargeTablet`         |
+| `maxWidthTypeHeadingMediumMobile`          | `maxWidthHeadingMediumMobile`        |
+| `maxWidthTypeHeadingMediumTablet`          | `maxWidthHeadingMediumTablet`        |
+| `maxWidthTypeHeadingSmallMobile`           | `maxWidthHeadingSmallMobile`         |
+| `maxWidthTypeHeadingSmallTablet`           | `maxWidthHeadingSmallTablet`         |
+| `maxWidthTypeBodyLargeMobile`              | `maxWidthBodyLargeMobile`            |
+| `maxWidthTypeBodyLargeTablet`              | `maxWidthBodyLargeTablet`            |
+| `maxWidthTypeBodyMediumMobile`             | `maxWidthBodyMediumMobile`           |
+| `maxWidthTypeBodyMediumTablet`             | `maxWidthBodyMediumTablet`           |
+| `maxWidthTypeBodySmallMobile`              | `maxWidthBodySmallMobile`            |
+| `maxWidthTypeBodySmallTablet`              | `maxWidthBodySmallTablet`            |
+| `maxWidthTypeLabelXlargeMobile`            | `maxWidthLabelXlargeMobile`          |
+| `maxWidthTypeLabelXlargeTablet`            | `maxWidthLabelXlargeTablet`          |
+| `maxWidthTypeLabelLargeMobile`             | `maxWidthabelLargeMobile`            |
+| `maxWidthTypeLabelLargeTablet`             | `maxWidthLabelLargeTablet`           |
+| `maxWidthTypeLabelMediumMobile`            | `maxWidthLabelMediumMobile`          |
+| `maxWidthTypeLabelMediumTablet`            | `maxWidthLabelMediumTablet`          |
+| `maxWidthTypeLabelSmallMobile`             | `maxWidthLabelSmallMobile`           |
+| `maxWidthTypeLabelSmallTablet`             | `maxWidthLabelSmallTablet`           |
+
 **Required Action**:
 - Use the new names
 
