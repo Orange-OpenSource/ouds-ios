@@ -423,6 +423,11 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.contentStatusWarning == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenColorContentStatusAccent() throws {
+        #expect(inheritedTheme.colors.contentStatusAccent != abstractTheme.colors.contentStatusAccent)
+        #expect(inheritedTheme.colors.contentStatusAccent == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
+    }
+
     // MARK: - Color - Overlay
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayDropDown() throws {
@@ -443,6 +448,11 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayModal() throws {
         #expect(inheritedTheme.colors.overlayModalSheet != abstractTheme.colors.overlayModalSheet)
         #expect(inheritedTheme.colors.overlayModalSheet == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayBackdrop() throws {
+        #expect(inheritedTheme.colors.overlayBackdrop != abstractTheme.colors.overlayBackdrop)
+        #expect(inheritedTheme.colors.overlayBackdrop == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
     }
 
     // MARK: - Color - Surface

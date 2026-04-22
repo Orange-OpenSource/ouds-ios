@@ -21,7 +21,7 @@ Tokens librairies have been updated, with some semantic tokens removed or rename
 
 ### Renamed tokens
 
-Some semantic tokens of colors have been renamed.
+Some component tokens (badge) and semantic tokens (colors) have been renamed.
 
 **Impact**: High
 
@@ -79,19 +79,47 @@ For size semantic tokens:
 | `maxWidthTypeLabelSmallMobile`             | `maxWidthLabelSmallMobile`           |
 | `maxWidthTypeLabelSmallTablet`             | `maxWidthLabelSmallTablet`           |
 
+For badge component tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `spaceInset`                               | `spaceInsetMediumLarge`              |
+
+For bar component tokens
+
+| Old name                                        | New name                                        |
+|-------------------------------------------------|-------------------------------------------------|
+| `colorActiveIndicatorCustomSelectedEnabled`     | `colorCurrentIndicatorCustomSelectedEnabled`    |
+| `colorActiveIndicatorCustomSelectedHover`       | `colorCurrentIndicatorCustomSelectedHover`      |
+| `colorActiveIndicatorCustomSelectedPressed`     | `colorCurrentIndicatorCustomSelectedPressed`    |
+| `colorActiveIndicatorCustomSelectedFocus`       | `colorCurrentIndicatorCustomSelectedFocus`      |
+| `opacityActiveIndicatorCustom`                  | `opacityCurrentIndicatorCustom`                 |
+| `borderRadiusActiveIndicatorCustomTop`          | `borderRadiusCurrentIndicatorCustomTop`         |
+| `borderRadiusActiveIndicatorCustomBottom`       | `borderRadiusCurrentIndicatorCustomBottom`      |
+| `sizeWidthActiveIndicatorCustomTop`             | `sizeWidthCurrentIndicatorCustomTop`            |
+| `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
+| `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
+
+    
 **Required Action**:
-- Use the new names
+- Use the new names as explained above
 
 **Reason for Change**: Tokens librairies have been updated in design side
 
 ### Removed tokens
 
-Some semantic tokens of colors have been removed.
+Some component tokens (control item, checkbox, radio) and semantic tokens (color) have been removed.
 
 **Impact**: High
 
 **Required Action**:
-- Remove tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
+- Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
+- Remove radio component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
+- Remove checkbox component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
+- Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
+`colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
+
+**Reason for Change**: Tokens librairies have been updated in design side
 
 ### Compatibility
 
