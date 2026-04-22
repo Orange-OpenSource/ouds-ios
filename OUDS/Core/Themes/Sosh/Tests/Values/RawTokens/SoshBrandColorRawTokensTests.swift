@@ -287,7 +287,7 @@ struct SoshBrandColorRawTokensTests {
 
     @Test
     func opacityBlueDuckDark960800Format() throws {
-        TestsUtils.assertMatches(SoshBrandColorRawTokens.opacityBlueDuckDark960800e, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(SoshBrandColorRawTokens.opacityBlueDuckDark960800, regexp: Self.colorFormat)
     }
 
     // MARK: - Tests - Colors darker and darker
