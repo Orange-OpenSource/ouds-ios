@@ -34,6 +34,7 @@ public protocol ControlItemComponentTokens {
     var sizeIcon: SizeSemanticToken { get }
     var sizeErrorIcon: SizeSemanticToken { get }
     var sizeLoader: SizeSemanticToken { get }
+    var sizeControlIndicator: SizeSemanticToken { get }
 
     // MARK: - Colors
 

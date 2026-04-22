@@ -348,7 +348,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.checkbox.sizeIndicator,
-                   height: theme.checkbox.sizeIndicator)
+            .frame(width: theme.controlItem.sizeControlIndicator,
+                   height: theme.controlItem.sizeControlIndicator)
     }
 }

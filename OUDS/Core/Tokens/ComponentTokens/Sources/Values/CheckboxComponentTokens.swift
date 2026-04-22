@@ -30,7 +30,6 @@ public protocol CheckboxComponentTokens {
     var sizeMaxHeight: SizeSemanticToken { get }
     var sizeMinHeight: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
-    var sizeIndicator: SizeSemanticToken { get }
 
     // MARK: - Borders
 
