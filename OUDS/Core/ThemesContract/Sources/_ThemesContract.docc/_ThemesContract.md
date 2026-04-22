@@ -16,7 +16,7 @@ Orange Unified Design System: Build Sharper. Ship faster. Perform better.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Core version: 1.9.0
+🧬 Core version: 1.10.0
 ```
 
 *Orange Unified Design System* is the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere. Its objective is to propose a set of guidelines about how to apply the Orange brand on mobile applications. It also provides series of components and modules that show in details how to use this in the Orange apps.

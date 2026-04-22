@@ -53,9 +53,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.9.0
-/// - Core Sosh version: 1.2.0
-/// - Brand Sosh version: 2.3.0
+/// - Core OUDS version: 1.10.0
+/// - Core Sosh version: 1.3.0
+/// - Brand Sosh version: 2.4.0
 ///
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
