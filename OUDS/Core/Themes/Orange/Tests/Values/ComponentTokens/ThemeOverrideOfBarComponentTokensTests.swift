@@ -87,31 +87,31 @@ struct ThemeOverrideOfBarComponentTokensTests {
         #expect(inheritedTheme.bar.colorBorderBadge == MockThemeBarComponentTokenProvider.mockThemeBarColor)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenColorActiveIndicatorCustomSelectedEnabled() throws {
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedEnabled != abstractTheme.bar.colorActiveIndicatorCustomSelectedEnabled)
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedEnabled == MockThemeBarComponentTokenProvider.mockThemeBarColor)
+    @Test func inheritedThemeCanOverrideBarComponentTokenColorCurrentIndicatorCustomSelectedEnabled() throws {
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedEnabled != abstractTheme.bar.colorCurrentIndicatorCustomSelectedEnabled)
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedEnabled == MockThemeBarComponentTokenProvider.mockThemeBarColor)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenColorActiveIndicatorCustomSelectedHover() throws {
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedHover != abstractTheme.bar.colorActiveIndicatorCustomSelectedHover)
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedHover == MockThemeBarComponentTokenProvider.mockThemeBarColor)
+    @Test func inheritedThemeCanOverrideBarComponentTokenColorCurrentIndicatorCustomSelectedHover() throws {
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedHover != abstractTheme.bar.colorCurrentIndicatorCustomSelectedHover)
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedHover == MockThemeBarComponentTokenProvider.mockThemeBarColor)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenColorActiveIndicatorCustomSelectedPressed() throws {
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedPressed != abstractTheme.bar.colorActiveIndicatorCustomSelectedPressed)
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedPressed == MockThemeBarComponentTokenProvider.mockThemeBarColor)
+    @Test func inheritedThemeCanOverrideBarComponentTokenColorCurrentIndicatorCustomSelectedPressed() throws {
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedPressed != abstractTheme.bar.colorCurrentIndicatorCustomSelectedPressed)
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedPressed == MockThemeBarComponentTokenProvider.mockThemeBarColor)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenColorActiveIndicatorCustomSelectedFocus() throws {
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedFocus != abstractTheme.bar.colorActiveIndicatorCustomSelectedFocus)
-        #expect(inheritedTheme.bar.colorActiveIndicatorCustomSelectedFocus == MockThemeBarComponentTokenProvider.mockThemeBarColor)
+    @Test func inheritedThemeCanOverrideBarComponentTokenColorCurrentIndicatorCustomSelectedFocus() throws {
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedFocus != abstractTheme.bar.colorCurrentIndicatorCustomSelectedFocus)
+        #expect(inheritedTheme.bar.colorCurrentIndicatorCustomSelectedFocus == MockThemeBarComponentTokenProvider.mockThemeBarColor)
     }
 
     // MARK: - Opacities
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenOpacityActiveIndicatorCustom() throws {
-        #expect(inheritedTheme.bar.opacityActiveIndicatorCustom != abstractTheme.bar.opacityActiveIndicatorCustom)
-        #expect(inheritedTheme.bar.opacityActiveIndicatorCustom == MockThemeBarComponentTokenProvider.mockThemeBarOpacitiy)
+    @Test func inheritedThemeCanOverrideBarComponentTokenOpacityCurrentIndicatorCustom() throws {
+        #expect(inheritedTheme.bar.opacityCurrentIndicatorCustom != abstractTheme.bar.opacityCurrentIndicatorCustom)
+        #expect(inheritedTheme.bar.opacityCurrentIndicatorCustom == MockThemeBarComponentTokenProvider.mockThemeBarOpacitiy)
     }
 
     // MARK: - Effects
@@ -123,30 +123,30 @@ struct ThemeOverrideOfBarComponentTokensTests {
 
     // MARK: - Borders
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenBorderRadiusActiveIndicatorCustomTop() throws {
-        #expect(inheritedTheme.bar.borderRadiusActiveIndicatorCustomTop != abstractTheme.bar.borderRadiusActiveIndicatorCustomTop)
-        #expect(inheritedTheme.bar.borderRadiusActiveIndicatorCustomTop == MockThemeBarComponentTokenProvider.mockThemeBarBorderRadius)
+    @Test func inheritedThemeCanOverrideBarComponentTokenBorderRadiusCurrentIndicatorCustomTop() throws {
+        #expect(inheritedTheme.bar.borderRadiusCurrentIndicatorCustomTop != abstractTheme.bar.borderRadiusCurrentIndicatorCustomTop)
+        #expect(inheritedTheme.bar.borderRadiusCurrentIndicatorCustomTop == MockThemeBarComponentTokenProvider.mockThemeBarBorderRadius)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenBorderRadiusActiveIndicatorCustomBottom() throws {
-        #expect(inheritedTheme.bar.borderRadiusActiveIndicatorCustomBottom != abstractTheme.bar.borderRadiusActiveIndicatorCustomBottom)
-        #expect(inheritedTheme.bar.borderRadiusActiveIndicatorCustomBottom == MockThemeBarComponentTokenProvider.mockThemeBarBorderRadius)
+    @Test func inheritedThemeCanOverrideBarComponentTokenBorderRadiusCurrentIndicatorCustomBottom() throws {
+        #expect(inheritedTheme.bar.borderRadiusCurrentIndicatorCustomBottom != abstractTheme.bar.borderRadiusCurrentIndicatorCustomBottom)
+        #expect(inheritedTheme.bar.borderRadiusCurrentIndicatorCustomBottom == MockThemeBarComponentTokenProvider.mockThemeBarBorderRadius)
     }
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenSizeWidthActiveIndicatorCustomTop() throws {
-        #expect(inheritedTheme.bar.sizeWidthActiveIndicatorCustomTop != abstractTheme.bar.sizeWidthActiveIndicatorCustomTop)
-        #expect(inheritedTheme.bar.sizeWidthActiveIndicatorCustomTop == MockThemeBarComponentTokenProvider.mockThemeBarSize)
+    @Test func inheritedThemeCanOverrideBarComponentTokenSizeWidthCurrentIndicatorCustomTop() throws {
+        #expect(inheritedTheme.bar.sizeWidthCurrentIndicatorCustomTop != abstractTheme.bar.sizeWidthCurrentIndicatorCustomTop)
+        #expect(inheritedTheme.bar.sizeWidthCurrentIndicatorCustomTop == MockThemeBarComponentTokenProvider.mockThemeBarSize)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenSizeWidthActiveIndicatorCustomBottom() throws {
-        #expect(inheritedTheme.bar.sizeWidthActiveIndicatorCustomBottom != abstractTheme.bar.sizeWidthActiveIndicatorCustomBottom)
-        #expect(inheritedTheme.bar.sizeWidthActiveIndicatorCustomBottom == MockThemeBarComponentTokenProvider.mockThemeBarSize)
+    @Test func inheritedThemeCanOverrideBarComponentTokenSizeWidthCurrentIndicatorCustomBottom() throws {
+        #expect(inheritedTheme.bar.sizeWidthCurrentIndicatorCustomBottom != abstractTheme.bar.sizeWidthCurrentIndicatorCustomBottom)
+        #expect(inheritedTheme.bar.sizeWidthCurrentIndicatorCustomBottom == MockThemeBarComponentTokenProvider.mockThemeBarSize)
     }
 
-    @Test func inheritedThemeCanOverrideBarComponentTokenSizeHeightActiveIndicatorCustom() throws {
-        #expect(inheritedTheme.bar.sizeHeightActiveIndicatorCustom != abstractTheme.bar.sizeHeightActiveIndicatorCustom)
-        #expect(inheritedTheme.bar.sizeHeightActiveIndicatorCustom == MockThemeBarComponentTokenProvider.mockThemeBarSize)
+    @Test func inheritedThemeCanOverrideBarComponentTokenSizeHeightCurrentIndicatorCustom() throws {
+        #expect(inheritedTheme.bar.sizeHeightCurrentIndicatorCustom != abstractTheme.bar.sizeHeightCurrentIndicatorCustom)
+        #expect(inheritedTheme.bar.sizeHeightCurrentIndicatorCustom == MockThemeBarComponentTokenProvider.mockThemeBarSize)
     }
 }

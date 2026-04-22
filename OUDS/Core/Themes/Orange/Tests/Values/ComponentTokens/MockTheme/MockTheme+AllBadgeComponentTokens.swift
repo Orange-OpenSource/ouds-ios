@@ -39,7 +39,9 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
     override var sizeMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
     override var sizeLarge: SizeSemanticToken { Self.mockThemeBadgeSize }
 
-    override var spaceInset: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spaceInsetXsmall: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spaceInsetSmall: SpaceSemanticToken { Self.mockThemeBadgeSpace }
+    override var spaceInsetMediumLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
     override var spacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
     override var spacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
 }

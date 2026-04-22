@@ -27,9 +27,24 @@ struct ThemeOverrideOfBadgeComponentTokensTests {
 
     // MARK: - Spaces
 
-    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInset() throws {
-        #expect(inheritedTheme.badge.spaceInset != abstractTheme.badge.spaceInset)
-        #expect(inheritedTheme.badge.spaceInset == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInsetXsmall() throws {
+        #expect(inheritedTheme.badge.spaceInsetXsmall != abstractTheme.badge.spaceInsetXsmall)
+        #expect(inheritedTheme.badge.spaceInsetXsmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInsetSmall() throws {
+        #expect(inheritedTheme.badge.spaceInsetSmall != abstractTheme.badge.spaceInsetSmall)
+        #expect(inheritedTheme.badge.spaceInsetSmall == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInsetMediumLarge() throws {
+        #expect(inheritedTheme.badge.spaceInsetMediumLarge != abstractTheme.badge.spaceInsetMediumLarge)
+        #expect(inheritedTheme.badge.spaceInsetMediumLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInsetMediumLarge() throws {
+        #expect(inheritedTheme.badge.spaceInsetMediumLarge != abstractTheme.badge.spaceInsetMediumLarge)
+        #expect(inheritedTheme.badge.spaceInsetMediumLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
     }
 
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpacePaddingInlineMedium() throws {

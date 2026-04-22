@@ -55,17 +55,17 @@ struct SelectedTabIndicator: View {
     var body: some View {
         GeometryReader { geometry in
             let tabWidth = geometry.size.width / CGFloat(count)
-            let indicatorWidth = theme.bar.sizeWidthActiveIndicatorCustomTop + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
-            let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightActiveIndicatorCustom / 2)
+            let indicatorWidth = theme.bar.sizeWidthCurrentIndicatorCustomTop + (theme.bar.sizeHeightCurrentIndicatorCustom / 2)
+            let indicatorPosition = (geometry.size.height - tabBarHeight + safeAreaBottom) + (theme.bar.sizeHeightCurrentIndicatorCustom / 2)
             let xOffset = tabWidth * CGFloat(selected) + (tabWidth - indicatorWidth) / 2
 
             // Do not render the indicator when the native tab bar is hidden
             // (e.g. when the user applies `.toolbar(.hidden, for: .tabBar)`).
             if !isTabBarHidden, reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
                 // No animation: display a full-tab-width indicator, instantly repositioned on selection change.
-                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
-                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
-                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusCurrentIndicatorCustomTop)
+                    .fill(theme.bar.colorCurrentIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightCurrentIndicatorCustom)
                     .position(
                         x: tabWidth * CGFloat(selected) + tabWidth / 2,
                         y: indicatorPosition)
@@ -73,9 +73,9 @@ struct SelectedTabIndicator: View {
                         updateTabBarHeight()
                     }
             } else if !isTabBarHidden {
-                RoundedRectangle(cornerRadius: theme.bar.borderRadiusActiveIndicatorCustomTop)
-                    .fill(theme.bar.colorActiveIndicatorCustomSelectedEnabled.color(for: colorScheme))
-                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightActiveIndicatorCustom)
+                RoundedRectangle(cornerRadius: theme.bar.borderRadiusCurrentIndicatorCustomTop)
+                    .fill(theme.bar.colorCurrentIndicatorCustomSelectedEnabled.color(for: colorScheme))
+                    .frame(width: indicatorWidth, height: theme.bar.sizeHeightCurrentIndicatorCustom)
                     .scaleEffect(x: indicatorScaleX, y: 1, anchor: .center)
                     .position(
                         x: xOffset + indicatorWidth / 2,
