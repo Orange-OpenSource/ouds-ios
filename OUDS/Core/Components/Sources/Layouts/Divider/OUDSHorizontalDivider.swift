@@ -102,27 +102,4 @@ extension Divider {
     public func horizontal(color: OUDSDividerColor = .default) -> some View {
         modifier(DividerModifier(orientation: .horizontal, dividerColor: color))
     }
-
-    /// Set the color to the horizontal divider and adjust the thickness (height)
-    /// automatically according to token value.
-    ///
-    /// ```swift
-    /// VStack {
-    ///     Text("Bazinga!")
-    ///
-    ///     Divider()
-    ///        .oudsHorizontalDivider(dividerColor: .brandPrimary)
-    ///
-    ///     Text("Yowza!")
-    /// }
-    /// ```
-    ///
-    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.default` by default
-    ///
-    /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
-    @available(*, deprecated, renamed: "horizontal(color:)", message: "Use horizontal(color:) instead")
-    @MainActor
-    public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .default) -> some View {
-        horizontal(color: dividerColor)
-    }
 }

@@ -259,52 +259,6 @@ public struct OUDSTabBar<Content: View>: View {
 
     // NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
     /// Defines the tab bar component with given tab bar items.
-    /// Number of tabs and selected tab are needed to compute the selected tab indicator for iOS lower than 26.
-    /// If you target iOS 26+ or other platform, prefer instead `OUDSTabBar(content:)`.
-    ///
-    /// - Warning: Deprecated. Use ``init(selectedTab:count:content:)`` instead.
-    ///   This initializer uses a read-only `Int` for the initial selected tab; tab selection changes
-    ///   made by the user are not propagated back to the caller.
-    ///   Migrate to `init(selectedTab:count:content:)` which accepts a `Binding<Int>` for
-    ///   full two-way synchronisation.
-    ///
-    /// ```swift
-    ///     // Deprecated — use init(selectedTab:count:content:) instead
-    ///     OUDSTabBar(selected: 0, count: 2) {
-    ///         SomeView()
-    ///             .tabItem {
-    ///                 Label("Label 1", image: "some-image")
-    ///              }
-    ///              .tag(0)
-    ///         OtherView()
-    ///             .tabItem {
-    ///                 Label("Label 2", image: "some-image")
-    ///              }
-    ///              .tag(1)
-    ///     }
-    /// ```
-    ///
-    /// - Parameters:
-    ///    - selected: The identifier of the first selected tab, i.e. its rank starting from 0, associated to a *tag*  on a *tab bar item*
-    ///    - count: The current number of tabs hosted in the tab bar, must be positive non null integer
-    ///    - content: The list of items to add in the tab bar
-    @available(*, deprecated, renamed: "init(selectedTab:count:content:)",
-               message: "Pass a Binding<Int> using init(selectedTab:count:content:) so that tab selection is reflected back to the caller.")
-    public init(selected: Int,
-                count: Int,
-                @ViewBuilder content: @escaping () -> Content)
-    {
-        if selected < 0 || selected >= count {
-            OL.warning("The selected tab index for the OUDSTabBar does not match the count of tabs")
-        }
-        _selectedTab = .constant(selected)
-        tabCount = count
-        self.content = content
-        _isLandscape = State(initialValue: Self.isInLandscapeViewport())
-    }
-
-    /// NOTE: No use of #if os(iOS) to let OUDS maintainers macOS computers compute the documentation
-    /// Defines the tab bar component with given tab bar items.
     /// If you target iOS lower than 26, prefer instead `OUDSTabBar(selectedTab:count:content:)`
     ///
     /// ```swift

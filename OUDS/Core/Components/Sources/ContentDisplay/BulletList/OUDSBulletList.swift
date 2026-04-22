@@ -240,10 +240,6 @@ public struct OUDSBulletList: View {
 
     // MARK: - Unordered Icon
 
-    /// Old name of `OUDSBulletList.UnorderedAsset`
-    @available(*, deprecated, message: "Use instead OUDSBulletList.UnorderedAsset")
-    public typealias UnorderedIcon = UnorderedAsset
-
     /// The type of asset in the unordered list
     /// - Since: 1.2.0
     public enum UnorderedAsset {
@@ -252,14 +248,6 @@ public struct OUDSBulletList: View {
 
         /// A tick as bullet
         case tick
-
-        /// A free icon as bullet
-        ///
-        ///  - Parameters:
-        ///     - image: The asset image as bullet
-        ///     - accessibilityLabel: An optional label for accessibility description if asset is not decorative.
-        @available(*, deprecated, message: "Use instead .icon(:accessibilityLabel:)")
-        case free(_ image: Image, accessibilityLabel: String? = nil)
 
         /// A free icon as bullet
         ///

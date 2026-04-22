@@ -91,46 +91,4 @@ extension View {
                                                           target: target,
                                                           deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
-
-    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed
-    ///
-    /// ```swift
-    ///     YourView: View {
-    ///         @AccessibilityFocusState var requestFocus: Bool
-    ///
-    ///         var body: some View {
-    ///             SomeView()
-    ///                 .oudsRequestAccessibleFocus(_requestFocus)
-    ///         }
-    ///     }
-    /// ```
-    ///
-    /// - Parameter requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
-    /// - Returns View: The view with a new modifier
-    @available(*, deprecated, renamed: "requestAccessibleFocus(_:)", message: "Use requestAccessibleFocus(_:) instead")
-    public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
-        requestAccessibleFocus(requestFocus)
-    }
-
-    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given element
-    ///
-    /// ```swift
-    ///     YourView: View {
-    ///         @AccessibilityFocusState var requestFocus: Bool
-    ///
-    ///         var body: some View {
-    ///             SomeView()
-    ///                 .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: element.id))
-    ///         }
-    ///     }
-    /// ```
-    ///
-    /// - Parameters:
-    ///    - requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
-    ///    - target: The item which will get the focus
-    /// - Returns View: The view with a new modifier
-    @available(*, deprecated, renamed: "requestAccessibleFocus(_:for:)", message: "Use requestAccessibleFocus(_:for:) instead")
-    public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
-        requestAccessibleFocus(requestFocus, for: target)
-    }
 }

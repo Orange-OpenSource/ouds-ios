@@ -164,64 +164,6 @@ public struct OUDSCheckboxItem: View {
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// ```swift
-    ///     OUDSCheckboxItem(isOn: $isOn,
-    ///                      label: "Virgin Holy Lava",
-    ///                      description: "Very spicy",
-    ///                      icon: Image(systemName: "flame")
-    /// ```
-    ///
-    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
-    ///
-    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
-    /// provide the localized string if key is stored in another bundle.**
-    ///
-    /// - Parameters:
-    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
-    ///   - label: The main label text of the checkbox, must not be empty
-    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
-    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
-    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
-    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
-    ///     modifier. Defaults to `false`.
-    ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use instead OUDSCheckboxItem(:isOn:)")
-    public init(isOn: Binding<Bool>,
-                label: String,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: String? = nil,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        self.init(label,
-                  isOn: isOn,
-                  description: description,
-                  icon: icon,
-                  flipIcon: flipIcon,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
-
-    /// Creates a checkbox with label and optional helper text, icon, divider.
-    ///
-    /// ```swift
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
