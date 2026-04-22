@@ -202,7 +202,7 @@ extension OrangeCompactThemeColorSemanticTokensProvider: ColorMultipleSemanticTo
 
     @objc public final var overlayDrag: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDragLight, dark: overlayDragDark) }
 
-    @objc public final var overlayModal: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalLight, dark: overlayModalDark) }
+    @objc public final var overlayModalSheet: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalSheetLight, dark: overlayModalSheetDark) }
 
     // MARK: - Color - Surface
 

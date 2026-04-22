@@ -441,8 +441,8 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenColorOverlayModal() throws {
-        #expect(inheritedTheme.colors.overlayModal != abstractTheme.colors.overlayModal)
-        #expect(inheritedTheme.colors.overlayModal == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
+        #expect(inheritedTheme.colors.overlayModalSheet != abstractTheme.colors.overlayModalSheet)
+        #expect(inheritedTheme.colors.overlayModalSheet == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticToken)
     }
 
     // MARK: - Color - Surface

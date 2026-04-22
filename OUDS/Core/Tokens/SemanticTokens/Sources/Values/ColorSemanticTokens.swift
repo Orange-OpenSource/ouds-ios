@@ -308,8 +308,11 @@ public protocol ColorSemanticTokens {
     var overlayDragLight: ColorSemanticToken { get }
     var overlayDragDark: ColorSemanticToken { get }
 
-    var overlayModalLight: ColorSemanticToken { get }
-    var overlayModalDark: ColorSemanticToken { get }
+    var overlayModalSheetLight: ColorSemanticToken { get }
+    var overlayModalSheetDark: ColorSemanticToken { get }
+
+    var overlayBackdropLight: ColorSemanticToken { get }
+    var overlayBackdropDark: ColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
