@@ -39,8 +39,8 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
                   borders: AllBorderSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
                   spaces: AllSpaceSemanticTokensProvider?,
-                  opacities: AllOpacitySemanticTokensProvider,
-                  dimensions: AllDimensionSemanticTokensProvider)
+                  opacities: AllOpacitySemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider?)
     {
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
     }

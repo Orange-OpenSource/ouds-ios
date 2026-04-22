@@ -156,11 +156,11 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        theme.controlItem.colorBgHover.color(for: colorScheme)
+        Color.clear // TODO: #1437 - No more color?
     }
 
     private var pressedColor: Color {
-        theme.controlItem.colorBgPressed.color(for: colorScheme)
+        Color.clear // TODO: #1437 - No more color?
     }
 
     private var readOnlyColor: Color {

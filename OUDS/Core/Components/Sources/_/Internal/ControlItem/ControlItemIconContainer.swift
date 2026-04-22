@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -35,7 +36,15 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(minHeight: theme.controlItem.sizeIcon, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+            // TODO: #1437 - Which token use instead of sizeMaxHeightAssetsContainer?
+            /*
+             .frame(minHeight: theme.controlItem.sizeAssetSmall,
+                    maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer,
+                    alignment: .center)
+              */
+            .frame(minHeight: theme.controlItem.sizeAssetSmall,
+                   maxHeight: DimensionRawTokens._1200,
+                   alignment: .center)
         }
     }
 
@@ -50,8 +59,9 @@ struct ControlItemIconContainer: View {
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)
                 .foregroundColor(errorIconColor)
-                .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
-                .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
+                .frame(width: theme.controlItem.sizeAssetSmall, // TODO: #1437 - Which token should replace sizeErrorIcon? sizeAssetSmall?
+                       height: theme.controlItem.sizeAssetSmall)
+                .padding(.horizontal, theme.controlItem.spacePaddingBlockDensityCompact) // TODO: #1437 - Which token should replace spacePaddingInlineErrorIcon? spacePaddingBlockDensityCompact?
         } else {
             if let icon = layoutData.icon {
                 icon
@@ -59,7 +69,8 @@ struct ControlItemIconContainer: View {
                     .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
-                    .frame(width: theme.controlItem.sizeIcon, height: theme.controlItem.sizeIcon)
+                    .frame(width: theme.controlItem.sizeAssetSmall,
+                           height: theme.controlItem.sizeAssetSmall)
                     .toFlip(layoutData.flipIcon)
             }
         }

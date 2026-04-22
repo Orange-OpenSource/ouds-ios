@@ -43,10 +43,6 @@ struct OrangeThemeControlItemComponentTokensProviderTests {
         #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
     }
 
-    @Test func defaultFontSemanticTokensProvider() throws {
-        #expect(provider.fonts is OrangeThemeFontSemanticTokensProvider)
-    }
-
     @Test func defaultOpacitySemanticTokensProvider() throws {
         #expect(provider.opacities is OrangeThemeOpacitySemanticTokensProvider)
     }

@@ -42,11 +42,6 @@ struct ThemeOverrideOfBadgeComponentTokensTests {
         #expect(inheritedTheme.badge.spaceInsetMediumLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpaceInsetMediumLarge() throws {
-        #expect(inheritedTheme.badge.spaceInsetMediumLarge != abstractTheme.badge.spaceInsetMediumLarge)
-        #expect(inheritedTheme.badge.spaceInsetMediumLarge == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)
-    }
-
     @Test func inheritedThemeCanOverrideBadgeComponentTokenBadgeSpacePaddingInlineMedium() throws {
         #expect(inheritedTheme.badge.spacePaddingInlineMedium != abstractTheme.badge.spacePaddingInlineMedium)
         #expect(inheritedTheme.badge.spacePaddingInlineMedium == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSpace)

@@ -136,7 +136,7 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(onBrandPrimary) { return colors.surfaceBrandPrimary }
         if mode.isEqual(onBrandSecondary) { return colors.surfaceBrandSecondary }
         if mode.isEqual(onBrandTertiary) { return colors.surfaceBrandTertiary }
-        if mode.isEqual(overlayModalSheet) { return colors.overlayModalSheet }
+        if mode.isEqual(onOverlayModal) { return colors.overlayModalSheet }
         if mode.isEqual(onStatusAccentEmphasized) { return colors.surfaceStatusAccentEmphasized }
         if mode.isEqual(onStatusAccentMuted) { return colors.surfaceStatusAccentMuted }
         if mode.isEqual(onStatusInfoEmphasized) { return colors.surfaceStatusInfoEmphasized }
