@@ -25,38 +25,70 @@ import OUDSTokensSemantic
 /// - Since: 0.11.0
 public protocol ControlItemComponentTokens {
 
-    // MARK: - Sizes
-
-    var sizeMinHeight: SizeSemanticToken { get }
-    var sizeMinWidth: SizeSemanticToken { get }
-    var sizeMaxWidth: SizeSemanticToken { get }
-    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    var sizeIcon: SizeSemanticToken { get }
-    var sizeErrorIcon: SizeSemanticToken { get }
-    var sizeLoader: SizeSemanticToken { get }
-    var sizeControlIndicator: SizeSemanticToken { get }
-
     // MARK: - Colors
 
-    var colorBgHover: MultipleColorSemanticToken { get }
-    var colorBgPressed: MultipleColorSemanticToken { get }
-    var colorBgLoading: MultipleColorSemanticToken { get }
-    var colorBgFocus: MultipleColorSemanticToken { get }
-    var colorContentLoader: MultipleColorSemanticToken { get }
+    var colorBgCurrentEnabled: MultipleColorSemanticToken { get }
+    var colorBgCurrentHover: MultipleColorSemanticToken { get }
+    var colorBgCurrentPressed: MultipleColorSemanticToken { get }
+    var colorBgCurrentDisabled: MultipleColorSemanticToken { get }
+    var colorBgCurrentFocus: MultipleColorSemanticToken { get }
+    var colorContentCurrentEnabled: MultipleColorSemanticToken { get }
+    var colorContentCurrentHover: MultipleColorSemanticToken { get }
+    var colorContentCurrentPressed: MultipleColorSemanticToken { get }
+    var colorContentCurrentDisabled: MultipleColorSemanticToken { get }
+    var colorContentCurrentFocus: MultipleColorSemanticToken { get }
+    var colorBadgeSafetyArea: MultipleColorSemanticToken { get }
 
-    // MARK: - Spaces
+    // MARK: - Fonts
 
-    var spaceColumnGap: SpaceSemanticToken { get }
-    var spaceRowGap: SpaceSemanticToken { get }
-    var spacePaddingBlockDefault: SpaceSemanticToken { get }
-    var spacePaddingBlockTopErrorText: SpaceSemanticToken { get }
-    var spacePaddingInline: SpaceSemanticToken { get }
-    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
+    var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { get }
+    var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { get }
+    var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { get }
+
+    // MARK: - Opacities
+
+    var controlItemOpacityCurrentIndicator: OpacitySemanticToken { get }
+    var controlItemOpacityCurrentDivider: OpacitySemanticToken { get }
 
     // MARK: - Borders
 
-    var borderRadius: BorderRadiusSemanticToken { get }
-    var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthCurrentPage: BorderWidthSemanticToken { get }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderRadiusRounded: BorderRadiusSemanticToken { get }
+    var borderRadiusMedia: BorderRadiusSemanticToken { get }
+    var borderRadiusMediaRoundedCorner: BorderRadiusSemanticToken { get }
+    var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { get }
+
+    // MARK: - Spaces
+
+    var spacePaddingInline: SpaceSemanticToken { get }
+    var spaceColumnGap: SpaceSemanticToken { get }
+    var spaceRowGap: SpaceSemanticToken { get }
+    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    var spacePaddingBlockBottomSlot: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompact: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultBottomExpandContainer: SpaceSemanticToken { get }
+
+    // MARK: - Sizes
+
+    var sizeControlIndicator: SizeSemanticToken { get }
+    var sizeMinHeightCompact: SizeSemanticToken { get }
+    var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
+    var sizeAssetSmall: SizeSemanticToken { get }
+    var sizeAssetMedium: SizeSemanticToken { get }
+    var sizeAssetLarge: SizeSemanticToken { get }
+    var sizeAssetXlarge: SizeSemanticToken { get }
+    var sizeFlagHeight: SizeSemanticToken { get }
+    var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
