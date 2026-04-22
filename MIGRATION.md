@@ -28,6 +28,10 @@ Some semantic tokens of colors have been renamed.
 | Old name                                   | New name                             |
 |--------------------------------------------|--------------------------------------|
 | `repositorySecondaryHigher`                | `repositorySecondaryHigherHigh`      |
+| `overlayModalLight`                        | `overlayModalSheetLight`             |
+| `overlayModalDark`                         | `overlayModalSheetDark`              |
+| `overlayModal`                             | `overlayModalSheet`                  |
+
 
 **Required Action**:
 - Use the new names

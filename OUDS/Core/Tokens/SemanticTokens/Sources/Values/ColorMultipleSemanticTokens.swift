@@ -228,7 +228,9 @@ public protocol ColorMultipleSemanticTokens {
 
     var overlayDrag: MultipleColorSemanticToken { get }
 
-    var overlayModal: MultipleColorSemanticToken { get }
+    var overlayModalSheet: MultipleColorSemanticToken { get }
+
+    var overlayBackdrop: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
