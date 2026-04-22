@@ -42,8 +42,8 @@ extension WireframeThemeElevationSemanticTokensProvider: ElevationCompositeSeman
     }
 
     @objc public final var `default`: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawToken(light: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultLight),
-                                           dark: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultDark))
+        MultipleElevationCompositeRawToken(light: ElevationCompositeRawToken(x: xElevated, y: yElevated, blur: blurElevated, color: colorDefaultLight),
+                                           dark: ElevationCompositeRawToken(x: xElevated, y: yElevated, blur: blurElevated, color: colorDefaultDark))
     }
 
     @objc public final var emphasized: ElevationCompositeSemanticToken {

@@ -31,7 +31,7 @@ public protocol ElevationSemanticTokens {
 
     var xNone: ElevationXSemanticToken { get }
     var xRaised: ElevationXSemanticToken { get }
-    var xDefault: ElevationXSemanticToken { get }
+    var xElevated: ElevationXSemanticToken { get }
     var xEmphasized: ElevationXSemanticToken { get }
     var xDrag: ElevationXSemanticToken { get }
     var xSticky: ElevationXSemanticToken { get }
@@ -40,7 +40,7 @@ public protocol ElevationSemanticTokens {
 
     var yNone: ElevationYSemanticToken { get }
     var yRaised: ElevationYSemanticToken { get }
-    var yDefault: ElevationYSemanticToken { get }
+    var yElevated: ElevationYSemanticToken { get }
     var yEmphasized: ElevationYSemanticToken { get }
     var yDrag: ElevationYSemanticToken { get }
     var ySticky: ElevationYSemanticToken { get }
@@ -49,7 +49,7 @@ public protocol ElevationSemanticTokens {
 
     var blurNone: ElevationBlurSemanticToken { get }
     var blurRaised: ElevationBlurSemanticToken { get }
-    var blurDefault: ElevationBlurSemanticToken { get }
+    var blurElevated: ElevationBlurSemanticToken { get }
     var blurEmphasized: ElevationBlurSemanticToken { get }
     var blurDrag: ElevationBlurSemanticToken { get }
     var blurSticky: ElevationBlurSemanticToken { get }

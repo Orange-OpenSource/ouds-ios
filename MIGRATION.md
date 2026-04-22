@@ -25,12 +25,25 @@ Some semantic tokens of colors have been renamed.
 
 **Impact**: High
 
+For colors semantic tokens:
+
 | Old name                                   | New name                             |
 |--------------------------------------------|--------------------------------------|
 | `repositorySecondaryHigher`                | `repositorySecondaryHigherHigh`      |
 | `overlayModalLight`                        | `overlayModalSheetLight`             |
 | `overlayModalDark`                         | `overlayModalSheetDark`              |
 | `overlayModal`                             | `overlayModalSheet`                  |
+
+For elevation semantic tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `xDefault`                                 | `xElevated`                          |
+| `yefault`                                  | `yElevated`                          |
+| `blurDefault`                              | `blurElevated`                       |
+| `spreadDefault`                            | `spreadElevated`                     |
+| `colorDefaultLight`                        | `colorElevatedLight`                 |
+| `colorDefaultDark`                         | `colorElevatedDark`                  |
 
 
 **Required Action**:
