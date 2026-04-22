@@ -131,9 +131,9 @@ import OUDSTokensSemantic
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.9.0
+/// - Core OUDS version: 1.10.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange version: 2.3.0
+/// - Brand Orange version: 2.4.0
 ///
 /// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
