@@ -43,7 +43,7 @@ struct AlertLeadingIcon: View {
             case let .accent(icon):
                 icon?.update(with: theme.colors.contentStatusAccent)
             case let .neutral(icon):
-                icon?.update(with: theme.icon.colorContentDefault)
+                icon?.update(with: theme.colors.contentDefault)
             case .negative:
                 OUDSIcon(assetName: "ic_alert_important_fill", color: theme.colors.contentStatusNegative)
             case .positive:
