@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: `OUDSBulletList.UnorderedAsset.free` case
 - **BREAKING**: `OUDSCheckboxItem(isOn:)`, `OUDSRadioItem(isOn:)`, `OUDSCheckboxItemIndeterminate(selection:)` inits
 - **BREAKING**: `OUDSTabBar(selected:count)` init
+### Changed
+
+- Update of tokens librairies (v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
 
 ### Fixed
 

@@ -45,11 +45,6 @@ struct ThemeOverrideOfCheckboxComponentTokensTests {
         #expect(inheritedTheme.checkbox.sizeMinHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeIndicator() throws {
-        #expect(inheritedTheme.checkbox.sizeIndicator != abstractTheme.checkbox.sizeIndicator)
-        #expect(inheritedTheme.checkbox.sizeIndicator == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
-    }
-
     // MARK: - Borders
 
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderRadius() throws {

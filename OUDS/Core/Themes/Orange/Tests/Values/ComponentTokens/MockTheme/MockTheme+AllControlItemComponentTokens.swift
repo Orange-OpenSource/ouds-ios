@@ -47,6 +47,7 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     override var sizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var sizeErrorIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var sizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeControlIndicator: SizeSemanticToken { Self.mockThemeControlItemSize }
     override var colorBgHover: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
     override var colorBgPressed: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
     override var colorBgLoading: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
