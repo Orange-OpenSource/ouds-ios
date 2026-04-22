@@ -104,8 +104,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var actionReadOnlySecondary: MultipleColorSemanticToken { get }
 
-    var actionAccent: MultipleColorSemanticToken { get }
-
     // MARK: - Color - Background
 
     var bgPrimary: MultipleColorSemanticToken { get }

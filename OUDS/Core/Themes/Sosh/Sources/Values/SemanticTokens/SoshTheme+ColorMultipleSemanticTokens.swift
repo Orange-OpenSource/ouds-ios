@@ -78,8 +78,6 @@ extension SoshThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var actionReadOnlySecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
 
-    @objc public final var actionAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionAccentLight, dark: actionAccentDark) }
-
     // MARK: - Color - Background
 
     @objc public final var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }

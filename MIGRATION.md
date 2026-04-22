@@ -1,10 +1,52 @@
 # Migration Guide
 
+- [v1.4.0 → v2.0.0](#v140--v200)
 - [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.4.0 → v2.0.0
+
+### Overview
+
+Tokens librairies have been updated, with some semantic tokens removed or renamed.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.4 or older
+
+### Renamed tokens
+
+Some semantic tokens of colors have been renamed.
+
+**Impact**: High
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `repositorySecondaryHigher`                | `repositorySecondaryHigherHigh`      |
+
+**Required Action**:
+- Use the new names
+
+**Reason for Change**: Tokens librairies have been updated in design side
+
+### Removed tokens
+
+Some semantic tokens of colors have been removed.
+
+**Impact**: High
+
+**Required Action**:
+- Remove tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.4.0 Support**: No
 
 ## v1.3.0 → v1.4.0
 
@@ -121,7 +163,7 @@ The new initializer uses a `Binding<Int>` so the selected tab is always in sync 
 ### Compatibility
 
 - **Backward Compatibility**: Yes
-- **v1.4.0 Support**:  Until release of next minor version
+- **v1.3.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0
 

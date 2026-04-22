@@ -172,7 +172,7 @@ struct TabBarViewModifier: ViewModifier {
                 .font: selectedFont,
             ]
         } else {
-            let selectedUIColor = themeToApply.colors.actionAccent.color(for: colorSchemeToApply).uiColor
+            let selectedUIColor = themeToApply.bar.colorAccent.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
             tabBarItemAppearance.selected.titleTextAttributes = [
                 .foregroundColor: selectedUIColor,
