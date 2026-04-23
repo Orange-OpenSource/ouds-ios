@@ -30,13 +30,132 @@ PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(🤖\):|ci:|docs:|s
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"
 
+# Known trailers (Linux Foundation conventions)
+# Exact spelling and casing is enforced.
+# Format expected for each trailer: Token: First Last <email@example.com>  or  Token: username <email@example.com>
+KNOWN_TRAILERS=(
+    "Acked-by"
+    "Assisted-by"
+    "Co-authored-by"
+    "Reported-by"
+    "Reviewed-by"
+    "Signed-off-by"
+    "Suggested-by"
+    "Tested-by"
+)
+
+# Functions
+# ---------
+
+# Check if a token matches one of the known trailers (exact casing)
+is_known_trailer() {
+    local token="$1"
+    for trailer in "${KNOWN_TRAILERS[@]}"; do
+        if [[ "$token" == "$trailer" ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Check if a token looks like a known trailer but with wrong casing
+is_known_trailer_wrong_case() {
+    local token_lower
+    token_lower=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    for trailer in "${KNOWN_TRAILERS[@]}"; do
+        local trailer_lower
+        trailer_lower=$(echo "$trailer" | tr '[:upper:]' '[:lower:]')
+        if [[ "$token_lower" == "$trailer_lower" ]]; then
+            echo "$trailer"
+            return 0
+        fi
+    done
+    return 1
+}
+
+# Validate trailers in the commit message body.
+# Prints errors to stdout; returns the error count via exit code.
+check_trailers() {
+    local input_file="$1"
+    local errors=0
+    local line_number=0
+    # Regex stored in a variable to avoid bash misinterpreting '>' as redirection
+    # Format: "First Last <user@host.tld>" or "username <user@host.tld>" — a space before '<' is always required
+    local TRAILER_CONTENT_RE='^[^<[:space:]][^<]*[[:space:]]<[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+>$'
+
+    # Process substitution instead of input redirection to avoid a subshell,
+    # so that $errors stays accessible after the loop and can be returned.
+    while IFS= read -r line; do
+        line_number=$((line_number + 1))
+
+        # Skip the first line (commit subject) and blank lines
+        [[ $line_number -eq 1 ]] && continue
+        [[ -z "$line" ]] && continue
+
+        # Detect lines that look like a trailer: "Word-Word...: anything" (including empty content)
+        # The pattern captures the token and optional content separately.
+        if [[ "$line" =~ ^([A-Za-z][A-Za-z-]+):(.*)$ ]]; then
+            local token="${BASH_REMATCH[1]}"
+            local content="${BASH_REMATCH[2]}"
+            # Trim leading space from content (the ": " separator)
+            content="${content# }"
+
+            # Check if the token is a known trailer (exact casing)
+            if is_known_trailer "$token"; then
+                # Validate content format: "First Last <email>" or "username <email>"
+                # A space before '<' is always required.
+                if ! [[ "$content" =~ $TRAILER_CONTENT_RE ]]; then
+                    echo "💥 Malformed trailer (line $line_number): '$line'"
+                    echo "Invalid format. Expected: $token: First Last <email@example.com> or $token: username <email@example.com>"
+                    errors=$((errors + 1))
+                fi
+            else
+                # Check if it looks like a known trailer with wrong casing
+                canonical=$(is_known_trailer_wrong_case "$token")
+                if [[ $? -eq 0 ]]; then
+                    echo "💥 Malformed trailer (line $line_number): '$line'"
+                    echo "Wrong casing. Use '$canonical:' (not '$token:')"
+                    errors=$((errors + 1))
+                # Check if it looks like a known trailer with a typo:
+                # a token that has ≥2 hyphen-separated words and ends with a known trailer suffix.
+                # e.g. "Reported-off-by" ends with "-by" which is the suffix of known trailers,
+                # but the full token does not match any known trailer — flagged as a likely typo.
+                else
+                    local token_lower
+                    token_lower=$(echo "$token" | tr '[:upper:]' '[:lower:]')
+                    local is_trailer_like=0
+                    for trailer in "${KNOWN_TRAILERS[@]}"; do
+                        local trailer_lower
+                        trailer_lower=$(echo "$trailer" | tr '[:upper:]' '[:lower:]')
+                        # Flag as trailer-like if the token ends with the same suffix ("-by", "-on", etc.)
+                        local suffix="${trailer_lower##*-}"
+                        if [[ "$token_lower" == *"-$suffix" ]] && [[ ${#token} -gt ${#trailer} ]]; then
+                            is_trailer_like=1
+                            break
+                        fi
+                    done
+                    if [[ $is_trailer_like -eq 1 ]]; then
+                        echo "💥 Malformed trailer (line $line_number): '$line'"
+                        echo "Unknown trailer '$token:'. Valid trailers are:"
+                        echo "${KNOWN_TRAILERS[*]}"
+                        errors=$((errors + 1))
+                    fi
+                    # Otherwise: regular body line with a colon — silently ignored
+                fi
+            fi
+        fi
+    done < <(cat "$input_file")
+
+    return $errors
+}
+
 # Main
 # ----
 
-echo "🔎 Checking conventional commit messages commit message"
+echo "🔎 Checking conventional commit message"
 
 INPUT_FILE=$1
-COMMIT_MESSAGE=`head -n1 $INPUT_FILE`
+COMMIT_MESSAGE=$(head -n1 "$INPUT_FILE")
 if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
     echo "Bad commit message, it must match one of the following patterns:"
     echo -e "\tTo add things............: 'feat:' \t \t  \t 'chore: add'"
@@ -47,6 +166,18 @@ if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
     echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'fix!:'"
     echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'chore(🤖)' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
     echo "Your commit message: '$COMMIT_MESSAGE'"
+    exit 1
+fi
+
+echo "🔎 Checking trailers"
+
+check_trailers "$INPUT_FILE"
+TRAILER_ERRORS=$?
+
+if [[ $TRAILER_ERRORS -gt 0 ]]; then
+    echo ""
+    echo "Valid trailers: ${KNOWN_TRAILERS[*]}"
+    echo "Expected format: Token: First Last <email@example.com> or Token: username <email@example.com>"
     exit 1
 fi
 
