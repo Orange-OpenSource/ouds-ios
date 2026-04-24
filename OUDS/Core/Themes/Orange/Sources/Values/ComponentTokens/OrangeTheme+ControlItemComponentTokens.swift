@@ -45,15 +45,15 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     /// Has for value token colors.bgPrimary
     @objc open var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
     /// Has for value token FontRawTokens.size450
-    @objc open var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
+    @objc open var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
     /// Has for value token FontRawTokens.lineHeight650
-    @objc open var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
+    @objc open var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
     /// Has for value token FontRawTokens.letterSpacing450
-    @objc open var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
+    @objc open var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
     /// Has for value token opacities.opaque
-    @objc open var controlItemOpacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
+    @objc open var opacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
     /// Has for value token opacities.opaque
-    @objc open var controlItemOpacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
+    @objc open var opacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
     /// Has for value token borders.widthDefault
     @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium
