@@ -73,5 +73,5 @@ extension SoshThemeTextInputComponentTokensProvider: TextInputComponentTokens {
     /// Has for value token DimensionRawTokens._2500
     @objc public final var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._4000
-    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    @objc public final var sizemaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }

@@ -73,5 +73,5 @@ extension OrangeThemeTextInputComponentTokensProvider: TextInputComponentTokens 
     /// Has for value token DimensionRawTokens._2500
     @objc open var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2500 }
     /// Has for value token DimensionRawTokens._4000
-    @objc open var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    @objc open var sizemaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
 }

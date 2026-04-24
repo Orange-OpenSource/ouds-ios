@@ -29,5 +29,5 @@ extension OrangeThemeQuantityInputComponentTokensProvider: QuantityInputComponen
     /// Has for value token DimensionRawTokens._2225
     @objc open var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2225 }
     /// Has for value token DimensionRawTokens._3000
-    @objc open var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+    @objc open var sizemaxWidth: SizeSemanticToken { DimensionRawTokens._3000 }
 }
