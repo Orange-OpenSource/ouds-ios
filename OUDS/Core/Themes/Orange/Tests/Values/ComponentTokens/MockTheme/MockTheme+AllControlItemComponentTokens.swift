@@ -61,14 +61,14 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
 
     // MARK: - ControlItem component tokens - Fonts
 
-    override var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { Self.mockThemeControlItemFontSize }
-    override var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { Self.mockThemeControlItemFontLineHeight }
-    override var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { Self.mockThemeControlItemFontLetterSpacing }
+    override var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { Self.mockThemeControlItemFontSize }
+    override var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { Self.mockThemeControlItemFontLineHeight }
+    override var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { Self.mockThemeControlItemFontLetterSpacing }
 
     // MARK: - ControlItem component tokens - Opacities
 
-    override var controlItemOpacityCurrentIndicator: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
-    override var controlItemOpacityCurrentDivider: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
+    override var opacityCurrentIndicator: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
+    override var opacityCurrentDivider: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
 
     // MARK: - ControlItem component tokens - Borders
 

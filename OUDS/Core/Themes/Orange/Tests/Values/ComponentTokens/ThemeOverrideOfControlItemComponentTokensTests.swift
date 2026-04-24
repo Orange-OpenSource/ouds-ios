@@ -88,30 +88,30 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
     // MARK: - Fonts
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenFontSizeAvatarInitialXlarge() throws {
-        #expect(inheritedTheme.controlItem.controlItemFontSizeAvatarInitialXlarge != abstractTheme.controlItem.controlItemFontSizeAvatarInitialXlarge)
-        #expect(inheritedTheme.controlItem.controlItemFontSizeAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontSize)
+        #expect(inheritedTheme.controlItem.fontSizeAvatarInitialXlarge != abstractTheme.controlItem.fontSizeAvatarInitialXlarge)
+        #expect(inheritedTheme.controlItem.fontSizeAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontSize)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenFontLineHeightAvatarInitialXlarge() throws {
-        #expect(inheritedTheme.controlItem.controlItemFontLineHeightAvatarInitialXlarge != abstractTheme.controlItem.controlItemFontLineHeightAvatarInitialXlarge)
-        #expect(inheritedTheme.controlItem.controlItemFontLineHeightAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontLineHeight)
+        #expect(inheritedTheme.controlItem.fontLineHeightAvatarInitialXlarge != abstractTheme.controlItem.fontLineHeightAvatarInitialXlarge)
+        #expect(inheritedTheme.controlItem.fontLineHeightAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontLineHeight)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenFontLetterSpacingAvatarInitialXlarge() throws {
-        #expect(inheritedTheme.controlItem.controlItemFontLetterSpacingAvatarInitialXlarge != abstractTheme.controlItem.controlItemFontLetterSpacingAvatarInitialXlarge)
-        #expect(inheritedTheme.controlItem.controlItemFontLetterSpacingAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontLetterSpacing)
+        #expect(inheritedTheme.controlItem.fontLetterSpacingAvatarInitialXlarge != abstractTheme.controlItem.fontLetterSpacingAvatarInitialXlarge)
+        #expect(inheritedTheme.controlItem.fontLetterSpacingAvatarInitialXlarge == MockThemeControlItemComponentTokenProvider.mockThemeControlItemFontLetterSpacing)
     }
 
     // MARK: - Opacities
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenOpacityCurrentIndicator() throws {
-        #expect(inheritedTheme.controlItem.controlItemOpacityCurrentIndicator != abstractTheme.controlItem.controlItemOpacityCurrentIndicator)
-        #expect(inheritedTheme.controlItem.controlItemOpacityCurrentIndicator == MockThemeControlItemComponentTokenProvider.mockThemeControlItemOpacity)
+        #expect(inheritedTheme.controlItem.opacityCurrentIndicator != abstractTheme.controlItem.opacityCurrentIndicator)
+        #expect(inheritedTheme.controlItem.opacityCurrentIndicator == MockThemeControlItemComponentTokenProvider.mockThemeControlItemOpacity)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenOpacityCurrentDivider() throws {
-        #expect(inheritedTheme.controlItem.controlItemOpacityCurrentDivider != abstractTheme.controlItem.controlItemOpacityCurrentDivider)
-        #expect(inheritedTheme.controlItem.controlItemOpacityCurrentDivider == MockThemeControlItemComponentTokenProvider.mockThemeControlItemOpacity)
+        #expect(inheritedTheme.controlItem.opacityCurrentDivider != abstractTheme.controlItem.opacityCurrentDivider)
+        #expect(inheritedTheme.controlItem.opacityCurrentDivider == MockThemeControlItemComponentTokenProvider.mockThemeControlItemOpacity)
     }
 
     // MARK: - Borders
