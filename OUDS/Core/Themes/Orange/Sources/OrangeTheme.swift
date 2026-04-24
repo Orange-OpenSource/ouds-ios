@@ -148,7 +148,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - charts: All semantic tokens of color charts
+    ///    - colorsCharts: All semantic tokens of color charts
+    ///    - colorsDecorative: All semantic tokens of color decorative
     ///    - effects: All semantic tokens of effects
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
@@ -185,7 +186,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
                          colorModes: AllColorModeSemanticTokensProvider? = nil,
-                         charts: AllColorChartSemanticTokensProvider? = nil,
+                         colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+                         colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                          effects: AllEffectSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
@@ -224,7 +226,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
-        let charts = (charts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let colorsCharts = (colorsCharts ?? OrangeThemeColorChartSemanticTokensProvider())
+        let colorsDecorative = (colorsDecorative ?? OrangeThemeColorDecorativeSemanticTokensProvider())
         let effects = (effects ?? OrangeThemeEffectSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
@@ -259,7 +262,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   charts: charts,
+                   colorsCharts: colorsCharts,
+                   colorsDecorative: colorsDecorative,
                    effects: effects,
                    elevations: elevations,
                    fonts: fonts,

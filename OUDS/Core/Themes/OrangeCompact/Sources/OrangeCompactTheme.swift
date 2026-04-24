@@ -127,7 +127,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let borders = OrangeCompactThemeBorderSemanticTokensProvider()
         let colors = OrangeCompactThemeColorSemanticTokensProvider()
         let colorModes = OrangeCompactThemeColorModeSemanticTokensProvider(colors: colors)
-        let charts = OrangeCompactThemeColorChartSemanticTokensProvider()
+        let colorsCharts = OrangeCompactThemeColorChartSemanticTokensProvider()
+        let colorsDecorative = OrangeCompactThemeColorDecorativeSemanticTokensProvider()
         let effects = OrangeCompactThemeEffectSemanticTokensProvider()
         let elevations = OrangeCompactThemeElevationSemanticTokensProvider()
         let fonts = OrangeCompactThemeFontSemanticTokensProvider()
@@ -162,7 +163,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   charts: charts,
+                   colorsCharts: colorsCharts,
+                   colorsDecorative: colorsDecorative,
                    effects: effects,
                    elevations: elevations,
                    fonts: fonts,
