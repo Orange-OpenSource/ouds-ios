@@ -114,4 +114,35 @@ extension WireframeThemeControlItemComponentTokensProvider: ControlItemComponent
     @objc public final var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token DimensionRawTokens._50
     @objc public final var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    /// Has for value token colors.actionSupportHover
+    @objc public final var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
+    /// Has for value token colors.actionSupportPressed
+    @objc public final var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
+    /// Has for value token colors.actionSupportLoading
+    @objc public final var colorBgLoading: MultipleColorSemanticToken { colors.actionSupportLoading }
+    /// Has for value token colors.actionSupportFocus
+    @objc public final var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
+    /// Has for value token colors.contentDefault
+    @objc public final var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
+
+    /// Has for value token borders.radiusNone
+    @objc public final var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
+    /// Has for value token borders.radiusDefault
+    @objc public final var borderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
+
+    /// Has for value token spaces.paddingBlockMedium
+    @objc public final var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingInline4xsmall
+    @objc public final var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
+
+    /// Has for value token DimensionRawTokens._1200
+    @objc public final var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1200 }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var sizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    @objc public final var sizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
 }

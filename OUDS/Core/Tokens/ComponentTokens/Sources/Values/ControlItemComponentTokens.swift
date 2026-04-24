@@ -89,6 +89,37 @@ public protocol ControlItemComponentTokens {
     var sizeAssetXlarge: SizeSemanticToken { get }
     var sizeFlagHeight: SizeSemanticToken { get }
     var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgHover: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgPressed: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgLoading: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgFocus: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorContentLoader: MultipleColorSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var borderRadius: BorderRadiusSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeErrorIcon: SizeSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeLoader: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

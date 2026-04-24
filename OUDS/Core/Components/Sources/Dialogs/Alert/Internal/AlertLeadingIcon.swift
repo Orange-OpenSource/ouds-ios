@@ -15,7 +15,6 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Alert Leading Icon
-
 struct AlertLeadingIcon: View {
 
     // MARK: Properties
@@ -43,7 +42,7 @@ struct AlertLeadingIcon: View {
             case let .accent(icon):
                 icon?.update(with: theme.colors.contentStatusAccent)
             case let .neutral(icon):
-                icon?.update(with: theme.colors.contentDefault)
+                icon?.update(with: theme.icon.colorContentDefault)
             case .negative:
                 OUDSIcon(assetName: "ic_alert_important_fill", color: theme.colors.contentStatusNegative)
             case .positive:

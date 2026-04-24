@@ -29,6 +29,12 @@ public protocol IconComponentTokens {
     var colorContentStatusWarningInternalShape: MultipleColorSemanticToken { get }
     var colorContentStatusWarningInverseExternalShape: MultipleColorSemanticToken { get }
     var colorContentStatusWarningInverseInternalShape: MultipleColorSemanticToken { get }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorContentDefault: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -27,20 +27,12 @@ struct RadioBackgroundModifier: ViewModifier {
         switch interactionState {
         case .enabled, .disabled, .readOnly:
             content
-        // TODO: #1437 - Which background apply instead of colorBgHover?
-        // TODO: #1437 - Which radius apply instead of borderRadiusItemOnly?
-        /*
-         case .hover:
-             content.background(theme.controlItem.colorBgHover)
-                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
-         case .pressed:
-             content.background(theme.controlItem.colorBgPressed)
-                 .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
-              */
         case .hover:
-            content
+            content.background(theme.controlItem.colorBgHover)
+                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         case .pressed:
-            content
+            content.background(theme.controlItem.colorBgPressed)
+                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusItemOnly))
         }
     }
 }

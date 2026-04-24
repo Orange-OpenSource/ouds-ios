@@ -12,7 +12,6 @@
 //
 
 import OUDSThemesContract
-import OUDSTokensRaw
 import SwiftUI
 
 /// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.
@@ -50,7 +49,7 @@ struct ControlItemContent: View {
                     indicatorContainer()
                 }
             }
-            .padding(.vertical, theme.controlItem.spacePaddingBlockDensityDefault) // TODO: #1437 - spacePaddingBlockDensityDefault instead of spacePaddingBlockDefault?
+            .padding(.vertical, theme.controlItem.spacePaddingBlockDefault)
             .padding(.horizontal, theme.controlItem.spacePaddingInline)
             .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
@@ -59,16 +58,13 @@ struct ControlItemContent: View {
                 Text(errorText)
                     .labelDefaultMedium(theme)
                     .foregroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText) // TODO: #1437 - Which token must replace spacePaddingBlockTopErrorText? spacePaddingBlockTopHelperText?
+                    .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)
                     .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .frame(minWidth: theme.controlItem.sizeMinWidth,
-               maxWidth: maxWidth,
-               minHeight: theme.controlItem.sizeMinHeightDefault,
-               alignment: .center)
+        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
-        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusDefault)) // TODO: #1437 - Which token use instead of borderRadius? borderRadiusDefault?
+        .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
 
     // MARK: Containers
@@ -80,8 +76,8 @@ struct ControlItemContent: View {
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
             .readSize { size in
-                verticalAlignment = size.height > DimensionRawTokens._1200 ? .top : .center
-            } // TODO: #1437 - Which token use instead of sizeMaxHeightAssetsContainer?
+                verticalAlignment = size.height > theme.controlItem.sizeMaxHeightAssetsContainer ? .top : .center
+            }
     }
 
     private func iconContainer() -> some View {
