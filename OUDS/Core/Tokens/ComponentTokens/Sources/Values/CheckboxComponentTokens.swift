@@ -30,7 +30,6 @@ public protocol CheckboxComponentTokens {
     var sizeMaxHeight: SizeSemanticToken { get }
     var sizeMinHeight: SizeSemanticToken { get }
     var sizeMinWidth: SizeSemanticToken { get }
-    var sizeIndicator: SizeSemanticToken { get }
 
     // MARK: - Borders
 
@@ -43,6 +42,12 @@ public protocol CheckboxComponentTokens {
     var borderWidthUnselectedFocus: BorderWidthSemanticToken { get }
     var borderWidthUnselectedHover: BorderWidthSemanticToken { get }
     var borderWidthUnselectedPressed: BorderWidthSemanticToken { get }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeIndicator: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

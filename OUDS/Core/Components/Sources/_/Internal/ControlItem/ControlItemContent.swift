@@ -58,11 +58,11 @@ struct ControlItemContent: View {
                 Text(errorText)
                     .labelDefaultMedium(theme)
                     .foregroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.controlItem.spacePaddingBlockTopErrorText)
+                    .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)
                     .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeight, alignment: .center)
+        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }

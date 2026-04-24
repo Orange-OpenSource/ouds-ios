@@ -136,7 +136,7 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(onBrandPrimary) { return colors.surfaceBrandPrimary }
         if mode.isEqual(onBrandSecondary) { return colors.surfaceBrandSecondary }
         if mode.isEqual(onBrandTertiary) { return colors.surfaceBrandTertiary }
-        if mode.isEqual(onOverlayModal) { return colors.overlayModal }
+        if mode.isEqual(onOverlayModal) { return colors.overlayModalSheet }
         if mode.isEqual(onStatusAccentEmphasized) { return colors.surfaceStatusAccentEmphasized }
         if mode.isEqual(onStatusAccentMuted) { return colors.surfaceStatusAccentMuted }
         if mode.isEqual(onStatusInfoEmphasized) { return colors.surfaceStatusInfoEmphasized }
@@ -148,8 +148,8 @@ extension OrangeCompactThemeColorModeSemanticTokensProvider: ColorModeMultipleSe
         if mode.isEqual(onStatusWarningEmphasized) { return colors.surfaceStatusWarningEmphasized }
         if mode.isEqual(onStatusWarningMuted) { return colors.surfaceStatusWarningMuted }
         if mode.isEqual(onOverlayDropdown) { return colors.overlayDropdown }
-        if mode.isEqual(onOverlayTooltip) { return colors.overlayModal } // FIXME: Not sure of this value
-        if mode.isEqual(navigationBar) { return colors.overlayModal } // FIXME: Not sure of this value
+        if mode.isEqual(onOverlayTooltip) { return colors.overlayModalSheet } // FIXME: Not sure of this value
+        if mode.isEqual(navigationBar) { return colors.overlayModalSheet } // FIXME: Not sure of this value
         OL.fatal("The color mode '\(mode.name)' for Orange Theme is not managed and must be.")
     }
     // swiftlint:enable cyclomatic_complexity

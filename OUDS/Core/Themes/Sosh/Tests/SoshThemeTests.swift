@@ -51,7 +51,11 @@ struct SoshThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.charts == nil)
+        #expect(theme.colorsCharts == nil)
+    }
+
+    @Test func defaultColorDecorativeSemanticTokensProvider() throws {
+        #expect(theme.colorsDecorative == nil)
     }
 
     @Test func defaultEffectSemanticTokensProvider() throws {

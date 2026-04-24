@@ -24,11 +24,32 @@ import Foundation
 /// - Since: 0.17.0
 public protocol ColorChartSemanticTokens {
 
+    var gridlinesLight: ColorSemanticToken { get }
+    var gridlinesDark: ColorSemanticToken { get }
+
     var borderLight: ColorSemanticToken { get }
     var borderDark: ColorSemanticToken { get }
 
     var borderContrastLight: ColorSemanticToken { get }
     var borderContrastDark: ColorSemanticToken { get }
+
+    var highlightLight: ColorSemanticToken { get }
+    var highlightDark: ColorSemanticToken { get }
+
+    var neutralLight: ColorSemanticToken { get }
+    var neutralDark: ColorSemanticToken { get }
+
+    var functionalInfoLight: ColorSemanticToken { get }
+    var functionalInfoDark: ColorSemanticToken { get }
+
+    var functionalPositiveLight: ColorSemanticToken { get }
+    var functionalPositiveDark: ColorSemanticToken { get }
+
+    var functionalWarningLight: ColorSemanticToken { get }
+    var functionalWarningDark: ColorSemanticToken { get }
+
+    var functionalNegativeLight: ColorSemanticToken { get }
+    var functionalNegativeDark: ColorSemanticToken { get }
 
     var categoricalTier1Light: ColorSemanticToken { get }
     var categoricalTier1Dark: ColorSemanticToken { get }
@@ -60,26 +81,140 @@ public protocol ColorChartSemanticTokens {
     var categoricalTier10Light: ColorSemanticToken { get }
     var categoricalTier10Dark: ColorSemanticToken { get }
 
-    var functionalInfoLight: ColorSemanticToken { get }
-    var functionalInfoDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint100Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint100Dark: ColorSemanticToken { get }
 
-    var functionalNegativeLight: ColorSemanticToken { get }
-    var functionalNegativeDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint200Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint200Dark: ColorSemanticToken { get }
 
-    var functionalPositiveLight: ColorSemanticToken { get }
-    var functionalPositiveDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint300Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint300Dark: ColorSemanticToken { get }
 
-    var functionalWarningLight: ColorSemanticToken { get }
-    var functionalWarningDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint400Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint400Dark: ColorSemanticToken { get }
 
-    var gridlinesLight: ColorSemanticToken { get }
-    var gridlinesDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint500Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint500Dark: ColorSemanticToken { get }
 
-    var highlightLight: ColorSemanticToken { get }
-    var highlightDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint600Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint600Dark: ColorSemanticToken { get }
 
-    var neutralLight: ColorSemanticToken { get }
-    var neutralDark: ColorSemanticToken { get }
+    var sequentialAccent1Tint700Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint700Dark: ColorSemanticToken { get }
+
+    var sequentialAccent1Tint800Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint800Dark: ColorSemanticToken { get }
+
+    var sequentialAccent1Tint900Light: ColorSemanticToken { get }
+    var sequentialAccent1Tint900Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint100Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint100Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint200Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint200Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint300Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint300Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint400Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint400Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint500Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint500Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint600Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint600Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint700Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint700Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint800Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint800Dark: ColorSemanticToken { get }
+
+    var sequentialAccent2Tint900Light: ColorSemanticToken { get }
+    var sequentialAccent2Tint900Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint100Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint100Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint200Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint200Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint300Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint300Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint400Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint400Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint500Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint500Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint600Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint600Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint700Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint700Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint800Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint800Dark: ColorSemanticToken { get }
+
+    var sequentialAccent3Tint900Light: ColorSemanticToken { get }
+    var sequentialAccent3Tint900Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint100Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint100Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint200Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint200Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint300Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint300Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint400Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint400Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint500Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint500Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint600Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint600Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint700Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint700Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint800Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint800Dark: ColorSemanticToken { get }
+
+    var sequentialAccent4Tint900Light: ColorSemanticToken { get }
+    var sequentialAccent4Tint900Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint100Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint100Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint200Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint200Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint300Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint300Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint400Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint400Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint500Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint500Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint600Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint600Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint700Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint700Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint800Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint800Dark: ColorSemanticToken { get }
+
+    var sequentialAccent5Tint900Light: ColorSemanticToken { get }
+    var sequentialAccent5Tint900Dark: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

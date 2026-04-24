@@ -45,6 +45,56 @@ public protocol ColorChartMultipleSemanticTokens {
     var gridlines: MultipleColorSemanticToken { get }
     var highlight: MultipleColorSemanticToken { get }
     var neutral: MultipleColorSemanticToken { get }
+
+    var sequentialAccent1Tint100: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint200: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint300: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint400: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint500: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint600: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint700: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint800: MultipleColorSemanticToken { get }
+    var sequentialAccent1Tint900: MultipleColorSemanticToken { get }
+
+    var sequentialAccent2Tint100: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint200: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint300: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint400: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint500: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint600: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint700: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint800: MultipleColorSemanticToken { get }
+    var sequentialAccent2Tint900: MultipleColorSemanticToken { get }
+
+    var sequentialAccent3Tint100: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint200: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint300: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint400: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint500: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint600: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint700: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint800: MultipleColorSemanticToken { get }
+    var sequentialAccent3Tint900: MultipleColorSemanticToken { get }
+
+    var sequentialAccent4Tint100: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint200: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint300: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint400: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint500: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint600: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint700: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint800: MultipleColorSemanticToken { get }
+    var sequentialAccent4Tint900: MultipleColorSemanticToken { get }
+
+    var sequentialAccent5Tint100: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint200: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint300: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint400: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint500: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint600: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint700: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint800: MultipleColorSemanticToken { get }
+    var sequentialAccent5Tint900: MultipleColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

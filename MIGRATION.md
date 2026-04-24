@@ -1,10 +1,144 @@
 # Migration Guide
 
+- [v1.4.0 → v2.0.0](#v140--v200)
 - [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v1.4.0 → v2.0.0
+
+### Overview
+
+Tokens librairies have been updated, with some semantic tokens removed or renamed.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 1.4 or older
+
+### Renamed tokens
+
+Some component tokens (badge) and semantic tokens (colors) have been renamed.
+
+**Impact**: High
+
+For colors semantic tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `repositorySecondaryHigher`                | `repositorySecondaryHigherHigh`      |
+| `overlayModalLight`                        | `overlayModalSheetLight`             |
+| `overlayModalDark`                         | `overlayModalSheetDark`              |
+| `overlayModal`                             | `overlayModalSheet`                  |
+
+For elevation semantic tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `xDefault`                                 | `xElevated`                          |
+| `yefault`                                  | `yElevated`                          |
+| `blurDefault`                              | `blurElevated`                       |
+| `spreadDefault`                            | `spreadElevated`                     |
+| `colorDefaultLight`                        | `colorElevatedLight`                 |
+| `colorDefaultDark`                         | `colorElevatedDark`                  |
+
+
+For size semantic tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `maxWidthTypeDisplayLargeMobile`           | `maxWidthDisplayLargeMobile`         |
+| `maxWidthTypeDisplayLargeTablet`           | `maxWidthDisplayLargeTablet`         |
+| `maxWidthTypeDisplayMediumMobile`          | `maxWidthDisplayMediumMobile`        |
+| `maxWidthTypeDisplayMediumTablet`          | `maxWidthDisplayMediumTablet`        |
+| `maxWidthTypeDisplaySmallMobile`           | `maxWidthDisplaySmallMobile`         |
+| `maxWidthTypeDisplaySmallTablet`           | `maxWidthDisplaySmallTablet`         |
+| `maxWidthTypeHeadingXlargeMobile`          | `maxWidthHeadingXlargeMobile`        |
+| `maxWidthTypeHeadingXlargeTablet`          | `maxWidthHeadingXlargeTablet`        |
+| `maxWidthTypeHeadingLargeMobile`           | `maxWidthHeadingLargeMobile`         |
+| `maxWidthTypeHeadingLargeTablet`           | `maxWidthHeadingLargeTablet`         |
+| `maxWidthTypeHeadingMediumMobile`          | `maxWidthHeadingMediumMobile`        |
+| `maxWidthTypeHeadingMediumTablet`          | `maxWidthHeadingMediumTablet`        |
+| `maxWidthTypeHeadingSmallMobile`           | `maxWidthHeadingSmallMobile`         |
+| `maxWidthTypeHeadingSmallTablet`           | `maxWidthHeadingSmallTablet`         |
+| `maxWidthTypeBodyLargeMobile`              | `maxWidthBodyLargeMobile`            |
+| `maxWidthTypeBodyLargeTablet`              | `maxWidthBodyLargeTablet`            |
+| `maxWidthTypeBodyMediumMobile`             | `maxWidthBodyMediumMobile`           |
+| `maxWidthTypeBodyMediumTablet`             | `maxWidthBodyMediumTablet`           |
+| `maxWidthTypeBodySmallMobile`              | `maxWidthBodySmallMobile`            |
+| `maxWidthTypeBodySmallTablet`              | `maxWidthBodySmallTablet`            |
+| `maxWidthTypeLabelXlargeMobile`            | `maxWidthLabelXlargeMobile`          |
+| `maxWidthTypeLabelXlargeTablet`            | `maxWidthLabelXlargeTablet`          |
+| `maxWidthTypeLabelLargeMobile`             | `maxWidthabelLargeMobile`            |
+| `maxWidthTypeLabelLargeTablet`             | `maxWidthLabelLargeTablet`           |
+| `maxWidthTypeLabelMediumMobile`            | `maxWidthLabelMediumMobile`          |
+| `maxWidthTypeLabelMediumTablet`            | `maxWidthLabelMediumTablet`          |
+| `maxWidthTypeLabelSmallMobile`             | `maxWidthLabelSmallMobile`           |
+| `maxWidthTypeLabelSmallTablet`             | `maxWidthLabelSmallTablet`           |
+
+For badge component tokens:
+
+| Old name                                   | New name                             |
+|--------------------------------------------|--------------------------------------|
+| `spaceInset`                               | `spaceInsetMediumLarge`              |
+
+For bar component tokens
+
+| Old name                                        | New name                                        |
+|-------------------------------------------------|-------------------------------------------------|
+| `colorActiveIndicatorCustomSelectedEnabled`     | `colorCurrentIndicatorCustomSelectedEnabled`    |
+| `colorActiveIndicatorCustomSelectedHover`       | `colorCurrentIndicatorCustomSelectedHover`      |
+| `colorActiveIndicatorCustomSelectedPressed`     | `colorCurrentIndicatorCustomSelectedPressed`    |
+| `colorActiveIndicatorCustomSelectedFocus`       | `colorCurrentIndicatorCustomSelectedFocus`      |
+| `opacityActiveIndicatorCustom`                  | `opacityCurrentIndicatorCustom`                 |
+| `borderRadiusActiveIndicatorCustomTop`          | `borderRadiusCurrentIndicatorCustomTop`         |
+| `borderRadiusActiveIndicatorCustomBottom`       | `borderRadiusCurrentIndicatorCustomBottom`      |
+| `sizeWidthActiveIndicatorCustomTop`             | `sizeWidthCurrentIndicatorCustomTop`            |
+| `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
+| `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
+
+    
+**Required Action**:
+- Use the new names as explained above
+
+**Reason for Change**: Tokens librairies have been updated in design side
+
+### Removed tokens
+
+Some component tokens (control item, checkbox, radio), semantic tokens (color) and raw tokens (effect, colors) have been removed.
+
+**Impact**: High
+
+**Required Action**:
+- Remove effect raw token `blur160`
+- Remove color raw token `opacityGrayLight80800`
+- Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
+- Remove radio component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
+- Remove checkbox component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
+- Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
+`colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
+
+**Reason for Change**: Tokens librairies have been updated in design side
+
+### Renamed color charts tokens providers
+
+The tokens provider for charts colors, previously named `charts`, is now named `colorsCharts`.
+
+**Impact**: High
+
+**Required Action**:
+- Rename any use of `theme.charts` to `theme.colorsCharts`
+
+**Reason for Change**: Bring more clarity in naming
+
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v1.4.0 Support**: No
 
 ## v1.3.0 → v1.4.0
 
@@ -121,7 +255,7 @@ The new initializer uses a `Binding<Int>` so the selected tab is always in sync 
 ### Compatibility
 
 - **Backward Compatibility**: Yes
-- **v1.4.0 Support**:  Until release of next minor version
+- **v1.3.0 Support**:  Until release of next minor version
 
 ## v1.2.0 → v1.3.0
 

@@ -29,37 +29,86 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     static let mockThemeControlItemSpace: DimensionRawToken = 218
     static let mockThemeControlItemColor = MultipleColorSemanticToken("#00FF00")
     static let mockThemeControlItemBorderRadius: BorderRadiusRawToken = 444_719
+    static let mockThemeControlItemBorderWidth: BorderWidthRawToken = 101
+    static let mockThemeControlItemFontSize: FontSizeRawToken = 1_337
+    static let mockThemeControlItemFontLineHeight: FontLineHeightRawToken = 1_000
+    static let mockThemeControlItemFontLetterSpacing: FontLetterSpacingRawToken = 777
+    static let mockThemeControlItemOpacity: OpacityRawToken = 0.42
 
     override init(sizes: AllSizeSemanticTokensProvider?,
                   borders: AllBorderSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
-                  spaces: AllSpaceSemanticTokensProvider?)
+                  spaces: AllSpaceSemanticTokensProvider?,
+                  opacities: AllOpacitySemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider?)
     {
-        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions)
     }
 
-    // MARK: - ControlItem component tokens
+    // MARK: - ControlItem component tokens - Colors
 
-    override var sizeMinHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeMaxHeightAssetsContainer: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeErrorIcon: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var sizeLoader: SizeSemanticToken { Self.mockThemeControlItemSize }
-    override var colorBgHover: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
-    override var colorBgPressed: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
-    override var colorBgLoading: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
-    override var colorBgFocus: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
-    override var colorContentLoader: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgCurrentEnabled: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgCurrentHover: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgCurrentPressed: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgCurrentDisabled: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBgCurrentFocus: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentCurrentEnabled: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentCurrentHover: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentCurrentPressed: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentCurrentDisabled: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorContentCurrentFocus: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+    override var colorBadgeSafetyArea: MultipleColorSemanticToken { Self.mockThemeControlItemColor }
+
+    // MARK: - ControlItem component tokens - Fonts
+
+    override var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { Self.mockThemeControlItemFontSize }
+    override var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { Self.mockThemeControlItemFontLineHeight }
+    override var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { Self.mockThemeControlItemFontLetterSpacing }
+
+    // MARK: - ControlItem component tokens - Opacities
+
+    override var opacityCurrentIndicator: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
+    override var opacityCurrentDivider: OpacitySemanticToken { Self.mockThemeControlItemOpacity }
+
+    // MARK: - ControlItem component tokens - Borders
+
+    override var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeControlItemBorderWidth }
+    override var borderWidthCurrentPage: BorderWidthSemanticToken { Self.mockThemeControlItemBorderWidth }
+    override var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var borderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var borderRadiusMedia: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var borderRadiusMediaRoundedCorner: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+
+    // MARK: - ControlItem component tokens - Spaces
+
+    override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spaceColumnGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spaceRowGap: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingBlockTopErrorText: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingInlineErrorIcon: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var borderRadius: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
-    override var borderRadiusItemOnly: BorderRadiusSemanticToken { Self.mockThemeControlItemBorderRadius }
+    override var spacePaddingBlockTopHelperText: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockBottomSlot: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityCompact: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityDefault: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityDefaultBottomExpandContainer: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+
+    // MARK: - ControlItem component tokens - Sizes
+
+    override var sizeControlIndicator: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMinHeightCompact: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMinHeightDefault: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeMaxWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeAssetSmall: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeAssetMedium: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeAssetLarge: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeAssetXlarge: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeFlagHeight: SizeSemanticToken { Self.mockThemeControlItemSize }
+    override var sizeCurrentIndicatorWidth: SizeSemanticToken { Self.mockThemeControlItemSize }
 }
 
 // swiftlint:enable required_deinit

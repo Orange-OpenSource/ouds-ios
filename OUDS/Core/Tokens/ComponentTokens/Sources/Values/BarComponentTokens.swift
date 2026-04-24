@@ -28,6 +28,7 @@ public protocol BarComponentTokens {
 
     // MARK: - Colors
 
+    var colorAccent: MultipleColorSemanticToken { get }
     var colorBgOpaque: MultipleColorSemanticToken { get }
     var colorBgTranslucent: MultipleColorSemanticToken { get }
     var colorContentSelectedEnabled: MultipleColorSemanticToken { get }
@@ -40,14 +41,14 @@ public protocol BarComponentTokens {
     var colorContentUnselectedFocus: MultipleColorSemanticToken { get }
     var colorContentOnAccent: MultipleColorSemanticToken { get }
     var colorBorderBadge: MultipleColorSemanticToken { get }
-    var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { get }
-    var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticToken { get }
-    var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticToken { get }
-    var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticToken { get }
+    var colorCurrentIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { get }
+    var colorCurrentIndicatorCustomSelectedHover: MultipleColorSemanticToken { get }
+    var colorCurrentIndicatorCustomSelectedPressed: MultipleColorSemanticToken { get }
+    var colorCurrentIndicatorCustomSelectedFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Opacities
 
-    var opacityActiveIndicatorCustom: OpacitySemanticToken { get }
+    var opacityCurrentIndicatorCustom: OpacitySemanticToken { get }
 
     // MARK: - Effects
 
@@ -55,14 +56,14 @@ public protocol BarComponentTokens {
 
     // MARK: - Borders
 
-    var borderRadiusActiveIndicatorCustomTop: BorderRadiusSemanticToken { get }
-    var borderRadiusActiveIndicatorCustomBottom: BorderRadiusSemanticToken { get }
+    var borderRadiusCurrentIndicatorCustomTop: BorderRadiusSemanticToken { get }
+    var borderRadiusCurrentIndicatorCustomBottom: BorderRadiusSemanticToken { get }
 
     // MARK: - Sizes
 
-    var sizeWidthActiveIndicatorCustomTop: SizeSemanticToken { get }
-    var sizeWidthActiveIndicatorCustomBottom: SizeSemanticToken { get }
-    var sizeHeightActiveIndicatorCustom: SizeSemanticToken { get }
+    var sizeWidthCurrentIndicatorCustomTop: SizeSemanticToken { get }
+    var sizeWidthCurrentIndicatorCustomBottom: SizeSemanticToken { get }
+    var sizeHeightCurrentIndicatorCustom: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

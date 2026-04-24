@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...develop)
 
+### Changed
+
+- **BREAKING**: Update of raw, semantic and component tokens declarations and definitions (tokens librairies v2.4.0)  (Orange-OpenSource/ouds-ios#1437)
+
 ### Removed
 
 - **BREAKING**: Old methods prefixed by `ouds`

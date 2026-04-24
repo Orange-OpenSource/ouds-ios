@@ -106,9 +106,9 @@ import SwiftUI
 ///
 /// ## Tokens versions
 ///
-/// - Core OUDS version: 1.9.0
+/// - Core OUDS version: 1.10.0
 /// - Core Orange version: 1.2.0
-/// - Brand Orange Compact version: 2.3.0
+/// - Brand Orange Compact version: 2.4.0
 ///
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
@@ -127,7 +127,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let borders = OrangeCompactThemeBorderSemanticTokensProvider()
         let colors = OrangeCompactThemeColorSemanticTokensProvider()
         let colorModes = OrangeCompactThemeColorModeSemanticTokensProvider(colors: colors)
-        let charts = OrangeCompactThemeColorChartSemanticTokensProvider()
+        let colorsCharts = OrangeCompactThemeColorChartSemanticTokensProvider()
+        let colorsDecorative = OrangeCompactThemeColorDecorativeSemanticTokensProvider()
         let effects = OrangeCompactThemeEffectSemanticTokensProvider()
         let elevations = OrangeCompactThemeElevationSemanticTokensProvider()
         let fonts = OrangeCompactThemeFontSemanticTokensProvider()
@@ -162,7 +163,8 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: borders,
                    colors: colors,
                    colorModes: colorModes,
-                   charts: charts,
+                   colorsCharts: colorsCharts,
+                   colorsDecorative: colorsDecorative,
                    effects: effects,
                    elevations: elevations,
                    fonts: fonts,

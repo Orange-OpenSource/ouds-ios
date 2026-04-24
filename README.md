@@ -167,14 +167,14 @@ The wiki lists also [the components and their availability](https://github.com/O
 > This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.9.0
+- Core OUDS version: 1.10.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.3.0
-- Core Sosh version: 1.2.0
-- Brand Sosh version: 2.3.0
-- Core Wireframe version: 1.3.0
-- Brand Wireframe version: 2.3.0
-- Brand Orange Compact version: 2.3.0
+- Brand Orange version: 2.4.0
+- Core Sosh version: 1.3.0
+- Brand Sosh version: 2.4.0
+- Core Wireframe version: 1.4.0
+- Brand Wireframe version: 2.4.0
+- Brand Orange Compact version: 2.4.0
 
 ## 🪲 Bugs, feature requests and discussions
 

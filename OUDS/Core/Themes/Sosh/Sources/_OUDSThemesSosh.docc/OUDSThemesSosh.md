@@ -16,7 +16,7 @@ The Sosh theme is the theme dedicated to the Sosh brand only.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.3.0
+🧬 Theme version: 2.4.0
 ```
 
 This is the Sosh theme any Sosh product must use, and cannot be subclassed.

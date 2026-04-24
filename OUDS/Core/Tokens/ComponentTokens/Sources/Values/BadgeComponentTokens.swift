@@ -34,7 +34,9 @@ public protocol BadgeComponentTokens {
 
     // MARK: - Spaces
 
-    var spaceInset: SpaceSemanticToken { get }
+    var spaceInsetXsmall: SpaceSemanticToken { get }
+    var spaceInsetSmall: SpaceSemanticToken { get }
+    var spaceInsetMediumLarge: SpaceSemanticToken { get }
     var spacePaddingInlineMedium: SpaceSemanticToken { get }
     var spacePaddingInlineLarge: SpaceSemanticToken { get }
 }

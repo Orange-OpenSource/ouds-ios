@@ -42,6 +42,18 @@ struct OrangeCompactThemeControlItemComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultFontSemanticTokensProvider() throws {
+        #expect(provider.fonts is OrangeCompactThemeFontSemanticTokensProvider)
+    }
+
+    @Test func defaultOpacitySemanticTokensProvider() throws {
+        #expect(provider.opacities is OrangeCompactThemeOpacitySemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeCompactThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

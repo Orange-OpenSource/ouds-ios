@@ -56,23 +56,23 @@ extension OrangeThemeSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    @objc open var maxWidthTypeDisplayLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeDisplayLargeMobile, regular: maxWidthTypeDisplayLargeTablet) }
-    @objc open var maxWidthTypeDisplayMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeDisplayMediumMobile, regular: maxWidthTypeDisplayMediumTablet) }
-    @objc open var maxWidthTypeDisplaySmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeDisplaySmallMobile, regular: maxWidthTypeDisplaySmallTablet) }
+    @objc open var maxWidthDisplayLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthDisplayLargeMobile, regular: maxWidthDisplayLargeTablet) }
+    @objc open var maxWidthDisplayMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthDisplayMediumMobile, regular: maxWidthDisplayMediumTablet) }
+    @objc open var maxWidthDisplaySmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthDisplaySmallMobile, regular: maxWidthDisplaySmallTablet) }
 
-    @objc open var maxWidthTypeHeadingXlarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeHeadingXlargeMobile, regular: maxWidthTypeHeadingXlargeTablet) }
-    @objc open var maxWidthTypeHeadingLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeHeadingLargeMobile, regular: maxWidthTypeHeadingLargeTablet) }
-    @objc open var maxWidthTypeHeadingMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeHeadingMediumMobile, regular: maxWidthTypeHeadingMediumTablet) }
-    @objc open var maxWidthTypeHeadingSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeHeadingSmallMobile, regular: maxWidthTypeHeadingSmallTablet) }
+    @objc open var maxWidthHeadingXlarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthHeadingXlargeMobile, regular: maxWidthHeadingXlargeTablet) }
+    @objc open var maxWidthHeadingLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthHeadingLargeMobile, regular: maxWidthHeadingLargeTablet) }
+    @objc open var maxWidthHeadingMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthHeadingMediumMobile, regular: maxWidthHeadingMediumTablet) }
+    @objc open var maxWidthHeadingSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthHeadingSmallMobile, regular: maxWidthHeadingSmallTablet) }
 
-    @objc open var maxWidthTypeBodyLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeBodyLargeMobile, regular: maxWidthTypeBodyLargeTablet) }
-    @objc open var maxWidthTypeBodyMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeBodyMediumMobile, regular: maxWidthTypeBodyMediumTablet) }
-    @objc open var maxWidthTypeBodySmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeBodySmallMobile, regular: maxWidthTypeBodySmallTablet) }
+    @objc open var maxWidthBodyLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBodyLargeMobile, regular: maxWidthBodyLargeTablet) }
+    @objc open var maxWidthBodyMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBodyMediumMobile, regular: maxWidthBodyMediumTablet) }
+    @objc open var maxWidthBodySmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthBodySmallMobile, regular: maxWidthBodySmallTablet) }
 
-    @objc open var maxWidthTypeLabelXlarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeLabelXlargeMobile, regular: maxWidthTypeLabelXlargeTablet) }
-    @objc open var maxWidthTypeLabelLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeLabelLargeMobile, regular: maxWidthTypeLabelLargeTablet) }
-    @objc open var maxWidthTypeLabelMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeLabelMediumMobile, regular: maxWidthTypeLabelMediumTablet) }
-    @objc open var maxWidthTypeLabelSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthTypeLabelSmallMobile, regular: maxWidthTypeLabelSmallTablet) }
+    @objc open var maxWidthLabelXlarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelXlargeMobile, regular: maxWidthLabelXlargeTablet) }
+    @objc open var maxWidthLabelLarge: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelLargeMobile, regular: maxWidthLabelLargeTablet) }
+    @objc open var maxWidthLabelMedium: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelMediumMobile, regular: maxWidthLabelMediumTablet) }
+    @objc open var maxWidthLabelSmall: MultipleSizeSemanticToken { MultipleSizeSemanticToken(compact: maxWidthLabelSmallMobile, regular: maxWidthLabelSmallTablet) }
 }
 
 // swiftlint:enable line_length

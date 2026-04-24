@@ -41,7 +41,6 @@ final class MockThemeRadioButtonComponentTokenProvider: OrangeThemeRadioButtonCo
     override var sizeMaxHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
     override var sizeMinHeight: SizeSemanticToken { Self.mockThemeRadioButtonSize }
     override var sizeMinWidth: SizeSemanticToken { Self.mockThemeRadioButtonSize }
-    override var sizeIndicator: SizeSemanticToken { Self.mockThemeRadioButtonSize }
 
     // MARK: Borders
 
