@@ -45,11 +45,11 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     /// Has for value token colors.bgPrimary
     @objc open var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
     /// Has for value token FontRawTokens.size450
-    @objc open var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
+    @objc open var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
     /// Has for value token FontRawTokens.lineHeight650
-    @objc open var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
+    @objc open var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
     /// Has for value token FontRawTokens.letterSpacing450
-    @objc open var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
+    @objc open var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
     /// Has for value token opacities.opaque
     @objc open var controlItemOpacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
     /// Has for value token opacities.opaque
@@ -116,36 +116,6 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token DimensionRawTokens._50
     @objc open var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
-
-    // MARK: - Old tokens to keep until components updates
-    // See https://github.com/Orange-OpenSource/ouds-ios#1437
-
-    /// Has for value token colors.actionSupportHover
-    @objc open var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
-    /// Has for value token colors.actionSupportPressed
-    @objc open var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
-    /// Has for value token colors.actionSupportLoading
-    @objc open var colorBgLoading: MultipleColorSemanticToken { colors.actionSupportLoading }
-    /// Has for value token colors.actionSupportFocus
-    @objc open var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
-
-    /// Has for value token borders.radiusNone
-    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
-    /// Has for value token borders.radiusDefault
-    @objc open var borderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token spaces.paddingBlockMedium
-    @objc open var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
-    /// Has for value token spaces.paddingInline4xsmall
-    @objc open var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
-
-    /// Has for value token DimensionRawTokens._1200
-    @objc open var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1200 }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall
-    @objc open var sizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall
-    @objc open var sizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
 }
 
 // swiftlint:enable identifier_name
