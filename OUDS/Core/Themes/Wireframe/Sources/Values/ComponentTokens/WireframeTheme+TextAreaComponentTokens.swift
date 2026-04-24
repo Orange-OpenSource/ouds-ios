@@ -31,5 +31,5 @@ extension WireframeThemeTextAreaComponentTokensProvider: TextAreaComponentTokens
     /// Has for value token DimensionRawTokens._1100
     @objc public final var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1100 }
     /// Has for value token DimensionRawTokens._6000
-    @objc public final var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
+    @objc public final var size📄_maxWidth: SizeSemanticToken { DimensionRawTokens._6000 }
 }
