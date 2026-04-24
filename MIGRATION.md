@@ -123,6 +123,18 @@ Some component tokens (control item, checkbox, radio), semantic tokens (color) a
 
 **Reason for Change**: Tokens librairies have been updated in design side
 
+### Renamed color charts tokens providers
+
+The tokens provider for charts colors, previously named `charts`, is now named `colorsCharts`.
+
+**Impact**: High
+
+**Required Action**:
+- Rename any use of `theme.charts` to `theme.colorsCharts`
+
+**Reason for Change**: Bring more clarity in naming
+
+
 ### Compatibility
 
 - **Backward Compatibility**: No

@@ -327,25 +327,21 @@ public protocol ColorSemanticTokens {
 
     var surfaceStatusAccentEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusAccentEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusAccentMutedLight: ColorSemanticToken { get }
     var surfaceStatusAccentMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusInfoEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusInfoEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusInfoMutedLight: ColorSemanticToken { get }
     var surfaceStatusInfoMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusNegativeEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusNegativeEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusNegativeMutedLight: ColorSemanticToken { get }
     var surfaceStatusNegativeMutedDark: ColorSemanticToken { get }
 
     var surfaceInverseLowLight: ColorSemanticToken { get }
     var surfaceInverseLowDark: ColorSemanticToken { get }
-
     var surfaceInverseHighLight: ColorSemanticToken { get }
     var surfaceInverseHighDark: ColorSemanticToken { get }
 
@@ -360,13 +356,11 @@ public protocol ColorSemanticTokens {
 
     var surfaceStatusPositiveEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusPositiveEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusPositiveMutedLight: ColorSemanticToken { get }
     var surfaceStatusPositiveMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusWarningEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusWarningEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusWarningMutedLight: ColorSemanticToken { get }
     var surfaceStatusWarningMutedDark: ColorSemanticToken { get }
 
