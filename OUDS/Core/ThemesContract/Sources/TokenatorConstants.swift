@@ -46,37 +46,37 @@ public enum OUDSVersions {
 
     // MARK: - Components versions - Content display
 
-    /// Version of the Figma specifications for the component bullet list (1.0.0)
-    public static let componentBulletListVersion = "1.0.0" // NOTE: #1437 - v1.1.0 not implemented yet
-
+    /// Version of the Figma specifications for the component bullet list (1.1.0)
+    public static let componentBulletListVersion = "1.1.0"
+  
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
     public static let componentCheckboxVersion = "2.4.0"
-    /// Version of the Figma specifications for the component filter chip (1.3.0)
-    public static let componentFilterChipVersion = "1.3.0" // NOTE: #1437 - v1.4.0 not implemented yet
-    /// Version of the Figma specifications for the component suggestion chip (1.3.0)
-    public static let componentSuggestionChipVersion = "1.3.0" // NOTE: #1437 - v1.4.0 not implemented yet
-    /// Version of the Figma specifications for the component filter chip expand (1.3.0)
-    public static let componentFilterChipExpandVersion = "1.3.0" // NOTE: #1437 - v1.4.0 not implemented yet
+    /// Version of the Figma specifications for the component filter chip (1.4.0)
+    public static let componentFilterChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component suggestion chip (1.4.0)
+    public static let componentSuggestionChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component filter chip expand (1.4.0)
+    public static let componentFilterChipExpandVersion = "1.4.0"
     /// Version of the Figma specifications for the component radio button (1.4.0)
     public static let componentRadioButtonVersion = "1.4.0"
     /// Version of the Figma specifications for the component switch (1.5.0)
     public static let componentSwitchVersion = "1.5.0"
-    /// Version of the Figma specifications for the component text input (1.3.0)
-    public static let componentTextInputVersion = "1.3.0" // NOTE: #1437 - v1.4.0 not implemented yet
+    /// Version of the Figma specifications for the component text input (1.4.0)
+    public static let componentTextInputVersion = "1.4.0"
     /// Version of the Figma specifications for the component phone number input (1.3.0)
     public static let componentPhoneNumberInputVersion = "1.3.0"
-    /// Version of the Figma specifications for the component password input (1.2.0)
-    public static let componentPasswordInputVersion = "1.2.0" // NOTE: #1437 - v1.3.0 not implemented yet
-    /// Version of the Figma specifications for the component pin code input (1.2.0)
-    public static let componentPinCodeInputVersion = "1.2.0" // NOTE: #1437 - v1.3.0 not implemented yet
+    /// Version of the Figma specifications for the component password input (1.3.0)
+    public static let componentPasswordInputVersion = "1.3.0"
+    /// Version of the Figma specifications for the component pin code input (1.3.0)
+    public static let componentPinCodeInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component quantity input (1.3.0)
     public static let componentQuantityInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component select input (1.3.0)
     public static let componentSelectInputVersion = "1.3.0"
-    /// Version of the Figma specifications for the component text area (1.1.0)
-    public static let componentTextAreaVersion = "1.1.0" // NOTE: #1437 - v1.2.0 not implemented yet
+    /// Version of the Figma specifications for the component text area (1.2.0)
+    public static let componentTextAreaVersion = "1.2.0"
 
     // MARK: - Components versions - Dialog
 
@@ -89,7 +89,7 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component divider (1.0.0)
     public static let componentDividerVersion = "1.0.0"
-
+  
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link (2.2.0)
@@ -105,8 +105,8 @@ public enum OUDSVersions {
     public static let componentBadgeVersion = "1.2.0"
     /// Version of the Figma specifications for the component skeleton (1.0.0)
     public static let componentSkeletonVersion = "1.0.0"
-    /// Version of the Figma specifications for the component tag (1.4.0)
-    public static let componentTagVersion = "1.4.0" // NOTE: #1437 - v1.5.0 not implemented yet
+    /// Version of the Figma specifications for the component tag (1.5.0)
+    public static let componentTagVersion = "1.5.0"
 
     // MARK: - Components versions - Visual assets
 
