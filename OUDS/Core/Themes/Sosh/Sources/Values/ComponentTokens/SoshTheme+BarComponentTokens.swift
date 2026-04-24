@@ -27,7 +27,7 @@ extension SoshThemeBarComponentTokensProvider: BarComponentTokens {
     @objc public final var colorAccent: MultipleColorSemanticToken { colors.actionSelected }
     /// Has for value token colors.bgSecondary
     @objc public final var colorBgOpaque: MultipleColorSemanticToken { colors.bgSecondary }
-    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: colors.{coreSoshColorOpacityBlueDuckDark960800)
+    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: SoshBrandColorRawTokens.opacityBlueDuckDark960800)
     @objc public final var colorBgTranslucent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: SoshBrandColorRawTokens.opacityBlueDuckDark960800) }
     /// Has for value token colors.actionSelected
     @objc public final var colorContentSelectedEnabled: MultipleColorSemanticToken { colors.actionSelected }

@@ -45,15 +45,15 @@ extension OrangeCompactThemeControlItemComponentTokensProvider: ControlItemCompo
     /// Has for value token colors.bgPrimary
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
     /// Has for value token FontRawTokens.size350
-    @objc public final var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size350 }
+    @objc public final var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size350 }
     /// Has for value token FontRawTokens.lineHeight550
-    @objc public final var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight550 }
+    @objc public final var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight550 }
     /// Has for value token FontRawTokens.letterSpacing350
-    @objc public final var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing350 }
+    @objc public final var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing350 }
     /// Has for value token opacities.opaque
-    @objc public final var controlItemOpacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
+    @objc public final var opacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
     /// Has for value token opacities.opaque
-    @objc public final var controlItemOpacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
+    @objc public final var opacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
     /// Has for value token borders.widthDefault
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium

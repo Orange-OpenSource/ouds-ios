@@ -45,15 +45,15 @@ extension WireframeThemeControlItemComponentTokensProvider: ControlItemComponent
     /// Has for value token colors.bgPrimary
     @objc public final var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
     /// Has for value token FontRawTokens.size450
-    @objc public final var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
+    @objc public final var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
     /// Has for value token FontRawTokens.lineHeight650
-    @objc public final var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
+    @objc public final var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
     /// Has for value token FontRawTokens.letterSpacing450
-    @objc public final var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
+    @objc public final var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
     /// Has for value token opacities.invisible
-    @objc public final var controlItemOpacityCurrentIndicator: OpacitySemanticToken { opacities.invisible }
+    @objc public final var opacityCurrentIndicator: OpacitySemanticToken { opacities.invisible }
     /// Has for value token opacities.invisible
-    @objc public final var controlItemOpacityCurrentDivider: OpacitySemanticToken { opacities.invisible }
+    @objc public final var opacityCurrentDivider: OpacitySemanticToken { opacities.invisible }
     /// Has for value token borders.widthDefault
     @objc public final var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
     /// Has for value token borders.widthMedium

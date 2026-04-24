@@ -42,14 +42,14 @@ public protocol ControlItemComponentTokens {
 
     // MARK: - Fonts
 
-    var controlItemFontSizeAvatarInitialXlarge: FontSizeSemanticToken { get }
-    var controlItemFontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { get }
-    var controlItemFontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { get }
+    var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { get }
+    var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { get }
+    var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { get }
 
     // MARK: - Opacities
 
-    var controlItemOpacityCurrentIndicator: OpacitySemanticToken { get }
-    var controlItemOpacityCurrentDivider: OpacitySemanticToken { get }
+    var opacityCurrentIndicator: OpacitySemanticToken { get }
+    var opacityCurrentDivider: OpacitySemanticToken { get }
 
     // MARK: - Borders
 
