@@ -16,6 +16,7 @@ import OUDSThemesOrange
 import Testing
 
 // swiftlint:disable type_name
+// swiftlint:disable line_length
 
 struct ThemeOverrideOfControlItemComponentTokensTests {
 
@@ -276,3 +277,4 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
 }
 
 // swiftlint:enable type_name
+// swiftlint:enable line_length

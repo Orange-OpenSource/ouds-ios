@@ -18,6 +18,7 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
+// swiftlint:disable identifier_name
 
 /// Declares all component tokens for components using control item layout like `OUDSSwitch`, `OUDSCheckboxItem` and `OUDSRadioButton`
 /// Use for tokens providers like `OrangeThemeControlItemComponentTokensProvider`.
@@ -123,3 +124,4 @@ public protocol ControlItemComponentTokens {
 }
 
 // swiftlint:enable missing_docs
+// swiftlint:enable identifier_name
