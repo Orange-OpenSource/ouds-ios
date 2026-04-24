@@ -156,11 +156,11 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        Color.clear // TODO: #1437 - No more color?
+        theme.controlItem.colorBgHover.color(for: colorScheme)
     }
 
     private var pressedColor: Color {
-        Color.clear // TODO: #1437 - No more color?
+        theme.controlItem.colorBgPressed.color(for: colorScheme)
     }
 
     private var readOnlyColor: Color {
@@ -348,7 +348,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.controlItem.sizeControlIndicator,
-                   height: theme.controlItem.sizeControlIndicator)
+            .frame(width: theme.checkbox.sizeIndicator,
+                   height: theme.checkbox.sizeIndicator)
     }
 }

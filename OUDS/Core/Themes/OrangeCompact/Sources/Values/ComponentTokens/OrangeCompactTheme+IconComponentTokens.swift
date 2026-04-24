@@ -29,6 +29,12 @@ extension OrangeCompactThemeIconComponentTokensProvider: IconComponentTokens {
     @objc public final var colorContentStatusWarningInverseExternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningLow, dark: colors.repositoryWarningMedium) }
     /// Has for value token MultipleColorSemanticToken(light: colors.opacityTransparentDark, dark: colors.repositoryWarningHigh)
     @objc public final var colorContentStatusWarningInverseInternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.opacityTransparentDark, dark: colors.repositoryWarningHigh) }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
+    @objc public final var colorContentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
 }
 
 // swiftlint:enable line_length

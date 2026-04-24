@@ -25,16 +25,12 @@ struct ControlItemBackgroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        // TODO: #1437: - No more background color?
-        /*
-         if interactionState == .hover {
-             content.background(theme.controlItem.colorBgHover)
-         } else if interactionState == .pressed {
-             content.background(theme.controlItem.colorBgPressed)
-         } else {
-             content
-         }
-         */
-        content
+        if interactionState == .hover {
+            content.background(theme.controlItem.colorBgHover)
+        } else if interactionState == .pressed {
+            content.background(theme.controlItem.colorBgPressed)
+        } else {
+            content
+        }
     }
 }

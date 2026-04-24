@@ -380,142 +380,142 @@ struct ThemeOverrideOfSizeSemanticTokensTests {
 
     // MARK: - Semantic token - Sizing - Max width
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplayLargeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplayLargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplayLargeMobile != abstractTheme.sizes.maxWidthDisplayLargeMobile)
         #expect(inheritedTheme.sizes.maxWidthDisplayLargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplayLargeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplayLargeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplayLargeTablet != abstractTheme.sizes.maxWidthDisplayLargeTablet)
         #expect(inheritedTheme.sizes.maxWidthDisplayLargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplayMediumMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplayMediumMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplayMediumMobile != abstractTheme.sizes.maxWidthDisplayMediumMobile)
         #expect(inheritedTheme.sizes.maxWidthDisplayMediumMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplayMediumTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplayMediumTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplayMediumTablet != abstractTheme.sizes.maxWidthDisplayMediumTablet)
         #expect(inheritedTheme.sizes.maxWidthDisplayMediumTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplaySmallMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplaySmallMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplaySmallMobile != abstractTheme.sizes.maxWidthDisplaySmallMobile)
         #expect(inheritedTheme.sizes.maxWidthDisplaySmallMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthDisplaySmallTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthDisplaySmallTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthDisplaySmallTablet != abstractTheme.sizes.maxWidthDisplaySmallTablet)
         #expect(inheritedTheme.sizes.maxWidthDisplaySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingXlargeSizeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingXlargeSizeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingXlargeMobile != abstractTheme.sizes.maxWidthHeadingXlargeMobile)
         #expect(inheritedTheme.sizes.maxWidthHeadingXlargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingXlargeSizeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingXlargeSizeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingXlargeTablet != abstractTheme.sizes.maxWidthHeadingXlargeTablet)
         #expect(inheritedTheme.sizes.maxWidthHeadingXlargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingLargeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingLargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingLargeMobile != abstractTheme.sizes.maxWidthHeadingLargeMobile)
         #expect(inheritedTheme.sizes.maxWidthHeadingLargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingLargeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingLargeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingLargeTablet != abstractTheme.sizes.maxWidthHeadingLargeTablet)
         #expect(inheritedTheme.sizes.maxWidthHeadingLargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingMediumMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingMediumMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingMediumMobile != abstractTheme.sizes.maxWidthHeadingMediumMobile)
         #expect(inheritedTheme.sizes.maxWidthHeadingMediumMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingMediumTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingMediumTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingMediumTablet != abstractTheme.sizes.maxWidthHeadingMediumTablet)
         #expect(inheritedTheme.sizes.maxWidthHeadingMediumTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingSmallMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingSmallMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingSmallMobile != abstractTheme.sizes.maxWidthHeadingSmallMobile)
         #expect(inheritedTheme.sizes.maxWidthHeadingSmallMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthHeadingSmallTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthHeadingSmallTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthHeadingSmallTablet != abstractTheme.sizes.maxWidthHeadingSmallTablet)
         #expect(inheritedTheme.sizes.maxWidthHeadingSmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodyLargeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodyLargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthBodyLargeMobile != abstractTheme.sizes.maxWidthBodyLargeMobile)
         #expect(inheritedTheme.sizes.maxWidthBodyLargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodyLargeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodyLargeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthBodyLargeTablet != abstractTheme.sizes.maxWidthBodyLargeTablet)
         #expect(inheritedTheme.sizes.maxWidthBodyLargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodyMediumMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodyMediumMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthBodyMediumMobile != abstractTheme.sizes.maxWidthBodyMediumMobile)
         #expect(inheritedTheme.sizes.maxWidthBodyMediumMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodyMediumTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodyMediumTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthBodyMediumTablet != abstractTheme.sizes.maxWidthBodyMediumTablet)
         #expect(inheritedTheme.sizes.maxWidthBodyMediumTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodySmallMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodySmallMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthBodySmallMobile != abstractTheme.sizes.maxWidthBodySmallMobile)
         #expect(inheritedTheme.sizes.maxWidthBodySmallMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthBodySmallTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthBodySmallTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthBodySmallTablet != abstractTheme.sizes.maxWidthBodySmallTablet)
         #expect(inheritedTheme.sizes.maxWidthBodySmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelXlargeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelXlargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile != abstractTheme.sizes.maxWidthLabelXlargeMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelXlargeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelXlargeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeTablet != abstractTheme.sizes.maxWidthLabelXlargeTablet)
         #expect(inheritedTheme.sizes.maxWidthLabelXlargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelLargeMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelLargeMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelLargeMobile != abstractTheme.sizes.maxWidthLabelLargeMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelLargeMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelLargeTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelLargeTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelLargeTablet != abstractTheme.sizes.maxWidthLabelLargeTablet)
         #expect(inheritedTheme.sizes.maxWidthLabelLargeTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelMediumMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelMediumMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelMediumMobile != abstractTheme.sizes.maxWidthLabelMediumMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelMediumMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelMediumTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelMediumTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelMediumTablet != abstractTheme.sizes.maxWidthLabelMediumTablet)
         #expect(inheritedTheme.sizes.maxWidthLabelMediumTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelSmallMobile() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelSmallMobile() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelSmallMobile != abstractTheme.sizes.maxWidthLabelSmallMobile)
         #expect(inheritedTheme.sizes.maxWidthLabelSmallMobile == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenSizemaxWidthLabelSmallTablet() throws {
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthLabelSmallTablet() throws {
         #expect(inheritedTheme.sizes.maxWidthLabelSmallTablet != abstractTheme.sizes.maxWidthLabelSmallTablet)
         #expect(inheritedTheme.sizes.maxWidthLabelSmallTablet == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }

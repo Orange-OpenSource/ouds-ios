@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
 import SwiftUI
 
 /// This is the indicator container of the ControlItem.
@@ -42,14 +41,6 @@ struct ControlItemIndicatorContainer: View {
                 CheckboxIndicator(interactionState: interactionState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
-        // TODO: #1437 - Which token apply instead of sizeMaxHeightAssetsContainer?
-        /*
-         .frame(minHeight: theme.controlItem.sizeAssetSmall,
-                maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer,
-                alignment: .center)
-          */
-        .frame(minHeight: theme.controlItem.sizeAssetSmall,
-               maxHeight: DimensionRawTokens._1200,
-               alignment: .center)
+        .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
     }
 }

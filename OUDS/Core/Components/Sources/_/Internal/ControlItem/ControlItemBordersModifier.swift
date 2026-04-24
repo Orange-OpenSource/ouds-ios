@@ -98,12 +98,8 @@ struct ControlItemBordersModifier: ViewModifier {
     }
 
     private var radius: BorderRadiusSemanticToken {
-        // TODO: #1437 - No more radius?
-        /*
-         interactionState == .readOnly ?
-             theme.controlItem.borderRadiusItemOnly :
-             theme.controlItem.borderRadius
-          */
-        theme.controlItem.borderRadiusDefault
+        interactionState == .readOnly ?
+            theme.controlItem.borderRadiusItemOnly :
+            theme.controlItem.borderRadius
     }
 }
