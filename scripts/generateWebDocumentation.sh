@@ -212,6 +212,7 @@ swift package \
     --target OUDSFoundations \
     --output-path "$DOCUMENTATION_HTML_LOCATION" \
     --transform-for-static-hosting \
+    --experimental-transform-for-static-hosting-with-content \
     --warnings-as-errors \
     --symbol-graph-minimum-access-level public
 
@@ -354,6 +355,7 @@ if [[ $use_git -eq 1 ]]; then
             "$DOCS_DIRECTORY/data" \
             "$DOCS_DIRECTORY/documentation" \
             "$DOCS_DIRECTORY/downloads" \
+            "$DOCS_DIRECTORY/tutorials" \
             "$DOCS_DIRECTORY/images" \
             "$DOCS_DIRECTORY/img" \
             "$DOCS_DIRECTORY/index" \
