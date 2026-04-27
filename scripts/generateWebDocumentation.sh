@@ -353,6 +353,7 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY/css" \
             "$DOCS_DIRECTORY/data" \
             "$DOCS_DIRECTORY/documentation" \
+            "$DOCS_DIRECTORY/downloads" \
             "$DOCS_DIRECTORY/images" \
             "$DOCS_DIRECTORY/img" \
             "$DOCS_DIRECTORY/index" \
