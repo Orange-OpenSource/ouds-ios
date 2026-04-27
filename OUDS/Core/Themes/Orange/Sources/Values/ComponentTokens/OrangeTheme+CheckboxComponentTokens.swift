@@ -43,4 +43,10 @@ extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     @objc open var sizeMinWidth: SizeSemanticToken { sizes.minInteractiveArea }
     /// Has for value token sizes.minInteractiveArea
     @objc open var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveArea }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
+    @objc open var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
 }

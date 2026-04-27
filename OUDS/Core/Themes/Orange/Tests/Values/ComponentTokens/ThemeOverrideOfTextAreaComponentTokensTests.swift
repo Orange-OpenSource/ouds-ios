@@ -39,6 +39,16 @@ struct ThemeOverrideOfTextAreaComponentTokensTests {
         #expect(inheritedTheme.textArea.spacePaddingBlockTopEmpty == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSpace)
     }
 
+    @Test func inheritedThemeCanOverrideTextAreaSpacePaddingBlockTrailingContainer() throws {
+        #expect(inheritedTheme.textArea.spacePaddingBlockTrailingContainer != abstractTheme.textArea.spacePaddingBlockTrailingContainer)
+        #expect(inheritedTheme.textArea.spacePaddingBlockTrailingContainer == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTextAreaSpaceBlockEmptyTrailingContainer() throws {
+        #expect(inheritedTheme.textArea.spacePaddingBlockEmptyTrailingContainer != abstractTheme.textArea.spacePaddingBlockEmptyTrailingContainer)
+        #expect(inheritedTheme.textArea.spacePaddingBlockEmptyTrailingContainer == MockThemeTextAreaComponentTokenProvider.mockThemeTextAreaSpace)
+    }
+
     // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideTextAreaSizeMinHeightInput() throws {
