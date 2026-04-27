@@ -102,12 +102,21 @@ check_trailers() {
 
             # Check if the token is a known trailer (exact casing)
             if is_known_trailer "$token"; then
-                # Validate content format: "First Last <email>" or "username <email>"
-                # A space before '<' is always required.
-                if ! [[ "$content" =~ $TRAILER_CONTENT_RE ]]; then
-                    echo "💥 Malformed trailer (line $line_number): '$line'"
-                    echo "Invalid format. Expected: $token: First Last <email@example.com> or $token: username <email@example.com>"
-                    errors=$((errors + 1))
+                if [[ "$token" == "Assisted-by" ]]; then
+                    # Assisted-by only requires a non-empty value (no email format enforced)
+                    if [[ -z "$content" ]]; then
+                        echo "💥 Malformed trailer (line $line_number): '$line'"
+                        echo "Empty value. Expected: Assisted-by: <non-empty value>"
+                        errors=$((errors + 1))
+                    fi
+                else
+                    # Validate content format: "First Last <email>" or "username <email>"
+                    # A space before '<' is always required.
+                    if ! [[ "$content" =~ $TRAILER_CONTENT_RE ]]; then
+                        echo "💥 Malformed trailer (line $line_number): '$line'"
+                        echo "Invalid format. Expected: $token: First Last <email@example.com> or $token: username <email@example.com>"
+                        errors=$((errors + 1))
+                    fi
                 fi
             else
                 # Check if it looks like a known trailer with wrong casing
@@ -178,6 +187,7 @@ if [[ $TRAILER_ERRORS -gt 0 ]]; then
     echo ""
     echo "Valid trailers: ${KNOWN_TRAILERS[*]}"
     echo "Expected format: Token: First Last <email@example.com> or Token: username <email@example.com>"
+    echo "Exception: Assisted-by: <any non-empty value>"
     exit 1
 fi
 
