@@ -81,6 +81,18 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentExpandLinkVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentTabBarVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentTabBarVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentToolBarTopVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentToolBarTopVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentToolBarBottomVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentToolBarBottomVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Controls
 
     @Test func componentCheckboxVersionMustBeConform() throws {

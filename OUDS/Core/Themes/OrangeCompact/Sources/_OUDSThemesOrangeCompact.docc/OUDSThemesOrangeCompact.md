@@ -16,7 +16,7 @@ The Orange Compact theme is dedicated to applications with strong dimensions con
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧬 Theme version: 2.4.0
+🧬 Theme version: 2.5.0
 ```
 
 Some products may have heavy and very rich user interfaces with a lot of components and elements to display and

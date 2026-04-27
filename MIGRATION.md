@@ -11,7 +11,7 @@
 
 ### Overview
 
-Tokens librairies have been updated, with some semantic tokens removed or renamed.
+Tokens librairies have been updated, with some raw, semantic and components tokens removed or renamed.
 
 ### Before You Begin
 
@@ -109,6 +109,7 @@ For bar component tokens
 ### Removed tokens
 
 Some component tokens (control item, checkbox, radio), semantic tokens (color) and raw tokens (effect, colors) have been removed.
+All Sosh raw tokens have been changed.
 
 **Impact**: High
 
@@ -120,6 +121,7 @@ Some component tokens (control item, checkbox, radio), semantic tokens (color) a
 - Remove checkbox component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
 - Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
 `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
+- Remove use of all raw tokens for Sosh and use new ones
 
 **Reason for Change**: Tokens librairies have been updated in design side
 
@@ -133,7 +135,6 @@ The tokens provider for charts colors, previously named `charts`, is now named `
 - Rename any use of `theme.charts` to `theme.colorsCharts`
 
 **Reason for Change**: Bring more clarity in naming
-
 
 ### Compatibility
 
