@@ -1,1 +1,80 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Tokens</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Design tokens represent the small, repeated design decisions that make up a design system’s visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names. They are used to define the look and feel and the style of everything. They are exposed through the themes and can be used as they are." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Welcome to Orange Unified Design System</a></li><li>Tokens</li></ul><p>Article</p><h1>Tokens</h1><p>Design tokens represent the small, repeated design decisions that make up a design system’s visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names. They are used to define the look and feel and the style of everything. They are exposed through the themes and can be used as they are.</p></section><h2>Component tokens</h2><h3>What they are</h3><p>These <i>tokens</i> (<a href="https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/">OUDSTokensComponent</a>) are defined for components and refer to semantic tokens or raw tokens. They can be seen as a kind of bridge between components and in the end primitive values of the design kit.</p><p>Components tokens are defined and gathered inside <i>Swift protocol</i> so as to be exposed then through implementation of <code>OUDSTheme</code> thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in <i>protocols</i> and defined in <i>extensions</i>. That is the reason why tokens are exposed as <code>@objc open</code> to be available and overridable anywhere.</p><p>Below is an example about how the component tokens are declared, defined and provided.</p><pre class="swift"><code>// Declare some component tokens for buttons with properties they must apply
+public protocol ButtonComponentTokens {
+    var sizeMaxHeightIconOnly: SizeSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderRadius: BorderRadiusSemanticToken { get }
+    var colorBgDefaultPressedMono: MultipleColorSemanticToken { get }
+    var spacePaddingBlock: SpaceSemanticToken { get }
+}
+
+// There is an existing provider for such tokens
+open class OrangeThemeButtonComponentTokensProvider { }
+
+// Define the components tokens exposed through the theme thanks to provider
+extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
+
+    // Raw tokens can be used
+
+    @objc open var sizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens._600 }
+    
+    // And also semantic tokens
+
+    @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthThicker }
+    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusMd }
+    @objc open var colorBgDefaultPressedMono: MultipleColorSemanticToken { colors.repositoryOpacityBlackHigher }
+    @objc open var spacePaddingBlock: SpaceSemanticToken { spaces.paddingInlineSpacious }
+}
+
+// This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
+</code></pre><blockquote class="aside tip"><p class="label">Tip</p><p>In most of cases you may use the components tokens if you want to implement your own components</p></blockquote><h2>Semantic tokens</h2><h3>What they are</h3><p>These <i>tokens</i> (<a href="https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/">OUDSTokensSemantic</a>) can be used mainly for <i>component tokens</i> to apply some style and configuration values. They can be seen as an high level of usage with functional meanings.</p><p>A semantic token points to a raw token or another semantic token, and is used by components. A semantic token brings meanings, higher level notions. For example, a raw token can be a “red color”, and a semantic token pointing to it can be a “danger information color”. Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, colors, spacings, elevations, sizings, opacities, grids and fonts. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. Finally, any of these semantic tokens is associated to a raw value which will be - in the end - applied to <i>SwiftUI</i> views inside components. <i>Type aliases</i> will help to make a simple match between any semantic tokens and raw tokens. Thus if we need for example to change a warning color, supposing this color is defined as a dimensionsemantic token_, we only have to change its assigned value and all components using the dimensionsemantic token_ won’t be impacted in their definition, only their rendering.</p><p>Each dimensionsemantic token_ “family” is then declared in its dedicated <i>Swift protocol</i> any root theme must implement through <i>tokens providers</i>. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in <i>protocols</i> and defined in <i>extensions</i>. That is the reason why tokens are exposed as <code>@objc open</code> to be available and overridable anywhere.</p><p>To keep the same semantics as the ones used in our specifications, <i>type aliases</i> are used to as to make the links to <i>primitive types</i> and our logic of <i>tokens</i>. These <i>type aliases</i> are available for those who want to make their own theme. It’s only syntaxic sugar to bring <i>design words</i> in our product.</p><p>Below is an example about how the component tokens are declared, defined and provided (with <a href="https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens">OUDSTokensComponent/ColorSemanticTokens</a>).</p><pre class="swift"><code>// Declare the semantic tokens
+protocol ColorSemanticTokens {
+
+    var bgPrimary: ColorSemanticToken { get }
+    var bgSecondary: ColorSemanticToken { get }
+    var bgTertiary: ColorSemanticToken { get }
+    // ...
+}
+
+// There is an existing provider for colors
+open class OrangeThemeColorSemanticTokensProvider { }
+
+// Define the semantic tokens exposed through the theme thanks to provider
+extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
+
+    // Possible to assign raw token of color available in the global package
+    @objc open var bgPrimary: ColorSemanticToken { ColorRawTokens.functionalWhite }
+
+    // Possible to assign raw token of color available in the the module
+    @objc open var bgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+
+    // Possible to refer to another semantic token of color
+    @objc open var bgTertiary: ColorSemanticToken { bgSecondary }
+}
+
+// This provider is then exposed through OUDSTheme as an AllColorSemanticTokensProvider
+</code></pre><blockquote class="aside tip"><p class="label">Tip</p><p>In some cases you can use the components tokens if you want to implement your own components</p></blockquote><h2>Raw tokens</h2><h3>What they are</h3><p><i>Raw tokens</i> (<a href="https://ios.unified-design-system.orange.com/documentation/oudstokensraw/">OUDSTokensRaw</a>) are smallest <i>tokens</i> possible. They are associated to raw values and will be finaly the values assigned to the <i>components</i> properties.</p><p>In fact, we choose to use as most as possible primitive types for raw values, like <code>Int</code>, <code>Double</code>, <code>CGFloat</code> or <code>String</code> so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than <i>structs</i> or <i>classes</i>.</p><p>So we expose also in higher level some properties so as to convert when needed some of these types to <code>SwiftUI</code> types (like <code>Font.Weight</code> and <code>Color</code>).</p><p>To keep the same semantics as the ones used in our specifications, <i>type alias</i> are used to as to make the links to <i>primitive types</i> and our logic of <i>tokens</i>. These type aliases are available for those who want to make their own theme for example.</p><p>Using more simple and primitive types will help also to test the library. With also type aliases we force users to use our types and not higher level types like <i>SwiftUI</i> types.</p><p>We also choose to add in <i>extension</i> all the tokens values in a separated file so as to help the <i>Figma</i>-JSON-to-Swift parser (<i>el famoso tokenator</i>) to build files to copy and past easily in the project and keeping all the other objects.</p><p>Example for <a href="https://ios.unified-design-system.orange.com/documentation/oudstokensraw/colorrawtokens">ColorRawTokens</a>:</p><pre class="swift"><code>// Define type alias for color raw tokens, we don't care in higher level their real type, just use aliases
+public typealias ColorRawToken = String
+
+// Declared in a file not updated automatically
+public enum ColorRawTokens { } 
+
+// Defined in file updated by tokenator
+extension ColorRawTokens { // Gathers all color raw tokens, use enums for namespace optimization with static let
+
+    public static let functionalWhite: ColorRawToken = "#FFFFFF"
+    public static let opacityBlack0: ColorRawToken = "#00000000"
+    ...
+}
+
+// The OUDS library still exposes this computed property
+extension String {
+    public var color: Color {
+        Color(hexadecimalCode: self)
+    }
+}
+
+// Themes can embed their own tokens matching the good type
+enum OrangeBrandColorRawTokens {
+    public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18AFF"
+}
+</code></pre><blockquote class="aside note"><p class="label">Note</p><p>In most of cases you won’t use these raw tokens as they are already in yse by component and semantic tokens</p></blockquote><h2>Add, edit or remove tokens</h2><p>If you need to add, update or remove tokens, you will have to follow some simple steps. You may need to <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml">create an issue</a> or <a href="https://github.com/Orange-OpenSource/ouds-ios/pulls">a pull request</a> to submit the evolutions you want. <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens">The wiki</a> can be also helpful.</p></article></noscript><div id="app"></div></body></html>

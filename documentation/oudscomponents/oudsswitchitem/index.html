@@ -1,1 +1,60 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>OUDSSwitchItem</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Switch item is a UI element that allows to toggle between two states, typically “On” and “Off”, and used to enable or disable features, options or settings. Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Components</a></li><li>OUDSSwitchItem</li></ul><p>Structure</p><h1>OUDSSwitchItem</h1><p>Switch item is a UI element that allows to toggle between two states, typically “On” and “Off”, and used to enable or disable features, options or settings. Switch Item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.</p><ul id="availability"><li>iOS 15.0+</li><li>macOS 13.0+</li><li>tvOS 16.0+</li><li>visionOS 1.0+</li><li>watchOS 11.0+</li></ul><pre><code>@MainActor struct OUDSSwitchItem</code></pre></section><h2>Mentioned In</h2><ul><li><a href="../controls/index.html">Controls</a></li></ul><h2>Layouts</h2><p>The component can be rendered as two different layouts:</p><ul><li><p><b>default</b>: the component has a leading indicator, a label and optional texts, and an optional trailing decorative icon</p></li><li><p><b>inverse</b>: like the <i>default</i> layout but with a trailing switch indicator and a leading optional decorative icon</p></li></ul><h2>Indicator states</h2><p>The switch indicator has two available states set as a boolean property that determines whether the toggle is on or off.</p><h2>Particular cases</h2><p>An <a href="."><code>OUDSSwitchItem</code></a> can be related to an error situation, for example troubles for a formular. A dedicated look and feel is implemented for that if the <code>isError</code> flag is risen. In that case if the component displayed an icon, this icon will be replaced automatically by an error icon.</p><p>In addition, the <a href="."><code>OUDSSwitchItem</code></a> can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered as disabled. The switch can be also outlined in some cases.</p><h2>Accessibility considerations</h2><p><i>Voice Over</i> will use several elements to describe the component: if component disabled / read only, if error context, the label and optional texts and a custom switch trait.</p><h2>Forbidden by design</h2><p><b>The design system does not allow to have both an error situation and a read only component.</b> <b>The design system does not allow to have both an error situation and a disabled component.</b> <b>The design system does not allow to have both a read only and a disabled component.</b></p><h2>Code samples</h2><pre class="swift"><code>    // Supposing we have an unselected state
+    @Published var isOn: Bool = false
+
+    // A leading switch with a label.
+    // The default layout will be used here.
+    OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
+
+    // Localizable from bundle can also be used
+    OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+
+    // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
+    // The default layout will be used here.
+    OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
+
+    // A leading switch with a label, and a description text.
+    // The default layout will be used here.
+    OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
+
+    // A leading switch with an additional label.
+    // The default layout will be used here.
+    OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
+
+    // A trailing switch with a label, an additional label, a description text and an icon.
+    // The inverse layout will be used here.
+    OUDSSwitchItem("Lucy in the Sky with Diamonds",
+                   isOn: $isOn,
+                   description: "The Beatles",
+                   isReversed: true,
+                   icon: Image(decorative: "ic_heart"))
+
+    // A trailing switch with a label, a description text, an icon, a divider and is about an error.
+    // The inverse layout will be used here.
+    OUDSSwitchItem("Rescue from this world!",
+                   isOn: $isOn,
+                   description: "Put your hand in mine",
+                   icon: Image(decorative: "ic_heart"),
+                   isReversed: true,
+                   isError: true,
+                   hasDivider: true)
+
+    // If on error, add an error message can help user to understand error context
+    OUDSSwitchItem("Rescue from this world!",
+                   isOn: $isOn,
+                   isError: true,
+                   errorText: "Something wrong",
+                   hasDivider: true)
+
+    // A leading switch with a label, but disabled.
+    // The default layout will be used here.
+    OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
+        .disabled(true)
+
+    // Never disable a read only or an error-related switch as it will crash
+    // This is forbidden by design!
+    OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
+    OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
+</code></pre><p>If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):</p><pre class="swift"><code>    @Environment(\.layoutDirection) var layoutDirection
+
+    OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, flipLeadingIcon: layoutDirection == .rightToLeft)
+</code></pre><h2>Design documentation</h2><p><a href="https://r.orange.fr/r/S-ouds-doc-switch">unified-design-system.orange.com</a></p><h2>Themes rendering</h2><h3>Orange</h3><p><picture><img alt="A switch item component in light and dark modes with Orange theme" decoding="async" loading="lazy" src="../../../users/pylapersonne/documents/5_projects/17-ouds/ouds-ios/ouds/core/components/sources/_oudscomponents.docc/resources/controls/switches/switchitem/component_switchitem_orange.png"/></picture></p><h3>Orange Compact</h3><p><picture><img alt="A switch item  component in light and dark modes with Orange Compact theme" decoding="async" loading="lazy" src="../../../users/pylapersonne/documents/5_projects/17-ouds/ouds-ios/ouds/core/components/sources/_oudscomponents.docc/resources/controls/switches/switchitem/component_switchitem_orangecompact.png"/></picture></p><h3>Sosh</h3><p><picture><img alt="A switch item component in light and dark modes with Sosh theme" decoding="async" loading="lazy" src="../../../users/pylapersonne/documents/5_projects/17-ouds/ouds-ios/ouds/core/components/sources/_oudscomponents.docc/resources/controls/switches/switchitem/component_switchitem_sosh.png"/></picture></p><h3>Wireframe</h3><p><picture><img alt="A switch item component in light and dark modes with Wireframe theme" decoding="async" loading="lazy" src="../../../users/pylapersonne/documents/5_projects/17-ouds/ouds-ios/ouds/core/components/sources/_oudscomponents.docc/resources/controls/switches/switchitem/component_switchitem_wireframe.png"/></picture></p><blockquote class="aside version"><p class="label">Version</p><p>1.5.0 (Figma component design version)</p></blockquote><blockquote class="aside since"><p class="label">Since</p><p>0.14.0</p></blockquote><h2>Topics</h2><h3>Initializers</h3><ul><li><a href="init(_:ison:description:icon:flipicon:isreversed:iserror:errortext:isreadonly:hasdivider:constrainedmaxwidth:)/index.html"><code>init(String, isOn: Binding&lt;Bool&gt;, description: String?, icon: Image?, flipIcon: Bool, isReversed: Bool, isError: Bool, errorText: String?, isReadOnly: Bool, hasDivider: Bool, constrainedMaxWidth: Bool)</code><p>Creates a switch with label and optional desvription text, icon, divider.</p></a></li><li><a href="init(_:tablename:bundle:ison:description:icon:flipicon:isreversed:iserror:errortext:isreadonly:hasdivider:constrainedmaxwidth:)/index.html"><code>init(LocalizedStringKey, tableName: String?, bundle: Bundle, isOn: Binding&lt;Bool&gt;, description: String?, icon: Image?, flipIcon: Bool, isReversed: Bool, isError: Bool, errorText: String?, isReadOnly: Bool, hasDivider: Bool, constrainedMaxWidth: Bool)</code><p>Creates a switch with a localized label, looking up the key in the given bundle.</p></a></li></ul><h3>Instance Properties</h3><ul><li><a href="body/index.html"><code>var body: some View</code></a></li></ul></article></noscript><div id="app"></div></body></html>

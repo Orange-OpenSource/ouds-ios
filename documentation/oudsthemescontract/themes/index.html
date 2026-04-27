@@ -1,1 +1,142 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Themes</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Themes are applications of specific values for components tokens and dimensionsemantic tokens_ using in the end raw tokens. A theme contains any relevant tokens which can be used for components rendering. A theme can use its own assets like fonts and icons." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Welcome to Orange Unified Design System</a></li><li>Themes</li></ul><p>Article</p><h1>Themes</h1><p><i>Themes</i> are applications of specific values for <i>components tokens</i> and dimensionsemantic tokens_ using in the end <i>raw tokens</i>. A <i>theme</i> contains any relevant tokens which can be used for components rendering. A <i>theme</i> can use its own assets like fonts and icons.</p></section><h2>Overview</h2><p>This framework exposes today following themes:</p><table><thead><tr><th>Theme</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/">Orange</a></td><td>The default one for Orange products and can be enriched / derivated</td></tr><tr><td><a href="https://ios.unified-design-system.orange.com/documentation/oudsthemesorangecompact/">Orange Compact</a></td><td>For some Orange products with heavy / rich UI and dimensions constraints</td></tr><tr><td><a href="https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/">Sosh</a></td><td>For Sosh products</td></tr><tr><td><a href="https://ios.unified-design-system.orange.com/documentation/oudsthemeswireframe/">Wireframe</a></td><td>For mockups, prototypes and prooves of concepts witouth Orange-flavoured styles</td></tr></tbody></table><p>All themes are based on a theme contract called <code>OUDSTheme</code>.</p><p><i>Themes</i> use <i>tokens providers</i> which provide the <i>semantic tokens</i> and <i>component tokens</i> to apply in the project. These tokens in most of cases can be overriden thanks to <code>@objc open</code> combination so as to make possible to override these values in extensions (thanks to <code>@objc</code>) and from objects outside the module (thanks to <code>open</code>). Thus we can split values and responsabilities in different <i>Swift Package Manager</i> targets and keep overriding and inheritance possible.</p><blockquote class="aside important"><p class="label">Important</p><p>Only one theme, the Orange theme, can be subclassed.</p></blockquote><h2>Architecture</h2><p>A theme is a <i>Swift class</i> which several tokens providers providing their own definition of tokens.</p><p>We choose to pack all semantic tokens in protocols, so as to force any theme to manage them through tokens providers. Because Swift does not have notions of abstract classes compared to Kotlin,the <code>OUDSTheme</code> which can be considered like an almost-abstract class. Then, a white label theme may just inherit from this class and override the tokens it needs. The real, default theme to use, will be the <code>OrangeTheme</code> providing in its module brand colors and overriding some tokens with the suitable values.</p><p>Themes must be able to override semantic tokens and components tokens, and use its own raw or semantic tokens without sharing them to other themes. The existing raw tokens, shared between all themes, are not overridable because their definitions are frozen.</p><p>A theme can use its own tokens providers, implemented from scratch or by inheriting from existing tokens providers.</p><h2>Use themeable view</h2><pre class="swift"><code>// Add themeable view to your root view to use the OrangeTheme
+OUDSThemeableView(theme: OrangeTheme()) {
+    YourRootView()
+}
+
+// Or use your custom theme if you want
+OUDSThemeableView(theme: YourCustomTheme()) {
+    YourRootView()
+}
+</code></pre><h2>Theme tuning</h2><h3>Tunable themes or not</h3><p>Some themes like <code>OrangeTheme</code> and <code>OrangeCompact</code> can be tuned so as to be more flexible and adapt to some countries or affiliates constraints. However other themes like <code>SoshTheme</code> and <code>WireframeTheme</code> cannot be tuned.</p><blockquote class="aside note"><p class="label">Note</p><p>Tuning represents the group of “flexibility points” allowed by the Orange Brand to tailor and customize themes for particular contexts.</p></blockquote><h3>Tuned values</h3><p>There are few elements which can be tuned. Some tunings have also been defined.</p><table><thead><tr><th>Tunable elements</th><th>Default values</th><th>Orange France</th><th>Orange Business</th><th>Max It</th></tr></thead><tbody><tr><td>rounded corners for buttons</td><td>❌ false</td><td>❌ false</td><td>❌ false</td><td>✅ true</td></tr><tr><td>rounded corners for text inputs</td><td>❌ false</td><td>❌ false</td><td>✅ true</td><td>✅ true</td></tr></tbody></table><h3>Tuning usages</h3><p>The tuning to apply must be done at theme init.</p><pre class="swift"><code>    // Define your theme tuning with for example only rounded corners for buttons
+    let tuning = Tuning(hasRoundedButtons: true)
+
+    // Apply it to your theme
+    let theme = OrangeTheme(tuning: tuning)
+    // Or in one line
+    let theme = OrangeTheme(tuning: Tuning(hasRoundedButtons: true))
+
+    // Or use predefined tuning
+    let orangeFranceTheme = OrangeTheme(tuning: Tuning.OrangeFrance)
+    let orangeBusinessTheme = OrangeTheme(tuning: Tuning.OrangeBusiness)
+    let maxItTheme = OrangeTheme(tuning: Tuning.MaxIt)
+</code></pre><h2>Define a custom theme if needed</h2><p>You will have to create a <i>Swift class</i> which will inherit from <code>OrangeTheme</code> (if you need Orange brand assets) or <code>OUDSTheme</code>. You can see <code>OrangeTheme</code> as more specified and less abtract as <code>OUDSTheme</code> which is the base of all themes. We do not recommend to use directly the <code>OUDSTheme</code> as is, but you can of course, you jusr will have to add your own tokens providers.</p><p>Then, you should override the dimensionsemantic tokens_ and <i>components tokens</i> you want using the providers ; we recommend to use <i>Swift extensions</i> for clarity reasons. You can use existing tokens providers or override them.</p><p>If your theme needs to define its own <i>raw tokens</i>, you can also define them using a <code>enum</code> and the <i>raw tokens types</i>.</p><h3>By subclassing</h3><p>You may want to define your own theme, thus you can override the <code>OrangeTheme</code> with your own class or just override the providers. For clarity reasons maybe you should define your own class inheriting from <code>OrangeTheme</code>, or, more difficult, from <code>OUDSTheme</code> but we do not recommand that.</p><p>You must consider the tokens provider you need (to inherit from for overriding, or to use as is):</p><ul><li><p>spaces tokens are <code>OrangeThemeSpaceSemanticTokensProvider</code></p></li><li><p>sizes tokens are in <code>OrangeThemeSizeSemanticTokensProvider</code></p></li><li><p>colors tokens are all defined in <code>OrangeThemeColorSemanticTokensProvider</code></p></li><li><p>borders tokens are in <code>OrangeBorderSemanticTokensProvider</code></p></li><li><p>elevations tokens are in <code>OrangeThemeElevationSemanticTokensProvider</code></p></li><li><p>opacity tokens are in <code>OrangeThemeOpacitySemanticTokensProvider</code></p></li><li><p>grid tokens are in <code>OrangeThemeGridSemanticTokensProvider</code></p></li><li><p>font tokens are in <code>OrangeThemeFontSemanticTokensProvider</code></p></li><li><p>and same logic for component tokens</p></li></ul><p>Find below some example</p><pre class="swift"><code>// Token provider for spaces
+
+class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
+    override var fixedMedium: SpaceSemanticToken {
+        DimensionRawTokens._400
+    }
+    override var scaledSmall: MultipleSpaceSemanticToken {
+        MultipleSpaceSemanticToken(compact: fixed5xl, regular: fixed5xl)
+    }
+}
+
+// Token provider for sizes
+
+class YourAppThemeSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
+    override var iconDecorative2xl: SizeSemanticToken {
+        DimensionRawTokens._300
+    }
+    override var iconDecorativeMd: SizeSemanticToken {
+        DimensionRawTokens._900
+    }
+}
+
+// Token provider for colors
+
+class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
+    override var bgSecondary: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+    }
+    override var actionEnabled: MultipleColorSemanticToken {
+        MultipleColorSemanticToken(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.functionalScarlet600)
+    }
+}
+
+// Token provider for border
+
+class YourAppThemeBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider {
+    override var styleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.styleDashed
+    }
+    override var widthw: BorderWidthSemanticToken {
+        BorderRawTokens.width100
+    }
+    override var radiusLarge: BorderRadiusSemanticToken {
+        BorderRawTokens.radius800
+    }
+}
+
+// Token provider for elevation
+
+class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
+    override var stickyEmphasized: ElevationCompositeSemanticToken {
+        ElevationCompositeSemanticToken(ElevationRawTokens.bottom_4_600)
+    }
+}
+
+// Token provider for opacity
+
+class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
+    override var strong: OpacitySemanticToken {
+        OpacityRawTokens._920
+    }
+}
+
+// Token provider for grid
+
+class YourAppThemeGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
+    override var extraCompactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
+    }
+    override var compactColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
+    }
+    override var regularColumnGap: GridSemanticToken {
+        GridRawTokens.columnGap200
+    }
+}
+
+// Token provider for font
+
+class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
+    override var displayLarge: MultipleFontCompositeSemanticToken { 
+        MultipleFontCompositeSemanticToken(FontCompositeSemanticToken(
+            size: sizeDisplayLargeMobile,
+            lineHeight: lineHeightDisplayLargeMobile,
+            weight: weightDisplay,
+            letterSpacing: letterSpacingDisplayLargeMobile))) 
+    }
+}
+</code></pre><p>You can instead of overriding existing semantic tokens provider implement your own provider but it will imply to implement maybe hundreds of tokens. Your own provider must match the suitable signature.</p><p>Then define your own theme class and assign the providers. You can just use some custom providers and leave the others as they are.</p><pre class="swift"><code>import OUDSThemesOrange // To get OrangeTheme
+
+// Define your theme
+class YourAppTheme: OrangeTheme {
+    
+    override init() {
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider(),
+                   button: YourAppThemeButtonComponentTokensProvider,
+                
+                    Etc...)
+    }
+}
+</code></pre><p>Finaly for your app root view:</p><pre class="swift"><code>struct MyAppRootView: View {
+
+    var body: some View {
+        OUDSThemeableView(theme: YourAppTheme()) {
+            // ...
+        }
+    }
+}
+</code></pre><p>You can define your own set of raw tokens, and asign them in the semantic tokens you override as values, for example:</p><pre class="swift"><code>public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
+
+public enum MyOwnFontRawTokens {
+    public static let someFontBody: MyOwnFontRawTokens = "Arial"
+}
+</code></pre><p>All components the OUDS library provides are based on themes, handle through the abstract <code>OUDSTheme</code>, exposing <i>semantic tokens</i>, defined by <i>raw tokens</i> assigned to usable final values. In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching <i>semantic tokens</i> or <i>component tokens</i>, but it will bring side effects as these <i>semantic tokens</i> are shared accross several components.</p><p>You are also able to define your <i>components tokens</i> and your <i>semantic tokens</i> used by them.</p></article></noscript><div id="app"></div></body></html>

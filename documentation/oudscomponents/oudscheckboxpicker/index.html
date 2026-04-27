@@ -1,1 +1,43 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>OUDSCheckboxPicker</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="A picker allowing to expose several checkboxes and select some of them within the others. Each checkbox contains a “tag”, i.e. a supposed to be unique value. The picker will expose the choosen values using this “tag”. It has also some configuration elements which will override the one applied to nested ``doc://OUDSComponents/documentation/OUDSComponents/OUDSCheckboxItem`` (divider, read only and error mode, layout and outlined)" name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Components</a></li><li>OUDSCheckboxPicker</li></ul><p>Structure</p><h1>OUDSCheckboxPicker</h1><p>A picker allowing to expose several checkboxes and select some of them within the others. Each checkbox contains a “tag”, i.e. a supposed to be unique value. The picker will expose the choosen values using this “tag”. It has also some configuration elements which will override the one applied to nested <a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a> (divider, read only and error mode, layout and outlined)</p><ul id="availability"><li>iOS 15.0+</li><li>macOS 13.0+</li><li>visionOS 1.0+</li></ul><pre><code>@MainActor struct OUDSCheckboxPicker&lt;Tag&gt; where Tag : Hashable</code></pre></section><h2>Mentioned In</h2><ul><li><a href="../controls/index.html">Controls</a></li></ul><h2>Accessibility considerations</h2><p><i>Voice Over</i> will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a chekcbox trait. The picker itself does no have any defined accessiiblity value, label or identifier ; it remains in the users hands to define which one will be used. However if defined in the <a href="../oudsradiopickerdata/index.html"><code>OUDSRadioPickerData</code></a> the items inside the picker will have such accessibility identifiers. In addition the root item of the picker has for accessiiblity identifier the displayed text.</p><h2>Forbidden by design</h2><p>The design system does not allow to have <a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a> in both an error situation and a read only state. The design system does not allow to have <a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a> in both an error situation and a disabled state. The design system does not allow to have <a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a> in both a read only and a disabled state.</p><h2>Code samples</h2><pre class="swift"><code>    // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
+    // This object has the same properties as the OUDSCheckboxItem,
+    // and some of them are optional with default values set
+    var someDataToPopulate: [OUDSCheckboxPickerData&lt;String&gt;] {
+        [
+        OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_1",
+                                       label: "Virgin Holy Lava",
+                                       extraLabel: "Very spicy",
+                                       helper: "No alcohol, only tasty flavors",
+                                       icon: Image(systemName: "flame")),
+
+        OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_2",
+                                       label: "IPA beer",
+                                       helper: "From Brewdog company",
+                                       icon: Image(systemName: "dog.fill")),
+
+        OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_3",
+                                       label: "Mineral water",
+                                       icon: Image(systemName: "waterbottle.fill")),
+        ]
+    }
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
+
+    // Here the picker is vertical by default
+    OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+
+    // The picker can be vertical and have a root item with a label and a counter
+    OUDSCheckboxPicker(selections: $selections,
+                       placement: .verticalRooted(label, .textAndCount))
+
+    // The picker can apply some settings to all its radio buttons.
+    // It can be also horizontal with a scroll indicator.
+    // Here all the the checkboxes are in read only mode and use reversed layout.
+    // Here the picker is horizontal and shows the scroll indicator
+    OUDSCheckboxPicker(selections: $selections,
+                       checkboxes: someDataToPopulate)
+                       isReversed: true,
+                       isReadOnly: true,
+                       placement: .horizontal(true))
+</code></pre><h2>Design documentation</h2><p>There is no online specification as this component is not an official OUDS one</p><h2>Themes rendering</h2><h3>Orange</h3><p><picture><img alt="A checkbox picker component in light and dark modes with Orange theme" decoding="async" loading="lazy" src="../../../users/pylapersonne/documents/5_projects/17-ouds/ouds-ios/ouds/core/components/sources/_oudscomponents.docc/resources/controls/checkboxes/checkboxpicker/component_checkboxpicker_orange.png"/></picture></p><blockquote class="aside since"><p class="label">Since</p><p>0.14.0</p></blockquote><h2>Topics</h2><h3>Initializers</h3><ul><li><a href="init(selections:checkboxes:placement:isreversed:iserror:isreadonly:hasdivider:itemsspacing:)/index.html"><code>init(selections: Binding&lt;[Tag]&gt;, checkboxes: [OUDSCheckboxPickerData&lt;Tag&gt;], placement: OUDSCheckboxPickerPlacement, isReversed: Bool, isError: Bool, isReadOnly: Bool, hasDivider: Bool, itemsSpacing: SpaceSemanticToken?)</code><p>Defines the picker view which displays using <a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a> view the <a href="../oudscheckboxpickerdata/index.html"><code>OUDSCheckboxPickerData</code></a></p></a></li></ul><h3>Instance Properties</h3><ul><li><a href="body/index.html"><code>var body: some View</code></a></li></ul></article></noscript><div id="app"></div></body></html>

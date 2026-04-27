@@ -1,1 +1,36 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>OrangeThemeQuantityInputComponentTokensProvider</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="A class which wraps all component  tokens of quantity input objects like `OUDSQuantityInput`. Contains also references to semantic tokens providers so as to be able to use them to define the component tokens. This provider should be integrated as a `AllQuantityInputComponentTokensProvider` implementation inside `OUDSTheme` so as to provide all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use. Custom themes can use subclass of ``doc://OUDSThemesOrange/documentation/OUDSThemesOrange/OrangeThemeQuantityInputComponentTokensProvider`` and apply the provider they need. It implements also the protocol `QuantityInputComponentTokens` so as to expose the component tokens for tag inputs through any `OUDSTheme`. Quantity inputs components tokens are defined with semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), and spaces (from `AllSpaceSemanticTokensProvider`)." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Theme Orange</a></li><li>OrangeThemeQuantityInputComponentTokensProvider</li></ul><p>Class</p><h1>OrangeThemeQuantityInputComponentTokensProvider</h1><p>A class which wraps all <b>component  tokens of quantity input</b> objects like <code>OUDSQuantityInput</code>. Contains also references to semantic tokens providers so as to be able to use them to define the component tokens. This provider should be integrated as a <code>AllQuantityInputComponentTokensProvider</code> implementation inside <code>OUDSTheme</code> so as to provide all tokens to the users. It helps users to override some of the tokens and assign them to an <code>OUDSTheme</code> implementation to use. Custom themes can use subclass of <a href="."><code>OrangeThemeQuantityInputComponentTokensProvider</code></a> and apply the provider they need. It implements also the protocol <code>QuantityInputComponentTokens</code> so as to expose the component tokens for <i>tag inputs</i> through any <code>OUDSTheme</code>. <i>Quantity inputs</i> components tokens are defined with semantic tokens of sizes (from <code>AllSizeSemanticTokensProvider</code>), and spaces (from <code>AllSpaceSemanticTokensProvider</code>).</p><pre><code>class OrangeThemeQuantityInputComponentTokensProvider</code></pre></section><h2>Overview</h2><pre class="swift"><code>    // Define your own provider for quantity input component tokens
+    // by inheriting from existing provider
+    class CustomQuantityInputComponentTokensProvider: OrangeThemeQuantityInputComponentTokensProvider {
+
+        // Then override the tag component tokens you want.
+
+        override var spaceColumnGapQuantitySelector: SpaceSemanticToken { spaces.columnGap2Xs }
+
+        override var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._3000 }
+
+        // ...
+    }
+
+    // Or define your own provider from scratch
+    class CustomQuantityInputComponentTokensProvider: QuantityInputComponentTokens {
+
+        // And implement maybe hundreds of tokens.
+        // You are allowed to use semantic tokens providers if you want to define values.
+    }
+</code></pre><p>Then, you can give this <code>CustomQuantityInputComponentTokensProvider</code> to your own theme implementation:</p><pre class="swift"><code>class LocalTheme: OrangeTheme {
+
+    override init() {
+        super.init(quantityInput: CustomQuantityInputComponentTokensProvider())
+    }
+}
+</code></pre><p>or to an already existing theme for example:</p><pre class="swift"><code>    OrangeTheme(quantityInput: CustomQuantityInputComponentTokensProvider())
+</code></pre><p>It is also possible to use your own semantic tokens providers for this component tokens providers:</p><pre class="swift"><code>    // Uses by default here:
+    // - OrangeThemeSizeSemanticTokensProvider for sizes
+    // - OrangeThemeSpaceSemanticTokensProvider for spaces
+    let quantityInputComponentTokensProvider = OrangeThemeQuantityInputComponentTokensProvider()
+
+    // Or use your own space, size and border semantic tokens providers (or only some)
+    let quantityInputComponentTokensProvider = OrangeThemeQuantityInputComponentTokensProvider(
+                                            sizes: CustomSizesSemanticTokensProvider(),
+                                            spaces: CustomSpacesSemanticTokensProvider())
+</code></pre><blockquote class="aside since"><p class="label">Since</p><p>0.17.0</p></blockquote><h2>Topics</h2><h3>Initializers</h3><ul><li><a href="init(sizes:spaces:)/index.html"><code>init(sizes: (any AllSizeSemanticTokensProvider)?, spaces: (any AllSpaceSemanticTokensProvider)?)</code><p>Defines a provider of component tokens dedicated to <code>OUDSQuantityInput</code></p></a></li></ul><h3>Instance Properties</h3><ul><li><a href="sizes/index.html"><code>let sizes: any AllSizeSemanticTokensProvider</code><p>Provider of size semantic tokens to use for quantity input component</p></a></li><li><a href="spaces/index.html"><code>let spaces: any AllSpaceSemanticTokensProvider</code><p>Provider of space semantic tokens to use for quantity input component</p></a></li></ul></article></noscript><div id="app"></div></body></html>
