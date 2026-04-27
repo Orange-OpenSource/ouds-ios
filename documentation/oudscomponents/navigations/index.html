@@ -1,1 +1,86 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Navigations</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Some components can be used for navigation." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Components</a></li><li>Navigations</li></ul><p>Article</p><h1>Navigations</h1><p>Some components can be used for <b>navigation</b>.</p></section><h2>Overview</h2><h3>Links</h3><p>The <a href="../oudslink/index.html"><code>OUDSLink</code></a> proposes layout with text only or text with icon. It also proposes layout to navigate forward or backward. The link can be displayed in <code>small</code> or <code>default</code> size.</p><pre class="swift"><code>// Text only in small size
+OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+
+// Text and icon in default size
+OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+
+// Navigate to previous page with link in a default size
+OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
+</code></pre><h3>Tab bars</h3><p>The <a href="../oudstabbar/index.html"><code>OUDSTabBar</code></a> provides a native SwiftUI <code>TabView</code> with use of OUDS effects and styles. The <a href="../oudstabbar/index.html"><code>OUDSTabBar</code></a> lets users define their own hierarchy of views associated to tab items.</p><pre class="swift"><code>// Use the OUDS tab bar to wrap tab bar items and associated views.
+// Declare a @State to hold the selected tab index, then pass it as a binding.
+@State private var selectedTab = 0
+
+OUDSTabBar(selectedTab: $selectedTab, count: 3) {
+        
+    // Add the views with the SwiftUI tab item and labels
+    // No need to define colors, everything is done inside OUDSTabBar
+    SomeView()
+        .tabItem {
+            Label("Label 1", image: "image_1")
+        }
+        .tag(0)
+    OtherView()
+        .tabItem {
+            Label("Label 2", image: "image_2")
+        }
+        .tag(1)
+    LastView()
+        .tabItem {
+            Label("Label 3", image: "image_3")
+        }
+        .tag(2)
+}
+</code></pre><h3>Toolbars</h3><p>The toolbars components provide top and bottom navigation bars. They rely on SwiftUI toolbars and expose OUDS styles. Top toolbars provide a title and optional subtitle, while bottom toolbars focus on actions.</p><p>There are different style depending to Liquid Glass (iOS 26+) or not (iOS 18 and older).</p><h4>Top toolbar</h4><pre class="swift"><code>// Apply once on the root NavigationStack to style the system navigation bar
+NavigationStack {
+    SomeView()
+        .toolBarTop("Title",
+                    leadingItems: {
+                        // Back button — system dismiss is automatic, no closure needed
+                        OUDSToolBarItem(navigation: .back())
+                    },
+                    trailingItems: {
+                        OUDSToolBarItem(label: "Label") { /* Action to process */ }
+                        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+                    })
+}
+.oudsNavigationBarAppearance() // required — apply on the NavigationStack, not on the child view
+
+// Close button — .close takes NO closure, dismiss is handled automatically
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .close)
+                })
+
+// Back button with a visible label (label text is ignored on iOS 26+ / Liquid Glass)
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Cancel"))
+                })
+
+// Back button with custom action executed before automatic dismiss
+SomeView()
+    .toolBarTop("Title",
+                leadingItems: {
+                    OUDSToolBarItem(navigation: .back(label: "Back") { saveDraft() })
+                })
+
+// On iOS ≤ 18, add on the root view to color the system back-button chevron correctly
+.accentColor(theme.colors.contentDefault)
+</code></pre><h4>Bottom toolbar</h4><pre class="swift"><code>// Leading + trailing split — works on all supported OS versions
+SomeView()
+    .toolBarBottom(leadingItems: {
+        OUDSToolBarItem(label: "Some label") { /* Action to process */ }
+    }, trailingItems: {
+        OUDSToolBarItem(icon: Image(decorative: "some_image"), accessibilityLabel: "Label") { /* Action to process */ }
+    })
+
+// Grouped / centered — meaningful on iOS 26+ (Liquid Glass) only
+// On earlier OS versions the system splits the items into leading/trailing positions.
+SomeView()
+    .toolBarBottom(groupedItems: {
+        OUDSToolBarItem(label: "Save") { /* Action to process */ }
+        OUDSToolBarItem(icon: Image(decorative: "ic_delete"), accessibilityLabel: "Delete") { /* Action to process */ }
+    })
+</code></pre></article></noscript><div id="app"></div></body></html>

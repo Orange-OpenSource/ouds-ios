@@ -1,1 +1,43 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Indicators</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Some components can be used for indicators." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Components</a></li><li>Indicators</li></ul><p>Article</p><h1>Indicators</h1><p>Some components can be used for <b>indicators</b>.</p></section><h2>Overview</h2><h3>Badge</h3><p>The <a href="../oudsbadge/index.html"><code>OUDSBadge</code></a> is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.</p><pre class="swift"><code>// Info badge in medium size without information
+OUDSBadge(status: .info, size: .medium)
+
+// Negative badge in medium size with count information
+OUDSBadge(count: 1, status: .negative, size: .medium)
+
+// Neutral badge in medium size with an image
+OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+</code></pre><h3>Tag</h3><p>An <a href="../oudstag/index.html"><code>OUDSTag</code></a> is a small element that shows short information like a label, keyword, or category. It helps users quickly find, group, or understand content.</p><pre class="swift"><code>// Text only with neutral status, for emphasized appearance with rounded shape in default size
+OUDSTag(label: "Label",  status: .neutral(), appearance: .emphasized, shape: .rounded, size: .default)
+// Or also
+OUDSTag(label: "Label")
+            
+// Tag with negative status with bullet
+OUDSTag(label: "Label", status: .negative(leading: .bullet)
+            
+// Tag with neutral status with a custom decorative icon
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+// If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
+// you can flip the icon
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+            
+// Text with neutral status with bullet
+OUDSTag(label: "Label", status: .neutral(bullet: true))
+            
+// Tag with loader with rounded shape in small size
+OUDSTag(loadingLabel: "Label", shape: .rounded, size: .small)
+</code></pre><h3>Input Tag</h3><p>An <a href="../oudsinputtag/index.html"><code>OUDSInputTag</code></a> is a small element that shows short information like a label, keyword, or category, which can be removed or changed on tap.</p><pre class="swift"><code>// Create an input tag
+OUDSInputTag("Label") {
+    // Do something, usually remove itself from a list
+}
+    
+// Show in a list and remove when clicked
+var names: [String] = [ "Foo", "Bar", "Wizz" ]
+    
+ForEach(names, id: \.self) { name in
+    OUDSInputTag(label: name) {
+        if let index = names.firstIndex(of: name) {
+            names.remove(at: index)
+        }
+    }
+}
+</code></pre></article></noscript><div id="app"></div></body></html>

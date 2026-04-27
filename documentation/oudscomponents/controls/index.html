@@ -1,1 +1,280 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Controls</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Some components can be used for controls and inputs." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../index.html">Components</a></li><li>Controls</li></ul><p>Article</p><h1>Controls</h1><p>Some components can be used for <b>controls</b> and <b>inputs</b>.</p></section><h2>Overview</h2><h3>Checkboxes</h3><h4>Checkbox (only)</h4><p>The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one. You can use a simple checkbox without any labels and images using <a href="../oudscheckbox/index.html"><code>OUDSCheckbox</code></a>. This checkbox can provide two values (selected and unselected) or three values (selected, unselected and indeterminate) with <a href="../oudscheckboxindeterminate/index.html"><code>OUDSCheckboxIndeterminate</code></a>.</p><pre class="swift"><code>// A simple checkbox, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will be
+// vocalized by Voice Over.
+
+// The isOn parameter can have only two values: true (selected), false (unselected)
+OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Select the element")
+
+// The selection parameter can have only three values: selected, unselected and indeterminate
+OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Select the element")
+</code></pre><h4>Checkbox item</h4><p>The library proposes also a checkbox which has in its layout some labels and icons. The indicator can be leading or trailing. It can be be used for two-states (<a href="../oudscheckboxitem/index.html"><code>OUDSCheckboxItem</code></a>) or three-states management (<a href="../oudscheckboxitemindeterminate/index.html"><code>OUDSCheckboxItemIndeterminate</code></a>).</p><pre class="swift"><code>// A leading checkbox with a label, with only two states
+OUDSCheckboxItem("Hello world", isOn: $isOn)
+
+// A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
+OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
+                              selection: $selection,
+                              description: "from Outer Space II")
+
+// A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+// with a reversed layout, and exposing only two states through isOn binding
+OUDSCheckboxItem("We live in a fabled world",
+                 isOn: $isOn,
+                 description: "Of dreaming boys and wide-eyed girls",
+                 icon: Image(decorative: "ic_heart"),
+                 isReversed: true,
+                 isError: true,
+                 hasDivider: true)
+</code></pre><h4>Checkbox picker</h4><p>Checkboxes can be embeded in a checkbox picker (<a href="../oudscheckboxpicker/index.html"><code>OUDSCheckboxPicker</code></a>) so as to let the users to select one or more items within several.</p><pre class="swift"><code>// Define the elements to display in checkboxes using OUDSCheckboxPickerData.
+// This object has the same properties as the OUDSCheckboxItem,
+// and some of them are optional with default values set
+var someDataToPopulate: [OUDSCheckboxPickerData&lt;String&gt;] {
+    [
+         OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_1",
+                                        label: "Virgin Holy Lava",
+                                        description: "No alcohol, only tasty flavors",
+                                        icon: Image(systemName: "flame")),
+
+         OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_2",
+                                        label: "IPA beer",
+                                        description: "From Brewdog company",
+                                        icon: Image(systemName: "dog.fill")),
+
+         OUDSCheckboxPickerData&lt;String&gt;(tag: "Choice_3",
+                                        label: "Mineral water",
+                                        icon: Image(systemName: "waterbottle.fill")),
+    ]
+}
+
+// Prepare the selection, with a value previously selected
+// Use the data and the binding for the picker.
+@State var selections: [String] = ["Choice_1"] // or empty if nothing selected
+// Here the picker is vertical by default
+OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+
+// The picker can be vertical and have a root item with a label and a counter
+OUDSCheckboxPicker(selections: $selections,
+                  placement: .verticalRooted(label, .textAndCount))
+
+// The picker can apply some settings to all its radio buttons.
+// It can be also horizontal with a scroll indicator.
+// Here all the the checkboxes are in read only mode and use reversed layout.
+// Here the picker is horizontal and shows the scroll indicator
+OUDSCheckboxPicker(selections: $selections,
+                   checkboxes: someDataToPopulate)
+                   isReversed: true,
+                   isReadOnly: true,
+                   placement: .horizontal(true))
+</code></pre><h3>Radios</h3><h4>Radio (only)</h4><p>The library proposes layout to add in your views some radio buttons components, even if this type of component is not iOS-native one. You can use a simple radio without any labels and images thanks to <a href="../oudsradio/index.html"><code>OUDSRadio</code></a>.</p><pre class="swift"><code>// A simple radio, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will
+// be vocalized by Voice Over.
+OUDSRadio(isOn: $isOn, accessibilityLabel: "Select the element")
+</code></pre><h4>Radio item</h4><p>The library proposes also a radio which has in its layout some labels and icons (<a href="../oudsradioitem/index.html"><code>OUDSRadioItem</code></a>). The indicator can be leading or trailing.</p><pre class="swift"><code>// A leading radio with a label
+OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
+
+// A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
+// error with a reversed layout
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              extraLabel: "The Beatles"
+              description: "1967",
+              icon: Image(decorative: "ic_heart"),
+              isReversed: true,
+              isError: true,
+              hasDivider: true)
+</code></pre><h4>Radio picker</h4><p>Radio items can be embeded in a radio picker so as to let the users to select only one item within several (<a href="../oudsradiopicker/index.html"><code>OUDSRadioPicker</code></a>).</p><pre class="swift"><code>// Define the elements to display in radio buttons using OUDSRadioPickerData.
+// This object has the same properties as the OUDSRadioItem,
+// and some of them are optional withdefault values set
+var someDataToPopulate: [OUDSRadioPickerData&lt;String&gt;] {
+    [
+            OUDSRadioPickerData&lt;String&gt;(tag: "Choice_1",
+                                        label: "Virgin Holy Lava",
+                                        extraLabel: "Very spicy",
+                                        description: "No alcohol, only tasty flavors",
+                                        icon: Image(systemName: "flame")),
+
+            OUDSRadioPickerData&lt;String&gt;(tag: "Choice_2",
+                                        label: "IPA beer",
+                                        description: "From Brewdog company",
+                                        icon: Image(systemName: "dog.fill")),
+
+            OUDSRadioPickerData&lt;String&gt;(tag: "Choice_3",
+                                        label: "Mineral water",
+                                        icon: Image(systemName: "waterbottle.fill")),
+    ]
+}
+
+// Prepare the selection, with a value previously selected
+// Use the data and the binding for the picker.
+@State var selection: String = "Choice_1"
+
+// Here the picker is vertical
+OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+</code></pre><h3>Switches</h3><h4>Switch (only)</h4><p>The library proposes a new layout for the switch component. The native one is not used. You can use a simple switch without any labels and images thanks to the <a href="../oudsswitch/index.html"><code>OUDSSwitch</code></a>.</p><pre class="swift"><code>// A simple switch, with only an indicator
+// The component must be instanciated with a string parameter used as accessibility label that will be
+// vocalized by Voice Over.
+
+// The isOn parameter can have only two values: true (selected), false (unselected)
+OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
+</code></pre><h4>Switch item</h4><p>The library proposes also a switch which has in its layout some labels and icons (<a href="../oudsswitchitem/index.html"><code>OUDSSwitchItem</code></a>). The indicator can be leading or trailing.</p><pre class="swift"><code>// A leading switch with a label and exposing the state through isOn binding
+OUDSSwitchItem("Hello world", isOn: $isOn)
+
+// A leading switch with a label and a description
+OUDSSwitchItem("Dead Robot Zombie Cop",
+               isOn: $isOn,
+               description: "from Outer Space II")
+
+// A trailing switch with a label, a description, an icon, a divider and is about an error
+// with an inverse layout
+OUDSSwitchItem("We live in a fabled world",
+                isOn: $isOn,
+                description: "Of dreaming boys and wide-eyed girls",
+                icon: Image(decorative: "ic_heart"),
+                isReversed: true,
+                isError: true,
+                hasDivider: true)
+</code></pre><h3>Chips</h3><h4>Suggestion</h4><p>The library proposes suggestion (<a href="../oudssuggestionchip/index.html"><code>OUDSSuggestionChip</code></a>) chip component to make some predicitve or recommended selection.</p><pre class="swift"><code>// Suggestion chip with icon only
+OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+
+// Layout with text only
+OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+
+// Layout with text and icon
+OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+</code></pre><h4>Filter</h4><p>The library proposes filter chip component (<a href="../oudsfilterchip/index.html"><code>OUDSFilterChip</code></a>) to make some filtering with selected or unselected options.</p><pre class="swift"><code>// Filter chip with icon only as selected
+OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+
+// Filter chip with text only as not selected
+OUDSFilterChip(text: "Heart") { /* the action to process */ }
+
+// Filter chip with text and icon layout an in selected state
+OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+</code></pre><h4>Chip picker</h4><p>The library proposes a chip picker (<a href="../oudschippicker/index.html"><code>OUDSChipPicker</code></a>) to make easily filtering with two kinds of selection:</p><ul><li><p><b>single or none</b>: to select or unselect one option only</p></li><li><p><b>single</b>: to select at least one option</p></li><li><p><b>multiple</b>: to select several options</p></li></ul><pre class="swift"><code>// Define the elements to display in filter chip using OUDSChipPickerData.
+enum Drink: String, CaseIterable {
+    case virginHolyLava, ipaBeer, mineralWater
+}
+
+var someDataToPopulate: [OUDSChipPickerData&lt;Drink&gt;] {
+    [
+        OUDSChipPickerData(tag: Drink.virginHolyLava,
+                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame"))),
+
+        OUDSChipPickerData(tag: Dring.ipaBeer,
+                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill"))),
+
+        OUDSChipPickerData(tag: Drink.mineralWater,
+                           layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+    ]
+}
+
+// MARK: - Simple selection, one or zero
+
+// Prepare the selection, with a value previously selected
+// Use the data and the binding for the picker.
+@State var selection: Drink? = .mineralWater
+
+// Here the picker with title, selection and data
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+
+// MARK: - Simple selection
+
+// Prepare the selection, with a value previously selected
+// Use the data and the binding for the picker.
+@State var selection: Drink = .mineralWater
+
+// Here the picker with title, selection and data
+OUDSChipPicker(title: "Select a drink", selection: $selection, chips: someDataToPopulate)
+
+// MARK: - Multiple selection
+
+// Prepare the selection, with a value previously selected
+// Use the data and the binding for the picker.
+@State var selections: [Drink] = [.mineralWater]
+
+// Here the picker with title, selection and data
+OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someDataToPopulate)
+</code></pre><h3>Password input</h3><p>The library provides an <a href="../oudspasswordinput/index.html"><code>OUDSPasswordInput</code></a> based on a <a href="../oudstextinput/index.html"><code>OUDSTextInput</code></a> to let user provides password in a secure text field.</p><pre class="swift"><code>// The password to display and edit
+@State var password: String = ""
+
+// A basic password input with label
+OUDSPasswordInput(label: "Password", password: $password)
+
+// Add a leading icon and helper text to more context
+OUDSPasswordInput(label: "Password", password: $password, lockIcon: true, helperText: "Your password must be between 8 and 20 characters long.")
+
+// Password with prefix
+OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
+</code></pre><h3>Pin Code Input</h3><p>The library provides an <a href="../oudspincodeinput/index.html"><code>OUDSPinCodeInput</code></a> to let user provides PIN code or OTP code with only digits.</p><pre class="swift"><code>// The value with the code
+@State private var pinCode: String = ""
+
+// By default, the PIN code input displays only 6 boxes
+OUDSPinCodeInput($pinCode)
+
+// It can have also up 4 or 8 boxes, with an helper text
+OUDSPinCodeInput($pinCode, length: .eight, helperText: "Enter your 8 secret digits")
+
+// The component can be used in error contexts
+OUDSPinCodeInput($pinCode, length: .six, status: .error(message: "The OTP code you entered is not correct"))
+</code></pre><h3>Text area</h3><p>The library provides <a href="../oudstextarea/index.html"><code>OUDSTextArea</code></a> for multiline text entry in forms such as comments, descriptions or messages. The field grows from a minimum of visible lines up to maximum lines based on tokens associated to the theme, after which the content scrolls. It supports labels, placeholders, helper text, a helper link and five statuses: enabled, loading, error, read-only and disabled.</p><pre class="swift"><code>// The text to display and edit
+@State var text: String = ""
+
+// Basic usage — label and text only
+OUDSTextArea(label: "Comments", text: $text)
+
+// With a placeholder shown when the field is empty
+OUDSTextArea(label: "Comments", text: $text, placeholder: "Describe your issue in detail")
+
+// With a plain helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .plain("Maximum 500 characters."))
+
+// With a maximum character count — remaining count rendered bold, error style when exceeded
+OUDSTextArea(label: "Comments",
+             text: $text,
+             helperText: .charactersMaxCount(500))
+
+// With a helper link
+@Environment(\.openURL) private var openUrl
+
+let helperLink = OUDSTextArea.Helperlink(text: "Learn more") {
+    openUrl.callAsFunction(url)
+}
+
+OUDSTextArea(label: "Comments", text: $text, helperLink: helperLink)
+
+// With error status — error message replaces the helper text
+OUDSTextArea(label: "Comments",
+             text: $text,
+             status: .error(message: "This field cannot be empty."))
+</code></pre><h3>Text input</h3><p>The library provides useful components for forms like <a href="../oudstextinput/index.html"><code>OUDSTextInput</code></a> to let user write text data and be helped if needed. Such components can have or not a leading icon or a trailing action with or without placeholders.</p><pre class="swift"><code>// The text to display and edit
+@State var text: String = ""
+
+// Empty text and no placeholder
+OUDSTextInput(label: "Email", text: $text)
+
+// Empty text with prefix and suffix
+OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
+
+// Add a leading icon for more context
+OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
+
+// Add a trailing button with local image named "ic_cross" for additional action
+let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
+OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
+
+// With helper text
+OUDSTextInput(label: "Email",
+              text: $text,
+              placeholder: "firstName.lastName",
+              suffix: "@orange.com",
+              helperText: "The email will be automatically completed with @orange.com")
+
+// With helper link
+@Environment(\.openURL) private var openUrl
+
+let helperLink = OUDSTextInput.HelperLink(text: "Helper Link") {
+    openUrl.callAsFunction(url)
+}
+
+OUDSTextInput(label: "Label", text: $text, placeholder: "Placeholder", helperLink: helperLink)
+</code></pre></article></noscript><div id="app"></div></body></html>
