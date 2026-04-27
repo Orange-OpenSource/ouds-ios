@@ -5,7 +5,7 @@ It covers contributor and maintainer guidelines: code formatting, architecture, 
 
 ## 1. Code formatting
 
-The source code is formatted for Swift 6.2. Configuration of formatter is in `.swiftformat` and linter in `.swiftlint`.
+The source code is formatted for Swift 6.3. Configuration of formatter is in `.swiftformat` and linter in `.swiftlint`.
 
 ## 2. Architecture details
 
@@ -214,8 +214,8 @@ Everything is available on [our guidelines](https://a11y-guidelines.orange.com/f
 
 ## 7. Development requirements
 
-- Minimum Swift 6.2 (e.g. 6.2.3)
-- Xcode 26.3 or later
+- Minimum Swift 6.3 (e.g. 6.3.1)
+- Xcode 26.4 or later
 - Minimum deployment: iOS 15.0, iPadOS 15.0, macOS 13.0, visionOS 1.0, watchOS 11.6, tvOS 16.6
 - Apple Developer account for device testing
 
