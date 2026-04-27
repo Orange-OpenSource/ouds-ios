@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `SwiftFormat` Swift package plugin from v0.61.0 to v0.61.1
 - `Ruby` version from v4.0.2 to v4.0.3 for `build-and-test` workflows
 - `fastlane` gem from v2.232.2 to v2.233.1
 - `actions/upload-artifact` action from v7.0.0 to v7.0.1 for `scorecard` workflow
