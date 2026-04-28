@@ -15,6 +15,10 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+/// Displayes a helper message below `ContolItems` texts according to the data avilable in `ControlItemData.Style`
+/// and updates text color according to the `InteractionState`:
+/// - error message if not empty and if `isError` flag are set in `true`.
+/// - helper text, if `isError` flag are set in `false`
 struct ControlItemHelperErrorTextContainer: View {
 
     // MARK: - Properties
@@ -27,7 +31,7 @@ struct ControlItemHelperErrorTextContainer: View {
     // MARK: - Body
 
     var body: some View {
-        if let text = layoutDataStyle.errorText, !text.isEmpty {
+        if let text = layoutDataStyle.helperErrorText, !text.isEmpty {
             textView(for: text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)

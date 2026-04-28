@@ -45,6 +45,8 @@ struct ControlItemIndicator: View {
     /// - Parameters:
     ///    - type: The type of indicator set in the control item
     ///    - layoutData: The data of the layout
+    ///    - icon: The icon to be displayed in the trailing part of the control item (if not reversed)
+    ///    - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
     ///    - action: An optional action to trigger when the component has been pressed
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**

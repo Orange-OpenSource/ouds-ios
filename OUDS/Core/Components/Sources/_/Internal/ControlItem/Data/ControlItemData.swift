@@ -24,13 +24,26 @@ struct ControlItemData {
     struct Style {
         let isOutlined: Bool
         let isError: Bool
-        let errorText: TextualContent?
+        let helperErrorText: TextualContent?
         let isReadOnly: Bool
         let hasDivider: Bool
         let constrainedMaxWidth: Bool
         let isReversed: Bool
     }
 
+    enum AffordanceType {
+        case next
+        case previous
+        case external
+    }
+
     let texts: Texts
     let style: Style
+    let affordanceType: AffordanceType?
+
+    init(texts: Texts, style: Style, affordanceType: AffordanceType? = nil) {
+        self.texts = texts
+        self.style = style
+        self.affordanceType = affordanceType
+    }
 }

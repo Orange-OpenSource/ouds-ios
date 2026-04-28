@@ -14,45 +14,29 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// ListItem is a navigation UI element used to display a row of content within a list.
-/// It typically contains a title, an optional subtitle, an optional leading icon,
-/// and an optional trailing element (like a chevron or an action).
-/// ListItem helps users navigate between sections or screens.
-///
-/// ## Code samples
-///
-/// ```swift
-///     // Simple list item with title only
-///     OUDSListItem(title: "Settings") {
-///         // Navigate to settings
-///     }
-///
-///     // List item with title and subtitle
-///     OUDSListItem(title: "Profile", subtitle: "Edit your profile information") {
-///         // Navigate to profile
-///     }
-///
-///     // List item with icon, title, subtitle and trailing chevron
-///     OUDSListItem(title: "Notifications",
-///                  subtitle: "Manage your notifications",
-///                  leadingIcon: Image(systemName: "bell")) {
-///         // Navigate to notifications
-///     }
-/// ```
+// TODO: ADD doc here
+
 ///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.5.0
+/// - Since: 2.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItem: View {
+public struct OUDSListItemNavigationGrouped: View {
 
     // MARK: - Stored Properties
 
     private let layoutData: ControlItemData
     private let action: (() -> Void)?
+
+    /// - Since: 2.0.0
+    @frozen public enum AffordanceType {
+        case next
+        case previous
+        case external
+    }
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -90,6 +74,7 @@ public struct OUDSListItem: View {
                 isOutlined: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
+                affordanceType: AffordanceType = .next,
                 action: (() -> Void)? = nil)
     {
         let helperTextContent: TextualContent? = if let helperText {
@@ -109,7 +94,8 @@ public struct OUDSListItem: View {
                                           hasDivider: hasDivider,
                                           constrainedMaxWidth: false,
                                           isReversed: false)
-        layoutData = .init(texts: texts, style: style)
+        layoutData = .init(texts: texts, style: style, affordanceType: affordanceType.controlItemAffordance)
+
         self.action = action
     }
 
@@ -121,16 +107,5 @@ public struct OUDSListItem: View {
         } trailing: {
             EmptyView()
         }
-    }
-
-    // MARK: - Helpers
-
-    private var chevronImage: some View {
-        Image(decorative: layoutDirection == .rightToLeft ? "ic_link_previous" : "ic_link_next",
-              bundle: theme.resourcesBundle)
-            .renderingMode(.template)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 16, height: 16)
     }
 }

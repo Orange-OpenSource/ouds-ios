@@ -13,19 +13,19 @@
 
 import SwiftUI
 
-/// This is the indicator container of the ControlItem.
+/// This is the leading container of the ControlItem.
 ///
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
-/// The indicator with a fixed size is centered in this frame.
+/// The content with a fixed size is centered in this frame.
 struct ControlItemLeadingContainer<Content: View>: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     @ViewBuilder let content: () -> Content
     @Environment(\.theme) private var theme
 
-    // MARK: Body
+    // MARK: - Body
 
     var body: some View {
         HStack(alignment: .center, spacing: 0) {

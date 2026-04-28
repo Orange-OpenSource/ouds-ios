@@ -29,37 +29,35 @@ struct ControlItemTextContainer: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.controlItem.spaceColumnGap) {
-            VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
-                if let overline = layoutData.texts.overline, !overline.isEmpty {
-                    Text(overline)
-                        .labelModerateSmall(theme)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(descriptionOverlineColor)
-                }
-
-                Text(layoutData.texts.label)
-                    .labelDefaultLarge(theme)
+        VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
+            if let overline = layoutData.texts.overline, !overline.isEmpty {
+                Text(overline)
+                    .labelModerateSmall(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(labelColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                if let extraLabel = layoutData.texts.extraLabel, !extraLabel.isEmpty {
-                    Text(extraLabel)
-                        .labelStrongMedium(theme)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(extraLabelColor)
-                }
-
-                if let description = layoutData.texts.description, !description.isEmpty {
-                    Text(description)
-                        .labelDefaultMedium(theme)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(descriptionOverlineColor)
-                }
+                    .foregroundStyle(descriptionOverlineColor)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+
+            Text(layoutData.texts.label)
+                .labelDefaultLarge(theme)
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(labelColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let extraLabel = layoutData.texts.extraLabel, !extraLabel.isEmpty {
+                Text(extraLabel)
+                    .labelStrongMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(extraLabelColor)
+            }
+
+            if let description = layoutData.texts.description, !description.isEmpty {
+                Text(description)
+                    .labelDefaultMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(descriptionOverlineColor)
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Colors
@@ -74,26 +72,16 @@ struct ControlItemTextContainer: View {
             case .pressed:
                 theme.colors.actionNegativePressed
             case .readOnly, .disabled:
-                OL.fatal("A component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
+                OL.fatal("Component with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                     + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {
-            switch interactionState {
-            case .enabled, .hover, .pressed, .readOnly:
-                theme.colors.contentDefault
-            case .disabled:
-                theme.colors.contentDisabled
-            }
+            interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
         }
     }
 
     private var descriptionOverlineColor: MultipleColorSemanticToken {
-        switch interactionState {
-        case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.contentMuted
-        case .disabled:
-            theme.colors.contentDisabled
-        }
+        interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
     }
 
     private var extraLabelColor: MultipleColorSemanticToken {
