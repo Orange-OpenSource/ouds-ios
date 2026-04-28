@@ -91,7 +91,7 @@ private struct ToolBarItemBadgeModifier: ViewModifier {
                 case .standard:
                     OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)
                 case let .number(count):
-                    OUDSBadge(count: count, accessibilityLabel: "", status: .negative, size: .medium)
+                    OUDSBadge(count: count, accessibilityLabel: String(count), status: .negative, size: .medium)
                         .offset(x: 3, y: -3)
                 case .none:
                     EmptyView()
