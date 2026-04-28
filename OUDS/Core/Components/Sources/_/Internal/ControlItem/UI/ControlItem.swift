@@ -13,18 +13,18 @@
 
 import SwiftUI
 
-/// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
+/// Modelizes the layout for indicator (checkbox, radio button or switch) and list Item with additional components like labels, helper text and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
-/// This internal component displays the indicator and defines the layout as a SwiftUI button through the internal `InteractionButton`.
+/// This internal component displays the leading and trailing elements and defines the layout as a SwiftUI button through the internal `InteractionButton`.
 struct ControlItem<Leading: View, Trailing: View>: View {
 
-    // MARK: Stored Properties
+    // MARK: - Properties
 
     private let layoutData: ControlItemData
     private let isSelected: Bool
+    private let action: (() -> Void)?
     private let leading: () -> Leading
     private let trailing: () -> Trailing
-    private let action: (() -> Void)?
 
     /// Used to define the orientation of the Layout
     enum Orientation {
@@ -34,21 +34,23 @@ struct ControlItem<Leading: View, Trailing: View>: View {
         case reversed
     }
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Creates a control item with the layout data model
     ///
     /// - Parameters:
-    ///    - indicatorType: The type of indicator set in the control item
     ///    - layoutData: The data of the layout
+    ///    - isSelected: if the element is selected. `false` by default.
     ///    - action: An optional action to trigger when the component has been pressed
+    ///    - leading: Leading content
+    ///    - trailing: Trailing content
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(layoutData: ControlItemData,
          isSelected: Bool = false,
+         action: (() -> Void)? = nil,
          @ViewBuilder leading: @escaping () -> Leading,
-         @ViewBuilder trailing: @escaping () -> Trailing,
-         action: (() -> Void)? = nil)
+         @ViewBuilder trailing: @escaping () -> Trailing)
     {
         self.layoutData = layoutData
         self.isSelected = isSelected
@@ -57,7 +59,24 @@ struct ControlItem<Leading: View, Trailing: View>: View {
         self.action = action
     }
 
-    // MARK: Body
+    /// Creates a control item with the layout data model where leading and trailing content are empty
+    ///
+    /// - Parameters:
+    ///    - layoutData: The data of the layout
+    ///    - isSelected: if the element is selected. `false` by default.
+    ///    - action: An optional action to trigger when the component has been pressed
+    init(layoutData: ControlItemData,
+         isSelected: Bool = false,
+         action: (() -> Void)? = nil) where Leading == EmptyView, Trailing == EmptyView
+    {
+        self.layoutData = layoutData
+        self.isSelected = isSelected
+        leading = { EmptyView() }
+        trailing = { EmptyView() }
+        self.action = action
+    }
+
+    // MARK: - Body
 
     var body: some View {
         InteractionButton(isReadOnly: layoutData.style.isReadOnly) {

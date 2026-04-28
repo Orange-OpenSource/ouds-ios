@@ -14,10 +14,12 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the icon container of the ControlItem.
+/// This is the trailing container of the ControlItem.
 ///
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
+///
+/// If `ContolItem`is on error, the provided content is replaced by an error asset.
 struct ControlItemTrailingContainer<Content: View>: View {
 
     // MARK: - Stored properties
@@ -32,6 +34,7 @@ struct ControlItemTrailingContainer<Content: View>: View {
     // MARK: Body
 
     var body: some View {
+        // TODO: check if is EmptyView work well
         if isError || !(computedTrailingAction is EmptyView) {
             HStack(alignment: .center, spacing: 0) {
                 computedTrailingAction

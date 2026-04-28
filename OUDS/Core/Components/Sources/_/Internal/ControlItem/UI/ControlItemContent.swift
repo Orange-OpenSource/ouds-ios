@@ -17,14 +17,13 @@ import SwiftUI
 /// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.
 ///
 /// This state is used by:
-/// - the indicator according to ``ControlItemIndicator.Type`` to apply right tokens
-/// - the label described by ``ControlItemTextContainer.LayoutData`` to apply right tokens on texts
-/// - the icon described by ``ControlItemTextContainer.LayoutData`` to apply right tokens on icon
+/// - the label described by ``ControlItemData.Texts`` to apply right tokens on texts
 /// - the background modifier
+/// - the boder modifier
 /// - the outlined modifier
 struct ControlItemContent<Leading: View, Trailing: View>: View {
 
-    // MARK: Stored properties
+    // MARK: - Properties
 
     let layoutData: ControlItemData
     let isSelected: Bool
@@ -32,14 +31,19 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
     let leading: () -> Leading
     let trailing: () -> Trailing
 
-    @State var verticalAlignment: VerticalAlignment = .top
     @Environment(\.theme) private var theme
+    @Environment(\.controlItemContainersAlignment) private var containersAlignment
 
-    // MARK: Body
+    // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
+                if layoutData.affordanceType == .previous {
+                    ControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
+                        .background(.red)
+                }
+
                 if layoutData.style.isReversed {
                     trailingContainer()
                     textContainer()
@@ -48,6 +52,11 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
                     leadingContainer()
                     textContainer()
                     trailingContainer()
+                }
+
+                if layoutData.affordanceType == .next || layoutData.affordanceType == .external {
+                    ControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
+                        .background(.yellow)
                 }
             }
             .padding(.vertical, theme.controlItem.spacePaddingBlockDefault)
@@ -63,7 +72,7 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }
 
-    // MARK: Containers
+    // MARK: - Containers
 
     private func leadingContainer() -> some View {
         ControlItemLeadingContainer(content: leading)
@@ -71,18 +80,24 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
 
     private func textContainer() -> some View {
         ControlItemTextContainer(interactionState: interactionState, layoutData: layoutData)
-            .readSize { size in
-                verticalAlignment = size.height > theme.controlItem.sizeMaxHeightAssetsContainer ? .top : .center
-            }
     }
 
     private func trailingContainer() -> some View {
         ControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
     }
 
-    // MARK: Computed properties
+    // MARK: - Computed properties
 
     private var maxWidth: CGFloat {
         layoutData.style.constrainedMaxWidth ? theme.controlItem.sizeMaxWidth : .infinity
+    }
+
+    private var verticalAlignment: VerticalAlignment {
+        switch containersAlignment {
+        case .top:
+            .top
+        default:
+            .center
+        }
     }
 }

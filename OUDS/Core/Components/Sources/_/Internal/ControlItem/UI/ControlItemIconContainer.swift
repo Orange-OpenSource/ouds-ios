@@ -21,7 +21,7 @@ import SwiftUI
 /// The icon with a fixed size is centered in this frame.
 struct ControlItemIconContainer: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let interactionState: InteractionState
     let icon: Image?
@@ -30,7 +30,7 @@ struct ControlItemIconContainer: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Body
+    // MARK: - Body
 
     var body: some View {
         if isError || icon != nil {

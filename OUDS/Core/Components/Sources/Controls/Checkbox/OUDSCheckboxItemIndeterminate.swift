@@ -237,7 +237,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                                           description: description?.localized())
         let style = ControlItemData.Style(isOutlined: false,
                                           isError: isError,
-                                          errorText: errorTextContent,
+                                          helperErrorText: errorTextContent,
                                           isReadOnly: isReadOnly,
                                           hasDivider: hasDivider,
                                           constrainedMaxWidth: constrainedMaxWidth,
@@ -278,7 +278,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         let stateDescription = !isEnabled || layoutData.style.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.style.errorText?.rawValue ?? ""
+        let errorText = layoutData.style.helperErrorText?.rawValue ?? ""
         let errorDescription = layoutData.style.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
