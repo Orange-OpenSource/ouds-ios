@@ -69,33 +69,55 @@ struct ToolBarItemActionButton: View {
 
 // MARK: - ToolBar Item Badge Modifier
 
+/// Depending to the OS version and the toolbar associated to the item, adds a badge to the item/
+/// For iOS 26 / Liquid Glass, system badge must be used for top toolbar, otherwise badge won't be readable.
+/// However with this case and for bottom toolbar, the system does not display system badge, thus an OUDS badge should be used
+/// as workaround.
+/// For iOS until 18, use OUDS badge in all cases.
 private struct ToolBarItemBadgeModifier: ViewModifier {
 
     let type: OUDSToolBarItem.BadgeType?
+    @Environment(\.toolbarItemLocation) private var location
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     func body(content: Content) -> some View {
-        if #available(iOS 26, *) {
+        if isLiquidGlassDisabled {
+            oudsBadgeLayout(content)
+        } else {
+            switch location {
+            case .toolbarTop:
+                systemBadgeLayout(content)
+            case .toolbarBottom:
+                oudsBadgeLayout(content)
+            }
+        }
+    }
+
+    /// Adds a system badge to the item
+    @ViewBuilder private func systemBadgeLayout(_ content: Content) -> some View {
+        switch type {
+        case .standard:
+            content.badge("")
+        case let .number(count):
+            let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
+            content.badge(Text(text))
+        case .none:
+            content
+        }
+    }
+
+    /// Adds an OUDS badge to the item
+    @ViewBuilder private func oudsBadgeLayout(_ content: Content) -> some View {
+        ZStack(alignment: .topTrailing) {
+            content
             switch type {
             case .standard:
-                content.badge("")
+                OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)
             case let .number(count):
-                let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
-                content.badge(Text(text))
+                OUDSBadge(count: count, accessibilityLabel: String(count), status: .negative, size: .medium)
+                    .offset(x: 3, y: -3)
             case .none:
-                content
-            }
-        } else {
-            ZStack(alignment: .topTrailing) {
-                content
-                switch type {
-                case .standard:
-                    OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)
-                case let .number(count):
-                    OUDSBadge(count: count, accessibilityLabel: String(count), status: .negative, size: .medium)
-                        .offset(x: 3, y: -3)
-                case .none:
-                    EmptyView()
-                }
+                EmptyView()
             }
         }
     }

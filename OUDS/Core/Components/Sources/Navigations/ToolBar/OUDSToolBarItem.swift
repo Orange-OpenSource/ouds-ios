@@ -314,4 +314,18 @@ public enum OUDSToolBarItemsBuilder {
         components.flatMap(\.self)
     }
 }
+
+// MARK: - OUDS Tool Bar Item Position
+
+enum ToolBarItemLocation {
+    case toolbarTop
+    case toolbarBottom
+}
+
+extension EnvironmentValues {
+
+    /// A flag to know if ``OUDSToolBarItem`` will be placed in ``OUDSToolBarBottom`` or ``OUDSToolBarTop``
+    @Entry var toolbarItemLocation: ToolBarItemLocation = .toolbarTop
+}
+
 #endif
