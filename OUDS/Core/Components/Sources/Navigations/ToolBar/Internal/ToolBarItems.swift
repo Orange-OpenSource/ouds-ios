@@ -17,7 +17,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Toolbar Item Action Button
+// MARK: - ToolBar Item Action Button
 
 struct ToolBarItemActionButton: View {
 
@@ -67,7 +67,9 @@ struct ToolBarItemActionButton: View {
     }
 }
 
-struct ToolBarItemBadgeModifier: ViewModifier {
+// MARK: - ToolBar Item Badge Modifier
+
+private struct ToolBarItemBadgeModifier: ViewModifier {
 
     let type: OUDSToolBarItem.BadgeType?
 

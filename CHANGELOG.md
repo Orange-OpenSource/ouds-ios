@@ -6,11 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...develop)
 
+### Added
+
+- `badge` on `toolbar` components items (Orange-OpenSource/ouds-ios#1398)
+
 ### Changed
 
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
 - **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
 - **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+
+### Fixed
+
+- Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
+- Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
 
 ### Removed
 
@@ -19,14 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: `OUDSBulletList.UnorderedAsset.free` case
 - **BREAKING**: `OUDSCheckboxItem(isOn:)`, `OUDSRadioItem(isOn:)`, `OUDSCheckboxItemIndeterminate(selection:)` inits
 - **BREAKING**: `OUDSTabBar(selected:count)` init
-### Added
-
-- `badge` on `toolbar` item (Orange-OpenSource/ouds-ios#1398)
-
-### Fixed
-
-- Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
-- Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
 
 ## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.3.0...1.4.0) - 2026-04-15
 
