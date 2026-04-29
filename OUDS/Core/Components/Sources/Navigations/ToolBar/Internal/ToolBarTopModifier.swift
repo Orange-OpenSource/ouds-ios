@@ -82,6 +82,7 @@ struct ToolBarTopModifier: ViewModifier {
     private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
         ForEach(items) { item in
             item
+                .environment(\.toolbarItemLocation, .toolbarTop)
         }
     }
 

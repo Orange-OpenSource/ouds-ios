@@ -17,7 +17,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Toolbar Item Action Button
+// MARK: - ToolBar Item Action Button
 
 struct ToolBarItemActionButton: View {
 
@@ -48,7 +48,7 @@ struct ToolBarItemActionButton: View {
             .modifier(ToolBarActionItemModifier(style: style))
             .accessibilityHint(Text(accessibilityHint ?? ""))
 
-        case let .icon(asset, accessibilityLabel, accessibilityHint, action):
+        case let .icon(asset, accessibilityLabel, accessibilityHint, badgeType, action):
             Button {
                 action?()
             } label: {
@@ -62,6 +62,62 @@ struct ToolBarItemActionButton: View {
             .modifier(ToolBarActionItemModifier(style: style))
             .accessibilityLabel(Text(accessibilityLabel))
             .accessibilityHint(Text(accessibilityHint ?? ""))
+            .modifier(ToolBarItemBadgeModifier(type: badgeType))
+        }
+    }
+}
+
+// MARK: - ToolBar Item Badge Modifier
+
+/// Depending on the OS version and the toolbar associated with the item, adds a badge to the item.
+/// For iOS 26 / Liquid Glass, the system badge must be used for the top toolbar; otherwise, the badge will not be readable.
+/// However, for the bottom toolbar, the system does not display the badge, so an OUDS badge is used as a workaround.
+/// For iOS versions up to 18, use the OUDS badge in all cases.
+private struct ToolBarItemBadgeModifier: ViewModifier {
+
+    let type: OUDSToolBarItem.BadgeType?
+    @Environment(\.toolbarItemLocation) private var location
+    @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
+
+    func body(content: Content) -> some View {
+        if isLiquidGlassDisabled {
+            oudsBadgeLayout(content)
+        } else {
+            switch location {
+            case .toolbarTop:
+                systemBadgeLayout(content)
+            case .toolbarBottom:
+                oudsBadgeLayout(content)
+            }
+        }
+    }
+
+    /// Adds a system badge to the item
+    @ViewBuilder private func systemBadgeLayout(_ content: Content) -> some View {
+        switch type {
+        case .standard:
+            content.badge("")
+        case let .number(count):
+            let text = count > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(count)"
+            content.badge(Text(text))
+        case .none:
+            content
+        }
+    }
+
+    /// Adds an OUDS badge to the item
+    @ViewBuilder private func oudsBadgeLayout(_ content: Content) -> some View {
+        ZStack(alignment: .topTrailing) {
+            content
+            switch type {
+            case .standard:
+                OUDSBadge(accessibilityLabel: "", status: .negative, size: .small)
+            case let .number(count):
+                OUDSBadge(count: count, accessibilityLabel: String(count), status: .negative, size: .medium)
+                    .offset(x: 3, y: -3)
+            case .none:
+                EmptyView()
+            }
         }
     }
 }
