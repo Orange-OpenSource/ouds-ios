@@ -17,14 +17,14 @@ import SwiftUI
 
 struct PinCodeHelperErrorTextContainer: View {
 
-    let helperText: String?
+    let helperText: TextualContent?
     let status: OUDSPinCodeInput.Status
 
     @Environment(\.theme) private var theme
 
     var body: some View {
         if !text.isEmpty {
-            Text(text)
+            view(for: text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
@@ -34,7 +34,7 @@ struct PinCodeHelperErrorTextContainer: View {
 
     private var color: MultipleColorSemanticToken {
         switch status {
-        case .error:
+        case .error, .richError:
             theme.colors.contentStatusNegative
         case .enabled:
             theme.colors.contentMuted
@@ -45,8 +45,25 @@ struct PinCodeHelperErrorTextContainer: View {
         switch status {
         case let .error(message):
             message
+        case let .richError(message):
+            String(message.characters)
         case .enabled:
-            helperText ?? ""
+            helperText?.rawValue ?? ""
+        }
+    }
+
+    private func view(for text: String) -> Text {
+        switch status {
+        case let .error(message):
+            Text(message)
+        case let .richError(message):
+            Text(message)
+        case .enabled:
+            if let helperText {
+                textView(for: helperText)
+            } else {
+                Text("") // Will never happen
+            }
         }
     }
 }

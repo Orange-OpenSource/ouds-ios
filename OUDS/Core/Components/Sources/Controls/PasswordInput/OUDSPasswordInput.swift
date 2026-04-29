@@ -61,6 +61,14 @@ import SwiftUI
 /// However you should think about cases wher you will have to make the devices vibrates.
 /// You can refer to the [Human Interface Guidelines of Apple](https://developer.apple.com/design/human-interface-guidelines/playing-haptics).
 ///
+/// ## Rich text
+///
+/// Rich text can be used for error and helper texts.
+///
+/// Strong text can be used sparingly to highlight key information within the content.
+/// No other text styles should be used.
+/// Underlined text must not be applied manually (e.g. in error message), as it is commonly associated with hyperlinks and may mislead users.
+///
 /// ## Code samples
 ///
 /// ```swift

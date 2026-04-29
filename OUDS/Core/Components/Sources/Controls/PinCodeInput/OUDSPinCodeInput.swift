@@ -91,6 +91,14 @@ import SwiftUI
 /// Use helper text to communicate additional guidance (for example: *“Check the 6‑digit code sent by SMS”*), and keep this text short so it remains easy to vocalize
 /// and understand.
 ///
+/// ## Rich text
+///
+/// Rich text can be used for error and helper texts.
+///
+/// Strong text can be used sparingly to highlight key information within the content.
+/// No other text styles should be used.
+/// Underlined text must not be applied manually (e.g. in error message), as it is commonly associated with hyperlinks and may mislead users.
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -146,7 +154,7 @@ public struct OUDSPinCodeInput: View {
 
     @Binding private var value: String
     private let length: Length
-    private let helperText: String?
+    private let helperText: TextualContent?
     private let isOutlined: Bool
     private let status: Self.Status
     private let autofocus: Bool
@@ -178,9 +186,16 @@ public struct OUDSPinCodeInput: View {
         /// It provides a clear accessible error `message` positioned below the input.
         /// This message must not be empty.
         case error(message: String)
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides a clear accessible error `message` positioned below the input.
+        /// This message must not be empty. The message can be a rich text.
+        case richError(message: AttributedString)
     }
 
     // MARK: - Initializers
+
+    // swiftlint:disable function_default_parameter_at_end
 
     /// Defines a PIN code imput component with several boxes to fill the code
     ///
@@ -204,14 +219,46 @@ public struct OUDSPinCodeInput: View {
     {
         _value = value
         self.length = length
-        self.helperText = helperText
+        self.helperText = if let helperText {
+            .raw(helperText)
+        } else {
+            nil
+        }
         self.isOutlined = isOutlined
         self.status = status
         self.autofocus = autofocus
     }
 
-    // swiftlint:disable function_default_parameter_at_end
-    /// Defines a PIN code imput component with several boxes to fill the code
+    /// Defines a PIN code imput component with several boxes to fill the code and an helper text in rich text
+    ///
+    /// ```swift
+    ///     OUDSPinCodeInput($pinCode,
+    ///                      helperText: AttributedString(markdown: "Enter the **one-time code** sent to your device"))  // Manage in your side errors for init
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - value: A *binding* exposing the value written by the user when the last symbol has been put
+    ///   - length: The number of required symbols for the input, default set to *six*
+    ///   - helperText: A text to display below the PIN code input container, in rich text
+    ///   - isOutlined: If *true*, draw a thing stroke around the input, otherwise use a background to fill instead, default set to *false*
+    ///   - status: Default set to *.enabled*, defines if there is an error context or not
+    ///   - autofocus: If *true*, automatically focuses the first available field on appear, default set to *false*
+    public init(_ value: Binding<String>,
+                length: OUDSPinCodeInput.Length = .six,
+                helperText: AttributedString,
+                isOutlined: Bool = false,
+                status: Self.Status = .enabled,
+                autofocus: Bool = false)
+    {
+        _value = value
+        self.length = length
+        self.helperText = .attributed(helperText)
+        self.isOutlined = isOutlined
+        self.status = status
+        self.autofocus = autofocus
+    }
+
+    /// Defines a PIN code imput component with several boxes to fill the code, and an helper text in rich text.
     ///
     /// ```swift
     ///     OUDSPinCodeInput($pinCode, helperText: LocalizedStringKey("pin_helper"), bundle: Bundle.module)
@@ -237,7 +284,7 @@ public struct OUDSPinCodeInput: View {
     {
         _value = value
         self.length = length
-        helperText = key.resolved(tableName: tableName, bundle: bundle)
+        helperText = .raw(key.resolved(tableName: tableName, bundle: bundle))
         self.isOutlined = isOutlined
         self.status = status
         self.autofocus = autofocus
