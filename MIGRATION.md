@@ -22,11 +22,11 @@ API for `action type` of `toolbar item` has been enriched.
 
 ### Renamed tokens
 
-Some component tokens (badge) and semantic tokens (colors) have been renamed.
+Some component tokens (badge, bar) and semantic tokens (colors, elevations, size) have been renamed.
 
 **Impact**: High
 
-For colors semantic tokens:
+For colors semantic tokens, "Modal" is now "ModalSheet":
 
 | Old name                                   | New name                             |
 |--------------------------------------------|--------------------------------------|
@@ -35,19 +35,19 @@ For colors semantic tokens:
 | `overlayModalDark`                         | `overlayModalSheetDark`              |
 | `overlayModal`                             | `overlayModalSheet`                  |
 
-For elevation semantic tokens:
+For elevation semantic tokens, "Default" is now "Elevated":
 
 | Old name                                   | New name                             |
 |--------------------------------------------|--------------------------------------|
 | `xDefault`                                 | `xElevated`                          |
-| `yefault`                                  | `yElevated`                          |
+| `yDefault`                                 | `yElevated`                          |
 | `blurDefault`                              | `blurElevated`                       |
 | `spreadDefault`                            | `spreadElevated`                     |
 | `colorDefaultLight`                        | `colorElevatedLight`                 |
 | `colorDefaultDark`                         | `colorElevatedDark`                  |
 
 
-For size semantic tokens:
+For size semantic tokens, the word "Type" has been removed from the name:
 
 | Old name                                   | New name                             |
 |--------------------------------------------|--------------------------------------|
@@ -86,7 +86,7 @@ For badge component tokens:
 |--------------------------------------------|--------------------------------------|
 | `spaceInset`                               | `spaceInsetMediumLarge`              |
 
-For bar component tokens
+For bar component tokens, "ActiveIndicator" is now "CurrentIndicator":
 
 | Old name                                        | New name                                        |
 |-------------------------------------------------|-------------------------------------------------|
@@ -116,9 +116,9 @@ All Sosh raw tokens have been changed.
 **Required Action**:
 - Remove effect raw token `blur160`
 - Remove color raw token `opacityGrayLight80800`
-- Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`
-- Remove radio component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
-- Remove checkbox component token `sizeIndicator`, use `controlItem.sizeControlIndicator` instead
+- Remove color semantic tokens `actionAccentLight`, `actionAccentDark` and `actionAccent`; use if relevant `colorAccent` bar component tokens
+- Remove radio component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
+- Remove checkbox component token `sizeIndicator`; use `controlItem.sizeControlIndicator` instead
 - Remove following control item component tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`,
 `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`
 - Remove use of all raw tokens for Sosh and use new ones
