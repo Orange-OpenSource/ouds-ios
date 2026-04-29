@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
 - `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
 - URL redirection for documentation (Orange-OpenSource/ouds-ios#1481)
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
