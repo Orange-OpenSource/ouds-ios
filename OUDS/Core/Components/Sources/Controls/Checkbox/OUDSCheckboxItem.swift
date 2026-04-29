@@ -478,7 +478,7 @@ public struct OUDSCheckboxItem: View {
         let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.errorText?.rawValue ?? "" // TODO: #1405 - Check if any regression
+        let errorText = layoutData.errorText?.rawValue ?? ""
         let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"

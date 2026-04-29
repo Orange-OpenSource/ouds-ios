@@ -197,7 +197,8 @@ public struct OUDSTextArea: View {
     ///     OUDSTextArea(label: "Comments", text: $text, status: .error(message: "This field can't be empty."))
     ///
     ///     // Rich text error
-    ///     OUDSTextArea(label: "Comments", text: $text, status: .richError(message: "This field **must be defined**."))
+    ///     OUDSTextArea(label: "Comments", text: $text, status: .richError(message: AttributedString(markdown: "This field **must be defined**.")))
+    ///     // Manage parsing of AttributedString on your side
     /// ```
     ///
     /// - Since: 1.4.0
@@ -285,7 +286,7 @@ public struct OUDSTextArea: View {
             case let .plain(string):
                 string
             case let .rich(attributedString):
-                String(describing: attributedString)
+                String(attributedString.characters)
             case .charactersMaxCount:
                 String(format: "core_textArea_charactersRemaining".localized(), remainingCount)
             }

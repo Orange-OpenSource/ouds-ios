@@ -13,8 +13,6 @@
 
 import SwiftUI
 
-// TODO: #1405 - Add unit tests
-
 // MARK: - Textual Content
 
 /// Some components can have textual contents like descriptions.
@@ -25,11 +23,11 @@ enum TextualContent {
     /// The text is a raw `String` to use as is
     case raw(String)
 
-    /// The text is an `AtttributtedString`, a rich text
+    /// The text is an `AttributtedString`, a rich text
     case attributed(AttributedString)
 
     /// Returns the text value of the element.
-    /// Voice Over will be able to vocalized it, at least for `String` and `AttributedString(markdown:)` cases.
+    /// Voice Over will be able to vocalize it, at least for `String` and `AttributedString(markdown:)` cases.
     var rawValue: String {
         switch self {
         case let .raw(text):

@@ -15,7 +15,7 @@ import SwiftUI
 
 extension View {
 
-    /// Helps to create a `Text` View with the suitable infered type, otherwise compiler gets nut.
+    /// Helps to create a `Text` View with the suitable inferred type, otherwise compiler gets nuts.
     ///
     /// - Parameter description: The text to display in a particular context
     func textView(for description: TextualContent) -> Text {

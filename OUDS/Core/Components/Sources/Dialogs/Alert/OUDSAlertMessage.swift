@@ -27,7 +27,7 @@ import SwiftUI
 ///         // From a localizable in a bundle
 ///         OUDSAlertMessage(LocalizedStringKey("label_wording"), bundle: Bundle.module)
 ///
-///         // With a rich text for the description (e.g. markdown here, do not forge to manage the errors)
+///         // With a rich text for the description (e.g. markdown here, do not forget to manage the errors)
 ///         let richDescription = AttributedString(markdown: "You **must read this text**")
 ///         OUDSAlertMessage(label: "Label", description: richDescription)
 ///
@@ -226,7 +226,7 @@ public struct OUDSAlertMessage: View {
         self.bulletList = bulletList.map { .raw($0) }
     }
 
-    /// Creates an alert message with bulle tlsit containing rich text.
+    /// Creates an alert message with bullet list containing rich text.
     ///
     /// Use the `View/disabled(_:)` method to have component in disabled state.
     ///

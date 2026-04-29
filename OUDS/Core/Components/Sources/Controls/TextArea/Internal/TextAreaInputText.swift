@@ -81,7 +81,7 @@ struct TextAreaInputText: View {
 
     private var cursorColor: MultipleColorSemanticToken {
         switch status {
-        case .error:
+        case .error, .richError:
             theme.colors.actionNegativePressed
         default:
             theme.colors.contentDefault
