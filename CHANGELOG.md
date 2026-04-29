@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **BREAKING**: Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area` components (Orange-OpenSource/ouds-ios#1405)
 - **BREAKING**: `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 
 ### Changed
@@ -17,11 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
 - **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
 - **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
-- Rich text for `alert message` component (Orange-OpenSource/ouds-ios#1405)
-- Rich text for `alert message`, `bullet list` components (Orange-OpenSource/ouds-ios#1405)
-- Rich text for `alert message`, `bullet list`, `switch item` components (Orange-OpenSource/ouds-ios#1405)
-- Rich text for `alert message`, `bullet list`, `switch item`, `radio item` components (Orange-OpenSource/ouds-ios#1405)
-- Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item` components (Orange-OpenSource/ouds-ios#1405)
 
 ### Fixed
 

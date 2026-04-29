@@ -72,7 +72,7 @@ struct TextAreaInputText: View {
 
     private var placeholderColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .readOnly, .loading:
+        case .enabled, .error, .richError, .readOnly, .loading:
             theme.colors.contentMuted
         case .disabled:
             theme.colors.actionDisabled
@@ -90,7 +90,7 @@ struct TextAreaInputText: View {
 
     private var inputTextColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .readOnly, .loading:
+        case .enabled, .error, .richError, .readOnly, .loading:
             theme.colors.contentDefault
         case .disabled:
             theme.colors.actionDisabled
