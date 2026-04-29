@@ -12,6 +12,7 @@
 ### Overview
 
 Tokens librairies have been updated, with some raw, semantic and components tokens removed or renamed.
+API for `action type` of `toolbar item` has been enriched.
 
 ### Before You Begin
 
@@ -99,7 +100,6 @@ For bar component tokens
 | `sizeWidthActiveIndicatorCustomTop`             | `sizeWidthCurrentIndicatorCustomTop`            |
 | `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
 | `sizeWidthActiveIndicatorCustomBottom`          | `sizeWidthCurrentIndicatorCustomBottom`         |
-
     
 **Required Action**:
 - Use the new names as explained above
@@ -135,6 +135,18 @@ The tokens provider for charts colors, previously named `charts`, is now named `
 - Rename any use of `theme.charts` to `theme.colorsCharts`
 
 **Reason for Change**: Bring more clarity in naming
+
+### Refactor of API for `action type` of `toolbar item`
+
+The `OUDSToolBarItem.ActionType` enum has been updated for the `icon` case.
+A new parameter named `badgeType` appeared.
+
+**Impact**: Low
+
+**Required Action**: 
+- If you make pattern matching on this case, add a new slot for this parameter.
+
+**Reason for Change**: Manage badge for items with icons in toolbars
 
 ### Compatibility
 

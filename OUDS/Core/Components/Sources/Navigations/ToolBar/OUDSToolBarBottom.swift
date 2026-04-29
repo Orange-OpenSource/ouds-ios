@@ -34,6 +34,14 @@ import SwiftUI
 /// - If you use both an  ``OUDSTabBar`` with the `toolBarBottom`, the toolbar will be **behind** the tabbar for iOS 26+, so not usable, **not recommended**
 /// - Avoid use of both `toolBarBottom` and ``OUDSTabBar`` in the same page
 ///
+/// ## Badges uses
+///
+/// Because the system does not render system badge for items in bottom toolbar, the ``OUDSBadge`` is used for iOS 26 with Liquid Glass and bottom toolbars.
+/// However the glassified effect of Liquid Glass does not make sometimes the badge readable, that is the reason why you should use badge for bottom toolbars with lots of care
+/// and prefer *prominent* or *tinted* styles for the item with the badge instead of *default*.
+///
+/// For iOS until 18 and without Liquid Glass ``OUDSBadge`` is always used.
+///
 /// ## Code samples
 ///
 /// Define leading and trailing items for the bottom toolbar
