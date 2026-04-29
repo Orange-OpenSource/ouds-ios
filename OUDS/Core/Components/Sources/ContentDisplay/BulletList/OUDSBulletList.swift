@@ -284,7 +284,7 @@ public struct OUDSBulletList: View {
 
     /// The type of asset in the unordered list
     /// - Since: 1.2.0
-    public enum UnorderedAsset {
+    @frozen public enum UnorderedAsset {
         /// A bullet for unordered bullet list
         case bullet
 
@@ -303,7 +303,7 @@ public struct OUDSBulletList: View {
 
     /// The visual type of the list
     /// - Since: 1.2.0
-    public enum `Type` {
+    @frozen public enum `Type` {
         /// Collects related items that don’t need to be in a specific order or sequence.
         /// List items are typically marked with bullets, but it is also possible to use a tick or any Solaris icon.
         ///
@@ -325,7 +325,7 @@ public struct OUDSBulletList: View {
 
     /// The typography style for the list item
     /// - Since: 1.2.0
-    public enum TextStyle {
+    @frozen public enum TextStyle {
         /// If the text accompanying the list component is the body large text.
         /// This variant is designed for more visual, engaging experiences.
         case bodyLarge

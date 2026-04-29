@@ -52,7 +52,7 @@ struct TextInputBackgroundModifier: ViewModifier {
             case .hover:
                 theme.colors.actionSupportHover
             }
-        case .error:
+        case .error, .richError:
             theme.colors.surfaceStatusNegativeMuted
         case .loading:
             theme.colors.actionSupportLoading

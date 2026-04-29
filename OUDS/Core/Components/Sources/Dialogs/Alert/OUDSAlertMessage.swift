@@ -108,7 +108,7 @@ public struct OUDSAlertMessage: View {
     public struct Link {
 
         /// The position of an `OUDSAlertMessage.Link`in the alert message.
-        public enum Position {
+        @frozen public enum Position {
             /// The link is displayed at the bottom of the alert message below the main message content.
             /// Recommended for mobile or narrow layouts, or when the text spans multiple lines. This vertical structure improves clarity and ensures the action remains
             /// visible after the message is read.
@@ -194,7 +194,7 @@ public struct OUDSAlertMessage: View {
     /// ```swift
     ///     OUDSAlertMessage(label: "Success! Your form was submitted.",
     ///                      status: .positive,
-    ///                      description: AttributedString(markdown: "This is **an important notice**") // Manage in your side errors for init
+    ///                      description: AttributedString(markdown: "This is **an important notice**")) // Manage in your side errors for init
     /// ```
     ///
     /// - Parameters:

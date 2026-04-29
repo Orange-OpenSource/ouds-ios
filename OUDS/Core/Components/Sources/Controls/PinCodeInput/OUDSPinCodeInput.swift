@@ -157,7 +157,7 @@ public struct OUDSPinCodeInput: View {
 
     /// The type of layout to apply to the *pin code input* to define the size of the input
     /// - Since: 1.4.0
-    public enum Length: Int {
+    @frozen public enum Length: Int {
         /// Four symbols required
         case four = 4
         /// Six symbols required
@@ -170,7 +170,7 @@ public struct OUDSPinCodeInput: View {
 
     /// Define all available status for the PIN code input
     /// - Since: 1.4.0
-    public enum Status: Equatable {
+    @frozen public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
 

@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **BREAKING**: Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area` components (Orange-OpenSource/ouds-ios#1405)
+- **BREAKING**: Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area`, `text input` components (Orange-OpenSource/ouds-ios#1405)
 - **BREAKING**: `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 
 ### Changed

@@ -28,7 +28,7 @@ struct TextInputContainer: View {
     let trailingAction: OUDSTextInput.TrailingAction?
     let isOutlined: Bool
     let status: OUDSTextInput.Status
-    let accessibilityHint: String?
+    let accessibilityHint: TextualContent?
     @State var hover: Bool = false
 
     @FocusState private var focused: Bool
@@ -80,7 +80,7 @@ struct TextInputContainer: View {
             }
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
-            .accessibilityHint(accessibilityHint ?? "")
+            .accessibilityHint(accessibilityHint?.rawValue ?? "")
 
             // Trailing action container
             TrailingActionContainer(trailingAction: trailingAction, status: status, interactionState: interactionState)
@@ -150,6 +150,8 @@ struct TextInputContainer: View {
         case .disabled, .readOnly:
             "core_common_disabled_a11y".localized()
         case let .error(message):
+            "core_common_onError_a11y".localized() + ": \(message)"
+        case let .richError(message):
             "core_common_onError_a11y".localized() + ": \(message)"
         case .loading:
             "core_common_loading_a11y".localized()
