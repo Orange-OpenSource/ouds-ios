@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `actions/upload-artifact` action from v7.0.0 to v7.0.1 for `scorecard` workflow
 - `json` RubyGem from v2.19.3 to v2.19.5
 - `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
 - `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
