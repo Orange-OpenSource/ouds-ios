@@ -85,7 +85,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
     let indicator: OUDSLink.Indicator
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: alignment, spacing: spacing) {
+        HStack(alignment: .center, spacing: spacing) {
             if indicator == .back {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
@@ -106,10 +106,6 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
 
     private var spacing: Double {
         size == .small ? theme.link.spaceColumnGapChevronSmall : theme.link.spaceColumnGapChevronDefault
-    }
-
-    private var alignment: VerticalAlignment {
-        indicator == .back ? .center : .bottom
     }
 }
 
