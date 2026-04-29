@@ -63,7 +63,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@4c56a21280b36d862b5fc31348f463d60bdc55d5 # v1.301.0, https://github.com/ruby/setup-ruby
         with:
-          ruby-version: '4.0.2'
+          ruby-version: '4.0.3'
 
       - name: Install Fastlane
         run: |
@@ -88,7 +88,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@4c56a21280b36d862b5fc31348f463d60bdc55d5 # v1.301.0, https://github.com/ruby/setup-ruby
         with:
-          ruby-version: '4.0.2'
+          ruby-version: '4.0.3'
 
       - name: Install Fastlane
         run: |
