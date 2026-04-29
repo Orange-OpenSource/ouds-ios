@@ -4,8 +4,31 @@
     // A toolbar item with the back icon and and a text, for iOS &lt; 26
     OUDSToolBarItem(navigation: .back(label: "Back"))
 
+    // A toolbar item with the label
+    OUDSToolBarItem(action: "Label") {
+       // do something
+    }
+
+    // A toolbar item with the label
+    OUDSToolBarItem(action: .label("Label")) {
+       // do something
+    }
+
+    // A toolbar item with the icon
+    OUDSToolBarItem(action: .icon(asset: Image("mail"),
+                    accessibilityLabel: "New messages available")) {
+       // do something
+    }
+
+    // A toolbar item with the icon and badge count
+    OUDSToolBarItem(action: .icon(asset: Image("mail"),
+                                  accessibilityLabel: "9 new messages",
+                                  badgeType: .number(count: 9))) {
+       // do something
+    }
+
     // A toolbar item with some View inside
     OUDSToolBarItem {
         // Menu, ...
     }
-</code></pre><blockquote class="aside since"><p class="label">Since</p><p>1.4.0</p></blockquote><h2>Topics</h2><h3>Initializers</h3><ul><li><a href="init(action:)/index.html"><code>init(action: OUDSToolBarItem.ActionType)</code><p>Creates a toobar item with action type.</p></a></li><li><a href="init(action:style:)/index.html"><code>init(action: OUDSToolBarItem.ActionType, style: OUDSToolBarItem.ActionStyle)</code><p>Creates a toobar item with action type and a style</p></a></li><li><a href="init(content:)/index.html"><code>init(content: () -&gt; some View)</code><p>Creates a toobar item with a custom view.</p></a></li><li><a href="init(icon:accessibilitylabel:action:)/index.html"><code>init(icon: Image, accessibilityLabel: String, action: (() -&gt; Void)?)</code><p>Creates an action toolbar item with an icon only dedicated to action.</p></a></li><li><a href="init(label:action:)/index.html"><code>init(label: String, action: (() -&gt; Void)?)</code><p>Creates an action toolbar item with only a text</p></a></li><li><a href="init(navigation:)/index.html"><code>init(navigation: OUDSToolBarItem.NavigationType)</code><p>Creates a toobar item with icon dedicated to navigation.</p></a></li></ul><h3>Instance Properties</h3><ul><li><a href="body/index.html"><code>var body: some View</code></a></li><li><a href="id/index.html"><code>let id: UUID</code></a></li></ul><h3>Enumerations</h3><ul><li><a href="actionstyle/index.html"><code>enum ActionStyle</code><p>Defines the styling configuration for tooolbar items for iOS &gt; 26</p></a></li><li><a href="actiontype/index.html"><code>enum ActionType</code><p>Defines the built-in action type available for the toolbars. Those items can be used at <code>.topLeading</code> and <code>.topTrailing</code> positions of a <code>toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)</code></p></a></li><li><a href="navigationtype/index.html"><code>enum NavigationType</code><p>Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of <code>.toolBar</code> Each case maps to an image asset provided by the OUDS package resources.</p></a></li></ul></article></noscript><div id="app"></div></body></html>
+</code></pre><blockquote class="aside since"><p class="label">Since</p><p>1.4.0</p></blockquote><h2>Topics</h2><h3>Initializers</h3><ul><li><a href="init(action:)/index.html"><code>init(action: OUDSToolBarItem.ActionType)</code><p>Creates a toobar item with action type.</p></a></li><li><a href="init(action:style:)/index.html"><code>init(action: OUDSToolBarItem.ActionType, style: OUDSToolBarItem.ActionStyle)</code><p>Creates a toobar item with action type and a style</p></a></li><li><a href="init(content:)/index.html"><code>init(content: () -&gt; some View)</code><p>Creates a toobar item with a custom view.</p></a></li><li><a href="init(icon:accessibilitylabel:action:)/index.html"><code>init(icon: Image, accessibilityLabel: String, action: (() -&gt; Void)?)</code><p>Creates an action toolbar item with an icon only dedicated to action.</p></a></li><li><a href="init(label:action:)/index.html"><code>init(label: String, action: (() -&gt; Void)?)</code><p>Creates an action toolbar item with only a text</p></a></li><li><a href="init(navigation:)/index.html"><code>init(navigation: OUDSToolBarItem.NavigationType)</code><p>Creates a toobar item with icon dedicated to navigation.</p></a></li></ul><h3>Instance Properties</h3><ul><li><a href="body/index.html"><code>var body: some View</code></a></li><li><a href="id/index.html"><code>let id: UUID</code></a></li></ul><h3>Enumerations</h3><ul><li><a href="actionstyle/index.html"><code>enum ActionStyle</code><p>Defines the styling configuration for tooolbar items for iOS &gt; 26</p></a></li><li><a href="actiontype/index.html"><code>enum ActionType</code><p>Defines the built-in action type available for the toolbars. Those items can be used at <code>.topLeading</code> and <code>.topTrailing</code> positions of a <code>toolBarTop(_:hasLargeTitle:subtitle:leadingItems:trailingItems:)</code></p></a></li><li><a href="badgetype/index.html"><code>enum BadgeType</code><p>Defines the badge type can be added on <code>ActionType.icon</code> for item of toolbars.</p></a></li><li><a href="navigationtype/index.html"><code>enum NavigationType</code><p>Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of <code>.toolBar</code> Each case maps to an image asset provided by the OUDS package resources.</p></a></li></ul></article></noscript><div id="app"></div></body></html>

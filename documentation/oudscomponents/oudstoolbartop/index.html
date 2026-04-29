@@ -4,7 +4,7 @@
                 .accentColor(theme.colors.contentDefault)
         }
     }
-</code></pre><h2>Platform considerations</h2><ul><li><p>The component is available on iOS, iPadOS, and visionOS</p></li><li><p>The component is not available for watchOS, tvOS and macOS</p></li></ul><h2>Code sample</h2><pre class="swift"><code>    ContentView()
+</code></pre><h2>Platform considerations</h2><ul><li><p>The component is available on iOS, iPadOS, and visionOS</p></li><li><p>The component is not available for watchOS, tvOS and macOS</p></li></ul><h2>Badges uses</h2><p>For iOS 26 with Liquid Glass, the system badge is used because the <a href="../oudsbadge/index.html"><code>OUDSBadge</code></a> does not provide a suitable rendering with the glassified effect applied on the top toolbar. For iOS until 18 and without Liquid Glass <a href="../oudsbadge/index.html"><code>OUDSBadge</code></a> is always used.</p><h2>Code sample</h2><pre class="swift"><code>    ContentView()
         .toolBarTop("Title",
             leadingItems: {
                 OUDSToolBarItem(navigation: .back())
