@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `badge` on `toolbar` components items (Orange-OpenSource/ouds-ios#1398)
+- **BREAKING**: `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
 
 ### Changed
 

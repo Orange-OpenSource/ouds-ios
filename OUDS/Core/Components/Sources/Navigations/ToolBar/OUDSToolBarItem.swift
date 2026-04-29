@@ -50,8 +50,8 @@ import SwiftUI
 ///
 ///     // A toolbar item with the icon and badge count
 ///     OUDSToolBarItem(action: .icon(asset: Image("mail"),
-///                     accessibilityLabel: "9 new messages",
-///                     badge: .number(count: 9))) {
+///                                   accessibilityLabel: "9 new messages",
+///                                   badgeType: .number(count: 9))) {
 ///        // do something
 ///     }
 ///
@@ -122,7 +122,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         /// The basic badge without any information
         case standard
 
-        /// Tha badge with a count
+        /// The badge with a count
         ///
         /// - Parameter count:The number displayed in the badge.
         case number(count: UInt8)

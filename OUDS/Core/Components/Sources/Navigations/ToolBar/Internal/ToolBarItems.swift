@@ -69,11 +69,10 @@ struct ToolBarItemActionButton: View {
 
 // MARK: - ToolBar Item Badge Modifier
 
-/// Depending to the OS version and the toolbar associated to the item, adds a badge to the item/
-/// For iOS 26 / Liquid Glass, system badge must be used for top toolbar, otherwise badge won't be readable.
-/// However with this case and for bottom toolbar, the system does not display system badge, thus an OUDS badge should be used
-/// as workaround.
-/// For iOS until 18, use OUDS badge in all cases.
+/// Depending on the OS version and the toolbar associated with the item, adds a badge to the item.
+/// For iOS 26 / Liquid Glass, the system badge must be used for the top toolbar; otherwise, the badge will not be readable.
+/// However, for the bottom toolbar, the system does not display the badge, so an OUDS badge is used as a workaround.
+/// For iOS versions up to 18, use the OUDS badge in all cases.
 private struct ToolBarItemBadgeModifier: ViewModifier {
 
     let type: OUDSToolBarItem.BadgeType?
