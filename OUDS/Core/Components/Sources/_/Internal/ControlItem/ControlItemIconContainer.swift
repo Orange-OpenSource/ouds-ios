@@ -14,30 +14,26 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the trailing container of the ControlItem.
+/// This is the icon container of the ControlItem.
 ///
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
-///
-/// If `ContolItem`is on error, the provided content is replaced by an error asset.
-struct ControlItemTrailingContainer<Content: View>: View {
+/// The icon with a fixed size is centered in this frame.
+struct ControlItemIconContainer: View {
 
     // MARK: - Stored properties
 
     let interactionState: InteractionState
-    let isError: Bool
-    @ViewBuilder
-    let content: () -> Content
+    let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        // TODO: check if is EmptyView work well
-        if isError || !(computedTrailingAction is EmptyView) {
+        if layoutData.isError || layoutData.icon != nil {
             HStack(alignment: .center, spacing: 0) {
-                computedTrailingAction
+                icon
             }
             .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
@@ -46,8 +42,8 @@ struct ControlItemTrailingContainer<Content: View>: View {
     // MARK: - Colors
 
     @ViewBuilder
-    private var computedTrailingAction: some View {
-        if isError {
+    private var icon: some View {
+        if layoutData.isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
                 .resizable()
@@ -57,7 +53,15 @@ struct ControlItemTrailingContainer<Content: View>: View {
                 .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
                 .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
-            content()
+            if let icon = layoutData.icon {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .accessibilityHidden(true)
+                    .foregroundStyle(color)
+                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
+                    .toFlip(layoutData.flipIcon)
+            }
         }
     }
 

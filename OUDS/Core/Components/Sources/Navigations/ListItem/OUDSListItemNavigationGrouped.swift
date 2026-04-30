@@ -102,7 +102,7 @@ public struct OUDSListItemNavigationGrouped: View {
     // MARK: - Body
 
     public var body: some View {
-        ControlItem(layoutData: layoutData, isSelected: false, action: action) {
+        ListControlItem(layoutData: layoutData, isSelected: false, action: action) {
             EmptyView()
         } trailing: {
             EmptyView()

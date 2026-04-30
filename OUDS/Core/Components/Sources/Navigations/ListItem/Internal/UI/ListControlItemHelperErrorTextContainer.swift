@@ -19,7 +19,7 @@ import SwiftUI
 /// and updates text color according to the `InteractionState`:
 /// - error message if not empty and if `isError` flag are set in `true`.
 /// - helper text, if `isError` flag are set in `false`
-struct ControlItemHelperErrorTextContainer: View {
+struct ListControlItemHelperErrorTextContainer: View {
 
     // MARK: - Properties
 

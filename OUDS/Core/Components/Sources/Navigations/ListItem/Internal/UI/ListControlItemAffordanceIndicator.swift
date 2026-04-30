@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ControlItemAffordanceIndicator: View {
+struct ListControlItemAffordanceIndicator: View {
 
     // MARK: - Properties
 

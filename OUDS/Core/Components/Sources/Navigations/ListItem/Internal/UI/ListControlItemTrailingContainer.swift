@@ -14,28 +14,30 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the icon container of the ControlItem.
+/// This is the trailing container of the ControlItem.
 ///
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
-/// The icon with a fixed size is centered in this frame.
-struct ControlItemIconContainer: View {
+///
+/// If `ContolItem`is on error, the provided content is replaced by an error asset.
+struct ListControlItemTrailingContainer<Content: View>: View {
 
-    // MARK: - Properties
+    // MARK: - Stored properties
 
     let interactionState: InteractionState
-    let icon: Image?
-    let flipIcon: Bool
     let isError: Bool
+    @ViewBuilder
+    let content: () -> Content
 
     @Environment(\.theme) private var theme
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
-        if isError || icon != nil {
+        // TODO: check if is EmptyView work well
+        if isError || !(computedTrailingAction is EmptyView) {
             HStack(alignment: .center, spacing: 0) {
-                cumputedIcon
+                computedTrailingAction
             }
             .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
@@ -44,7 +46,7 @@ struct ControlItemIconContainer: View {
     // MARK: - Colors
 
     @ViewBuilder
-    private var cumputedIcon: some View {
+    private var computedTrailingAction: some View {
         if isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
                 .renderingMode(.template)
@@ -55,15 +57,7 @@ struct ControlItemIconContainer: View {
                 .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
                 .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
         } else {
-            if let icon {
-                icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .accessibilityHidden(true)
-                    .foregroundStyle(color)
-                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
-                    .toFlip(flipIcon)
-            }
+            content()
         }
     }
 

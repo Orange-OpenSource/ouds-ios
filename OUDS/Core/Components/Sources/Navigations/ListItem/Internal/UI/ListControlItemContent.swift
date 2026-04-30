@@ -21,7 +21,7 @@ import SwiftUI
 /// - the background modifier
 /// - the boder modifier
 /// - the outlined modifier
-struct ControlItemContent<Leading: View, Trailing: View>: View {
+struct ListControlItemContent<Leading: View, Trailing: View>: View {
 
     // MARK: - Properties
 
@@ -40,7 +40,7 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
                 if layoutData.affordanceType == .previous {
-                    ControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
+                    ListControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
                         .background(.red)
                 }
 
@@ -55,17 +55,17 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
                 }
 
                 if layoutData.affordanceType == .next || layoutData.affordanceType == .external {
-                    ControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
+                    ListControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
                         .background(.yellow)
                 }
             }
             .padding(.vertical, theme.controlItem.spacePaddingBlockDefault)
             .padding(.horizontal, theme.controlItem.spacePaddingInline)
-            .modifier(ControlItemBackgroundModifier(interactionState: interactionState))
-            .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutDataStyle: layoutData.style, isSelected: isSelected))
+            .modifier(ListControlItemBackgroundModifier(interactionState: interactionState))
+            .modifier(ListControlItemBordersModifier(interactionState: interactionState, layoutDataStyle: layoutData.style, isSelected: isSelected))
 
-            ControlItemHelperErrorTextContainer(layoutDataStyle: layoutData.style,
-                                                interactionState: interactionState)
+            ListControlItemHelperErrorTextContainer(layoutDataStyle: layoutData.style,
+                                                    interactionState: interactionState)
         }
         .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
@@ -75,15 +75,15 @@ struct ControlItemContent<Leading: View, Trailing: View>: View {
     // MARK: - Containers
 
     private func leadingContainer() -> some View {
-        ControlItemLeadingContainer(content: leading)
+        ListControlItemLeadingContainer(content: leading)
     }
 
     private func textContainer() -> some View {
-        ControlItemTextContainer(interactionState: interactionState, layoutData: layoutData)
+        ListControlItemTextContainer(interactionState: interactionState, layoutData: layoutData)
     }
 
     private func trailingContainer() -> some View {
-        ControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
+        ListControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
     }
 
     // MARK: - Computed properties

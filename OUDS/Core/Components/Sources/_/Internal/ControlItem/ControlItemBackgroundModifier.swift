@@ -17,7 +17,7 @@ import SwiftUI
 /// A `ViewModifier` to apply to `ControlItem` views so as to define the background
 struct ControlItemBackgroundModifier: ViewModifier {
 
-    // MARK: Properties
+    // MARK: Stored properties
 
     let interactionState: InteractionState
     @Environment(\.theme) private var theme

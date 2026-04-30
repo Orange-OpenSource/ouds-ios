@@ -16,7 +16,7 @@ import SwiftUI
 /// Modelizes the layout for indicator (checkbox, radio button or switch) and list Item with additional components like labels, helper text and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
 /// This internal component displays the leading and trailing elements and defines the layout as a SwiftUI button through the internal `InteractionButton`.
-struct ControlItem<Leading: View, Trailing: View>: View {
+struct ListControlItem<Leading: View, Trailing: View>: View {
 
     // MARK: - Properties
 
@@ -82,11 +82,11 @@ struct ControlItem<Leading: View, Trailing: View>: View {
         InteractionButton(isReadOnly: layoutData.style.isReadOnly) {
             action?()
         } content: { interactionState in
-            ControlItemContent(layoutData: layoutData,
-                               isSelected: isSelected,
-                               interactionState: interactionState,
-                               leading: leading,
-                               trailing: trailing)
+            ListControlItemContent(layoutData: layoutData,
+                                   isSelected: isSelected,
+                                   interactionState: interactionState,
+                                   leading: leading,
+                                   trailing: trailing)
         }
     }
 }

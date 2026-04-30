@@ -20,7 +20,7 @@ import SwiftUI
 /// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
 /// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
 /// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
-struct ControlItemBordersModifier: ViewModifier {
+struct ListControlItemBordersModifier: ViewModifier {
 
     // MARK: Properties
 

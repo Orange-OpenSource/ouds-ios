@@ -166,9 +166,7 @@ public struct OUDSRadioItem: View {
 
     // NOTE: Do not forget to keep updated OUDSRadioPickerData
     @Binding private var isOn: Bool
-    private let layoutData: ControlItemData
-    private let icon: Image?
-    private let flipIcon: Bool
+    private let layoutData: ControlItemLabel.LayoutData
     private let action: (() -> Void)?
 
     @Environment(\.isEnabled) private var isEnabled
@@ -256,20 +254,19 @@ public struct OUDSRadioItem: View {
             nil
         }
 
-        let texts = ControlItemData.Texts(label: label.localized(),
-                                          overline: nil,
-                                          extraLabel: extraLabel?.localized(),
-                                          description: description?.localized())
-        let style = ControlItemData.Style(isOutlined: isOutlined,
-                                          isError: isError,
-                                          helperErrorText: errorTextContent,
-                                          isReadOnly: isReadOnly,
-                                          hasDivider: hasDivider,
-                                          constrainedMaxWidth: constrainedMaxWidth,
-                                          isReversed: isReversed)
-        layoutData = .init(texts: texts, style: style)
-        self.icon = icon
-        self.flipIcon = flipIcon
+        layoutData = .init(
+            label: label.localized(),
+            extraLabel: extraLabel?.localized(),
+            description: description?.localized(),
+            icon: icon,
+            flipIcon: flipIcon,
+            isOutlined: isOutlined,
+            isError: isError,
+            errorText: errorTextContent,
+            isReadOnly: isReadOnly,
+            hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
+            orientation: isReversed ? .reversed : .default)
         self.action = action
     }
 
@@ -350,20 +347,19 @@ public struct OUDSRadioItem: View {
 
         _isOn = isOn
 
-        let texts = ControlItemData.Texts(label: label.localized(),
-                                          overline: nil,
-                                          extraLabel: extraLabel?.localized(),
-                                          description: description?.localized())
-        let style = ControlItemData.Style(isOutlined: isOutlined,
-                                          isError: isError,
-                                          helperErrorText: .attributed(errorText),
-                                          isReadOnly: isReadOnly,
-                                          hasDivider: hasDivider,
-                                          constrainedMaxWidth: constrainedMaxWidth,
-                                          isReversed: isReversed)
-        layoutData = .init(texts: texts, style: style)
-        self.icon = icon
-        self.flipIcon = flipIcon
+        layoutData = .init(
+            label: label.localized(),
+            extraLabel: extraLabel?.localized(),
+            description: description?.localized(),
+            icon: icon,
+            flipIcon: flipIcon,
+            isOutlined: isOutlined,
+            isError: isError,
+            errorText: .attributed(errorText),
+            isReadOnly: isReadOnly,
+            hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
+            orientation: isReversed ? .reversed : .default)
         self.action = action
     }
 
@@ -494,11 +490,7 @@ public struct OUDSRadioItem: View {
     // MARK: Body
 
     public var body: some View {
-        ControlItemIndicator(type: .radioButton($isOn),
-                             layoutData: layoutData,
-                             icon: icon,
-                             flipIcon: flipIcon,
-                             action: action)
+        ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(accessibilityLabel)
             .accessibilityValue(accessibilityValue)
@@ -509,27 +501,27 @@ public struct OUDSRadioItem: View {
 
     /// Forge a string to vocalize the component label based on label, extraLabel and description
     private var accessibilityLabel: String {
-        let extraLabel = layoutData.texts.extraLabel?.isEmpty != false ? "" : ", \(layoutData.texts.extraLabel ?? "")"
-        let description = layoutData.texts.description?.isEmpty != false ? "" : ", \(layoutData.texts.description ?? "")"
-        return "\(layoutData.texts.label)\(extraLabel)\(description)"
+        let extraLabel = layoutData.extraLabel?.isEmpty != false ? "" : ", \(layoutData.extraLabel ?? "")"
+        let description = layoutData.description?.isEmpty != false ? "" : ", \(layoutData.description ?? "")"
+        return "\(layoutData.label)\(extraLabel)\(description)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component trait, value, state and error
     private var accessibilityValue: String {
         let traitDescription = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
         let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
-        let stateDescription = !isEnabled || layoutData.style.isReadOnly ? "core_common_disabled_a11y".localized() : ""
+        let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.style.helperErrorText?.rawValue ?? ""
-        let errorDescription = layoutData.style.isError ? "\(errorPrefix), \(errorText)" : ""
+        let errorText = layoutData.errorText?.rawValue ?? ""
+        let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
     private var accessibilityHint: String {
-        if layoutData.style.isReadOnly || !isEnabled {
+        if layoutData.isReadOnly || !isEnabled {
             ""
         } else {
             _isOn.wrappedValue
