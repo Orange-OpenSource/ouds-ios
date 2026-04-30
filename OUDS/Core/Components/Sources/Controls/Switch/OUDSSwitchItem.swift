@@ -302,7 +302,11 @@ public struct OUDSSwitchItem: View {
         let valueDescription = (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
         let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
-        return "\(traitDescription). \(valueDescription). \(stateDescription)"
+        let errorPrefix = "core_common_onError_a11y".localized()
+        let errorText = layoutData.errorText?.localized() ?? ""
+        let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
+
+        return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component hint
