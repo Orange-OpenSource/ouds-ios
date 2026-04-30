@@ -15,20 +15,20 @@ import OUDSThemesContract
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define the background
-struct ControlItemBackgroundModifier: ViewModifier {
+struct ListControlItemBackgroundModifier: ViewModifier {
 
     // MARK: Properties
 
-    let interactionState: OUDSButtonInteractionState
+    let interactionState: InteractionState
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         if interactionState == .hover {
-            content.background(theme.listItem.colorBgHover)
+            content.background(theme.controlItem.colorBgHover)
         } else if interactionState == .pressed {
-            content.background(theme.listItem.colorBgPressed)
+            content.background(theme.controlItem.colorBgPressed)
         } else {
             content
         }

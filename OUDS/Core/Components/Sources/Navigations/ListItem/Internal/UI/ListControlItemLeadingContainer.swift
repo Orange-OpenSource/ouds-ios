@@ -18,7 +18,7 @@ import SwiftUI
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
 /// The content with a fixed size is centered in this frame.
-struct ControlItemLeadingContainer<Content: View>: View {
+struct ListControlItemLeadingContainer<Content: View>: View {
 
     // MARK: - Properties
 

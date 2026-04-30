@@ -24,9 +24,9 @@ struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Properties
 
-    let interactionState: OUDSButtonInteractionState
-    let layoutDataStyle: ControlItemData.Style
-    let isSelected: Bool
+    let interactionState: InteractionState
+    let layoutData: ControlItemLabel.LayoutData
+    let isOn: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -35,14 +35,14 @@ struct ControlItemBordersModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        if layoutDataStyle.isOutlined, let borderColor {
+        if layoutData.isOutlined, let borderColor {
             content
                 .border(style: theme.borders.styleDefault,
                         width: theme.borders.widthDefault,
                         radius: radius,
                         color: borderColor)
         } else {
-            if layoutDataStyle.hasDivider {
+            if layoutData.hasDivider {
                 // Divider must be inside
                 ZStack(alignment: .bottom) {
                     content
@@ -57,11 +57,11 @@ struct ControlItemBordersModifier: ViewModifier {
     // MARK: Private helpers
 
     private var dividerColor: MultipleColorSemanticToken {
-        layoutDataStyle.isError ? errorColor : theme.colors.borderDefault
+        layoutData.isError ? errorColor : theme.colors.borderDefault
     }
 
     private var borderColor: MultipleColorSemanticToken? {
-        layoutDataStyle.isError ? errorColor : successColor
+        layoutData.isError ? errorColor : successColor
     }
 
     private var errorColor: MultipleColorSemanticToken {
@@ -82,18 +82,18 @@ struct ControlItemBordersModifier: ViewModifier {
         switch interactionState {
         case .enabled:
             if colorSchemeContrast == .increased, colorScheme == .light {
-                isSelected ? theme.colors.contentDefault : nil
+                isOn ? theme.colors.contentDefault : nil
             } else {
-                isSelected ? theme.colors.actionSelected : nil
+                isOn ? theme.colors.actionSelected : nil
             }
         case .hover:
             theme.colors.actionHover
         case .pressed:
             theme.colors.actionPressed
         case .disabled:
-            isSelected ? theme.colors.actionDisabled : nil
+            isOn ? theme.colors.actionDisabled : nil
         case .readOnly:
-            isSelected ? theme.colors.actionDisabled : nil
+            isOn ? theme.colors.actionDisabled : nil
         }
     }
 

@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The texts can be considered as a rich label for the associated indicator (checkbox, radio, switch).
-struct ControlItemTextContainer: View {
+struct ListControlItemTextContainer: View {
 
     // MARK: - Stored properties
 
