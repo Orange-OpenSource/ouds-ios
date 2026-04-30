@@ -12,25 +12,66 @@
 //
 
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define the background
 struct ListControlItemBackgroundModifier: ViewModifier {
 
-    // MARK: Properties
+    // MARK: Stored properties
 
     let interactionState: InteractionState
+    let mode: Mode
+
+    enum Mode {
+        case outlined
+        case `default`(forceEnabledColor: Bool)
+    }
+
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     func body(content: Content) -> some View {
-        if interactionState == .hover {
-            content.background(theme.controlItem.colorBgHover)
-        } else if interactionState == .pressed {
-            content.background(theme.controlItem.colorBgPressed)
+        if let color {
+            content.background(color)
         } else {
             content
+        }
+    }
+
+    // MARK: - Helpers
+
+    private var color: MultipleColorSemanticToken? {
+        switch mode {
+        case .outlined:
+            outlinedColor
+        case let .default(forceEnabledColor):
+            defaultColor(forceEnabledColor: forceEnabledColor)
+        }
+    }
+
+    private func defaultColor(forceEnabledColor: Bool) -> MultipleColorSemanticToken? {
+        switch interactionState {
+        case .enabled:
+            forceEnabledColor ? theme.colors.actionSupportEnabled : nil
+        case .hover:
+            theme.colors.actionSupportHover
+        case .pressed:
+            theme.colors.actionSupportPressed
+        case .disabled:
+            theme.colors.actionSupportEnabled
+        case .readOnly:
+            theme.colors.actionSupportEnabled
+        }
+    }
+
+    private var outlinedColor: MultipleColorSemanticToken? {
+        switch interactionState {
+        case .readOnly:
+            theme.colors.actionSupportDisabled
+        default:
+            nil
         }
     }
 }

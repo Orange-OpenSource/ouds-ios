@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ListControlItemAffordanceIndicator: View {
+struct ListControlItemAffordanceContainer: View {
 
     // MARK: - Properties
 
@@ -24,15 +24,16 @@ struct ListControlItemAffordanceIndicator: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
 
-    // MARK: - Body
-
     var body: some View {
         if let assetName {
-            Image(decorative: assetName, bundle: theme.resourcesBundle)
-                .renderingMode(.template)
-                .resizable()
-                .foregroundColor(tintColor)
-                .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
+            HStack {
+                Image(decorative: assetName, bundle: theme.resourcesBundle)
+                    .renderingMode(.template)
+                    .resizable()
+                    .foregroundColor(color)
+                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
+            }
+            .frame(minHeight: theme.controlItem.sizeAssetMedium, alignment: .center)
         }
     }
 
@@ -52,7 +53,7 @@ struct ListControlItemAffordanceIndicator: View {
         }
     }
 
-    private var tintColor: MultipleColorSemanticToken {
+    private var color: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
             theme.colors.actionEnabled
