@@ -40,28 +40,20 @@ struct ListControlItemContent<Leading: View, Trailing: View>: View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
                 if layoutData.affordanceType == .previous {
-                    ListControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
-                        .background(.red)
+                    ListControlItemAffordanceContainer(type: layoutData.affordanceType, interactionState: interactionState)
                 }
 
-                if layoutData.style.isReversed {
-                    trailingContainer()
-                    textContainer()
-                    leadingContainer()
-                } else {
-                    leadingContainer()
-                    textContainer()
-                    trailingContainer()
-                }
+                leadingContainer()
+                textContainer()
+                trailingContainer()
 
                 if layoutData.affordanceType == .next || layoutData.affordanceType == .external {
-                    ListControlItemAffordanceIndicator(type: layoutData.affordanceType, interactionState: interactionState)
-                        .background(.yellow)
+                    ListControlItemAffordanceContainer(type: layoutData.affordanceType, interactionState: interactionState)
                 }
             }
             .padding(.vertical, theme.controlItem.spacePaddingBlockDefault)
             .padding(.horizontal, theme.controlItem.spacePaddingInline)
-            .modifier(ListControlItemBackgroundModifier(interactionState: interactionState))
+            .modifier(ListControlItemBackgroundModifier(interactionState: interactionState, mode: layoutData.style.isOutlined ? .outlined : .default(forceEnabledColor: true)))
             .modifier(ListControlItemBordersModifier(interactionState: interactionState, layoutDataStyle: layoutData.style, isSelected: isSelected))
 
             ListControlItemHelperErrorTextContainer(layoutDataStyle: layoutData.style,
@@ -73,17 +65,29 @@ struct ListControlItemContent<Leading: View, Trailing: View>: View {
     }
 
     // MARK: - Containers
-
+    @ViewBuilder
     private func leadingContainer() -> some View {
-        ListControlItemLeadingContainer(content: leading)
+        // Remove leading element if previous affordance is presented
+        if layoutData.affordanceType != .previous {
+            if layoutData.style.isReversed {
+                ListControlItemLeadingContainer(content: leading)
+            } else {
+                ListControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
+            }
+        }
     }
 
     private func textContainer() -> some View {
         ListControlItemTextContainer(interactionState: interactionState, layoutData: layoutData)
     }
 
+    @ViewBuilder
     private func trailingContainer() -> some View {
-        ListControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
+        if layoutData.style.isReversed {
+            ListControlItemTrailingContainer(interactionState: interactionState, isError: layoutData.style.isError, content: trailing)
+        } else {
+            ListControlItemLeadingContainer(content: leading)
+        }
     }
 
     // MARK: - Computed properties

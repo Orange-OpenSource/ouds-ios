@@ -37,13 +37,21 @@ struct ControlItemData {
         case external
     }
 
+    enum `Type` {
+        case `static`
+        case grouped
+        case separated
+    }
+
     let texts: Texts
     let style: Style
+    let type: `Type`
     let affordanceType: AffordanceType?
 
-    init(texts: Texts, style: Style, affordanceType: AffordanceType? = nil) {
+    init(texts: Texts, style: Style, type: Type = .grouped, affordanceType: AffordanceType? = nil) {
         self.texts = texts
         self.style = style
+        self.type = type
         self.affordanceType = affordanceType
     }
 }

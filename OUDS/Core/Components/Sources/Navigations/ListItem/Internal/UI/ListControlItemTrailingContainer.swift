@@ -39,6 +39,7 @@ struct ListControlItemTrailingContainer<Content: View>: View {
             HStack(alignment: .center, spacing: 0) {
                 computedTrailingAction
             }
+            // TODO: with the rigth size
             .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
