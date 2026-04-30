@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
+- `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
 - URL redirection for documentation (Orange-OpenSource/ouds-ios#1481)
 - Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
 - **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
 - Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
 - Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
 
