@@ -18,7 +18,7 @@ import Testing
 // swiftlint:disable force_unwrapping
 
 /// Provides methods for assertions using *Swift Testing* library
-public enum TestsUtils {
+@frozen public enum TestsUtils {
 
     /// Checks if `value` is between `min` and `max`
     public static func assertBetween(min: Double, _ value: Double, max: Double) {

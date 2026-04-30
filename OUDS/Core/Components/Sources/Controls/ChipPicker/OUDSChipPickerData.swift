@@ -37,7 +37,7 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
     /// **Remark: For texts, strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     /// - Since: 0.17.0
-    public enum Layout {
+    @frozen public enum Layout {
         /// Layout with text only
         case text(text: String)
 

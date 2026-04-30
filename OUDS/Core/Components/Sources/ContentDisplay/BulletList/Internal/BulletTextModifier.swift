@@ -21,7 +21,7 @@ struct BulletListLabel: View {
 
     // MARK: Properties
 
-    let label: String
+    let label: TextualContent
     let textStyle: OUDSBulletList.TextStyle
     let isBold: Bool
 
@@ -31,9 +31,15 @@ struct BulletListLabel: View {
     // MARK: - Body
 
     var body: some View {
-        Text(label)
-            .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
-            .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+        if isBold {
+            Text(label.rawValue)
+                .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
+                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+        } else {
+            textView(for: label)
+                .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
+                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+        }
     }
 
     private var maxWidth: MultipleSizeSemanticToken {

@@ -51,7 +51,7 @@ struct InputText: View {
 
     private var labelColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .readOnly, .loading:
+        case .enabled, .error, .richError, .readOnly, .loading:
             text.wrappedValue.isEmpty ? theme.colors.contentMuted : theme.colors.contentDefault
         case .disabled:
             theme.colors.actionDisabled
@@ -60,7 +60,7 @@ struct InputText: View {
 
     private var cursorColor: MultipleColorSemanticToken {
         switch status {
-        case .error:
+        case .error, .richError:
             theme.colors.actionNegativePressed
         default:
             theme.colors.contentDefault
@@ -69,7 +69,7 @@ struct InputText: View {
 
     private var inputTextColor: MultipleColorSemanticToken {
         switch status {
-        case .enabled, .error, .loading, .readOnly:
+        case .enabled, .error, .richError, .loading, .readOnly:
             theme.colors.contentDefault
         case .disabled:
             theme.colors.actionDisabled

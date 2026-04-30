@@ -15,8 +15,6 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Bullet List
-
 /// Bullet list is a UI element that helps to view in related individual text items grouped together; items usually starting with a number or a bullet.
 /// Bullet list is also known as _Unordered list_ or _Ordered list_ and is not an interactive element by default.
 ///
@@ -118,6 +116,20 @@ import SwiftUI
 ///        }
 /// ```
 ///
+/// ## Rich text
+///
+/// Rich text can be applied only if `isBold` flag is set to *false*.
+///
+/// Strong text can be used sparingly within alert messages to highlight key information.
+/// Underlined text must not be used for emphasis, as it is commonly associated with links.
+/// If a hyperlink is needed within the content, the underlined style should be used.
+/// Italic should be used with care, some brands do not allow it like Orange brand.
+/// No other text styles should be used.
+///
+/// ## Accessibility considerations
+///
+/// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-bullet-list)
@@ -162,7 +174,7 @@ public struct OUDSBulletList: View {
 
         // MARK: Properties
 
-        let text: String
+        let text: TextualContent
         let subListType: OUDSBulletList.`Type`?
         let subListTextStyle: OUDSBulletList.TextStyle?
         let subListHasBoldText: Bool?
@@ -196,7 +208,37 @@ public struct OUDSBulletList: View {
                     subListHasBoldText: Bool? = nil,
                     @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
         {
-            self.text = text
+            self.text = .raw(text)
+            self.subListType = subListType
+            self.subListTextStyle = subListTextStyle
+            self.subListHasBoldText = subListHasBoldText
+            self.subItems = subItems()
+        }
+
+        /// Create the item with text and sub items, the text is a rich text.
+        /// Use the `subListType` , `subListTextStyle` and `subListHasBoldText`
+        /// to change properties for those sub items, if needed.
+        ///
+        /// ```swift
+        ///     OUDSBulletList.Item(AttributedString(markdown: "First **important** point")) // Manage in your side errors for init
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - richText: The rich text of the item
+        ///    - subListType: The specific `OUDSBulletList.Type` for the nested sub-list, if any. If `nil`,
+        ///     the type is inherited from the parent list.
+        ///    - subListTextStyle: The specific `OUDSBulletList.TextStyle` for the nested sub-list, if any. If
+        ///     `nil`, the text style is inherited from the parent list.
+        ///    - subListHasBoldText: Whether the text of the nested sub-list should be bold. If `nil`, the bold
+        ///     setting is inherited from the parent list.
+        ///    - subItems: The sub items builder to add to the current item. **Remark** only three levels are allowed.
+        public init(_ richText: AttributedString,
+                    subListType: OUDSBulletList.`Type`? = nil,
+                    subListTextStyle: OUDSBulletList.TextStyle? = nil,
+                    subListHasBoldText: Bool? = nil,
+                    @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
+        {
+            text = .attributed(richText)
             self.subListType = subListType
             self.subListTextStyle = subListTextStyle
             self.subListHasBoldText = subListHasBoldText
@@ -228,7 +270,7 @@ public struct OUDSBulletList: View {
                     subListHasBoldText: Bool? = nil,
                     @OUDSBulletListItemBuilder subItems: () -> [OUDSBulletList.Item] = { [] })
         {
-            text = key.resolved(tableName: tableName, bundle: bundle)
+            text = .raw(key.resolved(tableName: tableName, bundle: bundle))
             self.subListType = subListType
             self.subListTextStyle = subListTextStyle
             self.subListHasBoldText = subListHasBoldText
@@ -242,7 +284,7 @@ public struct OUDSBulletList: View {
 
     /// The type of asset in the unordered list
     /// - Since: 1.2.0
-    public enum UnorderedAsset {
+    @frozen public enum UnorderedAsset {
         /// A bullet for unordered bullet list
         case bullet
 
@@ -261,7 +303,7 @@ public struct OUDSBulletList: View {
 
     /// The visual type of the list
     /// - Since: 1.2.0
-    public enum `Type` {
+    @frozen public enum `Type` {
         /// Collects related items that don’t need to be in a specific order or sequence.
         /// List items are typically marked with bullets, but it is also possible to use a tick or any Solaris icon.
         ///
@@ -283,7 +325,7 @@ public struct OUDSBulletList: View {
 
     /// The typography style for the list item
     /// - Since: 1.2.0
-    public enum TextStyle {
+    @frozen public enum TextStyle {
         /// If the text accompanying the list component is the body large text.
         /// This variant is designed for more visual, engaging experiences.
         case bodyLarge

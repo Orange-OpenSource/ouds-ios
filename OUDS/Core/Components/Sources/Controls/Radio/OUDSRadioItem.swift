@@ -14,7 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Radio Item
+// swiftlint:disable file_length
 
 /// Radio button item is a UI element that allows to select a single option from a set of mutually exclusive choices.
 /// Radio button item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
@@ -48,7 +48,17 @@ import SwiftUI
 /// It could lead to a loss of meaning or semantics in the icon. Thus a specific flag can be used to flip the icon content whatever the layout direction is.
 /// It prevents the user do implement its own rules to flip or not image.
 ///
+/// ## Rich text
+///
+/// Rich text can only be used for error messages.
+///
+/// Strong text can be used sparingly to highlight key information within the content.
+/// No other text styles should be used.
+/// Underlined text must not be applied manually (e.g. in error message), as it is commonly associated with hyperlinks and may mislead users.
+///
 /// ## Accessibility considerations
+///
+/// Always check the results of rich text mode with high contrast, light and dark modes, and Voice Over vocalization.
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and optional texts and a custom radio trait.
 /// No accessibility identifier is defined in OUDS side as this value remains in the users hands.
@@ -237,6 +247,13 @@ public struct OUDSRadioItem: View {
         // swiftlint:enable force_unwrapping
 
         _isOn = isOn
+
+        let errorTextContent: TextualContent? = if let errorText {
+            .raw(errorText)
+        } else {
+            nil
+        }
+
         layoutData = .init(
             label: label.localized(),
             extraLabel: extraLabel?.localized(),
@@ -245,7 +262,7 @@ public struct OUDSRadioItem: View {
             flipIcon: flipIcon,
             isOutlined: isOutlined,
             isError: isError,
-            errorText: errorText,
+            errorText: errorTextContent,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,
@@ -253,11 +270,105 @@ public struct OUDSRadioItem: View {
         self.action = action
     }
 
+    // For API signature consistency disable this warning
     // swiftlint:disable function_default_parameter_at_end
+
+    /// Creates a radio with label and optional helper text as description, icon, divider.
+    ///
+    /// ```swift
+    ///     OUDSRadioItem("Virgin Holy Lava",
+    ///                   isOn: $selection,
+    ///                   extraLabel: "Very spicy",
+    ///                   description: "No alcohol, only tasty flavors",
+    ///                   icon: Image(systemName: "flame"),
+    ///                   errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
+    ///                    // Manage in your side errors for init for AttributedString(markdown:)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the radio, must not be empty
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
+    ///   - description: A description, like an helper text, should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
+    ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   The `errorText`can be different if switch is selected or not.
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
+    ///   - action: An additional action to trigger when the radio button has been pressed
+    ///
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    ///
+    /// **Remark 2: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
+    public init(_ label: String,
+                isOn: Binding<Bool>,
+                extraLabel: String? = nil,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isOutlined: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        if isError, isReadOnly {
+            OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
+        }
+
+        if label.isEmpty {
+            OL.warning("Label given to an OUDSRadioItem is empty, prefer OUDSRadio(isOn:accessibilityLabel:) instead")
+        }
+
+        if let description, description.isEmpty {
+            OL.warning("Description text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if let extraLabel, extraLabel.isEmpty {
+            OL.warning("Extra label text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if isError, errorText.isEmpty {
+            OL.warning("Error text given to an OUDSRadioItem must be defined in case of error")
+        }
+
+        _isOn = isOn
+
+        layoutData = .init(
+            label: label.localized(),
+            extraLabel: extraLabel?.localized(),
+            description: description?.localized(),
+            icon: icon,
+            flipIcon: flipIcon,
+            isOutlined: isOutlined,
+            isError: isError,
+            errorText: .attributed(errorText),
+            isReadOnly: isReadOnly,
+            hasDivider: hasDivider,
+            constrainedMaxWidth: constrainedMaxWidth,
+            orientation: isReversed ? .reversed : .default)
+        self.action = action
+    }
+
     /// Creates a radio with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $selection)
+    ///     OUDSRadioItem(LocalizedStringKey("option_label"),
+    ///                   bundle: Bundle.module,
+    ///                   isOn: $selection)
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -312,6 +423,68 @@ public struct OUDSRadioItem: View {
                   action: action)
     }
 
+    /// Creates a radio with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSRadioItem(LocalizedStringKey("option_label"),
+    ///                   bundle: Bundle.module,
+    ///                   isOn: $selection,
+    ///                   errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
+    ///                    // Manage in your side errors for init for AttributedString(markdown:)
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - extraLabel: An additional label text of the radio, default set to `nil`
+    ///   - description: A description, like an helper text, should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
+    ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - action: An additional action to trigger when the radio button has been pressed
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                extraLabel: String? = nil,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isOutlined: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  extraLabel: extraLabel,
+                  description: description,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isOutlined: isOutlined,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
     // swiftlint:enable function_default_parameter_at_end
 
     // MARK: Body
@@ -340,7 +513,7 @@ public struct OUDSRadioItem: View {
         let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.errorText?.localized() ?? ""
+        let errorText = layoutData.errorText?.rawValue ?? ""
         let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"
@@ -357,3 +530,5 @@ public struct OUDSRadioItem: View {
         }
     }
 }
+
+// swiftlint:enable file_length

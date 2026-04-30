@@ -223,6 +223,13 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
         _selection = selection
         self.action = action
+
+        let errorTextContent: TextualContent? = if let errorText {
+            .raw(errorText)
+        } else {
+            nil
+        }
+
         layoutData = .init(
             label: label.localized(),
             extraLabel: nil,
@@ -231,7 +238,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
-            errorText: errorText,
+            errorText: errorTextContent,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,
@@ -264,7 +271,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         let stateDescription = !isEnabled || layoutData.isReadOnly ? "core_common_disabled_a11y".localized() : ""
 
         let errorPrefix = "core_common_onError_a11y".localized()
-        let errorText = layoutData.errorText?.localized() ?? ""
+        let errorText = layoutData.errorText?.rawValue ?? ""
         let errorDescription = layoutData.isError ? "\(errorPrefix), \(errorText)" : ""
 
         return "\(traitDescription). \(valueDescription). \(stateDescription). \(errorDescription)"

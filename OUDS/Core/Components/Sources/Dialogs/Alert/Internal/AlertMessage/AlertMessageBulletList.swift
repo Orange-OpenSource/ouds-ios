@@ -18,7 +18,7 @@ struct AlertMessageBulletListItem: View {
 
     // MARK: - Properties
 
-    let text: String
+    let text: TextualContent
     let status: OUDSAlertStatus
 
     @Environment(\.theme) private var theme
@@ -37,7 +37,7 @@ struct AlertMessageBulletListItem: View {
             .frame(width: width, alignment: .trailing)
             .frame(maxHeight: maxHeight, alignment: .center)
 
-            Text(text)
+            textView(for: text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(foregroundColor)
                 .frame(maxWidth: theme.sizes.maxWidthLabelMedium.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)

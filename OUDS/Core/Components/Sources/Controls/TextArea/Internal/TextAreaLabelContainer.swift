@@ -64,7 +64,7 @@ struct TextAreaLabelContainer: View {
         return switch status {
         case .enabled, .readOnly, .loading:
             theme.colors.contentMuted
-        case .error:
+        case .error, .richError:
             switch interactionState {
             case .idle:
                 theme.colors.actionNegativeEnabled
