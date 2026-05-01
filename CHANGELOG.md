@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `github/codeql-action/upload-sarif` action from v4.35.2 to v4.35.3 for `scorecard` workflow
 - `swift-docc-plugin` Swift package from v1.4.6 to v1.5.0
 - `SwiftFormat` Swift package plugin from v0.61.0 to v0.61.1
 - `Ruby` version from v4.0.2 to v4.0.3 for `build-and-test` workflows
