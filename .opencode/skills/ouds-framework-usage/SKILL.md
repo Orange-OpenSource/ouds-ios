@@ -162,6 +162,12 @@ OUDSBulletList(type: .ordered) {
     }
     OUDSBulletList.Item("Label 2")
 }
+
+// Rich text item — pass an AttributedString directly
+let richLabel: AttributedString = …
+OUDSBulletList {
+    OUDSBulletList.Item(richLabel)
+}
 ```
 
 ---
@@ -199,6 +205,12 @@ OUDSCheckboxItem("Accept terms", isOn: $isOn,
                  isError: true,
                  errorText: "You must accept the terms to continue",
                  hasDivider: true)
+
+// Rich error text
+let richError: AttributedString = …
+OUDSCheckboxItem("Accept terms", isOn: $isOn,
+                 isError: true,
+                 errorText: richError)
 
 // Read-only — user cannot interact but component is not disabled
 OUDSCheckboxItem("Accept terms", isOn: $isOn, isReadOnly: true)
@@ -245,6 +257,17 @@ OUDSRadio(isOn: $selection, accessibilityLabel: "Label")
 OUDSRadioItem("Label", isOn: $isOn)
 OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "ic"))
 
+// Error state
+OUDSRadioItem("Label", isOn: $isOn,
+              isError: true,
+              errorText: "This option is unavailable")
+
+// Rich error text
+let richError: AttributedString = …
+OUDSRadioItem("Label", isOn: $isOn,
+              isError: true,
+              errorText: richError)
+
 // Picker
 let data: [OUDSRadioPickerData<String>] = [
     .init(tag: "a", label: "Option A"),
@@ -262,6 +285,83 @@ Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/
 OUDSSwitch(isOn: $isOn, accessibilityLabel: "Label")
 OUDSSwitchItem("Label", isOn: $isOn)
 OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "ic"))
+
+// Error state
+OUDSSwitchItem("Label", isOn: $isOn,
+               isError: true,
+               errorText: "This setting cannot be enabled")
+
+// Rich error text
+let richError: AttributedString = …
+OUDSSwitchItem("Label", isOn: $isOn,
+               isError: true,
+               errorText: richError)
+```
+
+---
+
+### Controls — Pin Code Input
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudspincodeinput
+
+Available lengths: `.four`, `.six` (default).
+
+```swift
+// Basic — 6 digits, no autofocus
+OUDSPinCodeInput($value)
+
+// Custom length
+OUDSPinCodeInput($value, length: .four)
+
+// With autofocus
+OUDSPinCodeInput($value, autofocus: true)
+
+// Plain helper text
+OUDSPinCodeInput($value, helperText: "Enter your PIN")
+
+// Rich helper text
+let richHelper: AttributedString = …
+OUDSPinCodeInput($value, helperText: richHelper)
+
+// Error status
+OUDSPinCodeInput($value, status: .error(message: "Invalid PIN"))
+
+// Rich error status
+let richError: AttributedString = …
+OUDSPinCodeInput($value, status: .richError(message: richError))
+```
+
+---
+
+### Controls — Password Input
+Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudspasswordinput
+
+> `status` is of type `OUDSTextInput.Status` (shared with `OUDSTextInput`).
+
+```swift
+// Basic
+OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isHidden)
+
+// With placeholder, prefix, lock icon
+OUDSPasswordInput(label: "Password", password: $password,
+                  isHiddenPassword: $isHidden,
+                  placeholder: "Min. 8 characters", prefix: "🔑",
+                  lockIcon: true)
+
+// Plain helper text
+OUDSPasswordInput(label: "Password", password: $password,
+                  isHiddenPassword: $isHidden,
+                  helperText: "At least 8 characters")
+
+// Rich helper text
+let richHelper: AttributedString = …
+OUDSPasswordInput(label: "Password", password: $password,
+                  isHiddenPassword: $isHidden,
+                  helperText: richHelper)
+
+// Error status
+OUDSPasswordInput(label: "Password", password: $password,
+                  isHiddenPassword: $isHidden,
+                  status: .error(message: "Incorrect password"))
 ```
 
 ---
@@ -303,12 +403,28 @@ OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"))
 OUDSTextInput(label: "Label", text: $text,
               trailingAction: .init(icon: Image("ic"), actionHint: "Hint") {})
 OUDSTextInput(label: "Label", text: $text, status: .error(message: "Error"))
+
+// Rich helper text
+let richHelper: AttributedString = …
+OUDSTextInput(label: "Label", text: $text, helperText: richHelper)
+
+// Rich error status
+let richError: AttributedString = …
+OUDSTextInput(label: "Label", text: $text, status: .richError(message: richError))
 ```
 
 ---
 
 ### Controls — Text Area
 Docs: https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudstextarea
+
+`helperText` is of type `OUDSTextArea.HelperText`, a `@frozen` enum with three cases:
+
+| Case | Description |
+|------|-------------|
+| `.plain(String)` | Plain text helper |
+| `.rich(AttributedString)` | Rich text helper |
+| `.charactersMaxCount(UInt16)` | Remaining-characters counter (rendered bold) |
 
 ```swift
 // Basic
@@ -323,12 +439,20 @@ OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
 // Remaining characters — count is rendered bold in the UI
 OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
 
+// Rich helper text
+let richHelper: AttributedString = …
+OUDSTextArea(label: "Label", text: $text, helperText: .rich(richHelper))
+
 // Helper link
 let helperLink = OUDSTextArea.Helperlink(text: "Learn more") { openUrl(url) }
 OUDSTextArea(label: "Label", text: $text, helperLink: helperLink)
 
 // Error status — error message replaces the helper text
 OUDSTextArea(label: "Label", text: $text, status: .error(message: "Required."))
+
+// Rich error status
+let richError: AttributedString = …
+OUDSTextArea(label: "Label", text: $text, status: .richError(message: richError))
 ```
 
 > Min visible lines: `OUDSTextArea.minLines` (3). Max lines before scrolling: `OUDSTextArea.maxLines` (10).
@@ -349,6 +473,17 @@ OUDSAlertMessage(label: "Label",
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
+
+// Rich description
+let richDesc: AttributedString = …
+OUDSAlertMessage(label: "Label", description: richDesc)
+
+// Rich bullet list
+let richItems: [AttributedString] = […]
+OUDSAlertMessage(label: "Label", bulletList: richItems)
+
+// Both rich
+OUDSAlertMessage(label: "Label", description: richDesc, bulletList: richItems)
 ```
 
 ---
@@ -546,6 +681,36 @@ ContentView()
 ### Navigations — Toolbar Item (`OUDSToolBarItem`)
 
 `OUDSToolBarItem` is the building block for both `OUDSToolBarTop` and `OUDSToolBarBottom`. Items are composed with the `@OUDSToolBarItemsBuilder` result builder, which supports conditionals and loops.
+
+**Badges** (`OUDSToolBarItem.BadgeType`) — v2.0.0+:
+
+Badges are available **only** on icon actions (`.icon` case). Pass `badgeType:` inside the `.icon` action type.
+
+| Case | Description |
+|------|-------------|
+| `.standard` | Dot badge — notification without count |
+| `.number(count: UInt8)` | Numbered badge — count in range 0–255 |
+
+Rendering behaviour by OS:
+- **iOS ≤ 25**: rendered as `OUDSBadge`
+- **iOS 26+ toolbar top** (Liquid Glass): native system badge
+- **iOS 26+ toolbar bottom** (Liquid Glass): `OUDSBadge` forced — the system does not render badges in the bottom toolbar
+
+```swift
+// Dot badge
+OUDSToolBarItem(action: .icon(
+    asset: Image("ic_bell"),
+    accessibilityLabel: "Notifications",
+    badgeType: .standard
+))
+
+// Numbered badge
+OUDSToolBarItem(action: .icon(
+    asset: Image("ic_mail"),
+    accessibilityLabel: "9 new messages",
+    badgeType: .number(count: 9)
+))
+```
 
 **Action styles** (`OUDSToolBarItem.ActionStyle`) — iOS 26+ only:
 
