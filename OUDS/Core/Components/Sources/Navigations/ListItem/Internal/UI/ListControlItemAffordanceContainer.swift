@@ -47,7 +47,7 @@ struct ListControlItemAffordanceContainer: View {
         case .previous:
             layoutDirection == .rightToLeft ? "ic_link_next" : "ic_link_previous"
         case .external:
-            "ic_link_external"
+            "ic_functional_action_external_link"
         case .none:
             nil
         }
