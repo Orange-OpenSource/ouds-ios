@@ -205,9 +205,11 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isLandscape: Bool
 
     #if os(iOS)
-    /// KVO observer that watches the native `UITabBar.isHidden` property and broadcasts
-    /// `TabBarVisibilityObserver.visibilityDidChange` so overlay views can react.
-    @State private var tabBarVisibilityObserver: TabBarVisibilityObserver?
+    /// Single source of truth for tab bar visibility.
+    /// Updated via `TabBarHiddenPreferenceKey` posted by child views using `.oudsHideTabBar()`.
+    /// Passed down as a `@Binding` to overlay views (`SelectedTabIndicator`, `TabBarTopDivider`)
+    /// so they never need to call `findTabBar()` themselves to check `isHidden`.
+    @State private var isTabBarHidden: Bool = false
     #endif
 
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
@@ -305,33 +307,27 @@ public struct OUDSTabBar<Content: View>: View {
             }
             .modifier(TabBarViewModifier())
 
-            SelectedTabIndicator(selected: $selectedTab, count: tabCount)
+            SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
                 .opacity(shouldShowTabIndicator ? 1 : 0)
                 .ignoresSafeArea(.keyboard, edges: .bottom)
 
-            TabBarTopDivider()
+            TabBarTopDivider(isTabBarHidden: $isTabBarHidden)
                 .opacity(hasLegacyLayout ? 1 : 0)
                 .ignoresSafeArea(.keyboard, edges: .bottom)
         }
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
-            // Attach KVO observer on the live UITabBar so the overlay views
-            // (SelectedTabIndicator, TabBarTopDivider) are notified whenever
-            // `.toolbar(.hidden, for: .tabBar)` is applied or removed.
-            // The UIKit hierarchy may not be fully settled on the first onAppear,
-            // so retry after a short delay if findTabBar() returns nil.
-            if let tabBar = findTabBar() {
-                tabBarVisibilityObserver = TabBarVisibilityObserver(tabBar: tabBar)
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
-                    if let tabBar = findTabBar() {
-                        tabBarVisibilityObserver = TabBarVisibilityObserver(tabBar: tabBar)
-                    }
-                }
-            }
+        }
+        // React to child views calling `.oudsHideTabBar()`, which posts `TabBarHiddenPreferenceKey`.
+        // SwiftUI PreferenceKey is the only reliable mechanism here: `.toolbar(.hidden, for: .tabBar)`
+        // does not change any observable UIKit property on UITabBar (isHidden, alpha, frame all stay
+        // unchanged), making KVO, polling and GeometryReader all blind to the visibility change.
+        // When the child view disappears, SwiftUI resets the preference to its defaultValue (false),
+        // so the overlays reappear automatically without any additional handling.
+        .onPreferenceChange(TabBarHiddenPreferenceKey.self) { hidden in
+            isTabBarHidden = hidden
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-            // Delay to ensure the orientation change is complete
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                 isLandscape = Self.isInLandscapeViewport()
             }

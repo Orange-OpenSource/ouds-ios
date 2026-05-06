@@ -33,13 +33,16 @@ struct SelectedTabIndicator: View {
 
     @Binding var selected: Int
     var count: Int
+    /// Driven by `OUDSTabBar` via KVO on `UITabBar.isHidden` — the single source of truth for
+    /// tab bar visibility. Using a `@Binding` avoids calling `findTabBar()` here for visibility,
+    /// which was unreliable when intermediate navigation layers were present.
+    @Binding var isTabBarHidden: Bool
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
     /// Horizontal scale factor used to animate the indicator expanding from its center.
     /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
     @State private var indicatorScaleX: CGFloat = 0
-    @State private var isTabBarHidden: Bool = false
 
     /// To disable animation if device in low power mode
     @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
@@ -107,16 +110,17 @@ struct SelectedTabIndicator: View {
                 updateTabBarHeight()
             }
         }
-        // React to `.toolbar(.hidden, for: .tabBar)` being applied or removed at any time.
-        .onReceive(NotificationCenter.default.publisher(for: TabBarVisibilityObserver.visibilityDidChange)) { _ in
-            updateTabBarHeight()
-        }
+        // Tab bar visibility (`isTabBarHidden`) is now driven entirely by `OUDSTabBar` via
+        // a `@Binding`, which reads `UITabBar.isHidden` directly from the KVO notification object.
+        // No local `onReceive(visibilityDidChange)` is needed here.
     }
 
     // MARK: Tab bar heights
 
-    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension.
-    /// Also updates `isTabBarHidden` to reflect whether `.toolbar(.hidden, for: .tabBar)` has been applied.
+    /// Gets the tab bar height from the UIKit hierarchy and updates the stored dimension.
+    /// Visibility (`isTabBarHidden`) is intentionally NOT updated here — it is owned by
+    /// `OUDSTabBar` and passed down via `@Binding` to avoid the race condition where
+    /// `findTabBar()` might return a stale `isHidden` value during a navigation transition.
     private func updateTabBarHeight() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
@@ -124,11 +128,9 @@ struct SelectedTabIndicator: View {
         safeAreaBottom = window.safeAreaInsets.bottom
 
         if let detectedTabBar = findTabBar() {
-            isTabBarHidden = detectedTabBar.isHidden
             tabBarHeight = detectedTabBar.frame.height
         } else {
-            // If not possible to compute tab bar height, get recommended / precomputed value as fallback
-            isTabBarHidden = false
+            // If not possible to compute tab bar height, use recommended / precomputed value as fallback
             let heights = iPhoneInUse.tabBarHeights
             tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
         }

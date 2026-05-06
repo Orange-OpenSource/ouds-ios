@@ -24,7 +24,10 @@ struct TabBarTopDivider: View {
 
     @State private var tabBarHeight: CGFloat = 0
     @State private var safeAreaBottom: CGFloat = 0
-    @State private var isTabBarHidden: Bool = false
+    /// Driven by `OUDSTabBar` via KVO on `UITabBar.isHidden` — the single source of truth for
+    /// tab bar visibility. Using a `@Binding` avoids calling `findTabBar()` here for visibility,
+    /// which was unreliable when intermediate navigation layers were present.
+    @Binding var isTabBarHidden: Bool
 
     @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
@@ -61,16 +64,17 @@ struct TabBarTopDivider: View {
                 updateTabBarStatus()
             }
         }
-        // React to `.toolbar(.hidden, for: .tabBar)` being applied or removed at any time.
-        .onReceive(NotificationCenter.default.publisher(for: TabBarVisibilityObserver.visibilityDidChange)) { _ in
-            updateTabBarStatus()
-        }
+        // Tab bar visibility (`isTabBarHidden`) is now driven entirely by `OUDSTabBar` via
+        // a `@Binding`, which reads `UITabBar.isHidden` directly from the KVO notification object.
+        // No local `onReceive(visibilityDidChange)` is needed here.
     }
 
     // MARK: Tab bar heights
 
-    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension.
-    /// Also updates `isTabBarHidden` to reflect whether `.toolbar(.hidden, for: .tabBar)` has been applied.
+    /// Gets the tab bar height from the UIKit hierarchy and updates the stored dimension.
+    /// Visibility (`isTabBarHidden`) is intentionally NOT updated here — it is owned by
+    /// `OUDSTabBar` and passed down via `@Binding` to avoid the race condition where
+    /// `findTabBar()` might return a stale `isHidden` value during a navigation transition.
     private func updateTabBarStatus() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
@@ -78,21 +82,17 @@ struct TabBarTopDivider: View {
         safeAreaBottom = window.safeAreaInsets.bottom
 
         if let detectedTabBar = findTabBar() {
-            // UITabBar found: read actual height and visibility.
-            isTabBarHidden = detectedTabBar.isHidden
+            // UITabBar found: read actual height only.
             tabBarHeight = detectedTabBar.frame.height
         } else {
             // UITabBar not yet in the hierarchy (timing issue on first appear).
-            // Use hardcoded fallback so `tabBarHeight > 0` unlocks the render guard,
-            // but do NOT touch `isTabBarHidden` — KVO via TabBarVisibilityObserver is
-            // the sole source of truth for visibility; we just don't know it yet here.
+            // Use hardcoded fallback so `tabBarHeight > 0` unlocks the render guard.
             let heights = iPhoneInUse.tabBarHeights
             tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
-            // Schedule a retry so we can replace the fallback with the real value once
-            // the UIKit hierarchy has settled.
+            // Schedule a retry so we can replace the fallback with the real measured value
+            // once the UIKit hierarchy has settled.
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
                 if let retryTabBar = findTabBar() {
-                    isTabBarHidden = retryTabBar.isHidden
                     tabBarHeight = retryTabBar.frame.height
                 }
             }
