@@ -55,12 +55,6 @@ import SwiftUI
 /// - if a badge must be displayed, prefer short texts. If the text is a decimal value greater than 99, prefer display "+99"
 /// - if decorative images are used for tab bar item, apply *template* rendering mode on it to apply color on tabs
 ///
-/// ## Technical constraints
-///
-/// - You must use in your tab bar items images with **a size of 26 x 26**, otherwise rendering could be unaligned with Figma specifications
-/// - Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width based on the tab bar item content,
-/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
-///
 /// ## Accessibility considerations
 ///
 /// - If your tabs embedded in the `OUDSTabBar` do not contain texts but only images, add an accessibility label introducing the journey for this tab
@@ -97,6 +91,14 @@ import SwiftUI
 /// OUDS applies only appearances and styles on elements to prevent users to define raw data to assign to the component before being rendered like a *picker*.
 /// Thus users will need to add their own accessiiblity label if badges are used or also apply *template* rendering mode on images if needed.
 /// Thus it will be also possible to use Liquid Glass new API with animations and items stacking.
+///
+/// You must use in your tab bar items images with **a size of 26 x 26**, otherwise rendering could be unaligned with Figma specifications
+///
+/// Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width based on the tab bar item content,
+/// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
+///
+/// If you app uses several universes with nested views, containing their own navigation and tab bars, prefer `hideTabBar()` from `View` to hide the tab bar
+/// (`TabView` and overlay items) with Liquid Glass is disabled or not available.
 ///
 /// ## Code samples
 ///
@@ -206,7 +208,7 @@ public struct OUDSTabBar<Content: View>: View {
 
     #if os(iOS)
     /// Single source of truth for tab bar visibility.
-    /// Updated via `TabBarHiddenPreferenceKey` posted by child views using `.oudsHideTabBar()`.
+    /// Updated via `TabBarHiddenPreferenceKey` posted by child views using `.hideTabBar()`.
     /// Passed down as a `@Binding` to overlay views (`SelectedTabIndicator`, `TabBarTopDivider`)
     /// so they never need to call `findTabBar()` themselves to check `isHidden`.
     @State private var isTabBarHidden: Bool = false
@@ -318,7 +320,7 @@ public struct OUDSTabBar<Content: View>: View {
         .onAppear {
             isLandscape = Self.isInLandscapeViewport()
         }
-        // React to child views calling `.oudsHideTabBar()`, which posts `TabBarHiddenPreferenceKey`.
+        // React to child views calling `.hideTabBar()`, which posts `TabBarHiddenPreferenceKey`.
         // SwiftUI PreferenceKey is the only reliable mechanism here: `.toolbar(.hidden, for: .tabBar)`
         // does not change any observable UIKit property on UITabBar (isHidden, alpha, frame all stay
         // unchanged), making KVO, polling and GeometryReader all blind to the visibility change.

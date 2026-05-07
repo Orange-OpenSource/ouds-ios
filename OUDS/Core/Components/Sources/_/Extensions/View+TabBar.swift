@@ -81,7 +81,7 @@ extension View {
 /// `GeometryReader`.
 ///
 /// `TabBarHiddenPreferenceKey` solves this by letting child views explicitly signal their intent
-/// via `.oudsHideTabBar()`, which posts this preference. `OUDSTabBar` listens with
+/// via `.hideTabBar()`, which posts this preference. `OUDSTabBar` listens with
 /// `.onPreferenceChange` and updates its `isTabBarHidden` state accordingly.
 ///
 /// The `reduce` function uses logical OR so that if any descendant hides the tab bar, the
@@ -115,14 +115,14 @@ extension View {
     /// struct DetailView: View {
     ///     var body: some View {
     ///         Text("Detail")
-    ///             .oudsHideTabBar()
+    ///             .hideTabBar()
     ///     }
     /// }
     /// ```
     ///
     /// - Returns: A view that hides the tab bar and propagates the hidden state to `OUDSTabBar` overlay items.
     @available(iOS 16, *)
-    public func oudsHideTabBar() -> some View {
+    public func hideTabBar() -> some View {
         #if !os(macOS)
         toolbar(.hidden, for: .tabBar)
             .preference(key: TabBarHiddenPreferenceKey.self, value: true)
