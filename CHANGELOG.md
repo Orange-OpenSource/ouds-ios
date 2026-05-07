@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass for deep navigations app (Orange-OpenSource/ouds-ios#1490) 
 - Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
 - Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
 - Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
