@@ -304,6 +304,15 @@ public struct OUDSTabBar<Content: View>: View {
         // device-related environment values (such as `iPhoneInUse`) are available only
         // within the TabBar view hierarchy (e.g. `SelectedTabIndicator`, `TabBarTopDivider`).
         ZStack(alignment: .bottom) {
+
+            // NOTE: Do not understand why, but if we do not have these SelectedTabIndicator TWICE
+            // the indicator will be never disabled if Liquid Glass unavailable or disabled
+            // for iOS 26+ with Liquid Glass disabled and Xcode 26.4.1
+            // (ノಠ益ಠ)ノ彡┻━┻
+            SelectedTabIndicator(selected: $selectedTab, count: tabCount, isTabBarHidden: $isTabBarHidden)
+                .opacity(shouldShowTabIndicator ? 1 : 0)
+                .ignoresSafeArea(.keyboard, edges: .bottom)
+
             TabView(selection: $selectedTab) {
                 content()
             }
