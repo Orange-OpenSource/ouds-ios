@@ -123,7 +123,7 @@ extension View {
     /// - Returns: A view that hides the tab bar and propagates the hidden state to `OUDSTabBar` overlay items.
     @available(iOS 16, *)
     public func hideTabBar() -> some View {
-        #if !os(macOS)
+        #if !os(macOS) && !os(watchOS)
         toolbar(.hidden, for: .tabBar)
             .preference(key: TabBarHiddenPreferenceKey.self, value: true)
         #else
