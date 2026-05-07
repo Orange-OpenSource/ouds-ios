@@ -98,7 +98,7 @@ import SwiftUI
 /// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
 ///
 /// If your app uses several universes with nested views, containing their own navigation and tab bars, prefer `hideTabBar()` from `View` to hide the tab bar
-/// (`TabView` and overlay items) with Liquid Glass is disabled or not available.
+/// (`TabView` and overlay items) with Liquid Glass is disabled or not available, or also `tabBar(isHidden:)`.
 ///
 /// ## Code samples
 ///
