@@ -130,4 +130,44 @@ extension View {
         preference(key: TabBarHiddenPreferenceKey.self, value: true)
         #endif
     }
+
+    /// Hides or not the native tab bar **and** signals `OUDSTabBar` to hide (or not) its overlay elements
+    /// (selected tab indicator and top divider) in sync.
+    ///
+    /// Use this modifier instead of `.toolbar(for:)`
+    /// whenever a view inside a `NavigationStack` embedded in an `OUDSTabBar` needs to hide
+    /// the tab bar. Without this modifier, `OUDSTabBar` cannot detect the visibility change
+    /// and its overlay elements remain visible on top of the content. This helper must be used for
+    /// apps with nested views and tab bars.
+    ///
+    /// Otherwise for simple app `.toolbar(for:)` is enough.
+    ///
+    /// ```swift
+    /// struct DetailView: View {
+    ///     var body: some View {
+    ///         Text("Detail")
+    ///             .tabBar(isHidden: true)
+    ///     }
+    /// }
+    /// ```
+    ///
+    /// - Returns: A view that hides or not the tab bar and propagates the hidden state to `OUDSTabBar` overlay items.
+    @available(iOS 16, *)
+    public func tabBar(isHidden: Bool) -> some View {
+        #if !os(macOS) && !os(watchOS)
+        if isHidden {
+            toolbar(.hidden, for: .tabBar)
+                .preference(key: TabBarHiddenPreferenceKey.self, value: true)
+        } else {
+            toolbar(.visible, for: .tabBar)
+                .preference(key: TabBarHiddenPreferenceKey.self, value: false)
+        }
+        #else
+        if isHidden {
+            preference(key: TabBarHiddenPreferenceKey.self, value: true)
+        } else {
+            preference(key: TabBarHiddenPreferenceKey.self, value: false)
+        }
+        #endif
+    }
 }
