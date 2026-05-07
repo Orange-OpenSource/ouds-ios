@@ -15,6 +15,8 @@ import Foundation
 import OUDSThemesContract
 import OUDSThemesOrange
 
+// swiftlint:disable line_length
+
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
 /// Uses its own tokens providers for tests:
@@ -44,6 +46,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         let fonts = MockThemeFontSemanticTokensProvider()
         let grids = MockThemeGridSemanticTokensProvider()
         let opacities = MockThemeOpacitySemanticTokensProvider()
+        let dimensions = OrangeThemeDimensionSemanticTokensProvider()
         let sizes = MockThemeSizeSemanticTokensProvider()
         let spaces = MockThemeSpaceSemanticTokensProvider()
         super.init(borders: borders,
@@ -54,7 +57,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   dimensions: OrangeThemeDimensionSemanticTokensProvider(),
+                   dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
                    alert: MockThemeAlertComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
@@ -64,7 +67,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
@@ -85,3 +88,5 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
+
+// swiftlint:enable line_length

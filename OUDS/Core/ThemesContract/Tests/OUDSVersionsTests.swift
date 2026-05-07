@@ -81,14 +81,34 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentExpandLinkVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentTabBarVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentTabBarVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentToolBarTopVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentToolBarTopVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentToolBarBottomVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentToolBarBottomVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Controls
 
     @Test func componentCheckboxVersionMustBeConform() throws {
         TestsUtils.assertMatches(OUDSVersions.componentCheckboxVersion, regexp: Self.oudsVersionsFormat)
     }
 
-    @Test func componentChipVersionMustBeConform() throws {
-        TestsUtils.assertMatches(OUDSVersions.componentChipVersion, regexp: Self.oudsVersionsFormat)
+    @Test func componentSugggestionChipVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentSuggestionChipVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentFilterChipVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentFilterChipVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentFilterChipExpandVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentFilterChipExpandVersion, regexp: Self.oudsVersionsFormat)
     }
 
     @Test func componentRadioButtonVersionMustBeConform() throws {

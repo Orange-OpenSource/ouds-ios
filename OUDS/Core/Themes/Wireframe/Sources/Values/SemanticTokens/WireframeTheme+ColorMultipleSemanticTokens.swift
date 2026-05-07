@@ -78,8 +78,6 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var actionReadOnlySecondary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionReadOnlySecondaryLight, dark: actionReadOnlySecondaryDark) }
 
-    @objc public final var actionAccent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: actionAccentLight, dark: actionAccentDark) }
-
     // MARK: - Color - Background
 
     @objc public final var bgPrimary: MultipleColorSemanticToken { MultipleColorSemanticToken(light: bgPrimaryLight, dark: bgPrimaryDark) }
@@ -204,7 +202,9 @@ extension WireframeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens
 
     @objc public final var overlayDrag: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayDragLight, dark: overlayDragDark) }
 
-    @objc public final var overlayModal: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalLight, dark: overlayModalDark) }
+    @objc public final var overlayModalSheet: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayModalSheetLight, dark: overlayModalSheetDark) }
+
+    @objc public final var overlayBackdrop: MultipleColorSemanticToken { MultipleColorSemanticToken(light: overlayBackdropLight, dark: overlayBackdropDark) }
 
     // MARK: - Color - Surface
 

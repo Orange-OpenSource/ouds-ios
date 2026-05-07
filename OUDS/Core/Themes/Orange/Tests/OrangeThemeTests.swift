@@ -49,7 +49,11 @@ struct OrangeThemeTests {
     }
 
     @Test func defaultColorChartsSemanticTokensProvider() throws {
-        #expect(theme.charts is OrangeThemeColorChartSemanticTokensProvider)
+        #expect(theme.colorsCharts is OrangeThemeColorChartSemanticTokensProvider)
+    }
+
+    @Test func defaultColorDecorativeSemanticTokensProvider() throws {
+        #expect(theme.colorsDecorative is OrangeThemeColorDecorativeSemanticTokensProvider)
     }
 
     @Test func defaultEffectemanticTokensProvider() throws {

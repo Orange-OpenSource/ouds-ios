@@ -42,6 +42,18 @@ struct SoshThemeControlItemComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultFontSemanticTokensProvider() throws {
+        #expect(provider.fonts is SoshThemeFontSemanticTokensProvider)
+    }
+
+    @Test func defaultOpacitySemanticTokensProvider() throws {
+        #expect(provider.opacities is SoshThemeOpacitySemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

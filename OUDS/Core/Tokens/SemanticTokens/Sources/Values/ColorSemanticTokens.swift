@@ -107,9 +107,6 @@ public protocol ColorSemanticTokens {
     var actionReadOnlySecondaryLight: ColorSemanticToken { get }
     var actionReadOnlySecondaryDark: ColorSemanticToken { get }
 
-    var actionAccentLight: ColorSemanticToken { get }
-    var actionAccentDark: ColorSemanticToken { get }
-
     // MARK: - Color - Always
 
     var alwaysBlack: ColorSemanticToken { get }
@@ -288,6 +285,18 @@ public protocol ColorSemanticTokens {
     var contentInverseLight: ColorSemanticToken { get }
     var contentInverseDark: ColorSemanticToken { get }
 
+    var contentStatusInversePositiveLight: ColorSemanticToken { get }
+    var contentStatusInversePositiveDark: ColorSemanticToken { get }
+
+    var contentStatusInverseInfoLight: ColorSemanticToken { get }
+    var contentStatusInverseInfoDark: ColorSemanticToken { get }
+
+    var contentStatusInverseWarningLight: ColorSemanticToken { get }
+    var contentStatusInverseWarningDark: ColorSemanticToken { get }
+
+    var contentStatusInverseNegativeLight: ColorSemanticToken { get }
+    var contentStatusInverseNegativeDark: ColorSemanticToken { get }
+
     // MARK: - Color - Overlay
 
     var overlayDropdownLight: ColorSemanticToken { get }
@@ -299,8 +308,11 @@ public protocol ColorSemanticTokens {
     var overlayDragLight: ColorSemanticToken { get }
     var overlayDragDark: ColorSemanticToken { get }
 
-    var overlayModalLight: ColorSemanticToken { get }
-    var overlayModalDark: ColorSemanticToken { get }
+    var overlayModalSheetLight: ColorSemanticToken { get }
+    var overlayModalSheetDark: ColorSemanticToken { get }
+
+    var overlayBackdropLight: ColorSemanticToken { get }
+    var overlayBackdropDark: ColorSemanticToken { get }
 
     // MARK: - Color - Surface
 
@@ -315,25 +327,21 @@ public protocol ColorSemanticTokens {
 
     var surfaceStatusAccentEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusAccentEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusAccentMutedLight: ColorSemanticToken { get }
     var surfaceStatusAccentMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusInfoEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusInfoEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusInfoMutedLight: ColorSemanticToken { get }
     var surfaceStatusInfoMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusNegativeEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusNegativeEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusNegativeMutedLight: ColorSemanticToken { get }
     var surfaceStatusNegativeMutedDark: ColorSemanticToken { get }
 
     var surfaceInverseLowLight: ColorSemanticToken { get }
     var surfaceInverseLowDark: ColorSemanticToken { get }
-
     var surfaceInverseHighLight: ColorSemanticToken { get }
     var surfaceInverseHighDark: ColorSemanticToken { get }
 
@@ -348,13 +356,11 @@ public protocol ColorSemanticTokens {
 
     var surfaceStatusPositiveEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusPositiveEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusPositiveMutedLight: ColorSemanticToken { get }
     var surfaceStatusPositiveMutedDark: ColorSemanticToken { get }
 
     var surfaceStatusWarningEmphasizedLight: ColorSemanticToken { get }
     var surfaceStatusWarningEmphasizedDark: ColorSemanticToken { get }
-
     var surfaceStatusWarningMutedLight: ColorSemanticToken { get }
     var surfaceStatusWarningMutedDark: ColorSemanticToken { get }
 
@@ -468,7 +474,8 @@ public protocol ColorSemanticTokens {
     var repositoryPrimaryLowest: ColorSemanticToken { get }
 
     var repositorySecondaryHighest: ColorSemanticToken { get }
-    var repositorySecondaryHigher: ColorSemanticToken { get }
+    var repositorySecondaryHigherHigh: ColorSemanticToken { get }
+    var repositorySecondaryHigherLow: ColorSemanticToken { get }
     var repositorySecondaryHigh: ColorSemanticToken { get }
     var repositorySecondaryMedium: ColorSemanticToken { get }
     var repositorySecondaryLow: ColorSemanticToken { get }

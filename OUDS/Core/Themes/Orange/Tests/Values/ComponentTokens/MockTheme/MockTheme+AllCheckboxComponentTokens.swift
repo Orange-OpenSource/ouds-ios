@@ -40,7 +40,6 @@ final class MockThemeCheckboxComponentTokenProvider: OrangeThemeCheckboxComponen
     override var sizeMinWidth: SizeSemanticToken { Self.mockThemeCheckboxSize }
     override var sizeMaxHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
     override var sizeMinHeight: SizeSemanticToken { Self.mockThemeCheckboxSize }
-    override var sizeIndicator: SizeSemanticToken { Self.mockThemeCheckboxSize }
 
     // MARK: - Borders
 

@@ -18,6 +18,7 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
+// swiftlint:disable identifier_name
 
 /// Declares all component tokens for components using control item layout like `OUDSSwitch`, `OUDSCheckboxItem` and `OUDSRadioButton`
 /// Use for tokens providers like `OrangeThemeControlItemComponentTokensProvider`.
@@ -25,37 +26,102 @@ import OUDSTokensSemantic
 /// - Since: 0.11.0
 public protocol ControlItemComponentTokens {
 
-    // MARK: - Sizes
-
-    var sizeMinHeight: SizeSemanticToken { get }
-    var sizeMinWidth: SizeSemanticToken { get }
-    var sizeMaxWidth: SizeSemanticToken { get }
-    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    var sizeIcon: SizeSemanticToken { get }
-    var sizeErrorIcon: SizeSemanticToken { get }
-    var sizeLoader: SizeSemanticToken { get }
-
     // MARK: - Colors
 
-    var colorBgHover: MultipleColorSemanticToken { get }
-    var colorBgPressed: MultipleColorSemanticToken { get }
-    var colorBgLoading: MultipleColorSemanticToken { get }
-    var colorBgFocus: MultipleColorSemanticToken { get }
-    var colorContentLoader: MultipleColorSemanticToken { get }
+    var colorBgCurrentEnabled: MultipleColorSemanticToken { get }
+    var colorBgCurrentHover: MultipleColorSemanticToken { get }
+    var colorBgCurrentPressed: MultipleColorSemanticToken { get }
+    var colorBgCurrentDisabled: MultipleColorSemanticToken { get }
+    var colorBgCurrentFocus: MultipleColorSemanticToken { get }
+    var colorContentCurrentEnabled: MultipleColorSemanticToken { get }
+    var colorContentCurrentHover: MultipleColorSemanticToken { get }
+    var colorContentCurrentPressed: MultipleColorSemanticToken { get }
+    var colorContentCurrentDisabled: MultipleColorSemanticToken { get }
+    var colorContentCurrentFocus: MultipleColorSemanticToken { get }
+    var colorBadgeSafetyArea: MultipleColorSemanticToken { get }
 
-    // MARK: - Spaces
+    // MARK: - Fonts
 
-    var spaceColumnGap: SpaceSemanticToken { get }
-    var spaceRowGap: SpaceSemanticToken { get }
-    var spacePaddingBlockDefault: SpaceSemanticToken { get }
-    var spacePaddingBlockTopErrorText: SpaceSemanticToken { get }
-    var spacePaddingInline: SpaceSemanticToken { get }
-    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
+    var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { get }
+    var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { get }
+    var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { get }
+
+    // MARK: - Opacities
+
+    var opacityCurrentIndicator: OpacitySemanticToken { get }
+    var opacityCurrentDivider: OpacitySemanticToken { get }
 
     // MARK: - Borders
 
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthCurrentPage: BorderWidthSemanticToken { get }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderRadiusRounded: BorderRadiusSemanticToken { get }
+    var borderRadiusMedia: BorderRadiusSemanticToken { get }
+    var borderRadiusMediaRoundedCorner: BorderRadiusSemanticToken { get }
+    var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { get }
+
+    // MARK: - Spaces
+
+    var spacePaddingInline: SpaceSemanticToken { get }
+    var spaceColumnGap: SpaceSemanticToken { get }
+    var spaceRowGap: SpaceSemanticToken { get }
+    var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
+    var spacePaddingBlockBottomSlot: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompact: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityDefaultBottomExpandContainer: SpaceSemanticToken { get }
+
+    // MARK: - Sizes
+
+    var sizeControlIndicator: SizeSemanticToken { get }
+    var sizeMinHeightCompact: SizeSemanticToken { get }
+    var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
+    var sizeMaxWidth: SizeSemanticToken { get }
+    var sizeAssetSmall: SizeSemanticToken { get }
+    var sizeAssetMedium: SizeSemanticToken { get }
+    var sizeAssetLarge: SizeSemanticToken { get }
+    var sizeAssetXlarge: SizeSemanticToken { get }
+    var sizeFlagHeight: SizeSemanticToken { get }
+    var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgHover: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgPressed: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgLoading: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorBgFocus: MultipleColorSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var colorContentLoader: MultipleColorSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
     var borderRadius: BorderRadiusSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
     var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
+
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeErrorIcon: SizeSemanticToken { get }
+    @available(*, deprecated, message: "Will be removed with next component update")
+    var sizeLoader: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
+// swiftlint:enable identifier_name

@@ -107,8 +107,6 @@ struct UnorderedBullet: View {
             Image(decorative: bulletAssetName, bundle: theme.resourcesBundle)
         case .tick:
             Image(decorative: "ic_bullet_list_tick", bundle: theme.resourcesBundle)
-        case let .free(image, _):
-            image
         case let .icon(image, _):
             image
         }

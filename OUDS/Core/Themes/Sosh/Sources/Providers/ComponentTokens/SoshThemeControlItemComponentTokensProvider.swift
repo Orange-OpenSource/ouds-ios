@@ -34,11 +34,20 @@ final class SoshThemeControlItemComponentTokensProvider: AllControlItemComponent
     /// Provider of border semantic tokens to use for button borders
     let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of color semantic tokens to use for control-item-layout-based  colors
+    /// Provider of color semantic tokens to use for control-item-layout-based colors
     let colors: AllColorSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for control-item-layout-based  spaces
+    /// Provider of spaces semantic tokens to use for control-item-layout-based spaces
     let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of font semantic tokens to use for control-item-layout-based fonts
+    let fonts: AllFontSemanticTokensProvider
+
+    /// Provider of opacity semantic tokens to use for control-item-layout-based opacities
+    let opacities: AllOpacitySemanticTokensProvider
+
+    /// Provider of dimension semantic tokens to use for control-item-layout-based dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -50,16 +59,25 @@ final class SoshThemeControlItemComponentTokensProvider: AllControlItemComponent
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``SoshThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``SoshThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``SoshThemeSpaceSemanticTokensProvider``)
+    ///    - fonts: Provider for font semantic tokens. If nil, a default one will be used (``SoshThemeFontSemanticTokensProvider``)
+    ///    - opacities: Provider for opacity semantic tokens. If nil, a default one will be used (``SoshThemeOpacitySemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``SoshThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         fonts: AllFontSemanticTokensProvider? = nil,
+         opacities: AllOpacitySemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of SoshThemeControlItemComponentTokensProvider")
         self.sizes = (sizes ?? SoshThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? SoshThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? SoshThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? SoshThemeSpaceSemanticTokensProvider())
+        self.fonts = (fonts ?? SoshThemeFontSemanticTokensProvider())
+        self.opacities = (opacities ?? SoshThemeOpacitySemanticTokensProvider())
+        self.dimensions = (dimensions ?? SoshThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "SoshThemeControlItemComponentTokensProvider")

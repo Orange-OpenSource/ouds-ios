@@ -72,9 +72,9 @@ struct ContentView: View {
                 }
                 .background(theme.colors.bgTertiary)
                 .border(style: theme.borders.styleDefault,
-                            width: theme.borders.widthThin,
-                            radius: theme.borders.radiusMedium,
-                            color: theme.colors.actionEnabled)
+                        width: theme.borders.widthThin,
+                        radius: theme.borders.radiusMedium,
+                        color: theme.colors.actionEnabled)
                 .shadow(theme.elevations.emphasized)
                 .padding(.bottom, theme.spaces.fixedLarge)
 
@@ -100,7 +100,7 @@ struct ContentView: View {
                                    isOn: $switchToDarkMode)
                         .padding(.horizontal, theme.spaces.fixed3xlarge)
                 }
-                .frame(maxWidth: theme.sizes.maxWidthTypeBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
+                .frame(maxWidth: theme.sizes.maxWidthBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
                 .padding(.bottom, theme.spaces.fixedLarge)
             }
         }.preferredColorScheme(switchToDarkMode ? .dark : .light)

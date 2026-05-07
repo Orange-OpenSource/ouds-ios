@@ -35,9 +35,9 @@ import OUDSThemesContract
 ///
 ///         override var effectBgBlur: EffectSemanticToken { EffectRawTokens.blur320 }
 ///
-///         override var borderRadiusActiveIndicatorCustomTop: BorderRadiusSemanticToken { borders.radiusPill }
+///         override var borderRadiusCurrentIndicatorCustomTop: BorderRadiusSemanticToken { borders.radiusPill }
 ///
-///         override var sizeWidthActiveIndicatorCustomBottom: SizeSemanticToken { DimensionRawTokens._650 }
+///         override var sizeWidthCurrentIndicatorCustomBottom: SizeSemanticToken { DimensionRawTokens._650 }
 ///         // ...
 ///     }
 ///

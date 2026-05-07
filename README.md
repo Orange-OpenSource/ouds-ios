@@ -56,7 +56,7 @@
 ![tvOS 16](https://img.shields.io/badge/tvOS-16-FF1AB2?style=for-the-badge)
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 26.3](https://img.shields.io/badge/Xcode-26.3-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes)
+[![Xcode 26.4](https://img.shields.io/badge/Xcode-26.4-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4-release-notes)
 
 [![Open Hub](https://img.shields.io/badge/open%20hub-5A2A82?style=for-the-badge)](https://openhub.net/p/ouds-ios)
 
@@ -79,7 +79,7 @@ It replaces internal frameworks and also [ODS](https://github.com/Orange-OpenSou
 
 ## 🚀 Quick start
 
-You can try [our Swift tutorial](https://ios.unified-design-system.orange.com/tutorials/table-of-contents) which will explain how to embed and use OUDS iOS Swift Package for your app.
+You can try our [Swift Package online tutorials](https://ios.unified-design-system.orange.com/documentation/) which will explain how to embed and use OUDS iOS Swift Package for your app.
 
 ### Choose your version
 
@@ -125,7 +125,7 @@ struct YourApp: App {
 ```
 
 Feel free to read the [online documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/gettingstarted).
-You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/ouds/themes).
+You can find also [more details about theme instanciations online](https://ios.unified-design-system.orange.com/documentation/oudsthemescontract/themes).
 
 ### Get the theme
 
@@ -167,14 +167,14 @@ The wiki lists also [the components and their availability](https://github.com/O
 > This Swift package embeds specific versions of themes / tokens librairies.
 > You can find more details in the online documentation and also in the wiki.
 
-- Core OUDS version: 1.9.0
+- Core OUDS version: 1.10.0
 - Core Orange version: 1.2.0
-- Brand Orange version: 2.3.0
-- Core Sosh version: 1.2.0
-- Brand Sosh version: 2.3.0
-- Core Wireframe version: 1.3.0
-- Brand Wireframe version: 2.3.0
-- Brand Orange Compact version: 2.3.0
+- Brand Orange version: 2.5.0
+- Core Sosh version: 1.4.0
+- Brand Sosh version: 2.5.0
+- Core Wireframe version: 1.4.0
+- Brand Wireframe version: 2.5.0
+- Brand Orange Compact version: 2.5.0
 
 ## 🪲 Bugs, feature requests and discussions
 
@@ -200,7 +200,7 @@ As such:
 ## ⚖️ Copyright and license
 
 Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
-For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
+For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/main/NOTICE.txt).
 
 ## 📱 Design Toolbox App
 

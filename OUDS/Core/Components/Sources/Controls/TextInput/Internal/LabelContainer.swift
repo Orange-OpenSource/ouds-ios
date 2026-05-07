@@ -70,7 +70,7 @@ struct LabelContainer: View {
         switch status {
         case .enabled, .loading, .readOnly:
             theme.colors.contentMuted
-        case .error:
+        case .error, .richError:
             switch interactionState {
             case .idle:
                 theme.colors.actionNegativeEnabled

@@ -14,7 +14,7 @@
 import Foundation
 import OUDSTokensSemantic
 
-// MARK: - OUDSTheme Theme
+// MARK: - OUDS Theme
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
@@ -50,12 +50,21 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All color charts semantic tokens exposed in one obejct
     ///
     /// If nil the theme does not provide color charts (like today `SoshTheme`).
-    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`
-    /// or by `OrangeChartColorChartSemanticTokensProvider` from `OrangeTheme`.
+    /// In this case it cannot be used but can be overriden by local implementation of `AllColorChartSemanticTokensProvider`.
     ///
     /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
     /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
-    public let charts: AllColorChartSemanticTokensProvider!
+    public let colorsCharts: AllColorChartSemanticTokensProvider!
+
+    /// All color decorative semantic tokens exposed in one obejct
+    ///
+    /// If nil the theme does not provide color decorative (like today `SoshTheme`).
+    /// In this case it cannot be used but can be overriden by local implementation of `AllColorDecorativeSemanticTokensProvider`
+    ///
+    /// If you think your theme must have such colors, feel free to subit an issue (https://github.com/Orange-OpenSource/ouds-ios/issues)
+    /// or open a discussion (https://github.com/Orange-OpenSource/ouds-ios/discussions/new?category=q-a)
+    public let colorsDecorative: AllColorDecorativeSemanticTokensProvider!
+
     // swiftlint:enable implicitly_unwrapped_optional
 
     /// All effect semantic tokens exposed in one object
@@ -178,7 +187,8 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
     ///    - colorModes: All semantic tokens of color modes
-    ///    - charts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
+    ///    - colorsCharts: All semantic tokens of color charts if the theme have some, otherwise nil (by default is nil)
+    ///    - colorsDecorative: All semantic tokens of color decorative if the theme have some, otherwise nil (by default is nil)
     ///    - effects: All semantic tokens of effects
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
@@ -215,7 +225,8 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 colorModes: AllColorModeSemanticTokensProvider,
-                charts: AllColorChartSemanticTokensProvider? = nil,
+                colorsCharts: AllColorChartSemanticTokensProvider? = nil,
+                colorsDecorative: AllColorDecorativeSemanticTokensProvider? = nil,
                 effects: AllEffectSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
@@ -255,7 +266,8 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.borders = borders
         self.colors = colors
         self.colorModes = colorModes
-        self.charts = charts
+        self.colorsCharts = colorsCharts
+        self.colorsDecorative = colorsDecorative
         self.elevations = elevations
         self.effects = effects
         self.fonts = fonts

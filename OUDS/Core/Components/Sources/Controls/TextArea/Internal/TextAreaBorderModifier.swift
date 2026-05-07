@@ -106,7 +106,7 @@ struct TextAreaBorderModifier: ViewModifier {
             case .hover:
                 theme.textInput.colorBorderHover
             }
-        case .error:
+        case .error, .richError:
             switch interactionState {
             case .idle:
                 theme.colors.actionNegativeEnabled

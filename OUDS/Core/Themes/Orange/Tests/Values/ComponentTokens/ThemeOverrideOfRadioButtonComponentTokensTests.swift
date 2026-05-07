@@ -40,11 +40,6 @@ struct ThemeOverrideOfRadioButtonComponentTokensTests {
         #expect(inheritedTheme.radioButton.sizeMinHeight == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideRadioButtonSizeIndicator() throws {
-        #expect(inheritedTheme.radioButton.sizeIndicator != abstractTheme.radioButton.sizeIndicator)
-        #expect(inheritedTheme.radioButton.sizeIndicator == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)
-    }
-
     @Test func inheritedThemeCanOverrideRadioButtonSizeMinWidth() throws {
         #expect(inheritedTheme.radioButton.sizeMinWidth != abstractTheme.radioButton.sizeMinWidth)
         #expect(inheritedTheme.radioButton.sizeMinWidth == MockThemeRadioButtonComponentTokenProvider.mockThemeRadioButtonSize)

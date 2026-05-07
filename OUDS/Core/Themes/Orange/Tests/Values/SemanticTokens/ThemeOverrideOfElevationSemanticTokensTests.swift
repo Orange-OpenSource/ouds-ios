@@ -45,9 +45,9 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.xRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationXRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationXDefault() throws {
-        #expect(inheritedTheme.elevations.xDefault != abstractTheme.elevations.xDefault)
-        #expect(inheritedTheme.elevations.xDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationXRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationXElevated() throws {
+        #expect(inheritedTheme.elevations.xElevated != abstractTheme.elevations.xElevated)
+        #expect(inheritedTheme.elevations.xElevated == MockThemeElevationSemanticTokensProvider.mockThemeElevationXRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationXEmphasized() throws {
@@ -77,9 +77,9 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.yRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationYRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationYDefault() throws {
-        #expect(inheritedTheme.elevations.yDefault != abstractTheme.elevations.yDefault)
-        #expect(inheritedTheme.elevations.yDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationYRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationYElevated() throws {
+        #expect(inheritedTheme.elevations.yElevated != abstractTheme.elevations.yElevated)
+        #expect(inheritedTheme.elevations.yElevated == MockThemeElevationSemanticTokensProvider.mockThemeElevationYRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationYEmphasized() throws {
@@ -109,9 +109,9 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.blurRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationBlurDefault() throws {
-        #expect(inheritedTheme.elevations.blurDefault != abstractTheme.elevations.blurDefault)
-        #expect(inheritedTheme.elevations.blurDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationBlurElevated() throws {
+        #expect(inheritedTheme.elevations.blurElevated != abstractTheme.elevations.blurElevated)
+        #expect(inheritedTheme.elevations.blurElevated == MockThemeElevationSemanticTokensProvider.mockThemeElevationBlurRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationBlurEmpahsized() throws {
@@ -136,14 +136,14 @@ struct ThemeOverrideOfElevationSemanticTokensTests {
         #expect(inheritedTheme.elevations.colorNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDefaultLight() throws {
-        #expect(inheritedTheme.elevations.colorDefaultLight != abstractTheme.elevations.colorDefaultLight)
-        #expect(inheritedTheme.elevations.colorDefaultLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorElevatedight() throws {
+        #expect(inheritedTheme.elevations.colorElevatedLight != abstractTheme.elevations.colorElevatedLight)
+        #expect(inheritedTheme.elevations.colorElevatedLight == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
-    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorDefaultDark() throws {
-        #expect(inheritedTheme.elevations.colorDefaultDark != abstractTheme.elevations.colorDefaultDark)
-        #expect(inheritedTheme.elevations.colorDefaultDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationColorElevatedDark() throws {
+        #expect(inheritedTheme.elevations.colorElevatedDark != abstractTheme.elevations.colorElevatedDark)
+        #expect(inheritedTheme.elevations.colorElevatedDark == MockThemeElevationSemanticTokensProvider.mockThemeElevationColorRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenElevationColorRaisedLight() throws {

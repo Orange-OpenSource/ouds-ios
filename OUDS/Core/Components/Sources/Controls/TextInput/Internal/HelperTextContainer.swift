@@ -19,7 +19,7 @@ struct HelperErrorTextContainer: View {
 
     // MARK: - Properties
 
-    let helperText: String?
+    let helperText: TextualContent?
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
@@ -28,7 +28,7 @@ struct HelperErrorTextContainer: View {
 
     var body: some View {
         if !text.isEmpty {
-            Text(text)
+            view(for: text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
@@ -43,7 +43,7 @@ struct HelperErrorTextContainer: View {
         switch status {
         case .enabled:
             theme.colors.contentMuted
-        case .error:
+        case .error, .richError:
             theme.colors.contentStatusNegative
         case .loading: // Should not appear
             theme.colors.contentMuted
@@ -58,8 +58,25 @@ struct HelperErrorTextContainer: View {
         switch status {
         case let .error(message):
             message
+        case let .richError(message):
+            String(message.characters)
         case .enabled, .readOnly, .disabled, .loading:
-            helperText ?? ""
+            helperText?.rawValue ?? ""
+        }
+    }
+
+    private func view(for text: String) -> Text {
+        switch status {
+        case let .error(message):
+            Text(message)
+        case let .richError(message):
+            Text(message)
+        case .enabled, .readOnly, .disabled, .loading:
+            if let helperText {
+                textView(for: helperText)
+            } else {
+                Text("") // Will never happen
+            }
         }
     }
 }

@@ -30,31 +30,31 @@ struct EffectRawTokensTests {
     // MARK: - Positive tests
 
     @Test
-    func effectRawTokenBlur160IsNotNegative() throws {
-        #expect(EffectRawTokens.blur160 >= 0)
-    }
-
-    @Test
     func effectRawTokenBlur320IsNotNegative() throws {
         #expect(EffectRawTokens.blur320 >= 0)
     }
 
-    // MARK: - Integer tests
-
     @Test
-    func effectRawTokenBlur160IsInteger() throws {
-        #expect(EffectRawTokens.blur160.truncatingRemainder(dividingBy: 1) == 0)
+    func effectRawTokenBlur480IsNotNegative() throws {
+        #expect(EffectRawTokens.blur480 >= 0)
     }
+
+    // MARK: - Integer tests
 
     @Test
     func effectRawTokenBlur320IsInteger() throws {
         #expect(EffectRawTokens.blur320.truncatingRemainder(dividingBy: 1) == 0)
     }
 
+    @Test
+    func effectRawTokenBlur480IsInteger() throws {
+        #expect(EffectRawTokens.blur480.truncatingRemainder(dividingBy: 1) == 0)
+    }
+
     // MARK: - Order tests
 
     @Test
-    func effectRawTokenBlur160LowerThan320() throws {
-        #expect(EffectRawTokens.blur160 < EffectRawTokens.blur320)
+    func effectRawTokenBlur320LowerThan480() throws {
+        #expect(EffectRawTokens.blur320 < EffectRawTokens.blur480)
     }
 }

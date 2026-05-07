@@ -60,6 +60,8 @@ public protocol TextInputComponentTokens {
     var spaceColumnGapDefault: SpaceSemanticToken { get }
     var spaceColumnGapInlineText: SpaceSemanticToken { get }
     var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { get }
+    var spaceColumnGapLabelAsterisk: SpaceSemanticToken { get }
+    var spaceColumnGapLabelSmallAsterisk: SpaceSemanticToken { get }
     var spaceRowGapLabelInput: SpaceSemanticToken { get }
 }
 

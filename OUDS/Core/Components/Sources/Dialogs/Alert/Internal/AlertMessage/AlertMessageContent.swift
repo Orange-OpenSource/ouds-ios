@@ -20,8 +20,8 @@ struct AlertMessageContent: View {
 
     let text: String
     let status: OUDSAlertStatus
-    let description: String?
-    let bulletList: [String]
+    let description: TextualContent?
+    let bulletList: [TextualContent]
     let link: OUDSAlertMessage.Link?
 
     @Environment(\.theme) private var theme
@@ -38,7 +38,7 @@ struct AlertMessageContent: View {
                     .accessibilityLabel(accessibilityLabel)
 
                 if let description, !description.isEmpty {
-                    Text(description)
+                    textView(for: description)
                         .labelDefaultMedium(theme)
                         .foregroundColor(foregroundColor)
                         .frame(maxWidth: .infinity, alignment: .leading)

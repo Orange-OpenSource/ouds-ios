@@ -104,8 +104,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var actionReadOnlySecondary: MultipleColorSemanticToken { get }
 
-    var actionAccent: MultipleColorSemanticToken { get }
-
     // MARK: - Color - Background
 
     var bgPrimary: MultipleColorSemanticToken { get }
@@ -230,7 +228,9 @@ public protocol ColorMultipleSemanticTokens {
 
     var overlayDrag: MultipleColorSemanticToken { get }
 
-    var overlayModal: MultipleColorSemanticToken { get }
+    var overlayModalSheet: MultipleColorSemanticToken { get }
+
+    var overlayBackdrop: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Surface
 

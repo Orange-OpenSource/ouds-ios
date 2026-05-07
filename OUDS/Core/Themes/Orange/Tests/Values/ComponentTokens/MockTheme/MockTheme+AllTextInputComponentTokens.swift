@@ -74,6 +74,9 @@ final class MockThemeTextInputComponentTokenProvider: OrangeThemeTextInputCompon
     override var spaceColumnGapDefault: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spaceColumnGapInlineText: SpaceSemanticToken { Self.mockThemeTextInputSpace }
     override var spaceColumnGapTrailingErrorAction: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override var spaceColumnGapLabelAsterisk: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+    override var spaceColumnGapLabelSmallAsterisk: SpaceSemanticToken { Self.mockThemeTextInputSpace }
+
     override var spaceRowGapLabelInput: SpaceSemanticToken { Self.mockThemeTextInputSpace }
 }
 

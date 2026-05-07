@@ -96,7 +96,7 @@ struct ContentView: View {
                                    isOn: $switchToDarkMode)
                         .padding(.horizontal, theme.spaces.fixed3xlarge)
                 }
-                .frame(maxWidth: theme.sizes.maxWidthTypeBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
+                .frame(maxWidth: theme.sizes.maxWidthBodyMedium.dimension(for: horizontalSizeClass ?? .regular))
                 .padding(.bottom, theme.spaces.fixedLarge)
             }
         }.preferredColorScheme(switchToDarkMode ? .dark : .light)

@@ -47,6 +47,8 @@ struct TextAreaTrailingContainer: View {
 
             if case .error = status {
                 errorIcon
+            } else if case .richError = status {
+                errorIcon
             } else if isOverLimit {
                 errorIcon
             } else if case .loading = status {

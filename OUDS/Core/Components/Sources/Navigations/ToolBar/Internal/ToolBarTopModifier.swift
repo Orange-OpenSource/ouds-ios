@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS) && !os(macOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
@@ -82,6 +82,7 @@ struct ToolBarTopModifier: ViewModifier {
     private func itemsView(_ items: [OUDSToolBarItem]) -> some View {
         ForEach(items) { item in
             item
+                .environment(\.toolbarItemLocation, .toolbarTop)
         }
     }
 

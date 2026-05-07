@@ -24,7 +24,7 @@ import OUDSTokensSemantic
 /// These values can be overriden inside `OrangeCompactThemeElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OrangeCompactThemeElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
 
-    public var colorDefault: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorDefaultLight, dark: colorDefaultDark) }
+    public var colorElevated: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorElevatedLight, dark: colorElevatedDark) }
 
     public var colorRaised: ElevationMultipleColorSemanticToken { MultipleColorSemanticToken(light: colorRaisedLight, dark: colorRaisedDark) }
 

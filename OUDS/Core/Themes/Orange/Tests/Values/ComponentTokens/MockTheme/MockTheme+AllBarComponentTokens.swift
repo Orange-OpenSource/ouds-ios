@@ -51,14 +51,14 @@ final class MockThemeBarComponentTokenProvider: OrangeThemeBarComponentTokensPro
     override var colorContentUnselectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
     override var colorContentOnAccent: MultipleColorSemanticToken { Self.mockThemeBarColor }
     override var colorBorderBadge: MultipleColorSemanticToken { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedHover: MultipleColorSemanticToken { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedPressed: MultipleColorSemanticToken { Self.mockThemeBarColor }
-    override var colorActiveIndicatorCustomSelectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorCurrentIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorCurrentIndicatorCustomSelectedHover: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorCurrentIndicatorCustomSelectedPressed: MultipleColorSemanticToken { Self.mockThemeBarColor }
+    override var colorCurrentIndicatorCustomSelectedFocus: MultipleColorSemanticToken { Self.mockThemeBarColor }
 
     // MARK: - Opacities
 
-    override var opacityActiveIndicatorCustom: OpacitySemanticToken { Self.mockThemeBarOpacitiy }
+    override var opacityCurrentIndicatorCustom: OpacitySemanticToken { Self.mockThemeBarOpacitiy }
 
     // MARK: - Effects
 
@@ -66,14 +66,14 @@ final class MockThemeBarComponentTokenProvider: OrangeThemeBarComponentTokensPro
 
     // MARK: - Borders
 
-    override var borderRadiusActiveIndicatorCustomTop: BorderRadiusSemanticToken { Self.mockThemeBarBorderRadius }
-    override var borderRadiusActiveIndicatorCustomBottom: BorderRadiusSemanticToken { Self.mockThemeBarBorderRadius }
+    override var borderRadiusCurrentIndicatorCustomTop: BorderRadiusSemanticToken { Self.mockThemeBarBorderRadius }
+    override var borderRadiusCurrentIndicatorCustomBottom: BorderRadiusSemanticToken { Self.mockThemeBarBorderRadius }
 
     // MARK: - Sizes
 
-    override var sizeWidthActiveIndicatorCustomTop: SizeSemanticToken { Self.mockThemeBarSize }
-    override var sizeWidthActiveIndicatorCustomBottom: SizeSemanticToken { Self.mockThemeBarSize }
-    override var sizeHeightActiveIndicatorCustom: SizeSemanticToken { Self.mockThemeBarSize }
+    override var sizeWidthCurrentIndicatorCustomTop: SizeSemanticToken { Self.mockThemeBarSize }
+    override var sizeWidthCurrentIndicatorCustomBottom: SizeSemanticToken { Self.mockThemeBarSize }
+    override var sizeHeightCurrentIndicatorCustom: SizeSemanticToken { Self.mockThemeBarSize }
 }
 
 // swiftlint:enable required_deinit

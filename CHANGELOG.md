@@ -4,7 +4,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
- ## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.3.0...1.4.0) - 2026-04-15
+## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...2.0.0) - 2026-05-07
+
+### Added
+
+- **BREAKING**: Rich text support for `alert message`, `bullet list`, `switch item`, `radio item`, `checkbox item`, `text area`, `text input`, `password input`, `PIN code input` components (Orange-OpenSource/ouds-ios#1405)
+- **BREAKING**: `badge` on `toolbar` components items with icons (Orange-OpenSource/ouds-ios#1398)
+
+### Changed
+
+- `github/codeql-action/upload-sarif` action from v4.35.2 to v4.35.3 for `scorecard` workflow
+- `swift-docc-plugin` Swift package from v1.4.6 to v1.5.0
+- `SwiftFormat` Swift package plugin from v0.61.0 to v0.61.1
+- `Ruby` version from v4.0.2 to v4.0.3 for `build-and-test` workflows
+- `fastlane` gem from v2.232.2 to v2.233.1
+- `actions/upload-artifact` action from v7.0.0 to v7.0.1 for `scorecard` workflow
+- `json` RubyGem from v2.19.3 to v2.19.5
+- `ruby/setup-ruby` action from v1.301.0 to v1.306.0 for `build-and-test` workflow
+- `link` component to center the indicator on multiline (Orange-OpenSource/ouds-ios#1482)
+- URL redirection for documentation (Orange-OpenSource/ouds-ios#1481)
+- Move from Xcode 26.3 to Xcode 26.4, and Swift 6.2 to Swift 6.3 (Orange-OpenSource/ouds-ios#1356)
+- **BREAKING**: Update of tokens (tokens librairies v2.5.0) (Orange-OpenSource/ouds-ios#1473)
+- **BREAKING**: Update of tokens (tokens librairies v2.4.0) (Orange-OpenSource/ouds-ios#1437)
+
+### Fixed
+
+- Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass for deep navigations app (Orange-OpenSource/ouds-ios#1490) 
+- Missing error vocalization with Voice Over for `switch item` component (Orange-OpenSource/ouds-ios#1484)
+- Overlay items of `tab bar` component still displayed even if hidden for disabled Liquid Glass (Orange-OpenSource/ouds-ios#1434)
+- Selected tab indicator in `tab bar` component if Liquid Glass not applied (Orange-OpenSource/ouds-ios#1428)
+
+### Removed
+
+- **BREAKING**: Old methods prefixed by `ouds`
+- **BREAKING**: `UnorderedIcon` type
+- **BREAKING**: `OUDSBulletList.UnorderedAsset.free` case
+- **BREAKING**: `OUDSCheckboxItem(isOn:)`, `OUDSRadioItem(isOn:)`, `OUDSCheckboxItemIndeterminate(selection:)` inits
+- **BREAKING**: `OUDSTabBar(selected:count)` init
+
+## [1.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.3.0...1.4.0) - 2026-04-15
 
 ### Added
 

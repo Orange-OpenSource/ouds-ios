@@ -60,7 +60,7 @@ struct TextAreaBackgroundModifier: ViewModifier {
             case .hover:
                 theme.colors.actionSupportHover
             }
-        case .error:
+        case .error, .richError:
             theme.colors.surfaceStatusNegativeMuted
         case .loading:
             switch interactionState {

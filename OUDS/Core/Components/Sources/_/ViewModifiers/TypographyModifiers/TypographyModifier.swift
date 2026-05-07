@@ -124,7 +124,7 @@ struct TypographyModifier: ViewModifier {
     func body(content: Content) -> some View {
         Group {
             // `kerning()` and `fontWeight, only available for iOS 16+
-            if #available(iOS 16.0, macOS 13.0, tvOS 16.0, visionOS 16.0, watchOS 9.0, *) {
+            if #available(iOS 16.0, macOS 13.0, tvOS 16.0, visionOS 1, watchOS 9.0, *) {
                 content
                     .font(Font(adaptativeFont))
                     .fontWeight(Font.Weight(weight: adaptiveFontToken.weight))

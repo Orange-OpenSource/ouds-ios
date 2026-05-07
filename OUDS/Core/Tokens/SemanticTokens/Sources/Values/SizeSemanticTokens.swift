@@ -77,40 +77,41 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    var maxWidthTypeDisplayLargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeDisplayLargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeDisplayMediumMobile: SizeSemanticToken { get }
-    var maxWidthTypeDisplayMediumTablet: SizeSemanticToken { get }
-    var maxWidthTypeDisplaySmallMobile: SizeSemanticToken { get }
-    var maxWidthTypeDisplaySmallTablet: SizeSemanticToken { get }
+    var maxWidthDisplayLargeMobile: SizeSemanticToken { get }
+    var maxWidthDisplayLargeTablet: SizeSemanticToken { get }
+    var maxWidthDisplayMediumMobile: SizeSemanticToken { get }
+    var maxWidthDisplayMediumTablet: SizeSemanticToken { get }
+    var maxWidthDisplaySmallMobile: SizeSemanticToken { get }
+    var maxWidthDisplaySmallTablet: SizeSemanticToken { get }
 
-    var maxWidthTypeHeadingXlargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeHeadingXlargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeHeadingLargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeHeadingLargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeHeadingMediumMobile: SizeSemanticToken { get }
-    var maxWidthTypeHeadingMediumTablet: SizeSemanticToken { get }
-    var maxWidthTypeHeadingSmallMobile: SizeSemanticToken { get }
-    var maxWidthTypeHeadingSmallTablet: SizeSemanticToken { get }
+    var maxWidthHeadingXlargeMobile: SizeSemanticToken { get }
+    var maxWidthHeadingXlargeTablet: SizeSemanticToken { get }
+    var maxWidthHeadingLargeMobile: SizeSemanticToken { get }
+    var maxWidthHeadingLargeTablet: SizeSemanticToken { get }
+    var maxWidthHeadingMediumMobile: SizeSemanticToken { get }
+    var maxWidthHeadingMediumTablet: SizeSemanticToken { get }
+    var maxWidthHeadingSmallMobile: SizeSemanticToken { get }
+    var maxWidthHeadingSmallTablet: SizeSemanticToken { get }
 
-    var maxWidthTypeBodyLargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeBodyLargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeBodyMediumMobile: SizeSemanticToken { get }
-    var maxWidthTypeBodyMediumTablet: SizeSemanticToken { get }
-    var maxWidthTypeBodySmallMobile: SizeSemanticToken { get }
-    var maxWidthTypeBodySmallTablet: SizeSemanticToken { get }
+    var maxWidthBodyLargeMobile: SizeSemanticToken { get }
+    var maxWidthBodyLargeTablet: SizeSemanticToken { get }
+    var maxWidthBodyMediumMobile: SizeSemanticToken { get }
+    var maxWidthBodyMediumTablet: SizeSemanticToken { get }
+    var maxWidthBodySmallMobile: SizeSemanticToken { get }
+    var maxWidthBodySmallTablet: SizeSemanticToken { get }
 
-    var maxWidthTypeLabelXlargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeLabelXlargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeLabelLargeMobile: SizeSemanticToken { get }
-    var maxWidthTypeLabelLargeTablet: SizeSemanticToken { get }
-    var maxWidthTypeLabelMediumMobile: SizeSemanticToken { get }
-    var maxWidthTypeLabelMediumTablet: SizeSemanticToken { get }
-    var maxWidthTypeLabelSmallMobile: SizeSemanticToken { get }
-    var maxWidthTypeLabelSmallTablet: SizeSemanticToken { get }
+    var maxWidthLabelXlargeMobile: SizeSemanticToken { get }
+    var maxWidthLabelXlargeTablet: SizeSemanticToken { get }
+    var maxWidthLabelLargeMobile: SizeSemanticToken { get }
+    var maxWidthLabelLargeTablet: SizeSemanticToken { get }
+    var maxWidthLabelMediumMobile: SizeSemanticToken { get }
+    var maxWidthLabelMediumTablet: SizeSemanticToken { get }
+    var maxWidthLabelSmallMobile: SizeSemanticToken { get }
+    var maxWidthLabelSmallTablet: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
+    var iconWithLabelXlargeSizeXsmall: SizeSemanticToken { get }
     var iconWithLabelXlargeSizeSmall: SizeSemanticToken { get }
     var iconWithLabelXlargeSizeMedium: SizeSemanticToken { get }
     var iconWithLabelXlargeSizeLarge: SizeSemanticToken { get }

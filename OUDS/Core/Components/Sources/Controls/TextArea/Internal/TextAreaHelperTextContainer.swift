@@ -47,13 +47,16 @@ struct TextAreaHelperErrorTextContainer: View {
         switch status {
         case let .error(message):
             return Text(message)
-
+        case let .richError(message):
+            return Text(message)
         case .enabled, .readOnly, .loading, .disabled:
             if isOverLimit, case .charactersMaxCount = helperText {
                 return Text(tooManyCharactersText(excess: excessCount))
             }
             switch helperText {
             case let .plain(string):
+                return Text(string)
+            case let .rich(string):
                 return Text(string)
             case .charactersMaxCount:
                 return Text(remainingCharactersText(count: remainingCount))
@@ -69,7 +72,7 @@ struct TextAreaHelperErrorTextContainer: View {
         switch status {
         case .enabled, .readOnly, .loading:
             return theme.colors.contentMuted
-        case .error:
+        case .error, .richError:
             return theme.colors.contentStatusNegative
         case .disabled:
             return theme.colors.actionDisabled

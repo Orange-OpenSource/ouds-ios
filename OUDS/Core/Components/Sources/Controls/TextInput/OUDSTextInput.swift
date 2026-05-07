@@ -18,6 +18,8 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// swiftlint:disable file_length
+
 /// Text input is a UI element that allows to enter, edit, or select single-line textual data.
 /// Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
 /// It provides a visual and interactive affordance for text entry while supporting labels, placeholders, icons, descriptions, and validation feedback.
@@ -119,6 +121,14 @@ import SwiftUI
 /// If there is only one field in the formular, or if the mandatory nature is obvious (such as login/password),
 /// no mention is necessary since the fields are essential to the formular's functionality.
 ///
+/// ## Rich text
+///
+/// Rich text can be used for error and helper texts.
+///
+/// Strong text can be used sparingly to highlight key information within the content.
+/// No other text styles should be used.
+/// Underlined text must not be applied manually (e.g. in error message), as it is commonly associated with hyperlinks and may mislead users.
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -167,7 +177,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com]( https://r.orange.fr/r/S-ouds-doc-text-input)
+/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-text-input)
 ///
 /// ## Themes rendering
 ///
@@ -190,7 +200,7 @@ import SwiftUI
 /// - Version: 1.3.0 (Figma component design version)
 /// - Since: 0.20.0
 @available(iOS 15, macOS 13, visionOS 1, *)
-public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink in doc above
+public struct OUDSTextInput: View {
 
     // MARK: - Properties
 
@@ -202,7 +212,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     let leadingIcon: Image?
     let flipLeadingIcon: Bool
     let trailingAction: TrailingAction?
-    let helperText: String?
+    let helperText: TextualContent?
     let helperLink: Helperlink?
     let status: Self.Status
     let isOutlined: Bool
@@ -250,7 +260,7 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
 
     /// Define all available status for the text input
     /// - Since: 0.20.0
-    public enum Status: Equatable {
+    @frozen public enum Status: Equatable {
         /// The `enabled` status (default)
         case enabled
 
@@ -258,6 +268,12 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
         /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
         /// accessible error `message` positioned below the input.
         case error(message: String)
+
+        /// The `error` status indicates that the user input does not meet validation rules or expected formatting.
+        /// It provides immediate visual feedback, typically through a red border, error icon, and a clear,
+        /// accessible error `message` positioned below the input.
+        /// The error message can be a rich text.
+        case richError(message: AttributedString)
 
         /// The `loading` state indicates that the system is processing or retrieving data related to the
         /// text entered. A progress indicator appears to inform the user that an action is in progress.
@@ -275,6 +291,8 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
             case (.enabled, .enabled), (.loading, .loading), (.readOnly, .readOnly), (.disabled, .disabled):
                 true
             case let (.error(lhsMessage), .error(rhsMessage)):
+                lhsMessage == rhsMessage
+            case let (.richError(lhsMessage), .richError(rhsMessage)):
                 lhsMessage == rhsMessage
             default:
                 false
@@ -351,7 +369,11 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     {
         self.label = label
         self.text = text
-        self.helperText = helperText
+        self.helperText = if let helperText {
+            .raw(helperText)
+        } else {
+            nil
+        }
         self.placeholder = placeholder
         self.prefix = prefix
         self.suffix = suffix
@@ -365,6 +387,67 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
     }
 
     // swiftlint:disable function_default_parameter_at_end
+
+    /// Creates a text input.
+    ///
+    /// ```swift
+    ///     OUDSTextInput(label: "Email",
+    ///                   text: $text,
+    ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))  // Manage in your side errors for init
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - label: The label displayed above the text input. It describes the purpose of the input
+    ///    - text: The text to display and edit
+    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input. Commonly used to indicate expected formatting like a country code, a unit...
+    ///      The `prefix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
+    ///    - suffix: Text placed after the user's input, often used to display a currency or a unit (kg, %, cm…).
+    ///      The `suffix` is hidden if a `placeholder` is not provided or empty. But it is visible in focus state or if the value is not empty.
+    ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
+    ///      envelope for email, etc.), by default is *nil*
+    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
+    ///    - trailingAction: An optional trailing action related to the field: (clear input,
+    ///      toggle password visibility, etc.), by default is *nil*
+    ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
+    ///      information about the input field, such as how it will be used., by default is *nil*. If `status` is set to OUDSTextInput.Status.Error,
+    ///      this `helperText` is ignored.
+    ///    - helperLink: An helper link displayed below or in place of the helper text., by default is *nil*
+    ///    - isOutlined: Controls the style of the text input. When `true`, it displays a minimalist
+    ///      text input with a transparent background and a visible stroke outlining the field, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
+    ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///      modifier. Defaults to `false`.
+    ///    - status: The current status of the text input, by default to set *enabled*
+    public init(label: String,
+                text: Binding<String>,
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                suffix: String? = nil,
+                leadingIcon: Image? = nil,
+                flipLeadingIcon: Bool = false,
+                trailingAction: Self.TrailingAction? = nil,
+                helperText: AttributedString,
+                helperLink: Self.Helperlink? = nil,
+                isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                status: Self.Status = .enabled)
+    {
+        self.label = label
+        self.text = text
+        self.helperText = .attributed(helperText)
+        self.placeholder = placeholder
+        self.prefix = prefix
+        self.suffix = suffix
+        self.leadingIcon = leadingIcon
+        self.flipLeadingIcon = flipLeadingIcon
+        self.trailingAction = trailingAction
+        self.helperLink = helperLink
+        self.status = status
+        self.isOutlined = isOutlined
+        self.constrainedMaxWidth = constrainedMaxWidth
+    }
+
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -398,6 +481,62 @@ public struct OUDSTextInput: View { // TODO: #406 - Add documentation hyperlink 
                 flipLeadingIcon: Bool = false,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
+                helperLink: Self.Helperlink? = nil,
+                isOutlined: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                status: Self.Status = .enabled)
+    {
+        self.init(label: key.resolved(tableName: tableName, bundle: bundle),
+                  text: text,
+                  placeholder: placeholder,
+                  prefix: prefix,
+                  suffix: suffix,
+                  leadingIcon: leadingIcon,
+                  flipLeadingIcon: flipLeadingIcon,
+                  trailingAction: trailingAction,
+                  helperText: helperText,
+                  helperLink: helperLink,
+                  isOutlined: isOutlined,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  status: status)
+    }
+
+    /// Creates a text input with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSTextInput(LocalizedStringKey("email_label"),
+    ///                   bundle: Bundle.module,
+    ///                   text: $text,
+    ///                   helperText: AttributedString(markdown: "You should use your **corporate email**"))  // Manage in your side errors for init
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - text: The text to display and edit
+    ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
+    ///    - prefix: Text placed before the user's input, by default is *nil*
+    ///    - suffix: Text placed after the user's input, by default is *nil*
+    ///    - leadingIcon: An optional leading icon, by default is *nil*
+    ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
+    ///    - trailingAction: An optional trailing action, by default is *nil*
+    ///    - helperText: An helper text in rich text
+    ///    - helperLink: An optional helper link, by default is *nil*
+    ///    - isOutlined: Controls the style of the text input, by default is *false*
+    ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
+    ///    - status: The current status of the text input, default set to *enabled*
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                text: Binding<String>,
+                placeholder: String? = nil,
+                prefix: String? = nil,
+                suffix: String? = nil,
+                leadingIcon: Image? = nil,
+                flipLeadingIcon: Bool = false,
+                trailingAction: Self.TrailingAction? = nil,
+                helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,

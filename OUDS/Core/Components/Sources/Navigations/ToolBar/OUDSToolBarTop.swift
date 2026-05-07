@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS) && !os(tvOS) && !os(macOS)
+#if !os(watchOS) && !os(tvOS)
 import OUDSFoundations
 import OUDSThemesContract
 import SwiftUI
@@ -56,6 +56,11 @@ import SwiftUI
 ///
 /// - The component is available on iOS, iPadOS, and visionOS
 /// - The component is not available for watchOS, tvOS and macOS
+///
+/// ## Badges uses
+///
+/// For iOS 26 with Liquid Glass, the system badge is used because the ``OUDSBadge`` does not provide a suitable rendering with the glassified effect applied on the top toolbar.
+/// For iOS until 18 and without Liquid Glass ``OUDSBadge`` is always used.
 ///
 /// ## Code sample
 ///

@@ -42,6 +42,18 @@ struct WireframeThemeControlItemComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultFontSemanticTokensProvider() throws {
+        #expect(provider.fonts is WireframeThemeFontSemanticTokensProvider)
+    }
+
+    @Test func defaultOpacitySemanticTokensProvider() throws {
+        #expect(provider.opacities is WireframeThemeOpacitySemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is WireframeThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

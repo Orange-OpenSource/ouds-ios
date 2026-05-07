@@ -154,6 +154,16 @@ struct ThemeOverrideOfTextInputComponentTokensTests {
         #expect(inheritedTheme.textInput.spaceRowGapLabelInput != abstractTheme.textInput.spaceRowGapLabelInput)
         #expect(inheritedTheme.textInput.spaceRowGapLabelInput == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
     }
+
+    @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapLabelAsterisk() throws {
+        #expect(inheritedTheme.textInput.spaceColumnGapLabelAsterisk != abstractTheme.textInput.spaceColumnGapLabelAsterisk)
+        #expect(inheritedTheme.textInput.spaceColumnGapLabelAsterisk == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideTextInputSpaceColumnGapLabelSmallAsterisk() throws {
+        #expect(inheritedTheme.textInput.spaceColumnGapLabelSmallAsterisk != abstractTheme.textInput.spaceColumnGapLabelSmallAsterisk)
+        #expect(inheritedTheme.textInput.spaceColumnGapLabelSmallAsterisk == MockThemeTextInputComponentTokenProvider.mockThemeTextInputSpace)
+    }
 }
 
 // swiftlint:enable type_name

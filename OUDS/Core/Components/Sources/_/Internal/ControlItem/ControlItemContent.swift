@@ -55,14 +55,14 @@ struct ControlItemContent: View {
             .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
 
             if layoutData.isError, let errorText = layoutData.errorText, !errorText.isEmpty {
-                Text(errorText)
+                textView(for: errorText)
                     .labelDefaultMedium(theme)
                     .foregroundColor(theme.colors.contentStatusNegative)
-                    .padding(.top, theme.controlItem.spacePaddingBlockTopErrorText)
+                    .padding(.top, theme.controlItem.spacePaddingBlockTopHelperText)
                     .padding(.horizontal, theme.controlItem.spacePaddingInline)
             }
         }
-        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeight, alignment: .center)
+        .frame(minWidth: theme.controlItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.controlItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
         .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadius))
     }

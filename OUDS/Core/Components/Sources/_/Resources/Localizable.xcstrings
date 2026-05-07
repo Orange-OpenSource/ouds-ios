@@ -4,6 +4,78 @@
     "" : {
       "shouldTranslate" : false
     },
+    "core_alertMessage_close_a11y" : {
+      "comment" : "Component - Alert Message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق رسالة التنبيه"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close alert message"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer le message d'alerte"
+          }
+        }
+      }
+    },
+    "core_alertMessage_negative_a11y" : {
+      "comment" : "Component - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
+    },
+    "core_alertMessage_warning_a11y" : {
+      "comment" : "Component - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحذير"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertissement"
+          }
+        }
+      }
+    },
     "core_bulletList_a11y_level" : {
       "comment" : "Component - Bullet List - VoiceOver: nesting level of an item (e.g. \"level 1\")",
       "extractionState" : "manual",
@@ -108,78 +180,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "core_alertMessage_close_a11y" : {
-      "comment" : "Component - Alert Message",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إغلاق رسالة التنبيه"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close alert message"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fermer le message d'alerte"
-          }
-        }
-      }
-    },
-    "core_alertMessage_negative_a11y" : {
-      "comment" : "Component - Alerts",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خطأ"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erreur"
-          }
-        }
-      }
-    },
-    "core_alertMessage_warning_a11y" : {
-      "comment" : "Component - Alerts",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تحذير"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Warning"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avertissement"
           }
         }
       }

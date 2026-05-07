@@ -18,7 +18,9 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-/// Defines provider objects for `ColorChartSemanticTokens` so as to pack them as light and dark modes colors.
+// swiftlint:disable line_length
+
+/// Defines provider objects for `semanticTokens` so as to pack them as light and dark modes colors.
 /// These values cannot be overriden as not specified / allowed, forbidden by design.
 ///
 /// Helps to expose color chart semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
@@ -61,4 +63,96 @@ extension OrangeThemeColorChartSemanticTokensProvider: ColorChartMultipleSemanti
     @objc public final var highlight: MultipleColorSemanticToken { MultipleColorSemanticToken(light: highlightLight, dark: highlightDark) }
 
     @objc public final var neutral: MultipleColorSemanticToken { MultipleColorSemanticToken(light: neutralLight, dark: neutralDark) }
+
+    @objc public final var sequentialAccent1Tint100: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint100Light, dark: sequentialAccent1Tint100Dark) }
+
+    @objc public final var sequentialAccent1Tint200: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint200Light, dark: sequentialAccent1Tint200Dark) }
+
+    @objc public final var sequentialAccent1Tint300: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint300Light, dark: sequentialAccent1Tint300Dark) }
+
+    @objc public final var sequentialAccent1Tint400: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint400Light, dark: sequentialAccent1Tint400Dark) }
+
+    @objc public final var sequentialAccent1Tint500: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint500Light, dark: sequentialAccent1Tint500Dark) }
+
+    @objc public final var sequentialAccent1Tint600: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint600Light, dark: sequentialAccent1Tint600Dark) }
+
+    @objc public final var sequentialAccent1Tint700: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint700Light, dark: sequentialAccent1Tint700Dark) }
+
+    @objc public final var sequentialAccent1Tint800: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint800Light, dark: sequentialAccent1Tint800Dark) }
+
+    @objc public final var sequentialAccent1Tint900: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent1Tint900Light, dark: sequentialAccent1Tint900Dark) }
+
+    @objc public final var sequentialAccent2Tint100: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint100Light, dark: sequentialAccent2Tint100Dark) }
+
+    @objc public final var sequentialAccent2Tint200: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint200Light, dark: sequentialAccent2Tint200Dark) }
+
+    @objc public final var sequentialAccent2Tint300: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint300Light, dark: sequentialAccent2Tint300Dark) }
+
+    @objc public final var sequentialAccent2Tint400: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint400Light, dark: sequentialAccent2Tint400Dark) }
+
+    @objc public final var sequentialAccent2Tint500: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint500Light, dark: sequentialAccent2Tint500Dark) }
+
+    @objc public final var sequentialAccent2Tint600: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint600Light, dark: sequentialAccent2Tint600Dark) }
+
+    @objc public final var sequentialAccent2Tint700: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint700Light, dark: sequentialAccent2Tint700Dark) }
+
+    @objc public final var sequentialAccent2Tint800: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint800Light, dark: sequentialAccent2Tint800Dark) }
+
+    @objc public final var sequentialAccent2Tint900: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent2Tint900Light, dark: sequentialAccent2Tint900Dark) }
+
+    @objc public final var sequentialAccent3Tint100: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint100Light, dark: sequentialAccent3Tint100Dark) }
+
+    @objc public final var sequentialAccent3Tint200: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint200Light, dark: sequentialAccent3Tint200Dark) }
+
+    @objc public final var sequentialAccent3Tint300: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint300Light, dark: sequentialAccent3Tint300Dark) }
+
+    @objc public final var sequentialAccent3Tint400: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint400Light, dark: sequentialAccent3Tint400Dark) }
+
+    @objc public final var sequentialAccent3Tint500: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint500Light, dark: sequentialAccent3Tint500Dark) }
+
+    @objc public final var sequentialAccent3Tint600: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint600Light, dark: sequentialAccent3Tint600Dark) }
+
+    @objc public final var sequentialAccent3Tint700: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint700Light, dark: sequentialAccent3Tint700Dark) }
+
+    @objc public final var sequentialAccent3Tint800: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint800Light, dark: sequentialAccent3Tint800Dark) }
+
+    @objc public final var sequentialAccent3Tint900: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent3Tint900Light, dark: sequentialAccent3Tint900Dark) }
+
+    @objc public final var sequentialAccent4Tint100: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint100Light, dark: sequentialAccent4Tint100Dark) }
+
+    @objc public final var sequentialAccent4Tint200: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint200Light, dark: sequentialAccent4Tint200Dark) }
+
+    @objc public final var sequentialAccent4Tint300: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint300Light, dark: sequentialAccent4Tint300Dark) }
+
+    @objc public final var sequentialAccent4Tint400: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint400Light, dark: sequentialAccent4Tint400Dark) }
+
+    @objc public final var sequentialAccent4Tint500: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint500Light, dark: sequentialAccent4Tint500Dark) }
+
+    @objc public final var sequentialAccent4Tint600: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint600Light, dark: sequentialAccent4Tint600Dark) }
+
+    @objc public final var sequentialAccent4Tint700: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint700Light, dark: sequentialAccent4Tint700Dark) }
+
+    @objc public final var sequentialAccent4Tint800: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint800Light, dark: sequentialAccent4Tint800Dark) }
+
+    @objc public final var sequentialAccent4Tint900: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent4Tint900Light, dark: sequentialAccent4Tint900Dark) }
+
+    @objc public final var sequentialAccent5Tint100: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint100Light, dark: sequentialAccent5Tint100Dark) }
+
+    @objc public final var sequentialAccent5Tint200: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint200Light, dark: sequentialAccent5Tint200Dark) }
+
+    @objc public final var sequentialAccent5Tint300: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint300Light, dark: sequentialAccent5Tint300Dark) }
+
+    @objc public final var sequentialAccent5Tint400: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint400Light, dark: sequentialAccent5Tint400Dark) }
+
+    @objc public final var sequentialAccent5Tint500: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint500Light, dark: sequentialAccent5Tint500Dark) }
+
+    @objc public final var sequentialAccent5Tint600: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint600Light, dark: sequentialAccent5Tint600Dark) }
+
+    @objc public final var sequentialAccent5Tint700: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint700Light, dark: sequentialAccent5Tint700Dark) }
+
+    @objc public final var sequentialAccent5Tint800: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint800Light, dark: sequentialAccent5Tint800Dark) }
+
+    @objc public final var sequentialAccent5Tint900: MultipleColorSemanticToken { MultipleColorSemanticToken(light: sequentialAccent5Tint900Light, dark: sequentialAccent5Tint900Dark) }
 }
+
+// swiftlint:enable line_length

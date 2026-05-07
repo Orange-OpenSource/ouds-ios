@@ -482,7 +482,7 @@ OUDSChipPicker(title: "Select a drink", selections: $selections, chips: someData
     }
 }
 
-The library provides a password input based on a ``OUDSTextInput`` to let user provides password in a secure text field.
+The library provides an ``OUDSPasswordInput`` based on a ``OUDSTextInput`` to let user provides password in a secure text field.
 
 ```swift
 // The password to display and edit
@@ -515,7 +515,7 @@ OUDSPasswordInput(label: "Password", password: $password, prefix: "CORP-")
     }
 }
 
-The library provides a Pin Code input to let user provides PIN code or OTP code with only digits.
+The library provides an ``OUDSPinCodeInput`` to let user provides PIN code or OTP code with only digits.
 
 ```swift
 // The value with the code

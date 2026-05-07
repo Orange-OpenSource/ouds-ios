@@ -298,7 +298,7 @@ private struct SizeFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.radioButton.sizeIndicator,
-                   height: theme.radioButton.sizeIndicator)
+            .frame(width: theme.controlItem.sizeControlIndicator,
+                   height: theme.controlItem.sizeControlIndicator)
     }
 }

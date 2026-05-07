@@ -25,7 +25,7 @@ public protocol ElevationMultipleSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
-    var colorDefault: ElevationMultipleColorSemanticToken { get }
+    var colorElevated: ElevationMultipleColorSemanticToken { get }
     var colorRaised: ElevationMultipleColorSemanticToken { get }
     var colorDrag: ElevationMultipleColorSemanticToken { get }
     var colorEmphasized: ElevationMultipleColorSemanticToken { get }

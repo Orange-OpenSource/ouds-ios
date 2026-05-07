@@ -34,11 +34,20 @@ final class OrangeCompactThemeControlItemComponentTokensProvider: AllControlItem
     /// Provider of border semantic tokens to use for button borders
     let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of color semantic tokens to use for control-item-layout-based  colors
+    /// Provider of color semantic tokens to use for control-item-layout-based colors
     let colors: AllColorSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for control-item-layout-based  spaces
+    /// Provider of spaces semantic tokens to use for control-item-layout-based spaces
     let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of font semantic tokens to use for control-item-layout-based fonts
+    let fonts: AllFontSemanticTokensProvider
+
+    /// Provider of opacity semantic tokens to use for control-item-layout-based opacities
+    let opacities: AllOpacitySemanticTokensProvider
+
+    /// Provider of dimension semantic tokens to use for control-item-layout-based dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -50,16 +59,25 @@ final class OrangeCompactThemeControlItemComponentTokensProvider: AllControlItem
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeCompactThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeCompactThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeCompactThemeSpaceSemanticTokensProvider``)
+    ///    - fonts: Provider for font semantic tokens. If nil, a default one will be used (``OrangeCompactThemeFontSemanticTokensProvider``)
+    ///    - opacities: Provider for opacity semantic tokens. If nil, a default one will be used (``OrangeCompactThemeOpacitySemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens. If nil, a default one will be used (``OrangeCompactThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         fonts: AllFontSemanticTokensProvider? = nil,
+         opacities: AllOpacitySemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeCompactThemeControlItemComponentTokensProvider")
         self.sizes = (sizes ?? OrangeCompactThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeCompactThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeCompactThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeCompactThemeSpaceSemanticTokensProvider())
+        self.fonts = (fonts ?? OrangeCompactThemeFontSemanticTokensProvider())
+        self.opacities = (opacities ?? OrangeCompactThemeOpacitySemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeCompactThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeCompactThemeControlItemComponentTokensProvider")

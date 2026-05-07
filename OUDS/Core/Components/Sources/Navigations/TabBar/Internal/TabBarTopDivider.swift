@@ -19,26 +19,44 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A small stroke, like a divider, to display in the top of the tab bar
+/// A small stroke, like a divider, to display in the top of the tab bar for iOS lower than 26 (i.e. no Liquid Glass)
+/// or 26+ with Liquid Glass disabled.
 struct TabBarTopDivider: View {
 
+    /// Driven by `OUDSTabBar`,  the single source of truth for tab bar visibility.
+    /// Using a `@Binding` avoids calling `findTabBar()` here for visibility,
+    /// which was unreliable when intermediate navigation layers were present.
+    @Binding var isTabBarHidden: Bool
+
+    /// The height of the tab bar to compute the indicator position
     @State private var tabBarHeight: CGFloat = 0
+    /// The safe area bottom dimension to compute the indicator position
     @State private var safeAreaBottom: CGFloat = 0
 
-    @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
+    @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         GeometryReader { geometry in
+            // Keep the GeometryReader always present so its proxy stays available for
+            // measuring and positioning the divider on every update.
+            //
+            // The visibility guard intentionally stays inside the GeometryReader and is
+            // applied with `.opacity` on the Rectangle rather than conditionally removing
+            // the view. This lets the position calculation continue to use the current
+            // geometry and state values on each pass.
+            //
+            // `tabBarHeight > 0` prevents a misplaced render during the first layout pass,
+            // before `updateTabBarHeight()` has populated the measured tab bar height.
             let dividerPosition = geometry.size.height - tabBarHeight + safeAreaBottom
-
             Rectangle()
                 .fill(theme.colors.borderMinimal.color(for: colorScheme))
                 .frame(height: 1)
                 .position(
                     x: geometry.size.width / 2,
                     y: dividerPosition)
+                .opacity(tabBarHeight > 0 && !isTabBarHidden ? 1 : 0)
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
@@ -54,19 +72,33 @@ struct TabBarTopDivider: View {
 
     // MARK: Tab bar heights
 
-    /// Get the tab bar height depending to the state of the device and updates the same area stored dimension
-    private func updateTabBarHeight() {
+    /// Gets the tab bar height from the UIKit hierarchy and updates the stored dimension.
+    /// Visibility (`isTabBarHidden`) is intentionally NOT updated here — it is owned by
+    /// `OUDSTabBar` and passed down via `@Binding` to avoid the race condition where
+    /// `findTabBar()` might return a stale `isHidden` value during a navigation transition.
+    private func updateTabBarHeight() { // ༼;´༎ຶ ۝ ༎ຶ༽
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
 
         safeAreaBottom = window.safeAreaInsets.bottom
 
         if let detectedTabBar = findTabBar() {
+            // UITabBar found: read actual height only.
             tabBarHeight = detectedTabBar.frame.height
         } else {
-            // If not possible to compute tab bar height, get recommended / precomputed value as fallback
+            // UITabBar not yet in the hierarchy (timing issue on first appear).
+            // Use hardcoded fallback so `tabBarHeight > 0` unlocks the render guard.
+            //  (╯°□°)╯︵ ┻━┻
             let heights = iPhoneInUse.tabBarHeights
             tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
+            // Schedule a retry so we can replace the fallback with the real measured value
+            // once the UIKit hierarchy has settled.
+            //  (╯°□°)╯︵ ┻━┻
+            DispatchQueue.main.asyncAfter(deadline: .now() + SelectedTabIndicator.asyncDelay) {
+                if let retryTabBar = findTabBar() {
+                    tabBarHeight = retryTabBar.frame.height
+                }
+            }
         }
     }
 }

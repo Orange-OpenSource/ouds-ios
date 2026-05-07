@@ -32,6 +32,29 @@ import SwiftUI
 ///     // A toolbar item with the back icon and and a text, for iOS < 26
 ///     OUDSToolBarItem(navigation: .back(label: "Back"))
 ///
+///     // A toolbar item with the label
+///     OUDSToolBarItem(action: "Label") {
+///        // do something
+///     }
+///
+///     // A toolbar item with the label
+///     OUDSToolBarItem(action: .label("Label")) {
+///        // do something
+///     }
+///
+///     // A toolbar item with the icon
+///     OUDSToolBarItem(action: .icon(asset: Image("mail"),
+///                     accessibilityLabel: "New messages available")) {
+///        // do something
+///     }
+///
+///     // A toolbar item with the icon and badge count
+///     OUDSToolBarItem(action: .icon(asset: Image("mail"),
+///                                   accessibilityLabel: "9 new messages",
+///                                   badgeType: .number(count: 9))) {
+///        // do something
+///     }
+///
 ///     // A toolbar item with some View inside
 ///     OUDSToolBarItem {
 ///         // Menu, ...
@@ -66,6 +89,7 @@ public struct OUDSToolBarItem: View, Identifiable {
     ///
     /// - Since: 1.4.0
     @frozen public enum ActionType {
+
         /// Create an action wth label only that could be emphasized.
         /// **For iOS > 26, label is always emphasized.**
         ///
@@ -82,8 +106,26 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///     - asset: The asset displayed in the icon
         ///     - accessibilityLabel: The accessibility label discribes the action
         ///     - accessibilityHint: Communicates to the user what happens after performing the action, default set to *nil*
+        ///     - badgeType: The optional badge type, by default *nil* means no badge.
         ///     - action: The action to do when clicked. If *nil* (default) the button is disabled
-        case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, action: (() -> Void)? = nil)
+        case icon(asset: Image, accessibilityLabel: String, accessibilityHint: String? = nil, badgeType: BadgeType? = nil, action: (() -> Void)? = nil)
+    }
+
+    /// Defines the badge type can be added on `ActionType.icon` for item of toolbars.
+    ///
+    /// **By default, the `OUDSBadge` is used, but for iOS > 26, the system one is used, so its color, size and position
+    /// can not be changed.**
+    ///
+    /// - Since: 2.0.0
+    @frozen public enum BadgeType {
+
+        /// The basic badge without any information
+        case standard
+
+        /// The badge with a count
+        ///
+        /// - Parameter count:The number displayed in the badge.
+        case number(count: UInt8)
     }
 
     /// Defines the built-in navigation type available for the toolbars. Those items must be used only on top leading position of `.toolBar`
@@ -158,7 +200,11 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Creates a toobar item with action type.
     ///
     /// ```swift
+    ///     // A toolbar item with an "Edit" label and an associated action
     ///     OUDSToolBarItem(action: .label("Edit") { /* Action */ })
+    ///
+    ///     // A toolbar item with an image and a badge
+    ///     OUDSToolBarItem(action: .icon(asset: Image("mail"), accessibilityLabel: "5 new emails", badgeType: .number(count: 5)))
     /// ```
     ///
     /// - Parameter type: The action type describing the layout and assoicated action.
@@ -196,12 +242,12 @@ public struct OUDSToolBarItem: View, Identifiable {
     /// Use this initializer to provide any SwiftUI view, such as a `Menu`, custom button, or complex layout.
     ///
     /// ```swift
-    /// OUDSToolBarItem {
-    ///     Menu("Options") {
-    ///         Button("Option 1") { }
-    ///         Button("Option 2") { }
+    ///     OUDSToolBarItem {
+    ///         Menu("Options") {
+    ///             Button("Option 1") { }
+    ///             Button("Option 2") { }
+    ///         }
     ///     }
-    /// }
     /// ```
     ///
     /// - Parameter content: A view builder that returns the custom view to display.
@@ -268,4 +314,18 @@ public enum OUDSToolBarItemsBuilder {
         components.flatMap(\.self)
     }
 }
+
+// MARK: - OUDS Tool Bar Item Position
+
+enum ToolBarItemLocation {
+    case toolbarTop
+    case toolbarBottom
+}
+
+extension EnvironmentValues {
+
+    /// A flag to know if ``OUDSToolBarItem`` will be placed in ``OUDSToolBarBottom`` or ``OUDSToolBarTop``
+    @Entry var toolbarItemLocation: ToolBarItemLocation = .toolbarTop
+}
+
 #endif

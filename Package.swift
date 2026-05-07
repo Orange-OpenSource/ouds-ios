@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.3
 
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
@@ -100,11 +100,11 @@ let package = Package(
         // MARK: Tooling dependencies
 
         // Apple Swift tool to build documentation
-        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.6"),
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.5.0"),
         // Linter for Swift code
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.63.2"),
         // Formatter for Swift code
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.61.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.61.1"),
     ],
 
     // MARK: - Targets

@@ -35,7 +35,7 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(minHeight: theme.controlItem.sizeIcon, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+            .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 
@@ -59,7 +59,7 @@ struct ControlItemIconContainer: View {
                     .renderingMode(.template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
-                    .frame(width: theme.controlItem.sizeIcon, height: theme.controlItem.sizeIcon)
+                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
                     .toFlip(layoutData.flipIcon)
             }
         }

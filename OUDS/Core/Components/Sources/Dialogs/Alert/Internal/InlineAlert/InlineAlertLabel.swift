@@ -28,7 +28,7 @@ struct InlineAlertLabel: View {
         Text(text)
             .labelModerateLarge(theme)
             .foregroundColor(contentColor)
-            .frame(maxWidth: theme.sizes.maxWidthTypeLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
+            .frame(maxWidth: theme.sizes.maxWidthLabelLarge.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
             .accessibilityLabel(accessibilityLabel)
     }
 

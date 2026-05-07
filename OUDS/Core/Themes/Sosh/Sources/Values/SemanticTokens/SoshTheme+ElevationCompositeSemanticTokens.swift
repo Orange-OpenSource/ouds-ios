@@ -42,8 +42,8 @@ extension SoshThemeElevationSemanticTokensProvider: ElevationCompositeSemanticTo
     }
 
     @objc public final var `default`: ElevationCompositeSemanticToken {
-        MultipleElevationCompositeRawToken(light: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultLight),
-                                           dark: ElevationCompositeRawToken(x: xDefault, y: yDefault, blur: blurDefault, color: colorDefaultDark))
+        MultipleElevationCompositeRawToken(light: ElevationCompositeRawToken(x: xElevated, y: yElevated, blur: blurElevated, color: colorElevatedLight),
+                                           dark: ElevationCompositeRawToken(x: xElevated, y: yElevated, blur: blurElevated, color: colorElevatedDark))
     }
 
     @objc public final var emphasized: ElevationCompositeSemanticToken {
