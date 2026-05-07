@@ -19,7 +19,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-/// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. no Liquid Glass)
+/// An indicator to display at the top of the selected tab for iOS lower than 26 (i.e. Liquid Glass not available) or with Liquid Glass disabled (26+)
 struct SelectedTabIndicator: View {
 
     // MARK: - Constants
@@ -31,14 +31,20 @@ struct SelectedTabIndicator: View {
 
     // MARK: - Properties
 
+    /// The index of the selected tab used to compute the location of the indicator, used to compute the tab width
     @Binding var selected: Int
+
+    /// The number of items in the tab bar with this indicator
     var count: Int
+
     /// Driven by `OUDSTabBar` via KVO on `UITabBar.isHidden` — the single source of truth for
-    /// tab bar visibility. Using a `@Binding` avoids calling `findTabBar()` here for visibility,
+    /// tab bar visibility. Using a `@Binding` avoids calling helpers to try to find the tab bar to hide
     /// which was unreliable when intermediate navigation layers were present.
     @Binding var isTabBarHidden: Bool
 
+    /// The height of the tab bar to compute the indicator position
     @State private var tabBarHeight: CGFloat = 0
+    /// The safe area bottom dimension to compute the indicator position
     @State private var safeAreaBottom: CGFloat = 0
     /// Horizontal scale factor used to animate the indicator expanding from its center.
     /// Starts at 0 (invisible) and is animated to 1 (full width) whenever a tab becomes selected.
@@ -49,9 +55,9 @@ struct SelectedTabIndicator: View {
     /// To disable animation if user asked for it in device settings
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    @Environment(\.iPhoneInUse) private var iPhoneInUse
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.iPhoneInUse) private var iPhoneInUse
 
     // MARK: - Body
 
@@ -110,9 +116,6 @@ struct SelectedTabIndicator: View {
                 updateTabBarHeight()
             }
         }
-        // Tab bar visibility (`isTabBarHidden`) is now driven entirely by `OUDSTabBar` via
-        // a `@Binding`, which reads `UITabBar.isHidden` directly from the KVO notification object.
-        // No local `onReceive(visibilityDidChange)` is needed here.
     }
 
     // MARK: Tab bar heights
@@ -121,7 +124,7 @@ struct SelectedTabIndicator: View {
     /// Visibility (`isTabBarHidden`) is intentionally NOT updated here — it is owned by
     /// `OUDSTabBar` and passed down via `@Binding` to avoid the race condition where
     /// `findTabBar()` might return a stale `isHidden` value during a navigation transition.
-    private func updateTabBarHeight() {
+    private func updateTabBarHeight() { // ༼;´༎ຶ ۝ ༎ຶ༽
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else { return }
 
@@ -130,7 +133,7 @@ struct SelectedTabIndicator: View {
         if let detectedTabBar = findTabBar() {
             tabBarHeight = detectedTabBar.frame.height
         } else {
-            // If not possible to compute tab bar height, use recommended / precomputed value as fallback
+            // If not possible to compute tab bar height, use recommended / precomputed value as fallback (╯°□°)╯︵ ┻━┻
             let heights = iPhoneInUse.tabBarHeights
             tabBarHeight = Self.isInLandscapeViewport() ? heights.landscape : heights.portrait
         }
