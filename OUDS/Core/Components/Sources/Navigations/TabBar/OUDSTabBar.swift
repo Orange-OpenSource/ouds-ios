@@ -97,7 +97,7 @@ import SwiftUI
 /// Because the component cannot compute the ideal width of the selected tab indicator (for iOS before 26 and iPadOS before 18), ideal width based on the tab bar item content,
 /// this indicator is not displayed for iOS lower than 26 in landscape mode and iPadOS.
 ///
-/// If you app uses several universes with nested views, containing their own navigation and tab bars, prefer `hideTabBar()` from `View` to hide the tab bar
+/// If your app uses several universes with nested views, containing their own navigation and tab bars, prefer `hideTabBar()` from `View` to hide the tab bar
 /// (`TabView` and overlay items) with Liquid Glass is disabled or not available.
 ///
 /// ## Code samples

@@ -23,8 +23,8 @@ import SwiftUI
 /// or 26+ with Liquid Glass disabled.
 struct TabBarTopDivider: View {
 
-    /// Driven by `OUDSTabBar` via KVO on `UITabBar.isHidden` — the single source of truth for
-    /// tab bar visibility. Using a `@Binding` avoids calling `findTabBar()` here for visibility,
+    /// Driven by `OUDSTabBar`,  the single source of truth for tab bar visibility.
+    /// Using a `@Binding` avoids calling `findTabBar()` here for visibility,
     /// which was unreliable when intermediate navigation layers were present.
     @Binding var isTabBarHidden: Bool
 

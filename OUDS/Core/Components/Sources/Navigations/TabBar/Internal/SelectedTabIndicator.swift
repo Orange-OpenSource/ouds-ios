@@ -37,8 +37,8 @@ struct SelectedTabIndicator: View {
     /// The number of items in the tab bar with this indicator
     var count: Int
 
-    /// Driven by `OUDSTabBar` via KVO on `UITabBar.isHidden` — the single source of truth for
-    /// tab bar visibility. Using a `@Binding` avoids calling helpers to try to find the tab bar to hide
+    /// Driven by `OUDSTabBar`, the single source of truth for tab bar visibility.
+    /// Using a `@Binding` avoids calling helpers to try to find the tab bar to hide
     /// which was unreliable when intermediate navigation layers were present.
     @Binding var isTabBarHidden: Bool
 
