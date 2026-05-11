@@ -153,10 +153,9 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Wireframe *contains:
-    /// - square corners for buttons
-    /// - square corners for text-based inputs
-    /// - rounded corners for alert messages
+    /// The theme tuning for *Wireframe* contains **square corners for buttons**,
+    /// **square corners for text / PIN code / password / text area inputs**
+    /// and **rounded corners for alert messages**.
     public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
                                          hasRoundedAlertMessages: true)

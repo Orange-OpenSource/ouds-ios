@@ -66,7 +66,7 @@ struct SomeView: View {
 
 ## How to tune the theme
 
-You cannot tune the Sosh theme.
+You cannot tune the Wireframe theme.
 
 ## Typography
 

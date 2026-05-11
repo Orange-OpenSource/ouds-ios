@@ -157,10 +157,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Sosh *contains:
-    /// - square corners for buttons
-    /// - square corners for text-based inputs
-    /// - rounded corners for alert messages
+    /// The theme tuning for *Sosh* contains **square corners for buttons**,
+    /// **square corners for text / PIN code / password / text area inputs**
+    /// and **rounded corners for alert messages**.
     public static let Sosh = Tuning(hasRoundedButtons: false,
                                     hasRoundedTextInputs: false,
                                     hasRoundedAlertMessages: true)
