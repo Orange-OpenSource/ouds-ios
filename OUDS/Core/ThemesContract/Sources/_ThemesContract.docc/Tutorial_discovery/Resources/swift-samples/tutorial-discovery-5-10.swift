@@ -17,7 +17,7 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    static let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
+    static let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true)
     let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
                               colors: MyOwnProviderOfColorTokens(),
                               fontFamily: "Menlo",

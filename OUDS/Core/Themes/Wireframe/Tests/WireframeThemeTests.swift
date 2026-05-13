@@ -34,151 +34,152 @@ struct WireframeThemeTests {
 
     // MARK: - Tests - Theme tuning
 
-    @Test func defaultTuningOfWireframeTheme() throws {
+    @Test func defaultTuningOfWireframeTheme() {
         let tuning = theme.tuning
         #expect(tuning.hasRoundedButtons == false)
         #expect(tuning.hasRoundedTextInputs == false)
         #expect(tuning.hasRoundedAlertMessages == true)
+        #expect(tuning.hasRoundedListItems == false)
     }
 
     // MARK: - Tests - Semantic tokens providers
 
-    @Test func defaultBorderSemanticTokensProvider() throws {
+    @Test func defaultBorderSemanticTokensProvider() {
         #expect(theme.borders is WireframeThemeBorderSemanticTokensProvider)
     }
 
-    @Test func defaultColorSemanticTokensProvider() throws {
+    @Test func defaultColorSemanticTokensProvider() {
         #expect(theme.colors is WireframeThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultColorModeSemanticTokensProvider() throws {
         #expect(theme.colorModes is WireframeThemeColorModeSemanticTokensProvider)
-        #expect((theme.colorModes as! WireframeThemeColorModeSemanticTokensProvider).colors is WireframeThemeColorSemanticTokensProvider)
+        #expect(try #require((theme.colorModes as? WireframeThemeColorModeSemanticTokensProvider)?.colors) is WireframeThemeColorSemanticTokensProvider)
     }
 
-    @Test func defaultColorChartsSemanticTokensProvider() throws {
+    @Test func defaultColorChartsSemanticTokensProvider() {
         #expect(theme.colorsCharts == nil)
     }
 
-    @Test func defaultColorDecorativeSemanticTokensProvider() throws {
+    @Test func defaultColorDecorativeSemanticTokensProvider() {
         #expect(theme.colorsDecorative == nil)
     }
 
-    @Test func defaultEffectSemanticTokensProvider() throws {
+    @Test func defaultEffectSemanticTokensProvider() {
         #expect(theme.effects is WireframeThemeEffectSemanticTokensProvider)
     }
 
-    @Test func defaultElevationSemanticTokensProvider() throws {
+    @Test func defaultElevationSemanticTokensProvider() {
         #expect(theme.elevations is WireframeThemeElevationSemanticTokensProvider)
     }
 
-    @Test func defaultFontSemanticTokensProvider() throws {
+    @Test func defaultFontSemanticTokensProvider() {
         #expect(theme.fonts is WireframeThemeFontSemanticTokensProvider)
     }
 
-    @Test func defaultGridSemanticTokensProvider() throws {
+    @Test func defaultGridSemanticTokensProvider() {
         #expect(theme.grids is WireframeThemeGridSemanticTokensProvider)
     }
 
-    @Test func defaultOpacitySemanticTokensProvider() throws {
+    @Test func defaultOpacitySemanticTokensProvider() {
         #expect(theme.opacities is WireframeThemeOpacitySemanticTokensProvider)
     }
 
-    @Test func defaultDimensionSemanticTokensProvider() throws {
+    @Test func defaultDimensionSemanticTokensProvider() {
         #expect(theme.dimensions is WireframeThemeDimensionSemanticTokensProvider)
     }
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
+    @Test func defaultSizeSemanticTokensProvider() {
         #expect(theme.sizes is WireframeThemeSizeSemanticTokensProvider)
     }
 
-    @Test func defaultSpaceSemanticTokensProvider() throws {
+    @Test func defaultSpaceSemanticTokensProvider() {
         #expect(theme.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
 
     // MARK: - Tests - Component tokens providers
 
-    @Test func defaultAlertComponentTokensProvider() throws {
+    @Test func defaultAlertComponentTokensProvider() {
         #expect(theme.alert is WireframeThemeAlertComponentTokensProvider)
     }
 
-    @Test func defaultBadgeComponentTokensProvider() throws {
+    @Test func defaultBadgeComponentTokensProvider() {
         #expect(theme.badge is WireframeThemeBadgeComponentTokensProvider)
     }
 
-    @Test func defaultBarComponentTokensProvider() throws {
+    @Test func defaultBarComponentTokensProvider() {
         #expect(theme.bar is WireframeThemeBarComponentTokensProvider)
     }
 
-    @Test func defaultBulletListComponentTokensProvider() throws {
+    @Test func defaultBulletListComponentTokensProvider() {
         #expect(theme.bulletList is WireframeThemeBulletListComponentTokensProvider)
     }
 
-    @Test func defaultButtonComponentTokensProvider() throws {
+    @Test func defaultButtonComponentTokensProvider() {
         #expect(theme.button is WireframeThemeButtonComponentTokensProvider)
     }
 
-    @Test func defaultCheckboxComponentTokensProvider() throws {
+    @Test func defaultCheckboxComponentTokensProvider() {
         #expect(theme.checkbox is WireframeThemeCheckboxComponentTokensProvider)
     }
 
-    @Test func defaultChipComponentTokensProvider() throws {
+    @Test func defaultChipComponentTokensProvider() {
         #expect(theme.chip is WireframeThemeChipComponentTokensProvider)
     }
 
-    @Test func defaultDividerComponentTokensProvider() throws {
+    @Test func defaultDividerComponentTokensProvider() {
         #expect(theme.divider is WireframeThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
+    @Test func defaultControlItemComponentTokensProvider() {
         #expect(theme.controlItem is WireframeThemeControlItemComponentTokensProvider)
     }
 
-    @Test func defaultIconComponentTokensProvider() throws {
+    @Test func defaultIconComponentTokensProvider() {
         #expect(theme.icon is WireframeThemeIconComponentTokensProvider)
     }
 
-    @Test func defaultLinkComponentTokensProvider() throws {
+    @Test func defaultLinkComponentTokensProvider() {
         #expect(theme.link is WireframeThemeLinkComponentTokensProvider)
     }
 
-    @Test func defaultPinCodeInputComponentTokensProvider() throws {
+    @Test func defaultPinCodeInputComponentTokensProvider() {
         #expect(theme.pinCodeInput is WireframeThemePinCodeInputComponentTokensProvider)
     }
 
-    @Test func defaultQuantityInputComponentTokensProvider() throws {
+    @Test func defaultQuantityInputComponentTokensProvider() {
         #expect(theme.quantityInput is WireframeThemeQuantityInputComponentTokensProvider)
     }
 
-    @Test func defaultRadioButtonComponentTokensProvider() throws {
+    @Test func defaultRadioButtonComponentTokensProvider() {
         #expect(theme.radioButton is WireframeThemeRadioButtonComponentTokensProvider)
     }
 
-    @Test func defaultSelectInputComponentTokensProvider() throws {
+    @Test func defaultSelectInputComponentTokensProvider() {
         #expect(theme.selectInput is WireframeThemeSelectInputComponentTokensProvider)
     }
 
-    @Test func defaultSkeletonComponentTokensProvider() throws {
+    @Test func defaultSkeletonComponentTokensProvider() {
         #expect(theme.skeleton is WireframeThemeSkeletonComponentTokensProvider)
     }
 
-    @Test func defaultSwitchComponentTokensProvider() throws {
+    @Test func defaultSwitchComponentTokensProvider() {
         #expect(theme.switch is WireframeThemeSwitchComponentTokensProvider)
     }
 
-    @Test func defaultTagComponentTokensProvider() throws {
+    @Test func defaultTagComponentTokensProvider() {
         #expect(theme.tag is WireframeThemeTagComponentTokensProvider)
     }
 
-    @Test func defaultInputTagComponentTokensProvider() throws {
+    @Test func defaultInputTagComponentTokensProvider() {
         #expect(theme.inputTag is WireframeThemeInputTagComponentTokensProvider)
     }
 
-    @Test func defaultTextAreaButtonComponentTokensProvider() throws {
+    @Test func defaultTextAreaButtonComponentTokensProvider() {
         #expect(theme.textArea is WireframeThemeTextAreaComponentTokensProvider)
     }
 
-    @Test func defaultTextInputComponentTokensProvider() throws {
+    @Test func defaultTextInputComponentTokensProvider() {
         #expect(theme.textInput is WireframeThemeTextInputComponentTokensProvider)
     }
 }

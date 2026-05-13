@@ -15,15 +15,13 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Displayes a helper message below `ContolItems` texts according to the data avilable in `ControlItemData.Style`
-/// and updates text color according to the `InteractionState`:
-/// - error message if not empty and if `isError` flag are set in `true`.
-/// - helper text, if `isError` flag are set in `false`
-struct ListControlItemHelperErrorTextContainer: View {
+/// Displayes a helper message below `ListItemContent` text.
+/// and updates text color according to the `InteractionState`.
+struct ListItemHelperTextContainer: View {
 
     // MARK: - Properties
 
-    let layoutDataStyle: ControlItemData.Style
+    let text: TextualContent?
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
@@ -31,7 +29,7 @@ struct ListControlItemHelperErrorTextContainer: View {
     // MARK: - Body
 
     var body: some View {
-        if let text = layoutDataStyle.helperErrorText, !text.isEmpty {
+        if let text, !text.isEmpty {
             textView(for: text)
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
@@ -44,11 +42,7 @@ struct ListControlItemHelperErrorTextContainer: View {
     // MARK: - Helper
 
     private var color: MultipleColorSemanticToken {
-        if layoutDataStyle.isError {
-            return theme.colors.contentStatusNegative
-        }
-
-        return interactionState == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
+        interactionState == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 }
 #endif
