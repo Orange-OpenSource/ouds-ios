@@ -32,6 +32,7 @@ public struct OUDSListItemNavigation: View {
     private let affordanceType: AffordanceType
     private let action: (() -> Void)?
     private let leading: OOUDSListItemLeading?
+    private let trailing: OOUDSListItemTrailing?
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -67,15 +68,18 @@ public struct OUDSListItemNavigation: View {
     ///   - data: The main label text of the item, must not be empty
     ///   - affordanceType:The type of affordance
     ///   - leading: The optinal leading element
+    ///   - trailing: The optional trailing element,
     ///   - action: An additional action to trigger when the radio button has been pressed
     public init(data: OUDSListItemData,
                 affordanceType: AffordanceType = .next,
                 leading: OOUDSListItemLeading? = nil,
+                trailing: OOUDSListItemTrailing? = nil,
                 action: (() -> Void)? = nil)
     {
         self.data = data
         self.affordanceType = affordanceType
         self.leading = leading
+        self.trailing = trailing
         self.action = action
     }
 
@@ -88,10 +92,8 @@ public struct OUDSListItemNavigation: View {
             ListItemContent(data: data,
                             affordanceType: affordanceType,
                             leading: leading,
+                            trailing: trailing,
                             interactionState: interactionState)
-            {
-                Text("Label").labelDefaultLarge(theme)
-            }
         }
     }
 }
