@@ -81,7 +81,7 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     /// Has for value token spaces.paddingBlockXsmall
     @objc open var spacePaddingBlockDensityCompact: SpaceSemanticToken { spaces.paddingBlockXsmall }
     /// Has for value token spaces.paddingBlockNone
-    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { spaces.paddingBlockNone }
+    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopTextContainer: SpaceSemanticToken { spaces.paddingBlockNone }
     /// Has for value token spaces.paddingBlockXsmall
     @objc open var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { spaces.paddingBlockXsmall }
     /// Has for value token spaces.paddingBlock2xlarge
@@ -146,6 +146,9 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var sizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
     /// Has for value token sizes.iconWithLabelLargeSizeSmall
     @objc open var sizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+
+    /// Has for value token spaces.paddingBlockNone
+    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { spaces.paddingBlockNone }
 }
 
 // swiftlint:enable identifier_name

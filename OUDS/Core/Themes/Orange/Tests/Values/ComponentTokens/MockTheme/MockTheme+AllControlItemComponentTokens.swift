@@ -88,7 +88,7 @@ final class MockThemeControlItemComponentTokenProvider: OrangeThemeControlItemCo
     override var spacePaddingBlockTopHelperText: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockBottomSlot: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockDensityCompact: SpaceSemanticToken { Self.mockThemeControlItemSpace }
-    override var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { Self.mockThemeControlItemSpace }
+    override var spacePaddingBlockDensityCompactTopAlignmentTopTextContainer: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { Self.mockThemeControlItemSpace }
     override var spacePaddingBlockDensityDefault: SpaceSemanticToken { Self.mockThemeControlItemSpace }

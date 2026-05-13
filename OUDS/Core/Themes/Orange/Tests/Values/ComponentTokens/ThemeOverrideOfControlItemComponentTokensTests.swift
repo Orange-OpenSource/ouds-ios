@@ -183,9 +183,9 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.spacePaddingBlockDensityCompact == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
-    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingBlockDensityCompactTopAlignmentTopText_container() throws {
-        #expect(inheritedTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopText_container != abstractTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopText_container)
-        #expect(inheritedTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopText_container == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingBlockDensityCompactTopAlignmentTopTextContainer() throws {
+        #expect(inheritedTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer != abstractTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer)
+        #expect(inheritedTheme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSpace)
     }
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenSpacePaddingBlockDensityCompactTopAlignmentTopCounterweight() throws {
