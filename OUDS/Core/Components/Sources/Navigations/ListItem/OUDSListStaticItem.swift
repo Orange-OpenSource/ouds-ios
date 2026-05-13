@@ -43,6 +43,7 @@ public struct OUDSListStaticItem: View {
 
     private let data: OUDSListItemData
     private let leading: OOUDSListItemLeading?
+    private let trailing: OOUDSListItemTrailing?
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -57,12 +58,19 @@ public struct OUDSListStaticItem: View {
     ///    OUDSListIStaticItem(data: data)
     /// ```
     ///
-    /// - Parameter data: The data of the item. Could be default content with `OUDSListItemSizeDefaultData` or more simplier data with `OUDSListItemSizeSmallData`
+    /// - Parameters
+    ///    - data: The data of the item. Could be default content with `OUDSListItemSizeDefaultData` or more simplier data with `OUDSListItemSizeSmallData`
+    ///    - leading: The optional element set at leading (before texts)
+    ///    - trailing: The optional element set at trailing (after texts)
+    ///
+    ///    **Remark** trailing, leading elements and texts can be aligned using ``View.oudsListItemCaontainersAlignment``.
     public init(data: OUDSListItemData,
-                leading: OOUDSListItemLeading? = nil)
+                leading: OOUDSListItemLeading? = nil,
+                trailing: OOUDSListItemTrailing? = nil)
     {
         self.data = data
         self.leading = leading
+        self.trailing = trailing
     }
 
     // MARK: - Body
@@ -71,9 +79,7 @@ public struct OUDSListStaticItem: View {
         ListItemContent(data: data,
                         affordanceType: nil,
                         leading: leading,
+                        trailing: trailing,
                         interactionState: isEnabled ? .enabled : .disabled)
-        {
-            Text("Label").labelDefaultLarge(theme)
-        }
     }
 }

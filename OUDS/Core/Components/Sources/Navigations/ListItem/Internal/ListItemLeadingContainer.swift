@@ -28,58 +28,30 @@ struct ListItemLeadingContainer: View {
     // MARK: - Body
 
     var body: some View {
-        switch leading {
-        case let .icon(asset: asset):
-            asset
-                .resizable()
-                .renderingMode(.template)
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(color)
-                .frame(width: assetSize, height: assetSize, alignment: .center)
-        case let .image(asset: asset):
-            asset
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .opacity(opcity)
-                .frame(height: assetSize, alignment: .center)
-                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusMedia))
-        case let .flag(asset: asset):
-            HStack {
-                asset
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .opacity(opcity)
-                    .frame(height: theme.controlItem.sizeFlagHeight, alignment: .center)
-            }
-            .frame(minWidth: assetSize, minHeight: assetSize, alignment: .center)
-        case let .video(url):
-            HStack {
-                let player = AVPlayer(url: url)
-                VideoPlayer(player: player)
-                    .aspectRatio(contentMode: .fit)
-                    .opacity(opcity)
-                    .frame(height: assetSize, alignment: .center)
-                    .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusMedia))
-                    .onAppear {
-                        player.play()
-                    }
+        HStack {
+            switch leading {
+            case let .icon(asset: asset):
+                ListItemIcon(asset: asset,
+                             small: small,
+                             isEnabled: !(interactionState == .disabled))
+            case let .image(asset: asset):
+                ListItemImage(asset: asset,
+                              small: small,
+                              isEnabled: !(interactionState == .disabled))
+            case let .flag(asset: asset):
+                ListItemFlag(asset: asset,
+                             small: small,
+                             isEnabled: !(interactionState == .disabled))
+            case let .video(url):
+                ListItemVideo(url: url,
+                              small: small,
+                              isEnabled: !(interactionState == .disabled))
             }
         }
-    }
-
-    private var opcity: Double {
-        interactionState == .disabled ? theme.opacities.disabled : theme.opacities.opaque
-    }
-
-    private var color: MultipleColorSemanticToken {
-        interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
+        .frame(minHeight: assetSize, alignment: .center)
     }
 
     private var assetSize: CGFloat {
         small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
-    }
-
-    private var radius: CGFloat {
-        theme.tuning.hasRoundedListItems ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
     }
 }

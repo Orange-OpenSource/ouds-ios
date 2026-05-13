@@ -17,15 +17,15 @@ import SwiftUI
 
 /// The content for the ``OUDSListStaticItem`` and the ``OUDSListItemNavigation`` component described by the ``OUDSListItemData``.
 /// The layout (divider, background, size) are updated according to the interaction state ``InteractionState``.
-struct ListItemContent<Trailing: View>: View {
+struct ListItemContent: View {
 
     // MARK: - Properties
 
     let data: OUDSListItemData
     let affordanceType: OUDSListItemNavigation.AffordanceType?
     let leading: OOUDSListItemLeading?
+    let trailing: OOUDSListItemTrailing?
     let interactionState: InteractionState
-    let trailing: () -> Trailing
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListContainersAlignment) private var containersAlignment
@@ -38,10 +38,15 @@ struct ListItemContent<Trailing: View>: View {
                 if affordanceType == .previous {
                     ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
                 }
+                if let leading {
+                    leadingContainer(leading)
+                }
 
-                leadingContainer()
                 textContainer()
-                trailingContainer()
+
+                if let trailing {
+                    trailingContainer(trailing)
+                }
 
                 if affordanceType == .next || affordanceType == .external {
                     ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
@@ -67,11 +72,9 @@ struct ListItemContent<Trailing: View>: View {
 
     // MARK: - Containers
     @ViewBuilder
-    private func leadingContainer() -> some View {
+    private func leadingContainer(_ leading: OOUDSListItemLeading) -> some View {
         // Remove leading element if previous affordance is presented
-        if affordanceType != .previous,
-           let leading
-        {
+        if affordanceType != .previous {
             ListItemLeadingContainer(leading: leading,
                                      small: data is OUDSListItemSizeSmallData,
                                      interactionState: interactionState)
@@ -82,8 +85,10 @@ struct ListItemContent<Trailing: View>: View {
         ListItemTextContainer(data: data, interactionState: interactionState)
     }
 
-    private func trailingContainer() -> some View {
-        ListItemTrailingContainer(interactionState: interactionState, content: trailing)
+    private func trailingContainer(_ trailing: OOUDSListItemTrailing) -> some View {
+        ListItemTrailingContainer(trailing: trailing,
+                                  small: data is OUDSListItemSizeSmallData,
+                                  interactionState: interactionState)
     }
 
     // MARK: - Computed properties
