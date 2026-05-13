@@ -11,10 +11,22 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSTokensSemantic
 import SwiftUI
 
-extension EnvironmentValues {
+/// Defines the elements can be added at leading of the list item
+///
+/// - Since: 2.0.0
+@frozen public enum OOUDSListItemLeading {
+    /// An soloaris icon with be tinted according toi state of the item
+    case icon(asset: Image)
 
-    /// Define the current conainers alignment in `OUDSListItem` applyed globaly on a list of items.
-    @Entry var controlItemContainersAlignment: OUDSListItemStyle.ContainersAlignment = .center
+    /// An image
+    case image(asset: Image)
+
+    /// A country flag with the asset
+    case flag(asset: Image)
+
+    /// A video from URL
+    case video(URL)
 }
