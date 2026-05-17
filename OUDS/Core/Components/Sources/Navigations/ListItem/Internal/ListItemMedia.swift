@@ -23,6 +23,7 @@ struct ListItemVideo: View {
     let small: Bool
     let isEnabled: Bool
     @Environment(\.theme) private var theme
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     // MARK: - Body
 
@@ -33,7 +34,7 @@ struct ListItemVideo: View {
                 .aspectRatio(contentMode: .fit)
                 .opacity(opcity)
                 .frame(height: assetSize, alignment: .center)
-                .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusMedia))
+                .clipShape(RoundedRectangle(cornerRadius: radius))
                 .onAppear {
                     player.play()
                 }
@@ -41,6 +42,10 @@ struct ListItemVideo: View {
     }
 
     // MARK: - Heleprs
+
+    private var radius: BorderRadiusSemanticToken {
+        roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
+    }
 
     private var opcity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
@@ -59,6 +64,7 @@ struct ListItemImage: View {
     let small: Bool
     let isEnabled: Bool
     @Environment(\.theme) private var theme
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     var body: some View {
         asset
@@ -66,7 +72,11 @@ struct ListItemImage: View {
             .aspectRatio(contentMode: .fit)
             .opacity(opcity)
             .frame(height: assetSize, alignment: .center)
-            .clipShape(RoundedRectangle(cornerRadius: theme.controlItem.borderRadiusMedia))
+            .clipShape(RoundedRectangle(cornerRadius: radius))
+    }
+
+    private var radius: BorderRadiusSemanticToken {
+        roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
     }
 
     private var opcity: Double {
