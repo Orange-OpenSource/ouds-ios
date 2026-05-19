@@ -35,7 +35,7 @@ import SwiftUI
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
 ///
 /// - Version: 1.0.0 (Figma component design version)
-/// - Since: 1.5.0
+/// - Since: 2.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListStaticItem: View {
 

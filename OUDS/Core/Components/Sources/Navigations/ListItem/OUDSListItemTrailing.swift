@@ -18,10 +18,22 @@ import SwiftUI
 ///
 /// - Since: 2.0.0
 @frozen public enum OOUDSListItemTrailing {
+
+    /// Define the type of trailing text
+    ///
+    /// - Since: 2.0.0
     @frozen public enum TextType {
+        /// Default label
         case label(Text)
+
+        /// Muted label
         case labelMuted(Text)
+
+        /// Strong label
         case labelStrong(Text)
+
+        ///  Default label and additional extra label.
+        ///  **Remark: For small size of the list item, the extra label is ignored**
         case labelAndExtraLabel(Text, Text)
     }
 
