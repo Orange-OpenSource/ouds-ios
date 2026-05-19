@@ -18,8 +18,15 @@ import SwiftUI
 ///
 /// - Since: 2.0.0
 @frozen public enum OOUDSListItemTrailing {
+    @frozen public enum TextType {
+        case label(Text)
+        case labelMuted(Text)
+        case labelStrong(Text)
+        case labelAndExtraLabel(Text, Text)
+    }
+
     /// A text
-    case text(Text)
+    case text(TextType)
 
     /// A badge
     case badge(OUDSBadge)

@@ -21,8 +21,9 @@ struct ListItemVideo: View {
 
     let url: URL
     let small: Bool
-    let isEnabled: Bool
+
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     // MARK: - Body
@@ -62,8 +63,9 @@ struct ListItemImage: View {
 
     let asset: Image
     let small: Bool
-    let isEnabled: Bool
+
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     var body: some View {
@@ -94,8 +96,8 @@ struct ListItemIcon: View {
 
     let asset: Image
     let small: Bool
-    let isEnabled: Bool
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Body
 
@@ -123,7 +125,8 @@ struct ListItemFlag: View {
 
     let asset: Image
     let small: Bool
-    let isEnabled: Bool
+
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
 
     // MARK: - Body

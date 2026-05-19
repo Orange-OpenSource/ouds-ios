@@ -31,23 +31,16 @@ struct ListItemLeadingContainer: View {
         HStack {
             switch leading {
             case let .icon(asset: asset):
-                ListItemIcon(asset: asset,
-                             small: small,
-                             isEnabled: !(interactionState == .disabled))
+                ListItemIcon(asset: asset, small: small)
             case let .image(asset: asset):
-                ListItemImage(asset: asset,
-                              small: small,
-                              isEnabled: !(interactionState == .disabled))
+                ListItemImage(asset: asset, small: small)
             case let .flag(asset: asset):
-                ListItemFlag(asset: asset,
-                             small: small,
-                             isEnabled: !(interactionState == .disabled))
+                ListItemFlag(asset: asset, small: small)
             case let .video(url):
-                ListItemVideo(url: url,
-                              small: small,
-                              isEnabled: !(interactionState == .disabled))
+                ListItemVideo(url: url, small: small)
             }
         }
+        .disabled(interactionState == .disabled)
         .frame(minHeight: assetSize, alignment: .center)
     }
 
