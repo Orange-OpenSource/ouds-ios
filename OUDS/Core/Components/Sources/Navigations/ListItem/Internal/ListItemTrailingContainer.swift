@@ -33,34 +33,23 @@ struct ListItemTrailingContainer: View {
     var body: some View {
         HStack {
             switch trailing {
-            case let .text(text):
-                HStack {
-                    text.labelDefaultLarge(theme)
-                        .foregroundColor(textColor)
-                        .padding(.top, topTextPadding)
-                }
+            case let .text(type):
+                ListItemTrailingTexts(textType: type, small: small)
             case let .badge(badge):
-                badge.disabled(interactionState == .disabled)
+                badge
             case let .tag(tag):
-                tag.disabled(interactionState == .disabled)
+                tag
             case let .icon(asset: asset):
-                ListItemIcon(asset: asset,
-                             small: small,
-                             isEnabled: !(interactionState == .disabled))
+                ListItemIcon(asset: asset, small: small)
             case let .image(asset: asset):
-                ListItemImage(asset: asset,
-                              small: small,
-                              isEnabled: !(interactionState == .disabled))
+                ListItemImage(asset: asset, small: small)
             case let .flag(asset: asset):
-                ListItemFlag(asset: asset,
-                             small: small,
-                             isEnabled: !(interactionState == .disabled))
+                ListItemFlag(asset: asset, small: small)
             case let .video(url):
-                ListItemVideo(url: url,
-                              small: small,
-                              isEnabled: !(interactionState == .disabled))
+                ListItemVideo(url: url, small: small)
             }
         }
+        .disabled(interactionState == .disabled)
         .frame(minHeight: minHeight, alignment: .center)
     }
 
@@ -72,17 +61,6 @@ struct ListItemTrailingContainer: View {
             theme.colors.contentDefault
         case .disabled:
             theme.colors.contentDisabled
-        }
-    }
-
-    private var topTextPadding: SpaceSemanticToken {
-        switch alignment {
-        case .center:
-            theme.spaces.fixedNone
-        case .top:
-            small ?
-                theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
-                : theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
         }
     }
 
