@@ -235,7 +235,7 @@ struct PinCodeInputContainer: View {
         // are retrieved in the suitable thread at the best moment
         let uiFont = TypographyModifier.makeUIFont(
             family: nil,
-            from: theme.fonts.labelDefaultLarge,
+            from: theme.fonts.labelModerateLarge,
             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
         return BackspaceDetectingTextField(
             text: $digits[index],
