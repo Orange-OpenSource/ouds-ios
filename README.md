@@ -35,7 +35,9 @@
 &nbsp;
 <a href="https://renovatebot.com" title="Renovate status"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" alt="Renovate status"></a>
 &nbsp;
-<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="Fossa status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="Fossa status"></a>
+<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="FOSSA status for licences policy"></a>
+&nbsp;
+<a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield&issueType=security" alt="FOSSA sattus for security policy"/></a>
 </p>
 
 ## ⚙️ Status
