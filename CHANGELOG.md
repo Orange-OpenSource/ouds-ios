@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
 - `control item` component token renamed `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
 
 ### Deprecated
