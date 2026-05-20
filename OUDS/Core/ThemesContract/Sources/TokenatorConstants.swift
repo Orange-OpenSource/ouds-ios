@@ -111,6 +111,8 @@
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag (1.4.0)
     public static let componentTagVersion = "1.4.0" // NOTE: #1473 - v1.5.0 not implemented yet
+    /// Version of the Figma specifications for the component input tag (1.2.0)
+    public static let componentInputTagVersion = "1.2.0"
 
     // MARK: - Components versions - Visual assets
 
