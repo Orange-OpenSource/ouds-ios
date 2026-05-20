@@ -110,7 +110,7 @@ import SwiftUI
 ///
 /// ![A text input component in light and dark modes with Wireframe theme](component_passwordInput_Wireframe)
 ///
-/// - Version: 1.2.0 (Figma component design version)
+/// - Version: 1.3.0 (Figma component design version)
 /// - Since: 1.2.0
 @available(iOS 15, macOS 13, visionOS 1, *)
 public struct OUDSPasswordInput: View {

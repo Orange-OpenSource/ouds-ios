@@ -37,7 +37,7 @@ struct InputText: View {
                 SecureField(text: text, label: textFieldLabel)
             } else {
                 TextField(text: text, label: textFieldLabel)
-                    .labelDefaultLarge(theme)
+                    .labelModerateLarge(theme)
             }
         }
         .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))
@@ -79,7 +79,7 @@ struct InputText: View {
     private func textFieldLabel() -> some View {
         Text(label)
             .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-            .labelDefaultLarge(theme)
+            .labelModerateLarge(theme)
             .foregroundStyle(labelColor)
     }
 }

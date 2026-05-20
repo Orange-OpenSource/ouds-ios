@@ -37,7 +37,7 @@ struct InputContainer: View {
                (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty || !text.wrappedValue.isEmpty
             {
                 Text(prefix)
-                    .labelDefaultLarge(theme)
+                    .labelModerateLarge(theme)
                     .foregroundColor(prefixSuffixColor)
                     .accessibilityHidden(true)
             }
@@ -54,7 +54,7 @@ struct InputContainer: View {
                (placeholder.isEmpty && interactionState == .focused) || !placeholder.isEmpty || !text.wrappedValue.isEmpty
             {
                 Text(suffix)
-                    .labelDefaultLarge(theme)
+                    .labelModerateLarge(theme)
                     .foregroundColor(prefixSuffixColor)
                     .accessibilityHidden(true)
             }

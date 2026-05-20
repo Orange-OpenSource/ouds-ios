@@ -63,8 +63,8 @@
     public static let componentRadioButtonVersion = "1.4.0"
     /// Version of the Figma specifications for the component switch (1.5.0)
     public static let componentSwitchVersion = "1.5.0"
-    /// Version of the Figma specifications for the component text input (1.3.0)
-    public static let componentTextInputVersion = "1.3.0" // NOTE: #1473 - v1.4.0 not implemented yet
+    /// Version of the Figma specifications for the component text input (1.4.0)
+    public static let componentTextInputVersion = "1.4.0"
     /// Version of the Figma specifications for the component phone number input (1.3.0)
     public static let componentPhoneNumberInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component password input (1.3.0)

@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tag` component with label medium moderate typography for text for small size (Orange-OpenSource/ouds-ios#1449)
 - `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
 - `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
+- `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
+- `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
 - `control item` component token renamed `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
 
 ### Deprecated
