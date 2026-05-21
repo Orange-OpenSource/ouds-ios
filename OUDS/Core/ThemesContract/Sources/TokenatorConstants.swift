@@ -76,7 +76,7 @@
     /// Version of the Figma specifications for the component select input (1.3.0)
     public static let componentSelectInputVersion = "1.3.0"
     /// Version of the Figma specifications for the component text area (1.0.0)
-    public static let componentTextAreaVersion = "1.1.0" // NOTE: #1473 - v1.2.0 not implemented yet
+    public static let componentTextAreaVersion = "1.2.0"
 
     // MARK: - Components versions - Dialog
 
