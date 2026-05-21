@@ -19,7 +19,7 @@ struct ListItemTrailingTexts: View {
 
     // MARK: - Properties
 
-    let textType: OOUDSListItemTrailing.TextType
+    let textType: OUDSListItemTrailing.TextType
     let small: Bool
 
     @Environment(\.theme) private var theme

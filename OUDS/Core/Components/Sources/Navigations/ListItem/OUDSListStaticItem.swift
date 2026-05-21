@@ -43,7 +43,7 @@ public struct OUDSListStaticItem: View {
 
     private let data: OUDSListItemData
     private let leading: OOUDSListItemLeading?
-    private let trailing: OOUDSListItemTrailing?
+    private let trailing: OUDSListItemTrailing?
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -66,7 +66,7 @@ public struct OUDSListStaticItem: View {
     ///    **Remark** trailing, leading elements and texts can be aligned using ``View.oudsListItemCaontainersAlignment``.
     public init(data: OUDSListItemData,
                 leading: OOUDSListItemLeading? = nil,
-                trailing: OOUDSListItemTrailing? = nil)
+                trailing: OUDSListItemTrailing? = nil)
     {
         self.data = data
         self.leading = leading
