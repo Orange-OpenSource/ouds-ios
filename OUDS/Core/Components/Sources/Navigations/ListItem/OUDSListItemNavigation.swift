@@ -32,7 +32,7 @@ public struct OUDSListItemNavigation: View {
     private let affordanceType: AffordanceType
     private let action: (() -> Void)?
     private let leading: OOUDSListItemLeading?
-    private let trailing: OOUDSListItemTrailing?
+    private let trailing: OUDSListItemTrailing?
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
@@ -73,7 +73,7 @@ public struct OUDSListItemNavigation: View {
     public init(data: OUDSListItemData,
                 affordanceType: AffordanceType = .next,
                 leading: OOUDSListItemLeading? = nil,
-                trailing: OOUDSListItemTrailing? = nil,
+                trailing: OUDSListItemTrailing? = nil,
                 action: (() -> Void)? = nil)
     {
         self.data = data

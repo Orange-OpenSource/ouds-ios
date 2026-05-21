@@ -29,4 +29,7 @@ import SwiftUI
 
     /// A video from URL
     case video(URL)
+
+    /// An avatar
+    case avatar(OUDSListItemAvatar)
 }

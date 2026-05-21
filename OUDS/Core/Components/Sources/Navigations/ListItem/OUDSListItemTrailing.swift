@@ -17,7 +17,7 @@ import SwiftUI
 /// Defines the elements can be added at leading of the list item
 ///
 /// - Since: 2.0.0
-@frozen public enum OOUDSListItemTrailing {
+@frozen public enum OUDSListItemTrailing {
 
     /// Define the type of trailing text
     ///
@@ -57,4 +57,7 @@ import SwiftUI
 
     /// A video from URL
     case video(URL)
+
+    /// An avatar
+    case avatar(OUDSListItemAvatar)
 }

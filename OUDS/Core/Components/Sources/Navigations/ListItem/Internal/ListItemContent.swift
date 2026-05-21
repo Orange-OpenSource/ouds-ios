@@ -24,7 +24,7 @@ struct ListItemContent: View {
     let data: OUDSListItemData
     let affordanceType: OUDSListItemNavigation.AffordanceType?
     let leading: OOUDSListItemLeading?
-    let trailing: OOUDSListItemTrailing?
+    let trailing: OUDSListItemTrailing?
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
@@ -85,7 +85,7 @@ struct ListItemContent: View {
         ListItemTextContainer(data: data, interactionState: interactionState)
     }
 
-    private func trailingContainer(_ trailing: OOUDSListItemTrailing) -> some View {
+    private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {
         ListItemTrailingContainer(trailing: trailing,
                                   small: data is OUDSListItemSizeSmallData,
                                   interactionState: interactionState)

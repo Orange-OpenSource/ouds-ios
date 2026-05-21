@@ -38,6 +38,8 @@ struct ListItemLeadingContainer: View {
                 ListItemFlag(asset: asset, small: small)
             case let .video(url):
                 ListItemVideo(url: url, small: small)
+            case let .avatar(avatar):
+                avatar
             }
         }
         .disabled(interactionState == .disabled)
