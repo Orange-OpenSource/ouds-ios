@@ -39,9 +39,9 @@ struct LabelContainer: View {
         if !label.isEmpty {
             switch position {
             case .top:
-                content.labelModerateSmall(theme)
+                content.labelDefaultSmall(theme)
             case .middle:
-                content.labelModerateLarge(theme)
+                content.labelDefaultLarge(theme)
             }
         }
     }

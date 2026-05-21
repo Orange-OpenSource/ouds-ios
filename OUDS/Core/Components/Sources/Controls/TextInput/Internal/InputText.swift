@@ -35,6 +35,7 @@ struct InputText: View {
             // to get the right size of dots.
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
+                    .labelModerateLarge(theme)
             } else {
                 TextField(text: text, label: textFieldLabel)
                     .labelModerateLarge(theme)
@@ -79,7 +80,7 @@ struct InputText: View {
     private func textFieldLabel() -> some View {
         Text(label)
             .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
-            .labelModerateLarge(theme)
+            .labelDefaultLarge(theme)
             .foregroundStyle(labelColor)
     }
 }
