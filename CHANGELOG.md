@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tag` component with label medium moderate typography for text for small size (Orange-OpenSource/ouds-ios#1449)
 - `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
 - `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
+- `text area` component (Orange-OpenSource/ouds-ios#1448)
 - `control item` component token renamed `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
 
 ### Deprecated

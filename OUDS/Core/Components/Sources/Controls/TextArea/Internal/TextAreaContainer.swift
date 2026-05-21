@@ -72,7 +72,8 @@ struct TextAreaContainer: View {
                 // The top of the container is aligned with the top of the main content
                 TextAreaTrailingContainer(status: status,
                                           interactionState: interactionState,
-                                          isOverLimit: isOverLimit)
+                                          isOverLimit: isOverLimit,
+                                          isSmallLabel: isSmallLabel)
             }
         }
         .padding(.top, theme.textArea.spacePaddingBlockTopEmpty)
