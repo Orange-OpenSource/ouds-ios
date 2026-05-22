@@ -37,6 +37,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_error_fill.imageset/ic_badge_error_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_info_fill.imageset/ic_badge_info_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_tick_confirmation_fill.imageset/ic_badge_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_warning_external_shape.imageset/ic_badge_warning_external_shape.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/Button/ic_button_expurge.imageset/ic_button_expurge.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
 ./OUDS/Core/Themes/Orange/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0_rtl.svg
@@ -73,6 +77,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_error_fill.imageset/ic_badge_error_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_info_fill.imageset/ic_badge_info_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_tick_confirmation_fill.imageset/ic_badge_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_warning_external_shape.imageset/ic_badge_warning_external_shape.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/Button/ic_button_expurge.imageset/ic_button_expurge.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
 ./OUDS/Core/Themes/Sosh/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
@@ -104,12 +112,16 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_communication_security_and_safety_lock.imageset/ic_communication_security_and_safety_lock.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Functional/ic_functional_settings_and_tools_hide.imageset/ic_functional_settings_and_tools_hide.svg
 
-./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
-./OUDS/Core/Themes/Sosh/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
+./OUDS/Core/Themes/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_important_fill.imageset/ic_alert_important_fill.svg
+./OUDS/Core/Themes/Wireframe/Resources/Icons.xcassets/Components/Alert/ic_alert_info_fill.imageset/ic_alert_info_fill.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_tick_confirmation_fill.imageset/ic_alert_tick_confirmation_fill.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_external_shape.imageset/ic_alert_warning_external_shape.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning_internal_shape.imageset/ic_alert_warning_internal_shape.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Alert/ic_alert_warning.imageset/ic_alert_warning.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_error_fill.imageset/ic_badge_error_fill.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_info_fill.imageset/ic_badge_info_fill.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_tick_confirmation_fill.imageset/ic_badge_tick_confirmation_fill.svg
+./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BadgeIcon/ic_badge_warning_external_shape.imageset/ic_badge_warning_external_shape.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/Button/ic_button_expurge.imageset/ic_button_expurge.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level0.imageset/ic_bullet_list_level0.svg
 ./OUDS/Core/Themes/Wireframe/Sources/Resources/Icons.xcassets/Components/BulletList/ic_bullet_list_level1.imageset/ic_bullet_list_level1.svg
