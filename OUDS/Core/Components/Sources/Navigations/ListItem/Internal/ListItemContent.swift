@@ -28,7 +28,8 @@ struct ListItemContent: View {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListContainersAlignment) private var containersAlignment
+    @Environment(\.oudsListItemContainersAlignment) private var containersAlignment
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -75,9 +76,7 @@ struct ListItemContent: View {
     private func leadingContainer(_ leading: OOUDSListItemLeading) -> some View {
         // Remove leading element if previous affordance is presented
         if affordanceType != .previous {
-            ListItemLeadingContainer(leading: leading,
-                                     small: data is OUDSListItemSizeSmallData,
-                                     interactionState: interactionState)
+            ListItemLeadingContainer(leading: leading, interactionState: interactionState)
         }
     }
 
@@ -86,9 +85,7 @@ struct ListItemContent: View {
     }
 
     private func trailingContainer(_ trailing: OUDSListItemTrailing) -> some View {
-        ListItemTrailingContainer(trailing: trailing,
-                                  small: data is OUDSListItemSizeSmallData,
-                                  interactionState: interactionState)
+        ListItemTrailingContainer(trailing: trailing, interactionState: interactionState)
     }
 
     // MARK: - Computed properties
@@ -103,27 +100,30 @@ struct ListItemContent: View {
     }
 
     private var topPadding: SpaceSemanticToken {
-        switch containersAlignment {
-        case .top:
-            if data is OUDSListItemSizeSmallData {
+        switch itemSize {
+        case .small:
+            switch containersAlignment {
+            case .top:
                 theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopCounterweight
-            } else {
-                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight
+            case .center:
+                theme.controlItem.spacePaddingBlockDensityCompact
             }
 
-        case .center:
-            if data is OUDSListItemSizeSmallData {
-                theme.controlItem.spacePaddingBlockDensityCompact
-            } else {
+        case .standard:
+            switch containersAlignment {
+            case .top:
+                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight
+            case .center:
                 theme.controlItem.spacePaddingBlockDensityDefault
             }
         }
     }
 
     private var bottomPadding: Double {
-        if data is OUDSListItemSizeSmallData {
+        switch itemSize {
+        case .small:
             theme.controlItem.spacePaddingBlockDensityCompact
-        } else {
+        case .standard:
             theme.controlItem.spacePaddingBlockDensityDefault
         }
     }

@@ -50,20 +50,19 @@ public struct OUDSListStaticItem: View {
 
     // MARK: - Initializer
 
-    /// Creates a list item with the data (`OUDSListItemSizeSmallData` or `OUDSListItemSizeDefaultData`).
-    /// This list item is used to display static data, means without interaction and navigation.
+    /// Creates a list item to display static data, means without interaction and navigation.
     ///
     /// ```swift
-    ///    let data = OUDSListItemSizeSmallData(label: "Label", description: "Description")
+    ///    let data = OUDSListItemData(label: "Label", description: "Description")
     ///    OUDSListIStaticItem(data: data)
     /// ```
     ///
     /// - Parameters
-    ///    - data: The data of the item. Could be default content with `OUDSListItemSizeDefaultData` or more simplier data with `OUDSListItemSizeSmallData`
+    ///    - data: The data of the item.
     ///    - leading: The optional element set at leading (before texts)
     ///    - trailing: The optional element set at trailing (after texts)
     ///
-    ///    **Remark** trailing, leading elements and texts can be aligned using ``View.oudsListItemCaontainersAlignment``.
+    ///    **Remark** trailing, leading elements and texts can be aligned using ``View.oudsListItemContainersAlignment``.
     public init(data: OUDSListItemData,
                 leading: OOUDSListItemLeading? = nil,
                 trailing: OUDSListItemTrailing? = nil)

@@ -20,11 +20,11 @@ struct ListItemVideo: View {
     // MARK: - Properties
 
     let url: URL
-    let small: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -53,7 +53,12 @@ struct ListItemVideo: View {
     }
 
     private var assetSize: CGFloat {
-        small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
+        switch itemSize {
+        case .standard:
+            theme.controlItem.sizeAssetMedium
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        }
     }
 }
 
@@ -62,11 +67,11 @@ struct ListItemImage: View {
     // MARK: - Properties
 
     let asset: Image
-    let small: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         asset
@@ -86,7 +91,12 @@ struct ListItemImage: View {
     }
 
     private var assetSize: CGFloat {
-        small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
+        switch itemSize {
+        case .standard:
+            theme.controlItem.sizeAssetMedium
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        }
     }
 }
 
@@ -124,10 +134,10 @@ struct ListItemFlag: View {
     // MARK: - Properties
 
     let asset: Image
-    let small: Bool
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -147,6 +157,11 @@ struct ListItemFlag: View {
     }
 
     private var assetSize: CGFloat {
-        small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
+        switch itemSize {
+        case .standard:
+            theme.controlItem.sizeAssetMedium
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        }
     }
 }

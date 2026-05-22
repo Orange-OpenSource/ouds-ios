@@ -20,11 +20,11 @@ struct ListItemTrailingTexts: View {
     // MARK: - Properties
 
     let textType: OUDSListItemTrailing.TextType
-    let small: Bool
 
-    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListContainersAlignment) private var alignment
+    @Environment(\.theme) private var theme
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -48,7 +48,7 @@ struct ListItemTrailingTexts: View {
                     .labelDefaultLarge(theme)
                     .foregroundColor(labelColor)
 
-                if !small {
+                if itemSize == .standard {
                     extraLabel
                         .labelStrongMedium(theme)
                         .foregroundColor(isEnabled ? theme.colors.contentDefault : theme.colors.contentDisabled)
@@ -78,9 +78,12 @@ struct ListItemTrailingTexts: View {
         case .center:
             theme.spaces.fixedNone
         case .top:
-            small ?
+            switch itemSize {
+            case .standard:
+                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+            case .small:
                 theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
-                : theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+            }
         }
     }
 }
