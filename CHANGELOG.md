@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `actions/dependency-review-action` action from v4.9.0 to v5.0.0 for `dependency-review` workflow
 - `github/codeql-action/upload-sarif` action from v4.35.3 to v4.36.1 for `scorecard` workflow
 - Definition of SKILL files to be available on *skills.sh* registry
 - Duration of animation for selected tab indicator of `tab bar` component
