@@ -18,8 +18,8 @@ import SwiftUI
 ///
 /// - Since: 2.0.0
 @frozen public enum OOUDSListItemLeading {
-    /// An soloaris icon with be tinted according toi state of the item
-    case icon(asset: Image)
+    /// An icon according to ``OUDSLIstItemIconType``
+    case icon(OUDSLIstItemIcon)
 
     /// An image
     case image(asset: Image)

@@ -46,8 +46,8 @@ import SwiftUI
     /// A tag
     case tag(OUDSTag)
 
-    /// An solaris icon with be tinted according toi state of the item
-    case icon(asset: Image)
+    /// An icon
+    case icon(OUDSLIstItemIcon)
 
     /// An image
     case image(asset: Image)

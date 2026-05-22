@@ -39,9 +39,9 @@ struct ListItemTrailingContainer: View {
                 badge
             case let .tag(tag):
                 tag
-            case let .icon(asset: asset):
-                ListItemIcon(asset: asset, small: small)
-            case let .image(asset: asset):
+            case let .icon(icon):
+                icon
+            case let .image(asset):
                 ListItemImage(asset: asset, small: small)
             case let .flag(asset: asset):
                 ListItemFlag(asset: asset, small: small)
