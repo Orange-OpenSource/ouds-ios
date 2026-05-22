@@ -26,11 +26,11 @@ struct BadgeLayout {
         case empty(size: OUDSBadge.StandardSize)
 
         /// To display a count on badge
-        case count(value: UInt8, size: OUDSBadge.IllustrationSize)
+        case count(value: UInt8, size: OUDSBadge.CountSize)
 
         /// To display an icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
         /// the decorative icon must be provided. For other categories, a default icon is already provided.
-        case icon(customIcon: Image? = nil, flipIcon: Bool = false, size: OUDSBadge.IllustrationSize)
+        case icon(customIcon: Image? = nil, flipIcon: Bool = false, size: OUDSBadge.IconSize)
     }
 
     /// Internal initializer
@@ -47,8 +47,9 @@ struct BadgeLayout {
         switch type {
         case let .empty(size):
             size
-        case let .count(_, illustrationSize),
-             let .icon(_, _, illustrationSize):
+        case let .count(_, countSize):
+            countSize.standardSize
+        case let .icon(_, _, illustrationSize):
             illustrationSize.standardSize
         }
     }

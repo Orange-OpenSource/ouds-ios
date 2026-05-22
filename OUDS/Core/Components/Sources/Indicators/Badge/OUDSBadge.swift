@@ -156,7 +156,36 @@ public struct OUDSBadge: View {
 
     /// All available sizes of a badge with *count* or *icon*
     /// - Since: 0.17.0
+    @available(*, deprecated, message: "For CountBadge use instead CountSize. For IconBadge use instead IconSize.")
     @frozen public enum IllustrationSize {
+
+        /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
+        case medium
+
+        /// A prominent badge for drawing more attention, often used in dashboards or highlighted sections.
+        case large
+    }
+
+    /// All available sizes of a badge as *count* type
+    /// - Since: 2.1.0
+    @frozen public enum CountSize {
+
+        /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
+        case medium
+
+        /// A prominent badge for drawing more attention, often used in dashboards or highlighted sections.
+        case large
+    }
+
+    /// All available sizes of a badge as *icon* type
+    /// - Since: 2.1.0
+    @frozen public enum IconSize {
+
+        /// A compact badge for minimal space usage, ideal for small UI elements like icons or tooltips.
+        case extraSmall
+
+        /// A slightly larger badge that remains subtle but improves readability, often used for inline labels.
+        case small
 
         /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
         case medium
@@ -224,7 +253,30 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
+    @available(*, deprecated, message: "Use instead init(UInt8,String,Status,CountSize)")
     public init(count: UInt8, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
+        self.init(layout: .init(type: .count(value: count, size: size.toCountSize), status: status),
+                  accessibilityLabel: accessibilityLabel)
+    }
+
+    /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
+    /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
+    /// Negative values are not allowed by design.
+    /// The background color of the badge and the number color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative, countSize: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - count:The number displayed in the badge.
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
+    ///    - status: The status of this badge, default set to *neutral*
+    ///    - size: The size of this badge, default set to *medium*
+    public init(count: UInt8, accessibilityLabel: String, status: Status = .neutral, countSize size: CountSize = .medium) {
+        // Parameter renamed to countSize to remove ambiguity between old init and new one (enums share some cases names)
         self.init(layout: .init(type: .count(value: count, size: size), status: status),
                   accessibilityLabel: accessibilityLabel)
     }
@@ -247,6 +299,7 @@ public struct OUDSBadge: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
+    @available(*, deprecated, message: "Use instead init(UInt8,LocalizedStringKey,String?,Bundle,Status,CountSize)")
     public init(count: UInt8,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -254,6 +307,37 @@ public struct OUDSBadge: View {
                 status: Status = .neutral,
                 size: IllustrationSize = .medium)
     {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        self.init(layout: .init(type: .count(value: count, size: size.toCountSize), status: status),
+                  accessibilityLabel: resolvedText)
+    }
+
+    /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
+    /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
+    /// Negative values are not allowed by design.
+    /// The background color of the badge and the number color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(count: 9, accessibilityLabel: LocalizedStringKey("new_messages"), bundle: Bundle.module, status: .negative, countSize: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - count:The number displayed in the badge.
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - status: The status of this badge, default set to *neutral*
+    ///    - size: The size of this badge, default set to *medium*
+    public init(count: UInt8,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                status: Status = .neutral,
+                countSize size: CountSize = .medium)
+    {
+        // Parameter renamed to countSize to remove ambiguity between old init and new one (enums share some cases names)
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
         self.init(layout: .init(type: .count(value: count, size: size), status: status),
                   accessibilityLabel: resolvedText)
@@ -274,10 +358,35 @@ public struct OUDSBadge: View {
     ///    and **neutral** status whrere a decorative icon is required)
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     ///    - size: The size of this badge, default set to *medium*
+    @available(*, deprecated, message: "Use instead init(StatusWithIcon,String,IconSize)")
     public init(status: StatusWithIcon,
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
     {
+        let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size.toIconSize), status: status.status)
+        self.init(layout: layout, accessibilityLabel: accessibilityLabel)
+    }
+
+    /// Creates a badge which displays an icon to visually reinforce meaning.
+    /// It is used for status indicators (e.g., "New", "Pending", "Success").
+    /// The background color of the badge and the icon color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(status: .info, accessibilityLabel: "Information", size: .medium, iconSize: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
+    ///    and **neutral** status whrere a decorative icon is required)
+    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
+    ///    - size: The size of this badge, default set to *medium*
+    public init(status: StatusWithIcon,
+                accessibilityLabel: String,
+                iconSize size: IconSize = .medium)
+    {
+        // Parameter renamed to iconSize to remove ambiguity between old init and new one (enums share some cases names)
         let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
         self.init(layout: layout, accessibilityLabel: accessibilityLabel)
     }
@@ -299,12 +408,42 @@ public struct OUDSBadge: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - size: The size of this badge, default set to *medium*
+    @available(*, deprecated, message: "Use instead init(StatusWithIcon,LocalizedStringKey,String?,Bundle,IconSize)")
     public init(status: StatusWithIcon,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 size: IllustrationSize = .medium)
     {
+        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
+        let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size.toIconSize), status: status.status)
+        self.init(layout: layout, accessibilityLabel: resolvedText)
+    }
+
+    /// Creates a badge which displays an icon to visually reinforce meaning.
+    /// It is used for status indicators (e.g., "New", "Pending", "Success").
+    /// The background color of the badge and the icon color are based on the given `status`.
+    ///
+    /// Use the `View/disabled(_:)` method to have badge in disabled state.
+    ///
+    /// ```swift
+    ///     OUDSBadge(status: .info, accessibilityLabel: LocalizedStringKey("info_badge"), bundle: Bundle.module, iconSize: .large)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - status: The status of this badge with icon (for all status, a default icon is displayed except for **accent**
+    ///    and **neutral** status whrere a decorative icon is required)
+    ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - size: The size of this badge, default set to *medium*
+    public init(status: StatusWithIcon,
+                accessibilityLabel key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                iconSize size: IconSize = .medium)
+    {
+        // Parameter renamed to iconSize to remove ambiguity between old init and new one (enums share some cases names)
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
         let layout = BadgeLayout(type: .icon(customIcon: status.icon?.image, flipIcon: status.icon?.flipped ?? false, size: size), status: status.status)
         self.init(layout: layout, accessibilityLabel: resolvedText)

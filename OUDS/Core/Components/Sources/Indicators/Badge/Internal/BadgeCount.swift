@@ -19,7 +19,7 @@ struct BadgeCount: View {
     // MARK: Properties
 
     let value: UInt8
-    let size: OUDSBadge.IllustrationSize
+    let size: OUDSBadge.CountSize
 
     @Environment(\.theme) private var theme
 

@@ -126,6 +126,56 @@ extension OUDSBadge.IllustrationSize {
             .large
         }
     }
+
+    /// To convert the old deprecated API `IllustrationSize` to the new one `CountSize`
+    public var toCountSize: OUDSBadge.CountSize {
+        switch self {
+        case .medium:
+            .medium
+        case .large:
+            .large
+        }
+    }
+
+    /// To convert the old deprecated API `IllustrationSize` to the new one `IconSize`
+    public var toIconSize: OUDSBadge.IconSize {
+        switch self {
+        case .medium:
+            .medium
+        case .large:
+            .large
+        }
+    }
+}
+
+extension OUDSBadge.IconSize {
+
+    /// Internal usage: convert to standard size
+    public var standardSize: OUDSBadge.StandardSize {
+        switch self {
+        case .extraSmall:
+            .extraSmall
+        case .small:
+            .small
+        case .medium:
+            .medium
+        case .large:
+            .large
+        }
+    }
+}
+
+extension OUDSBadge.CountSize {
+
+    /// Internal usage: convert to standard size
+    public var standardSize: OUDSBadge.StandardSize {
+        switch self {
+        case .medium:
+            .medium
+        case .large:
+            .large
+        }
+    }
 }
 
 extension OUDSBadge.StatusWithIcon {
