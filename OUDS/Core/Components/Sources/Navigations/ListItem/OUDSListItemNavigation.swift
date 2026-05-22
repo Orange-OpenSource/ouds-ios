@@ -54,22 +54,27 @@ public struct OUDSListItemNavigation: View {
 
     // MARK: - Initializer
 
-    /// Creates a list item with the data (`OUDSListItemSizeSmallData` or `OUDSListItemSizeDefaultData`) and the type of affordance
+    /// Creates a list item with the data `OUDSListItemData` and the type of affordance
     /// according to action done when item is clicked.
     ///
     /// ```swift
-    ///    let data = OUDSListItemSizeSmallData(label: "Label", description: "Description")
-    ///    OUDSListIStaticCard(data: data)
+    ///    let data = OUDSListItemData(label: "Label", description: "Description")
+    ///    OUDSListItemNavigation(data: data, affordance: .external) {
+    ///         // do some staff here
+    ///         openUrl.callAsFunction(url)
+    ///    }
     /// ```
     ///
     /// - Parameter data: The data of the item. Could be default content with `OUDSListItemSizeDefaultData` or more simplier data with `OUDSListItemSizeSmallData`
     ///
     /// - Parameters:
-    ///   - data: The main label text of the item, must not be empty
+    ///   - data: The data contains all labels
     ///   - affordanceType:The type of affordance
     ///   - leading: The optinal leading element
-    ///   - trailing: The optional trailing element,
-    ///   - action: An additional action to trigger when the radio button has been pressed
+    ///   - trailing: The optional trailing element
+    ///   - action: An additional action to trigger when the item has been pressed
+    ///
+    ///    **Remark** trailing, leading elements and texts can be aligned using ``View.oudsListItemContainersAlignment``.
     public init(data: OUDSListItemData,
                 affordanceType: AffordanceType = .next,
                 leading: OOUDSListItemLeading? = nil,

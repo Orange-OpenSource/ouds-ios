@@ -24,13 +24,17 @@ struct ListItemTextContainer: View {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListContainersAlignment) private var alignment
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
-            if let overline = data.overline, !overline.isEmpty {
+            if let overline = data.overline,
+               !overline.isEmpty,
+               itemSize == .standard
+            {
                 Text(overline)
                     .labelModerateSmall(theme)
                     .multilineTextAlignment(.leading)
@@ -49,7 +53,10 @@ struct ListItemTextContainer: View {
             .foregroundStyle(labelsColor)
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let extraLabel = data.extraLabel, !extraLabel.isEmpty {
+            if let extraLabel = data.extraLabel,
+               !extraLabel.isEmpty,
+               itemSize == .standard
+            {
                 Text(extraLabel)
                     .labelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
@@ -73,9 +80,10 @@ struct ListItemTextContainer: View {
             return theme.spaces.fixedNone
         }
 
-        if data is OUDSListItemSizeSmallData {
+        switch itemSize {
+        case .small:
             return theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
-        } else {
+        case .standard:
             return theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
         }
     }

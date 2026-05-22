@@ -37,6 +37,20 @@ import SwiftUI
     case standard(divider: Bool, background: Bool)
 }
 
+/// Define the size of the item
+///
+/// - Since: 2.0.0
+@frozen public enum OUDSListItemSize {
+    /// The standard (i.e. default) size
+    case standard
+
+    /// The small size of the ``OUDSListItem``
+    ///
+    ///  **Remark: Some elements will be displyed in their smallest size (Avatar, Icon, badge, ...), and some elements will be hidden
+    ///  (Extra label, Overline)**
+    case small
+}
+
 extension View {
     /// Use to apply the _Card_ style on items of a list. This style is applied globaly
     /// on each items of a list.
@@ -50,7 +64,7 @@ extension View {
     public func oudsListCardStyle(hasDdivider: Bool = false,
                                   hasBackground: Bool = true) -> some View
     {
-        environment(\.oudsListContentStyle, .standard(divider: hasDdivider, background: hasBackground))
+        environment(\.oudsListItemContentStyle, .standard(divider: hasDdivider, background: hasBackground))
     }
 
     /// Use to apply the _Standard_ style on items of a list. This style is applied globaly
@@ -61,7 +75,7 @@ extension View {
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemStyle(style: OUDSListItemContentStyle = .standard(divider: true, background: false)) -> some View {
-        environment(\.oudsListContentStyle, style)
+        environment(\.oudsListItemContentStyle, style)
     }
 
     /// Use to define if madia in `OUDSListItem` are rounded.
@@ -81,18 +95,31 @@ extension View {
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
     public func oudsListItemContainerAlignment(_ alignment: OUDSListItemContainersAlignment = .center) -> some View {
-        environment(\.oudsListContainersAlignment, alignment)
+        environment(\.oudsListItemContainersAlignment, alignment)
+    }
+
+    /// Use to align containers in `OUDSListItem`
+    ///
+    /// - Parameter isSmall: Alignment to apply, `Center` by default.
+    ///
+    /// - Since: 2.0.0
+    @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+    public func oudsListItemSize(_ size: OUDSListItemSize) -> some View {
+        environment(\.oudsListItemSize, size)
     }
 }
 
 extension EnvironmentValues {
 
     /// Define the current conainers alignment in `OUDSListItem` applyed globaly on a list of items.
-    @Entry var oudsListContainersAlignment: OUDSListItemContainersAlignment = .center
+    @Entry var oudsListItemContainersAlignment: OUDSListItemContainersAlignment = .center
 
     /// Define the content style of a `OUDSListItem` applied globaly on items of a list.
-    @Entry var oudsListContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
+    @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
 
     /// Defines if media should be rounded. By default media is square
     @Entry var oudsListItemRoundedMedia: Bool = false
+
+    /// Define the size of items in list. By default, it is the standard
+    @Entry var oudsListItemSize: OUDSListItemSize = .standard
 }

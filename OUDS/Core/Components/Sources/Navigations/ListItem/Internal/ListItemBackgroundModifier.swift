@@ -23,7 +23,7 @@ struct ListItemBackgroundModifier: ViewModifier {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListContentStyle) private var style
+    @Environment(\.oudsListItemContentStyle) private var style
 
     // MARK: - Body
 

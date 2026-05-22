@@ -35,9 +35,6 @@ public struct OUDSListItemAvatar: View {
 
     /// Define the available size of avatar
     @frozen public enum Size {
-        /// The smaller size used when list item is in a samll size
-        case small
-
         /// The medium size used in standard size of the list item
         case medium
 
@@ -55,9 +52,11 @@ public struct OUDSListItemAvatar: View {
     ///
     /// - Parameters:
     ///     - type: The type of the avatar
-    ///     - size: The size of the avatar
+    ///     - size: The size of the avatar.
+    ///     **Reamrk : Ignored, if it is embeded in an item with small size (`oudsListItemSize`), and the smallest size is applied**
     ///     - badge: An option `OUDBadge` set at bottom trailing of the avatar.
     ///
+    /// **Reamrk : If embeded in an item wit small size (`oudsListItemSize`), the size is ignored  **
     public init(type: AvatarType, size: Size, badge: OUDSBadge? = nil) {
         self.type = type
         self.size = size
@@ -73,6 +72,7 @@ public struct OUDSListItemAvatar: View {
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -114,36 +114,51 @@ public struct OUDSListItemAvatar: View {
     // MARK: - Size helpers
 
     private var frameSize: SizeSemanticToken {
-        switch size {
+        switch itemSize {
+        case .standard:
+            switch size {
+            case .medium:
+                theme.controlItem.sizeAssetMedium
+            case .large:
+                theme.controlItem.sizeAssetLarge
+            case .extraLarge:
+                // TODO: a vérifier car figma 2xlarge
+                theme.controlItem.sizeAssetXlarge
+            }
         case .small:
             theme.controlItem.sizeAssetSmall
-        case .medium:
-            theme.controlItem.sizeAssetMedium
-        case .large:
-            theme.controlItem.sizeAssetLarge
-        case .extraLarge:
-            // TODO: a vérifier car figma 2xlarge
-            theme.controlItem.sizeAssetXlarge
         }
     }
 
     private var avatarSize: SizeSemanticToken {
-        switch size {
-        case .small: 12
-        case .medium: 16
-        case .large: 24
-        case .extraLarge: 36
+        switch itemSize {
+        case .small:
+            12
+        case .standard:
+            switch size {
+            case .medium:
+                16
+            case .large:
+                24
+            case .extraLarge:
+                36
+            }
         }
     }
 
     private var badgeSize: OUDSBadge.StandardSize {
-        switch size {
-        case .small, .medium:
+        switch itemSize {
+        case .small:
             .extraSmall
-        case .large:
-            .small
-        case .extraLarge:
-            .medium
+        case .standard:
+            switch size {
+            case .medium:
+                .extraSmall
+            case .large:
+                .small
+            case .extraLarge:
+                .medium
+            }
         }
     }
 
@@ -160,31 +175,36 @@ public struct OUDSListItemAvatar: View {
     // MARK: - Font helpers
 
     private var font: MultipleFontCompositeSemanticToken {
-        switch size {
-        case .small, .medium:
-            MultipleFontCompositeSemanticToken(small)
-        case .large:
-            MultipleFontCompositeSemanticToken(large)
-        case .extraLarge:
-            MultipleFontCompositeSemanticToken(xLarge)
+        switch itemSize {
+        case .small:
+            MultipleFontCompositeSemanticToken(smallFont)
+        case .standard:
+            switch size {
+            case .medium:
+                MultipleFontCompositeSemanticToken(smallFont)
+            case .large:
+                MultipleFontCompositeSemanticToken(largeFont)
+            case .extraLarge:
+                MultipleFontCompositeSemanticToken(extraLargeFont)
+            }
         }
     }
 
-    private var small: FontCompositeSemanticToken {
+    private var smallFont: FontCompositeSemanticToken {
         .init(size: theme.fonts.sizeLabelSmall,
               lineHeight: theme.fonts.lineHeightLabelSmall,
               weight: theme.fonts.weightLabelModerate,
               letterSpacing: theme.fonts.letterSpacingLabelSmall)
     }
 
-    private var large: FontCompositeSemanticToken {
+    private var largeFont: FontCompositeSemanticToken {
         .init(size: theme.fonts.sizeLabelXlarge,
               lineHeight: theme.fonts.lineHeightLabelXlarge,
               weight: theme.fonts.weightLabelModerate,
               letterSpacing: theme.fonts.letterSpacingLabelXlarge)
     }
 
-    private var xLarge: FontCompositeSemanticToken {
+    private var extraLargeFont: FontCompositeSemanticToken {
         .init(size: theme.controlItem.fontSizeAvatarInitialXlarge,
               lineHeight: theme.controlItem.fontLineHeightAvatarInitialXlarge,
               weight: theme.fonts.weightLabelModerate,

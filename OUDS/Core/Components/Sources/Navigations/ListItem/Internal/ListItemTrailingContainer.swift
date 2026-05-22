@@ -22,11 +22,11 @@ struct ListItemTrailingContainer: View {
     // MARK: - Stored properties
 
     let trailing: OUDSListItemTrailing
-    let small: Bool
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListContainersAlignment) private var alignment
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: Body
 
@@ -34,7 +34,7 @@ struct ListItemTrailingContainer: View {
         HStack {
             switch trailing {
             case let .text(type):
-                ListItemTrailingTexts(textType: type, small: small)
+                ListItemTrailingTexts(textType: type)
             case let .badge(badge):
                 badge
             case let .tag(tag):
@@ -42,11 +42,11 @@ struct ListItemTrailingContainer: View {
             case let .icon(icon):
                 icon
             case let .image(asset):
-                ListItemImage(asset: asset, small: small)
+                ListItemImage(asset: asset)
             case let .flag(asset: asset):
-                ListItemFlag(asset: asset, small: small)
+                ListItemFlag(asset: asset)
             case let .video(url):
-                ListItemVideo(url: url, small: small)
+                ListItemVideo(url: url)
             case let .avatar(avatar):
                 avatar
             }
@@ -67,6 +67,11 @@ struct ListItemTrailingContainer: View {
     }
 
     private var minHeight: CGFloat {
-        small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
+        switch itemSize {
+        case .standard:
+            theme.controlItem.sizeAssetMedium
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        }
     }
 }
