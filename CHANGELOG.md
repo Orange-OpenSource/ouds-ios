@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `Ruby` version from v4.0.3 to v4.0.5 for `build-and-test` workflows
 - `gitleaks/gitleaks-action` action from v2.3.9 to v3.0.0 for `gitleaks` workflow
 - `ruby/setup-ruby` action from v1.306.0 to v1.310.0 for `build-and-test` workflow
 - `actions/dependency-review-action` action from v4.9.0 to v5.0.0 for `dependency-review` workflow
