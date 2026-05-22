@@ -30,8 +30,8 @@ struct ListItemLeadingContainer: View {
     var body: some View {
         HStack {
             switch leading {
-            case let .icon(asset: asset):
-                ListItemIcon(asset: asset, small: small)
+            case let .icon(icon):
+                icon
             case let .image(asset: asset):
                 ListItemImage(asset: asset, small: small)
             case let .flag(asset: asset):
