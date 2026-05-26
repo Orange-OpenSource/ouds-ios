@@ -75,7 +75,7 @@ import SwiftUI
 ///
 /// ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
 ///
-/// - Version: 1.2.0 (Figma component design version)
+/// - Version: 1.2.0 (standard and count badges), 1.3.0 (icon badge) Figma component design version)
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadge: View {

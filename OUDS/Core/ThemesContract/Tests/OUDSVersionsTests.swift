@@ -151,6 +151,14 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentBadgeVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentBadgeCountVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentBadgeCountVersion, regexp: Self.oudsVersionsFormat)
+    }
+
+    @Test func componentBadgeIconVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentBadgeIconVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Tag
 
     @Test func componentSkeletonVersionMustBeConform() throws {
