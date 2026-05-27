@@ -19,14 +19,14 @@ struct BadgeCount: View {
     // MARK: Properties
 
     let value: UInt8
-    let size: OUDSBadge.CountSize
+    let size: OUDSBadgeCount.Size
 
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
+        let text = value > OUDSBadgeCount.maxCount ? "+\(OUDSBadgeCount.maxCount)" : "\(value)"
         switch size {
         case .medium:
             Text(text)

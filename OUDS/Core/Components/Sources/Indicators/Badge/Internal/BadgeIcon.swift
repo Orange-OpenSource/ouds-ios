@@ -20,7 +20,16 @@ struct BadgeIcon: View {
 
     let customIcon: Image?
     let flipped: Bool
-    let status: OUDSBadge.Status
+    let status: OUDSBadgeIcon.Status
+
+    // swiftlint:disable discouraged_optional_boolean
+    init(customIcon: Image?, flipped: Bool?, status: OUDSBadgeIcon.Status) {
+        self.customIcon = customIcon
+        self.flipped = flipped ?? false
+        self.status = status
+    }
+
+    // swiftlint:enable discouraged_optional_boolean
 
     @Environment(\.theme) private var theme
 
@@ -35,7 +44,7 @@ struct BadgeIcon: View {
                 .toFlip(flipped)
         }
         .padding(.all, theme.badge.spaceInsetMediumLarge)
-        .accessibilityElement() // Otherwise label cannot be used in OUDSBadge body
+        .accessibilityElement() // Otherwise label cannot be used in OUDSBadge* body
     }
 
     // MARK: Helpers

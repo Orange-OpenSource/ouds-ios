@@ -14,6 +14,9 @@
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Badge Modifier (deprecated API)
+
+@available(*, deprecated, message: "Use BadgeLayoutModifier instead.")
 struct BadgeModifier: ViewModifier {
 
     // MARK: Properties
@@ -78,7 +81,7 @@ struct BadgeModifier: ViewModifier {
 
     private var foregroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
-        case .neutral:
+        case .neutral, .none:
             theme.colors.contentInverse
         case .accent:
             theme.colors.contentOnStatusAccentEmphasized
@@ -97,7 +100,7 @@ struct BadgeModifier: ViewModifier {
 
     private var backgroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
-        case .neutral:
+        case .neutral, .none:
             theme.colors.surfaceInverseHigh
         case .accent:
             theme.colors.surfaceStatusAccentEmphasized
@@ -127,48 +130,8 @@ extension OUDSBadge.IllustrationSize {
         }
     }
 
-    /// To convert the old deprecated API `IllustrationSize` to the new one `CountSize`
-    public var toCountSize: OUDSBadge.CountSize {
-        switch self {
-        case .medium:
-            .medium
-        case .large:
-            .large
-        }
-    }
-
-    /// To convert the old deprecated API `IllustrationSize` to the new one `IconSize`
-    public var toIconSize: OUDSBadge.IconSize {
-        switch self {
-        case .medium:
-            .medium
-        case .large:
-            .large
-        }
-    }
-}
-
-extension OUDSBadge.IconSize {
-
-    /// Internal usage: convert to standard size
-    public var standardSize: OUDSBadge.StandardSize {
-        switch self {
-        case .extraSmall:
-            .extraSmall
-        case .small:
-            .small
-        case .medium:
-            .medium
-        case .large:
-            .large
-        }
-    }
-}
-
-extension OUDSBadge.CountSize {
-
-    /// Internal usage: convert to standard size
-    public var standardSize: OUDSBadge.StandardSize {
+    /// Internal usage: to convert old deprecated API (`OUDSBadge.IllustrationSize`) to new one (`OUDSBadgeCount.Size`)
+    var toCountSize: OUDSBadgeCount.Size {
         switch self {
         case .medium:
             .medium
