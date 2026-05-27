@@ -114,7 +114,7 @@ The components tokens are wrapped in tokens provider acessible through the theme
 Components tokens provider     | Target component                          
 ------------------------------ | ------------------------------------- 
 bar                            | For bars components like bottom and navigation bars
-badge                          | For badges like `OUDSBadge`
+badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `OUDSButton` 
 bulletList                     | For list of elements with bullets 
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 

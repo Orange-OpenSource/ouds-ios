@@ -1,11 +1,60 @@
 # Migration Guide
 
+- [v2.0.0 → v2.1.0](#v200--v210)
 - [v1.4.0 → v2.0.0](#v140--v200)
 - [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v2.0.0 → v2.1.0
+
+### Overview
+
+The `badge` component has been refactored so as to improve maintainability and split responsabilities.
+Now there are 3 components instead of 1.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 2.0 or older
+
+### Deprecated badge API
+
+The `OUDSBadge` component is deprecated. Use instead dedicated API.
+
+**Impact**: Medium
+
+**Before (v2.0.0)**:
+```swift
+// Standard badge (i.e. empty badge)
+OUDSBadge(accessibilityLabel: "New feature available", status: .accent, size: .small)
+
+// Count badge
+OUDSBadge(count: 9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
+
+// Icon badge
+OUDSBadge(status: .info, accessibilityLabel: "Like", size: .medium)
+```
+
+**After (v2.1.0)**:
+```swift
+// Standard badge (i.e. empty badge)
+OUDSBadgeStandard(accessibilityLabel: "New feature available", status: .accent, size: .small)
+
+// Count badge
+OUDSBadgeCount(9, accessibilityLabel: "9 new messages", status: .negative, size: .large)
+
+// Icon badge
+OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
+```
+
+**Required Action**:
+- Remove the `OUDSBadge` calls by `OUDSBadgeStandard`, `OUDSBadgeCount` or `OUDSBadgeIcon`
+
+**Reason for Change**: Now in Figma these components have their own versions, configurations and should be split.
 
 ## v1.4.0 → v2.0.0
 

@@ -29,7 +29,7 @@ import SwiftUI
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on OUDS badge components.
 ///
 @available(iOS 15, *)
 struct TabBarViewModifier: ViewModifier {

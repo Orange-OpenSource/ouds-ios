@@ -26,17 +26,17 @@ Some components can be used for **indicators**.
     }
 }
 
-The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
+The badge is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text. It can be empty (``OUDSBadgeStandard``), with an image ( ``OUDSBadgeIcon``)  or with a numeric value (``OUDSBadgeCount``).
 
 ```swift            
 // Info badge in medium size without information
-OUDSBadge(status: .info, size: .medium)
+OUDSBadgeStandard(status: .info, size: .medium)
 
 // Negative badge in medium size with count information
-OUDSBadge(count: 1, status: .negative, size: .medium)
+OUDSBadgeCount(1, status: .negative, size: .medium)
 
 // Neutral badge in medium size with an image
-OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
 ```
 
 ### Tag
