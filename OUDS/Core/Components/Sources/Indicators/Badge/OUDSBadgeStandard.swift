@@ -179,6 +179,6 @@ public struct OUDSBadgeStandard: View { // TODO: #1493 - Update screenshots for 
         HStack {
             EmptyView()
         }
-        .modifier(BadgeLayoutModifier(standardLayout: configuration, accessibilityLabel: accessibilityLabel))
+        .modifier(BadgeLayoutModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
     }
 }

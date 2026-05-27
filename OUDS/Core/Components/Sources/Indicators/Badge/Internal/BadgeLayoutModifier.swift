@@ -11,81 +11,33 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
-
-// MARK: - Badge Layout Modifier (new API)
 
 struct BadgeLayoutModifier: ViewModifier {
 
     // MARK: Properties
 
+    let configuration: BadgeConfiguration
     let accessibilityLabel: String
 
-    private let rawFrameSize: SizeSemanticToken
-    private let maxWidth: CGFloat?
-    private let maxHeight: CGFloat?
-    private let foregroundColor: MultipleColorSemanticToken
-    private let backgroundColor: MultipleColorSemanticToken
-
     @Environment(\.theme) private var theme
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
     @Environment(\.isEnabled) private var isEnabled: Bool
-
-    // MARK: Initializers
-
-    init(standardLayout: BadgeStandardConfiguration, accessibilityLabel: String) {
-        self.accessibilityLabel = accessibilityLabel
-        rawFrameSize = switch standardLayout.size {
-        case .extraSmall:
-            theme.badge.sizeXsmall
-        case .small:
-            theme.badge.sizeSmall
-        case .medium:
-            theme.badge.sizeMedium
-        case .large:
-            theme.badge.sizeLarge
-        }
-        maxWidth = rawFrameSize
-        maxHeight = rawFrameSize
-        (foregroundColor, backgroundColor) = colors(for: standardLayout.status)
-    }
-
-    init(countLayout: BadgeCountConfiguration, accessibilityLabel: String) {
-        self.accessibilityLabel = accessibilityLabel
-        rawFrameSize = switch countLayout.size {
-        case .medium:
-            theme.badge.sizeMedium
-        case .large:
-            theme.badge.sizeLarge
-        }
-        maxWidth = nil
-        maxHeight = nil
-        (foregroundColor, backgroundColor) = colors(for: countLayout.status)
-    }
-
-    init(iconLayout: BadgeIconConfiguration, accessibilityLabel: String) {
-        self.accessibilityLabel = accessibilityLabel
-        rawFrameSize = switch iconLayout.size {
-        case .extraSmall:
-            theme.badge.sizeXsmall
-        case .small:
-            theme.badge.sizeSmall
-        case .medium:
-            theme.badge.sizeMedium
-        case .large:
-            theme.badge.sizeLarge
-        }
-        maxWidth = rawFrameSize
-        maxHeight = rawFrameSize
-        (foregroundColor, backgroundColor) = colors(for: iconLayout.status.toStandardStatus)
-    }
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Body
 
     func body(content: Content) -> some View {
+        let status = standardStatus(from: configuration)
+        let (foregroundColor, backgroundColor) = colors(for: status)
+
         content
-            .frame(minWidth: computedFrameSize, maxWidth: computedMaxWidth, minHeight: computedFrameSize, maxHeight: computedMaxHeight, alignment: .center)
+            .frame(minWidth: computedFrameSize,
+                   maxWidth: computedMaxWidth,
+                   minHeight: computedFrameSize,
+                   maxHeight: computedMaxHeight,
+                   alignment: .center)
             .foregroundColor(foregroundColor)
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
@@ -95,29 +47,106 @@ struct BadgeLayoutModifier: ViewModifier {
 
     // MARK: Helpers
 
+    /// Returns the raw frame size according to the concrete configuration type.
+    private func rawFrameSize(from configuration: BadgeConfiguration) -> CGFloat {
+        switch configuration {
+        case let standard as BadgeStandardConfiguration:
+            rawFrameSize(from: standard.size)
+        case let count as BadgeCountConfiguration:
+            rawFrameSize(from: count.size)
+        case let icon as BadgeIconConfiguration:
+            rawFrameSize(from: icon.size)
+        default:
+            // Should never happen, only 3 implementations of BadgeConfiguration:
+            // BadgeStandardConfiguration, BadgeCountConfiguration and BadgeIconConfiguration
+            OL.fatal("Impossible to compute the raw frame size for the badge.")
+        }
+    }
+
+    private func rawFrameSize(from size: OUDSBadgeStandard.Size) -> CGFloat {
+        switch size {
+        case .extraSmall:
+            theme.badge.sizeXsmall
+        case .small:
+            theme.badge.sizeSmall
+        case .medium:
+            theme.badge.sizeMedium
+        case .large:
+            theme.badge.sizeLarge
+        }
+    }
+
+    private func rawFrameSize(from size: OUDSBadgeCount.Size) -> CGFloat {
+        switch size {
+        case .medium:
+            theme.badge.sizeMedium
+        case .large:
+            theme.badge.sizeLarge
+        }
+    }
+
+    private func rawFrameSize(from size: OUDSBadgeIcon.Size) -> CGFloat {
+        switch size {
+        case .extraSmall:
+            theme.badge.sizeXsmall
+        case .small:
+            theme.badge.sizeSmall
+        case .medium:
+            theme.badge.sizeMedium
+        case .large:
+            theme.badge.sizeLarge
+        }
+    }
+
     /// Returns the value to apply to compute frame size.
     /// If the text is not large, uses the expected tokens.
     /// Otherwise uses the largest token and applies a factor based on the text size rate to have bigger size.
-    private var computedFrameSize: SizeSemanticToken {
-        rawFrameSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
+    private func size(computeFrom configuration: BadgeConfiguration) -> CGFloat {
+        let rawSize = rawFrameSize(from: configuration)
+        return rawSize * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
+    }
+
+    /// Returns the computed frame size (min width / min height).
+    private var computedFrameSize: CGFloat {
+        size(computeFrom: configuration)
     }
 
     /// Returns the max width.
     /// If count defined, i.e. means a text, don't limit width.
     private var computedMaxWidth: CGFloat? {
-        guard let maxWidth else { return nil }
-        return maxWidth * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
+        if configuration is BadgeCountConfiguration {
+            return nil
+        }
+        return computedFrameSize
     }
 
     /// Returns the max height.
-    /// If count defined, i.e. means a text, don't limit width
+    /// If count defined, i.e. means a text, don't limit width.
     private var computedMaxHeight: CGFloat? {
-        guard let maxWidth else { return nil }
-        return maxWidth * (dynamicTypeSize.isLargeTextUsed ? dynamicTypeSize.percentageRate / 100 : 1)
+        if configuration is BadgeCountConfiguration {
+            return nil
+        }
+        return computedFrameSize
+    }
+
+    /// Converts any badge configuration status to standard status.
+    private func standardStatus(from configuration: BadgeConfiguration) -> OUDSBadgeStandard.Status {
+        switch configuration {
+        case let standard as BadgeStandardConfiguration:
+            standard.status
+        case let count as BadgeCountConfiguration:
+            count.status
+        case let icon as BadgeIconConfiguration:
+            icon.status.toStandardStatus
+        default:
+            // Should never happen, only 3 implementations of BadgeConfiguration:
+            // BadgeStandardConfiguration, BadgeCountConfiguration and BadgeIconConfiguration
+            OL.fatal("Impossible to compute the standard status for the badge.")
+        }
     }
 
     /// Returns the foreground and background colors for the given status
-    private func colors(for status: OUDSBadgeStandard.Status) -> (foreground: MultipleColorSemanticToken, background: MultipleColorSemanticToken) {
+    private func colors(for status: OUDSBadgeStandard.Status) -> (MultipleColorSemanticToken, MultipleColorSemanticToken) {
         let enabledForegroundColor = switch status {
         case .neutral:
             theme.colors.contentInverse
@@ -152,6 +181,6 @@ struct BadgeLayoutModifier: ViewModifier {
 
         let backgroundColor = isEnabled ? enabledBackgroundColor : theme.colors.actionDisabled
 
-        return (foreground: foregroundColor, background: backgroundColor)
+        return (foregroundColor, backgroundColor)
     }
 }

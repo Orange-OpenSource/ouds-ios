@@ -21,7 +21,7 @@ import SwiftUI
 struct BadgeLayout {
 
     let type: Self.`Type`
-    let status: OUDSBadge.Status?
+    let status: OUDSBadge.Status
 
     /// The type of the badge
     enum `Type` {
@@ -60,9 +60,11 @@ struct BadgeLayout {
 
 // MARK: - Badge Standard Configuration
 
+protocol BadgeConfiguration {}
+
 /// The status of an ``OUDSBadgeStandard`` determines the leading element, the background
 /// and the content colors of the badge according to the category.
-struct BadgeStandardConfiguration {
+struct BadgeStandardConfiguration: BadgeConfiguration {
     let size: OUDSBadgeStandard.Size
     let status: OUDSBadgeStandard.Status
 }
@@ -71,8 +73,7 @@ struct BadgeStandardConfiguration {
 
 /// The status of an ``OUDSBadgeCount`` determines the leading element, the background
 /// and the content colors of the badge according to the category.
-struct BadgeCountConfiguration {
-
+struct BadgeCountConfiguration: BadgeConfiguration {
     let value: UInt8
     let size: OUDSBadgeCount.Size
     let status: OUDSBadgeStandard.Status
@@ -82,7 +83,7 @@ struct BadgeCountConfiguration {
 
 /// The status of an ``OUDSBadgeIcon`` determines the leading element, the background
 /// and the content colors of the badge according to the category.
-struct BadgeIconConfiguration {
+struct BadgeIconConfiguration: BadgeConfiguration {
 
     let customIcon: Image?
     let flipIcon: Bool

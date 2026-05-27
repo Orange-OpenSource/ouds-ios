@@ -20,10 +20,10 @@ struct BadgeIcon: View {
 
     let customIcon: Image?
     let flipped: Bool
-    let status: OUDSBadgeIcon.Status
+    let status: OUDSBadge.Status
 
     // swiftlint:disable discouraged_optional_boolean
-    init(customIcon: Image?, flipped: Bool?, status: OUDSBadgeIcon.Status) {
+    init(customIcon: Image?, flipped: Bool?, status: OUDSBadge.Status) {
         self.customIcon = customIcon
         self.flipped = flipped ?? false
         self.status = status

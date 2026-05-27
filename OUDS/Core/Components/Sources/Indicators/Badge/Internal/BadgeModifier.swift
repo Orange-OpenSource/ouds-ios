@@ -81,7 +81,7 @@ struct BadgeModifier: ViewModifier {
 
     private var foregroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
-        case .neutral, .none:
+        case .neutral:
             theme.colors.contentInverse
         case .accent:
             theme.colors.contentOnStatusAccentEmphasized
@@ -100,7 +100,7 @@ struct BadgeModifier: ViewModifier {
 
     private var backgroundColor: MultipleColorSemanticToken {
         let enabbledColor = switch layout.status {
-        case .neutral, .none:
+        case .neutral:
             theme.colors.surfaceInverseHigh
         case .accent:
             theme.colors.surfaceStatusAccentEmphasized

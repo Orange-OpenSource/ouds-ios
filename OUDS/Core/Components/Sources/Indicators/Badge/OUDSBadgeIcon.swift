@@ -139,6 +139,25 @@ public struct OUDSBadgeIcon: View { // TODO: #1439 - Update illustrations
                 .negative
             }
         }
+
+        /// The ``OUDSBadgeIcon`` has in fact the same status as the ``OUDSBadge`` but with
+        /// elements abouts images. Man may need to just keep the information about the status.
+        var toBadgeStatus: OUDSBadge.Status {
+            switch self {
+            case .neutral:
+                .neutral
+            case .accent:
+                .accent
+            case .positive:
+                .positive
+            case .info:
+                .info
+            case .warning:
+                .warning
+            case .negative:
+                .negative
+            }
+        }
     }
 
     /// All available sizes of a badge as *icon* type
@@ -222,8 +241,8 @@ public struct OUDSBadgeIcon: View { // TODO: #1439 - Update illustrations
 
     public var body: some View {
         HStack {
-            BadgeIcon(customIcon: status.icon?.image, flipped: status.icon?.flipped, status: status)
+            BadgeIcon(customIcon: status.icon?.image, flipped: status.icon?.flipped, status: status.toBadgeStatus)
         }
-        .modifier(BadgeLayoutModifier(iconLayout: configuration, accessibilityLabel: accessibilityLabel))
+        .modifier(BadgeLayoutModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
     }
 }

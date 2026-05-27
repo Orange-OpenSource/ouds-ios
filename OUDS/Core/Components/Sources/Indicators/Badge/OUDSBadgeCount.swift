@@ -157,6 +157,6 @@ public struct OUDSBadgeCount: View { // TODO: #1439 - Update illustrations
         HStack {
             BadgeCount(value: count, size: size)
         }
-        .modifier(BadgeLayoutModifier(countLayout: configuration, accessibilityLabel: accessibilityLabel))
+        .modifier(BadgeLayoutModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
     }
 }
