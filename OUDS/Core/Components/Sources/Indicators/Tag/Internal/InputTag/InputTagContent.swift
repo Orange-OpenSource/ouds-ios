@@ -24,7 +24,7 @@ struct InputTagContent: View {
     var body: some View {
         HStack(alignment: .center, spacing: theme.tag.spaceColumnGapDefault) {
             Text(label)
-                .labelStrongMedium(theme)
+                .labelModerateMedium(theme)
             ScaledIcon(icon: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle).renderingMode(.template),
                        size: theme.tag.sizeAssetDefault)
                 .aspectRatio(contentMode: .fit)
