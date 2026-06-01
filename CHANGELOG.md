@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
+- `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
 - `PIN code input` component with new typography (Orange-OpenSource/ouds-ios#1444)
 - `bullet list` component can use rich text if bold or not (Orange-OpenSource/ouds-ios#1440)
 - `tag` component with label medium moderate typography for text for small size (Orange-OpenSource/ouds-ios#1449)
