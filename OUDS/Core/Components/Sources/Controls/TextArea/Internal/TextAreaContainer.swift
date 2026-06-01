@@ -72,12 +72,13 @@ struct TextAreaContainer: View {
                 // The top of the container is aligned with the top of the main content
                 TextAreaTrailingContainer(status: status,
                                           interactionState: interactionState,
-                                          isOverLimit: isOverLimit)
+                                          isOverLimit: isOverLimit,
+                                          isSmallLabel: isSmallLabel)
             }
         }
-        .padding(.vertical, theme.textArea.spacePaddingBlock)
+        .padding(.top, theme.textArea.spacePaddingBlockTopEmpty)
         .padding(.leading, theme.textInput.spacePaddingInlineDefault)
-        .padding(.trailing, trailingPadding)
+        .padding(.trailing, theme.textInput.spacePaddingInlineTrailingAction)
         .modifier(TextAreaBackgroundModifier(status: status,
                                              interactionState: interactionState,
                                              isOverLimit: isOverLimit,
@@ -100,12 +101,6 @@ struct TextAreaContainer: View {
 
     private var isSmallLabel: Bool {
         !text.wrappedValue.isEmpty || placeholder?.isEmpty == false || interactionState == .focused
-    }
-
-    /// Always use the reduced trailing padding so the HStack width never changes between statuses.
-    /// The trailing container always reserves the same fixed-width slot (visible or invisible).
-    private var trailingPadding: CGFloat {
-        theme.textInput.spacePaddingInlineTrailingAction
     }
 
     private var accessibilityLabel: String {
