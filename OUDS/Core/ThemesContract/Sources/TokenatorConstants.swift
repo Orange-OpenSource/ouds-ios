@@ -53,12 +53,12 @@
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
     public static let componentCheckboxVersion = "2.4.0"
-    /// Version of the Figma specifications for the component filter chip (1.3.0)
-    public static let componentFilterChipVersion = "1.3.0" // NOTE: #1473 - v1.4.0 not implemented yet
-    /// Version of the Figma specifications for the component suggestion chip (1.3.0)
-    public static let componentSuggestionChipVersion = "1.3.0" // NOTE: #1473 - v1.4.0 not implemented yet
-    /// Version of the Figma specifications for the component filter chip expand (1.3.0)
-    public static let componentFilterChipExpandVersion = "1.3.0" // NOTE: #1473 - v1.4.0 not implemented yet
+    /// Version of the Figma specifications for the component filter chip (1.4.0)
+    public static let componentFilterChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component suggestion chip (1.4.0)
+    public static let componentSuggestionChipVersion = "1.4.0"
+    /// Version of the Figma specifications for the component filter chip expand (1.4.0)
+    public static let componentFilterChipExpandVersion = "1.4.0"
     /// Version of the Figma specifications for the component radio button (1.4.0)
     public static let componentRadioButtonVersion = "1.4.0"
     /// Version of the Figma specifications for the component switch (1.5.0)
