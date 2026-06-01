@@ -46,8 +46,8 @@
 
     // MARK: - Components versions - Content display
 
-    /// Version of the Figma specifications for the component bullet list (1.0.0)
-    public static let componentBulletListVersion = "1.0.0" // NOTE: #1473 - v1.1.0 not implemented yet
+    /// Version of the Figma specifications for the component bullet list (1.1.0)
+    public static let componentBulletListVersion = "1.1.0"
 
     // MARK: - Components versions - Control
 
