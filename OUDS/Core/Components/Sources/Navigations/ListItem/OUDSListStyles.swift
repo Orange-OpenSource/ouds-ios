@@ -1,4 +1,3 @@
-
 //
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
@@ -15,49 +14,124 @@
 import OUDSThemesContract
 import SwiftUI
 
-/// Defines the alinment of the leading, trailing and texts containers
+/// Defines the vertical alignment of the leading, trailing, and text containers
+/// within a list item such as ``OUDSListStaticItem`` or ``OUDSListItemNavigation``.
+///
+/// Use the ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier
+/// to apply the alignment on list items.
+///
+/// ## Code sample
+///
+/// ```swift
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListItemContainerAlignment(.top)
+/// ```
 ///
 /// - Since: 2.0.0
 @frozen public enum OUDSListItemContainersAlignment {
-    /// Containers are top aligned
+    /// Containers are aligned to the top of the list item row.
+    /// Best suited when the list item has multiple lines of text and
+    /// leading/trailing elements should stay anchored at the top.
     case top
 
-    /// Containers are centrer
+    /// Containers are vertically centered within the list item row.
+    /// This is the default alignment.
     case center
 }
 
-/// Define the style of the item
+/// Defines the visual style of a list item such as ``OUDSListStaticItem`` or ``OUDSListItemNavigation``.
+///
+/// The style controls the border, divider, and background appearance of list items.
+/// Use the ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+/// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)`` view modifiers
+/// to apply the style on list items.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Outlined style with a border around each item
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListItemStyle(style: .outlined)
+///
+///     // Standard style with divider and no background
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListItemStyle(style: .standard(divider: true, background: false))
+///
+///     // Card style with background and no divider
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListCardStyle(hasDdivider: false, hasBackground: true)
+/// ```
 ///
 /// - Since: 2.0.0
 @frozen public enum OUDSListItemContentStyle {
-    /// Outlined means with a border
+    /// An outlined appearance with a visible border around the list item.
     case outlined
 
-    /// Standard apperance with a divider or a background
+    /// A standard appearance with configurable divider and background.
+    ///
+    /// - Parameters:
+    ///   - divider: When `true`, a divider line is displayed at the bottom of the item.
+    ///   - background: When `true`, a background fill is applied to the item.
     case standard(divider: Bool, background: Bool)
 }
 
-/// Define the size of the item
+/// Defines the size of a list item such as ``OUDSListStaticItem`` or ``OUDSListItemNavigation``.
+///
+/// The size affects the padding, the visibility of certain text fields, and the size of
+/// leading/trailing elements within the list item.
+///
+/// Use the ``SwiftUICore/View/oudsListItemSize(_:)`` view modifier to apply the size on list items.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Standard size (default)
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListItemSize(.standard)
+///
+///     // Small size — overline and extraLabel are hidden,
+///     // avatars and icons use their smallest variant
+///     OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+///         .oudsListItemSize(.small)
+/// ```
 ///
 /// - Since: 2.0.0
 @frozen public enum OUDSListItemSize {
-    /// The standard (i.e. default) size
+    /// The standard (i.e. default) size of the list item.
+    /// All text fields and elements are displayed at their normal size.
     case standard
 
-    /// The small size of the ``OUDSListItem``
+    /// The small (compact) size of the list item.
     ///
-    ///  **Remark: Some elements will be displyed in their smallest size (Avatar, Icon, badge, ...), and some elements will be hidden
-    ///  (Extra label, Overline)**
+    /// When using this size:
+    /// - Some elements are displayed in their smallest variant (avatar, icon, badge, etc.).
+    /// - Some text fields are **hidden**: `overline` and `extraLabel` from ``OUDSListItemData``,
+    ///   and the extra label from ``OUDSListItemTrailing/TextType/labelAndExtraLabel(_:_:)``.
     case small
 }
 
+// MARK: - View Modifiers
+
 extension View {
-    /// Use to apply the _Card_ style on items of a list. This style is applied globaly
-    /// on each items of a list.
+
+    /// Applies the *card* style on list items.
+    ///
+    /// This modifier is typically applied globally on a container (e.g. a `List`, `VStack`, or `ForEach`)
+    /// so that all enclosed list items share the same card-like appearance.
+    ///
+    /// ```swift
+    ///     VStack {
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Item 1"))
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Item 2"))
+    ///     }
+    ///     .oudsListCardStyle(hasDdivider: false, hasBackground: true)
+    /// ```
     ///
     /// - Parameters:
-    ///     - hasDivider: Flag to display or hide the divider at the bottom of the item
-    ///     - hasBackground: Flag to set or remove a background on items
+    ///     - hasDdivider: When `true`, a divider line is displayed at the bottom of each item. Defaults to `false`.
+    ///     - hasBackground: When `true`, a background fill is applied to each item. Defaults to `true`.
+    ///
+    /// - Returns: A view with the card style applied to its list items.
     ///
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -67,10 +141,23 @@ extension View {
         environment(\.oudsListItemContentStyle, .standard(divider: hasDdivider, background: hasBackground))
     }
 
-    /// Use to apply the _Standard_ style on items of a list. This style is applied globaly
-    /// on each items of a list.
+    /// Applies a content style on list items.
     ///
-    /// - Parameter style: The `OUDSListItemContentStyle` to apply on items
+    /// This modifier is typically applied globally on a container so that all enclosed
+    /// list items share the same visual style.
+    ///
+    /// ```swift
+    ///     VStack {
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Item 1"))
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Item 2"))
+    ///     }
+    ///     .oudsListItemStyle(style: .outlined)
+    /// ```
+    ///
+    /// - Parameter style: The ``OUDSListItemContentStyle`` to apply on items.
+    ///   Defaults to `.standard(divider: true, background: false)`.
+    ///
+    /// - Returns: A view with the specified content style applied to its list items.
     ///
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -78,9 +165,25 @@ extension View {
         environment(\.oudsListItemContentStyle, style)
     }
 
-    /// Use to define if madia in `OUDSListItem` are rounded.
+    /// Defines whether media elements (images and videos) in list items should be displayed
+    /// with rounded corners.
     ///
-    /// - Parameter rounded: Flag to define if rounded. false by default
+    /// This modifier applies to both leading and trailing media elements
+    /// (``OOUDSListItemLeading/image(asset:)``, ``OOUDSListItemLeading/video(_:)``,
+    /// ``OUDSListItemTrailing/image(asset:)``, ``OUDSListItemTrailing/video(_:)``).
+    ///
+    /// ```swift
+    ///     OUDSListStaticItem(
+    ///         data: OUDSListItemData(label: "Label"),
+    ///         leading: .image(asset: Image("il_placeholder"))
+    ///     )
+    ///     .oudsListItemRoundedMedia(true)
+    /// ```
+    ///
+    /// - Parameter rounded: When `true`, media elements are displayed with rounded corners.
+    ///   When `false` (default), media elements are displayed with square corners.
+    ///
+    /// - Returns: A view with the rounded media setting applied to its list items.
     ///
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -88,9 +191,27 @@ extension View {
         environment(\.oudsListItemRoundedMedia, rounded)
     }
 
-    /// Use to align containers in `OUDSListItem`
+    /// Sets the vertical alignment of leading, trailing, and text containers within list items.
     ///
-    /// - Parameter alignemnt: Alignment to apply, `Center` by default.
+    /// This modifier is typically applied globally on a container so that all enclosed
+    /// list items share the same alignment.
+    ///
+    /// ```swift
+    ///     VStack {
+    ///         OUDSListStaticItem(
+    ///             data: OUDSListItemData(label: "Label", description: "Description"),
+    ///             leading: .icon(OUDSLIstItemIcon(type: .info, size: .medium)),
+    ///             trailing: .text(.label(Text("Info")))
+    ///         )
+    ///     }
+    ///     .oudsListItemContainerAlignment(.top)
+    /// ```
+    ///
+    /// - Parameter alignment: The ``OUDSListItemContainersAlignment`` to apply.
+    ///   Use `.center` (default) to vertically center all containers, or `.top` to align them
+    ///   to the top of the row.
+    ///
+    /// - Returns: A view with the specified containers alignment applied to its list items.
     ///
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -98,9 +219,24 @@ extension View {
         environment(\.oudsListItemContainersAlignment, alignment)
     }
 
-    /// Use to align containers in `OUDSListItem`
+    /// Sets the size of list items.
     ///
-    /// - Parameter isSmall: Alignment to apply, `Center` by default.
+    /// This modifier affects the padding, the visibility of certain text fields
+    /// (`overline` and `extraLabel` are hidden in `.small`), and the size of
+    /// leading/trailing elements (avatars, icons, badges use their smallest variant in `.small`).
+    ///
+    /// ```swift
+    ///     VStack {
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Compact item"))
+    ///         OUDSListStaticItem(data: OUDSListItemData(label: "Another compact item"))
+    ///     }
+    ///     .oudsListItemSize(.small)
+    /// ```
+    ///
+    /// - Parameter size: The ``OUDSListItemSize`` to apply.
+    ///   Use `.standard` (default) for normal sizing, or `.small` for a compact layout.
+    ///
+    /// - Returns: A view with the specified size applied to its list items.
     ///
     /// - Since: 2.0.0
     @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
@@ -109,17 +245,33 @@ extension View {
     }
 }
 
+// MARK: - Environment Values
+
 extension EnvironmentValues {
 
-    /// Define the current conainers alignment in `OUDSListItem` applyed globaly on a list of items.
+    /// The current vertical alignment of leading, trailing, and text containers in list items.
+    ///
+    /// Defaults to ``OUDSListItemContainersAlignment/center``.
+    /// Set via ``SwiftUICore/View/oudsListItemContainerAlignment(_:)``.
     @Entry var oudsListItemContainersAlignment: OUDSListItemContainersAlignment = .center
 
-    /// Define the content style of a `OUDSListItem` applied globaly on items of a list.
+    /// The current content style of list items (outlined, standard with divider/background).
+    ///
+    /// Defaults to `.standard(divider: true, background: false)`.
+    /// Set via ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+    /// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
 
-    /// Defines if media should be rounded. By default media is square
+    /// Whether media elements (images and videos) in list items should be displayed
+    /// with rounded corners.
+    ///
+    /// Defaults to `false` (square corners).
+    /// Set via ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``.
     @Entry var oudsListItemRoundedMedia: Bool = false
 
-    /// Define the size of items in list. By default, it is the standard
+    /// The current size of list items.
+    ///
+    /// Defaults to ``OUDSListItemSize/standard``.
+    /// Set via ``SwiftUICore/View/oudsListItemSize(_:)``.
     @Entry var oudsListItemSize: OUDSListItemSize = .standard
 }
