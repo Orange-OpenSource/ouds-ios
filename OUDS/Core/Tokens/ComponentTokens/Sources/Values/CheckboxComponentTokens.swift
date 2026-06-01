@@ -44,9 +44,9 @@ public protocol CheckboxComponentTokens {
     var borderWidthUnselectedPressed: BorderWidthSemanticToken { get }
 
     // MARK: - Old tokens to keep until components updates
+    // Will be removed with next component update
     // See https://github.com/Orange-OpenSource/ouds-ios#1437
 
-    @available(*, deprecated, message: "Will be removed with next component update")
     var sizeIndicator: SizeSemanticToken { get }
 }
 
