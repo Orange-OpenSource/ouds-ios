@@ -18,7 +18,6 @@ import SwiftUI
 
 // MARK: - Pin Code Input Container
 
-// swiftlint:disable type_body_length
 struct PinCodeInputContainer: View {
 
     // MARK: - Properties
@@ -142,14 +141,6 @@ struct PinCodeInputContainer: View {
             theme.colors.surfaceStatusNegativeMuted
         } else { // Not outlined, no error
             theme.colors.actionSupportEnabled
-        }
-    }
-
-    private var borderColor: MultipleColorSemanticToken {
-        if isError {
-            theme.colors.actionNegativeEnabled
-        } else { // Same color of border for both outlined and not outlined layouts
-            theme.textInput.colorBorderEnabled
         }
     }
 
@@ -411,5 +402,4 @@ struct PinCodeInputContainer: View {
         }
     }
 }
-// swiftlint:enable type_body_length
 #endif

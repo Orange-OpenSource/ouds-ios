@@ -29,7 +29,7 @@ import SwiftUI
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component,
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` componetabCountnt,
 /// the native API is used instead.
 ///
 /// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version, not before.
