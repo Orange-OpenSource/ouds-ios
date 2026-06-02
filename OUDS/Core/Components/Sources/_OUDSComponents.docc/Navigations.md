@@ -41,6 +41,174 @@ OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the act
 OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
 ```
 
+### List items
+
+The ``OUDSListStaticItem`` displays a non-interactive row of information, while ``OUDSListItemNavigation`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+
+Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
+
+#### Static list item
+
+Use ``OUDSListStaticItem`` when the row is display-only and should not trigger any action or navigation.
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_list_item_static_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_list_item_static_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_list_item_static_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_list_item_static_Wireframe)
+    }
+}
+
+
+```swift
+// Simple list item with a label only
+OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+
+// List item with full textual content
+OUDSListStaticItem(data: OUDSListItemData(
+    label: "Label",
+    isBoldLabel: true,
+    description: "Description",
+    overline: "Overline",
+    extraLabel: "Extra label",
+    helperText: "Helper text providing guidance"
+))
+
+// List item with a leading icon and a trailing badge
+let icon = OUDSLIstItemIcon(type: .info, size: .medium)
+let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+
+OUDSListStaticItem(
+    data: OUDSListItemData(label: "Notifications"),
+    leading: .icon(icon),
+    trailing: .badge(badge)
+)
+```
+
+#### Navigable list item
+
+Use ``OUDSListItemNavigation`` when tapping the row should trigger an action. The ``OUDSListItemNavigation/AffordanceType`` defines the visual indicator shown:
+
+- **`.next`** *(default)* — forward chevron, for in-app navigation to the next screen.
+- **`.previous`** — backward chevron, for in-app navigation to the previous screen. The leading element is automatically hidden.
+- **`.external`** — external link icon, for actions opening content outside the app.
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_list_item_navigation_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_list_item_navigation_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_list_item_navigation_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_list_item_navigation_Wireframe)
+    }
+}
+
+```swift
+// Forward navigation (default)
+OUDSListItemNavigation(
+    data: OUDSListItemData(label: "Next screen")
+) {
+    // Navigate to next screen
+}
+
+// External navigation
+OUDSListItemNavigation(
+    data: OUDSListItemData(label: "Open website"),
+    affordanceType: .external
+) {
+    openURL(url)
+}
+
+// Backward navigation
+OUDSListItemNavigation(
+    data: OUDSListItemData(label: "Go back"),
+    affordanceType: .previous
+) {
+    // Navigate back
+}
+
+// With a leading avatar and a trailing text
+let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
+
+OUDSListItemNavigation(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    leading: .avatar(avatar),
+    trailing: .text(.labelMuted(Text("Details")))
+) {
+    // Navigate to profile
+}
+```
+
+#### Leading elements
+
+The leading position (before the texts) accepts one optional element via ``OOUDSListItemLeading``:
+
+| Case | Description |
+|------|-------------|
+| `.icon(OUDSLIstItemIcon)` | A status or custom icon (neutral, info, warning, negative, positive) |
+| `.image(asset:)` | A static image asset |
+| `.flag(asset:)` | A country flag image |
+| `.video(URL)` | A video thumbnail loaded from a URL |
+| `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
+
+> Note: The leading element is automatically hidden when ``OUDSListItemNavigation/AffordanceType`` is `.previous`.
+
+#### Trailing elements
+
+The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``:
+
+| Case | Description |
+|------|-------------|
+| `.text(.label(Text))` | A default-styled label |
+| `.text(.labelMuted(Text))` | A muted (secondary) label |
+| `.text(.labelStrong(Text))` | An emphasized (bold) label |
+| `.text(.labelAndExtraLabel(Text, Text))` | A label with an additional extra label below |
+| `.badge(OUDSBadge)` | A badge with count or status |
+| `.tag(OUDSTag)` | A tag for categorization |
+| `.icon(OUDSLIstItemIcon)` | A status or custom icon |
+| `.image(asset:)` | A static image asset |
+| `.flag(asset:)` | A country flag image |
+| `.video(URL)` | A video thumbnail loaded from a URL |
+| `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
+
+#### View modifiers
+
+Several view modifiers are available to customize the appearance and layout of list items:
+
+| Modifier | Description |
+|----------|-------------|
+| `.oudsListItemSize(.standard` or `.small)` | Sets the size of the item |
+| `.oudsListItemContainerAlignment(.top` or `.center)` | Aligns leading, trailing, and text containers |
+| `.oudsListItemStyle(style:)` | Applies a standard style with optional divider and background |
+| `.oudsListCardStyle(hasDdivider:hasBackground:)` | Applies a card style on list items |
+| `.oudsListItemRoundedMedia(_:)` | Defines whether media (images, videos) use rounded corners |
+
+```swift
+OUDSListItemNavigation(
+    data: OUDSListItemData(label: "Settings"),
+    affordanceType: .next
+) {
+    // Navigate to settings
+}
+.oudsListItemSize(.small)
+.oudsListItemContainerAlignment(.top)
+.oudsListItemStyle(style: .outlined)
+```
+
+> Note: In `.small` size, the `overline` and `extraLabel` fields of ``OUDSListItemData`` are automatically hidden.
+
 ### Tab bars
 
 @TabNavigator {
