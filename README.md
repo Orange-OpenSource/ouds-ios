@@ -38,6 +38,8 @@
 <a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield" alt="FOSSA status for licences policy"></a>
 &nbsp;
 <a href="https://app.fossa.com/projects/git%252Bgithub.com%252FOrange-OpenSource%252Fouds-ios" title="FOSSA status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FOrange-OpenSource%2Fouds-ios.svg?type=shield&issueType=security" alt="FOSSA sattus for security policy"/></a>
+&nbsp;
+<a href="https://skills.sh/Orange-OpenSource/ouds-ios" title="Agent skills"><img src="https://skills.sh/b/Orange-OpenSource/ouds-ios" alt="skills.sh"></a>
 </p>
 
 ## ⚙️ Status
