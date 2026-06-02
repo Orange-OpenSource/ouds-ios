@@ -22,133 +22,124 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTokens {
-    /// Has for value token MultipleColorSemanticToken(light: colors.actionSupportEnabledLight, dark: colors.actionSupportHoverDark)
+    /// Has for value token MultipleColorSemanticToken(light: colors.actionSupportEnabledLight, dark: colors.actionSupportHoverDark) (= light: "#0000000A" / dark: "#FFFFFF14")
     @objc open var colorBgCurrentEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.actionSupportEnabledLight, dark: colors.actionSupportHoverDark) }
-    /// Has for value token colors.actionSupportHover
+    /// Has for value token colors.actionSupportHover (= light: "#00000014" / dark: "#FFFFFF14")
     @objc open var colorBgCurrentHover: MultipleColorSemanticToken { colors.actionSupportHover }
-    /// Has for value token colors.actionSupportPressed
+    /// Has for value token colors.actionSupportPressed (= light: "#0000001F" / dark: "#FFFFFF1F")
     @objc open var colorBgCurrentPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
-    /// Has for value token colors.actionSupportDisabled
+    /// Has for value token colors.actionSupportDisabled (= light: "#0000000A" / dark: "#FFFFFF0A")
     @objc open var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionSupportDisabled }
-    /// Has for value token colors.actionSupportFocus
+    /// Has for value token colors.actionSupportFocus (= light: "#00000014" / dark: "#FFFFFF14")
     @objc open var colorBgCurrentFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentCurrentEnabled: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentCurrentHover: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentCurrentPressed: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentCurrentDisabled: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.contentDefault
-    @objc open var colorContentCurrentFocus: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.bgPrimary
-    @objc open var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
-    /// Has for value token FontRawTokens.size450
-    @objc open var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
-    /// Has for value token FontRawTokens.lineHeight650
-    @objc open var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
-    /// Has for value token FontRawTokens.letterSpacing450
-    @objc open var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
-    /// Has for value token opacities.opaque
-    @objc open var opacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
-    /// Has for value token opacities.opaque
-    @objc open var opacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
-    /// Has for value token borders.widthDefault
-    @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
-    /// Has for value token borders.widthMedium
-    @objc open var borderWidthCurrentPage: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.radiusDefault
-    @objc open var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token borders.radiusMedium
-    @objc open var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusMedium }
-    /// Has for value token borders.radiusDefault
-    @objc open var borderRadiusMedia: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token borders.radiusSmall
-    @objc open var borderRadiusMediaRoundedCorner: BorderRadiusSemanticToken { borders.radiusSmall }
-    /// Has for value token borders.radiusNone
-    @objc open var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { borders.radiusNone }
-    /// Has for value token spaces.paddingInlineLarge
-    @objc open var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineLarge }
-    /// Has for value token spaces.columnGapMedium
-    @objc open var spaceColumnGap: SpaceSemanticToken { spaces.columnGapMedium }
-    /// Has for value token spaces.rowGapNone
-    @objc open var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
-    /// Has for value token spaces.paddingBlockXsmall
-    @objc open var spacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
-    /// Has for value token spaces.paddingBlock3xsmall
-    @objc open var spacePaddingBlockBottomSlot: SpaceSemanticToken { spaces.paddingBlock3xsmall }
-    /// Has for value token spaces.paddingBlockXsmall
-    @objc open var spacePaddingBlockDensityCompact: SpaceSemanticToken { spaces.paddingBlockXsmall }
-    /// Has for value token spaces.paddingBlockNone
-    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopTextContainer: SpaceSemanticToken { spaces.paddingBlockNone }
-    /// Has for value token spaces.paddingBlockXsmall
-    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { spaces.paddingBlockXsmall }
-    /// Has for value token spaces.paddingBlock2xlarge
-    @objc open var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { spaces.paddingBlock2xlarge }
-    /// Has for value token spaces.paddingBlockMedium
-    @objc open var spacePaddingBlockDensityDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
-    /// Has for value token spaces.paddingBlock4xsmall
-    @objc open var spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer: SpaceSemanticToken { spaces.paddingBlock4xsmall }
-    /// Has for value token spaces.paddingBlockSmall
-    @objc open var spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight: SpaceSemanticToken { spaces.paddingBlockSmall }
-    /// Has for value token spaces.paddingBlock3xlarge
-    @objc open var spacePaddingBlockDensityDefaultBottomExpandContainer: SpaceSemanticToken { spaces.paddingBlock3xlarge }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc open var sizeControlIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
-    /// Has for value token sizes.minInteractiveArea
-    @objc open var sizeMinHeightCompact: SizeSemanticToken { sizes.minInteractiveArea }
-    /// Has for value token DimensionRawTokens._750
-    @objc open var sizeMinHeightDefault: SizeSemanticToken { DimensionRawTokens._750 }
-    /// Has for value token DimensionRawTokens._2000
-    @objc open var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2000 }
-    /// Has for value token DimensionRawTokens._4000
-    @objc open var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall
-    @objc open var sizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeMedium
-    @objc open var sizeAssetMedium: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
-    /// Has for value token dimensions._medium
-    @objc open var sizeAssetLarge: SizeSemanticToken { dimensions._medium }
-    /// Has for value token dimensions._3xlarge
-    @objc open var sizeAssetXlarge: SizeSemanticToken { dimensions._3xlarge }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall
-    @objc open var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
-    /// Has for value token DimensionRawTokens._50
-    @objc open var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
-
-    // MARK: - Old tokens to keep until components updates
-    // See https://github.com/Orange-OpenSource/ouds-ios#1437
-
-    /// Has for value token colors.actionSupportHover
+    /// Has for value token colors.actionSupportHover (= light: "#00000014" / dark: "#FFFFFF14")
     @objc open var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
-    /// Has for value token colors.actionSupportPressed
+    /// Has for value token colors.actionSupportPressed (= light: "#0000001F" / dark: "#FFFFFF1F")
     @objc open var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
-    /// Has for value token colors.actionSupportLoading
+    /// Has for value token colors.actionSupportLoading (= light: "#0000001F" / dark: "#FFFFFF1F")
     @objc open var colorBgLoading: MultipleColorSemanticToken { colors.actionSupportLoading }
-    /// Has for value token colors.actionSupportFocus
+    /// Has for value token colors.actionSupportFocus (= light: "#00000014" / dark: "#FFFFFF14")
     @objc open var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
-    /// Has for value token colors.contentDefault
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentCurrentEnabled: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentCurrentHover: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentCurrentPressed: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentCurrentDisabled: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
+    @objc open var colorContentCurrentFocus: MultipleColorSemanticToken { colors.contentDefault }
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#EEEEEEFF")
     @objc open var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
-
-    /// Has for value token borders.radiusNone
-    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
-    /// Has for value token borders.radiusDefault
+    /// Has for value token colors.bgPrimary (= light: "#FFFFFFFF" / dark: "#141414FF")
+    @objc open var colorBadgeSafetyArea: MultipleColorSemanticToken { colors.bgPrimary }
+    /// Has for value token FontRawTokens.size450 (= 24)
+    @objc open var fontSizeAvatarInitialXlarge: FontSizeSemanticToken { FontRawTokens.size450 }
+    /// Has for value token FontRawTokens.lineHeight650 (= 32)
+    @objc open var fontLineHeightAvatarInitialXlarge: FontLineHeightSemanticToken { FontRawTokens.lineHeight650 }
+    /// Has for value token FontRawTokens.letterSpacing450 (= -0.12)
+    @objc open var fontLetterSpacingAvatarInitialXlarge: FontLetterSpacingSemanticToken { FontRawTokens.letterSpacing450 }
+    /// Has for value token opacities.opaque (= 1)
+    @objc open var opacityCurrentIndicator: OpacitySemanticToken { opacities.opaque }
+    /// Has for value token opacities.opaque (= 1)
+    @objc open var opacityCurrentDivider: OpacitySemanticToken { opacities.opaque }
+    /// Has for value token borders.widthDefault (= 1)
+    @objc open var borderWidthDefault: BorderWidthSemanticToken { borders.widthDefault }
+    /// Has for value token borders.widthMedium (= 2)
+    @objc open var borderWidthCurrentPage: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.radiusDefault (= 0)
+    @objc open var borderRadiusDefault: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusMedium (= 8)
+    @objc open var borderRadiusRounded: BorderRadiusSemanticToken { borders.radiusMedium }
+    /// Has for value token borders.radiusDefault (= 0)
+    @objc open var borderRadiusMedia: BorderRadiusSemanticToken { borders.radiusDefault }
+    /// Has for value token borders.radiusSmall (= 4)
+    @objc open var borderRadiusMediaRoundedCorner: BorderRadiusSemanticToken { borders.radiusSmall }
+    /// Has for value token borders.radiusNone (= 0)
+    @objc open var borderRadiusCurrentIndicator: BorderRadiusSemanticToken { borders.radiusNone }
+    /// Has for value token borders.radiusDefault (= 0)
     @objc open var borderRadiusItemOnly: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token spaces.paddingBlockMedium
-    @objc open var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
-    /// Has for value token spaces.paddingInline4xsmall
+    /// Has for value token spaces.paddingInlineLarge (= 16)
+    @objc open var spacePaddingInline: SpaceSemanticToken { spaces.paddingInlineLarge }
+    /// Has for value token spaces.paddingInline4xsmall (= 2)
     @objc open var spacePaddingInlineErrorIcon: SpaceSemanticToken { spaces.paddingInline4xsmall }
-
-    /// Has for value token DimensionRawTokens._1200
-    @objc open var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1200 }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    /// Has for value token spaces.columnGapMedium (= 12)
+    @objc open var spaceColumnGap: SpaceSemanticToken { spaces.columnGapMedium }
+    /// Has for value token spaces.rowGapNone (= 0)
+    @objc open var spaceRowGap: SpaceSemanticToken { spaces.rowGapNone }
+    /// Has for value token spaces.paddingBlockMedium (= 12)
+    @objc open var spacePaddingBlockDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingBlockXsmall (= 8)
+    @objc open var spacePaddingBlockTopHelperText: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.paddingBlock3xsmall (= 4)
+    @objc open var spacePaddingBlockBottomSlot: SpaceSemanticToken { spaces.paddingBlock3xsmall }
+    /// Has for value token spaces.paddingBlockXsmall (= 8)
+    @objc open var spacePaddingBlockDensityCompact: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.paddingBlockNone (= 0)
+    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopTextContainer: SpaceSemanticToken { spaces.paddingBlockNone }
+    /// Has for value token spaces.paddingBlockXsmall (= 8)
+    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { spaces.paddingBlockXsmall }
+    /// Has for value token spaces.paddingBlock2xlarge (= 24)
+    @objc open var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { spaces.paddingBlock2xlarge }
+    /// Has for value token spaces.paddingBlockMedium (= 12)
+    @objc open var spacePaddingBlockDensityDefault: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingBlock4xsmall (= 2)
+    @objc open var spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer: SpaceSemanticToken { spaces.paddingBlock4xsmall }
+    /// Has for value token spaces.paddingBlockSmall (= 10)
+    @objc open var spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight: SpaceSemanticToken { spaces.paddingBlockSmall }
+    /// Has for value token spaces.paddingBlock3xlarge (= 28)
+    @objc open var spacePaddingBlockDensityDefaultBottomExpandContainer: SpaceSemanticToken { spaces.paddingBlock3xlarge }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
+    @objc open var sizeIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
     @objc open var sizeErrorIcon: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
     @objc open var sizeLoader: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-
-    /// Has for value token spaces.paddingBlockNone
-    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { spaces.paddingBlockNone }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeControlIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveArea (= 48)
+    @objc open var sizeMinHeightCompact: SizeSemanticToken { sizes.minInteractiveArea }
+    /// Has for value token DimensionRawTokens._750 (= 60)
+    @objc open var sizeMinHeightDefault: SizeSemanticToken { DimensionRawTokens._750 }
+    /// Has for value token DimensionRawTokens._1200 (= 96)
+    @objc open var sizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens._1200 }
+    /// Has for value token DimensionRawTokens._2000 (= 160)
+    @objc open var sizeMinWidth: SizeSemanticToken { DimensionRawTokens._2000 }
+    /// Has for value token DimensionRawTokens._4000 (= 480)
+    @objc open var sizeMaxWidth: SizeSemanticToken { DimensionRawTokens._4000 }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
+    @objc open var sizeAssetSmall: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
+    @objc open var sizeAssetMedium: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token dimensions._medium (= 40)
+    @objc open var sizeAssetLarge: SizeSemanticToken { dimensions._medium }
+    /// Has for value token dimensions._3xlarge (= 56)
+    @objc open var sizeAssetXlarge: SizeSemanticToken { dimensions._3xlarge }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token DimensionRawTokens._50 (= 4)
+    @objc open var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
 }
 
 // swiftlint:enable identifier_name

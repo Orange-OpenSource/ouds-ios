@@ -23,53 +23,53 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension SoshThemeBarComponentTokensProvider: BarComponentTokens {
-    /// Has for value token colors.actionSelected
+    /// Has for value token colors.actionSelected (= light: "#DE034BFF" / dark: "#5DBCFEFF")
     @objc public final var colorAccent: MultipleColorSemanticToken { colors.actionSelected }
-    /// Has for value token colors.bgSecondary
+    /// Has for value token colors.bgSecondary (= light: "#EDF6FDFF" / dark: "#002138FF")
     @objc public final var colorBgOpaque: MultipleColorSemanticToken { colors.bgSecondary }
-    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: SoshBrandColorRawTokens.opacityLochmaraDark960800)
+    /// Has for value token MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: SoshBrandColorRawTokens.opacityLochmaraDark960800) (= light: "#FFFFFFCC" / dark: "#001524CC")
     @objc public final var colorBgTranslucent: MultipleColorSemanticToken { MultipleColorSemanticToken(light: ColorRawTokens.white800, dark: SoshBrandColorRawTokens.opacityLochmaraDark960800) }
-    /// Has for value token colors.actionSelected
+    /// Has for value token colors.actionSelected (= light: "#DE034BFF" / dark: "#5DBCFEFF")
     @objc public final var colorContentSelectedEnabled: MultipleColorSemanticToken { colors.actionSelected }
-    /// Has for value token colors.actionHover
+    /// Has for value token colors.actionHover (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorContentSelectedHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed
+    /// Has for value token colors.actionPressed (= light: "#0173C1FF" / dark: "#FFEF66FF")
     @objc public final var colorContentSelectedPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.actionFocus
+    /// Has for value token colors.actionFocus (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorContentSelectedFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.contentMuted
+    /// Has for value token colors.contentMuted (= light: "#000F19B8" / dark: "#EDF6FCA3")
     @objc public final var colorContentUnselectedEnabled: MultipleColorSemanticToken { colors.contentMuted }
-    /// Has for value token colors.contentDefault
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorContentUnselectedHover: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.actionPressed
+    /// Has for value token colors.actionPressed (= light: "#0173C1FF" / dark: "#FFEF66FF")
     @objc public final var colorContentUnselectedPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.contentDefault
+    /// Has for value token colors.contentDefault (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorContentUnselectedFocus: MultipleColorSemanticToken { colors.contentDefault }
-    /// Has for value token colors.contentOnActionSelected
+    /// Has for value token colors.contentOnActionSelected (= light: "#FFFFFFFF" / dark: "#001524FF")
     @objc public final var colorContentOnAccent: MultipleColorSemanticToken { colors.contentOnActionSelected }
-    /// Has for value token colors.bgSecondary
+    /// Has for value token colors.bgSecondary (= light: "#EDF6FDFF" / dark: "#002138FF")
     @objc public final var colorBorderBadge: MultipleColorSemanticToken { colors.bgSecondary }
-    /// Has for value token colors.actionSelected
+    /// Has for value token colors.actionSelected (= light: "#DE034BFF" / dark: "#5DBCFEFF")
     @objc public final var colorCurrentIndicatorCustomSelectedEnabled: MultipleColorSemanticToken { colors.actionSelected }
-    /// Has for value token colors.actionHover
+    /// Has for value token colors.actionHover (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorCurrentIndicatorCustomSelectedHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed
+    /// Has for value token colors.actionPressed (= light: "#0173C1FF" / dark: "#FFEF66FF")
     @objc public final var colorCurrentIndicatorCustomSelectedPressed: MultipleColorSemanticToken { colors.actionPressed }
-    /// Has for value token colors.actionFocus
+    /// Has for value token colors.actionFocus (= light: "#000000FF" / dark: "#E9EEF1FF")
     @objc public final var colorCurrentIndicatorCustomSelectedFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token opacities.opaque
+    /// Has for value token opacities.opaque (= 1)
     @objc public final var opacityCurrentIndicatorCustom: OpacitySemanticToken { opacities.opaque }
-    /// Has for value token EffectRawTokens.blur320
+    /// Has for value token EffectRawTokens.blur320 (= 32)
     @objc public final var effectBgBlur: EffectSemanticToken { EffectRawTokens.blur320 }
-    /// Has for value token borders.radiusDefault
+    /// Has for value token borders.radiusDefault (= 4)
     @objc public final var borderRadiusCurrentIndicatorCustomTop: BorderRadiusSemanticToken { borders.radiusDefault }
-    /// Has for value token borders.radiusPill
+    /// Has for value token borders.radiusPill (= 2000)
     @objc public final var borderRadiusCurrentIndicatorCustomBottom: BorderRadiusSemanticToken { borders.radiusPill }
-    /// Has for value token DimensionRawTokens._500
+    /// Has for value token DimensionRawTokens._500 (= 40)
     @objc public final var sizeWidthCurrentIndicatorCustomTop: SizeSemanticToken { DimensionRawTokens._500 }
-    /// Has for value token DimensionRawTokens._300
+    /// Has for value token DimensionRawTokens._300 (= 24)
     @objc public final var sizeWidthCurrentIndicatorCustomBottom: SizeSemanticToken { DimensionRawTokens._300 }
-    /// Has for value token DimensionRawTokens.outOfSystem75
+    /// Has for value token DimensionRawTokens.outOfSystem75 (= 3)
     @objc public final var sizeHeightCurrentIndicatorCustom: SizeSemanticToken { DimensionRawTokens.outOfSystem75 }
 }
 
