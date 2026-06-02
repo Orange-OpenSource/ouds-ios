@@ -106,6 +106,24 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
 ///
+/// ## Themes rendering
+///
+/// ### Orange
+///
+/// ![A list item component in light and dark modes with Orange theme](component_list_item_navigation_Orange)
+///
+/// ### Orange Compact
+///
+/// ![A list item component in light and dark modes with Orange Compact theme](component_list_item_navigation_OrangeCompact)
+///
+/// ### Sosh
+///
+/// ![A list item component in light and dark modes with Sosh theme](component_list_item_navigation_Sosh)
+///
+/// ### Wireframe
+///
+/// ![A list item component in light and dark modes with Wireframe theme](component_list_item_navigation_Wireframe)
+///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
