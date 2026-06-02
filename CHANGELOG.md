@@ -6,8 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.0.0..develop)
 
+### Added
+
+- SKILL file to convert Figma tokens to Swift tokens
+- Public name of themes provided by OUDS
+
 ### Changed
 
+- Definition of SKILL files to be available on *skills.sh* registry
+- Duration of animation for selected tab indicator of `tab bar` component
+- Tokens documentation with final values described in comments
 - `text area` component (Orange-OpenSource/ouds-ios#1448)
 - `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
 - `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
