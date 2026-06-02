@@ -21,83 +21,83 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeCompactThemeButtonComponentTokensProvider: ButtonMonoComponentTokens {
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBgDefaultEnabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgDefaultHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) (= light: "#FFFFFFCC" / dark: "#000000AD")
     @objc public final var monoColorBgDefaultPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) (= light: "#FFFFFFCC" / dark: "#000000AD")
     @objc public final var monoColorBgDefaultLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) }
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBgDefaultDisabled: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgDefaultFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorBgStrongEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgStrongHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) (= light: "#FFFFFFCC" / dark: "#000000AD")
     @objc public final var monoColorBgStrongPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) (= light: "#FFFFFFCC" / dark: "#000000AD")
     @objc public final var monoColorBgStrongLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) (= light: "#00000047" / dark: "#FFFFFF70")
     @objc public final var monoColorBgStrongDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgStrongFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgMinimalHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) (= light: "#FFFFFFCC" / dark: "#000000AD")
     @objc public final var monoColorBgMinimalPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigher, dark: colors.repositoryOpacityBlackHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) (= light: "#000000AD" / dark: "#FFFFFFCC")
     @objc public final var monoColorBgMinimalFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackHigher, dark: colors.repositoryOpacityWhiteHigher) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentDefaultEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentDefaultHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentDefaultPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentDefaultLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) (= light: "#00000047" / dark: "#FFFFFF70")
     @objc public final var monoColorContentDefaultDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentDefaultFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentMinimalEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentMinimalHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentMinimalPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentMinimalLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) (= light: "#00000047" / dark: "#FFFFFF70")
     @objc public final var monoColorContentMinimalDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentMinimalFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentStrongEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentStrongHover: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentStrongPressed: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorContentStrongLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigh, dark: colors.repositoryOpacityBlackMediumHigh)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigh, dark: colors.repositoryOpacityBlackMediumHigh) (= light: "#FFFFFFA3" / dark: "#00000070")
     @objc public final var monoColorContentStrongDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityWhiteHigh, dark: colors.repositoryOpacityBlackMediumHigh) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) (= light: "#FFFFFFFF" / dark: "#000000FF")
     @objc public final var monoColorContentStrongFocus: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralMutedWhite, dark: colors.repositoryNeutralEmphasizedBlack) }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) (= light: "#000000FF" / dark: "#FFFFFFFF")
     @objc public final var monoColorBorderDefaultEnabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedWhite) }
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBorderDefaultHover: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBorderDefaultPressed: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBorderDefaultLoading: MultipleColorSemanticToken { colors.opacityTransparent }
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium)
+    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) (= light: "#00000047" / dark: "#FFFFFF70")
     @objc public final var monoColorBorderDefaultDisabled: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryOpacityBlackMedium, dark: colors.repositoryOpacityWhiteMedium) }
-    /// Has for value token colors.opacityTransparent
+    /// Has for value token colors.opacityTransparent (= light: "#00000000" / dark: "#FFFFFF00")
     @objc public final var monoColorBorderDefaultFocus: MultipleColorSemanticToken { colors.opacityTransparent }
 }
 
