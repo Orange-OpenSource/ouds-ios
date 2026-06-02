@@ -20,6 +20,7 @@ Load skills on demand for detailed guidance:
 
 - **`ouds-vocabulary`** — glossary of OUDS-specific terms (tokenator, token types, theme, …)
 - **`ouds-framework-usage`** — full usage reference: imports, themes, tokens, view modifiers, all components with code examples
+- **`ouds-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
 
 ## Key files
 
@@ -33,6 +34,7 @@ Load skills on demand for detailed guidance:
 
 - Always load the **`ouds-vocabulary`** skill before discussing tokens or themes.
 - Always load the **`ouds-framework-usage`** skill before writing or reviewing code that uses OUDS components or tokens.
+- Always load the **`ouds-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
 - Before committing: format → build → fix errors → run tests → lint (see `.github/copilot-instructions.md` §3).
 - Use `#available` for iOS 26 SDK APIs (min deployment is iOS 15).
 - Use `#if os(…)` for platform-specific code.
