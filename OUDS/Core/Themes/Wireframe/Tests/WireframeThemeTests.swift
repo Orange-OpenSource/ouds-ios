@@ -15,8 +15,6 @@ import OUDSThemesContract
 @testable import OUDSThemesWireframe
 import Testing
 
-// swiftlint:disable force_cast
-
 /// Check if the theme has the default configuration and tokens providers with the expected types.
 struct WireframeThemeTests {
 
@@ -195,5 +193,3 @@ struct WireframeThemeTests {
         #expect(theme.typography is WireframeThemeTypographyComponentTokensProvider)
     }
 }
-
-// swiftlint:enable force_cast
