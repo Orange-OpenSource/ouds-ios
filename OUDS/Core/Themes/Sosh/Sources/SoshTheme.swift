@@ -60,6 +60,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Sosh")
+    public static let name = "Sosh"
+
     /// Flag to avoid to register severals the fonts making some errors happen
     nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
@@ -134,7 +137,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
-                   name: "Sosh",
+                   name: Self.name,
                    fontFamily: SoshBrandFontRawTokens.familyDefault,
                    tuning: Tuning.Sosh)
 

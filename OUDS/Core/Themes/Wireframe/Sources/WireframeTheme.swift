@@ -56,6 +56,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Wireframe")
+    public static let name = "Wireframe"
+
     /// Flag to avoid to register severals the fonts making some errors happen
     nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
@@ -130,7 +133,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.WireframeTheme,
-                   name: "Wireframe",
+                   name: Self.name,
                    fontFamily: WireframeBrandFontRawTokens.familyDefault,
                    tuning: Tuning.Wireframe)
 

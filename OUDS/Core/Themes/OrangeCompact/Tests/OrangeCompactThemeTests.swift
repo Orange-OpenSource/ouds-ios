@@ -26,6 +26,12 @@ struct OrangeCompactThemeTests {
         theme = OrangeCompactTheme()
     }
 
+    // MARK: - Tests - Misc.
+
+    @Test func themeName() throws {
+        #expect(theme.name == "Orange Compact")
+    }
+
     // MARK: - Tests - Theme tuning
 
     @Test func defaultTuningOfOrangeCompactTheme() throws {

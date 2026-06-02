@@ -113,6 +113,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Orange Compact")
+    public static let name = "Orange Compact"
+
     // MARK: - Initializers
 
     /// Constructor of the OrangeCompact theme with its own providers of tokens.
@@ -195,7 +198,7 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.OrangeCompactTheme,
-                   name: "Orange Compact",
+                   name: Self.name,
                    fontFamily: fontFamily,
                    tuning: tuning)
     }
