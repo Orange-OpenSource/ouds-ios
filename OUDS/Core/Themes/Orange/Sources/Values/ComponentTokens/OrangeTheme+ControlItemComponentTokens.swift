@@ -140,6 +140,14 @@ extension OrangeThemeControlItemComponentTokensProvider: ControlItemComponentTok
     @objc open var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token DimensionRawTokens._50 (= 4)
     @objc open var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
+
+    // MARK: - Old tokens to keep until components updates
+    // See https://github.com/Orange-OpenSource/ouds-ios#1437
+
+    /// Has for value token borders.radiusNone
+    @objc open var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
+    /// Has for value token spaces.paddingBlockNone
+    @objc open var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { spaces.paddingBlockNone }
 }
 
 // swiftlint:enable identifier_name
