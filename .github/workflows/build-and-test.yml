@@ -61,9 +61,9 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f # v1.306.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f # v1.310.0, https://github.com/ruby/setup-ruby
         with:
-          ruby-version: '4.0.3'
+          ruby-version: '4.0.5'
 
       - name: Install Fastlane
         run: |
@@ -86,9 +86,9 @@ jobs:
           sudo xcode-select -s /Applications/Xcode_26.4.1.app/Contents/Developer
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f # v1.306.0, https://github.com/ruby/setup-ruby
+        uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f # v1.310.0, https://github.com/ruby/setup-ruby
         with:
-          ruby-version: '4.0.3'
+          ruby-version: '4.0.5'
 
       - name: Install Fastlane
         run: |

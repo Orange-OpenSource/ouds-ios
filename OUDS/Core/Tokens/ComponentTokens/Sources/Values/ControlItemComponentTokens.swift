@@ -69,7 +69,7 @@ public protocol ControlItemComponentTokens {
     var spacePaddingBlockTopHelperText: SpaceSemanticToken { get }
     var spacePaddingBlockBottomSlot: SpaceSemanticToken { get }
     var spacePaddingBlockDensityCompact: SpaceSemanticToken { get }
-    var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { get }
+    var spacePaddingBlockDensityCompactTopAlignmentTopTextContainer: SpaceSemanticToken { get }
     var spacePaddingBlockDensityCompactTopAlignmentTopCounterweight: SpaceSemanticToken { get }
     var spacePaddingBlockDensityCompactBottomExpandContainer: SpaceSemanticToken { get }
     var spacePaddingBlockDensityDefault: SpaceSemanticToken { get }
@@ -91,35 +91,27 @@ public protocol ControlItemComponentTokens {
     var sizeFlagHeight: SizeSemanticToken { get }
     var sizeCurrentIndicatorWidth: SizeSemanticToken { get }
 
+    @available(*, deprecated, message: "Use spacePaddingBlockDensityCompactTopAlignmentTopTextContainer instead, will be removed soon")
+    var spacePaddingBlockDensityCompactTopAlignmentTopText_container: SpaceSemanticToken { get }
+
     // MARK: - Old tokens to keep until components updates
+    // Will be removed with next component update
     // See https://github.com/Orange-OpenSource/ouds-ios#1437
 
-    @available(*, deprecated, message: "Will be removed with next component update")
     var colorBgHover: MultipleColorSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var colorBgPressed: MultipleColorSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var colorBgLoading: MultipleColorSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var colorBgFocus: MultipleColorSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var colorContentLoader: MultipleColorSemanticToken { get }
 
-    @available(*, deprecated, message: "Will be removed with next component update")
     var borderRadius: BorderRadiusSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var borderRadiusItemOnly: BorderRadiusSemanticToken { get }
 
-    @available(*, deprecated, message: "Will be removed with next component update")
     var spacePaddingBlockDefault: SpaceSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var spacePaddingInlineErrorIcon: SpaceSemanticToken { get }
 
-    @available(*, deprecated, message: "Will be removed with next component update")
     var sizeMaxHeightAssetsContainer: SizeSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var sizeErrorIcon: SizeSemanticToken { get }
-    @available(*, deprecated, message: "Will be removed with next component update")
     var sizeLoader: SizeSemanticToken { get }
 }
 

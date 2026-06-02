@@ -25,9 +25,9 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryPrimaryLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry300
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry300 (= "#FC6999FF")
     @objc public final var repositoryPrimaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry300 }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry500
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry500 (= "#DE034BFF")
     @objc public final var repositoryPrimaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry500 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
@@ -35,41 +35,41 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryPrimaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight80
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight80 (= "#EDF6FDFF")
     @objc public final var repositorySecondaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight80 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight640
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight640 (= "#5DBCFEFF")
     @objc public final var repositorySecondaryLower: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight640 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240 (= "#0173C1FF")
     @objc public final var repositorySecondaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark240 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark480
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark480 (= "#01558EFF")
     @objc public final var repositorySecondaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark480 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark720
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark720 (= "#003051FF")
     @objc public final var repositorySecondaryHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark720 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark800
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark800 (= "#002742FF")
     @objc public final var repositorySecondaryHigherLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark800 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark880
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark880 (= "#002138FF")
     @objc public final var repositorySecondaryHigherHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark880 }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark960
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark960 (= "#001524FF")
     @objc public final var repositorySecondaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark960 }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo50
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo50 (= "#FCFAE8FF")
     @objc public final var repositoryTertiaryLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo50 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo300
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo300 (= "#FFEF66FF")
     @objc public final var repositoryTertiaryLow: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo300 }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo500
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo500 (= "#FFE500FF")
     @objc public final var repositoryTertiaryMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo500 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryTertiaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo950
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo950 (= "#221F02FF")
     @objc public final var repositoryTertiaryHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo950 }
-    /// Has for value token ColorRawTokens.functionalWhite
+    /// Has for value token ColorRawTokens.functionalWhite (= "#FFFFFFFF")
     @objc public final var repositoryNeutralMutedWhite: ColorSemanticToken { ColorRawTokens.functionalWhite }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayLight80
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayLight80 (= "#F7F9FAFF")
     @objc public final var repositoryNeutralMutedLowest: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight80 }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayLight160
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayLight160 (= "#E9EEF1FF")
     @objc public final var repositoryNeutralMutedLower: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayLight160 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralMutedLow: ColorSemanticToken { "ouds-forbidden-color-value" }
@@ -85,29 +85,29 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryNeutralEmphasizedLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNeutralEmphasizedLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark560
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark560 (= "#2F404BFF")
     @objc public final var repositoryNeutralEmphasizedLow: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark560 }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark640
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark640 (= "#27353FFF")
     @objc public final var repositoryNeutralEmphasizedMedium: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark640 }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark720
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark720 (= "#1F2B32FF")
     @objc public final var repositoryNeutralEmphasizedHigh: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark720 }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark800
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark800 (= "#182026FF")
     @objc public final var repositoryNeutralEmphasizedHigher: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark800 }
-    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark880
+    /// Has for value token SoshBrandColorRawTokens.functionalGrayDark880 (= "#101519FF")
     @objc public final var repositoryNeutralEmphasizedHighest: ColorSemanticToken { SoshBrandColorRawTokens.functionalGrayDark880 }
-    /// Has for value token ColorRawTokens.functionalBlack
+    /// Has for value token ColorRawTokens.functionalBlack (= "#000000FF")
     @objc public final var repositoryNeutralEmphasizedBlack: ColorSemanticToken { ColorRawTokens.functionalBlack }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.functionalMalachite300
+    /// Has for value token ColorRawTokens.functionalMalachite300 (= "#94F0A4FF")
     @objc public final var repositoryPositiveLow: ColorSemanticToken { ColorRawTokens.functionalMalachite300 }
-    /// Has for value token ColorRawTokens.functionalMalachite600
+    /// Has for value token ColorRawTokens.functionalMalachite600 (= "#1ECD3CFF")
     @objc public final var repositoryPositiveMedium: ColorSemanticToken { ColorRawTokens.functionalMalachite600 }
-    /// Has for value token ColorRawTokens.functionalMalachite700
+    /// Has for value token ColorRawTokens.functionalMalachite700 (= "#17A02FFF")
     @objc public final var repositoryPositiveHigh: ColorSemanticToken { ColorRawTokens.functionalMalachite700 }
-    /// Has for value token ColorRawTokens.functionalMalachite750
+    /// Has for value token ColorRawTokens.functionalMalachite750 (= "#138126FF")
     @objc public final var repositoryPositiveHigher: ColorSemanticToken { ColorRawTokens.functionalMalachite750 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryPositiveHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
@@ -115,11 +115,11 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryInfoLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight400
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraLight400 (= "#99D5FFFF")
     @objc public final var repositoryInfoLow: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraLight400 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoMedium: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240
+    /// Has for value token SoshBrandColorRawTokens.colorLochmaraDark240 (= "#0173C1FF")
     @objc public final var repositoryInfoHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorLochmaraDark240 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryInfoHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
@@ -129,101 +129,101 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryWarningLowest: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo300
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo300 (= "#FFEF66FF")
     @objc public final var repositoryWarningLow: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo300 }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo500
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo500 (= "#FFE500FF")
     @objc public final var repositoryWarningMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo500 }
-    /// Has for value token SoshBrandColorRawTokens.colorTurbo750
+    /// Has for value token SoshBrandColorRawTokens.colorTurbo750 (= "#7A6E00FF")
     @objc public final var repositoryWarningHigh: ColorSemanticToken { SoshBrandColorRawTokens.colorTurbo750 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryWarningHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token ColorRawTokens.functionalScarlet100
+    /// Has for value token ColorRawTokens.functionalScarlet100 (= "#FFE5E6FF")
     @objc public final var repositoryNegativeLowest: ColorSemanticToken { ColorRawTokens.functionalScarlet100 }
-    /// Has for value token ColorRawTokens.functionalScarlet200
+    /// Has for value token ColorRawTokens.functionalScarlet200 (= "#FFB2B3FF")
     @objc public final var repositoryNegativeLower: ColorSemanticToken { ColorRawTokens.functionalScarlet200 }
-    /// Has for value token ColorRawTokens.functionalScarlet300
+    /// Has for value token ColorRawTokens.functionalScarlet300 (= "#FF8081FF")
     @objc public final var repositoryNegativeLow: ColorSemanticToken { ColorRawTokens.functionalScarlet300 }
-    /// Has for value token ColorRawTokens.functionalScarlet600
+    /// Has for value token ColorRawTokens.functionalScarlet600 (= "#DB0002FF")
     @objc public final var repositoryNegativeMedium: ColorSemanticToken { ColorRawTokens.functionalScarlet600 }
-    /// Has for value token ColorRawTokens.functionalScarlet700
+    /// Has for value token ColorRawTokens.functionalScarlet700 (= "#B20002FF")
     @objc public final var repositoryNegativeHigh: ColorSemanticToken { ColorRawTokens.functionalScarlet700 }
-    /// Has for value token ColorRawTokens.functionalScarlet800
+    /// Has for value token ColorRawTokens.functionalScarlet800 (= "#800001FF")
     @objc public final var repositoryNegativeHigher: ColorSemanticToken { ColorRawTokens.functionalScarlet800 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryNegativeHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry50
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry50 (= "#FFE6EEFF")
     @objc public final var repositoryAccentLowest: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry50 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentLower: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry300
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry300 (= "#FC6999FF")
     @objc public final var repositoryAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry300 }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry500
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry500 (= "#DE034BFF")
     @objc public final var repositoryAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry500 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentHigh: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryAccentHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token SoshBrandColorRawTokens.colorRaspberry800
+    /// Has for value token SoshBrandColorRawTokens.colorRaspberry800 (= "#640222FF")
     @objc public final var repositoryAccentHighest: ColorSemanticToken { SoshBrandColorRawTokens.colorRaspberry800 }
-    /// Has for value token ColorRawTokens.malachite120
+    /// Has for value token ColorRawTokens.malachite120 (= "#3DE35A1F")
     @objc public final var repositoryOpacityPositiveLow: ColorSemanticToken { ColorRawTokens.malachite120 }
-    /// Has for value token ColorRawTokens.malachite640
+    /// Has for value token ColorRawTokens.malachite640 (= "#0E621DA3")
     @objc public final var repositoryOpacityPositiveMedium: ColorSemanticToken { ColorRawTokens.malachite640 }
-    /// Has for value token SoshBrandColorRawTokens.opacityLochmaraLight80080
+    /// Has for value token SoshBrandColorRawTokens.opacityLochmaraLight80080 (= "#34ACFE14")
     @objc public final var repositoryOpacityInfoLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityLochmaraLight80080 }
-    /// Has for value token SoshBrandColorRawTokens.opacityLochmaraDark880520
+    /// Has for value token SoshBrandColorRawTokens.opacityLochmaraDark880520 (= "#01558E85")
     @objc public final var repositoryOpacityInfoMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityLochmaraDark880520 }
-    /// Has for value token SoshBrandColorRawTokens.opacityTurbo160
+    /// Has for value token SoshBrandColorRawTokens.opacityTurbo160 (= "#FFE50029")
     @objc public final var repositoryOpacityWarningLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityTurbo160 }
-    /// Has for value token SoshBrandColorRawTokens.opacityTurbo480
+    /// Has for value token SoshBrandColorRawTokens.opacityTurbo480 (= "#665C007A")
     @objc public final var repositoryOpacityWarningMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityTurbo480 }
-    /// Has for value token ColorRawTokens.scarlet80
+    /// Has for value token ColorRawTokens.scarlet80 (= "#DB000214")
     @objc public final var repositoryOpacityNegativeLow: ColorSemanticToken { ColorRawTokens.scarlet80 }
-    /// Has for value token ColorRawTokens.scarlet320
+    /// Has for value token ColorRawTokens.scarlet320 (= "#DB000252")
     @objc public final var repositoryOpacityNegativeMedium: ColorSemanticToken { ColorRawTokens.scarlet320 }
-    /// Has for value token SoshBrandColorRawTokens.opacityRaspberry100
+    /// Has for value token SoshBrandColorRawTokens.opacityRaspberry100 (= "#FC69991A")
     @objc public final var repositoryOpacityAccentLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityRaspberry100 }
-    /// Has for value token SoshBrandColorRawTokens.opacityRaspberry640
+    /// Has for value token SoshBrandColorRawTokens.opacityRaspberry640 (= "#960333A3")
     @objc public final var repositoryOpacityAccentMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityRaspberry640 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack0
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack0 (= "#000F1900")
     @objc public final var repositoryOpacityBlackTransparent: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack0 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack40
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack40 (= "#000F190A")
     @objc public final var repositoryOpacityBlackLowest: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack40 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack80
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack80 (= "#000F1914")
     @objc public final var repositoryOpacityBlackLower: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack80 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack120
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack120 (= "#000F191F")
     @objc public final var repositoryOpacityBlackLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack120 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack200
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack200 (= "#000F1933")
     @objc public final var repositoryOpacityBlackMediumLow: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack200 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack280
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack280 (= "#000F1947")
     @objc public final var repositoryOpacityBlackMedium: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack280 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack440
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack440 (= "#000F1970")
     @objc public final var repositoryOpacityBlackMediumHigh: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack440 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack520
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack520 (= "#000F1985")
     @objc public final var repositoryOpacityBlackHigh: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack520 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack720
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack720 (= "#000F19B8")
     @objc public final var repositoryOpacityBlackHigher: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack720 }
-    /// Has for value token SoshBrandColorRawTokens.opacityBlack920
+    /// Has for value token SoshBrandColorRawTokens.opacityBlack920 (= "#000F19EB")
     @objc public final var repositoryOpacityBlackHighest: ColorSemanticToken { SoshBrandColorRawTokens.opacityBlack920 }
-    /// Has for value token SoshBrandColorRawTokens.white0
+    /// Has for value token SoshBrandColorRawTokens.white0 (= "#EDF6FC00")
     @objc public final var repositoryOpacityWhiteTransparent: ColorSemanticToken { SoshBrandColorRawTokens.white0 }
-    /// Has for value token SoshBrandColorRawTokens.white40
+    /// Has for value token SoshBrandColorRawTokens.white40 (= "#EDF6FC0A")
     @objc public final var repositoryOpacityWhiteLowest: ColorSemanticToken { SoshBrandColorRawTokens.white40 }
-    /// Has for value token SoshBrandColorRawTokens.white80
+    /// Has for value token SoshBrandColorRawTokens.white80 (= "#EDF6FC14")
     @objc public final var repositoryOpacityWhiteLower: ColorSemanticToken { SoshBrandColorRawTokens.white80 }
-    /// Has for value token SoshBrandColorRawTokens.white120
+    /// Has for value token SoshBrandColorRawTokens.white120 (= "#EDF6FC1F")
     @objc public final var repositoryOpacityWhiteLow: ColorSemanticToken { SoshBrandColorRawTokens.white120 }
-    /// Has for value token SoshBrandColorRawTokens.white200
+    /// Has for value token SoshBrandColorRawTokens.white200 (= "#EDF6FC33")
     @objc public final var repositoryOpacityWhiteMediumLow: ColorSemanticToken { SoshBrandColorRawTokens.white200 }
-    /// Has for value token SoshBrandColorRawTokens.white440
+    /// Has for value token SoshBrandColorRawTokens.white440 (= "#EDF6FC70")
     @objc public final var repositoryOpacityWhiteMedium: ColorSemanticToken { SoshBrandColorRawTokens.white440 }
-    /// Has for value token SoshBrandColorRawTokens.white640
+    /// Has for value token SoshBrandColorRawTokens.white640 (= "#EDF6FCA3")
     @objc public final var repositoryOpacityWhiteHigh: ColorSemanticToken { SoshBrandColorRawTokens.white640 }
-    /// Has for value token SoshBrandColorRawTokens.white800
+    /// Has for value token SoshBrandColorRawTokens.white800 (= "#EDF6FCCC")
     @objc public final var repositoryOpacityWhiteHigher: ColorSemanticToken { SoshBrandColorRawTokens.white800 }
-    /// Has for value token SoshBrandColorRawTokens.white920
+    /// Has for value token SoshBrandColorRawTokens.white920 (= "#EDF6FCEB")
     @objc public final var repositoryOpacityWhiteHighest: ColorSemanticToken { SoshBrandColorRawTokens.white920 }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryTransparent: ColorSemanticToken { "ouds-forbidden-color-value" }
@@ -241,440 +241,440 @@ extension SoshThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var repositoryOpacityPrimaryHigher: ColorSemanticToken { "ouds-forbidden-color-value" }
     /// This token has a forbidden color value (#FF000000 in tokenator) and **must not be used if you use this SoshTheme**
     @objc public final var repositoryOpacityPrimaryHighest: ColorSemanticToken { "ouds-forbidden-color-value" }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var bgPrimaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var bgPrimaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositorySecondaryLowest
+    /// Has for value token repositorySecondaryLowest (= "#EDF6FDFF")
     @objc public final var bgSecondaryLight: ColorSemanticToken { repositorySecondaryLowest }
-    /// Has for value token repositorySecondaryHigherHigh
+    /// Has for value token repositorySecondaryHigherHigh (= "#002138FF")
     @objc public final var bgSecondaryDark: ColorSemanticToken { repositorySecondaryHigherHigh }
-    /// Has for value token repositoryTertiaryLowest
+    /// Has for value token repositoryTertiaryLowest (= "#FCFAE8FF")
     @objc public final var bgTertiaryLight: ColorSemanticToken { repositoryTertiaryLowest }
-    /// Has for value token repositoryTertiaryHighest
+    /// Has for value token repositoryTertiaryHighest (= "#221F02FF")
     @objc public final var bgTertiaryDark: ColorSemanticToken { repositoryTertiaryHighest }
-    /// Has for value token repositorySecondaryHigherHigh
+    /// Has for value token repositorySecondaryHigherHigh (= "#002138FF")
     @objc public final var bgInverseLowLight: ColorSemanticToken { repositorySecondaryHigherHigh }
-    /// Has for value token repositorySecondaryHigh
+    /// Has for value token repositorySecondaryHigh (= "#003051FF")
     @objc public final var bgInverseLowDark: ColorSemanticToken { repositorySecondaryHigh }
-    /// Has for value token repositorySecondaryHigherHigh
+    /// Has for value token repositorySecondaryHigherHigh (= "#002138FF")
     @objc public final var bgInverseHighLight: ColorSemanticToken { repositorySecondaryHigherHigh }
-    /// Has for value token repositorySecondaryLowest
+    /// Has for value token repositorySecondaryLowest (= "#EDF6FDFF")
     @objc public final var bgInverseHighDark: ColorSemanticToken { repositorySecondaryLowest }
-    /// Has for value token repositoryPrimaryMedium
+    /// Has for value token repositoryPrimaryMedium (= "#DE034BFF")
     @objc public final var surfaceBrandPrimaryLight: ColorSemanticToken { repositoryPrimaryMedium }
-    /// Has for value token repositoryPrimaryLow
+    /// Has for value token repositoryPrimaryLow (= "#FC6999FF")
     @objc public final var surfaceBrandPrimaryDark: ColorSemanticToken { repositoryPrimaryLow }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var surfaceBrandSecondaryLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositorySecondaryLower
+    /// Has for value token repositorySecondaryLower (= "#5DBCFEFF")
     @objc public final var surfaceBrandSecondaryDark: ColorSemanticToken { repositorySecondaryLower }
-    /// Has for value token repositoryTertiaryMedium
+    /// Has for value token repositoryTertiaryMedium (= "#FFE500FF")
     @objc public final var surfaceBrandTertiaryLight: ColorSemanticToken { repositoryTertiaryMedium }
-    /// Has for value token repositoryTertiaryLow
+    /// Has for value token repositoryTertiaryLow (= "#FFEF66FF")
     @objc public final var surfaceBrandTertiaryDark: ColorSemanticToken { repositoryTertiaryLow }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var surfacePrimaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositoryOpacityWhiteLowest
+    /// Has for value token repositoryOpacityWhiteLowest (= "#EDF6FC0A")
     @objc public final var surfacePrimaryDark: ColorSemanticToken { repositoryOpacityWhiteLowest }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var surfaceSecondaryLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var surfaceSecondaryDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryOpacityAccentLow
+    /// Has for value token repositoryOpacityAccentLow (= "#FC69991A")
     @objc public final var surfaceTertiaryLight: ColorSemanticToken { repositoryOpacityAccentLow }
-    /// Has for value token repositoryOpacityAccentMedium
+    /// Has for value token repositoryOpacityAccentMedium (= "#960333A3")
     @objc public final var surfaceTertiaryDark: ColorSemanticToken { repositoryOpacityAccentMedium }
-    /// Has for value token repositorySecondaryHigherHigh
+    /// Has for value token repositorySecondaryHigherHigh (= "#002138FF")
     @objc public final var surfaceInverseLowLight: ColorSemanticToken { repositorySecondaryHigherHigh }
-    /// Has for value token repositoryOpacityWhiteLow
+    /// Has for value token repositoryOpacityWhiteLow (= "#EDF6FC1F")
     @objc public final var surfaceInverseLowDark: ColorSemanticToken { repositoryOpacityWhiteLow }
-    /// Has for value token repositorySecondaryHigherHigh
+    /// Has for value token repositorySecondaryHigherHigh (= "#002138FF")
     @objc public final var surfaceInverseHighLight: ColorSemanticToken { repositorySecondaryHigherHigh }
-    /// Has for value token repositorySecondaryLowest
+    /// Has for value token repositorySecondaryLowest (= "#EDF6FDFF")
     @objc public final var surfaceInverseHighDark: ColorSemanticToken { repositorySecondaryLowest }
-    /// Has for value token repositoryOpacityPositiveLow
+    /// Has for value token repositoryOpacityPositiveLow (= "#3DE35A1F")
     @objc public final var surfaceStatusPositiveMutedLight: ColorSemanticToken { repositoryOpacityPositiveLow }
-    /// Has for value token repositoryOpacityPositiveMedium
+    /// Has for value token repositoryOpacityPositiveMedium (= "#0E621DA3")
     @objc public final var surfaceStatusPositiveMutedDark: ColorSemanticToken { repositoryOpacityPositiveMedium }
-    /// Has for value token repositoryPositiveHigher
+    /// Has for value token repositoryPositiveHigher (= "#138126FF")
     @objc public final var surfaceStatusPositiveEmphasizedLight: ColorSemanticToken { repositoryPositiveHigher }
-    /// Has for value token repositoryPositiveLow
+    /// Has for value token repositoryPositiveLow (= "#94F0A4FF")
     @objc public final var surfaceStatusPositiveEmphasizedDark: ColorSemanticToken { repositoryPositiveLow }
-    /// Has for value token repositoryOpacityInfoLow
+    /// Has for value token repositoryOpacityInfoLow (= "#34ACFE14")
     @objc public final var surfaceStatusInfoMutedLight: ColorSemanticToken { repositoryOpacityInfoLow }
-    /// Has for value token repositoryOpacityInfoMedium
+    /// Has for value token repositoryOpacityInfoMedium (= "#01558E85")
     @objc public final var surfaceStatusInfoMutedDark: ColorSemanticToken { repositoryOpacityInfoMedium }
-    /// Has for value token repositoryInfoHigh
+    /// Has for value token repositoryInfoHigh (= "#0173C1FF")
     @objc public final var surfaceStatusInfoEmphasizedLight: ColorSemanticToken { repositoryInfoHigh }
-    /// Has for value token repositoryInfoLow
+    /// Has for value token repositoryInfoLow (= "#99D5FFFF")
     @objc public final var surfaceStatusInfoEmphasizedDark: ColorSemanticToken { repositoryInfoLow }
-    /// Has for value token repositoryOpacityWarningLow
+    /// Has for value token repositoryOpacityWarningLow (= "#FFE50029")
     @objc public final var surfaceStatusWarningMutedLight: ColorSemanticToken { repositoryOpacityWarningLow }
-    /// Has for value token repositoryOpacityWarningMedium
+    /// Has for value token repositoryOpacityWarningMedium (= "#665C007A")
     @objc public final var surfaceStatusWarningMutedDark: ColorSemanticToken { repositoryOpacityWarningMedium }
-    /// Has for value token repositoryWarningMedium
+    /// Has for value token repositoryWarningMedium (= "#FFE500FF")
     @objc public final var surfaceStatusWarningEmphasizedLight: ColorSemanticToken { repositoryWarningMedium }
-    /// Has for value token repositoryWarningLow
+    /// Has for value token repositoryWarningLow (= "#FFEF66FF")
     @objc public final var surfaceStatusWarningEmphasizedDark: ColorSemanticToken { repositoryWarningLow }
-    /// Has for value token repositoryOpacityNegativeLow
+    /// Has for value token repositoryOpacityNegativeLow (= "#DB000214")
     @objc public final var surfaceStatusNegativeMutedLight: ColorSemanticToken { repositoryOpacityNegativeLow }
-    /// Has for value token repositoryOpacityNegativeMedium
+    /// Has for value token repositoryOpacityNegativeMedium (= "#DB000252")
     @objc public final var surfaceStatusNegativeMutedDark: ColorSemanticToken { repositoryOpacityNegativeMedium }
-    /// Has for value token repositoryNegativeMedium
+    /// Has for value token repositoryNegativeMedium (= "#DB0002FF")
     @objc public final var surfaceStatusNegativeEmphasizedLight: ColorSemanticToken { repositoryNegativeMedium }
-    /// Has for value token repositoryNegativeLow
+    /// Has for value token repositoryNegativeLow (= "#FF8081FF")
     @objc public final var surfaceStatusNegativeEmphasizedDark: ColorSemanticToken { repositoryNegativeLow }
-    /// Has for value token repositoryOpacityAccentLow
+    /// Has for value token repositoryOpacityAccentLow (= "#FC69991A")
     @objc public final var surfaceStatusAccentMutedLight: ColorSemanticToken { repositoryOpacityAccentLow }
-    /// Has for value token repositoryOpacityAccentMedium
+    /// Has for value token repositoryOpacityAccentMedium (= "#960333A3")
     @objc public final var surfaceStatusAccentMutedDark: ColorSemanticToken { repositoryOpacityAccentMedium }
-    /// Has for value token repositoryAccentMedium
+    /// Has for value token repositoryAccentMedium (= "#DE034BFF")
     @objc public final var surfaceStatusAccentEmphasizedLight: ColorSemanticToken { repositoryAccentMedium }
-    /// Has for value token repositoryAccentLow
+    /// Has for value token repositoryAccentLow (= "#FC6999FF")
     @objc public final var surfaceStatusAccentEmphasizedDark: ColorSemanticToken { repositoryAccentLow }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentDefaultLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentDefaultDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryOpacityBlackHigher
+    /// Has for value token repositoryOpacityBlackHigher (= "#000F19B8")
     @objc public final var contentMutedLight: ColorSemanticToken { repositoryOpacityBlackHigher }
-    /// Has for value token repositoryOpacityWhiteHigh
+    /// Has for value token repositoryOpacityWhiteHigh (= "#EDF6FCA3")
     @objc public final var contentMutedDark: ColorSemanticToken { repositoryOpacityWhiteHigh }
-    /// Has for value token repositoryOpacityBlackMediumLow
+    /// Has for value token repositoryOpacityBlackMediumLow (= "#000F1933")
     @objc public final var contentDisabledLight: ColorSemanticToken { repositoryOpacityBlackMediumLow }
-    /// Has for value token repositoryOpacityWhiteMediumLow
+    /// Has for value token repositoryOpacityWhiteMediumLow (= "#EDF6FC33")
     @objc public final var contentDisabledDark: ColorSemanticToken { repositoryOpacityWhiteMediumLow }
-    /// Has for value token repositoryPrimaryMedium
+    /// Has for value token repositoryPrimaryMedium (= "#DE034BFF")
     @objc public final var contentBrandPrimaryLight: ColorSemanticToken { repositoryPrimaryMedium }
-    /// Has for value token repositoryPrimaryLow
+    /// Has for value token repositoryPrimaryLow (= "#FC6999FF")
     @objc public final var contentBrandPrimaryDark: ColorSemanticToken { repositoryPrimaryLow }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var contentBrandSecondaryLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositorySecondaryLower
+    /// Has for value token repositorySecondaryLower (= "#5DBCFEFF")
     @objc public final var contentBrandSecondaryDark: ColorSemanticToken { repositorySecondaryLower }
-    /// Has for value token repositoryTertiaryMedium
+    /// Has for value token repositoryTertiaryMedium (= "#FFE500FF")
     @objc public final var contentBrandTertiaryLight: ColorSemanticToken { repositoryTertiaryMedium }
-    /// Has for value token repositoryTertiaryLow
+    /// Has for value token repositoryTertiaryLow (= "#FFEF66FF")
     @objc public final var contentBrandTertiaryDark: ColorSemanticToken { repositoryTertiaryLow }
-    /// Has for value token repositoryPositiveHigher
+    /// Has for value token repositoryPositiveHigher (= "#138126FF")
     @objc public final var contentStatusPositiveLight: ColorSemanticToken { repositoryPositiveHigher }
-    /// Has for value token repositoryPositiveLow
+    /// Has for value token repositoryPositiveLow (= "#94F0A4FF")
     @objc public final var contentStatusPositiveDark: ColorSemanticToken { repositoryPositiveLow }
-    /// Has for value token repositoryInfoHigh
+    /// Has for value token repositoryInfoHigh (= "#0173C1FF")
     @objc public final var contentStatusInfoLight: ColorSemanticToken { repositoryInfoHigh }
-    /// Has for value token repositoryInfoLow
+    /// Has for value token repositoryInfoLow (= "#99D5FFFF")
     @objc public final var contentStatusInfoDark: ColorSemanticToken { repositoryInfoLow }
-    /// Has for value token repositoryWarningHigh
+    /// Has for value token repositoryWarningHigh (= "#7A6E00FF")
     @objc public final var contentStatusWarningLight: ColorSemanticToken { repositoryWarningHigh }
-    /// Has for value token repositoryWarningLow
+    /// Has for value token repositoryWarningLow (= "#FFEF66FF")
     @objc public final var contentStatusWarningDark: ColorSemanticToken { repositoryWarningLow }
-    /// Has for value token repositoryNegativeMedium
+    /// Has for value token repositoryNegativeMedium (= "#DB0002FF")
     @objc public final var contentStatusNegativeLight: ColorSemanticToken { repositoryNegativeMedium }
-    /// Has for value token repositoryNegativeLow
+    /// Has for value token repositoryNegativeLow (= "#FF8081FF")
     @objc public final var contentStatusNegativeDark: ColorSemanticToken { repositoryNegativeLow }
-    /// Has for value token repositoryPositiveLow
+    /// Has for value token repositoryPositiveLow (= "#94F0A4FF")
     @objc public final var contentStatusInversePositiveLight: ColorSemanticToken { repositoryPositiveLow }
-    /// Has for value token repositoryPositiveHigher
+    /// Has for value token repositoryPositiveHigher (= "#138126FF")
     @objc public final var contentStatusInversePositiveDark: ColorSemanticToken { repositoryPositiveHigher }
-    /// Has for value token repositoryInfoLow
+    /// Has for value token repositoryInfoLow (= "#99D5FFFF")
     @objc public final var contentStatusInverseInfoLight: ColorSemanticToken { repositoryInfoLow }
-    /// Has for value token repositoryInfoHigh
+    /// Has for value token repositoryInfoHigh (= "#0173C1FF")
     @objc public final var contentStatusInverseInfoDark: ColorSemanticToken { repositoryInfoHigh }
-    /// Has for value token repositoryWarningLow
+    /// Has for value token repositoryWarningLow (= "#FFEF66FF")
     @objc public final var contentStatusInverseWarningLight: ColorSemanticToken { repositoryWarningLow }
-    /// Has for value token repositoryWarningHigh
+    /// Has for value token repositoryWarningHigh (= "#7A6E00FF")
     @objc public final var contentStatusInverseWarningDark: ColorSemanticToken { repositoryWarningHigh }
-    /// Has for value token repositoryNegativeLow
+    /// Has for value token repositoryNegativeLow (= "#FF8081FF")
     @objc public final var contentStatusInverseNegativeLight: ColorSemanticToken { repositoryNegativeLow }
-    /// Has for value token repositoryNegativeMedium
+    /// Has for value token repositoryNegativeMedium (= "#DB0002FF")
     @objc public final var contentStatusInverseNegativeDark: ColorSemanticToken { repositoryNegativeMedium }
-    /// Has for value token repositoryAccentMedium
+    /// Has for value token repositoryAccentMedium (= "#DE034BFF")
     @objc public final var contentStatusAccentLight: ColorSemanticToken { repositoryAccentMedium }
-    /// Has for value token repositoryAccentLow
+    /// Has for value token repositoryAccentLow (= "#FC6999FF")
     @objc public final var contentStatusAccentDark: ColorSemanticToken { repositoryAccentLow }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnBrandPrimaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnBrandPrimaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnBrandSecondaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnBrandSecondaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnBrandTertiaryLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnBrandTertiaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusPositiveMutedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentOnStatusPositiveMutedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnStatusPositiveEmphasizedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnStatusPositiveEmphasizedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusInfoMutedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentOnStatusInfoMutedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnStatusInfoEmphasizedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnStatusInfoEmphasizedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusWarningMutedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentOnStatusWarningMutedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusWarningEmphasizedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnStatusWarningEmphasizedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusNegativeMutedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentOnStatusNegativeMutedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnStatusNegativeEmphasizedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnStatusNegativeEmphasizedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentOnStatusAccentMutedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var contentOnStatusAccentMutedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnStatusAccentEmphasizedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnStatusAccentEmphasizedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionEnabledLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionEnabledDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionHoverLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionHoverDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionPressedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionPressedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionLoadingLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionLoadingDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionDisabledLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionDisabledDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionFocusLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionFocusDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionSelectedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionSelectedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentOnActionHighlightedLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var contentOnActionHighlightedDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var contentInverseLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var contentInverseDark: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var borderMinimalLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLowest
+    /// Has for value token repositoryOpacityWhiteLowest (= "#EDF6FC0A")
     @objc public final var borderMinimalDark: ColorSemanticToken { repositoryOpacityWhiteLowest }
-    /// Has for value token repositoryOpacityBlackLower
+    /// Has for value token repositoryOpacityBlackLower (= "#000F1914")
     @objc public final var borderMutedLight: ColorSemanticToken { repositoryOpacityBlackLower }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var borderMutedDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryOpacityBlackMediumLow
+    /// Has for value token repositoryOpacityBlackMediumLow (= "#000F1933")
     @objc public final var borderDefaultLight: ColorSemanticToken { repositoryOpacityBlackMediumLow }
-    /// Has for value token repositoryOpacityWhiteMediumLow
+    /// Has for value token repositoryOpacityWhiteMediumLow (= "#EDF6FC33")
     @objc public final var borderDefaultDark: ColorSemanticToken { repositoryOpacityWhiteMediumLow }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var borderEmphasizedLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var borderEmphasizedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var borderFocusLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var borderFocusDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var borderFocusInsetLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositoryNeutralEmphasizedHighest
+    /// Has for value token repositoryNeutralEmphasizedHighest (= "#101519FF")
     @objc public final var borderFocusInsetDark: ColorSemanticToken { repositoryNeutralEmphasizedHighest }
-    /// Has for value token repositoryPrimaryMedium
+    /// Has for value token repositoryPrimaryMedium (= "#DE034BFF")
     @objc public final var borderBrandPrimaryLight: ColorSemanticToken { repositoryPrimaryMedium }
-    /// Has for value token repositoryPrimaryLow
+    /// Has for value token repositoryPrimaryLow (= "#FC6999FF")
     @objc public final var borderBrandPrimaryDark: ColorSemanticToken { repositoryPrimaryLow }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var borderBrandSecondaryLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositorySecondaryLower
+    /// Has for value token repositorySecondaryLower (= "#5DBCFEFF")
     @objc public final var borderBrandSecondaryDark: ColorSemanticToken { repositorySecondaryLower }
-    /// Has for value token repositoryTertiaryMedium
+    /// Has for value token repositoryTertiaryMedium (= "#FFE500FF")
     @objc public final var borderBrandTertiaryLight: ColorSemanticToken { repositoryTertiaryMedium }
-    /// Has for value token repositoryTertiaryLow
+    /// Has for value token repositoryTertiaryLow (= "#FFEF66FF")
     @objc public final var borderBrandTertiaryDark: ColorSemanticToken { repositoryTertiaryLow }
-    /// Has for value token repositoryPositiveHigher
+    /// Has for value token repositoryPositiveHigher (= "#138126FF")
     @objc public final var borderStatusPositiveLight: ColorSemanticToken { repositoryPositiveHigher }
-    /// Has for value token repositoryPositiveLow
+    /// Has for value token repositoryPositiveLow (= "#94F0A4FF")
     @objc public final var borderStatusPositiveDark: ColorSemanticToken { repositoryPositiveLow }
-    /// Has for value token repositoryInfoHigh
+    /// Has for value token repositoryInfoHigh (= "#0173C1FF")
     @objc public final var borderStatusInfoLight: ColorSemanticToken { repositoryInfoHigh }
-    /// Has for value token repositoryInfoLow
+    /// Has for value token repositoryInfoLow (= "#99D5FFFF")
     @objc public final var borderStatusInfoDark: ColorSemanticToken { repositoryInfoLow }
-    /// Has for value token repositoryWarningMedium
+    /// Has for value token repositoryWarningMedium (= "#FFE500FF")
     @objc public final var borderStatusWarningLight: ColorSemanticToken { repositoryWarningMedium }
-    /// Has for value token repositoryWarningLow
+    /// Has for value token repositoryWarningLow (= "#FFEF66FF")
     @objc public final var borderStatusWarningDark: ColorSemanticToken { repositoryWarningLow }
-    /// Has for value token repositoryNegativeMedium
+    /// Has for value token repositoryNegativeMedium (= "#DB0002FF")
     @objc public final var borderStatusNegativeLight: ColorSemanticToken { repositoryNegativeMedium }
-    /// Has for value token repositoryNegativeLow
+    /// Has for value token repositoryNegativeLow (= "#FF8081FF")
     @objc public final var borderStatusNegativeDark: ColorSemanticToken { repositoryNegativeLow }
-    /// Has for value token repositoryAccentMedium
+    /// Has for value token repositoryAccentMedium (= "#DE034BFF")
     @objc public final var borderStatusAccentLight: ColorSemanticToken { repositoryAccentMedium }
-    /// Has for value token repositoryAccentLow
+    /// Has for value token repositoryAccentLow (= "#FC6999FF")
     @objc public final var borderStatusAccentDark: ColorSemanticToken { repositoryAccentLow }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var borderOnBrandPrimaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var borderOnBrandPrimaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var borderOnBrandSecondaryLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var borderOnBrandSecondaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var borderOnBrandTertiaryLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositorySecondaryHighest
+    /// Has for value token repositorySecondaryHighest (= "#001524FF")
     @objc public final var borderOnBrandTertiaryDark: ColorSemanticToken { repositorySecondaryHighest }
-    /// Has for value token repositoryPrimaryMedium
+    /// Has for value token repositoryPrimaryMedium (= "#DE034BFF")
     @objc public final var actionEnabledLight: ColorSemanticToken { repositoryPrimaryMedium }
-    /// Has for value token repositorySecondaryLower
+    /// Has for value token repositorySecondaryLower (= "#5DBCFEFF")
     @objc public final var actionEnabledDark: ColorSemanticToken { repositorySecondaryLower }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var actionHoverLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var actionHoverDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var actionPressedLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositoryTertiaryLow
+    /// Has for value token repositoryTertiaryLow (= "#FFEF66FF")
     @objc public final var actionPressedDark: ColorSemanticToken { repositoryTertiaryLow }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var actionLoadingLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositoryTertiaryLow
+    /// Has for value token repositoryTertiaryLow (= "#FFEF66FF")
     @objc public final var actionLoadingDark: ColorSemanticToken { repositoryTertiaryLow }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var actionReadOnlyPrimaryLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var actionReadOnlyPrimaryDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryOpacityBlackMediumLow
+    /// Has for value token repositoryOpacityBlackMediumLow (= "#000F1933")
     @objc public final var actionReadOnlySecondaryLight: ColorSemanticToken { repositoryOpacityBlackMediumLow }
-    /// Has for value token repositoryOpacityWhiteMediumLow
+    /// Has for value token repositoryOpacityWhiteMediumLow (= "#EDF6FC33")
     @objc public final var actionReadOnlySecondaryDark: ColorSemanticToken { repositoryOpacityWhiteMediumLow }
-    /// Has for value token repositoryOpacityBlackMediumLow
+    /// Has for value token repositoryOpacityBlackMediumLow (= "#000F1933")
     @objc public final var actionDisabledLight: ColorSemanticToken { repositoryOpacityBlackMediumLow }
-    /// Has for value token repositoryOpacityWhiteMediumLow
+    /// Has for value token repositoryOpacityWhiteMediumLow (= "#EDF6FC33")
     @objc public final var actionDisabledDark: ColorSemanticToken { repositoryOpacityWhiteMediumLow }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var actionFocusLight: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var actionFocusDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryPrimaryMedium
+    /// Has for value token repositoryPrimaryMedium (= "#DE034BFF")
     @objc public final var actionSelectedLight: ColorSemanticToken { repositoryPrimaryMedium }
-    /// Has for value token repositorySecondaryLower
+    /// Has for value token repositorySecondaryLower (= "#5DBCFEFF")
     @objc public final var actionSelectedDark: ColorSemanticToken { repositorySecondaryLower }
-    /// Has for value token ColorRawTokens.functionalAmethyst600
+    /// Has for value token ColorRawTokens.functionalAmethyst600 (= "#5B2F98FF")
     @objc public final var actionVisitedLight: ColorSemanticToken { ColorRawTokens.functionalAmethyst600 }
-    /// Has for value token ColorRawTokens.functionalAmethyst400
+    /// Has for value token ColorRawTokens.functionalAmethyst400 (= "#A885D8FF")
     @objc public final var actionVisitedDark: ColorSemanticToken { ColorRawTokens.functionalAmethyst400 }
-    /// Has for value token repositorySecondaryLow
+    /// Has for value token repositorySecondaryLow (= "#0173C1FF")
     @objc public final var actionHighlightedLight: ColorSemanticToken { repositorySecondaryLow }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var actionHighlightedDark: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var actionSupportEnabledLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLowest
+    /// Has for value token repositoryOpacityWhiteLowest (= "#EDF6FC0A")
     @objc public final var actionSupportEnabledDark: ColorSemanticToken { repositoryOpacityWhiteLowest }
-    /// Has for value token repositoryOpacityBlackLower
+    /// Has for value token repositoryOpacityBlackLower (= "#000F1914")
     @objc public final var actionSupportHoverLight: ColorSemanticToken { repositoryOpacityBlackLower }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var actionSupportHoverDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryOpacityBlackLow
+    /// Has for value token repositoryOpacityBlackLow (= "#000F191F")
     @objc public final var actionSupportPressedLight: ColorSemanticToken { repositoryOpacityBlackLow }
-    /// Has for value token repositoryOpacityWhiteLow
+    /// Has for value token repositoryOpacityWhiteLow (= "#EDF6FC1F")
     @objc public final var actionSupportPressedDark: ColorSemanticToken { repositoryOpacityWhiteLow }
-    /// Has for value token repositoryOpacityBlackLow
+    /// Has for value token repositoryOpacityBlackLow (= "#000F191F")
     @objc public final var actionSupportLoadingLight: ColorSemanticToken { repositoryOpacityBlackLow }
-    /// Has for value token repositoryOpacityWhiteLow
+    /// Has for value token repositoryOpacityWhiteLow (= "#EDF6FC1F")
     @objc public final var actionSupportLoadingDark: ColorSemanticToken { repositoryOpacityWhiteLow }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var actionSupportDisabledLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLowest
+    /// Has for value token repositoryOpacityWhiteLowest (= "#EDF6FC0A")
     @objc public final var actionSupportDisabledDark: ColorSemanticToken { repositoryOpacityWhiteLowest }
-    /// Has for value token repositoryOpacityBlackLower
+    /// Has for value token repositoryOpacityBlackLower (= "#000F1914")
     @objc public final var actionSupportFocusLight: ColorSemanticToken { repositoryOpacityBlackLower }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var actionSupportFocusDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryNegativeMedium
+    /// Has for value token repositoryNegativeMedium (= "#DB0002FF")
     @objc public final var actionNegativeEnabledLight: ColorSemanticToken { repositoryNegativeMedium }
-    /// Has for value token repositoryNegativeLow
+    /// Has for value token repositoryNegativeLow (= "#FF8081FF")
     @objc public final var actionNegativeEnabledDark: ColorSemanticToken { repositoryNegativeLow }
-    /// Has for value token repositoryNegativeHigh
+    /// Has for value token repositoryNegativeHigh (= "#B20002FF")
     @objc public final var actionNegativeHoverLight: ColorSemanticToken { repositoryNegativeHigh }
-    /// Has for value token repositoryNegativeLower
+    /// Has for value token repositoryNegativeLower (= "#FFB2B3FF")
     @objc public final var actionNegativeHoverDark: ColorSemanticToken { repositoryNegativeLower }
-    /// Has for value token repositoryNegativeHigher
+    /// Has for value token repositoryNegativeHigher (= "#800001FF")
     @objc public final var actionNegativePressedLight: ColorSemanticToken { repositoryNegativeHigher }
-    /// Has for value token repositoryNegativeLowest
+    /// Has for value token repositoryNegativeLowest (= "#FFE5E6FF")
     @objc public final var actionNegativePressedDark: ColorSemanticToken { repositoryNegativeLowest }
-    /// Has for value token repositoryNegativeHigher
+    /// Has for value token repositoryNegativeHigher (= "#800001FF")
     @objc public final var actionNegativeLoadingLight: ColorSemanticToken { repositoryNegativeHigher }
-    /// Has for value token repositoryNegativeLowest
+    /// Has for value token repositoryNegativeLowest (= "#FFE5E6FF")
     @objc public final var actionNegativeLoadingDark: ColorSemanticToken { repositoryNegativeLowest }
-    /// Has for value token repositoryNegativeHigh
+    /// Has for value token repositoryNegativeHigh (= "#B20002FF")
     @objc public final var actionNegativeFocusLight: ColorSemanticToken { repositoryNegativeHigh }
-    /// Has for value token repositoryNegativeLower
+    /// Has for value token repositoryNegativeLower (= "#FFB2B3FF")
     @objc public final var actionNegativeFocusDark: ColorSemanticToken { repositoryNegativeLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var overlayDropdownLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositoryNeutralEmphasizedLow
+    /// Has for value token repositoryNeutralEmphasizedLow (= "#2F404BFF")
     @objc public final var overlayDropdownDark: ColorSemanticToken { repositoryNeutralEmphasizedLow }
-    /// Has for value token repositoryNeutralEmphasizedHigh
+    /// Has for value token repositoryNeutralEmphasizedHigh (= "#1F2B32FF")
     @objc public final var overlayTooltipLight: ColorSemanticToken { repositoryNeutralEmphasizedHigh }
-    /// Has for value token repositoryNeutralEmphasizedLow
+    /// Has for value token repositoryNeutralEmphasizedLow (= "#2F404BFF")
     @objc public final var overlayTooltipDark: ColorSemanticToken { repositoryNeutralEmphasizedLow }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var overlayDragLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var overlayDragDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var overlayModalSheetLight: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositorySecondaryHigherLow
+    /// Has for value token repositorySecondaryHigherLow (= "#002742FF")
     @objc public final var overlayModalSheetDark: ColorSemanticToken { repositorySecondaryHigherLow }
-    /// Has for value token repositoryOpacityBlackHigher
+    /// Has for value token repositoryOpacityBlackHigher (= "#000F19B8")
     @objc public final var overlayBackdropLight: ColorSemanticToken { repositoryOpacityBlackHigher }
-    /// Has for value token repositoryOpacityBlackHigher
+    /// Has for value token repositoryOpacityBlackHigher (= "#000F19B8")
     @objc public final var overlayBackdropDark: ColorSemanticToken { repositoryOpacityBlackHigher }
-    /// Has for value token repositoryOpacityBlackTransparent
+    /// Has for value token repositoryOpacityBlackTransparent (= "#000F1900")
     @objc public final var opacityTransparentLight: ColorSemanticToken { repositoryOpacityBlackTransparent }
-    /// Has for value token repositoryOpacityWhiteTransparent
+    /// Has for value token repositoryOpacityWhiteTransparent (= "#EDF6FC00")
     @objc public final var opacityTransparentDark: ColorSemanticToken { repositoryOpacityWhiteTransparent }
-    /// Has for value token repositoryOpacityBlackLowest
+    /// Has for value token repositoryOpacityBlackLowest (= "#000F190A")
     @objc public final var opacityLowestLight: ColorSemanticToken { repositoryOpacityBlackLowest }
-    /// Has for value token repositoryOpacityWhiteLowest
+    /// Has for value token repositoryOpacityWhiteLowest (= "#EDF6FC0A")
     @objc public final var opacityLowestDark: ColorSemanticToken { repositoryOpacityWhiteLowest }
-    /// Has for value token repositoryOpacityBlackLower
+    /// Has for value token repositoryOpacityBlackLower (= "#000F1914")
     @objc public final var opacityLowerLight: ColorSemanticToken { repositoryOpacityBlackLower }
-    /// Has for value token repositoryOpacityWhiteLower
+    /// Has for value token repositoryOpacityWhiteLower (= "#EDF6FC14")
     @objc public final var opacityLowerDark: ColorSemanticToken { repositoryOpacityWhiteLower }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var alwaysBlack: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
-    /// Has for value token repositoryNeutralMutedWhite
+    /// Has for value token repositoryNeutralMutedWhite (= "#FFFFFFFF")
     @objc public final var alwaysWhite: ColorSemanticToken { repositoryNeutralMutedWhite }
-    /// Has for value token repositoryNeutralMutedLower
+    /// Has for value token repositoryNeutralMutedLower (= "#E9EEF1FF")
     @objc public final var alwaysOnBlack: ColorSemanticToken { repositoryNeutralMutedLower }
-    /// Has for value token repositoryNeutralEmphasizedBlack
+    /// Has for value token repositoryNeutralEmphasizedBlack (= "#000000FF")
     @objc public final var alwaysOnWhite: ColorSemanticToken { repositoryNeutralEmphasizedBlack }
 }

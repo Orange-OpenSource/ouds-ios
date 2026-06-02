@@ -26,6 +26,12 @@ struct SoshThemeTests {
         theme = SoshTheme()
     }
 
+    // MARK: - Tests - Misc.
+
+    @Test func themeName() throws {
+        #expect(theme.name == "Sosh")
+    }
+
     // MARK: - Tests - Theme tuning
 
     @Test func defaultTuningOfSoshTheme() throws {

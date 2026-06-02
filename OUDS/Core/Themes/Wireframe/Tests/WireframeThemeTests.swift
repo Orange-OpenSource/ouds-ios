@@ -26,6 +26,12 @@ struct WireframeThemeTests {
         theme = WireframeTheme()
     }
 
+    // MARK: - Tests - Misc.
+
+    @Test func themeName() throws {
+        #expect(theme.name == "Wireframe")
+    }
+
     // MARK: - Tests - Theme tuning
 
     @Test func defaultTuningOfWireframeTheme() throws {

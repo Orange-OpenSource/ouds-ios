@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.0.0...2.1.0) - 2026-06-02
+
+### Added
+
+- SKILL file to convert Figma tokens to Swift tokens
+- Public name of themes provided by OUDS
+
+### Changed
+
+- `fastlane` gem from v2.233.1 to v2.235.0
+- `json` RubyGem from v2.19.5 to v2.19.7
+- `SwiftLintPlugins` Swift package from v0.63.2 to v0.63.3
+- `Ruby` version from v4.0.3 to v4.0.5 for `build-and-test` workflows
+- `gitleaks/gitleaks-action` action from v2.3.9 to v3.0.0 for `gitleaks` workflow
+- `ruby/setup-ruby` action from v1.306.0 to v1.310.0 for `build-and-test` workflow
+- `actions/dependency-review-action` action from v4.9.0 to v5.0.0 for `dependency-review` workflow
+- `github/codeql-action/upload-sarif` action from v4.35.3 to v4.36.1 for `scorecard` workflow
+- Definition of SKILL files to be available on *skills.sh* registry
+- Duration of animation for selected tab indicator of `tab bar` component
+- Tokens documentation with final values described in comments
+- `text area` component (Orange-OpenSource/ouds-ios#1448)
+- `text input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1446)
+- `password input` component typography with label moderate typography for texts (Orange-OpenSource/ouds-ios#1443)
+- `PIN code input` component with new typography (Orange-OpenSource/ouds-ios#1444)
+- `bullet list` component can use rich text if bold or not (Orange-OpenSource/ouds-ios#1440)
+- `tag` component with label medium moderate typography for text for small size (Orange-OpenSource/ouds-ios#1449)
+- `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
+- `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
+- `control item` component token renamed `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
+
+### Fixed
+
+- Duplicated dimensions tokens provider for themes definitions (Orange-OpenSource/ouds-ios#1539)
+
+### Deprecated
+
+- `control item` component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container`
+
 ## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...2.0.0) - 2026-05-07
 
 ### Added

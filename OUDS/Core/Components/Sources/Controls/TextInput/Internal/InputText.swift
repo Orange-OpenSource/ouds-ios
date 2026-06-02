@@ -35,9 +35,10 @@ struct InputText: View {
             // to get the right size of dots.
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
+                    .labelModerateLarge(theme)
             } else {
                 TextField(text: text, label: textFieldLabel)
-                    .labelDefaultLarge(theme)
+                    .labelModerateLarge(theme)
             }
         }
         .modifier(SecureTextFieldModifier(isSecureTextField: textInputAsSecureField))

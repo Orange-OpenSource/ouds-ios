@@ -24,7 +24,7 @@ struct PinCodeHelperErrorTextContainer: View {
 
     var body: some View {
         if !text.isEmpty {
-            view(for: text)
+            textView()
                 .labelDefaultMedium(theme)
                 .foregroundColor(color)
                 .multilineTextAlignment(.leading)
@@ -52,7 +52,7 @@ struct PinCodeHelperErrorTextContainer: View {
         }
     }
 
-    private func view(for text: String) -> Text {
+    private func textView() -> Text {
         switch status {
         case let .error(message):
             Text(message)

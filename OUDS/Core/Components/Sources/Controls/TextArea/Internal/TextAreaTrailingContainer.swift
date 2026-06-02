@@ -31,6 +31,8 @@ struct TextAreaTrailingContainer: View {
     let interactionState: TextAreaInteractionState
     /// `true` when the caller uses `.charactersMaxCount` and the text exceeds the limit.
     let isOverLimit: Bool
+    /// `true` if the associated `OUDSTextArea` component does not have a placeholder nor a value, i.e. the label is small
+    let isSmallLabel: Bool
 
     @Environment(\.theme) private var theme
 
@@ -59,7 +61,7 @@ struct TextAreaTrailingContainer: View {
                            action: {})
                     .accessibilityHidden(true)
             }
-        }.frame(maxHeight: theme.textArea.sizeMaxHeightAssetsContainer)
+        }
     }
 
     // MARK: - Helpers
@@ -74,6 +76,7 @@ struct TextAreaTrailingContainer: View {
                    height: theme.button.sizeIconOnly,
                    alignment: .center)
             .padding(.horizontal, theme.button.spaceInsetIconOnly)
+            .padding(.vertical, verticalPadding)
     }
 
     private var errorIconColor: MultipleColorSemanticToken {
@@ -85,6 +88,10 @@ struct TextAreaTrailingContainer: View {
         case .hover:
             theme.colors.actionNegativeHover
         }
+    }
+
+    private var verticalPadding: SpaceSemanticToken {
+        isSmallLabel ? theme.textArea.spacePaddingBlockTrailingContainer : theme.textArea.spacePaddingBlockEmptyTrailingContainer
     }
 }
 #endif

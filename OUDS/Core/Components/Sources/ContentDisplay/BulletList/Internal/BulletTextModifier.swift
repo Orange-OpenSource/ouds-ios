@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -31,15 +30,9 @@ struct BulletListLabel: View {
     // MARK: - Body
 
     var body: some View {
-        if isBold {
-            Text(label.rawValue)
-                .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
-                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
-        } else {
-            textView(for: label)
-                .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
-                .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
-        }
+        textView(for: label)
+            .modifier(BulletTextModifier(textStyle: textStyle, isBold: isBold))
+            .frame(maxWidth: maxWidth.dimension(for: horizontalSizeClass ?? .regular), alignment: .leading)
     }
 
     private var maxWidth: MultipleSizeSemanticToken {

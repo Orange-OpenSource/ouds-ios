@@ -1,0 +1,14 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "OUDS iOS",
+      "description": "Skills for working with the Orange Unified Design System iOS Swift Package.",
+      "skills": [
+        "ouds-vocabulary",
+        "ouds-framework-usage",
+        "ouds-figma-to-swift"
+      ]
+    }
+  ]
+}

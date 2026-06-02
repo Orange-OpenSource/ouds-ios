@@ -138,6 +138,9 @@ import OUDSTokensSemantic
 /// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Orange")
+    public static let name = "Orange"
+
     // MARK: - Initializers
 
     /// Constructor of the Orange theme.
@@ -218,7 +221,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
-                         name: String = "Orange",
+                         name: String = OrangeTheme.name,
                          fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
                          tuning: Tuning = Tuning.default)
     {
@@ -244,7 +247,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
-        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))

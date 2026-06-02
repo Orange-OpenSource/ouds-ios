@@ -35,7 +35,7 @@ struct TagLabel: View {
                     .labelStrongMedium(theme)
             case .small:
                 Text(type.label)
-                    .labelStrongSmall(theme)
+                    .labelModerateSmall(theme)
             }
         }
         .foregroundColor(color)

@@ -60,6 +60,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Sosh")
+    public static let name = "Sosh"
+
     /// Flag to avoid to register severals the fonts making some errors happen
     nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
@@ -86,7 +89,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
@@ -134,7 +137,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.SoshTheme,
-                   name: "Sosh",
+                   name: Self.name,
                    fontFamily: SoshBrandFontRawTokens.familyDefault,
                    tuning: Tuning.Sosh)
 
@@ -157,10 +160,9 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Sosh *contains:
-    /// - square corners for buttons
-    /// - square corners for text-based inputs
-    /// - rounded corners for alert messages
+    /// The theme tuning for *Sosh* contains **square corners for buttons**,
+    /// **square corners for text / PIN code / password / text area inputs**
+    /// and **rounded corners for alert messages**.
     public static let Sosh = Tuning(hasRoundedButtons: false,
                                     hasRoundedTextInputs: false,
                                     hasRoundedAlertMessages: true)

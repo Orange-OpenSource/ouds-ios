@@ -56,6 +56,9 @@ import SwiftUI
 /// - Since: 0.17.0
 public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
+    /// The theme name ("Wireframe")
+    public static let name = "Wireframe"
+
     /// Flag to avoid to register severals the fonts making some errors happen
     nonisolated(unsafe) private static var fontsAlreadyRegistered: Bool = false
 
@@ -82,7 +85,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
+        let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
@@ -130,7 +133,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    textArea: textArea,
                    textInput: textInput,
                    resourcesBundle: Bundle.WireframeTheme,
-                   name: "Wireframe",
+                   name: Self.name,
                    fontFamily: WireframeBrandFontRawTokens.familyDefault,
                    tuning: Tuning.Wireframe)
 
@@ -153,10 +156,9 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
 
 extension Tuning {
 
-    /// The theme tuning for *Wireframe *contains:
-    /// - square corners for buttons
-    /// - square corners for text-based inputs
-    /// - rounded corners for alert messages
+    /// The theme tuning for *Wireframe* contains **square corners for buttons**,
+    /// **square corners for text / PIN code / password / text area inputs**
+    /// and **rounded corners for alert messages**.
     public static let Wireframe = Tuning(hasRoundedButtons: false,
                                          hasRoundedTextInputs: false,
                                          hasRoundedAlertMessages: true)

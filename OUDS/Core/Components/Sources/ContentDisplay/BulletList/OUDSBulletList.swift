@@ -116,12 +116,13 @@ import SwiftUI
 ///        }
 /// ```
 ///
-/// ## Rich text
+/// ## Rich text recommendations
 ///
-/// Rich text can be applied only if `isBold` flag is set to *false*.
+/// Rich text can be applied for bullet list whatever the `isBold` flag is.
 ///
 /// Strong text can be used sparingly within alert messages to highlight key information.
 /// Underlined text must not be used for emphasis, as it is commonly associated with links.
+/// Underlined links must be bold.
 /// If a hyperlink is needed within the content, the underlined style should be used.
 /// Italic should be used with care, some brands do not allow it like Orange brand.
 /// No other text styles should be used.
@@ -152,7 +153,7 @@ import SwiftUI
 ///
 /// ![A bullet list component in light and dark modes with Wireframe theme](component_bullet_list_Wireframe)
 ///
-/// - Version: 1.0.0 (Figma component design version)
+/// - Version: 1.1.0 (Figma component design version)
 /// - Since: 1.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBulletList: View {

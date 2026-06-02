@@ -48,7 +48,7 @@ struct TextAreaInputText: View {
             // - min/maxHeight come directly from the text area size tokens — no Dynamic Type scaling
             //   arithmetic needed, keeping the frame stable across style and status changes.
             rawTextEditor
-                .labelDefaultLarge(theme)
+                .labelModerateLarge(theme)
                 .foregroundColor(inputTextColor)
                 .tint(cursorColor.color(for: colorScheme))
                 .background(Color.clear)

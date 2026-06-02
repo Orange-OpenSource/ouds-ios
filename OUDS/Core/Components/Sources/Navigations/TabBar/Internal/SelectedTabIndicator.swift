@@ -24,8 +24,8 @@ struct SelectedTabIndicator: View {
 
     // MARK: - Constants
 
-    /// Duration in seconds of the indicator expand/collapse animation.
-    static let animationDuration: CGFloat = 0.2
+    /// Duration in seconds of the indicator expand/collapse animation (240 ms)
+    static let animationDuration: CGFloat = 0.24
     /// Delay in seconds before updating the tab bar geometry after layout changes.
     static let asyncDelay: CGFloat = 0.1
 

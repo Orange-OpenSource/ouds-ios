@@ -161,6 +161,10 @@ struct OUDSVersionsTests {
         TestsUtils.assertMatches(OUDSVersions.componentTagVersion, regexp: Self.oudsVersionsFormat)
     }
 
+    @Test func componentInputTagVersionMustBeConform() throws {
+        TestsUtils.assertMatches(OUDSVersions.componentInputTagVersion, regexp: Self.oudsVersionsFormat)
+    }
+
     // MARK: - Tests - Component versions - Layout
 
     @Test func componentDividerVersionMustBeConform() throws {
