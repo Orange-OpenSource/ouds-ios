@@ -262,10 +262,16 @@ OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
 OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
 OUDSTextArea(label: "Label", text: $text,
              helperLink: .init(text: "Learn more") { openUrl(url) })
+// Fixed height — no vertical growth, scroll from first overflow line
+OUDSTextArea(label: "Label", text: $text, constrainedMaxHeight: true)
 // Error status → see §6 Common patterns
 ```
 
-> Min visible lines: 3 (`OUDSTextArea.minLines`). Max before scrolling: 10 (`OUDSTextArea.maxLines`).
+> Height is controlled by two component tokens on `theme.textArea`:
+> - `sizeMinHeightInput` (72 pt by default) — minimum height, always applied
+> - `sizeMaxHeightInput` (240 pt by default) — maximum height before scroll (used when `constrainedMaxHeight: false`, the default)
+>
+> When `constrainedMaxHeight: true`, `maxHeight` is capped to `sizeMinHeightInput`, keeping the component at a fixed compact size.
 
 ---
 

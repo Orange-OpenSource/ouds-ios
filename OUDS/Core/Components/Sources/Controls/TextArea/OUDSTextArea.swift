@@ -100,6 +100,22 @@ import SwiftUI
 ///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
 /// ```
 ///
+/// ## Fixed height
+///
+/// By **default**, the text area grows vertically as the user types, up to a maximum height defined by the
+/// design system (token `sizeMaxHeightInput`). Once that height is reached, the content becomes scrollable.
+///
+/// When `constrainedMaxHeight` is set to `true`, the maximum height is capped to the **minimum** height
+/// (token `sizeMinHeightInput`), keeping the component at a fixed, compact size at all times.
+/// The content is immediately scrollable from the first overflow line.
+///
+/// This is useful in dense layouts — forms, filter panels, chat composers — where vertical space is at a premium.
+///
+/// ```swift
+///     // Height is fixed to the minimum (no vertical growth)
+///     OUDSTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
+/// ```
+///
 /// ## Rich text
 ///
 /// Rich text can be used for error and helper texts.
@@ -146,6 +162,9 @@ import SwiftUI
 ///
 ///     // Outlined style
 ///     OUDSTextArea(label: "Comments", text: $text, isOutlined: true)
+///
+///     // Fixed height — no vertical growth
+///     OUDSTextArea(label: "Comments", text: $text, constrainedMaxHeight: true)
 /// ```
 ///
 /// ## Design documentation
@@ -185,6 +204,7 @@ public struct OUDSTextArea: View {
     let status: Self.Status
     let isOutlined: Bool
     let constrainedMaxWidth: Bool
+    let constrainedMaxHeight: Bool
 
     @Environment(\.theme) private var theme
 
@@ -336,6 +356,9 @@ public struct OUDSTextArea: View {
     ///    - constrainedMaxWidth: When `true`, the width is constrained to a maximum value defined by the design system.
     ///      When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///      modifier. Defaults to `false`.
+    ///    - constrainedMaxHeight: When `true`, the maximum height is capped to the minimum height token (`sizeMinHeightInput`),
+    ///      keeping the component at a fixed compact size. The content becomes immediately scrollable on overflow.
+    ///      When `false` (default), the component grows up to `sizeMaxHeightInput` before scrolling.
     ///    - status: The current status of the text area, by default to set *enabled*
     public init(label: String,
                 text: Binding<String>,
@@ -344,6 +367,7 @@ public struct OUDSTextArea: View {
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
+                constrainedMaxHeight: Bool = false,
                 status: Self.Status = .enabled)
     {
         self.label = label
@@ -354,6 +378,7 @@ public struct OUDSTextArea: View {
         self.isOutlined = isOutlined
         self.status = status
         self.constrainedMaxWidth = constrainedMaxWidth
+        self.constrainedMaxHeight = constrainedMaxHeight
     }
 
     // swiftlint:disable function_default_parameter_at_end
@@ -373,6 +398,7 @@ public struct OUDSTextArea: View {
     ///    - helperLink: An optional helper link, by default is *nil*
     ///    - isOutlined: When `true`, the text area uses a full-perimeter border, defaults to `false`
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
+    ///    - constrainedMaxHeight: When `true`, the height is fixed to the minimum token value, defaults to `false`
     ///    - status: The current status of the text area, default set to *enabled*
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -383,6 +409,7 @@ public struct OUDSTextArea: View {
                 helperLink: Self.Helperlink? = nil,
                 isOutlined: Bool = false,
                 constrainedMaxWidth: Bool = false,
+                constrainedMaxHeight: Bool = false,
                 status: Self.Status = .enabled)
     {
         self.init(label: key.resolved(tableName: tableName, bundle: bundle),
@@ -392,6 +419,7 @@ public struct OUDSTextArea: View {
                   helperLink: helperLink,
                   isOutlined: isOutlined,
                   constrainedMaxWidth: constrainedMaxWidth,
+                  constrainedMaxHeight: constrainedMaxHeight,
                   status: status)
     }
 
@@ -442,6 +470,7 @@ public struct OUDSTextArea: View {
                                   excessCount: excessCount,
                                   status: status,
                                   isOutlined: isOutlined,
+                                  constrainedMaxHeight: constrainedMaxHeight,
                                   accessibilityHint: helperText?.accessibilityDescription(remainingCount: remainingCount))
 
                 TextAreaHelperErrorTextContainer(helperText: helperText,
