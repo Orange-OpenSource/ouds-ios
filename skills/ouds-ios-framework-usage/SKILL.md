@@ -82,7 +82,8 @@ Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`.
 ## 5. View modifiers
 
 ```swift
-Text("Hello").bodyDefaultMedium(theme)           // typography — use OUDS, not font()
+Text("Hello")
+.font(theme.fonts.bodyDefaultMedium) // typography — use view modifier with token
 .foregroundColor(theme.colors.contentDefault)
 .background(theme.colors.bgPrimary)
 .border(style: theme.borders.styleDefault,

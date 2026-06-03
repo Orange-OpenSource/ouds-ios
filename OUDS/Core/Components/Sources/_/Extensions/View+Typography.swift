@@ -12,11 +12,12 @@
 //
 
 import OUDSThemesContract
+import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - View extensions for typography
-
 extension View {
+
+    // MARK: - Typography modifiers
 
     /// Modifies the current `View` to apply a *display large* typography.
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
@@ -248,5 +249,14 @@ extension View {
     /// - Returns some View: The current `View` but with new typography applied
     public func codeMedium(_ theme: OUDSTheme) -> some View {
         modifier(TypographyModifier(family: theme.fontFamily, font: theme.fonts.codeMedium))
+    }
+
+    // MARK: - Font modifier
+
+    /// Modifies the current `View` to apply a specific typography from a token?
+    /// - Parameter token: The typography token
+    /// - Returns some View: The current `View` but with new typography applied
+    public func font(_ token: MultipleFontCompositeSemanticToken) -> some View {
+        modifier(TypographyModifier(font: token))
     }
 }

@@ -29,19 +29,10 @@ import UIKit
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is dimensionsystem font_
-    let family: FontFamilyRawToken?
+    private let family: FontFamilyRawToken?
 
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
-    let font: MultipleFontCompositeSemanticToken
-
-    /// To get programatically and on the fly the horizontal layout size
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-    /// To get programatically and on the fly the vertical layout size
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-
-    /// Environment variable to observe Dynamic Type changes in accessibility settings
-    @Environment(\.sizeCategory) private var sizeCategory
+    private let font: MultipleFontCompositeSemanticToken
 
     /// Says whether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
@@ -63,9 +54,12 @@ struct TypographyModifier: ViewModifier {
     /// The `UIFont` is preferred to the `Font` because the `lineHeight`to compute the `lineSpacing` is needed.
     /// In addition, SwiftUI line height dedicated API stack text to the top, and OUDS requires to have text centered.
     private var adaptativeFont: NativeFont {
-        if let family {
+        // If a font family has been given by the user, user it.
+        // If undefined, use font family from theme (maybe because not directly given by user), which can be also undefined
+        let fontFamilyToApply = (family ?? theme.fontFamily)
+        if let fontFamilyToApply {
             // Can be a custom font loaded from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
+            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(fontFamilyToApply, Font.Weight(weight: adaptiveFontToken.weight))]
             let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize)
             if let customFont {
                 return customFont
@@ -115,6 +109,36 @@ struct TypographyModifier: ViewModifier {
     /// Computes the extra padding which should be added at top and bottom to conform the line height.
     private var padding: CGFloat {
         lineSpacing / 2
+    }
+
+    /// The theme with inside the font family if defined
+    @Environment(\.theme) private var theme
+
+    /// Environment variable to observe Dynamic Type changes in accessibility settings
+    @Environment(\.sizeCategory) private var sizeCategory
+
+    /// To get programatically and on the fly the vertical layout size
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    /// To get programatically and on the fly the horizontal layout size
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    // MARK: - Initialize
+
+    /// Defines a `ViewModifier` for typography with a font token to apply and a font family
+    /// - Parameters:
+    ///    - family: The font family to apply
+    ///    - font: The token of font to use for the typography
+    init(family: FontFamilyRawToken?, font: MultipleFontCompositeSemanticToken) {
+        self.family = family
+        self.font = font
+    }
+
+    /// Defines a `ViewModifier` for typography with a font token to apply and a font family loaded from the theme
+    /// - Parameter font: The token of font to use for the typography
+    init(font: MultipleFontCompositeSemanticToken) {
+        family = nil
+        self.font = font
     }
 
     // MARK: - View Modifier

@@ -54,19 +54,23 @@ Your application identity can be strongly based on the *typography* you use, i.e
 
 With OUDS, typography depends to the class size, i.e. whether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositesemantictoken) defined in the [`FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
-The _theme_ contains lots of `MultipleFontCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
+The _theme_ contains lots of `MultipleFontCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*.
 
-However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `family` property. This value will be used to compute the typography, if not defined the default system font will be used.
+Typography relies on _font family_ which is stored in the theme, and this font family can be a _custom one_ or the _system one_.
+Thus, we let the users define the font family they want by overriding the `family` property of the theme. This value will be used to compute the typography, if not defined the default system font will be used.
 
 Thus, if you want to apply a specific typography to a `View` (supposing the semantic tokens are defined in the theme), just call the method you want and gives as parameter the theme (to get the custom font if defined):
 
 ```swift
 // Apply typography "body default small"
 myView.bodyDefaultSmall(theme)
+// or
+myView.font(theme.fonts.bodyDefaultSmall)
 
 // Apply typography "label strong X large"
 myView.labelStrongXLarge(theme)
+// or
+myView.font(theme.fonts.labelStrongXLarge)
 
 // Etc.
 ```

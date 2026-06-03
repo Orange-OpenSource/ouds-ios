@@ -17,6 +17,8 @@ license: MIT
 | **tuning** | Lightweight configuration knobs on a theme (e.g. rounded-corner radius) |
 | **token provider** | Object within a theme that groups semantic and component tokens together |
 | **component** | SwiftUI view shipped by OUDS with well-defined layout and behaviour (buttons, switches, links, …) |
+| **view modifier** | Object which changes the style or look and feel of a component |
+| **typography** | Style applied on texts with font line height, letter spacing weight, size and family |
 
 ## When to load which skill
 
