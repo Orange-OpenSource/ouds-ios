@@ -160,7 +160,7 @@ Here are some shared logics and objects with plenty of extensions and utilities 
 
 ### 5.12 Screens
 
-- Manage at least small screen like the iPhone SE 2026 one (i.e. 4 inch)
+- Manage at least small screen like the iPhone SE (2016) one (i.e. 4 inch)
 
 ### 5.13 UI
 

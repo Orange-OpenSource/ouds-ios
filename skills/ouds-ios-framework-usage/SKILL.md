@@ -1,5 +1,5 @@
 ---
-name: ouds-framework-usage
+name: ouds-ios-framework-usage
 description: How to set up and use the OUDS iOS framework with imports, themes, tokens, view modifiers, and all available components with code examples
 license: MIT
 ---

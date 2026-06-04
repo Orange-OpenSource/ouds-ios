@@ -5,9 +5,9 @@
       "title": "OUDS iOS",
       "description": "Skills for working with the Orange Unified Design System iOS Swift Package.",
       "skills": [
-        "ouds-vocabulary",
-        "ouds-framework-usage",
-        "ouds-figma-to-swift"
+        "ouds-ios-vocabulary",
+        "ouds-ios-framework-usage",
+        "ouds-ios-figma-to-swift"
       ]
     }
   ]
