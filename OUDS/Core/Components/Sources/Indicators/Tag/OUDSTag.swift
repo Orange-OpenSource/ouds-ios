@@ -271,7 +271,7 @@ public struct OUDSTag: View {
         /// Used to create a tag with a accent status with leading bullet or not.
         ///
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
-        public static func accent(bullet: Bool) -> Status {
+        public static func accent(bullet: Bool = false) -> Status {
             Status(leading: bullet ? .bullet : .none, category: .accent)
         }
 

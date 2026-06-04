@@ -300,10 +300,11 @@ OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_
 ### Indicators — Badge
 
 Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Sizes: `extraSmall`, `small`, `medium`, `large`
+Count parameter must be of type `UInt8`.
 
 ```swift
-OUDSBadge(status: .neutral, size: .medium)
-OUDSBadge(count: 3, status: .neutral, size: .medium)
+OUDSBadge(accessibilityLabel: "Some label", status: .neutral, size: .medium)
+OUDSBadge(count: 3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
 OUDSBadge(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
 ```
 
