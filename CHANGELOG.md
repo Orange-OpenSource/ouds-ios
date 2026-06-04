@@ -36,6 +36,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 
 - `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/2.1.0...develop)
+
+### Added
+
+- Use of original image for components (Orange-OpenSource/ouds-ios#1511)
 
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.0.0...2.1.0) - 2026-06-02
 

@@ -38,8 +38,10 @@ import SwiftUI
 ///         }
 ///
 ///         // Add a custom icon for accent and neutral status
+///         // with original rendering mode (to avoid tints) or not.
+///         // By default, tinted, template mode.
 ///         OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
-///         OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+///         OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"), renderingMode: .original)))
 ///
 ///         // Add a custom action (i.e Link) at bottom (could also at top trailing position)
 ///         @Environment(\.openURL) private var openUrl

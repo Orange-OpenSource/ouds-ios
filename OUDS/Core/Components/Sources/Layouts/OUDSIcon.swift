@@ -21,6 +21,16 @@ import SwiftUI
 /// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
 /// if the icon is not decorative.
 ///
+/// ## Code Samples
+///
+/// ```swift
+///     // Display an image with a label loaded from a given module (default in rendering mode)
+///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+///
+///     // Display an image but without tints and in original mode
+///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+/// ```
+///
 /// - Since: 1.3.0
 public struct OUDSIcon: View {
 
@@ -31,6 +41,7 @@ public struct OUDSIcon: View {
     private let flipped: Bool
     private let accessibilityLabel: String?
     private let color: MultipleColorSemanticToken?
+    private let renderingMode: Image.TemplateRenderingMode
 
     @Environment(\.theme) private var theme
 
@@ -49,11 +60,13 @@ public struct OUDSIcon: View {
     ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
     public init(asset: Image,
                 flipped: Bool = false,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
-                bundle: Bundle = .main)
+                bundle: Bundle = .main,
+                renderingMode: Image.TemplateRenderingMode = .template)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
         self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText)
@@ -71,12 +84,18 @@ public struct OUDSIcon: View {
     ///    - asset: The asset
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
-    public init(asset: Image, flipped: Bool = false, accessibilityLabel: String? = nil) {
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
+    public init(asset: Image,
+                flipped: Bool = false,
+                accessibilityLabel: String? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template)
+    {
         self.asset = asset
         assetName = nil
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         color = nil
+        self.renderingMode = renderingMode
     }
 
     /// Create the icon from its name.
@@ -93,6 +112,7 @@ public struct OUDSIcon: View {
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         self.color = color
+        renderingMode = .template
     }
 
     // MARK: Body
@@ -100,7 +120,7 @@ public struct OUDSIcon: View {
     public var body: some View {
         image?
             .resizable()
-            .renderingMode(.template)
+            .renderingMode(renderingMode)
             .toFlip(flipped)
             .update(with: color)
             .accessibility(label: Text(accessibilityLabel ?? ""))

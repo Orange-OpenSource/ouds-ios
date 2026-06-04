@@ -331,7 +331,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSAlertMessage(label: "Label")
 OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
 OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))),
+                 status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
