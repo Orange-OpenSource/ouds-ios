@@ -75,6 +75,21 @@ myView.font(theme.fonts.labelStrongXLarge)
 // Etc.
 ```
 
+The font object can be also forged from tokens to be applied elsewhere:
+```swift
+@Environment(\.theme) private var theme
+@Environment(\.verticalSizeClass) private var verticalSizeClass
+@Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+let font = Font.makeFont(
+            family: theme.fontFamily,
+            from: theme.fonts.labelModerateLarge,
+            isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
+
+// To SwiftUI font
+let swiftUiFont = Font(font)    
+```
+
 In details how it works:
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "displayMedium":

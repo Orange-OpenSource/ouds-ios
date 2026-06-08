@@ -224,7 +224,7 @@ struct PinCodeInputContainer: View {
         #if !os(macOS)
         // Compute at this level the typography to use to be sure environment values for size class
         // are retrieved in the suitable thread at the best moment
-        let uiFont = TypographyModifier.makeUIFont(
+        let uiFont = Font.makeFont(
             family: nil,
             from: theme.fonts.labelModerateLarge,
             isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
