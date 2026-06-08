@@ -35,7 +35,6 @@ struct AlertMessageContent: View {
                     .labelModerateLarge(theme)
                     .foregroundColor(foregroundColor)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .accessibilityLabel(accessibilityLabel)
 
                 if let description, !description.isEmpty {
                     textView(for: description)
@@ -52,6 +51,8 @@ struct AlertMessageContent: View {
                     }
                 }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityLabel)
 
             // Action
             if let link, self.link?.position == .bottom {
@@ -90,6 +91,15 @@ struct AlertMessageContent: View {
         default:
             ""
         }
-        return "\(labelPrefix) \(text)"
+        return "\(labelPrefix) \(alertText)"
+    }
+
+    private var alertText: String {
+        var parts: [String] = [text]
+        if let description, !description.isEmpty {
+            parts.append(description.rawValue)
+        }
+        parts += bulletList.filter { !$0.isEmpty }.map(\.rawValue)
+        return parts.joined(separator: ", ")
     }
 }
