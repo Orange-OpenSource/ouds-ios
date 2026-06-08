@@ -20,7 +20,7 @@ struct ListItemAffordanceContainer: View {
 
     // MARK: - Properties
 
-    let type: OUDSListItemNavigation.AffordanceType?
+    let type: OUDSListItemNavigationAffordanceType?
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme

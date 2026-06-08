@@ -17,11 +17,12 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Contains all texts (overline, label, extralabel, description) of the `ListItemContent`.
-struct ListItemTextContainer: View {
+struct ListItemTextContainer<Slot: View>: View {
 
     // MARK: - Stored properties
 
     let data: OUDSListItemData
+    let slot: Slot
     let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
@@ -69,6 +70,10 @@ struct ListItemTextContainer: View {
                     .labelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
                     .foregroundStyle(descriptionOverlineColor)
+            }
+
+            if !(slot is EmptyView) {
+                slot
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
