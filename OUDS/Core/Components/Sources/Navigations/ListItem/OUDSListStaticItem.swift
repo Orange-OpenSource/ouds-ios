@@ -105,11 +105,12 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListStaticItem: View {
+public struct OUDSListStaticItem<Slot: View>: View {
 
     // MARK: - Stored Properties
 
     private let data: OUDSListItemData
+    private let slot: Slot
     private let leading: OOUDSListItemLeading?
     private let trailing: OUDSListItemTrailing?
 
@@ -117,6 +118,36 @@ public struct OUDSListStaticItem: View {
     @Environment(\.theme) private var theme
 
     // MARK: - Initializer
+
+    // Creates a list item to display static data, without interaction or navigation.
+    // A slot (View) area is reseverd under texts and before helper text.
+    //
+    // ```swift
+    //     let data = OUDSListItemData(label: "Label", description: "Description")
+    //     OUDSListStaticItem(data: data)
+    // ```
+    //
+    // - Parameters:
+    //    - data: The textual data of the item, including label, description, overline, extra label, and helper text.
+    //    - slot: An optional element displayed under texts (at the bottom of the text container).
+    //    - leading: An optional element displayed at the leading position (before the texts).
+    //     See ``OOUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    //    - trailing: An optional element displayed at the trailing position (after the texts).
+    //     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    //
+    // - Note: Leading, trailing, and text containers can be aligned using the
+    //   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
+
+    public init(data: OUDSListItemData,
+                slot: Slot,
+                leading: OOUDSListItemLeading? = nil,
+                trailing: OUDSListItemTrailing? = nil)
+    {
+        self.data = data
+        self.leading = leading
+        self.trailing = trailing
+        self.slot = slot
+    }
 
     /// Creates a list item to display static data, without interaction or navigation.
     ///
@@ -136,9 +167,10 @@ public struct OUDSListStaticItem: View {
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
                 leading: OOUDSListItemLeading? = nil,
-                trailing: OUDSListItemTrailing? = nil)
+                trailing: OUDSListItemTrailing? = nil) where Slot == EmptyView
     {
         self.data = data
+        slot = EmptyView()
         self.leading = leading
         self.trailing = trailing
     }
@@ -147,6 +179,7 @@ public struct OUDSListStaticItem: View {
 
     public var body: some View {
         ListItemContent(data: data,
+                        slot: slot,
                         affordanceType: nil,
                         leading: leading,
                         trailing: trailing,

@@ -29,7 +29,7 @@ import SwiftUI
 ///
 /// ## Affordance types
 ///
-/// The ``AffordanceType`` enum defines the visual indicator and semantic meaning of the navigation:
+/// The ``OUDSListItemNavigationAffordanceType`` enum defines the visual indicator and semantic meaning of the navigation:
 ///
 /// - **`.next`** (default): A forward chevron indicating in-app navigation to a next screen.
 /// - **`.previous`**: A backward chevron indicating in-app navigation to a previous screen.
@@ -127,12 +127,13 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.0.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemNavigation: View {
+public struct OUDSListItemNavigation<Slot: View>: View {
 
     // MARK: - Stored Properties
 
     private let data: OUDSListItemData
-    private let affordanceType: AffordanceType
+    private let slot: Slot
+    private let affordanceType: OUDSListItemNavigationAffordanceType
     private let action: (() -> Void)?
     private let leading: OOUDSListItemLeading?
     private let trailing: OUDSListItemTrailing?
@@ -141,28 +142,48 @@ public struct OUDSListItemNavigation: View {
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
 
-    /// The navigation affordance indicator, describing the type of navigation triggered when the item is tapped.
-    ///
-    /// - Since: 2.0.0
-    @frozen public enum AffordanceType {
-        /// When item is tapped, the next page is opened in navigation.
-        /// A forward chevron is displayed at the trailing edge.
-        case next
-
-        /// When item is tapped, the previous page is presented in navigation.
-        /// A backward chevron is displayed at the leading edge.
-        /// **Note:** When using `.previous`, the leading element is automatically hidden.
-        case previous
-
-        /// When item is tapped, the action is performed outside the application
-        /// (e.g. open a URL in a browser, open a file in an external viewer).
-        /// An external link icon is displayed at the trailing edge.
-        case external
-    }
-
     // MARK: - Initializer
 
-    /// Creates a navigable list item with textual data, an affordance type, and an optional action.
+    /// Creates a navigable list item with textual data, an affordance type, and an optional action with additional slot.
+    /// A slot (View) area is reseverd under texts and before helper text.
+    ///
+    /// ```swift
+    ///     let data = OUDSListItemData(label: "Label", description: "Description")
+    ///     OUDSListItemNavigation(data: data, affordanceType: .external) {
+    ///         openURL(url)
+    ///     }
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
+    ///   - slot: An optional element displayed under texts (at the bottom of the text container).
+    ///   - affordanceType: The type of navigation affordance indicator to display. Defaults to `.next`.
+    ///     See ``OUDSListItemNavigationAffordanceType`` for available options (preivous, next and external).
+    ///   - leading: An optional element displayed at the leading position (before the texts).
+    ///     See ``OOUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
+    ///     **Note:** Ignored when `affordanceType` is `.previous`.
+    ///   - trailing: An optional element displayed at the trailing position (after the texts).
+    ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
+    ///   - action: An optional closure triggered when the item is tapped.
+    ///
+    /// - Note: Leading, trailing, and text containers can be aligned using the
+    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
+    public init(data: OUDSListItemData,
+                slot: Slot,
+                affordanceType: OUDSListItemNavigationAffordanceType = .next,
+                leading: OOUDSListItemLeading? = nil,
+                trailing: OUDSListItemTrailing? = nil,
+                action: (() -> Void)? = nil)
+    {
+        self.data = data
+        self.slot = slot
+        self.affordanceType = affordanceType
+        self.leading = leading
+        self.trailing = trailing
+        self.action = action
+    }
+
+    /// Creates a navigable list item with textual data, an affordance type, and an optional action but with no slot.
     ///
     /// ```swift
     ///     let data = OUDSListItemData(label: "Label", description: "Description")
@@ -174,6 +195,7 @@ public struct OUDSListItemNavigation: View {
     /// - Parameters:
     ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///   - affordanceType: The type of navigation affordance indicator to display. Defaults to `.next`.
+    ///     See ``OUDSListItemNavigationAffordanceType`` for available options (preivous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
     ///     See ``OOUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
     ///     **Note:** Ignored when `affordanceType` is `.previous`.
@@ -184,12 +206,13 @@ public struct OUDSListItemNavigation: View {
     /// - Note: Leading, trailing, and text containers can be aligned using the
     ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
-                affordanceType: AffordanceType = .next,
+                affordanceType: OUDSListItemNavigationAffordanceType = .next,
                 leading: OOUDSListItemLeading? = nil,
                 trailing: OUDSListItemTrailing? = nil,
-                action: (() -> Void)? = nil)
+                action: (() -> Void)? = nil) where Slot == EmptyView
     {
         self.data = data
+        slot = EmptyView()
         self.affordanceType = affordanceType
         self.leading = leading
         self.trailing = trailing
@@ -203,10 +226,30 @@ public struct OUDSListItemNavigation: View {
             action?()
         } content: { interactionState in
             ListItemContent(data: data,
+                            slot: slot,
                             affordanceType: affordanceType,
                             leading: leading,
                             trailing: trailing,
                             interactionState: interactionState)
         }
     }
+}
+
+/// The navigation affordance indicator, describing the type of navigation triggered when the item is tapped.
+///
+/// - Since: 2.0.0
+@frozen public enum OUDSListItemNavigationAffordanceType {
+    /// When item is tapped, the next page is opened in navigation.
+    /// A forward chevron is displayed at the trailing edge.
+    case next
+
+    /// When item is tapped, the previous page is presented in navigation.
+    /// A backward chevron is displayed at the leading edge.
+    /// **Note:** When using `.previous`, the leading element is automatically hidden.
+    case previous
+
+    /// When item is tapped, the action is performed outside the application
+    /// (e.g. open a URL in a browser, open a file in an external viewer).
+    /// An external link icon is displayed at the trailing edge.
+    case external
 }
