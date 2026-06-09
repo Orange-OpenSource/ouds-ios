@@ -38,7 +38,7 @@ public struct OUDSLegacyTabBarModifier: ViewModifier {
     /// Instanciates the `OUDSLegacyTabBarModifier` and displays error messages in the standard output
     public init() {
         OL.error("You should not force the legacy layout of the tab bar; please embrace Liquid Glass!")
-        OL.error("You should not use this View Modifier with Xcode 27 and UIDesignRequiresCompatibility set to YES")
+        OL.error("You should not use this OUDSLegacyTabBarModifier with Xcode 27 or with Xcode 26 without UIDesignRequiresCompatibility or set to NO")
     }
 
     /// Defines environement variable to precise the legacy tab bar must be forced
