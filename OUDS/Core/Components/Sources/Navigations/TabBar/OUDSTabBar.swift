@@ -216,6 +216,7 @@ public struct OUDSTabBar<Content: View>: View {
     @State private var isTabBarHidden: Bool = false
     #endif
 
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Initializers
@@ -358,6 +359,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// Determines if the selected tab indicator should be shown, i.e. if iOS lower than 26 in portrait mode.
     private var shouldShowTabIndicator: Bool {
         #if canImport(UIKit) && !os(watchOS)
+        if forceOUDSLegacyTabBar { return true }
         guard isLiquidGlassDisabled else { return false }
         guard UIDevice.current.userInterfaceIdiom == .phone else { return false }
         return !isLandscape
@@ -369,6 +371,7 @@ public struct OUDSTabBar<Content: View>: View {
     /// - Returns Bool: true if iOS lower than 26.0 for iPhone or iOS lower than 18.0 for iPad, false otherwise
     private var hasLegacyLayout: Bool {
         #if canImport(UIKit) && !os(watchOS)
+        if forceOUDSLegacyTabBar { return true }
         // iOS < 26
         if isLiquidGlassDisabled {
             // iPhone
