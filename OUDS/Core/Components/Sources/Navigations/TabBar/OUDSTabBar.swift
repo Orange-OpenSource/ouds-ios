@@ -33,6 +33,8 @@ import SwiftUI
 /// the native API is used instead.
 ///
 /// Because Liquid Glass is available since iOS 26, the tab bar will be liquified / glassified since this OS version, not before.
+/// However if an app is built with Xcode 26 and the flag *UIDesignRequiresCompatibility* set to *YES*, then Loquid Glass won't be applied but the alternative layout.
+/// Nevertheless with Xcode 27 and for iOS 27, Liquid Glass will be always applied, whatever the value of the flag is.
 ///
 /// If you use SF Symbols for images, if they exist their *fill* variant will be automatically used in the tab bar (native behaviour).
 ///
