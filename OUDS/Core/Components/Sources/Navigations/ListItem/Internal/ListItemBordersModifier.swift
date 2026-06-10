@@ -66,7 +66,7 @@ struct ListItemBordersModifier: ViewModifier {
     private var outlinedColor: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
-            theme.colors.actionEnabled
+            theme.colors.borderDefault
         case .hover:
             theme.colors.actionHover
         case .pressed:
@@ -79,13 +79,6 @@ struct ListItemBordersModifier: ViewModifier {
     }
 
     private var dividerColor: MultipleColorSemanticToken {
-        switch interactionState {
-        case .enabled, .hover, .pressed:
-            theme.colors.borderDefault
-        case .disabled:
-            theme.colors.actionDisabled
-        case .readOnly:
-            theme.colors.actionDisabled
-        }
+        theme.colors.borderMuted
     }
 }

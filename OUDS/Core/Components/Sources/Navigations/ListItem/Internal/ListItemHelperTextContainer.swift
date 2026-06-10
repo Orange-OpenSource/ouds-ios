@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-#if !os(watchOS)
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -45,4 +44,3 @@ struct ListItemHelperTextContainer: View {
         interactionState == .disabled ? theme.colors.actionDisabled : theme.colors.contentMuted
     }
 }
-#endif
