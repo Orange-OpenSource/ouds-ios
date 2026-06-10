@@ -62,11 +62,11 @@ import SwiftUI
 ///
 /// Several view modifiers can be applied to customize the appearance and layout of list items:
 ///
-/// - ``SwiftUI/View/oudsListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
-/// - ``SwiftUI/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
-/// - ``SwiftUI/View/oudsListItemStyle(style:)`` — Applies a standard style with optional divider and background.
-/// - ``SwiftUI/View/oudsListCardStyle(hasDdivider:hasBackground:)`` — Applies a card style on list items.
-/// - ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
+/// - ``SwiftUICore/View/oudsListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
+/// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
+/// - ``SwiftUICore/View/oudsListItemStyle(style:)`` — Applies a standard style with optional divider and background.
+/// - ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)`` — Applies a card style on list items.
+/// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
 ///
 /// ```swift
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
@@ -134,7 +134,7 @@ public struct OUDSStaticListItem<Slot: View>: View {
     ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
-    ///   ``SwiftUI/View/oudsListItemContainerAlignment(_:)`` view modifier.
+    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
                 slot: Slot,
                 leading: OUDSListItemLeading? = nil,
@@ -161,7 +161,7 @@ public struct OUDSStaticListItem<Slot: View>: View {
     ///     See ``OUDSListItemTrailing`` for available options (text, badge, tag, icon, image, flag, video, avatar).
     ///
     /// - Note: Leading, trailing, and text containers can be aligned using the
-    ///   ``SwiftUI/View/oudsListItemContainerAlignment(_:)`` view modifier.
+    ///   ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier.
     public init(data: OUDSListItemData,
                 leading: OUDSListItemLeading? = nil,
                 trailing: OUDSListItemTrailing? = nil) where Slot == EmptyView

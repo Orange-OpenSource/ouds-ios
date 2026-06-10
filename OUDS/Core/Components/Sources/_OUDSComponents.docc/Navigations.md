@@ -94,7 +94,7 @@ OUDSStaticListItem(
 
 #### Navigable list item
 
-Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItem/AffordanceType`` defines the visual indicator shown:
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemAffordanceType`` defines the visual indicator shown:
 
 - **`.next`** *(default)* — forward chevron, for in-app navigation to the next screen.
 - **`.previous`** — backward chevron, for in-app navigation to the previous screen. The leading element is automatically hidden.
@@ -163,7 +163,7 @@ The leading position (before the texts) accepts one optional element via ``OUDSL
 | `.video(URL)` | A video thumbnail loaded from a URL |
 | `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
 
-> Note: The leading element is automatically hidden when ``OUDSNavigationListItem/AffordanceType`` is `.previous`.
+> Note: The leading element is automatically hidden when ``OUDSNavigationListItemAffordanceType`` is `.previous`.
 
 #### Trailing elements
 

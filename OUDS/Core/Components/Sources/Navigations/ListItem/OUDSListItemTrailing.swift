@@ -101,11 +101,11 @@ import SwiftUI
 /// ## Media appearance
 ///
 /// Images and videos can be displayed with rounded corners using the
-/// ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` view modifier.
+/// ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` view modifier.
 ///
 /// ## Small size behavior
 ///
-/// When the list item is displayed in small size (via ``SwiftUI/View/oudsListItemSize(_:)``):
+/// When the list item is displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``):
 /// - Trailing elements such as avatars and icons are rendered in their smallest available size.
 /// - The extra label in ``TextType/labelAndExtraLabel(_:_:)`` is **ignored**.
 ///
@@ -130,7 +130,7 @@ import SwiftUI
 
         /// A default label paired with an additional extra label displayed below it.
         ///
-        /// **Note:** For small size of the list item (via ``SwiftUI/View/oudsListItemSize(_:)``),
+        /// **Note:** For small size of the list item (via ``SwiftUICore/View/oudsListItemSize(_:)``),
         /// the extra label is **ignored** and only the primary label is shown.
         case labelAndExtraLabel(Text, Text)
     }
@@ -159,7 +159,7 @@ import SwiftUI
 
     /// A static image asset.
     ///
-    /// Use ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
+    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
     case image(asset: Image)
 
     /// A country flag image.
@@ -167,7 +167,7 @@ import SwiftUI
 
     /// A video thumbnail loaded from the given URL.
     ///
-    /// Use ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
+    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
     case video(URL)
 
     /// An avatar with icon, initials, or image.

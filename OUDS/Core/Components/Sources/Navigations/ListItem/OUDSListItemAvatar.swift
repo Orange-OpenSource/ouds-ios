@@ -36,7 +36,7 @@ import SwiftUI
 /// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
 ///
 /// **Note:** When the avatar is embedded in a list item with small size
-/// (via ``SwiftUI/View/oudsListItemSize(_:)``), the `size` parameter is **ignored**
+/// (via ``SwiftUICore/View/oudsListItemSize(_:)``), the `size` parameter is **ignored**
 /// and the avatar is always rendered at its smallest available size.
 ///
 /// ## Badge
@@ -86,7 +86,7 @@ import SwiftUI
 /// ## Containers alignment
 ///
 /// The avatar, along with other leading/trailing elements and the text container, can be
-/// vertically aligned using the ``SwiftUI/View/oudsListItemContainerAlignment(_:)`` view modifier
+/// vertically aligned using the ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier
 /// (`.center` by default, or `.top`).
 ///
 /// - Since: 2.2.0
@@ -116,7 +116,7 @@ public struct OUDSListItemAvatar: View {
     ///
     /// The actual rendered size is determined by the theme's `controlItem` size tokens.
     /// When the avatar is embedded in a list item with `.small` size
-    /// (via ``SwiftUI/View/oudsListItemSize(_:)``), this parameter is ignored
+    /// (via ``SwiftUICore/View/oudsListItemSize(_:)``), this parameter is ignored
     /// and the smallest size is always used.
     ///
     /// - Since: 2.2.0
@@ -148,7 +148,7 @@ public struct OUDSListItemAvatar: View {
     /// - Parameters:
     ///    - type: The type of content displayed inside the avatar. See ``AvatarType``.
     ///    - size: The size of the avatar. Defaults to `.medium`.
-    /// **Note:** Ignored when embedded in a list item with small size (via ``SwiftUI/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    /// **Note:** Ignored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///    - badge: An optional ``OUDSBadge`` displayed at the bottom-trailing corner of the avatar. Defaults to `nil`.
     public init(type: AvatarType, size: Size, badge: OUDSBadge? = nil) {
         self.type = type
