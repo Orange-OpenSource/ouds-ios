@@ -58,6 +58,30 @@ import SwiftUI
 ///     )
 /// ```
 ///
+/// ## Leading elements
+///
+///  The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
+///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
+///  - `.image(asset:)`: A static image asset
+///  - `.flag(asset:)`: A country flag image
+///  - `.video(URL)`: A video thumbnail loaded from a URL
+/// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///
+/// ## Trailing elements
+///
+/// The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``, like:
+/// - `.text(.label(Text))`: A default-styled label
+/// - `.text(.labelMuted(Text))`: A muted (secondary) label
+/// - `.text(.labelStrong(Text))`: An emphasized (bold) label
+/// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
+/// - `.badge(OUDSBadge)`: A badge with count or status
+/// - `.tag(OUDSTag)`: A tag for categorization
+/// - `.icon(OUDSListItemIcon)`: A status or custom icon
+/// - `.image(asset:)`:  A static image asset
+/// - `.flag(asset:)`: A country flag image
+/// - `.video(URL)`: A video thumbnail loaded from a URL
+/// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///
 /// ## View modifiers
 ///
 /// Several view modifiers can be applied to customize the appearance and layout of list items:
@@ -79,32 +103,28 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
 ///
-/// ## Design documentation
-///
-/// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-link)
-///
 /// ## Themes rendering
 ///
 /// ### Orange
 ///
-/// ![A list item component in light and dark modes with Orange theme](component_list_item_static_Orange)
+/// ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![A list item component in light and dark modes with Orange Compact theme](component_list_item_static_OrangeCompact)
+/// ![A list item component in light and dark modes with Orange Compact theme](component_static_list_item_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![A list item component in light and dark modes with Sosh theme](component_list_item_static_Sosh)
+/// ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A list item component in light and dark modes with Wireframe theme](component_list_item_static_Wireframe)
+/// ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
 ///
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSStaticListItem<Slot: View>: View {
+public struct OUDSStaticListItem<Slot: View>: View { // TODO: #265 - Use suitable short link for DSM documentation
 
     // MARK: - Stored Properties
 
