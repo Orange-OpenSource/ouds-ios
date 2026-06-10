@@ -38,7 +38,8 @@ extension EnvironmentValues {
     /// The environment entry default is *false*.
     /// When using `OUDSThemeableView` (the recommended integration path), this value may be overridden to *true*
     /// on iOS versions earlier than 26 or when the app enables *UIDesignRequiresCompatibility* in the
-    /// *main Bundle* `Info.plist`.
+    /// *main Bundle* `Info.plist` if Xcode 26.
+    /// For Xcode 27, will be always `false` as Apple forces Liquid Glass.
     @Entry public var isLiquidGlassDisabled: Bool = false
 }
 
@@ -69,9 +70,11 @@ public struct OUDSThemeableView<Content: View>: View {
     private let content: () -> Content
 
     private static var isLiquidGlassDisabled: Bool {
-        if #available(iOS 26.0, *) {
+        if #available(iOS 27.0, *) { // Liquid Glass mandatory for iOS 27 (so Xcode 27)
+            false
+        } else if #available(iOS 26.0, *) { // Liquid Glass optional for iOS 26 (with Xcode 26)
             (Bundle.main.object(forInfoDictionaryKey: "UIDesignRequiresCompatibility") as? Bool) ?? false
-        } else {
+        } else { // Liquid Glass unavailable for iOS 18 and lower
             true
         }
     }
