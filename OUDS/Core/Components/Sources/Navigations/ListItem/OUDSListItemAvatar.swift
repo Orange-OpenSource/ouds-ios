@@ -228,7 +228,6 @@ public struct OUDSListItemAvatar: View {
             case .large:
                 theme.controlItem.sizeAssetLarge
             case .extraLarge:
-                // TODO: a vérifier car figma 2xlarge
                 theme.controlItem.sizeAssetXlarge
             }
         case .small:

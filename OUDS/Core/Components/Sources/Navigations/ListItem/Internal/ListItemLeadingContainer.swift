@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import AVKit
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -46,6 +45,8 @@ struct ListItemLeadingContainer: View {
         .disabled(interactionState == .disabled)
         .frame(minHeight: assetSize, alignment: .center)
     }
+
+    // MARK: - Size
 
     private var assetSize: CGFloat {
         switch itemSize {
