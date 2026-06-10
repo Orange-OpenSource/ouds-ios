@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A list item component used to display a row of static (non-interactive, non-navigable) content within a list.
@@ -115,7 +114,6 @@ public struct OUDSListStaticItem<Slot: View>: View {
     private let trailing: OUDSListItemTrailing?
 
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.theme) private var theme
 
     // MARK: - Initializer
 

@@ -177,7 +177,6 @@ public struct OUDSListItemAvatar: View {
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
@@ -247,22 +246,6 @@ public struct OUDSListItemAvatar: View {
                 24
             case .extraLarge:
                 36
-            }
-        }
-    }
-
-    private var badgeSize: OUDSBadge.StandardSize {
-        switch itemSize {
-        case .small:
-            .extraSmall
-        case .standard:
-            switch size {
-            case .medium:
-                .extraSmall
-            case .large:
-                .small
-            case .extraLarge:
-                .medium
             }
         }
     }

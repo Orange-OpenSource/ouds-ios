@@ -100,35 +100,6 @@ struct ListItemImage: View {
     }
 }
 
-struct ListItemIcon: View {
-
-    // MARK: - Properties
-
-    let asset: Image
-    let small: Bool
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-
-    // MARK: - Body
-
-    var body: some View {
-        asset
-            .resizable()
-            .renderingMode(.template)
-            .aspectRatio(contentMode: .fit)
-            .foregroundColor(color)
-            .frame(width: assetSize, height: assetSize, alignment: .center)
-    }
-
-    private var color: MultipleColorSemanticToken {
-        isEnabled ? theme.colors.contentDefault : theme.colors.contentDisabled
-    }
-
-    private var assetSize: CGFloat {
-        small ? theme.controlItem.sizeAssetSmall : theme.controlItem.sizeAssetMedium
-    }
-}
-
 struct ListItemFlag: View {
 
     // MARK: - Properties
