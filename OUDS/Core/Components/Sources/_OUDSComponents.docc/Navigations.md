@@ -53,16 +53,16 @@ Use ``OUDSStaticListItem`` when the row is display-only and should not trigger a
 
 @TabNavigator {
     @Tab("Orange") {
-        ![A list item component in light and dark modes with Orange theme](component_list_item_static_Orange)
+        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
     }
     @Tab("Orange Compact") {
-        ![A list item component in light and dark modes with Orange compact theme](component_list_item_static_OrangeCompact)
+        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
     }
     @Tab("Sosh") {
-        ![A list item component in light and dark modes with Sosh theme](component_list_item_static_Sosh)
+        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
     }
     @Tab("Wireframe") {
-        ![A list item component in light and dark modes with Wireframe theme](component_list_item_static_Wireframe)
+        ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
     }
 }
 
@@ -96,22 +96,18 @@ OUDSStaticListItem(
 
 Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemAffordanceType`` defines the visual indicator shown:
 
-- **`.next`** *(default)* — forward chevron, for in-app navigation to the next screen.
-- **`.previous`** — backward chevron, for in-app navigation to the previous screen. The leading element is automatically hidden.
-- **`.external`** — external link icon, for actions opening content outside the app.
-
 @TabNavigator {
     @Tab("Orange") {
-        ![A list item component in light and dark modes with Orange theme](component_list_item_navigation_Orange)
+        ![A list item component in light and dark modes with Orange theme](component_navigation_list_item_Orange)
     }
     @Tab("Orange Compact") {
-        ![A list item component in light and dark modes with Orange compact theme](component_list_item_navigation_OrangeCompact)
+        ![A list item component in light and dark modes with Orange compact theme](component_navigation_list_item_OrangeCompact)
     }
     @Tab("Sosh") {
-        ![A list item component in light and dark modes with Sosh theme](component_list_item_navigation_Sosh)
+        ![A list item component in light and dark modes with Sosh theme](component_navigation_list_item_Sosh)
     }
     @Tab("Wireframe") {
-        ![A list item component in light and dark modes with Wireframe theme](component_list_item_navigation_Wireframe)
+        ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
     }
 }
 
@@ -150,64 +146,6 @@ OUDSNavigationListItem(
     // Navigate to profile
 }
 ```
-
-#### Leading elements
-
-The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
-
-| Case | Description |
-|------|-------------|
-| `.icon(OUDSListItemIcon)` | A status or custom icon (neutral, info, warning, negative, positive) |
-| `.image(asset:)` | A static image asset |
-| `.flag(asset:)` | A country flag image |
-| `.video(URL)` | A video thumbnail loaded from a URL |
-| `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
-
-> Note: The leading element is automatically hidden when ``OUDSNavigationListItemAffordanceType`` is `.previous`.
-
-#### Trailing elements
-
-The trailing position (after the texts) accepts one optional element via ``OUDSListItemTrailing``:
-
-| Case | Description |
-|------|-------------|
-| `.text(.label(Text))` | A default-styled label |
-| `.text(.labelMuted(Text))` | A muted (secondary) label |
-| `.text(.labelStrong(Text))` | An emphasized (bold) label |
-| `.text(.labelAndExtraLabel(Text, Text))` | A label with an additional extra label below |
-| `.badge(OUDSBadge)` | A badge with count or status |
-| `.tag(OUDSTag)` | A tag for categorization |
-| `.icon(OUDSListItemIcon)` | A status or custom icon |
-| `.image(asset:)` | A static image asset |
-| `.flag(asset:)` | A country flag image |
-| `.video(URL)` | A video thumbnail loaded from a URL |
-| `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
-
-#### View modifiers
-
-Several view modifiers are available to customize the appearance and layout of list items:
-
-| Modifier | Description |
-|----------|-------------|
-| `.oudsListItemSize(.standard` or `.small)` | Sets the size of the item |
-| `.oudsListItemContainerAlignment(.top` or `.center)` | Aligns leading, trailing, and text containers |
-| `.oudsListItemStyle(style:)` | Applies a standard style with optional divider and background |
-| `.oudsListCardStyle(hasDdivider:hasBackground:)` | Applies a card style on list items |
-| `.oudsListItemRoundedMedia(_:)` | Defines whether media (images, videos) use rounded corners |
-
-```swift
-OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Settings"),
-    affordanceType: .next
-) {
-    // Navigate to settings
-}
-.oudsListItemSize(.small)
-.oudsListItemContainerAlignment(.top)
-.oudsListItemStyle(style: .outlined)
-```
-
-> Note: In `.small` size, the `overline` and `extraLabel` fields of ``OUDSListItemData`` are automatically hidden.
 
 ### Tab bars
 
