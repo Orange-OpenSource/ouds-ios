@@ -43,13 +43,13 @@ OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to proc
 
 ### List items
 
-The ``OUDSListStaticItem`` displays a non-interactive row of information, while ``OUDSListItemNavigation`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
 
 Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
 
 #### Static list item
 
-Use ``OUDSListStaticItem`` when the row is display-only and should not trigger any action or navigation.
+Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
 
 @TabNavigator {
     @Tab("Orange") {
@@ -69,10 +69,10 @@ Use ``OUDSListStaticItem`` when the row is display-only and should not trigger a
 
 ```swift
 // Simple list item with a label only
-OUDSListStaticItem(data: OUDSListItemData(label: "Label"))
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 
 // List item with full textual content
-OUDSListStaticItem(data: OUDSListItemData(
+OUDSStaticListItem(data: OUDSListItemData(
     label: "Label",
     isBoldLabel: true,
     description: "Description",
@@ -82,10 +82,10 @@ OUDSListStaticItem(data: OUDSListItemData(
 ))
 
 // List item with a leading icon and a trailing badge
-let icon = OUDSLIstItemIcon(type: .info, size: .medium)
+let icon = OUDSListItemIcon(type: .info, size: .medium)
 let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
-OUDSListStaticItem(
+OUDSStaticListItem(
     data: OUDSListItemData(label: "Notifications"),
     leading: .icon(icon),
     trailing: .badge(badge)
@@ -94,7 +94,7 @@ OUDSListStaticItem(
 
 #### Navigable list item
 
-Use ``OUDSListItemNavigation`` when tapping the row should trigger an action. The ``OUDSListItemNavigation/AffordanceType`` defines the visual indicator shown:
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItem/AffordanceType`` defines the visual indicator shown:
 
 - **`.next`** *(default)* — forward chevron, for in-app navigation to the next screen.
 - **`.previous`** — backward chevron, for in-app navigation to the previous screen. The leading element is automatically hidden.
@@ -117,14 +117,14 @@ Use ``OUDSListItemNavigation`` when tapping the row should trigger an action. Th
 
 ```swift
 // Forward navigation (default)
-OUDSListItemNavigation(
+OUDSNavigationListItem(
     data: OUDSListItemData(label: "Next screen")
 ) {
     // Navigate to next screen
 }
 
 // External navigation
-OUDSListItemNavigation(
+OUDSNavigationListItem(
     data: OUDSListItemData(label: "Open website"),
     affordanceType: .external
 ) {
@@ -132,7 +132,7 @@ OUDSListItemNavigation(
 }
 
 // Backward navigation
-OUDSListItemNavigation(
+OUDSNavigationListItem(
     data: OUDSListItemData(label: "Go back"),
     affordanceType: .previous
 ) {
@@ -142,7 +142,7 @@ OUDSListItemNavigation(
 // With a leading avatar and a trailing text
 let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
 
-OUDSListItemNavigation(
+OUDSNavigationListItem(
     data: OUDSListItemData(label: "Profile", description: "View your profile"),
     leading: .avatar(avatar),
     trailing: .text(.labelMuted(Text("Details")))
@@ -153,17 +153,17 @@ OUDSListItemNavigation(
 
 #### Leading elements
 
-The leading position (before the texts) accepts one optional element via ``OOUDSListItemLeading``:
+The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
 
 | Case | Description |
 |------|-------------|
-| `.icon(OUDSLIstItemIcon)` | A status or custom icon (neutral, info, warning, negative, positive) |
+| `.icon(OUDSListItemIcon)` | A status or custom icon (neutral, info, warning, negative, positive) |
 | `.image(asset:)` | A static image asset |
 | `.flag(asset:)` | A country flag image |
 | `.video(URL)` | A video thumbnail loaded from a URL |
 | `.avatar(OUDSListItemAvatar)` | An avatar with icon, initials, or image |
 
-> Note: The leading element is automatically hidden when ``OUDSListItemNavigation/AffordanceType`` is `.previous`.
+> Note: The leading element is automatically hidden when ``OUDSNavigationListItem/AffordanceType`` is `.previous`.
 
 #### Trailing elements
 
@@ -177,7 +177,7 @@ The trailing position (after the texts) accepts one optional element via ``OUDSL
 | `.text(.labelAndExtraLabel(Text, Text))` | A label with an additional extra label below |
 | `.badge(OUDSBadge)` | A badge with count or status |
 | `.tag(OUDSTag)` | A tag for categorization |
-| `.icon(OUDSLIstItemIcon)` | A status or custom icon |
+| `.icon(OUDSListItemIcon)` | A status or custom icon |
 | `.image(asset:)` | A static image asset |
 | `.flag(asset:)` | A country flag image |
 | `.video(URL)` | A video thumbnail loaded from a URL |
@@ -196,7 +196,7 @@ Several view modifiers are available to customize the appearance and layout of l
 | `.oudsListItemRoundedMedia(_:)` | Defines whether media (images, videos) use rounded corners |
 
 ```swift
-OUDSListItemNavigation(
+OUDSNavigationListItem(
     data: OUDSListItemData(label: "Settings"),
     affordanceType: .next
 ) {

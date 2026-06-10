@@ -17,14 +17,14 @@ import SwiftUI
 
 struct ListItemTrailingTexts: View {
 
-    // MARK: - Properties
-
     let textType: OUDSListItemTrailing.TextType
 
-    @Environment(\.isEnabled) private var isEnabled
+    // MARK: - Properties
+
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemContainersAlignment) private var alignment
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.oudsListItemContainersAlignment) private var alignment
 
     // MARK: - Body
 

@@ -16,17 +16,17 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ListItemContent` view so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
-/// The divider and the ouline effetc can be affected by the rounded corner flag of the theme tuning.
+/// The divider and the ouline effetct can be affected by the rounded corner flag of the theme `Tuning`.
 struct ListItemBordersModifier: ViewModifier {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 
-    // MARK: Body
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         switch style {
@@ -40,7 +40,7 @@ struct ListItemBordersModifier: ViewModifier {
         case let .standard(divider, _):
             if divider {
                 if theme.tuning.hasRoundedListItems {
-                    // TODO: A udated
+                    // TODO: #265 - To be updated
                     content
                         .shadow(theme.elevations.raised)
                 } else {
@@ -56,7 +56,7 @@ struct ListItemBordersModifier: ViewModifier {
         }
     }
 
-    // MARK: Helpers
+    // MARK: - Helpers
 
     private var radius: BorderRadiusSemanticToken {
         theme.tuning.hasRoundedListItems ? theme.controlItem.borderRadiusRounded : theme.controlItem.borderRadiusDefault

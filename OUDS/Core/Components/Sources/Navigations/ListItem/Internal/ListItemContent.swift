@@ -15,7 +15,7 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The content for the ``OUDSListStaticItem`` and the ``OUDSListItemNavigation`` component described by the ``OUDSListItemData``.
+/// The content for the ``OUDSStaticListItem`` and the ``OUDSNavigationListItem`` component described by the ``OUDSListItemData``.
 /// The layout (divider, background, size) are updated according to the interaction state ``InteractionState``.
 struct ListItemContent<Slot: View>: View {
 
@@ -23,14 +23,14 @@ struct ListItemContent<Slot: View>: View {
 
     let data: OUDSListItemData
     let slot: Slot
-    let affordanceType: OUDSListItemNavigationAffordanceType?
-    let leading: OOUDSListItemLeading?
+    let affordanceType: OUDSNavigationListItemAffordanceType?
+    let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemContainersAlignment) private var containersAlignment
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.oudsListItemContainersAlignment) private var containersAlignment
 
     // MARK: - Body
 
@@ -75,8 +75,9 @@ struct ListItemContent<Slot: View>: View {
     }
 
     // MARK: - Containers
+
     @ViewBuilder
-    private func leadingContainer(_ leading: OOUDSListItemLeading) -> some View {
+    private func leadingContainer(_ leading: OUDSListItemLeading) -> some View {
         // Remove leading element if previous affordance is presented
         if affordanceType != .previous {
             ListItemLeadingContainer(leading: leading, interactionState: interactionState)

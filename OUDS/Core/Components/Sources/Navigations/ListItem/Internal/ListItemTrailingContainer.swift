@@ -15,11 +15,10 @@ import AVKit
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the trailing container of the `ListItemContent`.
-///
+/// Trailing container of the ``ListItemContent``.
 struct ListItemTrailingContainer: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let trailing: OUDSListItemTrailing
     let interactionState: InteractionState
@@ -54,7 +53,7 @@ struct ListItemTrailingContainer: View {
         .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Size
+    // MARK: - Helper
 
     private var minHeight: CGFloat {
         switch itemSize {

@@ -14,12 +14,12 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// This is the leading container of the `ListItemContent.
+/// This is the leading container of the ``ListItemContent``.
 struct ListItemLeadingContainer: View {
 
     // MARK: - Properties
 
-    let leading: OOUDSListItemLeading
+    let leading: OUDSListItemLeading
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme

@@ -18,7 +18,7 @@ import SwiftUI
 /// A `ViewModifier` to apply to `ListItemContent` views so as to define the background
 struct ListItemBackgroundModifier: ViewModifier {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let interactionState: InteractionState
 

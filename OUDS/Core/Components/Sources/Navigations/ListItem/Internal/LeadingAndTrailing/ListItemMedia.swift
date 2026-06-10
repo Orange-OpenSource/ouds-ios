@@ -15,25 +15,27 @@ import AVKit
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - List Item Video
+
 struct ListItemVideo: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let url: URL
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         HStack {
             let player = AVPlayer(url: url)
             VideoPlayer(player: player)
                 .aspectRatio(contentMode: .fit)
-                .opacity(opcity)
+                .opacity(opacity)
                 .frame(height: assetSize, alignment: .center)
                 .clipShape(RoundedRectangle(cornerRadius: radius))
                 .onAppear {
@@ -42,13 +44,13 @@ struct ListItemVideo: View {
         }
     }
 
-    // MARK: - Heleprs
+    // MARK: Helpers
 
     private var radius: BorderRadiusSemanticToken {
         roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
     }
 
-    private var opcity: Double {
+    private var opacity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
@@ -62,9 +64,11 @@ struct ListItemVideo: View {
     }
 }
 
+// MARK: - List Item Image
+
 struct ListItemImage: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let asset: Image
 
@@ -73,20 +77,24 @@ struct ListItemImage: View {
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.isEnabled) private var isEnabled
 
+    // MARK: Body
+
     var body: some View {
         asset
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .opacity(opcity)
+            .opacity(opacity)
             .frame(height: assetSize, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: radius))
     }
+
+    // MARK: Helpers
 
     private var radius: BorderRadiusSemanticToken {
         roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
     }
 
-    private var opcity: Double {
+    private var opacity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
@@ -100,30 +108,34 @@ struct ListItemImage: View {
     }
 }
 
+// MARK: - List Item Flag
+
 struct ListItemFlag: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     let asset: Image
 
-    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
 
-    // MARK: - Body
+    // MARK: Body
 
     var body: some View {
         HStack {
             asset
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .opacity(opcity)
+                .opacity(opacity)
                 .frame(height: theme.controlItem.sizeFlagHeight, alignment: .center)
         }
         .frame(minWidth: assetSize, alignment: .center)
     }
 
-    private var opcity: Double {
+    // MARK: Helpers
+
+    private var opacity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled
     }
 
