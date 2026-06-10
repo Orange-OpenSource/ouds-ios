@@ -15,8 +15,6 @@ import OUDSThemesContract
 @testable import OUDSThemesSosh
 import Testing
 
-// swiftlint:disable force_cast
-
 /// Check if the theme has the default configuration and tokens providers with the expected types.
 struct SoshThemeTests {
 
@@ -195,5 +193,3 @@ struct SoshThemeTests {
         #expect(theme.typography is SoshThemeTypographyComponentTokensProvider)
     }
 }
-
-// swiftlint:enable force_cast
