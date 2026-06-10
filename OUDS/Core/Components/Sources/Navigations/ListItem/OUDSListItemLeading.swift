@@ -68,11 +68,11 @@ import SwiftUI
 ///
 /// ## Media appearance
 ///
-/// Images and videos can be displayed with rounded corners using the  ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` view modifier.
+/// Images and videos can be displayed with rounded corners using the  ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` view modifier.
 ///
 /// ## Small size behavior
 ///
-/// When the list item is displayed in small size (via ``SwiftUI/View/oudsListItemSize(_:)``), leading elements such as avatars and icons
+/// When the list item is displayed in small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), leading elements such as avatars and icons
 /// are rendered in their smallest available size.
 ///
 /// - Since: 2.2.0
@@ -86,7 +86,7 @@ import SwiftUI
 
     /// A static image asset displayed at the leading position.
     ///
-    /// The image is displayed as-is. Use ``SwiftUI/View/oudsListItemRoundedMedia(_:)``
+    /// The image is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
     /// to apply rounded corners.
     case image(asset: Image)
 
@@ -95,7 +95,7 @@ import SwiftUI
 
     /// A video thumbnail loaded from the given URL, displayed at the leading position.
     ///
-    /// Use ``SwiftUI/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
+    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
     case video(URL)
 
     /// An avatar displayed at the leading position.

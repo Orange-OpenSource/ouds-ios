@@ -17,7 +17,7 @@ import SwiftUI
 /// Defines the vertical alignment of the leading, trailing, and text containers
 /// within a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
-/// Use the ``SwiftUI/View/oudsListItemContainerAlignment(_:)`` view modifier
+/// Use the ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` view modifier
 /// to apply the alignment on list items.
 ///
 /// ## Code sample
@@ -43,8 +43,8 @@ import SwiftUI
 /// Defines the visual style of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// The style controls the border, divider, and background appearance of list items.
-/// Use the ``SwiftUI/View/oudsListItemStyle(style:)`` or
-/// ``SwiftUI/View/oudsListCardStyle(hasDdivider:hasBackground:)`` view modifiers
+/// Use the ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+/// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)`` view modifiers
 /// to apply the style on list items.
 ///
 /// ## Code samples
@@ -82,7 +82,7 @@ import SwiftUI
 /// The size affects the padding, the visibility of certain text fields, and the size of
 /// leading/trailing elements within the list item.
 ///
-/// Use the ``SwiftUI/View/oudsListItemSize(_:)`` view modifier to apply the size on list items.
+/// Use the ``SwiftUICore/View/oudsListItemSize(_:)`` view modifier to apply the size on list items.
 ///
 /// ## Code samples
 ///
@@ -240,26 +240,26 @@ extension EnvironmentValues {
     /// The current vertical alignment of leading, trailing, and text containers in list items.
     ///
     /// Defaults to ``OUDSListItemContainersAlignment/center``.
-    /// Set via ``SwiftUI/View/oudsListItemContainerAlignment(_:)``.
+    /// Set via ``SwiftUICore/View/oudsListItemContainerAlignment(_:)``.
     @Entry var oudsListItemContainersAlignment: OUDSListItemContainersAlignment = .center
 
     /// The current content style of list items (outlined, standard with divider/background).
     ///
     /// Defaults to `.standard(divider: true, background: false)`.
-    /// Set via ``SwiftUI/View/oudsListItemStyle(style:)`` or
-    /// ``SwiftUI/View/oudsListCardStyle(hasDdivider:hasBackground:)``.
+    /// Set via ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+    /// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
 
     /// Whether media elements (images and videos) in list items should be displayed
     /// with rounded corners.
     ///
     /// Defaults to `false` (square corners).
-    /// Set via ``SwiftUI/View/oudsListItemRoundedMedia(_:)``.
+    /// Set via ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``.
     @Entry var oudsListItemRoundedMedia: Bool = false
 
     /// The current size of list items.
     ///
     /// Defaults to ``OUDSListItemSize/standard``.
-    /// Set via ``SwiftUI/View/oudsListItemSize(_:)``.
+    /// Set via ``SwiftUICore/View/oudsListItemSize(_:)``.
     @Entry var oudsListItemSize: OUDSListItemSize = .standard
 }

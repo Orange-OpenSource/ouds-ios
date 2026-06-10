@@ -26,9 +26,9 @@ import SwiftUI
 /// - **isBoldLabel**: When `true`, the label is rendered with a bold font weight. Defaults to `false`.
 /// - **description**: A secondary text displayed below the label, providing additional context.
 /// - **overline**: A small text displayed above the label, often used for categories or metadata.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUI/View/oudsListItemSize(_:)``).
+///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
 /// - **extraLabel**: An additional text displayed below the description.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUI/View/oudsListItemSize(_:)``).
+///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
 /// - **helperText**: A supporting text displayed below the list item row, outside the main content area,
 ///   typically used for guidance or additional information.
 ///

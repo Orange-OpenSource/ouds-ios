@@ -18,7 +18,7 @@ import SwiftUI
 // TODO: #265 - Replace with incoming icon component
 
 /// An icon element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSListStaticItem`` or ``OUDSNavigationListItem``.
+/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// ``OUDSListItemIcon`` displays a status icon (info, warning, positive, negative) with a predefined asset,
 /// or a custom neutral icon from a provided image. Each icon type has a semantic color applied automatically
@@ -45,7 +45,7 @@ import SwiftUI
 /// - **`.large`**: The largest size, corresponding to the theme's `controlItem.sizeAssetLarge` token.
 ///
 /// **Note:** When the icon is embedded in a list item with small size
-/// (via ``SwiftUI/View/oudsListItemSize(_:)``), the icon is always rendered at its smallest size
+/// (via `SwiftUI/View/oudsListItemSize(_:)`), the icon is always rendered at its smallest size
 /// regardless of the `size` parameter.
 ///
 /// ## Code samples
@@ -143,7 +143,7 @@ public struct OUDSListItemIcon: View {
     ///   - type: The type of icon to display. See ``IconType`` for available options.
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
-    ///     (via ``SwiftUI/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     public init(type: IconType, size: Size = .medium) {
         self.type = type
         self.size = size
