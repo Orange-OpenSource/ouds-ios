@@ -25,7 +25,6 @@ struct ListItemTrailingContainer: View {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemContainersAlignment) private var alignment
     @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: Body
@@ -55,16 +54,7 @@ struct ListItemTrailingContainer: View {
         .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Colors
-
-    private var textColor: MultipleColorSemanticToken {
-        switch interactionState {
-        case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.contentDefault
-        case .disabled:
-            theme.colors.contentDisabled
-        }
-    }
+    // MARK: - Size
 
     private var minHeight: CGFloat {
         switch itemSize {
