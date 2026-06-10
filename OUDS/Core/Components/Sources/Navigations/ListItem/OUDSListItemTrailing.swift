@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
 import SwiftUI
 
 /// Defines the elements that can be displayed at the trailing position (after the texts)

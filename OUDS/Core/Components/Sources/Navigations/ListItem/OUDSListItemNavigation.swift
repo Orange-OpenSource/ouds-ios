@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A list item component used to display a row of interactive, navigable content within a list.
@@ -137,10 +136,6 @@ public struct OUDSListItemNavigation<Slot: View>: View {
     private let action: (() -> Void)?
     private let leading: OOUDSListItemLeading?
     private let trailing: OUDSListItemTrailing?
-
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: - Initializer
 
