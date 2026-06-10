@@ -15,9 +15,9 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Represents the textual content displayed within a list item component such as
-/// ``OUDSListStaticItem`` or ``OUDSListItemNavigation``.
+/// ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
-/// `OUDSListItemData` groups all the text-based information that a list item can display:
+/// ``OUDSListItemData`` groups all the text-based information that a list item can display:
 /// a mandatory label, and optional description, overline, extra label, and helper text.
 ///
 /// ## Properties
@@ -26,9 +26,9 @@ import SwiftUI
 /// - **isBoldLabel**: When `true`, the label is rendered with a bold font weight. Defaults to `false`.
 /// - **description**: A secondary text displayed below the label, providing additional context.
 /// - **overline**: A small text displayed above the label, often used for categories or metadata.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
+///   **Ignored when the list item size is `.small`** (see ``SwiftUI/View/oudsListItemSize(_:)``).
 /// - **extraLabel**: An additional text displayed below the description.
-///   **Ignored when the list item size is `.small`** (see ``SwiftUICore/View/oudsListItemSize(_:)``).
+///   **Ignored when the list item size is `.small`** (see ``SwiftUI/View/oudsListItemSize(_:)``).
 /// - **helperText**: A supporting text displayed below the list item row, outside the main content area,
 ///   typically used for guidance or additional information.
 ///
@@ -52,10 +52,10 @@ import SwiftUI
 ///     )
 ///
 ///     // Usage with a static list item
-///     OUDSListStaticItem(data: data)
+///     OUDSStaticListItem(data: data)
 ///
-///     // Usage with a navigable list item
-///     OUDSListItemNavigation(data: data) {
+///     // Usage with a navigation list item
+///     OUDSNavigationListItem(data: data) {
 ///         // Navigate to next screen
 ///     }
 /// ```
@@ -68,7 +68,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // overline and extraLabel will not be displayed
-///     OUDSListStaticItem(data: OUDSListItemData(
+///     OUDSStaticListItem(data: OUDSListItemData(
 ///         label: "Label",
 ///         overline: "Hidden in small",
 ///         extraLabel: "Also hidden in small"
@@ -76,7 +76,8 @@ import SwiftUI
 ///     .oudsListItemSize(.small)
 /// ```
 ///
-/// - Since: 2.0.0
+/// - Since: 2.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemData {
 
     /// The primary text of the list item. Always visible.

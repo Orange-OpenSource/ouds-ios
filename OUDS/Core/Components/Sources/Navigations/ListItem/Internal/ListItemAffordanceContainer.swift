@@ -14,18 +14,20 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A conainer to display the affordance accoring to its type and apply the right color based on the `InteractionState`.
+/// A container to display the affordance according to its type and apply the right color based on the `InteractionState`.
 /// For RTL,  the next and previous affordance change there assets according to the `LayoutDirection`.
 struct ListItemAffordanceContainer: View {
 
     // MARK: - Properties
 
-    let type: OUDSListItemNavigationAffordanceType?
+    let type: OUDSNavigationListItemAffordanceType?
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.oudsListItemSize) private var size
+    @Environment(\.layoutDirection) private var layoutDirection
+
+    // MARK: - Body
 
     var body: some View {
         if let assetName {

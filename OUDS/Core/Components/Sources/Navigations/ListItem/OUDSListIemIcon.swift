@@ -15,12 +15,12 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: remplacer avec le composant à venir
+// TODO: #265 - Replace with incoming icon component
 
 /// An icon element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSListStaticItem`` or ``OUDSListItemNavigation``.
+/// such as ``OUDSListStaticItem`` or ``OUDSNavigationListItem``.
 ///
-/// `OUDSLIstItemIcon` displays a status icon (info, warning, positive, negative) with a predefined asset,
+/// ``OUDSListItemIcon`` displays a status icon (info, warning, positive, negative) with a predefined asset,
 /// or a custom neutral icon from a provided image. Each icon type has a semantic color applied automatically
 /// based on the current theme.
 ///
@@ -29,7 +29,6 @@ import SwiftUI
 /// ## Icon types
 ///
 /// The ``IconType`` enum defines the available icon variants:
-///
 /// - **`.neutral(asset:badge:)`**: A custom icon from a provided `Image` asset, rendered with the default
 ///   content color. An optional notification badge (small dot) can be displayed at the top-trailing corner.
 /// - **`.positive`**: A predefined checkmark/confirmation icon with a positive (green) semantic color.
@@ -41,62 +40,56 @@ import SwiftUI
 /// ## Sizes
 ///
 /// The ``Size`` enum defines the available sizes:
-///
 /// - **`.small`**: The smallest size, corresponding to the theme's `controlItem.sizeAssetSmall` token.
 /// - **`.medium`**: The default size, corresponding to the theme's `controlItem.sizeAssetMedium` token.
 /// - **`.large`**: The largest size, corresponding to the theme's `controlItem.sizeAssetLarge` token.
 ///
 /// **Note:** When the icon is embedded in a list item with small size
-/// (via ``SwiftUICore/View/oudsListItemSize(_:)``), the icon is always rendered at its smallest size
+/// (via ``SwiftUI/View/oudsListItemSize(_:)``), the icon is always rendered at its smallest size
 /// regardless of the `size` parameter.
 ///
 /// ## Code samples
 ///
 /// ```swift
 ///     // Info icon with medium size (default)
-///     OUDSLIstItemIcon(type: .info)
+///     OUDSListItemIcon(type: .info)
 ///
 ///     // Warning icon with large size
-///     OUDSLIstItemIcon(type: .warning, size: .large)
+///     OUDSListItemIcon(type: .warning, size: .large)
 ///
 ///     // Positive icon with small size
-///     OUDSLIstItemIcon(type: .positive, size: .small)
+///     OUDSListItemIcon(type: .positive, size: .small)
 ///
 ///     // Negative icon with medium size
-///     OUDSLIstItemIcon(type: .negative, size: .medium)
+///     OUDSListItemIcon(type: .negative, size: .medium)
 ///
 ///     // Custom neutral icon without badge
-///     OUDSLIstItemIcon(type: .neutral(asset: Image(decorative: "ic_heart")))
+///     OUDSListItemIcon(type: .neutral(asset: Image(decorative: "ic_heart")))
 ///
 ///     // Custom neutral icon with notification badge
-///     OUDSLIstItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"), badge: true))
+///     OUDSListItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"), badge: true))
 ///
 ///     // Usage as leading element in a list item
-///     OUDSListStaticItem(
+///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
-///         leading: .icon(OUDSLIstItemIcon(type: .info, size: .medium))
+///         leading: .icon(OUDSListItemIcon(type: .info, size: .medium))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
-///     OUDSListStaticItem(
+///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .icon(OUDSLIstItemIcon(type: .warning, size: .small))
+///         trailing: .icon(OUDSListItemIcon(type: .warning, size: .small))
 ///     )
 /// ```
 ///
-/// ## Disabled state
-///
-/// When the icon is inside a disabled view (`.disabled(true)`), all icon types are rendered
-/// with the theme's `actionDisabled` color instead of their semantic color.
-///
-/// - Since: 2.0.0
-public struct OUDSLIstItemIcon: View {
+/// - Since: 2.2.0
+@available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
+public struct OUDSListItemIcon: View {
 
     /// Defines the type of icon to display.
-    ///
     /// Each type determines the icon asset and its semantic foreground color.
     ///
-    /// - Since: 2.0.0
+    /// - Since: 2.2.0
     @frozen public enum IconType {
         /// A custom icon from a provided `Image` asset, rendered with the default content color.
         ///
@@ -113,7 +106,6 @@ public struct OUDSLIstItemIcon: View {
         case info
 
         /// A predefined warning icon with a warning semantic color.
-        ///
         /// This icon uses a two-layer rendering with distinct colors for the
         /// internal and external shapes of the warning symbol.
         case warning
@@ -123,12 +115,10 @@ public struct OUDSLIstItemIcon: View {
     }
 
     /// Defines the available sizes for the icon.
-    ///
-    /// The actual rendered size is determined by the theme's `controlItem` size tokens.
     /// When the icon is embedded in a list item with `.small` size, this parameter is ignored
     /// and the smallest size is always used.
     ///
-    /// - Since: 2.0.0
+    /// - Since: 2.2.0
     @frozen public enum Size {
         /// The smallest icon size.
         case small
@@ -145,15 +135,15 @@ public struct OUDSLIstItemIcon: View {
     /// Creates an icon element for use in a list item at the leading or trailing position.
     ///
     /// ```swift
-    ///     OUDSLIstItemIcon(type: .info)
-    ///     OUDSLIstItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"), badge: true), size: .large)
+    ///     OUDSListItemIcon(type: .info)
+    ///     OUDSListItemIcon(type: .neutral(asset: Image(decorative: "ic_heart"), badge: true), size: .large)
     /// ```
     ///
     /// - Parameters:
     ///   - type: The type of icon to display. See ``IconType`` for available options.
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
-    ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
+    ///     (via ``SwiftUI/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     public init(type: IconType, size: Size = .medium) {
         self.type = type
         self.size = size
@@ -163,6 +153,7 @@ public struct OUDSLIstItemIcon: View {
 
     private let type: IconType
     private let size: Size
+
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
 

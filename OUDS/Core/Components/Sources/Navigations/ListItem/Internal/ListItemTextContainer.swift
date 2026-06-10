@@ -16,10 +16,10 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Contains all texts (overline, label, extralabel, description) of the `ListItemContent`.
+/// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
 struct ListItemTextContainer<Slot: View>: View {
 
-    // MARK: - Stored properties
+    // MARK: - Properties
 
     let data: OUDSListItemData
     let slot: Slot
