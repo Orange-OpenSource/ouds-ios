@@ -88,9 +88,9 @@ struct ListItemTextContainer<Slot: View>: View {
 
         switch itemSize {
         case .small:
-            return theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
-        case .standard:
             return theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
+        case .standard:
+            return theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
         }
     }
 

@@ -25,6 +25,7 @@ struct ListItemAffordanceContainer: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.oudsListItemSize) private var size
 
     var body: some View {
         if let assetName {
@@ -35,19 +36,18 @@ struct ListItemAffordanceContainer: View {
                     .foregroundColor(color)
                     .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
             }
-            .frame(minHeight: theme.controlItem.sizeAssetMedium, alignment: .center)
+            .frame(minHeight: minHeight, alignment: .center)
         }
     }
 
     // MARK: - Helpers
 
-    // TODO: use right asset
     private var assetName: String? {
         switch type {
         case .next:
-            layoutDirection == .rightToLeft ? "ic_link_previous" : "ic_link_next"
+            layoutDirection == .rightToLeft ? "ic_control_item_previous" : "ic_control_item_next"
         case .previous:
-            layoutDirection == .rightToLeft ? "ic_link_next" : "ic_link_previous"
+            layoutDirection == .rightToLeft ? "ic_control_item_next" : "ic_control_item_previous"
         case .external:
             "ic_functional_action_external_link"
         case .none:
@@ -68,6 +68,15 @@ struct ListItemAffordanceContainer: View {
         case .readOnly:
             // should not appear
             theme.colors.actionDisabled
+        }
+    }
+
+    private var minHeight: CGFloat {
+        switch size {
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        case .standard:
+            theme.controlItem.sizeAssetMedium
         }
     }
 }

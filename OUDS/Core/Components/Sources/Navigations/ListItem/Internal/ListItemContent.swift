@@ -59,6 +59,7 @@ struct ListItemContent<Slot: View>: View {
             .padding(.bottom, bottomPadding)
             .padding(.horizontal, theme.controlItem.spacePaddingInline)
             .frame(maxWidth: .infinity, alignment: .topLeading)
+            .frame(minWidth: theme.controlItem.sizeMinWidth, minHeight: minHeight)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
@@ -127,6 +128,15 @@ struct ListItemContent<Slot: View>: View {
             theme.controlItem.spacePaddingBlockDensityCompact
         case .standard:
             theme.controlItem.spacePaddingBlockDensityDefault
+        }
+    }
+
+    private var minHeight: SizeSemanticToken {
+        switch itemSize {
+        case .small:
+            theme.controlItem.sizeMinHeightCompact
+        case .standard:
+            theme.controlItem.sizeMinHeightDefault
         }
     }
 }
