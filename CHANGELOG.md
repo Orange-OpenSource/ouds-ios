@@ -14,7 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `ruby/setup-ruby` action from v1.310.0 to v1.313.0 for `build-and-test` workflow
+- `checkout` action from v6.0.2 to v6.0.3 for all GitHub Actions workflows
+- `ruby/setup-ruby` action from v1.310.0 to v1.313.0 for `build-and-test` GitHub Actions workflow
 - `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
 
 ### Fixed
