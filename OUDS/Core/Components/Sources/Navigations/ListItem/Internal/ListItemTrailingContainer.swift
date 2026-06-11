@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import AVKit
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -43,10 +42,16 @@ struct ListItemTrailingContainer: View {
                 ListItemImage(asset: asset)
             case let .flag(asset: asset):
                 ListItemFlag(asset: asset)
-            case let .video(url):
-                ListItemVideo(url: url)
             case let .avatar(avatar):
                 avatar
+            #if os(iOS)
+            case let .video(url, autoplay, muted, tapToTogglePlay, tapToToggleMute):
+                ListItemVideo(url: url,
+                              autoplay: autoplay,
+                              muted: muted,
+                              tapToTogglePlay: tapToTogglePlay,
+                              tapToToggleMute: tapToToggleMute)
+            #endif
             }
         }
         .disabled(interactionState == .disabled)
