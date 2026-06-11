@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `json` RubyGem from v2.19.7 to v2.19.9
 - `github/codeql-action/upload-sarif` action from v4.36.1 to v4.36.2 for `scorecard` GitHub Actions workflow
 - `checkout` action from v6.0.2 to v6.0.3 for all GitHub Actions workflows
 - `ruby/setup-ruby` action from v1.310.0 to v1.313.0 for `build-and-test` GitHub Actions workflow

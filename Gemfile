@@ -26,7 +26,7 @@ gem 'abbrev', '0.1.2'
 
 # Grype run result on 2026-03-26
 # json     2.18.1     2.19.2    gem   GHSA-3m6g-2423-7cp3  High      < 0.1% (3rd)  < 0.1
-gem 'json', '2.19.7'
+gem 'json', '2.19.9'
 
 # Really needed gems
 # ------------------
