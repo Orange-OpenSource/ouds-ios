@@ -24,11 +24,11 @@ import SwiftUI
 ///
 /// ## Available options
 ///
-/// - ``icon(_:)``: A status or custom icon (see ``OUDSListItemIcon``).
-/// - ``image(asset:)``: A static image asset.
-/// - ``flag(asset:)``: A country flag image.
-/// - ``video(_:)``: A video thumbnail loaded from a URL.
-/// - ``avatar(_:)``: An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
+/// -  `icon`: A status or custom icon (see ``OUDSListItemIcon``).
+/// - `image`: A static image asset.
+/// - `flag`: A country flag image.
+/// - `video`: A video loaded from a URL **(iOS only)**.
+/// - `avatar`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
 ///
 /// ## Code samples
 ///
@@ -93,10 +93,24 @@ import SwiftUI
     /// A country flag image displayed at the leading position.
     case flag(asset: Image)
 
-    /// A video thumbnail loaded from the given URL, displayed at the leading position.
+    /// A video loaded from the given URL, displayed at the leading position.
     ///
     /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
-    case video(URL)
+    ///
+    /// - Parameters:
+    ///   - url: The URL of the video (local `file://` or remote `https://` HLS / MP4).
+    ///   - autoplay: Whether the video starts playing automatically when the item appears. Defaults to `false`.
+    ///   - muted: Whether the video is muted. Defaults to `true`.
+    ///   - tapToTogglePlay: Whether a tap on the video toggles play / pause. Defaults to `false`.
+    ///   - tapToToggleMute: Whether a tap on the video toggles mute / unmute. Defaults to `false`.
+    ///
+    /// When both `tapToTogglePlay` and `tapToToggleMute` are `true`, a single tap performs both actions.
+    /// When `autoplay` is `false` and `tapToTogglePlay` is `false`, the first frame is shown as a static thumbnail.
+    @available(macOS, unavailable)
+    @available(tvOS, unavailable)
+    @available(watchOS, unavailable)
+    @available(visionOS, unavailable)
+    case video(URL, autoplay: Bool = false, muted: Bool = true, tapToTogglePlay: Bool = false, tapToToggleMute: Bool = false)
 
     /// An avatar displayed at the leading position.
     ///

@@ -166,8 +166,8 @@ extension View {
     /// with rounded corners.
     ///
     /// This modifier applies to both leading and trailing media elements
-    /// (``OUDSListItemLeading/image(asset:)``, ``OUDSListItemLeading/video(_:)``,
-    /// ``OUDSListItemTrailing/image(asset:)``, ``OUDSListItemTrailing/video(_:)``).
+    /// (``OUDSListItemLeading/image(asset:)``, `OUDSListItemLeading/video(_:autoplay:muted:tapToTogglePlay:tapToToggleMute:)`,
+    /// ``OUDSListItemTrailing/image(asset:)``, `OUDSListItemTrailing/video(_:autoplay:muted:tapToTogglePlay:tapToToggleMute:)`).
     ///
     /// ```swift
     ///     OUDSStaticListItem(
