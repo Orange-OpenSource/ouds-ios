@@ -178,7 +178,7 @@ public struct OUDSNavigationListItem<Slot: View>: View { // TODO: #265 - Use sui
     ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///   - slot: An optional element displayed under texts (at the bottom of the text container).
     ///   - affordanceType: The type of navigation affordance indicator to display. Defaults to `.next`.
-    ///     See ``OUDSNavigationListItemAffordanceType`` for available options (preivous, next and external).
+    ///     See ``OUDSNavigationListItemAffordanceType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
     ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
     ///     **Note:** Ignored when `affordanceType` is `.previous`.
@@ -215,7 +215,7 @@ public struct OUDSNavigationListItem<Slot: View>: View { // TODO: #265 - Use sui
     /// - Parameters:
     ///   - data: The textual data of the item, including label, description, overline, extra label, and helper text.
     ///   - affordanceType: The type of navigation affordance indicator to display. Defaults to `.next`.
-    ///     See ``OUDSNavigationListItemAffordanceType`` for available options (preivous, next and external).
+    ///     See ``OUDSNavigationListItemAffordanceType`` for available options (previous, next and external).
     ///   - leading: An optional element displayed at the leading position (before the texts).
     ///     See ``OUDSListItemLeading`` for available options (icon, image, flag, video, avatar).
     ///     **Note:** Ignored when `affordanceType` is `.previous`.

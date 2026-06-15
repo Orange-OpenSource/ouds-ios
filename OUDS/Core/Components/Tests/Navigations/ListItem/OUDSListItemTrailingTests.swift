@@ -13,51 +13,51 @@
 
 #if os(iOS)
 import OUDSComponents
+import SwiftUI
 import Testing
 
-// swiftlint:disable force_unwrapping
 /// Tests the default and explicit parameter values of `OUDSListItemTrailing` cases.
 struct OUDSListItemTrailingTests {
 
-    private let url = URL(string: "https://example.com/video.mp4")!
+    private let url = URL(string: "https://example.com/video.mp4")
 
     // MARK: - .video default values
 
     @Test func videoDefaultAutoplayIsFalse() {
-        guard case let .video(_, autoplay, _, _, _) = OUDSListItemTrailing.video(url) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, autoplay, _, _, _) = OUDSListItemTrailing.video(url) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(autoplay == false)
     }
 
     @Test func videoDefaultMutedIsTrue() {
-        guard case let .video(_, _, muted, _, _) = OUDSListItemTrailing.video(url) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, muted, _, _) = OUDSListItemTrailing.video(url) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(muted == true)
     }
 
     @Test func videoDefaultTapToTogglePlayIsFalse() {
-        guard case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemTrailing.video(url) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemTrailing.video(url) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(tapToTogglePlay == false)
     }
 
     @Test func videoDefaultTapToToggleMuteIsFalse() {
-        guard case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemTrailing.video(url) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemTrailing.video(url) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(tapToToggleMute == false)
     }
 
     @Test func videoStoresProvidedURL() {
-        guard case let .video(storedURL, _, _, _, _) = OUDSListItemTrailing.video(url) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(storedURL, _, _, _, _) = OUDSListItemTrailing.video(url) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(storedURL == url)
@@ -66,36 +66,35 @@ struct OUDSListItemTrailingTests {
     // MARK: - .video explicit values are preserved
 
     @Test func videoExplicitAutoplayTrueIsPreserved() {
-        guard case let .video(_, autoplay, _, _, _) = OUDSListItemTrailing.video(url, autoplay: true) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, autoplay, _, _, _) = OUDSListItemTrailing.video(url, autoplay: true) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(autoplay == true)
     }
 
     @Test func videoExplicitMutedFalseIsPreserved() {
-        guard case let .video(_, _, muted, _, _) = OUDSListItemTrailing.video(url, muted: false) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, muted, _, _) = OUDSListItemTrailing.video(url, muted: false) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(muted == false)
     }
 
     @Test func videoExplicitTapToTogglePlayTrueIsPreserved() {
-        guard case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemTrailing.video(url, tapToTogglePlay: true) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemTrailing.video(url, tapToTogglePlay: true) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(tapToTogglePlay == true)
     }
 
     @Test func videoExplicitTapToToggleMuteTrueIsPreserved() {
-        guard case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemTrailing.video(url, tapToToggleMute: true) else {
-            Issue.record("Expected .video case")
+        guard let url, case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemTrailing.video(url, tapToToggleMute: true) else {
+            Issue.record("Expected .video case or non-nil URL")
             return
         }
         #expect(tapToToggleMute == true)
     }
 }
-// swiftlint:enable force_unwrapping
 #endif

@@ -138,7 +138,7 @@ public struct OUDSStaticListItem<Slot: View>: View { // TODO: #265 - Use suitabl
     // MARK: - Initializer
 
     /// Creates a list item to display static data, without interaction or navigation.
-    /// A slot (`View`) area is reseverd under texts and before helper text.
+    /// A slot (`View`) area is reserved under texts and before helper text.
     ///
     /// ```swift
     ///     let data = OUDSListItemData(label: "Label", description: "Description")

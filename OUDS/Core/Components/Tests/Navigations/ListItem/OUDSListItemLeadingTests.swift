@@ -16,16 +16,15 @@ import Foundation
 import OUDSComponents
 import Testing
 
-// swiftlint:disable force_unwrapping
 /// Tests the default and explicit parameter values of `OUDSListItemLeading` cases.
 struct OUDSListItemLeadingTests {
 
-    private let url = URL(string: "https://example.com/video.mp4")!
+    private let url = URL(string: "https://example.com/video.mp4")
 
     // MARK: - .video default values
 
     @Test func videoDefaultAutoplayIsFalse() {
-        guard case let .video(_, autoplay, _, _, _) = OUDSListItemLeading.video(url) else {
+        guard let url, case let .video(_, autoplay, _, _, _) = OUDSListItemLeading.video(url) else {
             Issue.record("Expected .video case")
             return
         }
@@ -33,7 +32,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoDefaultMutedIsTrue() {
-        guard case let .video(_, _, muted, _, _) = OUDSListItemLeading.video(url) else {
+        guard let url, case let .video(_, _, muted, _, _) = OUDSListItemLeading.video(url) else {
             Issue.record("Expected .video case")
             return
         }
@@ -41,7 +40,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoDefaultTapToTogglePlayIsFalse() {
-        guard case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemLeading.video(url) else {
+        guard let url, case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemLeading.video(url) else {
             Issue.record("Expected .video case")
             return
         }
@@ -49,7 +48,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoDefaultTapToToggleMuteIsFalse() {
-        guard case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemLeading.video(url) else {
+        guard let url, case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemLeading.video(url) else {
             Issue.record("Expected .video case")
             return
         }
@@ -57,7 +56,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoStoresProvidedURL() {
-        guard case let .video(storedURL, _, _, _, _) = OUDSListItemLeading.video(url) else {
+        guard let url, case let .video(storedURL, _, _, _, _) = OUDSListItemLeading.video(url) else {
             Issue.record("Expected .video case")
             return
         }
@@ -67,7 +66,7 @@ struct OUDSListItemLeadingTests {
     // MARK: - .video explicit values are preserved
 
     @Test func videoExplicitAutoplayTrueIsPreserved() {
-        guard case let .video(_, autoplay, _, _, _) = OUDSListItemLeading.video(url, autoplay: true) else {
+        guard let url, case let .video(_, autoplay, _, _, _) = OUDSListItemLeading.video(url, autoplay: true) else {
             Issue.record("Expected .video case")
             return
         }
@@ -75,7 +74,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoExplicitMutedFalseIsPreserved() {
-        guard case let .video(_, _, muted, _, _) = OUDSListItemLeading.video(url, muted: false) else {
+        guard let url, case let .video(_, _, muted, _, _) = OUDSListItemLeading.video(url, muted: false) else {
             Issue.record("Expected .video case")
             return
         }
@@ -83,7 +82,7 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoExplicitTapToTogglePlayTrueIsPreserved() {
-        guard case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemLeading.video(url, tapToTogglePlay: true) else {
+        guard let url, case let .video(_, _, _, tapToTogglePlay, _) = OUDSListItemLeading.video(url, tapToTogglePlay: true) else {
             Issue.record("Expected .video case")
             return
         }
@@ -91,12 +90,11 @@ struct OUDSListItemLeadingTests {
     }
 
     @Test func videoExplicitTapToToggleMuteTrueIsPreserved() {
-        guard case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemLeading.video(url, tapToToggleMute: true) else {
+        guard let url, case let .video(_, _, _, _, tapToToggleMute) = OUDSListItemLeading.video(url, tapToToggleMute: true) else {
             Issue.record("Expected .video case")
             return
         }
         #expect(tapToToggleMute == true)
     }
 }
-// swiftlint:enable force_unwrapping
 #endif
