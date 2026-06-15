@@ -162,8 +162,8 @@ public struct OUDSListItemAvatar: View {
     let size: Size
     let badge: OUDSBadge?
 
-    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body

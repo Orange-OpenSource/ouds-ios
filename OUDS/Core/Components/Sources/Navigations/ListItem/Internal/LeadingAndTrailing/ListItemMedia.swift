@@ -24,9 +24,9 @@ struct ListItemImage: View {
     let asset: Image
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
-    @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
 
     // MARK: Body
 
