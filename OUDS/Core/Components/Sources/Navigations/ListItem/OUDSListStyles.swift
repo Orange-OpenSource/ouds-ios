@@ -44,7 +44,7 @@ import SwiftUI
 ///
 /// The style controls the border, divider, and background appearance of list items.
 /// Use the ``SwiftUICore/View/oudsListItemStyle(style:)`` or
-/// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)`` view modifiers
+/// ``SwiftUICore/View/oudsListCardStyle(hasDivider:hasBackground:)`` view modifiers
 /// to apply the style on list items.
 ///
 /// ## Code samples
@@ -60,7 +60,7 @@ import SwiftUI
 ///
 ///     // Card style with background and no divider
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListCardStyle(hasDdivider: false, hasBackground: true)
+///         .oudsListCardStyle(hasDivider: false, hasBackground: true)
 /// ```
 ///
 /// - Since: 2.2.0
@@ -127,18 +127,18 @@ extension View {
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
     ///     }
-    ///     .oudsListCardStyle(hasDdivider: false, hasBackground: true)
+    ///     .oudsListCardStyle(hasDivider: false, hasBackground: true)
     /// ```
     ///
     /// - Parameters:
-    ///     - hasDdivider: When `true`, a divider line is displayed at the bottom of each item. Defaults to `false`.
-    ///     - hasBackground: When `true`, a background fill is applied to each item. Defaults to `true`.
+    ///    - hasDivider: When `true`, a divider line is displayed at the bottom of each item. Defaults to `false`.
+    ///    - hasBackground: When `true`, a background fill is applied to each item. Defaults to `true`.
     ///
     /// - Returns: A view with the card style applied to its list items.
-    public func oudsListCardStyle(hasDdivider: Bool = false,
+    public func oudsListCardStyle(hasDivider: Bool = false,
                                   hasBackground: Bool = true) -> some View
     {
-        environment(\.oudsListItemContentStyle, .standard(divider: hasDdivider, background: hasBackground))
+        environment(\.oudsListItemContentStyle, .standard(divider: hasDivider, background: hasBackground))
     }
 
     /// Applies a content style on list items.
@@ -247,7 +247,7 @@ extension EnvironmentValues {
     ///
     /// Defaults to `.standard(divider: true, background: false)`.
     /// Set via ``SwiftUICore/View/oudsListItemStyle(style:)`` or
-    /// ``SwiftUICore/View/oudsListCardStyle(hasDdivider:hasBackground:)``.
+    /// ``SwiftUICore/View/oudsListCardStyle(hasDivider:hasBackground:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
 
     /// Whether media elements (images and videos) in list items should be displayed

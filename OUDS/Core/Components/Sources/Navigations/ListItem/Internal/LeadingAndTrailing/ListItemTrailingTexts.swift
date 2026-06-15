@@ -17,9 +17,9 @@ import SwiftUI
 
 struct ListItemTrailingTexts: View {
 
-    let textType: OUDSListItemTrailing.TextType
-
     // MARK: - Properties
+
+    let textType: OUDSListItemTrailing.TextType
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
