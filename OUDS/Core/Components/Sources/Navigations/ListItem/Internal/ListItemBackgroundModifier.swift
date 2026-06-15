@@ -47,7 +47,7 @@ struct ListItemBackgroundModifier: ViewModifier {
         case .enabled:
             backgroundFlag ? theme.colors.actionSupportEnabled : nil
         case .disabled:
-            backgroundFlag ? theme.colors.actionSupportEnabled : nil
+            backgroundFlag ? theme.colors.actionSupportDisabled : nil
         case .hover:
             theme.colors.actionSupportHover
         case .pressed:

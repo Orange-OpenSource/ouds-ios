@@ -41,7 +41,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
-    /// If components like button (`OUDSListItem`) must have always rounded corners or not
+    /// If components like button (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
     public let hasRoundedListItems: Bool
 
     /// Defines the tuning for a theme
@@ -98,7 +98,7 @@ extension Tuning {
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**
-    /// anddd **rounded corners for alert messages** and **list items**.
+    /// and **rounded corners for alert messages** and **list items**.
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
                                      hasRoundedAlertMessages: true,

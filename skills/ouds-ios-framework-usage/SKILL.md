@@ -515,7 +515,6 @@ Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`
 .oudsListItemStyle(style: .standard(divider: false, background: true))  // background fill, no divider
 
 // Card style shorthand (hasDivider: false, hasBackground: true by default)
-// WARNING: parameter name has a typo in the API — "hasDivider" with double 'd'
 .oudsListCardStyle(hasDivider: false, hasBackground: true)
 
 // Rounded corners on image/video media elements (default: false)
@@ -542,7 +541,7 @@ VStack {
 4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
-7. **`oudsListCardStyle(hasDivider:)`** — the API parameter name contains a typo with a double `d`; use it as-is.
+7. **`oudsListCardStyle(hasDivider:hasBackground:)`** — shorthand for applying `.standard(divider:hasDivider, background:hasBackground)` (defaults: divider `false`, background `true`).
 
 ---
 
