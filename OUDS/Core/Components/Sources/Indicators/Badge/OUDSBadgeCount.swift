@@ -45,37 +45,31 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
+/// ![A badge component in light and dark modes with Orange theme](component_badge_count_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_OrangeCompact)
+/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_count_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
+/// ![A badge component in light and dark modes with Sosh theme](component_badge_count_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
+/// ![A badge component in light and dark modes with Wireframe theme](component_badge_count_Wireframe)
 ///
 /// - Version: 1.2.0
 /// - Since: 2.1.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBadgeCount: View { // TODO: #1439 - Update illustrations
+public struct OUDSBadgeCount: View {
 
     static let maxCount = 99
 
     // MARK: Stored properties
 
-    private let count: UInt8
-    private let size: OUDSBadgeCount.Size
-    private let status: OUDSBadgeStandard.Status
+    private let configuration: BadgeCountConfiguration
     private let accessibilityLabel: String
-
-    private var configuration: BadgeCountConfiguration {
-        .init(value: count, size: size, status: status)
-    }
 
     // MARK: - Configurations
 
@@ -141,13 +135,18 @@ public struct OUDSBadgeCount: View { // TODO: #1439 - Update illustrations
         self.init(count: count, size: size, status: status, accessibilityLabel: resolvedText)
     }
 
+    /// Private initializer of the badge
+    ///
+    /// - Parameters:
+    ///    - count:The number displayed in the badge.
+    ///    - size: The size of this badge
+    ///    - status: The status of this badge with icon
+    ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     private init(count: UInt8, size: OUDSBadgeCount.Size, status: OUDSBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSBadgeCount should not have an empty accessibility label, think about your disabled users!")
         }
-        self.count = count
-        self.size = size
-        self.status = status
+        configuration = .init(value: count, size: size, status: status)
         self.accessibilityLabel = accessibilityLabel
     }
 
@@ -155,8 +154,8 @@ public struct OUDSBadgeCount: View { // TODO: #1439 - Update illustrations
 
     public var body: some View {
         HStack {
-            BadgeCount(value: count, size: size)
+            BadgeCount(configuration: configuration)
         }
-        .modifier(BadgeLayoutModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
+        .modifier(BadgeModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
     }
 }

@@ -48,34 +48,29 @@ import SwiftUI
 ///
 /// ### Orange
 ///
-/// ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
+/// ![A badge component in light and dark modes with Orange theme](component_badge_standard_Orange)
 ///
 /// ### Orange Compact
 ///
-/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_OrangeCompact)
+/// ![A badge component in light and dark modes with Orange Compact theme](component_badge_standard_OrangeCompact)
 ///
 /// ### Sosh
 ///
-/// ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
+/// ![A badge component in light and dark modes with Sosh theme](component_badge_standard_Sosh)
 ///
 /// ### Wireframe
 ///
-/// ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
+/// ![A badge component in light and dark modes with Wireframe theme](component_badge_standard_Wireframe)
 ///
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 2.1.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSBadgeStandard: View { // TODO: #1493 - Update screenshots for documentation
+public struct OUDSBadgeStandard: View {
 
     // MARK: Stored properties
 
-    private let size: OUDSBadgeStandard.Size
-    private let status: OUDSBadgeStandard.Status
     private let accessibilityLabel: String
-
-    private var configuration: BadgeStandardConfiguration {
-        .init(size: size, status: status)
-    }
+    private let configuration: BadgeStandardConfiguration
 
     // MARK: - Configurations
 
@@ -164,12 +159,17 @@ public struct OUDSBadgeStandard: View { // TODO: #1493 - Update screenshots for 
         self.init(size: size, status: status, accessibilityLabel: accessibilityLabel)
     }
 
+    // Private initializer of the badge
+
+    /// - Parameters:
+    ///    - size: The size of this badge
+    ///    - status: The status of this badge. The background color of the badge is based on this status
+    ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     private init(size: OUDSBadgeStandard.Size, status: OUDSBadgeStandard.Status, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSBadgeStandard should not have an empty accessibility label, think about your disabled users!")
         }
-        self.size = size
-        self.status = status
+        configuration = .init(size: size, status: status)
         self.accessibilityLabel = accessibilityLabel
     }
 
@@ -179,6 +179,6 @@ public struct OUDSBadgeStandard: View { // TODO: #1493 - Update screenshots for 
         HStack {
             EmptyView()
         }
-        .modifier(BadgeLayoutModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
+        .modifier(BadgeModifier(configuration: configuration, accessibilityLabel: accessibilityLabel))
     }
 }

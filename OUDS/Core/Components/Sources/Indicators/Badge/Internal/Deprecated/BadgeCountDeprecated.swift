@@ -14,18 +14,21 @@
 import OUDSThemesContract
 import SwiftUI
 
-struct BadgeCount: View {
+@available(*, deprecated, message: "Use BadgeCount(configuration:) instead.")
+struct BadgeCountDeprecated: View {
 
     // MARK: Properties
 
-    let configuration: BadgeCountConfiguration
+    let value: UInt8
+    let size: OUDSBadge.IllustrationSize
+
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        let text = configuration.value > OUDSBadgeCount.maxCount ? "+\(OUDSBadgeCount.maxCount)" : "\(configuration.value)"
-        switch configuration.size {
+        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
+        switch size {
         case .medium:
             Text(text)
                 .labelDefaultSmall(theme)
@@ -34,15 +37,6 @@ struct BadgeCount: View {
             Text(text)
                 .labelDefaultMedium(theme)
                 .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
-        }
-    }
-}
-
-extension OUDSBadge.IllustrationSize {
-    fileprivate var countSize: OUDSBadgeCount.Size {
-        switch self {
-        case .medium: .medium
-        case .large: .large
         }
     }
 }
