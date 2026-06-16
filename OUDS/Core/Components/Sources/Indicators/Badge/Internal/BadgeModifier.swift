@@ -276,6 +276,7 @@ struct BadgeIconColorModifier: ViewModifier {
     }
 }
 
+// swiftlint:disable switch_case_on_newline
 extension OUDSBadgeIcon.Status {
     var toStandardStatus: OUDSBadgeStandard.Status {
         switch self {
@@ -297,3 +298,5 @@ extension OUDSBadgeCount.Size {
         }
     }
 }
+
+// swiftlint:enable switch_case_on_newline

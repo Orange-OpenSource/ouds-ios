@@ -39,10 +39,12 @@ struct BadgeCount: View {
 }
 
 extension OUDSBadge.IllustrationSize {
-    fileprivate var countSize: OUDSBadgeCount.Size {
+    private var countSize: OUDSBadgeCount.Size {
         switch self {
-        case .medium: .medium
-        case .large: .large
+        case .medium:
+            .medium
+        case .large:
+            .large
         }
     }
 }

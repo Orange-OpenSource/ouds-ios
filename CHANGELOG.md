@@ -12,10 +12,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
 
+### Changed
+ 
+- `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
+
 ### Fixed
 
 - `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
 - Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+
+### Deprecated
+
+- `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
 
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.0.0...2.1.0) - 2026-06-02
 
@@ -45,7 +53,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tag` component with label medium moderate typography for text for small size (Orange-OpenSource/ouds-ios#1449)
 - `filter chip` and `suggestion chip` components with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1441)
 - `input tag` component with label medium moderate typography for text (Orange-OpenSource/ouds-ios#1450)
-- `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
 - `control item` component token renamed `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
 
 ### Fixed
@@ -54,7 +61,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-- `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
 - `control item` component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container`
 
 ## [2.0.0](https://github.com/Orange-OpenSource/ouds-ios/compare/1.4.0...2.0.0) - 2026-05-07
