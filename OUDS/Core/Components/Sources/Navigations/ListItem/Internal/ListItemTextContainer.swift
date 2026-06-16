@@ -33,44 +33,50 @@ struct ListItemTextContainer<Slot: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
-            if let overline = data.overline,
-               !overline.isEmpty,
-               itemSize == .standard
-            {
-                Text(overline)
-                    .labelModerateSmall(theme)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(descriptionOverlineColor)
-                    .padding(.top, topPadding)
-            }
 
-            Group {
-                if data.isBoldLabel {
-                    Text(data.label).labelStrongLarge(theme)
-                } else {
-                    Text(data.label).labelDefaultLarge(theme)
+            VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
+
+                if let overline = data.overline,
+                   !overline.isEmpty,
+                   itemSize == .standard
+                {
+                    Text(overline)
+                        .labelModerateSmall(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(descriptionOverlineColor)
+                        .padding(.top, topPadding)
+                }
+
+                Group {
+                    if data.isBoldLabel {
+                        Text(data.label).labelStrongLarge(theme)
+                    } else {
+                        Text(data.label).labelDefaultLarge(theme)
+                    }
+                }
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(labelsColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                if let extraLabel = data.extraLabel,
+                   !extraLabel.isEmpty,
+                   itemSize == .standard
+                {
+                    Text(extraLabel)
+                        .labelStrongMedium(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(labelsColor)
+                }
+
+                if let description = data.description, !description.isEmpty {
+                    Text(description)
+                        .labelDefaultMedium(theme)
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(descriptionOverlineColor)
                 }
             }
-            .multilineTextAlignment(.leading)
-            .foregroundStyle(labelsColor)
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            if let extraLabel = data.extraLabel,
-               !extraLabel.isEmpty,
-               itemSize == .standard
-            {
-                Text(extraLabel)
-                    .labelStrongMedium(theme)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(labelsColor)
-            }
-
-            if let description = data.description, !description.isEmpty {
-                Text(description)
-                    .labelDefaultMedium(theme)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(descriptionOverlineColor)
-            }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityLabel)
 
             if !(slot is EmptyView) {
                 slot
@@ -79,7 +85,7 @@ struct ListItemTextContainer<Slot: View>: View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 
-    // MARK: - Padding
+    // MARK: - Helpers
 
     private var topPadding: CGFloat {
         guard alignment == .top else {
@@ -94,13 +100,34 @@ struct ListItemTextContainer<Slot: View>: View {
         }
     }
 
-    // MARK: - Colors
-
     private var labelsColor: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentDefault
     }
 
     private var descriptionOverlineColor: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
+    }
+
+    /// Forges the accessibility label for the list item text parts.
+    /// Prevents to user to have to make several swipes on the texts to vocalize them.
+    /// Groups only the overline, label, extra label and description (or only label and description in small size).
+    private var accessibilityLabel: String {
+        var parts: [String] = []
+
+        if itemSize != .small, let overline = data.overline {
+            parts.append(overline)
+        }
+
+        parts.append(data.label)
+
+        if itemSize != .small, let extraLabel = data.extraLabel {
+            parts.append(extraLabel)
+        }
+
+        if let description = data.description {
+            parts.append(description)
+        }
+
+        return parts.joined(separator: ", ")
     }
 }

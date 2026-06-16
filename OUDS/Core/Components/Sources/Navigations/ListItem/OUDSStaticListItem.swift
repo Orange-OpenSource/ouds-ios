@@ -99,6 +99,13 @@ import SwiftUI
 ///         .oudsListItemStyle(style: .outlined)
 /// ```
 ///
+/// ## Accesibility considerations
+///
+/// You should test with Voice Over your `OUDSStaticListItem` to check which parts are vocalized and if they are well vocalized, specially for
+/// the avatars, badges, tags and slot views.  Do not vocalize decorative elements.
+///
+/// If flags are used, do not suppose users known the flags and add in the texts parts of the `OUDSStaticListItem` the country or region name.
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://r.orange.fr/r/S-ouds-doc-listitem)
