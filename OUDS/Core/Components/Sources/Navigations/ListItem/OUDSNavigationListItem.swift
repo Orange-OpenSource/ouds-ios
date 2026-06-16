@@ -119,10 +119,14 @@ import SwiftUI
 ///     .oudsListItemStyle(style: .outlined)
 /// ```
 ///
-/// ## Interaction states
+/// ## Accesibility considerations
 ///
-/// The component automatically manages its visual appearance based on the current interaction state:
-/// **enabled**, **hover**, **pressed**, or **disabled** (when `.disabled(true)` is applied).
+/// You should test with Voice Over your `OUDSNavigationListItem` to check which parts are vocalized and if they are well vocalized, specially for
+/// the avatars, badges, tags and slot views.  Do not vocalize decorative elements.
+///
+/// If flags are used, do not suppose users known the flags and add in the texts parts of the `OUDSNavigationListItem` the country or region name.
+///
+/// Be sure the available texts are enough to explain to the users the navigation depending to its affordance type.
 ///
 /// ## Design documentation
 ///

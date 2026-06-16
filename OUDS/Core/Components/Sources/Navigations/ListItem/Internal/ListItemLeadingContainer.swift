@@ -36,8 +36,10 @@ struct ListItemLeadingContainer: View {
                 ListItemImage(asset: asset, description: description)
             case let .flag(asset: asset):
                 ListItemFlag(asset: asset)
+                    .accessibilityHidden(true)
             case let .avatar(avatar):
                 avatar
+                    .accessibilityHidden(true)
             #if os(iOS)
             case let .video(url, autoplay, muted, tapToTogglePlay, tapToToggleMute):
                 ListItemVideo(url: url,
