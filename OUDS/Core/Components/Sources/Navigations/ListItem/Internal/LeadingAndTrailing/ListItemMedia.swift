@@ -22,6 +22,7 @@ struct ListItemImage: View {
     // MARK: Properties
 
     let asset: Image
+    let description: String?
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -37,6 +38,7 @@ struct ListItemImage: View {
             .opacity(opacity)
             .frame(height: assetSize, alignment: .center)
             .clipShape(RoundedRectangle(cornerRadius: radius))
+            .accessibilityLabel(description ?? "")
     }
 
     // MARK: Helpers
@@ -145,6 +147,8 @@ struct ListItemVideo: View {
 
     var body: some View {
         // NOTE: #265 - Does the video must be disabled or muted if Voice Over enabled?
+        // NOTE: #265 - What should we do when network communication is missing or is retrieved?
+        // Today player is not displayed in that cases.
         VideoPlayerView(player: player)
             .opacity(opacity)
             .frame(width: assetSize, height: assetSize)

@@ -157,10 +157,19 @@ import SwiftUI
     /// and sizes (`.small`, `.medium`, `.large`).
     case icon(OUDSListItemIcon)
 
-    /// A static image asset.
+    /// A static image asset displayed at the leading position.
     ///
-    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
-    case image(asset: Image)
+    /// The image is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
+    /// to apply rounded corners. Do not forget to add an accessibility label if the image is not decorative.
+    ///
+    /// ```swift
+    ///     // Decorative image
+    ///     .image(asset: Image(decorative: "il_placeholder"))
+    ///
+    ///     // Not decorative image
+    ///     .image(asset: Image("meaningful_image"), description: "A nice landscape")
+    /// ```
+    case image(asset: Image, description: String? = nil)
 
     /// A country flag image.
     case flag(asset: Image)
