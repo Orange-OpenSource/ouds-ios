@@ -38,8 +38,8 @@ struct ListItemTrailingContainer: View {
                 tag
             case let .icon(icon):
                 icon
-            case let .image(asset):
-                ListItemImage(asset: asset)
+            case let .image(asset: asset, description: description):
+                ListItemImage(asset: asset, description: description)
             case let .flag(asset: asset):
                 ListItemFlag(asset: asset)
             case let .avatar(avatar):

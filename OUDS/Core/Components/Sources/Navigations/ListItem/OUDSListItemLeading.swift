@@ -87,8 +87,16 @@ import SwiftUI
     /// A static image asset displayed at the leading position.
     ///
     /// The image is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
-    /// to apply rounded corners.
-    case image(asset: Image)
+    /// to apply rounded corners. Do not forget to add an accessibility label if the image is not decorative.
+    ///
+    /// ```swift
+    ///     // Decorative image
+    ///     .image(asset: Image(decorative: "il_placeholder"))
+    ///
+    ///     // Not decorative image
+    ///     .image(asset: Image("meaningful_image"), description: "A nice landscape")
+    /// ```
+    case image(asset: Image, description: String? = nil)
 
     /// A country flag image displayed at the leading position.
     case flag(asset: Image)
@@ -100,17 +108,20 @@ import SwiftUI
     /// - Parameters:
     ///   - url: The URL of the video (local `file://` or remote `https://` HLS / MP4).
     ///   - autoplay: Whether the video starts playing automatically when the item appears. Defaults to `false`.
-    ///   - muted: Whether the video is muted. Defaults to `true`.
-    ///   - tapToTogglePlay: Whether a tap on the video toggles play / pause. Defaults to `false`.
+    ///   - muted: Whether the video is muted. Defaults to `false`.
+    ///   - tapToTogglePlay: Whether a tap on the video toggles play / pause. Defaults to `true`.
     ///   - tapToToggleMute: Whether a tap on the video toggles mute / unmute. Defaults to `false`.
     ///
     /// When both `tapToTogglePlay` and `tapToToggleMute` are `true`, a single tap performs both actions.
     /// When `autoplay` is `false` and `tapToTogglePlay` is `false`, the first frame is shown as a static thumbnail.
+    ///
+    /// For accessibility reasons, `autoplay` should be disabled, and the Voice Over status must be considered to avoid to have videos
+    /// disturbing the users.
     @available(macOS, unavailable)
     @available(tvOS, unavailable)
     @available(watchOS, unavailable)
     @available(visionOS, unavailable)
-    case video(URL, autoplay: Bool = false, muted: Bool = true, tapToTogglePlay: Bool = false, tapToToggleMute: Bool = false)
+    case video(URL, autoplay: Bool = false, muted: Bool = false, tapToTogglePlay: Bool = true, tapToToggleMute: Bool = false)
 
     /// An avatar displayed at the leading position.
     ///
