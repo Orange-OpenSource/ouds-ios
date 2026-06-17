@@ -88,7 +88,7 @@ import SwiftUI
 ///
 /// - ``SwiftUICore/View/oudsListItemSize(_:)`` — Sets the size of the item (`.standard` or `.small`).
 /// - ``SwiftUICore/View/oudsListItemContainerAlignment(_:)`` — Aligns leading, trailing, and text containers (`.top` or `.center`).
-/// - ``SwiftUICore/View/oudsListItemStyle(style:)`` — Applies a standard style with optional divider and background.
+/// - ``SwiftUICore/View/oudsListItemStyle(_:)`` — Applies a standard style with optional divider and background.
 /// - ``SwiftUICore/View/oudsListCardStyle(hasDivider:hasBackground:)`` — Applies a card style on list items.
 /// - ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` — Defines whether media (images, videos) should be displayed with rounded corners.
 ///

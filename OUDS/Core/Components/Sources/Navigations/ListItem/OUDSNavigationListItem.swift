@@ -256,6 +256,8 @@ public struct OUDSNavigationListItem<Slot: View>: View { // TODO: #265 - Use sui
                             trailing: trailing,
                             interactionState: interactionState)
         }
+        .accessibilityRemoveTraits([.isButton])
+        .accessibilityAddTraits([.isLink])
     }
 }
 
