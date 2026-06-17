@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import SwiftUI
+
 /// Represents the textual content displayed within a list item component such as
 /// ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
@@ -108,12 +110,13 @@ public struct OUDSListItemData {
     ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
     ///     **Ignored when the list item size is `.small`.**
     ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
-    public init(label: String,
-                isBoldLabel: Bool = false,
-                description: String? = nil,
-                overline: String? = nil,
-                extraLabel: String? = nil,
-                helperText: String? = nil)
+    public init(
+        label: String,
+        isBoldLabel: Bool = false,
+        description: String? = nil,
+        overline: String? = nil,
+        extraLabel: String? = nil,
+        helperText: String? = nil)
     {
         self.label = label
         self.isBoldLabel = isBoldLabel
@@ -121,5 +124,37 @@ public struct OUDSListItemData {
         self.overline = overline
         self.extraLabel = extraLabel
         self.helperText = helperText
+    }
+
+    /// Creates a new list item data model.
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isBoldLabel: When `true`, the label is rendered in bold. Defaults to `false`.
+    ///   - description: An optional secondary text displayed below the label. Defaults to `nil`.
+    ///   - overline: An optional text displayed above the label. Defaults to `nil`.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - extraLabel: An optional additional text displayed below the description. Defaults to `nil`.
+    ///     **Ignored when the list item size is `.small`.**
+    ///   - helperText: An optional supporting text displayed below the list item row. Defaults to `nil`.
+    public init(
+        key: LocalizedStringKey,
+        tableName: String? = nil,
+        bundle: Bundle = .main,
+        isBoldLabel: Bool = false,
+        description: String? = nil,
+        overline: String? = nil,
+        extraLabel: String? = nil,
+        helperText: String? = nil)
+    {
+        self.init(
+            label: key.resolved(tableName: tableName, bundle: bundle),
+            isBoldLabel: isBoldLabel,
+            description: description,
+            overline: overline,
+            extraLabel: extraLabel,
+            helperText: helperText)
     }
 }
