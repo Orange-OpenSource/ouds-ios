@@ -510,9 +510,9 @@ Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`
 .oudsListItemContainerAlignment(.top)
 
 // Content style
-.oudsListItemStyle(style: .outlined)                              // visible border around each item
-.oudsListItemStyle(style: .standard(divider: true, background: false))  // default
-.oudsListItemStyle(style: .standard(divider: false, background: true))  // background fill, no divider
+.oudsListItemStyle(.outlined)                              // visible border around each item
+.oudsListItemStyle(.standard(divider: true, background: false))  // default
+.oudsListItemStyle(.standard(divider: false, background: true))  // background fill, no divider
 
 // Card style shorthand (hasDivider: false, hasBackground: true by default)
 .oudsListCardStyle(hasDivider: false, hasBackground: true)

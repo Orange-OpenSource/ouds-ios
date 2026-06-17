@@ -43,7 +43,7 @@ import SwiftUI
 /// Defines the visual style of a list item such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
 /// The style controls the border, divider, and background appearance of list items.
-/// Use the ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+/// Use the ``SwiftUICore/View/oudsListItemStyle(_:)`` or
 /// ``SwiftUICore/View/oudsListCardStyle(hasDivider:hasBackground:)`` view modifiers
 /// to apply the style on list items.
 ///
@@ -52,11 +52,11 @@ import SwiftUI
 /// ```swift
 ///     // Outlined style with a border around each item
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(style: .outlined)
+///         .oudsListItemStyle(.outlined)
 ///
 ///     // Standard style with divider and no background
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
-///         .oudsListItemStyle(style: .standard(divider: true, background: false))
+///         .oudsListItemStyle(.standard(divider: true, background: false))
 ///
 ///     // Card style with background and no divider
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
@@ -151,14 +151,14 @@ extension View {
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
     ///         OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
     ///     }
-    ///     .oudsListItemStyle(style: .outlined)
+    ///     .oudsListItemStyle(.outlined)
     /// ```
     ///
     /// - Parameter style: The ``OUDSListItemContentStyle`` to apply on items.
     ///   Defaults to `.standard(divider: true, background: false)`.
     ///
     /// - Returns: A view with the specified content style applied to its list items.
-    public func oudsListItemStyle(style: OUDSListItemContentStyle = .standard(divider: true, background: false)) -> some View {
+    public func oudsListItemStyle(_ style: OUDSListItemContentStyle = .standard(divider: true, background: false)) -> some View {
         environment(\.oudsListItemContentStyle, style)
     }
 
@@ -246,7 +246,7 @@ extension EnvironmentValues {
     /// The current content style of list items (outlined, standard with divider/background).
     ///
     /// Defaults to `.standard(divider: true, background: false)`.
-    /// Set via ``SwiftUICore/View/oudsListItemStyle(style:)`` or
+    /// Set via ``SwiftUICore/View/oudsListItemStyle(_:)`` or
     /// ``SwiftUICore/View/oudsListCardStyle(hasDivider:hasBackground:)``.
     @Entry var oudsListItemContentStyle: OUDSListItemContentStyle = .standard(divider: true, background: false)
 

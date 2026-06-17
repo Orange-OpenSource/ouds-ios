@@ -96,7 +96,7 @@ import SwiftUI
 ///     OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 ///         .oudsListItemSize(.small)
 ///         .oudsListItemContainerAlignment(.top)
-///         .oudsListItemStyle(style: .outlined)
+///         .oudsListItemStyle(.outlined)
 /// ```
 ///
 /// ## Accesibility considerations
