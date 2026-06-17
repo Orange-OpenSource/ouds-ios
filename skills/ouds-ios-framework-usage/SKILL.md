@@ -310,9 +310,9 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Siz
 Count parameter must be of type `UInt8`.
 
 ```swift
-OUDSBadge(accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadge(count: 3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadge(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
+OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
+OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
+OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
 ```
 
 ---
