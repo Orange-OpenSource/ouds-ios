@@ -59,7 +59,8 @@ import SwiftUI
 ///
 /// ## Badges uses
 ///
-/// For iOS 26 with Liquid Glass, the system badge is used because the OUDS badge component does not provide a suitable rendering with the glassified effect applied on the top toolbar.
+/// For iOS 26 with Liquid Glass, the system badge is used because the OUDS badge component does not provide a suitable
+/// rendering with the glassified effect applied on the top toolbar.
 /// For iOS until 18 and without Liquid Glass  OUDS badge component is always used.
 ///
 /// ## Code sample
