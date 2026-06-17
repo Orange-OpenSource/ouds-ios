@@ -67,18 +67,19 @@ import SwiftUI
 /// ![A badge component in light and dark modes with Wireframe theme](component_badge_icon_Wireframe)
 ///
 /// - Version: 1.3.0 Figma component design version)
-/// - Since: 2.1.0
+/// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadgeIcon: View {
 
-    // MARK: Properties
+    // MARK: - Properties
+
     private let accessibilityLabel: String
     private let configuration: BadgeIconConfiguration
 
     // MARK: - Configurations
 
     /// The status depends on the context of the information it represents.
-    /// - Since: 2.1.0
+    /// - Since: 2.2.0
     @frozen public enum Status {
 
         /// Used for general labels without specific emphasis
@@ -101,7 +102,7 @@ public struct OUDSBadgeIcon: View {
         case negative
     }
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Creates a badge which displays an icon to visually reinforce meaning.
     /// It is used for status indicators (e.g., "New", "Pending", "Success").

@@ -78,7 +78,7 @@ import SwiftUI
 /// - Version: 1.2.0 (Figma component design version)
 /// - Since: 0.17.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-@available(*, deprecated, message: "Use instead OUDSBadgeStandard, OUDSBadgeIcon or OUDSBadgeCount instead.")
+@available(*, deprecated, message: "Use OUDSBadgeStandard, OUDSBadgeIcon or OUDSBadgeCount instead.")
 public struct OUDSBadge: View {
 
     static let maxCount = 99
@@ -182,7 +182,7 @@ public struct OUDSBadge: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    @available(*, deprecated, message: "Use instead OUDSBadgeStandard instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeStandard instead.")
     public init(accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -205,7 +205,7 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge. The background color of the badge is based on this status, *neutral* by default
     ///    - size: The size of this badge, *medium* by default
-    @available(*, deprecated, message: "Use instead OUDSBadgeStandard instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeStandard instead.")
     public init(accessibilityLabel: String, status: Status = .neutral, size: StandardSize = .medium) {
         self.init(layout: .init(type: .empty(size: size), status: status),
                   accessibilityLabel: accessibilityLabel)
@@ -227,7 +227,7 @@ public struct OUDSBadge: View {
     ///    - accessibilityLabel: The accessibility label the badge should have to provide meaning.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    @available(*, deprecated, message: "Use instead OUDSBadgeCount instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeCount instead.")
     public init(count: UInt8, accessibilityLabel: String, status: Status = .neutral, size: IllustrationSize = .medium) {
         self.init(layout: .init(type: .count(value: count, size: size), status: status),
                   accessibilityLabel: accessibilityLabel)
@@ -251,7 +251,7 @@ public struct OUDSBadge: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - status: The status of this badge, default set to *neutral*
     ///    - size: The size of this badge, default set to *medium*
-    @available(*, deprecated, message: "Use instead OUDSBadgeCount instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeCount instead.")
     public init(count: UInt8,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -279,7 +279,7 @@ public struct OUDSBadge: View {
     ///    and **neutral** status whrere a decorative icon is required)
     ///    - accessibilityLabel: The accessibility label the badge should have, describing the icon or brining meanings
     ///    - size: The size of this badge, default set to *medium*
-    @available(*, deprecated, message: "Use instead OUDSBadgeIcon instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeIcon instead.")
     public init(status: StatusWithIcon,
                 accessibilityLabel: String,
                 size: IllustrationSize = .medium)
@@ -305,7 +305,7 @@ public struct OUDSBadge: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - size: The size of this badge, default set to *medium*
-    @available(*, deprecated, message: "Use instead OUDSBadgeIcon instead.")
+    @available(*, deprecated, message: "Use OUDSBadgeIcon instead.")
     public init(status: StatusWithIcon,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,

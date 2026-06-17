@@ -63,11 +63,11 @@ import SwiftUI
 /// ![A badge component in light and dark modes with Wireframe theme](component_badge_standard_Wireframe)
 ///
 /// - Version: 1.2.0 (Figma component design version)
-/// - Since: 2.1.0
+/// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadgeStandard: View {
 
-    // MARK: Stored properties
+    // MARK: - Properties
 
     private let accessibilityLabel: String
     private let configuration: BadgeStandardConfiguration
@@ -77,7 +77,7 @@ public struct OUDSBadgeStandard: View {
     /// The status depends on the context of the information it represents.
     /// Badges components like ``OUDSBadge`` and ``OUDSBadgeCount`` share the sames status.
     ///
-    /// - Since: 2.1.0
+    /// - Since: 2.2.0
     @frozen public enum Status {
 
         /// Used for general labels without specific emphasis
@@ -101,7 +101,7 @@ public struct OUDSBadgeStandard: View {
     }
 
     /// All available sizes of a badge as *standard* type
-    /// - Since: 2.1.0
+    /// - Since: 2.2.0
     @frozen public enum Size {
 
         /// A compact badge for minimal space usage, ideal for small UI elements like icons or tooltips.
@@ -117,7 +117,7 @@ public struct OUDSBadgeStandard: View {
         case large
     }
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Creates a basic badge.
     ///
@@ -148,7 +148,7 @@ public struct OUDSBadgeStandard: View {
     /// Use the `View/disabled(_:)` method to have badge in disabled state.
     ///
     /// ```swift
-    ///     OUDSBadge(accessibilityLabel: "New", status: .info)
+    ///     OUDSBadgeStandard(accessibilityLabel: "New", status: .info)
     /// ```
     ///
     /// - Parameters:
@@ -173,7 +173,7 @@ public struct OUDSBadgeStandard: View {
         self.accessibilityLabel = accessibilityLabel
     }
 
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         HStack {

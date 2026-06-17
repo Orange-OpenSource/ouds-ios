@@ -16,7 +16,7 @@ import SwiftUI
 
 /// Badge is a UI element that emphasizes system notifications, status, or the categorization of an information, throughout colour only.
 /// Badge is rendered as a coloured shape, without icon, text or number; and its chosen size remains unchanged regardless of the changes of the interface size.
-/// ``OUDSBadgeCount`` displays a text.
+/// ``OUDSBadgeCount`` displays a text, as integer, limited to 99.
 ///
 /// ## Code samples
 ///
@@ -59,14 +59,14 @@ import SwiftUI
 ///
 /// ![A badge component in light and dark modes with Wireframe theme](component_badge_count_Wireframe)
 ///
-/// - Version: 1.2.0
-/// - Since: 2.1.0
+/// - Version: 1.2.0 (Figma component design version)
+/// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSBadgeCount: View {
 
     static let maxCount = 99
 
-    // MARK: Stored properties
+    // MARK: - Properties
 
     private let configuration: BadgeCountConfiguration
     private let accessibilityLabel: String
@@ -74,7 +74,7 @@ public struct OUDSBadgeCount: View {
     // MARK: - Configurations
 
     /// All available sizes of a badge as *count* type
-    /// - Since: 2.1.0
+    /// - Since: 2.2.0
     @frozen public enum Size {
 
         /// The default size, providing a balance between visibility and space efficiency, suitable for most use cases.
@@ -84,7 +84,7 @@ public struct OUDSBadgeCount: View {
         case large
     }
 
-    // MARK: Initializers
+    // MARK: - Initializers
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
     /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
@@ -150,7 +150,7 @@ public struct OUDSBadgeCount: View {
         self.accessibilityLabel = accessibilityLabel
     }
 
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         HStack {

@@ -22,9 +22,9 @@ struct Indicator: View {
     var body: some View {
         VStack(spacing: theme.spaces.scaledMedium.dimension(for: verticalSizeClass ?? .regular)) {
             HStack(spacing: theme.spaces.fixedSmall) {
-                OUDSBadge(accessibilityLabel: "Badge positive", status: .positive, size: .large)
-                OUDSBadge(count: 1, accessibilityLabel: "Badge Count", status: .negative, size: .large)
-                OUDSBadge(status: .info, accessibilityLabel: "Badge Info", size: .large)
+                OUDSBadgeStandard(accessibilityLabel: "Badge positive", status: .positive, size: .large)
+                OUDSBadgeCount(1, accessibilityLabel: "Badge count", status: .negative, size: .large)
+                OUDSBadgeIcon(status: .info, accessibilityLabel: "Badge info", size: .large)
             }
         }
     }

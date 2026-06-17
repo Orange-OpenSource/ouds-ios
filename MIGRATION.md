@@ -1,6 +1,6 @@
 # Migration Guide
 
-- [v2.0.0 → v2.1.0](#v200--v210)
+- [v2.0.0 → v2.2.0](#v200--v220)
 - [v1.4.0 → v2.0.0](#v140--v200)
 - [v1.3.0 → v1.4.0](#v130--v140)
 - [v1.2.0 → v1.3.0](#v120--v130)
@@ -8,7 +8,7 @@
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
 
-## v2.0.0 → v2.1.0
+## v2.0.0 → v2.2.0
 
 ### Overview
 
@@ -52,7 +52,7 @@ OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 ```
 
 **Required Action**:
-- Remove the `OUDSBadge` calls by `OUDSBadgeStandard`, `OUDSBadgeCount` or `OUDSBadgeIcon`
+- Replace the `OUDSBadge` calls by `OUDSBadgeStandard`, `OUDSBadgeCount` or `OUDSBadgeIcon`
 
 **Reason for Change**: Now in Figma these components have their own versions, configurations and should be split.
 
