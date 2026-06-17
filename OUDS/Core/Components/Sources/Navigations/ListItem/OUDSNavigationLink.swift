@@ -65,6 +65,29 @@ public struct OUDSNavigationLink<Destination: View>: View {
         isActive = false
     }
 
+    /// Defines an ``OUDSNavigationListItem`` backed by a ``SwiftUICore/NavigationLink``
+    /// with a `Destination` ``SwiftUICore/View``  to display whe the user taps.
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - affordanceType: The type of link to apply, default set to `.next`
+    ///    - style: The type of style to apply, default set to `.standard(divider: false, background: false)`
+    ///    - destination: A closure providing the view to display when the user taps the item.
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                affordanceType: OUDSNavigationListItemAffordanceType = .next,
+                style: OUDSListItemContentStyle = .standard(divider: false, background: false),
+                destination: @escaping () -> Destination)
+    {
+        self.init(title: key.resolved(tableName: tableName, bundle: bundle),
+                  affordanceType: affordanceType,
+                  style: style,
+                  destination: destination)
+    }
+
     // MARK: - Body
 
     public var body: some View {
