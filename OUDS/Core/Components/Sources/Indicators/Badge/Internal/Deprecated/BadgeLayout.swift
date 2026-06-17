@@ -13,8 +13,11 @@
 
 import SwiftUI
 
-/// The status of a `OUDSBadge` determines the leading element, the background
+// MARK: - Badge Layout
+
+/// The status of an ``OUDSBadge`` determines the leading element, the background
 /// and the content colors of the badge according to the category.
+@available(*, deprecated, message: "Use BadgeStandardConfiguration, BadgeIconConfiguration or BadgeCountConfiguration instead.")
 struct BadgeLayout {
 
     let type: Self.`Type`
@@ -28,7 +31,7 @@ struct BadgeLayout {
         /// To display a count on badge
         case count(value: UInt8, size: OUDSBadge.IllustrationSize)
 
-        /// To display an icon. For `OUDSTag.Status.Category.neutral` and `OUDSTag.Status.Category.accent`
+        /// To display an icon. For `neutral` and `.accent`
         /// the decorative icon must be provided. For other categories, a default icon is already provided.
         case icon(customIcon: Image? = nil, flipIcon: Bool = false, size: OUDSBadge.IllustrationSize)
     }
@@ -47,8 +50,7 @@ struct BadgeLayout {
         switch type {
         case let .empty(size):
             size
-        case let .count(_, illustrationSize),
-             let .icon(_, _, illustrationSize):
+        case let .icon(_, _, illustrationSize), let .count(_, illustrationSize):
             illustrationSize.standardSize
         }
     }

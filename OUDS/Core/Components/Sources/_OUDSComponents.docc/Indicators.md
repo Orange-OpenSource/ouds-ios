@@ -11,32 +11,78 @@ Some components can be used for **indicators**.
 
 ### Badge
 
+The badge is a small UI element used to highlight status, notifications, or categorization within an interface.
+
+#### Badge Count
+
 @TabNavigator {
     @Tab("Orange") {
-        ![A badge component in light and dark modes with Orange theme](component_badge_Orange)
+        ![A count badge component in light and dark modes with Orange theme](component_badge_count_Orange)
     }
     @Tab("Orange Compact") {
-        ![A badge component in light and dark modes with Orange Compact theme](component_badge_OrangeCompact)
+        ![A count badge component in light and dark modes with Orange Compact theme](component_badge_count_OrangeCompact)
     }
     @Tab("Sosh") {
-        ![A badge component in light and dark modes with Sosh theme](component_badge_Sosh)
+        ![A count badge component in light and dark modes with Sosh theme](component_badge_count_Sosh)
     }
     @Tab("Wireframe") {
-        ![A badge component in light and dark modes with Wireframe theme](component_badge_Wireframe)
+        ![A count badge component in light and dark modes with Wireframe theme](component_badge_count_Wireframe)
+    }
+}
+ 
+An ``OUDSBadgeCount`` displays an integer value.
+
+```swift            
+// Neutral badge in medium size with an image
+OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+```
+
+#### Badge Icon
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![An icon badge component in light and dark modes with Orange theme](component_badge_icon_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![An icon badge component in light and dark modes with Orange Compact theme](component_badge_icon_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![An icon badge component in light and dark modes with Sosh theme](component_badge_icon_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![An icon badge component in light and dark modes with Wireframe theme](component_badge_icon_Wireframe)
     }
 }
 
-The ``OUDSBadge`` is a small UI element used to highlight status, notifications, or categorization within an interface. It is often displayed as a label or indicator with a distinct background color and text.
+An ``OUDSBadgeIcon`` displays only an icon and has specific colors.
+
+```swift            
+// Neutral badge in medium size with an image
+OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+```
+
+#### Badge Standard
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A standard badge component in light and dark modes with Orange theme](component_badge_standard_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A standard badge component in light and dark modes with Orange Compact theme](component_badge_standard_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A standard badge component in light and dark modes with Sosh theme](component_badge_standard_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A standard badge component in light and dark modes with Wireframe theme](component_badge_standard_Wireframe)
+    }
+}
+
+An ``OUDSBadgeStandard`` is an empty badge like a coloured pastille.
 
 ```swift            
 // Info badge in medium size without information
-OUDSBadge(status: .info, size: .medium)
-
-// Negative badge in medium size with count information
-OUDSBadge(count: 1, status: .negative, size: .medium)
-
-// Neutral badge in medium size with an image
-OUDSBadge(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeStandard(status: .info, size: .medium)
 ```
 
 ### Tag

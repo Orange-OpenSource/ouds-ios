@@ -35,7 +35,9 @@ extension OUDSVersions {
         // NOTE: Keep components sorted
         var versionsLog = "OUDS iOS Components Versions:\n"
         versionsLog += "- Alert message: \(Self.componentAlertMessageVersion)\n"
-        versionsLog += "- Badge: \(Self.componentBadgeVersion)\n"
+        versionsLog += "- Badge Standard: \(Self.componentBadgeVersion)\n"
+        versionsLog += "- Badge Count: \(Self.componentBadgeCountVersion)\n"
+        versionsLog += "- Badge Icon: \(Self.componentBadgeIconVersion)\n"
         versionsLog += "- Bullet List: \(Self.componentBulletListVersion)\n"
         versionsLog += "- Button: \(Self.componentButtonVersion)\n"
         versionsLog += "- Checkbox: \(Self.componentCheckboxVersion)\n"
