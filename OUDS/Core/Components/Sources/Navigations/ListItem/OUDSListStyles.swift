@@ -172,7 +172,7 @@ extension View {
     /// ```swift
     ///     OUDSStaticListItem(
     ///         data: OUDSListItemData(label: "Label"),
-    ///         leading: .image(asset: Image("il_placeholder"))
+    ///         leading: .image(.init(asset: Image("il_placeholder"), size: .medium))
     ///     )
     ///     .oudsListItemRoundedMedia(true)
     /// ```

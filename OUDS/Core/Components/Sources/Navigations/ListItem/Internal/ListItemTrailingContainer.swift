@@ -38,8 +38,8 @@ struct ListItemTrailingContainer: View {
                 tag
             case let .icon(icon):
                 icon
-            case let .image(asset: asset, description: description):
-                ListItemImage(asset: asset, description: description)
+            case let .image(image):
+                image
             case let .flag(asset: asset):
                 ListItemFlag(asset: asset)
                     .accessibilityHidden(true)

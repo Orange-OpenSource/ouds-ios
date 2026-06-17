@@ -14,74 +14,74 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// An avatar element that can be used at the leading or trailing position of a list item
-/// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
-///
-/// ``OUDSListItemAvatar`` displays a circular visual identifier that can represent a user, a contact,
-/// or any entity. It supports three content types: a predefined icon, a custom image, or text initials.
-/// An optional ``OUDSBadge`` can be attached at the bottom-trailing corner to indicate status.
-///
-/// ## Avatar types
-///
-/// The ``AvatarType`` enum defines the content displayed inside the avatar:
-/// - **`.icon`**: A predefined person/people icon from the current theme's resource bundle.
-/// - **`.image(_:)`**: A custom `Image` asset that fills the avatar circle.
-/// - **`.initials(_:)`**: A short text string (2 characters maximum) rendered centered in the avatar.
-///
-/// ## Sizes
-///
-/// The ``Size`` enum defines the available sizes for the avatar:
-/// - **`.medium`**: The default size, suited for standard list items.
-/// - **`.large`**: A larger variant for increased visual prominence.
-/// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
-///
-/// **Note:** When the avatar is embedded in a list item with small size
-/// (via ``SwiftUICore/View/oudsListItemSize(_:)``), the `size` parameter is **ignored**
-/// and the avatar is always rendered at its smallest available size.
-///
-/// ## Badge
-///
-/// An optional ``OUDSBadge`` can be placed at the bottom-trailing corner of the avatar
-/// to convey status information (e.g. online presence, notification count).
-/// The badge is rendered with a safety-area border matching the theme's `controlItem.colorBadgeSafetyArea`.
-///
-/// The recommended badge sizes per avatar size are:
-/// - `.medium` avatar → `.extraSmall` badge
-/// - `.large` avatar → `.small` badge
-/// - `.extraLarge` avatar → `.medium` badge
-///
-/// ## Code samples
-///
-/// ```swift
-///     // Avatar with predefined icon, medium size
-///     OUDSListItemAvatar(type: .icon, size: .medium)
-///
-///     // Avatar with a custom image, large size
-///     OUDSListItemAvatar(type: .image(Image("il_placeholder")), size: .large)
-///
-///     // Avatar with initials, extra large size
-///     OUDSListItemAvatar(type: .initials("AB"), size: .extraLarge)
-///
-///     // Avatar with icon and a notification badge
-///     let badge = OUDSBadge(accessibilityLabel: "Online", status: .positive, size: .extraSmall)
-///     OUDSListItemAvatar(type: .icon, size: .medium, badge: badge)
-///
-///     // Avatar with initials and a count badge
-///     let countBadge = OUDSBadge(count: 3, accessibilityLabel: "3 messages", status: .negative, size: .small)
-///     OUDSListItemAvatar(type: .initials("JD"), size: .large, badge: countBadge)
-///
-///     // Usage as leading element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "John Doe", description: "Online"),
-///         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))
-///     )
-///
-///     // Usage as trailing element in a list item
-///     OUDSStaticListItem(
-///         data: OUDSListItemData(label: "Contact"),
-///         trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
-///     )
-/// ```
+// An avatar element that can be used at the leading or trailing position of a list item
+// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
+//
+// ``OUDSListItemAvatar`` displays a circular visual identifier that can represent a user, a contact,
+// or any entity. It supports three content types: a predefined icon, a custom image, or text initials.
+// An optional ``OUDSBadge`` can be attached at the bottom-trailing corner to indicate status.
+//
+// ## Avatar types
+//
+// The ``AvatarType`` enum defines the content displayed inside the avatar:
+// - **`.icon`**: A predefined person/people icon from the current theme's resource bundle.
+// - **`.image(_:)`**: A custom `Image` asset that fills the avatar circle.
+// - **`.initials(_:)`**: A short text string (2 characters maximum) rendered centered in the avatar.
+//
+// ## Sizes
+//
+// The ``Size`` enum defines the available sizes for the avatar:
+// - **`.medium`**: The default size, suited for standard list items.
+// - **`.large`**: A larger variant for increased visual prominence.
+// - **`.extraLarge`**: The largest variant, typically used for profile-like displays.
+//
+// **Note:** When the avatar is embedded in a list item with small size
+// (via ``SwiftUICore/View/oudsListItemSize(_:)``), the `size` parameter is **ignored**
+// and the avatar is always rendered at its smallest available size.
+//
+// ## Badge
+//
+// An optional ``OUDSBadge`` can be placed at the bottom-trailing corner of the avatar
+// to convey status information (e.g. online presence, notification count).
+// The badge is rendered with a safety-area border matching the theme's `controlItem.colorBadgeSafetyArea`.
+//
+// The recommended badge sizes per avatar size are:
+// - `.medium` avatar → `.extraSmall` badge
+// - `.large` avatar → `.small` badge
+// - `.extraLarge` avatar → `.medium` badge
+//
+// ## Code samples
+//
+// ```swift
+//     // Avatar with predefined icon, medium size
+//     OUDSListItemAvatar(type: .icon, size: .medium)
+//
+//     // Avatar with a custom image, large size
+//     OUDSListItemAvatar(type: .image(Image("il_placeholder")), size: .large)
+//
+//     // Avatar with initials, extra large size
+//     OUDSListItemAvatar(type: .initials("AB"), size: .extraLarge)
+//
+//     // Avatar with icon and a notification badge
+//     let badge = OUDSBadge(accessibilityLabel: "Online", status: .positive, size: .extraSmall)
+//     OUDSListItemAvatar(type: .icon, size: .medium, badge: badge)
+//
+//     // Avatar with initials and a count badge
+//     let countBadge = OUDSBadge(count: 3, accessibilityLabel: "3 messages", status: .negative, size: .small)
+//     OUDSListItemAvatar(type: .initials("JD"), size: .large, badge: countBadge)
+//
+//     // Usage as leading element in a list item
+//     OUDSStaticListItem(
+//         data: OUDSListItemData(label: "John Doe", description: "Online"),
+//         leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium))
+//     )
+//
+//     // Usage as trailing element in a list item
+//     OUDSStaticListItem(
+//         data: OUDSListItemData(label: "Contact"),
+//         trailing: .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
+//     )
+// ```
 
 /// ## Containers alignment
 ///

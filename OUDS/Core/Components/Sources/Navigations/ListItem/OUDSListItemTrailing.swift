@@ -73,9 +73,10 @@ import SwiftUI
 ///     )
 ///
 ///     // Trailing with an image
+///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .meidum)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         trailing: .image(asset: Image("il_placeholder"))
+///         trailing: .image(image)
 ///     )
 ///
 ///     // Trailing with a country flag
@@ -164,12 +165,12 @@ import SwiftUI
     ///
     /// ```swift
     ///     // Decorative image
-    ///     .image(asset: Image(decorative: "il_placeholder"))
+    ///     .image(.init(asset: Image(decorative: "il_placeholder")))
     ///
     ///     // Not decorative image
-    ///     .image(asset: Image("meaningful_image"), description: "A nice landscape")
+    ///     .image(.init(asset: Image("meaningful_image"), description: "A nice landscape"))
     /// ```
-    case image(asset: Image, description: String? = nil)
+    case image(OUDSListItemImage)
 
     /// A country flag image.
     case flag(asset: Image)

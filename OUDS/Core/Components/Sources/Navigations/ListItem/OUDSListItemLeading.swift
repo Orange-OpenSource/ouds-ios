@@ -41,9 +41,10 @@ import SwiftUI
 ///     )
 ///
 ///     // Leading with an image
+///     let image = OUDSListItemImage(asset: Image("il_placeholder"), size: .medium)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         leading: .image(asset: Image("il_placeholder"))
+///         leading: .image(image)
 ///     )
 ///
 ///     // Leading with a country flag
@@ -81,7 +82,7 @@ import SwiftUI
     /// A status or custom icon displayed at the leading position.
     ///
     /// See ``OUDSListItemIcon`` for available icon types (`.neutral`, `.info`, `.warning`, `.negative`, `.positive`)
-    /// and sizes (`.small`, `.medium`, `.large`).
+    /// and sizes (`.medium`, `.large`).
     case icon(OUDSListItemIcon)
 
     /// A static image asset displayed at the leading position.
@@ -91,12 +92,15 @@ import SwiftUI
     ///
     /// ```swift
     ///     // Decorative image
-    ///     .image(asset: Image(decorative: "il_placeholder"))
+    ///     .image(.init(asset: Image(decorative: "il_placeholder")))
     ///
     ///     // Not decorative image
-    ///     .image(asset: Image("meaningful_image"), description: "A nice landscape")
+    ///     .image(.init(asset: Image("meaningful_image"), description: "A nice landscape"))
+    ///
+    ///     // Decorative image in large size
+    ///     .image(.init(asset: Image(decorative: "il_placeholder"), size .large))
     /// ```
-    case image(asset: Image, description: String? = nil)
+    case image(OUDSListItemImage)
 
     /// A country flag image displayed at the leading position.
     case flag(asset: Image)

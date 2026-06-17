@@ -449,7 +449,7 @@ OUDSNavigationListItem(
 
 ```swift
 .leading = .icon(OUDSListItemIcon(type: .info, size: .medium))    // status/custom icon
-.leading = .image(asset: Image("il_placeholder"))                  // static image
+.leading = .image(OUDSListItemImage(asset: Image("il_placeholder"), size: .medium) // static image
 .leading = .flag(asset: Image("il_flag_fr"))                       // country flag
 .leading = .video(URL(string: "https://example.com/video.mp4")!)   // video thumbnail
 .leading = .avatar(OUDSListItemAvatar(type: .icon, size: .medium)) // circular avatar
@@ -465,7 +465,7 @@ OUDSNavigationListItem(
 .trailing = .badge(OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium))
 .trailing = .tag(OUDSTag(label: "New"))
 .trailing = .icon(OUDSListItemIcon(type: .warning, size: .small))
-.trailing = .image(asset: Image("il_placeholder"))
+.trailing = .image(OUDSListItemImage(asset: Image("il_placeholder"), size: .medium))
 .trailing = .flag(asset: Image("il_flag_fr"))
 .trailing = .video(URL(string: "https://example.com/video.mp4")!)
 .trailing = .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
@@ -485,6 +485,20 @@ OUDSListItemAvatar(type: .icon, size: .large,
 > In `.small` list item size, the avatar size parameter is ignored — smallest variant is always used.
 
 #### `OUDSListItemIcon` — status icon
+
+```swift
+OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))          // custom image, default color
+OUDSListItemIcon(type: .neutral(asset: Image("ic_bell"), badge: true)) // with negative dot badge
+OUDSListItemIcon(type: .positive)    // predefined checkmark, positive (green)
+OUDSListItemIcon(type: .info)        // predefined info icon, informational (blue)
+OUDSListItemIcon(type: .warning)     // predefined warning icon, warning color, two-layer rendering
+OUDSListItemIcon(type: .negative)    // predefined alert icon, negative (red)
+OUDSListItemIcon(type: .info, size: .large)   // .medium (default) | .large
+```
+
+> In `.small` list item size, the icon size parameter is ignored — smallest variant is always used.
+
+#### `OUDSListItemImage`
 
 ```swift
 OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))          // custom image, default color

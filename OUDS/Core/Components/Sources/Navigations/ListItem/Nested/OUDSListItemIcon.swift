@@ -40,7 +40,6 @@ import SwiftUI
 /// ## Sizes
 ///
 /// The ``Size`` enum defines the available sizes:
-/// - **`.small`**: The smallest size, corresponding to the theme's `controlItem.sizeAssetSmall` token.
 /// - **`.medium`**: The default size, corresponding to the theme's `controlItem.sizeAssetMedium` token.
 /// - **`.large`**: The largest size, corresponding to the theme's `controlItem.sizeAssetLarge` token.
 ///
@@ -56,9 +55,6 @@ import SwiftUI
 ///
 ///     // Warning icon with large size
 ///     OUDSListItemIcon(type: .warning, size: .large)
-///
-///     // Positive icon with small size
-///     OUDSListItemIcon(type: .positive, size: .small)
 ///
 ///     // Negative icon with medium size
 ///     OUDSListItemIcon(type: .negative, size: .medium)
@@ -78,7 +74,7 @@ import SwiftUI
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .icon(OUDSListItemIcon(type: .warning, size: .small))
+///         trailing: .icon(OUDSListItemIcon(type: .warning, size: .medium))
 ///     )
 /// ```
 ///
@@ -116,13 +112,10 @@ public struct OUDSListItemIcon: View {
 
     /// Defines the available sizes for the icon.
     /// When the icon is embedded in a list item with `.small` size, this parameter is ignored
-    /// and the smallest size is always used.
+    /// and a smallest size is always used.
     ///
     /// - Since: 2.2.0
     @frozen public enum Size {
-        /// The smallest icon size.
-        case small
-
         /// The default icon size.
         case medium
 
@@ -156,6 +149,7 @@ public struct OUDSListItemIcon: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
 
     // MARK: - Body
 
@@ -235,23 +229,30 @@ public struct OUDSListItemIcon: View {
         }
     }
 
-    private var assetSize: CGFloat {
-        switch size {
+    private var assetSize: SizeSemanticToken {
+        switch itemSize {
+        case .standard:
+            switch size {
+            case .medium:
+                theme.controlItem.sizeAssetMedium
+            case .large:
+                theme.controlItem.sizeAssetLarge
+            }
         case .small:
             theme.controlItem.sizeAssetSmall
-        case .medium:
-            theme.controlItem.sizeAssetMedium
-        case .large:
-            theme.controlItem.sizeAssetLarge
         }
     }
 
     private var badgeSize: OUDSBadge.StandardSize {
-        switch size {
-        case .small, .medium:
+        if itemSize == .small {
             .extraSmall
-        case .large:
-            .small
+        } else {
+            switch size {
+            case .medium:
+                .extraSmall
+            case .large:
+                .small
+            }
         }
     }
 }

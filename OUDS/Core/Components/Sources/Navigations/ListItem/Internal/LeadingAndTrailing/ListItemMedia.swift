@@ -15,52 +15,6 @@ import AVFoundation
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - List Item Image
-
-struct ListItemImage: View {
-
-    // MARK: Properties
-
-    let asset: Image
-    let description: String?
-
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
-
-    // MARK: Body
-
-    var body: some View {
-        asset
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .opacity(opacity)
-            .frame(height: assetSize, alignment: .center)
-            .clipShape(RoundedRectangle(cornerRadius: radius))
-            .accessibilityLabel(description ?? "")
-    }
-
-    // MARK: Helpers
-
-    private var radius: BorderRadiusSemanticToken {
-        roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
-    }
-
-    private var opacity: Double {
-        isEnabled ? theme.opacities.opaque : theme.opacities.disabled
-    }
-
-    private var assetSize: CGFloat {
-        switch itemSize {
-        case .standard:
-            theme.controlItem.sizeAssetMedium
-        case .small:
-            theme.controlItem.sizeAssetSmall
-        }
-    }
-}
-
 // MARK: - List Item Flag
 
 struct ListItemFlag: View {
@@ -194,11 +148,11 @@ struct ListItemVideo: View {
         #if os(visionOS)
             .onChange(of: url) { _, newURL in
                 refreshPlayer(with: newURL)
-            }
+        }
         #else
-            .onChange(of: url) { newURL in
-                refreshPlayer(with: newURL)
-            }
+        .onChange(of: url) { newURL in
+            refreshPlayer(with: newURL)
+        }
         #endif
     }
 
@@ -294,10 +248,14 @@ private final class PlayerUIView: UIView {
 
     // MARK: - Layer
 
-    override class var layerClass: AnyClass { AVPlayerLayer.self }
+    override class var layerClass: AnyClass {
+        AVPlayerLayer.self
+    }
 
     // swiftlint:disable:next force_cast
-    private var playerLayer: AVPlayerLayer { layer as! AVPlayerLayer }
+    private var playerLayer: AVPlayerLayer {
+        layer as! AVPlayerLayer
+    }
 
     // MARK: - Player
 
@@ -317,7 +275,9 @@ private final class PlayerUIView: UIView {
         backgroundColor = .clear
     }
 
-    required init?(coder: NSCoder) { nil }
+    required init?(coder: NSCoder) {
+        nil
+    }
 
     deinit {}
 
