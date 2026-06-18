@@ -1,0 +1,13 @@
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>makeFont(family:from:isCompact:)</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.0b7dc663.js"></script><script defer="defer" src="/js/index.b232e9de.js"></script><link href="/css/index.19043b1e.css" rel="stylesheet"><meta content="Generates a `NativeFont` object based on tokens, i.e. a `UIFont` for UIKit apps or a `NSFont` for AppKit apps." name="description"/></head><body data-color-scheme="auto"><noscript><article><section><ul><li><a href="../../../index.html">Components</a></li><li><a href="../../index.html">SwiftUICore</a></li><li><a href="../index.html">Font</a></li><li>makeFont(family:from:isCompact:)</li></ul><p>Type Method</p><h1>makeFont(family:from:isCompact:)</h1><p>Generates a <code>NativeFont</code> object based on tokens, i.e. a <code>UIFont</code> for UIKit apps or a <code>NSFont</code> for AppKit apps.</p><pre><code>static func makeFont(family: FontFamilyRawToken?, from fontToken: MultipleFontCompositeSemanticToken, isCompact: Bool) -&gt; NativeFont</code></pre></section><h2>Parameters</h2><dl><dt>family</dt><dd><p>Token of font family to apply</p></dd><dt>fontToken</dt><dd><p>The token of font to apply</p></dd><dt>isCompact</dt><dd><p>If <i>true</i>, use compact mode, otherwise use regular</p></dd></dl><h2>Return Value</h2><p>The font object created from font tokens</p><h2>Discussion</h2><pre class="swift"><code>    @Environment(\.theme) private var theme
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    let font = Font.makeFont(
+                family: theme.fontFamily,
+                from: theme.fonts.labelModerateLarge,
+                isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
+
+    // To SwiftUI font
+    let swiftUiFont = Font(font)
+</code></pre><p>You may need to use instead <code>View/font(:MultipleFontCompositeSemanticToken)</code> <code>ViewModifier</code> so as to apply computed lines and letters heights and spacings, e.g:</p><pre class="swift"><code>    SomeView().font(theme.fonts.labelModerateLarge)
+</code></pre></article></noscript><div id="app"></div></body></html>
