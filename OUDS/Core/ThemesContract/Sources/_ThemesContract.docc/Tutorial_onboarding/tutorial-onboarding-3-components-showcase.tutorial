@@ -29,7 +29,7 @@
             @Step {
                 OUDS provides also components as *indicators* like *badges* and *tags*.
                 Define an `Indicator` `View`, with a `VStack` applying *theme.spaces.scaledMedium* spacing token for a *vertical size class*, and containing an `HStack` with a *theme.spaces.fixedSmall* spacing.
-                Add inside [badges](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbadge/): do not hesitate to change their *status* and *size*.
+                Add inside [badges](https://ios.unified-design-system.orange.com/documentation/oudscomponents/oudsbadgestandard/): do not hesitate to change their *status* and *size*.
                 Make your tests with the Xcode preview.
                 
                 @Code(name: "Indicator.swift", file: "tutorial-onboarding-3-2.swift") {

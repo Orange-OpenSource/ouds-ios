@@ -25,6 +25,7 @@ struct TextAreaInputText: View {
     let placeholder: String
     let text: Binding<String>
     let status: OUDSTextArea.Status
+    let constrainedMaxHeight: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -54,7 +55,7 @@ struct TextAreaInputText: View {
                 .background(Color.clear)
                 .padding(EdgeInsets(top: -8, leading: -5, bottom: -8, trailing: 0))
                 .frame(minHeight: theme.textArea.sizeMinHeightInput)
-                .frame(maxHeight: theme.textArea.sizeMaxHeightInput)
+                .frame(maxHeight: constrainedMaxHeight ? theme.textArea.sizeMinHeightInput : theme.textArea.sizeMaxHeightInput)
         }
     }
 

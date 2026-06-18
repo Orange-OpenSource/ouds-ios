@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.1.0...2.2.0) - 2026-06-18
+
+### Added
+
+- Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
+- Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
+- `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
+
+### Changed
+
+- `fastlane` RubyGem from v2.235.10 to v2.236.1
+- `json` RubyGem from v2.19.7 to v2.19.9
+- `github/codeql-action/upload-sarif` action from v4.36.1 to v4.36.2 for `scorecard` GitHub Actions workflow
+- `checkout` action from v6.0.2 to v6.0.3 for all GitHub Actions workflows
+- `ruby/setup-ruby` action from v1.310.0 to v1.313.0 for `build-and-test` GitHub Actions workflow
+- `badge` components with dedicated API and version 1.3 for `badge icon` (Orange-OpenSource/ouds-ios#1439)
+
+### Fixed
+
+- `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
+- Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+
+### Deprecated
+
+- `badge` umbrella component managing the three variants (Orange-OpenSource/ouds-ios#1439)
+
 ## [2.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.0.0...2.1.0) - 2026-06-02
 
 ### Added

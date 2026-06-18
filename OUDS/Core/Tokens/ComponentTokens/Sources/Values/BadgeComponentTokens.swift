@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for badge components like `OUDSBadge`
+/// Declares all component tokens for badge components like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 /// Use for tokens providers like `OrangeThemeBadgeComponentTokensProvider`.
 ///
 /// - Since: 0.10.0

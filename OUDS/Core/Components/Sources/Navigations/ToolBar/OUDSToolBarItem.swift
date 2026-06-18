@@ -113,7 +113,7 @@ public struct OUDSToolBarItem: View, Identifiable {
 
     /// Defines the badge type can be added on `ActionType.icon` for item of toolbars.
     ///
-    /// **By default, the `OUDSBadge` is used, but for iOS > 26, the system one is used, so its color, size and position
+    /// **By default, the OUDS badge component is used, but for iOS > 26, the system one is used, so its color, size and position
     /// can not be changed.**
     ///
     /// - Since: 2.0.0

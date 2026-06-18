@@ -1,10 +1,10 @@
 ---
-name: ouds-figma-to-swift
+name: ouds-ios-figma-to-swift
 description: How to derive a Swift token name from a Figma token path in the OUDS iOS project (raw, semantic and component tokens)
 license: MIT
 ---
 
-# Skill: ouds-figma-to-swift
+# Skill: ouds-ios-figma-to-swift
 
 ## 1. Quick-reference cheat sheet
 
@@ -61,31 +61,31 @@ PROPERTY NAME (apply in order)
 
 The `1f4a0_<group>/` segment is always dropped. `<component-name>` → lowerCamelCase = `theme.` property.
 
-| Figma `<component-name>` | `theme.` property | SwiftUI component |
-|---|---|---|
-| `button` | `button` | `OUDSButton` |
-| `button-mono` | `button` | `OUDSButton` (mono — prepend `mono` to property) |
-| `text-input` | `textInput` | `OUDSTextInput` |
-| `text-area` | `textArea` | `OUDSTextArea` |
-| `pin-code-input` | `pinCodeInput` | `OUDSPinCodeInput` |
-| `password-input` | `passwordInput` | `OUDSPasswordInput` |
-| `checkbox` | `checkbox` | `OUDSCheckbox` |
-| `radio-button` | `radioButton` | `OUDSRadio` |
-| `switch` | `switch` | `OUDSSwitch` |
-| `chip` | `chip` | `OUDSFilterChip`, `OUDSSuggestionChip` |
-| `select-input` | `selectInput` | `OUDSSelectInput` |
-| `quantity-input` | `quantityInput` | `OUDSQuantityInput` |
-| `control-item` | `controlItem` | shared by switch/radio/checkbox items |
-| `badge` | `badge` | `OUDSBadge` |
-| `tag` | `tag` | `OUDSTag` |
-| `input-tag` | `inputTag` | `OUDSInputTag` |
-| `link` | `link` | `OUDSLink` |
-| `bar` | `bar` | toolbar / tab-bar |
-| `skeleton` | `skeleton` | `OUDSSkeleton` |
-| `alert` | `alert` | `OUDSAlertMessage`, `OUDSInlineAlert` |
-| `divider` | `divider` | `OUDSHorizontalDivider`, `OUDSVerticalDivider` |
-| `bullet-list` | `bulletList` | `OUDSBulletList` |
-| `icon` | `icon` | icon helper views |
+| Figma `<component-name>` | `theme.` property |
+|---|---|
+| `button` | `button` |
+| `button-mono` | `button` (mono — prepend `mono` to property) |
+| `text-input` | `textInput` |
+| `text-area` | `textArea` |
+| `pin-code-input` | `pinCodeInput` |
+| `password-input` | `passwordInput` |
+| `checkbox` | `checkbox` |
+| `radio-button` | `radioButton` |
+| `switch` | `switch` |
+| `chip` | `chip` |
+| `select-input` | `selectInput` |
+| `quantity-input` | `quantityInput` |
+| `control-item` | `controlItem` |
+| `badge` | `badge` |
+| `tag` | `tag` |
+| `input-tag` | `inputTag` |
+| `link` | `link` |
+| `bar` | `bar` |
+| `skeleton` | `skeleton` |
+| `alert` | `alert` |
+| `divider` | `divider` |
+| `bullet-list` | `bulletList` |
+| `icon` | `icon` |
 
 ### Layer 1 — Raw token families
 
@@ -116,7 +116,7 @@ Numeric-only IDs get a leading underscore: `core-ouds/dimension/750` → `Dimens
 `1f4c4_` (📄) and `1f525_` (🔥) are stripped from the segment, name kept.
 `1f4a0_` (💠) and `1f6a7_` (🚧) are NOT stripped — they control layer detection and WIP exclusion.
 
-**R9 — Semantic: domain NOT repeated in property name**
+**R8 — Semantic: domain NOT repeated in property name**
 `ouds/border/width/focus` → `theme.borders.widthFocus` (not `borderWidthFocus`)
 Component tokens are different: domain IS repeated → `theme.button.borderWidthDefault`
 

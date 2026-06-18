@@ -29,7 +29,7 @@ import SwiftUI
 /// - with iOS 26 no token of color are applied on unselected / normal tab item because only the image will be changed
 /// and not the text making theme not readable in dark color scheme
 ///
-/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on ``OUDSBadge`` component.
+/// In addition the badges colors will be the same and cannot be changed (except with token definition). These particular badges do not rely on OUDS badge components.
 ///
 @available(iOS 15, *)
 struct TabBarViewModifier: ViewModifier {
@@ -39,6 +39,7 @@ struct TabBarViewModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @Environment(\.forceOUDSLegacyTabBar) private var forceOUDSLegacyTabBar
     @Environment(\.isLiquidGlassDisabled) private var isLiquidGlassDisabled
 
     // MARK: Init
@@ -149,7 +150,7 @@ struct TabBarViewModifier: ViewModifier {
          It could mean in dark mode the text is not readable at all.
          Thus apply the unselector color only for cases where everything works, i.e. not Liquid Glass
          */
-        if isLiquidGlassDisabled { // No Liquid Glass (i.e. iOS 26 with disabled option, and iOS < 26)
+        if forceOUDSLegacyTabBar || isLiquidGlassDisabled { // No Liquid Glass (i.e. iOS 26 with disabled option, and iOS < 26)
             let unselectedUIColor = themeToApply.bar.colorContentUnselectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.normal.iconColor = unselectedUIColor
             tabBarItemAppearance.normal.titleTextAttributes = [
@@ -164,7 +165,7 @@ struct TabBarViewModifier: ViewModifier {
 
         // MARK: Tab bar selected item
 
-        if isLiquidGlassDisabled {
+        if forceOUDSLegacyTabBar || isLiquidGlassDisabled {
             let selectedUIColor = themeToApply.bar.colorContentSelectedEnabled.color(for: colorSchemeToApply).uiColor
             tabBarItemAppearance.selected.iconColor = selectedUIColor
             tabBarItemAppearance.selected.titleTextAttributes = [

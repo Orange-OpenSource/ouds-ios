@@ -30,6 +30,7 @@ struct TextAreaContainer: View {
     let excessCount: Int
     let status: OUDSTextArea.Status
     let isOutlined: Bool
+    let constrainedMaxHeight: Bool
     let accessibilityHint: String?
 
     @State private var hover: Bool = false
@@ -55,7 +56,8 @@ struct TextAreaContainer: View {
 
                     TextAreaInputText(placeholder: placeholder ?? "",
                                       text: text,
-                                      status: status)
+                                      status: status,
+                                      constrainedMaxHeight: constrainedMaxHeight)
                         .focused($focused)
                         .allowsHitTesting(status != .readOnly && status != .disabled)
                         .onTapGesture {

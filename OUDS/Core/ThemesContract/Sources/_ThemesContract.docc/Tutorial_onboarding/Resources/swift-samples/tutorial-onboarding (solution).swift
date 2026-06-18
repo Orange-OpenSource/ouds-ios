@@ -171,9 +171,9 @@ struct Indicator: View {
     var body: some View {
         VStack(spacing: theme.spaces.scaledMedium.dimension(for: verticalSizeClass ?? .regular)) {
             HStack(spacing: theme.spaces.fixedSmall) {
-                OUDSBadge(accessibilityLabel: "Badge positive", status: .positive, size: .large)
-                OUDSBadge(count: 1, accessibilityLabel: "Badge Count", status: .negative, size: .large)
-                OUDSBadge(status: .info, accessibilityLabel: "Badge Info", size: .large)
+                OUDSBadgeStandard(accessibilityLabel: "Badge positive", status: .positive, size: .large)
+                OUDSBadgeCount(1, accessibilityLabel: "Badge count", status: .negative, size: .large)
+                OUDSBadgeIcon(status: .info, accessibilityLabel: "Badge info", size: .large)
             }
         }
     }
@@ -248,8 +248,8 @@ struct ContentView: View {
 
     private let theme = OrangeTheme()
 
-    // Tracks the currently selected tab; updated automatically when the user taps a tab item.
-    // Can also be set programmatically to switch tabs from outside the component.
+    /// Tracks the currently selected tab; updated automatically when the user taps a tab item.
+    /// Can also be set programmatically to switch tabs from outside the component.
     @State private var selectedTab = 0
 
     var body: some View {

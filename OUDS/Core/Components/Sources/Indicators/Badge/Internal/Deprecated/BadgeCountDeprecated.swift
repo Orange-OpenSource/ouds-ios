@@ -1,0 +1,42 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDSThemesContract
+import SwiftUI
+
+@available(*, deprecated, message: "Use BadgeCount(configuration:) instead.")
+struct BadgeCountDeprecated: View {
+
+    // MARK: Properties
+
+    let value: UInt8
+    let size: OUDSBadge.IllustrationSize
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
+
+    var body: some View {
+        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
+        switch size {
+        case .medium:
+            Text(text)
+                .labelDefaultSmall(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineMedium)
+        case .large:
+            Text(text)
+                .labelDefaultMedium(theme)
+                .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
+        }
+    }
+}

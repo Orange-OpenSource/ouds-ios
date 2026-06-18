@@ -23,25 +23,16 @@ import UIKit
 
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
 /// so as to define the viewport and use finaly the suitable `MultipleFontCompositeSemanticToken`.
-/// In fact dimensionswift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
+/// In fact Swift extension does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
 /// In few words, contains the font elements to apply a defined typography depending to size classes and categories.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is dimensionsystem font_
-    let family: FontFamilyRawToken?
+    private let family: FontFamilyRawToken?
 
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
-    let font: MultipleFontCompositeSemanticToken
-
-    /// To get programatically and on the fly the horizontal layout size
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-
-    /// To get programatically and on the fly the vertical layout size
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-
-    /// Environment variable to observe Dynamic Type changes in accessibility settings
-    @Environment(\.sizeCategory) private var sizeCategory
+    private let font: MultipleFontCompositeSemanticToken
 
     /// Says whether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
@@ -53,38 +44,15 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? font.compact : font.regular
     }
 
-    #if os(macOS)
-    private typealias NativeFont = NSFont
-    #else
-    private typealias NativeFont = UIFont
-    #endif
-
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `NativeFont`
-    /// The `UIFont` is preferred to the `Font` because the `lineHeight`to compute the `lineSpacing` is needed.
-    /// In addition, SwiftUI line height dedicated API stack text to the top, and OUDS requires to have text centered.
+    /// The `UIFont` is preferred to the `Font` because the `lineHeight` to compute the `lineSpacing` is needed.
+    /// In addition, SwiftUI line height dedicated API stacks text to the top, and OUDS requires to have text centered.
     private var adaptativeFont: NativeFont {
-        if let family {
-            // Can be a custom font loaded from side assets or another custom font available in the OS
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
-            let customFont = NativeFont(name: composedFontFamily, size: scaledFontSize)
-            if let customFont {
-                return customFont
-            }
-        }
-
-        // If no family or not loaded
-        // Apply the system font with weight, responsive to Dynamic Type
-        return NativeFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
-    }
-
-    /// Adjusts the font size dynamically based on the user's accessibility settings
-    /// using `UIFontMetrics` for non-macOS OS to scale the font size, ensuring Dynamic Type support
-    private var scaledFontSize: CGFloat {
-        #if os(macOS)
-        adaptiveFontToken.size
-        #else
-        UIFontMetrics.default.scaledValue(for: adaptiveFontToken.size)
-        #endif
+        // If a font family has been given by the user, use it.
+        // If undefined, use font family from theme (maybe because not directly given by user), which can be also undefined
+        Font.makeFont(family: family ?? theme.fontFamily,
+                      from: font,
+                      isCompact: horizontalSizeClass == .compact || verticalSizeClass == .compact)
     }
 
     /// Computes the line height value scaled according to Dynamic Type (if not macOS)
@@ -117,6 +85,36 @@ struct TypographyModifier: ViewModifier {
         lineSpacing / 2
     }
 
+    /// The theme with inside the font family if defined
+    @Environment(\.theme) private var theme
+
+    /// Environment variable to observe Dynamic Type changes in accessibility settings
+    @Environment(\.sizeCategory) private var sizeCategory
+
+    /// To get programatically and on the fly the vertical layout size
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    /// To get programatically and on the fly the horizontal layout size
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    // MARK: - Initialize
+
+    /// Defines a `ViewModifier` for typography with a font token to apply and a font family
+    /// - Parameters:
+    ///    - family: The font family to apply
+    ///    - font: The token of font to use for the typography
+    init(family: FontFamilyRawToken?, font: MultipleFontCompositeSemanticToken) {
+        self.family = family
+        self.font = font
+    }
+
+    /// Defines a `ViewModifier` for typography with a font token to apply and a font family loaded from the theme
+    /// - Parameter font: The token of font to use for the typography
+    init(font: MultipleFontCompositeSemanticToken) {
+        family = nil
+        self.font = font
+    }
+
     // MARK: - View Modifier
 
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*)
@@ -140,40 +138,6 @@ struct TypographyModifier: ViewModifier {
         }
         .modifier(OnChangeSizeCategoryModifier(sizeCategory: sizeCategory))
     }
-
-    // MARK: - UIKit util
-
-    #if !os(macOS)
-    /// Generates a `UIFont` object based on tokens without needing any environement object lile `theme`.
-    ///
-    /// - Parameters:
-    ///   - family: Token of font family to apply
-    ///   - fontToken: The token of font to apply
-    ///   - isCompact: If *true*, use compact mode, otherwise use regular
-    /// - Returns: The `UIFont`
-    static func makeUIFont(
-        family: FontFamilyRawToken?,
-        from fontToken: MultipleFontCompositeSemanticToken,
-        isCompact: Bool) -> UIFont
-    {
-        let adaptiveFontToken = isCompact ? fontToken.compact : fontToken.regular
-
-        #if os(macOS)
-        let scaledFontSize = adaptiveFontToken.size
-        #else
-        let scaledFontSize = UIFontMetrics.default.scaledValue(for: adaptiveFontToken.size)
-        #endif
-
-        if let family {
-            let composedFontFamily = kApplePostScriptFontNames[orKey: PSFNMK(family, Font.Weight(weight: adaptiveFontToken.weight))]
-            if let customFont = UIFont(name: composedFontFamily, size: scaledFontSize) {
-                return customFont
-            }
-        }
-
-        return UIFont.systemFont(ofSize: scaledFontSize, weight: Font.Weight(weight: adaptiveFontToken.weight).nativeFontWeight)
-    }
-    #endif
 
     // MARK: - On Change Size Category Modifier
 

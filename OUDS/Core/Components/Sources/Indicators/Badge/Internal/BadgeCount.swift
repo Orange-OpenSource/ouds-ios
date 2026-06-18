@@ -18,16 +18,14 @@ struct BadgeCount: View {
 
     // MARK: Properties
 
-    let value: UInt8
-    let size: OUDSBadge.IllustrationSize
-
+    let configuration: BadgeCountConfiguration
     @Environment(\.theme) private var theme
 
     // MARK: Body
 
     var body: some View {
-        let text = value > OUDSBadge.maxCount ? "+\(OUDSBadge.maxCount)" : "\(value)"
-        switch size {
+        let text = configuration.value > OUDSBadgeCount.maxCount ? "+\(OUDSBadgeCount.maxCount)" : "\(configuration.value)"
+        switch configuration.size {
         case .medium:
             Text(text)
                 .labelDefaultSmall(theme)
@@ -36,6 +34,17 @@ struct BadgeCount: View {
             Text(text)
                 .labelDefaultMedium(theme)
                 .padding(.horizontal, theme.badge.spacePaddingInlineLarge)
+        }
+    }
+}
+
+extension OUDSBadge.IllustrationSize {
+    private var countSize: OUDSBadgeCount.Size {
+        switch self {
+        case .medium:
+            .medium
+        case .large:
+            .large
         }
     }
 }

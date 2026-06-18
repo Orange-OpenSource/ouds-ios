@@ -1,5 +1,5 @@
 ---
-name: ouds-framework-usage
+name: ouds-ios-framework-usage
 description: How to set up and use the OUDS iOS framework with imports, themes, tokens, view modifiers, and all available components with code examples
 license: MIT
 ---
@@ -82,7 +82,8 @@ Available: `OrangeTheme`, `OrangeCompact`, `SoshTheme`, `WireframeTheme`.
 ## 5. View modifiers
 
 ```swift
-Text("Hello").bodyDefaultMedium(theme)           // typography — use OUDS, not font()
+Text("Hello")
+.font(theme.fonts.bodyDefaultMedium) // typography — use view modifier with token
 .foregroundColor(theme.colors.contentDefault)
 .background(theme.colors.bgPrimary)
 .border(style: theme.borders.styleDefault,
@@ -261,10 +262,16 @@ OUDSTextArea(label: "Label", text: $text, helperText: .plain("Max 500 chars."))
 OUDSTextArea(label: "Label", text: $text, helperText: .charactersMaxCount(500))
 OUDSTextArea(label: "Label", text: $text,
              helperLink: .init(text: "Learn more") { openUrl(url) })
+// Fixed height — no vertical growth, scroll from first overflow line
+OUDSTextArea(label: "Label", text: $text, constrainedMaxHeight: true)
 // Error status → see §6 Common patterns
 ```
 
-> Min visible lines: 3 (`OUDSTextArea.minLines`). Max before scrolling: 10 (`OUDSTextArea.maxLines`).
+> Height is controlled by two component tokens on `theme.textArea`:
+> - `sizeMinHeightInput` (72 pt by default) — minimum height, always applied
+> - `sizeMaxHeightInput` (240 pt by default) — maximum height before scroll (used when `constrainedMaxHeight: false`, the default)
+>
+> When `constrainedMaxHeight: true`, `maxHeight` is capped to `sizeMinHeightInput`, keeping the component at a fixed compact size.
 
 ---
 
@@ -300,11 +307,12 @@ OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_
 ### Indicators — Badge
 
 Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative` — Sizes: `extraSmall`, `small`, `medium`, `large`
+Count parameter must be of type `UInt8`.
 
 ```swift
-OUDSBadge(status: .neutral, size: .medium)
-OUDSBadge(count: 3, status: .neutral, size: .medium)
-OUDSBadge(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
+OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
+OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
+OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
 ```
 
 ---
