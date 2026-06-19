@@ -15,10 +15,10 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// An icon element that can be used at the leading or trailing position of a list item
+/// An country flag element that can be used at the leading or trailing position of a list item
 /// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///
-/// ``OUDSListItemImage`` displays an image (square or wide)
+/// ``OUDSListItemFlag`` displays a country flag (i.e. image)
 ///
 /// ## Sizes
 ///
@@ -33,33 +33,30 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Decorative image
-///     OUDSListItemImage(asset: Image(decorative: "il_placeholder"))
+///     // Country flag with medium size (default)
+///     OUDSListItemFlag(asset: "il_flag_fr")
 ///
-///     // Not decorative image
-///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape")
-///
-///     // Not decorative image with large size
-///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape", size: .large)
+///     // Country flag with large size
+///     OUDSListItemFlag(asset: "il_flag_fr", size: .large)
 ///
 ///     // Usage as leading element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Information"),
-///         leading: .image(.init(asset: Image(decorative: "il_placeholder", size: .medium))
+///         leading: .flag(.init(asset: "il_flag_fr", size: .large))
 ///     )
 ///
 ///     // Usage as trailing element in a list item
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Warning"),
-///         trailing: .image(.init(asset: Image(decorative: "il_placeholder", size: .medium))
+///         trailing: .flag(.init(asset: "il_flag_fr", size: .large))
 ///     )
 /// ```
 ///
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSListItemImage: View {
+public struct OUDSListItemFlag: View {
 
-    /// Defines the available sizes (i.e. height) for the image.
+    /// Defines the available sizes (i.e. height) for the image of the country flag.
     /// When the image is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
     ///
@@ -81,10 +78,7 @@ public struct OUDSListItemImage: View {
     ///
     /// ```swift
     ///     // Decorative image
-    ///     OUDSListItemImage(asset: Image(decorative: "il_placeholder"))
-    ///
-    ///     // Not decorative image
-    ///     OUDSListItemImage(asset: Image("meaningful_image"), description: "A nice landscape")
+    ///     OUDSListItemFlag(asset: Image(decorative: "il_flag_fr"))
     /// ```
     ///
     /// - Parameters:
@@ -93,17 +87,15 @@ public struct OUDSListItemImage: View {
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
     ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
     ///   - description: The description of the image if not decorative
-    public init(asset: Image, size: Size = .medium, description: String? = nil) {
+    public init(asset: Image, size: Size = .medium) {
         self.asset = asset
         self.size = size
-        self.description = description
     }
 
     // MARK: Properties
 
-    let asset: Image
-    let size: Size
-    let description: String?
+    private let asset: Image
+    private let size: Size
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -113,20 +105,17 @@ public struct OUDSListItemImage: View {
     // MARK: Body
 
     public var body: some View {
-        asset
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .opacity(opacity)
-            .frame(height: frameHeight, alignment: .center)
-            .clipShape(RoundedRectangle(cornerRadius: radius))
-            .accessibilityLabel(description ?? "")
+        HStack {
+            asset
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .opacity(opacity)
+                .frame(height: theme.controlItem.sizeFlagHeight, alignment: .center)
+        }
+        .frame(minWidth: frameHeight, alignment: .center)
     }
 
     // MARK: Helpers
-
-    private var radius: BorderRadiusSemanticToken {
-        roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
-    }
 
     private var opacity: Double {
         isEnabled ? theme.opacities.opaque : theme.opacities.disabled

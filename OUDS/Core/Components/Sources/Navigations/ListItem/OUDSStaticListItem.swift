@@ -77,8 +77,8 @@ import SwiftUI
 /// - `.badge(OUDSBadge)`: A badge with count or status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
-/// - `.image(asset:)`:  A static image asset
-/// - `.flag(asset:)`: A country flag image
+/// - `.image(OUDSListItemImage)`:  A static image asset
+/// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///

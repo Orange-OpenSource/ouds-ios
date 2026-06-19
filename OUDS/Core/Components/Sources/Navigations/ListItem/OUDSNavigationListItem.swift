@@ -78,7 +78,7 @@ import SwiftUI
 ///  The leading position (before the texts) accepts one optional element via ``OUDSListItemLeading``:
 ///  - `.icon(OUDSListItemIcon)`: A status or custom icon (neutral, info, warning, negative, positive)
 ///  - `.image(OUDSListItemImage)`: A static image asset
-///  - `.flag(asset:)`: A country flag image
+///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
@@ -93,7 +93,7 @@ import SwiftUI
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset
-/// - `.flag(asset:)`: A country flag image
+/// - `.flag(OUDSListItemFlag)`: A country flag image
 /// - `.video(URL)`: A video thumbnail loaded from a URL
 /// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///

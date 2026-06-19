@@ -82,13 +82,14 @@ import SwiftUI
 ///     // Trailing with a country flag
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "France"),
-///         trailing: .flag(asset: Image("il_flag_fr"))
+///         trailing: .flag(.init(asset: Image("il_flag_fr"), size: .medium))
 ///     )
 ///
 ///     // Trailing with a video thumbnail
+///     let video = OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .meidum)
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Watch"),
-///         trailing: .video(URL(string: "https://example.com/video.mp4")!)
+///         trailing: .video(video)
 ///     )
 ///
 ///     // Trailing with an avatar
@@ -173,26 +174,21 @@ import SwiftUI
     case image(OUDSListItemImage)
 
     /// A country flag image.
-    case flag(asset: Image)
+    case flag(OUDSListItemFlag)
 
     /// A video loaded from the given URL.
     ///
-    /// Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)`` to apply rounded corners.
+    /// The video is displayed as-is. Use ``SwiftUICore/View/oudsListItemRoundedMedia(_:)``
+    /// to apply rounded corners.
     ///
-    /// - Parameters:
-    ///   - url: The URL of the video (local `file://` or remote `https://` HLS / MP4).
-    ///   - autoplay: Whether the video starts playing automatically when the item appears. Defaults to `false`.
-    ///   - muted: Whether the video is muted. Defaults to `true`.
-    ///   - tapToTogglePlay: Whether a tap on the video toggles play / pause. Defaults to `false`.
-    ///   - tapToToggleMute: Whether a tap on the video toggles mute / unmute. Defaults to `false`.
-    ///
-    /// When both `tapToTogglePlay` and `tapToToggleMute` are `true`, a single tap performs both actions.
-    /// When `autoplay` is `false` and `tapToTogglePlay` is `false`, the first frame is shown as a static thumbnail.
+    /// ```swift
+    ///     .video(.init(url: <your_video_url>))
+    /// ```
     @available(macOS, unavailable)
     @available(tvOS, unavailable)
     @available(watchOS, unavailable)
     @available(visionOS, unavailable)
-    case video(URL, autoplay: Bool = false, muted: Bool = true, tapToTogglePlay: Bool = false, tapToToggleMute: Bool = false)
+    case video(OUDSListItemVideo)
 
     /// An avatar with icon, initials, or image.
     ///

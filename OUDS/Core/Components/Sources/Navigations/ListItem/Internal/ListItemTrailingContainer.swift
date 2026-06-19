@@ -40,19 +40,15 @@ struct ListItemTrailingContainer: View {
                 icon
             case let .image(image):
                 image
-            case let .flag(asset: asset):
-                ListItemFlag(asset: asset)
+            case let .flag(flag):
+                flag
                     .accessibilityHidden(true)
             case let .avatar(avatar):
                 avatar
                     .accessibilityHidden(true)
             #if os(iOS)
-            case let .video(url, autoplay, muted, tapToTogglePlay, tapToToggleMute):
-                ListItemVideo(url: url,
-                              autoplay: autoplay,
-                              muted: muted,
-                              tapToTogglePlay: tapToTogglePlay,
-                              tapToToggleMute: tapToToggleMute)
+            case let .video(video):
+                video
             #endif
             }
         }
