@@ -82,11 +82,21 @@ public struct OUDSBadgeIcon: View {
     /// - Since: 2.2.0
     @frozen public enum Status {
 
-        /// Used for general labels without specific emphasis
-        case neutral(icon: Image, flipped: Bool = false)
+        /// Used for general labels without specific emphasis.
+        ///
+        /// - Parameters:
+        ///    - icon: The `Image` to display in the badge
+        ///    - flipped: Default set to `false`, set to `true` to mirror the image (e.g. in RTL cases if relevant)
+        ///    - renderingMode: Default set to `.template`, set to `.original` if the image of the badge should not be tinted
+        case neutral(icon: Image, flipped: Bool = false, renderingMode: Image.TemplateRenderingMode = .template)
 
         /// Employed to highlight discovery or exploration-related content
-        case accent(icon: Image, flipped: Bool = false)
+        ///
+        /// - Parameters:
+        ///    - icon: The `Image` to display in the badge
+        ///    - flipped: Default set to `false`, set to `true` to mirror the image (e.g. in RTL cases if relevant)
+        ///    - renderingMode: Default set to `.template`, set to `.original` if the image of the badge should not be tinted
+        case accent(icon: Image, flipped: Bool = false, renderingMode: Image.TemplateRenderingMode = .template)
 
         /// Indicates success, completion, or approval
         case positive
