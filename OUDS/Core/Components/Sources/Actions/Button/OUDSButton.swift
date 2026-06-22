@@ -274,7 +274,14 @@ public struct OUDSButton: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, accessibilityLabel: resolvedText, flipIcon: flipIcon, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+        self.init(icon: icon,
+                  accessibilityLabel: resolvedText,
+                  flipIcon: flipIcon,
+                  renderingMode: renderingMode,
+                  appearance: appearance,
+                  style: style,
+                  isFullWidth: isFullWidth,
+                  action: action)
     }
 
     /// Creates a button with an icon only.

@@ -33,6 +33,9 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// An optional image the ``OUDSCheckboxItem`` can have
     let icon: Image?
 
+    /// The rendering mode for the `icon`, prefer `.original` for raw images, otherwise `.template` for tinted icons
+    let renderingMode: Image.TemplateRenderingMode
+
     /// Define if the ``OUDSCheckboxItem`` is reversed or not
     let isReversed: Bool
 
@@ -61,6 +64,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
     ///    - description: An optional text, default set to nil
     ///    - icon: An optional image, default set to nil
+    ///    - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
@@ -73,6 +77,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
                 label: String,
                 description: String? = nil,
                 icon: Image? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -83,6 +88,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
         self.label = label
         self.description = description
         self.icon = icon
+        self.renderingMode = renderingMode
         self.isReversed = isReversed
         self.isError = isError
         self.isReadOnly = isReadOnly

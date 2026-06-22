@@ -245,6 +245,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                          isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
                          icon: checkbox.icon,
+                         renderingMode: checkbox.renderingMode,
                          isReversed: isReversed ? true : checkbox.isReversed,
                          isError: isError ? true : checkbox.isError,
                          isReadOnly: isReadOnly ? true : checkbox.isReadOnly,
