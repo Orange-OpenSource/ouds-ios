@@ -76,12 +76,22 @@ import SwiftUI
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
 ///
 ///     // A trailing switch with a label, an additional label, a description text and an icon.
-///     // The inverse layout will be used here.
+///     // The reversed layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
-///                    isReversed: true,
-///                    icon: Image(decorative: "ic_heart"))
+///                    icon: Image(decorative: "ic_heart"),
+///                    isReversed: true)
+///
+///     // A trailing switch with a label, an additional label, a description text and an icon.
+///     // The reversed layout will be used here.
+///     // Image is kept as is, raw, without tint.
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///                    isOn: $isOn,
+///                    description: "The Beatles",
+///                    icon: Image(decorative: "il_someImage"),
+///                    renderingMode: .original,
+///                    isReversed: true)
 ///
 ///     // A trailing switch with a label, a description text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
@@ -183,6 +193,7 @@ public struct OUDSSwitchItem: View {
     ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -200,6 +211,7 @@ public struct OUDSSwitchItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -239,6 +251,7 @@ public struct OUDSSwitchItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -265,6 +278,7 @@ public struct OUDSSwitchItem: View {
     ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -282,6 +296,7 @@ public struct OUDSSwitchItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -313,6 +328,7 @@ public struct OUDSSwitchItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: .attributed(errorText),
@@ -338,6 +354,7 @@ public struct OUDSSwitchItem: View {
     ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -351,6 +368,7 @@ public struct OUDSSwitchItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -363,6 +381,7 @@ public struct OUDSSwitchItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -391,6 +410,7 @@ public struct OUDSSwitchItem: View {
     ///   - description: An additional helper text, a description, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -404,6 +424,7 @@ public struct OUDSSwitchItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -416,6 +437,7 @@ public struct OUDSSwitchItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,

@@ -36,6 +36,7 @@ struct ControlItemLabel: View {
         let description: String?
         let icon: Image?
         let flipIcon: Bool
+        let renderingMode: Image.TemplateRenderingMode
         let isOutlined: Bool
         let isError: Bool
         let errorText: TextualContent?

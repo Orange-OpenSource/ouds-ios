@@ -106,6 +106,18 @@ import SwiftUI
 ///                   isError: true,
 ///                   hasDivider: true)
 ///
+///     // A trailing radio with a label, a description, an icon, a divider and is about an error.
+///     // The reversed layout will be used here.
+///     // The image is kept as is, raw, and not tinted.
+///     OUDSRadioItem("Rescue from this world!",
+///                   isOn: $selection,
+///                   description: "Put your hand in mine",
+///                   icon: Image(decorative: "il_someImage"),
+///                   renderingMode: .original,
+///                   isReversed: true,
+///                   isError: true,
+///                   hasDivider: true)
+///
 ///     // If on error, add an error message can help user to understand error context
 ///     OUDSRadioItem("Rescue from this world!",
 ///                   isOn: $selection,
@@ -193,6 +205,7 @@ public struct OUDSRadioItem: View {
     ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -215,6 +228,7 @@ public struct OUDSRadioItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -260,6 +274,7 @@ public struct OUDSRadioItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: isOutlined,
             isError: isError,
             errorText: errorTextContent,
@@ -294,6 +309,7 @@ public struct OUDSRadioItem: View {
     ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -316,6 +332,7 @@ public struct OUDSRadioItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -353,6 +370,7 @@ public struct OUDSRadioItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: isOutlined,
             isError: isError,
             errorText: .attributed(errorText),
@@ -382,6 +400,7 @@ public struct OUDSRadioItem: View {
     ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -398,6 +417,7 @@ public struct OUDSRadioItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -413,6 +433,7 @@ public struct OUDSRadioItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isOutlined: isOutlined,
                   isReversed: isReversed,
                   isError: isError,
@@ -444,6 +465,7 @@ public struct OUDSRadioItem: View {
     ///   - description: A description, like an helper text, should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` of the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -460,6 +482,7 @@ public struct OUDSRadioItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -475,6 +498,7 @@ public struct OUDSRadioItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isOutlined: isOutlined,
                   isReversed: isReversed,
                   isError: isError,

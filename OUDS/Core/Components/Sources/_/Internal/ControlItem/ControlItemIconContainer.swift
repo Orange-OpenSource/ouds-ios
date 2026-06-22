@@ -45,7 +45,7 @@ struct ControlItemIconContainer: View {
     private var icon: some View {
         if layoutData.isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
-                .renderingMode(.template)
+                .renderingMode(layoutData.renderingMode)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)
@@ -56,7 +56,7 @@ struct ControlItemIconContainer: View {
             if let icon = layoutData.icon {
                 icon
                     .resizable()
-                    .renderingMode(.template)
+                    .renderingMode(layoutData.renderingMode)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
                     .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)

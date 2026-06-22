@@ -83,8 +83,18 @@ import SwiftUI
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
-///                                   isReversed: true,
-///                                   icon: Image(decorative: "ic_heart"))
+///                                   icon: Image(decorative: "ic_heart"),
+///                                   isReversed: true)
+///
+///     // A trailing checkbox with a label, an helper text and an icon.
+///     // The reversed layout will be used here.
+///     // Image is kept as is as raw imahge and not tinted
+///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
+///                                   selection: $selection,
+///                                   description: "Of dreaming boys and wide-eyed girls",
+///                                   icon: Image(decorative: "il_someImage"),
+///                                   renderingMode: .original,
+///                                   isReversed: true)
 ///
 ///     // If on error, add an error message can help user to understand error context
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
@@ -177,6 +187,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - description: A description, an additional helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -195,6 +206,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -236,6 +248,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,

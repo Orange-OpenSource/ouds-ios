@@ -14,6 +14,8 @@
 import OUDSFoundations
 import SwiftUI
 
+// swiftlint:disable file_length
+
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
 /// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
@@ -94,8 +96,18 @@ import SwiftUI
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      isReversed: true,
-///                      icon: Image(decorative: "ic_heart"))
+///                      icon: Image(decorative: "ic_heart"),
+///                      isReversed: true)
+///
+///     // A trailing checkbox with a label, a description and an icon.
+///     // The reversed layout will be used here.
+///     // The image is kept as is and is not tinted.
+///     OUDSCheckboxItem("We live in a fabled world",
+///                      isOn: $isOn,
+///                      description: "Of dreaming boys and wide-eyed girls",
+///                      icon: Image(decorative: "il_someImage"),
+///                      renderingMode: .original,
+///                      isReversed: true)
 ///
 ///     // If on error, add an error message can help user to understand error context
 ///     OUDSCheckboxItem("We live in a fabled world",
@@ -189,6 +201,7 @@ public struct OUDSCheckboxItem: View {
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -204,6 +217,7 @@ public struct OUDSCheckboxItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -244,6 +258,7 @@ public struct OUDSCheckboxItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -279,6 +294,7 @@ public struct OUDSCheckboxItem: View {
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -294,6 +310,7 @@ public struct OUDSCheckboxItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -326,6 +343,7 @@ public struct OUDSCheckboxItem: View {
             description: description?.localized(),
             icon: icon,
             flipIcon: flipIcon,
+            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: .attributed(errorText),
@@ -352,6 +370,7 @@ public struct OUDSCheckboxItem: View {
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -366,6 +385,7 @@ public struct OUDSCheckboxItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -379,6 +399,7 @@ public struct OUDSCheckboxItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -408,6 +429,7 @@ public struct OUDSCheckboxItem: View {
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -422,6 +444,7 @@ public struct OUDSCheckboxItem: View {
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -435,6 +458,7 @@ public struct OUDSCheckboxItem: View {
                   description: description,
                   icon: icon,
                   flipIcon: flipIcon,
+                  renderingMode: renderingMode,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
