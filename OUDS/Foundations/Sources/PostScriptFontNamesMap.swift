@@ -99,6 +99,27 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 
 // MARK: - Values
 
+/// Because some local themes can use their own fonts, OUDS is not always able to make the conversion between the PostScript identifier
+/// of the TTF file for a given font and in the end tokens of fonts with weights.
+/// Registers a PostScript identifier to use for a given combination of font name and weight.
+///
+/// ```swift
+///     // For a given Winky Rough font family, supposed to be added by the client, defines the combinations you need for weights
+///     registerFont(postScript: "WinkyRough-Regular_Light", forCombination: PSFNMK("Winky Rough", Font.Weight.light))
+///     registerFont(postScript: "WinkyRough-Regular", forCombination: PSFNMK("Winky Rough", Font.Weight.regular))
+///     registerFont(postScript: "WinkyRough-Regular_Medium", forCombination: PSFNMK("Winky Rough", Font.Weight.medium))
+///     registerFont(postScript: "WinkyRough-Regular_SemiBold", forCombination: PSFNMK("Winky Rough", Font.Weight.semibold))
+///     registerFont(postScript: "WinkyRough-Regular_Bold", forCombination: PSFNMK("Winky Rough", Font.Weight.bold))
+///     registerFont(postScript: "WinkyRough-Regular_Black", forCombination: PSFNMK("Winky Rough", Font.Weight.black))
+/// ```
+///
+/// - Parameters:
+///    - identifier: The PostScript identifier as defined in police books
+///    - key: The combination of font name and weight
+public func registerFont(postScript identifier: String, forCombination key: PostScriptFontNamesMapKey) {
+    internalApplePostScriptFontNames[key] = identifier
+}
+
 /// Contains the Apple PostScript name of a font given a font family name and a font weight.
 /// Such values have been picked from the Apple Font Book.
 ///
@@ -107,7 +128,10 @@ public typealias PostScriptFontNamesMap = [PostScriptFontNamesMapKey: String]
 /// - do not collide with one of the Apple available fonts (in iOS side)
 ///
 /// Defines also kind of fallbacks if the weight or the style is not defined.
-public let kApplePostScriptFontNames: PostScriptFontNamesMap =
+public var kApplePostScriptFontNames: PostScriptFontNamesMap { internalApplePostScriptFontNames }
+
+/// Internal set of configurations to let users update it with `registerFont(postScript:forCombination)`
+nonisolated(unsafe) private var internalApplePostScriptFontNames: PostScriptFontNamesMap =
     [
 
         // MARK: OUDS
