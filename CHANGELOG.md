@@ -17,15 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Swift Package `SwiftFormat` from v0.61.1 to v0.62.1
-- Swift Package `SwiftLintPlugins` from v0.63.3 to v0.65.0
-- GitHub Actions `github/codeql-action/upload-sarif` from v4.36.2 to v4.37.0 for `scorecard` workflow
-- GitHub Actions `checkout` from v6.0.2 to v6.0.3 for all workflows
+- Ruby Gem `json` from v2.19.9 to v2.20.0
 - Swift Package `SwiftFormat` from v0.61.1 to v0.62.1
 - Swift Package `SwiftLintPlugins` from v0.63.3 to v0.65.0
 - GitHub Action `ruby/setup-ruby` from v1.313.0 to v1.316.0 for `build-and-test` GitHub Actions workflow
-- GitHub Action `github/codeql-action/upload-sarif` from v4.36.2 to v4.37.0 for `scorecard` workflow
-- GitHub Action `checkout` from v6.0.2 to v6.0.3 for all workflows
+- GitHub Actions `github/codeql-action/upload-sarif` from v4.36.2 to v4.37.0 for `scorecard` workflow
+- GitHub Actions `checkout` from v6.0.2 to v6.0.3 for all workflows
 
 ### Deprecated
 

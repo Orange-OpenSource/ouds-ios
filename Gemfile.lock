@@ -172,7 +172,7 @@ GEM
     httpclient (2.9.0)
       mutex_m
     jmespath (1.6.2)
-    json (2.19.9)
+    json (2.20.0)
     jwt (2.10.3)
       base64
     logger (1.7.0)
@@ -238,7 +238,7 @@ PLATFORMS
 DEPENDENCIES
   abbrev (= 0.1.2)
   fastlane (= 2.236.1)
-  json (= 2.19.9)
+  json (= 2.20.0)
 
 BUNDLED WITH
    2.6.9
