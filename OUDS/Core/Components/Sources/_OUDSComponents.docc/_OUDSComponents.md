@@ -207,3 +207,16 @@ private func registerFonts() {
     }
 }
 ```
+
+Then, for each weight variant you need, declare the PostScript name so OUDS can resolve the correct identifier from its font tokens:
+
+```swift
+registerFont(postScript: "WinkyRough-Regular_Light",   forCombination: PSFNMK("Winky Rough", Font.Weight.light))
+registerFont(postScript: "WinkyRough-Regular",         forCombination: PSFNMK("Winky Rough", Font.Weight.regular))
+registerFont(postScript: "WinkyRough-Regular_Medium",  forCombination: PSFNMK("Winky Rough", Font.Weight.medium))
+registerFont(postScript: "WinkyRough-Regular_SemiBold",forCombination: PSFNMK("Winky Rough", Font.Weight.semibold))
+registerFont(postScript: "WinkyRough-Regular_Bold",    forCombination: PSFNMK("Winky Rough", Font.Weight.bold))
+registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("Winky Rough", Font.Weight.black))
+```
+
+The full map is readable at any time via `kApplePostScriptFontNames`. Unregistered combinations fall back to the family name without spaces.

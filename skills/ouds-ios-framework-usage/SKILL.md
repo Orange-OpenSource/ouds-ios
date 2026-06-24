@@ -470,3 +470,35 @@ OUDSToolBarItem { Menu("More") { Button("Option 1") {} } }
 ```
 
 > Badge rendering: iOS ≤ 25 → `OUDSBadge`; iOS 26+ top → native system badge; iOS 26+ bottom → `OUDSBadge` forced.
+
+---
+
+## Registering custom fonts
+
+To use a custom font family with OUDS, two steps are required after adding the TTF files to your project:
+
+**Step 1 — Register the font files** (Core Text, call once at app startup):
+
+```swift
+private static var fontsAlreadyRegistered = false
+
+private func registerFonts() {
+    guard !Self.fontsAlreadyRegistered else { return }
+    Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)?
+        .forEach { CTFontManagerRegisterFontsForURL($0 as CFURL, .process, nil) }
+    Self.fontsAlreadyRegistered = true
+}
+```
+
+**Step 2 — Register PostScript names** for each family + weight combination you use:
+
+```swift
+registerFont(postScript: "WinkyRough-Regular_Light",   forCombination: PSFNMK("Winky Rough", Font.Weight.light))
+registerFont(postScript: "WinkyRough-Regular",         forCombination: PSFNMK("Winky Rough", Font.Weight.regular))
+registerFont(postScript: "WinkyRough-Regular_Medium",  forCombination: PSFNMK("Winky Rough", Font.Weight.medium))
+registerFont(postScript: "WinkyRough-Regular_SemiBold",forCombination: PSFNMK("Winky Rough", Font.Weight.semibold))
+registerFont(postScript: "WinkyRough-Regular_Bold",    forCombination: PSFNMK("Winky Rough", Font.Weight.bold))
+registerFont(postScript: "WinkyRough-Regular_Black",   forCombination: PSFNMK("Winky Rough", Font.Weight.black))
+```
+
+`kApplePostScriptFontNames` exposes the full map (read-only). OUDS uses it internally to resolve `Font` objects from theme font tokens. Unregistered combinations fall back to the family name without spaces.
