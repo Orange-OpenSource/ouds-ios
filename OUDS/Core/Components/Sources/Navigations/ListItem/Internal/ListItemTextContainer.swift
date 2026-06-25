@@ -33,7 +33,6 @@ struct ListItemTextContainer<Slot: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
-
             VStack(alignment: .leading, spacing: theme.controlItem.spaceRowGap) {
 
                 if let overline = data.overline,
@@ -47,7 +46,7 @@ struct ListItemTextContainer<Slot: View>: View {
                         .padding(.top, topPadding)
                 }
 
-                Group {
+                HStack {
                     if data.isBoldLabel {
                         Text(data.label).labelStrongLarge(theme)
                     } else {
@@ -56,7 +55,7 @@ struct ListItemTextContainer<Slot: View>: View {
                 }
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelsColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, minHeight: labelMinHeight, alignment: .leading)
 
                 if let extraLabel = data.extraLabel,
                    !extraLabel.isEmpty,
@@ -106,6 +105,15 @@ struct ListItemTextContainer<Slot: View>: View {
 
     private var descriptionOverlineColor: MultipleColorSemanticToken {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
+    }
+
+    private var labelMinHeight: CGFloat {
+        switch itemSize {
+        case .small:
+            theme.controlItem.sizeAssetSmall
+        case .standard:
+            theme.controlItem.sizeAssetMedium
+        }
     }
 
     /// Forges the accessibility label for the list item text parts.

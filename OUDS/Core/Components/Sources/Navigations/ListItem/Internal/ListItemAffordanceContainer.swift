@@ -60,7 +60,7 @@ struct ListItemAffordanceContainer: View {
     private var color: MultipleColorSemanticToken {
         switch interactionState {
         case .enabled:
-            theme.colors.actionEnabled
+            theme.link.colorChevronEnabled
         case .hover:
             theme.colors.actionHover
         case .pressed:
