@@ -39,21 +39,16 @@ import SwiftUI
 ///     OUDSStaticListItem(data: data)
 ///
 ///     // List item with leading icon and trailing badge
-///     let icon = OUDSListItemIcon(type: .info, size: .medium)
-///     let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
-///
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label"),
-///         leading: .icon(icon),
-///         trailing: .badge(badge)
+///         leading: .icon(.init(type: .info, size: .medium)),
+///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // List item with avatar as leading and text as trailing
-///     let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
-///
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Label", description: "Description"),
-///         leading: .avatar(avatar),
+///         leading: .avatar(.init(type: .icon, size: .medium)),
 ///         trailing: .text(.label(Text("Info")))
 ///     )
 /// ```
@@ -74,7 +69,8 @@ import SwiftUI
 /// - `.text(.labelMuted(Text))`: A muted (secondary) label
 /// - `.text(.labelStrong(Text))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
-/// - `.badge(OUDSBadge)`: A badge with count or status
+/// - `.badge(.count(OUDSBadgeCount)`: A badge with count
+/// - `.badge(.standard(ODSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset

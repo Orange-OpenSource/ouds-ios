@@ -83,12 +83,12 @@ OUDSStaticListItem(data: OUDSListItemData(
 
 // List item with a leading icon and a trailing badge
 let icon = OUDSListItemIcon(type: .info, size: .medium)
-let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+let badge = OUDSBadgeIcon(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
 
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Notifications"),
     leading: .icon(icon),
-    trailing: .badge(badge)
+    trailing: .badge(.icon(badge)
 )
 ```
 

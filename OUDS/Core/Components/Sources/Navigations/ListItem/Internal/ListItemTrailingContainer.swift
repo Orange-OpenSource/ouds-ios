@@ -32,8 +32,8 @@ struct ListItemTrailingContainer: View {
             switch trailing {
             case let .text(type):
                 ListItemTrailingTexts(textType: type)
-            case let .badge(badge):
-                badge
+            case let .badge(badgeType):
+                badge(for: badgeType)
             case let .tag(tag):
                 tag
             case let .icon(icon):
@@ -64,6 +64,16 @@ struct ListItemTrailingContainer: View {
             theme.controlItem.sizeAssetMedium
         case .small:
             theme.controlItem.sizeAssetSmall
+        }
+    }
+
+    @ViewBuilder
+    private func badge(for type: OUDSListItemTrailing.BadgeType) -> some View {
+        switch type {
+        case let .standard(badge):
+            badge
+        case let .count(badge):
+            badge
         }
     }
 }

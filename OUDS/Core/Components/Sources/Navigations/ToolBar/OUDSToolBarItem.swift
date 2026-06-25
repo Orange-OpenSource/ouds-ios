@@ -142,7 +142,7 @@ public struct OUDSToolBarItem: View, Identifiable {
         ///
         ///  - Parameters:
         ///     - label; The optional string label displayed near to the back indicator
-        ///     - accessibilityLabel: The accessibility label to describe the back action that could be overtied if needed,d efault set to *core_common_back*
+        ///     - accessibilityLabel: The accessibility label to describe the back action that could be overtied if needed, default set to *core_common_back*
         ///     - action: The action to do when clicked. If *nil* (default) the button is disabled. By default the dismiss is done after `action` is called..
         case back(label: String? = nil, accessibilityLabel: String = "core_common_back".localized(), action: (() -> Void)? = nil)
 

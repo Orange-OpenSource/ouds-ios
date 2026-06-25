@@ -15,7 +15,6 @@ import AVFoundation
 import OUDSTokensSemantic
 import SwiftUI
 
-#if os(iOS) && canImport(UIKit)
 // Control UIKit import to let macOS build the documentation
 
 // MARK: - List Item Video
@@ -144,6 +143,7 @@ public struct OUDSListItemVideo: View {
     // MARK: Body
 
     public var body: some View {
+        #if os(iOS) && canImport(UIKit)
         // NOTE: #265 - Does the video must be disabled or muted if Voice Over enabled?
         // NOTE: #265 - What should we do when network communication is missing or is retrieved?
         // Today player is not displayed in that cases.
@@ -197,6 +197,9 @@ public struct OUDSListItemVideo: View {
         .onChange(of: url) { newURL in
             refreshPlayer(with: newURL)
         }
+        #endif
+        #else
+        EmptyView()
         #endif
     }
 
@@ -272,4 +275,3 @@ public struct OUDSListItemVideo: View {
         }
     }
 }
-#endif

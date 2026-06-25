@@ -41,8 +41,8 @@ import SwiftUI
 //
 // ## Badge
 //
-// An optional ``OUDSBadge`` can be placed at the bottom-trailing corner of the avatar
-// to convey status information (e.g. online presence, notification count).
+// An optional badge ``OUDSBadgeStandard`` or ``OUDSBadgeIcon`` can be placed at the
+// bottom-trailing corner of the avatar to convey status information (e.g. online presence, notification count).
 // The badge is rendered with a safety-area border matching the theme's `controlItem.colorBadgeSafetyArea`.
 //
 // The recommended badge sizes per avatar size are:
@@ -63,12 +63,12 @@ import SwiftUI
 //     OUDSListItemAvatar(type: .initials("AB"), size: .extraLarge)
 //
 //     // Avatar with icon and a notification badge
-//     let badge = OUDSBadge(accessibilityLabel: "Online", status: .positive, size: .extraSmall)
-//     OUDSListItemAvatar(type: .icon, size: .medium, badge: badge)
+//     let badgeType = .standard(.init(accessibilityLabel: "Do not disturb", status: .negative, size: .small))
+//     OUDSListItemAvatar(type: .icon, size: .medium, badgeType: badgeType)
 //
-//     // Avatar with initials and a count badge
-//     let countBadge = OUDSBadge(count: 3, accessibilityLabel: "3 messages", status: .negative, size: .small)
-//     OUDSListItemAvatar(type: .initials("JD"), size: .large, badge: countBadge)
+//     // Avatar with initials and a icon badge with positive status
+//     let badgeType = .icon(.init(status: .positive, accessibilityLable: "Online", size: .small))
+//     OUDSListItemAvatar(type: .initials("JD"), size: .large, badgeType: badgeType)
 //
 //     // Usage as leading element in a list item
 //     OUDSStaticListItem(
@@ -92,6 +92,25 @@ import SwiftUI
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemAvatar: View {
+
+    /// The type of badge displayed on the avatar.
+    ///
+    /// - Since: 2.2.0
+    @frozen public enum BadgeType {
+        /// A standard badge in its status.
+        ///
+        /// - Parameters:
+        ///     - status: The status of the badge. See ``OUDSBadgeStandard/Status``
+        ///     - accessibilityLabel: An additional accessibility label to vocalize the meaning of the badge
+        case standard(_ status: OUDSBadgeStandard.Status, accessibilityLabel: String = "")
+
+        /// A badge with icon in its status
+        ///
+        /// - Parameters:
+        ///     - status: The status of the badge. See ``OUDSBadgeIcon/Status``
+        ///     - accessibilityLabel: An additional accessibility label to vocalize the meaning of the badge
+        case icon(_ status: OUDSBadgeIcon.Status, accessibilityLabel: String = "")
+    }
 
     /// The type of content displayed inside the avatar.
     ///
@@ -140,27 +159,26 @@ public struct OUDSListItemAvatar: View {
     ///     // Simple avatar with icon
     ///     OUDSListItemAvatar(type: .icon, size: .medium)
     ///
-    ///     // Avatar with initials and a badge
-    ///     let badge = OUDSBadge(accessibilityLabel: "Online", status: .positive, size: .extraSmall)
-    ///     OUDSListItemAvatar(type: .initials("JD"), size: .large, badge: badge)
+    ///     // Avatar with initials and a standard badge with negative status
+    ///     OUDSListItemAvatar(type: .initials("JD"), size: .large, badgeType: .standard(.negative))
     /// ```
     ///
     /// - Parameters:
     ///    - type: The type of content displayed inside the avatar. See ``AvatarType``.
     ///    - size: The size of the avatar. Defaults to `.medium`.
     /// **Note:** Ignored when embedded in a list item with small size (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
-    ///    - badge: An optional ``OUDSBadge`` displayed at the bottom-trailing corner of the avatar. Defaults to `nil`.
-    public init(type: AvatarType, size: Size, badge: OUDSBadge? = nil) {
+    ///    - badgeType: The type of an optional badge displayed at the bottom-trailing corner of the avatar.  Defaults to `nil`.
+    public init(type: AvatarType, size: Size, badgeType: BadgeType? = nil) {
         self.type = type
         self.size = size
-        self.badge = badge
+        self.badgeType = badgeType
     }
 
     // MARK: - Properties
 
     let type: AvatarType
     let size: Size
-    let badge: OUDSBadge?
+    let badgeType: BadgeType?
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -194,11 +212,8 @@ public struct OUDSListItemAvatar: View {
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: theme.borders.radiusPill))
 
-            if let badge {
-                badge.border(style: theme.borders.styleDefault,
-                             width: theme.borders.widthThin,
-                             radius: theme.borders.radiusPill,
-                             color: theme.controlItem.colorBadgeSafetyArea)
+            if let badgeType {
+                badge(from: badgeType)
             }
         }
     }
@@ -284,5 +299,38 @@ public struct OUDSListItemAvatar: View {
               lineHeight: theme.controlItem.fontLineHeightAvatarInitialXlarge,
               weight: theme.fonts.weightLabelModerate,
               letterSpacing: theme.controlItem.fontLetterSpacingAvatarInitialXlarge)
+    }
+
+    // MARK: Badge helper
+
+    private func badge(from badgeType: BadgeType) -> some View {
+        Group {
+            switch badgeType {
+            case let .standard(status, accessibilityLabel):
+                OUDSBadgeStandard(accessibilityLabel: accessibilityLabel, status: status, size: badgeSize)
+            case let .icon(status, accessibilityLabel):
+                OUDSBadgeIcon(status: status, accessibilityLabel: accessibilityLabel, size: badgeSize)
+            }
+        }
+        .border(style: theme.borders.styleDefault,
+                width: theme.borders.widthThin,
+                radius: theme.borders.radiusPill,
+                color: theme.controlItem.colorBadgeSafetyArea)
+    }
+
+    private var badgeSize: OUDSBadgeStandard.Size {
+        switch itemSize {
+        case .standard:
+            switch size {
+            case .medium:
+                .extraSmall
+            case .large:
+                .small
+            case .extraLarge:
+                .medium
+            }
+        case .small:
+            .extraSmall
+        }
     }
 }

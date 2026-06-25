@@ -86,7 +86,6 @@ public struct OUDSListItemFlag: View {
     ///   - size: The size of the icon. Defaults to `.medium`.
     ///     **Note:** Ignored when the icon is embedded in a list item with small size
     ///     (via ``SwiftUICore/View/oudsListItemSize(_:)``), where the smallest size is always applied.
-    ///   - description: The description of the image if not decorative
     public init(asset: Image, size: Size = .medium) {
         self.asset = asset
         self.size = size

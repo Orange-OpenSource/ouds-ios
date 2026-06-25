@@ -22,7 +22,7 @@ import SwiftUI
 /// ## Available options
 ///
 /// - `text(_:)`: A textual element with various styles (see ``TextType``).
-/// - `badge(_:)`: A badge component (see ``OUDSBadge``).
+/// - `badge(_:)`: A badge component (see ``OUDSBadgeStandard`` or ``OUDSBadgeCount``).
 /// - `tag(_:)`: A tag component (see ``OUDSTag``).
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
 /// - `image(asset:)`: A static image asset.
@@ -51,11 +51,10 @@ import SwiftUI
 ///         trailing: .text(.labelAndExtraLabel(Text("Label"), Text("Extra")))
 ///     )
 ///
-///     // Trailing with a badge
-///     let badge = OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+///     // Trailing with a badge according to type
 ///     OUDSStaticListItem(
 ///         data: OUDSListItemData(label: "Notifications"),
-///         trailing: .badge(badge)
+///         trailing: .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)))
 ///     )
 ///
 ///     // Trailing with a tag
@@ -143,10 +142,21 @@ import SwiftUI
     /// and `.labelAndExtraLabel`.
     case text(TextType)
 
+    /// The type of badge displayed.
+    ///
+    /// - Since: 2.2.0
+    @frozen public enum BadgeType {
+        /// A standard badge
+        case standard(OUDSBadgeStandard)
+
+        /// A badge with count
+        case count(OUDSBadgeCount)
+    }
+
     /// A badge component providing status or count information.
     ///
-    /// See ``OUDSBadge`` for available configurations.
-    case badge(OUDSBadge)
+    /// See ``OUDSBadgeStandard``  or ``OUDSBadgeCount``for available configurations.
+    case badge(BadgeType)
 
     /// A tag component providing categorization or status information.
     ///
@@ -194,6 +204,6 @@ import SwiftUI
     ///
     /// See ``OUDSListItemAvatar`` for available types (`.icon`, `.image`, `.initials`)
     /// and sizes (`.medium`, `.large`, `.extraLarge`).
-    /// An optional ``OUDSBadge`` can be attached to the avatar.
+    /// An optional Badge can be attached to the avatar.
     case avatar(OUDSListItemAvatar)
 }

@@ -173,7 +173,7 @@ public struct OUDSListItemIcon: View {
                         .renderingMode(.template)
                         .foregroundColor(foregroundColor)
                     if badge {
-                        OUDSBadge(accessibilityLabel: "", status: .negative, size: badgeSize)
+                        OUDSBadgeStandard(accessibilityLabel: "", status: .negative, size: badgeSize)
                             .border(style: theme.borders.styleDefault,
                                     width: theme.borders.widthThin,
                                     radius: theme.borders.radiusPill,
@@ -243,7 +243,7 @@ public struct OUDSListItemIcon: View {
         }
     }
 
-    private var badgeSize: OUDSBadge.StandardSize {
+    private var badgeSize: OUDSBadgeStandard.Size {
         if itemSize == .small {
             .extraSmall
         } else {

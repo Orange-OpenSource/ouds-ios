@@ -38,7 +38,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
     private let title: String
     /// Set to `true`  if the label must be bold, false otherwise
     private let isBoldLabel: Bool
-    /// The type of affordance for the ``OUDSNavigationListItem``, e.g. `.next` or `.back` to define the chevron.
+    /// The type of affordance for the ``OUDSNavigationListItem``, e.g. `.next` or `.previous` to define the chevron.
     private let affordanceType: OUDSNavigationListItemAffordanceType
     /// The style to apply to the ``OUDSNavigationListItem``
     private let style: OUDSListItemContentStyle

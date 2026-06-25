@@ -80,7 +80,7 @@ import SwiftUI
 ///  - `.image(OUDSListItemImage)`: A static image asset
 ///  - `.flag(OUDSListItemFlag)`: A country flag image
 ///  - `.video(URL)`: A video thumbnail loaded from a URL
-/// - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
+///  - `.avatar(OUDSListItemAvatar)`: An avatar with icon, initials, or image
 ///
 /// ## Trailing elements
 ///
@@ -89,7 +89,8 @@ import SwiftUI
 /// - `.text(.labelMuted(Text))`: A muted (secondary) label
 /// - `.text(.labelStrong(Text))`: An emphasized (bold) label
 /// - `.text(.labelAndExtraLabel(Text, Text))`: A label with an additional extra label below
-/// - `.badge(OUDSBadge)`: A badge with count or status
+/// - `.badge(.count(OUDSBadgeCount)`: A badge with count
+/// - `.badge(.standard(ODSBadgeStandard)`: A badge with standard status
 /// - `.tag(OUDSTag)`: A tag for categorization
 /// - `.icon(OUDSListItemIcon)`: A status or custom icon
 /// - `.image(OUDSListItemImage)`:  A static image asset

@@ -398,7 +398,7 @@ OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
 OUDSStaticListItem(
     data: OUDSListItemData(label: "Label", description: "Description"),
     leading: .icon(OUDSListItemIcon(type: .info, size: .medium)),
-    trailing: .badge(OUDSBadge(count: 3, accessibilityLabel: "3 new", status: .negative, size: .medium))
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 new", status: .negative, size: .medium)))
 )
 
 // With a custom slot view (rendered between text block and helperText)
@@ -462,7 +462,8 @@ OUDSNavigationListItem(
 .trailing = .text(.labelMuted(Text("Secondary")))       // muted/secondary color
 .trailing = .text(.labelStrong(Text("Strong")))         // bold/emphasized
 .trailing = .text(.labelAndExtraLabel(Text("Label"), Text("Extra"))) // stacked; extra hidden in .small
-.trailing = .badge(OUDSBadge(count: 3, accessibilityLabel: "3 notifications", status: .negative, size: .medium))
+.trailing = .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium))) // A badge with count
+.trailing = .badge(.standard(.init((accessibilityLabel: "Do not disturb", status: .negative, size: .medium))) // A badge with standard status
 .trailing = .tag(OUDSTag(label: "New"))
 .trailing = .icon(OUDSListItemIcon(type: .warning, size: .small))
 .trailing = .image(OUDSListItemImage(asset: Image("il_placeholder"), size: .medium))
