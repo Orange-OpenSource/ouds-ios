@@ -25,10 +25,10 @@ import SwiftUI
 /// - `badge(_:)`: A badge component (see ``OUDSBadgeStandard`` or ``OUDSBadgeCount``).
 /// - `tag(_:)`: A tag component (see ``OUDSTag``).
 /// - `icon(_:)`: A status or custom icon (see ``OUDSListItemIcon``).
-/// - `image(asset:)`: A static image asset.
-/// - `flag(asset:)`: A country flag image.
-/// - `video(_:autoplay:muted:tapToTogglePlay:tapToToggleMute:)`: A video loaded from a URL **(iOS only)**.
-/// - `avatar(_:)`: An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
+/// - `image(_:)`: A static image asset (see ``OUDSListItemImage``).
+/// - `flag(_:)`: A country flag image (see ``OUDSListItemFlag``).
+/// - `video(_:)`: A video loaded from a URL **(iOS only)** (see ``OUDSListItemVideo``).
+/// - `avatar(_:)`:  An avatar with icon, initials, or image (see ``OUDSListItemAvatar``).
 ///
 /// ## Code samples
 ///
