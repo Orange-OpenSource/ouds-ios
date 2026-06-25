@@ -63,13 +63,9 @@ struct ListItemContent<Slot: View>: View {
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))
 
-            let helperTextContent: TextualContent? = if let helperText = data.helperText {
-                .raw(helperText)
-            } else {
-                nil
+            if let helperText = data.helperText {
+                ListItemHelperTextContainer(text: .raw(helperText), interactionState: interactionState)
             }
-
-            ListItemHelperTextContainer(text: helperTextContent, interactionState: interactionState)
         }
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
     }

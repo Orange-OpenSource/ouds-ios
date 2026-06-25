@@ -15,8 +15,6 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: #265 - Replace with incoming icon component
-
 /// An icon element that can be used at the leading or trailing position of a list item
 /// such as ``OUDSStaticListItem`` or ``OUDSNavigationListItem``.
 ///

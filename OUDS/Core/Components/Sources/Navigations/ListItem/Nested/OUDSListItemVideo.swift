@@ -67,7 +67,6 @@ import SwiftUI
 // ```
 //
 // - Since: 2.2.0
-
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)

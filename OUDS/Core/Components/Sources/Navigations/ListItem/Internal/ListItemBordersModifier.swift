@@ -40,7 +40,6 @@ struct ListItemBordersModifier: ViewModifier {
         case let .standard(divider, _):
             if divider {
                 if theme.tuning.hasRoundedListItems {
-                    // TODO: #265 - To be updated
                     content
                         .shadow(theme.elevations.raised)
                 } else {

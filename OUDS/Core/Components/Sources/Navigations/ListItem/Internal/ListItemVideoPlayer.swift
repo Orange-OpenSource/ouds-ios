@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+#if os(iOS) && canImport(UIKit)
 import AVFoundation
 import OUDSThemesContract
 import OUDSTokensSemantic
@@ -18,9 +19,8 @@ import SwiftUI
 
 // MARK: - Video Player UIViewRepresentable
 
-// `AVPlayer` in SwiftUI lifecycle can be buggy ; use of UIKit API is prefered
-// to let the video be played at the best moment when view appears.
-#if os(iOS) && canImport(UIKit)
+/// `AVPlayer` in SwiftUI lifecycle can be buggy ; use of UIKit API is prefered
+/// to let the video be played at the best moment when view appears.
 struct VideoPlayerView: UIViewRepresentable {
 
     let player: AVPlayer

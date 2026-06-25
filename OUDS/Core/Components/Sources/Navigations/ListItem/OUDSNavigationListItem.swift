@@ -154,7 +154,7 @@ import SwiftUI
 /// - Version: 1.0.0 (Figma component design version)
 /// - Since: 2.2.0
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
-public struct OUDSNavigationListItem<Slot: View>: View { // TODO: #265 - Use suitable short link for DSM documentation
+public struct OUDSNavigationListItem<Slot: View>: View {
 
     // MARK: - Stored Properties
 

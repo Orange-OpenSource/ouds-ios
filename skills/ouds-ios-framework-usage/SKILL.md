@@ -561,7 +561,7 @@ VStack {
 4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
-7. **`oudsListCardStyle(hasDivider:hasBackground:)`** — shorthand for applying `.standard(divider:hasDivider, background:hasBackground)` (defaults: divider `false`, background `true`).
+7. **`oudsListCardStyle(hasDivider:, hasBackground:)`** — shorthand for applying `.standard(divider:hasDivider, background:hasBackground)` (defaults: divider `false`, background `true`).
 
 ---
 

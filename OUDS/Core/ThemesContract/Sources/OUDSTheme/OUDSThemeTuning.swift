@@ -41,7 +41,7 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
-    /// If components like button (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
+    /// If components list items (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
     public let hasRoundedListItems: Bool
 
     /// Defines the tuning for a theme

@@ -167,7 +167,7 @@ extension View {
     ///
     /// This modifier applies to both leading and trailing media elements
     /// (``OUDSListItemLeading/image(_:)``, ``OUDSListItemLeading/video(_:)``,
-    /// ``OUDSListItemTrailing/image(:_)``, ``OUDSListItemTrailing/video(_:)`).
+    /// ``OUDSListItemTrailing/image(:_)``, ``OUDSListItemTrailing/video(_:)``).
     ///
     /// ```swift
     ///     OUDSStaticListItem(
