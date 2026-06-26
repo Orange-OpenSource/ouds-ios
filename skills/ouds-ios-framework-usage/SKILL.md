@@ -93,6 +93,15 @@ Text("Hello")
 .shadow(theme.elevations.emphasized)
 ```
 
+For `Shape` types, use `fill(_:style:)` with a color token — the light/dark variant is resolved automatically:
+
+```swift
+Circle()
+    .fill(theme.colors.actionEnabled)                               // shape fill with token
+RoundedRectangle(cornerRadius: 8)
+    .fill(theme.colors.bgPrimary, style: FillStyle(eoFill: true))  // with custom fill style
+```
+
 ---
 
 ## 6. Common patterns (shared by multiple components)

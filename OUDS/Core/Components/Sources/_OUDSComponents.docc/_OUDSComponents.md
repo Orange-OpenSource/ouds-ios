@@ -149,6 +149,21 @@ someView.accentColor(theme.colors.bgPrimary)
 someView.tint(theme.colors.bgPrimary)
 ```
 
+For `Shape` types, a similar helper fills the shape with a token-based color.
+The correct light or dark color variant is resolved automatically from the environment color scheme.
+
+```swift
+@Environment(\.theme) private var theme
+
+// Fill a shape with a token-based color
+Circle()
+    .fill(theme.colors.actionEnabled)
+
+// Fill with a custom fill style
+RoundedRectangle(cornerRadius: 8)
+    .fill(theme.colors.bgPrimary, style: FillStyle(eoFill: true))
+```
+
 ## Flip images according to layouts
 
 Images bring meanings, and are used in components. But sometimes, depending to your layouts (right to left (RTL) or left to right (LTR)), if the whole layout
