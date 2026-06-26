@@ -104,6 +104,45 @@ RoundedRectangle(cornerRadius: 8)
 
 ---
 
+## 5b. Images in OUDS components
+
+**Never call SwiftUI modifiers on an `Image` that is passed as a parameter to an OUDS component.**
+
+OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier on it (including `.accessibilityHidden(true)`) changes the type to `some View` and produces a compile error.
+
+> The component handles the accessibility of its own images internally. You must not alter them from the call site.
+
+**Never do this:**
+```swift
+OUDSButton(
+    text: "Add",
+    icon: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
+    appearance: .default) {}
+
+OUDSLink(
+    text: "Back",
+    icon: Image(systemName: "chevron.left").accessibilityHidden(true), // ❌ same error
+    size: .default) {}
+```
+
+**Always do this — swiftlint comment on the line before the component call:**
+```swift
+// swiftlint:disable:next accessibility_label_for_image
+OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
+
+// swiftlint:disable:next accessibility_label_for_image
+OUDSLink(text: "Back", icon: Image(systemName: "chevron.left"), size: .default) {}
+
+// swiftlint:disable:next accessibility_label_for_image
+OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
+```
+
+The `// swiftlint:disable:next accessibility_label_for_image` comment must appear **on the line immediately before** the component call, never on the line of the `Image(...)` itself.
+
+Exception: `Image(decorative: "name")` suppresses the linter rule automatically and needs no comment.
+
+---
+
 ## 6. Common patterns (shared by multiple components)
 
 These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInput, PasswordInput unless noted otherwise.
