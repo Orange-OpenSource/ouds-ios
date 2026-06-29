@@ -9,7 +9,7 @@ license: MIT
 ## 1. Basic setup
 
 ```swift
-import OUDSSwiftUI // Always use the umbrella import
+import OUDSSwiftUI // umbrella import — see §2 for granular alternative
 
 @main
 struct MyApp: App {
@@ -35,18 +35,53 @@ struct ContentView: View {
 
 ---
 
-## 2. Imports
+## 2. Imports — two modes
 
-Never import internal modules. Always use an umbrella product:
+OUDS exposes two layers of Swift Package products. Choose one approach per project; never mix them.
 
-| Product | Themes | When |
+### Mode 1 — Umbrella import (recommended)
+
+One import pulls every required dependency. Prefer this unless you have a strong reason to minimize compiled targets.
+
+| Product | Themes included | When to use |
 |---|---|---|
-| `OUDSSwiftUI` | All | Default |
-| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange apps only |
-| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand |
-| `OUDSSwiftUIWireframe` | Wireframe | Prototyping |
+| `OUDSSwiftUI` | All (Orange, OrangeCompact, Sosh, Wireframe) | Default — use this when in doubt |
+| `OUDSSwiftUIOrange` | Orange + OrangeCompact | Orange-brand apps only |
+| `OUDSSwiftUIOrangeSosh` | Orange + Sosh | Multi-brand Orange/Sosh apps |
+| `OUDSSwiftUIWireframe` | Wireframe only | Prototyping, no brand theme needed |
 
-Internal modules (never import directly): `OUDSComponents`, `OUDSTokensRaw`, `OUDSTokensSemantic`, `OUDSTokensComponent`, `OUDSThemesOrange`, `OUDSThemesSosh`, `OUDSFoundations`, etc.
+```swift
+import OUDSSwiftUI          // everything — default choice
+import OUDSSwiftUIOrange    // or: Orange apps only
+import OUDSSwiftUIOrangeSosh // or: Orange + Sosh multi-brand
+import OUDSSwiftUIWireframe  // or: wireframe prototyping
+```
+
+### Mode 2 — Granular (atomic) import
+
+For advanced users who want fine-grained control over compiled dependencies. Import only what the target actually needs.
+
+| Product | Content |
+|---|---|
+| `OUDSThemesOrange` | Orange theme |
+| `OUDSThemesOrangeCompact` | Orange Compact theme (depends on OrangeTheme) |
+| `OUDSThemesSosh` | Sosh theme |
+| `OUDSThemesWireframe` | Wireframe theme (depends on OrangeTheme) |
+| `OUDSThemesContract` | Theme protocols / contracts — required when using any theme |
+| `OUDSModules` | High-level screen-ready modules (depends on OUDSComponents) |
+| `OUDSComponents` | SwiftUI components |
+| `OUDSTokensComponent` | Component-level design tokens |
+| `OUDSTokensRaw` | Raw tokens + semantic tokens |
+| `OUDSFoundations` | Base utilities (lowest level) |
+
+```swift
+// Example: components + Orange theme only, no Sosh/Wireframe
+import OUDSComponents
+import OUDSThemesContract
+import OUDSThemesOrange
+```
+
+> **Rule:** always prefer an umbrella product. Use granular imports only when you explicitly need to exclude specific themes or layers from compilation.
 
 ---
 
