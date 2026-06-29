@@ -17,6 +17,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// Contains all texts (overline, label, extra label, description) of the ``ListItemContent``.
+///
+/// The label area supports two modes via ``OUDSListItemData/Label``:
+/// - **`.text(String, isBold: Bool)`**: The label is rendered as a styled `Text` view.
+///   When `isBold` is `true`, a bold typography is applied.
+/// - **`.custom(AnyView, accessibilityLabel: String)`**: A user-provided SwiftUI view is rendered
+///   as-is inside the label area. The provided `accessibilityLabel` is used in the combined
+///   Voice Over vocalization.
 struct ListItemTextContainer<Slot: View>: View {
 
     // MARK: - Properties
@@ -47,10 +54,15 @@ struct ListItemTextContainer<Slot: View>: View {
                 }
 
                 HStack {
-                    if data.isBoldLabel {
-                        Text(data.label).labelStrongLarge(theme)
-                    } else {
-                        Text(data.label).labelDefaultLarge(theme)
+                    switch data.labelContent {
+                    case let .text(labelText, isBold):
+                        if isBold {
+                            Text(labelText).labelStrongLarge(theme)
+                        } else {
+                            Text(labelText).labelDefaultLarge(theme)
+                        }
+                    case let .custom(customView, _):
+                        customView
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -117,8 +129,12 @@ struct ListItemTextContainer<Slot: View>: View {
     }
 
     /// Forges the accessibility label for the list item text parts.
-    /// Prevents to user to have to make several swipes on the texts to vocalize them.
-    /// Groups only the overline, label, extra label and description (or only label and description in small size).
+    /// Prevents the user from having to make several swipes on the texts to vocalize them.
+    /// Groups the overline, label, extra label and description (or only label and description in small size).
+    ///
+    /// For text labels, the label string is included directly.
+    /// For custom view labels, the `accessibilityLabel` provided at init time is used,
+    /// ensuring Voice Over can vocalize the label even when it is an arbitrary view.
     private var accessibilityLabel: String {
         var parts: [String] = []
 
@@ -126,7 +142,12 @@ struct ListItemTextContainer<Slot: View>: View {
             parts.append(overline)
         }
 
-        parts.append(data.label)
+        // data.label returns the text for .text labels,
+        // or the accessibilityLabel for .custom labels.
+        let labelString = data.labelContent.stringValue
+        if !labelString.isEmpty {
+            parts.append(labelString)
+        }
 
         if itemSize != .small, let extraLabel = data.extraLabel {
             parts.append(extraLabel)
