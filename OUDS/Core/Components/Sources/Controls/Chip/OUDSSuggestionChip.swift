@@ -31,6 +31,9 @@ import SwiftUI
 ///     // Icon only
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
 ///
+///     // Icon only, raw image (not tinted)
+///     OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", renderingMode: .original) { /* the action to process */ }
+///
 ///     // Text only
 ///     OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
 ///
@@ -39,6 +42,9 @@ import SwiftUI
 ///
 ///     // Text and icon
 ///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+///
+///     // Text and icon, raw image (not tinted)
+///     OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart", renderingMode: .original) { /* the action to process */ }
 /// ```
 ///
 /// ## Design documentation
@@ -86,15 +92,17 @@ public struct OUDSSuggestionChip: View {
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, text: resolvedText, action: action)
+        self.init(icon: icon, text: resolvedText, renderingMode: renderingMode, action: action)
     }
 
     /// Creates a chip with text and icon.
@@ -109,12 +117,13 @@ public struct OUDSSuggestionChip: View {
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the chip, should not be empty
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, text: String, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
         if text.isEmpty {
             OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
         }
-        layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading)
+        layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading, renderingMode: renderingMode)
         self.action = action
     }
 
@@ -129,15 +138,17 @@ public struct OUDSSuggestionChip: View {
     ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, accessibilityLabel: resolvedText, action: action)
+        self.init(icon: icon, accessibilityLabel: resolvedText, renderingMode: renderingMode, action: action)
     }
 
     /// Creates a chip with an icon only.
@@ -149,12 +160,13 @@ public struct OUDSSuggestionChip: View {
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, accessibilityLabel: String, action: @escaping () -> Void) {
+    public init(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
-        layout = .icon(icon, accessibilityLabel)
+        layout = .icon(icon, accessibilityLabel, renderingMode: renderingMode)
         self.action = action
     }
 
@@ -207,7 +219,7 @@ public struct OUDSSuggestionChip: View {
 
     private var accessibilityLabel: String {
         switch layout {
-        case let .text(text), let .textAndIcon(text, _, _), let .icon(_, text):
+        case let .text(text), let .textAndIcon(text, _, _, _), let .icon(_, text, _):
             text
         }
     }

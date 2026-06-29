@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Use of original image for components (Orange-OpenSource/ouds-ios#1511)
+- Use of original image possible for components with icons (Orange-OpenSource/ouds-ios#1511)
 
 ## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.1.0...2.2.0) - 2026-06-18
 

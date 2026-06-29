@@ -326,10 +326,10 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         switch data.layout {
         case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
-        case let .icon(icon, accessibilityLabel):
-            OUDSFilterChip(icon: icon, accessibilityLabel: accessibilityLabel, selected: selected, action: action)
-        case let .textAndIcon(text, icon):
-            OUDSFilterChip(icon: icon, text: text, selected: selected, action: action)
+        case let .icon(icon, accessibilityLabel, renderingMode):
+            OUDSFilterChip(icon: icon, accessibilityLabel: accessibilityLabel, selected: selected, renderingMode: renderingMode, action: action)
+        case let .textAndIcon(text, icon, renderingMode):
+            OUDSFilterChip(icon: icon, text: text, selected: selected, renderingMode: renderingMode, action: action)
         }
     }
 

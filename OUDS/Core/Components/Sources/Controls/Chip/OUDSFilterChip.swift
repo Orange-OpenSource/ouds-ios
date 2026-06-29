@@ -24,6 +24,9 @@ import SwiftUI
 ///     // Icon only layout as selected
 ///     OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
 ///
+///     // Icon only, raw image (not tinted)
+///     OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", renderingMode: .original) { /* the action to process */ }
+///
 ///     // Text only as not selected (default unselected)
 ///     OUDSFilterChip(text: "Label") { /* the action to process */ }
 ///
@@ -32,6 +35,9 @@ import SwiftUI
 ///
 ///     // Text and icon as selected
 ///     OUDSFilterChip(icon: Image("ic_heart"), text: "Label", selected: true) { /* the action to process */ }
+///
+///     // Text and icon, raw image (not tinted)
+///     OUDSFilterChip(icon: Image("ic_heart"), text: "Label", renderingMode: .original) { /* the action to process */ }
 /// ```
 ///
 /// ## Design documentation
@@ -81,16 +87,18 @@ public struct OUDSFilterChip: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 selected: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, text: resolvedText, selected: selected, action: action)
+        self.init(icon: icon, text: resolvedText, selected: selected, renderingMode: renderingMode, action: action)
     }
 
     /// Creates a filter chip with text and icon.
@@ -103,12 +111,13 @@ public struct OUDSFilterChip: View {
     ///    - icon: An image which shoud contains an icon
     ///    - text: The text to display in the chip, should not be empty
     ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, text: String, selected: Bool = false, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, selected: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
         if text.isEmpty {
             OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
         }
-        layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing)
+        layout = .textAndIcon(text: text, icon: icon, iconPosition: .trailing, renderingMode: renderingMode)
         self.action = action
         self.selected = selected
     }
@@ -125,16 +134,18 @@ public struct OUDSFilterChip: View {
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: Image,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 selected: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, accessibilityLabel: resolvedText, selected: selected, action: action)
+        self.init(icon: icon, accessibilityLabel: resolvedText, selected: selected, renderingMode: renderingMode, action: action)
     }
 
     /// Create a chip with an icon only.
@@ -147,12 +158,13 @@ public struct OUDSFilterChip: View {
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the chip action, should not be empty
     ///    - selected: Flag to know if chip is selected, by default is unselected
+    ///    - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: Image, accessibilityLabel: String, selected: Bool = false, action: @escaping () -> Void) {
+    public init(icon: Image, accessibilityLabel: String, selected: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSFilterChip should not have an empty accessibility label, think about your disabled users!")
         }
-        layout = .icon(icon, accessibilityLabel)
+        layout = .icon(icon, accessibilityLabel, renderingMode: renderingMode)
         self.action = action
         self.selected = selected
     }
@@ -217,7 +229,7 @@ public struct OUDSFilterChip: View {
 
     private var accessibilityLabel: String {
         switch layout {
-        case let .text(text), let .textAndIcon(text, _, _), let .icon(_, text):
+        case let .text(text), let .textAndIcon(text, _, _, _), let .icon(_, text, _):
             text
         }
     }

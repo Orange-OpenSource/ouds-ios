@@ -86,7 +86,7 @@ struct TagAsset: View {
                 }
             } else {
                 iconFromAsset?
-                    .renderingMode(.template)
+                    .renderingMode(appliedRenderingMode)
                     .resizable()
                     .toFlip(status.flipIcon)
                     .foregroundColor(color)
@@ -108,6 +108,14 @@ struct TagAsset: View {
                 return alternativeIcon
             }
             return defaultLeadingIcon
+        }
+    }
+
+    private var appliedRenderingMode: Image.TemplateRenderingMode {
+        if status.leading == .icon, status.customIcon != nil {
+            status.renderingMode
+        } else {
+            .template
         }
     }
 

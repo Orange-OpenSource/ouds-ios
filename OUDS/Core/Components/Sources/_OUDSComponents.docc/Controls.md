@@ -358,11 +358,17 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 // Suggestion chip with icon only
 OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
 
+// Suggestion chip with raw icon (not tinted)
+OUDSSuggestionChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) { /* the action to process */ }
+
 // Layout with text only
 OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
 
 // Layout with text and icon
 OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+
+// Layout with text and raw icon (not tinted)
+OUDSSuggestionChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) { /* the action to process */ }
 ```
 
 #### Filter
@@ -388,11 +394,17 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
 // Filter chip with icon only as selected
 OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
 
+// Filter chip with raw icon (not tinted)
+OUDSFilterChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) { /* the action to process */ }
+
 // Filter chip with text only as not selected
 OUDSFilterChip(text: "Heart") { /* the action to process */ }
 
 // Filter chip with text and icon layout an in selected state
 OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+
+// Filter chip with text and raw icon (not tinted)
+OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) { /* the action to process */ }
 ```
 
 
@@ -620,9 +632,16 @@ OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 // Add a leading icon for more context
 OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 
+// Add a leading raw image (not tinted)
+OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
+
 // Add a trailing button with local image named "ic_cross" for additional action
 let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
+
+// Add a trailing button with raw image (not tinted)
+let trailingActionRaw = OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", renderingMode: .original) { /* action */ }
+OUDSTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)
 
 // With helper text
 OUDSTextInput(label: "Email",

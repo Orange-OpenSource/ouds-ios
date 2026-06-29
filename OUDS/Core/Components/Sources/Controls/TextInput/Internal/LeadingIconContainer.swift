@@ -21,6 +21,7 @@ struct LeadingIconContainer: View {
 
     let leadingIcon: Image?
     let flip: Bool
+    let renderingMode: Image.TemplateRenderingMode
     let status: OUDSTextInput.Status
 
     @Environment(\.theme) private var theme
@@ -30,7 +31,7 @@ struct LeadingIconContainer: View {
     var body: some View {
         leadingIcon?
             .resizable()
-            .renderingMode(.template)
+            .renderingMode(renderingMode)
             .aspectRatio(contentMode: .fit)
             .frame(height: theme.textInput.sizeLeadingIcon, alignment: .center)
             .foregroundColor(color)

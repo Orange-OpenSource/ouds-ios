@@ -41,11 +41,13 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// Layout with text only
         case text(text: String)
 
-        /// Layout with icon only and its accessibility label
-        case icon(icon: Image, accessibilityLabel: String)
+        /// Layout with icon only and its accessibility label.
+        /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
+        case icon(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template)
 
-        /// Layout with text and icon
-        case textAndIcon(text: String, icon: Image)
+        /// Layout with text and icon.
+        /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
+        case textAndIcon(text: String, icon: Image, renderingMode: Image.TemplateRenderingMode = .template)
     }
 
     /// Defines the data to use to define the chip (``OUDSFilterChip``)

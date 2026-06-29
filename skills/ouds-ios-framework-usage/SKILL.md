@@ -277,10 +277,19 @@ OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isH
 ```swift
 OUDSSuggestionChip(text: "Label") {}
 OUDSSuggestionChip(icon: Image("ic"), text: "Label") {}
+OUDSSuggestionChip(icon: Image("ic"), text: "Label", renderingMode: .original) {} // raw image (not tinted)
+OUDSSuggestionChip(icon: Image("ic"), accessibilityLabel: "Label") {}
+OUDSSuggestionChip(icon: Image("ic"), accessibilityLabel: "Label", renderingMode: .original) {} // raw image (not tinted)
 OUDSFilterChip(text: "Label") {}
 OUDSFilterChip(icon: Image("ic"), text: "Label") {}
+OUDSFilterChip(icon: Image("ic"), text: "Label", renderingMode: .original) {} // raw image (not tinted)
+OUDSFilterChip(icon: Image("ic"), accessibilityLabel: "Label") {}
+OUDSFilterChip(icon: Image("ic"), accessibilityLabel: "Label", renderingMode: .original) {} // raw image (not tinted)
 OUDSChipPicker(title: "Title", selection: $selection, chips: [
     .init(tag: .value1, layout: .textAndIcon("Label", icon: Image("ic"))),
+    .init(tag: .value2, layout: .textAndIcon("Brand", icon: Image("ic_brand"), renderingMode: .original)), // raw image
+    .init(tag: .value3, layout: .icon(icon: Image("ic"), accessibilityLabel: "Label")),
+    .init(tag: .value4, layout: .icon(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original)), // raw image
 ])
 ```
 
@@ -292,8 +301,11 @@ OUDSChipPicker(title: "Title", selection: $selection, chips: [
 OUDSTextInput(label: "Label", text: $text)
 OUDSTextInput(label: "Label", text: $text, placeholder: "…", prefix: "Pre", suffix: "Suf")
 OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"))
+OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), leadingIconRenderingMode: .original) // raw image (not tinted)
 OUDSTextInput(label: "Label", text: $text,
               trailingAction: .init(icon: Image("ic"), actionHint: "Hint") {})
+OUDSTextInput(label: "Label", text: $text,
+              trailingAction: .init(icon: Image("ic"), actionHint: "Hint", renderingMode: .original) {}) // raw image
 // Helper / error status → see §6 Common patterns
 ```
 
@@ -370,6 +382,9 @@ OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", 
 ```swift
 OUDSTag(label: "Label")
 OUDSTag(label: "Label", status: .neutral(icon: Image("ic")))
+OUDSTag(label: "Label", status: .neutral(icon: Image("ic"), renderingMode: .original)) // raw image (not tinted)
+OUDSTag(label: "Label", status: .accent(icon: Image("ic")))
+OUDSTag(label: "Label", status: .accent(icon: Image("ic"), renderingMode: .original)) // raw image (not tinted)
 OUDSTag(label: "Label", status: .neutral(bullet: true))
 ```
 
@@ -408,6 +423,7 @@ OUDSVerticalDivider(color: .brandPrimary)
 OUDSLink(text: "Text", size: .default) {}
 OUDSLink(text: "Text", indicator: .back, size: .default) {}
 OUDSLink(text: "Text", icon: Image("ic"), size: .default) {}
+OUDSLink(text: "Text", icon: Image("ic"), renderingMode: .original, size: .default) {} // raw image (not tinted)
 ```
 
 ---

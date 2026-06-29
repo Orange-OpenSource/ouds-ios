@@ -71,6 +71,7 @@ struct TrailingActionContainer: View {
         OUDSButton(icon: trailingAction.icon,
                    accessibilityLabel: trailingAction.actionHint,
                    flipIcon: trailingAction.flipIcon,
+                   renderingMode: trailingAction.renderingMode,
                    appearance: .minimal,
                    style: status == .loading ? .loading : .default,
                    action: trailingAction.action)

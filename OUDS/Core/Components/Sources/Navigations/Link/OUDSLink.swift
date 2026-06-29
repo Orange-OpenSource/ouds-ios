@@ -33,6 +33,9 @@ import SwiftUI
 ///
 ///     // Text and icon in default size
 ///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+///
+///     // Text and icon with raw image (not tinted)
+///     OUDSLink(text: "Feedback", icon: Image("ic_brand"), renderingMode: .original, size: .default) { /* the action to process */ }
 /// ```
 ///
 /// ## Navigation layout
@@ -103,7 +106,7 @@ public struct OUDSLink: View {
     enum Layout {
         case indicator(OUDSLink.Indicator)
         case textOnly
-        case textAndIcon(Image)
+        case textAndIcon(Image, Image.TemplateRenderingMode)
     }
 
     // MARK: Initializers
@@ -117,11 +120,17 @@ public struct OUDSLink: View {
     /// - Parameters:
     ///   - text: Text displayed in the link
     ///   - icon: Icon displayed in the link
+    ///   - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, icon: Image? = nil, size: Size = .default, action: @escaping () -> Void) {
+    public init(text: String,
+                icon: Image? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
         if let icon {
-            layout = .textAndIcon(icon)
+            layout = .textAndIcon(icon, renderingMode)
         } else {
             layout = .textOnly
         }
@@ -141,17 +150,19 @@ public struct OUDSLink: View {
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - icon: Icon displayed in the link
+    ///   - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 icon: Image? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template,
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
         if let icon {
-            layout = .textAndIcon(icon)
+            layout = .textAndIcon(icon, renderingMode)
         } else {
             layout = .textOnly
         }
@@ -229,12 +240,12 @@ public struct OUDSLink: View {
                 } icon: {
                     EmptyView()
                 }
-            case let .textAndIcon(icon):
+            case let .textAndIcon(icon, renderingMode):
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
                     icon
-                        .renderingMode(.template)
+                        .renderingMode(renderingMode)
                         .resizable()
                 }
             }

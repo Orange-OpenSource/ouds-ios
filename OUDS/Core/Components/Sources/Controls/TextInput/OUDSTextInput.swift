@@ -147,6 +147,9 @@ import SwiftUI
 ///     // Add a leading icon for more context
 ///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
 ///
+///     // Add a leading icon displayed as raw image (not tinted)
+///     OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
+///
 ///     // Add a trailing button with local image namde "ic_cross" for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
@@ -211,6 +214,7 @@ public struct OUDSTextInput: View {
     let suffix: String?
     let leadingIcon: Image?
     let flipLeadingIcon: Bool
+    let leadingIconRenderingMode: Image.TemplateRenderingMode
     let trailingAction: TrailingAction?
     let helperText: TextualContent?
     let helperLink: Helperlink?
@@ -236,6 +240,7 @@ public struct OUDSTextInput: View {
         let icon: Image
         let actionHint: String
         let flipIcon: Bool
+        let renderingMode: Image.TemplateRenderingMode
         let action: () -> Void
 
         /// Creates a trailing action.
@@ -244,14 +249,16 @@ public struct OUDSTextInput: View {
         ///   - icon: The icon set in the ``OUDSButton``
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+        ///   - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: Image, actionHint: String, flipIcon: Bool = false, action: @escaping () -> Void) {
+        public init(icon: Image, actionHint: String, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
             self.icon = icon
             self.actionHint = actionHint
             self.flipIcon = flipIcon
+            self.renderingMode = renderingMode
             self.action = action
         }
     }
@@ -341,6 +348,7 @@ public struct OUDSTextInput: View {
     ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
     ///      envelope for email, etc.), by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
+    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - trailingAction: An optional trailing action related to the field: (clear input,
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
@@ -360,6 +368,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
+                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -379,6 +388,7 @@ public struct OUDSTextInput: View {
         self.suffix = suffix
         self.leadingIcon = leadingIcon
         self.flipLeadingIcon = flipLeadingIcon
+        self.leadingIconRenderingMode = leadingIconRenderingMode
         self.trailingAction = trailingAction
         self.helperLink = helperLink
         self.status = status
@@ -407,6 +417,7 @@ public struct OUDSTextInput: View {
     ///    - leadingIcon: An optional leading icon to provide more context (magnifying glass for search,
     ///      envelope for email, etc.), by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon (e.g. in RTL case)
+    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - trailingAction: An optional trailing action related to the field: (clear input,
     ///      toggle password visibility, etc.), by default is *nil*
     ///    - helperText: An optional helper text displayed below the text input. It conveys additional, by default is *nil*
@@ -426,6 +437,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
+                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
@@ -441,6 +453,7 @@ public struct OUDSTextInput: View {
         self.suffix = suffix
         self.leadingIcon = leadingIcon
         self.flipLeadingIcon = flipLeadingIcon
+        self.leadingIconRenderingMode = leadingIconRenderingMode
         self.trailingAction = trailingAction
         self.helperLink = helperLink
         self.status = status
@@ -464,6 +477,7 @@ public struct OUDSTextInput: View {
     ///    - suffix: Text placed after the user's input, by default is *nil*
     ///    - leadingIcon: An optional leading icon, by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
+    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -479,6 +493,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
+                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -493,6 +508,7 @@ public struct OUDSTextInput: View {
                   suffix: suffix,
                   leadingIcon: leadingIcon,
                   flipLeadingIcon: flipLeadingIcon,
+                  leadingIconRenderingMode: leadingIconRenderingMode,
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -520,6 +536,7 @@ public struct OUDSTextInput: View {
     ///    - suffix: Text placed after the user's input, by default is *nil*
     ///    - leadingIcon: An optional leading icon, by default is *nil*
     ///    - flipLeadingIcon: Default set to *false*, set to *true* to mirror the leading icon
+    ///    - leadingIconRenderingMode: The rendering mode to apply on the leading icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An helper text in rich text
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -535,6 +552,7 @@ public struct OUDSTextInput: View {
                 suffix: String? = nil,
                 leadingIcon: Image? = nil,
                 flipLeadingIcon: Bool = false,
+                leadingIconRenderingMode: Image.TemplateRenderingMode = .template,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
@@ -549,6 +567,7 @@ public struct OUDSTextInput: View {
                   suffix: suffix,
                   leadingIcon: leadingIcon,
                   flipLeadingIcon: flipLeadingIcon,
+                  leadingIconRenderingMode: leadingIconRenderingMode,
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -571,6 +590,7 @@ public struct OUDSTextInput: View {
                                    suffix: suffix,
                                    leadingIcon: leadingIcon,
                                    flipIcon: flipLeadingIcon,
+                                   leadingIconRenderingMode: leadingIconRenderingMode,
                                    trailingAction: trailingAction,
                                    isOutlined: isOutlined,
                                    status: status,
