@@ -88,7 +88,7 @@ import SwiftUI
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The reversed layout will be used here.
-///     // Image is kept as is as raw imahge and not tinted
+///     // Image is kept as is as raw image and not tinted
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",

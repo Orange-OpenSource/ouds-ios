@@ -45,7 +45,7 @@ struct ControlItemIconContainer: View {
     private var icon: some View {
         if layoutData.isError {
             Image(decorative: "ic_alert_important_fill", bundle: theme.resourcesBundle)
-                .renderingMode(layoutData.renderingMode)
+                .renderingMode(.template)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)

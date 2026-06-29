@@ -69,7 +69,7 @@ public struct OUDSIcon: View {
                 renderingMode: Image.TemplateRenderingMode = .template)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText)
+        self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText, renderingMode: renderingMode)
     }
 
     // swiftlint:enable function_default_parameter_at_end

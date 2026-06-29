@@ -150,7 +150,7 @@ import SwiftUI
 ///     // Add a leading icon displayed as raw image (not tinted)
 ///     OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
 ///
-///     // Add a trailing button with local image namde "ic_cross" for additional action
+///     // Add a trailing button with local image named "ic_cross" for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
