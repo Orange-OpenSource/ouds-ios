@@ -37,8 +37,8 @@ struct Chip: View {
 
     enum Layout {
         case text(String)
-        case icon(Image, String, renderingMode: Image.TemplateRenderingMode = .template)
-        case textAndIcon(text: String, icon: Image, iconPosition: IconPosition = .leading, renderingMode: Image.TemplateRenderingMode = .template)
+        case icon(OUDSImage, String)
+        case textAndIcon(text: String, icon: OUDSImage, iconPosition: IconPosition = .leading)
     }
 
     // MARK: Initializers
@@ -81,7 +81,7 @@ struct Chip: View {
                 theme.chip.spacePaddingInlineIconNone
             case .icon:
                 theme.chip.spacePaddingInlineIcon
-            case let .textAndIcon(_, _, iconPosition, _):
+            case let .textAndIcon(_, _, iconPosition):
                 if iconPosition == .leading {
                     theme.chip.spacePaddingInlineIcon
                 } else {
@@ -97,7 +97,7 @@ struct Chip: View {
             theme.chip.spacePaddingInlineIconNone
         case .icon:
             theme.chip.spacePaddingInlineIcon
-        case let .textAndIcon(_, _, iconPosition, _):
+        case let .textAndIcon(_, _, iconPosition):
             if iconPosition == .trailing {
                 theme.chip.spacePaddingInlineIcon
             } else {
@@ -124,23 +124,25 @@ private struct ChipContent: View {
     var body: some View {
         Group {
             switch layout {
-            case let .icon(icon, accessibilityLabel, renderingMode):
-                ScaledIcon(icon: icon.renderingMode(renderingMode),
-                           size: theme.chip.sizeIcon)
-                    .accessibilityLabel(accessibilityLabel)
+            case let .icon(oudsImage, accessibilityLabel):
+                if let asset = oudsImage.asset {
+                    ScaledIcon(icon: asset.renderingMode(oudsImage.renderingMode),
+                               size: theme.chip.sizeIcon)
+                        .accessibilityLabel(accessibilityLabel)
+                }
             case let .text(text):
                 ChipText(text: text)
-            case let .textAndIcon(text, icon, iconPosition, renderingMode):
+            case let .textAndIcon(text, oudsImage, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
-                    if iconPosition == .leading {
-                        FixedIcon(icon: icon.resizable().renderingMode(renderingMode),
+                    if iconPosition == .leading, let asset = oudsImage.asset {
+                        FixedIcon(icon: asset.resizable().renderingMode(oudsImage.renderingMode),
                                   size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
-                    if iconPosition == .trailing {
-                        FixedIcon(icon: icon.resizable().renderingMode(renderingMode),
+                    if iconPosition == .trailing, let asset = oudsImage.asset {
+                        FixedIcon(icon: asset.resizable().renderingMode(oudsImage.renderingMode),
                                   size: theme.chip.sizeIcon)
                     }
                 }

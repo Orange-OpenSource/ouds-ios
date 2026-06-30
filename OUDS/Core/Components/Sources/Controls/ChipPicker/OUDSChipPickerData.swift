@@ -48,6 +48,49 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// Layout with text and icon.
         /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
         case textAndIcon(text: String, icon: Image, renderingMode: Image.TemplateRenderingMode = .template)
+
+        // MARK: - OUDSImage factories
+
+        /// Creates an icon-only layout from an ``OUDSImage``.
+        ///
+        /// ```swift
+        ///     OUDSChipPickerData(tag: "a",
+        ///                        layout: .icon(OUDSImage(asset: Image("ic_heart")),
+        ///                                      accessibilityLabel: "Heart"))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSChipPickerData(tag: "b",
+        ///                        layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///                                      accessibilityLabel: "Brand"))
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
+        ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip
+        public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
+            .icon(icon: image.asset ?? Image(""), accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
+        }
+
+        /// Creates a text + icon layout from an ``OUDSImage``.
+        ///
+        /// ```swift
+        ///     OUDSChipPickerData(tag: "a",
+        ///                        layout: .textAndIcon("Label",
+        ///                                             image: OUDSImage(asset: Image("ic_heart"))))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSChipPickerData(tag: "b",
+        ///                        layout: .textAndIcon("Brand",
+        ///                                             image: OUDSImage(asset: Image("ic_brand"),
+        ///                                                              renderingMode: .original)))
+        /// ```
+        ///
+        /// - Parameters:
+        ///    - text: The text to display in the chip
+        ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
+        public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
+            .textAndIcon(text: text, icon: image.asset ?? Image(""), renderingMode: image.renderingMode)
+        }
     }
 
     /// Defines the data to use to define the chip (``OUDSFilterChip``)

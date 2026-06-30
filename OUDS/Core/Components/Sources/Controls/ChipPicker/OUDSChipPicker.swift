@@ -39,13 +39,13 @@ import SwiftUI
 ///     var someDataToPopulate: [OUDSChipPickerData<Drink>] {
 ///         [
 ///             OUDSChipPickerData(tag: Drink.virginHolyLava,
-///                                layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame")),
+///                                layout: .textAndIcon("Virgin Holy Lava", image: OUDSImage(asset: Image(systemName: "flame")))),
 ///
-///             OUDSChipPickerData(tag: Dring.ipaBeer,
-///                                layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill")),
+///             OUDSChipPickerData(tag: Drink.ipaBeer,
+///                                layout: .textAndIcon("IPA Beer", image: OUDSImage(asset: Image(systemName: "dog.fill")))),
 ///
 ///             OUDSChipPickerData(tag: Drink.mineralWater,
-///                                layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+///                                layout: .textAndIcon("Mineral water", image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
 ///         ]
 ///     }
 ///
@@ -327,9 +327,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
         case let .icon(icon, accessibilityLabel, renderingMode):
-            OUDSFilterChip(icon: icon, accessibilityLabel: accessibilityLabel, selected: selected, renderingMode: renderingMode, action: action)
+            OUDSFilterChip(icon: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, selected: selected, action: action)
         case let .textAndIcon(text, icon, renderingMode):
-            OUDSFilterChip(icon: icon, text: text, selected: selected, renderingMode: renderingMode, action: action)
+            OUDSFilterChip(icon: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, selected: selected, action: action)
         }
     }
 

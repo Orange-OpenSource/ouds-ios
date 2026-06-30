@@ -22,7 +22,7 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData` and `OUDSSwitchItem` initialisers with `icon:` deprecated |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip` and `OUDSSuggestionChip` initialisers with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
 
 ---
 
@@ -711,6 +711,74 @@ OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: 
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
+
+### 6. `OUDSFilterChip` and `OUDSSuggestionChip` — initialisers with `icon: Image` deprecated
+
+Initialisers accepting a bare `Image` with a separate `renderingMode` are deprecated.
+
+> **Note**: Unlike other components, chips do **not** support `flipIcon`. The `accessibilityLabel` parameter stays on the chip itself — do not move it into `OUDSImage`.
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
+OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") {}
+OUDSSuggestionChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
+
+OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
+OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) {}
+OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+3. Remove the now-unused `renderingMode` parameter from the chip call site.
+4. Leave `accessibilityLabel` as a separate parameter on the chip — do not set it on `OUDSImage`.
+
+### 7. `OUDSChipPickerData.Layout` — new static factories for OUDSImage
+
+`@frozen` is preserved. Two static factory methods have been added to accept `OUDSImage` directly.
+The existing cases still compile and remain valid.
+
+**Before (v2.2.0)** — case-based form:
+```swift
+OUDSChipPickerData(tag: .x, layout: .icon(icon: Image("ic_heart"), accessibilityLabel: "Heart"))
+OUDSChipPickerData(tag: .y, layout: .icon(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original))
+OUDSChipPickerData(tag: .z, layout: .textAndIcon("Label", icon: Image("ic_heart")))
+OUDSChipPickerData(tag: .w, layout: .textAndIcon("Brand", icon: Image("ic_brand"), renderingMode: .original))
+```
+
+**After (v2.3.0)** — preferred form using static factories:
+```swift
+OUDSChipPickerData(tag: .x, layout: .icon(OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart"))
+OUDSChipPickerData(tag: .y, layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand"))
+OUDSChipPickerData(tag: .z, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic_heart"))))
+OUDSChipPickerData(tag: .w, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+```
+
+**Required action**: Migrate to the static factory form when convenient. The old form still compiles.
 
 ---
 

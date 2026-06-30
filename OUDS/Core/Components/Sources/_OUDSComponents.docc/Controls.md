@@ -370,19 +370,19 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 ```swift
 // Suggestion chip with icon only
-OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 
 // Suggestion chip with raw icon (not tinted)
-OUDSSuggestionChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) { /* the action to process */ }
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Layout with text only
-OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(text: "Heart") {}
 
 // Layout with text and icon
-OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
 
 // Layout with text and raw icon (not tinted)
-OUDSSuggestionChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) { /* the action to process */ }
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 #### Filter
@@ -406,19 +406,19 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
 
 ```swift
 // Filter chip with icon only as selected
-OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
 
 // Filter chip with raw icon (not tinted)
-OUDSFilterChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) { /* the action to process */ }
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Filter chip with text only as not selected
-OUDSFilterChip(text: "Heart") { /* the action to process */ }
+OUDSFilterChip(text: "Heart") {}
 
-// Filter chip with text and icon layout an in selected state
-OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+// Filter chip with text and icon in selected state
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
 
 // Filter chip with text and raw icon (not tinted)
-OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) { /* the action to process */ }
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 
@@ -453,13 +453,16 @@ enum Drink: String, CaseIterable {
 var someDataToPopulate: [OUDSChipPickerData<Drink>] {
     [
         OUDSChipPickerData(tag: Drink.virginHolyLava,
-                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame"))),
+                          layout: .textAndIcon("Virgin Holy Lava",
+                                               image: OUDSImage(asset: Image(systemName: "flame")))),
 
-        OUDSChipPickerData(tag: Dring.ipaBeer,
-                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill"))),
+        OUDSChipPickerData(tag: Drink.ipaBeer,
+                           layout: .textAndIcon("IPA Beer",
+                                                image: OUDSImage(asset: Image(systemName: "dog.fill")))),
 
         OUDSChipPickerData(tag: Drink.mineralWater,
-                           layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+                           layout: .textAndIcon("Mineral water",
+                                                image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
     ]
 }
 

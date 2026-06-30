@@ -324,20 +324,20 @@ OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isH
 
 ```swift
 OUDSSuggestionChip(text: "Label") {}
-OUDSSuggestionChip(icon: Image("ic"), text: "Label") {}
-OUDSSuggestionChip(icon: Image("ic"), text: "Label", renderingMode: .original) {} // raw image (not tinted)
-OUDSSuggestionChip(icon: Image("ic"), accessibilityLabel: "Label") {}
-OUDSSuggestionChip(icon: Image("ic"), accessibilityLabel: "Label", renderingMode: .original) {} // raw image (not tinted)
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSFilterChip(text: "Label") {}
-OUDSFilterChip(icon: Image("ic"), text: "Label") {}
-OUDSFilterChip(icon: Image("ic"), text: "Label", renderingMode: .original) {} // raw image (not tinted)
-OUDSFilterChip(icon: Image("ic"), accessibilityLabel: "Label") {}
-OUDSFilterChip(icon: Image("ic"), accessibilityLabel: "Label", renderingMode: .original) {} // raw image (not tinted)
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSChipPicker(title: "Title", selection: $selection, chips: [
-    .init(tag: .value1, layout: .textAndIcon("Label", icon: Image("ic"))),
-    .init(tag: .value2, layout: .textAndIcon("Brand", icon: Image("ic_brand"), renderingMode: .original)), // raw image
-    .init(tag: .value3, layout: .icon(icon: Image("ic"), accessibilityLabel: "Label")),
-    .init(tag: .value4, layout: .icon(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original)), // raw image
+    .init(tag: .value1, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic")))),
+    .init(tag: .value2, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))), // raw image
+    .init(tag: .value3, layout: .icon(OUDSImage(asset: Image("ic")), accessibilityLabel: "Label")),
+    .init(tag: .value4, layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand")), // raw image
 ])
 ```
 

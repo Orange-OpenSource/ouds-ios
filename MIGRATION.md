@@ -298,6 +298,98 @@ OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: 
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSSwitchItem` with the same pattern applied to `OUDSButton`, `OUDSCheckboxItem`, `OUDSRadioItem` and other components.
 
+### Deprecated OUDSFilterChip and OUDSSuggestionChip initialisers with `icon: Image` parameter
+
+Initialisers of `OUDSFilterChip` and `OUDSSuggestionChip` that accepted a bare `Image` together with a separate `renderingMode` parameter are deprecated.
+Use the new initialisers that accept an `OUDSImage` value instead.
+
+**Impact**: Low
+
+**Note**: Unlike other components, chips do **not** support `flipIcon` — `OUDSImage.flipped` is not used here.
+The `accessibilityLabel` parameter remains on the chip itself; do not set it on `OUDSImage`.
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
+OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") {}
+OUDSSuggestionChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
+
+OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
+OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) {}
+OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+```
+
+**Required Action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`
+2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+3. Remove the now-unused `renderingMode` parameter from the chip call site
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns the chip components with the same pattern applied to all other OUDS components.
+
+### OUDSChipPickerData.Layout — new static factories for OUDSImage
+
+The `@frozen` enum `OUDSChipPickerData.Layout` has been enriched with two static factory methods accepting `OUDSImage`.
+The existing cases `.icon(icon:accessibilityLabel:renderingMode:)` and `.textAndIcon(text:icon:renderingMode:)` remain available for backward compatibility.
+
+**Impact**: Low — additive change, no breaking change.
+
+**Before (v2.2.0)**:
+```swift
+OUDSChipPickerData(tag: .x,
+                   layout: .icon(icon: Image("ic_heart"), accessibilityLabel: "Heart"))
+OUDSChipPickerData(tag: .y,
+                   layout: .icon(icon: Image("ic_brand"), accessibilityLabel: "Brand",
+                                 renderingMode: .original))
+OUDSChipPickerData(tag: .z,
+                   layout: .textAndIcon("Label", icon: Image("ic_heart")))
+OUDSChipPickerData(tag: .w,
+                   layout: .textAndIcon("Brand", icon: Image("ic_brand"),
+                                        renderingMode: .original))
+```
+
+**After (v2.3.0)** — preferred new form using static factories:
+```swift
+OUDSChipPickerData(tag: .x,
+                   layout: .icon(OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart"))
+OUDSChipPickerData(tag: .y,
+                   layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+                                 accessibilityLabel: "Brand"))
+OUDSChipPickerData(tag: .z,
+                   layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic_heart"))))
+OUDSChipPickerData(tag: .w,
+                   layout: .textAndIcon("Brand",
+                                        image: OUDSImage(asset: Image("ic_brand"),
+                                                         renderingMode: .original)))
+```
+
+**Required Action**:
+- Migrate to the new static factory form to avoid passing `renderingMode` separately
+- The old case-based form continues to compile and remains valid
+
+**Reason for Change**: `@frozen` is preserved for ABI stability. Static factories provide a cleaner API aligned with `OUDSImage` without requiring a breaking enum change.
+
 ### Compatibility
 
 - **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning
