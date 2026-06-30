@@ -343,7 +343,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSAlertMessage(label: "Label")
 OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
 OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
+                 status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
@@ -359,7 +359,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 ```swift
 OUDSInlineAlert(label: "Label")
 OUDSInlineAlert(label: "Label", status: .warning)
-OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
 ```
 
 ---

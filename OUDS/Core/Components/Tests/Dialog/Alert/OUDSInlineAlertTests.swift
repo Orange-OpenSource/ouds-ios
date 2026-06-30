@@ -22,7 +22,7 @@ struct OUDSInlineAlertTests {
 
     @Test("Inline alert default status must be neutral with an icon")
     func defaultStatusIsNeutralWithIcon() {
-        let neutralWithIcon = OUDSAlertStatus.neutral(icon: OUDSIcon(assetName: "ic_heart"))
+        let neutralWithIcon = OUDSAlertStatus.neutral(icon: OUDSImage(assetName: "ic_heart"))
         #expect(neutralWithIcon.hasIcon, "Neutral status with a non-nil icon must report hasIcon as true")
     }
 
@@ -58,7 +58,7 @@ struct OUDSInlineAlertTests {
 
     @MainActor @Test("Neutral status with icon must render a leading icon")
     func neutralStatusWithIconHasIcon() {
-        let status = OUDSAlertStatus.neutral(icon: OUDSIcon(assetName: "ic_heart"))
+        let status = OUDSAlertStatus.neutral(icon: OUDSImage(assetName: "ic_heart"))
         #expect(status.hasIcon, "Neutral status with non-nil icon must report hasIcon as true, allowing icon rendering")
     }
 
@@ -70,7 +70,7 @@ struct OUDSInlineAlertTests {
 
     @MainActor @Test("Accent status with icon must render a leading icon")
     func accentStatusWithIconHasIcon() {
-        let status = OUDSAlertStatus.accent(icon: OUDSIcon(assetName: "ic_heart"))
+        let status = OUDSAlertStatus.accent(icon: OUDSImage(assetName: "ic_heart"))
         #expect(status.hasIcon, "Accent status with non-nil icon must report hasIcon as true, allowing icon rendering")
     }
 }

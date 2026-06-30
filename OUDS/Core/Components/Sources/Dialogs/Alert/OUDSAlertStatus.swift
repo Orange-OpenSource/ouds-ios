@@ -31,15 +31,15 @@ import SwiftUI
     /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where
     /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
     ///
-    /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert. Pass `nil` if no icon is needed.
-    case neutral(icon: OUDSIcon? = nil)
+    /// - Parameter icon: Optional `OUDSImage`  to be displayed in the alert. Pass `nil` if no icon is needed.
+    case neutral(icon: OUDSImage? = nil)
 
     /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
     /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
     /// product updates, or customer engagement moments.
     ///
-    /// - Parameter icon: Optional `OUDSIcon`  to be displayed in the alert. Pass `nil` if no icon is needed.
-    case accent(icon: OUDSIcon? = nil)
+    /// - Parameter icon: Optional `OUDSImage`  to be displayed in the alert. Pass `nil` if no icon is needed.
+    case accent(icon: OUDSImage? = nil)
 
     /// Positive status indicates that a task or process has been completed successfully. These alerts reassure users and confirm that no further action is needed.
     /// This status displays a dedicated default icon.

@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v2.2.0 → v2.3.0](#v220--v230)
 - [v2.0.0 → v2.2.0](#v200--v220)
 - [v1.4.0 → v2.0.0](#v140--v200)
 - [v1.3.0 → v1.4.0](#v130--v140)
@@ -7,6 +8,42 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v2.2.0 → v2.3.0
+
+### Overview
+
+Work on original images integrations in components brings API updates to group parameters related
+to images / icons into one single object type. `OUDSIcon` is now `OUDSImage`.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 2.2 or older
+
+### Renmaed OUDSIcon
+
+The `OUDSIcon` type is deprecated. Use instead `OUDSImage`.
+
+**Impact**: Low
+
+**Before (v2.2.0)**:
+```swift
+OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+```
+
+**Required Action**:
+- Rename the `OUDSIcon` calls by `OUDSImage`
+
+**Reason for Change**: "icon" is too strict in meanings, "image" is more open.
 
 ## v2.0.0 → v2.2.0
 

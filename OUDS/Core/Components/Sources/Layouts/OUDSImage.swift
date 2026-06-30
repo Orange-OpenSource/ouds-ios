@@ -15,7 +15,11 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Icon
+// MARK: - OUDS Image
+
+/// Old name of ``OUDSImage``
+@available(*, deprecated, message: "Use OUDSImage type instead of OUDSIcon.")
+public typealias OUDSIcon = OUDSImage // To not break public API where OUDSIcon were used before
 
 /// Use to provide an asset to ouds in order to be added in some components.
 /// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
@@ -25,14 +29,14 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Display an image with a label loaded from a given module (default in rendering mode)
-///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
 ///
 ///     // Display an image but without tints and in original mode
-///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
 /// ```
 ///
 /// - Since: 1.3.0
-public struct OUDSIcon: View {
+public struct OUDSImage: View {
 
     // MARK: Properties
 
@@ -51,7 +55,7 @@ public struct OUDSIcon: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
     /// ```
     ///
     /// - Parameters:
@@ -77,7 +81,7 @@ public struct OUDSIcon: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like")
+    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like")
     /// ```
     ///
     /// - Parameters:

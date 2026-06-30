@@ -45,8 +45,8 @@ Dialogs components are UI elements that display information, system feedback or 
     // Add a custom icon for accent and neutral status
     // with original rendering mode (to avoid tints) or not.
     // By default, tinted, template mode.
-    OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
-    OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"), renderingMode: .original)))
+    OUDSAlertMessage(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+    OUDSAlertMessage(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)))
 ```
 
 ### Inline Alert
@@ -79,6 +79,6 @@ Inline alert does not disappear and remains visible.
     OUDSInlineAlert(label: "Warning", status: .warning)
 
     // Add a custom icon for accent and neutral status
-    OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSIcon(asset: Image("ic_heart"))))
-    OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSIcon(asset: Image("ic_heart"))))
+    OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+    OUDSInlineAlert(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_heart"))))
 ```
