@@ -212,7 +212,7 @@ public struct OUDSBadge: View {
     }
 
     /// Creates a badge which displays numerical value (e.g., unread messages, notifications).
-    /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99, "+99" is displayed.
+    /// Minimum and maximum values are 0 and 99 respectively. If value is greater than 99,OUDSB "+99" is displayed.
     /// Negative values are not allowed by design.
     /// The background color of the badge and the number color are based on the given `status`.
     ///

@@ -143,8 +143,8 @@ public struct OUDSButton: View {
 
     private enum `Type` {
         case text(String)
-        case icon(Image, flipIcon: Bool, renderingMode: Image.TemplateRenderingMode, String)
-        case textAndIcon(text: String, icon: Image, flipIcon: Bool, renderingMode: Image.TemplateRenderingMode)
+        case icon(OUDSImage)
+        case textAndIcon(text: String, icon: OUDSImage)
     }
 
     /// Represents the appearance of an OUDS button, i.e. a kind of type
@@ -200,6 +200,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
+    @available(*, deprecated, message: "Use OUDSButton(_:tableName:bundle:image:appearance:style:isFullWidth:action) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -211,8 +212,42 @@ public struct OUDSButton: View {
                 isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
+        let imageSetup = OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode)
+        self.init(key, tableName: tableName, bundle: bundle, image: imageSetup, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+    }
+
+    /// Creates a button with a localized text and icon, looking up the key in the given bundle..
+    /// A raw string can also be given to be displayed.
+    ///
+    /// ```swift
+    ///     let imageSetup = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     // Use localizable
+    ///     OUDSButton(LocalizedStringKey("validate_button"),
+    ///                bundle: Bundle.module,
+    ///                image: imageSetup,
+    ///                appearance: .strong) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle, or a raw `String` to display
+    ///    - tableName: The name of the `.strings` file, or `nil` for the default
+    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                image: OUDSImage,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(text: resolvedText, icon: icon, flipIcon: flipIcon, renderingMode: renderingMode, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+        self.init(text: resolvedText, image: image, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -232,6 +267,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
+    @available(*, deprecated, message: "Use OUDSButton(text:image:appearance:style:isFullWidth:action) instead.")
     public init(text: String,
                 icon: Image,
                 flipIcon: Bool = false,
@@ -241,7 +277,44 @@ public struct OUDSButton: View {
                 isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
-        type = .textAndIcon(text: text, icon: icon, flipIcon: flipIcon, renderingMode: renderingMode)
+        type = .textAndIcon(text: text, icon: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
+        self.appearance = appearance
+        self.style = style
+        self.isFullWidth = isFullWidth
+        self.action = action
+        isHover = false
+    }
+
+    /// Creates a button with text and image.
+    ///
+    /// ```swift
+    ///     // With default setup
+    ///     OUDSButton(text: "Validate",
+    ///                image: OUDSImage(asset: Image(systemName: "checkmark")),
+    ///                appearance: .strong) { }
+    ///
+    ///     // With more setup
+    ///     let imageSetup = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     OUDSButton(text: "Validate",
+    ///                image: imageSetup,
+    ///                appearance: .strong) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - text: The text to display in the button
+    ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(text: String,
+                image: OUDSImage,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        type = .textAndIcon(text: text, icon: image)
         self.appearance = appearance
         self.style = style
         self.isFullWidth = isFullWidth
@@ -262,6 +335,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
+    @available(*, deprecated, message: "Use OUDSButton(image:appearance:style:isFullWidth:action) instead.")
     public init(icon: Image,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -287,6 +361,37 @@ public struct OUDSButton: View {
     /// Creates a button with an icon only.
     ///
     /// ```swift
+    ///     let imageSetup = OUDSImage(asset: Image("someIcon"),
+    ///                                flipped: true,
+    ///                                accessibilityLabel: LocalizedStringKey("some.wording.key"),
+    ///                                renderingMode: .original)
+    ///     OUDSButton(text: "Validate",
+    ///                image: imageSetup,
+    ///                appearance: .strong) { }
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - image: An image configuration defined asset to use, rendering mode or also flip to apply or not.
+    ///    - appearance: The button appearance, default set to `.default`
+    ///    - style: The button style, default set to `.default`
+    ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
+    ///    - action: The action to perform when the user triggers the button
+    public init(image: OUDSImage,
+                appearance: Appearance = .default,
+                style: Style = .default,
+                isFullWidth: Bool = false,
+                action: @escaping () -> Void)
+    {
+        self.init(image: image,
+                  appearance: appearance,
+                  style: style,
+                  isFullWidth: isFullWidth,
+                  action: action)
+    }
+
+    /// Creates a button with an icon only.
+    ///
+    /// ```swift
     ///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { }
     /// ```
     ///
@@ -299,6 +404,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - isFullWidth: Flag to let button take all the screen width, set to *false* by default.
     ///    - action: The action to perform when the user triggers the button
+    @available(*, deprecated, message: "Use OUDSButton(image:appearance:style:isFullWidth:action) instead.")
     public init(icon: Image,
                 accessibilityLabel: String,
                 flipIcon: Bool = false,
@@ -308,7 +414,7 @@ public struct OUDSButton: View {
                 isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
-        type = .icon(icon, flipIcon: flipIcon, renderingMode: renderingMode, accessibilityLabel)
+        type = .icon(OUDSImage(asset: icon, flipped: flipIcon, accessibilityLabel: accessibilityLabel, renderingMode: renderingMode))
         self.appearance = appearance
         self.style = style
         self.isFullWidth = isFullWidth
@@ -380,12 +486,12 @@ public struct OUDSButton: View {
 
         Button(action: action) {
             switch type {
-            case let .icon(icon, flipped, renderingMode, _):
-                ButtonIcon(icon: icon, flipped: flipped, mode: renderingMode)
+            case let .icon(image):
+                ButtonIcon(image: image)
             case let .text(text):
                 ButtonText(text: text)
-            case let .textAndIcon(text, icon, flipped, renderingMode):
-                ButtonTextAndIcon(text: text, icon: icon, flipIcon: flipped, mode: renderingMode)
+            case let .textAndIcon(text, image):
+                ButtonTextAndIcon(text: text, image: image)
             }
         }
         .buttonStyle(StyleForButton(appearance: appearance, style: style, isHover: isHover, isFullWidth: isFullWidth))
@@ -408,8 +514,12 @@ public struct OUDSButton: View {
             "core_common_loading_a11y".localized()
         } else {
             switch type {
-            case let .text(text), let .textAndIcon(text, _, _, _), let .icon(_, _, _, text):
+            case let .text(text):
                 text
+            case let .textAndIcon(text, _):
+                text
+            case let .icon(image):
+                image.accessibilityLabel ?? ""
             }
         }
     }
@@ -421,14 +531,11 @@ private struct ButtonIcon: View {
 
     @Environment(\.theme) private var theme
 
-    let icon: Image
-    let flipped: Bool
-    let mode: Image.TemplateRenderingMode
+    let image: OUDSImage
 
     var body: some View {
-        ScaledIcon(icon: icon.renderingMode(mode),
-                   size: theme.button.sizeIconOnly,
-                   flipped: flipped)
+        ScaledIcon(image: image,
+                   size: theme.button.sizeIconOnly)
             .padding(.all, theme.button.spaceInsetIconOnly)
             .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight)
     }
@@ -457,15 +564,12 @@ private struct ButtonTextAndIcon: View {
     @Environment(\.theme) private var theme
 
     let text: String
-    let icon: Image
-    let flipIcon: Bool
-    let mode: Image.TemplateRenderingMode
+    let image: OUDSImage
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.button.spaceColumnGapIcon) {
-            FixedIcon(icon: icon.resizable().renderingMode(mode),
-                      size: theme.button.sizeIcon,
-                      flipped: flipIcon)
+            FixedIcon(image: image,
+                      size: theme.button.sizeIcon)
 
             TextForButton(text: text)
         }

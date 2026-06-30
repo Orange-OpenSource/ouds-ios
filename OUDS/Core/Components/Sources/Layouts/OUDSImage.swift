@@ -17,7 +17,7 @@ import SwiftUI
 
 // MARK: - OUDS Image
 
-/// Old name of ``OUDSImage``
+/// Old name of ``OUDSImage`` (before v2.3.0)
 @available(*, deprecated, message: "Use OUDSImage type instead of OUDSIcon.")
 public typealias OUDSIcon = OUDSImage // To not break public API where OUDSIcon were used before
 
@@ -40,12 +40,12 @@ public struct OUDSImage: View {
 
     // MARK: Properties
 
-    private let asset: Image?
-    private let assetName: String?
-    private let flipped: Bool
-    private let accessibilityLabel: String?
-    private let color: MultipleColorSemanticToken?
-    private let renderingMode: Image.TemplateRenderingMode
+    public let asset: Image?
+    public let assetName: String?
+    public let flipped: Bool
+    public let accessibilityLabel: String?
+    public let color: MultipleColorSemanticToken?
+    public let renderingMode: Image.TemplateRenderingMode
 
     @Environment(\.theme) private var theme
 

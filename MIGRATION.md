@@ -22,7 +22,7 @@ to images / icons into one single object type. `OUDSIcon` is now `OUDSImage`.
 
 - Use version 2.2 or older
 
-### Renmaed OUDSIcon
+### Renamed OUDSIcon
 
 The `OUDSIcon` type is deprecated. Use instead `OUDSImage`.
 
@@ -44,6 +44,65 @@ OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .
 - Rename the `OUDSIcon` calls by `OUDSImage`
 
 **Reason for Change**: "icon" is too strict in meanings, "image" is more open.
+
+### Deprecated OUDSButton initialisers with `icon` parameter
+
+`OUDSButton` initialisers that accepted a bare `Image` together with separate `icon`, `flipIcon`, `renderingMode` and `accessibilityLabel` parameters are deprecated.
+Use the new initialisers that accept an `OUDSImage` value instead; `OUDSImage` encapsulates the asset, the flip flag, the rendering mode and the accessibility label in one object.
+
+**Impact**: Low
+
+**Before (v2.2.0)**:
+
+```swift
+// Text + icon (String label)
+OUDSButton(text: "Like", icon: Image("ic_heart"), appearance: .default) {}
+
+// Text + icon (flipped for RTL, original rendering)
+OUDSButton(text: "Back", icon: Image("ic_chevron"), flipIcon: true, renderingMode: .original, appearance: .default) {}
+
+// Text + icon (LocalizedStringKey)
+OUDSButton(LocalizedStringKey("action_like"), icon: Image("ic_heart"), appearance: .default) {}
+
+// Icon only (String accessibility label)
+OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) {}
+
+// Icon only (LocalizedStringKey accessibility label)
+OUDSButton(icon: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module, appearance: .default) {}
+```
+
+**After (v2.3.0)**:
+
+```swift
+// Text + icon (no accessibility label needed on OUDSImage — decorative in this context)
+OUDSButton(text: "Like", image: OUDSImage(asset: Image("ic_heart")), appearance: .default) {}
+
+// Text + icon (flipped for RTL, original rendering)
+OUDSButton(text: "Back", image: OUDSImage(asset: Image("ic_chevron"), flipped: true, renderingMode: .original), appearance: .default) {}
+
+// Text + icon (LocalizedStringKey)
+OUDSButton(LocalizedStringKey("action_like"), image: OUDSImage(asset: Image("ic_heart")), appearance: .default) {}
+
+// Icon only — accessibilityLabel is now carried by OUDSImage
+OUDSButton(image: OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like"), appearance: .default) {}
+
+// Icon only — LocalizedStringKey accessibility label
+OUDSButton(image: OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module), appearance: .default) {}
+```
+
+**Required Action**:
+1. Replace every `icon: Image(…)` parameter with `image: OUDSImage(asset: Image(…))`
+2. Move the `flipIcon: Bool` value to `OUDSImage(asset:flipped:)` (parameter renamed `flipped`)
+3. Move the `renderingMode:` value to `OUDSImage(asset:renderingMode:)`
+4. Move the `accessibilityLabel:` value (both `String` and `LocalizedStringKey` forms) to `OUDSImage(asset:accessibilityLabel:)` or `OUDSImage(asset:accessibilityLabel:tableName:bundle:)`
+5. Remove the now-unused `flipIcon`, `renderingMode` and `accessibilityLabel` parameters from the `OUDSButton` call site
+
+**Reason for Change**: Grouping image-related parameters (`icon`, `flipIcon`, `renderingMode`, `accessibilityLabel`) into one `OUDSImage` object makes the call site cleaner, reduces the number of parameters on `OUDSButton`, and aligns with the same pattern used by other components (`OUDSLink`, `OUDSSuggestionChip`, `OUDSFilterChip`, …).
+
+### Compatibility
+
+- **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning
+- **v2.2.0 Support**: None
 
 ## v2.0.0 → v2.2.0
 

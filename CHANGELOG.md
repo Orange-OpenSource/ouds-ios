@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - View modifier to fill colors on `Shape`
 - Helper to register local fonts configurations for custom themes
 
+### Deprecated
+
+- Components with several configuration parameters for images (Orange-OpenSource/ouds-ios#1511)
+
 ## [2.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.1.0...2.2.0) - 2026-06-18
 
 ### Added
