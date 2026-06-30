@@ -14,6 +14,11 @@
 import OUDSFoundations
 import SwiftUI
 
+// TODO: When v3 in development and deprecated API removed, fine-tune these SwiftLint commands
+
+// swiftlint:disable function_default_parameter_at_end
+// swiftlint:disable line_length
+
 // MARK: - OUDS Checkbox Item Indeterminate
 
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
@@ -47,8 +52,8 @@ import SwiftUI
 /// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
 /// to have for example the indicator in trailing position for LTR mode and vice versa.
 /// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
-/// It could lead to a loss of meaning or semantics in the icon. Thus a specific flag can be used to flip the icon content whatever the layout direction is.
-/// It prevents the user do implement its own rules to flip or not image.
+/// It could lead to a loss of meaning or semantics in the icon. Thus the ``OUDSImage`` `flipped` property can be used to flip the icon content
+/// whatever the layout direction is, preventing the user from implementing their own rules to flip or not the image.
 ///
 /// ## Accessibility considerations
 ///
@@ -67,34 +72,37 @@ import SwiftUI
 ///     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
 ///
 ///     // A leading checkbox with a label.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection)
 ///
-///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     // The default layout will be used here.
+///     // Localizable from bundle can also be used
+///     OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module, selection: $selection)
+///
+///     // A leading checkbox with a label, but in read only mode.
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadOnly: true)
 ///
 ///     // A leading checkbox with a label and a description as helper text.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItemIndeterminate("Bazinga!", selection: $selection, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
-///     // A trailing checkbox with a label, an helper text and an icon.
-///     // The reversed layout will be used here.
+///     // A trailing checkbox with a label, an helper text and an icon (tinted, default rendering).
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
-///                                   icon: Image(decorative: "ic_heart"),
+///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")),
 ///                                   isReversed: true)
 ///
-///     // A trailing checkbox with a label, an helper text and an icon.
-///     // The reversed layout will be used here.
-///     // Image is kept as is as raw image and not tinted
+///     // A trailing checkbox with a raw (non-tinted) image.
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
-///                                   icon: Image(decorative: "il_someImage"),
-///                                   renderingMode: .original,
+///                                   icon: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                                   isReversed: true)
+///
+///     // Flip the icon for RTL layouts using OUDSImage.
+///     OUDSCheckboxItemIndeterminate("Cocorico !",
+///                                   selection: $selection,
+///                                   icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                                                   flipped: layoutDirection == .rightToLeft),
+///                                   isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
@@ -104,31 +112,13 @@ import SwiftUI
 ///                                   hasDivider: true)
 ///
 ///     // A leading checkbox with a label, but disabled.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection)
 ///         .disabled(true)
-///
-///     // A leading checkbox with a label and and icon but with the icon flipped vertically
-///     OUDSCheckboxItemIndeterminate("Cocorico !",
-///                                   selection: $selection,
-///                                   icon: Image(systemName: "figure.handball"),
-///                                   flipIcon: true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isError: true).disabled(true) // fatal error
 ///     OUDSCheckboxItemIndeterminate("Hello world", selection: $selection, isReadOnly: true).disabled(true) // fatal error
-/// ```
-///
-/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
-/// ```swift
-///     @Environment(\.layoutDirection) var layoutDirection
-///
-///     OUDSCheckboxItemIndeterminate("Cocorico !",
-///                                   selection: $selection,
-///                                   icon: Image(systemName: "figure.handball"),
-///                                   flipIcon: layoutDirection == .rightToLeft,
-///                                   isReversed: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Suggestions
@@ -175,38 +165,82 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
-    /// ```swift
-    ///     OUDSCheckboxItemIndeterminate("Select all", selection: $state)
-    /// ```
-    ///
-    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
-    ///
     /// - Parameters:
     ///   - label: The main label text of the checkbox, must not be empty
-    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked (indeterminate / partially ticked).
+    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked
     ///   - description: A description, an additional helper text, should not be empty
-    ///   - icon: An optional icon
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
-    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
-    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
-    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
-    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
-    ///     modifier. Defaults to `false`.
-    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
-    ///
-    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
-    /// provide the localized string if key is stored in another bundle.**
+    ///   - icon: An optional icon image
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An optional error message to display at the bottom
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    @available(*, deprecated, message: "Use OUDSCheckboxItemIndeterminate(_:selection:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ label: String,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
                 renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(label,
+                  selection: selection,
+                  description: description,
+                  icon: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    /// Creates a checkbox with label and optional helper text, icon, divider.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItemIndeterminate("Select all", selection: $state)
+    ///
+    ///     OUDSCheckboxItemIndeterminate("Select all",
+    ///                                   selection: $state,
+    ///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the checkbox, must not be empty
+    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked (indeterminate / partially ticked)
+    ///   - description: A description, an additional helper text, should not be empty
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
+    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
+    public init(_ label: String,
+                selection: Binding<OUDSCheckboxIndicatorState>,
+                description: String? = nil,
+                icon: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -247,8 +281,6 @@ public struct OUDSCheckboxItemIndeterminate: View {
             extraLabel: nil,
             description: description?.localized(),
             icon: icon,
-            flipIcon: flipIcon,
-            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -256,6 +288,60 @@ public struct OUDSCheckboxItemIndeterminate: View {
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
+    }
+
+    /// Creates a checkbox with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module, selection: $state)
+    ///
+    ///     OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"),
+    ///                                   bundle: Bundle.module,
+    ///                                   selection: $state,
+    ///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked
+    ///   - description: A description, an additional helper text, should not be empty
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                selection: Binding<OUDSCheckboxIndicatorState>,
+                description: String? = nil,
+                icon: OUDSImage? = nil,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  selection: selection,
+                  description: description,
+                  icon: icon,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
     }
 
     // MARK: Body
@@ -299,3 +385,6 @@ public struct OUDSCheckboxItemIndeterminate: View {
         }
     }
 }
+
+// swiftlint:enable function_default_parameter_at_end
+// swiftlint:enable line_length

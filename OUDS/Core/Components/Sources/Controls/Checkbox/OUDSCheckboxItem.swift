@@ -14,7 +14,12 @@
 import OUDSFoundations
 import SwiftUI
 
+// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
+
 // swiftlint:disable file_length
+// swiftlint:disable function_default_parameter_at_end
+// swiftlint:disable line_length
+// swiftlint:disable type_body_length
 
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
 /// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
@@ -46,8 +51,8 @@ import SwiftUI
 /// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
 /// to have for example the indicator in trailing position for LTR mode and vice versa.
 /// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
-/// It could lead to a loss of meaning or semantics in the icon. Thus a specific flag can be used to flip the icon content whatever the layout direction is.
-/// It prevents the user do implement its own rules to flip or not image.
+/// It could lead to a loss of meaning or semantics in the icon. Thus the ``OUDSImage`` `flipped` property can be used to flip the icon content
+/// whatever the layout direction is, preventing the user from implementing their own rules to flip or not the image.
 ///
 /// ## Rich text
 ///
@@ -77,37 +82,37 @@ import SwiftUI
 ///     @Published var isOn: Bool = false
 ///
 ///     // A leading checkbox with a label.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///
 ///     // Localizable from bundle can also be used
 ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading checkbox with a label and a description as helper text.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Bazinga!", isOn: $isOn, description: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
-///     // A trailing checkbox with a label, a description and an icon.
-///     // The reversed layout will be used here.
+///     // A trailing checkbox with a label, a description and an icon (tinted, default rendering).
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      icon: Image(decorative: "ic_heart"),
+///                      icon: OUDSImage(asset: Image(decorative: "ic_heart")),
 ///                      isReversed: true)
 ///
-///     // A trailing checkbox with a label, a description and an icon.
-///     // The reversed layout will be used here.
-///     // The image is kept as is and is not tinted.
+///     // A trailing checkbox with a raw (non-tinted) image.
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      icon: Image(decorative: "il_someImage"),
-///                      renderingMode: .original,
+///                      icon: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                      isReversed: true)
+///
+///     // Flip the icon for RTL layouts using OUDSImage.
+///     OUDSCheckboxItem("Cocorico !",
+///                      isOn: $isOn,
+///                      icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                                     flipped: layoutDirection == .rightToLeft),
+///                      isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
 ///     OUDSCheckboxItem("We live in a fabled world",
@@ -117,7 +122,6 @@ import SwiftUI
 ///                      hasDivider: true)
 ///
 ///     // A leading checkbox with a label, but disabled.
-///     // The default layout will be used here.
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn)
 ///         .disabled(true)
 ///
@@ -125,17 +129,6 @@ import SwiftUI
 ///     // This is forbidden by design!
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn, isError: true).disabled(true) // fatal error
 ///     OUDSCheckboxItem("Hello world", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
-/// ```
-///
-/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
-/// ```swift
-///     @Environment(\.layoutDirection) var layoutDirection
-///
-///     OUDSCheckboxItem("Cocorico !",
-///                      isOn: $selection,
-///                      icon: Image(systemName: "figure.handball"),
-///                      flipIcon: layoutDirection == .rightToLeft,
-///                      isInversed: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Suggestions
@@ -179,7 +172,52 @@ public struct OUDSCheckboxItem: View {
 
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Initializers
+    // MARK: - Initializers — String label + errorText: String?
+
+    /// Creates a checkbox with label and optional helper text, icon, divider.
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the checkbox, must not be empty
+    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
+    ///   - description: An additional helper text, default set to `nil`
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An optional error message to display at the bottom
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    public init(_ label: String,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(label,
+                  isOn: isOn,
+                  description: description,
+                  icon: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
@@ -187,7 +225,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      icon: Image(systemName: "flame")
+    ///                      icon: OUDSImage(asset: Image(systemName: "flame")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -199,13 +237,11 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
+    ///   The `errorText` can be different if switch is selected or not.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
@@ -215,9 +251,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
+                icon: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -257,8 +291,6 @@ public struct OUDSCheckboxItem: View {
             extraLabel: nil,
             description: description?.localized(),
             icon: icon,
-            flipIcon: flipIcon,
-            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -269,16 +301,60 @@ public struct OUDSCheckboxItem: View {
         self.action = action
     }
 
-    // For API signature consistency disable this warning
-    // swiftlint:disable function_default_parameter_at_end
+    // MARK: - Initializers — String label + errorText: AttributedString
 
-    /// Creates a checkbox with label and optional helper text, icon, divider.
+    /// Creates a checkbox with label, optional helper text, icon, divider, and a rich attributed error text.
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the checkbox, must not be empty
+    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
+    ///   - description: An additional helper text, default set to `nil`
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    public init(_ label: String,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(label,
+                  isOn: isOn,
+                  description: description,
+                  icon: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    /// Creates a checkbox with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      icon: Image(systemName: "flame"),
+    ///                      icon: OUDSImage(asset: Image(systemName: "flame")),
     ///                      errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
     ///                    // Manage in your side errors for init for AttributedString(markdown:)
     /// ```
@@ -292,13 +368,10 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
@@ -308,9 +381,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
+                icon: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -342,8 +413,6 @@ public struct OUDSCheckboxItem: View {
             extraLabel: nil,
             description: description?.localized(),
             icon: icon,
-            flipIcon: flipIcon,
-            renderingMode: renderingMode,
             isOutlined: false,
             isError: isError,
             errorText: .attributed(errorText),
@@ -354,30 +423,27 @@ public struct OUDSCheckboxItem: View {
         self.action = action
     }
 
-    /// Creates a checkbox with a localized label, looking up the key in the given bundle.
-    ///
-    /// ```swift
-    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
-    /// ```
-    ///
-    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    // MARK: - Initializers — LocalizedStringKey + errorText: String?
+
+    /// Creates a checkbox with a localized label.
     ///
     /// - Parameters:
     ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
-    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
-    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
-    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   - isReadOnly: True if component is in read only, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - description: An additional helper text, default set to `nil`
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An optional error message to display at the bottom
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -394,12 +460,11 @@ public struct OUDSCheckboxItem: View {
                 constrainedMaxWidth: Bool = false,
                 action: (() -> Void)? = nil)
     {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: icon,
-                  flipIcon: flipIcon,
-                  renderingMode: renderingMode,
+                  icon: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -410,6 +475,111 @@ public struct OUDSCheckboxItem: View {
     }
 
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn)
+    ///
+    ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
+    ///                      bundle: Bundle.module,
+    ///                      isOn: $isOn,
+    ///                      icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
+    ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - isReadOnly: True if component is in read only, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: OUDSImage? = nil,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  icon: icon,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
+
+    /// Creates a checkbox with a localized label and a rich attributed error text.
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
+    ///   - description: An additional helper text, default set to `nil`
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false,
+                action: (() -> Void)? = nil)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  icon: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth,
+                  action: action)
+    }
+
+    /// Creates a checkbox with a localized label and a rich attributed error text.
     ///
     /// ```swift
     ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
@@ -427,12 +597,10 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
     ///   - isReadOnly: True if component is in read only, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
@@ -442,9 +610,7 @@ public struct OUDSCheckboxItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
+                icon: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -457,8 +623,6 @@ public struct OUDSCheckboxItem: View {
                   isOn: isOn,
                   description: description,
                   icon: icon,
-                  flipIcon: flipIcon,
-                  renderingMode: renderingMode,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -468,9 +632,7 @@ public struct OUDSCheckboxItem: View {
                   action: action)
     }
 
-    // swiftlint:enable function_default_parameter_at_end
-
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData, action: action)
@@ -517,3 +679,7 @@ public struct OUDSCheckboxItem: View {
         }
     }
 }
+
+// swiftlint:enable function_default_parameter_at_end
+// swiftlint:enable line_length
+// swiftlint:enable type_body_length

@@ -14,6 +14,8 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
+// swiftlint:disable line_length
+
 /// The data to use to populate the picker of ``OUDSCheckboxItem`` objects.
 /// Each property in this ``OUDSCheckboxPickerData`` is used to define the suitable ``OUDSCheckboxItem``.
 ///
@@ -30,11 +32,8 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// An optional helper text the ``OUDSCheckboxItem`` can have
     let description: String?
 
-    /// An optional image the ``OUDSCheckboxItem`` can have
-    let icon: Image?
-
-    /// The rendering mode for the `icon`, prefer `.original` for raw images, otherwise `.template` for tinted icons
-    let renderingMode: Image.TemplateRenderingMode
+    /// An optional image the ``OUDSCheckboxItem`` can have, encapsulating the asset, flip flag and rendering mode
+    let icon: OUDSImage?
 
     /// Define if the ``OUDSCheckboxItem`` is reversed or not
     let isReversed: Bool
@@ -53,11 +52,56 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// By default is nil as the logic of identifiers is in the hand of the users.
     let accessibilityIdentifier: String?
 
-    /// Defines the data to use to define the radio buttons (``OUDSCheckboxItem``)
+    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
     ///
     /// ```swift
     ///     OUDSCheckboxPickerData(tag: "option1", label: "Option 1")
+    ///
+    ///     OUDSCheckboxPickerData(tag: "option2",
+    ///                            label: "Option 2",
+    ///                            icon: OUDSImage(asset: Image(systemName: "flame")))
+    ///
+    ///     // Raw (non-tinted) image:
+    ///     OUDSCheckboxPickerData(tag: "option3",
+    ///                            label: "Option 3",
+    ///                            icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
     /// ```
+    ///
+    /// - Parameters:
+    ///    - tag: a value to discriminate one checkbox to another
+    ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
+    ///    - description: An optional text, default set to nil
+    ///    - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - isError: True if in an error context, false otherwise (default)
+    ///    - isReadOnly: True if read only, false otherwise (default)
+    ///    - hasDivider: True if a divider must be added for the current ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
+    ///
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
+    public init(tag: Tag,
+                label: String,
+                description: String? = nil,
+                icon: OUDSImage? = nil,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                accessibilityIdentifier: String? = nil)
+    {
+        self.tag = tag
+        self.label = label
+        self.description = description
+        self.icon = icon
+        self.isReversed = isReversed
+        self.isError = isError
+        self.isReadOnly = isReadOnly
+        self.hasDivider = hasDivider
+        self.accessibilityIdentifier = accessibilityIdentifier
+    }
+
+    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
     ///
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
@@ -70,9 +114,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     ///    - isReadOnly: True if read only, false otherwise (default)
     ///    - hasDivider: True if a divider must be added for the current ``OUDSCheckboxItem``, false otherwise (default)
     ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    ///
-    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
-    /// provide the localized string if key is stored in another bundle.**
+    @available(*, deprecated, message: "Use OUDSCheckboxPickerData(tag:label:description:icon:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) with icon: OUDSImage? instead.")
     public init(tag: Tag,
                 label: String,
                 description: String? = nil,
@@ -84,16 +126,18 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
                 hasDivider: Bool = false,
                 accessibilityIdentifier: String? = nil)
     {
-        self.tag = tag
-        self.label = label
-        self.description = description
-        self.icon = icon
-        self.renderingMode = renderingMode
-        self.isReversed = isReversed
-        self.isError = isError
-        self.isReadOnly = isReadOnly
-        self.hasDivider = hasDivider
-        self.accessibilityIdentifier = accessibilityIdentifier
+        let oudsImage = icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) }
+        self.init(tag: tag,
+                  label: label,
+                  description: description,
+                  icon: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  accessibilityIdentifier: accessibilityIdentifier)
     }
 }
+
+// swiftlint:enable line_length
 #endif

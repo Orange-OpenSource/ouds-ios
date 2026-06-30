@@ -14,6 +14,8 @@
 import OUDSFoundations
 import SwiftUI
 
+// swiftlint:disable file_length
+
 // MARK: - OUDS Button
 
 /// Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action.
@@ -212,19 +214,19 @@ public struct OUDSButton: View {
                 isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
-        let imageSetup = OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode)
-        self.init(key, tableName: tableName, bundle: bundle, image: imageSetup, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
+        let oudsImage = OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode)
+        self.init(key, tableName: tableName, bundle: bundle, image: oudsImage, appearance: appearance, style: style, isFullWidth: isFullWidth, action: action)
     }
 
     /// Creates a button with a localized text and icon, looking up the key in the given bundle..
     /// A raw string can also be given to be displayed.
     ///
     /// ```swift
-    ///     let imageSetup = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let oudsImage = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     // Use localizable
     ///     OUDSButton(LocalizedStringKey("validate_button"),
     ///                bundle: Bundle.module,
-    ///                image: imageSetup,
+    ///                image: oudsImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -294,9 +296,9 @@ public struct OUDSButton: View {
     ///                appearance: .strong) { }
     ///
     ///     // With more setup
-    ///     let imageSetup = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
+    ///     let oudsImage = OUDSImage(asset: Image("someIcon"), flipped: true, renderingMode: .original)
     ///     OUDSButton(text: "Validate",
-    ///                image: imageSetup,
+    ///                image: oudsImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -361,12 +363,12 @@ public struct OUDSButton: View {
     /// Creates a button with an icon only.
     ///
     /// ```swift
-    ///     let imageSetup = OUDSImage(asset: Image("someIcon"),
+    ///     let oudsImage = OUDSImage(asset: Image("someIcon"),
     ///                                flipped: true,
     ///                                accessibilityLabel: LocalizedStringKey("some.wording.key"),
     ///                                renderingMode: .original)
     ///     OUDSButton(text: "Validate",
-    ///                image: imageSetup,
+    ///                image: oudsImage,
     ///                appearance: .strong) { }
     /// ```
     ///
@@ -382,11 +384,12 @@ public struct OUDSButton: View {
                 isFullWidth: Bool = false,
                 action: @escaping () -> Void)
     {
-        self.init(image: image,
-                  appearance: appearance,
-                  style: style,
-                  isFullWidth: isFullWidth,
-                  action: action)
+        type = .icon(image)
+        self.appearance = appearance
+        self.style = style
+        self.isFullWidth = isFullWidth
+        self.action = action
+        isHover = false
     }
 
     /// Creates a button with an icon only.

@@ -79,7 +79,7 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
 OUDSCheckboxItem("We live in a fabled world",
                  isOn: $isOn,
                  description: "Of dreaming boys and wide-eyed girls",
-                 icon: Image(decorative: "ic_heart"),
+                 icon: OUDSImage(asset: Image(decorative: "ic_heart")),
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
@@ -113,16 +113,16 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+                                        icon: OUDSImage(asset: Image(systemName: "flame"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+                                        icon: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+                                        icon: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -200,16 +200,23 @@ The indicator can be leading or trailing.
 // A leading radio with a label
 OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 
-// A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
-// error with a reversed layout
+// A trailing radio with a label, an additional label, a description, a tinted icon,
+// a divider and is about an error with a reversed layout
 OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
-              extraLabel: "The Beatles"
+              extraLabel: "The Beatles",
               description: "1967",
-              icon: Image(decorative: "ic_heart"),
+              icon: OUDSImage(asset: Image(decorative: "ic_heart")),
               isReversed: true,
               isError: true,
               hasDivider: true)
+
+// A radio with a raw (non-tinted) image and RTL flip support
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "il_someImage"),
+                              flipped: layoutDirection == .rightToLeft,
+                              renderingMode: .original))
 ```
 
 #### Radio picker
@@ -241,16 +248,16 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+                                        icon: OUDSImage(asset: Image(systemName: "flame"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+                                        icon: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+                                        icon: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -322,15 +329,22 @@ OUDSSwitchItem("Dead Robot Zombie Cop",
                isOn: $isOn,
                description: "from Outer Space II")
 
-// A trailing switch with a label, a description, an icon, a divider and is about an error
+// A trailing switch with a label, a description, a tinted icon, a divider and is about an error
 // with an inverse layout
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 description: "Of dreaming boys and wide-eyed girls",
-                icon: Image(decorative: "ic_heart"),
+                icon: OUDSImage(asset: Image(decorative: "ic_heart")),
                 isReversed: true,
                 isError: true,
                 hasDivider: true)
+
+// A trailing switch with a raw (non-tinted) image and RTL flip support
+OUDSSwitchItem("We live in a fabled world",
+                isOn: $isOn,
+                icon: OUDSImage(asset: Image(decorative: "il_someImage"),
+                                flipped: layoutDirection == .rightToLeft,
+                                renderingMode: .original))
 ```
 
 ### Chips

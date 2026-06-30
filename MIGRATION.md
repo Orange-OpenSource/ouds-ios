@@ -99,10 +99,209 @@ OUDSButton(image: OUDSImage(asset: Image("ic_heart"), accessibilityLabel: Locali
 
 **Reason for Change**: Grouping image-related parameters (`icon`, `flipIcon`, `renderingMode`, `accessibilityLabel`) into one `OUDSImage` object makes the call site cleaner, reduces the number of parameters on `OUDSButton`, and aligns with the same pattern used by other components (`OUDSLink`, `OUDSSuggestionChip`, `OUDSFilterChip`, …).
 
+### Deprecated OUDSCheckboxItem, OUDSCheckboxItemIndeterminate and OUDSCheckboxPickerData initialisers with `icon` parameter
+
+Initialisers of `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate` and `OUDSCheckboxPickerData` that accepted a bare `Image` together with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Use the new initialisers that accept an `OUDSImage?` value instead; `OUDSImage` encapsulates the asset, the flip flag and the rendering mode in one object.
+
+**Impact**: Low
+
+**Parameter mapping** (applies to all three types):
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+#### OUDSCheckboxItem
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"), isReversed: true)
+OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(systemName: "figure.handball"),
+                 flipIcon: layoutDirection == .rightToLeft)
+OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
+                 icon: Image(decorative: "ic_heart"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                 flipped: layoutDirection == .rightToLeft))
+OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+```
+
+#### OUDSCheckboxItemIndeterminate
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: Image(decorative: "ic_heart"), isReversed: true)
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: Image(decorative: "il_brand"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+
+// New in v2.3.0: LocalizedStringKey variant now available
+OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module, selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+```
+
+#### OUDSCheckboxPickerData
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
+OUDSCheckboxPickerData(tag: "b", label: "Option B",
+                       icon: Image(decorative: "il_brand"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxPickerData(tag: "a", label: "Option A",
+                       icon: OUDSImage(asset: Image(systemName: "flame")))
+OUDSCheckboxPickerData(tag: "b", label: "Option B",
+                       icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+```
+
+**Required Action**:
+1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object reduces the number of parameters, makes the call site cleaner, and aligns `OUDSCheckboxItem` with the same pattern applied to `OUDSButton` and other components.
+
+### Deprecated OUDSRadioItem and OUDSRadioPickerData initialisers with `icon` parameter
+
+Initialisers of `OUDSRadioItem` and `OUDSRadioPickerData` that accepted a bare `Image` together with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Use the new initialisers that accept an `OUDSImage?` value instead.
+
+**Impact**: Low
+
+**Parameter mapping** (applies to both types):
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+#### OUDSRadioItem
+
+**Before (v2.2.0)**:
+```swift
+OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"), isReversed: true)
+OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSRadioItem("Label", isOn: $isOn, icon: Image(systemName: "chevron.right"),
+              flipIcon: layoutDirection == .rightToLeft)
+OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
+              icon: Image(decorative: "ic_heart"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+                              flipped: layoutDirection == .rightToLeft))
+OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+```
+
+#### OUDSRadioPickerData
+
+**Before (v2.2.0)**:
+```swift
+OUDSRadioPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
+OUDSRadioPickerData(tag: "b", label: "Option B",
+                    icon: Image(decorative: "il_brand"))
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSRadioPickerData(tag: "a", label: "Option A",
+                    icon: OUDSImage(asset: Image(systemName: "flame")))
+OUDSRadioPickerData(tag: "b", label: "Option B",
+                    icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+```
+
+**Required Action**:
+1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object reduces the number of parameters, makes the call site cleaner, and aligns `OUDSRadioItem` with the same pattern applied to `OUDSButton`, `OUDSCheckboxItem` and other components.
+
+### Deprecated OUDSSwitchItem initialisers with `icon` parameter
+
+Initialisers of `OUDSSwitchItem` that accepted a bare `Image` together with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Use the new initialisers that accept an `OUDSImage?` value instead.
+
+**Impact**: Low
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"), isReversed: true)
+OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: Image(systemName: "figure.handball"),
+               flipIcon: layoutDirection == .rightToLeft)
+OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
+               icon: Image(decorative: "ic_wifi"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+                               flipped: layoutDirection == .rightToLeft))
+OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "ic_wifi"), renderingMode: .original))
+```
+
+**Required Action**:
+1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSSwitchItem` with the same pattern applied to `OUDSButton`, `OUDSCheckboxItem`, `OUDSRadioItem` and other components.
+
 ### Compatibility
 
 - **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning
-- **v2.2.0 Support**: None
+- **v2.2.0 Support**: Until next major version
 
 ## v2.0.0 → v2.2.0
 

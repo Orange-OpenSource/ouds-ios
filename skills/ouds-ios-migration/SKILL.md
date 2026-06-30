@@ -22,7 +22,7 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; four `OUDSButton` initialisers with `icon:` deprecated |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData` and `OUDSSwitchItem` initialisers with `icon:` deprecated |
 
 ---
 
@@ -45,7 +45,7 @@ Run these from the project root to find all occurrences before starting:
 ```bash
 # All active deprecations (v2.x era)
 grep -rn \
-  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|spacePaddingBlockDensityCompactTopAlignmentTopText_container" \
+  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container" \
   --include="*.swift" .
 
 # Breaking changes removed in v2.0.0 (v1.x era)
@@ -528,6 +528,192 @@ OUDSButton(image: OUDSImage(asset: Image("ic_heart"),
 
 ---
 
+### 3. `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate` and `OUDSCheckboxPickerData` — initialisers with `icon:` deprecated
+
+Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
+
+**Parameter mapping** (applies to all three types):
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+#### OUDSCheckboxItem — String and LocalizedStringKey
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
+OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
+OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
+                 icon: Image(decorative: "ic_heart"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+                                 flipped: layoutDirection == .rightToLeft))
+OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+```
+
+#### OUDSCheckboxItemIndeterminate
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxItemIndeterminate("Label", selection: $state, icon: Image(decorative: "ic_heart"))
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: Image(decorative: "il_brand"), renderingMode: .original,
+                               flipIcon: true)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+OUDSCheckboxItemIndeterminate("Label", selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "il_brand"),
+                                               flipped: true, renderingMode: .original))
+// New in v2.3.0: LocalizedStringKey variant now available
+OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
+                               selection: $state,
+                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+```
+
+#### OUDSCheckboxPickerData
+
+**Before (v2.2.0)**:
+```swift
+OUDSCheckboxPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
+OUDSCheckboxPickerData(tag: "b", label: "Option B",
+                       icon: Image(decorative: "il_brand"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSCheckboxPickerData(tag: "a", label: "Option A",
+                       icon: OUDSImage(asset: Image(systemName: "flame")))
+OUDSCheckboxPickerData(tag: "b", label: "Option B",
+                       icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
+
+### 4. `OUDSRadioItem` and `OUDSRadioPickerData` — initialisers with `icon:` deprecated
+
+Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
+
+**Parameter mapping** (applies to both types):
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+#### OUDSRadioItem — String and LocalizedStringKey
+
+**Before (v2.2.0)**:
+```swift
+OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
+OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
+OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
+              icon: Image(decorative: "ic_heart"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+                              flipped: layoutDirection == .rightToLeft))
+OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+```
+
+#### OUDSRadioPickerData
+
+**Before (v2.2.0)**:
+```swift
+OUDSRadioPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
+OUDSRadioPickerData(tag: "b", label: "Option B", icon: Image(decorative: "il_brand"))
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSRadioPickerData(tag: "a", label: "Option A",
+                    icon: OUDSImage(asset: Image(systemName: "flame")))
+OUDSRadioPickerData(tag: "b", label: "Option B",
+                    icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
+
+### 5. `OUDSSwitchItem` — initialisers with `icon:` deprecated
+
+Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
+Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: Image(decorative: "il_brand"), renderingMode: .original)
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
+OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
+               icon: Image(decorative: "ic_wifi"), renderingMode: .original)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSSwitchItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+                               flipped: layoutDirection == .rightToLeft))
+OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "ic_wifi"), renderingMode: .original))
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
+
+---
+
 ## Verification checklist
 
 After completing all transformations, run:
@@ -541,7 +727,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # Residual deprecated or removed symbols — must return no results
 grep -rn \
-  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
+  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
   --include="*.swift" .
 
 # Tests — must pass

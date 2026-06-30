@@ -200,18 +200,38 @@ OUDSBulletList { OUDSBulletList.Item(AttributedString(…)) }
 OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Label")
 OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Label")
 OUDSCheckboxItem("Label", isOn: $isOn)
-OUDSCheckboxItem("Label", isOn: $isOn, description: "Helper", icon: Image(decorative: "ic"))
-OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "ic"), isReversed: true)
+OUDSCheckboxItem("Label", isOn: $isOn, description: "Helper",
+                 icon: OUDSImage(asset: Image(decorative: "ic")))
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
+// Raw (non-tinted) image:
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+// Flip icon for RTL:
+OUDSCheckboxItem("Label", isOn: $isOn,
+                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                 flipped: layoutDirection == .rightToLeft))
+// LocalizedStringKey:
+OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
+                 icon: OUDSImage(asset: Image(decorative: "ic")))
+// Indeterminate (three states) — also accepts LocalizedStringKey:
+OUDSCheckboxItemIndeterminate("Label", selection: $selection,
+                               icon: OUDSImage(asset: Image(decorative: "ic")))
+OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
+                               selection: $selection)
 // Error / helper / disabled → see §6 Common patterns
 ```
 
-> Parameter order: `(_ label:, isOn:, description:, icon:, flipIcon:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
+> Parameter order: `(_ label:, isOn:, description:, icon:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
 
 ```swift
-// Picker
+// Picker — icon is OUDSImage?
 OUDSCheckboxPicker(selections: $selections, checkboxes: [
     .init(tag: "a", label: "Option A"),
     .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
+    .init(tag: "c", label: "Option C", icon: OUDSImage(asset: Image(systemName: "flame"))),
+    .init(tag: "d", label: "Option D",
+          icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
 ])
 OUDSCheckboxPicker(selections: $selections, checkboxes: data,
                    placement: .verticalRooted("All options", .textAndCount))
@@ -226,10 +246,27 @@ OUDSCheckboxPicker(selections: $selections, checkboxes: data,
 ```swift
 OUDSRadio(isOn: $isOn, accessibilityLabel: "Label")
 OUDSRadioItem("Label", isOn: $isOn)
-OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "ic"))
+OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic")))
+// Raw (non-tinted) image:
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+// Flip icon for RTL:
+OUDSRadioItem("Label", isOn: $isOn,
+              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
+                              flipped: layoutDirection == .rightToLeft))
+// LocalizedStringKey:
+OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
+              icon: OUDSImage(asset: Image(decorative: "ic")))
 // Error / helper / disabled → see §6 Common patterns
 OUDSRadioPicker(selection: $selection,
-                radios: [.init(tag: "a", label: "Option A")],
+                radios: [
+                    .init(tag: "a", label: "Option A"),
+                    .init(tag: "b", label: "Option B",
+                          icon: OUDSImage(asset: Image(systemName: "flame"))),
+                    .init(tag: "c", label: "Option C",
+                          icon: OUDSImage(asset: Image(decorative: "il_brand"),
+                                         renderingMode: .original)),
+                ],
                 placement: .vertical)
 ```
 
@@ -240,7 +277,18 @@ OUDSRadioPicker(selection: $selection,
 ```swift
 OUDSSwitch(isOn: $isOn, accessibilityLabel: "Label")
 OUDSSwitchItem("Label", isOn: $isOn)
-OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "ic"))
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "ic")))
+// Raw (non-tinted) image:
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+// Flip icon for RTL:
+OUDSSwitchItem("Label", isOn: $isOn,
+               icon: OUDSImage(asset: Image(systemName: "figure.handball"),
+                               flipped: layoutDirection == .rightToLeft))
+// LocalizedStringKey:
+OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
+               icon: OUDSImage(asset: Image(decorative: "ic")))
 // Error / helper / disabled → see §6 Common patterns
 ```
 
