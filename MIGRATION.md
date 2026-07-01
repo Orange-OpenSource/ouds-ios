@@ -129,14 +129,14 @@ OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn:
 **After (v2.3.0)**:
 ```swift
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+                 image: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                 image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-                                 flipped: layoutDirection == .rightToLeft))
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                  flipped: layoutDirection == .rightToLeft))
 OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+                 image: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
 ```
 
 #### OUDSCheckboxItemIndeterminate
@@ -152,13 +152,13 @@ OUDSCheckboxItemIndeterminate("Label", selection: $state,
 **After (v2.3.0)**:
 ```swift
 OUDSCheckboxItemIndeterminate("Label", selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+                               image: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
 OUDSCheckboxItemIndeterminate("Label", selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                               image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 
 // New in v2.3.0: LocalizedStringKey variant now available
 OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module, selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+                               image: OUDSImage(asset: Image(decorative: "ic_heart")))
 ```
 
 #### OUDSCheckboxPickerData
@@ -173,13 +173,13 @@ OUDSCheckboxPickerData(tag: "b", label: "Option B",
 **After (v2.3.0)**:
 ```swift
 OUDSCheckboxPickerData(tag: "a", label: "Option A",
-                       icon: OUDSImage(asset: Image(systemName: "flame")))
+                       image: OUDSImage(asset: Image(systemName: "flame")))
 OUDSCheckboxPickerData(tag: "b", label: "Option B",
-                       icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                       image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 ```
 
 **Required Action**:
-1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+1. Replace every `icon: Image(…)` parameter with `image: OUDSImage(asset: Image(…))`
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
@@ -216,14 +216,14 @@ OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $
 **After (v2.3.0)**:
 ```swift
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+              image: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+              image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
-                              flipped: layoutDirection == .rightToLeft))
+              image: OUDSImage(asset: Image(systemName: "chevron.right"),
+                               flipped: layoutDirection == .rightToLeft))
 OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
+              image: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
 ```
 
 #### OUDSRadioPickerData
@@ -238,13 +238,13 @@ OUDSRadioPickerData(tag: "b", label: "Option B",
 **After (v2.3.0)**:
 ```swift
 OUDSRadioPickerData(tag: "a", label: "Option A",
-                    icon: OUDSImage(asset: Image(systemName: "flame")))
+                    image: OUDSImage(asset: Image(systemName: "flame")))
 OUDSRadioPickerData(tag: "b", label: "Option B",
-                    icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                    image: OUDSImage(asset: Image(decorative: "il_brand")))
 ```
 
 **Required Action**:
-1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+1. Replace every `icon: Image(…)` parameter with `image: OUDSImage(asset: Image(…))`
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
@@ -280,18 +280,18 @@ OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: 
 **After (v2.3.0)**:
 ```swift
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
+               image: OUDSImage(asset: Image(decorative: "ic_heart")), isReversed: true)
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+               image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-                               flipped: layoutDirection == .rightToLeft))
+               image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                flipped: layoutDirection == .rightToLeft))
 OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic_wifi"), renderingMode: .original))
+               image: OUDSImage(asset: Image(decorative: "ic_wifi"), renderingMode: .original))
 ```
 
 **Required Action**:
-1. Replace every `icon: Image(…)` parameter with `icon: OUDSImage(asset: Image(…))`
+1. Replace every `icon: Image(…)` parameter with `image: OUDSImage(asset: Image(…))`
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site
@@ -312,8 +312,15 @@ The `accessibilityLabel` parameter remains on the chip itself; do not set it on 
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` (FilterChip) / `icon: OUDSImage(asset: Image(…))` (SuggestionChip — see note) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+> **Note on parameter label differences between the two chip components:**
+>
+> `OUDSFilterChip` active initialisers all use `image: OUDSImage` as the parameter label.
+>
+> `OUDSSuggestionChip` active initialisers use `image: OUDSImage` only for the `LocalizedStringKey text` variant.
+> The three other active initialisers (`text: String`, `accessibilityLabel: String`, `accessibilityLabel: LocalizedStringKey`) keep `icon: OUDSImage` as the parameter label — this is intentional and does not cause ambiguity since the `OUDSImage` type differs from the deprecated `Image` type.
 
 **Before (v2.2.0)**:
 ```swift
@@ -330,23 +337,27 @@ OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original)
 
 **After (v2.3.0)**:
 ```swift
+// OUDSSuggestionChip — icon: OUDSImage (parameter label unchanged for these 3 variants)
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+// OUDSFilterChip — image: OUDSImage (parameter label renamed from icon: to image:)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 **Required Action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`
+1. Replace `icon: Image(…)` with `OUDSImage(asset: Image(…))`
 2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 3. Remove the now-unused `renderingMode` parameter from the chip call site
+4. For `OUDSFilterChip`: rename the parameter label from `icon:` to `image:`
+5. For `OUDSSuggestionChip`: keep `icon:` as the parameter label (except the `LocalizedStringKey text` variant which uses `image:`)
 
-**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns the chip components with the same pattern applied to all other OUDS components.
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns the chip components with the same pattern applied to all other OUDS components. `OUDSFilterChip` additionally renames `icon:` to `image:` to resolve a potential init ambiguity; `OUDSSuggestionChip` retains `icon:` on most variants because the `OUDSImage` / `Image` type distinction already prevents ambiguity.
 
 ### OUDSChipPickerData.Layout — new static factories for OUDSImage
 
@@ -461,16 +472,16 @@ OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
 
 **After (v2.3.0)**:
 ```swift
-OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
-OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+OUDSLink(text: "Learn more", image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
-         icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+         image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
 OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
-         icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+         image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 ```
 
 **Required Action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`
+1. Replace `icon: Image(…)` with `image: OUDSImage(asset: Image(…))`
 2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 3. Remove the now-unused `renderingMode` parameter from the call site
 
@@ -488,7 +499,7 @@ Both `OUDSTextInput` and its nested `TrailingAction` struct have been updated to
 
 | Old parameter | New location |
 |---|---|
-| `leadingIcon: Image(…)` | `leadingIcon: OUDSImage(asset: Image(…))` |
+| `leadingIcon: Image(…)` | `leadingImage: OUDSImage(asset: Image(…))` |
 | `flipLeadingIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
 | `leadingIconRenderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
@@ -501,9 +512,9 @@ OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), flipLeading
 
 **After (v2.3.0)**:
 ```swift
-OUDSTextInput(label: "Email", text: $text, leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
-OUDSTextInput(label: "Brand", text: $text, leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
-OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic"), flipped: true))
+OUDSTextInput(label: "Email", text: $text, leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+OUDSTextInput(label: "Brand", text: $text, leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+OUDSTextInput(label: "Label", text: $text, leadingImage: OUDSImage(asset: Image("ic"), flipped: true))
 ```
 
 #### OUDSTextInput.TrailingAction
@@ -529,13 +540,93 @@ OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), rendering
 ```
 
 **Required Action**:
-1. Replace `leadingIcon: Image(…)` with `leadingIcon: OUDSImage(asset: Image(…))`
+1. Replace `leadingIcon: Image(…)` with `leadingImage: OUDSImage(asset: Image(…))`
 2. Move `flipLeadingIcon:` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `leadingIconRenderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(icon: OUDSImage(asset: Image(…)), …)`
 5. Move `flipIcon:` and `renderingMode:` inside the `OUDSImage` construction
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSTextInput` with the same pattern applied to all other OUDS components.
+
+### Renamed `image:` and `leadingImage:` parameters in active initialisers
+
+Following the introduction of `OUDSImage`-based initialisers in the same release, a secondary naming ambiguity was discovered: because the deprecated initialisers keep `icon: Image? = nil` and the new active initialisers had `icon: OUDSImage? = nil`, Swift could not always resolve which overload to call when `nil` was passed (or the parameter was omitted).
+
+To resolve this, the active initialisers have been updated to use a distinct parameter label:
+- `icon: OUDSImage?` → `image: OUDSImage?`
+- `leadingIcon: OUDSImage?` → `leadingImage: OUDSImage?`
+
+The deprecated initialisers (`icon: Image?`, `leadingIcon: Image?`) are **unchanged**.
+
+**Impact**: Low
+
+**Components affected**:
+
+| Component | Old parameter (active init) | New parameter (active init) |
+|---|---|---|
+| `OUDSCheckboxItem` | `icon: OUDSImage?` | `image: OUDSImage?` |
+| `OUDSCheckboxItemIndeterminate` | `icon: OUDSImage?` | `image: OUDSImage?` |
+| `OUDSCheckboxPickerData` | `icon: OUDSImage?` | `image: OUDSImage?` |
+| `OUDSRadioItem` | `icon: OUDSImage?` | `image: OUDSImage?` |
+| `OUDSRadioPickerData` | `image: OUDSImage?` | unchanged (was already `image:`) |
+| `OUDSSwitchItem` | `icon: OUDSImage?` | `image: OUDSImage?` |
+| `OUDSTextInput` | `leadingIcon: OUDSImage?` | `leadingImage: OUDSImage?` |
+| `OUDSLink` | `icon: OUDSImage?` | `image: OUDSImage?` |
+
+**Before**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image("ic_heart")))
+OUDSCheckboxItemIndeterminate("Label", selection: $state, icon: OUDSImage(asset: Image("ic_heart")))
+OUDSCheckboxPickerData(tag: "a", label: "Option A", icon: OUDSImage(asset: Image(systemName: "flame")))
+OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image("ic_heart")))
+OUDSSwitchItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image("ic_heart")))
+OUDSTextInput(label: "Email", text: $text, leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+```
+
+**After**:
+```swift
+OUDSCheckboxItem("Label", isOn: $isOn, image: OUDSImage(asset: Image("ic_heart")))
+OUDSCheckboxItemIndeterminate("Label", selection: $state, image: OUDSImage(asset: Image("ic_heart")))
+OUDSCheckboxPickerData(tag: "a", label: "Option A", image: OUDSImage(asset: Image(systemName: "flame")))
+OUDSRadioItem("Label", isOn: $isOn, image: OUDSImage(asset: Image("ic_heart")))
+OUDSSwitchItem("Label", isOn: $isOn, image: OUDSImage(asset: Image("ic_heart")))
+OUDSTextInput(label: "Email", text: $text, leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
+OUDSLink(text: "Learn more", image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+```
+
+**Required Action**:
+1. In any call site using `icon: OUDSImage(…)` on the above components, rename the label to `image:`
+2. In any call site using `leadingIcon: OUDSImage(…)` on `OUDSTextInput`, rename to `leadingImage:`
+3. Call sites using the deprecated `icon: Image(…)` form are **not affected** — they continue to compile with a deprecation warning
+
+**Reason for Change**: Swift cannot resolve `nil` between `icon: Image? = nil` (deprecated) and `icon: OUDSImage? = nil` (active) when the parameter is omitted, causing a compile-time ambiguity. Using distinct labels (`image:`, `leadingImage:`) removes the ambiguity without breaking the deprecated API.
+
+> **⚠ Residual ambiguity warning**
+>
+> Even after this rename, a call site that omits the image parameter entirely may still trigger a Swift compile-time ambiguity, because both the deprecated init (e.g. `icon: Image? = nil`) and the active init (e.g. `image: OUDSImage? = nil`) can be invoked with no image argument.
+>
+> **Symptom**: `error: ambiguous use of 'init(...)'`
+>
+> **Fix**: Pass the image parameter explicitly as `nil` to force Swift to select the active init:
+>
+> ```swift
+> // ❌ may be ambiguous while deprecated inits coexist:
+> OUDSCheckboxItem("Label", isOn: $isOn)
+> OUDSRadioItem("Label", isOn: $isOn)
+> OUDSSwitchItem("Label", isOn: $isOn)
+> OUDSLink(text: "Learn more", size: .default) {}
+> OUDSTextInput(label: "Email", text: $text)
+>
+> // ✅ unambiguous — active init selected:
+> OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
+> OUDSRadioItem("Label", isOn: $isOn, image: nil)
+> OUDSSwitchItem("Label", isOn: $isOn, image: nil)
+> OUDSLink(text: "Learn more", image: nil, size: .default) {}
+> OUDSTextInput(label: "Email", text: $text, leadingImage: nil)
+> ```
+>
+> This workaround is only needed until the deprecated initialisers are removed in v3.
 
 ### Compatibility
 

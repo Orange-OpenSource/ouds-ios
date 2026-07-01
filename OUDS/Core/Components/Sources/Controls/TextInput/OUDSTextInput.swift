@@ -150,15 +150,15 @@ import SwiftUI
 ///
 ///     // Add a leading icon for more context
 ///     OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
-///                   leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
 ///
 ///     // Add a leading icon displayed as raw image (not tinted)
 ///     OUDSTextInput(label: "Brand", text: $text,
-///                   leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+///                   leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
 ///
 ///     // Flip the leading icon for RTL layouts using OUDSImage.flipped
 ///     OUDSTextInput(label: "Label", text: $text,
-///                   leadingIcon: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
+///                   leadingImage: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
 ///
 ///     // Add a trailing button with local image named "ic_cross" for additional action
 ///     let trailingAction = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
@@ -186,7 +186,7 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSTextInput(label: "Label", text: $text,
-///                   leadingIcon: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
+///                   leadingImage: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
 /// ```
 ///
 /// ## Design documentation
@@ -260,7 +260,7 @@ public struct OUDSTextInput: View {
         ///   - action: The action to perform when the user triggers the button
         @available(*, deprecated, message: "Use OUDSTextInput.TrailingAction(icon: OUDSImage, actionHint:action:) instead.")
         public init(icon: Image, actionHint: String, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-            self.init(icon: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode),
+            self.init(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode),
                       actionHint: actionHint,
                       action: action)
         }
@@ -268,23 +268,23 @@ public struct OUDSTextInput: View {
         /// Creates a trailing action.
         ///
         /// ```swift
-        ///     OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")),
-        ///                                 actionHint: "Delete") { text = "" }
+        ///     OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")),
+        ///                                  actionHint: "Delete") { text = "" }
         ///
         ///     // Raw (non-tinted) icon:
-        ///     OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
-        ///                                 actionHint: "Brand") { }
+        ///     OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///                                  actionHint: "Brand") { }
         /// ```
         ///
         /// - Parameters:
-        ///   - icon: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
+        ///   - image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
         ///   - actionHint: A string that describes the purpose of the button's `action`
         ///   - action: The action to perform when the user triggers the button
-        public init(icon: OUDSImage, actionHint: String, action: @escaping () -> Void) {
+        public init(image: OUDSImage, actionHint: String, action: @escaping () -> Void) {
             if actionHint.isEmpty {
                 OL.warning("The accessibility action hint for the OUDSTextInput trailing action should not be empty, think about your disabled users!")
             }
-            self.icon = icon
+            icon = image
             self.actionHint = actionHint
             self.action = action
         }
@@ -375,7 +375,7 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingIcon:OUDSImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
+    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
     public init(label: String,
                 text: Binding<String>,
                 placeholder: String? = nil,
@@ -396,7 +396,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
+                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -411,10 +411,10 @@ public struct OUDSTextInput: View {
     ///     OUDSTextInput(label: "Email", text: $text)
     ///
     ///     OUDSTextInput(label: "Email", text: $text,
-    ///                   leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+    ///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
     ///
     ///     OUDSTextInput(label: "Brand", text: $text,
-    ///                   leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+    ///                   leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
     /// ```
     ///
     /// - Parameters:
@@ -423,7 +423,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -435,7 +435,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingIcon: OUDSImage? = nil,
+                leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -453,7 +453,7 @@ public struct OUDSTextInput: View {
         self.placeholder = placeholder
         self.prefix = prefix
         self.suffix = suffix
-        self.leadingIcon = leadingIcon
+        leadingIcon = leadingImage
         self.trailingAction = trailingAction
         self.helperLink = helperLink
         self.status = status
@@ -480,7 +480,7 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingIcon:OUDSImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
+    @available(*, deprecated, message: "Use OUDSTextInput(label:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
     public init(label: String,
                 text: Binding<String>,
                 placeholder: String? = nil,
@@ -501,7 +501,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
+                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -524,7 +524,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: A rich `AttributedString` helper text
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -536,7 +536,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingIcon: OUDSImage? = nil,
+                leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
@@ -550,7 +550,7 @@ public struct OUDSTextInput: View {
         self.placeholder = placeholder
         self.prefix = prefix
         self.suffix = suffix
-        self.leadingIcon = leadingIcon
+        leadingIcon = leadingImage
         self.trailingAction = trailingAction
         self.helperLink = helperLink
         self.status = status
@@ -579,7 +579,7 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingIcon:OUDSImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
+    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -602,7 +602,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
+                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -617,7 +617,7 @@ public struct OUDSTextInput: View {
     ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text)
     ///
     ///     OUDSTextInput(LocalizedStringKey("email_label"), bundle: Bundle.module, text: $text,
-    ///                   leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+    ///                   leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
     /// ```
     ///
     /// - Parameters:
@@ -628,7 +628,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: An optional helper text, by default is *nil*
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -642,7 +642,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingIcon: OUDSImage? = nil,
+                leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: String? = nil,
                 helperLink: Self.Helperlink? = nil,
@@ -655,7 +655,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon,
+                  leadingImage: leadingImage,
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -685,7 +685,7 @@ public struct OUDSTextInput: View {
     ///    - isOutlined: Controls the style of the text input, by default is *false*
     ///    - constrainedMaxWidth: When `true`, the width is constrained, defaults to `false`
     ///    - status: The current status of the text input, default set to *enabled*
-    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingIcon:OUDSImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
+    @available(*, deprecated, message: "Use OUDSTextInput(_:tableName:bundle:text:placeholder:prefix:suffix:leadingImage:trailingAction:helperText:AttributedString:helperLink:isOutlined:constrainedMaxWidth:status:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -708,7 +708,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
+                  leadingImage: leadingIcon.map { OUDSImage(asset: $0, flipped: flipLeadingIcon, renderingMode: leadingIconRenderingMode) },
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,
@@ -734,7 +734,7 @@ public struct OUDSTextInput: View {
     ///    - placeholder: The text displayed when the text input is empty, by default is *nil*
     ///    - prefix: Text placed before the user's input, by default is *nil*
     ///    - suffix: Text placed after the user's input, by default is *nil*
-    ///    - leadingIcon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
+    ///    - leadingImage: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode, by default is *nil*
     ///    - trailingAction: An optional trailing action, by default is *nil*
     ///    - helperText: A rich `AttributedString` helper text
     ///    - helperLink: An optional helper link, by default is *nil*
@@ -748,7 +748,7 @@ public struct OUDSTextInput: View {
                 placeholder: String? = nil,
                 prefix: String? = nil,
                 suffix: String? = nil,
-                leadingIcon: OUDSImage? = nil,
+                leadingImage: OUDSImage? = nil,
                 trailingAction: Self.TrailingAction? = nil,
                 helperText: AttributedString,
                 helperLink: Self.Helperlink? = nil,
@@ -761,7 +761,7 @@ public struct OUDSTextInput: View {
                   placeholder: placeholder,
                   prefix: prefix,
                   suffix: suffix,
-                  leadingIcon: leadingIcon,
+                  leadingImage: leadingImage,
                   trailingAction: trailingAction,
                   helperText: helperText,
                   helperLink: helperLink,

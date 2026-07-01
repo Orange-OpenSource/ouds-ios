@@ -183,8 +183,8 @@ The `flipped` property of ``OUDSImage`` can be used when passing an icon to a co
 // For example in a checkbox item — wrap the asset in OUDSImage and set flipped:
 OUDSCheckboxItem("Label",
                  isOn: $isOn,
-                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-                                 flipped: layoutDirection == .rightToLeft),
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                  flipped: layoutDirection == .rightToLeft),
                  isReversed: layoutDirection == .rightToLeft)
 ```
 

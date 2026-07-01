@@ -141,6 +141,32 @@ The `// swiftlint:disable:next accessibility_label_for_image` comment must appea
 
 Exception: `Image(decorative: "name")` suppresses the linter rule automatically and needs no comment.
 
+> **⚠ Init ambiguity warning (v2.3.0)**
+>
+> The following components have both a deprecated init (`icon: Image? = nil` or `leadingIcon: Image? = nil`) and an active init (`image: OUDSImage? = nil` or `leadingImage: OUDSImage? = nil`). When the image parameter is omitted entirely, Swift may fail with `error: ambiguous use of 'init(...)'` because both overloads match.
+>
+> **If this error occurs**, pass the image parameter explicitly as `nil` to disambiguate:
+>
+> | Component | Parameter to add |
+> |---|---|
+> | `OUDSCheckboxItem` | `image: nil` |
+> | `OUDSCheckboxItemIndeterminate` | `image: nil` |
+> | `OUDSCheckboxPickerData` | `image: nil` |
+> | `OUDSRadioItem` | `image: nil` |
+> | `OUDSSwitchItem` | `image: nil` |
+> | `OUDSLink` | `image: nil` |
+> | `OUDSTextInput` | `leadingImage: nil` |
+>
+> ```swift
+> // ❌ may be ambiguous while deprecated inits exist:
+> OUDSCheckboxItem("Label", isOn: $isOn)
+>
+> // ✅ unambiguous:
+> OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
+> ```
+>
+> This is temporary — the ambiguity disappears once deprecated inits are removed in v3.
+
 ---
 
 ## 6. Common patterns (shared by multiple components)
@@ -201,37 +227,37 @@ OUDSCheckbox(isOn: $isOn, accessibilityLabel: "Label")
 OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "Label")
 OUDSCheckboxItem("Label", isOn: $isOn)
 OUDSCheckboxItem("Label", isOn: $isOn, description: "Helper",
-                 icon: OUDSImage(asset: Image(decorative: "ic")))
+                 image: OUDSImage(asset: Image(decorative: "ic")))
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
+                 image: OUDSImage(asset: Image(decorative: "ic")), isReversed: true)
 // Raw (non-tinted) image:
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+                 image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-                                 flipped: layoutDirection == .rightToLeft))
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                  flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic")))
+                 image: OUDSImage(asset: Image(decorative: "ic")))
 // Indeterminate (three states) — also accepts LocalizedStringKey:
 OUDSCheckboxItemIndeterminate("Label", selection: $selection,
-                               icon: OUDSImage(asset: Image(decorative: "ic")))
+                               image: OUDSImage(asset: Image(decorative: "ic")))
 OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
                                selection: $selection)
 // Error / helper / disabled → see §6 Common patterns
 ```
 
-> Parameter order: `(_ label:, isOn:, description:, icon:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
+> Parameter order: `(_ label:, isOn:, description:, image:, isReversed:, isError:, errorText:, isReadOnly:, hasDivider:, constrainedMaxWidth:, action:)`
 
 ```swift
-// Picker — icon is OUDSImage?
+// Picker — image is OUDSImage?
 OUDSCheckboxPicker(selections: $selections, checkboxes: [
     .init(tag: "a", label: "Option A"),
     .init(tag: "b", label: "Option B", description: "Details", isReversed: true),
-    .init(tag: "c", label: "Option C", icon: OUDSImage(asset: Image(systemName: "flame"))),
+    .init(tag: "c", label: "Option C", image: OUDSImage(asset: Image(systemName: "flame"))),
     .init(tag: "d", label: "Option D",
-          icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
+          image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original)),
 ])
 OUDSCheckboxPicker(selections: $selections, checkboxes: data,
                    placement: .verticalRooted("All options", .textAndCount))
@@ -246,26 +272,26 @@ OUDSCheckboxPicker(selections: $selections, checkboxes: data,
 ```swift
 OUDSRadio(isOn: $isOn, accessibilityLabel: "Label")
 OUDSRadioItem("Label", isOn: $isOn)
-OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic")))
+OUDSRadioItem("Label", isOn: $isOn, image: OUDSImage(asset: Image(decorative: "ic")))
 // Raw (non-tinted) image:
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+              image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
-                              flipped: layoutDirection == .rightToLeft))
+              image: OUDSImage(asset: Image(systemName: "chevron.right"),
+                               flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "ic")))
+              image: OUDSImage(asset: Image(decorative: "ic")))
 // Error / helper / disabled → see §6 Common patterns
 OUDSRadioPicker(selection: $selection,
                 radios: [
                     .init(tag: "a", label: "Option A"),
                     .init(tag: "b", label: "Option B",
-                          icon: OUDSImage(asset: Image(systemName: "flame"))),
+                          image: OUDSImage(asset: Image(systemName: "flame"))),
                     .init(tag: "c", label: "Option C",
-                          icon: OUDSImage(asset: Image(decorative: "il_brand"),
-                                         renderingMode: .original)),
+                          image: OUDSImage(asset: Image(decorative: "il_brand"),
+                                          renderingMode: .original)),
                 ],
                 placement: .vertical)
 ```
@@ -278,17 +304,17 @@ OUDSRadioPicker(selection: $selection,
 OUDSSwitch(isOn: $isOn, accessibilityLabel: "Label")
 OUDSSwitchItem("Label", isOn: $isOn)
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic")))
+               image: OUDSImage(asset: Image(decorative: "ic")))
 // Raw (non-tinted) image:
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+               image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
 // Flip icon for RTL:
 OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-                               flipped: layoutDirection == .rightToLeft))
+               image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                flipped: layoutDirection == .rightToLeft))
 // LocalizedStringKey:
 OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic")))
+               image: OUDSImage(asset: Image(decorative: "ic")))
 // Error / helper / disabled → see §6 Common patterns
 ```
 
@@ -329,10 +355,10 @@ OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original)
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
 OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSFilterChip(text: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSChipPicker(title: "Title", selection: $selection, chips: [
     .init(tag: .value1, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic")))),
     .init(tag: .value2, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))), // raw image
@@ -348,11 +374,11 @@ OUDSChipPicker(title: "Title", selection: $selection, chips: [
 ```swift
 OUDSTextInput(label: "Label", text: $text)
 OUDSTextInput(label: "Label", text: $text, placeholder: "…", prefix: "Pre", suffix: "Suf")
-OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic")))
+OUDSTextInput(label: "Label", text: $text, leadingImage: OUDSImage(asset: Image("ic")))
 OUDSTextInput(label: "Label", text: $text,
-              leadingIcon: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
+              leadingImage: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
 OUDSTextInput(label: "Label", text: $text,
-              leadingIcon: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
+              leadingImage: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
 OUDSTextInput(label: "Label", text: $text,
               trailingAction: .init(icon: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
 OUDSTextInput(label: "Label", text: $text,
@@ -475,8 +501,8 @@ OUDSVerticalDivider(color: .brandPrimary)
 ```swift
 OUDSLink(text: "Text", size: .default) {}
 OUDSLink(text: "Text", indicator: .back, size: .default) {}
-OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic")), size: .default) {}
-OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
+OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
+OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```
 
 ---

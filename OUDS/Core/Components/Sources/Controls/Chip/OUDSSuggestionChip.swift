@@ -29,10 +29,10 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only
-///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 ///
 ///     // Icon only, raw image (not tinted)
-///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
+///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
 ///
 ///     // Text only
 ///     OUDSSuggestionChip(text: "Heart") {}
@@ -41,10 +41,10 @@ import SwiftUI
 ///     OUDSSuggestionChip(LocalizedStringKey("category_chip"), bundle: Bundle.module) {}
 ///
 ///     // Text and icon
-///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
 ///
 ///     // Text and icon, raw image (not tinted)
-///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original), text: "Heart") {}
+///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original), text: "Heart") {}
 /// ```
 ///
 /// ## Design documentation
@@ -90,7 +90,7 @@ public struct OUDSSuggestionChip: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - renderingMode: The rendering mode to apply on the icon
     ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon: OUDSImage, _:tableName:bundle:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:_:tableName:bundle:action:) instead.")
     public init(icon: Image,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -105,25 +105,25 @@ public struct OUDSSuggestionChip: View {
     /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")),
+    ///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")),
     ///                        LocalizedStringKey("like_chip"),
     ///                        bundle: Bundle.module) {}
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
+    ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: OUDSImage,
+    public init(image: OUDSImage,
                 _ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, text: resolvedText, action: action)
+        self.init(icon: image, text: resolvedText, action: action)
     }
 
     // MARK: - Initializers — icon + String text (canonical)
@@ -135,7 +135,7 @@ public struct OUDSSuggestionChip: View {
     ///    - text: The text to display in the chip, should not be empty
     ///    - renderingMode: The rendering mode to apply on the icon
     ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon: OUDSImage, text:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon:text:action:) instead.")
     public init(icon: Image, text: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
         self.init(icon: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, action: action)
     }

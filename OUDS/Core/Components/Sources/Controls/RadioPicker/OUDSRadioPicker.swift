@@ -210,7 +210,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                       isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       extraLabel: radio.extraLabel,
                       description: radio.description,
-                      icon: radio.icon,
+                      image: radio.icon,
                       isOutlined: isOutlined ? true : radio.isOutlined,
                       isReversed: isReversed ? true : radio.isReversed,
                       isError: isError ? true : radio.isError,

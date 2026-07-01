@@ -79,7 +79,7 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
 OUDSCheckboxItem("We live in a fabled world",
                  isOn: $isOn,
                  description: "Of dreaming boys and wide-eyed girls",
-                 icon: OUDSImage(asset: Image(decorative: "ic_heart")),
+                 image: OUDSImage(asset: Image(decorative: "ic_heart")),
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
@@ -113,16 +113,16 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: OUDSImage(asset: Image(systemName: "flame"))),
+                                        image: OUDSImage(asset: Image(systemName: "flame"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: OUDSImage(asset: Image(systemName: "dog.fill"))),
+                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
+                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -206,7 +206,7 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
               extraLabel: "The Beatles",
               description: "1967",
-              icon: OUDSImage(asset: Image(decorative: "ic_heart")),
+              image: OUDSImage(asset: Image(decorative: "ic_heart")),
               isReversed: true,
               isError: true,
               hasDivider: true)
@@ -214,9 +214,9 @@ OUDSRadioItem("Lucy in the Sky with Diamonds",
 // A radio with a raw (non-tinted) image and RTL flip support
 OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "il_someImage"),
-                              flipped: layoutDirection == .rightToLeft,
-                              renderingMode: .original))
+              image: OUDSImage(asset: Image(decorative: "il_someImage"),
+                               flipped: layoutDirection == .rightToLeft,
+                               renderingMode: .original))
 ```
 
 #### Radio picker
@@ -248,16 +248,16 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: OUDSImage(asset: Image(systemName: "flame"))),
+                                        image: OUDSImage(asset: Image(systemName: "flame"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: OUDSImage(asset: Image(systemName: "dog.fill"))),
+                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
+                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -334,7 +334,7 @@ OUDSSwitchItem("Dead Robot Zombie Cop",
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 description: "Of dreaming boys and wide-eyed girls",
-                icon: OUDSImage(asset: Image(decorative: "ic_heart")),
+                image: OUDSImage(asset: Image(decorative: "ic_heart")),
                 isReversed: true,
                 isError: true,
                 hasDivider: true)
@@ -342,9 +342,9 @@ OUDSSwitchItem("We live in a fabled world",
 // A trailing switch with a raw (non-tinted) image and RTL flip support
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
-                icon: OUDSImage(asset: Image(decorative: "il_someImage"),
-                                flipped: layoutDirection == .rightToLeft,
-                                renderingMode: .original))
+                image: OUDSImage(asset: Image(decorative: "il_someImage"),
+                                 flipped: layoutDirection == .rightToLeft,
+                                 renderingMode: .original))
 ```
 
 ### Chips
@@ -370,19 +370,19 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 ```swift
 // Suggestion chip with icon only
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 
 // Suggestion chip with raw icon (not tinted)
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Layout with text only
 OUDSSuggestionChip(text: "Heart") {}
 
 // Layout with text and icon
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
 
 // Layout with text and raw icon (not tinted)
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 #### Filter
@@ -406,19 +406,19 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
 
 ```swift
 // Filter chip with icon only as selected
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
 
 // Filter chip with raw icon (not tinted)
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Filter chip with text only as not selected
 OUDSFilterChip(text: "Heart") {}
 
 // Filter chip with text and icon in selected state
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
 
 // Filter chip with text and raw icon (not tinted)
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 
@@ -648,11 +648,11 @@ OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 
 // Add a leading icon for more context
 OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
-              leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+              leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
 
 // Add a leading raw image (not tinted)
 OUDSTextInput(label: "Brand", text: $text,
-              leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+              leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
 
 // Add a trailing button for additional action
 let trailingAction = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")),

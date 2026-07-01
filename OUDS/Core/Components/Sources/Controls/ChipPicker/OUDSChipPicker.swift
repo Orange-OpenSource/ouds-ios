@@ -327,9 +327,9 @@ public struct OUDSChipPicker<Tag: Hashable>: View {
         case let .text(text):
             OUDSFilterChip(text: text, selected: selected, action: action)
         case let .icon(icon, accessibilityLabel, renderingMode):
-            OUDSFilterChip(icon: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, selected: selected, action: action)
+            OUDSFilterChip(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, selected: selected, action: action)
         case let .textAndIcon(text, icon, renderingMode):
-            OUDSFilterChip(icon: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, selected: selected, action: action)
+            OUDSFilterChip(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, selected: selected, action: action)
         }
     }
 

@@ -74,7 +74,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - isReadOnly: True if read only, false otherwise (default)
     ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
     ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:icon:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:image:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) with icon: OUDSImage? instead.")
     public init(tag: Tag,
                 label: String,
                 extraLabel: String? = nil,
@@ -91,7 +91,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
                   label: label,
                   extraLabel: extraLabel,
                   description: description,
-                  icon: icon.map { OUDSImage(asset: $0) },
+                  image: icon.map { OUDSImage(asset: $0) },
                   isOutlined: isOutlined,
                   isReversed: isReversed,
                   isError: isError,
@@ -107,12 +107,12 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///
     ///     OUDSRadioPickerData(tag: "option2",
     ///                         label: "Option 2",
-    ///                         icon: OUDSImage(asset: Image(systemName: "flame")))
+    ///                         image: OUDSImage(asset: Image(systemName: "flame")))
     ///
     ///     // Raw (non-tinted) image:
     ///     OUDSRadioPickerData(tag: "option3",
     ///                         label: "Option 3",
-    ///                         icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+    ///                         image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
     /// ```
     ///
     /// - Parameters:
@@ -120,7 +120,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - label: the mandatory text to add to ``OUDSRadioItem``
     ///    - extraLabel: An optional additional text, default set to nil
     ///    - description: Another optional text, a description, default set to nil
-    ///    - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///    - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///    - isOutlined: True to outline the ``OUDSRadioItem``, false otherwise (default)
     ///    - isReversed: True to use to reversed layout of the ``OUDSRadioItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
@@ -134,7 +134,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
                 label: String,
                 extraLabel: String? = nil,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -146,7 +146,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
         self.label = label
         self.extraLabel = extraLabel
         self.description = description
-        self.icon = icon
+        icon = image
         self.isOutlined = isOutlined
         self.isReversed = isReversed
         self.isError = isError

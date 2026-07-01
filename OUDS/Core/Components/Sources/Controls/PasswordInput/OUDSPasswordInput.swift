@@ -339,7 +339,7 @@ public struct OUDSPasswordInput: View {
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
-                          leadingIcon: leadingIcon,
+                          leadingImage: leadingIcon,
                           trailingAction: trailingAction,
                           helperText: rawHelperText,
                           isOutlined: isOutlined,
@@ -351,7 +351,7 @@ public struct OUDSPasswordInput: View {
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
-                          leadingIcon: leadingIcon,
+                          leadingImage: leadingIcon,
                           trailingAction: trailingAction,
                           helperText: richHelperText,
                           isOutlined: isOutlined,
@@ -363,7 +363,7 @@ public struct OUDSPasswordInput: View {
                           text: password,
                           placeholder: placeholder,
                           prefix: prefix,
-                          leadingIcon: leadingIcon,
+                          leadingImage: leadingIcon,
                           trailingAction: trailingAction,
                           helperText: nil,
                           isOutlined: isOutlined,
@@ -384,7 +384,7 @@ public struct OUDSPasswordInput: View {
         let iconName = isHiddenPassword ? "ic_communication_accessibility_vision" : "ic_functional_settings_and_tools_hide"
         let actionHint = isHiddenPassword ? "core_passwordInput_showPassword_a11y" : "core_passwordInput_hidePassword_a11y"
 
-        return .init(icon: OUDSImage(asset: Image(decorative: iconName, bundle: theme.resourcesBundle)),
+        return .init(image: OUDSImage(asset: Image(decorative: iconName, bundle: theme.resourcesBundle)),
                      actionHint: actionHint.localized())
         {
             isHiddenPassword.toggle()

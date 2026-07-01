@@ -171,18 +171,55 @@ renderingMode: .original          →  OUDSImage(asset:, renderingMode: .origina
 | Component | Old params removed | New param | Notes |
 |---|---|---|---|
 | `OUDSButton` | `icon:`, `flipIcon:`, `renderingMode:`, `accessibilityLabel:` | `image: OUDSImage` | `accessibilityLabel` moves **into** `OUDSImage` |
-| `OUDSCheckboxItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | — |
-| `OUDSCheckboxItemIndeterminate` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | New `LocalizedStringKey` init added |
-| `OUDSCheckboxPickerData` | `icon: Image?`, `renderingMode:` | `icon: OUDSImage?` | — |
-| `OUDSRadioItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | — |
-| `OUDSRadioPickerData` | `icon: Image?` | `icon: OUDSImage?` | — |
-| `OUDSSwitchItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | `isReversed` defaults to `true` |
-| `OUDSFilterChip` / `OUDSSuggestionChip` | `icon: Image`, `renderingMode:` | `icon: OUDSImage` | No `flipIcon`; `accessibilityLabel` **stays on chip** |
-| `OUDSChipPickerData.Layout` | cases `.icon(icon: Image, …)` / `.textAndIcon(icon: Image, …)` | static factories `.icon(OUDSImage, accessibilityLabel:)` / `.textAndIcon(_, image: OUDSImage)` | Old cases still compile |
+| `OUDSCheckboxItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity |
+| `OUDSCheckboxItemIndeterminate` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | New `LocalizedStringKey` init added; renamed `icon:` → `image:` |
+| `OUDSCheckboxPickerData` | `icon: Image?`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity |
+| `OUDSRadioItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity |
+| `OUDSRadioPickerData` | `icon: Image?` | `image: OUDSImage?` | Renamed `icon:` → `image:`; active init uses positional `_ tag` (no label), deprecated uses named `tag:` |
+| `OUDSSwitchItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | `isReversed` defaults to `true`; renamed `icon:` → `image:` |
+| `OUDSFilterChip` | `icon: Image`, `renderingMode:` | `image: OUDSImage` | Renamed `icon:` → `image:`; no `flipIcon`; `accessibilityLabel` **stays on chip** |
+| `OUDSSuggestionChip` | `icon: Image`, `renderingMode:` | `image: OUDSImage` (LocalizedStringKey text variant) / `icon: OUDSImage` (3 other variants) | No `flipIcon`; `icon:` label kept where `OUDSImage`/`Image` distinction prevents ambiguity |
+| `OUDSChipPickerData.Layout` | cases `.icon(icon: Image, …)` / `.textAndIcon(icon: Image, …)` — still available | static factories `.icon(OUDSImage, accessibilityLabel:)` / `.textAndIcon(_, image: OUDSImage)` | — |
 | `OUDSTag.Status` | `neutral/accent(icon: Image, flipIcon:, renderingMode:)` | `neutral/accent(icon: OUDSImage)` | Deprecated static factories; other status unchanged |
-| `OUDSLink` | `icon: Image?`, `renderingMode:` | `icon: OUDSImage?` | No `flipIcon`; navigation inits unchanged |
-| `OUDSTextInput` | `leadingIcon: Image?`, `flipLeadingIcon:`, `leadingIconRenderingMode:` | `leadingIcon: OUDSImage?` | — |
-| `OUDSTextInput.TrailingAction` | `icon: Image`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage` | — |
+| `OUDSLink` | `icon: Image?`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity; navigation inits unchanged |
+| `OUDSTextInput` | `leadingIcon: Image?`, `flipLeadingIcon:`, `leadingIconRenderingMode:` | `leadingImage: OUDSImage?` | Renamed `leadingIcon:` → `leadingImage:` to resolve init ambiguity |
+| `OUDSTextInput.TrailingAction` | `icon: Image`, `flipIcon:`, `renderingMode:` | `image: OUDSImage` | — |
+
+### ⚠ Residual init ambiguity — workaround
+
+Even after the `icon:` → `image:` / `leadingIcon:` → `leadingImage:` rename, a call site that omits the image parameter entirely can still trigger a Swift compile-time ambiguity error, because the deprecated initialisers (`icon: Image? = nil`) and the active initialisers (`image: OUDSImage? = nil`) both match a call with no image argument at all.
+
+**Symptom**: `error: ambiguous use of 'init(...)'` on a component call with no image argument.
+
+**Fix**: Pass the image parameter explicitly as `nil` to force resolution toward the active init:
+
+| Component | Add this to the call site |
+|---|---|
+| `OUDSCheckboxItem` | `image: nil` |
+| `OUDSCheckboxItemIndeterminate` | `image: nil` |
+| `OUDSCheckboxPickerData` | `image: nil` |
+| `OUDSRadioItem` | `image: nil` |
+| `OUDSSwitchItem` | `image: nil` |
+| `OUDSLink` | `image: nil` |
+| `OUDSTextInput` | `leadingImage: nil` |
+
+```swift
+// ❌ ambiguous while deprecated inits coexist:
+OUDSCheckboxItem("Label", isOn: $isOn)
+OUDSRadioItem("Label", isOn: $isOn)
+OUDSSwitchItem("Label", isOn: $isOn)
+OUDSLink(text: "Learn more", size: .default) {}
+OUDSTextInput(label: "Email", text: $text)
+
+// ✅ unambiguous — active init selected:
+OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
+OUDSRadioItem("Label", isOn: $isOn, image: nil)
+OUDSSwitchItem("Label", isOn: $isOn, image: nil)
+OUDSLink(text: "Learn more", image: nil, size: .default) {}
+OUDSTextInput(label: "Email", text: $text, leadingImage: nil)
+```
+
+This workaround is only needed until the deprecated initialisers are removed in v3.
 
 ---
 
@@ -194,8 +231,15 @@ swift build
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
 
 grep -rn \
-  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
+  "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|leadingIcon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
   --include="*.swift" .
+
+# Detect old active-init parameter labels that were renamed (v2.3.0 disambiguation).
+# Note: OUDSSuggestionChip and OUDSTag.Status legitimately use icon: OUDSImage — filter them out:
+grep -rn \
+  "icon: OUDSImage\|leadingIcon: OUDSImage" \
+  --include="*.swift" . \
+  | grep -v "OUDSSuggestionChip\|OUDSTag"
 
 swift test
 ```

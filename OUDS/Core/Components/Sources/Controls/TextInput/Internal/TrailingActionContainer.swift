@@ -49,7 +49,7 @@ struct TrailingActionContainer: View {
                 }
             }
         case .loading:
-            trailingButton(for: .init(icon: OUDSImage(asset: Image(decorative: "ic_heart")), actionHint: "", action: {}))
+            trailingButton(for: .init(image: OUDSImage(asset: Image(decorative: "ic_heart")), actionHint: "", action: {}))
                 .accessibilityHidden(true)
         }
     }

@@ -87,21 +87,21 @@ import SwiftUI
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
-///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                                   image: OUDSImage(asset: Image(decorative: "ic_heart")),
 ///                                   isReversed: true)
 ///
 ///     // A trailing checkbox with a raw (non-tinted) image.
 ///     OUDSCheckboxItemIndeterminate("We live in a fabled world",
 ///                                   selection: $selection,
 ///                                   description: "Of dreaming boys and wide-eyed girls",
-///                                   icon: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                                   image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                                   isReversed: true)
 ///
 ///     // Flip the icon for RTL layouts using OUDSImage.
 ///     OUDSCheckboxItemIndeterminate("Cocorico !",
 ///                                   selection: $selection,
-///                                   icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-///                                                   flipped: layoutDirection == .rightToLeft),
+///                                   image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                                                    flipped: layoutDirection == .rightToLeft),
 ///                                   isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
@@ -179,7 +179,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItemIndeterminate(_:selection:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItemIndeterminate(_:selection:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ label: String,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
@@ -198,7 +198,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         self.init(label,
                   selection: selection,
                   description: description,
-                  icon: oudsImage,
+                  image: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -215,7 +215,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///
     ///     OUDSCheckboxItemIndeterminate("Select all",
     ///                                   selection: $state,
-    ///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    ///                                   image: OUDSImage(asset: Image(decorative: "ic_heart")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -227,7 +227,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked (indeterminate / partially ticked)
     ///   - description: A description, an additional helper text, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -240,7 +240,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     public init(_ label: String,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -280,7 +280,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             label: label.localized(),
             extraLabel: nil,
             description: description?.localized(),
-            icon: icon,
+            icon: image,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -298,7 +298,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///     OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"),
     ///                                   bundle: Bundle.module,
     ///                                   selection: $state,
-    ///                                   icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    ///                                   image: OUDSImage(asset: Image(decorative: "ic_heart")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -309,7 +309,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - selection: A binding to a property that determines whether the indicator is ticked, unticked or preticked
     ///   - description: A description, an additional helper text, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -322,7 +322,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 bundle: Bundle = .main,
                 selection: Binding<OUDSCheckboxIndicatorState>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -334,7 +334,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   selection: selection,
                   description: description,
-                  icon: icon,
+                  image: image,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,

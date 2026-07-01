@@ -119,7 +119,7 @@ public struct OUDSLink: View {
     ///   - renderingMode: The rendering mode to apply on the icon
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(text:icon:OUDSImage:size:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSLink(text:image:size:action:) instead.")
     public init(text: String,
                 icon: Image? = nil,
                 renderingMode: Image.TemplateRenderingMode = .template,
@@ -127,7 +127,7 @@ public struct OUDSLink: View {
                 action: @escaping () -> Void)
     {
         self.init(text: text,
-                  icon: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
+                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
                   size: size,
                   action: action)
     }
@@ -135,26 +135,26 @@ public struct OUDSLink: View {
     /// Create a link with text and an optional icon.
     ///
     /// ```swift
-    ///     OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image(systemName: "arrow.right")), size: .default) {}
+    ///     OUDSLink(text: "Learn more", image: OUDSImage(asset: Image(systemName: "arrow.right")), size: .default) {}
     ///
     ///     // Raw (non-tinted) image:
-    ///     OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+    ///     OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
     ///
-    ///     // Text only — omit icon or pass nil:
+    ///     // Text only — omit image or pass nil:
     ///     OUDSLink(text: "Feedback", size: .small) {}
     /// ```
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(text: String,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
-        layout = icon.map { .textAndIcon($0) } ?? .textOnly
+        layout = image.map { .textAndIcon($0) } ?? .textOnly
         self.text = text
         self.size = size
         self.action = action
@@ -172,7 +172,7 @@ public struct OUDSLink: View {
     ///   - renderingMode: The rendering mode to apply on the icon
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(_:tableName:bundle:icon:OUDSImage:size:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSLink(_:tableName:bundle:image:size:action:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -182,7 +182,7 @@ public struct OUDSLink: View {
                 action: @escaping () -> Void)
     {
         self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  icon: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
+                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
                   size: size,
                   action: action)
     }
@@ -194,7 +194,7 @@ public struct OUDSLink: View {
     ///
     ///     OUDSLink(LocalizedStringKey("learn_more"),
     ///              bundle: Bundle.module,
-    ///              icon: OUDSImage(asset: Image("ic_heart")),
+    ///              image: OUDSImage(asset: Image("ic_heart")),
     ///              size: .default) {}
     /// ```
     ///
@@ -202,18 +202,18 @@ public struct OUDSLink: View {
     ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
         self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  icon: icon,
+                  image: image,
                   size: size,
                   action: action)
     }

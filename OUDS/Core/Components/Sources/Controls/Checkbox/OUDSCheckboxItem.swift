@@ -97,21 +97,21 @@ import SwiftUI
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      icon: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                      image: OUDSImage(asset: Image(decorative: "ic_heart")),
 ///                      isReversed: true)
 ///
 ///     // A trailing checkbox with a raw (non-tinted) image.
 ///     OUDSCheckboxItem("We live in a fabled world",
 ///                      isOn: $isOn,
 ///                      description: "Of dreaming boys and wide-eyed girls",
-///                      icon: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                      image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
 ///                      isReversed: true)
 ///
 ///     // Flip the icon for RTL layouts using OUDSImage.
 ///     OUDSCheckboxItem("Cocorico !",
 ///                      isOn: $isOn,
-///                      icon: OUDSImage(asset: Image(systemName: "figure.handball"),
-///                                     flipped: layoutDirection == .rightToLeft),
+///                      image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                                      flipped: layoutDirection == .rightToLeft),
 ///                      isReversed: layoutDirection == .rightToLeft)
 ///
 ///     // If on error, add an error message can help user to understand error context
@@ -190,7 +190,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -209,7 +209,7 @@ public struct OUDSCheckboxItem: View {
         self.init(label,
                   isOn: isOn,
                   description: description,
-                  icon: oudsImage,
+                  image: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -225,7 +225,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      icon: OUDSImage(asset: Image(systemName: "flame")))
+    ///                      image: OUDSImage(asset: Image(systemName: "flame")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -237,7 +237,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -251,7 +251,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -290,7 +290,7 @@ public struct OUDSCheckboxItem: View {
             label: label.localized(),
             extraLabel: nil,
             description: description?.localized(),
-            icon: icon,
+            icon: image,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -319,7 +319,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -338,7 +338,7 @@ public struct OUDSCheckboxItem: View {
         self.init(label,
                   isOn: isOn,
                   description: description,
-                  icon: oudsImage,
+                  image: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -354,7 +354,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem("Virgin Holy Lava",
     ///                      isOn: $isOn,
     ///                      description: "Very spicy",
-    ///                      icon: OUDSImage(asset: Image(systemName: "flame")),
+    ///                      image: OUDSImage(asset: Image(systemName: "flame")),
     ///                      errorText: AttributedString(markdown: "Please select **one flavor** for this drink"))
     ///                    // Manage in your side errors for init for AttributedString(markdown:)
     /// ```
@@ -368,7 +368,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -381,7 +381,7 @@ public struct OUDSCheckboxItem: View {
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -412,7 +412,7 @@ public struct OUDSCheckboxItem: View {
             label: label.localized(),
             extraLabel: nil,
             description: description?.localized(),
-            icon: icon,
+            icon: image,
             isOutlined: false,
             isError: isError,
             errorText: .attributed(errorText),
@@ -443,7 +443,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -464,7 +464,7 @@ public struct OUDSCheckboxItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: oudsImage,
+                  image: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -482,7 +482,7 @@ public struct OUDSCheckboxItem: View {
     ///     OUDSCheckboxItem(LocalizedStringKey("agree_terms"),
     ///                      bundle: Bundle.module,
     ///                      isOn: $isOn,
-    ///                      icon: OUDSImage(asset: Image(decorative: "ic_heart")))
+    ///                      image: OUDSImage(asset: Image(decorative: "ic_heart")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -493,7 +493,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -506,7 +506,7 @@ public struct OUDSCheckboxItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -518,7 +518,7 @@ public struct OUDSCheckboxItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: icon,
+                  image: image,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -548,7 +548,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:icon:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with image: OUDSImage? instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -569,7 +569,7 @@ public struct OUDSCheckboxItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: oudsImage,
+                  image: oudsImage,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -597,7 +597,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -610,7 +610,7 @@ public struct OUDSCheckboxItem: View {
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: OUDSImage? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -622,7 +622,7 @@ public struct OUDSCheckboxItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: icon,
+                  image: image,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
