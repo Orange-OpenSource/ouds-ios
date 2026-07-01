@@ -29,31 +29,46 @@ struct ListItemBackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         switch style {
-        case .outlined:
-            content
-        case let .standard(_, backgroundFlag):
-            if let background = color(with: backgroundFlag) {
-                content.background(background)
-            } else {
+        case let .card(cardStyle):
+            switch cardStyle {
+            case .outlined, .outlinedOnInteractionOnly:
                 content
+            case .backgroundOnInteractionOnly:
+                background(content: content, withInteractionOnly: true)
+            case .background:
+                background(content: content, withInteractionOnly: false)
+            }
+        case let .standard(standardStyle):
+            switch standardStyle {
+            case .backgroundOnInteractionOnly:
+                background(content: content, withInteractionOnly: true)
+            case .background:
+                background(content: content, withInteractionOnly: false)
             }
         }
     }
 
     // MARK: - Helpers
 
-    private func color(with backgroundFlag: Bool) -> MultipleColorSemanticToken? {
-        switch interactionState {
+    @ViewBuilder
+    private func background(content: Content, withInteractionOnly: Bool) -> some View {
+        let color = switch interactionState {
         case .enabled:
-            backgroundFlag ? theme.colors.actionSupportEnabled : nil
+            withInteractionOnly ? nil : theme.colors.actionSupportEnabled
         case .disabled:
-            backgroundFlag ? theme.colors.actionSupportDisabled : nil
+            withInteractionOnly ? nil : theme.colors.actionSupportDisabled
         case .hover:
             theme.colors.actionSupportHover
         case .pressed:
             theme.colors.actionSupportPressed
         case .readOnly:
             theme.colors.actionSupportEnabled
+        }
+
+        if let color {
+            content.background(color)
+        } else {
+            content
         }
     }
 }

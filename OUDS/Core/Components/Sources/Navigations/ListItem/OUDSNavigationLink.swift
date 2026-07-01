@@ -62,7 +62,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
     public init(title: String,
                 isBoldLabel: Bool = false,
                 affordanceType: OUDSNavigationListItemAffordanceType = .next,
-                style: OUDSListItemContentStyle = .standard(divider: false, background: false),
+                style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
                 destination: @escaping () -> Destination)
     {
         self.title = title
@@ -89,7 +89,7 @@ public struct OUDSNavigationLink<Destination: View>: View {
                 bundle: Bundle = .main,
                 isBoldLabel: Bool = false,
                 affordanceType: OUDSNavigationListItemAffordanceType = .next,
-                style: OUDSListItemContentStyle = .standard(divider: false, background: false),
+                style: OUDSListItemContentStyle = .standard(.backgroundOnInteractionOnly(withDivider: true)),
                 destination: @escaping () -> Destination)
     {
         self.init(title: key.resolved(tableName: tableName, bundle: bundle),

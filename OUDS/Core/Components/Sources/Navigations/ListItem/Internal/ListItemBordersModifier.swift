@@ -30,43 +30,48 @@ struct ListItemBordersModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         switch style {
-        case .outlined:
-            content
-                .border(style: theme.borders.styleDefault,
-                        width: theme.controlItem.borderWidthDefault,
-                        radius: radius,
-                        color: outlinedColor)
+        case let .card(cardStyle):
+            switch cardStyle {
+            case .outlined:
+                outlined(content: content, onInteractionOnly: false)
+            case .outlinedOnInteractionOnly:
+                outlined(content: content, onInteractionOnly: true)
+            case let .background(divider), let .backgroundOnInteractionOnly(divider):
+                self.divider(content: content, with: divider)
+            }
 
-        case let .standard(divider, _):
-            if divider {
-                if theme.tuning.hasRoundedListItems {
-                    content
-                        .shadow(theme.elevations.raised)
-                } else {
-                    // Divider must be inside
-                    ZStack(alignment: .bottom) {
-                        content
-                        Divider().horizontal(force: dividerColor)
-                    }
-                }
-            } else {
-                content.clipShape(RoundedRectangle(cornerRadius: radius))
+        case let .standard(standardStyle):
+            switch standardStyle {
+            case let .background(divider), let .backgroundOnInteractionOnly(divider):
+                self.divider(content: content, with: divider)
             }
         }
     }
 
-    // MARK: - Helpers
+    // MARK: - Rounded corners
 
-    private var radius: BorderRadiusSemanticToken {
-        theme.tuning.hasRoundedListItems ? theme.controlItem.borderRadiusRounded : theme.controlItem.borderRadiusDefault
+    private var roundedCorners: Bool {
+        switch style {
+        case .card:
+            theme.tuning.hasRoundedListItems
+        case .standard:
+            false
+        }
     }
 
-    private var outlinedColor: MultipleColorSemanticToken {
-        switch interactionState {
+    private var radius: BorderRadiusSemanticToken {
+        roundedCorners ? theme.controlItem.borderRadiusRounded : theme.controlItem.borderRadiusDefault
+    }
+
+    // MARK: - Border modifiers
+
+    @ViewBuilder
+    private func outlined(content: Content, onInteractionOnly: Bool) -> some View {
+        let color = switch interactionState {
         case .enabled:
-            theme.colors.borderDefault
+            onInteractionOnly ? nil : theme.colors.borderDefault
         case .hover:
-            theme.colors.actionHover
+            onInteractionOnly ? nil : theme.colors.actionHover
         case .pressed:
             theme.colors.actionPressed
         case .disabled:
@@ -74,9 +79,32 @@ struct ListItemBordersModifier: ViewModifier {
         case .readOnly:
             theme.colors.actionDisabled
         }
+
+        if let color {
+            content
+                .border(style: theme.borders.styleDefault,
+                        width: theme.controlItem.borderWidthDefault,
+                        radius: radius,
+                        color: color)
+        } else {
+            content
+        }
     }
 
-    private var dividerColor: MultipleColorSemanticToken {
-        theme.colors.borderMuted
+    @ViewBuilder
+    private func divider(content: Content, with divider: Bool) -> some View {
+        if divider {
+            if roundedCorners {
+                content.shadow(theme.elevations.raised)
+            } else {
+                // Divider must be inside
+                ZStack(alignment: .bottom) {
+                    content
+                    Divider().horizontal(force: theme.colors.borderMuted)
+                }
+            }
+        } else {
+            content.clipShape(RoundedRectangle(cornerRadius: radius))
+        }
     }
 }
