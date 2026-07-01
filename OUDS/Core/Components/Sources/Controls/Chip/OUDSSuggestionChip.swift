@@ -111,7 +111,7 @@ public struct OUDSSuggestionChip: View {
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode
+    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
@@ -150,7 +150,7 @@ public struct OUDSSuggestionChip: View {
     /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode
+    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - text: The text to display in the chip, should not be empty
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: OUDSImage, text: String, action: @escaping () -> Void) {
@@ -193,7 +193,7 @@ public struct OUDSSuggestionChip: View {
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode
+    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - key: The text to vocalize with Voice Over, as a `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
@@ -229,7 +229,7 @@ public struct OUDSSuggestionChip: View {
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode
+    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip action, should not be empty
     ///    - action: The action to perform when the user triggers the chip
     public init(icon: OUDSImage, accessibilityLabel: String, action: @escaping () -> Void) {

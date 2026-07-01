@@ -248,7 +248,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -395,7 +395,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -536,7 +536,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -652,7 +652,7 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`

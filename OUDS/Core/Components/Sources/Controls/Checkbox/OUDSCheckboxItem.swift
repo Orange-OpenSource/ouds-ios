@@ -237,7 +237,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -368,7 +368,7 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -493,7 +493,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -597,7 +597,7 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.

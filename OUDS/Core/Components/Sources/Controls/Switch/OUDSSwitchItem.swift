@@ -219,7 +219,7 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -342,7 +342,7 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -461,7 +461,7 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -559,7 +559,7 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.

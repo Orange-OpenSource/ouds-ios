@@ -82,6 +82,8 @@ public struct OUDSBadgeIcon: View {
     /// - Since: 2.2.0
     @frozen public enum Status {
 
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
         /// Used for general labels without specific emphasis.
         ///
         /// - Parameters:
@@ -90,6 +92,8 @@ public struct OUDSBadgeIcon: View {
         ///    - renderingMode: Default set to `.template`, set to `.original` if the image of the badge should not be tinted
         case neutral(icon: Image, flipped: Bool = false, renderingMode: Image.TemplateRenderingMode = .template)
 
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
         /// Employed to highlight discovery or exploration-related content
         ///
         /// - Parameters:

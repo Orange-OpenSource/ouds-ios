@@ -6,8 +6,8 @@ license: MIT
 
 # Skill: ouds-ios-migration
 
-This skill provides step-by-step guidance to migrate OUDS iOS code from **v1.0.0** up to **v2.3.0** (current).
-It covers all breaking changes, removed APIs and deprecated symbols introduced in each release.
+Migration guide from **v1.0.0** to **v2.3.0** (current). Covers all breaking changes and deprecated symbols.
+For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
 
@@ -15,40 +15,36 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 
 | From → To | Impact | Key changes |
 |---|---|---|
-| v1.0.0 → v1.1.0 | High | `Multiple*Tokens` (plural) → `Multiple*Token` (singular); button border tokens shortened |
+| v1.0.0 → v1.1.0 | High | `Multiple*Tokens` → `Multiple*Token`; button border tokens shortened |
 | v1.1.0 → v1.2.0 | High | Theme renamed: `OrangeBusinessTools` → `OrangeCompact` |
-| v1.2.0 → v1.3.0 | Low | `oudsVerticalSizeClass` removed; `OUDSBulletList.UnorderedIcon` → `UnorderedAsset` |
-| v1.3.0 → v1.4.0 | Low | `ouds`-prefixed `View` extension methods removed; `OUDSTabBar(selected:)` → `(selectedTab:)` |
+| v1.2.0 → v1.3.0 | Low | `oudsVerticalSizeClass` removed; `UnorderedIcon` → `UnorderedAsset` |
+| v1.3.0 → v1.4.0 | Low | `ouds`-prefixed `View` methods removed; `OUDSTabBar(selected:)` → `(selectedTab:)` |
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip`, `OUDSLink`, `OUDSTextInput`, `OUDSTextInput.TrailingAction` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
 
 ---
 
 ## Migration workflow
 
-For each migration task, follow this sequence:
-
-1. **Detect** — grep the target codebase for deprecated or removed symbols (commands provided per section below).
-2. **Transform** — apply the before/after substitutions listed in the relevant section.
-3. **Build** — run `swift build` and confirm zero errors.
-4. **Check warnings** — run `swift build 2>&1 | grep -i deprecated` and confirm zero OUDS deprecation warnings.
-5. **Test** — run the test suite (`swift test`) to confirm no regressions.
+1. **Detect** — grep for deprecated symbols (commands below).
+2. **Transform** — apply the rules for the relevant version.
+3. **Build** — `swift build` must succeed with zero errors.
+4. **Check warnings** — `swift build 2>&1 | grep -i deprecated` must return nothing OUDS-related.
+5. **Test** — `swift test` must pass.
 
 ---
 
 ## Detection grep commands
 
-Run these from the project root to find all occurrences before starting:
-
 ```bash
-# All active deprecations (v2.x era)
+# Active deprecations (v2.x)
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container" \
   --include="*.swift" .
 
-# Breaking changes removed in v2.0.0 (v1.x era)
+# Removed symbols (v1.x era)
 grep -rn \
   "oudsVerticalSizeClass\|UnorderedIcon\|\.free(\|OUDSTabBar(selected:\|\.ouds[A-Z]\|Multiple.*Tokens\b\|OrangeBusinessTools\|buttonBorderRadius\|buttonBorderWidth" \
   --include="*.swift" .
@@ -56,127 +52,41 @@ grep -rn \
 
 ---
 
-## v1.0.0 → v1.1.0 — Breaking changes
+## v1.0.0 → v1.1.0
 
-### 1. `Multiple*Tokens` (plural) → `Multiple*Token` (singular)
-
-**Before (v1.0.0)**:
-```swift
-MultipleElevationCompositeRawTokens
-MultipleColorSemanticTokens
-MultipleFontCompositeSemanticTokens
-MultipleFontLetterSpacingSemanticTokens
-MultipleFontLineHeightSemanticTokens
-MultipleFontSizeSemanticTokens
-MultipleSizeSemanticTokens
-MultipleSpaceSemanticTokens
-```
-
-**After (v1.1.0)**:
-```swift
-MultipleElevationCompositeRawToken
-MultipleColorSemanticToken
-MultipleFontCompositeSemanticToken
-MultipleFontLetterSpacingSemanticToken
-MultipleFontLineHeightSemanticToken
-MultipleFontSizeSemanticToken
-MultipleSizeSemanticToken
-MultipleSpaceSemanticToken
-```
-
-**Action**: Global rename — remove the trailing `s` from each type name.
-
-### 2. Button border component tokens shortened
-
-**Before (v1.0.0)**:
-```swift
-theme.button.buttonBorderRadiusDefault
-theme.button.buttonBorderRadiusRounded
-theme.button.buttonBorderRadiusSocial
-theme.button.buttonBorderWidthDefault
-theme.button.buttonBorderWidthDefaultInteraction
-theme.button.buttonBorderWidthDefaultInteractionMono
-```
-
-**After (v1.1.0)**:
-```swift
-theme.button.borderRadiusDefault
-theme.button.borderRadiusRounded
-theme.button.borderRadiusSocial
-theme.button.borderWidthDefault
-theme.button.borderWidthDefaultInteraction
-theme.button.borderWidthDefaultInteractionMono
-```
-
-**Action**: Remove the `button` prefix from each token name.
+| Old | New |
+|---|---|
+| `MultipleElevationCompositeRawTokens` | `MultipleElevationCompositeRawToken` |
+| `MultipleColorSemanticTokens` | `MultipleColorSemanticToken` |
+| `MultipleFontCompositeSemanticTokens` | `MultipleFontCompositeSemanticToken` |
+| `MultipleFontLetterSpacingSemanticTokens` | `MultipleFontLetterSpacingSemanticToken` |
+| `MultipleFontLineHeightSemanticTokens` | `MultipleFontLineHeightSemanticToken` |
+| `MultipleFontSizeSemanticTokens` | `MultipleFontSizeSemanticToken` |
+| `MultipleSizeSemanticTokens` | `MultipleSizeSemanticToken` |
+| `MultipleSpaceSemanticTokens` | `MultipleSpaceSemanticToken` |
+| `theme.button.buttonBorderRadiusDefault` | `theme.button.borderRadiusDefault` |
+| `theme.button.buttonBorderRadiusRounded` | `theme.button.borderRadiusRounded` |
+| `theme.button.buttonBorderRadiusSocial` | `theme.button.borderRadiusSocial` |
+| `theme.button.buttonBorderWidthDefault` | `theme.button.borderWidthDefault` |
+| `theme.button.buttonBorderWidthDefaultInteraction` | `theme.button.borderWidthDefaultInteraction` |
+| `theme.button.buttonBorderWidthDefaultInteractionMono` | `theme.button.borderWidthDefaultInteractionMono` |
 
 ---
 
-## v1.1.0 → v1.2.0 — Breaking changes
+## v1.1.0 → v1.2.0
 
-### Theme renamed: OrangeBusinessTools → OrangeCompact
-
-**Before (v1.1.0)**:
-```swift
-import OUDSThemeOrangeBusinessTools
-// …
-OUDSThemeableView(theme: OrangeBusinessToolsTheme()) { … }
-```
-
-**After (v1.2.0)**:
-```swift
-import OUDSThemeOrangeCompact
-// …
-OUDSThemeableView(theme: OrangeCompactTheme()) { … }
-```
-
-**Action**:
-1. Replace import `OUDSThemeOrangeBusinessTools` → `OUDSThemeOrangeCompact`.
-2. Replace all occurrences of `OrangeBusinessToolsTheme` → `OrangeCompactTheme`.
-3. Replace any string or identifier containing `OrangeBusinessTools` → `OrangeCompact` (documentation, test names, etc.).
+Replace everywhere: `OUDSThemeOrangeBusinessTools` → `OUDSThemeOrangeCompact`, `OrangeBusinessToolsTheme` → `OrangeCompactTheme`, `OrangeBusinessTools` → `OrangeCompact`.
 
 ---
 
-## v1.2.0 → v1.3.0 — Breaking changes
+## v1.2.0 → v1.3.0
 
-### 1. `oudsVerticalSizeClass` removed
-
-**Before (v1.2.0)**:
-```swift
-@Environment(\.oudsVerticalSizeClass) var sizeClass
-```
-
-**After (v1.3.0)**:
-```swift
-// Remove entirely — the property no longer exists.
-// Note: reintroduced in v1.4.0; wait for that version if you need it.
-```
-
-**Action**: Remove all uses of `oudsVerticalSizeClass`.
-
-### 2. `OUDSBulletList.UnorderedIcon` → `OUDSBulletList.UnorderedAsset`; `.free` → `.icon`
-
-**Before (v1.2.0)**:
-```swift
-var bullet: OUDSBulletList.UnorderedIcon { .free(someImage) }
-```
-
-**After (v1.3.0)**:
-```swift
-var bullet: OUDSBulletList.UnorderedAsset { .icon(someImage) }
-```
-
-**Action**:
-1. Rename `OUDSBulletList.UnorderedIcon` → `OUDSBulletList.UnorderedAsset`.
-2. Rename case `.free(…)` → `.icon(…)`.
+- Remove all uses of `@Environment(\.oudsVerticalSizeClass)`.
+- Rename `OUDSBulletList.UnorderedIcon` → `OUDSBulletList.UnorderedAsset`; case `.free(…)` → `.icon(…)`.
 
 ---
 
-## v1.3.0 → v1.4.0 — Breaking changes
-
-### 1. `ouds`-prefixed `View` extension methods removed
-
-All `ouds`-prefixed methods were removed. Replace each with its unprefixed counterpart:
+## v1.3.0 → v1.4.0
 
 | Removed | Replacement |
 |---|---|
@@ -192,732 +102,100 @@ All `ouds`-prefixed methods were removed. Replace each with its unprefixed count
 | `.oudsRequestAccessibleFocus(_:for:)` | `.requestAccessibleFocus(_:for:)` |
 | `.oudsHorizontalDivider(dividerColor:)` | `.horizontal(color:)` |
 | `.oudsVerticalDivider(color:)` | `.vertical(color:)` |
-
-**Action**: Replace each `ouds`-prefixed call with its unprefixed counterpart.
-
-### 2. `OUDSTabBar(selected:count:content:)` → `OUDSTabBar(selectedTab:count:content:)`
-
-**Before (v1.3.x)**:
-```swift
-OUDSTabBar(selected: 0, count: 3) {
-    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
-}
-```
-
-**After (v1.4.0)**:
-```swift
-@State private var selectedTab = 0
-
-OUDSTabBar(selectedTab: $selectedTab, count: 3) {
-    SomeView().tabItem { Label("Home", image: "ic_home") }.tag(0)
-}
-```
-
-**Action**:
-1. Rename parameter label `selected:` → `selectedTab:`.
-2. Declare `@State private var selectedTab: Int` and pass it as `$selectedTab`.
+| `OUDSTabBar(selected: 0, count: 3) { … }` | `@State var selectedTab = 0; OUDSTabBar(selectedTab: $selectedTab, count: 3) { … }` |
 
 ---
 
-## v1.4.0 → v2.0.0 — Breaking changes
+## v1.4.0 → v2.0.0
 
-### 1. Renamed semantic tokens — colors
+### Renamed semantic tokens
 
-| Old name | New name |
+| Old | New |
 |---|---|
 | `repositorySecondaryHigher` | `repositorySecondaryHigherHigh` |
-| `overlayModalLight` | `overlayModalSheetLight` |
-| `overlayModalDark` | `overlayModalSheetDark` |
-| `overlayModal` | `overlayModalSheet` |
+| `overlayModalLight/Dark/` | `overlayModalSheetLight/Dark/` (drop `Modal`, add `Sheet`) |
+| `xDefault`, `yDefault`, `blurDefault`, `spreadDefault` | `xElevated`, `yElevated`, `blurElevated`, `spreadElevated` |
+| `colorDefaultLight/Dark` | `colorElevatedLight/Dark` |
+| All `maxWidthType*` sizes | `maxWidth*` (remove `Type`) |
+| Badge `spaceInset` | `spaceInsetMediumLarge` |
+| Bar `colorActiveIndicator*` | `colorCurrentIndicator*` |
+| Bar `opacityActiveIndicator*`, `borderRadiusActiveIndicator*`, `sizeWidthActiveIndicator*` | same with `Current` |
 
-### 2. Renamed semantic tokens — elevations
+### Removed tokens
 
-| Old name | New name |
-|---|---|
-| `xDefault` | `xElevated` |
-| `yDefault` | `yElevated` |
-| `blurDefault` | `blurElevated` |
-| `spreadDefault` | `spreadElevated` |
-| `colorDefaultLight` | `colorElevatedLight` |
-| `colorDefaultDark` | `colorElevatedDark` |
+Remove: `blur160`, `opacityGrayLight80800`, `actionAccentLight/Dark/` (use `colorAccent` bar tokens), radio/checkbox `sizeIndicator` (use `controlItem.sizeControlIndicator`), control item tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover/Focus/Pressed/Loading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`.
 
-### 3. Renamed semantic tokens — sizes (remove "Type")
+### Other changes
 
-Pattern: `maxWidthType` → `maxWidth` for all typography size tokens.
-
-| Old name | New name |
-|---|---|
-| `maxWidthTypeDisplayLargeMobile` | `maxWidthDisplayLargeMobile` |
-| `maxWidthTypeDisplayLargeTablet` | `maxWidthDisplayLargeTablet` |
-| `maxWidthTypeDisplayMediumMobile` | `maxWidthDisplayMediumMobile` |
-| `maxWidthTypeDisplayMediumTablet` | `maxWidthDisplayMediumTablet` |
-| `maxWidthTypeDisplaySmallMobile` | `maxWidthDisplaySmallMobile` |
-| `maxWidthTypeDisplaySmallTablet` | `maxWidthDisplaySmallTablet` |
-| `maxWidthTypeHeadingXlargeMobile` | `maxWidthHeadingXlargeMobile` |
-| `maxWidthTypeHeadingXlargeTablet` | `maxWidthHeadingXlargeTablet` |
-| `maxWidthTypeHeadingLargeMobile` | `maxWidthHeadingLargeMobile` |
-| `maxWidthTypeHeadingLargeTablet` | `maxWidthHeadingLargeTablet` |
-| `maxWidthTypeHeadingMediumMobile` | `maxWidthHeadingMediumMobile` |
-| `maxWidthTypeHeadingMediumTablet` | `maxWidthHeadingMediumTablet` |
-| `maxWidthTypeHeadingSmallMobile` | `maxWidthHeadingSmallMobile` |
-| `maxWidthTypeHeadingSmallTablet` | `maxWidthHeadingSmallTablet` |
-| `maxWidthTypeBodyLargeMobile` | `maxWidthBodyLargeMobile` |
-| `maxWidthTypeBodyLargeTablet` | `maxWidthBodyLargeTablet` |
-| `maxWidthTypeBodyMediumMobile` | `maxWidthBodyMediumMobile` |
-| `maxWidthTypeBodyMediumTablet` | `maxWidthBodyMediumTablet` |
-| `maxWidthTypeBodySmallMobile` | `maxWidthBodySmallMobile` |
-| `maxWidthTypeBodySmallTablet` | `maxWidthBodySmallTablet` |
-| `maxWidthTypeLabelXlargeMobile` | `maxWidthLabelXlargeMobile` |
-| `maxWidthTypeLabelXlargeTablet` | `maxWidthLabelXlargeTablet` |
-| `maxWidthTypeLabelLargeMobile` | `maxWidthLabelLargeMobile` |
-| `maxWidthTypeLabelLargeTablet` | `maxWidthLabelLargeTablet` |
-| `maxWidthTypeLabelMediumMobile` | `maxWidthLabelMediumMobile` |
-| `maxWidthTypeLabelMediumTablet` | `maxWidthLabelMediumTablet` |
-| `maxWidthTypeLabelSmallMobile` | `maxWidthLabelSmallMobile` |
-| `maxWidthTypeLabelSmallTablet` | `maxWidthLabelSmallTablet` |
-
-### 4. Renamed component tokens — badge
-
-| Old name | New name |
-|---|---|
-| `spaceInset` | `spaceInsetMediumLarge` |
-
-### 5. Renamed component tokens — bar (ActiveIndicator → CurrentIndicator)
-
-| Old name | New name |
-|---|---|
-| `colorActiveIndicatorCustomSelectedEnabled` | `colorCurrentIndicatorCustomSelectedEnabled` |
-| `colorActiveIndicatorCustomSelectedHover` | `colorCurrentIndicatorCustomSelectedHover` |
-| `colorActiveIndicatorCustomSelectedPressed` | `colorCurrentIndicatorCustomSelectedPressed` |
-| `colorActiveIndicatorCustomSelectedFocus` | `colorCurrentIndicatorCustomSelectedFocus` |
-| `opacityActiveIndicatorCustom` | `opacityCurrentIndicatorCustom` |
-| `borderRadiusActiveIndicatorCustomTop` | `borderRadiusCurrentIndicatorCustomTop` |
-| `borderRadiusActiveIndicatorCustomBottom` | `borderRadiusCurrentIndicatorCustomBottom` |
-| `sizeWidthActiveIndicatorCustomTop` | `sizeWidthCurrentIndicatorCustomTop` |
-| `sizeWidthActiveIndicatorCustomBottom` | `sizeWidthCurrentIndicatorCustomBottom` |
-
-### 6. Removed tokens
-
-| Removed symbol | Action |
-|---|---|
-| Raw token `blur160` | Remove all uses |
-| Raw token `opacityGrayLight80800` | Remove all uses |
-| Semantic tokens `actionAccentLight`, `actionAccentDark`, `actionAccent` | Remove; use `colorAccent` bar component tokens if relevant |
-| Radio component token `sizeIndicator` | Use `controlItem.sizeControlIndicator` instead |
-| Checkbox component token `sizeIndicator` | Use `controlItem.sizeControlIndicator` instead |
-| Control item tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover*`, `colorBgFocus*`, `colorBgPressed*`, `colorBgLoading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*` | Remove all uses |
-
-### 7. Charts color token provider renamed
-
-**Before (v1.4.x)**:
-```swift
-theme.charts.someColorToken
-```
-
-**After (v2.0.0)**:
-```swift
-theme.colorsCharts.someColorToken
-```
-
-**Action**: Replace `theme.charts.` → `theme.colorsCharts.`.
-
-### 8. `OUDSToolBarItem.ActionType` — new `badgeType` parameter in `icon` case
-
-If you pattern-match on the `.icon` case, add a slot for `badgeType`:
-
-**Before (v1.4.x)**:
-```swift
-case .icon(let asset, let accessibilityLabel):
-    …
-```
-
-**After (v2.0.0)**:
-```swift
-case .icon(let asset, let accessibilityLabel, let badgeType):
-    …
-```
+- `theme.charts.*` → `theme.colorsCharts.*`
+- `OUDSToolBarItem.ActionType` `.icon` case: add new `badgeType` slot in pattern matching.
 
 ---
 
-## v2.0.0 → v2.1.0 — Deprecated symbols
+## v2.0.0 → v2.1.0
 
-### Component token renamed (ControlItem)
-
-**Before (v2.0.0)**:
-```swift
-theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopText_container
-```
-
-**After (v2.1.0)**:
-```swift
-theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
-```
-
-**Action**: Replace the underscore form with the camelCase form.
+`theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopText_container` → `spacePaddingBlockDensityCompactTopAlignmentTopTextContainer`
 
 ---
 
-## v2.0.0 → v2.2.0 — Deprecated symbols
+## v2.0.0 → v2.2.0 — OUDSBadge split
 
-### `OUDSBadge` split into three dedicated components
+`OUDSBadge` is deprecated. Identify the variant and replace:
 
-`OUDSBadge` is deprecated. Identify which variant you are using from the call site and replace it.
-
-**Detection**: search for `OUDSBadge(` in your Swift files.
-
-**Identification rule**:
-- Call has `count:` parameter → use `OUDSBadgeCount`
-- Call has a `status:` whose associated value carries an `icon:` (i.e. `StatusWithIcon`) → use `OUDSBadgeIcon`
-- Otherwise → use `OUDSBadgeStandard`
-
-#### Standard badge (no count, no icon in status)
-
-**Before (v2.0.0)**:
-```swift
-OUDSBadge(accessibilityLabel: "New", status: .accent, size: .small)
-OUDSBadge(accessibilityLabel: LocalizedStringKey("new_badge"), bundle: Bundle.module, status: .neutral, size: .medium)
-```
-
-**After (v2.2.0)**:
-```swift
-OUDSBadgeStandard(accessibilityLabel: "New", status: .accent, size: .small)
-OUDSBadgeStandard(accessibilityLabel: LocalizedStringKey("new_badge"), bundle: Bundle.module, status: .neutral, size: .medium)
-```
-
-#### Count badge
-
-**Before (v2.0.0)**:
-```swift
-OUDSBadge(count: 9, accessibilityLabel: "9 messages", status: .negative, size: .large)
-OUDSBadge(count: 3, accessibilityLabel: LocalizedStringKey("badge_count"), bundle: Bundle.module, status: .neutral, size: .medium)
-```
-
-**After (v2.2.0)**:
-```swift
-// count becomes the first unlabelled argument
-OUDSBadgeCount(9, accessibilityLabel: "9 messages", status: .negative, size: .large)
-OUDSBadgeCount(3, accessibilityLabel: LocalizedStringKey("badge_count"), bundle: Bundle.module, status: .neutral, size: .medium)
-```
-
-> `count` must be of type `UInt8`.
-
-#### Icon badge
-
-**Before (v2.0.0)**:
-```swift
-OUDSBadge(status: .info(icon: Image("ic_info")), accessibilityLabel: "Info", size: .medium)
-OUDSBadge(status: .warning(icon: Image("ic_warn")), accessibilityLabel: LocalizedStringKey("badge_warn"), bundle: Bundle.module, size: .small)
-```
-
-**After (v2.2.0)**:
-```swift
-OUDSBadgeIcon(status: .info(icon: Image("ic_info")), accessibilityLabel: "Info", size: .medium)
-OUDSBadgeIcon(status: .warning(icon: Image("ic_warn")), accessibilityLabel: LocalizedStringKey("badge_warn"), bundle: Bundle.module, size: .small)
-```
+| If the call has… | Use |
+|---|---|
+| `count:` parameter | `OUDSBadgeCount(count, accessibilityLabel:status:size:)` — count is first unlabelled arg, type `UInt8` |
+| `status:` of type `StatusWithIcon` (carries an icon) | `OUDSBadgeIcon(status:accessibilityLabel:size:)` |
+| Neither | `OUDSBadgeStandard(accessibilityLabel:status:size:)` |
 
 ---
 
-## v2.2.0 → v2.3.0 — Deprecated symbols
+## v2.2.0 → v2.3.0 — OUDSImage migration
 
-### 1. `OUDSIcon` → `OUDSImage`
+### Universal rule
 
-`OUDSIcon` is a deprecated typealias for `OUDSImage`. The initialiser signature is identical.
+All components that used `icon: Image`, `flipIcon: Bool`, `renderingMode:` as separate parameters now use `OUDSImage`:
 
-**Before (v2.2.0)**:
-```swift
-OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like")
-OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
-OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
-OUDSIcon(asset: Image("ic_heart"), flipped: true, accessibilityLabel: "Back")
+```
+icon: Image("x")                  →  OUDSImage(asset: Image("x"))
+flipIcon: true                    →  OUDSImage(asset:, flipped: true)          [omit if false]
+renderingMode: .original          →  OUDSImage(asset:, renderingMode: .original) [omit if .template]
 ```
 
-**After (v2.3.0)**:
-```swift
-OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like")
-OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
-OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
-OUDSImage(asset: Image("ic_heart"), flipped: true, accessibilityLabel: "Back")
-```
-
-**Action**: Global find-and-replace `OUDSIcon(` → `OUDSImage(`.
-
-### 2. `OUDSButton` — initialisers with `icon:` deprecated
-
-Four `OUDSButton` initialisers that accepted a bare `Image` with separate `flipIcon`, `renderingMode` and `accessibilityLabel` parameters are deprecated.
-Migrate by wrapping the image and its configuration into a single `OUDSImage` value.
-
-**Parameter mapping**:
-
-| Old parameter on `OUDSButton` | New location |
-|---|---|
-| `icon: Image("ic_x")` | `image: OUDSImage(asset: Image("ic_x"))` |
-| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit entirely if `false` (default) |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit entirely if `.template` (default) |
-| `accessibilityLabel: "Label"` | `OUDSImage(asset:, accessibilityLabel: "Label")` |
-| `accessibilityLabel: LocalizedStringKey("key"), bundle: B` | `OUDSImage(asset:, accessibilityLabel: LocalizedStringKey("key"), bundle: B)` |
-
-#### Case A — text + icon, String label
-
-**Before (v2.2.0)**:
-```swift
-OUDSButton(text: "Like", icon: Image("ic_heart"), appearance: .default) {}
-OUDSButton(text: "Back", icon: Image("ic_chevron"), flipIcon: true, renderingMode: .original, appearance: .strong) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSButton(text: "Like", image: OUDSImage(asset: Image("ic_heart")), appearance: .default) {}
-OUDSButton(text: "Back", image: OUDSImage(asset: Image("ic_chevron"), flipped: true, renderingMode: .original), appearance: .strong) {}
-```
-
-#### Case B — text + icon, LocalizedStringKey
-
-**Before (v2.2.0)**:
-```swift
-OUDSButton(LocalizedStringKey("action_like"), icon: Image("ic_heart"), appearance: .default) {}
-OUDSButton(LocalizedStringKey("go_back"), tableName: "Nav", bundle: Bundle.module,
-           icon: Image("ic_chevron"), flipIcon: true, appearance: .minimal) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSButton(LocalizedStringKey("action_like"), image: OUDSImage(asset: Image("ic_heart")), appearance: .default) {}
-OUDSButton(LocalizedStringKey("go_back"), tableName: "Nav", bundle: Bundle.module,
-           image: OUDSImage(asset: Image("ic_chevron"), flipped: true), appearance: .minimal) {}
-```
-
-#### Case C — icon only, String accessibility label
-
-**Before (v2.2.0)**:
-```swift
-OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) {}
-OUDSButton(icon: Image("ic_share"), accessibilityLabel: "Share", renderingMode: .original, appearance: .strong) {}
-```
-
-**After (v2.3.0)**:
-```swift
-// accessibilityLabel moves into OUDSImage
-OUDSButton(image: OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like"), appearance: .default) {}
-OUDSButton(image: OUDSImage(asset: Image("ic_share"), accessibilityLabel: "Share", renderingMode: .original), appearance: .strong) {}
-```
-
-#### Case D — icon only, LocalizedStringKey accessibility label
-
-**Before (v2.2.0)**:
-```swift
-OUDSButton(icon: Image("ic_heart"),
-           accessibilityLabel: LocalizedStringKey("like_icon"),
-           bundle: Bundle.module,
-           appearance: .default) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSButton(image: OUDSImage(asset: Image("ic_heart"),
-                            accessibilityLabel: LocalizedStringKey("like_icon"),
-                            bundle: Bundle.module),
-           appearance: .default) {}
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `image: OUDSImage(asset: Image(…))`.
-2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Move `accessibilityLabel:` (String or LocalizedStringKey) and optional `bundle:` into `OUDSImage`.
-5. Remove the now-unused `flipIcon`, `renderingMode` and `accessibilityLabel` parameters from the `OUDSButton` call site.
-
----
-
-### 3. `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate` and `OUDSCheckboxPickerData` — initialisers with `icon:` deprecated
-
-Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
-Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
-
-**Parameter mapping** (applies to all three types):
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
-| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-#### OUDSCheckboxItem — String and LocalizedStringKey
-
-**Before (v2.2.0)**:
-```swift
-OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
-OUDSCheckboxItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
-OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 icon: Image(decorative: "ic_heart"), renderingMode: .original)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSCheckboxItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-OUDSCheckboxItem("Label", isOn: $isOn,
-                 icon: OUDSImage(asset: Image(systemName: "chevron.right"),
-                                 flipped: layoutDirection == .rightToLeft))
-OUDSCheckboxItem(LocalizedStringKey("agree_terms"), bundle: Bundle.module, isOn: $isOn,
-                 icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
-```
-
-#### OUDSCheckboxItemIndeterminate
-
-**Before (v2.2.0)**:
-```swift
-OUDSCheckboxItemIndeterminate("Label", selection: $state, icon: Image(decorative: "ic_heart"))
-OUDSCheckboxItemIndeterminate("Label", selection: $state,
-                               icon: Image(decorative: "il_brand"), renderingMode: .original,
-                               flipIcon: true)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSCheckboxItemIndeterminate("Label", selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
-OUDSCheckboxItemIndeterminate("Label", selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "il_brand"),
-                                               flipped: true, renderingMode: .original))
-// New in v2.3.0: LocalizedStringKey variant now available
-OUDSCheckboxItemIndeterminate(LocalizedStringKey("select_all"), bundle: Bundle.module,
-                               selection: $state,
-                               icon: OUDSImage(asset: Image(decorative: "ic_heart")))
-```
-
-#### OUDSCheckboxPickerData
-
-**Before (v2.2.0)**:
-```swift
-OUDSCheckboxPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
-OUDSCheckboxPickerData(tag: "b", label: "Option B",
-                       icon: Image(decorative: "il_brand"), renderingMode: .original)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSCheckboxPickerData(tag: "a", label: "Option A",
-                       icon: OUDSImage(asset: Image(systemName: "flame")))
-OUDSCheckboxPickerData(tag: "b", label: "Option B",
-                       icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
-
-### 4. `OUDSRadioItem` and `OUDSRadioPickerData` — initialisers with `icon:` deprecated
-
-Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
-Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
-
-**Parameter mapping** (applies to both types):
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
-| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-#### OUDSRadioItem — String and LocalizedStringKey
-
-**Before (v2.2.0)**:
-```swift
-OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
-OUDSRadioItem("Label", isOn: $isOn, icon: Image(decorative: "il_brand"), renderingMode: .original)
-OUDSRadioItem("Label", isOn: $isOn,
-              icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
-OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              icon: Image(decorative: "ic_heart"), renderingMode: .original)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSRadioItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
-OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-OUDSRadioItem("Label", isOn: $isOn,
-              icon: OUDSImage(asset: Image(systemName: "chevron.right"),
-                              flipped: layoutDirection == .rightToLeft))
-OUDSRadioItem(LocalizedStringKey("option_label"), bundle: Bundle.module, isOn: $isOn,
-              icon: OUDSImage(asset: Image(decorative: "ic_heart"), renderingMode: .original))
-```
-
-#### OUDSRadioPickerData
-
-**Before (v2.2.0)**:
-```swift
-OUDSRadioPickerData(tag: "a", label: "Option A", icon: Image(systemName: "flame"))
-OUDSRadioPickerData(tag: "b", label: "Option B", icon: Image(decorative: "il_brand"))
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSRadioPickerData(tag: "a", label: "Option A",
-                    icon: OUDSImage(asset: Image(systemName: "flame")))
-OUDSRadioPickerData(tag: "b", label: "Option B",
-                    icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
-
-### 5. `OUDSSwitchItem` — initialisers with `icon:` deprecated
-
-Initialisers that accepted a bare `Image` with separate `flipIcon` and `renderingMode` parameters are deprecated.
-Migrate by wrapping the image and its configuration into a single `OUDSImage?` value.
-
-**Parameter mapping**:
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image("ic_x")` | `icon: OUDSImage(asset: Image("ic_x"))` |
-| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-**Before (v2.2.0)**:
-```swift
-OUDSSwitchItem("Label", isOn: $isOn, icon: Image(decorative: "ic_heart"))
-OUDSSwitchItem("Label", isOn: $isOn,
-               icon: Image(decorative: "il_brand"), renderingMode: .original)
-OUDSSwitchItem("Label", isOn: $isOn,
-               icon: Image(systemName: "chevron.right"), flipIcon: layoutDirection == .rightToLeft)
-OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               icon: Image(decorative: "ic_wifi"), renderingMode: .original)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSSwitchItem("Label", isOn: $isOn, icon: OUDSImage(asset: Image(decorative: "ic_heart")))
-OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
-OUDSSwitchItem("Label", isOn: $isOn,
-               icon: OUDSImage(asset: Image(systemName: "chevron.right"),
-                               flipped: layoutDirection == .rightToLeft))
-OUDSSwitchItem(LocalizedStringKey("wifi_setting"), bundle: Bundle.module, isOn: $isOn,
-               icon: OUDSImage(asset: Image(decorative: "ic_wifi"), renderingMode: .original))
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the call site.
-
-### 6. `OUDSFilterChip` and `OUDSSuggestionChip` — initialisers with `icon: Image` deprecated
-
-Initialisers accepting a bare `Image` with a separate `renderingMode` are deprecated.
-
-> **Note**: Unlike other components, chips do **not** support `flipIcon`. The `accessibilityLabel` parameter stays on the chip itself — do not move it into `OUDSImage`.
-
-**Parameter mapping**:
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-**Before (v2.2.0)**:
-```swift
-OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") {}
-OUDSSuggestionChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
-OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") {}
-OUDSSuggestionChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
-
-OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) {}
-OUDSFilterChip(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original) {}
-OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) {}
-OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
-
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
-OUDSFilterChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-3. Remove the now-unused `renderingMode` parameter from the chip call site.
-4. Leave `accessibilityLabel` as a separate parameter on the chip — do not set it on `OUDSImage`.
-
-### 7. `OUDSChipPickerData.Layout` — new static factories for OUDSImage
-
-`@frozen` is preserved. Two static factory methods have been added to accept `OUDSImage` directly.
-The existing cases still compile and remain valid.
-
-**Before (v2.2.0)** — case-based form:
-```swift
-OUDSChipPickerData(tag: .x, layout: .icon(icon: Image("ic_heart"), accessibilityLabel: "Heart"))
-OUDSChipPickerData(tag: .y, layout: .icon(icon: Image("ic_brand"), accessibilityLabel: "Brand", renderingMode: .original))
-OUDSChipPickerData(tag: .z, layout: .textAndIcon("Label", icon: Image("ic_heart")))
-OUDSChipPickerData(tag: .w, layout: .textAndIcon("Brand", icon: Image("ic_brand"), renderingMode: .original))
-```
-
-**After (v2.3.0)** — preferred form using static factories:
-```swift
-OUDSChipPickerData(tag: .x, layout: .icon(OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart"))
-OUDSChipPickerData(tag: .y, layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand"))
-OUDSChipPickerData(tag: .z, layout: .textAndIcon("Label", image: OUDSImage(asset: Image("ic_heart"))))
-OUDSChipPickerData(tag: .w, layout: .textAndIcon("Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
-```
-
-**Required action**: Migrate to the static factory form when convenient. The old form still compiles.
-
-### 8. `OUDSTag.Status` — factories with `icon: Image` deprecated
-
-The static factories `OUDSTag.Status.neutral(icon:flipIcon:renderingMode:)` and `OUDSTag.Status.accent(icon:flipIcon:renderingMode:)` are deprecated.
-
-> Only these two factories are affected. All others (`.positive`, `.negative`, `.warning`, `.info`, `.neutral(bullet:)`, `.accent(bullet:)`) are unchanged.
-
-**Parameter mapping**:
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image(…)` | `OUDSImage(asset: Image(…))` |
-| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-**Before (v2.2.0)**:
-```swift
-OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
-OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
-OUDSTag(label: "Label", status: .neutral(icon: Image("ic_brand"), renderingMode: .original))
-OUDSTag(label: "Label", status: .accent(icon: Image("ic_brand"), renderingMode: .original))
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"))))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the factory call.
-
-### 9. `OUDSLink` — initialisers with `icon: Image` deprecated
-
-The two `OUDSLink` initialisers that accepted a bare `Image` with a separate `renderingMode` are deprecated.
-
-> Navigation initialisers (`init(text:indicator:…)` and `init(_:…:indicator:…)`) are **unchanged**.
-> `OUDSLink` does not support `flipIcon` for custom icons — only back/next indicators flip automatically for RTL.
-
-**Parameter mapping**:
-
-| Old parameter | New location |
-|---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
-| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
-
-**Before (v2.2.0)**:
-```swift
-OUDSLink(text: "Learn more", icon: Image("ic_heart"), size: .default) {}
-OUDSLink(text: "Brand", icon: Image("ic_brand"), renderingMode: .original, size: .default) {}
-OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
-         icon: Image("ic_heart"), size: .default) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
-OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
-OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
-         icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
-```
-
-**Required action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
-2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-3. Remove the now-unused `renderingMode` parameter from the call site.
-
-### 10. `OUDSTextInput` and `OUDSTextInput.TrailingAction` — `icon:` / `leadingIcon:` deprecated
-
-#### OUDSTextInput — leadingIcon
-
-**Parameter mapping**:
-
-| Old parameter | New location |
-|---|---|
-| `leadingIcon: Image(…)` | `leadingIcon: OUDSImage(asset: Image(…))` |
-| `flipLeadingIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` |
-| `leadingIconRenderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` |
-
-**Before (v2.2.0)**:
-```swift
-OUDSTextInput(label: "Email", text: $text, leadingIcon: Image(systemName: "envelope"))
-OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
-OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), flipLeadingIcon: true)
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSTextInput(label: "Email", text: $text, leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
-OUDSTextInput(label: "Brand", text: $text, leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
-OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic"), flipped: true))
-```
-
-#### OUDSTextInput.TrailingAction
-
-**Before (v2.2.0)**:
-```swift
-OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
-OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", renderingMode: .original) {}
-OUDSTextInput.TrailingAction(icon: Image("ic"), actionHint: "Hint", flipIcon: true) {}
-```
-
-**After (v2.3.0)**:
-```swift
-OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
-OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), actionHint: "Brand") {}
-OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic"), flipped: true), actionHint: "Hint") {}
-```
-
-**Required action**:
-1. Replace `leadingIcon: Image(…)` with `leadingIcon: OUDSImage(asset: Image(…))`.
-2. Move `flipLeadingIcon:` → `OUDSImage(asset:, flipped:)` (omit if `false`).
-3. Move `leadingIconRenderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
-4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(icon: OUDSImage(asset: Image(…)), …)`.
-5. Move `flipIcon:` and `renderingMode:` inside the `OUDSImage` for `TrailingAction`.
+### OUDSIcon → OUDSImage
+
+`OUDSIcon` is a deprecated typealias. Global find-and-replace: `OUDSIcon(` → `OUDSImage(`.
+
+### Components index
+
+| Component | Old params removed | New param | Notes |
+|---|---|---|---|
+| `OUDSButton` | `icon:`, `flipIcon:`, `renderingMode:`, `accessibilityLabel:` | `image: OUDSImage` | `accessibilityLabel` moves **into** `OUDSImage` |
+| `OUDSCheckboxItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | — |
+| `OUDSCheckboxItemIndeterminate` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | New `LocalizedStringKey` init added |
+| `OUDSCheckboxPickerData` | `icon: Image?`, `renderingMode:` | `icon: OUDSImage?` | — |
+| `OUDSRadioItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | — |
+| `OUDSRadioPickerData` | `icon: Image?` | `icon: OUDSImage?` | — |
+| `OUDSSwitchItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage?` | `isReversed` defaults to `true` |
+| `OUDSFilterChip` / `OUDSSuggestionChip` | `icon: Image`, `renderingMode:` | `icon: OUDSImage` | No `flipIcon`; `accessibilityLabel` **stays on chip** |
+| `OUDSChipPickerData.Layout` | cases `.icon(icon: Image, …)` / `.textAndIcon(icon: Image, …)` | static factories `.icon(OUDSImage, accessibilityLabel:)` / `.textAndIcon(_, image: OUDSImage)` | Old cases still compile |
+| `OUDSTag.Status` | `neutral/accent(icon: Image, flipIcon:, renderingMode:)` | `neutral/accent(icon: OUDSImage)` | Deprecated static factories; other status unchanged |
+| `OUDSLink` | `icon: Image?`, `renderingMode:` | `icon: OUDSImage?` | No `flipIcon`; navigation inits unchanged |
+| `OUDSTextInput` | `leadingIcon: Image?`, `flipLeadingIcon:`, `leadingIconRenderingMode:` | `leadingIcon: OUDSImage?` | — |
+| `OUDSTextInput.TrailingAction` | `icon: Image`, `flipIcon:`, `renderingMode:` | `icon: OUDSImage` | — |
 
 ---
 
 ## Verification checklist
 
-After completing all transformations, run:
-
 ```bash
-# Build — must succeed with zero errors
 swift build
 
-# Deprecation warnings — must return no OUDS-related lines
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
 
-# Residual deprecated or removed symbols — must return no results
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
   --include="*.swift" .
 
-# Tests — must pass
 swift test
 ```

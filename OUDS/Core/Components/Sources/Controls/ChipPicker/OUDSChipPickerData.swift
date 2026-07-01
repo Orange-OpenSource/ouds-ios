@@ -41,10 +41,14 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// Layout with text only
         case text(text: String)
 
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
         /// Layout with icon only and its accessibility label.
         /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
         case icon(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template)
 
+        // TODO: For version v3, use OUDSImage instead of icon, accessibilityLabel and renderingMode
+        // Not done yet to not break public API
         /// Layout with text and icon.
         /// The `renderingMode` controls whether the icon is tinted (`.template`, default) or displayed as-is (`.original`).
         case textAndIcon(text: String, icon: Image, renderingMode: Image.TemplateRenderingMode = .template)
