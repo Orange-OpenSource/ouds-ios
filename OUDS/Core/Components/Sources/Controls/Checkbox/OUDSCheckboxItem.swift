@@ -190,7 +190,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -319,7 +319,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -443,7 +443,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -548,7 +548,7 @@ public struct OUDSCheckboxItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
     ///   - action: An additional action to trigger when the checkbox has been pressed
-    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) with image: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSCheckboxItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

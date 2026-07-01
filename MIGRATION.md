@@ -110,7 +110,7 @@ Use the new initialisers that accept an `OUDSImage?` value instead; `OUDSImage` 
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` |
 | `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
@@ -197,7 +197,7 @@ Use the new initialisers that accept an `OUDSImage?` value instead.
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` |
 | `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
@@ -262,7 +262,7 @@ Use the new initialisers that accept an `OUDSImage?` value instead.
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` |
 | `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
@@ -312,7 +312,7 @@ The `accessibilityLabel` parameter remains on the chip itself; do not set it on 
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` (FilterChip) / `icon: OUDSImage(asset: Image(…))` (SuggestionChip — see note) |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` (FilterChip) / `image: OUDSImage(asset: Image(…))` (SuggestionChip — see note) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
 > **Note on parameter label differences between the two chip components:**
@@ -338,10 +338,10 @@ OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original)
 **After (v2.3.0)**:
 ```swift
 // OUDSSuggestionChip — icon: OUDSImage (parameter label unchanged for these 3 variants)
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 
 // OUDSFilterChip — image: OUDSImage (parameter label renamed from icon: to image:)
 OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
@@ -404,7 +404,7 @@ OUDSChipPickerData(tag: .w,
 ### Deprecated OUDSTag.Status factories with `icon: Image` parameter
 
 The static factories `OUDSTag.Status.neutral(icon:flipIcon:renderingMode:)` and `OUDSTag.Status.accent(icon:flipIcon:renderingMode:)` are deprecated.
-Use the new overloads that accept an `OUDSImage` value instead.
+Use the new overloads that accept an `OUDSImage` value instead with parameter named `image` instead of `icon`.
 
 > Only the `.neutral(icon:)` and `.accent(icon:)` factories are affected.
 > All other factories (`.positive`, `.negative`, `.warning`, `.info`, `.neutral(bullet:)`, `.accent(bullet:)`) are unchanged.
@@ -429,14 +429,14 @@ OUDSTag(label: "Label", status: .accent(icon: Image("ic_brand"), renderingMode: 
 
 **After (v2.3.0)**:
 ```swift
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"))))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
 ```
 
 **Required Action**:
-1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`
+1. Replace `icon: Image(…)` with `image: OUDSImage(asset: Image(…))`
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the factory call
@@ -457,7 +457,7 @@ Use the new overloads that accept an `OUDSImage?` value instead.
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
 **Before (v2.2.0)**:
@@ -523,7 +523,7 @@ OUDSTextInput(label: "Label", text: $text, leadingImage: OUDSImage(asset: Image(
 
 | Old parameter | New location |
 |---|---|
-| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` |
 | `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
@@ -535,15 +535,15 @@ OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", rende
 
 **After (v2.3.0)**:
 ```swift
-OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
-OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), actionHint: "Brand") {}
+OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
+OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), actionHint: "Brand") {}
 ```
 
 **Required Action**:
 1. Replace `leadingIcon: Image(…)` with `leadingImage: OUDSImage(asset: Image(…))`
 2. Move `flipLeadingIcon:` → `OUDSImage(asset:, flipped:)` (omit if `false`)
 3. Move `leadingIconRenderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
-4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(icon: OUDSImage(asset: Image(…)), …)`
+4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(image: OUDSImage(asset: Image(…)), …)`
 5. Move `flipIcon:` and `renderingMode:` inside the `OUDSImage` construction
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSTextInput` with the same pattern applied to all other OUDS components.

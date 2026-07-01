@@ -14,8 +14,6 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
-// swiftlint:disable line_length
-
 /// The data to use to populate the picker of ``OUDSCheckboxItem`` objects.
 /// Each property in this ``OUDSCheckboxPickerData`` is used to define the suitable ``OUDSCheckboxItem``.
 ///
@@ -51,6 +49,43 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// Can be useful for automated tests for examples or anything else.
     /// By default is nil as the logic of identifiers is in the hand of the users.
     let accessibilityIdentifier: String?
+
+    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
+    ///
+    /// - Parameters:
+    ///    - tag: a value to discriminate one checkbox to another
+    ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
+    ///    - description: An optional text, default set to nil
+    ///    - icon: An optional image, default set to nil
+    ///    - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
+    ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - isError: True if in an error context, false otherwise (default)
+    ///    - isReadOnly: True if read only, false otherwise (default)
+    ///    - hasDivider: True if a divider must be added for the current ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
+    @available(*, deprecated, message: "Use OUDSCheckboxPickerData(tag:label:description:image:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:)  instead.")
+    public init(tag: Tag,
+                label: String,
+                description: String? = nil,
+                icon: Image? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                accessibilityIdentifier: String? = nil)
+    {
+        let oudsImage = icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) }
+        self.init(tag: tag,
+                  label: label,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  accessibilityIdentifier: accessibilityIdentifier)
+    }
 
     /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
     ///
@@ -100,44 +135,5 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
         self.hasDivider = hasDivider
         self.accessibilityIdentifier = accessibilityIdentifier
     }
-
-    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
-    ///
-    /// - Parameters:
-    ///    - tag: a value to discriminate one checkbox to another
-    ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
-    ///    - description: An optional text, default set to nil
-    ///    - icon: An optional image, default set to nil
-    ///    - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
-    ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
-    ///    - isError: True if in an error context, false otherwise (default)
-    ///    - isReadOnly: True if read only, false otherwise (default)
-    ///    - hasDivider: True if a divider must be added for the current ``OUDSCheckboxItem``, false otherwise (default)
-    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    @available(*, deprecated, message: "Use OUDSCheckboxPickerData(tag:label:description:image:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) with icon: OUDSImage? instead.")
-    public init(tag: Tag,
-                label: String,
-                description: String? = nil,
-                icon: Image? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                accessibilityIdentifier: String? = nil)
-    {
-        let oudsImage = icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) }
-        self.init(tag: tag,
-                  label: label,
-                  description: description,
-                  image: oudsImage,
-                  isReversed: isReversed,
-                  isError: isError,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  accessibilityIdentifier: accessibilityIdentifier)
-    }
 }
-
-// swiftlint:enable line_length
 #endif

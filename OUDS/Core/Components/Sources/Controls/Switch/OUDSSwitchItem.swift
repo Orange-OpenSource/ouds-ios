@@ -174,7 +174,7 @@ public struct OUDSSwitchItem: View {
     ///   - isReadOnly: True if component is in read only
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -297,7 +297,7 @@ public struct OUDSSwitchItem: View {
     ///   - isReadOnly: True if component is in read only
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
@@ -413,7 +413,7 @@ public struct OUDSSwitchItem: View {
     ///   - isReadOnly: True if component is in read only
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -512,7 +512,7 @@ public struct OUDSSwitchItem: View {
     ///   - isReadOnly: True if component is in read only
     ///   - hasDivider: If `true` a divider is added at the bottom of the view
     ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,

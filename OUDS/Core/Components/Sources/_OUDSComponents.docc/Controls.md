@@ -655,12 +655,12 @@ OUDSTextInput(label: "Brand", text: $text,
               leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
 
 // Add a trailing button for additional action
-let trailingAction = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")),
+let trailingAction = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")),
                                                    actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 
 // Add a trailing button with raw image (not tinted)
-let trailingActionRaw = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"),
+let trailingActionRaw = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"),
                                                                       renderingMode: .original),
                                                       actionHint: "Brand") { /* action */ }
 OUDSTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)

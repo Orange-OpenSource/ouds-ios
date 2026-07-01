@@ -28,7 +28,7 @@ import SwiftUI
 ///     OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original), accessibilityLabel: "Heart") {}
 ///
 ///     // Text only as not selected (default unselected)
-///     OUDSFilterChip(image: "Label") {}
+///     OUDSFilterChip(text: "Label") {}
 ///
 ///     // Text from a localizable and a bundle
 ///     OUDSFilterChip(LocalizedStringKey("category_filter"), bundle: Bundle.module) {}
@@ -156,7 +156,7 @@ public struct OUDSFilterChip: View {
     ///    - action: The action to perform when the user triggers the chip
     public init(image: OUDSImage, text: String, selected: Bool = false, action: @escaping () -> Void) {
         if text.isEmpty {
-            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(icon:accessibilityLabel:selected:action).")
+            OL.warning("The OUDSFilterChip should not have an empty text, prefer instead OUDSFilterChip(image:accessibilityLabel:selected:action).")
         }
         layout = .textAndIcon(text: text, icon: image, iconPosition: .trailing)
         self.action = action

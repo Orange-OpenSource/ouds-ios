@@ -67,18 +67,19 @@ struct TrailingActionContainer: View {
         }
     }
 
-    // swiftlint:disable accessibility_label_for_image
     private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
+        precondition(trailingAction.icon.asset != nil, "OUDSTextInput.TrailingAction.icon must be created with an asset Image")
         // Inject the actionHint as accessibilityLabel into a new OUDSImage for OUDSButton icon-only
-        let imageWithA11y = OUDSImage(asset: trailingAction.icon.asset ?? Image(""), // Never happens
+        // swiftlint:disable:next force_unwrapping
+        let imageWithA11y = OUDSImage(asset: trailingAction.icon.asset!,
                                       flipped: trailingAction.icon.flipped,
                                       accessibilityLabel: trailingAction.actionHint,
                                       renderingMode: trailingAction.icon.renderingMode)
+
         return OUDSButton(image: imageWithA11y,
                           appearance: .minimal,
                           style: status == .loading ? .loading : .default,
                           action: trailingAction.action)
     }
-    // swiftlint:enable accessibility_label_for_image
 }
 #endif

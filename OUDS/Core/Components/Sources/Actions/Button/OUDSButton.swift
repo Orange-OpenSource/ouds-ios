@@ -44,11 +44,11 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only with default appearance
-///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
+///     OUDSButton(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Like", appearance: .default) { /* the action to process */ }
 ///     // Or simpler
-///     OUDSButton(icon: Image("ic_heart"), accessibilityLabel: "Like") { /* the action to process */ }
+///     OUDSButton(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Like") { /* the action to process */ }
 ///     // With an image to keep raw without tint
-///     OUDSButton(icon: Image("il_someImage"), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
+///     OUDSButton(image: OUDSImage(asset: Image("il_someImage")), accessibilityLabel: "Like", renderingMode: .original) { /* the action to process */ }
 ///
 ///     // Text only with negative appearance
 ///     OUDSButton(text: "Delete", appearance: .negative,  style: .default) { /* the action to process */ }
@@ -59,10 +59,10 @@ import SwiftUI
 ///     OUDSButton(text: "Delete", style: .loading) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance
-///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong) { /* the action to process */ }
+///     OUDSButton(text: "Validate", image: OUDSImage(asset: Image("ic_heart")), appearance: .strong) { /* the action to process */ }
 ///
 ///     // Text and icon with strong appearance and button taking full width
-///     OUDSButton(text: "Validate", icon: Image("ic_heart"), appearance: .strong, isFullWidth: true) { /* the action to process */ }
+///     OUDSButton(text: "Validate", image: OUDSImage(asset: Image("ic_heart")), appearance: .strong, isFullWidth: true) { /* the action to process */ }
 ///
 ///     // Localizable from bundle can also be used
 ///     OUDSButton(LocalizedStringKey("validate_button"), bundle: Bundle.module, appearance: .strong) { }
@@ -73,7 +73,7 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSButton(text: "Button",
-///                icon: Image(systemName: "figure.handball"),
+///                image: OUDSImage(asset: Image(systemName: "figure.handball")),
 ///                flipIcon: layoutDirection == .rightToLeft)
 /// ```
 ///

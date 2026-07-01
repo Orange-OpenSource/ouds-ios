@@ -116,22 +116,19 @@ OUDS components accept `Image` — the bare SwiftUI type. Calling any modifier o
 ```swift
 OUDSButton(
     text: "Add",
-    icon: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
+    image: Image(systemName: "plus").accessibilityHidden(true), // ❌ compile error: Image → some View
     appearance: .default) {}
 
 OUDSLink(
     text: "Back",
-    icon: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
+    image: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     size: .default) {}
 ```
 
 **Always do this — pass a bare `Image` inside `OUDSImage`, swiftlint comment on the line before:**
 ```swift
 // swiftlint:disable:next accessibility_label_for_image
-OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
-
-// swiftlint:disable:next accessibility_label_for_image
-OUDSLink(text: "Back", icon: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
+OUDSLink(text: "Back", image: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
 OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
@@ -200,7 +197,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 OUDSButton(text: "Label", appearance: .default) {}
 OUDSButton(text: "Label", appearance: .default, style: .loading) {}
 OUDSButton(text: "Label", icon: Image("ic"), appearance: .default) {}
-OUDSButton(icon: Image("ic"), accessibilityLabel: "Label") {}
+OUDSButton(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
 ```
 
 ---
@@ -350,10 +347,10 @@ OUDSPasswordInput(label: "Password", password: $password, isHiddenPassword: $isH
 
 ```swift
 OUDSSuggestionChip(text: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), text: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
-OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), accessibilityLabel: "Label") {} // raw image (not tinted)
 OUDSFilterChip(text: "Label") {}
 OUDSFilterChip(image: OUDSImage(asset: Image("ic")), text: "Label") {}
 OUDSFilterChip(image: OUDSImage(asset: Image("ic"), renderingMode: .original), text: "Label") {} // raw image (not tinted)
@@ -380,9 +377,9 @@ OUDSTextInput(label: "Label", text: $text,
 OUDSTextInput(label: "Label", text: $text,
               leadingImage: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
+              trailingAction: .init(image: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: OUDSImage(asset: Image("ic"), renderingMode: .original),
+              trailingAction: .init(image: OUDSImage(asset: Image("ic"), renderingMode: .original),
                                     actionHint: "Hint") {}) // raw image
 // Helper / error status → see §6 Common patterns
 ```
@@ -459,11 +456,11 @@ OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", 
 
 ```swift
 OUDSTag(label: "Label")
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic"), flipped: true))) // flipped for RTL
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic"))))
-OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"))))
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
+OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic"), flipped: true))) // flipped for RTL
+OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"))))
+OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic"), renderingMode: .original))) // raw image (not tinted)
 OUDSTag(label: "Label", status: .neutral(bullet: true))
 ```
 

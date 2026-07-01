@@ -99,7 +99,7 @@ public struct OUDSSuggestionChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: OUDSImage(asset: icon, renderingMode: renderingMode), text: resolvedText, action: action)
+        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: resolvedText, action: action)
     }
 
     /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
@@ -123,7 +123,7 @@ public struct OUDSSuggestionChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: image, text: resolvedText, action: action)
+        self.init(image: image, text: resolvedText, action: action)
     }
 
     // MARK: - Initializers — icon + String text (canonical)
@@ -137,27 +137,27 @@ public struct OUDSSuggestionChip: View {
     ///    - action: The action to perform when the user triggers the chip
     @available(*, deprecated, message: "Use OUDSSuggestionChip(icon:text:action:) instead.")
     public init(icon: Image, text: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(icon: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, action: action)
+        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, action: action)
     }
 
     /// Creates a chip with text and icon.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+    ///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
     /// ```
     ///
     /// No accessibility hint is defined for this component.
     /// **Do not forget to define your own accessibility hint depending to what you want to do for the user when a tap is made.**
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
+    ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - text: The text to display in the chip, should not be empty
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: OUDSImage, text: String, action: @escaping () -> Void) {
+    public init(image: OUDSImage, text: String, action: @escaping () -> Void) {
         if text.isEmpty {
             OL.warning("The OUDSSuggestionChip should not have an empty text! Prefer instead OUDSSuggestionChip(icon:accessibilityLabel:action).")
         }
-        layout = .textAndIcon(text: text, icon: icon, iconPosition: .leading)
+        layout = .textAndIcon(text: text, icon: image, iconPosition: .leading)
         self.action = action
     }
 
@@ -172,7 +172,7 @@ public struct OUDSSuggestionChip: View {
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - renderingMode: The rendering mode to apply on the icon
     ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon: OUDSImage, accessibilityLabel:tableName:bundle:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:accessibilityLabel:tableName:bundle:action:) instead.")
     public init(icon: Image,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
@@ -181,31 +181,31 @@ public struct OUDSSuggestionChip: View {
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: resolvedText, action: action)
+        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: resolvedText, action: action)
     }
 
     /// Creates a chip with an icon only and a localized accessibility label.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")),
+    ///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")),
     ///                        accessibilityLabel: LocalizedStringKey("like_chip"),
     ///                        bundle: Bundle.module) {}
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
+    ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - key: The text to vocalize with Voice Over, as a `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: OUDSImage,
+    public init(image: OUDSImage,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 action: @escaping () -> Void)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(icon: icon, accessibilityLabel: resolvedText, action: action)
+        self.init(image: image, accessibilityLabel: resolvedText, action: action)
     }
 
     // MARK: - Initializers — icon + String accessibilityLabel (canonical)
@@ -217,26 +217,26 @@ public struct OUDSSuggestionChip: View {
     ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip action
     ///    - renderingMode: The rendering mode to apply on the icon
     ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon: OUDSImage, accessibilityLabel:action:) instead.")
+    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:accessibilityLabel:action:) instead.")
     public init(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(icon: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, action: action)
+        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, action: action)
     }
 
     /// Creates a chip with an icon only.
     ///
     /// ```swift
-    ///     OUDSSuggestionChip(icon: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+    ///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
     /// ```
     ///
     /// - Parameters:
-    ///    - icon: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
+    ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode. Its accessibility label will be ignored.
     ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip action, should not be empty
     ///    - action: The action to perform when the user triggers the chip
-    public init(icon: OUDSImage, accessibilityLabel: String, action: @escaping () -> Void) {
+    public init(image: OUDSImage, accessibilityLabel: String, action: @escaping () -> Void) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSSuggestionChip should not have an empty accessibility label, think about your disabled users!")
         }
-        layout = .icon(icon, accessibilityLabel)
+        layout = .icon(image, accessibilityLabel)
         self.action = action
     }
 

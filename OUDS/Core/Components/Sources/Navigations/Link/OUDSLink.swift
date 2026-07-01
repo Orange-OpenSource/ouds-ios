@@ -32,10 +32,10 @@ import SwiftUI
 ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
 ///
 ///     // Text and icon in default size
-///     OUDSLink(text: "Feedback", icon: OUDSImage(asset: Image("ic_heart")), size: .default) { }
+///     OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .default) { }
 ///
 ///     // Text and icon with raw image (not tinted)
-///     OUDSLink(text: "Feedback", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
+///     OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
 /// ```
 ///
 /// ## Navigation layout

@@ -27,6 +27,7 @@ import SwiftUI
 ///  These messages carry functional meaning and help guide user response or acknowledgment.
 @frozen public enum OUDSAlertStatus {
 
+    // TODO: For v3, rename the "icon" parameter to "image" to be aligned with other enums
     /// Neutral status can be used as a generic informative alert without semantic meaning or colour association.
     /// Suitable for a wide range of contexts — such as tips, general information, or descriptive labels — where
     /// no specific feedback or urgency is required. Appropriate for help sections, dashboards, or onboarding flows.
@@ -34,6 +35,7 @@ import SwiftUI
     /// - Parameter icon: Optional `OUDSImage`  to be displayed in the alert. Pass `nil` if no icon is needed.
     case neutral(icon: OUDSImage? = nil)
 
+    // TODO: For v3, rename the "icon" parameter to "image" to be aligned with other enums
     /// Accent status uses brand colours to draw attention to promotional or highlighted information while remaining non-critical. Ideal for marketing content,
     /// announcements, or feature highlights, where you want to subtly engage users without introducing functional semantics. Ideal for promotional banners,
     /// product updates, or customer engagement moments.

@@ -161,7 +161,7 @@ import SwiftUI
 ///                   leadingImage: OUDSImage(asset: Image("ic_arrow"), flipped: layoutDirection == .rightToLeft))
 ///
 ///     // Add a trailing button with local image named "ic_cross" for additional action
-///     let trailingAction = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
+///     let trailingAction = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
 ///     OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 ///
 ///     // With helper text
@@ -258,7 +258,7 @@ public struct OUDSTextInput: View {
         ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
         ///   - renderingMode: The rendering mode to apply on the icon
         ///   - action: The action to perform when the user triggers the button
-        @available(*, deprecated, message: "Use OUDSTextInput.TrailingAction(icon: OUDSImage, actionHint:action:) instead.")
+        @available(*, deprecated, message: "Use OUDSTextInput.TrailingAction(image:actionHint:action:) instead.")
         public init(icon: Image, actionHint: String, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
             self.init(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode),
                       actionHint: actionHint,

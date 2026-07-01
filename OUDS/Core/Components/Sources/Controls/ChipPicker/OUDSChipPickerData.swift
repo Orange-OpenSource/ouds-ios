@@ -71,8 +71,10 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// - Parameters:
         ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
         ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip
-        public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
-            .icon(icon: image.asset ?? Image(""), accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
+        @MainActor public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
+            precondition(image.asset != nil, "OUDSChipPickerData.Layout.icon(_:image:) requires an reliable OUDSImage")
+            // swiftlint:disable:next force_unwrapping
+            return .icon(icon: image.image!, accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
         }
 
         /// Creates a text + icon layout from an ``OUDSImage``.
@@ -92,8 +94,10 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         /// - Parameters:
         ///    - text: The text to display in the chip
         ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
-        public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
-            .textAndIcon(text: text, icon: image.asset ?? Image(""), renderingMode: image.renderingMode)
+        @MainActor public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
+            precondition(image.asset != nil, "OUDSChipPickerData.Layout.textAndIcon(_:image:) requires an reliable OUDSImage")
+            // swiftlint:disable:next force_unwrapping
+            return .textAndIcon(text: text, icon: image.image!, renderingMode: image.renderingMode)
         }
     }
 

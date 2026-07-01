@@ -74,7 +74,7 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - isReadOnly: True if read only, false otherwise (default)
     ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
     ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
-    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:image:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) with icon: OUDSImage? instead.")
+    @available(*, deprecated, message: "Use OUDSRadioPickerData(tag:label:extraLabel:description:image:isOutlined:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:) instead.")
     public init(tag: Tag,
                 label: String,
                 extraLabel: String? = nil,
