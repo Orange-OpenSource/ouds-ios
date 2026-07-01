@@ -73,8 +73,7 @@ import SwiftUI
 ///     @Environment(\.layoutDirection) var layoutDirection
 ///
 ///     OUDSButton(text: "Button",
-///                image: OUDSImage(asset: Image(systemName: "figure.handball")),
-///                flipIcon: layoutDirection == .rightToLeft)
+///                image: OUDSImage(asset: Image(systemName: "figure.handball"), flipped: layoutDirection == .rightToLeft))
 /// ```
 ///
 /// ## Styles

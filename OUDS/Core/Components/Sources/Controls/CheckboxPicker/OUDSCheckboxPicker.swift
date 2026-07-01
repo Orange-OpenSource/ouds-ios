@@ -45,16 +45,16 @@ import SwiftUI
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
 ///                                        description: "No alcohol, only tasty flavors",
-///                                        image: Image(systemName: "flame")),
+///                                        image: OUDSImage(asset: Image(systemName: "flame")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_2",
 ///                                        label: "IPA beer",
 ///                                        description: "From Brewdog company",
-///                                        image: Image(systemName: "dog.fill")),
+///                                        image: OUDSImage(asset: Image(systemName: "dog.fill")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_3",
 ///                                        label: "Mineral water",
-///                                        image: Image(systemName: "waterbottle.fill")),
+///                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))
 ///         ]
 ///     }
 ///

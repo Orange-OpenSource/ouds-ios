@@ -45,16 +45,16 @@ import SwiftUI
 ///                                         label: "Virgin Holy Lava",
 ///                                         extraLabel: "Very spicy",
 ///                                         description: "No alcohol, only tasty flavors",
-///                                         image: Image(systemName: "flame")),
+///                                         image: OUDSImage(asset: Image(systemName: "flame")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_2",
 ///                                         label: "IPA beer",
 ///                                         description: "From Brewdog company",
-///                                         image: Image(systemName: "dog.fill")),
+///                                         image: OUDSImage(asset: Image(systemName: "dog.fill")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_3",
 ///                                         label: "Mineral water",
-///                                         image: Image(systemName: "waterbottle.fill")),
+///                                         image: OUDSImage(asset: Image(systemName: "waterbottle.fill")),
 ///         ]
 ///     }
 ///

@@ -196,7 +196,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 ```swift
 OUDSButton(text: "Label", appearance: .default) {}
 OUDSButton(text: "Label", appearance: .default, style: .loading) {}
-OUDSButton(text: "Label", icon: Image("ic"), appearance: .default) {}
+OUDSButton(text: "Label", image: OUDSImage(asset: Image("ic")), appearance: .default) {}
 OUDSButton(image: OUDSImage(asset: Image("ic")), accessibilityLabel: "Label") {}
 ```
 
