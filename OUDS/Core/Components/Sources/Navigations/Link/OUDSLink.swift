@@ -32,10 +32,10 @@ import SwiftUI
 ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .small) { }
 ///
 ///     // Text and icon in default size
-///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+///     OUDSLink(text: "Feedback", icon: OUDSImage(asset: Image("ic_heart")), size: .default) { }
 ///
 ///     // Text and icon with raw image (not tinted)
-///     OUDSLink(text: "Feedback", icon: Image("ic_brand"), renderingMode: .original, size: .default) { /* the action to process */ }
+///     OUDSLink(text: "Feedback", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) { }
 /// ```
 ///
 /// ## Navigation layout
@@ -81,7 +81,7 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSLink: View {
 
-    // MARK: Stored Properties
+    // MARK: - Stored Properties
 
     private let layout: Layout
     private let text: String
@@ -106,53 +106,73 @@ public struct OUDSLink: View {
     enum Layout {
         case indicator(OUDSLink.Indicator)
         case textOnly
-        case textAndIcon(Image, Image.TemplateRenderingMode)
+        case textAndIcon(OUDSImage)
     }
 
-    // MARK: Initializers
+    // MARK: - Initializers — String label + optional icon
 
     /// Create a link with text and icon.
     ///
-    /// ```swift
-    ///     OUDSLink(text: "Learn more", icon: Image(systemName: "arrow.right")) { }
-    /// ```
-    ///
     /// - Parameters:
     ///   - text: Text displayed in the link
-    ///   - icon: Icon displayed in the link
-    ///   - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
+    ///   - icon: An optional icon image
+    ///   - renderingMode: The rendering mode to apply on the icon
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
+    @available(*, deprecated, message: "Use OUDSLink(text:icon:OUDSImage:size:action:) instead.")
     public init(text: String,
                 icon: Image? = nil,
                 renderingMode: Image.TemplateRenderingMode = .template,
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
-        if let icon {
-            layout = .textAndIcon(icon, renderingMode)
-        } else {
-            layout = .textOnly
-        }
+        self.init(text: text,
+                  icon: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
+                  size: size,
+                  action: action)
+    }
+
+    /// Create a link with text and an optional icon.
+    ///
+    /// ```swift
+    ///     OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image(systemName: "arrow.right")), size: .default) {}
+    ///
+    ///     // Raw (non-tinted) image:
+    ///     OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+    ///
+    ///     // Text only — omit icon or pass nil:
+    ///     OUDSLink(text: "Feedback", size: .small) {}
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - text: Text displayed in the link
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(text: String,
+                icon: OUDSImage? = nil,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        layout = icon.map { .textAndIcon($0) } ?? .textOnly
         self.text = text
         self.size = size
         self.action = action
     }
 
-    /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
-    ///
-    /// ```swift
-    ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) { }
-    /// ```
+    // MARK: - Initializers — LocalizedStringKey + optional icon
+
+    /// Creates a link with a localized text and optional icon.
     ///
     /// - Parameters:
     ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
     ///   - tableName: The name of the `.strings` file, or `nil` for the default
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - icon: Icon displayed in the link
-    ///   - renderingMode: The rendering mode to apply on the icon. Use `.template` (default) to tint the icon, or `.original` to display the image as-is.
+    ///   - icon: An optional icon image
+    ///   - renderingMode: The rendering mode to apply on the icon
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
+    @available(*, deprecated, message: "Use OUDSLink(_:tableName:bundle:icon:OUDSImage:size:action:) instead.")
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
@@ -161,17 +181,48 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
-        if let icon {
-            layout = .textAndIcon(icon, renderingMode)
-        } else {
-            layout = .textOnly
-        }
-        text = key.resolved(tableName: tableName, bundle: bundle)
-        self.size = size
-        self.action = action
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  icon: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
+                  size: size,
+                  action: action)
     }
 
-    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
+    /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
+    ///
+    /// ```swift
+    ///     OUDSLink(LocalizedStringKey("feedback_link"), bundle: Bundle.module, size: .default) {}
+    ///
+    ///     OUDSLink(LocalizedStringKey("learn_more"),
+    ///              bundle: Bundle.module,
+    ///              icon: OUDSImage(asset: Image("ic_heart")),
+    ///              size: .default) {}
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - icon: An optional ``OUDSImage`` encapsulating the asset and its rendering mode. Default set to `nil` (text-only layout).
+    ///   - size: Size of the link
+    ///   - action: The action to perform when the user triggers the link
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                icon: OUDSImage? = nil,
+                size: Size = .default,
+                action: @escaping () -> Void)
+    {
+        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
+                  icon: icon,
+                  size: size,
+                  action: action)
+    }
+
+    // MARK: - Initializers — indicator (unchanged)
+
+    // swiftlint:disable function_default_parameter_at_end
+
+    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// ```swift
     ///     OUDSLink(text: "Back", indicator: .back) { }
@@ -179,9 +230,9 @@ public struct OUDSLink: View {
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
-    ///   - indicator: Indicator displayed in the link
-    ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text
-    ///   When `OudsLink.Indicator.next`, the indicator is displayed after the text
+    ///   - indicator: Indicator displayed in the link.
+    ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text.
+    ///   When `OUDSLink.Indicator.next`, the indicator is displayed after the text.
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
     public init(text: String, indicator: Indicator, size: Size = .default, action: @escaping () -> Void) {
@@ -191,7 +242,6 @@ public struct OUDSLink: View {
         self.action = action
     }
 
-    // swiftlint:disable function_default_parameter_at_end
     /// Creates a link with a localized text and a navigation indicator, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -220,7 +270,7 @@ public struct OUDSLink: View {
 
     // swiftlint:enable function_default_parameter_at_end
 
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         Button(action: action) {
@@ -240,13 +290,15 @@ public struct OUDSLink: View {
                 } icon: {
                     EmptyView()
                 }
-            case let .textAndIcon(icon, renderingMode):
+            case let .textAndIcon(oudsImage):
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    icon
-                        .renderingMode(renderingMode)
-                        .resizable()
+                    if let asset = oudsImage.asset {
+                        asset
+                            .renderingMode(oudsImage.renderingMode)
+                            .resizable()
+                    }
                 }
             }
         }

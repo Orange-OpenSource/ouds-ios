@@ -432,6 +432,50 @@ OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand")
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSTag.Status` with the same pattern applied to all other OUDS components.
 
+### Deprecated OUDSLink initialisers with `icon: Image` parameter
+
+The two `OUDSLink` initialisers that accepted a bare `Image` together with a separate `renderingMode` parameter are deprecated.
+Use the new overloads that accept an `OUDSImage?` value instead.
+
+> The navigation initialisers (`init(text:indicator:size:action:)` and `init(_:tableName:bundle:indicator:size:action:)`) are **unchanged**.
+> `OUDSLink` does not support `flipIcon` for custom icons — only navigation indicators are automatically flipped for RTL.
+
+**Impact**: Low
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSLink(text: "Learn more", icon: Image("ic_heart"), size: .default) {}
+OUDSLink(text: "Brand", icon: Image("ic_brand"), renderingMode: .original, size: .default) {}
+OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
+         icon: Image("ic_heart"), size: .default) {}
+OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
+         icon: Image("ic_brand"), renderingMode: .original, size: .default) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
+         icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
+         icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+```
+
+**Required Action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`
+2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+3. Remove the now-unused `renderingMode` parameter from the call site
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSLink` with the same pattern applied to all other OUDS components.
+
 ### Compatibility
 
 - **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning

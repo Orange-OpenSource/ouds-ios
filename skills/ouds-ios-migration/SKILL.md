@@ -22,7 +22,7 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip`, `OUDSLink` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
 
 ---
 
@@ -815,6 +815,41 @@ OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand")
 2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
 3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
 4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the factory call.
+
+### 9. `OUDSLink` — initialisers with `icon: Image` deprecated
+
+The two `OUDSLink` initialisers that accepted a bare `Image` with a separate `renderingMode` are deprecated.
+
+> Navigation initialisers (`init(text:indicator:…)` and `init(_:…:indicator:…)`) are **unchanged**.
+> `OUDSLink` does not support `flipIcon` for custom icons — only back/next indicators flip automatically for RTL.
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSLink(text: "Learn more", icon: Image("ic_heart"), size: .default) {}
+OUDSLink(text: "Brand", icon: Image("ic_brand"), renderingMode: .original, size: .default) {}
+OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
+         icon: Image("ic_heart"), size: .default) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSLink(text: "Learn more", icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+OUDSLink(text: "Brand", icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
+OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
+         icon: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+3. Remove the now-unused `renderingMode` parameter from the call site.
 
 ---
 

@@ -121,17 +121,17 @@ OUDSButton(
 
 OUDSLink(
     text: "Back",
-    icon: Image(systemName: "chevron.left").accessibilityHidden(true), // ❌ same error
+    icon: OUDSImage(asset: Image(systemName: "chevron.left").accessibilityHidden(true)), // ❌ compile error: Image modifier → some View
     size: .default) {}
 ```
 
-**Always do this — swiftlint comment on the line before the component call:**
+**Always do this — pass a bare `Image` inside `OUDSImage`, swiftlint comment on the line before:**
 ```swift
 // swiftlint:disable:next accessibility_label_for_image
 OUDSButton(text: "Add", icon: Image(systemName: "plus"), appearance: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
-OUDSLink(text: "Back", icon: Image(systemName: "chevron.left"), size: .default) {}
+OUDSLink(text: "Back", icon: OUDSImage(asset: Image(systemName: "chevron.left")), size: .default) {}
 
 // swiftlint:disable:next accessibility_label_for_image
 OUDSToolBarItem(icon: Image("ic_share"), accessibilityLabel: "Share") {}
@@ -471,8 +471,8 @@ OUDSVerticalDivider(color: .brandPrimary)
 ```swift
 OUDSLink(text: "Text", size: .default) {}
 OUDSLink(text: "Text", indicator: .back, size: .default) {}
-OUDSLink(text: "Text", icon: Image("ic"), size: .default) {}
-OUDSLink(text: "Text", icon: Image("ic"), renderingMode: .original, size: .default) {} // raw image (not tinted)
+OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic")), size: .default) {}
+OUDSLink(text: "Text", icon: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```
 
 ---
