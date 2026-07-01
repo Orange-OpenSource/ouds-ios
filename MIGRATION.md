@@ -315,12 +315,10 @@ The `accessibilityLabel` parameter remains on the chip itself; do not set it on 
 | `icon: Image(…)` | `image: OUDSImage(asset: Image(…))` (FilterChip) / `image: OUDSImage(asset: Image(…))` (SuggestionChip — see note) |
 | `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
 
-> **Note on parameter label differences between the two chip components:**
+> **Note on parameter label for both chip components:**
 >
-> `OUDSFilterChip` active initialisers all use `image: OUDSImage` as the parameter label.
->
-> `OUDSSuggestionChip` active initialisers use `image: OUDSImage` only for the `LocalizedStringKey text` variant.
-> The three other active initialisers (`text: String`, `accessibilityLabel: String`, `accessibilityLabel: LocalizedStringKey`) keep `icon: OUDSImage` as the parameter label — this is intentional and does not cause ambiguity since the `OUDSImage` type differs from the deprecated `Image` type.
+> `OUDSFilterChip` and `OUDSSuggestionChip` active initialisers all use `image: OUDSImage` as the parameter label.
+> Both components rename `icon:` → `image:` to be consistent with all other OUDS components.
 
 **Before (v2.2.0)**:
 ```swift
@@ -337,7 +335,7 @@ OUDSFilterChip(icon: Image("ic_brand"), text: "Brand", renderingMode: .original)
 
 **After (v2.3.0)**:
 ```swift
-// OUDSSuggestionChip — icon: OUDSImage (parameter label unchanged for these 3 variants)
+// OUDSSuggestionChip — image: OUDSImage (parameter label renamed from icon: to image: for all variants)
 OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
 OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
@@ -354,10 +352,9 @@ OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .origin
 1. Replace `icon: Image(…)` with `OUDSImage(asset: Image(…))`
 2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 3. Remove the now-unused `renderingMode` parameter from the chip call site
-4. For `OUDSFilterChip`: rename the parameter label from `icon:` to `image:`
-5. For `OUDSSuggestionChip`: keep `icon:` as the parameter label (except the `LocalizedStringKey text` variant which uses `image:`)
+4. Rename the parameter label from `icon:` to `image:` (applies to both `OUDSFilterChip` and `OUDSSuggestionChip`)
 
-**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns the chip components with the same pattern applied to all other OUDS components. `OUDSFilterChip` additionally renames `icon:` to `image:` to resolve a potential init ambiguity; `OUDSSuggestionChip` retains `icon:` on most variants because the `OUDSImage` / `Image` type distinction already prevents ambiguity.
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns the chip components with the same pattern applied to all other OUDS components. Both rename `icon:` to `image:` for consistency.
 
 ### OUDSChipPickerData.Layout — new static factories for OUDSImage
 
@@ -398,6 +395,8 @@ OUDSChipPickerData(tag: .w,
 **Required Action**:
 - Migrate to the new static factory form to avoid passing `renderingMode` separately
 - The old case-based form continues to compile and remains valid
+- Replace `icon: Image(…)` → `image: OUDSImage(asset: Image(…))`
+- **Drop the `text:` label**: the static factory `.textAndIcon(_ text: String, image:)` has its first argument unlabelled (`_`). If your call site used the enum case with an explicit `text:` label (e.g. `.textAndIcon(text: "Label", icon: ...)`), you must remove that label when switching to the factory (e.g. `.textAndIcon("Label", image: ...)`)
 
 **Reason for Change**: `@frozen` is preserved for ABI stability. Static factories provide a cleaner API aligned with `OUDSImage` without requiring a breaking enum change.
 
@@ -481,9 +480,17 @@ OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
 ```
 
 **Required Action**:
-1. Replace `icon: Image(…)` with `image: OUDSImage(asset: Image(…))`
+1. Replace `icon: Image(…)` with `image: OUDSImage(asset: Image(…))` — **both** the parameter label (`icon:` → `image:`) and the type (`Image` → `OUDSImage(asset:)`) must change together
 2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
 3. Remove the now-unused `renderingMode` parameter from the call site
+
+> **⚠ Two-step migration trap**
+>
+> A common mistake is to replace the `Image(…)` value with `OUDSImage(asset: Image(…))` first (e.g. via a global find-and-replace or Xcode fix-it) while leaving the `icon:` label unchanged.
+> This produces `icon: OUDSImage(asset: Image(…))` which still compiles — the deprecated `icon: Image?` init accepts it because `OUDSImage` is not `Image` — but it is incorrect.
+> See the section "Renamed `image:` and `leadingImage:` parameters in active initialisers" further below.
+>
+> **You must always rename `icon:` → `image:` at the same time as you wrap the value in `OUDSImage(asset:)`.**
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSLink` with the same pattern applied to all other OUDS components.
 
@@ -568,7 +575,7 @@ The deprecated initialisers (`icon: Image?`, `leadingIcon: Image?`) are **unchan
 | `OUDSCheckboxItemIndeterminate` | `icon: OUDSImage?` | `image: OUDSImage?` |
 | `OUDSCheckboxPickerData` | `icon: OUDSImage?` | `image: OUDSImage?` |
 | `OUDSRadioItem` | `icon: OUDSImage?` | `image: OUDSImage?` |
-| `OUDSRadioPickerData` | `image: OUDSImage?` | unchanged (was already `image:`) |
+| `OUDSRadioPickerData` | `image: OUDSImage?` | unchanged (was already `image:`) — but still subject to residual ambiguity when called without an image argument (see warning below) |
 | `OUDSSwitchItem` | `icon: OUDSImage?` | `image: OUDSImage?` |
 | `OUDSTextInput` | `leadingIcon: OUDSImage?` | `leadingImage: OUDSImage?` |
 | `OUDSLink` | `icon: OUDSImage?` | `image: OUDSImage?` |
@@ -614,13 +621,16 @@ OUDSLink(text: "Learn more", image: OUDSImage(asset: Image("ic_heart")), size: .
 > // ❌ may be ambiguous while deprecated inits coexist:
 > OUDSCheckboxItem("Label", isOn: $isOn)
 > OUDSRadioItem("Label", isOn: $isOn)
+> OUDSRadioPickerData(tag: "a", label: "Option A")
 > OUDSSwitchItem("Label", isOn: $isOn)
 > OUDSLink(text: "Learn more", size: .default) {}
 > OUDSTextInput(label: "Email", text: $text)
 >
 > // ✅ unambiguous — active init selected:
+> // temporary — remove once deprecated inits are gone in v3
 > OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
 > OUDSRadioItem("Label", isOn: $isOn, image: nil)
+> OUDSRadioPickerData(tag: "a", label: "Option A", image: nil) 
 > OUDSSwitchItem("Label", isOn: $isOn, image: nil)
 > OUDSLink(text: "Learn more", image: nil, size: .default) {}
 > OUDSTextInput(label: "Email", text: $text, leadingImage: nil)
@@ -631,7 +641,7 @@ OUDSLink(text: "Learn more", image: OUDSImage(asset: Image("ic_heart")), size: .
 ### Compatibility
 
 - **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning
-- **v2.2.0 Support**: Until next major version
+- **v2.2.0 Support**: None
 
 ## v2.0.0 → v2.2.0
 

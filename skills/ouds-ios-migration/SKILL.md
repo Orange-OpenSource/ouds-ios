@@ -175,13 +175,13 @@ renderingMode: .original          →  OUDSImage(asset:, renderingMode: .origina
 | `OUDSCheckboxItemIndeterminate` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | New `LocalizedStringKey` init added; renamed `icon:` → `image:` |
 | `OUDSCheckboxPickerData` | `icon: Image?`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity |
 | `OUDSRadioItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity |
-| `OUDSRadioPickerData` | `icon: Image?` | `image: OUDSImage?` | Renamed `icon:` → `image:`; active init uses positional `_ tag` (no label), deprecated uses named `tag:` |
+| `OUDSRadioPickerData` | `icon: Image?` | `image: OUDSImage?` | Renamed `icon:` → `image:`; both the deprecated and the active init use a named `tag:` parameter |
 | `OUDSSwitchItem` | `icon: Image?`, `flipIcon:`, `renderingMode:` | `image: OUDSImage?` | `isReversed` defaults to `true`; renamed `icon:` → `image:` |
 | `OUDSFilterChip` | `icon: Image`, `renderingMode:` | `image: OUDSImage` | Renamed `icon:` → `image:`; no `flipIcon`; `accessibilityLabel` **stays on chip** |
-| `OUDSSuggestionChip` | `icon: Image`, `renderingMode:` | `image: OUDSImage` (LocalizedStringKey text variant) / `icon: OUDSImage` (3 other variants) | No `flipIcon`; `icon:` label kept where `OUDSImage`/`Image` distinction prevents ambiguity |
-| `OUDSChipPickerData.Layout` | cases `.icon(icon: Image, …)` / `.textAndIcon(icon: Image, …)` — still available | static factories `.icon(OUDSImage, accessibilityLabel:)` / `.textAndIcon(_, image: OUDSImage)` | — |
-| `OUDSTag.Status` | `neutral/accent(icon: Image, flipIcon:, renderingMode:)` | `neutral/accent(icon: OUDSImage)` | Deprecated static factories; other status unchanged |
-| `OUDSLink` | `icon: Image?`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity; navigation inits unchanged |
+| `OUDSSuggestionChip` | `icon: Image`, `renderingMode:` | `image: OUDSImage` | No `flipIcon`; `icon:` → `image:` for all variants |
+| `OUDSChipPickerData.Layout` | cases `.icon(icon: Image, …)` / `.textAndIcon(text:icon:renderingMode:)` — still available | static factories `.icon(OUDSImage, accessibilityLabel:)` / `.textAndIcon(_ text: String, image: OUDSImage)` | The static factory's first argument has **no label** (`_`): drop the `text:` label when migrating from the enum case |
+| `OUDSTag.Status` | `neutral/accent(icon: Image, flipIcon:, renderingMode:)` | `neutral/accent(image: OUDSImage)` | Deprecated static factories; parameter label renamed `icon:` → `image:`; other status unchanged |
+| `OUDSLink` | `icon: Image?`, `renderingMode:` | `image: OUDSImage?` | Renamed `icon:` → `image:` to resolve init ambiguity; navigation inits unchanged. **Two-step trap**: if you first replaced `Image(…)` with `OUDSImage(asset: Image(…))` but kept the `icon:` label, you end up with `icon: OUDSImage(…)` which still compiles (no error) but is wrong — you must also rename the label to `image:` |
 | `OUDSTextInput` | `leadingIcon: Image?`, `flipLeadingIcon:`, `leadingIconRenderingMode:` | `leadingImage: OUDSImage?` | Renamed `leadingIcon:` → `leadingImage:` to resolve init ambiguity |
 | `OUDSTextInput.TrailingAction` | `icon: Image`, `flipIcon:`, `renderingMode:` | `image: OUDSImage` | — |
 
@@ -199,6 +199,7 @@ Even after the `icon:` → `image:` / `leadingIcon:` → `leadingImage:` rename,
 | `OUDSCheckboxItemIndeterminate` | `image: nil` |
 | `OUDSCheckboxPickerData` | `image: nil` |
 | `OUDSRadioItem` | `image: nil` |
+| `OUDSRadioPickerData` | `image: nil` |
 | `OUDSSwitchItem` | `image: nil` |
 | `OUDSLink` | `image: nil` |
 | `OUDSTextInput` | `leadingImage: nil` |
@@ -207,13 +208,16 @@ Even after the `icon:` → `image:` / `leadingIcon:` → `leadingImage:` rename,
 // ❌ ambiguous while deprecated inits coexist:
 OUDSCheckboxItem("Label", isOn: $isOn)
 OUDSRadioItem("Label", isOn: $isOn)
+OUDSRadioPickerData(tag: "a", label: "Option A")
 OUDSSwitchItem("Label", isOn: $isOn)
 OUDSLink(text: "Learn more", size: .default) {}
 OUDSTextInput(label: "Email", text: $text)
 
 // ✅ unambiguous — active init selected:
+// temporary — remove once deprecated inits are gone in v3
 OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
 OUDSRadioItem("Label", isOn: $isOn, image: nil)
+OUDSRadioPickerData(tag: "a", label: "Option A", image: nil)  
 OUDSSwitchItem("Label", isOn: $isOn, image: nil)
 OUDSLink(text: "Learn more", image: nil, size: .default) {}
 OUDSTextInput(label: "Email", text: $text, leadingImage: nil)
@@ -235,11 +239,11 @@ grep -rn \
   --include="*.swift" .
 
 # Detect old active-init parameter labels that were renamed (v2.3.0 disambiguation).
-# Note: OUDSSuggestionChip and OUDSTag.Status legitimately use icon: OUDSImage — filter them out:
+# All components (including OUDSSuggestionChip and OUDSTag.Status) now use image: OUDSImage.
+# Any remaining icon: OUDSImage or leadingIcon: OUDSImage in call sites must be renamed.
 grep -rn \
   "icon: OUDSImage\|leadingIcon: OUDSImage" \
-  --include="*.swift" . \
-  | grep -v "OUDSSuggestionChip\|OUDSTag"
+  --include="*.swift" .
 
 swift test
 ```
