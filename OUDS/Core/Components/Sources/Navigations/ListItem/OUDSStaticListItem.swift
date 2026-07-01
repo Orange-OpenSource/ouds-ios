@@ -200,7 +200,7 @@ public struct OUDSStaticListItem<Slot: View>: View {
     public var body: some View {
         ListItemContent(data: data,
                         slot: slot,
-                        affordanceType: nil,
+                        indicatorType: nil,
                         leading: leading,
                         trailing: trailing,
                         interactionState: isEnabled ? .enabled : .disabled)

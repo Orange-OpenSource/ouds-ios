@@ -43,7 +43,7 @@ OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to proc
 
 ### List items
 
-The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation affordance indicator (chevron or external link icon).
+The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation indicator (chevron or external link icon).
 
 Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
 
@@ -94,7 +94,7 @@ OUDSStaticListItem(
 
 #### Navigable list item
 
-Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemAffordanceType`` defines the visual indicator shown:
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
 
 @TabNavigator {
     @Tab("Orange") {
@@ -121,16 +121,15 @@ OUDSNavigationListItem(
 
 // External navigation
 OUDSNavigationListItem(
-    data: OUDSListItemData(label: "Open website"),
-    affordanceType: .external
-) {
+    data: OUDSListItemData(label: "Open website"), 
+                       indicatorType: .external) {
     openURL(url)
 }
 
 // Backward navigation
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Go back"),
-    affordanceType: .previous
+                       indicator: .previous
 ) {
     // Navigate back
 }

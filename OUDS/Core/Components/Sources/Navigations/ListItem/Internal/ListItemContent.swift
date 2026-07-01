@@ -23,7 +23,7 @@ struct ListItemContent<Slot: View>: View {
 
     let data: OUDSListItemData
     let slot: Slot
-    let affordanceType: OUDSNavigationListItemAffordanceType?
+    let indicatorType: OUDSNavigationListItemIndicatorType?
     let leading: OUDSListItemLeading?
     let trailing: OUDSListItemTrailing?
     let interactionState: InteractionState
@@ -37,8 +37,8 @@ struct ListItemContent<Slot: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.fixedNone) {
             HStack(alignment: verticalAlignment, spacing: theme.controlItem.spaceColumnGap) {
-                if affordanceType == .previous {
-                    ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
+                if indicatorType == .previous {
+                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
 
                 if let leading {
@@ -51,8 +51,8 @@ struct ListItemContent<Slot: View>: View {
                     trailingContainer(trailing)
                 }
 
-                if affordanceType == .next || affordanceType == .external {
-                    ListItemAffordanceContainer(type: affordanceType, interactionState: interactionState)
+                if indicatorType == .next || indicatorType == .external {
+                    ListItemIndicatorContainer(type: indicatorType, interactionState: interactionState)
                 }
             }
             .padding(.top, topPadding)
@@ -74,8 +74,8 @@ struct ListItemContent<Slot: View>: View {
 
     @ViewBuilder
     private func leadingContainer(_ leading: OUDSListItemLeading) -> some View {
-        // Remove leading element if previous affordance is presented
-        if affordanceType != .previous {
+        // Remove leading element if previous indicator is presented
+        if indicatorType != .previous {
             ListItemLeadingContainer(leading: leading, interactionState: interactionState)
         }
     }

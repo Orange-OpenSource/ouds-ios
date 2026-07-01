@@ -19,7 +19,7 @@ import SwiftUI
 /// The leading element provides visual context or identification alongside the textual content
 /// of the list item. Only one leading element can be set at a time.
 ///
-/// **Note:** When using ``OUDSNavigationListItem`` with an affordance type of `.previous`,
+/// **Note:** When using ``OUDSNavigationListItem`` with an indicator type of `.previous`,
 /// the leading element is automatically hidden.
 ///
 /// ## Available options

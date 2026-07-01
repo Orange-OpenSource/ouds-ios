@@ -370,7 +370,7 @@ OUDSLink(text: "Text", icon: Image("ic"), size: .default) {}
 
 Two components share the same data model and slot/leading/trailing API:
 - **`OUDSStaticListItem`** — non-interactive, display-only row.
-- **`OUDSNavigationListItem`** — tappable row with a navigation affordance (chevron or external-link icon).
+- **`OUDSNavigationListItem`** — tappable row with a navigation indicator (chevron or external-link icon).
 
 #### `OUDSListItemData` — textual content model
 
@@ -405,10 +405,10 @@ OUDSStaticListItem(
 OUDSStaticListItem(data: OUDSListItemData(label: "Label"), slot: myCustomView)
 ```
 
-#### `OUDSNavigationListItem` — tappable with affordance
+#### `OUDSNavigationListItem` — tappable with indicator
 
 ```swift
-// Default affordance: .next (forward chevron at trailing edge)
+// Default indicator: .next (forward chevron at trailing edge)
 OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
     // navigate forward
 }
@@ -416,28 +416,28 @@ OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
 // .external: external-link icon at trailing edge (use for URLs, out-of-app content)
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Open website"),
-    affordanceType: .external
+    indicatorType: .external
 ) { openURL(url) }
 
 // .previous: backward chevron at leading edge — leading: parameter is silently ignored
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Go back"),
-    affordanceType: .previous
+    indicatorType: .previous
 ) { dismiss() }
 
 // Full example with leading avatar, trailing muted text, custom slot
 OUDSNavigationListItem(
     data: OUDSListItemData(label: "Profile", description: "View your profile"),
     slot: mySlotView,
-    affordanceType: .next,
+    indicatorType: .next,
     leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
     trailing: .text(.labelMuted(Text("Details")))
 ) { navigateToProfile() }
 ```
 
-#### `OUDSNavigationListItemAffordanceType`
+#### `OUDSNavigationListItemIndicatorType`
 
-| Case | Affordance position | Use for | Leading element |
+| Case | Indicator position | Use for | Leading element |
 |------|--------------------|---------|----|
 | `.next` (default) | Trailing chevron | In-app forward navigation | Visible |
 | `.previous` | Leading chevron | In-app back navigation | **Always hidden** |
@@ -557,7 +557,7 @@ VStack {
 
 1. **`OUDSStaticListItem`** has no tap interaction — `isEnabled` only affects visual opacity.
 2. **`OUDSNavigationListItem`** manages `.enabled`, `.hover`, `.pressed`, `.disabled` states automatically.
-3. **`.previous` affordance** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
+3. **`.previous` indicator** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
 4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
 5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
 6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
