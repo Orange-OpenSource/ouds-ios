@@ -476,6 +476,67 @@ OUDSLink(LocalizedStringKey("brand"), bundle: Bundle.module,
 
 **Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSLink` with the same pattern applied to all other OUDS components.
 
+### Deprecated OUDSTextInput initialisers and OUDSTextInput.TrailingAction
+
+Both `OUDSTextInput` and its nested `TrailingAction` struct have been updated to accept `OUDSImage` instead of separate `Image`, `flipIcon`/`flipLeadingIcon`, and `renderingMode` parameters.
+
+**Impact**: Low
+
+#### OUDSTextInput — leadingIcon
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `leadingIcon: Image(…)` | `leadingIcon: OUDSImage(asset: Image(…))` |
+| `flipLeadingIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `leadingIconRenderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSTextInput(label: "Email", text: $text, leadingIcon: Image(systemName: "envelope"))
+OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
+OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), flipLeadingIcon: true)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSTextInput(label: "Email", text: $text, leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+OUDSTextInput(label: "Brand", text: $text, leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic"), flipped: true))
+```
+
+#### OUDSTextInput.TrailingAction
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `icon: OUDSImage(asset: Image(…))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
+OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", renderingMode: .original) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
+OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), actionHint: "Brand") {}
+```
+
+**Required Action**:
+1. Replace `leadingIcon: Image(…)` with `leadingIcon: OUDSImage(asset: Image(…))`
+2. Move `flipLeadingIcon:` → `OUDSImage(asset:, flipped:)` (omit if `false`)
+3. Move `leadingIconRenderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`)
+4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(icon: OUDSImage(asset: Image(…)), …)`
+5. Move `flipIcon:` and `renderingMode:` inside the `OUDSImage` construction
+
+**Reason for Change**: Grouping image-related parameters into one `OUDSImage` object aligns `OUDSTextInput` with the same pattern applied to all other OUDS components.
+
 ### Compatibility
 
 - **Backward Compatibility**: Yes — deprecated initialisers still compile with a warning

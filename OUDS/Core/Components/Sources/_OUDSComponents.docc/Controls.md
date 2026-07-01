@@ -647,17 +647,22 @@ OUDSTextInput(label: "Email", text: $text)
 OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 
 // Add a leading icon for more context
-OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
+OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
+              leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
 
 // Add a leading raw image (not tinted)
-OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
+OUDSTextInput(label: "Brand", text: $text,
+              leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
 
-// Add a trailing button with local image named "ic_cross" for additional action
-let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
+// Add a trailing button for additional action
+let trailingAction = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")),
+                                                   actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
 
 // Add a trailing button with raw image (not tinted)
-let trailingActionRaw = OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", renderingMode: .original) { /* action */ }
+let trailingActionRaw = OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"),
+                                                                      renderingMode: .original),
+                                                      actionHint: "Brand") { /* action */ }
 OUDSTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)
 
 // With helper text

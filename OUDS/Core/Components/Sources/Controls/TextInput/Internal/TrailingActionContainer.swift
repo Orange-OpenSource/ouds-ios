@@ -49,7 +49,7 @@ struct TrailingActionContainer: View {
                 }
             }
         case .loading:
-            trailingButton(for: .init(icon: Image(decorative: "ic_heart"), actionHint: "", action: {}))
+            trailingButton(for: .init(icon: OUDSImage(asset: Image(decorative: "ic_heart")), actionHint: "", action: {}))
                 .accessibilityHidden(true)
         }
     }
@@ -67,14 +67,18 @@ struct TrailingActionContainer: View {
         }
     }
 
+    // swiftlint:disable accessibility_label_for_image
     private func trailingButton(for trailingAction: OUDSTextInput.TrailingAction) -> some View {
-        OUDSButton(icon: trailingAction.icon,
-                   accessibilityLabel: trailingAction.actionHint,
-                   flipIcon: trailingAction.flipIcon,
-                   renderingMode: trailingAction.renderingMode,
-                   appearance: .minimal,
-                   style: status == .loading ? .loading : .default,
-                   action: trailingAction.action)
+        // Inject the actionHint as accessibilityLabel into a new OUDSImage for OUDSButton icon-only
+        let imageWithA11y = OUDSImage(asset: trailingAction.icon.asset ?? Image(""), // Never happens
+                                      flipped: trailingAction.icon.flipped,
+                                      accessibilityLabel: trailingAction.actionHint,
+                                      renderingMode: trailingAction.icon.renderingMode)
+        return OUDSButton(image: imageWithA11y,
+                          appearance: .minimal,
+                          style: status == .loading ? .loading : .default,
+                          action: trailingAction.action)
     }
+    // swiftlint:enable accessibility_label_for_image
 }
 #endif

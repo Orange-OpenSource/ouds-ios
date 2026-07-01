@@ -348,12 +348,16 @@ OUDSChipPicker(title: "Title", selection: $selection, chips: [
 ```swift
 OUDSTextInput(label: "Label", text: $text)
 OUDSTextInput(label: "Label", text: $text, placeholder: "…", prefix: "Pre", suffix: "Suf")
-OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"))
-OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), leadingIconRenderingMode: .original) // raw image (not tinted)
+OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic")))
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: Image("ic"), actionHint: "Hint") {})
+              leadingIcon: OUDSImage(asset: Image("ic"), renderingMode: .original)) // raw image (not tinted)
 OUDSTextInput(label: "Label", text: $text,
-              trailingAction: .init(icon: Image("ic"), actionHint: "Hint", renderingMode: .original) {}) // raw image
+              leadingIcon: OUDSImage(asset: Image("ic"), flipped: layoutDirection == .rightToLeft)) // flip for RTL
+OUDSTextInput(label: "Label", text: $text,
+              trailingAction: .init(icon: OUDSImage(asset: Image("ic")), actionHint: "Hint") {})
+OUDSTextInput(label: "Label", text: $text,
+              trailingAction: .init(icon: OUDSImage(asset: Image("ic"), renderingMode: .original),
+                                    actionHint: "Hint") {}) // raw image
 // Helper / error status → see §6 Common patterns
 ```
 

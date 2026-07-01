@@ -23,9 +23,7 @@ struct TextInputContainer: View {
     let placeholder: String?
     let prefix: String?
     let suffix: String?
-    let leadingIcon: Image?
-    let flipIcon: Bool
-    let leadingIconRenderingMode: Image.TemplateRenderingMode
+    let leadingIcon: OUDSImage?
     let trailingAction: OUDSTextInput.TrailingAction?
     let isOutlined: Bool
     let status: OUDSTextInput.Status
@@ -44,7 +42,7 @@ struct TextInputContainer: View {
         HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
             HStack(alignment: .center, spacing: theme.textInput.spaceColumnGapDefault) {
                 // Leading icon container
-                LeadingIconContainer(leadingIcon: leadingIcon, flip: flipIcon, renderingMode: leadingIconRenderingMode, status: status)
+                LeadingIconContainer(leadingIcon: leadingIcon, status: status)
 
                 // ZStack here to add the label above the textField when
                 // the text is empty, the placeholder is empty and not focused

@@ -22,7 +22,7 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip`, `OUDSLink` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip`, `OUDSLink`, `OUDSTextInput`, `OUDSTextInput.TrailingAction` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
 
 ---
 
@@ -850,6 +850,55 @@ OUDSLink(LocalizedStringKey("learn_more"), bundle: Bundle.module,
 1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
 2. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
 3. Remove the now-unused `renderingMode` parameter from the call site.
+
+### 10. `OUDSTextInput` and `OUDSTextInput.TrailingAction` — `icon:` / `leadingIcon:` deprecated
+
+#### OUDSTextInput — leadingIcon
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `leadingIcon: Image(…)` | `leadingIcon: OUDSImage(asset: Image(…))` |
+| `flipLeadingIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` |
+| `leadingIconRenderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` |
+
+**Before (v2.2.0)**:
+```swift
+OUDSTextInput(label: "Email", text: $text, leadingIcon: Image(systemName: "envelope"))
+OUDSTextInput(label: "Brand", text: $text, leadingIcon: Image("ic_brand"), leadingIconRenderingMode: .original)
+OUDSTextInput(label: "Label", text: $text, leadingIcon: Image("ic"), flipLeadingIcon: true)
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSTextInput(label: "Email", text: $text, leadingIcon: OUDSImage(asset: Image(systemName: "envelope")))
+OUDSTextInput(label: "Brand", text: $text, leadingIcon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+OUDSTextInput(label: "Label", text: $text, leadingIcon: OUDSImage(asset: Image("ic"), flipped: true))
+```
+
+#### OUDSTextInput.TrailingAction
+
+**Before (v2.2.0)**:
+```swift
+OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
+OUDSTextInput.TrailingAction(icon: Image("ic_brand"), actionHint: "Brand", renderingMode: .original) {}
+OUDSTextInput.TrailingAction(icon: Image("ic"), actionHint: "Hint", flipIcon: true) {}
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_cross")), actionHint: "Delete") { text = "" }
+OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), actionHint: "Brand") {}
+OUDSTextInput.TrailingAction(icon: OUDSImage(asset: Image("ic"), flipped: true), actionHint: "Hint") {}
+```
+
+**Required action**:
+1. Replace `leadingIcon: Image(…)` with `leadingIcon: OUDSImage(asset: Image(…))`.
+2. Move `flipLeadingIcon:` → `OUDSImage(asset:, flipped:)` (omit if `false`).
+3. Move `leadingIconRenderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+4. Replace `TrailingAction(icon: Image(…), …)` with `TrailingAction(icon: OUDSImage(asset: Image(…)), …)`.
+5. Move `flipIcon:` and `renderingMode:` inside the `OUDSImage` for `TrailingAction`.
 
 ---
 
