@@ -22,7 +22,7 @@ It covers all breaking changes, removed APIs and deprecated symbols introduced i
 | v1.4.0 → v2.0.0 | High | Token renames (colors, elevations, sizes, badge, bar); charts provider renamed; toolbar action type enriched |
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
-| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip` and `OUDSSuggestionChip` initialisers with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
+| v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; `OUDSButton`, `OUDSCheckboxItem`, `OUDSCheckboxItemIndeterminate`, `OUDSCheckboxPickerData`, `OUDSRadioItem`, `OUDSRadioPickerData`, `OUDSSwitchItem`, `OUDSFilterChip`, `OUDSSuggestionChip` initialisers and `OUDSTag.Status` factories with `icon:` deprecated; `OUDSChipPickerData.Layout` new static factories |
 
 ---
 
@@ -779,6 +779,42 @@ OUDSChipPickerData(tag: .w, layout: .textAndIcon("Brand", image: OUDSImage(asset
 ```
 
 **Required action**: Migrate to the static factory form when convenient. The old form still compiles.
+
+### 8. `OUDSTag.Status` — factories with `icon: Image` deprecated
+
+The static factories `OUDSTag.Status.neutral(icon:flipIcon:renderingMode:)` and `OUDSTag.Status.accent(icon:flipIcon:renderingMode:)` are deprecated.
+
+> Only these two factories are affected. All others (`.positive`, `.negative`, `.warning`, `.info`, `.neutral(bullet:)`, `.accent(bullet:)`) are unchanged.
+
+**Parameter mapping**:
+
+| Old parameter | New location |
+|---|---|
+| `icon: Image(…)` | `OUDSImage(asset: Image(…))` |
+| `flipIcon: true` | `OUDSImage(asset:, flipped: true)` — omit if `false` (default) |
+| `renderingMode: .original` | `OUDSImage(asset:, renderingMode: .original)` — omit if `.template` (default) |
+
+**Before (v2.2.0)**:
+```swift
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+OUDSTag(label: "Label", status: .neutral(icon: Image("ic_brand"), renderingMode: .original))
+OUDSTag(label: "Label", status: .accent(icon: Image("ic_brand"), renderingMode: .original))
+```
+
+**After (v2.3.0)**:
+```swift
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"))))
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+```
+
+**Required action**:
+1. Replace `icon: Image(…)` with `icon: OUDSImage(asset: Image(…))`.
+2. Move `flipIcon: Bool` → `OUDSImage(asset:, flipped:)` (omit if `false`).
+3. Move `renderingMode:` → `OUDSImage(asset:, renderingMode:)` (omit if `.template`).
+4. Remove the now-unused `flipIcon` and `renderingMode` parameters from the factory call.
 
 ---
 

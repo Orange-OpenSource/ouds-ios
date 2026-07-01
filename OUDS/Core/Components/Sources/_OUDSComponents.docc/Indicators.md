@@ -114,16 +114,15 @@ OUDSTag(label: "Label")
 OUDSTag(label: "Label", status: .negative(leading: .bullet)
             
 // Tag with neutral status with a custom decorative icon
-OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
-// If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
-// you can flip the icon
-OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"))))
+// Flip the icon for RTL layouts using OUDSImage.flipped
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
 
 // Tag with neutral status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .neutral(icon: Image("ic_brand"), renderingMode: .original))
+OUDSTag(label: "Label", status: .neutral(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
 
 // Tag with accent status with a raw image (not tinted)
-OUDSTag(label: "Label", status: .accent(icon: Image("ic_brand"), renderingMode: .original))
+OUDSTag(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
             
 // Text with neutral status with bullet
 OUDSTag(label: "Label", status: .neutral(bullet: true))
