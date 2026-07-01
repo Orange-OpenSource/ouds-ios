@@ -86,9 +86,9 @@ struct TagAsset: View {
                 }
             } else {
                 iconFromAsset?
-                    .renderingMode(.template)
+                    .renderingMode(appliedRenderingMode)
                     .resizable()
-                    .toFlip(status.flipIcon)
+                    .toFlip(status.customIcon?.flipped ?? false)
                     .foregroundColor(color)
             }
         }
@@ -104,10 +104,18 @@ struct TagAsset: View {
         case .bullet:
             return Image(decorative: "ic_tag_bullet", bundle: theme.resourcesBundle)
         case .icon:
-            if let alternativeIcon = status.customIcon {
-                return alternativeIcon
+            if let oudsImage = status.customIcon {
+                return oudsImage.asset
             }
             return defaultLeadingIcon
+        }
+    }
+
+    private var appliedRenderingMode: Image.TemplateRenderingMode {
+        if status.leading == .icon, let oudsImage = status.customIcon {
+            oudsImage.renderingMode
+        } else {
+            .template
         }
     }
 

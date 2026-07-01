@@ -170,7 +170,8 @@ Images bring meanings, and are used in components. But sometimes, depending to y
 of your app changes, the images in use can loose meanings or have another one (except if they are asymetric).
 Even if some assets can be defined in a project with specific RTL/LTR variants, images can be loaded outside and in some case, in the end, must not be mirrored.
 
-If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want. The `flipIcon` flag available in components can be used.
+If your application manages several languages with RTL and LTR, here is a simple trick to flip the icons depending to the layout for the cases you want.
+The `flipped` property of ``OUDSImage`` can be used when passing an icon to a component.
 
 ```swift
 // Get the layout direction in your View
@@ -179,10 +180,12 @@ If your application manages several languages with RTL and LTR, here is a simple
 // Because by default icons are not flipped, i.e. more LTR flavoured, use a simple comparison
 // (layoutDirection == .rightToLeft)
 
-// For example in a checkbox item
-OUDSCheckboxItem(...,
-                 flipIcon: (layoutDirection == .rightToLeft),
-                 )
+// For example in a checkbox item — wrap the asset in OUDSImage and set flipped:
+OUDSCheckboxItem("Label",
+                 isOn: $isOn,
+                 image: OUDSImage(asset: Image(systemName: "figure.handball"),
+                                  flipped: layoutDirection == .rightToLeft),
+                 isReversed: layoutDirection == .rightToLeft)
 ```
 
 ## Change font family according to locale or preferred language

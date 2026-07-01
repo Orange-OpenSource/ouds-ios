@@ -45,16 +45,16 @@ import SwiftUI
 ///                                         label: "Virgin Holy Lava",
 ///                                         extraLabel: "Very spicy",
 ///                                         description: "No alcohol, only tasty flavors",
-///                                         icon: Image(systemName: "flame")),
+///                                         image: OUDSImage(asset: Image(systemName: "flame")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_2",
 ///                                         label: "IPA beer",
 ///                                         description: "From Brewdog company",
-///                                         icon: Image(systemName: "dog.fill")),
+///                                         image: OUDSImage(asset: Image(systemName: "dog.fill")),
 ///
 ///             OUDSRadioPickerData<String>(tag: "Choice_3",
 ///                                         label: "Mineral water",
-///                                         icon: Image(systemName: "waterbottle.fill")),
+///                                         image: OUDSImage(asset: Image(systemName: "waterbottle.fill")),
 ///         ]
 ///     }
 ///
@@ -210,7 +210,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                       isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                       extraLabel: radio.extraLabel,
                       description: radio.description,
-                      icon: radio.icon,
+                      image: radio.icon,
                       isOutlined: isOutlined ? true : radio.isOutlined,
                       isReversed: isReversed ? true : radio.isReversed,
                       isError: isError ? true : radio.isError,

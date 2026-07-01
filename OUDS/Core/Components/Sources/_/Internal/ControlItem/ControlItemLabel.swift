@@ -34,8 +34,7 @@ struct ControlItemLabel: View {
         let label: String
         let extraLabel: String?
         let description: String?
-        let icon: Image?
-        let flipIcon: Bool
+        let icon: OUDSImage?
         let isOutlined: Bool
         let isError: Bool
         let errorText: TextualContent?

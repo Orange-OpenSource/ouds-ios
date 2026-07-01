@@ -35,7 +35,10 @@ The link can be displayed in `small` or `default` size.
 OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 
 // Text and icon in default size
-OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
+OUDSLink(text: "Feedback", image: OUDSImage(asset: Image("ic_heart")), size: .default) {}
+
+// Text and raw icon (not tinted)
+OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), size: .default) {}
 
 // Navigate to previous page with link in a default size
 OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }

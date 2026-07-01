@@ -15,22 +15,45 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - OUDS Icon
+// MARK: - OUDS Image
+
+/// Old name of ``OUDSImage`` (before v2.3.0)
+@available(*, deprecated, message: "Use OUDSImage type instead of OUDSIcon.")
+public typealias OUDSIcon = OUDSImage // To not break public API where OUDSIcon were used before
 
 /// Use to provide an asset to ouds in order to be added in some components.
 /// The icon can be flipped for RTL consideration and an associated `acessibilityLabel`must be provided
 /// if the icon is not decorative.
 ///
+/// ## Code Samples
+///
+/// ```swift
+///     // Display an image with a label loaded from a given module (default in rendering mode)
+///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+///
+///     // Display an image but without tints and in original mode
+///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like", renderingMode: .original)
+/// ```
+///
 /// - Since: 1.3.0
-public struct OUDSIcon: View {
+public struct OUDSImage: View {
 
     // MARK: Properties
 
-    private let asset: Image?
-    private let assetName: String?
-    private let flipped: Bool
-    private let accessibilityLabel: String?
-    private let color: MultipleColorSemanticToken?
+    public let asset: Image?
+    public let assetName: String?
+    public let flipped: Bool
+    public let accessibilityLabel: String?
+    public let color: MultipleColorSemanticToken?
+    public let renderingMode: Image.TemplateRenderingMode
+
+    public var image: Image? {
+        if let assetName {
+            return Image(decorative: assetName, bundle: theme.resourcesBundle)
+        }
+
+        return asset
+    }
 
     @Environment(\.theme) private var theme
 
@@ -40,7 +63,7 @@ public struct OUDSIcon: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
+    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: LocalizedStringKey("like_icon"), bundle: Bundle.module)
     /// ```
     ///
     /// - Parameters:
@@ -49,14 +72,16 @@ public struct OUDSIcon: View {
     ///    - key: The text to vocalize with *Voice Over* the component must have, as as `LocalizedStringKey` for the given `Bundle`
     ///    - tableName: The name of the `.strings` file, or `nil` for the default
     ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
     public init(asset: Image,
                 flipped: Bool = false,
                 accessibilityLabel key: LocalizedStringKey,
                 tableName: String? = nil,
-                bundle: Bundle = .main)
+                bundle: Bundle = .main,
+                renderingMode: Image.TemplateRenderingMode = .template)
     {
         let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText)
+        self.init(asset: asset, flipped: flipped, accessibilityLabel: resolvedText, renderingMode: renderingMode)
     }
 
     // swiftlint:enable function_default_parameter_at_end
@@ -64,19 +89,25 @@ public struct OUDSIcon: View {
     /// Create the icon with asset.
     ///
     /// ```swift
-    ///     OUDSIcon(asset: Image("ic_heart"), accessibilityLabel: "Like")
+    ///     OUDSImage(asset: Image("ic_heart"), accessibilityLabel: "Like")
     /// ```
     ///
     /// - Parameters:
     ///    - asset: The asset
     ///    - flipped: If asset must be flipped, default set to `false`
     ///    - accessibilityLabel:The label to be vocalized to describe the icon, default set to `nil`
-    public init(asset: Image, flipped: Bool = false, accessibilityLabel: String? = nil) {
+    ///    - renderingMode: By default set to `.template`, allows to apply colors on given `asset` or not
+    public init(asset: Image,
+                flipped: Bool = false,
+                accessibilityLabel: String? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template)
+    {
         self.asset = asset
         assetName = nil
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         color = nil
+        self.renderingMode = renderingMode
     }
 
     /// Create the icon from its name.
@@ -93,6 +124,7 @@ public struct OUDSIcon: View {
         self.flipped = flipped
         self.accessibilityLabel = accessibilityLabel
         self.color = color
+        renderingMode = .template
     }
 
     // MARK: Body
@@ -100,21 +132,13 @@ public struct OUDSIcon: View {
     public var body: some View {
         image?
             .resizable()
-            .renderingMode(.template)
+            .renderingMode(renderingMode)
             .toFlip(flipped)
             .update(with: color)
             .accessibility(label: Text(accessibilityLabel ?? ""))
     }
 
     // MARK: Helpers
-
-    private var image: Image? {
-        if let assetName {
-            return Image(decorative: assetName, bundle: theme.resourcesBundle)
-        }
-
-        return asset
-    }
 
     // NOTE: Seen as unused by Periphery 3.4.0  (warning: Unused function 'update(with:)')
     private func update(with color: MultipleColorSemanticToken) -> some View {

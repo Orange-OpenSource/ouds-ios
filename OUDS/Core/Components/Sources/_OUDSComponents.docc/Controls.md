@@ -79,7 +79,7 @@ OUDSCheckboxItemIndeterminate("Dead Robot Zombie Cop",
 OUDSCheckboxItem("We live in a fabled world",
                  isOn: $isOn,
                  description: "Of dreaming boys and wide-eyed girls",
-                 icon: Image(decorative: "ic_heart"),
+                 image: OUDSImage(asset: Image(decorative: "ic_heart")),
                  isReversed: true,
                  isError: true,
                  hasDivider: true)
@@ -113,16 +113,16 @@ var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
          OUDSCheckboxPickerData<String>(tag: "Choice_1",
                                         label: "Virgin Holy Lava",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+                                        image: OUDSImage(asset: Image(systemName: "flame"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
          OUDSCheckboxPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -200,16 +200,23 @@ The indicator can be leading or trailing.
 // A leading radio with a label
 OUDSRadioItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 
-// A trailing radio with a label, an additional label, a descrption, an icon, a divider and is about an
-// error with a reversed layout
+// A trailing radio with a label, an additional label, a description, a tinted icon,
+// a divider and is about an error with a reversed layout
 OUDSRadioItem("Lucy in the Sky with Diamonds",
               isOn: $isOn,
-              extraLabel: "The Beatles"
+              extraLabel: "The Beatles",
               description: "1967",
-              icon: Image(decorative: "ic_heart"),
+              image: OUDSImage(asset: Image(decorative: "ic_heart")),
               isReversed: true,
               isError: true,
               hasDivider: true)
+
+// A radio with a raw (non-tinted) image and RTL flip support
+OUDSRadioItem("Lucy in the Sky with Diamonds",
+              isOn: $isOn,
+              image: OUDSImage(asset: Image(decorative: "il_someImage"),
+                               flipped: layoutDirection == .rightToLeft,
+                               renderingMode: .original))
 ```
 
 #### Radio picker
@@ -241,16 +248,16 @@ var someDataToPopulate: [OUDSRadioPickerData<String>] {
                                         label: "Virgin Holy Lava",
                                         extraLabel: "Very spicy",
                                         description: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+                                        image: OUDSImage(asset: Image(systemName: "flame"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_2",
                                         label: "IPA beer",
                                         description: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+                                        image: OUDSImage(asset: Image(systemName: "dog.fill"))),
 
             OUDSRadioPickerData<String>(tag: "Choice_3",
                                         label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))),
     ]
 }
 
@@ -322,15 +329,22 @@ OUDSSwitchItem("Dead Robot Zombie Cop",
                isOn: $isOn,
                description: "from Outer Space II")
 
-// A trailing switch with a label, a description, an icon, a divider and is about an error
+// A trailing switch with a label, a description, a tinted icon, a divider and is about an error
 // with an inverse layout
 OUDSSwitchItem("We live in a fabled world",
                 isOn: $isOn,
                 description: "Of dreaming boys and wide-eyed girls",
-                icon: Image(decorative: "ic_heart"),
+                image: OUDSImage(asset: Image(decorative: "ic_heart")),
                 isReversed: true,
                 isError: true,
                 hasDivider: true)
+
+// A trailing switch with a raw (non-tinted) image and RTL flip support
+OUDSSwitchItem("We live in a fabled world",
+                isOn: $isOn,
+                image: OUDSImage(asset: Image(decorative: "il_someImage"),
+                                 flipped: layoutDirection == .rightToLeft,
+                                 renderingMode: .original))
 ```
 
 ### Chips
@@ -356,13 +370,19 @@ The library proposes suggestion (``OUDSSuggestionChip``) chip component to make 
 
 ```swift
 // Suggestion chip with icon only
-OUDSSuggestionChip(icon: Image("ic_heart"), accessibilityLabel: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart") {}
+
+// Suggestion chip with raw icon (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Layout with text only
-OUDSSuggestionChip(text: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(text: "Heart") {}
 
 // Layout with text and icon
-OUDSSuggestionChip(icon: Image("ic_heart"), text: "Heart") { /* the action to process */ }
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
+
+// Layout with text and raw icon (not tinted)
+OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 #### Filter
@@ -386,13 +406,19 @@ The library proposes filter chip component (``OUDSFilterChip``) to make some fil
 
 ```swift
 // Filter chip with icon only as selected
-OUDSFilterChip(icon: Image("ic_heart"), accessibilityLabel: "Heart", selected: true) { /* the action to process */ }
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), accessibilityLabel: "Heart", selected: true) {}
+
+// Filter chip with raw icon (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), accessibilityLabel: "Brand") {}
 
 // Filter chip with text only as not selected
-OUDSFilterChip(text: "Heart") { /* the action to process */ }
+OUDSFilterChip(text: "Heart") {}
 
-// Filter chip with text and icon layout an in selected state
-OUDSFilterChip(icon: Image("ic_heart"), text: "Heart", selected: true) { /* the action to process */ }
+// Filter chip with text and icon in selected state
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart", selected: true) {}
+
+// Filter chip with text and raw icon (not tinted)
+OUDSFilterChip(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original), text: "Brand") {}
 ```
 
 
@@ -427,13 +453,16 @@ enum Drink: String, CaseIterable {
 var someDataToPopulate: [OUDSChipPickerData<Drink>] {
     [
         OUDSChipPickerData(tag: Drink.virginHolyLava,
-                          layout: .textAndIcon("Virgin Holy Lava", icon: Image(systemName: "flame"))),
+                          layout: .textAndIcon("Virgin Holy Lava",
+                                               image: OUDSImage(asset: Image(systemName: "flame")))),
 
-        OUDSChipPickerData(tag: Dring.ipaBeer,
-                           layout: .textAndIcon("IPA Beer", icon: Image(systemName: "dog.fill"))),
+        OUDSChipPickerData(tag: Drink.ipaBeer,
+                           layout: .textAndIcon("IPA Beer",
+                                                image: OUDSImage(asset: Image(systemName: "dog.fill")))),
 
         OUDSChipPickerData(tag: Drink.mineralWater,
-                           layout: .textAndIcon("Mineral water", icon: Image(systemName: "waterbottle.fill")),
+                           layout: .textAndIcon("Mineral water",
+                                                image: OUDSImage(asset: Image(systemName: "waterbottle.fill")))),
     ]
 }
 
@@ -618,11 +647,23 @@ OUDSTextInput(label: "Email", text: $text)
 OUDSTextInput(label: "Email", text: $text, prefix: "Distance", suffix: "km")
 
 // Add a leading icon for more context
-OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com", leadingIcon: Image(systemName: "envelope"))
+OUDSTextInput(label: "Email", text: $text, placeholder: "firstName.lastName", suffix: "@orange.com",
+              leadingImage: OUDSImage(asset: Image(systemName: "envelope")))
 
-// Add a trailing button with local image named "ic_cross" for additional action
-let trailingAction = OUDSTextInput.TrailingAction(icon: Image("ic_cross"), actionHint: "Delete") { text = "" }
+// Add a leading raw image (not tinted)
+OUDSTextInput(label: "Brand", text: $text,
+              leadingImage: OUDSImage(asset: Image("ic_brand"), renderingMode: .original))
+
+// Add a trailing button for additional action
+let trailingAction = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_cross")),
+                                                   actionHint: "Delete") { text = "" }
 OUDSTextInput(label: "Email", text: $text, trailingAction: trailingAction)
+
+// Add a trailing button with raw image (not tinted)
+let trailingActionRaw = OUDSTextInput.TrailingAction(image: OUDSImage(asset: Image("ic_brand"),
+                                                                      renderingMode: .original),
+                                                      actionHint: "Brand") { /* action */ }
+OUDSTextInput(label: "Brand", text: $text, trailingAction: trailingActionRaw)
 
 // With helper text
 OUDSTextInput(label: "Email",

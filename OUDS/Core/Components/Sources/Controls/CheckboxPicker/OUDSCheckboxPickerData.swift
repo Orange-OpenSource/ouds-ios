@@ -30,8 +30,8 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// An optional helper text the ``OUDSCheckboxItem`` can have
     let description: String?
 
-    /// An optional image the ``OUDSCheckboxItem`` can have
-    let icon: Image?
+    /// An optional image the ``OUDSCheckboxItem`` can have, encapsulating the asset, flip flag and rendering mode
+    let icon: OUDSImage?
 
     /// Define if the ``OUDSCheckboxItem`` is reversed or not
     let isReversed: Bool
@@ -50,17 +50,63 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// By default is nil as the logic of identifiers is in the hand of the users.
     let accessibilityIdentifier: String?
 
-    /// Defines the data to use to define the radio buttons (``OUDSCheckboxItem``)
-    ///
-    /// ```swift
-    ///     OUDSCheckboxPickerData(tag: "option1", label: "Option 1")
-    /// ```
+    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
     ///
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
     ///    - description: An optional text, default set to nil
     ///    - icon: An optional image, default set to nil
+    ///    - renderingMode: Default set to `.template`, forces the rendering mode of the image. Should be `.original` for raw images.
+    ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - isError: True if in an error context, false otherwise (default)
+    ///    - isReadOnly: True if read only, false otherwise (default)
+    ///    - hasDivider: True if a divider must be added for the current ``OUDSCheckboxItem``, false otherwise (default)
+    ///    - accessibilityIdentifier: The accessibility identifier to add to the item, nil by default
+    @available(*, deprecated, message: "Use OUDSCheckboxPickerData(tag:label:description:image:isReversed:isError:isReadOnly:hasDivider:accessibilityIdentifier:)  instead.")
+    public init(tag: Tag,
+                label: String,
+                description: String? = nil,
+                icon: Image? = nil,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                accessibilityIdentifier: String? = nil)
+    {
+        let oudsImage = icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) }
+        self.init(tag: tag,
+                  label: label,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  accessibilityIdentifier: accessibilityIdentifier)
+    }
+
+    /// Defines the data to use to define the checkbox items (``OUDSCheckboxItem``)
+    ///
+    /// ```swift
+    ///     OUDSCheckboxPickerData(tag: "option1", label: "Option 1")
+    ///
+    ///     OUDSCheckboxPickerData(tag: "option2",
+    ///                            label: "Option 2",
+    ///                            image: OUDSImage(asset: Image(systemName: "flame")))
+    ///
+    ///     // Raw (non-tinted) image:
+    ///     OUDSCheckboxPickerData(tag: "option3",
+    ///                            label: "Option 3",
+    ///                            image: OUDSImage(asset: Image(decorative: "il_brand"), renderingMode: .original))
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - tag: a value to discriminate one checkbox to another
+    ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
+    ///    - description: An optional text, default set to nil
+    ///    - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
     ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
@@ -72,7 +118,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     public init(tag: Tag,
                 label: String,
                 description: String? = nil,
-                icon: Image? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -82,7 +128,7 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
         self.tag = tag
         self.label = label
         self.description = description
-        self.icon = icon
+        icon = image
         self.isReversed = isReversed
         self.isError = isError
         self.isReadOnly = isReadOnly

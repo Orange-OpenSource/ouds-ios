@@ -44,18 +44,17 @@ import SwiftUI
 ///         [
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_1",
 ///                                        label: "Virgin Holy Lava",
-///                                        extraLabel: "Very spicy",
-///                                        helper: "No alcohol, only tasty flavors",
-///                                        icon: Image(systemName: "flame")),
+///                                        description: "No alcohol, only tasty flavors",
+///                                        image: OUDSImage(asset: Image(systemName: "flame")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_2",
 ///                                        label: "IPA beer",
-///                                        helper: "From Brewdog company",
-///                                        icon: Image(systemName: "dog.fill")),
+///                                        description: "From Brewdog company",
+///                                        image: OUDSImage(asset: Image(systemName: "dog.fill")),
 ///
 ///         OUDSCheckboxPickerData<String>(tag: "Choice_3",
 ///                                        label: "Mineral water",
-///                                        icon: Image(systemName: "waterbottle.fill")),
+///                                        image: OUDSImage(asset: Image(systemName: "waterbottle.fill"))
 ///         ]
 ///     }
 ///
@@ -244,7 +243,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         OUDSCheckboxItem(checkbox.label,
                          isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                          description: checkbox.description,
-                         icon: checkbox.icon,
+                         image: checkbox.icon,
                          isReversed: isReversed ? true : checkbox.isReversed,
                          isError: isError ? true : checkbox.isError,
                          isReadOnly: isReadOnly ? true : checkbox.isReadOnly,

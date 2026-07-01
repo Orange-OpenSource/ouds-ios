@@ -14,6 +14,13 @@
 import OUDSFoundations
 import SwiftUI
 
+// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
+
+// swiftlint:disable file_length
+// swiftlint:disable function_default_parameter_at_end
+// swiftlint:disable line_length
+// swiftlint:disable type_body_length
+
 // MARK: - OUDS Switch Item
 
 /// Switch item is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
@@ -38,7 +45,6 @@ import SwiftUI
 ///
 /// In addition, the ``OUDSSwitchItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
-/// The switch can be also outlined in some cases.
 ///
 /// ## Accessibility considerations
 ///
@@ -57,43 +63,38 @@ import SwiftUI
 ///     @Published var isOn: Bool = false
 ///
 ///     // A leading switch with a label.
-///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
 ///     // Localizable from bundle can also be used
 ///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
-///     // The default layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
 ///
-///     // A leading switch with a label, and a description text.
-///     // The default layout will be used here.
+///     // A leading switch with a label and a description text.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
 ///
-///     // A leading switch with an additional label.
-///     // The default layout will be used here.
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, description: "The Beatles")
-///
-///     // A trailing switch with a label, an additional label, a description text and an icon.
-///     // The inverse layout will be used here.
+///     // A trailing switch with a label, a description and a tinted icon.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
 ///                    description: "The Beatles",
-///                    isReversed: true,
-///                    icon: Image(decorative: "ic_heart"))
+///                    image: OUDSImage(asset: Image(decorative: "ic_heart")),
+///                    isReversed: true)
 ///
-///     // A trailing switch with a label, a description text, an icon, a divider and is about an error.
-///     // The inverse layout will be used here.
-///     OUDSSwitchItem("Rescue from this world!",
+///     // A trailing switch with a raw (non-tinted) image.
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
 ///                    isOn: $isOn,
-///                    description: "Put your hand in mine",
-///                    icon: Image(decorative: "ic_heart"),
-///                    isReversed: true,
-///                    isError: true,
-///                    hasDivider: true)
+///                    description: "The Beatles",
+///                    image: OUDSImage(asset: Image(decorative: "il_someImage"), renderingMode: .original),
+///                    isReversed: true)
 ///
-///     // If on error, add an error message can help user to understand error context
+///     // Flip the icon for RTL layouts using OUDSImage.
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///                    isOn: $isOn,
+///                    image: OUDSImage(asset: Image(systemName: "figure.handball"),
+///                                    flipped: layoutDirection == .rightToLeft))
+///
+///     // If on error, add an error message to help user understand the error context
 ///     OUDSSwitchItem("Rescue from this world!",
 ///                    isOn: $isOn,
 ///                    isError: true,
@@ -101,7 +102,6 @@ import SwiftUI
 ///                    hasDivider: true)
 ///
 ///     // A leading switch with a label, but disabled.
-///     // The default layout will be used here.
 ///     OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
 ///         .disabled(true)
 ///
@@ -109,13 +109,6 @@ import SwiftUI
 ///     // This is forbidden by design!
 ///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
 ///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadOnly: true).disabled(true) // fatal error
-/// ```
-///
-/// If you need to flip your icon depending to the layout direction or not (e.g. if RTL mode lose semantics  / meanings):
-/// ```swift
-///     @Environment(\.layoutDirection) var layoutDirection
-///
-///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, flipLeadingIcon: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Rich text
@@ -164,42 +157,82 @@ public struct OUDSSwitchItem: View {
 
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Initializers
-
-    // For API signature consistency disable this warning
-    // swiftlint:disable function_default_parameter_at_end
+    // MARK: - Initializers — String label + errorText: String?
 
     /// Creates a switch with label and optional description text, icon, divider.
     ///
-    /// ```swift
-    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn)
-    /// ```
-    ///
-    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
-    ///
     /// - Parameters:
     ///   - label: The main label text of the switch, must not be empty
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
-    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
-    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
-    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
-    ///     modifier. Defaults to `false`.
-    ///
-    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
-    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An optional error message to display at the bottom
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = true,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(label,
+                  isOn: isOn,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth)
+    }
+
+    /// Creates a switch with label and optional description text, icon, divider.
+    ///
+    /// ```swift
+    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn)
+    ///
+    ///     OUDSSwitchItem("Wi-Fi", isOn: $isOn,
+    ///                    image: OUDSImage(asset: Image(decorative: "ic_wifi")))
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the switch, must not be empty
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - description: An additional helper text, a description, should not be empty
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   The `errorText` can be different if switch is selected or not.
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
+    ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
+    ///     modifier. Defaults to `false`.
+    public init(_ label: String,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                image: OUDSImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -237,8 +270,7 @@ public struct OUDSSwitchItem: View {
             label: label.localized(),
             extraLabel: nil,
             description: description?.localized(),
-            icon: icon,
-            flipIcon: flipIcon,
+            icon: image,
             isOutlined: false,
             isError: isError,
             errorText: errorTextContent,
@@ -246,6 +278,50 @@ public struct OUDSSwitchItem: View {
             hasDivider: hasDivider,
             constrainedMaxWidth: constrainedMaxWidth,
             orientation: isReversed ? .reversed : .default)
+    }
+
+    // MARK: - Initializers — String label + errorText: AttributedString
+
+    /// Creates a switch with label, optional description text, icon, divider, and an error message in rich text format.
+    ///
+    /// - Parameters:
+    ///   - label: The main label text of the switch, must not be empty
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - description: An additional helper text, a description, should not be empty
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
+    public init(_ label: String,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = true,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(label,
+                  isOn: isOn,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth)
     }
 
     /// Creates a switch with label, optional description text, icon, divider, and an error message in rich text format.
@@ -259,29 +335,26 @@ public struct OUDSSwitchItem: View {
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
+    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    ///
     /// - Parameters:
     ///   - label: The main label text of the switch, must not be empty
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
-    ///   The `errorText`can be different if switch is selected or not.
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     ///     When `false`, no specific width constraint is applied, allowing the component to size itself or follow external
     ///     modifier. Defaults to `false`.
-    ///
-    /// **Remark: If `label` and `description` strings are wording keys from strings catalog stored in `Bundle.main`, they are
-    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
+                image: OUDSImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -311,8 +384,7 @@ public struct OUDSSwitchItem: View {
             label: label.localized(),
             extraLabel: nil,
             description: description?.localized(),
-            icon: icon,
-            flipIcon: flipIcon,
+            icon: image,
             isOutlined: false,
             isError: isError,
             errorText: .attributed(errorText),
@@ -322,10 +394,63 @@ public struct OUDSSwitchItem: View {
             orientation: isReversed ? .reversed : .default)
     }
 
+    // MARK: - Initializers — LocalizedStringKey + errorText: String?
+
+    /// Creates a switch with a localized label.
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - description: An additional helper text, a description, should not be empty
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An optional error message to display at the bottom
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = true,
+                isError: Bool = false,
+                errorText: String? = nil,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth)
+    }
+
     /// Creates a switch with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
     ///     OUDSSwitchItem(LocalizedStringKey("notifications_setting"), bundle: Bundle.module, isOn: $isOn)
+    ///
+    ///     OUDSSwitchItem(LocalizedStringKey("wifi_setting"),
+    ///                    bundle: Bundle.module,
+    ///                    isOn: $isOn,
+    ///                    image: OUDSImage(asset: Image(decorative: "ic_wifi")))
     /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
@@ -336,21 +461,19 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
     ///   - isReadOnly: True if component is in read only, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
+                image: OUDSImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: String? = nil,
@@ -361,8 +484,7 @@ public struct OUDSSwitchItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: icon,
-                  flipIcon: flipIcon,
+                  image: image,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -371,7 +493,55 @@ public struct OUDSSwitchItem: View {
                   constrainedMaxWidth: constrainedMaxWidth)
     }
 
-    /// Creates a switch with a localized label, looking up the key in the given bundle.
+    // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
+
+    /// Creates a switch with a localized label and a rich attributed error text.
+    ///
+    /// - Parameters:
+    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
+    ///   - tableName: The name of the `.strings` file, or `nil` for the default
+    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off
+    ///   - description: An additional helper text, a description, should not be empty
+    ///   - icon: An optional icon image, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
+    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
+    ///   - isReadOnly: True if component is in read only
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
+    @available(*, deprecated, message: "Use OUDSSwitchItem(_:tableName:bundle:isOn:description:image:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:) instead.")
+    public init(_ key: LocalizedStringKey,
+                tableName: String? = nil,
+                bundle: Bundle = .main,
+                isOn: Binding<Bool>,
+                description: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                renderingMode: Image.TemplateRenderingMode = .template,
+                isReversed: Bool = true,
+                isError: Bool = false,
+                errorText: AttributedString,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                constrainedMaxWidth: Bool = false)
+    {
+        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
+        self.init(key.resolved(tableName: tableName, bundle: bundle),
+                  isOn: isOn,
+                  description: description,
+                  image: oudsImage,
+                  isReversed: isReversed,
+                  isError: isError,
+                  errorText: errorText,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  constrainedMaxWidth: constrainedMaxWidth)
+    }
+
+    /// Creates a switch with a localized label and a rich attributed error text.
     ///
     /// ```swift
     ///     OUDSSwitchItem(LocalizedStringKey("enable_payments"),
@@ -389,21 +559,19 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `true` of the switch indicator must be in trailing position, `false` otherwise. Default to `true`
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - errorText: An error message to display at the bottom. This message is ignored if `isError` is `false`.
+    ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
     ///   - isReadOnly: True if component is in read only, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - constrainedMaxWidth: When `true`, the item width is constrained to a maximum value defined by the design system.
     public init(_ key: LocalizedStringKey,
                 tableName: String? = nil,
                 bundle: Bundle = .main,
                 isOn: Binding<Bool>,
                 description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
+                image: OUDSImage? = nil,
                 isReversed: Bool = true,
                 isError: Bool = false,
                 errorText: AttributedString,
@@ -414,8 +582,7 @@ public struct OUDSSwitchItem: View {
         self.init(key.resolved(tableName: tableName, bundle: bundle),
                   isOn: isOn,
                   description: description,
-                  icon: icon,
-                  flipIcon: flipIcon,
+                  image: image,
                   isReversed: isReversed,
                   isError: isError,
                   errorText: errorText,
@@ -424,9 +591,7 @@ public struct OUDSSwitchItem: View {
                   constrainedMaxWidth: constrainedMaxWidth)
     }
 
-    // swiftlint:enable function_default_parameter_at_end
-
-    // MARK: Body
+    // MARK: - Body
 
     public var body: some View {
         ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
@@ -435,6 +600,8 @@ public struct OUDSSwitchItem: View {
             .accessibilityValue(accessibilityValue)
             .accessibilityHint(accessibilityHint)
     }
+
+    // MARK: - A11Y helpers
 
     /// Forge a string to vocalize the component label based on label, extraLabel and description
     private var accessibilityLabel: String {
@@ -465,3 +632,7 @@ public struct OUDSSwitchItem: View {
         }
     }
 }
+
+// swiftlint:enable function_default_parameter_at_end
+// swiftlint:enable line_length
+// swiftlint:enable type_body_length

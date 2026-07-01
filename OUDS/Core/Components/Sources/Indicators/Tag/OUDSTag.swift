@@ -105,10 +105,12 @@ import SwiftUI
 ///     OUDSTag(label: "Label", status: .neutral(leading: .bullet)
 ///
 ///     // Tag with neutral status with a custom decorative icon
-///     OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart")))
+///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
 ///     // If your layout is in RTL mode but your tag has an icon with another meaning because of bad orientation,
-///     // you can flip the icon
-///     OUDSTag(label: "Label", status: .neutral(icon: Image(decorative: "ic_heart"), flipIcon: true))
+///     // you can flip the icon using OUDSImage.flipped
+///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+///     // If you want to display a raw image (not tinted), use renderingMode: .original
+///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
 ///
 ///     // Text with neutral status with bullet
 ///     OUDSTag(label: "Label", status: .neutral(bullet: true))
@@ -177,8 +179,7 @@ public struct OUDSTag: View {
 
         let leading: Self.Leading
         let category: Self.Category
-        let customIcon: Image?
-        let flipIcon: Bool
+        let customIcon: OUDSImage?
 
         /// The leading element of the tag
         /// - Since: 0.18.0
@@ -248,8 +249,27 @@ public struct OUDSTag: View {
         /// - Parameters:
         ///    - icon: The icon to set as leading element in the tag
         ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        public static func neutral(icon: Image, flipIcon: Bool = false) -> Status {
-            Status(leading: .icon, category: .neutral, alternativeIcon: icon, flipIcon: flipIcon)
+        ///    - renderingMode: The rendering mode to apply on the icon
+        @available(*, deprecated, message: "Use OUDSTag.Status.neutral(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
+        public static func neutral(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
+            .neutral(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
+        }
+
+        /// Used to create a tag with a neutral status with a leading ``OUDSImage`` icon.
+        ///
+        /// ```swift
+        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+        ///
+        ///     // Flip for RTL:
+        ///     OUDSTag(label: "Label", status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true)))
+        /// ```
+        ///
+        /// - Parameter image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
+        public static func neutral(image: OUDSImage) -> Status {
+            Status(leading: .icon, category: .neutral, alternativeIcon: image)
         }
 
         /// Used to create a tag with a neutral status with leading bullet or not.
@@ -259,16 +279,32 @@ public struct OUDSTag: View {
             Status(leading: bullet ? .bullet : .none, category: .neutral)
         }
 
-        /// Used to create a tag with a accent status with leading icon.
+        /// Used to create a tag with an accent status with leading icon.
         ///
         /// - Parameters:
         ///    - icon: The icon to set as leading element in the tag
         ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        public static func accent(icon: Image, flipIcon: Bool = false) -> Status {
-            Status(leading: .icon, category: .accent, alternativeIcon: icon, flipIcon: flipIcon)
+        ///    - renderingMode: The rendering mode to apply on the icon
+        @available(*, deprecated, message: "Use OUDSTag.Status.accent(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
+        public static func accent(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
+            .accent(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
         }
 
-        /// Used to create a tag with a accent status with leading bullet or not.
+        /// Used to create a tag with an accent status with a leading ``OUDSImage`` icon.
+        ///
+        /// ```swift
+        ///     OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image(decorative: "ic_heart"))))
+        ///
+        ///     // Raw (non-tinted) image:
+        ///     OUDSTag(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_brand"), renderingMode: .original)))
+        /// ```
+        ///
+        /// - Parameter image: An ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode
+        public static func accent(image: OUDSImage) -> Status {
+            Status(leading: .icon, category: .accent, alternativeIcon: image)
+        }
+
+        /// Used to create a tag with an accent status with leading bullet or not.
         ///
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
         public static func accent(bullet: Bool = false) -> Status {
@@ -280,13 +316,11 @@ public struct OUDSTag: View {
         /// - Parameters:
         ///    - leading: The leading element
         ///    - category: The category of the status
-        ///    - alternativeIcon: The optional leading icon
-        ///    - flipIcon: Flag to flip icon
-        private init(leading: Leading, category: Self.Category, alternativeIcon: Image? = nil, flipIcon: Bool = false) {
+        ///    - alternativeIcon: The optional leading ``OUDSImage`` (asset, flip and rendering mode encapsulated)
+        private init(leading: Leading, category: Self.Category, alternativeIcon: OUDSImage? = nil) {
             self.leading = leading
             self.category = category
             customIcon = alternativeIcon
-            self.flipIcon = flipIcon
         }
     }
 
