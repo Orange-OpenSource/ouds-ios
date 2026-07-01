@@ -54,8 +54,7 @@ struct TextAreaTrailingContainer: View {
             } else if isOverLimit {
                 errorIcon
             } else if case .loading = status {
-                OUDSButton(icon: Image(decorative: "ic_heart"), // Image won't never be displayed
-                           accessibilityLabel: "",
+                OUDSButton(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: ""), // Image won't never be displayed
                            appearance: .minimal,
                            style: .loading,
                            action: {})

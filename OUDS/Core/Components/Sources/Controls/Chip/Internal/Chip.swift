@@ -126,23 +126,25 @@ private struct ChipContent: View {
             switch layout {
             case let .icon(oudsImage, accessibilityLabel):
                 if let asset = oudsImage.asset {
-                    ScaledIcon(icon: asset.renderingMode(oudsImage.renderingMode),
+                    ScaledIcon(image: OUDSImage(asset: asset,
+                                                flipped: oudsImage.flipped,
+                                                accessibilityLabel: accessibilityLabel,
+                                                renderingMode: oudsImage.renderingMode),
                                size: theme.chip.sizeIcon)
-                        .accessibilityLabel(accessibilityLabel)
                 }
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, oudsImage, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
-                    if iconPosition == .leading, let asset = oudsImage.asset {
-                        FixedIcon(icon: asset.resizable().renderingMode(oudsImage.renderingMode),
+                    if iconPosition == .leading, oudsImage.asset != nil {
+                        FixedIcon(image: oudsImage,
                                   size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
-                    if iconPosition == .trailing, let asset = oudsImage.asset {
-                        FixedIcon(icon: asset.resizable().renderingMode(oudsImage.renderingMode),
+                    if iconPosition == .trailing, oudsImage.asset != nil {
+                        FixedIcon(image: oudsImage,
                                   size: theme.chip.sizeIcon)
                     }
                 }
@@ -181,7 +183,7 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ScaledIcon(icon: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle).renderingMode(.template),
+            ScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle), renderingMode: .template),
                        size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .foregroundColor(appliedColor)

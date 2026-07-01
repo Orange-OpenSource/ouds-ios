@@ -47,6 +47,14 @@ public struct OUDSImage: View {
     public let color: MultipleColorSemanticToken?
     public let renderingMode: Image.TemplateRenderingMode
 
+    public var image: Image? {
+        if let assetName {
+            return Image(decorative: assetName, bundle: theme.resourcesBundle)
+        }
+
+        return asset
+    }
+
     @Environment(\.theme) private var theme
 
     // MARK: Initializers
@@ -131,14 +139,6 @@ public struct OUDSImage: View {
     }
 
     // MARK: Helpers
-
-    private var image: Image? {
-        if let assetName {
-            return Image(decorative: assetName, bundle: theme.resourcesBundle)
-        }
-
-        return asset
-    }
 
     // NOTE: Seen as unused by Periphery 3.4.0  (warning: Unused function 'update(with:)')
     private func update(with color: MultipleColorSemanticToken) -> some View {

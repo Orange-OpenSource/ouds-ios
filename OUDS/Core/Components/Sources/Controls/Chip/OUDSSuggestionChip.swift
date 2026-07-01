@@ -291,7 +291,7 @@ public struct OUDSSuggestionChip: View {
 
     private var accessibilityLabel: String {
         switch layout {
-        case let .text(text), let .textAndIcon(text, _, _, _), let .icon(_, text, _):
+        case let .text(text), let .textAndIcon(text, _, _), let .icon(_, text):
             text
         }
     }

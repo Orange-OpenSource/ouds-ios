@@ -181,7 +181,7 @@ public struct OUDSLink: View {
                 size: Size = .default,
                 action: @escaping () -> Void)
     {
-        self.init(key.resolved(tableName: tableName, bundle: bundle),
+        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
                   icon: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
                   size: size,
                   action: action)
