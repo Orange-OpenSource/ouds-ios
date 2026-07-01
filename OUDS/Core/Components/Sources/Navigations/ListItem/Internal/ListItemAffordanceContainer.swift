@@ -30,19 +30,25 @@ struct ListItemAffordanceContainer: View {
     // MARK: - Body
 
     var body: some View {
-        if let assetName {
+        if let asset {
             HStack {
-                Image(decorative: assetName, bundle: theme.resourcesBundle)
-                    .renderingMode(.template)
-                    .resizable()
+                ScaledIcon(icon: asset, size: theme.controlItem.sizeAssetSmall)
                     .foregroundColor(color)
-                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
             }
             .frame(minHeight: minHeight, alignment: .center)
         }
     }
 
     // MARK: - Helpers
+
+    private var asset: Image? {
+        if let assetName {
+            Image(assetName, bundle: theme.resourcesBundle)
+                .renderingMode(.template)
+        } else {
+            nil
+        }
+    }
 
     private var assetName: String? {
         switch type {

@@ -81,6 +81,7 @@ struct ListItemBordersModifier: ViewModifier {
         }
 
         if let color {
+            // TODO: ouds/💠_control/list-item/border/width/default
             content
                 .border(style: theme.borders.styleDefault,
                         width: theme.controlItem.borderWidthDefault,

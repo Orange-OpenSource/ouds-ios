@@ -104,16 +104,20 @@ struct ListItemContent<Slot: View>: View {
         case .small:
             switch containersAlignment {
             case .top:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-small
                 theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopCounterweight
             case .center:
+                // TODO: ouds/💠_control/list-item/space/padding-block/small
                 theme.controlItem.spacePaddingBlockDensityCompact
             }
 
         case .standard:
             switch containersAlignment {
             case .top:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-counterweight-default
                 theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopCounterweight
             case .center:
+                // TODO: ouds/💠_control/list-item/space/padding-block/default
                 theme.controlItem.spacePaddingBlockDensityDefault
             }
         }
@@ -122,8 +126,10 @@ struct ListItemContent<Slot: View>: View {
     private var bottomPadding: Double {
         switch itemSize {
         case .small:
+            // TODO: ouds/💠_control/list-item/space/padding-block/small
             theme.controlItem.spacePaddingBlockDensityCompact
         case .standard:
+            // TODO: ouds/💠_control/list-item/space/padding-block/default
             theme.controlItem.spacePaddingBlockDensityDefault
         }
     }
@@ -131,8 +137,10 @@ struct ListItemContent<Slot: View>: View {
     private var minHeight: SizeSemanticToken {
         switch itemSize {
         case .small:
+            // TODO: ouds/💠_control/list-item/size/min-height-small
             theme.controlItem.sizeMinHeightCompact
         case .standard:
+            // TODO: ouds/💠_control/list-item/size/min-height-defaull
             theme.controlItem.sizeMinHeightDefault
         }
     }
