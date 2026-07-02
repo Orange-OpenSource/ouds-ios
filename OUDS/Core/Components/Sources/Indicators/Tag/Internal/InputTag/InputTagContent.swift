@@ -17,7 +17,7 @@ import SwiftUI
 struct InputTagContent: View {
 
     let label: String
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -25,9 +25,9 @@ struct InputTagContent: View {
         HStack(alignment: .center, spacing: theme.tag.spaceColumnGapDefault) {
             Text(label)
                 .labelModerateMedium(theme)
-            ScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle),
-                                        renderingMode: .template),
-                       size: theme.tag.sizeAssetDefault)
+            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_tag_close", bundle: theme.resourcesBundle),
+                                            renderingMode: .template),
+                           size: theme.tag.sizeAssetDefault)
                 .aspectRatio(contentMode: .fit)
         }
         .padding(.vertical, theme.tag.spacePaddingBlockDefault)

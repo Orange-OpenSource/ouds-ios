@@ -536,8 +536,8 @@ private struct ButtonIcon: View {
     let image: OUDSImage
 
     var body: some View {
-        ScaledIcon(image: image,
-                   size: theme.button.sizeIconOnly)
+        OUDSScaledIcon(image: image,
+                       size: theme.button.sizeIconOnly)
             .padding(.all, theme.button.spaceInsetIconOnly)
             .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight)
     }
@@ -570,8 +570,8 @@ private struct ButtonTextAndIcon: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.button.spaceColumnGapIcon) {
-            FixedIcon(image: image,
-                      size: theme.button.sizeIcon)
+            OUDSFixedIcon(image: image,
+                          size: theme.button.sizeIcon)
 
             TextForButton(text: text)
         }

@@ -19,13 +19,13 @@ import SwiftUI
 // MARK: - Radio Indicator Modifier
 
 /// A `ViewModier` to apply to the ``RadioIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``InteractionState`` and some flags
+/// It will define the look and feel of the indicator depending to the ``OUDSButtonInteractionState`` and some flags
 /// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct RadioIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -46,7 +46,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -121,7 +121,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isError: Bool
 
     // MARK: - Body
@@ -173,7 +173,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isOn: Bool
     let isError: Bool
 

@@ -95,7 +95,7 @@ struct UnorderedBullet: View {
     // MARK: Body
 
     var body: some View {
-        ScaledIcon(image: OUDSImage(asset: image, renderingMode: .template), size: assetSize)
+        OUDSScaledIcon(image: OUDSImage(asset: image, renderingMode: .template), size: assetSize)
             .foregroundColor(color)
     }
 

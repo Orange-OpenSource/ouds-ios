@@ -14,12 +14,12 @@
 import SwiftUI
 
 /// The indicator of the radio.
-/// Its content depends mainly to the ``InteractionState`` and from flags also.
+/// Its content depends mainly to the ``OUDSButtonInteractionState`` and from flags also.
 struct RadioIndicator: View {
 
     // MARK: - Properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let isOn: Bool
     let isError: Bool
 

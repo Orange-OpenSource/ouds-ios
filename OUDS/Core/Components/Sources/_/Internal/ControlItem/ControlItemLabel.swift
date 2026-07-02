@@ -22,7 +22,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Stored properties
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
