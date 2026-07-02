@@ -22,6 +22,7 @@ Load skills on demand for detailed guidance:
 - **`ouds-ios-framework-usage`** — full usage reference: imports, themes, tokens, view modifiers, all components with code examples
 - **`ouds-ios-figma-to-swift`** — how to derive a Swift token name from a Figma token path (raw, semantic and component tokens)
 - **`ouds-ios-migration`** — step-by-step migration guide from v1.0.0 to v2.3.0 (current); covers all breaking changes, removed APIs and deprecated symbols
+- **`ouds-ios-create-theme`** — step-by-step guide to create a custom OUDS theme (subclass OrangeTheme, from scratch on OUDSTheme, mix of providers, local fonts)
 
 ## Key files
 
@@ -37,6 +38,7 @@ Load skills on demand for detailed guidance:
 - Always load the **`ouds-ios-framework-usage`** skill before writing or reviewing code that uses OUDS components or tokens.
 - Always load the **`ouds-ios-figma-to-swift`** skill when asked to find or map a Figma token name to its Swift equivalent.
 - Always load the **`ouds-ios-migration`** skill when the user wants to migrate OUDS code or when deprecated OUDS API usages are detected.
+- Always load the **`ouds-ios-create-theme`** skill when the user wants to create a custom OUDS theme or brand theme.
 - Before committing: format → build → fix errors → run tests → lint (see `.github/copilot-instructions.md` §3).
 - Use `#available` for iOS 26 SDK APIs (min deployment is iOS 15).
 - Use `#if os(…)` for platform-specific code.

@@ -8,7 +8,8 @@
         "ouds-ios-vocabulary",
         "ouds-ios-framework-usage",
         "ouds-ios-figma-to-swift",
-        "ouds-ios-migration"
+        "ouds-ios-migration",
+        "ouds-ios-create-theme"
       ]
     }
   ]
