@@ -51,7 +51,6 @@ struct ListItemTextContainer<Slot: View>: View {
                         .labelModerateSmall(theme)
                         .multilineTextAlignment(.leading)
                         .foregroundStyle(descriptionOverlineColor)
-                        .padding(.top, topPadding)
                 }
 
                 HStack {
@@ -72,7 +71,7 @@ struct ListItemTextContainer<Slot: View>: View {
                 }
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelsColor)
-                .frame(maxWidth: .infinity, minHeight: labelMinHeight, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
                 if let extraLabel = data.extraLabel,
                    !extraLabel.isEmpty,
@@ -102,15 +101,22 @@ struct ListItemTextContainer<Slot: View>: View {
                     .padding(.bottom, theme.controlItem.spacePaddingBlockBottomSlot)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding(.top, topPadding)
+        .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .topLeading)
     }
 
     // MARK: - Helpers
 
     private var topPadding: CGFloat {
-        if alignment == .top, itemSize == .standard {
-            // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-default
-            theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+        if alignment == .top {
+            switch itemSize {
+            case .standard:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-default
+                theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+            case .small:
+                // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-small
+                theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
+            }
         } else {
             theme.spaces.fixedNone
         }
@@ -124,7 +130,7 @@ struct ListItemTextContainer<Slot: View>: View {
         interactionState == .disabled ? theme.colors.contentDisabled : theme.colors.contentMuted
     }
 
-    private var labelMinHeight: CGFloat {
+    private var minHeight: CGFloat {
         let rawSize = switch itemSize {
         case .standard:
             // TODO: ouds/💠_control/list-item/size/asset/medium

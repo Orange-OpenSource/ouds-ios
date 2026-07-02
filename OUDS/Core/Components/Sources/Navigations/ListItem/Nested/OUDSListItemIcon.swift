@@ -148,6 +148,7 @@ public struct OUDSListItemIcon: View {
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: - Body
 
@@ -228,7 +229,7 @@ public struct OUDSListItemIcon: View {
     }
 
     private var assetSize: SizeSemanticToken {
-        switch itemSize {
+        let rawSize = switch itemSize {
         case .standard:
             switch size {
             case .medium:
@@ -239,6 +240,8 @@ public struct OUDSListItemIcon: View {
         case .small:
             theme.controlItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     private var badgeSize: OUDSBadgeStandard.Size {
