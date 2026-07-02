@@ -39,7 +39,7 @@ struct LinkButtonStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
+        let interactionState = OUDSButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         Group {
             switch layout {
             case let .indicator(indicator):
@@ -80,7 +80,7 @@ private struct LinkIndicatorLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let size: OUDSLink.Size
     let indicator: OUDSLink.Indicator
 
@@ -115,7 +115,7 @@ private struct LinkTextAndIconLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
-    let interactionState: InteractionState
+    let interactionState: OUDSButtonInteractionState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 

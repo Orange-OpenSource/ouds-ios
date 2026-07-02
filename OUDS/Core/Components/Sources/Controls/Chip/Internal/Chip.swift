@@ -17,14 +17,14 @@ import SwiftUI
 // MARK: - Chip
 
 /// The ``Chip`` proposes layout with text only, icon only or text with icon.
-/// The layout of the chip will change according to the ``ChipInteractionState`` and the selected flag.
+/// The layout of the chip will change according to the ``OUDSChipInteractionState`` and the selected flag.
 struct Chip: View {
 
     // MARK: Stored Properties
 
     private let layout: Layout
     private let selected: Bool
-    private let interactionState: ChipInteractionState
+    private let interactionState: OUDSChipInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -49,7 +49,7 @@ struct Chip: View {
     ///    - layout: The layout of the chip
     ///    - selected: Flag to know if chip is selected or not
     ///    - interactionState: The interaction state
-    init(layout: Layout, selected: Bool, interactionState: ChipInteractionState) {
+    init(layout: Layout, selected: Bool, interactionState: OUDSChipInteractionState) {
         self.layout = layout
         self.selected = selected
         self.interactionState = interactionState
@@ -115,7 +115,7 @@ private struct ChipContent: View {
 
     let layout: Chip.Layout
     let selected: Bool
-    let interactionState: ChipInteractionState
+    let interactionState: OUDSChipInteractionState
 
     @Environment(\.theme) private var theme
 
@@ -126,26 +126,26 @@ private struct ChipContent: View {
             switch layout {
             case let .icon(oudsImage, accessibilityLabel):
                 if let asset = oudsImage.asset {
-                    ScaledIcon(image: OUDSImage(asset: asset,
-                                                flipped: oudsImage.flipped,
-                                                accessibilityLabel: accessibilityLabel,
-                                                renderingMode: oudsImage.renderingMode),
-                               size: theme.chip.sizeIcon)
+                    OUDSScaledIcon(image: OUDSImage(asset: asset,
+                                                    flipped: oudsImage.flipped,
+                                                    accessibilityLabel: accessibilityLabel,
+                                                    renderingMode: oudsImage.renderingMode),
+                                   size: theme.chip.sizeIcon)
                 }
             case let .text(text):
                 ChipText(text: text)
             case let .textAndIcon(text, oudsImage, iconPosition):
                 HStack(alignment: .center, spacing: theme.chip.spaceColumnGapIcon) {
                     if iconPosition == .leading, oudsImage.asset != nil {
-                        FixedIcon(image: oudsImage,
-                                  size: theme.chip.sizeIcon)
+                        OUDSFixedIcon(image: oudsImage,
+                                      size: theme.chip.sizeIcon)
                     }
 
                     ChipText(text: text)
 
                     if iconPosition == .trailing, oudsImage.asset != nil {
-                        FixedIcon(image: oudsImage,
-                                  size: theme.chip.sizeIcon)
+                        OUDSFixedIcon(image: oudsImage,
+                                      size: theme.chip.sizeIcon)
                     }
                 }
             }
@@ -174,7 +174,7 @@ private struct ChipSelectionIndicator: View {
 
     // MARK: Stored Properties
 
-    let state: ChipInteractionState
+    let state: OUDSChipInteractionState
     let selected: Bool
 
     @Environment(\.theme) private var theme
@@ -183,8 +183,8 @@ private struct ChipSelectionIndicator: View {
 
     var body: some View {
         if selected {
-            ScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle), renderingMode: .template),
-                       size: theme.chip.sizeIcon)
+            OUDSScaledIcon(image: OUDSImage(asset: Image(decorative: "ic_chip_tick", bundle: theme.resourcesBundle), renderingMode: .template),
+                           size: theme.chip.sizeIcon)
                 .accessibilityHidden(true)
                 .foregroundColor(appliedColor)
         }

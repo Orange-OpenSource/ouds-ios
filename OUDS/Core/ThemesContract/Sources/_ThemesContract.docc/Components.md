@@ -10,7 +10,7 @@ _Components_ are the `View` objects you can add in the views of your apps, like 
 ## How to use components
 
 Import the product of components, and use the component you want.
-Of course you must use in your root view the <doc:/OUDSThemesContract/OUDSThemeableView> with the suitable theme to asign it in environement variable so as to allow components to load their tokens:
+Of course you must use in your root view the <doc:/OUDSThemesContract/OUDSThemeableView> with the suitable theme to asign it in environment variable so as to allow components to load their tokens:
 
 ```swift
 // The theme can be OrangeTheme or your own

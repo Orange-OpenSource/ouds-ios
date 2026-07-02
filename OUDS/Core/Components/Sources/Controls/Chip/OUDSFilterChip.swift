@@ -298,8 +298,8 @@ public struct OUDSFilterChip: View {
     // MARK: - Body
 
     public var body: some View {
-        InteractionButton(action: action) {
-            Chip(layout: layout, selected: selected, interactionState: ChipInteractionState(with: $0))
+        OUDSInteractionButton(action: action) {
+            Chip(layout: layout, selected: selected, interactionState: OUDSChipInteractionState(with: $0))
                 .accessibilityHidden(true)
         }
         .accessibilityAddTraits(selected ? [.isSelected] : [])

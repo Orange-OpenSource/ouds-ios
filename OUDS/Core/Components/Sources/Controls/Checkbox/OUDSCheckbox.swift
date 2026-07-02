@@ -161,7 +161,7 @@ public struct OUDSCheckbox: View {
     // MARK: Body
 
     public var body: some View {
-        InteractionButton(isReadOnly: isReadOnly) {
+        OUDSInteractionButton(isReadOnly: isReadOnly) {
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)

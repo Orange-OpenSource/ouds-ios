@@ -92,7 +92,7 @@ public struct OUDSInputTag: View {
     }
 
     public var body: some View {
-        InteractionButton(action: action) {
+        OUDSInteractionButton(action: action) {
             InputTagContent(label: label, interactionState: $0)
         }
         .frame(height: theme.tag.sizeMinHeightInteractiveArea, alignment: .center)

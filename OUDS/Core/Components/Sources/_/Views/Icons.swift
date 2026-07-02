@@ -15,12 +15,26 @@ import SwiftUI
 
 // MARK: - Fixed Icon
 
-struct FixedIcon: View {
+/// Defines an image based on ``OUDSImage`` with with a fixed size
+///
+/// ## Code samples
+///
+/// ```swift
+///   OUDSFixedIcon(image: someOudsImage, size: someTokenOfSize)
+/// ```
+///
+/// - Since: 2.3.0
+public struct OUDSFixedIcon: View {
 
     let image: OUDSImage
     let size: CGFloat
 
-    var body: some View {
+    public init(image: OUDSImage, size: CGFloat) {
+        self.image = image
+        self.size = size
+    }
+
+    public var body: some View {
         image
             .frame(width: size, height: size, alignment: .center)
     }
@@ -28,17 +42,26 @@ struct FixedIcon: View {
 
 // MARK: - Scaled icon
 
-struct ScaledIcon: View {
+/// Defines an image based on ``OUDSImage`` with with a dynamic size depending to `ScaledMetric`
+///
+/// ## Code samples
+///
+/// ```swift
+///   OUDSScaledIcon(image: someOudsImage, size: someTokenOfSize)
+/// ```
+///
+/// - Since: 2.3.0
+public struct OUDSScaledIcon: View {
 
     let image: OUDSImage
     @ScaledMetric var size: CGFloat
 
-    init(image: OUDSImage, size: CGFloat) {
+    public init(image: OUDSImage, size: CGFloat) {
         self.image = image
         _size = ScaledMetric(wrappedValue: size)
     }
 
-    var body: some View {
+    public var body: some View {
         image
             .frame(width: size, height: size, alignment: .center)
     }

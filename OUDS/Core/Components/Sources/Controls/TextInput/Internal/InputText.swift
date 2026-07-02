@@ -31,7 +31,7 @@ struct InputText: View {
 
     var body: some View {
         Group {
-            // Warning: For secureTextField, the native font is prefered
+            // Warning: For secureTextField, the native font is preferred
             // to get the right size of dots.
             if textInputAsSecureField {
                 SecureField(text: text, label: textFieldLabel)
@@ -79,7 +79,7 @@ struct InputText: View {
 
     private func textFieldLabel() -> some View {
         Text(label)
-            .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is prefered)
+            .minimumScaleFactor(1.0) // Use to fix font size adaptation if long text (scroll is preferred)
             .labelDefaultLarge(theme)
             .foregroundStyle(labelColor)
     }

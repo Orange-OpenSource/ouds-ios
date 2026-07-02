@@ -123,7 +123,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// View model acting as coordinator between root checkbox and children checkboxes
     @StateObject private var coordinator: CheckboxPickerCoordinator
 
-    // MARK: - Environement variables
+    // MARK: - Environment variables
 
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.layoutDirection) private var layoutDirection
