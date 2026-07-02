@@ -140,10 +140,6 @@ extension WireframeThemeControlItemComponentTokensProvider: ControlItemComponent
     @objc public final var sizeFlagHeight: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
     /// Has for value token DimensionRawTokens._50 (= 4)
     @objc public final var sizeCurrentIndicatorWidth: SizeSemanticToken { DimensionRawTokens._50 }
-
-    // MARK: - Old tokens to keep until components updates
-    // See https://github.com/Orange-OpenSource/ouds-ios#1437
-
     /// Has for value token borders.radiusNone
     @objc public final var borderRadius: BorderRadiusSemanticToken { borders.radiusNone }
     /// Has for value token spaces.paddingBlockNone

@@ -118,6 +118,7 @@ struct BadgeModifierDeprecated: ViewModifier {
     }
 }
 
+@available(*, deprecated, message: "Use BadgeModifier(configuration:) instead.")
 extension OUDSBadge.IllustrationSize {
 
     /// Internal usage: convert to standard size
@@ -131,6 +132,7 @@ extension OUDSBadge.IllustrationSize {
     }
 }
 
+@available(*, deprecated, message: "Use BadgeModifier(configuration:) instead.")
 extension OUDSBadge.StatusWithIcon {
 
     /// The standardized status of the badge contaning an icon

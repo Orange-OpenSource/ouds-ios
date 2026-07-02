@@ -91,7 +91,13 @@ struct MultipleColorSemanticTokenTests {
 
     // MARK: - Extension with OUDSWCAG21Ratio
 
-    @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utlity must return suitable values", .enabled(if: Self.doesRunOniOS))
+    @Test("oudsDebugWCAG21Colors debug flag must be false by default")
+    func oudsDebugWCAG21ColorsDefaultIsFalse() {
+        defer { OUDSWCAG21Ratio.oudsDebugWCAG21Colors = false }
+        #expect(OUDSWCAG21Ratio.oudsDebugWCAG21Colors == false)
+    }
+
+    @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utility must return suitable values", .enabled(if: Self.doesRunOniOS))
     func debugContrastRatioWithTokens() {
 
         OUDSWCAG21Ratio.oudsDebugWCAG21Colors = true

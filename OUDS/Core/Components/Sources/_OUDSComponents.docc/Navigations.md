@@ -44,6 +44,111 @@ OUDSLink(text: "Brand", image: OUDSImage(asset: Image("ic_brand"), renderingMode
 OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
 ```
 
+### List items
+
+The ``OUDSStaticListItem`` displays a non-interactive row of information, while ``OUDSNavigationListItem`` adds tap interaction and a navigation indicator (chevron or external link icon).
+
+Both components use an ``OUDSListItemData`` model for their textual content, and accept optional leading and trailing elements.
+
+#### Static list item
+
+Use ``OUDSStaticListItem`` when the row is display-only and should not trigger any action or navigation.
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_static_list_item_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_static_list_item_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_static_list_item_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_static_list_item_Wireframe)
+    }
+}
+
+
+```swift
+// Simple list item with a label only
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+
+// List item with full textual content
+OUDSStaticListItem(data: OUDSListItemData(
+    label: "Label",
+    isBoldLabel: true,
+    description: "Description",
+    overline: "Overline",
+    extraLabel: "Extra label",
+    helperText: "Helper text providing guidance"
+))
+
+// List item with a leading icon and a trailing badge
+let icon = OUDSListItemIcon(type: .info, size: .medium)
+let badge = OUDSBadgeIcon(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium)
+
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Notifications"),
+    leading: .icon(icon),
+    trailing: .badge(.icon(badge)
+)
+```
+
+#### Navigable list item
+
+Use ``OUDSNavigationListItem`` when tapping the row should trigger an action. The ``OUDSNavigationListItemIndicatorType`` defines the visual indicator shown:
+
+@TabNavigator {
+    @Tab("Orange") {
+        ![A list item component in light and dark modes with Orange theme](component_navigation_list_item_Orange)
+    }
+    @Tab("Orange Compact") {
+        ![A list item component in light and dark modes with Orange compact theme](component_navigation_list_item_OrangeCompact)
+    }
+    @Tab("Sosh") {
+        ![A list item component in light and dark modes with Sosh theme](component_navigation_list_item_Sosh)
+    }
+    @Tab("Wireframe") {
+        ![A list item component in light and dark modes with Wireframe theme](component_navigation_list_item_Wireframe)
+    }
+}
+
+```swift
+// Forward navigation (default)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Next screen")
+) {
+    // Navigate to next screen
+}
+
+// External navigation
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Open website"), 
+                       indicatorType: .external) {
+    openURL(url)
+}
+
+// Backward navigation
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Go back"),
+                       indicator: .previous
+) {
+    // Navigate back
+}
+
+// With a leading avatar and a trailing text
+let avatar = OUDSListItemAvatar(type: .icon, size: .medium)
+
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    leading: .avatar(avatar),
+    trailing: .text(.labelMuted(Text("Details")))
+) {
+    // Navigate to profile
+}
+```
+
 ### Tab bars
 
 @TabNavigator {

@@ -19,7 +19,7 @@ import SwiftUI
 @main
 struct OUDSTutorialSandboxApp: App {
 
-    static let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true)
+    static let themeTuning = Tuning(hasRoundedButtons: true, hasRoundedTextInputs: true, hasRoundedAlertMessages: true, hasRoundedListItems: true)
 
     let myTheme = OrangeTheme(borders: MyOwnProviderOfBorderTokens(),
                               colors: MyOwnProviderOfColorTokens(),
@@ -97,9 +97,9 @@ struct ContentView: View {
                 }
                 .background(theme.colors.bgTertiary)
                 .border(style: theme.borders.styleDefault,
-                            width: theme.borders.widthThin,
-                            radius: theme.borders.radiusMedium,
-                            color: theme.colors.actionEnabled)
+                        width: theme.borders.widthThin,
+                        radius: theme.borders.radiusMedium,
+                        color: theme.colors.actionEnabled)
                 .shadow(theme.elevations.emphasized)
                 .padding(.bottom, theme.spaces.fixedLarge)
 

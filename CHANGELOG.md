@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `list item` component (v1.0.0) (Orange-OpenSource/ouds-ios#265)
 - Helper to forge a font object with OUDS typography tokens (Orange-OpenSource/ouds-ios#1550)
 - Flag to limit the height of the `text area` component (Orange-OpenSource/ouds-ios#1528)
 - `View modifier` for fonts using only token (Orange-OpenSource/ouds-ios#1534)
@@ -36,8 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- `tab bar` layout is broken for iOS 27 (Orange-OpenSource/ouds-ios#1557)
-- Label and description of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
+- `tab bar` layout is broken for iOS 27 with Xcode 26 and disabled Liquid Glass (Orange-OpenSource/ouds-ios#1557)
+- Textual contents of `alert message` component not vocalized together (Orange-OpenSource/ouds-ios#1552)
 
 ### Deprecated
 

@@ -41,19 +41,25 @@ public struct OUDSThemeTuning: @unchecked Sendable {
     /// If components like alert message (e.g. `OUDSAlertMessage`) must have always rounded corners or not
     public let hasRoundedAlertMessages: Bool
 
+    /// If components list items (`OUDSStaticListItem` and `OUDSNavigationListItem`) must have always rounded corners or not
+    public let hasRoundedListItems: Bool
+
     /// Defines the tuning for a theme
     ///
     /// - Parameters:
     ///    - hasRoundedButtons: If buttons must have rounded corners or not (default set to *false*)
     ///    - hasRoundedTextInputs: If text-based inputs components must have rounded corners or not (default set to *false*)
     ///    - hasRoundedAlertMessages: If alert messages must have rounded corners or not (default set to *false*)
+    ///    - hasRoundedListItems: If list items components must have rounded corners or not (default set to *false*)
     public init(hasRoundedButtons: Bool = false,
                 hasRoundedTextInputs: Bool = false,
-                hasRoundedAlertMessages: Bool = false)
+                hasRoundedAlertMessages: Bool = false,
+                hasRoundedListItems: Bool = false)
     {
         self.hasRoundedButtons = hasRoundedButtons
         self.hasRoundedTextInputs = hasRoundedTextInputs
         self.hasRoundedAlertMessages = hasRoundedAlertMessages
+        self.hasRoundedListItems = hasRoundedListItems
     }
 }
 
@@ -84,15 +90,17 @@ extension Tuning {
 
     /// The theme tuning for *Orange Business* contains **square corners for buttons (i.e. not rounded)**,
     /// **rounded corners for text / PIN code / password / text area inputs** and
-    /// **rounded corners for alert messages**.
+    /// **rounded corners for alert messages** and **list items**.
     public static let OrangeBusiness = Tuning(hasRoundedButtons: false,
                                               hasRoundedTextInputs: true,
-                                              hasRoundedAlertMessages: true)
+                                              hasRoundedAlertMessages: true,
+                                              hasRoundedListItems: true)
 
     /// The theme tuning for *Max It* contains **rounded corners for buttons**,
     /// **rounded corners for text / PIN code / password / text area inputs**
-    /// anddd **rounded corners for alert messages**.
+    /// and **rounded corners for alert messages** and **list items**.
     public static let MaxIt = Tuning(hasRoundedButtons: true,
                                      hasRoundedTextInputs: true,
-                                     hasRoundedAlertMessages: true)
+                                     hasRoundedAlertMessages: true,
+                                     hasRoundedListItems: true)
 }

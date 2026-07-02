@@ -222,7 +222,7 @@ These patterns apply to Checkbox, Radio, Switch, TextInput, TextArea, PinCodeInp
 
 ## 7. Components
 
-**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [TabBar](#navigations--tab-bar) · [Toolbars](#navigations--toolbars)
+**Index:** [Button](#actions--button) · [BulletList](#content-display--bullet-list) · [Checkbox](#controls--checkbox) · [Radio](#controls--radio-button) · [Switch](#controls--switch) · [PinCode](#controls--pin-code-input) · [Password](#controls--password-input) · [Chips](#controls--chips) · [TextInput](#controls--text-input) · [TextArea](#controls--text-area) · [AlertMessage](#dialogs--alert-message) · [InlineAlert](#dialogs--inline-alert) · [Badge](#indicators--badge) · [Tag](#indicators--tag) · [InputTag](#indicators--input-tag) · [ColoredSurface](#layouts--colored-surface) · [Divider](#layouts--divider) · [Link](#navigations--link) · [ListItems](#navigations--list-items) · [TabBar](#navigations--tab-bar) · [Toolbars](#navigations--toolbars)
 
 ---
 
@@ -536,6 +536,207 @@ OUDSLink(text: "Text", indicator: .back, size: .default) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic")), size: .default) {}
 OUDSLink(text: "Text", image: OUDSImage(asset: Image("ic"), renderingMode: .original), size: .default) {} // raw image (not tinted)
 ```
+
+---
+
+### Navigations — List Items
+
+> Availability: iOS 15+, macOS 13+, visionOS 1+, watchOS 11+, tvOS 16+. Since: 2.2.0.
+
+Two components share the same data model and slot/leading/trailing API:
+- **`OUDSStaticListItem`** — non-interactive, display-only row.
+- **`OUDSNavigationListItem`** — tappable row with a navigation indicator (chevron or external-link icon).
+
+#### `OUDSListItemData` — textual content model
+
+```swift
+// All text fields are optional except label.
+// overline and extraLabel are hidden in .small size.
+OUDSListItemData(label: "Label")
+OUDSListItemData(
+    label: "Label",
+    isBoldLabel: true,          // renders label in bold
+    description: "Description", // secondary text below label
+    overline: "Overline",       // small text above label (hidden in .small size)
+    extraLabel: "Extra Label",  // additional text below description (hidden in .small size)
+    helperText: "Helper text"   // supporting text rendered below the row, outside the HStack
+)
+```
+
+#### `OUDSStaticListItem` — non-interactive
+
+```swift
+// Minimal
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"))
+
+// With leading icon and trailing badge
+OUDSStaticListItem(
+    data: OUDSListItemData(label: "Label", description: "Description"),
+    leading: .icon(OUDSListItemIcon(type: .info, size: .medium)),
+    trailing: .badge(.count(.init(3, accessibilityLabel: "3 new", status: .negative, size: .medium)))
+)
+
+// With a custom slot view (rendered between text block and helperText)
+OUDSStaticListItem(data: OUDSListItemData(label: "Label"), slot: myCustomView)
+```
+
+#### `OUDSNavigationListItem` — tappable with indicator
+
+```swift
+// Default indicator: .next (forward chevron at trailing edge)
+OUDSNavigationListItem(data: OUDSListItemData(label: "Next screen")) {
+    // navigate forward
+}
+
+// .external: external-link icon at trailing edge (use for URLs, out-of-app content)
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Open website"),
+    indicatorType: .external
+) { openURL(url) }
+
+// .previous: backward chevron at leading edge — leading: parameter is silently ignored
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Go back"),
+    indicatorType: .previous
+) { dismiss() }
+
+// Full example with leading avatar, trailing muted text, custom slot
+OUDSNavigationListItem(
+    data: OUDSListItemData(label: "Profile", description: "View your profile"),
+    slot: mySlotView,
+    indicatorType: .next,
+    leading: .avatar(OUDSListItemAvatar(type: .icon, size: .medium)),
+    trailing: .text(.labelMuted(Text("Details")))
+) { navigateToProfile() }
+```
+
+#### `OUDSNavigationListItemIndicatorType`
+
+| Case | Indicator position | Use for | Leading element |
+|------|--------------------|---------|----|
+| `.next` (default) | Trailing chevron | In-app forward navigation | Visible |
+| `.previous` | Leading chevron | In-app back navigation | **Always hidden** |
+| `.external` | Trailing external-link icon | Out-of-app / URL content | Visible |
+
+> RTL support: `.next` and `.previous` icons are automatically swapped when `layoutDirection == .rightToLeft`.
+
+#### Leading slot — `OUDSListItemLeading`
+
+```swift
+.leading = .icon(OUDSListItemIcon(type: .info, size: .medium))    // status/custom icon
+.leading = .image(OUDSListItemImage(asset: Image("il_placeholder"), size: .medium) // static image
+.leading = .flag(OUDSListItemFlag(asset: Image("il_flag_fr"), size: .medium)) // country flag
+.leading = .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .medium))   // video thumbnail
+.leading = .avatar(OUDSListItemAvatar(type: .icon, size: .medium)) // circular avatar
+```
+
+#### Trailing slot — `OUDSListItemTrailing`
+
+```swift
+.trailing = .text(.label(Text("Info")))
+.trailing = .text(.labelMuted(Text("Secondary")))       // muted/secondary color
+.trailing = .text(.labelStrong(Text("Strong")))         // bold/emphasized
+.trailing = .text(.labelAndExtraLabel(Text("Label"), Text("Extra"))) // stacked; extra hidden in .small
+.trailing = .badge(.count(.init(3, accessibilityLabel: "3 notifications", status: .negative, size: .medium))) // A badge with count
+.trailing = .badge(.standard(.init((accessibilityLabel: "Do not disturb", status: .negative, size: .medium))) // A badge with standard status
+.trailing = .tag(OUDSTag(label: "New"))
+.trailing = .icon(OUDSListItemIcon(type: .warning, size: .small))
+.trailing = .image(OUDSListItemImage(asset: Image("il_placeholder"), size: .medium))
+.trailing = .flag(OUDSListItemFlag(asset: Image("il_flag_fr"), size: .medium)) // country flag
+.trailing = .video(OUDSListItemVideo(url: URL(string: "https://example.com/video.mp4")!, size: .medium))
+.trailing = .avatar(OUDSListItemAvatar(type: .initials("AB"), size: .medium))
+```
+
+#### `OUDSListItemAvatar` — circular avatar
+
+```swift
+OUDSListItemAvatar(type: .icon, size: .medium)                   // predefined person/people icon
+OUDSListItemAvatar(type: .image(Image("avatar")), size: .large)  // custom image
+OUDSListItemAvatar(type: .initials("AB"), size: .medium)         // up to 2-char initials
+OUDSListItemAvatar(type: .icon, size: .large,
+                   badge: OUDSBadge(accessibilityLabel: "New", status: .negative, size: .small))
+```
+
+> Badge size recommendations: `.medium` avatar → `.extraSmall` badge · `.large` → `.small` badge · `.extraLarge` → `.medium` badge.
+> In `.small` list item size, the avatar size parameter is ignored — smallest variant is always used.
+
+#### `OUDSListItemIcon` — status icon
+
+```swift
+OUDSListItemIcon(type: .neutral(asset: Image("ic_heart")))          // custom image, default color
+OUDSListItemIcon(type: .neutral(asset: Image("ic_bell"), badge: true)) // with negative dot badge
+OUDSListItemIcon(type: .positive)    // predefined checkmark, positive (green)
+OUDSListItemIcon(type: .info)        // predefined info icon, informational (blue)
+OUDSListItemIcon(type: .warning)     // predefined warning icon, warning color, two-layer rendering
+OUDSListItemIcon(type: .negative)    // predefined alert icon, negative (red)
+OUDSListItemIcon(type: .info, size: .large)   // .medium (default) | .large
+```
+
+> In `.small` list item size, the icon size parameter is ignored — smallest variant is always used.
+
+#### `OUDSListItemImage`
+
+```swift
+OUDSListItemImage(asset: Image("ic_heart"))
+OUDSListItemImage(asset: Image("ic_heart"), description: "describe the image")
+OUDSListItemImage(asset: Image("ic_heart"), size: .large)  // .medium (default) | .large
+```
+
+> In `.small` list item size, the image size parameter is ignored — smallest variant is always used.
+
+#### `OUDSListItemFlag`
+
+```swift
+OUDSListItemFlag(asset: Image("il_flag_fr"))
+OUDSListItemFlag(asset: Image("il_flag_fr"), size: .large)  // .medium (default) | .large
+```
+
+> In `.small` list item size, the flag size parameter is ignored — smallest variant is always used.
+
+#### View modifiers — styling and layout
+
+Modifiers propagate via SwiftUI environment: apply once to a container (`VStack`, `List`, `ForEach`) to style all enclosed list items.
+
+```swift
+// Size: .standard (default) or .small (hides overline, extraLabel, trailing extra label)
+.oudsListItemSize(.small)
+
+// Vertical alignment of leading/trailing/text containers: .center (default) or .top
+.oudsListItemContainerAlignment(.top)
+
+// Content style
+.oudsListItemStyle(.outlined)                              // visible border around each item
+.oudsListItemStyle(.standard(divider: true, background: false))  // default
+.oudsListItemStyle(.standard(divider: false, background: true))  // background fill, no divider
+
+// Card style shorthand (hasDivider: false, hasBackground: true by default)
+.oudsListCardStyle(hasDivider: false, hasBackground: true)
+
+// Rounded corners on image/video media elements (default: false)
+.oudsListItemRoundedMedia(true)
+```
+
+```swift
+// Apply modifiers to a container — affects all child list items
+VStack {
+    OUDSStaticListItem(data: OUDSListItemData(label: "Item 1"))
+    OUDSStaticListItem(data: OUDSListItemData(label: "Item 2"))
+    OUDSNavigationListItem(data: OUDSListItemData(label: "Item 3")) {}
+}
+.oudsListItemSize(.small)
+.oudsListItemContainerAlignment(.top)
+.oudsListCardStyle()
+```
+
+#### Key behavioral rules
+
+1. **`OUDSStaticListItem`** has no tap interaction — `isEnabled` only affects visual opacity.
+2. **`OUDSNavigationListItem`** manages `.enabled`, `.hover`, `.pressed`, `.disabled` states automatically.
+3. **`.previous` indicator** — the `leading:` parameter is **silently hidden**; do not pass a leading element expecting it to appear.
+4. **`.small` size** — hides `overline`, `extraLabel`, and trailing `labelAndExtraLabel`'s extra label; forces avatar/icon/badge to their smallest variant.
+5. **`slot:`** — rendered between the text group (label/description/overline/extraLabel) and `helperText`.
+6. **`helperText`** — rendered outside the row `HStack`, below it (not inside the leading/trailing row layout).
+7. **`oudsListCardStyle(hasDivider:, hasBackground:)`** — shorthand for applying `.standard(divider:hasDivider, background:hasBackground)` (defaults: divider `false`, background `true`).
 
 ---
 

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_control_item_next.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

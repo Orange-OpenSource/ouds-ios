@@ -49,4 +49,24 @@ struct OUDSBadgeStatusWithIconTests {
     func negativeStatusIconIsNegativeStandardStatus() {
         #expect(OUDSBadge.StatusWithIcon.negative.status == .negative)
     }
+
+    // MARK: - Default values
+
+    @Test("A neutral status with icon for badge must not be flipped by default")
+    func neutralStatusWithIconDefaultFlippedIsFalse() {
+        guard case let .neutral(_, flipped) = OUDSBadge.StatusWithIcon.neutral(icon: Image(decorative: "")) else {
+            Issue.record("Expected .neutral case")
+            return
+        }
+        #expect(flipped == false)
+    }
+
+    @Test("An accent status with icon for badge must not be flipped by default")
+    func accentStatusWithIconDefaultFlippedIsFalse() {
+        guard case let .accent(_, flipped) = OUDSBadge.StatusWithIcon.accent(icon: Image(decorative: "")) else {
+            Issue.record("Expected .accent case")
+            return
+        }
+        #expect(flipped == false)
+    }
 }

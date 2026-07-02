@@ -25,6 +25,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.default.hasRoundedButtons == false)
         #expect(Tuning.default.hasRoundedTextInputs == false)
         #expect(Tuning.default.hasRoundedAlertMessages == false)
+        #expect(Tuning.default.hasRoundedListItems == false)
     }
 
     // MARK: - Orange France
@@ -34,6 +35,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeFrance.hasRoundedButtons == false)
         #expect(Tuning.OrangeFrance.hasRoundedTextInputs == false)
         #expect(Tuning.OrangeFrance.hasRoundedAlertMessages == false)
+        #expect(Tuning.OrangeFrance.hasRoundedListItems == false)
     }
 
     @Test
@@ -48,6 +50,7 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.OrangeBusiness.hasRoundedButtons == false)
         #expect(Tuning.OrangeBusiness.hasRoundedTextInputs == true)
         #expect(Tuning.OrangeBusiness.hasRoundedAlertMessages == true)
+        #expect(Tuning.OrangeBusiness.hasRoundedListItems == true)
     }
 
     // MARK: - Max It
@@ -57,5 +60,6 @@ struct OUDSThemeTuningTests {
         #expect(Tuning.MaxIt.hasRoundedButtons == true)
         #expect(Tuning.MaxIt.hasRoundedTextInputs == true)
         #expect(Tuning.MaxIt.hasRoundedAlertMessages == true)
+        #expect(Tuning.MaxIt.hasRoundedListItems == true)
     }
 }
