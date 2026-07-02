@@ -49,7 +49,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 
     /// - Parameters:
     ///    - isReadOnly: Default set to `false`, defines if the component is in read only state or not
-    ///    - action: The action to trigger when the user taps the `OUDSInteractionButton`. Won't be triggered is `isReadOnly` set to `true`.
+    ///    - action: The action to trigger when the user taps the `OUDSInteractionButton`. Won't be triggered if `isReadOnly` set to `true`.
     ///    - content: A `ViewBuilder` to define the content of the `OUDSInteractionButton`
     public init(isReadOnly: Bool = false,
                 action: @escaping () -> Void,
@@ -79,7 +79,7 @@ public struct OUDSInteractionButton<Content>: View where Content: View {
 /// To compute this state, some elements are needed:
 /// - the `isHover` flag get from the `onHover` added on the `content`
 /// - the `isPressed` flag get from `ButtonStyle.Configuration`
-/// - the `isEnabled` flag get from the `@Environement`
+/// - the `isEnabled` flag get from the `@Environment`
 /// - the `isReadOnly` flag provided by the init function.
 ///
 /// ## Code samples
@@ -124,7 +124,7 @@ public struct OUDSInteractionButtonStyle<Content>: ButtonStyle where Content: Vi
 
     // MARK: Initializer
 
-    public init(isReadOnly: Bool = false, content: @escaping (OUDSButtonInteractionState) -> Content) {
+    public init(isReadOnly: Bool = false, @ViewBuilder content: @escaping (OUDSButtonInteractionState) -> Content) {
         self.isReadOnly = isReadOnly
         self.content = content
     }

@@ -14,7 +14,7 @@
 import OUDSFoundations
 
 /// The state used by modifiers to handle all states of the chip components.
-/// Combined with an interaction button,d efines the available states for a component of a chip family.
+/// Combined with an interaction button, defines the available states for a component of a chip family.
 ///
 /// ## Code samples
 ///
@@ -36,7 +36,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 2.3.0
-public enum OUDSChipInteractionState {
+@frozen public enum OUDSChipInteractionState {
 
     /// User can interact with the component
     case enabled
@@ -50,10 +50,10 @@ public enum OUDSChipInteractionState {
     /// The user cannot interact with the component
     case disabled
 
-    /// Initializes the ``OUDSChipInteractionState`` from the ``OUDSButtonInteractionState`
+    /// Initializes the ``OUDSChipInteractionState`` from the ``OUDSButtonInteractionState``
     /// provided by the ``OUDSInteractionButton`` which is used to build a chip.
     ///
-    /// This is prefered because chip does not support read only state.
+    /// This is preferred because chip does not support read only state.
     ///
     /// - Parameter interactionState: State provided by `OUDSInteractionButton`. Crashes if `.readOnly`.
     public init(with interactionState: OUDSButtonInteractionState) {

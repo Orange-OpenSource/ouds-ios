@@ -12,9 +12,9 @@
 //
 
 /// The interaction state used by modifiers to handle all states of the indicator.
-/// Any OUDS components should manage all theses cases.
+/// Any OUDS components should manage all these cases.
 ///
-/// The `read only` state primes over all.
+/// The `readOnly` state primes over all.
 /// Then `disabled` state, `pressed`, `hover` and in the end `enabled`
 ///
 /// ## Code samples
@@ -26,7 +26,7 @@
 ///     @Environment(\.isEnabled) private var isEnabled
 ///
 ///     func makeBody(configuration: Configuration) -> some View {
-///         // isEnabled: picked from environement object / SwiftUI layer
+///         // isEnabled: picked from environment object / SwiftUI layer
 ///         // isHover: from API callback on some OS
 ///         // isPressed: from ButtonStyle SwiftUI API
 ///         let interactionState = OUDSButtonInteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
@@ -71,10 +71,10 @@
     ///
     /// - Parameters:
     ///    - isEnabled: `true` if enabled, `false` otherwise (i.e. get for `isEnabled` environment)
-    ///    - isHover: `true` if a view is hoverd, `false` otherwise (i.e. get from `onHover`)
+    ///    - isHover: `true` if a view is hovered, `false` otherwise (i.e. get from `onHover`)
     ///    - isPressed: `true` if pressed, `false` otherwise (i.e. get from `ButtonStyle.Configuration`)
     ///    - isReadOnly: `true` if read only, `false` otherwise
-    init(isEnabled: Bool, isHover: Bool, isPressed: Bool, isReadOnly: Bool = false) {
+    public init(isEnabled: Bool, isHover: Bool, isPressed: Bool, isReadOnly: Bool = false) {
         if isReadOnly {
             self = .readOnly
         } else {
