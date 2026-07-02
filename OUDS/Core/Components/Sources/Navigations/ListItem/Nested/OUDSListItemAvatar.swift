@@ -183,6 +183,7 @@ public struct OUDSListItemAvatar: View {
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: - Body
 
@@ -193,6 +194,7 @@ public struct OUDSListItemAvatar: View {
                 case let .image(asset):
                     asset
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .opacity(isEnabled ? theme.opacities.opaque : theme.opacities.disabled)
                 case let .initials(letters):
                     Text(letters)
@@ -200,11 +202,9 @@ public struct OUDSListItemAvatar: View {
                         .dynamicTypeSize(.medium)
                         .foregroundStyle(foregroundColor)
                 case .icon:
-                    Image(decorative: "ic_communication_people_avatar", bundle: theme.resourcesBundle)
+                    let icon = Image(decorative: "ic_communication_people_avatar", bundle: theme.resourcesBundle)
                         .renderingMode(.template)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: avatarSize, alignment: .center)
+                    ScaledIcon(icon: icon, size: avatarSize)
                         .foregroundStyle(foregroundColor)
                 }
             }
@@ -221,7 +221,7 @@ public struct OUDSListItemAvatar: View {
     // MARK: - Size helpers
 
     private var frameSize: SizeSemanticToken {
-        switch itemSize {
+        let rawSize = switch itemSize {
         case .standard:
             switch size {
             case .medium:
@@ -234,6 +234,8 @@ public struct OUDSListItemAvatar: View {
         case .small:
             theme.controlItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     private var avatarSize: SizeSemanticToken {

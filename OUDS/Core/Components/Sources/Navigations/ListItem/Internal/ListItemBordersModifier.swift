@@ -15,14 +15,14 @@ import OUDSThemesContract
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` to apply to `ListItemContent` view so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
+/// A `ViewModifier` to apply to `ListItemContent` view so as to define an outline effect, i.e.
+/// draw kind of borders around the object, or a divider.
 /// The divider and the ouline effetct can be affected by the rounded corner flag of the theme `Tuning`.
 struct ListItemBordersModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: InteractionState
-
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 

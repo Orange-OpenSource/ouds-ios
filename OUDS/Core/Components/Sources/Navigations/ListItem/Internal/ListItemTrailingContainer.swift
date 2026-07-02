@@ -24,6 +24,7 @@ struct ListItemTrailingContainer: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: Body
 
@@ -33,7 +34,12 @@ struct ListItemTrailingContainer: View {
             case let .text(type):
                 ListItemTrailingTexts(textType: type)
             case let .badge(badgeType):
-                badge(for: badgeType)
+                switch badgeType {
+                case let .standard(badge):
+                    badge
+                case let .count(badge):
+                    badge
+                }
             case let .tag(tag):
                 tag
             case let .icon(icon):
@@ -56,24 +62,18 @@ struct ListItemTrailingContainer: View {
         .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Helper
+    // MARK: - Size helper
 
     private var minHeight: CGFloat {
-        switch itemSize {
+        let rawSize = switch itemSize {
         case .standard:
+            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.controlItem.sizeAssetMedium
         case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.controlItem.sizeAssetSmall
         }
-    }
 
-    @ViewBuilder
-    private func badge(for type: OUDSListItemTrailing.BadgeType) -> some View {
-        switch type {
-        case let .standard(badge):
-            badge
-        case let .count(badge):
-            badge
-        }
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }

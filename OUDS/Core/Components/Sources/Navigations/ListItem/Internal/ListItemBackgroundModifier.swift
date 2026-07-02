@@ -21,7 +21,6 @@ struct ListItemBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: InteractionState
-
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContentStyle) private var style
 

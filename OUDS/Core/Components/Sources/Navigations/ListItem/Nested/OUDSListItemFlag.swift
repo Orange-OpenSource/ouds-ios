@@ -56,6 +56,17 @@ import SwiftUI
 @available(iOS 15, macOS 13, visionOS 1, watchOS 11, tvOS 16, *)
 public struct OUDSListItemFlag: View {
 
+    // MARK: Properties
+
+    private let asset: Image
+    private let size: Size
+
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
     /// Defines the available sizes (i.e. height) for the image of the country flag.
     /// When the image is embedded in a list item with `.small` size, this parameter is ignored
     /// and a smallest size is always used.
@@ -91,25 +102,12 @@ public struct OUDSListItemFlag: View {
         self.size = size
     }
 
-    // MARK: Properties
-
-    private let asset: Image
-    private let size: Size
-
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.oudsListItemSize) private var itemSize
-    @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
-
     // MARK: Body
 
     public var body: some View {
         HStack {
-            asset
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            ScaledIcon(icon: asset, size: theme.controlItem.sizeFlagHeight)
                 .opacity(opacity)
-                .frame(height: theme.controlItem.sizeFlagHeight, alignment: .center)
         }
         .frame(minWidth: frameHeight, alignment: .center)
     }
@@ -121,17 +119,23 @@ public struct OUDSListItemFlag: View {
     }
 
     private var frameHeight: CGFloat {
-        if itemSize == .small {
+        let rawSize = if itemSize == .small {
+            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.controlItem.sizeAssetSmall
         } else {
             switch size {
             case .medium:
+                // TODO: ouds/💠_control/list-item/size/asset/medium
                 theme.controlItem.sizeAssetMedium
             case .large:
+                // TODO: ouds/💠_control/list-item/size/asset/large
                 theme.controlItem.sizeAssetLarge
             case .extraLarge:
+                // TODO: ouds/💠_control/list-item/size/asset/xLarge
                 theme.controlItem.sizeAssetXlarge
             }
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }

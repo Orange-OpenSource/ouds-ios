@@ -57,8 +57,10 @@ struct ListItemContent<Slot: View>: View {
             }
             .padding(.top, topPadding)
             .padding(.bottom, bottomPadding)
+            // TODO: ouds/💠_control/list-item/size/min-width
             .padding(.horizontal, theme.controlItem.spacePaddingInline)
             .frame(maxWidth: .infinity, alignment: .topLeading)
+            // TODO: ouds/💠_control/list-item/space/padding-inline
             .frame(minWidth: theme.controlItem.sizeMinWidth, minHeight: minHeight)
             .modifier(ListItemBackgroundModifier(interactionState: interactionState))
             .modifier(ListItemBordersModifier(interactionState: interactionState))

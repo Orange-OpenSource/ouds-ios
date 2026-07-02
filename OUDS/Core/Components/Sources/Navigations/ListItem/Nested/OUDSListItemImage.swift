@@ -109,6 +109,7 @@ public struct OUDSListItemImage: View {
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.oudsListItemRoundedMedia) private var roundedMedia
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: Body
 
@@ -125,6 +126,8 @@ public struct OUDSListItemImage: View {
     // MARK: Helpers
 
     private var radius: BorderRadiusSemanticToken {
+        // TODO: ouds/💠_control/list-item/border/radius/media-rounded-corner
+        // TODO: ouds/💠_control/list-item/border/radius/media
         roundedMedia ? theme.controlItem.borderRadiusMediaRoundedCorner : theme.controlItem.borderRadiusMedia
     }
 
@@ -133,17 +136,23 @@ public struct OUDSListItemImage: View {
     }
 
     private var frameHeight: CGFloat {
-        if itemSize == .small {
+        let rawSize = if itemSize == .small {
+            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.controlItem.sizeAssetSmall
         } else {
             switch size {
             case .medium:
+                // TODO: ouds/💠_control/list-item/size/asset/medium
                 theme.controlItem.sizeAssetMedium
             case .large:
+                // TODO: ouds/💠_control/list-item/size/asset/large
                 theme.controlItem.sizeAssetLarge
             case .extraLarge:
+                // TODO: ouds/💠_control/list-item/size/asset/xLarge
                 theme.controlItem.sizeAssetXlarge
             }
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }

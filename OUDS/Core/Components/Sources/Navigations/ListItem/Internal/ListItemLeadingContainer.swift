@@ -24,6 +24,7 @@ struct ListItemLeadingContainer: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize: DynamicTypeSize
 
     // MARK: - Body
 
@@ -47,17 +48,21 @@ struct ListItemLeadingContainer: View {
             }
         }
         .disabled(interactionState == .disabled)
-        .frame(minHeight: assetSize, alignment: .center)
+        .frame(minHeight: minHeight, alignment: .center)
     }
 
-    // MARK: - Size
+    // MARK: - Size helper
 
-    private var assetSize: CGFloat {
-        switch itemSize {
+    private var minHeight: CGFloat {
+        let rawSize = switch itemSize {
         case .standard:
+            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.controlItem.sizeAssetMedium
         case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
             theme.controlItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 }

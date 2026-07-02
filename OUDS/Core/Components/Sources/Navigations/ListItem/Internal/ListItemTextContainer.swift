@@ -35,6 +35,7 @@ struct ListItemTextContainer<Slot: View>: View {
     @Environment(\.theme) private var theme
     @Environment(\.oudsListItemContainersAlignment) private var alignment
     @Environment(\.oudsListItemSize) private var itemSize
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     // MARK: - Body
 
@@ -63,6 +64,10 @@ struct ListItemTextContainer<Slot: View>: View {
                         }
                     case let .custom(customView, _):
                         customView
+                            // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
+                            .padding(.top, theme.controlItem.spacePaddingBlockBottomSlot)
+                            // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
+                            .padding(.bottom, theme.controlItem.spacePaddingBlockBottomSlot)
                     }
                 }
                 .multilineTextAlignment(.leading)
@@ -91,6 +96,10 @@ struct ListItemTextContainer<Slot: View>: View {
 
             if !(slot is EmptyView) {
                 slot
+                    // TODO: (ouds/💠_control/list-item/space/padding-block/slot-text-container)
+                    .padding(.top, theme.controlItem.spacePaddingBlockBottomSlot)
+                    // TODO: ouds/💠_control/list-item/space/padding-block/bottom-slot-text-container
+                    .padding(.bottom, theme.controlItem.spacePaddingBlockBottomSlot)
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -99,15 +108,11 @@ struct ListItemTextContainer<Slot: View>: View {
     // MARK: - Helpers
 
     private var topPadding: CGFloat {
-        guard alignment == .top else {
-            return theme.spaces.fixedNone
-        }
-
-        switch itemSize {
-        case .small:
-            return theme.controlItem.spacePaddingBlockDensityCompactTopAlignmentTopTextContainer
-        case .standard:
-            return theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+        if alignment == .top, itemSize == .standard {
+            // TODO: ouds/💠_control/list-item/space/padding-block/top-alignment/top-text-container-default
+            theme.controlItem.spacePaddingBlockDensityDefaultTopAlignmentTopTextContainer
+        } else {
+            theme.spaces.fixedNone
         }
     }
 
@@ -120,12 +125,16 @@ struct ListItemTextContainer<Slot: View>: View {
     }
 
     private var labelMinHeight: CGFloat {
-        switch itemSize {
-        case .small:
-            theme.controlItem.sizeAssetSmall
+        let rawSize = switch itemSize {
         case .standard:
+            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.controlItem.sizeAssetMedium
+        case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
+            theme.controlItem.sizeAssetSmall
         }
+
+        return rawSize * dynamicTypeSize.percentageRate / 100
     }
 
     /// Forges the accessibility label for the list item text parts.

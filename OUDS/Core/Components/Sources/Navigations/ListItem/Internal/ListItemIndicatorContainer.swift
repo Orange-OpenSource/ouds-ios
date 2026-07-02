@@ -24,7 +24,7 @@ struct ListItemIndicatorContainer: View {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsListItemSize) private var size
+    @Environment(\.oudsListItemSize) private var itemSize
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: - Body
@@ -80,11 +80,13 @@ struct ListItemIndicatorContainer: View {
     }
 
     private var minHeight: CGFloat {
-        switch size {
-        case .small:
-            theme.controlItem.sizeAssetSmall
+        switch itemSize {
         case .standard:
+            // TODO: ouds/💠_control/list-item/size/asset/medium
             theme.controlItem.sizeAssetMedium
+        case .small:
+            // TODO: ouds/💠_control/list-item/size/asset/small
+            theme.controlItem.sizeAssetSmall
         }
     }
 }
