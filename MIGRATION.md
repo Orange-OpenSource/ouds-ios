@@ -86,6 +86,15 @@ theme.link.spacePaddingBlockDefault
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
+### Removed icon component token
+
+An old deprecated token has finally been removed from `icon` component tokens.
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.icon.colorContentDefault` by `theme.colors.contentDefault` if relevant
+
 ## v2.2.0 → v2.3.0
 
 ### Overview
