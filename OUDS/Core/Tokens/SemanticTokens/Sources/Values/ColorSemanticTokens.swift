@@ -39,6 +39,9 @@ public protocol ColorSemanticTokens {
     var opacityTransparentLight: ColorSemanticToken { get }
     var opacityTransparentDark: ColorSemanticToken { get }
 
+    var opacityTransparentInverseLight: ColorSemanticToken { get }
+    var opacityTransparentInverseDark: ColorSemanticToken { get }
+
     // MARK: - Color - Action
 
     var actionDisabledLight: ColorSemanticToken { get }
@@ -314,6 +317,9 @@ public protocol ColorSemanticTokens {
     var overlayBackdropLight: ColorSemanticToken { get }
     var overlayBackdropDark: ColorSemanticToken { get }
 
+    var overlayFloatingLight: ColorSemanticToken { get }
+    var overlayFloatingDark: ColorSemanticToken { get }
+
     // MARK: - Color - Surface
 
     var surfaceBrandPrimaryLight: ColorSemanticToken { get }
@@ -489,6 +495,17 @@ public protocol ColorSemanticTokens {
     var repositoryTertiaryLow: ColorSemanticToken { get }
     var repositoryTertiaryLower: ColorSemanticToken { get }
     var repositoryTertiaryLowest: ColorSemanticToken { get }
+
+    // MARK: - Color - AI
+
+    var colorAiPrimaryLight: ColorSemanticToken { get }
+    var colorAiPrimaryDark: ColorSemanticToken { get }
+    var colorAiSecondaryLight: ColorSemanticToken { get }
+    var colorAiSecondaryDark: ColorSemanticToken { get }
+    var colorAiTertiaryLight: ColorSemanticToken { get }
+    var colorAiTertiaryDark: ColorSemanticToken { get }
+    var colorAiQuaternaryLight: ColorSemanticToken { get }
+    var colorAiQuaternaryDark: ColorSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
