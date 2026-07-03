@@ -50,6 +50,9 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override var monoColorContentDisabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
     override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeLinkSpace }
+    override var spacePaddingBlockSmall: SpaceSemanticToken { Self.mockThemeLinkSpace }
+    override var spacePaddingBlockCompactDensityDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }
+    override var spacePaddingBlockCompactDensitySmall: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spaceColumnGapIconDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spaceColumnGapIconSmall: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spaceColumnGapChevronDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }

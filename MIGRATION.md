@@ -23,9 +23,9 @@ with renamed or delete tokens, at least at components tokens levels.
 
 - Use version 2.3 or older
 
-### Renamed component tokens of buttons
+### Renamed component tokens of button
 
-The `OUDSIcon` type is deprecated. Use instead `OUDSImage`.
+The tokens of sizes and spaces for `button` component have been renamed.
 
 **Impact**: High
 
@@ -50,7 +50,7 @@ The `OUDSIcon` type is deprecated. Use instead `OUDSImage`.
 For example, before:
 ```swift
 theme.button.sizeMinHeight
-``
+```
 and after:
 ```swift
 theme.button.sizeMinHeightDefault
@@ -58,6 +58,31 @@ theme.button.sizeMinHeightDefault
 
 **Required Action**:
 - Add suffix `Default` to the components tokens of sizes and spaces for `button` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of link
+
+The tokens of sizes and spaces for `link` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `sizeMinWidthDefault`| `sizeMinWidth `|
+
+For example, before:
+```swift
+theme.link.spacePaddingBlock
+```
+and after:
+```swift
+theme.link.spacePaddingBlockDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to some of the components tokens of sizes and spaces for `link` component
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
