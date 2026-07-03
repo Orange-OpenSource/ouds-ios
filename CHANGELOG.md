@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Components token for `button` component  (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - Components token for `alert` component (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 
+### Removed
+
+- **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
+
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0)
 
 ### Added

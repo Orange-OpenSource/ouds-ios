@@ -105,7 +105,7 @@ public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeI
 public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
 
 /// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens, ExpandLinkComponentTokens {}
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens, LinkMonoComponentTokens {}
 // TODO: #1001 - Check if relevant to add the expand link tokens in the same alias (i.e. same provider in the end)
 
 /// Something which provides all component tokens of quantity input

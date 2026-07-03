@@ -147,7 +147,6 @@ textInput                      | For text field input components like `OUDSTextI
 - ``ChipComponentTokens``
 - ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
-- ``ExpandLinkComponentTokens``
 - ``IconComponentTokens``
 - ``LinkComponentTokens``
 - ``PinCodeInputComponentTokens``
