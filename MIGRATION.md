@@ -61,6 +61,31 @@ theme.button.sizeMinHeightDefault
 
 **Reason for Change**: Renaming of tokens in Figma specification
 
+### Renamed component tokens of tag
+
+Some component tokens for `tag` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spaceInsetLoaderSmall` | `spaceInsetProgressIndicatorSmall` |
+| `spaceInsetLoaderDefault` | `spaceInsetProgressIndicatorDefault` |
+
+For example, before:
+```swift
+theme.tag.spaceInsetLoaderSmall
+```
+and after:
+```swift
+theme.tag.spaceInsetProgressIndicatorSmall
+```
+
+**Required Action**:
+- `Loader` must be replaced by `ProgressIndicator`
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
 ### Renamed component tokens of link
 
 The tokens of sizes and spaces for `link` component have been renamed.
@@ -105,6 +130,11 @@ The tokens provider for `control item` has been renamed to `list item`.
 - Replace any use of `theme.controlItem` by `theme.listItem`
 
 **Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v2.3.0 Support**: None
 
 ## v2.2.0 → v2.3.0
 
