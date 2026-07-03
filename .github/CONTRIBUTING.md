@@ -12,6 +12,7 @@
 - [Review Workflow](#review-workflow)
 - [LLMs, GitHub bot accounts, and AI agents](#llms-github-bot-accounts-and-ai-agents)
 - [Guidance Regarding Use of Generative AI](#guidance-regarding-use-of-generative-ai)
+- [Bringing evolutions](#bringing-evolutions)
 - [License](#license)
 
 Looking to contribute something OUDS iOS? **Here's how you can help.**
@@ -336,6 +337,18 @@ However, there are some unique considerations related to AI generated content th
 2. If any pre-existing copyrighted materials (including pre-existing open source code) authored or owned by third parties are included in the AI tool’s output, prior to contributing such output to the project, the Contributor should confirm that they have have permission from the third party owners–such as the form of an open source license or public domain declaration that complies with the project’s licensing policies–to use and modify such pre-existing materials and contribute them to the project. Additionally, the contributor should provide notice and attribution of such third party rights, along with information about the applicable license terms, with their contribution.
 
 This is based on [the Linux Foundation Guidance Regarding Use of Generative AI Tools for Open Source Software Development](https://www.linuxfoundation.org/legal/generative-ai).
+
+## Bringing evolutions
+
+OUDS provides themes, tokens, components and modules to users and is opensource under MIT license to easy the use, reuse and contributions.
+**However OUDS may be unable to define local custom components for everyone.**
+**OUDS must be always able to maintain and evolve the official elements it provides.**
+
+Thus if you need some components or evolutions we invite you to contact the maintainers to let them share you the suitable formulars to submit your ideas.
+
+**Do not expect OUDS to merge any custom evolutions for your needs that are not official.**
+
+If you want to share your work, feel free to create your own library of custom components, under MIT license, using OUDS. Thus it will ease the reuse of your work, based on OUDS, and people can use it until official elements are delivered.
 
 ## License
 
