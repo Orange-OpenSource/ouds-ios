@@ -71,6 +71,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),
                    quantityInput: MockThemeQuantityInputComponentTokenProvider(sizes: sizes, spaces: spaces),
                    radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),

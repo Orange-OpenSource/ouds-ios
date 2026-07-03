@@ -17,7 +17,7 @@ import SwiftUI
 
 // swiftlint:disable function_body_length
 
-/// This is the theme for Sosh brand?
+/// This is the theme for Sosh brand.
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
 ///
@@ -93,6 +93,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
         let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -126,6 +127,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
                    quantityInput: quantityInput,
                    radioButton: radioButton,

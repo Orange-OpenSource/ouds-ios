@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Components tokens for `list item` (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - Components tokens for `button` dedicated to AI (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 
 ### Changed
