@@ -130,10 +130,6 @@ struct SoshThemeTests {
         #expect(theme.divider is SoshThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is SoshThemeControlItemComponentTokensProvider)
-    }
-
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is SoshThemeIconComponentTokensProvider)
     }

@@ -123,7 +123,7 @@ Replace everywhere: `OUDSThemeOrangeBusinessTools` → `OUDSThemeOrangeCompact`,
 
 ### Removed tokens
 
-Remove: `blur160`, `opacityGrayLight80800`, `actionAccentLight/Dark/` (use `colorAccent` bar tokens), radio/checkbox `sizeIndicator` (use `controlItem.sizeControlIndicator`), control item tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover/Focus/Pressed/Loading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`.
+Remove: `blur160`, `opacityGrayLight80800`, `actionAccentLight/Dark/` (use `colorAccent` bar tokens), radio/checkbox `sizeIndicator` (use `listItem.sizeControlIndicator`), control item tokens: `sizeMaxHeightAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover/Focus/Pressed/Loading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`.
 
 ### Other changes
 

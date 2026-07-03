@@ -130,10 +130,6 @@ struct WireframeThemeTests {
         #expect(theme.divider is WireframeThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is WireframeThemeControlItemComponentTokensProvider)
-    }
-
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is WireframeThemeIconComponentTokensProvider)
     }

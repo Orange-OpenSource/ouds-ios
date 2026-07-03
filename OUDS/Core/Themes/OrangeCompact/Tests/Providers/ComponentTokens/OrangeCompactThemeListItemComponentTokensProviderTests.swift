@@ -11,48 +11,44 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSThemesSosh
+import OUDSThemesOrange
 import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
-struct SoshThemeControlItemComponentTokensProviderTests {
+/// Check if the component tokens provider under tests has the default semantic token providers with the expected types.
+struct OrangeCompactThemeListItemComponentTokensProviderTests {
 
-    private var provider: SoshThemeControlItemComponentTokensProvider
+    private var provider: OrangeCompactThemeListItemComponentTokensProvider
 
     init() {
-        provider = SoshThemeControlItemComponentTokensProvider()
+        provider = OrangeCompactThemeListItemComponentTokensProvider()
     }
 
     // MARK: - Tests
 
     @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is SoshThemeSizeSemanticTokensProvider)
+        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(provider.borders is SoshThemeBorderSemanticTokensProvider)
+        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is SoshThemeColorSemanticTokensProvider)
+        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
-    }
-
-    @Test func defaultFontSemanticTokensProvider() throws {
-        #expect(provider.fonts is SoshThemeFontSemanticTokensProvider)
+        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
     }
 
     @Test func defaultOpacitySemanticTokensProvider() throws {
-        #expect(provider.opacities is SoshThemeOpacitySemanticTokensProvider)
+        #expect(provider.opacities is OrangeThemeOpacitySemanticTokensProvider)
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
     }
 }
 

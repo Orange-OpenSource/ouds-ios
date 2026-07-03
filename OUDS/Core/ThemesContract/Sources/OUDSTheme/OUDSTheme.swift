@@ -121,16 +121,14 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to divider components like `OUDSHorizontalDivider` and `OUDSVerticalDivider`
     public let divider: AllDividerComponentTokensProvider
 
-    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
-    public let controlItem: AllControlItemComponentTokensProvider
-
     /// All components tokens related to icons components
     public let icon: AllIconComponentTokensProvider
 
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
 
-    /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`
+    /// All components tokens related to list item components like `OUDSListItem` and `OUDSSmallListItem`,
+    /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let listItem: AllListItemComponentTokensProvider
 
     /// All components tokens related to pin code input components like `OUDSPinCodeInput`
@@ -207,7 +205,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
-    ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
@@ -246,7 +243,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 button: AllButtonComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
-                controlItem: AllControlItemComponentTokensProvider,
                 divider: AllDividerComponentTokensProvider,
                 icon: AllIconComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
@@ -290,7 +286,6 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.bulletList = bulletList
         self.checkbox = checkbox
         self.chip = chip
-        self.controlItem = controlItem
         self.divider = divider
         self.icon = icon
         self.link = link

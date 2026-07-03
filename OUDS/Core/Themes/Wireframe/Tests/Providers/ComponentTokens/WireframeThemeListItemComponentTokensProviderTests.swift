@@ -11,48 +11,48 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-@testable import OUDSThemesOrangeCompact
+@testable import OUDSThemesWireframe
 import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
-struct OrangeCompactThemeControlItemComponentTokensProviderTests {
+/// Check if the component tokens provider under test as the default semantic token providers with the expected types.
+struct WireframeThemeListItemComponentTokensProviderTests {
 
-    private var provider: OrangeCompactThemeControlItemComponentTokensProvider
+    private var provider: WireframeThemeListItemComponentTokensProvider
 
     init() {
-        provider = OrangeCompactThemeControlItemComponentTokensProvider()
+        provider = WireframeThemeListItemComponentTokensProvider()
     }
 
     // MARK: - Tests
 
     @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeCompactThemeSizeSemanticTokensProvider)
+        #expect(provider.sizes is WireframeThemeSizeSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(provider.borders is OrangeCompactThemeBorderSemanticTokensProvider)
+        #expect(provider.borders is WireframeThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is OrangeCompactThemeColorSemanticTokensProvider)
+        #expect(provider.colors is WireframeThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
+        #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
 
     @Test func defaultFontSemanticTokensProvider() throws {
-        #expect(provider.fonts is OrangeCompactThemeFontSemanticTokensProvider)
+        #expect(provider.fonts is WireframeThemeFontSemanticTokensProvider)
     }
 
     @Test func defaultOpacitySemanticTokensProvider() throws {
-        #expect(provider.opacities is OrangeCompactThemeOpacitySemanticTokensProvider)
+        #expect(provider.opacities is WireframeThemeOpacitySemanticTokensProvider)
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(provider.dimensions is OrangeCompactThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is WireframeThemeDimensionSemanticTokensProvider)
     }
 }
 

@@ -85,7 +85,6 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = WireframeThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = WireframeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = WireframeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = WireframeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = WireframeThemeDividerComponentTokensProvider(borders: borders)
         let icon = WireframeThemeIconComponentTokensProvider(colors: colors)
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
@@ -119,7 +118,6 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,

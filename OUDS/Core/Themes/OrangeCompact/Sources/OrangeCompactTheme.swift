@@ -148,7 +148,6 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = OrangeCompactThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = OrangeCompactThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = OrangeCompactThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = OrangeCompactThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = OrangeCompactThemeDividerComponentTokensProvider(borders: borders)
         let icon = OrangeCompactThemeIconComponentTokensProvider(colors: colors)
         let link = OrangeCompactThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
@@ -184,7 +183,6 @@ public final class OrangeCompactTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,

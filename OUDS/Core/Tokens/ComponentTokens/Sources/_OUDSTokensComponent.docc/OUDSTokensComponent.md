@@ -118,11 +118,11 @@ badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadge
 button                         | For buttons like `OUDSButton` 
 bulletList                     | For list of elements with bullets 
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
-chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip` 
-controlItem                    | Shared and used for switch, checkbox and radio items layouts 
+chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 
+listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
 quantityInput                  | 
 radioButton                    | For radio components like `OUDSRadio` and `OUDSRadioItem` 

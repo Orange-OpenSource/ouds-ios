@@ -168,7 +168,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
-    ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
@@ -207,7 +206,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          button: AllButtonComponentTokensProvider? = nil,
                          checkbox: AllCheckboxComponentTokensProvider? = nil,
                          chip: AllChipComponentTokensProvider? = nil,
-                         controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
                          icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
@@ -249,7 +247,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
-        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
@@ -285,7 +282,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,

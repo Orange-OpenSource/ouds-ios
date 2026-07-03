@@ -67,7 +67,6 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),

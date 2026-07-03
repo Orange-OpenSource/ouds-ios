@@ -128,10 +128,6 @@ struct OrangeCompactThemeTests {
         #expect(theme.divider is OrangeCompactThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is OrangeCompactThemeControlItemComponentTokensProvider)
-    }
-
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is OrangeCompactThemeIconComponentTokensProvider)
     }

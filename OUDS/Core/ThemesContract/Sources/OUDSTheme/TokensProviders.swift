@@ -92,9 +92,6 @@ public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComp
 /// Something which provides all component tokens of chip
 public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens {}
 
-/// Something which provides all component tokens for control-item-layout-based components
-public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens {}
-
 /// Something which provides all component tokens of divider
 public protocol AllDividerComponentTokensProvider: TokensProvider, DividerComponentTokens {}
 

@@ -95,6 +95,17 @@ An old deprecated token has finally been removed from `icon` component tokens.
 **Required Action**:
 - Replace any use of `theme.icon.colorContentDefault` by `theme.colors.contentDefault` if relevant
 
+### Rename control item tokens providers
+
+The tokens provider for `control item` has been renamed to `list item`.
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.controlItem` by `theme.listItem`
+
+**Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
+
 ## v2.2.0 → v2.3.0
 
 ### Overview

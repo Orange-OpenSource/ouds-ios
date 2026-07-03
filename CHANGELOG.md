@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
 - **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
 
 ## [2.3.0](https://github.com/Orange-OpenSource/ouds-ios/compare/2.2.0...2.3.0)
