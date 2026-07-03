@@ -79,8 +79,8 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.borderRadius)
         }
-        .padding(.leading, theme.button.spacePaddingInlineChevronStart)
-        .padding(.trailing, theme.button.spacePaddingInlineChevronEnd)
+        .padding(.leading, theme.button.spacePaddingInlineChevronStartDefault)
+        .padding(.trailing, theme.button.spacePaddingInlineChevronEndDefault)
         .background(theme.button.colorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.borderRadius)

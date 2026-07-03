@@ -29,19 +29,19 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         inheritedTheme = MockTheme()
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeightIconOnly() throws {
-        #expect(inheritedTheme.button.sizeMaxHeightIconOnly != abstractTheme.button.sizeMaxHeightIconOnly)
-        #expect(inheritedTheme.button.sizeMaxHeightIconOnly == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeightIconOnlyDefault() throws {
+        #expect(inheritedTheme.button.sizeMaxHeightIconOnlyDefault != abstractTheme.button.sizeMaxHeightIconOnlyDefault)
+        #expect(inheritedTheme.button.sizeMaxHeightIconOnlyDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMinHeight() throws {
-        #expect(inheritedTheme.button.sizeMinHeight != abstractTheme.button.sizeMinHeight)
-        #expect(inheritedTheme.button.sizeMinHeight == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMinHeightDefault() throws {
+        #expect(inheritedTheme.button.sizeMinHeightDefault != abstractTheme.button.sizeMinHeightDefault)
+        #expect(inheritedTheme.button.sizeMinHeightDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMinWidth() throws {
-        #expect(inheritedTheme.button.sizeMinWidth != abstractTheme.button.sizeMinWidth)
-        #expect(inheritedTheme.button.sizeMinWidth == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMinWidthDefault() throws {
+        #expect(inheritedTheme.button.sizeMinWidthDefault != abstractTheme.button.sizeMinWidthDefault)
+        #expect(inheritedTheme.button.sizeMinWidthDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenBorderRadiusDefault() throws {
@@ -454,64 +454,64 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.colorContentMinimalPressed == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeIcon() throws {
-        #expect(inheritedTheme.button.sizeIcon != abstractTheme.button.sizeIcon)
-        #expect(inheritedTheme.button.sizeIcon == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeIconDefault() throws {
+        #expect(inheritedTheme.button.sizeIconDefault != abstractTheme.button.sizeIconDefault)
+        #expect(inheritedTheme.button.sizeIconDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeIconOnly() throws {
-        #expect(inheritedTheme.button.sizeIconOnly != abstractTheme.button.sizeIconOnly)
-        #expect(inheritedTheme.button.sizeIconOnly == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+        #expect(inheritedTheme.button.sizeIconOnlyDefault != abstractTheme.button.sizeIconOnlyDefault)
+        #expect(inheritedTheme.button.sizeIconOnlyDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeLoader() throws {
-        #expect(inheritedTheme.button.sizeLoader != abstractTheme.button.sizeLoader)
-        #expect(inheritedTheme.button.sizeLoader == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonProgressIndicatorDefault() throws {
+        #expect(inheritedTheme.button.sizeProgressIndicatorDefault != abstractTheme.button.sizeProgressIndicatorDefault)
+        #expect(inheritedTheme.button.sizeProgressIndicatorDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceColumnGapIcon() throws {
-        #expect(inheritedTheme.button.spaceColumnGapIcon != abstractTheme.button.spaceColumnGapIcon)
-        #expect(inheritedTheme.button.spaceColumnGapIcon == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceColumnGapIconDefault() throws {
+        #expect(inheritedTheme.button.spaceColumnGapIconDefault != abstractTheme.button.spaceColumnGapIconDefault)
+        #expect(inheritedTheme.button.spaceColumnGapIconDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceInsetIconOnly() throws {
-        #expect(inheritedTheme.button.spaceInsetIconOnly != abstractTheme.button.spaceInsetIconOnly)
-        #expect(inheritedTheme.button.spaceInsetIconOnly == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpaceInsetIconOnlyDefault() throws {
+        #expect(inheritedTheme.button.spaceInsetIconOnlyDefault != abstractTheme.button.spaceInsetIconOnlyDefault)
+        #expect(inheritedTheme.button.spaceInsetIconOnlyDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingBlock() throws {
-        #expect(inheritedTheme.button.spacePaddingBlock != abstractTheme.button.spacePaddingBlock)
-        #expect(inheritedTheme.button.spacePaddingBlock == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingBlockDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingBlockDefault != abstractTheme.button.spacePaddingBlockDefault)
+        #expect(inheritedTheme.button.spacePaddingBlockDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronEnd() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineChevronEnd != abstractTheme.button.spacePaddingInlineChevronEnd)
-        #expect(inheritedTheme.button.spacePaddingInlineChevronEnd == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronEndDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineChevronEndDefault != abstractTheme.button.spacePaddingInlineChevronEndDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineChevronEndDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronStart() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineChevronStart != abstractTheme.button.spacePaddingInlineChevronStart)
-        #expect(inheritedTheme.button.spacePaddingInlineChevronStart == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenbuttonSpacePaddingInlineChevronStartDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineChevronStartDefault != abstractTheme.button.spacePaddingInlineChevronStartDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineChevronStartDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineEndIconStart() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineEndIconStart != abstractTheme.button.spacePaddingInlineEndIconStart)
-        #expect(inheritedTheme.button.spacePaddingInlineEndIconStart == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineEndIconStartDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineEndIconStartDefault != abstractTheme.button.spacePaddingInlineEndIconStartDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineEndIconStartDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineIconNone() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineIconNone != abstractTheme.button.spacePaddingInlineIconNone)
-        #expect(inheritedTheme.button.spacePaddingInlineIconNone == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineIconNoneDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineIconNoneDefault != abstractTheme.button.spacePaddingInlineIconNoneDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineIconNoneDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineIconStart() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineIconStart != abstractTheme.button.spacePaddingInlineIconStart)
-        #expect(inheritedTheme.button.spacePaddingInlineIconStart == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineIconStartDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineIconStartDefault != abstractTheme.button.spacePaddingInlineIconStartDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineIconStartDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineStartIconEnd() throws {
-        #expect(inheritedTheme.button.spacePaddingInlineStartIconEnd != abstractTheme.button.spacePaddingInlineStartIconEnd)
-        #expect(inheritedTheme.button.spacePaddingInlineStartIconEnd == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
+    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSpacePaddingInlineStartIconEndDefault() throws {
+        #expect(inheritedTheme.button.spacePaddingInlineStartIconEndDefault != abstractTheme.button.spacePaddingInlineStartIconEndDefault)
+        #expect(inheritedTheme.button.spacePaddingInlineStartIconEndDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 }
 

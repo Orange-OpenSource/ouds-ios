@@ -39,13 +39,13 @@ struct TextAreaTrailingContainer: View {
     // MARK: - Body
 
     var body: some View {
-        // The slot size is always button.sizeIconOnly + 2 × button.spaceInsetIconOnly (horizontal).
+        // The slot size is always button.sizeIconOnlyDefault + 2 × button.spaceInsetIconOnlyDefault (horizontal).
         // Content is swapped via opacity so the size is never zero — preventing layout shifts.
         ZStack {
             // Invisible placeholder — always present to hold the slot size.
             Color.clear
-                .frame(width: theme.button.sizeIconOnly + 2 * theme.button.spaceInsetIconOnly,
-                       height: theme.button.sizeIconOnly)
+                .frame(width: theme.button.sizeIconOnlyDefault + 2 * theme.button.spaceInsetIconOnlyDefault,
+                       height: theme.button.sizeIconOnlyDefault)
 
             if case .error = status {
                 errorIcon
@@ -71,10 +71,10 @@ struct TextAreaTrailingContainer: View {
             .renderingMode(.template)
             .aspectRatio(contentMode: .fill)
             .foregroundColor(errorIconColor)
-            .frame(width: theme.button.sizeIconOnly,
-                   height: theme.button.sizeIconOnly,
+            .frame(width: theme.button.sizeIconOnlyDefault,
+                   height: theme.button.sizeIconOnlyDefault,
                    alignment: .center)
-            .padding(.horizontal, theme.button.spaceInsetIconOnly)
+            .padding(.horizontal, theme.button.spaceInsetIconOnlyDefault)
             .padding(.vertical, verticalPadding)
     }
 

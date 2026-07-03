@@ -537,9 +537,9 @@ private struct ButtonIcon: View {
 
     var body: some View {
         OUDSScaledIcon(image: image,
-                       size: theme.button.sizeIconOnly)
-            .padding(.all, theme.button.spaceInsetIconOnly)
-            .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight)
+                       size: theme.button.sizeIconOnlyDefault)
+            .padding(.all, theme.button.spaceInsetIconOnlyDefault)
+            .frame(minWidth: theme.button.sizeMinWidthDefault, minHeight: theme.button.sizeMinHeightDefault)
     }
 }
 
@@ -553,9 +553,9 @@ private struct ButtonText: View {
 
     var body: some View {
         TextForButton(text: text)
-            .padding(.vertical, theme.button.spacePaddingBlock)
-            .padding(.horizontal, theme.button.spacePaddingInlineIconNone)
-            .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight, alignment: .center)
+            .padding(.vertical, theme.button.spacePaddingBlockDefault)
+            .padding(.horizontal, theme.button.spacePaddingInlineIconNoneDefault)
+            .frame(minWidth: theme.button.sizeMinWidthDefault, minHeight: theme.button.sizeMinHeightDefault, alignment: .center)
     }
 }
 
@@ -569,16 +569,16 @@ private struct ButtonTextAndIcon: View {
     let image: OUDSImage
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.button.spaceColumnGapIcon) {
+        HStack(alignment: .center, spacing: theme.button.spaceColumnGapIconDefault) {
             OUDSFixedIcon(image: image,
-                          size: theme.button.sizeIcon)
+                          size: theme.button.sizeIconDefault)
 
             TextForButton(text: text)
         }
-        .padding(.vertical, theme.button.spacePaddingBlock)
-        .padding(.leading, theme.button.spacePaddingInlineIconStart)
-        .padding(.trailing, theme.button.spacePaddingInlineEndIconStart)
-        .frame(minWidth: theme.button.sizeMinWidth, minHeight: theme.button.sizeMinHeight, alignment: .center)
+        .padding(.vertical, theme.button.spacePaddingBlockDefault)
+        .padding(.leading, theme.button.spacePaddingInlineIconStartDefault)
+        .padding(.trailing, theme.button.spacePaddingInlineEndIconStartDefault)
+        .frame(minWidth: theme.button.sizeMinWidthDefault, minHeight: theme.button.sizeMinHeightDefault, alignment: .center)
     }
 }
 

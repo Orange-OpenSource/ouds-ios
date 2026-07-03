@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
 - [v2.0.0 → v2.2.0](#v200--v220)
 - [v1.4.0 → v2.0.0](#v140--v200)
@@ -8,6 +9,57 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v2.3.0 → v3.0.0
+
+### Overview
+
+Tokens version 2.6 are integrated in the OUDS code base and contains several breaking changes
+with renamed or delete tokens, at least at components tokens levels.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 2.3 or older
+
+### Renamed component tokens of buttons
+
+The `OUDSIcon` type is deprecated. Use instead `OUDSImage`.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `sizeMaxHeightIconOnly` | `sizeMaxHeightIconOnlyDefault` |
+| `sizeMinHeight` | `sizeMinHeightDefault` |
+| `sizeMinWidth` | `sizeMinWidthDefault` |
+| `sizeIcon` | `sizeIconDefault` |
+| `sizeIconOnly` | `sizeIconOnlyDefault` |
+| `sizeProgressIndicator` | `sizeProgressIndicatorDefault` |
+| `spaceColumnGapIconChevron` | `spaceColumnGapIconChevronDefault` |
+| `spaceColumnGapChevron` | `spaceColumnGapChevronDefault` |
+| `spaceInsetIconOnly` | `spaceInsetIconOnlyDefault` |
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `spacePaddingInlineChevronEnd` | `spacePaddingInlineChevronEndDefault` |
+| `spacePaddingInlineChevronStart` | `spacePaddingInlineChevronStartDefault` |
+| `spacePaddingInlineEndIconStart` | `spacePaddingInlineEndIconStartDefault` |
+| `spacePaddingInlineIconNone` | `spacePaddingInlineIconNoneDefault` |
+| `spacePaddingInlineStartIconEnd` | `spacePaddingInlineStartIconEndDefault` |
+
+For example, before:
+```swift
+theme.button.sizeMinHeight
+``
+and after:
+```swift
+theme.button.sizeMinHeightDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to the components tokens of sizes and spaces for `button` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
 
 ## v2.2.0 → v2.3.0
 

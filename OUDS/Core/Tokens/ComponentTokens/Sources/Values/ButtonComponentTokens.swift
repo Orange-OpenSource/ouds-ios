@@ -27,24 +27,26 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Size
 
-    var sizeMaxHeightIconOnly: SizeSemanticToken { get }
-    var sizeMinHeight: SizeSemanticToken { get }
-    var sizeMinWidth: SizeSemanticToken { get }
-    var sizeIcon: SizeSemanticToken { get }
-    var sizeIconOnly: SizeSemanticToken { get }
-    var sizeLoader: SizeSemanticToken { get }
+    var sizeMaxHeightIconOnlyDefault: SizeSemanticToken { get }
+    var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinWidthDefault: SizeSemanticToken { get }
+    var sizeIconDefault: SizeSemanticToken { get }
+    var sizeIconOnlyDefault: SizeSemanticToken { get }
+    var sizeProgressIndicatorDefault: SizeSemanticToken { get }
 
     // MARK: - Space
 
-    var spaceColumnGapIcon: SpaceSemanticToken { get }
-    var spaceInsetIconOnly: SpaceSemanticToken { get }
-    var spacePaddingBlock: SpaceSemanticToken { get }
-    var spacePaddingInlineChevronEnd: SpaceSemanticToken { get }
-    var spacePaddingInlineChevronStart: SpaceSemanticToken { get }
-    var spacePaddingInlineEndIconStart: SpaceSemanticToken { get }
-    var spacePaddingInlineIconNone: SpaceSemanticToken { get }
-    var spacePaddingInlineIconStart: SpaceSemanticToken { get }
-    var spacePaddingInlineStartIconEnd: SpaceSemanticToken { get }
+    var spaceColumnGapIconDefault: SpaceSemanticToken { get }
+    var spaceColumnGapIconChevronDefault: SpaceSemanticToken { get }
+    var spaceColumnGapChevronDefault: SpaceSemanticToken { get }
+    var spaceInsetIconOnlyDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineChevronEndDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineChevronStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineEndIconStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineIconNoneDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineIconStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineStartIconEndDefault: SpaceSemanticToken { get }
 
     // MARK: - Border
 
