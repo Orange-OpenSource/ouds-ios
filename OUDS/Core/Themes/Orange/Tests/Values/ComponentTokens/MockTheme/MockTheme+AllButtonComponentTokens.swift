@@ -126,17 +126,60 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     override var colorContentMinimalLoading: MultipleColorSemanticToken { Self.mockThemeButtonColor }
     override var colorContentMinimalPressed: MultipleColorSemanticToken { Self.mockThemeButtonColor }
     override var sizeIcon: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeIconSmall: SizeSemanticToken { Self.mockThemeButtonSize }
     override var sizeIconOnly: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeIconOnlySmall: SizeSemanticToken { Self.mockThemeButtonSize }
     override var sizeLoader: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeProgressIndicatorSmall: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeMinHeightSmall: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeMinWidthSmall: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeMaxSizeIconOnlyDefault: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var sizeMaxSizeIconOnlySmall: SizeSemanticToken { Self.mockThemeButtonSize }
+    override var borderRadiusAiIconOnly: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
+    override var borderWidthAi: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
+    override var borderWidthAiInteraction: BorderWidthSemanticToken { Self.mockThemeButtonWidth }
+    override var colorBgAiEnabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBgAiHover: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBgAiPressed: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBgAiLoading: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBgAiDisabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBgAiFocus: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiEnabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiHover: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiPressed: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiLoading: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiDisabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorContentAiFocus: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiEnabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiHover: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiPressed: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiLoading: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiDisabled: MultipleColorSemanticToken { Self.mockThemeButtonColor }
+    override var colorBorderAiFocus: MultipleColorSemanticToken { Self.mockThemeButtonColor }
     override var spaceColumnGapIcon: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceColumnGapIconSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceColumnGapChevronDefault: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceColumnGapChevronSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceColumnGapIconChevronDefault: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceColumnGapIconChevronSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spaceInsetIconOnly: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceInsetIconOnlySmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceInsetProgressIndicatorOnlyDefault: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spaceInsetProgressIndicatorOnlySmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingBlockSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineChevronEnd: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineChevronEndSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineChevronStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineChevronStartSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineEndIconStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineEndIconStartSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineIconNone: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineIconNoneSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineIconStart: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineIconStartSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
     override var spacePaddingInlineStartIconEnd: SpaceSemanticToken { Self.mockThemeButtonSpace }
+    override var spacePaddingInlineStartIconEndSmall: SpaceSemanticToken { Self.mockThemeButtonSpace }
 }
 
 // swiftlint:enable required_deinit
