@@ -29,11 +29,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         inheritedTheme = MockTheme()
     }
 
-    @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeightIconOnlyDefault() throws {
-        #expect(inheritedTheme.button.sizeMaxHeightIconOnlyDefault != abstractTheme.button.sizeMaxHeightIconOnlyDefault)
-        #expect(inheritedTheme.button.sizeMaxHeightIconOnlyDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
-    }
-
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMinHeightDefault() throws {
         #expect(inheritedTheme.button.sizeMinHeightDefault != abstractTheme.button.sizeMinHeightDefault)
         #expect(inheritedTheme.button.sizeMinHeightDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
@@ -70,8 +65,8 @@ struct ThemeOverrideOfButtonComponentTokensTests {
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenBorderWidthDefaultInteractionMono() throws {
-        #expect(inheritedTheme.button.borderWidthDefaultInteraction != abstractTheme.button.borderWidthDefaultInteraction)
-        #expect(inheritedTheme.button.borderWidthDefaultInteraction == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
+        #expect(inheritedTheme.button.borderWidthDefaultInteractionMono != abstractTheme.button.borderWidthDefaultInteractionMono)
+        #expect(inheritedTheme.button.borderWidthDefaultInteractionMono == MockThemeButtonComponentTokenProvider.mockThemeButtonWidth)
     }
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonMonoColorBgDefaultFocus() throws {
@@ -513,8 +508,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.spacePaddingInlineStartIconEndDefault != abstractTheme.button.spacePaddingInlineStartIconEndDefault)
         #expect(inheritedTheme.button.spacePaddingInlineStartIconEndDefault == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
-
-    // MARK: - New tokens (not yet in ButtonComponentTokens protocol)
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeIconSmall() throws {
         #expect(inheritedTheme.button.sizeIconSmall != abstractTheme.button.sizeIconSmall)

@@ -27,35 +27,57 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Size
 
-    var sizeMaxHeightIconOnlyDefault: SizeSemanticToken { get }
+    var sizeMaxSizeIconOnlyDefault: SizeSemanticToken { get }
+    var sizeMaxSizeIconOnlySmall: SizeSemanticToken { get }
     var sizeMinHeightDefault: SizeSemanticToken { get }
+    var sizeMinHeightSmall: SizeSemanticToken { get }
     var sizeMinWidthDefault: SizeSemanticToken { get }
+    var sizeMinWidthSmall: SizeSemanticToken { get }
     var sizeIconDefault: SizeSemanticToken { get }
+    var sizeIconSmall: SizeSemanticToken { get }
     var sizeIconOnlyDefault: SizeSemanticToken { get }
+    var sizeIconOnlySmall: SizeSemanticToken { get }
     var sizeProgressIndicatorDefault: SizeSemanticToken { get }
+    var sizeProgressIndicatorSmall: SizeSemanticToken { get }
 
     // MARK: - Space
 
     var spaceColumnGapIconDefault: SpaceSemanticToken { get }
+    var spaceColumnGapIconSmall: SpaceSemanticToken { get }
     var spaceColumnGapIconChevronDefault: SpaceSemanticToken { get }
+    var spaceColumnGapIconChevronSmall: SpaceSemanticToken { get }
     var spaceColumnGapChevronDefault: SpaceSemanticToken { get }
+    var spaceColumnGapChevronSmall: SpaceSemanticToken { get }
     var spaceInsetIconOnlyDefault: SpaceSemanticToken { get }
+    var spaceInsetIconOnlySmall: SpaceSemanticToken { get }
+    var spaceInsetProgressIndicatorOnlyDefault: SpaceSemanticToken { get }
+    var spaceInsetProgressIndicatorOnlySmall: SpaceSemanticToken { get }
     var spacePaddingBlockDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockSmall: SpaceSemanticToken { get }
     var spacePaddingInlineChevronEndDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineChevronEndSmall: SpaceSemanticToken { get }
     var spacePaddingInlineChevronStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineChevronStartSmall: SpaceSemanticToken { get }
     var spacePaddingInlineEndIconStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineEndIconStartSmall: SpaceSemanticToken { get }
     var spacePaddingInlineIconNoneDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineIconNoneSmall: SpaceSemanticToken { get }
     var spacePaddingInlineIconStartDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineIconStartSmall: SpaceSemanticToken { get }
     var spacePaddingInlineStartIconEndDefault: SpaceSemanticToken { get }
+    var spacePaddingInlineStartIconEndSmall: SpaceSemanticToken { get }
 
     // MARK: - Border
 
     var borderRadiusDefault: BorderRadiusSemanticToken { get }
     var borderRadiusRounded: BorderRadiusSemanticToken { get }
+    var borderRadiusAiIconOnly: BorderRadiusSemanticToken { get }
     var borderRadiusSocial: BorderRadiusSemanticToken { get }
     var borderWidthDefault: BorderWidthSemanticToken { get }
     var borderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var borderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
+    var borderWidthAi: BorderWidthSemanticToken { get }
+    var borderWidthAiInteraction: BorderWidthSemanticToken { get }
 
     // MARK: - Color - Background
 
@@ -81,6 +103,27 @@ public protocol ButtonComponentTokens {
     var colorContentBrandPressed: MultipleColorSemanticToken { get }
     var colorContentBrandLoading: MultipleColorSemanticToken { get }
     var colorContentBrandFocus: MultipleColorSemanticToken { get }
+
+    // MARK: - Color - AI
+
+    var colorBgAiEnabled: MultipleColorSemanticToken { get }
+    var colorBgAiHover: MultipleColorSemanticToken { get }
+    var colorBgAiPressed: MultipleColorSemanticToken { get }
+    var colorBgAiLoading: MultipleColorSemanticToken { get }
+    var colorBgAiDisabled: MultipleColorSemanticToken { get }
+    var colorBgAiFocus: MultipleColorSemanticToken { get }
+    var colorContentAiEnabled: MultipleColorSemanticToken { get }
+    var colorContentAiHover: MultipleColorSemanticToken { get }
+    var colorContentAiPressed: MultipleColorSemanticToken { get }
+    var colorContentAiLoading: MultipleColorSemanticToken { get }
+    var colorContentAiDisabled: MultipleColorSemanticToken { get }
+    var colorContentAiFocus: MultipleColorSemanticToken { get }
+    var colorBorderAiEnabled: MultipleColorSemanticToken { get }
+    var colorBorderAiHover: MultipleColorSemanticToken { get }
+    var colorBorderAiPressed: MultipleColorSemanticToken { get }
+    var colorBorderAiLoading: MultipleColorSemanticToken { get }
+    var colorBorderAiDisabled: MultipleColorSemanticToken { get }
+    var colorBorderAiFocus: MultipleColorSemanticToken { get }
 
     // MARK: - Color - Border
 

@@ -40,9 +40,6 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
 
     // MARK: - Button component tokens
 
-    override var sizeMaxHeightIconOnly: SizeSemanticToken { Self.mockThemeButtonSize }
-    override var sizeMinHeight: SizeSemanticToken { Self.mockThemeButtonSize }
-    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeButtonSize }
     override var borderRadiusDefault: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override var borderRadiusRounded: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override var borderRadiusSocial: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
