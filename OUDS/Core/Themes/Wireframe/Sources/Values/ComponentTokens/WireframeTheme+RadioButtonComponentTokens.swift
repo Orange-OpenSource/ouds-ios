@@ -24,23 +24,23 @@ extension WireframeThemeRadioButtonComponentTokensProvider: RadioButtonComponent
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelected: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone (= 0)
+    @objc public final var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthNone }
+    /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelectedHover: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthNone (= 0)
     @objc public final var borderWidthSelectedPressed: BorderWidthSemanticToken { borders.widthNone }
-    /// Has for value token borders.widthNone (= 0)
-    @objc public final var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthNone }
     /// Has for value token borders.widthMedium (= 3)
     @objc public final var borderWidthUnselected: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.widthMedium (= 3)
+    @objc public final var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 3)
     @objc public final var borderWidthUnselectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 3)
     @objc public final var borderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.widthMedium (= 3)
-    @objc public final var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
+    @objc public final var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 48)
     @objc public final var sizeMinHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 48)
     @objc public final var sizeMinWidth: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
-    @objc public final var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
 }

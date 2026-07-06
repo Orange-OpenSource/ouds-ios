@@ -21,14 +21,22 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension SoshThemeAccordionComponentTokensProvider: AccordionFaqComponentTokens {
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
+    @objc public final var sizeExpandingIndicatorMobile: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
+    @objc public final var sizeExpandingIndicatorTablet: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
+    @objc public final var sizeIconMobile: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
+    @objc public final var sizeIconTablet: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
+    /// Has for value token DimensionRawTokens._750 (= 60)
+    @objc public final var sizeMinHeightMobile: SizeSemanticToken { DimensionRawTokens._750 }
+    /// Has for value token DimensionRawTokens._750 (= 60)
+    @objc public final var sizeMinHeightTablet: SizeSemanticToken { DimensionRawTokens._750 }
     /// Has for value token spaces.columnGapMedium (= 12)
     @objc public final var spaceColumnGapMobile: SpaceSemanticToken { spaces.columnGapMedium }
     /// Has for value token spaces.columnGapMedium (= 12)
     @objc public final var spaceColumnGapTablet: SpaceSemanticToken { spaces.columnGapMedium }
-    /// Has for value token spaces.paddingBlockMedium (= 12)
-    @objc public final var spacePaddingBlockMobile: SpaceSemanticToken { spaces.paddingBlockMedium }
-    /// Has for value token spaces.paddingBlockMedium (= 12)
-    @objc public final var spacePaddingBlockTablet: SpaceSemanticToken { spaces.paddingBlockMedium }
     /// Has for value token spaces.paddingBlock3xlarge (= 28)
     @objc public final var spacePaddingBlockBottomExpandContainerMobile: SpaceSemanticToken { spaces.paddingBlock3xlarge }
     /// Has for value token spaces.paddingBlock3xlarge (= 28)
@@ -37,18 +45,10 @@ extension SoshThemeAccordionComponentTokensProvider: AccordionFaqComponentTokens
     @objc public final var spacePaddingBlockBottomSlotListItemContainerMobile: SpaceSemanticToken { spaces.paddingBlockLarge }
     /// Has for value token spaces.paddingBlockLarge (= 16)
     @objc public final var spacePaddingBlockBottomSlotListItemContainerTablet: SpaceSemanticToken { spaces.paddingBlockLarge }
-    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
-    @objc public final var sizeIconMobile: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
-    /// Has for value token sizes.iconWithLabelLargeSizeMedium (= 28)
-    @objc public final var sizeIconTablet: SizeSemanticToken { sizes.iconWithLabelLargeSizeMedium }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
-    @objc public final var sizeExpandingIndicatorMobile: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token sizes.iconWithLabelLargeSizeSmall (= 24)
-    @objc public final var sizeExpandingIndicatorTablet: SizeSemanticToken { sizes.iconWithLabelLargeSizeSmall }
-    /// Has for value token DimensionRawTokens._750 (= 60)
-    @objc public final var sizeMinHeightMobile: SizeSemanticToken { DimensionRawTokens._750 }
-    /// Has for value token DimensionRawTokens._750 (= 60)
-    @objc public final var sizeMinHeightTablet: SizeSemanticToken { DimensionRawTokens._750 }
+    /// Has for value token spaces.paddingBlockMedium (= 12)
+    @objc public final var spacePaddingBlockMobile: SpaceSemanticToken { spaces.paddingBlockMedium }
+    /// Has for value token spaces.paddingBlockMedium (= 12)
+    @objc public final var spacePaddingBlockTablet: SpaceSemanticToken { spaces.paddingBlockMedium }
 }
 
 // swiftlint:enable identifier_name

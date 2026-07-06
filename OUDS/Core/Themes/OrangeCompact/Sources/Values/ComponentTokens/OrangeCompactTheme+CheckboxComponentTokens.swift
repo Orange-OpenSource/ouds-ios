@@ -24,25 +24,25 @@ extension OrangeCompactThemeCheckboxComponentTokensProvider: CheckboxComponentTo
     /// Has for value token borders.widthMedium (= 2)
     @objc public final var borderWidthSelected: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
+    @objc public final var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.widthMedium (= 2)
     @objc public final var borderWidthSelectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc public final var borderWidthSelectedPressed: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.widthMedium (= 2)
-    @objc public final var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthThin (= 1)
     @objc public final var borderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
+    /// Has for value token borders.widthMedium (= 2)
+    @objc public final var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc public final var borderWidthUnselectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc public final var borderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.widthMedium (= 2)
-    @objc public final var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 16)
+    @objc public final var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 40)
+    @objc public final var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 40)
     @objc public final var sizeMinHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 40)
     @objc public final var sizeMinWidth: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 40)
-    @objc public final var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 16)
-    @objc public final var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
 }

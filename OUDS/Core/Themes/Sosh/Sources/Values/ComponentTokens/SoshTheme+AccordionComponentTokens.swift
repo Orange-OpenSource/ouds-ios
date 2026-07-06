@@ -21,10 +21,10 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension SoshThemeAccordionComponentTokensProvider: AccordionComponentTokens {
-    /// Has for value token spaces.paddingBlock2xlarge (= 24)
-    @objc public final var spacePaddingBlockBottomExpandContainerSmall: SpaceSemanticToken { spaces.paddingBlock2xlarge }
     /// Has for value token spaces.paddingBlock3xlarge (= 28)
     @objc public final var spacePaddingBlockBottomExpandContainerDefault: SpaceSemanticToken { spaces.paddingBlock3xlarge }
+    /// Has for value token spaces.paddingBlock2xlarge (= 24)
+    @objc public final var spacePaddingBlockBottomExpandContainerSmall: SpaceSemanticToken { spaces.paddingBlock2xlarge }
     /// Has for value token spaces.paddingBlockXsmall (= 8)
     @objc public final var spacePaddingBlockTopExpandContainer: SpaceSemanticToken { spaces.paddingBlockXsmall }
 }

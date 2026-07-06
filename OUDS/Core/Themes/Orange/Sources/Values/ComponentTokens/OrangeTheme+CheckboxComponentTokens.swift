@@ -24,25 +24,25 @@ extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthSelected: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
+    @objc open var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthSelectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthSelectedPressed: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.widthMedium (= 2)
-    @objc open var borderWidthSelectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthThin (= 1)
     @objc open var borderWidthUnselected: BorderWidthSemanticToken { borders.widthThin }
+    /// Has for value token borders.widthMedium (= 2)
+    @objc open var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthUnselectedHover: BorderWidthSemanticToken { borders.widthMedium }
     /// Has for value token borders.widthMedium (= 2)
     @objc open var borderWidthUnselectedPressed: BorderWidthSemanticToken { borders.widthMedium }
-    /// Has for value token borders.widthMedium (= 2)
-    @objc open var borderWidthUnselectedFocus: BorderWidthSemanticToken { borders.widthMedium }
+    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
+    @objc open var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
+    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
+    @objc open var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 48)
     @objc open var sizeMinHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
     /// Has for value token sizes.minInteractiveAreaDefault (= 48)
     @objc open var sizeMinWidth: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.minInteractiveAreaDefault (= 48)
-    @objc open var sizeMaxHeight: SizeSemanticToken { sizes.minInteractiveAreaDefault }
-    /// Has for value token sizes.iconWithLabelLargeSizeXsmall (= 20)
-    @objc open var sizeIndicator: SizeSemanticToken { sizes.iconWithLabelLargeSizeXsmall }
 }
