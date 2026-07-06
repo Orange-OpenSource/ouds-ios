@@ -34,7 +34,7 @@ An ``OUDSBadgeCount`` displays an integer value.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Icon
@@ -58,7 +58,7 @@ An ``OUDSBadgeIcon`` displays only an icon and has specific colors.
 
 ```swift            
 // Neutral badge in medium size with an image
-OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium))
 ```
 
 #### Badge Standard
