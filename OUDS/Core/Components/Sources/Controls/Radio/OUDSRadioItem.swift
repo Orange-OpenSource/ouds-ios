@@ -14,12 +14,7 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
 // swiftlint:disable file_length
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-// swiftlint:disable type_body_length
 
 /// Radio button item is a UI element that allows to select a single option from a set of mutually exclusive choices.
 /// Radio button item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
@@ -197,7 +192,8 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode.
+    ///   Default set to `nil`. If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -269,6 +265,7 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Initializers — String label + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a radio with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
@@ -293,7 +290,8 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -355,8 +353,11 @@ public struct OUDSRadioItem: View {
         self.action = action
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: String?
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a radio with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -379,7 +380,8 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -419,8 +421,11 @@ public struct OUDSRadioItem: View {
                   action: action)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a radio with a localized label and a rich attributed error text.
     ///
     /// ```swift
@@ -440,7 +445,8 @@ public struct OUDSRadioItem: View {
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - extraLabel: An additional label text of the radio, default set to `nil`
     ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isOutlined: Flag to get an outlined radio, default set to `false`
     ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -525,6 +531,3 @@ public struct OUDSRadioItem: View {
         }
     }
 }
-
-// swiftlint:enable line_length
-// swiftlint:enable type_body_length

@@ -14,8 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// swiftlint:disable file_length
-
 // MARK: - OUDS Button
 
 /// Button is a UI element that triggers an action or event, and is used to initiate tasks or confirming an action.

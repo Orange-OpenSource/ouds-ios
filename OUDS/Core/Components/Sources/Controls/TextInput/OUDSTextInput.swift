@@ -18,11 +18,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
 // swiftlint:disable file_length
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-// swiftlint:disable type_body_length
 
 /// Text input is a UI element that allows to enter, edit, or select single-line textual data.
 /// Text input is one of the most fundamental form elements used to capture user input such as names, emails, passwords, or search queries.
@@ -401,6 +397,7 @@ public struct OUDSTextInput: View {
 
     // MARK: - Initializers — String label + helperText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a rich attributed helper text.
     ///
     /// ```swift
@@ -449,8 +446,11 @@ public struct OUDSTextInput: View {
         self.constrainedMaxWidth = constrainedMaxWidth
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + helperText: String?
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -504,8 +504,11 @@ public struct OUDSTextInput: View {
                   status: status)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + helperText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a text input with a localized label and a rich attributed helper text.
     ///
     /// ```swift
@@ -559,6 +562,8 @@ public struct OUDSTextInput: View {
                   status: status)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Body
 
     public var body: some View {
@@ -592,7 +597,4 @@ public struct OUDSTextInput: View {
     }
 }
 
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length
-// swiftlint:enable type_body_length
 #endif

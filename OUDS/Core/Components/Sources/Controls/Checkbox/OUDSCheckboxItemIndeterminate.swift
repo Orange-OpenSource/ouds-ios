@@ -14,11 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these SwiftLint commands
-
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-
 // MARK: - OUDS Checkbox Item Indeterminate
 
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
@@ -245,6 +240,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             orientation: isReversed ? .reversed : .default)
     }
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -299,6 +295,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
                   action: action)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: Body
 
     public var body: some View {
@@ -340,6 +338,3 @@ public struct OUDSCheckboxItemIndeterminate: View {
         }
     }
 }
-
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length

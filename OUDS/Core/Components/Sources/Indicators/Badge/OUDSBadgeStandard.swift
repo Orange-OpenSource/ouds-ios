@@ -75,7 +75,7 @@ public struct OUDSBadgeStandard: View {
     // MARK: - Configurations
 
     /// The status depends on the context of the information it represents.
-    /// Badges components like ``OUDSBadge`` and ``OUDSBadgeCount`` share the sames status.
+    /// Badges components like ``OUDSBadgeStandard`` and ``OUDSBadgeCount`` share the sames status.
     ///
     /// - Since: 2.2.0
     @frozen public enum Status {
