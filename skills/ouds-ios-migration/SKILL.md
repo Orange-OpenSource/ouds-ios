@@ -23,7 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
-| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage` |
 
 ---
 
@@ -353,6 +353,31 @@ theme.listItem.someToken
 
 ---
 
+### OUDSChipPickerData.Layout — `.icon` and `.textAndIcon` cases replaced
+
+Both layout cases of `OUDSChipPickerData.Layout` that accepted bare `Image` parameters have been removed and replaced by cases that accept `OUDSImage`.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.icon(icon:accessibilityLabel:renderingMode:)` | `.image(image:)` |
+| `.textAndIcon(text:icon:renderingMode:)` | `.textAndImage(text:image:)` |
+
+```swift
+// Before (v2.3)
+.icon(icon: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original)
+.textAndIcon(text: "Foo", icon: Image("someImage"), renderingMode: .original)
+
+// After (v3.0)
+.image(image: OUDSImage(asset: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original))
+.textAndImage(text: "Foo", image: OUDSImage(asset: Image("someImage"), renderingMode: .original))
+```
+
+**Required action**:
+- Replace `.icon(icon:accessibilityLabel:renderingMode:)` with `.image(image:)`, wrapping the asset, accessibility label and rendering mode into a single `OUDSImage`.
+- Replace `.textAndIcon(text:icon:renderingMode:)` with `.textAndImage(text:image:)`, wrapping the asset and rendering mode into a single `OUDSImage`.
+
+---
+
 ## Verification checklist
 
 ```bash
@@ -362,7 +387,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b" \
   --include="*.swift" .
 
 # v2.x deprecated symbols — must return nothing

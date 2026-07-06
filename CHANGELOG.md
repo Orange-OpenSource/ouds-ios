@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **BREAKING**: `.icon` and `.textAndIcon` layouts for `chip picker data` object
 - `elevation` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - `color` semantic tokens for `Orange`, `Orange Compact`, `Sosh` and `Wireframe` themes (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)
 - `link` component tokens for `Sosh` theme (tokens library v2.6.0) (Orange-OpenSource/ouds-ios#1579)

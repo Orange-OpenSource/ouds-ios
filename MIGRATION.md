@@ -136,6 +136,30 @@ The tokens provider for `control item` has been renamed to `list item`.
 - **Backward Compatibility**: No
 - **v2.3.0 Support**: None
 
+## Changes in layout of OUDS chip picker data
+
+To be aligned with new `OUDSImage` logic, the `Layout` for the `OUDSChipPickerData` has been refactored.
+
+**Before (v2.3.0)**:
+```swift
+.icon(icon: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original)
+.textAndIcon(text: "Foo", icon: Image("someImage"), renderingMode: .original)
+```
+
+**After (v3.0.0)**:
+```swift
+.image(image: OUDSImage(asset: Image("someImage"), accessibilityLabel: "Foo", renderingMode: .original))
+.textAndImage(text: "Foo", image: OUDSImage(asset: Image("someImage"), renderingMode: .original))
+```
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `.icon(icon:accessibilityLabel:renderingMode)` by `.image(image:)`
+- Replace any use of `.textAndIcon(text:icon)` by `.textAndImage(text:image:)`
+
+**Reason for Change**: Use new `OUDSImage` API
+
 ## v2.2.0 → v2.3.0
 
 ### Overview
