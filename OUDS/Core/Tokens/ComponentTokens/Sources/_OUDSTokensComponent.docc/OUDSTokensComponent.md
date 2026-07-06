@@ -167,4 +167,4 @@ typography                     | For textual components like `OUDSText`
 - ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``
-- ``TyporgraphyComponentTokens``
+- ``TypographyComponentTokens``

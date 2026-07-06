@@ -30,15 +30,16 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
 
     override init(sizes: AllSizeSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
-                  spaces: AllSpaceSemanticTokensProvider?)
+                  spaces: AllSpaceSemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider?)
     {
-        super.init(sizes: sizes, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
     }
 
     // MARK: - Link component tokens
 
     override var sizeMinHeightDefault: SizeSemanticToken { Self.mockThemeLinkSize }
-    override var sizeMinWidthDefault: SizeSemanticToken { Self.mockThemeLinkSize }
+    override var sizeMinWidth: SizeSemanticToken { Self.mockThemeLinkSize }
     override var sizeMinHeightSmall: SizeSemanticToken { Self.mockThemeLinkSize }
     override var sizeMinWidthSmall: SizeSemanticToken { Self.mockThemeLinkSize }
     override var monoColorContentEnabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
@@ -47,7 +48,7 @@ final class MockThemeLinkComponentTokenProvider: OrangeThemeLinkComponentTokensP
     override var monoColorContentFocus: MultipleColorSemanticToken { Self.mockThemeLinkColor }
     override var monoColorContentDisabled: MultipleColorSemanticToken { Self.mockThemeLinkColor }
     override var spacePaddingInline: SpaceSemanticToken { Self.mockThemeLinkSpace }
-    override var spacePaddingBlock: SpaceSemanticToken { Self.mockThemeLinkSpace }
+    override var spacePaddingBlockDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spacePaddingBlockSmall: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spacePaddingBlockCompactDensityDefault: SpaceSemanticToken { Self.mockThemeLinkSpace }
     override var spacePaddingBlockCompactDensitySmall: SpaceSemanticToken { Self.mockThemeLinkSpace }

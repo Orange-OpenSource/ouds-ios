@@ -32,12 +32,14 @@ final class MockThemeProgressIndicatorComponentTokenProvider: OrangeThemeProgres
     override init(sizes: AllSizeSemanticTokensProvider?,
                   borders: AllBorderSemanticTokensProvider?,
                   colors: AllColorSemanticTokensProvider?,
-                  spaces: AllSpaceSemanticTokensProvider?)
+                  spaces: AllSpaceSemanticTokensProvider?,
+                  dimensions: AllDimensionSemanticTokensProvider?)
     {
         super.init(sizes: sizes,
                    borders: borders,
                    colors: colors,
-                   spaces: spaces)
+                   spaces: spaces,
+                   dimensions: dimensions)
     }
 
     // MARK: - ProgressIndicator component tokens

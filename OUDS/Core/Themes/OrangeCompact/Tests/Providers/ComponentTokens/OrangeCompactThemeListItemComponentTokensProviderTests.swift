@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSThemesOrange
+@testable import OUDSThemesOrangeCompact
 import Testing
 
 // swiftlint:disable type_name
@@ -28,27 +28,27 @@ struct OrangeCompactThemeListItemComponentTokensProviderTests {
     // MARK: - Tests
 
     @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
+        #expect(provider.sizes is OrangeCompactThemeSizeSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
-        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
+        #expect(provider.borders is OrangeCompactThemeBorderSemanticTokensProvider)
     }
 
     @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
+        #expect(provider.colors is OrangeCompactThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
+        #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
     }
 
     @Test func defaultOpacitySemanticTokensProvider() throws {
-        #expect(provider.opacities is OrangeThemeOpacitySemanticTokensProvider)
+        #expect(provider.opacities is OrangeCompactThemeOpacitySemanticTokensProvider)
     }
 
     @Test func defaultDimensionSemanticTokensProvider() throws {
-        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
+        #expect(provider.dimensions is OrangeCompactThemeDimensionSemanticTokensProvider)
     }
 }
 

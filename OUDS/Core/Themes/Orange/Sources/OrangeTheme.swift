@@ -161,6 +161,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
@@ -173,15 +174,17 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - progressIndicator: All component tokens for progress indicator
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
-    ///    - inputTag: All component tokens for tag input
-    ///    - textInput: All component tokens for text input
+    ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
+    ///    - textInput: All component tokens for text input
+    ///    - typography: All component tokens for typography
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
