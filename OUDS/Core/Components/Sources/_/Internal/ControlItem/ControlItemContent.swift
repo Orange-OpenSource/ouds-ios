@@ -64,7 +64,7 @@ struct ControlItemContent: View {
         }
         .frame(minWidth: theme.listItem.sizeMinWidth, maxWidth: maxWidth, minHeight: theme.listItem.sizeMinHeightDefault, alignment: .center)
         .contentShape(Rectangle()) // Needed otherwise because of button style any empty space without views won't trigger tap
-        .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadius))
+        .clipShape(RoundedRectangle(cornerRadius: theme.listItem.borderRadiusDefault))
     }
 
     // MARK: Containers

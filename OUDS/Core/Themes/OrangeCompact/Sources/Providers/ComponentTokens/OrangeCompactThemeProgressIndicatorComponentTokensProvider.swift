@@ -66,7 +66,7 @@ final class OrangeCompactThemeProgressIndicatorComponentTokensProvider: AllProgr
         self.borders = (borders ?? OrangeCompactThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeCompactThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeCompactThemeSpaceSemanticTokensProvider())
-        self.dimensions = (spaces ?? OrangeCompactThemeDimensionSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeCompactThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeCompactThemeProgressIndicatorComponentTokensProvider")
