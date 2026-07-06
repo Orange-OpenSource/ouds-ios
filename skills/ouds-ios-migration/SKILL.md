@@ -23,7 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
-| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem`; `OUDSChipPickerData.Layout.icon(icon:…)` → `.image(image:)`; `.textAndIcon` → `.textAndImage`; alert status `.neutral(icon:)`/`.accent(icon:)` → `(image:)`; `OUDSBadgeIcon` status `.neutral(icon:flipped:renderingMode:)`/`.accent(…)` → `(image: OUDSImage)` |
 
 ---
 
@@ -378,6 +378,31 @@ Both layout cases of `OUDSChipPickerData.Layout` that accepted bare `Image` para
 
 ---
 
+### OUDSBadgeIcon status — `neutral` and `accent` now accept `OUDSImage`
+
+The `.neutral(icon:flipped:renderingMode:)` and `.accent(icon:flipped:renderingMode:)` cases of `OUDSBadgeIcon` status have been replaced: the three separate parameters are now grouped into a single `OUDSImage` passed as `image:`.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `.neutral(icon:flipped:renderingMode:)` | `.neutral(image: OUDSImage)` |
+| `.accent(icon:flipped:renderingMode:)` | `.accent(image: OUDSImage)` |
+
+```swift
+// Before (v2.3)
+.neutral(icon: Image("someImage"), flipped: false, renderingMode: .original)
+.accent(icon: Image("someImage"), flipped: false, renderingMode: .original)
+
+// After (v3.0)
+.neutral(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+.accent(image: OUDSImage(asset: Image("someImage"), flipped: false, renderingMode: .original))
+```
+
+**Required action**:
+- Replace `.neutral(icon:flipped:renderingMode:)` with `.neutral(image:)`, wrapping asset, flip flag and rendering mode into a single `OUDSImage`.
+- Replace `.accent(icon:flipped:renderingMode:)` with `.accent(image:)`, same wrapping.
+
+---
+
 ### Alert status — `icon:` parameter renamed to `image:`
 
 The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have their parameter label renamed from `icon:` to `image:`. The type (`OUDSImage`) is unchanged — this is a label-only rename.
@@ -412,7 +437,7 @@ swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|founda
 
 # v3.0 breaking changes — must return nothing
 grep -rn \
-  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:" \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b\|Layout\.icon(icon:\|\.textAndIcon\b\|\.neutral(icon:\|\.accent(icon:\|neutral(icon:\|accent(icon:" \
   --include="*.swift" .
 
 # v2.x deprecated symbols — must return nothing
