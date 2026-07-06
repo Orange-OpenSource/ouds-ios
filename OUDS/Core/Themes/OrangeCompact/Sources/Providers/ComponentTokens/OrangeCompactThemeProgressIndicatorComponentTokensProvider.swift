@@ -28,17 +28,20 @@ import OUDSThemesContract
 /// - Since: 3.0.0
 final class OrangeCompactThemeProgressIndicatorComponentTokensProvider: AllProgressIndicatorComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
+    /// Provider of size semantic tokens to use for progress indicator  sizes
     let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of border semantic tokens to use for button borders
+    /// Provider of border semantic tokens to use for progress indicator  borders
     let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of color semantic tokens to use for button colors
+    /// Provider of color semantic tokens to use for progress indicator  colors
     let colors: AllColorSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for progress indicator  spaces
     let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of dimensions semantic tokens to use for progress indicator dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -51,16 +54,19 @@ final class OrangeCompactThemeProgressIndicatorComponentTokensProvider: AllProgr
     ///    - borders: Provider for border semantic tokens, if nil, a default one will be used (``OrangeCompactThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens, if nil, a default one will be used (``OrangeCompactThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeCompactThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimensions semantic tokens, if nil, a default one will be used (``OrangeCompactThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          borders: AllBorderSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeCompactThemeProgressIndicatorComponentTokensProvider")
         self.sizes = (sizes ?? OrangeCompactThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeCompactThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeCompactThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeCompactThemeSpaceSemanticTokensProvider())
+        self.dimensions = (spaces ?? OrangeCompactThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeCompactThemeProgressIndicatorComponentTokensProvider")

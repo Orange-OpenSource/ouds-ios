@@ -22,7 +22,8 @@ import OUDSThemesContract
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// It implements also the protocol `LinkComponentTokens` so as to expose the component tokens for *links* through any `OUDSTheme`.
 /// *Link* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
+/// colors (from `AllColorSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`)
+/// and dimensions (from `AllDimensionSemanticTokensProvider`).
 ///
 /// - Since: 0.17.0
 final class WireframeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
@@ -36,6 +37,9 @@ final class WireframeThemeLinkComponentTokensProvider: AllLinkComponentTokensPro
     /// Provider of spaces semantic tokens to use for link spaces
     let spaces: AllSpaceSemanticTokensProvider
 
+    /// Provider of dimensions semantic tokens to use for link dimensions
+    let dimensions: AllDimensionSemanticTokensProvider
+
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
     #endif
@@ -45,14 +49,17 @@ final class WireframeThemeLinkComponentTokensProvider: AllLinkComponentTokensPro
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``WireframeThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``WireframeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``WireframeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimensions semantic tokens. If nil, a default one will be used (``WireframeThemeDimensionSemanticTokensProvider``)
     init(sizes: AllSizeSemanticTokensProvider? = nil,
          colors: AllColorSemanticTokensProvider? = nil,
-         spaces: AllSpaceSemanticTokensProvider? = nil)
+         spaces: AllSpaceSemanticTokensProvider? = nil,
+         dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of WireframeThemeLinkComponentTokensProvider")
         self.sizes = (sizes ?? WireframeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? WireframeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? WireframeThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? WireframeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "WireframeThemeLinkComponentTokensProvider")

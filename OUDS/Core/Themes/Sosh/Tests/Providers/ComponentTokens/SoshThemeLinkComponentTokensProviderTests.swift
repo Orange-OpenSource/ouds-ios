@@ -38,6 +38,10 @@ struct SoshThemeLinkComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

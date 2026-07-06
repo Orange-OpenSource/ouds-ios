@@ -24,7 +24,8 @@ import OUDSThemesContract
 /// Custom themes can use subclass of ``OrangeThemeProgressIndicatorComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ProgressIndicatorComponentTokens` so as to expose the component tokens for *progress indicators* through any `OUDSTheme`.
 /// *Progress indicators* components tokens are defined with semantic tokens spaces (from `AllSpaceSemanticTokensProvider`), sizes (from `AllSizeSemanticTokensProvider`),
-/// borders (from `AllBorderSemanticTokensProvider`) and colors (from `AllColorSemanticTokensProvider`).
+/// borders (from `AllBorderSemanticTokensProvider`), colors (from `AllColorSemanticTokensProvider`) and dimensions
+/// (from `AllDimensionSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for progress indicator component tokens
@@ -71,6 +72,7 @@ import OUDSThemesContract
 ///     // - OrangeThemeBorderSemanticTokensProvider for borders
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
 ///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     // - OrangeThemeDimensionSemanticTokensProvider for dimensions
 ///     let progressIndicatorComponentTokensProvider = OrangeThemeProgressIndicatorComponentTokensProvider()
 ///
 ///     // Or use your own semantic tokens providers
@@ -82,17 +84,20 @@ import OUDSThemesContract
 /// - Since: 3.0.0
 open class OrangeThemeProgressIndicatorComponentTokensProvider: AllProgressIndicatorComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for button sizes
+    /// Provider of size semantic tokens to use for progress indicator sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Provider of border semantic tokens to use for button borders
+    /// Provider of border semantic tokens to use for progress indicator borders
     public let borders: AllBorderSemanticTokensProvider
 
-    /// Provider of color semantic tokens to use for button colors
+    /// Provider of color semantic tokens to use for progress indicator colors
     public let colors: AllColorSemanticTokensProvider
 
-    /// Provider of spaces semantic tokens to use for button spaces
+    /// Provider of spaces semantic tokens to use for progress indicator spaces
     public let spaces: AllSpaceSemanticTokensProvider
+
+    /// Provider of dimensions semantic tokens to use for progress indicator dimensions
+    public let dimensions: AllDimensionSemanticTokensProvider
 
     #if DEBUG
     nonisolated(unsafe) private static var instanceCount: Int = 0
@@ -105,16 +110,19 @@ open class OrangeThemeProgressIndicatorComponentTokensProvider: AllProgressIndic
     ///    - borders: Provider for border semantic tokens, if nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens, if nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    ///    - dimensions: Provider for dimension semantic tokens, if nil, a default one will be used (``OrangeThemeDimensionSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil)
+                spaces: AllSpaceSemanticTokensProvider? = nil,
+                dimensions: AllDimensionSemanticTokensProvider? = nil)
     {
         OL.debug("Init of OrangeThemeProgressIndicatorComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        self.dimensions = (dimensions ?? OrangeThemeDimensionSemanticTokensProvider())
         #if DEBUG
         Self.instanceCount++
         checkInstances(count: Self.instanceCount, for: "OrangeThemeProgressIndicatorComponentTokensProvider")

@@ -42,6 +42,10 @@ struct WireframeThemeProgressIndicatorComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is WireframeThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is WireframeThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

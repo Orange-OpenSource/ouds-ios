@@ -49,7 +49,6 @@ public protocol TagComponentTokens {
     var spacePaddingInlineAssetDefault: SpaceSemanticToken { get }
     var spaceInsetIconSmall: SpaceSemanticToken { get }
     var spaceInsetBulletSmall: SpaceSemanticToken { get }
-    var spaceInsetLoaderSmall: SpaceSemanticToken { get }
     var spaceInsetIconDefault: SpaceSemanticToken { get }
     var spaceInsetBulletDefault: SpaceSemanticToken { get }
     var spaceInsetProgressIndicatorSmall: SpaceSemanticToken { get }

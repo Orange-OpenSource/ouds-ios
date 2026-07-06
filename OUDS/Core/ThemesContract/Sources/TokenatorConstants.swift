@@ -57,7 +57,7 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component bullet list (1.1.0)
     public static let componentBulletListVersion = "1.1.0"
-  
+
     // MARK: - Components versions - Control
 
     /// Version of the Figma specifications for the component checkbox (2.4.0)
@@ -94,7 +94,7 @@ public enum OUDSVersions {
     public static let componentTextAreaVersion = "1.2.1"
     /// Version of the Figma specifications for the component text input (1.4.1)
     public static let componentTextInputVersion = "1.4.1"
-  
+
     // MARK: - Components versions - Dialog
 
     /// Version of the Figma specifications for the component alert (alert message) (1.1.1)
@@ -110,7 +110,7 @@ public enum OUDSVersions {
     public static let componentTypographyVersion = "1.0.0"
 
     // MARK: - Components versions - Indicator
-  
+
     /// Version of the Figma specifications for the component progress indicator (1.0.0)
     public static let componentProgressIndicatorVersion = "1.0.0"
     /// Version of the Figma specifications for the component status icon(1.0.0)
@@ -120,7 +120,7 @@ public enum OUDSVersions {
 
     /// Version of the Figma specifications for the component divider (1.0.0)
     public static let componentDividerVersion = "1.0.0"
-  
+
     // MARK: - Components versions - Navigation
 
     /// Version of the Figma specifications for the component link (2.3.0)
@@ -141,7 +141,7 @@ public enum OUDSVersions {
     /// Version of the Figma specifications for the component count badge (1.2.0)
     public static let componentBadgeCountVersion = "1.2.0"
     /// Version of the Figma specifications for the component icon badge (1.3.0)
-    public static let componentBadgeIconVersion = "1.3.0"    
+    public static let componentBadgeIconVersion = "1.3.0"
     /// Version of the Figma specifications for the component skeleton (1.0.0)
     public static let componentSkeletonVersion = "1.0.0"
     /// Version of the Figma specifications for the component tag (1.5.0)

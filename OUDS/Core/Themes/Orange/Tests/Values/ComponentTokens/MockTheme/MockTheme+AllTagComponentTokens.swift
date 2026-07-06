@@ -61,7 +61,6 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
     override var spacePaddingInlineAssetDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
     override var spaceInsetIconSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
     override var spaceInsetBulletSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
-    override var spaceInsetLoaderSmall: SpaceSemanticToken { Self.mockThemeTagSpace }
     override var spaceInsetIconDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
     override var spaceInsetBulletDefault: SpaceSemanticToken { Self.mockThemeTagSpace }
     override var spaceInsetLoaderDefault: SpaceSemanticToken { Self.mockThemeTagSpace }

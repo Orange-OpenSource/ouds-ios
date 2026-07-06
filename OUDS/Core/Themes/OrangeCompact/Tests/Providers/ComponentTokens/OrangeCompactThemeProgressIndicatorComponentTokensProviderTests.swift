@@ -42,6 +42,10 @@ struct OrangeCompactThemeProgressIndicatorComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeCompactThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeCompactThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name

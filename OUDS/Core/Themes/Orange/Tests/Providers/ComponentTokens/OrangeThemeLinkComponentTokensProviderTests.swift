@@ -38,6 +38,10 @@ struct OrangeThemeLinkComponentTokensProviderTests {
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
     }
+
+    @Test func defaultDimensionSemanticTokensProvider() throws {
+        #expect(provider.dimensions is OrangeThemeDimensionSemanticTokensProvider)
+    }
 }
 
 // swiftlint:enable type_name
