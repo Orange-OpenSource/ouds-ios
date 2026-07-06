@@ -30,7 +30,7 @@ public protocol LinkComponentTokens {
     var sizeMinHeightSmall: SizeSemanticToken { get }
     var sizeMinHeightDefault: SizeSemanticToken { get }
     var sizeMinWidthSmall: SizeSemanticToken { get }
-    var sizeMinWidthDefault: SizeSemanticToken { get }
+    var sizeMinWidth: SizeSemanticToken { get }
     var sizeIconSmall: SizeSemanticToken { get }
     var sizeIconDefault: SizeSemanticToken { get }
 
@@ -48,7 +48,10 @@ public protocol LinkComponentTokens {
     // MARK: - Spaces
 
     var spacePaddingInline: SpaceSemanticToken { get }
-    var spacePaddingBlock: SpaceSemanticToken { get }
+    var spacePaddingBlockSmall: SpaceSemanticToken { get }
+    var spacePaddingBlockCompactDensityDefault: SpaceSemanticToken { get }
+    var spacePaddingBlockCompactDensitySmall: SpaceSemanticToken { get }
+    var spacePaddingBlockDefault: SpaceSemanticToken { get }
     var spaceColumnGapIconSmall: SpaceSemanticToken { get }
     var spaceColumnGapChevronSmall: SpaceSemanticToken { get }
     var spaceColumnGapIconDefault: SpaceSemanticToken { get }

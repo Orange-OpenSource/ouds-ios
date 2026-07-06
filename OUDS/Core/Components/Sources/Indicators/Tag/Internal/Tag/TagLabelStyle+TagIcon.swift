@@ -49,9 +49,9 @@ struct TagLoader: View {
     private var padding: CGFloat {
         switch size {
         case .default:
-            theme.tag.spaceInsetLoaderDefault
+            theme.tag.spaceInsetProgressIndicatorDefault
         case .small:
-            theme.tag.spaceInsetLoaderSmall
+            theme.tag.spaceInsetProgressIndicatorSmall
         }
     }
 }

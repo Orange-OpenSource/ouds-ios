@@ -17,7 +17,7 @@ import SwiftUI
 
 // swiftlint:disable function_body_length
 
-/// This is the theme for Sosh brand?
+/// This is the theme for Sosh brand.
 /// This is an override of the default basic `OUDSTheme` for the **Sosh brand theme**
 /// It can override any properties from its superclass, and but cannot be derived ; this is not allowed.
 ///
@@ -82,6 +82,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let sizes = SoshThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = SoshThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
+        let accordion = SoshThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = SoshThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
         let badge = SoshThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = SoshThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
@@ -89,11 +90,12 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = SoshThemeBulletListComponentTokensProvider(spaces: spaces)
         let checkbox = SoshThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip = SoshThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem = SoshThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider = SoshThemeDividerComponentTokensProvider(borders: borders)
         let icon = SoshThemeIconComponentTokensProvider(colors: colors)
-        let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let link = SoshThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions)
+        let listItem = SoshThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = SoshThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let progressIndicator = SoshThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let quantityInput = SoshThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = SoshThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = SoshThemeSelectInputComponentTokensProvider(dimensions: dimensions)
@@ -103,6 +105,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = SoshThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = SoshThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = SoshThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let typography = SoshThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
                    colors: colors,
@@ -115,6 +118,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: accordion,
                    alert: alert,
                    badge: badge,
                    bar: bar,
@@ -122,11 +126,12 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -136,6 +141,7 @@ public final class SoshTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   typography: typography,
                    resourcesBundle: Bundle.SoshTheme,
                    name: Self.name,
                    fontFamily: SoshBrandFontRawTokens.familyDefault,

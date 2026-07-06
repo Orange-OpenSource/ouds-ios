@@ -161,6 +161,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
@@ -168,20 +169,22 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - button: All component tokens for button
     ///    - checkbox: All component tokens for checkbox
     ///    - chip: All component tokens for chip
-    ///    - controlItem: All component tokens for control item
     ///    - divider: All component tokens for divider
     ///    - icon: All component tokens for icon
     ///    - link: All component tokens for link
+    ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - progressIndicator: All component tokens for progress indicator
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - selectInput: All component tokens for select input
     ///    - skeleton: All component tokens for skeleton
     ///    - switch: All component tokens for switch
     ///    - tag: All component tokens for tag
-    ///    - inputTag: All component tokens for tag input
-    ///    - textInput: All component tokens for text input
+    ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
+    ///    - textInput: All component tokens for text input
+    ///    - typography: All component tokens for typography
     ///    - resourcesBundle: The `Bundle` of the module containing assets to load like images
     ///    - name: A name to give for debug purposes to the theme, default set to "Orange"
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply. Default set to `OrangeBrandFontRawTokens.familyBrandDefault`
@@ -199,6 +202,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          dimensions: AllDimensionSemanticTokensProvider? = nil,
                          sizes: AllSizeSemanticTokensProvider? = nil,
                          spaces: AllSpaceSemanticTokensProvider? = nil,
+                         accordion: AllAccordionComponentTokensProvider? = nil,
                          alert: AllAlertComponentTokensProvider? = nil,
                          badge: AllBadgeComponentTokensProvider? = nil,
                          bar: AllBarComponentTokensProvider? = nil,
@@ -206,11 +210,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          button: AllButtonComponentTokensProvider? = nil,
                          checkbox: AllCheckboxComponentTokensProvider? = nil,
                          chip: AllChipComponentTokensProvider? = nil,
-                         controlItem: AllControlItemComponentTokensProvider? = nil,
                          divider: AllDividerComponentTokensProvider? = nil,
                          icon: AllIconComponentTokensProvider? = nil,
                          link: AllLinkComponentTokensProvider? = nil,
+                         listItem: AllListItemComponentTokensProvider? = nil,
                          pinCodeInput: AllPinCodeInputComponentTokensProvider? = nil,
+                         progressIndicator: AllProgressIndicatorComponentTokensProvider? = nil,
                          quantityInput: AllQuantityInputComponentTokensProvider? = nil,
                          radioButton: AllRadioButtonComponentTokensProvider? = nil,
                          selectInput: AllSelectInputComponentTokensProvider? = nil,
@@ -220,6 +225,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          inputTag: AllInputTagComponentTokensProvider? = nil,
                          textArea: AllTextAreaComponentTokensProvider? = nil,
                          textInput: AllTextInputComponentTokensProvider? = nil,
+                         typography: AllTypographyComponentTokensProvider? = nil,
                          resourcesBundle: Bundle = Bundle.OrangeTheme,
                          name: String = OrangeTheme.name,
                          fontFamily: FontFamilySemanticToken? = OrangeBrandFontRawTokens.familyBrandDefault,
@@ -240,6 +246,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider(dimensions: dimensions))
         let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider(dimensions: dimensions))
 
+        let accordion = (accordion ?? OrangeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces))
         let alert = (alert ?? OrangeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
         let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions))
         let bar = (bar ?? OrangeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects))
@@ -247,11 +254,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
         let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
         let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
-        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let icon = (icon ?? OrangeThemeIconComponentTokensProvider(colors: colors))
-        let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions))
+        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions))
         let pinCodeInput = (pinCodeInput ?? OrangeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions))
+        let progressIndicator = (progressIndicator ?? OrangeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
         let quantityInput = (quantityInput ?? OrangeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
         let selectInput = (selectInput ?? OrangeThemeSelectInputComponentTokensProvider(dimensions: dimensions))
@@ -261,6 +269,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = (inputTag ?? OrangeThemeInputTagComponentTokensProvider(borders: borders, colors: colors))
         let textArea = (textArea ?? OrangeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces))
         let textInput = (textInput ?? OrangeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions))
+        let typography = (typography ?? OrangeThemeTypographyComponentTokensProvider(spaces: spaces))
 
         super.init(borders: borders,
                    colors: colors,
@@ -275,6 +284,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: accordion,
                    alert: alert,
                    badge: badge,
                    bar: bar,
@@ -282,11 +292,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    checkbox: checkbox,
                    chip: chip,
-                   controlItem: controlItem,
                    divider: divider,
                    icon: icon,
                    link: link,
+                   listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -296,6 +307,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   typography: typography,
                    resourcesBundle: Bundle.OrangeTheme,
                    name: name,
                    fontFamily: fontFamily,

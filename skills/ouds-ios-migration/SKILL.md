@@ -1,12 +1,12 @@
 ---
 name: ouds-ios-migration
-description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (2.3.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
+description: Use when the user wants to migrate OUDS iOS code from an older version (1.0.0 or later) to the current version (3.0.0 or higher), or when deprecated or removed OUDS APIs are detected in the codebase
 license: MIT
 ---
 
 # Skill: ouds-ios-migration
 
-Migration guide from **v1.0.0** to **v2.3.0** (current). Covers all breaking changes and deprecated symbols.
+Migration guide from **v1.0.0** to **v3.0.0** (current). Covers all breaking changes and deprecated symbols.
 For full before/after examples, refer to `MIGRATION.md` in the project root.
 
 ---
@@ -23,6 +23,7 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 | v2.0.0 → v2.1.0 | Low | Component token `spacePaddingBlockDensityCompactTopAlignmentTopText_container` renamed |
 | v2.0.0 → v2.2.0 | Medium | `OUDSBadge` split into `OUDSBadgeStandard`, `OUDSBadgeCount`, `OUDSBadgeIcon` |
 | v2.2.0 → v2.3.0 | Low | `OUDSIcon` → `OUDSImage`; all `icon: Image` + `flipIcon` + `renderingMode` params replaced by `OUDSImage` |
+| v2.3.0 → v3.0.0 | High | Button/tag/link component token renames (add `Default` suffix); `icon.colorContentDefault` removed; `theme.controlItem` → `theme.listItem` |
 
 ---
 
@@ -39,6 +40,11 @@ For full before/after examples, refer to `MIGRATION.md` in the project root.
 ## Detection grep commands
 
 ```bash
+# Breaking changes (v3.0.0)
+grep -rn \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b" \
+  --include="*.swift" .
+
 # Active deprecations (v2.x)
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container" \
@@ -123,7 +129,7 @@ Replace everywhere: `OUDSThemeOrangeBusinessTools` → `OUDSThemeOrangeCompact`,
 
 ### Removed tokens
 
-Remove: `blur160`, `opacityGrayLight80800`, `actionAccentLight/Dark/` (use `colorAccent` bar tokens), radio/checkbox `sizeIndicator` (use `controlItem.sizeControlIndicator`), control item tokens: `sizeMaxHeihtAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover/Focus/Pressed/Loading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`.
+Remove: `blur160`, `opacityGrayLight80800`, `actionAccentLight/Dark/` (use `colorAccent` bar tokens), radio/checkbox `sizeIndicator` (use `listItem.sizeControlIndicator`), control item tokens: `sizeMaxHeightAssetsContainer`, `sizeLoader`, `sizeErrorIcon`, `borderRadiusItemOnly`, `colorBgHover/Focus/Pressed/Loading*`, `colorContentLoader*`, `spacePaddingInlineErrorIcon*`.
 
 ### Other changes
 
@@ -233,6 +239,120 @@ This workaround is only needed until the deprecated initialisers are removed in 
 
 ---
 
+## v2.3.0 → v3.0.0
+
+**Backward compatibility**: None. All changes are breaking.
+
+### Button component tokens — add `Default` suffix
+
+15 size and space tokens for `OUDSButton` have been renamed. Add the `Default` suffix to each.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `sizeMaxHeightIconOnly` | `sizeMaxHeightIconOnlyDefault` |
+| `sizeMinHeight` | `sizeMinHeightDefault` |
+| `sizeMinWidth` | `sizeMinWidthDefault` |
+| `sizeIcon` | `sizeIconDefault` |
+| `sizeIconOnly` | `sizeIconOnlyDefault` |
+| `sizeProgressIndicator` | `sizeProgressIndicatorDefault` |
+| `spaceColumnGapIconChevron` | `spaceColumnGapIconChevronDefault` |
+| `spaceColumnGapChevron` | `spaceColumnGapChevronDefault` |
+| `spaceInsetIconOnly` | `spaceInsetIconOnlyDefault` |
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `spacePaddingInlineChevronEnd` | `spacePaddingInlineChevronEndDefault` |
+| `spacePaddingInlineChevronStart` | `spacePaddingInlineChevronStartDefault` |
+| `spacePaddingInlineEndIconStart` | `spacePaddingInlineEndIconStartDefault` |
+| `spacePaddingInlineIconNone` | `spacePaddingInlineIconNoneDefault` |
+| `spacePaddingInlineStartIconEnd` | `spacePaddingInlineStartIconEndDefault` |
+
+```swift
+// Before (v2.3)
+theme.button.sizeMinHeight
+theme.button.spacePaddingBlock
+
+// After (v3.0)
+theme.button.sizeMinHeightDefault
+theme.button.spacePaddingBlockDefault
+```
+
+**Required action**: for each row, global find-and-replace `theme.button.<oldName>` → `theme.button.<newName>`.
+
+---
+
+### Tag component tokens — `Loader` → `ProgressIndicator`
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `spaceInsetLoaderSmall` | `spaceInsetProgressIndicatorSmall` |
+| `spaceInsetLoaderDefault` | `spaceInsetProgressIndicatorDefault` |
+
+```swift
+// Before (v2.3)
+theme.tag.spaceInsetLoaderSmall
+
+// After (v3.0)
+theme.tag.spaceInsetProgressIndicatorSmall
+```
+
+**Required action**: replace `Loader` with `ProgressIndicator` in all `theme.tag` token names.
+
+---
+
+### Link component tokens — mixed rename
+
+> Note the asymmetry: one token gains `Default`, the other loses it.
+
+| Old (v2.3) | New (v3.0) |
+|---|---|
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `sizeMinWidthDefault` | `sizeMinWidth` |
+
+```swift
+// Before (v2.3)
+theme.link.spacePaddingBlock
+theme.link.sizeMinWidthDefault
+
+// After (v3.0)
+theme.link.spacePaddingBlockDefault
+theme.link.sizeMinWidth
+```
+
+**Required action**: apply both renames independently; a bulk "add Default" pass will break `sizeMinWidth`.
+
+---
+
+### Removed: `icon.colorContentDefault`
+
+The token `theme.icon.colorContentDefault` has been fully removed (was deprecated in v2.x).
+
+```swift
+// Before (v2.3)
+theme.icon.colorContentDefault
+
+// After (v3.0) — verify semantic equivalence before replacing
+theme.colors.contentDefault
+```
+
+**Required action**: replace any use of `theme.icon.colorContentDefault` with `theme.colors.contentDefault`.
+
+---
+
+### Provider renamed: `controlItem` → `listItem`
+
+The `controlItem` tokens provider no longer exists in Figma and has been removed from the Swift API.
+
+```swift
+// Before (v2.3)
+theme.controlItem.someToken
+
+// After (v3.0)
+theme.listItem.someToken
+```
+
+**Required action**: global find-and-replace `theme.controlItem` → `theme.listItem` across the codebase.
+
+---
+
 ## Verification checklist
 
 ```bash
@@ -240,13 +360,17 @@ swift build
 
 swift build 2>&1 | grep -i "deprecated" | grep -iv "apple\|system\|swift\|foundation"
 
+# v3.0 breaking changes — must return nothing
+grep -rn \
+  "theme\.controlItem\|icon\.colorContentDefault\|spaceInsetLoader\|\.sizeMaxHeightIconOnly\b\|\.sizeMinHeight\b\|\.sizeMinWidth\b\|\.sizeIcon\b\|\.sizeIconOnly\b\|\.sizeProgressIndicator\b\|\.spaceColumnGapIconChevron\b\|\.spaceColumnGapChevron\b\|\.spaceInsetIconOnly\b\|\.spacePaddingBlock\b\|\.spacePaddingInlineChevronEnd\b\|\.spacePaddingInlineChevronStart\b\|\.spacePaddingInlineEndIconStart\b\|\.spacePaddingInlineIconNone\b\|\.spacePaddingInlineStartIconEnd\b" \
+  --include="*.swift" .
+
+# v2.x deprecated symbols — must return nothing
 grep -rn \
   "OUDSBadge\b\|OUDSIcon\b\|icon: Image\|leadingIcon: Image\|flipIcon\|renderingMode:\|spacePaddingBlockDensityCompactTopAlignmentTopText_container\|buttonBorderRadius\|buttonBorderWidth\|Multiple.*Tokens\b\|OrangeBusinessTools\|oudsVerticalSizeClass\|UnorderedIcon\|\.ouds[A-Z]" \
   --include="*.swift" .
 
-# Detect old active-init parameter labels that were renamed (v2.3.0 disambiguation).
-# All components (including OUDSSuggestionChip and OUDSTag.Status) now use image: OUDSImage.
-# Any remaining icon: OUDSImage or leadingIcon: OUDSImage in call sites must be renamed.
+# v2.3.0 init label disambiguation — must return nothing
 grep -rn \
   "icon: OUDSImage\|leadingIcon: OUDSImage" \
   --include="*.swift" .

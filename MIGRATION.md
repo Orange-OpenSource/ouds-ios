@@ -1,5 +1,6 @@
 # Migration Guide
 
+- [v2.3.0 → v3.0.0](#v230--v300)
 - [v2.2.0 → v2.3.0](#v220--v230)
 - [v2.0.0 → v2.2.0](#v200--v220)
 - [v1.4.0 → v2.0.0](#v140--v200)
@@ -8,6 +9,132 @@
 - [v1.1.0 → v1.2.0](#v110--v120)
 - [v1.0.0 → v1.1.0](#v100--v110)
 - [Support](#support)
+
+## v2.3.0 → v3.0.0
+
+### Overview
+
+Tokens version 2.6 are integrated in the OUDS code base and contains several breaking changes
+with renamed or delete tokens, at least at components tokens levels.
+
+### Before You Begin
+
+#### Prerequisites
+
+- Use version 2.3 or older
+
+### Renamed component tokens of button
+
+The tokens of sizes and spaces for `button` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `sizeMaxHeightIconOnly` | `sizeMaxHeightIconOnlyDefault` |
+| `sizeMinHeight` | `sizeMinHeightDefault` |
+| `sizeMinWidth` | `sizeMinWidthDefault` |
+| `sizeIcon` | `sizeIconDefault` |
+| `sizeIconOnly` | `sizeIconOnlyDefault` |
+| `sizeProgressIndicator` | `sizeProgressIndicatorDefault` |
+| `spaceColumnGapIconChevron` | `spaceColumnGapIconChevronDefault` |
+| `spaceColumnGapChevron` | `spaceColumnGapChevronDefault` |
+| `spaceInsetIconOnly` | `spaceInsetIconOnlyDefault` |
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `spacePaddingInlineChevronEnd` | `spacePaddingInlineChevronEndDefault` |
+| `spacePaddingInlineChevronStart` | `spacePaddingInlineChevronStartDefault` |
+| `spacePaddingInlineEndIconStart` | `spacePaddingInlineEndIconStartDefault` |
+| `spacePaddingInlineIconNone` | `spacePaddingInlineIconNoneDefault` |
+| `spacePaddingInlineStartIconEnd` | `spacePaddingInlineStartIconEndDefault` |
+
+For example, before:
+```swift
+theme.button.sizeMinHeight
+```
+and after:
+```swift
+theme.button.sizeMinHeightDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to the components tokens of sizes and spaces for `button` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of tag
+
+Some component tokens for `tag` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spaceInsetLoaderSmall` | `spaceInsetProgressIndicatorSmall` |
+| `spaceInsetLoaderDefault` | `spaceInsetProgressIndicatorDefault` |
+
+For example, before:
+```swift
+theme.tag.spaceInsetLoaderSmall
+```
+and after:
+```swift
+theme.tag.spaceInsetProgressIndicatorSmall
+```
+
+**Required Action**:
+- `Loader` must be replaced by `ProgressIndicator`
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Renamed component tokens of link
+
+The tokens of sizes and spaces for `link` component have been renamed.
+
+**Impact**: High
+
+| Old v2 name | New v3 name |
+|-------------|---|
+| `spacePaddingBlock` | `spacePaddingBlockDefault` |
+| `sizeMinWidthDefault`| `sizeMinWidth `|
+
+For example, before:
+```swift
+theme.link.spacePaddingBlock
+```
+and after:
+```swift
+theme.link.spacePaddingBlockDefault
+```
+
+**Required Action**:
+- Add suffix `Default` to some of the components tokens of sizes and spaces for `link` component
+
+**Reason for Change**: Renaming of tokens in Figma specification
+
+### Removed icon component token
+
+An old deprecated token has finally been removed from `icon` component tokens.
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.icon.colorContentDefault` by `theme.colors.contentDefault` if relevant
+
+### Rename control item tokens providers
+
+The tokens provider for `control item` has been renamed to `list item`.
+
+**Impact**: High
+
+**Required Action**:
+- Replace any use of `theme.controlItem` by `theme.listItem`
+
+**Reason for Change**: "control item" does not exist anymore in Figma but "list item" does
+
+### Compatibility
+
+- **Backward Compatibility**: No
+- **v2.3.0 Support**: None
 
 ## v2.2.0 → v2.3.0
 

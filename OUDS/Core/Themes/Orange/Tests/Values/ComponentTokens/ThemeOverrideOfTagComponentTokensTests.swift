@@ -111,9 +111,9 @@ struct ThemeOverrideOfTagComponentTokensTests {
         #expect(inheritedTheme.tag.spaceInsetBulletSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpaceInsetLoaderSmall() throws {
-        #expect(inheritedTheme.tag.spaceInsetLoaderSmall != abstractTheme.tag.spaceInsetLoaderSmall)
-        #expect(inheritedTheme.tag.spaceInsetLoaderSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpaceInsetProgressIndicatorSmall() throws {
+        #expect(inheritedTheme.tag.spaceInsetProgressIndicatorSmall != abstractTheme.tag.spaceInsetProgressIndicatorSmall)
+        #expect(inheritedTheme.tag.spaceInsetProgressIndicatorSmall == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
     @Test func inheritedThemeCanOverrideTagSpaceInsetIconDefault() throws {
@@ -126,9 +126,9 @@ struct ThemeOverrideOfTagComponentTokensTests {
         #expect(inheritedTheme.tag.spaceInsetBulletDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
-    @Test func inheritedThemeCanOverrideTagSpaceInsetLoaderDefault() throws {
-        #expect(inheritedTheme.tag.spaceInsetLoaderDefault != abstractTheme.tag.spaceInsetLoaderDefault)
-        #expect(inheritedTheme.tag.spaceInsetLoaderDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
+    @Test func inheritedThemeCanOverrideTagSpaceInsetProgressIndicatorDefault() throws {
+        #expect(inheritedTheme.tag.spaceInsetProgressIndicatorDefault != abstractTheme.tag.spaceInsetProgressIndicatorDefault)
+        #expect(inheritedTheme.tag.spaceInsetProgressIndicatorDefault == MockThemeTagComponentTokenProvider.mockThemeTagSpace)
     }
 
     @Test func inheritedThemeCanOverrideTagSpaceColumnGapSmall() throws {

@@ -91,10 +91,10 @@ Each provider inherits from an `OrangeThemeXxxProvider` class. Override `@objc o
 | Button | `OrangeThemeButtonComponentTokensProvider` |
 | Checkbox | `OrangeThemeCheckboxComponentTokensProvider` |
 | Chip | `OrangeThemeChipComponentTokensProvider` |
-| Control item | `OrangeThemeControlItemComponentTokensProvider` |
 | Divider | `OrangeThemeDividerComponentTokensProvider` |
 | Icon | `OrangeThemeIconComponentTokensProvider` |
 | Link | `OrangeThemeLinkComponentTokensProvider` |
+| List item | `OrangeThemeListItemComponentTokensProvider` |
 | Pin code input | `OrangeThemePinCodeInputComponentTokensProvider` |
 | Quantity input | `OrangeThemeQuantityInputComponentTokensProvider` |
 | Radio button | `OrangeThemeRadioButtonComponentTokensProvider` |
@@ -263,10 +263,10 @@ Respect dependency order — some providers take others as constructor arguments
 | `button` | `AllButtonComponentTokensProvider` |
 | `checkbox` | `AllCheckboxComponentTokensProvider` |
 | `chip` | `AllChipComponentTokensProvider` |
-| `controlItem` | `AllControlItemComponentTokensProvider` |
 | `divider` | `AllDividerComponentTokensProvider` |
 | `icon` | `AllIconComponentTokensProvider` |
 | `link` | `AllLinkComponentTokensProvider` |
+| `listItem` | `AllListItemComponentTokensProvider` |
 | `pinCodeInput` | `AllPinCodeInputComponentTokensProvider` |
 | `quantityInput` | `AllQuantityInputComponentTokensProvider` |
 | `radioButton` | `AllRadioButtonComponentTokensProvider` |
@@ -317,10 +317,10 @@ public final class YourTheme: OUDSTheme, @unchecked Sendable {
         let button       = YourThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let checkbox     = YourThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders)
         let chip         = YourThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
-        let controlItem  = YourThemeControlItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let divider      = YourThemeDividerComponentTokensProvider(borders: borders)
         let icon         = YourThemeIconComponentTokensProvider(colors: colors)
         let link         = YourThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
+        let listItem     = YourThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = YourThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let quantityInput = YourThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton  = YourThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
@@ -354,10 +354,10 @@ public final class YourTheme: OUDSTheme, @unchecked Sendable {
             button:        button,
             checkbox:      checkbox,
             chip:          chip,
-            controlItem:   controlItem,
             divider:       divider,
             icon:          icon,
             link:          link,
+            listItem:      listItem,
             pinCodeInput:  pinCodeInput,
             quantityInput: quantityInput,
             radioButton:   radioButton,

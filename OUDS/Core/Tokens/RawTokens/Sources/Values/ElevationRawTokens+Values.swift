@@ -16,22 +16,6 @@
 
 extension ElevationRawTokens {
     /// Has for value 0
-    public static let x0: ElevationRawToken = 0
-    /// Has for value 0
-    public static let y0: ElevationRawToken = 0
-    /// Has for value 1
-    public static let y100: ElevationRawToken = 1
-    /// Has for value 2
-    public static let y200: ElevationRawToken = 2
-    /// Has for value 4
-    public static let y300: ElevationRawToken = 4
-    /// Has for value 8
-    public static let y400: ElevationRawToken = 8
-    /// Has for value 12
-    public static let y500: ElevationRawToken = 12
-    /// Has for value 20
-    public static let y600: ElevationRawToken = 20
-    /// Has for value 0
     public static let blur0: ElevationRawToken = 0
     /// Has for value 1
     public static let blur100: ElevationRawToken = 1
@@ -47,4 +31,20 @@ extension ElevationRawTokens {
     public static let blur600: ElevationRawToken = 12
     /// Has for value 20
     public static let blur700: ElevationRawToken = 20
+    /// Has for value 0
+    public static let x0: ElevationRawToken = 0
+    /// Has for value 0
+    public static let y0: ElevationRawToken = 0
+    /// Has for value 1
+    public static let y100: ElevationRawToken = 1
+    /// Has for value 2
+    public static let y200: ElevationRawToken = 2
+    /// Has for value 4
+    public static let y300: ElevationRawToken = 4
+    /// Has for value 8
+    public static let y400: ElevationRawToken = 8
+    /// Has for value 12
+    public static let y500: ElevationRawToken = 12
+    /// Has for value 20
+    public static let y600: ElevationRawToken = 20
 }

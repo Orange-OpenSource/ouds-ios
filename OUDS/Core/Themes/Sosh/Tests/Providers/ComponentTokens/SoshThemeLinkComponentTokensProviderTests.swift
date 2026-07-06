@@ -16,7 +16,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
+/// Check if the component tokens provider under test as the default semantic token providers with the expected types.
 struct SoshThemeLinkComponentTokensProviderTests {
 
     private var provider: SoshThemeLinkComponentTokensProvider
@@ -37,6 +37,10 @@ struct SoshThemeLinkComponentTokensProviderTests {
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is SoshThemeSpaceSemanticTokensProvider)
+    }
+
+    @Test func defaultDimensionsSemanticTokensProvider() throws {
+        #expect(provider.dimensions is SoshThemeDimensionSemanticTokensProvider)
     }
 }
 

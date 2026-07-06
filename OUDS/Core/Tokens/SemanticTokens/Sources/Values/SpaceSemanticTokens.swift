@@ -95,6 +95,7 @@ public protocol SpaceSemanticTokens { // 👾
     // MARK: Semantic token - Spacing - Padding - Padding inset
 
     var insetNone: SpaceSemanticToken { get }
+    var inset5xsmall: SpaceSemanticToken { get }
     var inset4xsmall: SpaceSemanticToken { get }
     var inset3xsmall: SpaceSemanticToken { get }
     var inset2xsmall: SpaceSemanticToken { get }
