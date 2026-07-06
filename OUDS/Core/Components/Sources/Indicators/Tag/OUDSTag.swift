@@ -244,17 +244,6 @@ public struct OUDSTag: View {
             Status(leading: leading, category: .info)
         }
 
-        /// Used to create a tag with a neutral status with leading icon.
-        ///
-        /// - Parameters:
-        ///    - icon: The icon to set as leading element in the tag
-        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        ///    - renderingMode: The rendering mode to apply on the icon
-        @available(*, deprecated, message: "Use OUDSTag.Status.neutral(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
-        public static func neutral(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
-            .neutral(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
-        }
-
         /// Used to create a tag with a neutral status with a leading ``OUDSImage`` icon.
         ///
         /// ```swift
@@ -277,17 +266,6 @@ public struct OUDSTag: View {
         /// - Parameter bullet: Default set to `false`, set to true to add bullet.
         public static func neutral(bullet: Bool = false) -> Status {
             Status(leading: bullet ? .bullet : .none, category: .neutral)
-        }
-
-        /// Used to create a tag with an accent status with leading icon.
-        ///
-        /// - Parameters:
-        ///    - icon: The icon to set as leading element in the tag
-        ///    - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-        ///    - renderingMode: The rendering mode to apply on the icon
-        @available(*, deprecated, message: "Use OUDSTag.Status.accent(image: OUDSImage) instead. Pass OUDSImage(asset:flipped:renderingMode:) to encapsulate image configuration.")
-        public static func accent(icon: Image, flipIcon: Bool = false, renderingMode: Image.TemplateRenderingMode = .template) -> Status {
-            .accent(image: OUDSImage(asset: icon, flipped: flipIcon, renderingMode: renderingMode))
         }
 
         /// Used to create a tag with an accent status with a leading ``OUDSImage`` icon.

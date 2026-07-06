@@ -29,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- **BREAKING**: Deprecated type `OUDSIcon`
+- **BREAKING**: Deprecated initializers for `button`, `checkbox`, `chips`, `radio`, `switch`, `checkbox`, `text input`, `badge`, `link`, `tag` components
 - **BREAKING**: Component tokens of `control item` component (Orange-OpenSource/ouds-ios#1579)
 - **BREAKING**: Component tokens of `expand link` component (Orange-OpenSource/ouds-ios#1579)
 

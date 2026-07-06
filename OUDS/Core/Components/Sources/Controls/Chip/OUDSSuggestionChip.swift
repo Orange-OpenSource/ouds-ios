@@ -81,27 +81,6 @@ public struct OUDSSuggestionChip: View {
 
     // MARK: - Initializers — icon + LocalizedStringKey text
 
-    /// Creates a chip with a localized text and icon.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - key: A `LocalizedStringKey` used to look up the text in the given bundle
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:_:tableName:bundle:action:) instead.")
-    public init(icon: Image,
-                _ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                action: @escaping () -> Void)
-    {
-        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: resolvedText, action: action)
-    }
-
     /// Creates a chip with a localized text and icon, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -130,18 +109,6 @@ public struct OUDSSuggestionChip: View {
 
     /// Creates a chip with text and icon.
     ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - text: The text to display in the chip, should not be empty
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(icon:text:action:) instead.")
-    public init(icon: Image, text: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), text: text, action: action)
-    }
-
-    /// Creates a chip with text and icon.
-    ///
     /// ```swift
     ///     OUDSSuggestionChip(image: OUDSImage(asset: Image("ic_heart")), text: "Heart") {}
     /// ```
@@ -162,27 +129,6 @@ public struct OUDSSuggestionChip: View {
     }
 
     // MARK: - Initializers — icon + LocalizedStringKey accessibilityLabel
-
-    /// Creates a chip with an icon only and a localized accessibility label.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - key: The text to vocalize with Voice Over, as a `LocalizedStringKey` for the given `Bundle`
-    ///    - tableName: The name of the `.strings` file, or `nil` for the default
-    ///    - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:accessibilityLabel:tableName:bundle:action:) instead.")
-    public init(icon: Image,
-                accessibilityLabel key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                action: @escaping () -> Void)
-    {
-        let resolvedText = key.resolved(tableName: tableName, bundle: bundle)
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: resolvedText, action: action)
-    }
 
     /// Creates a chip with an icon only and a localized accessibility label.
     ///
@@ -209,18 +155,6 @@ public struct OUDSSuggestionChip: View {
     }
 
     // MARK: - Initializers — icon + String accessibilityLabel (canonical)
-
-    /// Creates a chip with an icon only.
-    ///
-    /// - Parameters:
-    ///    - icon: An image which should contain an icon
-    ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip action
-    ///    - renderingMode: The rendering mode to apply on the icon
-    ///    - action: The action to perform when the user triggers the chip
-    @available(*, deprecated, message: "Use OUDSSuggestionChip(image:accessibilityLabel:action:) instead.")
-    public init(icon: Image, accessibilityLabel: String, renderingMode: Image.TemplateRenderingMode = .template, action: @escaping () -> Void) {
-        self.init(image: OUDSImage(asset: icon, renderingMode: renderingMode), accessibilityLabel: accessibilityLabel, action: action)
-    }
 
     /// Creates a chip with an icon only.
     ///

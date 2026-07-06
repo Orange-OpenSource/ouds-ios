@@ -111,27 +111,6 @@ public struct OUDSLink: View {
 
     // MARK: - Initializers — String label + optional icon
 
-    /// Create a link with text and icon.
-    ///
-    /// - Parameters:
-    ///   - text: Text displayed in the link
-    ///   - icon: An optional icon image
-    ///   - renderingMode: The rendering mode to apply on the icon
-    ///   - size: Size of the link
-    ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(text:image:size:action:) instead.")
-    public init(text: String,
-                icon: Image? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                size: Size = .default,
-                action: @escaping () -> Void)
-    {
-        self.init(text: text,
-                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
-                  size: size,
-                  action: action)
-    }
-
     /// Create a link with text and an optional icon.
     ///
     /// ```swift
@@ -161,31 +140,6 @@ public struct OUDSLink: View {
     }
 
     // MARK: - Initializers — LocalizedStringKey + optional icon
-
-    /// Creates a link with a localized text and optional icon.
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the text in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - icon: An optional icon image
-    ///   - renderingMode: The rendering mode to apply on the icon
-    ///   - size: Size of the link
-    ///   - action: The action to perform when the user triggers the link
-    @available(*, deprecated, message: "Use OUDSLink(_:tableName:bundle:image:size:action:) instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                icon: Image? = nil,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                size: Size = .default,
-                action: @escaping () -> Void)
-    {
-        self.init(text: key.resolved(tableName: tableName, bundle: bundle),
-                  image: icon.map { OUDSImage(asset: $0, renderingMode: renderingMode) },
-                  size: size,
-                  action: action)
-    }
 
     /// Creates a link with a localized text and optional icon, looking up the key in the given bundle.
     ///

@@ -177,57 +177,6 @@ public struct OUDSRadioItem: View {
 
     /// Creates a radio with label and optional helper text as description, icon, divider.
     ///
-    /// - Parameters:
-    ///   - label: The main label text of the radio, must not be empty
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off
-    ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional icon image, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
-    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise
-    ///   - isError: `true` if the look and feel of the component must reflect an error state
-    ///   - errorText: An optional error message to display at the bottom
-    ///   - isReadOnly: True if component is in read only
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
-    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    ///   - action: An additional action to trigger when the radio button has been pressed
-    @available(*, deprecated, message: "Use OUDSRadioItem(_:isOn:extraLabel:description:image:isOutlined:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
-    public init(_ label: String,
-                isOn: Binding<Bool>,
-                extraLabel: String? = nil,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isOutlined: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: String? = nil,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
-        self.init(label,
-                  isOn: isOn,
-                  extraLabel: extraLabel,
-                  description: description,
-                  image: oudsImage,
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
-
-    /// Creates a radio with label and optional helper text as description, icon, divider.
-    ///
     /// ```swift
     ///     OUDSRadioItem("Virgin Holy Lava",
     ///                   isOn: $selection,
@@ -320,57 +269,6 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Initializers — String label + errorText: AttributedString
 
-    /// Creates a radio with label and optional helper text as description, icon, divider.
-    ///
-    /// - Parameters:
-    ///   - label: The main label text of the radio, must not be empty
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off
-    ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional icon image, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image (i.e. flip vertically)
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
-    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise
-    ///   - isError: `true` if the look and feel of the component must reflect an error state
-    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
-    ///   - isReadOnly: True if component is in read only
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
-    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    ///   - action: An additional action to trigger when the radio button has been pressed
-    @available(*, deprecated, message: "Use OUDSRadioItem(_:isOn:extraLabel:description:image:isOutlined:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
-    public init(_ label: String,
-                isOn: Binding<Bool>,
-                extraLabel: String? = nil,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isOutlined: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: AttributedString,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
-        self.init(label,
-                  isOn: isOn,
-                  extraLabel: extraLabel,
-                  description: description,
-                  image: oudsImage,
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
-
     /// Creates a radio with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
@@ -459,61 +357,6 @@ public struct OUDSRadioItem: View {
 
     // MARK: - Initializers — LocalizedStringKey + errorText: String?
 
-    /// Creates a radio with a localized label.
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off
-    ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional icon image, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
-    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise
-    ///   - isError: `true` if the look and feel of the component must reflect an error state
-    ///   - errorText: An optional error message to display at the bottom
-    ///   - isReadOnly: True if component is in read only
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
-    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    ///   - action: An additional action to trigger when the radio button has been pressed
-    @available(*, deprecated, message: "Use OUDSRadioItem(_:tableName:bundle:isOn:extraLabel:description:image:isOutlined:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action:) instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                isOn: Binding<Bool>,
-                extraLabel: String? = nil,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isOutlined: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: String? = nil,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
-        self.init(key.resolved(tableName: tableName, bundle: bundle),
-                  isOn: isOn,
-                  extraLabel: extraLabel,
-                  description: description,
-                  image: oudsImage,
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
-
     /// Creates a radio with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -577,61 +420,6 @@ public struct OUDSRadioItem: View {
     }
 
     // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
-
-    /// Creates a radio with a localized label and a rich attributed error text.
-    ///
-    /// - Parameters:
-    ///   - key: A `LocalizedStringKey` used to look up the label in the given bundle
-    ///   - tableName: The name of the `.strings` file, or `nil` for the default
-    ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off
-    ///   - extraLabel: An additional label text of the radio, default set to `nil`
-    ///   - description: A description, like a helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional icon image, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to `true` to reverse the image
-    ///   - renderingMode: Default set to `.template`, forces the rendering mode of the image
-    ///   - isOutlined: Flag to get an outlined radio, default set to `false`
-    ///   - isReversed: `true` if the radio indicator must be in trailing position, `false` otherwise
-    ///   - isError: `true` if the look and feel of the component must reflect an error state
-    ///   - errorText: An error message to display at the bottom as rich `AttributedString`
-    ///   - isReadOnly: True if component is in read only
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view
-    ///   - constrainedMaxWidth: Constrains the item width to the design system maximum when `true`
-    ///   - action: An additional action to trigger when the radio button has been pressed
-    @available(*, deprecated, message: "Use OUDSRadioItem(_:tableName:bundle:isOn:extraLabel:description:image:isOutlined:isReversed:isError:errorText:isReadOnly:hasDivider:constrainedMaxWidth:action: instead.")
-    public init(_ key: LocalizedStringKey,
-                tableName: String? = nil,
-                bundle: Bundle = .main,
-                isOn: Binding<Bool>,
-                extraLabel: String? = nil,
-                description: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                renderingMode: Image.TemplateRenderingMode = .template,
-                isOutlined: Bool = false,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                errorText: AttributedString,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                constrainedMaxWidth: Bool = false,
-                action: (() -> Void)? = nil)
-    {
-        let oudsImage: OUDSImage? = icon.map { OUDSImage(asset: $0, flipped: flipIcon, renderingMode: renderingMode) }
-        self.init(key.resolved(tableName: tableName, bundle: bundle),
-                  isOn: isOn,
-                  extraLabel: extraLabel,
-                  description: description,
-                  image: oudsImage,
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  errorText: errorText,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  constrainedMaxWidth: constrainedMaxWidth,
-                  action: action)
-    }
 
     /// Creates a radio with a localized label and a rich attributed error text.
     ///
