@@ -146,7 +146,9 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Interactive area
 
-    var minInteractiveArea: SizeSemanticToken { get }
+    var minInteractiveAreaDefault: SizeSemanticToken { get }
+    var minInteractiveAreaSmall: SizeSemanticToken { get }
+    var minInteractiveAreaSmallest: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

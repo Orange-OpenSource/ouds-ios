@@ -49,10 +49,10 @@ public protocol TagComponentTokens {
     var spacePaddingInlineAssetDefault: SpaceSemanticToken { get }
     var spaceInsetIconSmall: SpaceSemanticToken { get }
     var spaceInsetBulletSmall: SpaceSemanticToken { get }
-    var spaceInsetLoaderSmall: SpaceSemanticToken { get }
     var spaceInsetIconDefault: SpaceSemanticToken { get }
     var spaceInsetBulletDefault: SpaceSemanticToken { get }
-    var spaceInsetLoaderDefault: SpaceSemanticToken { get }
+    var spaceInsetProgressIndicatorSmall: SpaceSemanticToken { get }
+    var spaceInsetProgressIndicatorDefault: SpaceSemanticToken { get }
     var spaceColumnGapSmall: SpaceSemanticToken { get }
     var spaceColumnGapDefault: SpaceSemanticToken { get }
 }

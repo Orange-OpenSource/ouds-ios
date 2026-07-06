@@ -63,7 +63,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
     }
 
     private var size: CGFloat {
-        theme.button.sizeLoader
+        theme.button.sizeProgressIndicatorDefault
     }
 }
 

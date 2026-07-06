@@ -75,11 +75,11 @@ The `1f4a0_<group>/` segment is always dropped. `<component-name>` → lowerCame
 | `chip` | `chip` |
 | `select-input` | `selectInput` |
 | `quantity-input` | `quantityInput` |
-| `control-item` | `controlItem` |
 | `badge` | `badge` |
 | `tag` | `tag` |
 | `input-tag` | `inputTag` |
 | `link` | `link` |
+| `list-item` | `listItem` |
 | `bar` | `bar` |
 | `skeleton` | `skeleton` |
 | `alert` | `alert` |

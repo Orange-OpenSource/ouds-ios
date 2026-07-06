@@ -32,9 +32,9 @@ struct ThemeOverrideOfLinkComponentTokensTests {
         #expect(inheritedTheme.link.sizeMinHeightDefault == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
-    @Test func inheritedThemeCanOverrideLinkComponentTokenSizeMinWidthDefault() throws {
-        #expect(inheritedTheme.link.sizeMinWidthDefault != abstractTheme.link.sizeMinWidthDefault)
-        #expect(inheritedTheme.link.sizeMinWidthDefault == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSizeMinWidth() throws {
+        #expect(inheritedTheme.link.sizeMinWidth != abstractTheme.link.sizeMinWidth)
+        #expect(inheritedTheme.link.sizeMinWidth == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenSizeMinHeightSmall() throws {
@@ -131,9 +131,24 @@ struct ThemeOverrideOfLinkComponentTokensTests {
         #expect(inheritedTheme.link.spacePaddingInline == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 
-    @Test func inheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlock() throws {
-        #expect(inheritedTheme.link.spacePaddingBlock != abstractTheme.link.spacePaddingBlock)
-        #expect(inheritedTheme.link.spacePaddingBlock == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlockDefault() throws {
+        #expect(inheritedTheme.link.spacePaddingBlockDefault != abstractTheme.link.spacePaddingBlockDefault)
+        #expect(inheritedTheme.link.spacePaddingBlockDefault == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlockSmall() throws {
+        #expect(inheritedTheme.link.spacePaddingBlockSmall != abstractTheme.link.spacePaddingBlockSmall)
+        #expect(inheritedTheme.link.spacePaddingBlockSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlockCompactDensityDefault() throws {
+        #expect(inheritedTheme.link.spacePaddingBlockCompactDensityDefault != abstractTheme.link.spacePaddingBlockCompactDensityDefault)
+        #expect(inheritedTheme.link.spacePaddingBlockCompactDensityDefault == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlockCompactDensitySmall() throws {
+        #expect(inheritedTheme.link.spacePaddingBlockCompactDensitySmall != abstractTheme.link.spacePaddingBlockCompactDensitySmall)
+        #expect(inheritedTheme.link.spacePaddingBlockCompactDensitySmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 
     @Test func inheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapIconDefault() throws {
@@ -154,17 +169,5 @@ struct ThemeOverrideOfLinkComponentTokensTests {
     @Test func inheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapArrowSmall() throws {
         #expect(inheritedTheme.link.spaceColumnGapChevronSmall != abstractTheme.link.spaceColumnGapChevronSmall)
         #expect(inheritedTheme.link.spaceColumnGapChevronSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
-    }
-
-    // MARK: - Expand link
-
-    @Test func inheritedThemeCanOverrideExpandLinkComponentTokenExpandLinkIconStart() throws {
-        #expect(inheritedTheme.link.iconStart != abstractTheme.link.iconStart)
-        #expect(inheritedTheme.link.iconStart == MockThemeLinkComponentTokenProvider.mockThemeExpandLinkIconStart)
-    }
-
-    @Test func inheritedThemeCanOverrideExpandLinkComponentTokenExpandLinkIconEnd() throws {
-        #expect(inheritedTheme.link.iconEnd != abstractTheme.link.iconEnd)
-        #expect(inheritedTheme.link.iconEnd == MockThemeLinkComponentTokenProvider.mockThemeExpandLinkIconEnd)
     }
 }

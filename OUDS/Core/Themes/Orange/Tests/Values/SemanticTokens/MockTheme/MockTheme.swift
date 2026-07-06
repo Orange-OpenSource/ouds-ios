@@ -15,8 +15,6 @@ import Foundation
 import OUDSThemesContract
 import OUDSThemesOrange
 
-// swiftlint:disable line_length
-
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
 /// Uses its own tokens providers for tests:
@@ -60,6 +58,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: MockThemeAccordionComponentTokenProvider(sizes: sizes, spaces: spaces),
                    alert: MockThemeAlertComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
                    bar: MockThemeBarComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects),
@@ -67,11 +66,12 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    divider: MockThemeDividerComponentTokenProvider(borders: borders),
                    icon: MockThemeIconComponentTokenProvider(colors: colors),
-                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces, dimensions: dimensions),
+                   listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),
+                   progressIndicator: MockThemeProgressIndicatorComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions),
                    quantityInput: MockThemeQuantityInputComponentTokenProvider(sizes: sizes, spaces: spaces),
                    radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),
                    selectInput: MockThemeSelectInputComponentTokenProvider(dimensions: nil),
@@ -81,6 +81,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: MockThemeInputTagComponentTokenProvider(borders: borders, colors: colors),
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
+                   typography: MockThemeTypographyComponentTokenProvider(spaces: spaces),
                    resourcesBundle: Bundle.OrangeTheme,
                    name: "Mock",
                    fontFamily: fontFamily)
@@ -88,5 +89,3 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     deinit {}
 }
-
-// swiftlint:enable line_length

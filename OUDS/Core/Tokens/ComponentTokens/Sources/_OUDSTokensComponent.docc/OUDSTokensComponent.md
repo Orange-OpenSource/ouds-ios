@@ -79,8 +79,8 @@ struct SomeView: View {
             Text("Some label")
                 .cornerRadius(theme.button.borderRadius)
         }
-        .padding(.leading, theme.button.spacePaddingInlineChevronStart)
-        .padding(.trailing, theme.button.spacePaddingInlineChevronEnd)
+        .padding(.leading, theme.button.spacePaddingInlineChevronStartDefault)
+        .padding(.trailing, theme.button.spacePaddingInlineChevronEndDefault)
         .background(theme.button.colorBgStrongEnabledMono)
         .overlay(
             RoundedRectangle(cornerRadius: theme.button.borderRadius)
@@ -109,20 +109,22 @@ struct DesignToolbox: App {
 }
 ```
 
-The components tokens are wrapped in tokens provider acessible through the themes:
+The components tokens are wrapped in tokens provider accessible through the themes:
 
 Components tokens provider     | Target component                          
 ------------------------------ | ------------------------------------- 
+accordion / accordionFaq       | For accordions components
+alert                          | For alert mesdsages and inline alert components like `OUDSAlertMessage` and `OUDSInlineAlert`
 bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `OUDSButton` 
-bulletList                     | For list of elements with bullets 
+bulletList                     | For list of elements with bullets like `OUDSBulletList`
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
-chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip` 
-controlItem                    | Shared and used for switch, checkbox and radio items layouts 
+chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
 icon                           | For components containing icons like `OUDSTag`
 link                           | For links like `OUDSLink` 
+listItem                       | Shared and used for switch, checkbox, radio items and list items layouts
 pinCodeInput                   |  
 quantityInput                  | 
 radioButton                    | For radio components like `OUDSRadio` and `OUDSRadioItem` 
@@ -133,24 +135,29 @@ tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
 textInput                      | For text field input components like `OUDSTextInput`
+typography                     | For textual components like `OUDSText`
 
 ## Topics
 
 ### Group
 
+- ``AccordionComponentTokens``
+- ``AccordionFaqComponentTokens``
 - ``AlertComponentTokens``
 - ``BarComponentTokens``
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
+- ``ButtonMonoComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
-- ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
-- ``ExpandLinkComponentTokens``
 - ``IconComponentTokens``
 - ``LinkComponentTokens``
+- ``LinkMonoComponentTokens``
+- ``ListItemComponentTokens``
 - ``PinCodeInputComponentTokens``
+- ``ProgressIndicatorComponentTokens``
 - ``QuantityInputComponentTokens``
 - ``RadioButtonComponentTokens``
 - ``SelectInputComponentTokens``
@@ -160,3 +167,4 @@ textInput                      | For text field input components like `OUDSTextI
 - ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``
+- ``TypographyComponentTokens``

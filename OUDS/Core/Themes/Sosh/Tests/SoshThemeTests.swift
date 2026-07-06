@@ -98,6 +98,10 @@ struct SoshThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
+    @Test func defaultAccordionComponentTokensProvider() throws {
+        #expect(theme.accordion is SoshThemeAccordionComponentTokensProvider)
+    }
+
     @Test func defaultAlertComponentTokensProvider() throws {
         #expect(theme.alert is SoshThemeAlertComponentTokensProvider)
     }
@@ -130,10 +134,6 @@ struct SoshThemeTests {
         #expect(theme.divider is SoshThemeDividerComponentTokensProvider)
     }
 
-    @Test func defaultControlItemComponentTokensProvider() throws {
-        #expect(theme.controlItem is SoshThemeControlItemComponentTokensProvider)
-    }
-
     @Test func defaultIconComponentTokensProvider() throws {
         #expect(theme.icon is SoshThemeIconComponentTokensProvider)
     }
@@ -144,6 +144,10 @@ struct SoshThemeTests {
 
     @Test func defaultPinCodeInputComponentTokensProvider() throws {
         #expect(theme.pinCodeInput is SoshThemePinCodeInputComponentTokensProvider)
+    }
+
+    @Test func defaultProgressIndicatorComponentTokensProvider() throws {
+        #expect(theme.progressIndicator is SoshThemeProgressIndicatorComponentTokensProvider)
     }
 
     @Test func defaultQuantityInputComponentTokensProvider() throws {
@@ -180,6 +184,10 @@ struct SoshThemeTests {
 
     @Test func defaultTextInputComponentTokensProvider() throws {
         #expect(theme.textInput is SoshThemeTextInputComponentTokensProvider)
+    }
+
+    @Test func defaultTypographyComponentTokensProvider() throws {
+        #expect(theme.typography is SoshThemeTypographyComponentTokensProvider)
     }
 }
 

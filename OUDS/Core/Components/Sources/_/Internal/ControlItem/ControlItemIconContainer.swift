@@ -35,7 +35,7 @@ struct ControlItemIconContainer: View {
             HStack(alignment: .center, spacing: 0) {
                 icon
             }
-            .frame(minHeight: theme.controlItem.sizeAssetSmall, maxHeight: theme.controlItem.sizeMaxHeightAssetsContainer, alignment: .center)
+            .frame(minHeight: theme.listItem.sizeAssetSmall, maxHeight: theme.listItem.sizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 
@@ -50,8 +50,8 @@ struct ControlItemIconContainer: View {
                 .aspectRatio(contentMode: .fill)
                 .accessibilityHidden(true)
                 .foregroundColor(errorIconColor)
-                .frame(width: theme.controlItem.sizeErrorIcon, height: theme.controlItem.sizeErrorIcon)
-                .padding(.horizontal, theme.controlItem.spacePaddingInlineErrorIcon)
+                .frame(width: theme.listItem.sizeErrorIcon, height: theme.listItem.sizeErrorIcon)
+                .padding(.horizontal, theme.listItem.spacePaddingInlineErrorIcon)
         } else {
             if let asset = layoutData.icon?.asset {
                 asset
@@ -59,7 +59,7 @@ struct ControlItemIconContainer: View {
                     .renderingMode(layoutData.icon?.renderingMode ?? .template)
                     .accessibilityHidden(true)
                     .foregroundStyle(color)
-                    .frame(width: theme.controlItem.sizeAssetSmall, height: theme.controlItem.sizeAssetSmall)
+                    .frame(width: theme.listItem.sizeAssetSmall, height: theme.listItem.sizeAssetSmall)
                     .toFlip(layoutData.icon?.flipped ?? false)
             }
         }
