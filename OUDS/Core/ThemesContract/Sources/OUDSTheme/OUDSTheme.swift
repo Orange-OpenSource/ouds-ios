@@ -97,7 +97,10 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     // MARK: - Component tokens
     // Keep things alphabetically ordered
 
-    /// All components tokens related to alert component like `OUDSAlert`
+    /// All components tokens related to alert componens
+    public let accordion: AllAccordionComponentTokensProvider
+
+    /// All components tokens related to alert component like `OUDSAlertMessage` and `OUDSInlineAlert`
     public let alert: AllAlertComponentTokensProvider
 
     /// All components tokens related to bar components
@@ -131,10 +134,13 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// and also `OUDSSwitchItem`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let listItem: AllListItemComponentTokensProvider
 
-    /// All components tokens related to pin code input components like `OUDSPinCodeInput`
+    /// All components tokens related to pin code input components
     public let pinCodeInput: AllPinCodeInputComponentTokensProvider
 
-    /// All components tokens related to quantity input components like `OUDSQuantityInput`
+    /// All components tokens related to progress indicator components
+    public let progressIndicator: AllProgressIndicatorComponentTokensProvider
+
+    /// All components tokens related to quantity input components
     public let quantityInput: AllQuantityInputComponentTokensProvider
 
     /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
@@ -143,7 +149,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     /// All components tokens related to select input components like `OUDSSelectInput`
     public let selectInput: AllSelectInputComponentTokensProvider
 
-    /// All components tokens related to skeleto components like `OUDSSkeleton`
+    /// All components tokens related to skeleto components
     public let skeleton: AllSkeletonComponentTokensProvider
 
     /// All components tokens related to switch / toggle components like `OUDSSwitch`
@@ -160,6 +166,9 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
 
     /// All components tokens related to bullet list components like `OUDSTextInput`
     public let textInput: AllTextInputComponentTokensProvider
+
+    /// All components tokens related to typography components
+    public let typography: AllTypographyComponentTokensProvider
 
     // MARK: - Other elements
 
@@ -198,6 +207,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - dimensions: All semantic tokens of dimensions
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
+    ///    - accordion: All component tokens for accordion
     ///    - alert: All component tokens for alert
     ///    - badge: All component tokens for badge
     ///    - bar: All component tokens for bar
@@ -210,6 +220,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - link: All component tokens for link
     ///    - listItem: All component tokens for list item
     ///    - pinCodeInput: All component tokens for pin code input
+    ///    - progressIndicator: All component tokens for progress indicator
     ///    - quantityInput: All component tokens for quantity input
     ///    - radioButton: All component tokens for radio buttons
     ///    - selectInput: All component tokens for select input
@@ -219,6 +230,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
     ///    - inputTag: All component tokens for input tag
     ///    - textArea: All component tokens for text area
     ///    - textInput: All component tokens for text input
+    ///    - typography: All component tokens for typography
     ///    - name: The name of the theme, can be used for debugging for example
     ///    - resourcesBundle: The `Bundle` of the module containing the assets to load (e.g. icons of components, etc.)
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
@@ -236,6 +248,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 dimensions: AllDimensionSemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
+                accordion: AllAccordionComponentTokensProvider,
                 alert: AllAlertComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
                 bar: AllBarComponentTokensProvider,
@@ -248,6 +261,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 link: AllLinkComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 pinCodeInput: AllPinCodeInputComponentTokensProvider,
+                progressIndicator: AllProgressIndicatorComponentTokensProvider,
                 quantityInput: AllQuantityInputComponentTokensProvider,
                 radioButton: AllRadioButtonComponentTokensProvider,
                 selectInput: AllSelectInputComponentTokensProvider,
@@ -257,6 +271,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
                 inputTag: AllInputTagComponentTokensProvider,
                 textArea: AllTextAreaComponentTokensProvider,
                 textInput: AllTextInputComponentTokensProvider,
+                typography: AllTypographyComponentTokensProvider,
                 resourcesBundle: Bundle,
                 name: String,
                 fontFamily: FontFamilySemanticToken? = nil,
@@ -279,6 +294,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.spaces = spaces
 
         // Save component tokens providers
+        self.accordion = accordion
         self.alert = alert
         self.badge = badge
         self.bar = bar
@@ -291,6 +307,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.link = link
         self.listItem = listItem
         self.pinCodeInput = pinCodeInput
+        self.progressIndicator = progressIndicator
         self.quantityInput = quantityInput
         self.radioButton = radioButton
         self.selectInput = selectInput
@@ -300,6 +317,7 @@ open class OUDSTheme: @unchecked Sendable, Equatable {
         self.inputTag = inputTag
         self.textArea = textArea
         self.textInput = textInput
+        self.typography = typography
 
         // Load other configuration elements
         self.resourcesBundle = resourcesBundle

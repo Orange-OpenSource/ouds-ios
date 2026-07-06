@@ -109,14 +109,16 @@ struct DesignToolbox: App {
 }
 ```
 
-The components tokens are wrapped in tokens provider acessible through the themes:
+The components tokens are wrapped in tokens provider accessible through the themes:
 
 Components tokens provider     | Target component                          
 ------------------------------ | ------------------------------------- 
+accordion / accordionFaq       | For accordions components
+alert                          | For alert mesdsages and inline alert components like `OUDSAlertMessage` and `OUDSInlineAlert`
 bar                            | For bars components like bottom and navigation bars
 badge                          | For badges like `OUDSBadgeStandard`, `OUDSBadgeIcon` and `OUDSBadgeCount`.
 button                         | For buttons like `OUDSButton` 
-bulletList                     | For list of elements with bullets 
+bulletList                     | For list of elements with bullets like `OUDSBulletList`
 checkbox                       | For checkboxes like `OUDSCheckbox`, `OUDSCheckboxItem` and their indeterminate variants 
 chip                           | For chips like `OUDSSuggestionChip` and `OUDSFilterChip`  
 divider                        | For dividers like `OUDSHorizontalDivider` and `OUDSVerticalDivider` 
@@ -133,23 +135,29 @@ tag                            | For tag components like `OUDSTag`
 inputTag                       | For input tag components like `OUDSInputTag`
 textArea                       | For text area components like `OUDSTextArea`
 textInput                      | For text field input components like `OUDSTextInput`
+typography                     | For textual components like `OUDSText`
 
 ## Topics
 
 ### Group
 
+- ``AccordionComponentTokens``
+- ``AccordionFaqComponentTokens``
 - ``AlertComponentTokens``
 - ``BarComponentTokens``
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
 - ``ButtonComponentTokens``
+- ``ButtonMonoComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
-- ``ControlItemComponentTokens``
 - ``DividerComponentTokens``
 - ``IconComponentTokens``
 - ``LinkComponentTokens``
+- ``LinkMonoComponentTokens``
+- ``ListItemComponentTokens``
 - ``PinCodeInputComponentTokens``
+- ``ProgressIndicatorComponentTokens``
 - ``QuantityInputComponentTokens``
 - ``RadioButtonComponentTokens``
 - ``SelectInputComponentTokens``
@@ -159,3 +167,4 @@ textInput                      | For text field input components like `OUDSTextI
 - ``InputTagComponentTokens``
 - ``TextAreaComponentTokens``
 - ``TextInputComponentTokens``
+- ``TyporgraphyComponentTokens``

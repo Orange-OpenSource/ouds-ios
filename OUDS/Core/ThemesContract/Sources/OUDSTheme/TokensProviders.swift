@@ -14,6 +14,8 @@
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
+// swiftlint:disable type_name
+
 // MARK: - Root
 
 /// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
@@ -71,6 +73,9 @@ public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTok
 
 // NOTE: Keep things alphabetically sorted
 
+/// Something which provides all component tokens of accions
+public protocol AllAccordionComponentTokensProvider: TokensProvider, AccordionComponentTokens, AccordionFaqComponentTokens {}
+
 /// Something which provides all component tokens of alert
 public protocol AllAlertComponentTokensProvider: TokensProvider, AlertComponentTokens {}
 
@@ -97,6 +102,9 @@ public protocol AllDividerComponentTokensProvider: TokensProvider, DividerCompon
 
 /// Something which provides all component tokens of pin code input
 public protocol AllPinCodeInputComponentTokensProvider: TokensProvider, PinCodeInputComponentTokens {}
+
+/// Something which provides all component tokens of progress indicator
+public protocol AllProgressIndicatorComponentTokensProvider: TokensProvider, ProgressIndicatorComponentTokens {}
 
 /// Something which provides all components tokens for icons
 public protocol AllIconComponentTokensProvider: TokensProvider, IconComponentTokens {}
@@ -133,3 +141,8 @@ public protocol AllTextAreaComponentTokensProvider: TokensProvider, TextAreaComp
 
 /// Something which provides all component tokens of text input
 public protocol AllTextInputComponentTokensProvider: TokensProvider, TextInputComponentTokens {}
+
+/// Something which provides all component tokens of typography
+public protocol AllTypographyComponentTokensProvider: TokensProvider, TypographyComponentTokens {}
+
+// swiftlint:enable type_name

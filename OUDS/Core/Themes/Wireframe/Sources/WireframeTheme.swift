@@ -78,6 +78,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let sizes = WireframeThemeSizeSemanticTokensProvider(dimensions: dimensions)
         let spaces = WireframeThemeSpaceSemanticTokensProvider(dimensions: dimensions)
 
+        let accordion = WireframeThemeAccordionComponentTokensProvider(sizes: sizes, spaces: spaces)
         let alert = WireframeThemeAlertComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces)
         let badge = WireframeThemeBadgeComponentTokensProvider(spaces: spaces, dimensions: dimensions)
         let bar = WireframeThemeBarComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects)
@@ -90,6 +91,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let link = WireframeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces)
         let listItem = WireframeThemeListItemComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
         let pinCodeInput = WireframeThemePinCodeInputComponentTokensProvider(spaces: spaces, dimensions: dimensions)
+        let progressIndicator = WireframeThemeProgressIndicatorComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
         let quantityInput = WireframeThemeQuantityInputComponentTokensProvider(sizes: sizes, spaces: spaces)
         let radioButton = WireframeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders)
         let selectInput = WireframeThemeSelectInputComponentTokensProvider(dimensions: dimensions)
@@ -99,6 +101,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
         let inputTag = WireframeThemeInputTagComponentTokensProvider(borders: borders, colors: colors)
         let textArea = WireframeThemeTextAreaComponentTokensProvider(sizes: sizes, spaces: spaces)
         let textInput = WireframeThemeTextInputComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: dimensions)
+        let typography = WireframeThemeTypographyComponentTokensProvider(spaces: spaces)
 
         super.init(borders: borders,
                    colors: colors,
@@ -111,6 +114,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: accordion,
                    alert: alert,
                    badge: badge,
                    bar: bar,
@@ -123,6 +127,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    link: link,
                    listItem: listItem,
                    pinCodeInput: pinCodeInput,
+                   progressIndicator: progressIndicator,
                    quantityInput: quantityInput,
                    radioButton: radioButton,
                    selectInput: selectInput,
@@ -132,6 +137,7 @@ public final class WireframeTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: inputTag,
                    textArea: textArea,
                    textInput: textInput,
+                   typography: typography,
                    resourcesBundle: Bundle.WireframeTheme,
                    name: Self.name,
                    fontFamily: WireframeBrandFontRawTokens.familyDefault,

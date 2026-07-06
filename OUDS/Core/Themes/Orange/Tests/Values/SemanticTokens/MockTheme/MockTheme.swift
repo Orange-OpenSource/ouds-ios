@@ -58,6 +58,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    dimensions: dimensions,
                    sizes: sizes,
                    spaces: spaces,
+                   accordion: MockThemeAccordionComponentTokenProvider(sizes: sizes, spaces: spaces),
                    alert: MockThemeAlertComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(spaces: spaces),
                    bar: MockThemeBarComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities, effects: effects),
@@ -70,6 +71,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities, dimensions: dimensions),
                    pinCodeInput: MockThemePinCodeInputComponentTokenProvider(spaces: spaces, dimensions: nil),
+                   progressIndicator: MockThemeProgressIndicatorComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    quantityInput: MockThemeQuantityInputComponentTokenProvider(sizes: sizes, spaces: spaces),
                    radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),
                    selectInput: MockThemeSelectInputComponentTokenProvider(dimensions: nil),
@@ -79,6 +81,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    inputTag: MockThemeInputTagComponentTokenProvider(borders: borders, colors: colors),
                    textArea: MockThemeTextAreaComponentTokenProvider(sizes: sizes, spaces: spaces),
                    textInput: MockThemeTextInputComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, dimensions: nil),
+                   typography: MockThemeTypographyComponentTokenProvider(spaces: spaces),
                    resourcesBundle: Bundle.OrangeTheme,
                    name: "Mock",
                    fontFamily: fontFamily)

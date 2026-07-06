@@ -98,6 +98,10 @@ struct WireframeThemeTests {
 
     // MARK: - Tests - Component tokens providers
 
+    @Test func defaultAccordionComponentTokensProvider() throws {
+        #expect(theme.accordion is WireframeThemeAccordionComponentTokensProvider)
+    }
+
     @Test func defaultAlertComponentTokensProvider() throws {
         #expect(theme.alert is WireframeThemeAlertComponentTokensProvider)
     }
@@ -142,6 +146,10 @@ struct WireframeThemeTests {
         #expect(theme.pinCodeInput is WireframeThemePinCodeInputComponentTokensProvider)
     }
 
+    @Test func defaultProgressIndicatorComponentTokensProvider() throws {
+        #expect(theme.progressIndicator is WireframeThemeProgressIndicatorComponentTokensProvider)
+    }
+
     @Test func defaultQuantityInputComponentTokensProvider() throws {
         #expect(theme.quantityInput is WireframeThemeQuantityInputComponentTokensProvider)
     }
@@ -176,6 +184,10 @@ struct WireframeThemeTests {
 
     @Test func defaultTextInputComponentTokensProvider() throws {
         #expect(theme.textInput is WireframeThemeTextInputComponentTokensProvider)
+    }
+
+    @Test func defaultTypographyComponentTokensProvider() throws {
+        #expect(theme.typography is WireframeThemeTypographyComponentTokensProvider)
     }
 }
 
