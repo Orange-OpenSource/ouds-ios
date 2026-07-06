@@ -173,32 +173,6 @@ The `// swiftlint:disable:next accessibility_label_for_image` comment must appea
 
 Exception: `Image(decorative: "name")` suppresses the linter rule automatically and needs no comment.
 
-> **⚠ Init ambiguity warning (v2.3.0)**
->
-> The following components have both a deprecated init (`icon: Image? = nil` or `leadingIcon: Image? = nil`) and an active init (`image: OUDSImage? = nil` or `leadingImage: OUDSImage? = nil`). When the image parameter is omitted entirely, Swift may fail with `error: ambiguous use of 'init(...)'` because both overloads match.
->
-> **If this error occurs**, pass the image parameter explicitly as `nil` to disambiguate:
->
-> | Component | Parameter to add |
-> |---|---|
-> | `OUDSCheckboxItem` | `image: nil` |
-> | `OUDSCheckboxItemIndeterminate` | `image: nil` |
-> | `OUDSCheckboxPickerData` | `image: nil` |
-> | `OUDSRadioItem` | `image: nil` |
-> | `OUDSSwitchItem` | `image: nil` |
-> | `OUDSLink` | `image: nil` |
-> | `OUDSTextInput` | `leadingImage: nil` |
->
-> ```swift
-> // ❌ may be ambiguous while deprecated inits exist:
-> OUDSCheckboxItem("Label", isOn: $isOn)
->
-> // ✅ unambiguous:
-> OUDSCheckboxItem("Label", isOn: $isOn, image: nil)
-> ```
->
-> This is temporary — the ambiguity disappears once deprecated inits are removed in v3.
-
 ---
 
 ## 6. Common patterns (shared by multiple components)

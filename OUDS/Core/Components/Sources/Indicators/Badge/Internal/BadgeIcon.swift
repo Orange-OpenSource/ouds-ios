@@ -39,10 +39,7 @@ struct BadgeIcon: View {
                     OUDSImage(assetName: "ic_badge_warning_external_shape", color: theme.colors.actionDisabled)
                 }
             default:
-                icon
-                    .resizable()
-                    .renderingMode(renderingMode)
-                    .toFlip(flipped)
+                image
             }
         }
         .padding(.all, padding)
@@ -69,36 +66,18 @@ struct BadgeIcon: View {
         }
     }
 
-    private var icon: Image {
+    private var image: OUDSImage {
         switch configuration.status {
-        case let .neutral(icon, _, _), let .accent(icon, _, _):
-            icon
+        case let .neutral(image), let .accent(image):
+            image
         case .warning:
-            Image(decorative: "ic_badge_warning_external_shape", bundle: theme.resourcesBundle)
+            OUDSImage(asset: Image(decorative: "ic_badge_warning_external_shape", bundle: theme.resourcesBundle))
         case .positive:
-            Image(decorative: "ic_badge_tick_confirmation_fill", bundle: theme.resourcesBundle)
+            OUDSImage(asset: Image(decorative: "ic_badge_tick_confirmation_fill", bundle: theme.resourcesBundle))
         case .negative:
-            Image(decorative: "ic_badge_error_fill", bundle: theme.resourcesBundle)
+            OUDSImage(asset: Image(decorative: "ic_badge_error_fill", bundle: theme.resourcesBundle))
         case .info:
-            Image(decorative: "ic_badge_info_fill", bundle: theme.resourcesBundle)
-        }
-    }
-
-    private var flipped: Bool {
-        switch configuration.status {
-        case let .neutral(_, flipped, _), let .accent(_, flipped, _):
-            flipped
-        default:
-            false
-        }
-    }
-
-    private var renderingMode: Image.TemplateRenderingMode {
-        switch configuration.status {
-        case let .neutral(_, _, renderingMode), let .accent(_, _, renderingMode):
-            renderingMode
-        default:
-            .template
+            OUDSImage(asset: Image(decorative: "ic_badge_info_fill", bundle: theme.resourcesBundle))
         }
     }
 }
