@@ -30,12 +30,6 @@ extension OrangeCompactThemeIconComponentTokensProvider: IconComponentTokens {
     @objc public final var colorContentStatusWarningInverseExternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryWarningLow, dark: colors.repositoryWarningMedium) }
     /// Has for value token MultipleColorSemanticToken(light: colors.opacityTransparentDark, dark: colors.repositoryWarningHigh) (= light: "#FFFFFF00" / dark: "#856A00FF")
     @objc public final var colorContentStatusWarningInverseInternalShape: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.opacityTransparentDark, dark: colors.repositoryWarningHigh) }
-
-    // MARK: - Old tokens to keep until components updates
-    // See #1437 #1579
-
-    /// Has for value token MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower)
-    @objc public final var colorContentDefault: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.repositoryNeutralEmphasizedBlack, dark: colors.repositoryNeutralMutedLower) }
 }
 
 // swiftlint:enable identifier_name
