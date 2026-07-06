@@ -41,14 +41,14 @@ extension WireframeThemeListItemComponentTokensProvider: ListItemComponentTokens
     @objc public final var colorBgCurrentDisabled: MultipleColorSemanticToken { colors.actionDisabled }
     /// Has for value token colors.actionFocus (= light: "#223CABFF" / dark: "#C1D8FCFF")
     @objc public final var colorBgCurrentFocus: MultipleColorSemanticToken { colors.actionFocus }
-    /// Has for value token colors.actionHover (= light: "#223CABFF" / dark: "#C1D8FCFF")
-    @objc public final var colorBgHover: MultipleColorSemanticToken { colors.actionHover }
-    /// Has for value token colors.actionPressed (= light: "#213787FF" / dark: "#DCE9FDFF")
-    @objc public final var colorBgPressed: MultipleColorSemanticToken { colors.actionPressed }
+    /// Has for value token colors.actionSupportHover (= light: "#05052E14" / dark: "#EFF5FF14")
+    @objc public final var colorBgHover: MultipleColorSemanticToken { colors.actionSupportHover }
+    /// Has for value token colors.actionSupportPressed (= light: "#05052E1F" / dark: "#EFF5FF1F")
+    @objc public final var colorBgPressed: MultipleColorSemanticToken { colors.actionSupportPressed }
     /// Has for value token MultipleColorSemanticToken(light: colors.actionSupportDisabledLight, dark: colors.actionSupportLoadingDark) (= light: "#05052E0A" / dark: "#EFF5FF1F")
     @objc public final var colorBgLoading: MultipleColorSemanticToken { MultipleColorSemanticToken(light: colors.actionSupportDisabledLight, dark: colors.actionSupportLoadingDark) }
-    /// Has for value token colors.actionFocus (= light: "#223CABFF" / dark: "#C1D8FCFF")
-    @objc public final var colorBgFocus: MultipleColorSemanticToken { colors.actionFocus }
+    /// Has for value token colors.actionSupportFocus (= light: "#05052E14" / dark: "#EFF5FF14")
+    @objc public final var colorBgFocus: MultipleColorSemanticToken { colors.actionSupportFocus }
     /// Has for value token colors.contentDefault (= light: "#08090DFF" / dark: "#E9ECF1FF")
     @objc public final var colorContentLoader: MultipleColorSemanticToken { colors.contentDefault }
     /// Has for value token colors.contentOnActionSelected (= light: "#FFFFFFFF" / dark: "#08090DFF")
