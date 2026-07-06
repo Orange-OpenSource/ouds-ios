@@ -14,13 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
-// swiftlint:disable file_length
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-// swiftlint:disable type_body_length
-
 // MARK: - OUDS Switch Item
 
 /// Switch item is a UI element that allows to toggle between two states, typically "On" and "Off", and used to enable or disable features, options or settings.
@@ -177,7 +170,8 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -240,6 +234,7 @@ public struct OUDSSwitchItem: View {
 
     // MARK: - Initializers — String label + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a switch with label, optional description text, icon, divider, and an error message in rich text format.
     ///
     /// ```swift
@@ -258,7 +253,8 @@ public struct OUDSSwitchItem: View {
     ///   - label: The main label text of the switch, must not be empty
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -310,8 +306,11 @@ public struct OUDSSwitchItem: View {
             orientation: isReversed ? .reversed : .default)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: String?
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a switch with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -331,7 +330,8 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -363,8 +363,11 @@ public struct OUDSSwitchItem: View {
                   constrainedMaxWidth: constrainedMaxWidth)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a switch with a localized label and a rich attributed error text.
     ///
     /// ```swift
@@ -383,7 +386,8 @@ public struct OUDSSwitchItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the toggle is on or off
     ///   - description: An additional helper text, a description, should not be empty
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the switch indicator must be in trailing position, `false` otherwise. Default to `true`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -414,6 +418,8 @@ public struct OUDSSwitchItem: View {
                   hasDivider: hasDivider,
                   constrainedMaxWidth: constrainedMaxWidth)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
@@ -456,7 +462,3 @@ public struct OUDSSwitchItem: View {
         }
     }
 }
-
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length
-// swiftlint:enable type_body_length

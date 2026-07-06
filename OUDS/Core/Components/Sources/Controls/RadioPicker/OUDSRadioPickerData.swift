@@ -14,10 +14,6 @@
 #if !os(watchOS) && !os(tvOS)
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
-// swiftlint:disable line_length
-
 /// The data to use to populate the picker of ``OUDSRadioItem`` objects.
 /// Each property in this ``OUDSRadioPickerData`` is used to define the suitable ``OUDSRadioItem``.
 ///
@@ -115,7 +111,5 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
         self.accessibilityIdentifier = accessibilityIdentifier
     }
 }
-
-// swiftlint:enable line_length
 
 #endif

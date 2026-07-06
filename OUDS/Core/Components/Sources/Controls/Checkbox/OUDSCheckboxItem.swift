@@ -14,13 +14,6 @@
 import OUDSFoundations
 import SwiftUI
 
-// TODO: When v3 in development and deprecated API removed, fine-tune these warnings
-
-// swiftlint:disable file_length
-// swiftlint:disable function_default_parameter_at_end
-// swiftlint:disable line_length
-// swiftlint:disable type_body_length
-
 /// Checkbox is a UI element that allows to select multiple options from a set of mutually non exclusive choices.
 /// Checkbox item covers a wider range of contexts by allowing to toggle the visibility of additional text labels and icon assets.
 ///
@@ -192,7 +185,8 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -258,6 +252,7 @@ public struct OUDSCheckboxItem: View {
 
     // MARK: - Initializers — String label + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with label, optional helper text, icon, divider, and a rich attributed error text.
     ///
     /// ```swift
@@ -278,7 +273,8 @@ public struct OUDSCheckboxItem: View {
     ///   - label: The main label text of the checkbox, must not be empty
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`. Will be replaced by `errorText` in case of error.
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -333,8 +329,11 @@ public struct OUDSCheckboxItem: View {
         self.action = action
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: String?
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with a localized label, looking up the key in the given bundle.
     ///
     /// ```swift
@@ -354,7 +353,8 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An optional error message to display at the bottom. This message is ignored if `isError` is `false`.
@@ -389,8 +389,11 @@ public struct OUDSCheckboxItem: View {
                   action: action)
     }
 
+    // swiftlint:enable function_default_parameter_at_end
+
     // MARK: - Initializers — LocalizedStringKey + errorText: AttributedString
 
+    // swiftlint:disable function_default_parameter_at_end
     /// Creates a checkbox with a localized label and a rich attributed error text.
     ///
     /// ```swift
@@ -409,7 +412,8 @@ public struct OUDSCheckboxItem: View {
     ///   - bundle: The bundle in which to look up the localized string. Defaults to `Bundle.main`.
     ///   - isOn: A binding to a property that determines whether the indicator is ticked (selected) or not (unselected)
     ///   - description: An additional helper text, a description, which should not be empty, default set to `nil`
-    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`. If defined, its accessibility label will be ignored.
+    ///   - image: An optional ``OUDSImage`` encapsulating the asset, its flip flag and its rendering mode. Default set to `nil`.
+    ///   If defined, its accessibility label will be ignored.
     ///   - isReversed: `true` if the checkbox indicator must be in trailing position, `false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - errorText: An error message to display at the bottom as rich `AttributedString`. This message is ignored if `isError` is `false`.
@@ -443,6 +447,8 @@ public struct OUDSCheckboxItem: View {
                   constrainedMaxWidth: constrainedMaxWidth,
                   action: action)
     }
+
+    // swiftlint:enable function_default_parameter_at_end
 
     // MARK: - Body
 
@@ -491,7 +497,3 @@ public struct OUDSCheckboxItem: View {
         }
     }
 }
-
-// swiftlint:enable function_default_parameter_at_end
-// swiftlint:enable line_length
-// swiftlint:enable type_body_length
