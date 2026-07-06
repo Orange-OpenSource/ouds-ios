@@ -25,11 +25,11 @@ import SwiftUI
 ///     OUDSBadgeIcon(status: .info, accessibilityLabel: "Like", size: .medium)
 ///
 ///     // Badge with neutral status with a custom decorative icon
-///     OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart")), accessibilityLabel: "Like", size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), accessibilityLabel: "Like"), size: .medium)
 ///
 ///     // If your layout is in RTL mode but your badge has an icon with another meaning because of bad orientation,
 ///     // you can flip the icon
-///     OUDSBadgeIcon(status: .neutral(icon: Image(decorative: "ic_heart"), flipped: true), accessibilityLabel: "Like", size: .medium)
+///     OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image(decorative: "ic_heart"), flipped: true, accessibilityLabel: "Like"), size: .medium)
 /// ```
 ///
 /// ## Accessibility considerations

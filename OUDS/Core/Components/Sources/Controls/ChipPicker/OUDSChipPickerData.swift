@@ -53,20 +53,20 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         ///
         /// ```swift
         ///     OUDSChipPickerData(tag: "a",
-        ///                        layout: .icon(OUDSImage(asset: Image("ic_heart")),
-        ///                                      accessibilityLabel: "Heart"))
+        ///                        layout: .image(OUDSImage(asset: Image("ic_heart")),
+        ///                                       accessibilityLabel: "Heart"))
         ///
         ///     // Raw (non-tinted) image:
         ///     OUDSChipPickerData(tag: "b",
-        ///                        layout: .icon(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
-        ///                                      accessibilityLabel: "Brand"))
+        ///                        layout: .image(OUDSImage(asset: Image("ic_brand"), renderingMode: .original),
+        ///                                       accessibilityLabel: "Brand"))
         /// ```
         ///
         /// - Parameters:
         ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
         ///    - accessibilityLabel: The text to vocalize with Voice Over describing the chip
         @MainActor public static func icon(_ image: OUDSImage, accessibilityLabel: String) -> Layout {
-            precondition(image.image != nil, "OUDSChipPickerData.Layout.icon(icon:accessibilityLabel:renderingMode:) requires a reliable OUDSImage")
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.icon(_:accessibilityLabel:) requires a reliable OUDSImage")
             // swiftlint:disable:next force_unwrapping
             let newOudsImage = OUDSImage(asset: image.image!, accessibilityLabel: accessibilityLabel, renderingMode: image.renderingMode)
             return .image(image: newOudsImage)
@@ -76,12 +76,12 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         ///
         /// ```swift
         ///     OUDSChipPickerData(tag: "a",
-        ///                        layout: .textAndIcon("Label",
+        ///                        layout: .textAndImage("Label",
         ///                                             image: OUDSImage(asset: Image("ic_heart"))))
         ///
         ///     // Raw (non-tinted) image:
         ///     OUDSChipPickerData(tag: "b",
-        ///                        layout: .textAndIcon("Brand",
+        ///                        layout: .textAndImage("Brand",
         ///                                             image: OUDSImage(asset: Image("ic_brand"),
         ///                                                              renderingMode: .original)))
         /// ```
@@ -90,7 +90,7 @@ public struct OUDSChipPickerData<Tag> where Tag: Hashable {
         ///    - text: The text to display in the chip
         ///    - image: An ``OUDSImage`` encapsulating the asset and its rendering mode
         @MainActor public static func textAndIcon(_ text: String, image: OUDSImage) -> Layout {
-            precondition(image.image != nil, "OUDSChipPickerData.Layout.textAndIcon(text:icon:renderingMode:) requires a reliable OUDSImage")
+            precondition(image.image != nil, "OUDSChipPickerData.Layout.textAndIcon(text:image:) requires a reliable OUDSImage")
             return .textAndImage(text: text, image: image)
         }
     }
