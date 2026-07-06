@@ -427,7 +427,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 OUDSAlertMessage(label: "Label")
 OUDSAlertMessage(label: "Label", status: .warning, description: "Details") { /* dismiss */ }
 OUDSAlertMessage(label: "Label",
-                 status: .neutral(icon: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
+                 status: .neutral(image: OUDSImage(asset: Image("ic_heart"), renderingMode: .original)), // .original to avoid to have tinted images
                  bulletList: ["A", "B"],
                  link: .init(text: "More", position: .bottom) {},
                  onClose: {})
@@ -443,7 +443,7 @@ Statuses: `neutral`, `accent`, `positive`, `info`, `warning`, `negative`
 ```swift
 OUDSInlineAlert(label: "Label")
 OUDSInlineAlert(label: "Label", status: .warning)
-OUDSInlineAlert(label: "Label", status: .accent(icon: OUDSImage(asset: Image("ic_heart"))))
+OUDSInlineAlert(label: "Label", status: .accent(image: OUDSImage(asset: Image("ic_heart"))))
 ```
 
 ---
@@ -456,7 +456,7 @@ Count parameter must be of type `UInt8`.
 ```swift
 OUDSBadgeStandard(accessibilityLabel: "Some label", status: .neutral, size: .medium)
 OUDSBadgeCount(3, accessibilityLabel: "Some label", status: .neutral, size: .medium)
-OUDSBadgeIcon(status: .neutral(icon: Image("ic")), accessibilityLabel: "Label", size: .medium)
+OUDSBadgeIcon(status: .neutral(image: OUDSImage(asset: Image("ic"), accessibilityLabel: "Label"), size: .medium))
 ```
 
 ---

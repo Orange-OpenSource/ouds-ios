@@ -403,14 +403,17 @@ The `.neutral(icon:flipped:renderingMode:)` and `.accent(icon:flipped:renderingM
 
 ---
 
-### Alert status — `icon:` parameter renamed to `image:`
+### Alert status — `icon:` parameter renamed to `image:` and made optional
 
-The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have their parameter label renamed from `icon:` to `image:`. The type (`OUDSImage`) is unchanged — this is a label-only rename.
+The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have two changes:
+- The parameter label is renamed from `icon:` to `image:`.
+- The type changes from `OUDSImage` (required) to `OUDSImage?` with a default value of `nil`, making the parameter optional.
 
 | Old (v2.3) | New (v3.0) |
 |---|---|
 | `.neutral(icon: someOudsImage)` | `.neutral(image: someOudsImage)` |
 | `.accent(icon: someOudsImage)` | `.accent(image: someOudsImage)` |
+| — | `.neutral()` / `.accent()` (no image, new in v3.0) |
 
 ```swift
 // Before (v2.3)
@@ -420,6 +423,10 @@ The `.neutral(icon:)` and `.accent(icon:)` cases of alert status have their para
 // After (v3.0)
 .neutral(image: someOudsImage)
 .accent(image: someOudsImage)
+
+// Also valid in v3.0 — no image (uses nil default)
+.neutral()
+.accent()
 ```
 
 **Required action**:
